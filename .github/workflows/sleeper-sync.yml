@@ -31,6 +31,7 @@ jobs:
             python radar.py
             python scouting.py
             python valuation.py
+            python waiver.py
 
       - name: Commit changed data
         run: |
