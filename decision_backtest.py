@@ -42,7 +42,7 @@ def capture(latest,names,projection,kickoffs,now):
  snapshots=[]
  for week in range(league_week,18):
   kickoff=kickoffs.get(week)
-  if not kickoff or now>=kickoff or not forecast_time or forecast_time>now or forecast_time>=kickoff:continue
+  if not kickoff or now>=kickoff or (kickoff-now)>dt.timedelta(hours=72) or not forecast_time or forecast_time>now or forecast_time>=kickoff:continue
   path=ARCHIVE/f"week_{week:02d}_decision.json"
   if path.exists():continue
   reserve=set(str(x) for x in (roster.get("reserve") or []))
@@ -68,7 +68,12 @@ def assess(latest,kickoffs,now):
  pending=[]
  for file in sorted(ARCHIVE.glob("week_*_decision.json")):
   item=load(file);week=int(item["week"])
-  if now<=kickoffs.get(week,now):pending.append(week);continue
+  lock_time=valid_time(item.get("captured_at_utc"))
+  first_kick=kickoffs.get(week)
+  if not lock_time or not first_kick or not (dt.timedelta(0)<first_kick-lock_time<=dt.timedelta(hours=72)):
+   evaluations.append({"week":week,"status":"planning_snapshot_only","reason":"Captured more than 72 hours before first kickoff or invalid timing."})
+   continue
+  if now<=first_kick:pending.append(week);continue
   if week>=latest_week:pending.append(week);continue
   actual=next((r for r in latest.get("matchups_by_week",{}).get(str(week),[]) if r.get("roster_id")==1),None)
   if not actual or not isinstance(actual.get("players_points"),dict):continue
@@ -109,6 +114,7 @@ def main():
   "completed_comparable_weeks":len(numeric),"pending_weeks":pending,
   "evaluations":results,
   "guardrails":["Never lock after earliest NFL game of target week.",
+  "Only decision snapshots captured within 72 hours of the first game qualify; earlier snapshots are planning-only.",
   "Never rewrite a first archived recommendation.",
   "Only compare with finalized Sleeper game-week starter and individual point arrays.",
   "Flag changed fantasy rosters instead of comparing unavailable players.",
