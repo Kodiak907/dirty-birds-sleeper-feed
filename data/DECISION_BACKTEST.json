@@ -1,8 +1,60 @@
 {
   "completed_comparable_weeks": 0,
-  "evaluations": [],
+  "evaluations": [
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 8
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 9
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 10
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 11
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 12
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 13
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 14
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 15
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 16
+    },
+    {
+      "reason": "Captured more than 72 hours before first kickoff or invalid timing.",
+      "status": "planning_snapshot_only",
+      "week": 17
+    }
+  ],
   "guardrails": [
     "Never lock after earliest NFL game of target week.",
+    "Only decision snapshots captured within 72 hours of the first game qualify; earlier snapshots are planning-only.",
     "Never rewrite a first archived recommendation.",
     "Only compare with finalized Sleeper game-week starter and individual point arrays.",
     "Flag changed fantasy rosters instead of comparing unavailable players.",
@@ -10,29 +62,7 @@
     "Injuries, availability, weather and game-by-game roster lock still require Coach review.",
     "Never perform roster moves."
   ],
-  "newly_archived_weeks": [
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17
-  ],
-  "pending_weeks": [
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17
-  ],
-  "updated_at_utc": "2026-10-24T16:24:15.752690+00:00"
+  "newly_archived_weeks": [],
+  "pending_weeks": [],
+  "updated_at_utc": "2026-10-24T16:24:59.603967+00:00"
 }
