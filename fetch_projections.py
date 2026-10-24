@@ -43,20 +43,19 @@ def main():
  allweeks={}
  successful=[]
  for w in range(first,last+1):
-  url=f"https://api.sleeper.app/projections/nfl/{year}/{w}?season_type=regular"
+  url=f"https://api.sleeper.app/v1/projections/nfl/regular/{year}/{w}"
   try: items=get(url)
   except Exception as exc:
    print(f"WARN: future week {w} projection fetch failed: {type(exc).__name__}: {exc}")
    continue
-  if not isinstance(items,list) or not items:
-   print(f"WARN: future week {w} returned no player projection list")
+  if not isinstance(items,(list,dict)) or not items:
+   print(f"WARN: future week {w} returned empty or unsupported JSON")
    continue
   successful.append(w)
-  for item in items:
-   if not isinstance(item,dict):continue
-   pid=str(item.get("player_id") or ((item.get("player") or {}).get("player_id") or ""))
-   if not pid:continue
-   stats=item.get("stats") or {}
+  entries=(items.items() if isinstance(items,dict) else ((str(i.get("player_id") or ""),i) for i in items if isinstance(i,dict)))
+  for pid,item in entries:
+   if not pid or not isinstance(item,dict):continue
+   stats=item.get("stats") if isinstance(item.get("stats"),dict) else item
    if not isinstance(stats,dict):continue
    pts,method=projection_points(stats,score)
    if pts is None:continue
@@ -66,7 +65,7 @@ def main():
   raise RuntimeError(f"Insufficient future week projections from Sleeper: fetched {successful}; no output published.")
  cutoff=dt.datetime.now(dt.timezone.utc).isoformat()
  out={"as_of":cutoff,"scoring":"half_ppr",
-  "source":"Sleeper NFL weekly projection endpoint; https://api.sleeper.app/projections/nfl/{season}/{week}?season_type=regular",
+  "source":"Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "source_week_range":successful,"source_method":"Summed source-derived projected fantasy points across fetched future calendar weeks, including projected zeros if explicitly provided.",
   "warnings":["This is an aggregation of Sleeper weekly estimates, not an independently verified consensus or medical forecast.",
    "Sleeper projection APIs may be unreliable or incomplete; missing weeks are excluded from the denominator.",
