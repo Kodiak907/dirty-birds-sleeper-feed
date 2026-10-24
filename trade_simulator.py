@@ -65,9 +65,31 @@ def run(give,receive,projection_path):
     now_a=lineup(roster_a,pp,names);after_a=lineup(new_a,pp,names)
     now_b=lineup(roster_b,pp,names);after_b=lineup(new_b,pp,names)
     if not all(x["complete"] for x in (now_a,after_a,now_b,after_b)):raise ValueError("Cannot fill legal fantasy lineup under supplied projections")
+    # Optional externally sourced advanced metrics; no silent numerical injury discount.
+    metrics_path=DATA/"external_metrics.json"
+    advanced=read(metrics_path) if metrics_path.exists() else {}
+    metrics_players=advanced.get("players") or {}
+    priority_fields=[
+      "snap_share_pct","snap_count","routes_run","route_participation_pct",
+      "targets_per_game","target_share_pct","air_yards_share_pct",
+      "rush_attempts_per_game","red_zone_opportunities_per_game",
+      "yards_per_route_run","yards_after_contact_per_attempt",
+      "games_played","games_missed","injury_designation",
+      "practice_participation","team_offense_context","bye_week",
+      "remaining_schedule_strength","playoff_schedule_strength"]
+    metric_audit=[]
+    for k in a+b:
+        record=metrics_players.get(k,{})
+        present=[field for field in priority_fields if record.get(field) is not None]
+        metric_audit.append({"player":k,"fields_present":present,
+          "fields_missing":[field for field in priority_fields if field not in present],
+          "source":record.get("source") or advanced.get("source"),
+          "as_of":record.get("as_of") or advanced.get("as_of")})
     result={"disclaimer":"What-if only; input PPG not verified by simulator. Not an offer or fair-trade determination.",
       "source":ps["source"],"projection_as_of":ps["as_of"],"league_snapshot_utc":d.get("fetched_at_utc"),
       "give":a,"receive":b,"other_roster_id":other_id,
+      "advanced_metric_audit":metric_audit,
+      "durability_note":"Past injury and missed-game rates describe historical availability; they cannot predict future injury with certainty.",
       "dirty_birds":{"before":now_a,"after":after_a,"delta_ppg":round(after_a["projected_ppg"]-now_a["projected_ppg"],2)},
       "counterparty":{"before":now_b,"after":after_b,"delta_ppg":round(after_b["projected_ppg"]-now_b["projected_ppg"],2)},
       "risks":["Model uses a single per-game value: it cannot model weekly byes or playoff schedules.",
