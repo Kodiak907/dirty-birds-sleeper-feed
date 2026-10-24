@@ -90,6 +90,19 @@ def main():
         playerids.update((tx.get('adds') or {}).keys()); playerids.update((tx.get('drops') or {}).keys())
     names={p:{'name':(' '.join(filter(None,[players.get(p,{}).get('first_name'),players.get(p,{}).get('last_name')])) or p), 'team':players.get(p,{}).get('team'),'position':players.get(p,{}).get('position')} for p in playerids if p in players}
     save(DATA/'player_names.json',names)
+    # Compact leaguewide NFL metadata for free-agent ownership and injury watchlists.
+    metadata={}
+    for pid,p in players.items():
+        if not isinstance(p,dict):continue
+        pos=p.get('position')
+        if pos not in ('QB','RB','WR','TE','K','DEF'):continue
+        display=' '.join(filter(None,[p.get('first_name'),p.get('last_name')])).strip() or p.get('full_name') or pid
+        if not p.get('active') and pos!='DEF':continue
+        metadata[str(pid)]={'name':display,'position':pos,'team':p.get('team'),'active':p.get('active'),
+          'status':p.get('status'),'injury_status':p.get('injury_status'),
+          'depth_chart_order':p.get('depth_chart_order')}
+    save(DATA/'player_metadata.json',metadata)
+
     owners={str(u.get('user_id')):u.get('metadata',{}).get('team_name') or u.get('display_name') or u.get('username') for u in users}
     text=['# FFL / Dirty Birds â Sleeper intelligence feed', '',f'Updated: {now}',f'League: {LEAGUE_ID}',f'NFL week: {week}', '', '## All rosters / records']
     for r in sorted(rosters,key=lambda r:r['roster_id']):
