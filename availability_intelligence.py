@@ -92,7 +92,8 @@ def main():
  for player in out["dirty_birds_watch"]:
   ir=player.get("injury_report") or {}
   note=player.get("standing_availability_flag") or "Verify current status before kickoff"
-  summary=", ".join(str(ir.get(k)) for k in ("report_status","practice_status","report_primary_injury") if ir.get(k)) or "No matched report (not clearance)"
+  summary=(", ".join(str(ir.get(k)) for k in ("report_status","practice_status","report_primary_injury") if ir.get(k)) or "No matched report (not clearance)")
+  if ir and ir.get("week") is not None:summary=f"Week {ir[\'week\']} observation: "+summary
   pct=player.get("snap_share_pct")
   lines.append(f'| {player["name"]} | {player["sleeper_injury_status"] or "No tag"} | {summary} | {f"{pct:.1f}%" if isinstance(pct,(int,float)) else "—"} | {note} |')
  lines+=["","## Changes since last published snapshot",""]
