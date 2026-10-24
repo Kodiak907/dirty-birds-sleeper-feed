@@ -1,9 +1,9 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 7 | Snapshot: 2026-10-24T17:41:30.351566+00:00
+Week 7 | Snapshot: 2026-10-24T17:41:56.475609+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
-ESPN event status: unavailable. Confirm any report with the NFL/team inactive release.
+ESPN event status: no_explicit_inactive_listing_present. Confirm any report with the NFL/team inactive release.
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
 Baseline projected lineup: 137.95.
