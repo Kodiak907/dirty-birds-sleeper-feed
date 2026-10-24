@@ -29,6 +29,8 @@ jobs:
         env:
           SLEEPER_SEASON: '2026'
         run: python fetch_projections.py
+      - name: Smoke-test requested Kyren-for-Bowers hypothetical (no trade action)
+        run: python trade_simulator.py --give 'Kyren Williams' --receive 'Brock Bowers' --projections data/ros_projections.json
       - name: Commit sourced data only after validated fetch
         run: |
           git config user.name "Dirty Birds Data Bot"
