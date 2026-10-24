@@ -8,6 +8,7 @@ on:
       - 'waiver.py'
       - 'decision_engine.py'
       - 'lineup_impact.py'
+      - 'weekly_lineups.py'
       - 'fetch_opportunity.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
@@ -47,6 +48,7 @@ jobs:
             python waiver.py
             python decision_engine.py
             python lineup_impact.py
+            python weekly_lineups.py
 
       - name: Commit changed data
         run: |
