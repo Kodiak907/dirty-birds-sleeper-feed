@@ -1,5 +1,5 @@
 import unittest
-from trade_simulator import lineup
+from trade_simulator import lineup,resolve_player_ids
 
 class SimulatorTests(unittest.TestCase):
     def setUp(self):
@@ -13,6 +13,16 @@ class SimulatorTests(unittest.TestCase):
         self.names = {pid:{"name":pid,"position":pos} for pid,pos,val in players}
         self.proj = {pid:{"ppg":val,"status":"test-only"} for pid,pos,val in players}
         self.ids = [p[0] for p in players]
+
+    def test_hyphenated_player_lookup(self):
+        names={"9488":{"name":"Jaxon Smith-Njigba","position":"WR"},"9758":{"name":"C.J. Stroud","position":"QB"}}
+        self.assertEqual(resolve_player_ids(["Jaxon Smith Njigba","C.J. Stroud"],names),["9488","9758"])
+        self.assertEqual(resolve_player_ids(["jaxon smith-njigba"],names),["9488"])
+
+    def test_ambiguous_player_lookup_rejected(self):
+        names={"1":{"name":"A-B"},"2":{"name":"AB"}}
+        with self.assertRaisesRegex(ValueError,"Ambiguous"):
+            resolve_player_ids(["ab"],names)
 
     def test_two_flex_fill(self):
         out=lineup(self.ids,self.proj,self.names)
