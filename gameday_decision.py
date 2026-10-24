@@ -14,6 +14,9 @@ def main():
  metadata=read("player_metadata.json")
  projections=read("ros_projections.json")["players"]
  availability=read("AVAILABILITY_INTELLIGENCE.json")
+ evidence_path=D/"GAME_INACTIVES_EVIDENCE.json"
+ evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"explicit_inactives":{},"status":"unavailable"}
+ reported=evidence.get("explicit_inactives") or {}
  team=next(r for r in snap["rosters"] if r["roster_id"]==1)
  week=int(snap["nfl_state"]["week"])
  roster=[str(x) for x in team.get("players") or []]
@@ -36,7 +39,9 @@ def main():
    "fantasy_reserve":pid in reserve,
    "status_source":"Sleeper metadata, not official gameday inactive list",
    "availability_verified":False}
-  if status in hard:excluded.add(pid);item["model_handling"]="exclude_explicit_unavailable_tag"
+  if pid in reported:
+   excluded.add(pid);item["model_handling"]="exclude_espn_reported_game_inactive";item["third_party_game_inactive"]=reported[pid]
+  elif status in hard:excluded.add(pid);item["model_handling"]="exclude_explicit_unavailable_tag"
   elif status in watch:risk.append(item["name"]);item["model_handling"]="unverified_availability_review"
   else:item["model_handling"]="unverified_no_hard_exclusion"
   detail.append(item)
@@ -46,8 +51,12 @@ def main():
  result={"generated_at_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
   "snapshot_utc":snap.get("fetched_at_utc"),"week":week,
   "official_game_day_inactives_integrated":False,
+  "third_party_reported_inactives_integrated":bool(reported),
+  "third_party_inactive_source_status":evidence.get("status"),
+  "reported_inactives_on_roster":[names.get(pid,{}).get("name",pid) for pid in roster if pid in reported],
+  "sleeper_discrepancies":[{"player":names.get(pid,{}).get("name",pid),"sleeper_injury_tag":metadata.get(pid,{}).get("injury_status"),"espn_reported":"inactive"} for pid in roster if pid in reported and str(metadata.get(pid,{}).get("injury_status") or "").lower() not in hard],
   "official_actives_verified":False,
-  "model_status":"provisional_sleeper_tags_only",
+  "model_status":"provisional_sleeper_and_espn_reported_inactives",
   "source_availability_generated_at_utc":availability.get("generated_at_utc"),
   "baseline_fantasy_reserve_excluded":pre,
   "hard_status_excluded":after,
@@ -56,6 +65,7 @@ def main():
   "removed_starters":[p["name"] for p in pre.get("starters",[]) if p["id"] not in a],
   "explicit_excluded_ids":sorted(excluded),"players_needing_review":risk,"player_statuses":detail,
   "warnings":["This is a conditional simulation, not an official starting lineup or verified inactive list.",
+  "ESPN game-status reports are third-party, not verified official NFL team submissions.",
   "Sleeper injury flags can be delayed; a blank tag is not confirmation that a player is active.",
   "NFL IR and fantasy reserve are distinct.",
   "Doubtful/questionable cases remain modeled but demand manual review.",
@@ -65,7 +75,8 @@ def main():
  (D/"GAMEDAY_DECISION.json").write_text(json.dumps(result,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
  lines=["# Dirty Birds — Gameday Availability Decision Board","",
   f"Week {week} | Snapshot: {snap.get('fetched_at_utc')}","",
-  "**PROVISIONAL: Sleeper injury tags, NOT verified official NFL actives/inactives.**",
+  "**PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**",
+  "ESPN event status: "+str(evidence.get("status"))+". Confirm any report with the NFL/team inactive release.",
   "This report is a read-only scenario showing the impact of explicit unavailable tags.","",
   f"Baseline projected lineup: {pre.get('ppg','incomplete')}.",
   f"Hard-tag exclusion projected lineup: {after.get('ppg','incomplete')}.",
@@ -74,6 +85,10 @@ def main():
  for p in detail:
   if p["id"] in excluded:lines.append(f'- {p["name"]} — fantasy reserve: {p["fantasy_reserve"]}; Sleeper injury: {p["sleeper_injury_status"] or "not listed"}')
  if len(excluded)==0:lines.append("None.")
+ lines+=["","## ESPN / Sleeper discrepancies",""]
+ if result["sleeper_discrepancies"]:
+  for x in result["sleeper_discrepancies"]:lines.append("- "+x["player"]+": ESPN reports inactive; Sleeper tag "+str(x["sleeper_injury_tag"]))
+ else:lines.append("No reported discrepancy; NOT a confirmed active list.")
  lines+=["","## Other unresolved status flags",""]
  if risk:lines.extend("- "+n for n in risk)
  else:lines.append("None in Sleeper tags; absence of flags is NOT active confirmation.")
