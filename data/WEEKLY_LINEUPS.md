@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:22.034078+00:00
+Generated: 2026-10-24T15:57:35.699897+00:00 | Forecast as of: 2026-10-24T13:28:22.034078+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -12,7 +12,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | C.J. Stroud | QB | NYG | 17.92 |
 | Bijan Robinson | RB | SF | 21.81 |
-| Kyren Williams | RB | Check schedule | 18.31 |
+| Kyren Williams | RB | LV | 18.31 |
 | Zay Flowers | WR | CIN | 15.78 |
 | Garrett Wilson | WR | MIA | 13.90 |
 | Isaiah Likely | TE | HOU | 10.00 |
@@ -29,7 +29,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | DEN | 17.04 |
 | Bijan Robinson | RB | TB | 20.09 |
-| Kyren Williams | RB | Check schedule | 18.53 |
+| Kyren Williams | RB | LAC | 18.53 |
 | Zay Flowers | WR | BUF | 15.50 |
 | Garrett Wilson | WR | LV | 13.38 |
 | Chig Okonkwo | TE | PHI | 5.78 |
@@ -46,7 +46,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | NYJ | 20.02 |
 | Bijan Robinson | RB | CIN | 23.07 |
-| Kyren Williams | RB | Check schedule | 17.60 |
+| Kyren Williams | RB | WAS | 17.60 |
 | Zay Flowers | WR | JAX | 16.00 |
 | A.J. Brown | WR | GB | 12.02 |
 | Isaiah Likely | TE | PHI | 10.04 |
@@ -63,7 +63,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | ATL | 17.47 |
 | Bijan Robinson | RB | KC | 19.36 |
-| Kyren Williams | RB | Check schedule | 17.70 |
+| Kyren Williams | RB | ARI | 17.70 |
 | Zay Flowers | WR | LAC | 16.25 |
 | A.J. Brown | WR | DET | 12.92 |
 | Isaiah Likely | TE | WAS | 11.96 |
@@ -97,7 +97,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | BUF | 19.75 |
 | Bijan Robinson | RB | MIN | 18.36 |
-| Kyren Williams | RB | Check schedule | 17.85 |
+| Kyren Williams | RB | GB | 17.85 |
 | Zay Flowers | WR | HOU | 16.23 |
 | Garrett Wilson | WR | MIA | 14.61 |
 | Isaiah Likely | TE | IND | 10.79 |
@@ -114,7 +114,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | LA | 17.02 |
 | Bijan Robinson | RB | DET | 22.98 |
-| Kyren Williams | RB | Check schedule | 16.43 |
+| Kyren Williams | RB | KC | 16.43 |
 | A.J. Brown | WR | BUF | 11.49 |
 | Antonio Williams | WR | TEN | 6.51 |
 | Isaiah Likely | TE | SF | 10.00 |
@@ -131,7 +131,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | CIN | 19.50 |
 | Bijan Robinson | RB | CLE | 19.98 |
-| Kyren Williams | RB | Check schedule | 16.09 |
+| Kyren Williams | RB | SF | 16.09 |
 | Zay Flowers | WR | TB | 16.57 |
 | Garrett Wilson | WR | DEN | 11.61 |
 | Isaiah Likely | TE | SEA | 9.84 |
@@ -148,7 +148,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | NE | 18.55 |
 | Bijan Robinson | RB | WAS | 21.04 |
-| Kyren Williams | RB | Check schedule | 18.76 |
+| Kyren Williams | RB | DAL | 18.76 |
 | Zay Flowers | WR | PIT | 16.47 |
 | Garrett Wilson | WR | ARI | 14.26 |
 | Isaiah Likely | TE | CLE | 10.11 |
@@ -165,7 +165,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | SF | 18.35 |
 | Bijan Robinson | RB | TB | 19.54 |
-| Kyren Williams | RB | Check schedule | 15.55 |
+| Kyren Williams | RB | SEA | 15.55 |
 | Zay Flowers | WR | CLE | 15.54 |
 | Garrett Wilson | WR | NE | 12.26 |
 | Isaiah Likely | TE | DET | 11.69 |
@@ -182,7 +182,7 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 |---|---|---|---:|
 | Patrick Mahomes | QB | LAC | 18.95 |
 | Bijan Robinson | RB | NO | 21.82 |
-| Kyren Williams | RB | Check schedule | 16.24 |
+| Kyren Williams | RB | TB | 16.24 |
 | Zay Flowers | WR | CIN | 16.74 |
 | Garrett Wilson | WR | MIN | 11.65 |
 | Isaiah Likely | TE | DAL | 11.74 |
@@ -193,6 +193,6 @@ Generated: 2026-10-24T15:56:37.199269+00:00 | Forecast as of: 2026-10-24T13:28:2
 
 ## Prediction tracking and calibration
 
-First stored forecast per week is retained; later updates will not overwrite it.
+First stored forecast per week is retained; later updates will not overwrite it. Automatic captures are NOT eligible for official pregame accuracy statistics without verified pre-kickoff capture.
 Completed-week archived evaluations: 0.
 No historical forecast is constructed from final results. Model accuracy cannot be claimed before true pregame observations are evaluated.

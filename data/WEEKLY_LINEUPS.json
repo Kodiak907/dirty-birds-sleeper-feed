@@ -8,12 +8,12 @@
     "13345",
     "4950"
   ],
-  "generated_at_utc": "2026-10-24T15:56:37.199269+00:00",
+  "generated_at_utc": "2026-10-24T15:57:35.699897+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-10-24T13:28:22.034078+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-24T15:56:33.706283+00:00",
+  "snapshot_utc": "2026-10-24T15:57:30.465126+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -43,7 +43,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "ARI",
           "position": "RB",
           "ppg": 17.7
         },
@@ -203,7 +203,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "GB",
           "position": "RB",
           "ppg": 17.85
         },
@@ -284,7 +284,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "KC",
           "position": "RB",
           "ppg": 16.43
         },
@@ -361,7 +361,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "SF",
           "position": "RB",
           "ppg": 16.09
         },
@@ -438,7 +438,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "DAL",
           "position": "RB",
           "ppg": 18.76
         },
@@ -515,7 +515,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "SEA",
           "position": "RB",
           "ppg": 15.55
         },
@@ -592,7 +592,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "TB",
           "position": "RB",
           "ppg": 16.24
         },
@@ -673,7 +673,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "LV",
           "position": "RB",
           "ppg": 18.31
         },
@@ -754,7 +754,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "LAC",
           "position": "RB",
           "ppg": 18.53
         },
@@ -831,7 +831,7 @@
         {
           "id": "8150",
           "name": "Kyren Williams",
-          "opponent": null,
+          "opponent": "WAS",
           "position": "RB",
           "ppg": 17.6
         },
