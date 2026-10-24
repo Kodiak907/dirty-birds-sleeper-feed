@@ -5,6 +5,7 @@ from championship_simulator import bracket,run
 import random
 from fetch_future_matchups import extract
 from full_season_playoff_simulator import estimate_week
+from scoring_variability import calculate
 class ChampionshipTests(unittest.TestCase):
  def test_bracket_reproducible(self):
   seed=[1,2,3,4,5,6]
@@ -29,4 +30,12 @@ class ChampionshipTests(unittest.TestCase):
   pairs,complete=extract(rows,{1,2,3,4})
   self.assertTrue(complete)
   self.assertEqual(pairs,[[1,2],[3,4]])
+ def test_scoring_uses_completed_weeks_only(self):
+  snap={"nfl_state":{"week":3},"league":{"settings":{"last_scored_leg":2}},
+    "matchups_by_week":{"1":[{"roster_id":1,"points":99},{"roster_id":2,"points":110}],
+      "2":[{"roster_id":1,"points":121},{"roster_id":2,"points":105}],
+      "3":[{"roster_id":1,"points":9999}]}}
+  audit=calculate(snap)
+  self.assertEqual(audit["observations"],4)
+  self.assertEqual(audit["status"],"insufficient_completed_scores")
 if __name__=="__main__":unittest.main()
