@@ -43,7 +43,7 @@ def capture(latest,names,projection,kickoffs,now):
  for week in range(league_week,18):
   kickoff=kickoffs.get(week)
   if not kickoff or now>=kickoff or (kickoff-now)>dt.timedelta(hours=72) or not forecast_time or forecast_time>now or forecast_time>=kickoff:continue
-  path=ARCHIVE/f"week_{week:02d}_decision.json"
+  path=ARCHIVE/f"week_{week:02d}_pregame.json"
   if path.exists():continue
   reserve=set(str(x) for x in (roster.get("reserve") or []))
   roster_ids=[str(pid) for pid in (roster.get("players") or [])]
@@ -66,7 +66,7 @@ def assess(latest,kickoffs,now):
  latest_week=int(latest["nfl_state"]["week"])
  evaluations=[]
  pending=[]
- for file in sorted(ARCHIVE.glob("week_*_decision.json")):
+ for file in sorted(ARCHIVE.glob("week_*_pregame.json")):
   item=load(file);week=int(item["week"])
   lock_time=valid_time(item.get("captured_at_utc"))
   first_kick=kickoffs.get(week)
