@@ -1,0 +1,4897 @@
+{
+  "baseline_lineup": {
+    "complete": true,
+    "missing_projection": [],
+    "ppg": 126.943,
+    "starters": [
+      {
+        "id": "4046",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "ppg": 18.665
+      },
+      {
+        "id": "9509",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "ppg": 18.914
+      },
+      {
+        "id": "8150",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "ppg": 15.733
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 14.586
+      },
+      {
+        "id": "8146",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "ppg": 11.741
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 9.705
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.3
+      },
+      {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF",
+        "ppg": 7.094
+      },
+      {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.439
+      },
+      {
+        "id": "5859",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "ppg": 10.766
+      }
+    ]
+  },
+  "by_position": {
+    "DEF": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Kansas City Chiefs",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "KC",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 6.716,
+        "team": "KC",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Baltimore Ravens",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "BAL",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 6.303,
+        "team": "BAL",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cincinnati Bengals",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "CIN",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 6.068,
+        "team": "CIN",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Carolina Panthers",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "CAR",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.995,
+        "team": "CAR",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Green Bay Packers",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "GB",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.976,
+        "team": "GB",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Buffalo Bills",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "BUF",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.896,
+        "team": "BUF",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Indianapolis Colts",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "IND",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.774,
+        "team": "IND",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Chicago Bears",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "CHI",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.642,
+        "team": "CHI",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "New York Giants",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "NYG",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.561,
+        "team": "NYG",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Tampa Bay Buccaneers",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "TB",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.355,
+        "team": "TB",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "New Orleans Saints",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "NO",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.322,
+        "team": "NO",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Washington Commanders",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "WAS",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.062,
+        "team": "WAS",
+        "warnings": [
+          "No sourced usage"
+        ]
+      }
+    ],
+    "K": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Trey Smack",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13545",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "K",
+        "projection_ppg": 6.449,
+        "team": "GB",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cam Little",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11786",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "K",
+        "projection_ppg": 6.01,
+        "team": "JAX",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cameron Dicker",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "8259",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "K",
+        "projection_ppg": 5.751,
+        "team": "LAC",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cairo Santos",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "2020",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "K",
+        "projection_ppg": 5.619,
+        "team": "CHI",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Chris Boswell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "1945",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "K",
+        "projection_ppg": 5.537,
+        "team": "PIT",
+        "warnings": [
+          "No sourced usage"
+        ]
+      }
+    ],
+    "QB": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Malik Willis",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "8161",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "QB",
+        "projection_ppg": 14.733,
+        "team": "MIA",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Baker Mayfield",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "4892",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "QB",
+        "projection_ppg": 13.288,
+        "team": "TB",
+        "warnings": [
+          "Availability status: questionable"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Tanner McKee",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "9230",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "QB",
+        "projection_ppg": 11.716,
+        "team": "PHI",
+        "warnings": [
+          "Limited snap sample"
+        ]
+      }
+    ],
+    "RB": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Tyrone Tracy Jr.",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11655",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 7.195,
+        "team": "NYG",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Rachaad White",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "8136",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 6.966,
+        "team": "WAS",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Kenny Gainwell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "7567",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 5.519,
+        "team": "TB",
+        "warnings": [
+          "Limited snap sample"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Samaje Perine",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "4147",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 5.145,
+        "team": "CIN",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Keaton Mitchell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "9511",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 5.104,
+        "team": "LAC",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Mike Washington Jr.",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13305",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 4.944,
+        "team": "LV",
+        "warnings": [
+          "Availability status: questionable"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Chris Rodriguez Jr.",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "10219",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 4.711,
+        "team": "JAX",
+        "warnings": [
+          "Limited snap sample"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Tank Bigsby",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "9225",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 2.005,
+        "team": "PHI",
+        "warnings": [
+          "Availability status: ir",
+          "Partial projection coverage"
+        ]
+      }
+    ],
+    "TE": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Jake Ferguson",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "8110",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 6.22,
+        "team": "DAL",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Noah Fant",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "5857",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 4.341,
+        "team": "NO",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Colby Parkinson",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "6865",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 3.863,
+        "team": "LAR",
+        "warnings": [
+          "No sourced usage",
+          "Limited snap sample"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "David Njoku",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "4033",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 2.528,
+        "team": "LAC",
+        "warnings": [
+          "Availability status: ir"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Zach Ertz",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "1339",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 1.635,
+        "team": "PHI",
+        "warnings": []
+      }
+    ],
+    "WR": [
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Jakobi Meyers",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "5947",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 8.194,
+        "team": "JAX",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Quentin Johnston",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "9754",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 5.181,
+        "team": "LAC",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Chris Bell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13311",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 5.118,
+        "team": "MIA",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Jauan Jennings",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "7049",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 4.794,
+        "team": "MIN",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Ja'Kobi Lane",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13293",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 4.615,
+        "team": "BAL",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Rashod Bateman",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "7571",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 4.363,
+        "team": "BAL",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Makai Lemon",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13294",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 3.833,
+        "team": "PHI",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Adonai Mitchell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11625",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 3.497,
+        "team": "NYJ",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Brian Thomas Jr.",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11631",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 2.829,
+        "team": "JAX",
+        "warnings": [
+          "Limited snap sample"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Mack Hollins",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "4177",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 2.826,
+        "team": "NE",
+        "warnings": [
+          "Availability status: ir",
+          "Partial projection coverage"
+        ]
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Zachariah Branch",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13320",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 2.103,
+        "team": "ATL",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Darius Cooper",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13150",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 2.088,
+        "team": "PHI",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Dohnte Meyers",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13264",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 1.125,
+        "team": "CIN",
+        "warnings": []
+      },
+      {
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.943,
+          "before_ppg": 126.943,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cyrus Allen",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.943,
+            "before_ppg": 126.943,
+            "displaced_starters": [],
+            "drop": "DeMario Douglas",
+            "drop_id": "9501",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13413",
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 0.939,
+        "team": "KC",
+        "warnings": []
+      }
+    ]
+  },
+  "generated_at_utc": "2026-10-24T13:49:18.634792+00:00",
+  "limitations": [
+    "Averages over explicitly projected weeks, not week-specific starting projections.",
+    "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
+    "A tiny gain is not an endorsement. No automatic pickup decisions or FAAB bids.",
+    "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
+  ],
+  "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
+  "sleeper_snapshot_utc": "2026-10-24T13:49:14.921459+00:00",
+  "source_projection_date": "2026-10-24T13:28:22.034078+00:00"
+}
