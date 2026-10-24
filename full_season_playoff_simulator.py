@@ -2,9 +2,25 @@
 """FFL full regular-season qualification + playoff Monte Carlo (source-backed fixtures)."""
 import json,datetime as dt,random,collections
 from pathlib import Path
-from championship_simulator import weekly,score,bracket,owner_name
+from championship_simulator import score,bracket,owner_name
+from lineup_impact import build_lineup
 D=Path(__file__).resolve().parent/"data"
 def load(p):return json.loads((D/p).read_text())
+def estimate_week(roster,week,names,projections):
+ reserve={str(x) for x in roster.get("reserve") or []}
+ ids=[str(x) for x in roster.get("players") or [] if str(x) not in reserve]
+ source={};fallback=[]
+ for pid in ids:
+  name=names.get(pid,{}).get("name")
+  rec=projections.get(name,{})
+  weekly=(rec.get("weeks") or {}).get(str(week))
+  if isinstance(weekly,(int,float)) and not isinstance(weekly,bool):
+   source[name]={"ppg":float(weekly)}
+  elif isinstance(rec.get("ppg"),(int,float)) and not isinstance(rec.get("ppg"),bool):
+   source[name]={"ppg":float(rec["ppg"])}
+   fallback.append(name)
+ return build_lineup(ids,names,source),fallback
+
 def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
  current=int(snapshot["nfl_state"]["week"])
  rosters={r["roster_id"]:r for r in snapshot["rosters"]};ids=sorted(rosters)
@@ -12,11 +28,12 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
  needed=list(range(current+1,15))
  if not needed or not all(fixtures.get(str(w),{}).get("complete") for w in needed):
   return {"status":"blocked_missing_verified_fixtures","missing_weeks":[w for w in needed if not fixtures.get(str(w),{}).get("complete")]}
- means={};missing=[]
+ means={};missing=[];fallbacks=[]
  for rid,r in rosters.items():
   means[rid]={}
   for week in range(current+1,18):
-   state=weekly(r,week,names,projections)
+   state,used=estimate_week(r,week,names,projections)
+   if used:fallbacks.append({"roster_id":rid,"week":week,"players":used})
    if state.get("complete"):means[rid][week]=float(state["ppg"])
    else:missing.append({"roster_id":rid,"week":week})
  if missing:return {"status":"blocked_incomplete_team_projections","missing":missing}
@@ -58,9 +75,12 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
   "tie_break_assumption":"Wins then projected accumulated points; official FFL tiebreak not independently verified",
   "remaining_week_assumption":"Weeks through 14 are remaining regular season; no tie games modeled",
   "future_roster_assumption":"Current roster held fixed; no future pickups, trades, or injuries simulated",
+  "fallback_player_weeks":fallbacks,
+  "fallback_method":"Where weekly value missing, use that players sourced ROS PPG; not a week-specific projection.",
   "limitations":["Win/bye/title chances are model outputs dependent on speculative volatility, fixed rosters and unverified tiebreaks.",
     "Current Week 7 may be in progress: current record is used as saved, not future outcome.",
-    "Model does not simulate correlated NFL player scoring or game lock time."],
+    "Model does not simulate correlated NFL player scoring or game lock time.",
+    "Missing weekly player forecasts are transparently replaced by ROS PPG when available."],
   "teams":report}
 def main():
  snap=load("latest.json");projections=load("ros_projections.json");schedule=load("FUTURE_MATCHUPS.json")
