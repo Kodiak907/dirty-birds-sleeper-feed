@@ -1,0 +1,177 @@
+{
+  "generated_at_utc": "2026-10-24T17:22:29.635219+00:00",
+  "limitations": [
+    "Value ratios are not exchange rates or manager acceptance probabilities.",
+    "Full-PPR market baseline differs from FFL half-PPR.",
+    "1-for-2 packages may require a separate cut; no FAAB or roster depth insurance priced.",
+    "No numerical maximum price is endorsed without additional context.",
+    "Verify current injuries and NFL snap/target usage before contacting a manager."
+  ],
+  "market_band": "Screen paid/received between 0.80 and 1.12 in publisher native value units",
+  "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
+  "no_automatic_trade_offers": true,
+  "not_a_probability": true,
+  "priced_candidates": 2,
+  "qualified_top_five": [
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 128.098,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 1.16,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "pos": "QB",
+          "projected_ppg": 18.66
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "pos": "WR",
+          "projected_ppg": 11.74
+        }
+      ],
+      "market_quote": {
+        "paid": 9252,
+        "paid_to_received_ratio": 1.052,
+        "received": 8793,
+        "relative_value_difference_pct": 5.2
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 1.186,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 102.498,
+      "opponent_before": 102.295,
+      "opponent_delta_ppg": 0.2,
+      "opponent_drop_to_fit": "Blake Corum",
+      "opponent_roster_id": 3,
+      "projected_ppg_received": 16.95,
+      "projected_ppg_sent": 30.41,
+      "receive": [
+        {
+          "id": "6813",
+          "name": "Jonathan Taylor",
+          "pos": "RB",
+          "projected_ppg": 16.95
+        }
+      ],
+      "starter_benefit": {
+        "them": 0.2,
+        "us": 1.16
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 127.577,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 0.63,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "projected_ppg": 14.61
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 7.36
+        }
+      ],
+      "market_quote": {
+        "paid": 5435,
+        "paid_to_received_ratio": 1.064,
+        "received": 5109,
+        "relative_value_difference_pct": 6.4
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 0.89,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 93.105,
+      "opponent_before": 92.739,
+      "opponent_delta_ppg": 0.37,
+      "opponent_drop_to_fit": "Keon Coleman",
+      "opponent_roster_id": 4,
+      "projected_ppg_received": 19.3,
+      "projected_ppg_sent": 21.97,
+      "receive": [
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB",
+          "projected_ppg": 19.3
+        }
+      ],
+      "starter_benefit": {
+        "them": 0.37,
+        "us": 0.63
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Zach Charbonnet: snap coverage absent"
+      ]
+    }
+  ],
+  "source": "Values by TheTradeCalc — https://thetradecalc.com",
+  "source_as_of": "2026-10-24T17:22:29.472031+00:00",
+  "unpriced_cases": 5,
+  "unpriced_examples": [
+    {
+      "give": [
+        "Ollie Gordon II"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Chris Olave"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Ollie Gordon II"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Chris Olave"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Zach Charbonnet"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Chris Olave"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Tyler Shough",
+        "Chris Olave"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "A.J. Brown"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Puka Nacua"
+      ]
+    }
+  ]
+}

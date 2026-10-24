@@ -1,6 +1,6 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-10-24T17:20:35.465643+00:00
+Generated: 2026-10-24T17:22:29.604455+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
