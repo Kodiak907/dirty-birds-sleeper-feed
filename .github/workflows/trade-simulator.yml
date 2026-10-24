@@ -1,6 +1,11 @@
 name: Dirty Birds Trade Simulator
 
 on:
+  push:
+    paths:
+      - 'trade_simulator.py'
+      - 'test_trade_simulator.py'
+      - '.github/workflows/trade-simulator.yml'
   workflow_dispatch:
     inputs:
       give:
@@ -31,6 +36,8 @@ jobs:
           python-version: '3.12'
       - name: Validate simulator logic with synthetic examples
         run: python -m unittest -v test_trade_simulator
+      - name: Verify C.J. Stroud for Jaxon Smith Njigba example (read-only)
+        run: python trade_simulator.py --give 'C.J. Stroud' --receive 'Jaxon Smith Njigba' --projections data/ros_projections.json > /dev/null
       - name: Run optional trade analysis (read-only)
         env:
           GIVE_PLAYERS: ${{ inputs.give }}
