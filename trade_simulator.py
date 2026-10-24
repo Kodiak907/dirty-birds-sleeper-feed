@@ -79,7 +79,7 @@ def run(give,receive,projection_path):
       "remaining_schedule_strength","playoff_schedule_strength"]
     metric_audit=[]
     for k in a+b:
-        record=metrics_players.get(k,{})
+        record=metrics_players.get(byname.get(k),metrics_players.get(k,{}))
         present=[field for field in priority_fields if record.get(field) is not None]
         metric_audit.append({"player":k,"fields_present":present,
           "fields_missing":[field for field in priority_fields if field not in present],
