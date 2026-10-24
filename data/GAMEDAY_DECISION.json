@@ -77,7 +77,7 @@
     "4950",
     "9753"
   ],
-  "generated_at_utc": "2026-10-24T17:42:06.855720+00:00",
+  "generated_at_utc": "2026-10-24T17:51:15.165490+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
@@ -148,9 +148,11 @@
       }
     ]
   },
+  "manual_verified_official_inactives_on_roster": [],
   "model_status": "provisional_sleeper_and_espn_reported_inactives",
   "official_actives_verified": false,
   "official_game_day_inactives_integrated": false,
+  "official_inactive_source_status": "unavailable",
   "player_statuses": [
     {
       "availability_verified": false,
@@ -337,13 +339,14 @@
   "removed_starters": [],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-10-24T17:41:56.475609+00:00",
-  "source_availability_generated_at_utc": "2026-10-24T17:42:04.215743+00:00",
+  "snapshot_utc": "2026-10-24T17:51:07.877687+00:00",
+  "source_availability_generated_at_utc": "2026-10-24T17:51:13.131821+00:00",
   "third_party_inactive_source_status": "no_explicit_inactive_listing_present",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
     "This is a conditional simulation, not an official starting lineup or verified inactive list.",
     "ESPN game-status reports are third-party, not verified official NFL team submissions.",
+    "Official submissions require human source review; automated link checks do not prove the source content.",
     "Sleeper injury flags can be delayed; a blank tag is not confirmation that a player is active.",
     "NFL IR and fantasy reserve are distinct.",
     "Doubtful/questionable cases remain modeled but demand manual review.",

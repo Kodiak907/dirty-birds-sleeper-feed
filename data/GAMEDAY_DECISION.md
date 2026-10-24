@@ -1,9 +1,10 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 7 | Snapshot: 2026-10-24T17:41:56.475609+00:00
+Week 7 | Snapshot: 2026-10-24T17:51:07.877687+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: no_explicit_inactive_listing_present. Confirm any report with the NFL/team inactive release.
+Manually verified official-release submissions: 0; unavailable.
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
 Baseline projected lineup: 137.95.
@@ -30,6 +31,6 @@ No modeled starter changes.
 
 ## Mandatory verification
 
-Official team/NFL gameday inactive lists are **not** integrated. Verify official reports before kickoff.
+Automatic official team/NFL inactive-list retrieval is **not available**. Human-verified submissions can be integrated when provided.
 Do not treat Sleeper Questionable, no tag, or dated nflverse practice participation as game-day active.
 Coach alone authorizes lineup changes.
