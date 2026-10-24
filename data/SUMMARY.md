@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-24T21:29:55.693352+00:00
+Updated: 2026-10-24T22:28:17.187370+00:00
 League: 1399157532559192064
 NFL week: 7
 
@@ -19,14 +19,7 @@ NFL week: 7
 - Roster 12: Cokerthestroker | 5-1 | FAAB used: 125
 
 ## Changes detected in this run
-- Roster 1: added none; dropped Caleb Douglas, Antonio Williams
-- lineup_change â roster/transaction 1
-- reserve_change â roster/transaction 1
-- Roster 7: added none; dropped Dominic Zvada
-- reserve_change â roster/transaction 7
-- Transaction 1419831122367397888: free_agent / complete / rosters [7] / adds None / drops {'13833': 7} / FAAB bid None
-- Transaction 1419824422595944448: free_agent / complete / rosters [1] / adds None / drops {'13296': 1} / FAAB bid None
-- Transaction 1419824009859616768: free_agent / complete / rosters [1] / adds None / drops {'13301': 1} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

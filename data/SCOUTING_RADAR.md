@@ -1,14 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-24T21:29:58.862218+00:00
-Sleeper snapshot: 2026-10-24T21:29:55.693352+00:00
+Generated: 2026-10-24T22:28:20.878293+00:00
+Sleeper snapshot: 2026-10-24T22:28:17.187370+00:00
 
-Roster change entries: 4. New completed trade entries: 0.
-
-- Dirty Birds: added none; dropped Caleb Douglas, Antonio Williams
-- Dirty Birds: reserve status changed
-- JA’MARRTRIX: added none; dropped Dominic Zvada
-- JA’MARRTRIX: reserve status changed
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
