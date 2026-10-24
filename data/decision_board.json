@@ -1,0 +1,1186 @@
+{
+  "current_roster_reference": {
+    "DEF": {
+      "name": "Minnesota Vikings",
+      "ppg": 7.094
+    },
+    "K": {
+      "name": "Will Reichard",
+      "ppg": 7.3
+    },
+    "QB": {
+      "name": "C.J. Stroud",
+      "ppg": 14.606
+    },
+    "RB": {
+      "name": "Jonah Coleman",
+      "ppg": 3.201
+    },
+    "TE": {
+      "name": "Michael Mayer",
+      "ppg": 5.217
+    },
+    "WR": {
+      "name": "Christian Kirk",
+      "ppg": 1.351
+    }
+  },
+  "generated_at_utc": "2026-10-24T13:43:37.234778+00:00",
+  "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
+  "rankings": {
+    "DEF": [
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Kansas City Chiefs",
+        "ppg": 6.72,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -0.38,
+        "screen_only": true,
+        "sleeper_id": "KC",
+        "team": "KC"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Baltimore Ravens",
+        "ppg": 6.3,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -0.79,
+        "screen_only": true,
+        "sleeper_id": "BAL",
+        "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Cincinnati Bengals",
+        "ppg": 6.07,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.03,
+        "screen_only": true,
+        "sleeper_id": "CIN",
+        "team": "CIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Carolina Panthers",
+        "ppg": 6.0,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.1,
+        "screen_only": true,
+        "sleeper_id": "CAR",
+        "team": "CAR"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Green Bay Packers",
+        "ppg": 5.98,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.12,
+        "screen_only": true,
+        "sleeper_id": "GB",
+        "team": "GB"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Buffalo Bills",
+        "ppg": 5.9,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.2,
+        "screen_only": true,
+        "sleeper_id": "BUF",
+        "team": "BUF"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Indianapolis Colts",
+        "ppg": 5.77,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.32,
+        "screen_only": true,
+        "sleeper_id": "IND",
+        "team": "IND"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Chicago Bears",
+        "ppg": 5.64,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.45,
+        "screen_only": true,
+        "sleeper_id": "CHI",
+        "team": "CHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New York Giants",
+        "ppg": 5.56,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.53,
+        "screen_only": true,
+        "sleeper_id": "NYG",
+        "team": "NYG"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Tampa Bay Buccaneers",
+        "ppg": 5.36,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.74,
+        "screen_only": true,
+        "sleeper_id": "TB",
+        "team": "TB"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New Orleans Saints",
+        "ppg": 5.32,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -1.77,
+        "screen_only": true,
+        "sleeper_id": "NO",
+        "team": "NO"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Washington Commanders",
+        "ppg": 5.06,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.094
+        },
+        "same_position_uplift_ppg": -2.03,
+        "screen_only": true,
+        "sleeper_id": "WAS",
+        "team": "WAS"
+      }
+    ],
+    "K": [
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Trey Smack",
+        "ppg": 6.45,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -0.85,
+        "screen_only": true,
+        "sleeper_id": "13545",
+        "team": "GB"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Cam Little",
+        "ppg": 6.01,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -1.29,
+        "screen_only": true,
+        "sleeper_id": "11786",
+        "team": "JAX"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Cameron Dicker",
+        "ppg": 5.75,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -1.55,
+        "screen_only": true,
+        "sleeper_id": "8259",
+        "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Cairo Santos",
+        "ppg": 5.62,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -1.68,
+        "screen_only": true,
+        "sleeper_id": "2020",
+        "team": "CHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Chris Boswell",
+        "ppg": 5.54,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -1.76,
+        "screen_only": true,
+        "sleeper_id": "1945",
+        "team": "PIT"
+      }
+    ],
+    "QB": [
+      {
+        "audit": {
+          "carries_per_game": 6.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 100.0,
+          "snap_trend_3_appearances_pp": 0.0,
+          "targets_per_game": 0.0
+        },
+        "name": "Malik Willis",
+        "ppg": 14.73,
+        "replacement_reference": {
+          "name": "C.J. Stroud",
+          "ppg": 14.606
+        },
+        "same_position_uplift_ppg": 0.13,
+        "screen_only": true,
+        "sleeper_id": "8161",
+        "team": "MIA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 3.67,
+          "flags": [
+            "sleeper_injury_questionable",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "report_primary_injury": "Thumb",
+            "report_status": "Questionable",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 98.0,
+          "snap_trend_3_appearances_pp": -6.0,
+          "targets_per_game": 0.0
+        },
+        "name": "Baker Mayfield",
+        "ppg": 13.29,
+        "replacement_reference": {
+          "name": "C.J. Stroud",
+          "ppg": 14.606
+        },
+        "same_position_uplift_ppg": -1.32,
+        "screen_only": true,
+        "sleeper_id": "4892",
+        "team": "TB"
+      },
+      {
+        "audit": {
+          "carries_per_game": 1.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 100.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 0.0
+        },
+        "name": "Tanner McKee",
+        "ppg": 11.72,
+        "replacement_reference": {
+          "name": "C.J. Stroud",
+          "ppg": 14.606
+        },
+        "same_position_uplift_ppg": -2.89,
+        "screen_only": true,
+        "sleeper_id": "9230",
+        "team": "PHI"
+      }
+    ],
+    "RB": [
+      {
+        "audit": {
+          "carries_per_game": 3.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "4"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 25.0,
+          "snap_trend_3_appearances_pp": 20.0,
+          "targets_per_game": 2.0
+        },
+        "name": "Tyrone Tracy Jr.",
+        "ppg": 7.2,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 3.99,
+        "screen_only": true,
+        "sleeper_id": "11655",
+        "team": "NYG"
+      },
+      {
+        "audit": {
+          "carries_per_game": 7.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "week": "6"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 57.3,
+          "snap_trend_3_appearances_pp": 26.0,
+          "targets_per_game": 2.33
+        },
+        "name": "Rachaad White",
+        "ppg": 6.97,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 3.77,
+        "screen_only": true,
+        "sleeper_id": "8136",
+        "team": "WAS"
+      },
+      {
+        "audit": {
+          "carries_per_game": 3.0,
+          "flags": [
+            "snap_data_missing",
+            "usage_sample_missing"
+          ],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 2.33
+        },
+        "name": "Kenny Gainwell",
+        "ppg": 5.52,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 2.32,
+        "screen_only": true,
+        "sleeper_id": "7567",
+        "team": "TB"
+      },
+      {
+        "audit": {
+          "carries_per_game": 6.67,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "week": "2"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 39.7,
+          "snap_trend_3_appearances_pp": 19.0,
+          "targets_per_game": 2.0
+        },
+        "name": "Samaje Perine",
+        "ppg": 5.14,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 1.94,
+        "screen_only": true,
+        "sleeper_id": "4147",
+        "team": "CIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 6.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "4"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 32.0,
+          "snap_trend_3_appearances_pp": -12.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Keaton Mitchell",
+        "ppg": 5.1,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 1.9,
+        "screen_only": true,
+        "sleeper_id": "9511",
+        "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 6.33,
+          "flags": [
+            "sleeper_injury_questionable",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Foot",
+            "report_secondary_injury": "Back",
+            "report_status": "Questionable",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 21.3,
+          "snap_trend_3_appearances_pp": 14.0,
+          "targets_per_game": 1.33
+        },
+        "name": "Mike Washington Jr.",
+        "ppg": 4.94,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 1.74,
+        "screen_only": true,
+        "sleeper_id": "13305",
+        "team": "LV"
+      },
+      {
+        "audit": {
+          "carries_per_game": 6.33,
+          "flags": [
+            "snap_data_missing",
+            "usage_sample_missing"
+          ],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 0.67
+        },
+        "name": "Chris Rodriguez Jr.",
+        "ppg": 4.71,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": 1.51,
+        "screen_only": true,
+        "sleeper_id": "10219",
+        "team": "JAX"
+      },
+      {
+        "audit": {
+          "carries_per_game": 9.0,
+          "flags": [
+            "sleeper_injury_ir",
+            "projection_weeks_partial"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "4"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.727,
+          "recent_snap_pct": 28.7,
+          "snap_trend_3_appearances_pp": 14.0,
+          "targets_per_game": 1.33
+        },
+        "name": "Tank Bigsby",
+        "ppg": 2.0,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.201
+        },
+        "same_position_uplift_ppg": -1.2,
+        "screen_only": true,
+        "sleeper_id": "9225",
+        "team": "PHI"
+      }
+    ],
+    "TE": [
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 69.3,
+          "snap_trend_3_appearances_pp": -17.0,
+          "targets_per_game": 4.33
+        },
+        "name": "Jake Ferguson",
+        "ppg": 6.22,
+        "replacement_reference": {
+          "name": "Michael Mayer",
+          "ppg": 5.217
+        },
+        "same_position_uplift_ppg": 1.0,
+        "screen_only": true,
+        "sleeper_id": "8110",
+        "team": "DAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "5"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 60.7,
+          "snap_trend_3_appearances_pp": 1.0,
+          "targets_per_game": 2.0
+        },
+        "name": "Noah Fant",
+        "ppg": 4.34,
+        "replacement_reference": {
+          "name": "Michael Mayer",
+          "ppg": 5.217
+        },
+        "same_position_uplift_ppg": -0.88,
+        "screen_only": true,
+        "sleeper_id": "5857",
+        "team": "NO"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [
+            "snap_data_missing",
+            "usage_sample_missing",
+            "targets_missing"
+          ],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Colby Parkinson",
+        "ppg": 3.86,
+        "replacement_reference": {
+          "name": "Michael Mayer",
+          "ppg": 5.217
+        },
+        "same_position_uplift_ppg": -1.35,
+        "screen_only": true,
+        "sleeper_id": "6865",
+        "team": "LAR"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "sleeper_injury_ir"
+          ],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 35.5,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 4.0
+        },
+        "name": "David Njoku",
+        "ppg": 2.53,
+        "replacement_reference": {
+          "name": "Michael Mayer",
+          "ppg": 5.217
+        },
+        "same_position_uplift_ppg": -2.69,
+        "screen_only": true,
+        "sleeper_id": "4033",
+        "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 23.3,
+          "snap_trend_3_appearances_pp": -27.0,
+          "targets_per_game": 2.67
+        },
+        "name": "Zach Ertz",
+        "ppg": 1.64,
+        "replacement_reference": {
+          "name": "Michael Mayer",
+          "ppg": 5.217
+        },
+        "same_position_uplift_ppg": -3.58,
+        "screen_only": true,
+        "sleeper_id": "1339",
+        "team": "PHI"
+      }
+    ],
+    "WR": [
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "5"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 80.7,
+          "snap_trend_3_appearances_pp": -7.0,
+          "targets_per_game": 5.67
+        },
+        "name": "Jakobi Meyers",
+        "ppg": 8.19,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 6.84,
+        "screen_only": true,
+        "sleeper_id": "5947",
+        "team": "JAX"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "6"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 81.3,
+          "snap_trend_3_appearances_pp": -5.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Quentin Johnston",
+        "ppg": 5.18,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.83,
+        "screen_only": true,
+        "sleeper_id": "9754",
+        "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "5"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 74.7,
+          "snap_trend_3_appearances_pp": 0.0,
+          "targets_per_game": 4.0
+        },
+        "name": "Chris Bell",
+        "ppg": 5.12,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.77,
+        "screen_only": true,
+        "sleeper_id": "13311",
+        "team": "MIA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Not injury related - personal matter",
+            "report_status": "Out",
+            "week": "2"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 81.3,
+          "snap_trend_3_appearances_pp": -11.0,
+          "targets_per_game": 1.33
+        },
+        "name": "Jauan Jennings",
+        "ppg": 4.79,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.44,
+        "screen_only": true,
+        "sleeper_id": "7049",
+        "team": "MIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "report_primary_injury": "Wrist",
+            "report_status": "Questionable",
+            "week": "6"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 47.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 4.0
+        },
+        "name": "Ja'Kobi Lane",
+        "ppg": 4.62,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.26,
+        "screen_only": true,
+        "sleeper_id": "13293",
+        "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 52.3,
+          "snap_trend_3_appearances_pp": -17.0,
+          "targets_per_game": 3.0
+        },
+        "name": "Rashod Bateman",
+        "ppg": 4.36,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.01,
+        "screen_only": true,
+        "sleeper_id": "7571",
+        "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 78.7,
+          "snap_trend_3_appearances_pp": 7.0,
+          "targets_per_game": 6.33
+        },
+        "name": "Makai Lemon",
+        "ppg": 3.83,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 2.48,
+        "screen_only": true,
+        "sleeper_id": "13294",
+        "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 75.5,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 7.5
+        },
+        "name": "Adonai Mitchell",
+        "ppg": 3.5,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 2.15,
+        "screen_only": true,
+        "sleeper_id": "11625",
+        "team": "NYJ"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "snap_data_missing",
+            "usage_sample_missing"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "week": "2"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 2.33
+        },
+        "name": "Brian Thomas Jr.",
+        "ppg": 2.83,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 1.48,
+        "screen_only": true,
+        "sleeper_id": "11631",
+        "team": "JAX"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "sleeper_injury_ir",
+            "projection_weeks_partial",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Calf",
+            "report_status": "Out",
+            "week": "5"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.727,
+          "recent_snap_pct": 62.7,
+          "snap_trend_3_appearances_pp": -30.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Mack Hollins",
+        "ppg": 2.83,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 1.48,
+        "screen_only": true,
+        "sleeper_id": "4177",
+        "team": "NE"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "1"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 25.7,
+          "snap_trend_3_appearances_pp": 12.0,
+          "targets_per_game": 2.0
+        },
+        "name": "Zachariah Branch",
+        "ppg": 2.1,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 0.75,
+        "screen_only": true,
+        "sleeper_id": "13320",
+        "team": "ATL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "4"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 78.7,
+          "snap_trend_3_appearances_pp": -29.0,
+          "targets_per_game": 4.0
+        },
+        "name": "Darius Cooper",
+        "ppg": 2.09,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 0.74,
+        "screen_only": true,
+        "sleeper_id": "13150",
+        "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 58.0,
+          "snap_trend_3_appearances_pp": -27.0,
+          "targets_per_game": 5.33
+        },
+        "name": "Dohnte Meyers",
+        "ppg": 1.12,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": -0.23,
+        "screen_only": true,
+        "sleeper_id": "13264",
+        "team": "CIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 8.3,
+          "snap_trend_3_appearances_pp": 13.0,
+          "targets_per_game": 1.33
+        },
+        "name": "Cyrus Allen",
+        "ppg": 0.94,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": -0.41,
+        "screen_only": true,
+        "sleeper_id": "13413",
+        "team": "KC"
+      }
+    ]
+  },
+  "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
+  "snapshot_utc": "2026-10-24T13:43:32.275438+00:00"
+}
