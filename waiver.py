@@ -57,12 +57,31 @@ def main():
   "ranked":False,"candidates":candidates}
  put("waiver_watchlist.json",out)
  c={k:sum(p["position"]==k for p in candidates) for k in ("QB","RB","WR","TE","K","DEF")}
+ # Sourced opportunity board. It is a screening order, NOT a validated pickup recommendation.
+ eligible=[p for p in candidates if p["quality"]=="reviewable" and
+     p["projection"].get("coverage_fraction",0)>=0.7 and
+     p["usage"].get("weeks_with_snap_data",0)>=2]
+ eligible.sort(key=lambda p:(float(p["projection"]["ppg"]),
+    float(p["usage"].get("snap_share_pct") or 0)),reverse=True)
+ out["projection_opportunity_screen"]=[{"name":p["name"],"position":p["position"],
+   "team":p["nfl_team"],"sleeper_id":p["id"],
+   "projected_ppg":p["projection"]["ppg"],
+   "projection_week_coverage":p["projection"]["coverage_fraction"],
+   "recent_snap_share_pct":p["usage"].get("snap_share_pct"),
+   "snap_trend_last_three_appearances":p["usage"].get("recent_three_snap_pct"),
+   "injury_status_from_sleeper":p["sleeper_injury_status"],
+   "caveat":"Watchlist only; position, lineup need, routes, injuries and cost not fully assessed"} for p in eligible[:40]]
+ put("waiver_watchlist.json",out)
  complete=sum(p["quality"]=="reviewable" for p in candidates)
  lines=["# Dirty Birds — Waiver Intelligence Watchlist","",
   f"Generated: {utc}",f"Sleeper snapshot: {snap.get('fetched_at_utc')}","",
   "**Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**","",
   "| Position | Available candidates |","|---|---:|"]
  lines += [f"| {k} | {v} |" for k,v in c.items()]
+ lines+=["","## Sourced opportunity screen (not pickup recommendations)","","Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorted by published Sleeper projected PPG. This is a **cross-position data screen**, not an adjusted value ranking.","","| Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |","|---|---|---|---:|---:|"]
+ for p in eligible[:20]:
+  lines.append(f'| {p["name"]} | {p["position"]} | {p["nfl_team"] or "-"} | {p["projection"]["ppg"]:.2f} | {p["usage"].get("snap_share_pct",0):.1f}% |')
+ lines+=["","*Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.",""]
  lines+=["",f"Candidates with independently sourced projections AND usage data: **{complete}**",
   "","## Coverage and rules","",
   "- Sleeper injury/status and depth-chart fields are descriptive and may lag official NFL reports.",
