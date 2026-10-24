@@ -1,0 +1,130 @@
+{
+  "generated_at_utc": "2026-10-24T20:28:22.796192+00:00",
+  "roster_snapshot_utc": "2026-10-24T20:28:19.015352+00:00",
+  "trade_qualified_for_negotiation_review": [],
+  "trade_rejected": [
+    {
+      "give": [
+        "Patrick Mahomes",
+        "Garrett Wilson"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Jonathan Taylor"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Zach Charbonnet"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Brock Purdy"
+      ]
+    }
+  ],
+  "trade_status": "No defensible opening offers",
+  "waiver_research_shortlist": [
+    {
+      "bench_depth_difference_ppg": 8.72,
+      "coach_authorization_required": true,
+      "drop_id": "13296",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Caleb Douglas",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Malik Willis",
+      "position": "QB",
+      "research_tier": "depth candidate",
+      "source_player_id": "8161",
+      "team": "MIA"
+    },
+    {
+      "bench_depth_difference_ppg": 7.28,
+      "coach_authorization_required": true,
+      "drop_id": "13296",
+      "evidence_flags": [
+        "Availability status: questionable"
+      ],
+      "hypothetical_drop": "Caleb Douglas",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Baker Mayfield",
+      "position": "QB",
+      "research_tier": "depth candidate",
+      "source_player_id": "4892",
+      "team": "TB"
+    },
+    {
+      "bench_depth_difference_ppg": 5.7,
+      "coach_authorization_required": true,
+      "drop_id": "13296",
+      "evidence_flags": [
+        "Limited snap sample"
+      ],
+      "hypothetical_drop": "Caleb Douglas",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Tanner McKee",
+      "position": "QB",
+      "research_tier": "depth candidate",
+      "source_player_id": "9230",
+      "team": "PHI"
+    },
+    {
+      "bench_depth_difference_ppg": 2.18,
+      "coach_authorization_required": true,
+      "drop_id": "13296",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Caleb Douglas",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Jakobi Meyers",
+      "position": "WR",
+      "research_tier": "depth candidate",
+      "source_player_id": "5947",
+      "team": "JAX"
+    }
+  ],
+  "waiver_screened_count": 4,
+  "warnings": [
+    "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
+    "A zero-starter-gain player can still have depth value; this list uses limited projections.",
+    "Market trade prices are full-PPR references; FFL is half-PPR.",
+    "No acceptance likelihood, FAAB bid, or trade offer is fabricated.",
+    "All outputs read only."
+  ]
+}
