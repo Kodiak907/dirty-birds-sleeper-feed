@@ -71,6 +71,20 @@ def main():
    "snap_trend_last_three_appearances":p["usage"].get("recent_three_snap_pct"),
    "injury_status_from_sleeper":p["sleeper_injury_status"],
    "caveat":"Watchlist only; position, lineup need, routes, injuries and cost not fully assessed"} for p in eligible[:40]]
+ # Separate rankings by position. Rankings screen published projections only, with
+ # coverage + injury caveats; other position groups never compete against QBs.
+ grouped={}
+ for pos in ("QB","RB","WR","TE","K","DEF"):
+  bunch=[p for p in candidates if p["position"]==pos and p["has_sourced_projection"] and p["projection"].get("coverage_fraction",0)>=0.7]
+  bunch.sort(key=lambda p:(float(p["projection"]["ppg"]),float(p["usage"].get("snap_share_pct") or 0)),reverse=True)
+  grouped[pos]=[{"rank":i+1,"name":p["name"],"id":p["id"],
+   "team":p["nfl_team"],"ppg":p["projection"]["ppg"],
+   "projection_coverage":p["projection"]["coverage_fraction"],
+   "snap_share_pct":p["usage"].get("snap_share_pct"),
+   "injury_status":p["sleeper_injury_status"],
+   "usage_verified":p["has_sourced_usage"]} for i,p in enumerate(bunch[:30])]
+ out["position_rankings"]=grouped
+ out["position_rankings_method"]="Within-position screening by Sleeper published half-PPR PPG (>=70% published week coverage); unadjusted for availability, medical risk or player-specific waiver value."
  put("waiver_watchlist.json",out)
  complete=sum(p["quality"]=="reviewable" for p in candidates)
  lines=["# Dirty Birds — Waiver Intelligence Watchlist","",
@@ -78,6 +92,14 @@ def main():
   "**Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**","",
   "| Position | Available candidates |","|---|---:|"]
  lines += [f"| {k} | {v} |" for k,v in c.items()]
+ lines+=["","## Position-specific projection rankings (screening only)"]
+ for pos in ("QB","RB","WR","TE","K","DEF"):
+  lines.extend(["",f"### {pos}","", "| # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |","|---:|---|---|---:|---:|---:|---|"])
+  if not grouped[pos]:lines.append("| — | No sufficiently covered forecasts | — | — | — | — | — |")
+  for p in grouped[pos][:12]:
+   snap=(f'{p["snap_share_pct"]:.1f}%' if isinstance(p["snap_share_pct"],(int,float)) else "—")
+   lines.append(f'| {p["rank"]} | {p["name"]} | {p["team"] or "-"} | {p["ppg"]:.2f} | {p["projection_coverage"]:.0%} | {snap} | {p["injury_status"] or "Not flagged"} |')
+ lines+=["","**Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review."]
  lines+=["","## Sourced opportunity screen (not pickup recommendations)","","Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorted by published Sleeper projected PPG. This is a **cross-position data screen**, not an adjusted value ranking.","","| Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |","|---|---|---|---:|---:|"]
  for p in eligible[:20]:
   lines.append(f'| {p["name"]} | {p["position"]} | {p["nfl_team"] or "-"} | {p["projection"]["ppg"]:.2f} | {p["usage"].get("snap_share_pct",0):.1f}% |')
