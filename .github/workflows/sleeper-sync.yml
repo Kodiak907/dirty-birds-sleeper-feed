@@ -9,6 +9,7 @@ on:
       - 'decision_engine.py'
       - 'lineup_impact.py'
       - 'weekly_lineups.py'
+      - 'pregame_calibration.py'
       - 'fetch_opportunity.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
@@ -49,6 +50,7 @@ jobs:
             python decision_engine.py
             python lineup_impact.py
             python weekly_lineups.py
+            python pregame_calibration.py
 
       - name: Commit changed data
         run: |
