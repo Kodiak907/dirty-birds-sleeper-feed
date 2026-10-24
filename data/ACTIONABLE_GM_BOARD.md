@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-24T20:29:01.628150+00:00
+Generated: 2026-10-24T20:29:15.495030+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,9 +8,8 @@ Generated: 2026-10-24T20:29:01.628150+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Malik Willis | QB | +0.00 | 8.72 | Caleb Douglas | depth candidate |
-| Baker Mayfield | QB | +0.00 | 7.28 | Caleb Douglas | depth candidate |
-| Tanner McKee | QB | +0.00 | 5.7 | Caleb Douglas | depth candidate |
+| Tyrone Tracy Jr. | RB | +0.00 | 2.9 | Kaelon Black | depth candidate |
+| Rachaad White | RB | +0.00 | 2.67 | Kaelon Black | depth candidate |
 | Jakobi Meyers | WR | +0.00 | 2.18 | Caleb Douglas | depth candidate |
 
 ## Trade proposals

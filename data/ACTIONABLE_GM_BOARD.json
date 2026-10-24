@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-24T20:29:01.628150+00:00",
-  "roster_snapshot_utc": "2026-10-24T20:28:58.760894+00:00",
+  "generated_at_utc": "2026-10-24T20:29:15.495030+00:00",
+  "roster_snapshot_utc": "2026-10-24T20:29:12.880160+00:00",
   "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
@@ -35,13 +35,13 @@
   "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [
     {
-      "bench_depth_difference_ppg": 8.72,
+      "bench_depth_difference_ppg": 2.9,
       "coach_authorization_required": true,
-      "drop_id": "13296",
+      "drop_id": "13414",
       "evidence_flags": [
         "No listed coverage caveats"
       ],
-      "hypothetical_drop": "Caleb Douglas",
+      "hypothetical_drop": "Kaelon Black",
       "modeled_starter_gain_ppg": 0.0,
       "not_yet_verified": [
         "current waiver lock",
@@ -49,20 +49,20 @@
         "week-by-week role",
         "reasonable FAAB cost"
       ],
-      "player": "Malik Willis",
-      "position": "QB",
+      "player": "Tyrone Tracy Jr.",
+      "position": "RB",
       "research_tier": "depth candidate",
-      "source_player_id": "8161",
-      "team": "MIA"
+      "source_player_id": "11655",
+      "team": "NYG"
     },
     {
-      "bench_depth_difference_ppg": 7.28,
+      "bench_depth_difference_ppg": 2.67,
       "coach_authorization_required": true,
-      "drop_id": "13296",
+      "drop_id": "13414",
       "evidence_flags": [
-        "Availability status: questionable"
+        "No listed coverage caveats"
       ],
-      "hypothetical_drop": "Caleb Douglas",
+      "hypothetical_drop": "Kaelon Black",
       "modeled_starter_gain_ppg": 0.0,
       "not_yet_verified": [
         "current waiver lock",
@@ -70,32 +70,11 @@
         "week-by-week role",
         "reasonable FAAB cost"
       ],
-      "player": "Baker Mayfield",
-      "position": "QB",
+      "player": "Rachaad White",
+      "position": "RB",
       "research_tier": "depth candidate",
-      "source_player_id": "4892",
-      "team": "TB"
-    },
-    {
-      "bench_depth_difference_ppg": 5.7,
-      "coach_authorization_required": true,
-      "drop_id": "13296",
-      "evidence_flags": [
-        "Limited snap sample"
-      ],
-      "hypothetical_drop": "Caleb Douglas",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Tanner McKee",
-      "position": "QB",
-      "research_tier": "depth candidate",
-      "source_player_id": "9230",
-      "team": "PHI"
+      "source_player_id": "8136",
+      "team": "WAS"
     },
     {
       "bench_depth_difference_ppg": 2.18,
@@ -119,7 +98,7 @@
       "team": "JAX"
     }
   ],
-  "waiver_screened_count": 4,
+  "waiver_screened_count": 3,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",
