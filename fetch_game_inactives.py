@@ -20,7 +20,7 @@ def main():
  out={"as_of":now,"season":season,"week":week,"source":"ESPN game-event summaries",
  "authority":"third_party_reported_not_official_team_submission",
  "verified_official_inactives":False,"status":"no_confirmed_events",
- "events_checked":0,"explicit_inactives":{},"unresolved":[],"errors":[]}
+ "events_checked":0,"explicit_inactives":{},"unresolved":[],"errors":[],"game_coverage":[],"primary_gameday_source":"ESPN (third-party reported)" }
  lookup={}
  for pid,p in names.items():
   if p.get("name"):lookup.setdefault(norm(p["name"]),[]).append(pid)
@@ -35,28 +35,35 @@ def main():
    except Exception as error:
     out["errors"].append(f"Event {eid}: {str(error)[:120]}");continue
    out["events_checked"]+=1
+   game={"event_id":eid,"kickoff_utc":event.get("date"),"listing_state":"not_published_or_unavailable","reported_count":0}
    # ESPN summary may provide an explicitly named inactives section; do not
    # derive inactive from box score DNP, missing stats, generic injury status.
    groups=detail.get("inactives")
-   if not isinstance(groups,list):continue
+   if not isinstance(groups,list):
+    out["game_coverage"].append(game)
+    continue
+   game["listing_state"]="explicit_inactives_section_present"
    for group in groups:
     team=group.get("team",{}) if isinstance(group,dict) else {}
-    candidates=group.get("athletes") or group.get("players") or [] if isinstance(group,dict) else []
+    candidates=(group.get("athletes") or group.get("players") or []) if isinstance(group,dict) else []
     for athlete in candidates:
      a=athlete.get("athlete",athlete) if isinstance(athlete,dict) else {}
+     if not isinstance(a,dict):continue
      name=a.get("fullName") or a.get("displayName")
      matches=lookup.get(norm(name),[])
      if len(matches)!=1:
       if name:out["unresolved"].append({"name":name,"event_id":eid})
       continue
      pid=matches[0]
+     game["reported_count"]+=1
      # Game-event inactive list explicitly establishes absence, but source is
      # ESPN reporting and not the NFL official transaction/inactive feed.
      out["explicit_inactives"][pid]={"name":name,"event_id":eid,"team":team.get("abbreviation"),
       "source_url":f"https://www.espn.com/nfl/game/_/gameId/{eid}",
       "source_type":"ESPN reported game inactives","observed_at_utc":now}
+   out["game_coverage"].append(game)
   if out["explicit_inactives"]:out["status"]="third_party_explicit_inactives_found"
-  elif out["events_checked"]:out["status"]="no_explicit_inactive_listing_present"
+  elif out["events_checked"]:out["status"]="espn_no_explicit_inactive_names_available"
  except Exception as e:out["errors"].append("ESPN scoreboard retrieval failed: "+str(e)[:200])
  (D/"GAME_INACTIVES_EVIDENCE.json").write_text(json.dumps(out,indent=2,sort_keys=True)+"\n")
  print("ESPN event checks",out["events_checked"],"explicit",len(out["explicit_inactives"]),"errors",len(out["errors"]))
