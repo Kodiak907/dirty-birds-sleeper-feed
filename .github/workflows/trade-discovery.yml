@@ -8,6 +8,8 @@ on:
       - 'market_offer_guide.py'
       - '.github/workflows/trade-discovery.yml'
   workflow_dispatch:
+  schedule:
+    - cron: '22 14 * * *'
 permissions:
   contents: write
 concurrency:
