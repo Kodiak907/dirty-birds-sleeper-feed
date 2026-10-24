@@ -1,61 +1,37 @@
 #!/usr/bin/env python3
-"""Import dated editorial trade chart values; preserve each source's native scale.
-
-This is NOT a prediction of a manager accepting a trade.
-Fails closed if source layout changes or too few distinct NFL players match.
-"""
-import urllib.request,html.parser,re,json,datetime as dt,collections
+"""Documented public TheTradeCalc redraft source, attributed and coverage gated."""
+import urllib.request,json,re,datetime as dt
 from pathlib import Path
 D=Path(__file__).resolve().parent/"data"
-URL="https://www.fantasypros.com/2026/10/fantasy-football-trade-value-chart-week-7-2026/"
-class Tables(html.parser.HTMLParser):
- def __init__(self):
-  super().__init__();self.in_table=False;self.in_cell=False;self.current=[];self.rows=[];self.table=[];self.tables=[];self.textbuf=[]
- def handle_starttag(self,tag,attrs):
-  if tag=="table":self.in_table=True;self.table=[]
-  if self.in_table and tag=="tr":self.rows=[]
-  if self.in_table and tag in ("td","th"):self.in_cell=True;self.textbuf=[]
- def handle_data(self,data):
-  if self.in_cell:self.textbuf.append(data)
- def handle_endtag(self,tag):
-  if tag in ("td","th") and self.in_cell:
-   self.rows.append(" ".join("".join(self.textbuf).split()));self.in_cell=False
-  if tag=="tr" and self.in_table and self.rows:self.table.append(self.rows);self.rows=[]
-  if tag=="table" and self.in_table:
-   self.tables.append(self.table);self.in_table=False
-def normalize(s):return re.sub("[^a-z0-9]","",s.casefold())
+URL="https://thetradecalc.com/api/v1/values?mode=redraft"
+def norm(x):return re.sub("[^a-z0-9]","",str(x or "").lower())
 def main():
- req=urllib.request.Request(URL,headers={"User-Agent":"Mozilla/5.0 (compatible; FFO-Research/1.0)"})
- with urllib.request.urlopen(req,timeout=30) as h:raw=h.read().decode("utf8","replace")
- parser=Tables();parser.feed(raw)
+ request=urllib.request.Request(URL,headers={"User-Agent":"DirtyBirdsFFO/1.0","Accept":"application/json"})
+ with urllib.request.urlopen(request,timeout=30) as response:raw=json.load(response)
+ entries=raw if isinstance(raw,list) else next((raw[k] for k in ("players","values","data","results") if isinstance(raw.get(k),list)),None) if isinstance(raw,dict) else None
+ if entries is None:raise RuntimeError("Trade value JSON schema unknown; no publication")
  names=json.loads((D/"player_names.json").read_text())
- match=collections.defaultdict(set)
+ byname={}
  for pid,p in names.items():
-  if p.get("name"):match[normalize(p["name"])].add(str(pid))
- players={};identified_tables=0
- for table in parser.tables:
-  if len(table)<3:continue
-  header=[x.lower() for x in table[0]]
-  if not any("value" in h for h in header) or not any("name" in h or "player" in h for h in header):continue
-  ni=next(i for i,h in enumerate(header) if "name" in h or "player" in h)
-  vi=next(i for i,h in enumerate(header) if "value" in h)
-  identified_tables+=1
-  for row in table[1:]:
-   if max(ni,vi)>=len(row):continue
-   rawname=row[ni].strip()
-   try:v=float(row[vi].replace(",","").replace("+",""))
-   except ValueError:continue
-   ids=match.get(normalize(rawname),set())
-   if len(ids)!=1:continue
-   pid=next(iter(ids))
-   players[pid]={"name":names[pid]["name"],"position":names[pid].get("position"),
-      "value":v}
- if len(players)<50:raise RuntimeError(f"Source format/coverage failed: {len(players)} matched across {identified_tables} trade chart tables; no output saved.")
- out={"as_of":dt.datetime.now(dt.timezone.utc).isoformat(),"source":URL,
-  "scale":"FantasyPros editorial week-7 2026 native redraft trade chart units (NOT normalized)",
-  "source_date":"2026-10-20","scoring_note":"Editorial chart, not necessarily exact FFL custom half-PPR settings",
-  "matching":"Unique normalized Sleeper player name only; uncertain rows excluded",
-  "count":len(players),"players":players}
+  if p.get("name"):byname.setdefault(norm(p["name"]),[]).append(str(pid))
+ matches={}
+ for row in entries:
+  if not isinstance(row,dict):continue
+  player=row.get("player") if isinstance(row.get("player"),dict) else row
+  name=next((player.get(k) for k in ("name","playerName","full_name","fullName") if isinstance(player.get(k),str)),None)
+  value=next((row.get(k) for k in ("value","tradeValue","trade_value","redraftValue","score") if isinstance(row.get(k),(int,float))),None)
+  if value is None:value=next((player.get(k) for k in ("value","tradeValue","trade_value") if isinstance(player.get(k),(int,float))),None)
+  candidates=byname.get(norm(name),[])
+  if len(candidates)==1 and value is not None:
+   pid=candidates[0]
+   matches[pid]={"name":names[pid]["name"],"position":names[pid].get("position"),"value":float(value)}
+ if len(matches)<60:raise RuntimeError(f"Only {len(matches)} uniquely matched values; no file published")
+ out={"as_of":dt.datetime.now(dt.timezone.utc).isoformat(),
+  "source":URL,"attribution":"Values by TheTradeCalc — https://thetradecalc.com",
+  "scale":"TheTradeCalc REDRAFT native units",
+  "scoring_note":"12-team 1-QB full PPR source; Dirty Birds uses half-PPR, so this is a comparison signal only.",
+  "matching":"Exact normalized unique Sleeper name; ambiguous/missing players excluded",
+  "count":len(matches),"players":matches}
  (D/"market_values.json").write_text(json.dumps(out,indent=2,sort_keys=True)+"\n")
- print("Sourced FantasyPros market chart values:",len(players),"players")
+ print("Sourced attributed redraft values:",len(matches))
 if __name__=="__main__":main()
