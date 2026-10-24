@@ -29,6 +29,7 @@ jobs:
         run: |
             python update.py
             python radar.py
+            python scouting.py
 
       - name: Commit changed data
         run: |
