@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'gameday_window_check.py'
+      - 'gameday_alerts.py'
+      - 'test_phase_vii.py'
       - '.github/workflows/pregame-window.yml'
   workflow_dispatch:
   schedule:
@@ -27,12 +29,15 @@ jobs:
       - name: Evaluate kickoff time and check inactives conditionally
         env:
           SLEEPER_LEAGUE_ID: '1399157532559192064'
-        run: python gameday_window_check.py
+        run: |
+          python -m unittest -v test_phase_vii
+          python gameday_window_check.py
+          python gameday_alerts.py
       - name: Publish changed gameday reports if any
         run: |
           git config user.name "Dirty Birds Data Bot"
           git config user.email "dirty-birds-data-bot@users.noreply.github.com"
-          git add data/GAMEDAY_WINDOW_CHECK.json data/GAME_INACTIVES_EVIDENCE.json data/OFFICIAL_INACTIVE_VERIFICATION.json data/GAMEDAY_DECISION.json data/GAMEDAY_DECISION.md data/latest.json data/player_names.json data/player_metadata.json 2>/dev/null || true
+          git add data/GAMEDAY_ALERTS.json data/GAMEDAY_ALERTS.md data/GAMEDAY_WINDOW_CHECK.json data/GAME_INACTIVES_EVIDENCE.json data/OFFICIAL_INACTIVE_VERIFICATION.json data/GAMEDAY_DECISION.json data/GAMEDAY_DECISION.md data/latest.json data/player_names.json data/player_metadata.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Pregame read-only availability window check"
             git pull --rebase -X theirs origin main
