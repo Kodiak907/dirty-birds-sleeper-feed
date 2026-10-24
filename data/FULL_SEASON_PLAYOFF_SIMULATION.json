@@ -1,68 +1,764 @@
 {
-  "generated_at_utc": "2026-10-24T18:33:49.888759+00:00",
-  "missing": [
+  "fallback_method": "Where weekly value missing, use that players sourced ROS PPG; not a week-specific projection.",
+  "fallback_player_weeks": [
     {
+      "players": [
+        "Kaelon Black",
+        "Isaiah Likely",
+        "C.J. Stroud"
+      ],
+      "roster_id": 1,
+      "week": 8
+    },
+    {
+      "players": [
+        "A.J. Brown",
+        "Kyren Williams",
+        "DeMario Douglas",
+        "Bijan Robinson",
+        "Zach Charbonnet"
+      ],
+      "roster_id": 1,
+      "week": 11
+    },
+    {
+      "players": [
+        "Garrett Wilson",
+        "Michael Mayer",
+        "Zay Flowers"
+      ],
+      "roster_id": 1,
+      "week": 13
+    },
+    {
+      "players": [
+        "Jordan Watkins"
+      ],
+      "roster_id": 2,
+      "week": 8
+    },
+    {
+      "players": [
+        "Carnell Tate",
+        "Tennessee Titans"
+      ],
       "roster_id": 2,
       "week": 9
     },
     {
+      "players": [
+        "Dameon Pierce"
+      ],
+      "roster_id": 2,
+      "week": 10
+    },
+    {
+      "players": [
+        "Emanuel Wilson",
+        "Jaleel McLaughlin",
+        "Sam Darnold",
+        "Rashid Shaheed",
+        "Puka Nacua"
+      ],
+      "roster_id": 2,
+      "week": 11
+    },
+    {
+      "players": [
+        "Braelon Allen",
+        "Tyler Warren",
+        "Breece Hall",
+        "Josh Downs"
+      ],
+      "roster_id": 2,
+      "week": 13
+    },
+    {
+      "players": [
+        "Jacoby Brissett"
+      ],
+      "roster_id": 2,
+      "week": 14
+    },
+    {
+      "players": [
+        "Malik Nabers",
+        "Travis Etienne Jr."
+      ],
+      "roster_id": 3,
+      "week": 8
+    },
+    {
+      "players": [
+        "Wan'Dale Robinson",
+        "Jaylen Warren"
+      ],
+      "roster_id": 3,
+      "week": 9
+    },
+    {
+      "players": [
+        "RJ Harvey",
+        "Colston Loveland"
+      ],
       "roster_id": 3,
       "week": 10
     },
     {
+      "players": [
+        "Blake Corum",
+        "Nick Folk"
+      ],
+      "roster_id": 3,
+      "week": 11
+    },
+    {
+      "players": [
+        "Geno Smith",
+        "Jonathan Taylor"
+      ],
+      "roster_id": 3,
+      "week": 13
+    },
+    {
+      "players": [
+        "Dallas Cowboys"
+      ],
+      "roster_id": 3,
+      "week": 14
+    },
+    {
+      "players": [
+        "Davante Adams",
+        "Demarcus Robinson",
+        "George Kittle",
+        "Eddy Pineiro",
+        "Brock Purdy",
+        "San Francisco 49ers"
+      ],
       "roster_id": 4,
       "week": 8
     },
     {
+      "players": [
+        "Germie Bernard",
+        "Davante Adams",
+        "Pat Freiermuth",
+        "Tyjae Spears"
+      ],
       "roster_id": 4,
       "week": 9
     },
     {
+      "players": [
+        "Emeka Egbuka",
+        "Davante Adams",
+        "Dallas Goedert",
+        "Courtland Sutton"
+      ],
+      "roster_id": 4,
+      "week": 10
+    },
+    {
+      "players": [
+        "Davante Adams",
+        "New England Patriots"
+      ],
+      "roster_id": 4,
+      "week": 11
+    },
+    {
+      "players": [
+        "Derrick Henry"
+      ],
       "roster_id": 4,
       "week": 13
     },
     {
+      "players": [
+        "Mike Evans",
+        "Juwan Johnson",
+        "Kendre Miller"
+      ],
+      "roster_id": 5,
+      "week": 8
+    },
+    {
+      "players": [
+        "Bucky Irving",
+        "Chase McLaughlin",
+        "Cade Otton"
+      ],
       "roster_id": 5,
       "week": 10
     },
     {
+      "players": [
+        "Efton Chism III",
+        "Cooper Kupp",
+        "Rhamondre Stevenson",
+        "Drake London",
+        "Cleveland Browns"
+      ],
       "roster_id": 5,
       "week": 11
     },
     {
+      "players": [
+        "Kirk Cousins"
+      ],
+      "roster_id": 5,
+      "week": 13
+    },
+    {
+      "players": [
+        "Jacory Croskey-Merritt",
+        "Dalton Schultz",
+        "David Montgomery",
+        "Michael Pittman Jr.",
+        "Nico Collins"
+      ],
+      "roster_id": 6,
+      "week": 8
+    },
+    {
+      "players": [
+        "Jacory Croskey-Merritt",
+        "Michael Pittman Jr."
+      ],
+      "roster_id": 6,
+      "week": 9
+    },
+    {
+      "players": [
+        "Luther Burden III",
+        "Jacory Croskey-Merritt",
+        "Chris Godwin Jr."
+      ],
+      "roster_id": 6,
+      "week": 10
+    },
+    {
+      "players": [
+        "Matthew Golden",
+        "Josh Jacobs"
+      ],
+      "roster_id": 6,
+      "week": 11
+    },
+    {
+      "players": [
+        "Spencer Shrader"
+      ],
       "roster_id": 6,
       "week": 13
     },
     {
+      "players": [
+        "Tyler Allgeier"
+      ],
+      "roster_id": 6,
+      "week": 14
+    },
+    {
+      "players": [
+        "Cam Skattebo",
+        "Dominic Zvada",
+        "Christian McCaffrey",
+        "Houston Texans"
+      ],
+      "roster_id": 7,
+      "week": 8
+    },
+    {
+      "players": [
+        "Kyle Monangai"
+      ],
+      "roster_id": 7,
+      "week": 10
+    },
+    {
+      "players": [
+        "Harold Fannin Jr.",
+        "Konata Mumpfield",
+        "Denzel Boston",
+        "Seattle Seahawks"
+      ],
+      "roster_id": 7,
+      "week": 11
+    },
+    {
+      "players": [
+        "Brock Bowers"
+      ],
+      "roster_id": 7,
+      "week": 13
+    },
+    {
+      "players": [
+        "Michael Wilson",
+        "Brandon Aubrey",
+        "Zonovan Knight"
+      ],
+      "roster_id": 7,
+      "week": 14
+    },
+    {
+      "players": [
+        "Marvin Harrison Jr."
+      ],
+      "roster_id": 8,
+      "week": 8
+    },
+    {
+      "players": [
+        "Darnell Washington"
+      ],
+      "roster_id": 8,
+      "week": 9
+    },
+    {
+      "players": [
+        "Roschon Johnson",
+        "Caleb Williams",
+        "Bo Nix"
+      ],
+      "roster_id": 8,
+      "week": 10
+    },
+    {
+      "players": [
+        "TreVeyon Henderson",
+        "KC Concepcion Jr.",
+        "Hunter Henry",
+        "Matthew Stafford",
+        "Christian Watson"
+      ],
+      "roster_id": 8,
+      "week": 11
+    },
+    {
+      "players": [
+        "Matt Gay",
+        "New York Jets"
+      ],
       "roster_id": 8,
       "week": 13
     },
     {
+      "players": [
+        "Ryan Flournoy",
+        "George Pickens"
+      ],
+      "roster_id": 8,
+      "week": 14
+    },
+    {
+      "players": [
+        "Woody Marks",
+        "Tyler Shough",
+        "Alvin Kamara",
+        "Chris Olave"
+      ],
+      "roster_id": 9,
+      "week": 8
+    },
+    {
+      "players": [
+        "Rico Dowdle"
+      ],
+      "roster_id": 9,
+      "week": 9
+    },
+    {
+      "players": [
+        "DeVonta Smith",
+        "Jaylen Waddle",
+        "Philadelphia Eagles"
+      ],
+      "roster_id": 9,
+      "week": 10
+    },
+    {
+      "players": [
+        "Jason Myers",
+        "Kyle Pitts Sr.",
+        "Brian Robinson Jr.",
+        "Jaxon Smith-Njigba"
+      ],
       "roster_id": 9,
       "week": 11
     },
     {
+      "players": [
+        "Kenyon Sadiq",
+        "Las Vegas Raiders"
+      ],
+      "roster_id": 9,
+      "week": 13
+    },
+    {
+      "players": [
+        "Dak Prescott",
+        "Kendrick Bourne"
+      ],
+      "roster_id": 9,
+      "week": 14
+    },
+    {
+      "players": [
+        "DK Metcalf"
+      ],
+      "roster_id": 10,
+      "week": 9
+    },
+    {
+      "players": [
+        "Saquon Barkley",
+        "J.K. Dobbins"
+      ],
       "roster_id": 10,
       "week": 10
     },
     {
+      "players": [
+        "Jordan Love",
+        "Los Angeles Rams"
+      ],
+      "roster_id": 10,
+      "week": 11
+    },
+    {
+      "players": [
+        "Tre Tucker",
+        "Keenan Allen",
+        "Mark Andrews"
+      ],
+      "roster_id": 10,
+      "week": 13
+    },
+    {
+      "players": [
+        "Brandin Cooks",
+        "Ka'imi Fairbairn",
+        "Deebo Samuel Sr."
+      ],
       "roster_id": 11,
       "week": 8
     },
     {
+      "players": [
+        "Tony Pollard",
+        "Aaron Rodgers",
+        "Pittsburgh Steelers"
+      ],
       "roster_id": 11,
       "week": 9
     },
     {
+      "players": [
+        "D'Andre Swift",
+        "Dontayvion Wicks"
+      ],
+      "roster_id": 11,
+      "week": 10
+    },
+    {
+      "players": [
+        "Quinshon Judkins",
+        "Tyler Higbee"
+      ],
+      "roster_id": 11,
+      "week": 11
+    },
+    {
+      "players": [
+        "Ashton Jeanty",
+        "Lamar Jackson"
+      ],
+      "roster_id": 11,
+      "week": 13
+    },
+    {
+      "players": [
+        "Trey McBride"
+      ],
+      "roster_id": 11,
+      "week": 14
+    },
+    {
+      "players": [
+        "Devaughn Vele"
+      ],
+      "roster_id": 12,
+      "week": 8
+    },
+    {
+      "players": [
+        "Rome Odunze",
+        "Kalif Raymond",
+        "Denver Broncos"
+      ],
       "roster_id": 12,
       "week": 10
     },
     {
+      "players": [
+        "Drake Maye",
+        "MarShawn Lloyd",
+        "Tucker Kraft"
+      ],
+      "roster_id": 12,
+      "week": 11
+    },
+    {
+      "players": [
+        "Tyler Loop",
+        "Omar Cooper Jr."
+      ],
       "roster_id": 12,
       "week": 13
+    },
+    {
+      "players": [
+        "Jeremiyah Love",
+        "CeeDee Lamb",
+        "Javonte Williams"
+      ],
+      "roster_id": 12,
+      "week": 14
     }
   ],
+  "future_fixtures_weeks": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "future_roster_assumption": "Current roster held fixed; no future pickups, trades, or injuries simulated",
+  "generated_at_utc": "2026-10-24T18:34:43.982109+00:00",
+  "limitations": [
+    "Win/bye/title chances are model outputs dependent on speculative volatility, fixed rosters and unverified tiebreaks.",
+    "Current Week 7 may be in progress: current record is used as saved, not future outcome.",
+    "Model does not simulate correlated NFL player scoring or game lock time.",
+    "Missing weekly player forecasts are transparently replaced by ROS PPG when available."
+  ],
   "projection_as_of": "2026-10-24T13:28:22.034078+00:00",
+  "random_seed": 2808,
+  "remaining_week_assumption": "Weeks through 14 are remaining regular season; no tie games modeled",
   "roster_snapshot_as_of": "2026-10-24T18:32:16.649681+00:00",
-  "status": "blocked_incomplete_team_projections"
+  "scoring_uncertainty": "Independent Normal(mean=weekly optimal lineup projection, sd=max(8, 0.22*mean)); not calibrated",
+  "season_week": 7,
+  "simulations": 10000,
+  "status": "complete_schedule_conditional_model",
+  "teams": [
+    {
+      "bye_probability": 0.6724,
+      "championship_probability": 0.2838,
+      "final_probability": 0.5033,
+      "name": "kfsn",
+      "playoff_probability": 0.9922,
+      "record": "5-1",
+      "roster_id": 6,
+      "seed_probabilities": {
+        "1": 0.4002,
+        "2": 0.2722,
+        "3": 0.1735,
+        "4": 0.0914,
+        "5": 0.0419,
+        "6": 0.013
+      }
+    },
+    {
+      "bye_probability": 0.5453,
+      "championship_probability": 0.2679,
+      "final_probability": 0.4829,
+      "name": "Dirty Birds",
+      "playoff_probability": 0.9832,
+      "record": "4-2",
+      "roster_id": 1,
+      "seed_probabilities": {
+        "1": 0.2591,
+        "2": 0.2862,
+        "3": 0.2209,
+        "4": 0.1288,
+        "5": 0.0618,
+        "6": 0.0264
+      }
+    },
+    {
+      "bye_probability": 0.4763,
+      "championship_probability": 0.168,
+      "final_probability": 0.3759,
+      "name": "Cokerthestroker",
+      "playoff_probability": 0.9771,
+      "record": "5-1",
+      "roster_id": 12,
+      "seed_probabilities": {
+        "1": 0.2395,
+        "2": 0.2368,
+        "3": 0.2388,
+        "4": 0.1483,
+        "5": 0.0789,
+        "6": 0.0348
+      }
+    },
+    {
+      "bye_probability": 0.2292,
+      "championship_probability": 0.1549,
+      "final_probability": 0.3055,
+      "name": "suck my dickerson",
+      "playoff_probability": 0.9192,
+      "record": "4-2",
+      "roster_id": 11,
+      "seed_probabilities": {
+        "1": 0.0855,
+        "2": 0.1437,
+        "3": 0.2104,
+        "4": 0.2471,
+        "5": 0.1544,
+        "6": 0.0781
+      }
+    },
+    {
+      "bye_probability": 0.0028,
+      "championship_probability": 0.0438,
+      "final_probability": 0.0878,
+      "name": "JA\u2019MARRTRIX",
+      "playoff_probability": 0.3256,
+      "record": "1-5",
+      "roster_id": 7,
+      "seed_probabilities": {
+        "1": 0.0001,
+        "2": 0.0027,
+        "3": 0.0143,
+        "4": 0.052,
+        "5": 0.1018,
+        "6": 0.1547
+      }
+    },
+    {
+      "bye_probability": 0.0561,
+      "championship_probability": 0.0369,
+      "final_probability": 0.1127,
+      "name": "DeeboSix0",
+      "playoff_probability": 0.7527,
+      "record": "4-2",
+      "roster_id": 8,
+      "seed_probabilities": {
+        "1": 0.0129,
+        "2": 0.0432,
+        "3": 0.0901,
+        "4": 0.1829,
+        "5": 0.2475,
+        "6": 0.1761
+      }
+    },
+    {
+      "bye_probability": 0.0067,
+      "championship_probability": 0.0259,
+      "final_probability": 0.0657,
+      "name": "    Victorious Secret",
+      "playoff_probability": 0.3508,
+      "record": "2-4",
+      "roster_id": 5,
+      "seed_probabilities": {
+        "1": 0.0009,
+        "2": 0.0058,
+        "3": 0.0205,
+        "4": 0.055,
+        "5": 0.1156,
+        "6": 0.153
+      }
+    },
+    {
+      "bye_probability": 0.0066,
+      "championship_probability": 0.0079,
+      "final_probability": 0.0286,
+      "name": "To Infinity and Bijan",
+      "playoff_probability": 0.2873,
+      "record": "3-3",
+      "roster_id": 9,
+      "seed_probabilities": {
+        "1": 0.0014,
+        "2": 0.0052,
+        "3": 0.0158,
+        "4": 0.0409,
+        "5": 0.083,
+        "6": 0.141
+      }
+    },
+    {
+      "bye_probability": 0.002,
+      "championship_probability": 0.0057,
+      "final_probability": 0.0175,
+      "name": "DANGER CLOSE ",
+      "playoff_probability": 0.1846,
+      "record": "3-3",
+      "roster_id": 4,
+      "seed_probabilities": {
+        "1": 0.0003,
+        "2": 0.0017,
+        "3": 0.0079,
+        "4": 0.0265,
+        "5": 0.0521,
+        "6": 0.0961
+      }
+    },
+    {
+      "bye_probability": 0.0025,
+      "championship_probability": 0.0031,
+      "final_probability": 0.0128,
+      "name": "CREAM MACHINE ",
+      "playoff_probability": 0.1706,
+      "record": "3-3",
+      "roster_id": 2,
+      "seed_probabilities": {
+        "1": 0.0001,
+        "2": 0.0024,
+        "3": 0.0074,
+        "4": 0.0224,
+        "5": 0.0462,
+        "6": 0.0921
+      }
+    },
+    {
+      "bye_probability": 0.0001,
+      "championship_probability": 0.0019,
+      "final_probability": 0.0068,
+      "name": "BigOlBoyle",
+      "playoff_probability": 0.0487,
+      "record": "1-5",
+      "roster_id": 3,
+      "seed_probabilities": {
+        "1": 0.0,
+        "2": 0.0001,
+        "3": 0.0004,
+        "4": 0.0043,
+        "5": 0.0145,
+        "6": 0.0294
+      }
+    },
+    {
+      "bye_probability": 0.0,
+      "championship_probability": 0.0002,
+      "final_probability": 0.0005,
+      "name": "EmanAndYoMomma",
+      "playoff_probability": 0.008,
+      "record": "1-5",
+      "roster_id": 10,
+      "seed_probabilities": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0004,
+        "5": 0.0023,
+        "6": 0.0053
+      }
+    }
+  ],
+  "tie_break_assumption": "Wins then projected accumulated points; official FFL tiebreak not independently verified"
 }
