@@ -1,0 +1,115 @@
+{
+  "bracket_assumption": "Six entrants, seeds 1 and 2 receive Week 15 byes; higher seed faces lower surviving seed Week 16.",
+  "forecast_source_as_of": "2026-10-24T13:28:22.034078+00:00",
+  "generated_at_utc": "2026-10-24T18:24:33.133189+00:00",
+  "key_disclaimer": "These championship probabilities are CONDITIONAL on today's six seeds reaching the playoffs, not estimates of actual season-end playoff or title probabilities.",
+  "league_week": 7,
+  "not_modeled": [
+    "remaining regular-season FFL schedule",
+    "real end-of-season qualification probability",
+    "correlated game outcomes",
+    "NFL injury probabilities",
+    "starters locked at kickoff",
+    "true tie-break procedures"
+  ],
+  "random_seed": 2607,
+  "ranking_assumption": "Current wins, losses, then scored points. Official Sleeper tiebreaks not reconstructed.",
+  "roster_snapshot_as_of": "2026-10-24T18:16:24.905954+00:00",
+  "seeded_rosters": [
+    6,
+    12,
+    11,
+    8,
+    1,
+    4
+  ],
+  "simulations": 10000,
+  "status": "completed_conditional_current_seed_bracket",
+  "teams": [
+    {
+      "conditional_championship_probability": 0.3506,
+      "conditional_final_probability": 0.6258,
+      "conditional_semifinal_probability": 1.0,
+      "name": "kfsn",
+      "playoff_lineup_forecasts": {
+        "15": 126.68,
+        "16": 132.8,
+        "17": 134.7
+      },
+      "record": "5-1",
+      "roster_id": 6,
+      "seed": 1
+    },
+    {
+      "conditional_championship_probability": 0.2314,
+      "conditional_final_probability": 0.5034,
+      "conditional_semifinal_probability": 1.0,
+      "name": "Cokerthestroker",
+      "playoff_lineup_forecasts": {
+        "15": 122.14,
+        "16": 127.47,
+        "17": 127.14
+      },
+      "record": "5-1",
+      "roster_id": 12,
+      "seed": 2
+    },
+    {
+      "conditional_championship_probability": 0.1596,
+      "conditional_final_probability": 0.337,
+      "conditional_semifinal_probability": 0.6751,
+      "name": "suck my dickerson",
+      "playoff_lineup_forecasts": {
+        "15": 126.73,
+        "16": 127.11,
+        "17": 130.35
+      },
+      "record": "4-2",
+      "roster_id": 11,
+      "seed": 3
+    },
+    {
+      "conditional_championship_probability": 0.0358,
+      "conditional_final_probability": 0.0998,
+      "conditional_semifinal_probability": 0.3038,
+      "name": "DeeboSix0",
+      "playoff_lineup_forecasts": {
+        "15": 116.55,
+        "16": 113.48,
+        "17": 113.55
+      },
+      "record": "4-2",
+      "roster_id": 8,
+      "seed": 4
+    },
+    {
+      "conditional_championship_probability": 0.1993,
+      "conditional_final_probability": 0.3583,
+      "conditional_semifinal_probability": 0.6962,
+      "name": "Dirty Birds",
+      "playoff_lineup_forecasts": {
+        "15": 136.93,
+        "16": 132.49,
+        "17": 134.59
+      },
+      "record": "4-2",
+      "roster_id": 1,
+      "seed": 5
+    },
+    {
+      "conditional_championship_probability": 0.0233,
+      "conditional_final_probability": 0.0757,
+      "conditional_semifinal_probability": 0.3249,
+      "name": "DANGER CLOSE ",
+      "playoff_lineup_forecasts": {
+        "15": 109.66,
+        "16": 106.68,
+        "17": 109.9
+      },
+      "record": "3-3",
+      "roster_id": 4,
+      "seed": 6
+    }
+  ],
+  "weekly_score_sd": "max(8 points, 22% of modeled score)"
+}
