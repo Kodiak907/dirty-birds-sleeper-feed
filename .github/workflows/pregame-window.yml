@@ -33,6 +33,16 @@ jobs:
           python -m unittest -v test_phase_vii
           python gameday_window_check.py
           python gameday_alerts.py
+          python - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path('data/GAMEDAY_ALERTS.json')
+          if p.exists():
+              d=json.loads(p.read_text())
+              lines=['## Dirty Birds pregame review',f"Week {d.get('week')} — {d.get('alert_count',0)} review alerts"]
+              for a in d.get('alerts',[]):
+                  lines.append(f"- {a.get('severity','review').upper()}: {a.get('player','Source')} — {a.get('message')}")
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:out.write('\\n'.join(lines)+'\\n')
+          PY
       - name: Publish changed gameday reports if any
         run: |
           git config user.name "Dirty Birds Data Bot"
