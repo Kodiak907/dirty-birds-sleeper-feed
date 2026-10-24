@@ -26,20 +26,21 @@ def weekly(roster,week,names,projection):
  return build_lineup(ids,names,f)
 def score(mu,rng,volatility=0.22):
  return max(0,rng.gauss(mu,max(8,volatility*mu)))
-def bracket(seed,points,rng):
+def bracket(seed,points,rng,score_fn=None):
+ if score_fn is None:score_fn=lambda mu:score(mu,rng)
  # Seed pairs 3v6 and 4v5; seeded reseeding in semifinals.
  w={}
  for a,b in ((seed[2],seed[5]),(seed[3],seed[4])):
-  sa,sb=score(points[a][15],rng),score(points[b][15],rng)
+  sa,sb=score_fn(points[a][15]),score_fn(points[b][15])
   w[a if sa>=sb else b]=True
  advancing=[x for x in seed[2:] if x in w]
  semi=[(seed[0],max(advancing,key=lambda x:seed.index(x))),(seed[1],min(advancing,key=lambda x:seed.index(x)))]
  finalists=[]
  for a,b in semi:
-  sa,sb=score(points[a][16],rng),score(points[b][16],rng)
+  sa,sb=score_fn(points[a][16]),score_fn(points[b][16])
   finalists.append(a if sa>=sb else b)
  a,b=finalists
- sa,sb=score(points[a][17],rng),score(points[b][17],rng)
+ sa,sb=score_fn(points[a][17]),score_fn(points[b][17])
  return (a if sa>=sb else b),finalists,advancing
 def run(snapshot,names,forecast,iterations=10000,seed=2607):
  rosters=snapshot["rosters"]
