@@ -539,7 +539,7 @@
     14
   ],
   "future_roster_assumption": "Current roster held fixed; no future pickups, trades, or injuries simulated",
-  "generated_at_utc": "2026-10-24T18:40:44.562253+00:00",
+  "generated_at_utc": "2026-10-24T18:45:30.271669+00:00",
   "historical_variability_audit": {
     "completed_weeks": 6,
     "leave_one_out_team_residual_sd": 25.15,
@@ -552,7 +552,7 @@
     "warning": "Observed score variability is not forecast error calibration. Only genuine archived pregame forecasts can measure predictive accuracy."
   },
   "limitations": [
-    "Win/bye/title chances are model outputs dependent on speculative volatility, fixed rosters and unverified tiebreaks.",
+    "Win/bye/title chances depend on descriptive historical volatility and fixed rosters; manual seeding and division overrides require verification.",
     "Current Week 7 may be in progress: current record is used as saved, not future outcome.",
     "Model does not simulate correlated NFL player scoring or game lock time.",
     "Missing weekly player forecasts are transparently replaced by ROS PPG when available."
@@ -771,5 +771,5 @@
       }
     }
   ],
-  "tie_break_assumption": "Wins then projected accumulated points; official FFL tiebreak not independently verified"
+  "tie_break_assumption": "Sleeper default no-division order: record, points for, higher points against; exact ties use deterministic roster ID in model, real coin flip/commissioner overrides not modeled"
 }

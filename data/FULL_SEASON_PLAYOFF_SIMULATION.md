@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VIII Full-Season Playoff Simulation
 
-Generated: 2026-10-24T18:40:44.562253+00:00
+Generated: 2026-10-24T18:45:30.271669+00:00
 
-Uses Sleeper-verified remaining fixtures and current roster lineup projections. All probability estimates depend on uncalibrated score variance, fixed rosters and assumed tiebreaks.
+Uses verified future Sleeper fixtures and current roster lineup projections. Historical score variation is descriptive, not calibrated pregame projection error.
 
 Status: **complete_schedule_conditional_model**
 
@@ -23,7 +23,7 @@ Status: **complete_schedule_conditional_model**
 
 ## Assumptions
 
-- Win/bye/title chances are model outputs dependent on speculative volatility, fixed rosters and unverified tiebreaks.
+- Win/bye/title chances depend on descriptive historical volatility and fixed rosters; manual seeding and division overrides require verification.
 - Current Week 7 may be in progress: current record is used as saved, not future outcome.
 - Model does not simulate correlated NFL player scoring or game lock time.
 - Missing weekly player forecasts are transparently replaced by ROS PPG when available.

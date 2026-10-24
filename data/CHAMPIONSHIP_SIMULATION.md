@@ -1,6 +1,6 @@
 # Dirty Birds — Phase VIII Conditional Championship Simulator
 
-Generated: 2026-10-24T18:40:43.473302+00:00 | Live league week: 7
+Generated: 2026-10-24T18:45:29.393031+00:00 | Live league week: 7
 
 **Not actual playoff qualification odds.** This assumes the league's current top six teams become the playoff seeds.
 It also assumes a 6-team Week 15–17 bracket, two byes, and weekly score volatility of 22% (minimum 8 points).
