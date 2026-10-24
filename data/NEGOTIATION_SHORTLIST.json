@@ -1,0 +1,288 @@
+{
+  "all_reviewed": 16,
+  "generated_at_utc": "2026-10-24T17:13:24.377689+00:00",
+  "limitations": [
+    "Acceptance odds unavailable. Never convert score to a probability.",
+    "Position depth heuristic is a rough proxy for roster needs, not manager preference.",
+    "Star, durability, reserve, playoff opponents and keeper values not fully represented.",
+    "This report does not recommend automatic opening offers or counteroffers."
+  ],
+  "market_truth": "No independently verified ADP, expert trade chart or league negotiation behavior has been sourced. Position-relative projected PPG is NOT fair market value.",
+  "screen_formula": "1.5*our line-up gain + 0.9*min(their gain,5) + 0.35*mean valid weeks 15-17 gain - 2*percentile imbalance - 2*redundant outgoing - 1 if playoff weeks incomplete",
+  "source_projections_as_of": "2026-10-24T13:28:22.034078+00:00",
+  "source_rosters_as_of": "2026-10-24T16:42:16.007359+00:00",
+  "top_five": [
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 127.516,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 0.57,
+      "dirty_birds_drop_to_fit": null,
+      "evidence_warnings": [
+        "Ollie Gordon II: snap coverage absent"
+      ],
+      "give": [
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "pos": "RB",
+          "projected_ppg": 12.44
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 2.438,
+      "negotiation_rationale": "Opponent projected starters improve +2.71 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 3.865,
+      "opponent_after": 103.498,
+      "opponent_before": 100.784,
+      "opponent_delta_ppg": 2.71,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "playoff_week_gains_ppg": {
+        "15": 2.52,
+        "16": 3.31,
+        "17": 1.69
+      },
+      "position_relative_percentile_sum_received": 0.88,
+      "position_relative_percentile_sum_sent": 0.745,
+      "projected_ppg_received": 13.01,
+      "projected_ppg_sent": 12.44,
+      "receive": [
+        {
+          "id": "8144",
+          "name": "Chris Olave",
+          "pos": "WR",
+          "projected_ppg": 13.01
+        }
+      ],
+      "redundant_outgoing_package": false,
+      "surrogate_balance_gap_fraction": 0.153,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Ollie Gordon II: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 127.516,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 0.57,
+      "dirty_birds_drop_to_fit": "Caleb Douglas",
+      "evidence_warnings": [
+        "Ollie Gordon II: snap coverage absent",
+        "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
+      ],
+      "give": [
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "pos": "RB",
+          "projected_ppg": 12.44
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 2.438,
+      "negotiation_rationale": "Opponent projected starters improve +2.71 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 3.645,
+      "opponent_after": 103.498,
+      "opponent_before": 100.784,
+      "opponent_delta_ppg": 2.71,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "playoff_week_gains_ppg": {
+        "15": 2.52,
+        "16": 5.04,
+        "17": 1.69
+      },
+      "position_relative_percentile_sum_received": 1.172,
+      "position_relative_percentile_sum_sent": 0.745,
+      "projected_ppg_received": 27.63,
+      "projected_ppg_sent": 12.44,
+      "receive": [
+        {
+          "id": "12545",
+          "name": "Tyler Shough",
+          "pos": "QB",
+          "projected_ppg": 14.62
+        },
+        {
+          "id": "8144",
+          "name": "Chris Olave",
+          "pos": "WR",
+          "projected_ppg": 13.01
+        }
+      ],
+      "redundant_outgoing_package": false,
+      "surrogate_balance_gap_fraction": 0.364,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Ollie Gordon II: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 127.577,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 0.63,
+      "dirty_birds_drop_to_fit": null,
+      "evidence_warnings": [
+        "Zach Charbonnet: snap coverage absent",
+        "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
+      ],
+      "give": [
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 7.36
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 0.89,
+      "negotiation_rationale": "Opponent projected starters improve +0.37 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 1.107,
+      "opponent_after": 93.105,
+      "opponent_before": 92.739,
+      "opponent_delta_ppg": 0.37,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 4,
+      "playoff_week_gains_ppg": {
+        "15": 3.19,
+        "16": 2.37,
+        "17": 1.92
+      },
+      "position_relative_percentile_sum_received": 0.875,
+      "position_relative_percentile_sum_sent": 0.418,
+      "projected_ppg_received": 19.3,
+      "projected_ppg_sent": 7.36,
+      "receive": [
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB",
+          "projected_ppg": 19.3
+        }
+      ],
+      "redundant_outgoing_package": false,
+      "surrogate_balance_gap_fraction": 0.522,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Zach Charbonnet: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 128.165,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 1.22,
+      "dirty_birds_drop_to_fit": null,
+      "evidence_warnings": [
+        "Kyren Williams: snap coverage absent",
+        "Unnecessary extra outgoing asset under aggregate PPG model"
+      ],
+      "give": [
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB",
+          "projected_ppg": 15.73
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "projected_ppg": 14.61
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 1.397,
+      "negotiation_rationale": "Opponent projected starters improve +0.37 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 0.594,
+      "opponent_after": 102.662,
+      "opponent_before": 102.295,
+      "opponent_delta_ppg": 0.37,
+      "opponent_drop_to_fit": "Blake Corum",
+      "opponent_roster_id": 3,
+      "playoff_week_gains_ppg": {
+        "15": -0.03,
+        "16": 5.43,
+        "17": 1.72
+      },
+      "position_relative_percentile_sum_received": 0.927,
+      "position_relative_percentile_sum_sent": 1.159,
+      "projected_ppg_received": 16.95,
+      "projected_ppg_sent": 30.34,
+      "receive": [
+        {
+          "id": "6813",
+          "name": "Jonathan Taylor",
+          "pos": "RB",
+          "projected_ppg": 16.95
+        }
+      ],
+      "redundant_outgoing_package": true,
+      "surrogate_balance_gap_fraction": 0.2,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Kyren Williams: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 128.042,
+      "dirty_birds_before": 126.943,
+      "dirty_birds_delta_ppg": 1.1,
+      "dirty_birds_drop_to_fit": null,
+      "evidence_warnings": [
+        "Zach Charbonnet: snap coverage absent",
+        "Unnecessary extra outgoing asset under aggregate PPG model"
+      ],
+      "give": [
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR",
+          "projected_ppg": 10.77
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 7.36
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 1.51,
+      "negotiation_rationale": "Opponent projected starters improve +0.60 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 0.386,
+      "opponent_after": 93.336,
+      "opponent_before": 92.739,
+      "opponent_delta_ppg": 0.6,
+      "opponent_drop_to_fit": "Keon Coleman",
+      "opponent_roster_id": 4,
+      "playoff_week_gains_ppg": {
+        "15": 2.34,
+        "16": 0.64,
+        "17": 1.97
+      },
+      "position_relative_percentile_sum_received": 0.931,
+      "position_relative_percentile_sum_sent": 1.151,
+      "projected_ppg_received": 11.87,
+      "projected_ppg_sent": 18.13,
+      "receive": [
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE",
+          "projected_ppg": 11.87
+        }
+      ],
+      "redundant_outgoing_package": true,
+      "surrogate_balance_gap_fraction": 0.191,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Zach Charbonnet: snap coverage absent"
+      ]
+    }
+  ]
+}
