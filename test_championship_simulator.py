@@ -3,6 +3,8 @@
 import unittest
 from championship_simulator import bracket,run
 import random
+from fetch_future_matchups import extract
+from full_season_playoff_simulator import estimate_week
 class ChampionshipTests(unittest.TestCase):
  def test_bracket_reproducible(self):
   seed=[1,2,3,4,5,6]
@@ -18,4 +20,13 @@ class ChampionshipTests(unittest.TestCase):
   result=run(snapshot,{}, {},10)
   self.assertEqual(result["status"],"blocked_incomplete_forecasts")
   self.assertGreater(len(result["warnings"]),0)
+ def test_future_pairs_reject_incomplete(self):
+  pairs,complete=extract([{"matchup_id":1,"roster_id":1},{"matchup_id":1,"roster_id":2}],{1,2,3,4})
+  self.assertFalse(complete)
+ def test_future_pairs_complete(self):
+  rows=[{"matchup_id":1,"roster_id":1},{"matchup_id":1,"roster_id":2},
+   {"matchup_id":2,"roster_id":3},{"matchup_id":2,"roster_id":4}]
+  pairs,complete=extract(rows,{1,2,3,4})
+  self.assertTrue(complete)
+  self.assertEqual(pairs,[[1,2],[3,4]])
 if __name__=="__main__":unittest.main()
