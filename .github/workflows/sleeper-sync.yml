@@ -6,6 +6,7 @@ on:
     paths:
       - 'fetch_usage.py'
       - 'waiver.py'
+      - 'decision_engine.py'
       - 'fetch_opportunity.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
@@ -43,6 +44,7 @@ jobs:
             python scouting.py
             python valuation.py
             python waiver.py
+            python decision_engine.py
 
       - name: Commit changed data
         run: |
