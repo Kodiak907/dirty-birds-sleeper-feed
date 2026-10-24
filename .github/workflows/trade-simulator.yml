@@ -1,0 +1,53 @@
+name: Dirty Birds Trade Simulator
+
+on:
+  workflow_dispatch:
+    inputs:
+      give:
+        description: 'Dirty Birds players to give (comma-separated); leave blank for tests only'
+        required: false
+        type: string
+      receive:
+        description: 'Opposing players to receive (comma-separated); leave blank for tests only'
+        required: false
+        type: string
+      projections:
+        description: 'Repo-relative sourced half-PPR projections JSON path'
+        required: false
+        default: 'data/ros_projections.json'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate simulator logic with synthetic examples
+        run: python -m unittest -v test_trade_simulator
+      - name: Run optional trade analysis (read-only)
+        env:
+          GIVE_PLAYERS: ${{ inputs.give }}
+          RECEIVE_PLAYERS: ${{ inputs.receive }}
+          PROJECTIONS_PATH: ${{ inputs.projections }}
+        run: |
+          python - <<'PY'
+          import os,subprocess,sys,pathlib
+          give=os.environ.get("GIVE_PLAYERS","").strip()
+          receive=os.environ.get("RECEIVE_PLAYERS","").strip()
+          if not give and not receive:
+              print("Validation-only run completed. Enter both player lists to run a hypothetical trade.")
+              sys.exit(0)
+          if not give or not receive:
+              sys.exit("Both give and receive fields are required for a trade analysis.")
+          path=pathlib.Path(os.environ.get("PROJECTIONS_PATH","data/ros_projections.json"))
+          if not path.is_file():
+              sys.exit(f"Verified projections file not found: {path}. No simulation performed.")
+          subprocess.run([sys.executable,"trade_simulator.py","--give",give,"--receive",receive,"--projections",str(path)],check=True)
+          PY
