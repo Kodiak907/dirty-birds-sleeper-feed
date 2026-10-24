@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'trade_discovery.py'
+      - 'negotiation_intelligence.py'
       - '.github/workflows/trade-discovery.yml'
   workflow_dispatch:
 permissions:
@@ -20,12 +21,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Analyze bilateral lineup trade ideas
-        run: python trade_discovery.py
+        run: |
+          python trade_discovery.py
+          python negotiation_intelligence.py
       - name: Publish only read-only research files
         run: |
           git config user.name "Dirty Birds Data Bot"
           git config user.email "dirty-birds-data-bot@users.noreply.github.com"
-          git add data/TRADE_IDEAS.json data/TRADE_IDEAS.md
+          git add data/TRADE_IDEAS.json data/TRADE_IDEAS.md data/NEGOTIATION_SHORTLIST.json data/NEGOTIATION_SHORTLIST.md
           if ! git diff --cached --quiet; then
             git commit -m "Update read-only two-sided trade discovery"
             git pull --rebase origin main
