@@ -2,6 +2,10 @@
 name: Sleeper Read-Only Sync
 
 on:
+  push:
+    paths:
+      - 'fetch_usage.py'
+      - '.github/workflows/sleeper-sync.yml'
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
