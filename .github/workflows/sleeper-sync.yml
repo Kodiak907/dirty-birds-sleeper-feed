@@ -7,6 +7,7 @@ on:
       - 'fetch_usage.py'
       - 'waiver.py'
       - 'fetch_opportunity.py'
+      - 'fetch_schedule.py'
       - 'trade_simulator.py'
       - '.github/workflows/sleeper-sync.yml'
   workflow_dispatch:
@@ -37,6 +38,7 @@ jobs:
             python update.py
             python fetch_usage.py
             python fetch_opportunity.py
+            python fetch_schedule.py
             python radar.py
             python scouting.py
             python valuation.py
