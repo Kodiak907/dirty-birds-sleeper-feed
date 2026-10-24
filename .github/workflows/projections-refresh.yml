@@ -1,6 +1,10 @@
 name: Refresh Trade Projections
 
 on:
+  push:
+    paths:
+      - 'fetch_projections.py'
+      - '.github/workflows/projections-refresh.yml'
   workflow_dispatch:
   schedule:
     - cron: '35 */6 * * *'
