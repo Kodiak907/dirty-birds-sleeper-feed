@@ -34,7 +34,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Quentin Johnston | 5.18 | +3.83 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 3 | Chris Bell | 5.12 | +3.77 | 74.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Jauan Jennings | 4.79 | +3.44 | 81.3% | Tgt 1.3 | injury_report_observation_review |
-| 5 | Ja'Kobi Lane | 4.62 | +3.26 | 47.0% | Tgt 4.0 | injury_report_observation_review |
+| 5 | Ja'Kobi Lane | 4.61 | +3.26 | 47.0% | Tgt 4.0 | injury_report_observation_review |
 | 6 | Rashod Bateman | 4.36 | +3.01 | 52.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 7 | Makai Lemon | 3.83 | +2.48 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
 | 8 | Adonai Mitchell | 3.50 | +2.15 | 75.5% | Tgt 7.5 | No modeled flags (not medically cleared) |
@@ -68,7 +68,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kansas City Chiefs | 6.72 | -0.38 | — | — | No modeled flags (not medically cleared) |
-| 2 | Baltimore Ravens | 6.30 | -0.79 | — | — | No modeled flags (not medically cleared) |
+| 2 | Baltimore Ravens | 6.30 | -0.80 | — | — | No modeled flags (not medically cleared) |
 | 3 | Cincinnati Bengals | 6.07 | -1.03 | — | — | No modeled flags (not medically cleared) |
 | 4 | Carolina Panthers | 6.00 | -1.10 | — | — | No modeled flags (not medically cleared) |
 | 5 | Green Bay Packers | 5.98 | -1.12 | — | — | No modeled flags (not medically cleared) |

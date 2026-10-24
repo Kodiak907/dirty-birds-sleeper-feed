@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-24T18:32:20.742819+00:00",
+  "generated_at_utc": "2026-10-24T19:28:53.858617+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -68,7 +68,7 @@
           "name": "Minnesota Vikings",
           "ppg": 7.094
         },
-        "same_position_uplift_ppg": -0.79,
+        "same_position_uplift_ppg": -0.8,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -941,7 +941,7 @@
           "targets_per_game": 4.0
         },
         "name": "Ja'Kobi Lane",
-        "ppg": 4.62,
+        "ppg": 4.61,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 1.351
@@ -1182,5 +1182,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-24T18:32:16.649681+00:00"
+  "snapshot_utc": "2026-10-24T19:28:48.141191+00:00"
 }

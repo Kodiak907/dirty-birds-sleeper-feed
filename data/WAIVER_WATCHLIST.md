@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-24T18:32:20.656915+00:00
-Sleeper snapshot: 2026-10-24T18:32:16.649681+00:00
+Generated: 2026-10-24T19:28:53.717431+00:00
+Sleeper snapshot: 2026-10-24T19:28:48.141191+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -45,7 +45,7 @@ Sleeper snapshot: 2026-10-24T18:32:16.649681+00:00
 | 2 | Quentin Johnston | LAC | 5.18 | 91% | 81.3% | Not flagged |
 | 3 | Chris Bell | MIA | 5.12 | 100% | 74.7% | Not flagged |
 | 4 | Jauan Jennings | MIN | 4.79 | 100% | 81.3% | Not flagged |
-| 5 | Ja'Kobi Lane | BAL | 4.62 | 91% | 47.0% | Not flagged |
+| 5 | Ja'Kobi Lane | BAL | 4.61 | 91% | 47.0% | Not flagged |
 | 6 | Rashod Bateman | BAL | 4.36 | 91% | 52.3% | Not flagged |
 | 7 | Makai Lemon | PHI | 3.83 | 91% | 78.7% | Not flagged |
 | 8 | Adonai Mitchell | NYJ | 3.50 | 91% | 75.5% | Not flagged |
@@ -111,7 +111,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Keaton Mitchell | RB | LAC | 5.10 | 32.0% |
 | Mike Washington Jr. | RB | LV | 4.94 | 21.3% |
 | Jauan Jennings | WR | MIN | 4.79 | 81.3% |
-| Ja'Kobi Lane | WR | BAL | 4.62 | 47.0% |
+| Ja'Kobi Lane | WR | BAL | 4.61 | 47.0% |
 | Rashod Bateman | WR | BAL | 4.36 | 52.3% |
 | Noah Fant | TE | NO | 4.34 | 60.7% |
 | Makai Lemon | WR | PHI | 3.83 | 78.7% |

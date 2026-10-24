@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-24T18:32:20.804758+00:00
+Generated: 2026-10-24T19:28:53.964847+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **126.94**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **126.93**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -34,7 +34,7 @@ Baseline illustrative optimal PPG: **126.94**. Weeks with partial projections an
 | 2 | Quentin Johnston | 5.18 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.83 | No flagged data gap; review still required |
 | 3 | Chris Bell | 5.12 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.89 | No flagged data gap; review still required |
 | 4 | Jauan Jennings | 4.79 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.22 | No flagged data gap; review still required |
-| 5 | Ja'Kobi Lane | 4.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.40 | No flagged data gap; review still required |
+| 5 | Ja'Kobi Lane | 4.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.40 | No flagged data gap; review still required |
 | 6 | Rashod Bateman | 4.36 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.65 | No flagged data gap; review still required |
 | 7 | Makai Lemon | 3.83 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.18 | No flagged data gap; review still required |
 | 8 | Adonai Mitchell | 3.50 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.52 | No flagged data gap; review still required |
@@ -68,7 +68,7 @@ Baseline illustrative optimal PPG: **126.94**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Kansas City Chiefs | 6.72 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.70 | No sourced usage |
-| 2 | Baltimore Ravens | 6.30 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.29 | No sourced usage |
+| 2 | Baltimore Ravens | 6.30 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.28 | No sourced usage |
 | 3 | Cincinnati Bengals | 6.07 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.06 | No sourced usage |
 | 4 | Carolina Panthers | 6.00 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.02 | No sourced usage |
 | 5 | Green Bay Packers | 5.98 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.04 | No sourced usage |
