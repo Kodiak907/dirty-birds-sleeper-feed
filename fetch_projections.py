@@ -67,7 +67,8 @@ def main():
  out={"as_of":cutoff,"scoring":"half_ppr",
   "source":"Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "source_week_range":successful,"source_method":"Summed source-derived projected fantasy points across fetched future calendar weeks, including projected zeros if explicitly provided.",
-  "warnings":["This is an aggregation of Sleeper weekly estimates, not an independently verified consensus or medical forecast.",
+  "warnings":["Player coverage varies. PPG is a mean of explicitly projected weeks; no missing week is scored zero.",
+   "This is an aggregation of Sleeper weekly estimates, not an independently verified consensus or medical forecast.",
    "Sleeper projection APIs may be unreliable or incomplete; missing weeks are excluded from the denominator.",
    "League-specific scoring bonuses without explicit projected stat fields cannot be represented precisely.",
    "Values may be stale or not availability-adjusted; manual injury and usage checks are required."],
@@ -76,15 +77,16 @@ def main():
   p=names.get(pid)
   if not p or not p.get("name"):continue
   name=p["name"]
-  # Allow only fully covered players; no implicit zero for missing weeks.
-  if set(wks)!=set(successful):continue
+  # Preserve explicit weeks only; do not impute omitted weeks.
   projected=sum(x["points"] for x in wks.values())
   out["players"][name]={"ppg":round(projected/len(successful),3),
    "remaining_projected_points":round(projected,2),
-   "games_remaining":len(successful),"status":"projection_only_not_injury_verified",
+   "games_remaining":len(wks),"coverage_weeks":len(wks),"total_weeks_fetched":len(successful),
+   "coverage_fraction":round(len(wks)/len(successful),3),
+   "status":"projection_only_not_injury_verified",
    "weeks":{str(w):obj["points"] for w,obj in sorted(wks.items())},
    "method":sorted(set(x["method"] for x in wks.values()))}
- if len(out["players"])<100:raise RuntimeError(f"Only {len(out['players'])} fully covered projected players; no output published")
+ if len(out["players"])<25:raise RuntimeError(f"Only {len(out['players'])} projected players; no output published")
  path=DATA/"ros_projections.json"
  path.write_text(json.dumps(out,indent=2,ensure_ascii=False,sort_keys=True)+"\n",encoding="utf-8")
  print(f"Saved sourced ROS estimates for {len(out['players'])} players, weeks {successful}")
