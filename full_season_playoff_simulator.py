@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """FFL full regular-season qualification + playoff Monte Carlo (source-backed fixtures)."""
 import json,datetime as dt,random,collections
+from scoring_variability import calculate
 from pathlib import Path
 from championship_simulator import score,bracket,owner_name
 from lineup_impact import build_lineup
@@ -21,7 +22,7 @@ def estimate_week(roster,week,names,projections):
    fallback.append(name)
  return build_lineup(ids,names,source),fallback
 
-def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
+def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808,observed_sd=None):
  current=int(snapshot["nfl_state"]["week"])
  rosters={r["roster_id"]:r for r in snapshot["rosters"]};ids=sorted(rosters)
  fixtures=schedule.get("future_weeks",{})
@@ -38,6 +39,8 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
    else:missing.append({"roster_id":rid,"week":week})
  if missing:return {"status":"blocked_incomplete_team_projections","missing":missing}
  rng=random.Random(seed)
+ def observed_score(mu):
+  return max(0,rng.gauss(mu,max(8,float(observed_sd)))) if observed_sd is not None else score(mu,rng)
  counts={i:collections.Counter() for i in ids}
  allseeds={i:collections.Counter() for i in ids}
  for _ in range(iterations):
@@ -46,7 +49,7 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
   pts={i:float(rosters[i]["settings"].get("fpts",0))+float(rosters[i]["settings"].get("fpts_decimal",0))/100 for i in ids}
   for wk in needed:
    for a,b in fixtures[str(wk)]["pairs"]:
-    sa,sb=score(means[a][wk],rng),score(means[b][wk],rng)
+    sa,sb=observed_score(means[a][wk]),observed_score(means[b][wk])
     pts[a]+=sa;pts[b]+=sb
     if sa>=sb:w[a]+=1;losses[b]+=1
     else:w[b]+=1;losses[a]+=1
@@ -56,7 +59,9 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
    counts[i]["playoffs"]+=1
    allseeds[i][index+1]+=1
    if index<2:counts[i]["bye"]+=1
-  winner,finalists,_=bracket(field,means,rng)
+  # Preserve bracket structure while injecting calibrated descriptive volatility.
+  # bracket internally uses score(); it will be generalized separately if necessary.
+  winner,finalists,_=bracket(field,means,rng,score_fn=observed_score)
   counts[winner]["champion"]+=1
   for i in finalists:counts[i]["final"]+=1
  report=[]
@@ -71,7 +76,7 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
  report.sort(key=lambda v:v["championship_probability"],reverse=True)
  return {"status":"complete_schedule_conditional_model","simulations":iterations,"random_seed":seed,
   "season_week":current,"future_fixtures_weeks":needed,
-  "scoring_uncertainty":"Independent Normal(mean=weekly optimal lineup projection, sd=max(8, 0.22*mean)); not calibrated",
+  "scoring_uncertainty":("Independent Normal(mean=weekly optimal lineup projection, sd="+str(observed_sd)+"), using descriptive FFL historical weekly residuals, NOT forecast error" if observed_sd is not None else "Independent Normal(mean=weekly optimal lineup projection, sd=max(8, 0.22*mean)); not calibrated"),
   "tie_break_assumption":"Wins then projected accumulated points; official FFL tiebreak not independently verified",
   "remaining_week_assumption":"Weeks through 14 are remaining regular season; no tie games modeled",
   "future_roster_assumption":"Current roster held fixed; no future pickups, trades, or injuries simulated",
@@ -84,7 +89,10 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808):
   "teams":report}
 def main():
  snap=load("latest.json");projections=load("ros_projections.json");schedule=load("FUTURE_MATCHUPS.json")
- result=simulate(snap,load("player_names.json"),projections["players"],schedule)
+ variation=calculate(snap)
+ sd=variation.get("model_sd_points") if variation.get("status")=="descriptive_historical_sample" else None
+ result=simulate(snap,load("player_names.json"),projections["players"],schedule,observed_sd=sd)
+ result["historical_variability_audit"]=variation
  result["generated_at_utc"]=dt.datetime.now(dt.timezone.utc).isoformat()
  result["roster_snapshot_as_of"]=snap.get("fetched_at_utc")
  result["projection_as_of"]=projections.get("as_of")
