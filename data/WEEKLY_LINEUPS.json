@@ -4,16 +4,13 @@
     "status": "awaiting_completed_week_with_archived_predictions",
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
-  "excluded_fantasy_reserve_player_ids": [
-    "13345",
-    "4950"
-  ],
-  "generated_at_utc": "2026-10-24T20:29:15.542975+00:00",
+  "excluded_fantasy_reserve_player_ids": [],
+  "generated_at_utc": "2026-10-24T21:29:59.396320+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-10-24T19:05:12.398944+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-24T20:29:12.880160+00:00",
+  "snapshot_utc": "2026-10-24T21:29:55.693352+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,7 +20,9 @@
   "weeks": {
     "10": {
       "complete": true,
-      "missing_projection": [],
+      "missing_projection": [
+        "Jonah Coleman"
+      ],
       "ppg": 134.86,
       "starters": [
         {
@@ -107,7 +106,7 @@
         "Bijan Robinson",
         "Zach Charbonnet"
       ],
-      "ppg": 105.26,
+      "ppg": 104.13,
       "starters": [
         {
           "id": "4046",
@@ -166,18 +165,18 @@
           "ppg": 7.19
         },
         {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "opponent": "CIN",
-          "position": "WR",
-          "ppg": 6.42
-        },
-        {
           "id": "8210",
           "name": "Chig Okonkwo",
           "opponent": "CIN",
           "position": "TE",
           "ppg": 6.34
+        },
+        {
+          "id": "9482",
+          "name": "Michael Mayer",
+          "opponent": "DEN",
+          "position": "TE",
+          "ppg": 5.29
         }
       ]
     },
@@ -265,7 +264,7 @@
         "Michael Mayer",
         "Zay Flowers"
       ],
-      "ppg": 120.48,
+      "ppg": 119.15,
       "starters": [
         {
           "id": "4046",
@@ -296,11 +295,11 @@
           "ppg": 11.49
         },
         {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "opponent": "TEN",
+          "id": "9501",
+          "name": "DeMario Douglas",
+          "opponent": "BUF",
           "position": "WR",
-          "ppg": 6.51
+          "ppg": 5.18
         },
         {
           "id": "8131",
@@ -650,7 +649,6 @@
     "7": {
       "complete": true,
       "missing_projection": [
-        "Antonio Williams",
         "Chig Okonkwo",
         "Zach Charbonnet"
       ],
@@ -732,6 +730,7 @@
       "complete": true,
       "missing_projection": [
         "Kaelon Black",
+        "Christian Kirk",
         "Isaiah Likely",
         "C.J. Stroud"
       ],

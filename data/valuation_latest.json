@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-24T20:29:14.994884+00:00",
+  "generated_at_utc": "2026-10-24T21:29:58.924273+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -128,49 +128,13 @@
           ]
         },
         {
-          "actual_points_total": 0.0,
-          "actual_points_weekly_avg": 0.0,
-          "id": "13296",
-          "n_weeks": 6,
-          "name": "Caleb Douglas",
-          "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
-          "actual_points_total": 0.0,
-          "actual_points_weekly_avg": 0.0,
-          "id": "13301",
-          "n_weeks": 6,
-          "name": "Antonio Williams",
-          "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 13.3,
           "actual_points_weekly_avg": 2.22,
           "id": "13345",
           "n_weeks": 6,
           "name": "Jonah Coleman",
           "nonzero_weeks": 1,
-          "on_fantasy_reserve": true,
+          "on_fantasy_reserve": false,
           "position": "RB",
           "weekly_points": [
             0.0,
@@ -224,7 +188,7 @@
           "n_weeks": 6,
           "name": "Christian Kirk",
           "nonzero_weeks": 0,
-          "on_fantasy_reserve": true,
+          "on_fantasy_reserve": false,
           "position": "WR",
           "weekly_points": [
             0.0,
@@ -611,7 +575,7 @@
             "n_weeks": 6,
             "name": "Jonah Coleman",
             "nonzero_weeks": 1,
-            "on_fantasy_reserve": true,
+            "on_fantasy_reserve": false,
             "position": "RB",
             "weekly_points": [
               0.0,
@@ -755,47 +719,11 @@
           {
             "actual_points_total": 0.0,
             "actual_points_weekly_avg": 0.0,
-            "id": "13296",
-            "n_weeks": 6,
-            "name": "Caleb Douglas",
-            "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
-          },
-          {
-            "actual_points_total": 0.0,
-            "actual_points_weekly_avg": 0.0,
-            "id": "13301",
-            "n_weeks": 6,
-            "name": "Antonio Williams",
-            "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
-          },
-          {
-            "actual_points_total": 0.0,
-            "actual_points_weekly_avg": 0.0,
             "id": "4950",
             "n_weeks": 6,
             "name": "Christian Kirk",
             "nonzero_weeks": 0,
-            "on_fantasy_reserve": true,
+            "on_fantasy_reserve": false,
             "position": "WR",
             "weekly_points": [
               0.0,
@@ -4760,24 +4688,6 @@
           ]
         },
         {
-          "actual_points_total": 0.0,
-          "actual_points_weekly_avg": 0.0,
-          "id": "13833",
-          "n_weeks": 6,
-          "name": "Dominic Zvada",
-          "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
-          "position": "K",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 108.0,
           "actual_points_weekly_avg": 18.0,
           "id": "4034",
@@ -4874,7 +4784,7 @@
           "n_weeks": 6,
           "name": "Tank Dell",
           "nonzero_weeks": 0,
-          "on_fantasy_reserve": true,
+          "on_fantasy_reserve": false,
           "position": "WR",
           "weekly_points": [
             0.0,
@@ -4978,24 +4888,6 @@
               10.0,
               5.0,
               1.0
-            ]
-          },
-          {
-            "actual_points_total": 0.0,
-            "actual_points_weekly_avg": 0.0,
-            "id": "13833",
-            "n_weeks": 6,
-            "name": "Dominic Zvada",
-            "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
-            "position": "K",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
             ]
           }
         ],
@@ -5301,7 +5193,7 @@
             "n_weeks": 6,
             "name": "Tank Dell",
             "nonzero_weeks": 0,
-            "on_fantasy_reserve": true,
+            "on_fantasy_reserve": false,
             "position": "WR",
             "weekly_points": [
               0.0,
@@ -8795,6 +8687,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-24T20:29:12.880160+00:00",
+  "snapshot_utc": "2026-10-24T21:29:55.693352+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-6"
 }

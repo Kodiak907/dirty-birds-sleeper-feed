@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-24T20:29:15.542975+00:00 | Forecast as of: 2026-10-24T19:05:12.398944+00:00
+Generated: 2026-10-24T21:29:59.396320+00:00 | Forecast as of: 2026-10-24T19:05:12.398944+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -74,7 +74,7 @@ Generated: 2026-10-24T20:29:15.542975+00:00 | Forecast as of: 2026-10-24T19:05:1
 
 ## Week 11
 
-**Projected optimal score:** 105.26
+**Projected optimal score:** 104.13
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -86,8 +86,8 @@ Generated: 2026-10-24T20:29:15.542975+00:00 | Forecast as of: 2026-10-24T19:05:1
 | Isaiah Likely | TE | JAX | 10.59 |
 | Will Reichard | K | SF | 7.13 |
 | Minnesota Vikings | DEF | SF | 7.19 |
-| Antonio Williams | WR | CIN | 6.42 |
 | Chig Okonkwo | TE | CIN | 6.34 |
+| Michael Mayer | TE | DEN | 5.29 |
 
 ## Week 12
 
@@ -108,7 +108,7 @@ Generated: 2026-10-24T20:29:15.542975+00:00 | Forecast as of: 2026-10-24T19:05:1
 
 ## Week 13
 
-**Projected optimal score:** 120.48
+**Projected optimal score:** 119.15
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -116,7 +116,7 @@ Generated: 2026-10-24T20:29:15.542975+00:00 | Forecast as of: 2026-10-24T19:05:1
 | Bijan Robinson | RB | DET | 22.98 |
 | Kyren Williams | RB | KC | 16.43 |
 | A.J. Brown | WR | BUF | 11.49 |
-| Antonio Williams | WR | TEN | 6.51 |
+| DeMario Douglas | WR | BUF | 5.18 |
 | Isaiah Likely | TE | SF | 10.00 |
 | Will Reichard | K | CAR | 7.13 |
 | Minnesota Vikings | DEF | CAR | 7.19 |

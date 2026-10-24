@@ -1,7 +1,35 @@
 {
-  "generated_at_utc": "2026-10-24T20:29:14.923399+00:00",
+  "generated_at_utc": "2026-10-24T21:29:58.862218+00:00",
   "is_initial_baseline": false,
   "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-10-24T20:29:12.880160+00:00"
+  "roster_changes": [
+    {
+      "adds": [],
+      "drops": [
+        "Caleb Douglas",
+        "Antonio Williams"
+      ],
+      "roster_id": 1,
+      "team": "Dirty Birds"
+    },
+    {
+      "kind": "reserve_change",
+      "roster_id": 1,
+      "team": "Dirty Birds"
+    },
+    {
+      "adds": [],
+      "drops": [
+        "Dominic Zvada"
+      ],
+      "roster_id": 7,
+      "team": "JA’MARRTRIX"
+    },
+    {
+      "kind": "reserve_change",
+      "roster_id": 7,
+      "team": "JA’MARRTRIX"
+    }
+  ],
+  "source_snapshot_utc": "2026-10-24T21:29:55.693352+00:00"
 }

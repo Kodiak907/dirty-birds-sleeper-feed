@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-24T20:29:15.283484+00:00",
+  "generated_at_utc": "2026-10-24T21:29:59.143398+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -316,6 +316,28 @@
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Dominic Zvada",
+        "ppg": 6.2,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.3
+        },
+        "same_position_uplift_ppg": -1.1,
+        "screen_only": true,
+        "sleeper_id": "13833",
+        "team": "NYG"
       },
       {
         "audit": {
@@ -845,6 +867,53 @@
       },
       {
         "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 88.5,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 5.0
+        },
+        "name": "Caleb Douglas",
+        "ppg": 6.01,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 4.66,
+        "screen_only": true,
+        "sleeper_id": "13296",
+        "team": "MIA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 68.0,
+          "snap_trend_3_appearances_pp": -2.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Antonio Williams",
+        "ppg": 5.54,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 4.19,
+        "screen_only": true,
+        "sleeper_id": "13301",
+        "team": "WAS"
+      },
+      {
+        "audit": {
           "carries_per_game": 0.33,
           "flags": [],
           "injury_report_observation": {
@@ -1182,5 +1251,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-24T20:29:12.880160+00:00"
+  "snapshot_utc": "2026-10-24T21:29:55.693352+00:00"
 }

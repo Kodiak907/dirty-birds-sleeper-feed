@@ -1,6 +1,6 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 7 | Snapshot: 2026-10-24T20:29:12.880160+00:00
+Week 7 | Snapshot: 2026-10-24T21:29:55.693352+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
@@ -13,8 +13,8 @@ Conditional projected difference: 0.0.
 
 ## Hard-tag excluded from provisional lineup
 
-- Jonah Coleman — fantasy reserve: True; Sleeper injury: IR
-- Christian Kirk — fantasy reserve: True; Sleeper injury: IR
+- Jonah Coleman — fantasy reserve: False; Sleeper injury: IR
+- Christian Kirk — fantasy reserve: False; Sleeper injury: IR
 - Zach Charbonnet — fantasy reserve: False; Sleeper injury: Out
 
 ## ESPN / Sleeper discrepancies

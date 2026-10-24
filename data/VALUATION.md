@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-24T20:29:14.994884+00:00
-Sleeper snapshot: 2026-10-24T20:29:12.880160+00:00
+Generated: 2026-10-24T21:29:58.924273+00:00
+Sleeper snapshot: 2026-10-24T21:29:55.693352+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -27,8 +27,6 @@ The points below average actual fantasy scoring over completed Weeks 1–6, with
 | Kaelon Black | RB | 18.80 | 3.13 | 6/6 |
 | Jonah Coleman | RB | 13.30 | 2.22 | 1/6 |
 | A.J. Brown | WR | 8.30 | 1.38 | 2/6 |
-| Caleb Douglas | WR | 0.00 | 0.00 | 0/6 |
-| Antonio Williams | WR | 0.00 | 0.00 | 0/6 |
 | Christian Kirk | WR | 0.00 | 0.00 | 0/6 |
 | Chig Okonkwo | TE | 0.00 | 0.00 | 0/6 |
 | DeMario Douglas | WR | 0.00 | 0.00 | 0/6 |
