@@ -1,0 +1,890 @@
+{
+  "backtesting": {
+    "evaluations": [],
+    "status": "awaiting_completed_week_with_archived_predictions",
+    "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
+  },
+  "excluded_fantasy_reserve_player_ids": [
+    "13345",
+    "4950"
+  ],
+  "generated_at_utc": "2026-10-24T15:56:37.199269+00:00",
+  "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
+  "projection_as_of": "2026-10-24T13:28:22.034078+00:00",
+  "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
+  "roster_id": 1,
+  "snapshot_utc": "2026-10-24T15:56:33.706283+00:00",
+  "warnings": [
+    "Current fantasy reserve players excluded; verify NFL availability separately.",
+    "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
+    "Missing week forecasts block a complete lineup; playoff rank not simulated here.",
+    "Pregame archives are only written if no existing file for the target week."
+  ],
+  "weeks": {
+    "10": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 134.86,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "ATL",
+          "position": "QB",
+          "ppg": 17.47
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "KC",
+          "position": "RB",
+          "ppg": 19.36
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 17.7
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "LAC",
+          "position": "WR",
+          "ppg": 16.25
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "DET",
+          "position": "WR",
+          "ppg": 12.92
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "WAS",
+          "position": "TE",
+          "ppg": 11.96
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "GB",
+          "position": "K",
+          "ppg": 7.13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "GB",
+          "position": "DEF",
+          "ppg": 6.84
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "IND",
+          "position": "RB",
+          "ppg": 12.79
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "BUF",
+          "position": "WR",
+          "ppg": 12.44
+        }
+      ]
+    },
+    "11": {
+      "complete": true,
+      "missing_projection": [
+        "A.J. Brown",
+        "Kyren Williams",
+        "DeMario Douglas",
+        "Bijan Robinson",
+        "Zach Charbonnet"
+      ],
+      "ppg": 105.26,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "ARI",
+          "position": "QB",
+          "ppg": 23.05
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "BUF",
+          "position": "RB",
+          "ppg": 11.94
+        },
+        {
+          "id": "13414",
+          "name": "Kaelon Black",
+          "opponent": "MIN",
+          "position": "RB",
+          "ppg": 4.18
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CAR",
+          "position": "WR",
+          "ppg": 15.37
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "LAC",
+          "position": "WR",
+          "ppg": 13.05
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "JAX",
+          "position": "TE",
+          "ppg": 10.59
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "SF",
+          "position": "K",
+          "ppg": 7.13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "SF",
+          "position": "DEF",
+          "ppg": 7.19
+        },
+        {
+          "id": "13301",
+          "name": "Antonio Williams",
+          "opponent": "CIN",
+          "position": "WR",
+          "ppg": 6.42
+        },
+        {
+          "id": "8210",
+          "name": "Chig Okonkwo",
+          "opponent": "CIN",
+          "position": "TE",
+          "ppg": 6.34
+        }
+      ]
+    },
+    "12": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 136.03,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "BUF",
+          "position": "QB",
+          "ppg": 19.75
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "MIN",
+          "position": "RB",
+          "ppg": 18.36
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 17.85
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "HOU",
+          "position": "WR",
+          "ppg": 16.23
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "MIA",
+          "position": "WR",
+          "ppg": 14.61
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "IND",
+          "position": "TE",
+          "ppg": 10.79
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "ATL",
+          "position": "K",
+          "ppg": 7.13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "ATL",
+          "position": "DEF",
+          "ppg": 7.19
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "LAC",
+          "position": "WR",
+          "ppg": 12.09
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "NYJ",
+          "position": "RB",
+          "ppg": 12.03
+        }
+      ]
+    },
+    "13": {
+      "complete": true,
+      "missing_projection": [
+        "Garrett Wilson",
+        "Michael Mayer",
+        "Zay Flowers"
+      ],
+      "ppg": 120.48,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "LA",
+          "position": "QB",
+          "ppg": 17.02
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "DET",
+          "position": "RB",
+          "ppg": 22.98
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 16.43
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "BUF",
+          "position": "WR",
+          "ppg": 11.49
+        },
+        {
+          "id": "13301",
+          "name": "Antonio Williams",
+          "opponent": "TEN",
+          "position": "WR",
+          "ppg": 6.51
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "SF",
+          "position": "TE",
+          "ppg": 10.0
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "CAR",
+          "position": "K",
+          "ppg": 7.13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "CAR",
+          "position": "DEF",
+          "ppg": 7.19
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "DEN",
+          "position": "RB",
+          "ppg": 12.03
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "opponent": "DAL",
+          "position": "RB",
+          "ppg": 9.7
+        }
+      ]
+    },
+    "14": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 132.1,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "CIN",
+          "position": "QB",
+          "ppg": 19.5
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "CLE",
+          "position": "RB",
+          "ppg": 19.98
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 16.09
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "TB",
+          "position": "WR",
+          "ppg": 16.57
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "DEN",
+          "position": "WR",
+          "ppg": 11.61
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "SEA",
+          "position": "TE",
+          "ppg": 9.84
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "NE",
+          "position": "K",
+          "ppg": 7.13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "NE",
+          "position": "DEF",
+          "ppg": 7.19
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "CHI",
+          "position": "RB",
+          "ppg": 13.43
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "MIN",
+          "position": "WR",
+          "ppg": 10.76
+        }
+      ]
+    },
+    "15": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 136.93,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "NE",
+          "position": "QB",
+          "ppg": 18.55
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "WAS",
+          "position": "RB",
+          "ppg": 21.04
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 18.76
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "PIT",
+          "position": "WR",
+          "ppg": 16.47
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "ARI",
+          "position": "WR",
+          "ppg": 14.26
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "CLE",
+          "position": "TE",
+          "ppg": 10.11
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "DET",
+          "position": "K",
+          "ppg": 7.64
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "DET",
+          "position": "DEF",
+          "ppg": 6.66
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "GB",
+          "position": "RB",
+          "ppg": 12.35
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "KC",
+          "position": "WR",
+          "ppg": 11.09
+        }
+      ]
+    },
+    "16": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 132.49,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "SF",
+          "position": "QB",
+          "ppg": 18.35
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "TB",
+          "position": "RB",
+          "ppg": 19.54
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 15.55
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CLE",
+          "position": "WR",
+          "ppg": 15.54
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "NE",
+          "position": "WR",
+          "ppg": 12.26
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "DET",
+          "position": "TE",
+          "ppg": 11.69
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "WAS",
+          "position": "K",
+          "ppg": 7.67
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "WAS",
+          "position": "DEF",
+          "ppg": 7.5
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "LAC",
+          "position": "RB",
+          "ppg": 12.38
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "NYJ",
+          "position": "WR",
+          "ppg": 12.01
+        }
+      ]
+    },
+    "17": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 134.59,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "LAC",
+          "position": "QB",
+          "ppg": 18.95
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "NO",
+          "position": "RB",
+          "ppg": 21.82
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 16.24
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CIN",
+          "position": "WR",
+          "ppg": 16.74
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "MIN",
+          "position": "WR",
+          "ppg": 11.65
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "DAL",
+          "position": "TE",
+          "ppg": 11.74
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "NYJ",
+          "position": "K",
+          "ppg": 6.81
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "NYJ",
+          "position": "DEF",
+          "ppg": 7.77
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "BUF",
+          "position": "RB",
+          "ppg": 12.08
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "DEN",
+          "position": "WR",
+          "ppg": 10.79
+        }
+      ]
+    },
+    "7": {
+      "complete": true,
+      "missing_projection": [
+        "Antonio Williams",
+        "Chig Okonkwo",
+        "Zach Charbonnet"
+      ],
+      "ppg": 137.95,
+      "starters": [
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "opponent": "NYG",
+          "position": "QB",
+          "ppg": 17.92
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "SF",
+          "position": "RB",
+          "ppg": 21.81
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 18.31
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CIN",
+          "position": "WR",
+          "ppg": 15.78
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "MIA",
+          "position": "WR",
+          "ppg": 13.9
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "HOU",
+          "position": "TE",
+          "ppg": 10.0
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "IND",
+          "position": "K",
+          "ppg": 7.65
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "IND",
+          "position": "DEF",
+          "ppg": 7.7
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "CHI",
+          "position": "WR",
+          "ppg": 12.58
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "NYJ",
+          "position": "RB",
+          "ppg": 12.3
+        }
+      ]
+    },
+    "8": {
+      "complete": true,
+      "missing_projection": [
+        "Kaelon Black",
+        "Isaiah Likely",
+        "C.J. Stroud"
+      ],
+      "ppg": 128.74,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "DEN",
+          "position": "QB",
+          "ppg": 17.04
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "TB",
+          "position": "RB",
+          "ppg": 20.09
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 18.53
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "BUF",
+          "position": "WR",
+          "ppg": 15.5
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "LV",
+          "position": "WR",
+          "ppg": 13.38
+        },
+        {
+          "id": "8210",
+          "name": "Chig Okonkwo",
+          "opponent": "PHI",
+          "position": "TE",
+          "ppg": 5.78
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "DET",
+          "position": "K",
+          "ppg": 7.39
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "DET",
+          "position": "DEF",
+          "ppg": 6.33
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "MIA",
+          "position": "WR",
+          "ppg": 12.68
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "NE",
+          "position": "RB",
+          "ppg": 12.02
+        }
+      ]
+    },
+    "9": {
+      "complete": true,
+      "missing_projection": [],
+      "ppg": 138.18,
+      "starters": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "NYJ",
+          "position": "QB",
+          "ppg": 20.02
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "CIN",
+          "position": "RB",
+          "ppg": 23.07
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "opponent": null,
+          "position": "RB",
+          "ppg": 17.6
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "JAX",
+          "position": "WR",
+          "ppg": 16.0
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "GB",
+          "position": "WR",
+          "ppg": 12.02
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "opponent": "PHI",
+          "position": "TE",
+          "ppg": 10.04
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "opponent": "BUF",
+          "position": "K",
+          "ppg": 7.49
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "BUF",
+          "position": "DEF",
+          "ppg": 6.47
+        },
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "opponent": "DET",
+          "position": "RB",
+          "ppg": 13.48
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "KC",
+          "position": "WR",
+          "ppg": 11.99
+        }
+      ]
+    }
+  }
+}
