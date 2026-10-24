@@ -17,6 +17,9 @@ def main():
  evidence_path=D/"GAME_INACTIVES_EVIDENCE.json"
  evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {"explicit_inactives":{},"status":"unavailable"}
  reported=evidence.get("explicit_inactives") or {}
+ official_path=D/"OFFICIAL_INACTIVE_VERIFICATION.json"
+ official=json.loads(official_path.read_text()) if official_path.exists() else {"confirmed_official_inactives":{},"status":"unavailable"}
+ verified=official.get("confirmed_official_inactives") or {}
  team=next(r for r in snap["rosters"] if r["roster_id"]==1)
  week=int(snap["nfl_state"]["week"])
  roster=[str(x) for x in team.get("players") or []]
@@ -39,7 +42,9 @@ def main():
    "fantasy_reserve":pid in reserve,
    "status_source":"Sleeper metadata, not official gameday inactive list",
    "availability_verified":False}
-  if pid in reported:
+  if pid in verified:
+   excluded.add(pid);item["model_handling"]="exclude_manual_verified_official_inactive";item["official_inactive_evidence"]=verified[pid];item["availability_verified"]=True
+  elif pid in reported:
    excluded.add(pid);item["model_handling"]="exclude_espn_reported_game_inactive";item["third_party_game_inactive"]=reported[pid]
   elif status in hard:excluded.add(pid);item["model_handling"]="exclude_explicit_unavailable_tag"
   elif status in watch:risk.append(item["name"]);item["model_handling"]="unverified_availability_review"
@@ -50,7 +55,9 @@ def main():
  a={p["id"] for p in after.get("starters",[])}
  result={"generated_at_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
   "snapshot_utc":snap.get("fetched_at_utc"),"week":week,
-  "official_game_day_inactives_integrated":False,
+  "official_game_day_inactives_integrated":bool(verified),
+  "official_inactive_source_status":official.get("status"),
+  "manual_verified_official_inactives_on_roster":[names.get(pid,{}).get("name",pid) for pid in roster if pid in verified],
   "third_party_reported_inactives_integrated":bool(reported),
   "third_party_inactive_source_status":evidence.get("status"),
   "reported_inactives_on_roster":[names.get(pid,{}).get("name",pid) for pid in roster if pid in reported],
@@ -66,6 +73,7 @@ def main():
   "explicit_excluded_ids":sorted(excluded),"players_needing_review":risk,"player_statuses":detail,
   "warnings":["This is a conditional simulation, not an official starting lineup or verified inactive list.",
   "ESPN game-status reports are third-party, not verified official NFL team submissions.",
+  "Official submissions require human source review; automated link checks do not prove the source content.",
   "Sleeper injury flags can be delayed; a blank tag is not confirmation that a player is active.",
   "NFL IR and fantasy reserve are distinct.",
   "Doubtful/questionable cases remain modeled but demand manual review.",
@@ -77,6 +85,7 @@ def main():
   f"Week {week} | Snapshot: {snap.get('fetched_at_utc')}","",
   "**PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**",
   "ESPN event status: "+str(evidence.get("status"))+". Confirm any report with the NFL/team inactive release.",
+  "Manually verified official-release submissions: "+str(len(verified))+"; "+str(official.get("status"))+".",
   "This report is a read-only scenario showing the impact of explicit unavailable tags.","",
   f"Baseline projected lineup: {pre.get('ppg','incomplete')}.",
   f"Hard-tag exclusion projected lineup: {after.get('ppg','incomplete')}.",
@@ -97,7 +106,7 @@ def main():
  if result["removed_starters"]:lines+=["Potentially removed: "+", ".join(result["removed_starters"])]
  if not result["added_starters"] and not result["removed_starters"]:lines.append("No modeled starter changes.")
  lines+=["","## Mandatory verification","",
-  "Official team/NFL gameday inactive lists are **not** integrated. Verify official reports before kickoff.",
+  "Automatic official team/NFL inactive-list retrieval is **not available**. Human-verified submissions can be integrated when provided.",
   "Do not treat Sleeper Questionable, no tag, or dated nflverse practice participation as game-day active.",
   "Coach alone authorizes lineup changes."]
  (D/"GAMEDAY_DECISION.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
