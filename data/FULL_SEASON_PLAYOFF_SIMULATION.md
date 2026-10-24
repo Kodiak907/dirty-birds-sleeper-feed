@@ -1,6 +1,6 @@
 # Dirty Birds — Phase VIII Full-Season Playoff Simulation
 
-Generated: 2026-10-24T18:40:31.094973+00:00
+Generated: 2026-10-24T18:40:44.562253+00:00
 
 Uses Sleeper-verified remaining fixtures and current roster lineup projections. All probability estimates depend on uncalibrated score variance, fixed rosters and assumed tiebreaks.
 
