@@ -10,11 +10,31 @@ External projection file schema:
   "players":{"Bijan Robinson":{"ppg":18.5,"status":"active","games_remaining":9}, ...}}
 All modeled players require explicit ppg; no silent use of historical averages.
 """
-import argparse,json,sys
+import argparse,json,sys,re,unicodedata
 from pathlib import Path
 DATA=Path(__file__).resolve().parent/"data"
 POSITIONS=["QB","RB","RB","WR","WR","TE","FLEX","FLEX","K","DEF"]
 def read(name):return json.loads(Path(name).read_text(encoding="utf-8"))
+def normalize_player_name(name):
+    raw=unicodedata.normalize("NFKD",name).casefold()
+    return re.sub(r"[^a-z0-9]", "",raw)
+def resolve_player_ids(player_inputs,names):
+    index={}
+    for pid,meta in names.items():
+        label=meta.get("name")
+        if label:
+            index.setdefault(normalize_player_name(label),set()).add(str(pid))
+    result=[]
+    for submitted in player_inputs:
+        ids=index.get(normalize_player_name(submitted),set())
+        if not ids:
+            raise ValueError(f"Unrecognized player '{submitted}'. Check Sleeper player names.")
+        if len(ids)>1:
+            raise ValueError(f"Ambiguous player '{submitted}' matches multiple Sleeper IDs; use a more specific identifier.")
+        result.append(next(iter(ids)))
+    if len(set(result))!=len(result):
+        raise ValueError("Duplicate player in a trade; check spelling and punctuation.")
+    return result
 def lineup(roster,proj,byname):
     pool=[]
     for pid in roster:
@@ -42,13 +62,12 @@ def run(give,receive,projection_path):
     roster=d["rosters"]
     mine=next(r for r in roster if r["roster_id"]==1)
     allp={str(pid):r["roster_id"] for r in roster for pid in (r.get("players") or [])}
-    byname={v.get("name"):str(k) for k,v in names.items()}
     a=[s.strip() for s in give.split(",") if s.strip()]
     b=[s.strip() for s in receive.split(",") if s.strip()]
     if not a or not b or len(set(a))!=len(a) or len(set(b))!=len(b):
         raise ValueError("Give and receive distinct player names")
-    ids_a=[byname.get(k) for k in a];ids_b=[byname.get(k) for k in b]
-    if None in ids_a+ids_b:raise ValueError("Unrecognized player name: check data/player_names.json")
+    ids_a=resolve_player_ids(a,names);ids_b=resolve_player_ids(b,names)
+    if set(ids_a)&set(ids_b):raise ValueError("Same player appears on both sides of the proposed trade")
     if any(allp.get(k)!=1 for k in ids_a):raise ValueError("Outgoing player is not on Dirty Birds")
     owners={allp.get(k) for k in ids_b}
     if len(owners)!=1 or 1 in owners or None in owners:raise ValueError("Received players must be on same opposing fantasy roster")
@@ -78,8 +97,8 @@ def run(give,receive,projection_path):
       "practice_participation","team_offense_context","bye_week",
       "remaining_schedule_strength","playoff_schedule_strength"]
     metric_audit=[]
-    for k in a+b:
-        record=metrics_players.get(byname.get(k),metrics_players.get(k,{}))
+    for k,pid in zip(a+b,ids_a+ids_b):
+        record=metrics_players.get(pid,metrics_players.get(k,{}))
         present=[field for field in priority_fields if record.get(field) is not None]
         metric_audit.append({"player":k,"fields_present":present,
           "fields_missing":[field for field in priority_fields if field not in present],
@@ -89,8 +108,7 @@ def run(give,receive,projection_path):
     sched=read(schedule_path) if schedule_path.exists() else {}
     current_names=read(DATA/"player_names.json")
     schedule_checks=[]
-    for player in a+b:
-        pid=byname.get(player)
+    for player,pid in zip(a+b,ids_a+ids_b):
         team=(current_names.get(pid) or {}).get("team")
         schedule_checks.append({"player":player,"nfl_team":team,
           "weeks_15_17":{str(w):((sched.get("teams") or {}).get(team,{}).get("weeks") or {}).get(str(w))
