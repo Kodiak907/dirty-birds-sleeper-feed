@@ -1,0 +1,350 @@
+{
+  "added_starters": [],
+  "baseline_fantasy_reserve_excluded": {
+    "complete": true,
+    "missing_projection": [
+      "Antonio Williams",
+      "Chig Okonkwo",
+      "Zach Charbonnet"
+    ],
+    "ppg": 137.95,
+    "starters": [
+      {
+        "id": "9758",
+        "name": "C.J. Stroud",
+        "position": "QB",
+        "ppg": 17.92
+      },
+      {
+        "id": "9509",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "ppg": 21.81
+      },
+      {
+        "id": "8150",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "ppg": 18.31
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 15.78
+      },
+      {
+        "id": "8146",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "ppg": 13.9
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 10.0
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.65
+      },
+      {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF",
+        "ppg": 7.7
+      },
+      {
+        "id": "5859",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "ppg": 12.58
+      },
+      {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.3
+      }
+    ]
+  },
+  "difference_ppg": 0.0,
+  "explicit_excluded_ids": [
+    "13345",
+    "4950",
+    "9753"
+  ],
+  "generated_at_utc": "2026-10-24T17:32:59.091556+00:00",
+  "hard_status_excluded": {
+    "complete": true,
+    "missing_projection": [
+      "Antonio Williams",
+      "Chig Okonkwo"
+    ],
+    "ppg": 137.95,
+    "starters": [
+      {
+        "id": "9758",
+        "name": "C.J. Stroud",
+        "position": "QB",
+        "ppg": 17.92
+      },
+      {
+        "id": "9509",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "ppg": 21.81
+      },
+      {
+        "id": "8150",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "ppg": 18.31
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 15.78
+      },
+      {
+        "id": "8146",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "ppg": 13.9
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 10.0
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.65
+      },
+      {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF",
+        "ppg": 7.7
+      },
+      {
+        "id": "5859",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "ppg": 12.58
+      },
+      {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.3
+      }
+    ]
+  },
+  "model_status": "provisional_sleeper_tags_only",
+  "official_actives_verified": false,
+  "official_game_day_inactives_integrated": false,
+  "player_statuses": [
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "11792",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Will Reichard",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "12495",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Ollie Gordon II",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "13296",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Caleb Douglas",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "13301",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Antonio Williams",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": true,
+      "id": "13345",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Jonah Coleman",
+      "sleeper_injury_status": "IR",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "13414",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Kaelon Black",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "4046",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Patrick Mahomes",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": true,
+      "id": "4950",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Christian Kirk",
+      "sleeper_injury_status": "IR",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "5859",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "A.J. Brown",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "8131",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Isaiah Likely",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "8146",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Garrett Wilson",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "8150",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Kyren Williams",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "8210",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Chig Okonkwo",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9482",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Michael Mayer",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9501",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "DeMario Douglas",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9509",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Bijan Robinson",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9753",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Zach Charbonnet",
+      "sleeper_injury_status": "Out",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9758",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "C.J. Stroud",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9997",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Zay Flowers",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "MIN",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Minnesota Vikings",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    }
+  ],
+  "players_needing_review": [],
+  "removed_starters": [],
+  "snapshot_utc": "2026-10-24T17:32:55.113815+00:00",
+  "source_availability_generated_at_utc": "2026-10-24T17:32:59.050888+00:00",
+  "warnings": [
+    "This is a conditional simulation, not an official starting lineup or verified inactive list.",
+    "Sleeper injury flags can be delayed; a blank tag is not confirmation that a player is active.",
+    "NFL IR and fantasy reserve are distinct.",
+    "Doubtful/questionable cases remain modeled but demand manual review.",
+    "Missing weekly projections cause incomplete lineups, not imputed zero points.",
+    "Official inactives must be checked near kickoff before any action.",
+    "No roster or lineup change performed."
+  ],
+  "week": 7
+}
