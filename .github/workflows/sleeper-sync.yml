@@ -8,6 +8,7 @@ on:
       - 'waiver.py'
       - 'decision_engine.py'
       - 'lineup_impact.py'
+      - 'actionable_gm_board.py'
       - 'weekly_lineups.py'
       - 'pregame_calibration.py'
       - 'decision_backtest.py'
@@ -54,6 +55,7 @@ jobs:
             python waiver.py
             python decision_engine.py
             python lineup_impact.py
+            python actionable_gm_board.py
             python weekly_lineups.py
             python pregame_calibration.py
             python decision_backtest.py
