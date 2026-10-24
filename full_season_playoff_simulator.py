@@ -47,13 +47,15 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808,obse
   w={i:int(rosters[i]["settings"].get("wins",0)) for i in ids}
   losses={i:int(rosters[i]["settings"].get("losses",0)) for i in ids}
   pts={i:float(rosters[i]["settings"].get("fpts",0))+float(rosters[i]["settings"].get("fpts_decimal",0))/100 for i in ids}
+  against={i:float(rosters[i]["settings"].get("fpts_against",0))+float(rosters[i]["settings"].get("fpts_against_decimal",0))/100 for i in ids}
   for wk in needed:
    for a,b in fixtures[str(wk)]["pairs"]:
     sa,sb=observed_score(means[a][wk]),observed_score(means[b][wk])
     pts[a]+=sa;pts[b]+=sb
+    against[a]+=sb;against[b]+=sa
     if sa>=sb:w[a]+=1;losses[b]+=1
     else:w[b]+=1;losses[a]+=1
-  rankings=sorted(ids,key=lambda i:(-w[i],losses[i],-pts[i]))
+  rankings=sorted(ids,key=lambda i:(-w[i],losses[i],-pts[i],-against[i],i))
   field=rankings[:6]
   for index,i in enumerate(field):
    counts[i]["playoffs"]+=1
@@ -77,12 +79,12 @@ def simulate(snapshot,names,projections,schedule,iterations=10000,seed=2808,obse
  return {"status":"complete_schedule_conditional_model","simulations":iterations,"random_seed":seed,
   "season_week":current,"future_fixtures_weeks":needed,
   "scoring_uncertainty":("Independent Normal(mean=weekly optimal lineup projection, sd="+str(observed_sd)+"), using descriptive FFL historical weekly residuals, NOT forecast error" if observed_sd is not None else "Independent Normal(mean=weekly optimal lineup projection, sd=max(8, 0.22*mean)); not calibrated"),
-  "tie_break_assumption":"Wins then projected accumulated points; official FFL tiebreak not independently verified",
+  "tie_break_assumption":"Sleeper default no-division order: record, points for, higher points against; exact ties use deterministic roster ID in model, real coin flip/commissioner overrides not modeled",
   "remaining_week_assumption":"Weeks through 14 are remaining regular season; no tie games modeled",
   "future_roster_assumption":"Current roster held fixed; no future pickups, trades, or injuries simulated",
   "fallback_player_weeks":fallbacks,
   "fallback_method":"Where weekly value missing, use that players sourced ROS PPG; not a week-specific projection.",
-  "limitations":["Win/bye/title chances are model outputs dependent on speculative volatility, fixed rosters and unverified tiebreaks.",
+  "limitations":["Win/bye/title chances depend on descriptive historical volatility and fixed rosters; manual seeding and division overrides require verification.",
     "Current Week 7 may be in progress: current record is used as saved, not future outcome.",
     "Model does not simulate correlated NFL player scoring or game lock time.",
     "Missing weekly player forecasts are transparently replaced by ROS PPG when available."],
@@ -99,7 +101,7 @@ def main():
  (D/"FULL_SEASON_PLAYOFF_SIMULATION.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
  lines=["# Dirty Birds — Phase VIII Full-Season Playoff Simulation","",
  f"Generated: {result['generated_at_utc']}","",
- "Uses Sleeper-verified remaining fixtures and current roster lineup projections. All probability estimates depend on uncalibrated score variance, fixed rosters and assumed tiebreaks.","",
+ "Uses verified future Sleeper fixtures and current roster lineup projections. Historical score variation is descriptive, not calibrated pregame projection error.","",
  f"Status: **{result['status']}**",""]
  if result["status"]=="complete_schedule_conditional_model":
   lines+=["| Team | Current record | Playoffs | Bye | Final | Title |",
