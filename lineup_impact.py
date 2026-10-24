@@ -75,6 +75,8 @@ def main():
    if not options:continue
    options.sort(key=lambda o:o["projected_lineup_gain_ppg"],reverse=True)
    best=options[0]
+   drop_ppg=pp.get(names.get(best["drop_id"],{}).get("name"),{}).get("ppg")
+   depth_delta=round(float(cand["projection"]["ppg"])-float(drop_ppg),3) if isinstance(drop_ppg,(int,float)) else None
    injury=str(cand.get("sleeper_injury_status") or "").lower()
    warnings=[]
    if injury in ("ir","pup","out","doubtful","questionable","sus","suspended"):warnings.append("Availability status: "+injury)
@@ -85,6 +87,8 @@ def main():
    entries.append({"candidate":cand["name"],"candidate_id":pid,"team":cand.get("nfl_team"),
     "position":pos,"projection_ppg":cand["projection"]["ppg"],
     "best_candidate_drop":best,"candidate_drop_options":options[:8],
+    "bench_depth_delta_ppg":depth_delta,
+    "improves_projected_starters":best["projected_lineup_gain_ppg"]>0.005,
     "warnings":warnings,
     "not_adjusted_for":"injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility"})
   entries.sort(key=lambda e:(e["best_candidate_drop"]["projected_lineup_gain_ppg"],e["projection_ppg"]),reverse=True)
@@ -104,11 +108,14 @@ def main():
  f'Baseline illustrative optimal PPG: **{before["ppg"]:.2f}**. Weeks with partial projections and injury status require manual verification.',""]
  for pos,entries in results.items():
   lines.extend([f"## {pos}","",
-   "| # | Free agent | PPG | Best hypothetical cut | Lineup gain | Flags |",
-   "|---:|---|---:|---|---:|---|"])
+   "| # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |",
+   "|---:|---|---:|---|---:|---:|---|"])
   for i,e in enumerate(entries[:12],1):
    b=e["best_candidate_drop"];warning="; ".join(e["warnings"]) or "No flagged data gap; review still required"
-   lines.append(f'| {i} | {e["candidate"]} | {e["projection_ppg"]:.2f} | {b["drop"]} | {b["projected_lineup_gain_ppg"]:+.2f} | {warning} |')
+   depth=e["bench_depth_delta_ppg"]
+   depth_str=f"{depth:+.2f}" if depth is not None else "—"
+   display_drop=b["drop"] if e["improves_projected_starters"] else "Bench-depth scenario: "+b["drop"]
+   lines.append(f'| {i} | {e["candidate"]} | {e["projection_ppg"]:.2f} | {display_drop} | {b["projected_lineup_gain_ppg"]:+.2f} | {depth_str} | {warning} |')
   lines.append("")
  lines+=["## Before making any claim","",
  "- Review the proposed cut, fantasy IR, current practice/injury status and whether the player is currently claimable.",
