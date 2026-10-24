@@ -85,10 +85,22 @@ def run(give,receive,projection_path):
           "fields_missing":[field for field in priority_fields if field not in present],
           "source":record.get("source") or advanced.get("source"),
           "as_of":record.get("as_of") or advanced.get("as_of")})
+    schedule_path=DATA/"nfl_schedule.json"
+    sched=read(schedule_path) if schedule_path.exists() else {}
+    current_names=read(DATA/"player_names.json")
+    schedule_checks=[]
+    for player in a+b:
+        pid=byname.get(player)
+        team=(current_names.get(pid) or {}).get("team")
+        schedule_checks.append({"player":player,"nfl_team":team,
+          "weeks_15_17":{str(w):((sched.get("teams") or {}).get(team,{}).get("weeks") or {}).get(str(w))
+                     for w in (15,16,17)},
+          "note":"Schedule is factual; difficulty and medical-adjusted forecasts not modeled."})
     result={"disclaimer":"What-if only; input PPG not verified by simulator. Not an offer or fair-trade determination.",
       "source":ps["source"],"projection_as_of":ps["as_of"],"league_snapshot_utc":d.get("fetched_at_utc"),
       "give":a,"receive":b,"other_roster_id":other_id,
       "advanced_metric_audit":metric_audit,
+      "playoff_schedule_audit":schedule_checks,
       "durability_note":"Past injury and missed-game rates describe historical availability; they cannot predict future injury with certainty.",
       "dirty_birds":{"before":now_a,"after":after_a,"delta_ppg":round(after_a["projected_ppg"]-now_a["projected_ppg"],2)},
       "counterparty":{"before":now_b,"after":after_b,"delta_ppg":round(after_b["projected_ppg"]-now_b["projected_ppg"],2)},
