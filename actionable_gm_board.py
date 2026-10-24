@@ -23,12 +23,15 @@ def create():
    if str(p.get("candidate_id")) in owned:continue
    injury=next((x.get("injury_status") for x in (watch.get("position_rankings") or {}).get(pos,[]) if str(x.get("id"))==str(p.get("candidate_id"))),None)
    if str(injury or "").lower() in ("ir","out","doubtful","pup","suspended","sus"):continue
-   options=[o for o in p.get("candidate_drop_options",[]) if not o.get("drop_is_fantasy_reserve") and str(o.get("drop_id")) not in reserved]
+   options=[o for o in p.get("candidate_drop_options",[]) if not o.get("drop_is_fantasy_reserve") and str(o.get("drop_id")) not in reserved and names.get(str(o.get("drop_id")),{}).get("position")==pos]
    if not options:continue
    options.sort(key=lambda x:x.get("projected_lineup_gain_ppg",0),reverse=True)
    best=options[0];gain=round(float(best.get("projected_lineup_gain_ppg",0)),2)
-   depth=p.get("bench_depth_delta_ppg")
-   depth=round(float(depth),2) if isinstance(depth,(float,int)) else None
+   proj=read("ros_projections.json").get("players",{})
+   candidate_ppg=p.get("projection_ppg")
+   drop_name=names.get(str(best.get("drop_id")),{}).get("name")
+   drop_ppg=proj.get(drop_name,{}).get("ppg")
+   depth=round(float(candidate_ppg)-float(drop_ppg),2) if isinstance(candidate_ppg,(int,float)) and isinstance(drop_ppg,(int,float)) else None
    # A zero-gain name may be worth a closer look as depth, but is NOT an add recommendation.
    if gain<0.75 and (depth is None or depth<2):continue
    signals=[]
