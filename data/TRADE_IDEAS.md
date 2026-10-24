@@ -1,6 +1,6 @@
 # Dirty Birds — Mutually Beneficial Trade Ideas
 
-Generated: 2026-10-24T17:22:29.215530+00:00
+Generated: 2026-10-24T17:23:13.788295+00:00
 
 **These are statistical conversation starters, NOT predicted acceptances or recommended offers.**
 Only projected starting-lineup gains (not medical-adjusted values) are tested. Ranking deliberately requires both teams to gain.

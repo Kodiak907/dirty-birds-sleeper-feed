@@ -2,7 +2,7 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-10-24T17:22:29.635219+00:00
+Updated: 2026-10-24T17:23:14.327103+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
