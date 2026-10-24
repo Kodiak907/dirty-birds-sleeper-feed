@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-24T13:35:06.174230+00:00
-Sleeper snapshot: 2026-10-24T13:35:03.116257+00:00
+Generated: 2026-10-24T13:35:48.732894+00:00
+Sleeper snapshot: 2026-10-24T13:35:46.190697+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -123,7 +123,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **29**
+Candidates with independently sourced projections AND usage data: **31**
 
 ## Coverage and rules
 
