@@ -36,7 +36,7 @@ def main():
    continue
   status[group]={"loaded":True,"rows":len(rows),"columns":list(rows[0])[:35] if rows else []}
   for row in rows:
-   name=next((row[k] for k in ("player_name","player","full_name","pfr_player_name","name") if row.get(k)),None)
+   name=next((row[k] for k in ("player_display_name","full_name","pfr_player_name","player_name","player","name") if row.get(k)),None)
    team=next((row[k] for k in ("recent_team","team","team_abbr","team_name") if row.get(k)),None)
    ids=look.get((norm(name),norm(team)),[])
    if len(ids)!=1:continue
