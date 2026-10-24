@@ -28,6 +28,7 @@ jobs:
           SLEEPER_LEAGUE_ID: '1399157532559192064'
         run: |
             python update.py
+            python fetch_usage.py
             python radar.py
             python scouting.py
             python valuation.py
