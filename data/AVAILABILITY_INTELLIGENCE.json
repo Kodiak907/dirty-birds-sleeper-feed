@@ -1,0 +1,451 @@
+{
+  "alerts": [],
+  "caveats": [
+    "Source injury observations can be delayed and are not official game-day inactives.",
+    "NFL IR is separate from fantasy reserve; fantasy reserve membership is not an injury status.",
+    "A missing injury report or blank designation does NOT mean healthy.",
+    "Snap change is observed role change only, not an injury-risk score.",
+    "On first baseline run historical changes cannot be inferred. No alerts are fabricated.",
+    "No changes to fantasy rosters, starters, trades or waiver claims."
+  ],
+  "dirty_birds_watch": [
+    {
+      "carries_per_game": null,
+      "fantasy_owner_roster_id": 1,
+      "id": "11792",
+      "injury_report": {},
+      "latest_snap_week": null,
+      "name": "Will Reichard",
+      "position": "K",
+      "recent_snap_percentages": [],
+      "report_source_as_of": null,
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": null,
+      "targets_per_game": null,
+      "team": "MIN"
+    },
+    {
+      "carries_per_game": 14.67,
+      "fantasy_owner_roster_id": 1,
+      "id": "12495",
+      "injury_report": {},
+      "latest_snap_week": null,
+      "name": "Ollie Gordon II",
+      "position": "RB",
+      "recent_snap_percentages": [],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": null,
+      "targets_per_game": 1.67,
+      "team": "MIA"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "13296",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "week": "7"
+      },
+      "latest_snap_week": 2,
+      "name": "Caleb Douglas",
+      "position": "WR",
+      "recent_snap_percentages": [
+        91.0,
+        86.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 88.5,
+      "targets_per_game": 5.0,
+      "team": "MIA"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "13301",
+      "injury_report": {},
+      "latest_snap_week": 6,
+      "name": "Antonio Williams",
+      "position": "WR",
+      "recent_snap_percentages": [
+        69.0,
+        68.0,
+        67.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 68.0,
+      "targets_per_game": 5.0,
+      "team": "WAS"
+    },
+    {
+      "carries_per_game": 5.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "13345",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "report_primary_injury": "Ankle",
+        "report_status": "Questionable",
+        "week": "7"
+      },
+      "latest_snap_week": 2,
+      "name": "Jonah Coleman",
+      "position": "RB",
+      "recent_snap_percentages": [
+        6.0,
+        40.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": "IR",
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Inactive",
+      "snap_share_pct": 23.0,
+      "standing_availability_flag": "Verify official NFL roster and game status before lineup decisions",
+      "targets_per_game": 1.5,
+      "team": "DEN"
+    },
+    {
+      "carries_per_game": 6.67,
+      "fantasy_owner_roster_id": 1,
+      "id": "13414",
+      "injury_report": {
+        "practice_status": "Did Not Participate In Practice",
+        "week": "6"
+      },
+      "latest_snap_week": 6,
+      "name": "Kaelon Black",
+      "position": "RB",
+      "recent_snap_percentages": [
+        26.0,
+        18.0,
+        23.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 22.3,
+      "targets_per_game": 0.33,
+      "team": "SF"
+    },
+    {
+      "carries_per_game": 2.67,
+      "fantasy_owner_roster_id": 1,
+      "id": "4046",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "week": "7"
+      },
+      "latest_snap_week": 6,
+      "name": "Patrick Mahomes",
+      "position": "QB",
+      "recent_snap_percentages": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 100.0,
+      "targets_per_game": 0.0,
+      "team": "KC"
+    },
+    {
+      "carries_per_game": null,
+      "fantasy_owner_roster_id": 1,
+      "id": "4950",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "report_primary_injury": "Calf",
+        "report_status": "Questionable",
+        "week": "7"
+      },
+      "latest_snap_week": null,
+      "name": "Christian Kirk",
+      "position": "WR",
+      "recent_snap_percentages": [],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": "IR",
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Inactive",
+      "snap_share_pct": null,
+      "standing_availability_flag": "Verify official NFL roster and game status before lineup decisions",
+      "targets_per_game": null,
+      "team": "SF"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "5859",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "week": "7"
+      },
+      "latest_snap_week": 7,
+      "name": "A.J. Brown",
+      "position": "WR",
+      "recent_snap_percentages": [
+        44.0,
+        76.0,
+        91.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 70.3,
+      "targets_per_game": 6.67,
+      "team": "NE"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "8131",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "week": "6"
+      },
+      "latest_snap_week": 6,
+      "name": "Isaiah Likely",
+      "position": "TE",
+      "recent_snap_percentages": [
+        66.0,
+        80.0,
+        91.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 79.0,
+      "targets_per_game": 12.0,
+      "team": "NYG"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "8146",
+      "injury_report": {},
+      "latest_snap_week": 6,
+      "name": "Garrett Wilson",
+      "position": "WR",
+      "recent_snap_percentages": [
+        100.0,
+        93.0,
+        98.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 97.0,
+      "targets_per_game": 7.0,
+      "team": "NYJ"
+    },
+    {
+      "carries_per_game": null,
+      "fantasy_owner_roster_id": 1,
+      "id": "8150",
+      "injury_report": {},
+      "latest_snap_week": null,
+      "name": "Kyren Williams",
+      "position": "RB",
+      "recent_snap_percentages": [],
+      "report_source_as_of": null,
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": null,
+      "targets_per_game": null,
+      "team": "LAR"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "8210",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "week": "5"
+      },
+      "latest_snap_week": 6,
+      "name": "Chig Okonkwo",
+      "position": "TE",
+      "recent_snap_percentages": [
+        58.0,
+        71.0,
+        76.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 68.3,
+      "targets_per_game": 5.67,
+      "team": "WAS"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "9482",
+      "injury_report": {},
+      "latest_snap_week": 6,
+      "name": "Michael Mayer",
+      "position": "TE",
+      "recent_snap_percentages": [
+        88.0,
+        65.0,
+        79.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 77.3,
+      "targets_per_game": 6.67,
+      "team": "LV"
+    },
+    {
+      "carries_per_game": 0.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "9501",
+      "injury_report": {},
+      "latest_snap_week": 7,
+      "name": "DeMario Douglas",
+      "position": "WR",
+      "recent_snap_percentages": [
+        49.0,
+        59.0,
+        65.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 57.7,
+      "targets_per_game": 5.67,
+      "team": "NE"
+    },
+    {
+      "carries_per_game": 15.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "9509",
+      "injury_report": {},
+      "latest_snap_week": 6,
+      "name": "Bijan Robinson",
+      "position": "RB",
+      "recent_snap_percentages": [
+        60.0,
+        81.0,
+        78.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 73.0,
+      "targets_per_game": 3.67,
+      "team": "ATL"
+    },
+    {
+      "carries_per_game": null,
+      "fantasy_owner_roster_id": 1,
+      "id": "9753",
+      "injury_report": {
+        "practice_status": "Full Participation in Practice",
+        "report_primary_injury": "Knee",
+        "report_status": "Out",
+        "week": "7"
+      },
+      "latest_snap_week": null,
+      "name": "Zach Charbonnet",
+      "position": "RB",
+      "recent_snap_percentages": [],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": "Out",
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": null,
+      "standing_availability_flag": "Verify official NFL roster and game status before lineup decisions",
+      "targets_per_game": null,
+      "team": "SEA"
+    },
+    {
+      "carries_per_game": 3.0,
+      "fantasy_owner_roster_id": 1,
+      "id": "9758",
+      "injury_report": {},
+      "latest_snap_week": 6,
+      "name": "C.J. Stroud",
+      "position": "QB",
+      "recent_snap_percentages": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 100.0,
+      "targets_per_game": 0.0,
+      "team": "HOU"
+    },
+    {
+      "carries_per_game": 0.67,
+      "fantasy_owner_roster_id": 1,
+      "id": "9997",
+      "injury_report": {
+        "practice_status": "Limited Participation in Practice",
+        "week": "6"
+      },
+      "latest_snap_week": 6,
+      "name": "Zay Flowers",
+      "position": "WR",
+      "recent_snap_percentages": [
+        73.0,
+        82.0,
+        88.0
+      ],
+      "report_source_as_of": "2026-10-24T17:27:09.910326+00:00",
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": "Active",
+      "snap_share_pct": 81.0,
+      "targets_per_game": 10.0,
+      "team": "BAL"
+    },
+    {
+      "carries_per_game": null,
+      "fantasy_owner_roster_id": 1,
+      "id": "MIN",
+      "injury_report": {},
+      "latest_snap_week": null,
+      "name": "Minnesota Vikings",
+      "position": "DEF",
+      "recent_snap_percentages": [],
+      "report_source_as_of": null,
+      "sleeper_injury_status": null,
+      "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+      "sleeper_status": null,
+      "snap_share_pct": null,
+      "targets_per_game": null,
+      "team": "MIN"
+    }
+  ],
+  "generated_at_utc": "2026-10-24T17:27:11.627282+00:00",
+  "initial_baseline": true,
+  "injury_feed_loaded": true,
+  "sleeper_snapshot_utc": "2026-10-24T17:27:04.904859+00:00",
+  "source_metrics_as_of": "2026-10-24T17:27:09.910326+00:00"
+}
