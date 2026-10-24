@@ -12,6 +12,7 @@ on:
       - 'pregame_calibration.py'
       - 'decision_backtest.py'
       - 'fetch_opportunity.py'
+      - 'availability_intelligence.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
       - '.github/workflows/sleeper-sync.yml'
@@ -53,6 +54,7 @@ jobs:
             python weekly_lineups.py
             python pregame_calibration.py
             python decision_backtest.py
+            python availability_intelligence.py
 
       - name: Commit changed data
         run: |
