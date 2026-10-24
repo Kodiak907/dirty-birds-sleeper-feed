@@ -14,6 +14,7 @@ on:
       - 'fetch_opportunity.py'
       - 'availability_intelligence.py'
       - 'gameday_decision.py'
+      - 'fetch_game_inactives.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
       - '.github/workflows/sleeper-sync.yml'
@@ -56,6 +57,7 @@ jobs:
             python pregame_calibration.py
             python decision_backtest.py
             python availability_intelligence.py
+            python fetch_game_inactives.py
             python gameday_decision.py
 
       - name: Commit changed data
