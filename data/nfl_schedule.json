@@ -1,0 +1,1850 @@
+{
+  "as_of": "2026-10-24T13:35:05.963611+00:00",
+  "description": "NFL future opponents only. No unsupported defense difficulty estimates.",
+  "fantasy_playoff_weeks": [
+    15,
+    16,
+    17
+  ],
+  "from_week": 7,
+  "season": 2026,
+  "source": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+  "teams": {
+    "ARI": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_LA_ARI",
+          "home": true,
+          "opponent": "LA"
+        },
+        "11": {
+          "game_id": "2026_11_ARI_KC",
+          "home": false,
+          "opponent": "KC"
+        },
+        "12": {
+          "game_id": "2026_12_WAS_ARI",
+          "home": true,
+          "opponent": "WAS"
+        },
+        "13": {
+          "game_id": "2026_13_PHI_ARI",
+          "home": true,
+          "opponent": "PHI"
+        },
+        "14": {
+          "bye": true
+        },
+        "15": {
+          "game_id": "2026_15_NYJ_ARI",
+          "home": true,
+          "opponent": "NYJ"
+        },
+        "16": {
+          "game_id": "2026_16_ARI_NO",
+          "home": false,
+          "opponent": "NO"
+        },
+        "17": {
+          "game_id": "2026_17_LV_ARI",
+          "home": true,
+          "opponent": "LV"
+        },
+        "7": {
+          "game_id": "2026_07_DEN_ARI",
+          "home": true,
+          "opponent": "DEN"
+        },
+        "8": {
+          "game_id": "2026_08_ARI_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "9": {
+          "game_id": "2026_09_ARI_SEA",
+          "home": false,
+          "opponent": "SEA"
+        }
+      }
+    },
+    "ATL": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_KC_ATL",
+          "home": true,
+          "opponent": "KC"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_ATL_MIN",
+          "home": false,
+          "opponent": "MIN"
+        },
+        "13": {
+          "game_id": "2026_13_DET_ATL",
+          "home": true,
+          "opponent": "DET"
+        },
+        "14": {
+          "game_id": "2026_14_ATL_CLE",
+          "home": false,
+          "opponent": "CLE"
+        },
+        "15": {
+          "game_id": "2026_15_ATL_WAS",
+          "home": false,
+          "opponent": "WAS"
+        },
+        "16": {
+          "game_id": "2026_16_TB_ATL",
+          "home": true,
+          "opponent": "TB"
+        },
+        "17": {
+          "game_id": "2026_17_NO_ATL",
+          "home": true,
+          "opponent": "NO"
+        },
+        "7": {
+          "game_id": "2026_07_SF_ATL",
+          "home": true,
+          "opponent": "SF"
+        },
+        "8": {
+          "game_id": "2026_08_ATL_TB",
+          "home": false,
+          "opponent": "TB"
+        },
+        "9": {
+          "game_id": "2026_09_CIN_ATL",
+          "home": true,
+          "opponent": "CIN"
+        }
+      }
+    },
+    "BAL": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_LAC_BAL",
+          "home": true,
+          "opponent": "LAC"
+        },
+        "11": {
+          "game_id": "2026_11_BAL_CAR",
+          "home": false,
+          "opponent": "CAR"
+        },
+        "12": {
+          "game_id": "2026_12_BAL_HOU",
+          "home": false,
+          "opponent": "HOU"
+        },
+        "13": {
+          "bye": true
+        },
+        "14": {
+          "game_id": "2026_14_TB_BAL",
+          "home": true,
+          "opponent": "TB"
+        },
+        "15": {
+          "game_id": "2026_15_BAL_PIT",
+          "home": false,
+          "opponent": "PIT"
+        },
+        "16": {
+          "game_id": "2026_16_CLE_BAL",
+          "home": true,
+          "opponent": "CLE"
+        },
+        "17": {
+          "game_id": "2026_17_BAL_CIN",
+          "home": false,
+          "opponent": "CIN"
+        },
+        "7": {
+          "game_id": "2026_07_CIN_BAL",
+          "home": true,
+          "opponent": "CIN"
+        },
+        "8": {
+          "game_id": "2026_08_BAL_BUF",
+          "home": false,
+          "opponent": "BUF"
+        },
+        "9": {
+          "game_id": "2026_09_JAX_BAL",
+          "home": true,
+          "opponent": "JAX"
+        }
+      }
+    },
+    "BUF": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_BUF_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "11": {
+          "game_id": "2026_11_MIA_BUF",
+          "home": true,
+          "opponent": "MIA"
+        },
+        "12": {
+          "game_id": "2026_12_KC_BUF",
+          "home": true,
+          "opponent": "KC"
+        },
+        "13": {
+          "game_id": "2026_13_BUF_NE",
+          "home": false,
+          "opponent": "NE"
+        },
+        "14": {
+          "game_id": "2026_14_BUF_GB",
+          "home": false,
+          "opponent": "GB"
+        },
+        "15": {
+          "game_id": "2026_15_CHI_BUF",
+          "home": true,
+          "opponent": "CHI"
+        },
+        "16": {
+          "game_id": "2026_16_BUF_DEN",
+          "home": false,
+          "opponent": "DEN"
+        },
+        "17": {
+          "game_id": "2026_17_BUF_MIA",
+          "home": false,
+          "opponent": "MIA"
+        },
+        "7": {
+          "bye": true
+        },
+        "8": {
+          "game_id": "2026_08_BAL_BUF",
+          "home": true,
+          "opponent": "BAL"
+        },
+        "9": {
+          "game_id": "2026_09_BUF_MIN",
+          "home": false,
+          "opponent": "MIN"
+        }
+      }
+    },
+    "CAR": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_CAR_NO",
+          "home": false,
+          "opponent": "NO"
+        },
+        "11": {
+          "game_id": "2026_11_BAL_CAR",
+          "home": true,
+          "opponent": "BAL"
+        },
+        "12": {
+          "game_id": "2026_12_CAR_TB",
+          "home": false,
+          "opponent": "TB"
+        },
+        "13": {
+          "game_id": "2026_13_CAR_MIN",
+          "home": false,
+          "opponent": "MIN"
+        },
+        "14": {
+          "game_id": "2026_14_NO_CAR",
+          "home": true,
+          "opponent": "NO"
+        },
+        "15": {
+          "game_id": "2026_15_CIN_CAR",
+          "home": true,
+          "opponent": "CIN"
+        },
+        "16": {
+          "game_id": "2026_16_CAR_PIT",
+          "home": false,
+          "opponent": "PIT"
+        },
+        "17": {
+          "game_id": "2026_17_SEA_CAR",
+          "home": true,
+          "opponent": "SEA"
+        },
+        "7": {
+          "game_id": "2026_07_TB_CAR",
+          "home": true,
+          "opponent": "TB"
+        },
+        "8": {
+          "game_id": "2026_08_CAR_GB",
+          "home": false,
+          "opponent": "GB"
+        },
+        "9": {
+          "game_id": "2026_09_DEN_CAR",
+          "home": true,
+          "opponent": "DEN"
+        }
+      }
+    },
+    "CHI": {
+      "weeks": {
+        "10": {
+          "bye": true
+        },
+        "11": {
+          "game_id": "2026_11_NO_CHI",
+          "home": true,
+          "opponent": "NO"
+        },
+        "12": {
+          "game_id": "2026_12_CHI_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "13": {
+          "game_id": "2026_13_JAX_CHI",
+          "home": true,
+          "opponent": "JAX"
+        },
+        "14": {
+          "game_id": "2026_14_CHI_MIA",
+          "home": false,
+          "opponent": "MIA"
+        },
+        "15": {
+          "game_id": "2026_15_CHI_BUF",
+          "home": false,
+          "opponent": "BUF"
+        },
+        "16": {
+          "game_id": "2026_16_GB_CHI",
+          "home": true,
+          "opponent": "GB"
+        },
+        "17": {
+          "game_id": "2026_17_DET_CHI",
+          "home": true,
+          "opponent": "DET"
+        },
+        "7": {
+          "game_id": "2026_07_NE_CHI",
+          "home": true,
+          "opponent": "NE"
+        },
+        "8": {
+          "game_id": "2026_08_CHI_SEA",
+          "home": false,
+          "opponent": "SEA"
+        },
+        "9": {
+          "game_id": "2026_09_TB_CHI",
+          "home": true,
+          "opponent": "TB"
+        }
+      }
+    },
+    "CIN": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_PIT_CIN",
+          "home": true,
+          "opponent": "PIT"
+        },
+        "11": {
+          "game_id": "2026_11_CIN_WAS",
+          "home": false,
+          "opponent": "WAS"
+        },
+        "12": {
+          "game_id": "2026_12_NO_CIN",
+          "home": true,
+          "opponent": "NO"
+        },
+        "13": {
+          "game_id": "2026_13_CIN_CLE",
+          "home": false,
+          "opponent": "CLE"
+        },
+        "14": {
+          "game_id": "2026_14_KC_CIN",
+          "home": true,
+          "opponent": "KC"
+        },
+        "15": {
+          "game_id": "2026_15_CIN_CAR",
+          "home": false,
+          "opponent": "CAR"
+        },
+        "16": {
+          "game_id": "2026_16_CIN_IND",
+          "home": false,
+          "opponent": "IND"
+        },
+        "17": {
+          "game_id": "2026_17_BAL_CIN",
+          "home": true,
+          "opponent": "BAL"
+        },
+        "7": {
+          "game_id": "2026_07_CIN_BAL",
+          "home": false,
+          "opponent": "BAL"
+        },
+        "8": {
+          "game_id": "2026_08_TEN_CIN",
+          "home": true,
+          "opponent": "TEN"
+        },
+        "9": {
+          "game_id": "2026_09_CIN_ATL",
+          "home": false,
+          "opponent": "ATL"
+        }
+      }
+    },
+    "CLE": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_HOU_CLE",
+          "home": true,
+          "opponent": "HOU"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_LV_CLE",
+          "home": true,
+          "opponent": "LV"
+        },
+        "13": {
+          "game_id": "2026_13_CIN_CLE",
+          "home": true,
+          "opponent": "CIN"
+        },
+        "14": {
+          "game_id": "2026_14_ATL_CLE",
+          "home": true,
+          "opponent": "ATL"
+        },
+        "15": {
+          "game_id": "2026_15_CLE_NYG",
+          "home": false,
+          "opponent": "NYG"
+        },
+        "16": {
+          "game_id": "2026_16_CLE_BAL",
+          "home": false,
+          "opponent": "BAL"
+        },
+        "17": {
+          "game_id": "2026_17_IND_CLE",
+          "home": true,
+          "opponent": "IND"
+        },
+        "7": {
+          "game_id": "2026_07_CLE_TEN",
+          "home": false,
+          "opponent": "TEN"
+        },
+        "8": {
+          "game_id": "2026_08_CLE_PIT",
+          "home": false,
+          "opponent": "PIT"
+        },
+        "9": {
+          "game_id": "2026_09_CLE_NO",
+          "home": false,
+          "opponent": "NO"
+        }
+      }
+    },
+    "DAL": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_SF_DAL",
+          "home": true,
+          "opponent": "SF"
+        },
+        "11": {
+          "game_id": "2026_11_TEN_DAL",
+          "home": true,
+          "opponent": "TEN"
+        },
+        "12": {
+          "game_id": "2026_12_PHI_DAL",
+          "home": true,
+          "opponent": "PHI"
+        },
+        "13": {
+          "game_id": "2026_13_DAL_SEA",
+          "home": false,
+          "opponent": "SEA"
+        },
+        "14": {
+          "bye": true
+        },
+        "15": {
+          "game_id": "2026_15_DAL_LA",
+          "home": false,
+          "opponent": "LA"
+        },
+        "16": {
+          "game_id": "2026_16_JAX_DAL",
+          "home": true,
+          "opponent": "JAX"
+        },
+        "17": {
+          "game_id": "2026_17_NYG_DAL",
+          "home": true,
+          "opponent": "NYG"
+        },
+        "7": {
+          "game_id": "2026_07_DAL_PHI",
+          "home": false,
+          "opponent": "PHI"
+        },
+        "8": {
+          "game_id": "2026_08_ARI_DAL",
+          "home": true,
+          "opponent": "ARI"
+        },
+        "9": {
+          "game_id": "2026_09_DAL_IND",
+          "home": false,
+          "opponent": "IND"
+        }
+      }
+    },
+    "DEN": {
+      "weeks": {
+        "10": {
+          "bye": true
+        },
+        "11": {
+          "game_id": "2026_11_LV_DEN",
+          "home": true,
+          "opponent": "LV"
+        },
+        "12": {
+          "game_id": "2026_12_DEN_PIT",
+          "home": false,
+          "opponent": "PIT"
+        },
+        "13": {
+          "game_id": "2026_13_MIA_DEN",
+          "home": true,
+          "opponent": "MIA"
+        },
+        "14": {
+          "game_id": "2026_14_DEN_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "15": {
+          "game_id": "2026_15_DEN_LV",
+          "home": false,
+          "opponent": "LV"
+        },
+        "16": {
+          "game_id": "2026_16_BUF_DEN",
+          "home": true,
+          "opponent": "BUF"
+        },
+        "17": {
+          "game_id": "2026_17_DEN_NE",
+          "home": false,
+          "opponent": "NE"
+        },
+        "7": {
+          "game_id": "2026_07_DEN_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "8": {
+          "game_id": "2026_08_KC_DEN",
+          "home": true,
+          "opponent": "KC"
+        },
+        "9": {
+          "game_id": "2026_09_DEN_CAR",
+          "home": false,
+          "opponent": "CAR"
+        }
+      }
+    },
+    "DET": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_NE_DET",
+          "home": true,
+          "opponent": "NE"
+        },
+        "11": {
+          "game_id": "2026_11_TB_DET",
+          "home": true,
+          "opponent": "TB"
+        },
+        "12": {
+          "game_id": "2026_12_CHI_DET",
+          "home": true,
+          "opponent": "CHI"
+        },
+        "13": {
+          "game_id": "2026_13_DET_ATL",
+          "home": false,
+          "opponent": "ATL"
+        },
+        "14": {
+          "game_id": "2026_14_TEN_DET",
+          "home": true,
+          "opponent": "TEN"
+        },
+        "15": {
+          "game_id": "2026_15_DET_MIN",
+          "home": false,
+          "opponent": "MIN"
+        },
+        "16": {
+          "game_id": "2026_16_NYG_DET",
+          "home": true,
+          "opponent": "NYG"
+        },
+        "17": {
+          "game_id": "2026_17_DET_CHI",
+          "home": false,
+          "opponent": "CHI"
+        },
+        "7": {
+          "game_id": "2026_07_GB_DET",
+          "home": true,
+          "opponent": "GB"
+        },
+        "8": {
+          "game_id": "2026_08_MIN_DET",
+          "home": true,
+          "opponent": "MIN"
+        },
+        "9": {
+          "game_id": "2026_09_DET_MIA",
+          "home": false,
+          "opponent": "MIA"
+        }
+      }
+    },
+    "GB": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_MIN_GB",
+          "home": true,
+          "opponent": "MIN"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_GB_LA",
+          "home": false,
+          "opponent": "LA"
+        },
+        "13": {
+          "game_id": "2026_13_GB_NO",
+          "home": false,
+          "opponent": "NO"
+        },
+        "14": {
+          "game_id": "2026_14_BUF_GB",
+          "home": true,
+          "opponent": "BUF"
+        },
+        "15": {
+          "game_id": "2026_15_MIA_GB",
+          "home": true,
+          "opponent": "MIA"
+        },
+        "16": {
+          "game_id": "2026_16_GB_CHI",
+          "home": false,
+          "opponent": "CHI"
+        },
+        "17": {
+          "game_id": "2026_17_HOU_GB",
+          "home": true,
+          "opponent": "HOU"
+        },
+        "7": {
+          "game_id": "2026_07_GB_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "8": {
+          "game_id": "2026_08_CAR_GB",
+          "home": true,
+          "opponent": "CAR"
+        },
+        "9": {
+          "game_id": "2026_09_GB_NE",
+          "home": false,
+          "opponent": "NE"
+        }
+      }
+    },
+    "HOU": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_HOU_CLE",
+          "home": false,
+          "opponent": "CLE"
+        },
+        "11": {
+          "game_id": "2026_11_IND_HOU",
+          "home": true,
+          "opponent": "IND"
+        },
+        "12": {
+          "game_id": "2026_12_BAL_HOU",
+          "home": true,
+          "opponent": "BAL"
+        },
+        "13": {
+          "game_id": "2026_13_HOU_PIT",
+          "home": false,
+          "opponent": "PIT"
+        },
+        "14": {
+          "game_id": "2026_14_HOU_WAS",
+          "home": false,
+          "opponent": "WAS"
+        },
+        "15": {
+          "game_id": "2026_15_JAX_HOU",
+          "home": true,
+          "opponent": "JAX"
+        },
+        "16": {
+          "game_id": "2026_16_HOU_PHI",
+          "home": false,
+          "opponent": "PHI"
+        },
+        "17": {
+          "game_id": "2026_17_HOU_GB",
+          "home": false,
+          "opponent": "GB"
+        },
+        "7": {
+          "game_id": "2026_07_NYG_HOU",
+          "home": true,
+          "opponent": "NYG"
+        },
+        "8": {
+          "bye": true
+        },
+        "9": {
+          "game_id": "2026_09_HOU_LAC",
+          "home": false,
+          "opponent": "LAC"
+        }
+      }
+    },
+    "IND": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_MIA_IND",
+          "home": true,
+          "opponent": "MIA"
+        },
+        "11": {
+          "game_id": "2026_11_IND_HOU",
+          "home": false,
+          "opponent": "HOU"
+        },
+        "12": {
+          "game_id": "2026_12_NYG_IND",
+          "home": true,
+          "opponent": "NYG"
+        },
+        "13": {
+          "bye": true
+        },
+        "14": {
+          "game_id": "2026_14_IND_PHI",
+          "home": false,
+          "opponent": "PHI"
+        },
+        "15": {
+          "game_id": "2026_15_IND_TEN",
+          "home": false,
+          "opponent": "TEN"
+        },
+        "16": {
+          "game_id": "2026_16_CIN_IND",
+          "home": true,
+          "opponent": "CIN"
+        },
+        "17": {
+          "game_id": "2026_17_IND_CLE",
+          "home": false,
+          "opponent": "CLE"
+        },
+        "7": {
+          "game_id": "2026_07_IND_MIN",
+          "home": false,
+          "opponent": "MIN"
+        },
+        "8": {
+          "game_id": "2026_08_IND_JAX",
+          "home": false,
+          "opponent": "JAX"
+        },
+        "9": {
+          "game_id": "2026_09_DAL_IND",
+          "home": true,
+          "opponent": "DAL"
+        }
+      }
+    },
+    "JAX": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_JAX_TEN",
+          "home": false,
+          "opponent": "TEN"
+        },
+        "11": {
+          "game_id": "2026_11_JAX_NYG",
+          "home": false,
+          "opponent": "NYG"
+        },
+        "12": {
+          "game_id": "2026_12_TEN_JAX",
+          "home": true,
+          "opponent": "TEN"
+        },
+        "13": {
+          "game_id": "2026_13_JAX_CHI",
+          "home": false,
+          "opponent": "CHI"
+        },
+        "14": {
+          "game_id": "2026_14_PIT_JAX",
+          "home": true,
+          "opponent": "PIT"
+        },
+        "15": {
+          "game_id": "2026_15_JAX_HOU",
+          "home": false,
+          "opponent": "HOU"
+        },
+        "16": {
+          "game_id": "2026_16_JAX_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "17": {
+          "game_id": "2026_17_WAS_JAX",
+          "home": true,
+          "opponent": "WAS"
+        },
+        "7": {
+          "bye": true
+        },
+        "8": {
+          "game_id": "2026_08_IND_JAX",
+          "home": true,
+          "opponent": "IND"
+        },
+        "9": {
+          "game_id": "2026_09_JAX_BAL",
+          "home": false,
+          "opponent": "BAL"
+        }
+      }
+    },
+    "KC": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_KC_ATL",
+          "home": false,
+          "opponent": "ATL"
+        },
+        "11": {
+          "game_id": "2026_11_ARI_KC",
+          "home": true,
+          "opponent": "ARI"
+        },
+        "12": {
+          "game_id": "2026_12_KC_BUF",
+          "home": false,
+          "opponent": "BUF"
+        },
+        "13": {
+          "game_id": "2026_13_KC_LA",
+          "home": false,
+          "opponent": "LA"
+        },
+        "14": {
+          "game_id": "2026_14_KC_CIN",
+          "home": false,
+          "opponent": "CIN"
+        },
+        "15": {
+          "game_id": "2026_15_NE_KC",
+          "home": true,
+          "opponent": "NE"
+        },
+        "16": {
+          "game_id": "2026_16_SF_KC",
+          "home": true,
+          "opponent": "SF"
+        },
+        "17": {
+          "game_id": "2026_17_KC_LAC",
+          "home": false,
+          "opponent": "LAC"
+        },
+        "7": {
+          "game_id": "2026_07_KC_SEA",
+          "home": false,
+          "opponent": "SEA"
+        },
+        "8": {
+          "game_id": "2026_08_KC_DEN",
+          "home": false,
+          "opponent": "DEN"
+        },
+        "9": {
+          "game_id": "2026_09_NYJ_KC",
+          "home": true,
+          "opponent": "NYJ"
+        }
+      }
+    },
+    "LA": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_LA_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_GB_LA",
+          "home": true,
+          "opponent": "GB"
+        },
+        "13": {
+          "game_id": "2026_13_KC_LA",
+          "home": true,
+          "opponent": "KC"
+        },
+        "14": {
+          "game_id": "2026_14_LA_SF",
+          "home": false,
+          "opponent": "SF"
+        },
+        "15": {
+          "game_id": "2026_15_DAL_LA",
+          "home": true,
+          "opponent": "DAL"
+        },
+        "16": {
+          "game_id": "2026_16_LA_SEA",
+          "home": false,
+          "opponent": "SEA"
+        },
+        "17": {
+          "game_id": "2026_17_LA_TB",
+          "home": false,
+          "opponent": "TB"
+        },
+        "7": {
+          "game_id": "2026_07_LA_LV",
+          "home": false,
+          "opponent": "LV"
+        },
+        "8": {
+          "game_id": "2026_08_LAC_LA",
+          "home": true,
+          "opponent": "LAC"
+        },
+        "9": {
+          "game_id": "2026_09_LA_WAS",
+          "home": false,
+          "opponent": "WAS"
+        }
+      }
+    },
+    "LAC": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_LAC_BAL",
+          "home": false,
+          "opponent": "BAL"
+        },
+        "11": {
+          "game_id": "2026_11_NYJ_LAC",
+          "home": true,
+          "opponent": "NYJ"
+        },
+        "12": {
+          "game_id": "2026_12_NE_LAC",
+          "home": true,
+          "opponent": "NE"
+        },
+        "13": {
+          "game_id": "2026_13_LAC_TB",
+          "home": false,
+          "opponent": "TB"
+        },
+        "14": {
+          "game_id": "2026_14_LAC_LV",
+          "home": false,
+          "opponent": "LV"
+        },
+        "15": {
+          "game_id": "2026_15_SF_LAC",
+          "home": true,
+          "opponent": "SF"
+        },
+        "16": {
+          "game_id": "2026_16_LAC_MIA",
+          "home": false,
+          "opponent": "MIA"
+        },
+        "17": {
+          "game_id": "2026_17_KC_LAC",
+          "home": true,
+          "opponent": "KC"
+        },
+        "7": {
+          "bye": true
+        },
+        "8": {
+          "game_id": "2026_08_LAC_LA",
+          "home": false,
+          "opponent": "LA"
+        },
+        "9": {
+          "game_id": "2026_09_HOU_LAC",
+          "home": true,
+          "opponent": "HOU"
+        }
+      }
+    },
+    "LV": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_SEA_LV",
+          "home": true,
+          "opponent": "SEA"
+        },
+        "11": {
+          "game_id": "2026_11_LV_DEN",
+          "home": false,
+          "opponent": "DEN"
+        },
+        "12": {
+          "game_id": "2026_12_LV_CLE",
+          "home": false,
+          "opponent": "CLE"
+        },
+        "13": {
+          "bye": true
+        },
+        "14": {
+          "game_id": "2026_14_LAC_LV",
+          "home": true,
+          "opponent": "LAC"
+        },
+        "15": {
+          "game_id": "2026_15_DEN_LV",
+          "home": true,
+          "opponent": "DEN"
+        },
+        "16": {
+          "game_id": "2026_16_TEN_LV",
+          "home": true,
+          "opponent": "TEN"
+        },
+        "17": {
+          "game_id": "2026_17_LV_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "7": {
+          "game_id": "2026_07_LA_LV",
+          "home": true,
+          "opponent": "LA"
+        },
+        "8": {
+          "game_id": "2026_08_LV_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "9": {
+          "game_id": "2026_09_LV_SF",
+          "home": false,
+          "opponent": "SF"
+        }
+      }
+    },
+    "MIA": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_MIA_IND",
+          "home": false,
+          "opponent": "IND"
+        },
+        "11": {
+          "game_id": "2026_11_MIA_BUF",
+          "home": false,
+          "opponent": "BUF"
+        },
+        "12": {
+          "game_id": "2026_12_NYJ_MIA",
+          "home": true,
+          "opponent": "NYJ"
+        },
+        "13": {
+          "game_id": "2026_13_MIA_DEN",
+          "home": false,
+          "opponent": "DEN"
+        },
+        "14": {
+          "game_id": "2026_14_CHI_MIA",
+          "home": true,
+          "opponent": "CHI"
+        },
+        "15": {
+          "game_id": "2026_15_MIA_GB",
+          "home": false,
+          "opponent": "GB"
+        },
+        "16": {
+          "game_id": "2026_16_LAC_MIA",
+          "home": true,
+          "opponent": "LAC"
+        },
+        "17": {
+          "game_id": "2026_17_BUF_MIA",
+          "home": true,
+          "opponent": "BUF"
+        },
+        "7": {
+          "game_id": "2026_07_MIA_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "8": {
+          "game_id": "2026_08_NE_MIA",
+          "home": true,
+          "opponent": "NE"
+        },
+        "9": {
+          "game_id": "2026_09_DET_MIA",
+          "home": true,
+          "opponent": "DET"
+        }
+      }
+    },
+    "MIN": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_MIN_GB",
+          "home": false,
+          "opponent": "GB"
+        },
+        "11": {
+          "game_id": "2026_11_MIN_SF",
+          "home": false,
+          "opponent": "SF"
+        },
+        "12": {
+          "game_id": "2026_12_ATL_MIN",
+          "home": true,
+          "opponent": "ATL"
+        },
+        "13": {
+          "game_id": "2026_13_CAR_MIN",
+          "home": true,
+          "opponent": "CAR"
+        },
+        "14": {
+          "game_id": "2026_14_MIN_NE",
+          "home": false,
+          "opponent": "NE"
+        },
+        "15": {
+          "game_id": "2026_15_DET_MIN",
+          "home": true,
+          "opponent": "DET"
+        },
+        "16": {
+          "game_id": "2026_16_WAS_MIN",
+          "home": true,
+          "opponent": "WAS"
+        },
+        "17": {
+          "game_id": "2026_17_MIN_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "7": {
+          "game_id": "2026_07_IND_MIN",
+          "home": true,
+          "opponent": "IND"
+        },
+        "8": {
+          "game_id": "2026_08_MIN_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "9": {
+          "game_id": "2026_09_BUF_MIN",
+          "home": true,
+          "opponent": "BUF"
+        }
+      }
+    },
+    "NE": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_NE_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_NE_LAC",
+          "home": false,
+          "opponent": "LAC"
+        },
+        "13": {
+          "game_id": "2026_13_BUF_NE",
+          "home": true,
+          "opponent": "BUF"
+        },
+        "14": {
+          "game_id": "2026_14_MIN_NE",
+          "home": true,
+          "opponent": "MIN"
+        },
+        "15": {
+          "game_id": "2026_15_NE_KC",
+          "home": false,
+          "opponent": "KC"
+        },
+        "16": {
+          "game_id": "2026_16_NE_NYJ",
+          "home": false,
+          "opponent": "NYJ"
+        },
+        "17": {
+          "game_id": "2026_17_DEN_NE",
+          "home": true,
+          "opponent": "DEN"
+        },
+        "7": {
+          "game_id": "2026_07_NE_CHI",
+          "home": false,
+          "opponent": "CHI"
+        },
+        "8": {
+          "game_id": "2026_08_NE_MIA",
+          "home": false,
+          "opponent": "MIA"
+        },
+        "9": {
+          "game_id": "2026_09_GB_NE",
+          "home": true,
+          "opponent": "GB"
+        }
+      }
+    },
+    "NO": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_CAR_NO",
+          "home": true,
+          "opponent": "CAR"
+        },
+        "11": {
+          "game_id": "2026_11_NO_CHI",
+          "home": false,
+          "opponent": "CHI"
+        },
+        "12": {
+          "game_id": "2026_12_NO_CIN",
+          "home": false,
+          "opponent": "CIN"
+        },
+        "13": {
+          "game_id": "2026_13_GB_NO",
+          "home": true,
+          "opponent": "GB"
+        },
+        "14": {
+          "game_id": "2026_14_NO_CAR",
+          "home": false,
+          "opponent": "CAR"
+        },
+        "15": {
+          "game_id": "2026_15_NO_TB",
+          "home": false,
+          "opponent": "TB"
+        },
+        "16": {
+          "game_id": "2026_16_ARI_NO",
+          "home": true,
+          "opponent": "ARI"
+        },
+        "17": {
+          "game_id": "2026_17_NO_ATL",
+          "home": false,
+          "opponent": "ATL"
+        },
+        "7": {
+          "game_id": "2026_07_PIT_NO",
+          "home": true,
+          "opponent": "PIT"
+        },
+        "8": {
+          "bye": true
+        },
+        "9": {
+          "game_id": "2026_09_CLE_NO",
+          "home": true,
+          "opponent": "CLE"
+        }
+      }
+    },
+    "NYG": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_WAS_NYG",
+          "home": true,
+          "opponent": "WAS"
+        },
+        "11": {
+          "game_id": "2026_11_JAX_NYG",
+          "home": true,
+          "opponent": "JAX"
+        },
+        "12": {
+          "game_id": "2026_12_NYG_IND",
+          "home": false,
+          "opponent": "IND"
+        },
+        "13": {
+          "game_id": "2026_13_SF_NYG",
+          "home": true,
+          "opponent": "SF"
+        },
+        "14": {
+          "game_id": "2026_14_NYG_SEA",
+          "home": false,
+          "opponent": "SEA"
+        },
+        "15": {
+          "game_id": "2026_15_CLE_NYG",
+          "home": true,
+          "opponent": "CLE"
+        },
+        "16": {
+          "game_id": "2026_16_NYG_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "17": {
+          "game_id": "2026_17_NYG_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "7": {
+          "game_id": "2026_07_NYG_HOU",
+          "home": false,
+          "opponent": "HOU"
+        },
+        "8": {
+          "bye": true
+        },
+        "9": {
+          "game_id": "2026_09_NYG_PHI",
+          "home": false,
+          "opponent": "PHI"
+        }
+      }
+    },
+    "NYJ": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_BUF_NYJ",
+          "home": true,
+          "opponent": "BUF"
+        },
+        "11": {
+          "game_id": "2026_11_NYJ_LAC",
+          "home": false,
+          "opponent": "LAC"
+        },
+        "12": {
+          "game_id": "2026_12_NYJ_MIA",
+          "home": false,
+          "opponent": "MIA"
+        },
+        "13": {
+          "bye": true
+        },
+        "14": {
+          "game_id": "2026_14_DEN_NYJ",
+          "home": true,
+          "opponent": "DEN"
+        },
+        "15": {
+          "game_id": "2026_15_NYJ_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "16": {
+          "game_id": "2026_16_NE_NYJ",
+          "home": true,
+          "opponent": "NE"
+        },
+        "17": {
+          "game_id": "2026_17_MIN_NYJ",
+          "home": true,
+          "opponent": "MIN"
+        },
+        "7": {
+          "game_id": "2026_07_MIA_NYJ",
+          "home": true,
+          "opponent": "MIA"
+        },
+        "8": {
+          "game_id": "2026_08_LV_NYJ",
+          "home": true,
+          "opponent": "LV"
+        },
+        "9": {
+          "game_id": "2026_09_NYJ_KC",
+          "home": false,
+          "opponent": "KC"
+        }
+      }
+    },
+    "PHI": {
+      "weeks": {
+        "10": {
+          "bye": true
+        },
+        "11": {
+          "game_id": "2026_11_PIT_PHI",
+          "home": true,
+          "opponent": "PIT"
+        },
+        "12": {
+          "game_id": "2026_12_PHI_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "13": {
+          "game_id": "2026_13_PHI_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "14": {
+          "game_id": "2026_14_IND_PHI",
+          "home": true,
+          "opponent": "IND"
+        },
+        "15": {
+          "game_id": "2026_15_SEA_PHI",
+          "home": true,
+          "opponent": "SEA"
+        },
+        "16": {
+          "game_id": "2026_16_HOU_PHI",
+          "home": true,
+          "opponent": "HOU"
+        },
+        "17": {
+          "game_id": "2026_17_PHI_SF",
+          "home": false,
+          "opponent": "SF"
+        },
+        "7": {
+          "game_id": "2026_07_DAL_PHI",
+          "home": true,
+          "opponent": "DAL"
+        },
+        "8": {
+          "game_id": "2026_08_PHI_WAS",
+          "home": false,
+          "opponent": "WAS"
+        },
+        "9": {
+          "game_id": "2026_09_NYG_PHI",
+          "home": true,
+          "opponent": "NYG"
+        }
+      }
+    },
+    "PIT": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_PIT_CIN",
+          "home": false,
+          "opponent": "CIN"
+        },
+        "11": {
+          "game_id": "2026_11_PIT_PHI",
+          "home": false,
+          "opponent": "PHI"
+        },
+        "12": {
+          "game_id": "2026_12_DEN_PIT",
+          "home": true,
+          "opponent": "DEN"
+        },
+        "13": {
+          "game_id": "2026_13_HOU_PIT",
+          "home": true,
+          "opponent": "HOU"
+        },
+        "14": {
+          "game_id": "2026_14_PIT_JAX",
+          "home": false,
+          "opponent": "JAX"
+        },
+        "15": {
+          "game_id": "2026_15_BAL_PIT",
+          "home": true,
+          "opponent": "BAL"
+        },
+        "16": {
+          "game_id": "2026_16_CAR_PIT",
+          "home": true,
+          "opponent": "CAR"
+        },
+        "17": {
+          "game_id": "2026_17_PIT_TEN",
+          "home": false,
+          "opponent": "TEN"
+        },
+        "7": {
+          "game_id": "2026_07_PIT_NO",
+          "home": false,
+          "opponent": "NO"
+        },
+        "8": {
+          "game_id": "2026_08_CLE_PIT",
+          "home": true,
+          "opponent": "CLE"
+        },
+        "9": {
+          "bye": true
+        }
+      }
+    },
+    "SEA": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_SEA_LV",
+          "home": false,
+          "opponent": "LV"
+        },
+        "11": {
+          "bye": true
+        },
+        "12": {
+          "game_id": "2026_12_SEA_SF",
+          "home": false,
+          "opponent": "SF"
+        },
+        "13": {
+          "game_id": "2026_13_DAL_SEA",
+          "home": true,
+          "opponent": "DAL"
+        },
+        "14": {
+          "game_id": "2026_14_NYG_SEA",
+          "home": true,
+          "opponent": "NYG"
+        },
+        "15": {
+          "game_id": "2026_15_SEA_PHI",
+          "home": false,
+          "opponent": "PHI"
+        },
+        "16": {
+          "game_id": "2026_16_LA_SEA",
+          "home": true,
+          "opponent": "LA"
+        },
+        "17": {
+          "game_id": "2026_17_SEA_CAR",
+          "home": false,
+          "opponent": "CAR"
+        },
+        "7": {
+          "game_id": "2026_07_KC_SEA",
+          "home": true,
+          "opponent": "KC"
+        },
+        "8": {
+          "game_id": "2026_08_CHI_SEA",
+          "home": true,
+          "opponent": "CHI"
+        },
+        "9": {
+          "game_id": "2026_09_ARI_SEA",
+          "home": true,
+          "opponent": "ARI"
+        }
+      }
+    },
+    "SF": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_SF_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "11": {
+          "game_id": "2026_11_MIN_SF",
+          "home": true,
+          "opponent": "MIN"
+        },
+        "12": {
+          "game_id": "2026_12_SEA_SF",
+          "home": true,
+          "opponent": "SEA"
+        },
+        "13": {
+          "game_id": "2026_13_SF_NYG",
+          "home": false,
+          "opponent": "NYG"
+        },
+        "14": {
+          "game_id": "2026_14_LA_SF",
+          "home": true,
+          "opponent": "LA"
+        },
+        "15": {
+          "game_id": "2026_15_SF_LAC",
+          "home": false,
+          "opponent": "LAC"
+        },
+        "16": {
+          "game_id": "2026_16_SF_KC",
+          "home": false,
+          "opponent": "KC"
+        },
+        "17": {
+          "game_id": "2026_17_PHI_SF",
+          "home": true,
+          "opponent": "PHI"
+        },
+        "7": {
+          "game_id": "2026_07_SF_ATL",
+          "home": false,
+          "opponent": "ATL"
+        },
+        "8": {
+          "bye": true
+        },
+        "9": {
+          "game_id": "2026_09_LV_SF",
+          "home": true,
+          "opponent": "LV"
+        }
+      }
+    },
+    "TB": {
+      "weeks": {
+        "10": {
+          "bye": true
+        },
+        "11": {
+          "game_id": "2026_11_TB_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "12": {
+          "game_id": "2026_12_CAR_TB",
+          "home": true,
+          "opponent": "CAR"
+        },
+        "13": {
+          "game_id": "2026_13_LAC_TB",
+          "home": true,
+          "opponent": "LAC"
+        },
+        "14": {
+          "game_id": "2026_14_TB_BAL",
+          "home": false,
+          "opponent": "BAL"
+        },
+        "15": {
+          "game_id": "2026_15_NO_TB",
+          "home": true,
+          "opponent": "NO"
+        },
+        "16": {
+          "game_id": "2026_16_TB_ATL",
+          "home": false,
+          "opponent": "ATL"
+        },
+        "17": {
+          "game_id": "2026_17_LA_TB",
+          "home": true,
+          "opponent": "LA"
+        },
+        "7": {
+          "game_id": "2026_07_TB_CAR",
+          "home": false,
+          "opponent": "CAR"
+        },
+        "8": {
+          "game_id": "2026_08_ATL_TB",
+          "home": true,
+          "opponent": "ATL"
+        },
+        "9": {
+          "game_id": "2026_09_TB_CHI",
+          "home": false,
+          "opponent": "CHI"
+        }
+      }
+    },
+    "TEN": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_JAX_TEN",
+          "home": true,
+          "opponent": "JAX"
+        },
+        "11": {
+          "game_id": "2026_11_TEN_DAL",
+          "home": false,
+          "opponent": "DAL"
+        },
+        "12": {
+          "game_id": "2026_12_TEN_JAX",
+          "home": false,
+          "opponent": "JAX"
+        },
+        "13": {
+          "game_id": "2026_13_WAS_TEN",
+          "home": true,
+          "opponent": "WAS"
+        },
+        "14": {
+          "game_id": "2026_14_TEN_DET",
+          "home": false,
+          "opponent": "DET"
+        },
+        "15": {
+          "game_id": "2026_15_IND_TEN",
+          "home": true,
+          "opponent": "IND"
+        },
+        "16": {
+          "game_id": "2026_16_TEN_LV",
+          "home": false,
+          "opponent": "LV"
+        },
+        "17": {
+          "game_id": "2026_17_PIT_TEN",
+          "home": true,
+          "opponent": "PIT"
+        },
+        "7": {
+          "game_id": "2026_07_CLE_TEN",
+          "home": true,
+          "opponent": "CLE"
+        },
+        "8": {
+          "game_id": "2026_08_TEN_CIN",
+          "home": false,
+          "opponent": "CIN"
+        },
+        "9": {
+          "bye": true
+        }
+      }
+    },
+    "WAS": {
+      "weeks": {
+        "10": {
+          "game_id": "2026_10_WAS_NYG",
+          "home": false,
+          "opponent": "NYG"
+        },
+        "11": {
+          "game_id": "2026_11_CIN_WAS",
+          "home": true,
+          "opponent": "CIN"
+        },
+        "12": {
+          "game_id": "2026_12_WAS_ARI",
+          "home": false,
+          "opponent": "ARI"
+        },
+        "13": {
+          "game_id": "2026_13_WAS_TEN",
+          "home": false,
+          "opponent": "TEN"
+        },
+        "14": {
+          "game_id": "2026_14_HOU_WAS",
+          "home": true,
+          "opponent": "HOU"
+        },
+        "15": {
+          "game_id": "2026_15_ATL_WAS",
+          "home": true,
+          "opponent": "ATL"
+        },
+        "16": {
+          "game_id": "2026_16_WAS_MIN",
+          "home": false,
+          "opponent": "MIN"
+        },
+        "17": {
+          "game_id": "2026_17_WAS_JAX",
+          "home": false,
+          "opponent": "JAX"
+        },
+        "7": {
+          "bye": true
+        },
+        "8": {
+          "game_id": "2026_08_PHI_WAS",
+          "home": true,
+          "opponent": "PHI"
+        },
+        "9": {
+          "game_id": "2026_09_LA_WAS",
+          "home": true,
+          "opponent": "LA"
+        }
+      }
+    }
+  }
+}
