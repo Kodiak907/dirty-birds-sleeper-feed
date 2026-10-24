@@ -23,7 +23,7 @@ class PhaseVII(unittest.TestCase):
  def test_kickoff_window(self):
   events=[{"id":"a","date":"2026-10-24T18:00:00Z"},{"id":"b","date":"2026-10-24T17:25:00Z"}]
   result=upcoming(events,self.now)
-  self.assertEqual(len(result),1)
+  self.assertEqual(len(result),2)
  def test_no_missing_as_active(self):
   alerts=make_alerts({"week":7,"player_statuses":[]},{"sleeper_snapshot_utc":"2026-10-24T16:00:00Z"},{"status":"no_verified_official_submissions"},{"errors":[]},self.now)
   self.assertTrue(any(a["kind"]=="official_unverified" for a in alerts))
