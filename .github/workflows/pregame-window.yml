@@ -1,5 +1,9 @@
 name: Pregame Inactive Window Check
 on:
+  push:
+    paths:
+      - 'gameday_window_check.py'
+      - '.github/workflows/pregame-window.yml'
   workflow_dispatch:
   schedule:
     # GitHub scheduled jobs are UTC and can be delayed. Quarter-hour
