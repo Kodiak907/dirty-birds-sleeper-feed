@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'gameday_window_check.py'
+      - 'fetch_game_inactives.py'
       - 'gameday_alerts.py'
       - 'gameday_injury_scenarios.py'
       - 'test_phase_vii.py'
