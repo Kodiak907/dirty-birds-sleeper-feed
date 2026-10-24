@@ -82,5 +82,5 @@ def main():
     ap.add_argument("--projections",default="data/ros_projections.json")
     args=ap.parse_args()
     try:run(args.give,args.receive,args.projections)
-    except (ValueError,FileNotFoundError) as e:sys.exit("VALUTION INPUT ERROR: "+str(e))
+    except (ValueError,FileNotFoundError) as e:sys.exit("VALUATION INPUT ERROR: "+str(e))
 if __name__=="__main__":main()
