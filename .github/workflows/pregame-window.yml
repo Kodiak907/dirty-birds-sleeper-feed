@@ -1,0 +1,36 @@
+name: Pregame Inactive Window Check
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub scheduled jobs are UTC and can be delayed. Quarter-hour
+    # polling plus the 45–75 min before actual kickoff gate handles DST
+    # and Thursday/Sunday/Monday early, afternoon and night starts.
+    - cron: '0,15,30,45 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: sleeper-sync
+  cancel-in-progress: false
+jobs:
+  pregame:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate kickoff time and check inactives conditionally
+        env:
+          SLEEPER_LEAGUE_ID: '1399157532559192064'
+        run: python gameday_window_check.py
+      - name: Publish changed gameday reports if any
+        run: |
+          git config user.name "Dirty Birds Data Bot"
+          git config user.email "dirty-birds-data-bot@users.noreply.github.com"
+          git add data/GAMEDAY_WINDOW_CHECK.json data/GAME_INACTIVES_EVIDENCE.json data/OFFICIAL_INACTIVE_VERIFICATION.json data/GAMEDAY_DECISION.json data/GAMEDAY_DECISION.md data/latest.json data/player_names.json data/player_metadata.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Pregame read-only availability window check"
+            git pull --rebase -X theirs origin main
+            git push origin HEAD:main
+          fi
