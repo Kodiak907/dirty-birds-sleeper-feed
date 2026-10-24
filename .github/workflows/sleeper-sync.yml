@@ -10,6 +10,7 @@ on:
       - 'lineup_impact.py'
       - 'weekly_lineups.py'
       - 'pregame_calibration.py'
+      - 'decision_backtest.py'
       - 'fetch_opportunity.py'
       - 'fetch_schedule.py'
       - 'trade_simulator.py'
@@ -51,6 +52,7 @@ jobs:
             python lineup_impact.py
             python weekly_lineups.py
             python pregame_calibration.py
+            python decision_backtest.py
 
       - name: Commit changed data
         run: |
