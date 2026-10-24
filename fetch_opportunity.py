@@ -64,7 +64,8 @@ def main():
     if nums:p[out]=round(sum(nums)/len(nums),2)
    if g=="injuries":
     latest=recent[-1]
-    p["injury_report_record"]={k:latest.get(k) for k in ("week","report_status","report_primary_injury","report_secondary_injury","practice_status","date_modified") if latest.get(k)}\n    p["injury_report_observations"]=len(values)
+    p["injury_report_record"]={k:latest.get(k) for k in ("week","report_status","report_primary_injury","report_secondary_injury","practice_status","date_modified") if latest.get(k)}
+    p["injury_report_observations"]=len(values)
    p[g+"_weeks_observed"]=len(values)
   p["as_of"]=now
   p["source"]=", ".join(URLS[g] for g in groups)
