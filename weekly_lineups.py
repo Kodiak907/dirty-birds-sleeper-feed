@@ -40,6 +40,7 @@ def main():
   lineup=weekly_lineup(eligible,names,ros["players"],week)
   for p in lineup.get("starters",[]):
    team=names.get(p["id"],{}).get("team")
+   team={"LAR":"LA","LA":"LA"}.get(team,team)
    p["opponent"]=(schedule.get("teams",{}).get(team,{})
       .get("weeks",{}).get(str(week),{}).get("opponent"))
   out["weeks"][str(week)]=lineup
@@ -49,6 +50,8 @@ def main():
  if not archive_path.exists():
   write("forecast_archive/"+archive_path.name,{"week":current,"captured_at_utc":generated,
     "model_version":"weekly_lineup_v1","roster_id":1,"projection_as_of":ros.get("as_of"),
+    "backtest_eligible":False,
+    "backtest_exclusion_reason":"Kickoff time not verified; auto-captured first snapshot must never be represented as pregame.",
     "players":{name:info.get("weeks",{}).get(str(current))
       for name,info in ros.get("players",{}).items()
       if info.get("weeks",{}).get(str(current)) is not None},
@@ -59,7 +62,7 @@ def main():
  for file in sorted(archive.glob("week_*_first.json")):
   prior=json.loads(file.read_text())
   week=prior["week"]
-  if week>=current:continue
+  if week>=current or prior.get("backtest_eligible") is not True:continue
   by_roster=[r for r in latest.get("matchups_by_week",{}).get(str(week),[]) if r.get("roster_id")==1]
   if not by_roster:continue
   actual=by_roster[0].get("players_points") or {}
@@ -90,7 +93,7 @@ def main():
     lines.append(f'| {p["name"]} | {p["position"]} | {p.get("opponent") or "Check schedule"} | {p["ppg"]:.2f} |')
   lines.append("")
  lines+=["## Prediction tracking and calibration","",
-  "First stored forecast per week is retained; later updates will not overwrite it.",
+  "First stored forecast per week is retained; later updates will not overwrite it. Automatic captures are NOT eligible for official pregame accuracy statistics without verified pre-kickoff capture.",
   f"Completed-week archived evaluations: {len(evaluations)}.",
   "No historical forecast is constructed from final results. Model accuracy cannot be claimed before true pregame observations are evaluated."]
  (D/"WEEKLY_LINEUPS.md").write_text("\n".join(lines)+"\n",encoding="utf8")
