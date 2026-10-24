@@ -1,0 +1,38 @@
+name: Phase VIII Championship Simulation
+on:
+  push:
+    paths:
+      - 'championship_simulator.py'
+      - 'test_championship_simulator.py'
+      - '.github/workflows/championship-simulation.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '35 15 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: championship-simulation
+  cancel-in-progress: false
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test championship simulation assumptions
+        run: python -m unittest -v test_championship_simulator
+      - name: Run conditional current-seed playoff analysis
+        run: python championship_simulator.py
+      - name: Commit read-only simulation results
+        run: |
+          git config user.name "Dirty Birds Data Bot"
+          git config user.email "dirty-birds-data-bot@users.noreply.github.com"
+          git add data/CHAMPIONSHIP_SIMULATION.json data/CHAMPIONSHIP_SIMULATION.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh conditional championship simulation"
+            git pull --rebase -X theirs origin main
+            git push origin HEAD:main
+          fi
