@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - 'fetch_usage.py'
+      - 'waiver.py'
+      - 'trade_simulator.py'
       - '.github/workflows/sleeper-sync.yml'
   workflow_dispatch:
   schedule:
