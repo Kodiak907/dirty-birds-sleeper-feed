@@ -72,16 +72,16 @@ def main():
       else:best_theirs=ranked[0]
      if not best_mine or not best_theirs:continue
      db=round(best_mine[0]-initial["ppg"],2)
-     dt=round(best_theirs[0]-other_start["ppg"],2)
+     other_delta=round(best_theirs[0]-other_start["ppg"],2)
      # Strict discovery: both parties nonnegative, Dirty Birds meaningfully better.
-     if db<0.5 or dt<0:continue
+     if db<0.5 or other_delta<0:continue
      # Score is transparent opportunity ordering, NOT acceptance probability.
-     score=round(db+min(dt,8)*0.8-abs(db-dt)*0.14,3)
+     score=round(db+min(other_delta,8)*0.8-abs(db-other_delta)*0.14,3)
      allgiven=sum(value(pid) for pid in give)
      allreceived=sum(value(pid) for pid in receive)
      scenarios.append({"opponent_roster_id":other["roster_id"],
        "give":package(give),"receive":package(receive),
-       "dirty_birds_delta_ppg":db,"opponent_delta_ppg":dt,
+       "dirty_birds_delta_ppg":db,"opponent_delta_ppg":other_delta,
        "dirty_birds_before":initial["ppg"],"dirty_birds_after":best_mine[0],
        "opponent_before":other_start["ppg"],"opponent_after":best_theirs[0],
        "dirty_birds_drop_to_fit":names.get(best_mine[2],{}).get("name") if best_mine[2] else None,
