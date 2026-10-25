@@ -2,19 +2,19 @@
   "current_roster_reference": {
     "DEF": {
       "name": "Minnesota Vikings",
-      "ppg": 7.094
+      "ppg": 7.095
     },
     "K": {
       "name": "Will Reichard",
-      "ppg": 7.3
+      "ppg": 7.302
     },
     "QB": {
       "name": "C.J. Stroud",
-      "ppg": 14.606
+      "ppg": 14.593
     },
     "RB": {
       "name": "Jonah Coleman",
-      "ppg": 3.269
+      "ppg": 3.275
     },
     "TE": {
       "name": "Michael Mayer",
@@ -22,10 +22,10 @@
     },
     "WR": {
       "name": "Christian Kirk",
-      "ppg": 1.358
+      "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-25T19:06:09.578769+00:00",
+  "generated_at_utc": "2026-10-25T19:29:10.880353+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -44,7 +44,7 @@
         "ppg": 6.77,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -0.32,
         "screen_only": true,
@@ -66,9 +66,9 @@
         "ppg": 6.43,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
-        "same_position_uplift_ppg": -0.66,
+        "same_position_uplift_ppg": -0.67,
         "screen_only": true,
         "sleeper_id": "JAX",
         "team": "JAX"
@@ -85,10 +85,10 @@
           "targets_per_game": null
         },
         "name": "Baltimore Ravens",
-        "ppg": 6.28,
+        "ppg": 6.29,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -0.81,
         "screen_only": true,
@@ -110,7 +110,7 @@
         "ppg": 6.07,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -1.02,
         "screen_only": true,
@@ -132,7 +132,7 @@
         "ppg": 5.95,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -1.14,
         "screen_only": true,
@@ -154,7 +154,7 @@
         "ppg": 5.87,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -1.22,
         "screen_only": true,
@@ -176,9 +176,9 @@
         "ppg": 5.77,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
-        "same_position_uplift_ppg": -1.32,
+        "same_position_uplift_ppg": -1.33,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -198,7 +198,7 @@
         "ppg": 5.64,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -1.45,
         "screen_only": true,
@@ -220,7 +220,7 @@
         "ppg": 5.56,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
         "same_position_uplift_ppg": -1.53,
         "screen_only": true,
@@ -239,12 +239,12 @@
           "targets_per_game": null
         },
         "name": "Tampa Bay Buccaneers",
-        "ppg": 5.36,
+        "ppg": 5.35,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
-        "same_position_uplift_ppg": -1.73,
+        "same_position_uplift_ppg": -1.74,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -264,9 +264,9 @@
         "ppg": 5.33,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
-        "same_position_uplift_ppg": -1.77,
+        "same_position_uplift_ppg": -1.76,
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
@@ -283,12 +283,12 @@
           "targets_per_game": null
         },
         "name": "Washington Commanders",
-        "ppg": 5.09,
+        "ppg": 5.12,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.094
+          "ppg": 7.095
         },
-        "same_position_uplift_ppg": -2.0,
+        "same_position_uplift_ppg": -1.98,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -310,7 +310,7 @@
         "ppg": 6.45,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
         "same_position_uplift_ppg": -0.85,
         "screen_only": true,
@@ -332,9 +332,9 @@
         "ppg": 6.2,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
-        "same_position_uplift_ppg": -1.1,
+        "same_position_uplift_ppg": -1.11,
         "screen_only": true,
         "sleeper_id": "13833",
         "team": "NYG"
@@ -354,7 +354,7 @@
         "ppg": 6.01,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
         "same_position_uplift_ppg": -1.29,
         "screen_only": true,
@@ -376,7 +376,7 @@
         "ppg": 5.75,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
         "same_position_uplift_ppg": -1.55,
         "screen_only": true,
@@ -398,7 +398,7 @@
         "ppg": 5.62,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
         "same_position_uplift_ppg": -1.68,
         "screen_only": true,
@@ -420,7 +420,7 @@
         "ppg": 5.53,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.3
+          "ppg": 7.302
         },
         "same_position_uplift_ppg": -1.77,
         "screen_only": true,
@@ -447,9 +447,9 @@
         "ppg": 14.72,
         "replacement_reference": {
           "name": "C.J. Stroud",
-          "ppg": 14.606
+          "ppg": 14.593
         },
-        "same_position_uplift_ppg": 0.12,
+        "same_position_uplift_ppg": 0.13,
         "screen_only": true,
         "sleeper_id": "8161",
         "team": "MIA"
@@ -469,12 +469,12 @@
           "targets_per_game": 0.33
         },
         "name": "Jacoby Brissett",
-        "ppg": 13.65,
+        "ppg": 13.66,
         "replacement_reference": {
           "name": "C.J. Stroud",
-          "ppg": 14.606
+          "ppg": 14.593
         },
-        "same_position_uplift_ppg": -0.96,
+        "same_position_uplift_ppg": -0.93,
         "screen_only": true,
         "sleeper_id": "3257",
         "team": "ARI"
@@ -491,12 +491,12 @@
           "targets_per_game": 0.0
         },
         "name": "Tanner McKee",
-        "ppg": 11.72,
+        "ppg": 11.85,
         "replacement_reference": {
           "name": "C.J. Stroud",
-          "ppg": 14.606
+          "ppg": 14.593
         },
-        "same_position_uplift_ppg": -2.88,
+        "same_position_uplift_ppg": -2.74,
         "screen_only": true,
         "sleeper_id": "9230",
         "team": "PHI"
@@ -518,12 +518,12 @@
           "targets_per_game": 2.0
         },
         "name": "Tyrone Tracy Jr.",
-        "ppg": 7.09,
+        "ppg": 7.1,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
-        "same_position_uplift_ppg": 3.83,
+        "same_position_uplift_ppg": 3.82,
         "screen_only": true,
         "sleeper_id": "11655",
         "team": "NYG"
@@ -543,12 +543,12 @@
           "targets_per_game": 2.33
         },
         "name": "Rachaad White",
-        "ppg": 6.97,
+        "ppg": 6.9,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
-        "same_position_uplift_ppg": 3.7,
+        "same_position_uplift_ppg": 3.63,
         "screen_only": true,
         "sleeper_id": "8136",
         "team": "WAS"
@@ -571,7 +571,7 @@
         "ppg": 5.6,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
         "same_position_uplift_ppg": 2.33,
         "screen_only": true,
@@ -596,9 +596,9 @@
         "ppg": 5.15,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
-        "same_position_uplift_ppg": 1.88,
+        "same_position_uplift_ppg": 1.87,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -627,7 +627,7 @@
         "ppg": 4.97,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
         "same_position_uplift_ppg": 1.7,
         "screen_only": true,
@@ -652,9 +652,9 @@
         "ppg": 4.72,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
-        "same_position_uplift_ppg": 1.45,
+        "same_position_uplift_ppg": 1.44,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
@@ -680,9 +680,9 @@
         "ppg": 2.0,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.269
+          "ppg": 3.275
         },
-        "same_position_uplift_ppg": -1.26,
+        "same_position_uplift_ppg": -1.27,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -731,7 +731,7 @@
           "name": "Michael Mayer",
           "ppg": 5.239
         },
-        "same_position_uplift_ppg": -0.91,
+        "same_position_uplift_ppg": -0.9,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -798,12 +798,12 @@
           "targets_per_game": 2.67
         },
         "name": "Zach Ertz",
-        "ppg": 1.46,
+        "ppg": 1.48,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.239
         },
-        "same_position_uplift_ppg": -3.78,
+        "same_position_uplift_ppg": -3.76,
         "screen_only": true,
         "sleeper_id": "1339",
         "team": "PHI"
@@ -828,9 +828,9 @@
         "ppg": 8.18,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 6.82,
+        "same_position_uplift_ppg": 6.83,
         "screen_only": true,
         "sleeper_id": "5947",
         "team": "JAX"
@@ -853,9 +853,9 @@
         "ppg": 6.01,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 4.65,
+        "same_position_uplift_ppg": 4.66,
         "screen_only": true,
         "sleeper_id": "13296",
         "team": "MIA"
@@ -872,12 +872,12 @@
           "targets_per_game": 5.0
         },
         "name": "Antonio Williams",
-        "ppg": 5.54,
+        "ppg": 5.51,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 4.18,
+        "same_position_uplift_ppg": 4.16,
         "screen_only": true,
         "sleeper_id": "13301",
         "team": "WAS"
@@ -900,7 +900,7 @@
         "ppg": 5.17,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
         "same_position_uplift_ppg": 3.82,
         "screen_only": true,
@@ -925,7 +925,7 @@
         "ppg": 5.12,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
         "same_position_uplift_ppg": 3.76,
         "screen_only": true,
@@ -954,34 +954,12 @@
         "ppg": 4.8,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 3.44,
+        "same_position_uplift_ppg": 3.45,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.909,
-          "recent_snap_pct": 78.7,
-          "snap_trend_3_appearances_pp": 7.0,
-          "targets_per_game": 6.33
-        },
-        "name": "Makai Lemon",
-        "ppg": 4.02,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.358
-        },
-        "same_position_uplift_ppg": 2.66,
-        "screen_only": true,
-        "sleeper_id": "13294",
-        "team": "PHI"
       },
       {
         "audit": {
@@ -1002,15 +980,62 @@
           "targets_per_game": 4.0
         },
         "name": "Ja'Kobi Lane",
-        "ppg": 3.69,
+        "ppg": 4.6,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 2.33,
+        "same_position_uplift_ppg": 3.25,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 52.3,
+          "snap_trend_3_appearances_pp": -17.0,
+          "targets_per_game": 3.0
+        },
+        "name": "Rashod Bateman",
+        "ppg": 4.35,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 3.0,
+        "screen_only": true,
+        "sleeper_id": "7571",
+        "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 78.7,
+          "snap_trend_3_appearances_pp": 7.0,
+          "targets_per_game": 6.33
+        },
+        "name": "Makai Lemon",
+        "ppg": 4.04,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 1.351
+        },
+        "same_position_uplift_ppg": 2.69,
+        "screen_only": true,
+        "sleeper_id": "13294",
+        "team": "PHI"
       },
       {
         "audit": {
@@ -1031,37 +1056,12 @@
         "ppg": 3.56,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 2.2,
+        "same_position_uplift_ppg": 2.21,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "7"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.909,
-          "recent_snap_pct": 52.3,
-          "snap_trend_3_appearances_pp": -17.0,
-          "targets_per_game": 3.0
-        },
-        "name": "Rashod Bateman",
-        "ppg": 3.55,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.358
-        },
-        "same_position_uplift_ppg": 2.2,
-        "screen_only": true,
-        "sleeper_id": "7571",
-        "team": "BAL"
       },
       {
         "audit": {
@@ -1081,9 +1081,9 @@
         "ppg": 3.49,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 2.13,
+        "same_position_uplift_ppg": 2.14,
         "screen_only": true,
         "sleeper_id": "11625",
         "team": "NYJ"
@@ -1109,9 +1109,9 @@
         "ppg": 2.83,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 1.47,
+        "same_position_uplift_ppg": 1.48,
         "screen_only": true,
         "sleeper_id": "11631",
         "team": "JAX"
@@ -1140,9 +1140,9 @@
         "ppg": 2.83,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 1.47,
+        "same_position_uplift_ppg": 1.48,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1162,12 +1162,12 @@
           "targets_per_game": 4.0
         },
         "name": "Darius Cooper",
-        "ppg": 2.6,
+        "ppg": 2.61,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 1.24,
+        "same_position_uplift_ppg": 1.26,
         "screen_only": true,
         "sleeper_id": "13150",
         "team": "PHI"
@@ -1187,12 +1187,12 @@
           "targets_per_game": 2.0
         },
         "name": "Zachariah Branch",
-        "ppg": 2.1,
+        "ppg": 2.23,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": 0.75,
+        "same_position_uplift_ppg": 0.88,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1212,9 +1212,9 @@
         "ppg": 1.12,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": -0.24,
+        "same_position_uplift_ppg": -0.23,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1237,9 +1237,9 @@
         "ppg": 0.93,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.358
+          "ppg": 1.351
         },
-        "same_position_uplift_ppg": -0.43,
+        "same_position_uplift_ppg": -0.42,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1247,5 +1247,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-25T19:06:03.882017+00:00"
+  "snapshot_utc": "2026-10-25T19:29:07.612600+00:00"
 }

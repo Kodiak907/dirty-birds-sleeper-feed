@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-25T19:06:09.772624+00:00",
-  "roster_snapshot_utc": "2026-10-25T19:06:03.882017+00:00",
+  "generated_at_utc": "2026-10-25T19:29:11.038376+00:00",
+  "roster_snapshot_utc": "2026-10-25T19:29:07.612600+00:00",
   "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
@@ -59,7 +59,7 @@
   "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [
     {
-      "bench_depth_difference_ppg": 6.82,
+      "bench_depth_difference_ppg": 6.83,
       "coach_authorization_required": true,
       "drop_id": "4950",
       "evidence_flags": [
@@ -80,7 +80,7 @@
       "team": "JAX"
     },
     {
-      "bench_depth_difference_ppg": 4.65,
+      "bench_depth_difference_ppg": 4.66,
       "coach_authorization_required": true,
       "drop_id": "4950",
       "evidence_flags": [
@@ -101,7 +101,7 @@
       "team": "MIA"
     },
     {
-      "bench_depth_difference_ppg": 4.18,
+      "bench_depth_difference_ppg": 4.16,
       "coach_authorization_required": true,
       "drop_id": "4950",
       "evidence_flags": [
@@ -122,7 +122,7 @@
       "team": "WAS"
     },
     {
-      "bench_depth_difference_ppg": 3.83,
+      "bench_depth_difference_ppg": 3.82,
       "coach_authorization_required": true,
       "drop_id": "13345",
       "evidence_flags": [
@@ -185,7 +185,7 @@
       "team": "MIA"
     },
     {
-      "bench_depth_difference_ppg": 3.7,
+      "bench_depth_difference_ppg": 3.63,
       "coach_authorization_required": true,
       "drop_id": "13345",
       "evidence_flags": [
@@ -206,7 +206,7 @@
       "team": "WAS"
     },
     {
-      "bench_depth_difference_ppg": 3.44,
+      "bench_depth_difference_ppg": 3.45,
       "coach_authorization_required": true,
       "drop_id": "4950",
       "evidence_flags": [
@@ -227,7 +227,49 @@
       "team": "MIN"
     },
     {
-      "bench_depth_difference_ppg": 2.66,
+      "bench_depth_difference_ppg": 3.25,
+      "coach_authorization_required": true,
+      "drop_id": "4950",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Christian Kirk",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Ja'Kobi Lane",
+      "position": "WR",
+      "research_tier": "depth candidate",
+      "source_player_id": "13293",
+      "team": "BAL"
+    },
+    {
+      "bench_depth_difference_ppg": 3.0,
+      "coach_authorization_required": true,
+      "drop_id": "4950",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Christian Kirk",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Rashod Bateman",
+      "position": "WR",
+      "research_tier": "depth candidate",
+      "source_player_id": "7571",
+      "team": "BAL"
+    },
+    {
+      "bench_depth_difference_ppg": 2.69,
       "coach_authorization_required": true,
       "drop_id": "4950",
       "evidence_flags": [
@@ -267,48 +309,6 @@
       "research_tier": "depth candidate",
       "source_player_id": "9511",
       "team": "LAC"
-    },
-    {
-      "bench_depth_difference_ppg": 2.33,
-      "coach_authorization_required": true,
-      "drop_id": "4950",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Christian Kirk",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Ja'Kobi Lane",
-      "position": "WR",
-      "research_tier": "depth candidate",
-      "source_player_id": "13293",
-      "team": "BAL"
-    },
-    {
-      "bench_depth_difference_ppg": 2.2,
-      "coach_authorization_required": true,
-      "drop_id": "4950",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Christian Kirk",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Rashod Bateman",
-      "position": "WR",
-      "research_tier": "depth candidate",
-      "source_player_id": "7571",
-      "team": "BAL"
     }
   ],
   "waiver_screened_count": 13,
