@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-10-25T00:39:41.528949+00:00",
+  "generated_at_utc": "2026-10-25T01:32:56.384609+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-24T19:05:12.398944+00:00",
+  "projection_as_of": "2026-10-25T01:13:03.602170+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-25T00:39:37.072828+00:00",
+  "snapshot_utc": "2026-10-25T01:32:50.380383+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -652,7 +652,7 @@
         "Chig Okonkwo",
         "Zach Charbonnet"
       ],
-      "ppg": 137.79,
+      "ppg": 136.18,
       "starters": [
         {
           "id": "9758",
@@ -666,7 +666,7 @@
           "name": "Bijan Robinson",
           "opponent": "SF",
           "position": "RB",
-          "ppg": 21.81
+          "ppg": 21.98
         },
         {
           "id": "8150",
@@ -676,18 +676,18 @@
           "ppg": 18.31
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CIN",
-          "position": "WR",
-          "ppg": 15.62
-        },
-        {
           "id": "8146",
           "name": "Garrett Wilson",
           "opponent": "MIA",
           "position": "WR",
           "ppg": 13.9
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CIN",
+          "position": "WR",
+          "ppg": 13.84
         },
         {
           "id": "8131",
