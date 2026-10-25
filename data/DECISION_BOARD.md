@@ -17,30 +17,30 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Tyrone Tracy Jr. | 7.10 | +3.82 | 25.0% | Carries 3.3 | No modeled flags (not medically cleared) |
+| 1 | Tyrone Tracy Jr. | 7.10 | +3.82 | 25.0% | Carries 5.0 | No modeled flags (not medically cleared) |
 | 2 | Rachaad White | 6.90 | +3.63 | 57.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 3 | Keaton Mitchell | 5.60 | +2.33 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
-| 4 | Samaje Perine | 5.15 | +1.87 | 39.7% | Carries 6.7 | No modeled flags (not medically cleared) |
+| 4 | Samaje Perine | 5.15 | +1.87 | 39.7% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 5 | Mike Washington Jr. | 4.97 | +1.70 | 21.3% | Carries 6.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Chris Rodriguez Jr. | 4.72 | +1.44 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
 | 7 | Tank Bigsby | 2.00 | -1.27 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
-| 8 | Jaleel McLaughlin | 1.59 | -1.69 | 28.3% | Carries 3.3 | No modeled flags (not medically cleared) |
+| 8 | Jaleel McLaughlin | 1.59 | -1.69 | 28.3% | Carries 3.0 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (1.35 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Jakobi Meyers | 8.18 | +6.83 | 80.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
-| 2 | Caleb Douglas | 6.01 | +4.66 | 88.5% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 2 | Caleb Douglas | 6.01 | +4.66 | 88.5% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 3 | Antonio Williams | 5.51 | +4.16 | 68.0% | Tgt 5.0 | No modeled flags (not medically cleared) |
 | 4 | Quentin Johnston | 5.17 | +3.82 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 5 | Chris Bell | 5.12 | +3.76 | 74.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 6 | Jauan Jennings | 4.80 | +3.45 | 81.3% | Tgt 1.3 | injury_report_observation_review |
-| 7 | Ja'Kobi Lane | 4.60 | +3.25 | 47.0% | Tgt 4.0 | injury_report_observation_review |
-| 8 | Rashod Bateman | 4.35 | +3.00 | 52.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 5 | Chris Bell | 5.12 | +3.76 | 74.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 6 | Jauan Jennings | 4.80 | +3.45 | 81.3% | Tgt 1.7 | injury_report_observation_review |
+| 7 | Ja'Kobi Lane | 4.60 | +3.25 | 47.0% | Tgt 4.3 | injury_report_observation_review |
+| 8 | Rashod Bateman | 4.35 | +3.00 | 52.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 9 | Makai Lemon | 4.04 | +2.69 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
 | 10 | Michael Pittman Jr. | 3.56 | +2.21 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
-| 11 | Adonai Mitchell | 3.49 | +2.14 | 75.5% | Tgt 7.5 | No modeled flags (not medically cleared) |
+| 11 | Adonai Mitchell | 3.49 | +2.14 | 75.5% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 12 | Brian Thomas Jr. | 2.83 | +1.48 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Michael Mayer (5.24 PPG)
@@ -48,7 +48,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Jake Ferguson | 6.22 | +0.98 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 2 | Noah Fant | 4.33 | -0.90 | 60.7% | Tgt 2.0 | No modeled flags (not medically cleared) |
+| 2 | Noah Fant | 4.33 | -0.90 | 60.7% | Tgt 1.3 | No modeled flags (not medically cleared) |
 | 3 | Colby Parkinson | 3.86 | -1.38 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 | 4 | David Njoku | 2.53 | -2.71 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
 | 5 | Zach Ertz | 1.48 | -3.76 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |

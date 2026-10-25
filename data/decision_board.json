@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-25T20:59:32.066065+00:00",
+  "generated_at_utc": "2026-10-25T21:29:22.768971+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -431,7 +431,7 @@
     "QB": [
       {
         "audit": {
-          "carries_per_game": 6.33,
+          "carries_per_game": 6.0,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -505,7 +505,7 @@
     "RB": [
       {
         "audit": {
-          "carries_per_game": 3.33,
+          "carries_per_game": 5.0,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -515,7 +515,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 25.0,
           "snap_trend_3_appearances_pp": 20.0,
-          "targets_per_game": 2.0
+          "targets_per_game": 2.33
         },
         "name": "Tyrone Tracy Jr.",
         "ppg": 7.1,
@@ -580,7 +580,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 6.67,
+          "carries_per_game": 7.0,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
@@ -590,7 +590,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 39.7,
           "snap_trend_3_appearances_pp": 19.0,
-          "targets_per_game": 2.0
+          "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
         "ppg": 5.15,
@@ -689,7 +689,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 3.33,
+          "carries_per_game": 3.0,
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
@@ -745,7 +745,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 60.7,
           "snap_trend_3_appearances_pp": 1.0,
-          "targets_per_game": 2.0
+          "targets_per_game": 1.33
         },
         "name": "Noah Fant",
         "ppg": 4.33,
@@ -869,7 +869,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 88.5,
           "snap_trend_3_appearances_pp": null,
-          "targets_per_game": 5.0
+          "targets_per_game": 4.33
         },
         "name": "Caleb Douglas",
         "ppg": 6.01,
@@ -941,7 +941,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 74.7,
           "snap_trend_3_appearances_pp": 0.0,
-          "targets_per_game": 4.0
+          "targets_per_game": 3.0
         },
         "name": "Chris Bell",
         "ppg": 5.12,
@@ -970,7 +970,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 81.3,
           "snap_trend_3_appearances_pp": -11.0,
-          "targets_per_game": 1.33
+          "targets_per_game": 1.67
         },
         "name": "Jauan Jennings",
         "ppg": 4.8,
@@ -999,7 +999,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 47.0,
           "snap_trend_3_appearances_pp": null,
-          "targets_per_game": 4.0
+          "targets_per_game": 4.33
         },
         "name": "Ja'Kobi Lane",
         "ppg": 4.6,
@@ -1024,7 +1024,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 52.3,
           "snap_trend_3_appearances_pp": -17.0,
-          "targets_per_game": 3.0
+          "targets_per_game": 3.67
         },
         "name": "Rashod Bateman",
         "ppg": 4.35,
@@ -1097,7 +1097,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 75.5,
           "snap_trend_3_appearances_pp": null,
-          "targets_per_game": 7.5
+          "targets_per_game": 6.0
         },
         "name": "Adonai Mitchell",
         "ppg": 3.49,
@@ -1171,7 +1171,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 0.0,
+          "carries_per_game": 0.33,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -1203,7 +1203,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 58.0,
           "snap_trend_3_appearances_pp": -27.0,
-          "targets_per_game": 5.33
+          "targets_per_game": 4.33
         },
         "name": "Dohnte Meyers",
         "ppg": 1.12,
@@ -1244,5 +1244,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-25T20:59:28.579624+00:00"
+  "snapshot_utc": "2026-10-25T21:29:17.569547+00:00"
 }
