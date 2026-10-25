@@ -36,7 +36,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Chris Bell | 5.12 | +3.76 | 74.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 6 | Jauan Jennings | 4.79 | +3.44 | 81.3% | Tgt 1.3 | injury_report_observation_review |
 | 7 | Ja'Kobi Lane | 4.53 | +3.17 | 47.0% | Tgt 4.0 | injury_report_observation_review |
-| 8 | Rashod Bateman | 4.30 | +2.94 | 52.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 8 | Rashod Bateman | 4.29 | +2.94 | 52.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 9 | Makai Lemon | 4.02 | +2.66 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
 | 10 | Michael Pittman Jr. | 3.56 | +2.20 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
 | 11 | Adonai Mitchell | 3.50 | +2.14 | 75.5% | Tgt 7.5 | No modeled flags (not medically cleared) |
@@ -69,9 +69,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kansas City Chiefs | 6.75 | -0.34 | — | — | No modeled flags (not medically cleared) |
 | 2 | Jacksonville Jaguars | 6.44 | -0.66 | — | — | No modeled flags (not medically cleared) |
-| 3 | Baltimore Ravens | 6.29 | -0.81 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cincinnati Bengals | 6.07 | -1.02 | — | — | No modeled flags (not medically cleared) |
-| 5 | Green Bay Packers | 5.98 | -1.12 | — | — | No modeled flags (not medically cleared) |
+| 3 | Baltimore Ravens | 6.28 | -0.81 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cincinnati Bengals | 6.07 | -1.03 | — | — | No modeled flags (not medically cleared) |
+| 5 | Green Bay Packers | 5.99 | -1.11 | — | — | No modeled flags (not medically cleared) |
 | 6 | Buffalo Bills | 5.90 | -1.20 | — | — | No modeled flags (not medically cleared) |
 | 7 | Indianapolis Colts | 5.77 | -1.32 | — | — | No modeled flags (not medically cleared) |
 | 8 | Chicago Bears | 5.64 | -1.45 | — | — | No modeled flags (not medically cleared) |

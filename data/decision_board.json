@@ -25,7 +25,7 @@
       "ppg": 1.358
     }
   },
-  "generated_at_utc": "2026-10-25T06:38:21.840047+00:00",
+  "generated_at_utc": "2026-10-25T07:38:30.820165+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -85,7 +85,7 @@
           "targets_per_game": null
         },
         "name": "Baltimore Ravens",
-        "ppg": 6.29,
+        "ppg": 6.28,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 7.094
@@ -112,7 +112,7 @@
           "name": "Minnesota Vikings",
           "ppg": 7.094
         },
-        "same_position_uplift_ppg": -1.02,
+        "same_position_uplift_ppg": -1.03,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -129,12 +129,12 @@
           "targets_per_game": null
         },
         "name": "Green Bay Packers",
-        "ppg": 5.98,
+        "ppg": 5.99,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 7.094
         },
-        "same_position_uplift_ppg": -1.12,
+        "same_position_uplift_ppg": -1.11,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -1010,7 +1010,7 @@
           "targets_per_game": 3.0
         },
         "name": "Rashod Bateman",
-        "ppg": 4.3,
+        "ppg": 4.29,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 1.358
@@ -1252,5 +1252,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-25T06:38:15.877542+00:00"
+  "snapshot_utc": "2026-10-25T07:38:27.057131+00:00"
 }

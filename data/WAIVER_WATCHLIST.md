@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-25T06:38:21.715298+00:00
-Sleeper snapshot: 2026-10-25T06:38:15.877542+00:00
+Generated: 2026-10-25T07:38:30.664327+00:00
+Sleeper snapshot: 2026-10-25T07:38:27.057131+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -47,7 +47,7 @@ Sleeper snapshot: 2026-10-25T06:38:15.877542+00:00
 | 5 | Chris Bell | MIA | 5.12 | 100% | 74.7% | Not flagged |
 | 6 | Jauan Jennings | MIN | 4.79 | 100% | 81.3% | Not flagged |
 | 7 | Ja'Kobi Lane | BAL | 4.53 | 91% | 47.0% | Not flagged |
-| 8 | Rashod Bateman | BAL | 4.30 | 91% | 52.3% | Not flagged |
+| 8 | Rashod Bateman | BAL | 4.29 | 91% | 52.3% | Not flagged |
 | 9 | Makai Lemon | PHI | 4.02 | 91% | 78.7% | Not flagged |
 | 10 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
 | 11 | Adonai Mitchell | NYJ | 3.50 | 91% | 75.5% | Not flagged |
@@ -80,9 +80,9 @@ Sleeper snapshot: 2026-10-25T06:38:15.877542+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Kansas City Chiefs | KC | 6.75 | 100% | — | Not flagged |
 | 2 | Jacksonville Jaguars | JAX | 6.44 | 91% | — | Not flagged |
-| 3 | Baltimore Ravens | BAL | 6.29 | 91% | — | Not flagged |
+| 3 | Baltimore Ravens | BAL | 6.28 | 91% | — | Not flagged |
 | 4 | Cincinnati Bengals | CIN | 6.07 | 100% | — | Not flagged |
-| 5 | Green Bay Packers | GB | 5.98 | 91% | — | Not flagged |
+| 5 | Green Bay Packers | GB | 5.99 | 91% | — | Not flagged |
 | 6 | Buffalo Bills | BUF | 5.90 | 91% | — | Not flagged |
 | 7 | Indianapolis Colts | IND | 5.77 | 91% | — | Not flagged |
 | 8 | Chicago Bears | CHI | 5.64 | 91% | — | Not flagged |
@@ -115,7 +115,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Jauan Jennings | WR | MIN | 4.79 | 81.3% |
 | Ja'Kobi Lane | WR | BAL | 4.53 | 47.0% |
 | Noah Fant | TE | NO | 4.33 | 60.7% |
-| Rashod Bateman | WR | BAL | 4.30 | 52.3% |
+| Rashod Bateman | WR | BAL | 4.29 | 52.3% |
 | Makai Lemon | WR | PHI | 4.02 | 78.7% |
 | Michael Pittman Jr. | WR | PIT | 3.56 | 77.7% |
 | Adonai Mitchell | WR | NYJ | 3.50 | 75.5% |
