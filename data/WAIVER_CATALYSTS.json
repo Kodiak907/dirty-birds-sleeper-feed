@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "last_curated_at_utc": "2026-10-25T17:00:00Z",
+  "method": "Human-reviewed dated coverage; source snapshot, NOT continuous news ingestion. Recheck official reports before bids.",
+  "catalysts": [
+    {
+      "player": "Antonio Williams",
+      "player_id": "13301",
+      "team": "WAS",
+      "event_type": "TEAMMATE_SEASON_ENDING_INJURY",
+      "event_player": "Terry McLaurin",
+      "event_at": "2026-10-20",
+      "event": "Washington confirmed Terry McLaurin tore his patellar tendon and is out for the 2026 season.",
+      "impact": "Opening for more snaps and targets; not a guaranteed starting job or fantasy breakout.",
+      "primary_source": {
+        "publisher": "Washington Commanders",
+        "url": "https://www.commanders.com/news/terry-mclaurin-knee-injury-commanders",
+        "published": "2026-10-20"
+      },
+      "analysis": [
+        {
+          "publisher": "NFL.com",
+          "url": "https://www.nfl.com/news/commanders-wr-terry-mclaurin-out-rest-of-season-torn-patellar-tendon",
+          "published": "2026-10-20",
+          "takeaway": "Diggs likely leads the receiving corps, while Antonio Williams, Dyami Brown and Treylon Burks may assume larger roles."
+        },
+        {
+          "publisher": "NBC Sports",
+          "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-10-04/williams-earns-wr2-role-in-week-4-loss-to-indy",
+          "published": "2026-10-04",
+          "takeaway": "Williams saw eight targets and led Washington in routes when McLaurin sat in Week 4."
+        },
+        {
+          "publisher": "Sports Illustrated",
+          "url": "https://www.si.com/nfl/commanders/onsi/commanders-antonio-williams-role-terry-mclaurin-injury",
+          "published": "2026-10-21",
+          "takeaway": "Role analysis notes 17 catches on 20 targets through six games and competing targets from Diggs and Burks."
+        }
+      ],
+      "followups": [
+        "Compare snap and route percentage in the next Commanders game",
+        "Track Jayden Daniels' availability",
+        "Check targets after bye week",
+        "Verify current waiver eligibility and cost"
+      ],
+      "confidence": "confirmed_event_unconfirmed_player_role"
+    }
+  ]
+}
