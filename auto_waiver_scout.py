@@ -95,6 +95,27 @@ def main():
             signals.append({"type":"Teammate depth opportunity — provider-tag only",
               "description":f"{team} {pos} teammates listed ahead in Sleeper: "+", ".join(teammates[:4])+". Verify official injury and role before assuming more work.",
               "source_url":"https://www.nfl.com/injuries/"})
+        # Actual nflverse-backed participation/production, if published.
+        # These are recent averages, NOT projections or guarantees.
+        for field,threshold,label in (
+            ("targets_per_game",6,"Recent target volume"),
+            ("rush_attempts_per_game",12,"Recent carry workload"),
+            ("receptions_per_game",4,"Recent reception volume")):
+            x=m.get(field)
+            try: number=float(x)
+            except (TypeError,ValueError):continue
+            if number>=threshold:
+                signals.append({"type":label,
+                    "description":f"{number:.1f} {field.replace('_per_game','').replace('_',' ')} per appearance in the source's recent sample; check trend and role.",
+                    "source_url":m.get("source")})
+        injury_record=m.get("injury_report_record")
+        if isinstance(injury_record,dict) and injury_record:
+            summary=", ".join(str(injury_record[k]) for k in
+                ("week","report_status","practice_status","report_primary_injury") if injury_record.get(k))
+            signals.append({"type":"Published injury report observation — historical",
+                "description":"nflverse injury observation: "+summary+
+                ". This record is not official game-day status and may be stale.",
+                "source_url":m.get("source")})
         previous=state.get(pid,{}).get("share")
         if share is not None:
             if isinstance(previous,(int,float)) and share-previous>=8:
