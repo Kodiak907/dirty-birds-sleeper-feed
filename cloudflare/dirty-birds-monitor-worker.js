@@ -37,7 +37,11 @@ export default {
     if (path === "/health") {
       if (!env.MONITOR_KV) return Response.json({ ok: false, message: "MONITOR_KV binding missing; scheduled checks still run but results are not persisted" }, {status: 503});
       const record = await env.MONITOR_KV.get("last_check", "json");
-      return Response.json(record || { ok: false, message: "No scheduled check stored yet" }, { headers: { "cache-control": "no-store" } });
+      const origin = request.headers.get("Origin");
+      const allowed = origin === "https://dirtybirdstest.pages.dev" || origin === "https://dbcommandcenter.tvega2924.workers.dev";
+      const headers = { "cache-control": "no-store", "vary": "Origin" };
+      if (allowed) headers["access-control-allow-origin"] = origin;
+      return Response.json(record || { ok: false, message: "No scheduled check stored yet" }, { headers });
     }
     return new Response("Dirty Birds monitoring Worker", {status:200});
   }
