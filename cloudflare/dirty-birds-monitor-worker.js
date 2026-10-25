@@ -24,14 +24,24 @@ async function inspect(name, url) {
     return { name, ok: false, checked_at: new Date().toISOString(), error: String(error.message || error) };
   } finally { clearTimeout(timeout); }
 }
-async function run(env) {
+async function run(env, shouldStore) {
   const checks = await Promise.all(SOURCES.map(([name,url]) => inspect(name,url)));
   const result = { checked_at: new Date().toISOString(), checks, meaning: "Connectivity checks only. Does not verify player IR activations or publish GitHub reports." };
-  if (env.MONITOR_KV) await env.MONITOR_KV.put("last_check", JSON.stringify(result), { expirationTtl: 86400 });
+  // Overwrite ONE existing key every five minutes; no history or delete operations.
+  // Source connectivity is still checked every minute.
+  if (env.MONITOR_KV && shouldStore) {
+    await env.MONITOR_KV.put("last_check", JSON.stringify(result), { expirationTtl: 86400 });
+  }
   return result;
 }
 export default {
-  async scheduled(event, env, ctx) { ctx.waitUntil(run(env)); },
+  async scheduled(event, env, ctx) {
+    // The cron remains * * * * * (every minute). Store only on UTC
+    // five-minute boundaries based on Cloudflare's scheduled timestamp.
+    const scheduledMs = Number(event.scheduledTime ?? Date.now());
+    const shouldStore = Math.floor(scheduledMs / 60000) % 5 === 0;
+    ctx.waitUntil(run(env, shouldStore));
+  },
   async fetch(request, env) {
     const path = new URL(request.url).pathname;
     if (path === "/health") {
