@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T17:23:14.327103+00:00",
+  "generated_at_utc": "2026-10-25T14:46:07.986293+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -11,13 +11,111 @@
   "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
   "no_automatic_trade_offers": true,
   "not_a_probability": true,
-  "priced_candidates": 2,
+  "priced_candidates": 4,
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 128.098,
-      "dirty_birds_before": 126.943,
-      "dirty_birds_delta_ppg": 1.16,
+      "dirty_birds_after": 125.037,
+      "dirty_birds_before": 124.211,
+      "dirty_birds_delta_ppg": 0.83,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "pos": "RB",
+          "projected_ppg": 18.27
+        }
+      ],
+      "market_quote": {
+        "paid": 9580,
+        "paid_to_received_ratio": 0.986,
+        "received": 9717,
+        "relative_value_difference_pct": -1.4
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 2.326,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 102.932,
+      "opponent_before": 100.841,
+      "opponent_delta_ppg": 2.09,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 19.1,
+      "projected_ppg_sent": 18.27,
+      "receive": [
+        {
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
+          "pos": "WR",
+          "projected_ppg": 19.1
+        }
+      ],
+      "starter_benefit": {
+        "them": 2.09,
+        "us": 0.83
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 125.037,
+      "dirty_birds_before": 124.211,
+      "dirty_birds_delta_ppg": 0.83,
+      "dirty_birds_drop_to_fit": "Jonah Coleman",
+      "give": [
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "pos": "RB",
+          "projected_ppg": 18.27
+        }
+      ],
+      "market_quote": {
+        "paid": 9580,
+        "paid_to_received_ratio": 0.814,
+        "received": 11765,
+        "relative_value_difference_pct": -18.6
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 2.326,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 102.932,
+      "opponent_before": 100.841,
+      "opponent_delta_ppg": 2.09,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 33.69,
+      "projected_ppg_sent": 18.27,
+      "receive": [
+        {
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
+          "pos": "WR",
+          "projected_ppg": 19.1
+        },
+        {
+          "id": "12545",
+          "name": "Tyler Shough",
+          "pos": "QB",
+          "projected_ppg": 14.59
+        }
+      ],
+      "starter_benefit": {
+        "them": 2.09,
+        "us": 0.83
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 125.402,
+      "dirty_birds_before": 124.211,
+      "dirty_birds_delta_ppg": 1.19,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -30,119 +128,100 @@
           "id": "8146",
           "name": "Garrett Wilson",
           "pos": "WR",
-          "projected_ppg": 11.74
+          "projected_ppg": 11.7
         }
       ],
       "market_quote": {
-        "paid": 9252,
-        "paid_to_received_ratio": 1.052,
+        "paid": 9406,
+        "paid_to_received_ratio": 1.07,
         "received": 8793,
-        "relative_value_difference_pct": 5.2
+        "relative_value_difference_pct": 7.0
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.186,
+      "mutual_benefit_screen_score": 1.409,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.498,
-      "opponent_before": 102.295,
-      "opponent_delta_ppg": 0.2,
+      "opponent_after": 103.019,
+      "opponent_before": 102.607,
+      "opponent_delta_ppg": 0.41,
       "opponent_drop_to_fit": "Blake Corum",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 16.95,
-      "projected_ppg_sent": 30.41,
+      "projected_ppg_received": 16.94,
+      "projected_ppg_sent": 30.36,
       "receive": [
         {
           "id": "6813",
           "name": "Jonathan Taylor",
           "pos": "RB",
-          "projected_ppg": 16.95
+          "projected_ppg": 16.94
         }
       ],
       "starter_benefit": {
-        "them": 0.2,
-        "us": 1.16
+        "them": 0.41,
+        "us": 1.19
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 127.577,
-      "dirty_birds_before": 126.943,
-      "dirty_birds_delta_ppg": 0.63,
+      "dirty_birds_after": 124.858,
+      "dirty_birds_before": 124.211,
+      "dirty_birds_delta_ppg": 0.65,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
+          "id": "4046",
+          "name": "Patrick Mahomes",
           "pos": "QB",
-          "projected_ppg": 14.61
+          "projected_ppg": 18.66
         },
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 7.36
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "pos": "WR",
+          "projected_ppg": 11.7
         }
       ],
       "market_quote": {
-        "paid": 5435,
-        "paid_to_received_ratio": 1.064,
-        "received": 5109,
-        "relative_value_difference_pct": 6.4
+        "paid": 9406,
+        "paid_to_received_ratio": 0.996,
+        "received": 9444,
+        "relative_value_difference_pct": -0.4
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 0.89,
+      "mutual_benefit_screen_score": 0.822,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 93.105,
-      "opponent_before": 92.739,
-      "opponent_delta_ppg": 0.37,
-      "opponent_drop_to_fit": "Keon Coleman",
-      "opponent_roster_id": 4,
-      "projected_ppg_received": 19.3,
-      "projected_ppg_sent": 21.97,
+      "opponent_after": 94.681,
+      "opponent_before": 94.398,
+      "opponent_delta_ppg": 0.28,
+      "opponent_drop_to_fit": "Emanuel Wilson",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 16.4,
+      "projected_ppg_sent": 30.36,
       "receive": [
         {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB",
-          "projected_ppg": 19.3
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR",
+          "projected_ppg": 16.4
         }
       ],
       "starter_benefit": {
-        "them": 0.37,
-        "us": 0.63
+        "them": 0.28,
+        "us": 0.65
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Zach Charbonnet: snap coverage absent"
+        "Puka Nacua: snap coverage absent"
       ]
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-10-24T17:23:14.220644+00:00",
-  "unpriced_cases": 5,
+  "source_as_of": "2026-10-25T14:46:07.823520+00:00",
+  "unpriced_cases": 2,
   "unpriced_examples": [
-    {
-      "give": [
-        "Ollie Gordon II"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Chris Olave"
-      ]
-    },
-    {
-      "give": [
-        "C.J. Stroud",
-        "Ollie Gordon II"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Chris Olave"
-      ]
-    },
     {
       "give": [
         "Ollie Gordon II",
@@ -150,17 +229,7 @@
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
-        "Chris Olave"
-      ]
-    },
-    {
-      "give": [
-        "Ollie Gordon II"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Tyler Shough",
-        "Chris Olave"
+        "Derrick Henry"
       ]
     },
     {
