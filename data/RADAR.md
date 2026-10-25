@@ -1,19 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-25T03:33:07.412316+00:00
-Sleeper snapshot: 2026-10-25T03:33:02.324455+00:00
+Generated: 2026-10-25T04:32:52.287895+00:00
+Sleeper snapshot: 2026-10-25T04:32:47.493937+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**6 transaction changes:** 6 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1419925022151065600` · FREE_AGENT · COMPLETE · kfsn (#6) | Dropped: Trey Smack → kfsn (#6)
-- **NEW** · transaction `1419924761168879616` · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Trey Smack → kfsn (#6) | Dropped: Blake Grupe → kfsn (#6)
-- **NEW** · transaction `1419924455521538048` · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Carolina Panthers → kfsn (#6) | Dropped: Jacksonville Jaguars → kfsn (#6)
-- **NEW** · transaction `1419919002389516288` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Kenny Gainwell → DANGER CLOSE  (#4)
-- **NEW** · transaction `1419918811166969856` · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Michael Penix Jr. → kfsn (#6) | Dropped: Michael Pittman Jr. → kfsn (#6)
-- **NEW** · transaction `1419917828441505792` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jerry Jeudy → DANGER CLOSE  (#4)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
