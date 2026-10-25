@@ -1,6 +1,6 @@
 # Pregame forecast locks and calibration
 
-Updated: 2026-10-25T18:16:35.246604+00:00
+Updated: 2026-10-25T18:32:30.953675+00:00
 
 **Current Week 7:** 15 locked player forecasts; 0 newly locked.
 **Completed-week backtest sample:** 0 actual player outcomes.
