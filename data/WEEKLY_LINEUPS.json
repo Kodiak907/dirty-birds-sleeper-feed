@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-10-25T12:36:13.432884+00:00",
+  "generated_at_utc": "2026-10-25T13:33:23.969419+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-25T07:17:09.481990+00:00",
+  "projection_as_of": "2026-10-25T13:12:11.619948+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-25T12:36:09.845095+00:00",
+  "snapshot_utc": "2026-10-25T13:33:17.766391+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,7 +23,7 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 134.86,
+      "ppg": 131.92,
       "starters": [
         {
           "id": "4046",
@@ -37,7 +37,7 @@
           "name": "Bijan Robinson",
           "opponent": "KC",
           "position": "RB",
-          "ppg": 19.36
+          "ppg": 18.63
         },
         {
           "id": "8150",
@@ -51,7 +51,7 @@
           "name": "Zay Flowers",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 16.25
+          "ppg": 14.04
         },
         {
           "id": "5859",
@@ -106,7 +106,7 @@
         "Bijan Robinson",
         "Zach Charbonnet"
       ],
-      "ppg": 104.13,
+      "ppg": 101.91,
       "starters": [
         {
           "id": "4046",
@@ -134,7 +134,7 @@
           "name": "Zay Flowers",
           "opponent": "CAR",
           "position": "WR",
-          "ppg": 15.37
+          "ppg": 13.15
         },
         {
           "id": "8146",
@@ -183,7 +183,7 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.03,
+      "ppg": 133.09,
       "starters": [
         {
           "id": "4046",
@@ -193,13 +193,6 @@
           "ppg": 19.75
         },
         {
-          "id": "9509",
-          "name": "Bijan Robinson",
-          "opponent": "MIN",
-          "position": "RB",
-          "ppg": 18.36
-        },
-        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "GB",
@@ -207,11 +200,11 @@
           "ppg": 17.85
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "HOU",
-          "position": "WR",
-          "ppg": 16.23
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "opponent": "MIN",
+          "position": "RB",
+          "ppg": 17.64
         },
         {
           "id": "8146",
@@ -219,6 +212,13 @@
           "opponent": "MIA",
           "position": "WR",
           "ppg": 14.61
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "HOU",
+          "position": "WR",
+          "ppg": 14.01
         },
         {
           "id": "8131",
@@ -264,7 +264,7 @@
         "Michael Mayer",
         "Zay Flowers"
       ],
-      "ppg": 119.15,
+      "ppg": 118.24,
       "starters": [
         {
           "id": "4046",
@@ -278,7 +278,7 @@
           "name": "Bijan Robinson",
           "opponent": "DET",
           "position": "RB",
-          "ppg": 22.98
+          "ppg": 22.07
         },
         {
           "id": "8150",
@@ -341,7 +341,7 @@
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.1,
+      "ppg": 129.11,
       "starters": [
         {
           "id": "4046",
@@ -355,7 +355,7 @@
           "name": "Bijan Robinson",
           "opponent": "CLE",
           "position": "RB",
-          "ppg": 19.98
+          "ppg": 19.19
         },
         {
           "id": "8150",
@@ -369,7 +369,7 @@
           "name": "Zay Flowers",
           "opponent": "TB",
           "position": "WR",
-          "ppg": 16.57
+          "ppg": 14.37
         },
         {
           "id": "8146",
@@ -418,7 +418,7 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.93,
+      "ppg": 133.85,
       "starters": [
         {
           "id": "4046",
@@ -432,7 +432,7 @@
           "name": "Bijan Robinson",
           "opponent": "WAS",
           "position": "RB",
-          "ppg": 21.04
+          "ppg": 20.17
         },
         {
           "id": "8150",
@@ -442,16 +442,16 @@
           "ppg": 18.76
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "PIT",
-          "position": "WR",
-          "ppg": 16.47
-        },
-        {
           "id": "8146",
           "name": "Garrett Wilson",
           "opponent": "ARI",
+          "position": "WR",
+          "ppg": 14.26
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "PIT",
           "position": "WR",
           "ppg": 14.26
         },
@@ -495,7 +495,7 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.49,
+      "ppg": 129.45,
       "starters": [
         {
           "id": "4046",
@@ -509,7 +509,7 @@
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 19.54
+          "ppg": 18.7
         },
         {
           "id": "8150",
@@ -523,7 +523,7 @@
           "name": "Zay Flowers",
           "opponent": "CLE",
           "position": "WR",
-          "ppg": 15.54
+          "ppg": 13.34
         },
         {
           "id": "8146",
@@ -572,7 +572,7 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 134.59,
+      "ppg": 131.61,
       "starters": [
         {
           "id": "4046",
@@ -586,7 +586,7 @@
           "name": "Bijan Robinson",
           "opponent": "NO",
           "position": "RB",
-          "ppg": 21.82
+          "ppg": 21.05
         },
         {
           "id": "8150",
@@ -600,7 +600,7 @@
           "name": "Zay Flowers",
           "opponent": "CIN",
           "position": "WR",
-          "ppg": 16.74
+          "ppg": 14.53
         },
         {
           "id": "8146",
@@ -652,7 +652,7 @@
         "Chig Okonkwo",
         "Zach Charbonnet"
       ],
-      "ppg": 136.15,
+      "ppg": 136.32,
       "starters": [
         {
           "id": "9758",
@@ -673,14 +673,7 @@
           "name": "Kyren Williams",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 18.31
-        },
-        {
-          "id": "8146",
-          "name": "Garrett Wilson",
-          "opponent": "MIA",
-          "position": "WR",
-          "ppg": 13.9
+          "ppg": 18.38
         },
         {
           "id": "9997",
@@ -690,11 +683,18 @@
           "ppg": 13.81
         },
         {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "opponent": "MIA",
+          "position": "WR",
+          "ppg": 13.75
+        },
+        {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "HOU",
           "position": "TE",
-          "ppg": 10.0
+          "ppg": 10.08
         },
         {
           "id": "11792",
@@ -722,7 +722,7 @@
           "name": "Ollie Gordon II",
           "opponent": "NYJ",
           "position": "RB",
-          "ppg": 12.3
+          "ppg": 12.47
         }
       ]
     },
@@ -734,49 +734,49 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 128.74,
+      "ppg": 125.07,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "DEN",
           "position": "QB",
-          "ppg": 17.04
+          "ppg": 17.07
         },
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 20.09
+          "ppg": 19.39
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "LAC",
           "position": "RB",
-          "ppg": 18.53
+          "ppg": 18.36
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 15.5
+          "ppg": 13.15
         },
         {
           "id": "8146",
           "name": "Garrett Wilson",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 13.38
+          "ppg": 13.09
         },
         {
-          "id": "8210",
-          "name": "Chig Okonkwo",
-          "opponent": "PHI",
+          "id": "9482",
+          "name": "Michael Mayer",
+          "opponent": "NYJ",
           "position": "TE",
-          "ppg": 5.78
+          "ppg": 5.93
         },
         {
           "id": "11792",
@@ -797,21 +797,21 @@
           "name": "A.J. Brown",
           "opponent": "MIA",
           "position": "WR",
-          "ppg": 12.68
+          "ppg": 12.57
         },
         {
           "id": "12495",
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.02
+          "ppg": 11.79
         }
       ]
     },
     "9": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 138.18,
+      "ppg": 134.81,
       "starters": [
         {
           "id": "4046",
@@ -825,7 +825,7 @@
           "name": "Bijan Robinson",
           "opponent": "CIN",
           "position": "RB",
-          "ppg": 23.07
+          "ppg": 22.21
         },
         {
           "id": "8150",
@@ -839,7 +839,7 @@
           "name": "Zay Flowers",
           "opponent": "JAX",
           "position": "WR",
-          "ppg": 16.0
+          "ppg": 13.49
         },
         {
           "id": "5859",
