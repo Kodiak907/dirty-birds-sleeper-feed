@@ -4,6 +4,14 @@
   "main": "cloudflare/dirty-birds-monitor-worker.js",
   "compatibility_date": "2026-10-24",
   "triggers": {
-    "crons": ["* * * * *"]
-  }
+    "crons": [
+      "* * * * *"
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "MONITOR_KV",
+      "id": "2003b149a5c14414b0bc637fc9eaaccb"
+    }
+  ]
 }
