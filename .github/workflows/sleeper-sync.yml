@@ -6,6 +6,10 @@ on:
     paths:
       - 'fetch_usage.py'
       - 'waiver.py'
+      - 'auto_waiver_scout.py'
+      - 'trade_quality_43.py'
+      - 'fetch_market_values.py'
+      - 'fetch_projections.py'
       - 'decision_engine.py'
       - 'lineup_impact.py'
       - 'actionable_gm_board.py'
@@ -60,6 +64,24 @@ jobs:
             python decision_engine.py
             python lineup_impact.py
             python actionable_gm_board.py
+            # Refresh independent trade inputs only when aged, not on every hourly run.
+            python - <<'PY'
+            import datetime as dt, json, subprocess
+            from pathlib import Path
+            now=dt.datetime.now(dt.timezone.utc)
+            for file,program in [('market_values.json','fetch_market_values.py'),('ros_projections.json','fetch_projections.py')]:
+                try:
+                    x=json.loads((Path('data')/file).read_text())
+                    age=(now-dt.datetime.fromisoformat(str(x.get('as_of','')).replace('Z','+00:00'))).total_seconds()/3600
+                except Exception: age=999
+                if age>=12:
+                    result=subprocess.run(['python',program],check=False)
+                    if result.returncode:print('WARNING: failed refreshing '+file+'; current old source is retained')
+            PY
+            # Automated candidate-wide injury/role/news research and stronger 1:1/2:2 trade gates.
+            python auto_waiver_scout.py
+            python trade_quality_43.py
+
             python weekly_lineups.py
             python pregame_calibration.py
             python decision_backtest.py
