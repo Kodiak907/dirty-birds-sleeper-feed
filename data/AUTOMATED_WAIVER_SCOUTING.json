@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-25T19:50:57.035351+00:00",
-  "source_snapshot_utc": "2026-10-25T19:50:50.899612+00:00",
+  "generated_at_utc": "2026-10-25T19:55:50.965337+00:00",
+  "source_snapshot_utc": "2026-10-25T19:55:46.784669+00:00",
   "candidate_count": 32,
   "news_queries_attempted": 30,
   "news_query_failures": 0,
@@ -19,8 +19,13 @@
       "team": "JAX",
       "position": "WR",
       "snap_share_pct": 80.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 5, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 80.7%; targets, touches and route trends still need verification.",
@@ -50,8 +55,13 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 88.5,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 88.5%; targets, touches and route trends still need verification.",
@@ -67,6 +77,13 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
+          "title": "Caleb Douglas (ankle) officially active for Week 7 - FantasyPros",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPamJWY2lnQXNWb1F3RUtQMmEzVHhkVXQwVUVNOGxlQUREcE9zc2haVDVERFVTaTRZNTNISjFiazBjbG1mWWtJQk14R1RoTTVLRkRmWHU1VjlhTHZJbEpVZHkwakVsSmFndVBjY0VWb0FuSng0S0t2ZmZRV3htdWNoWVp6aDAtOWpLSVNOR19rd1Q1WmFrUTVr0gGcAUFVX3lxTE5DWkh4b2lWUF8weXFFS043R0FvQ0JKZXJfWTVTeHowU0ZnU0NXeUN5aU5NU1UwTkR2ZEY0a2FzQ1JLRm9Zb3RCdFctZThxOC15cFl4ajI0bElUNmtOTHVoQ1p5aVN0Y2RqZzdkYW9EaHpLalN0dVVxdDBaV3BZazV5ZFg2VkJYRkl6TVhmN3NIMkhkbnY1eV96NWZCWA?oc=5",
+          "published": "2026-10-25",
+          "publisher": "FantasyPros",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
           "title": "Dolphins’ Caleb Douglas cleared to return from ankle injury against Jets - Sun Sentinel",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQM3VuSDhSemRzVkxaUEU3bzlMWXBqN3RzajBiQlNsVzBRN3FLOWVTVmxQRF9CdnlsbG1mTEZkVkIwZ1FJQlZ2UTlQcEx1Qm1vZ3dDeWFWZWFhWFNZZ1lNbkNsUXZIY3d5ZXpaQkhnWjd6UkotSFJXNGg1cmVQajZISEdtNHhmVktISHNBOGpIdUJjUGtjazdCcWF0RkdaZDg4c25IXzlRREVPN3NudkZvcWl3?oc=5",
           "published": "2026-10-23",
@@ -79,13 +96,6 @@
           "published": "2026-10-25",
           "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Dolphins rookie WR Caleb Douglas set to return vs. Jets - ESPN",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOa1d0bkNPcWR1dFZvNzBtQXMxdjduQ3Bja3hUUlFnOERsc3IwUXAxV3pxaGdQa2J5ZXRmSUFvVG9CQVVBeVNWb29wUVVFWlBCZmtMQTJxV3UxNzVlQWFOdDJxeFlrVUpZSk1OaHZuVXc5R1R6OUtNcHV2VUhEd0t4VS1jaFV0cWM5SllQVGs1TmU5eVBKLVVfU0RIZkQ?oc=5",
-          "published": "2026-10-23",
-          "publisher": "ESPN",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
     },
@@ -95,7 +105,7 @@
       "team": "WAS",
       "position": "WR",
       "snap_share_pct": 68.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -140,8 +150,14 @@
       "team": "NYG",
       "position": "RB",
       "snap_share_pct": 25.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Week 7 Fantasy Football Sleepers: Jaylin Noel, Tyrone Tracy Jr. among underrated options off the waiver wire - Yahoo Sports",
@@ -179,12 +195,17 @@
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 81.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
           "description": "LAC WR teammates listed ahead in Sleeper: Ladd McConkey (OUT). Verify official injury and role before assuming more work.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 6, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         },
         {
           "type": "High recent participation",
@@ -222,8 +243,14 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 74.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 5, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Chris Bell Week 7 Outlook for Fantasy Football (2026) - RotoBaller",
@@ -245,13 +272,6 @@
           "published": "2026-10-21",
           "publisher": "The Palm Beach Post",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chris Bell or Woody Marks: Who Should I Pick Up? Fantasy Football (2026) - RotoBaller",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOHVwQzh2MTFUVlJtZXEzVm5CR2NtMTc5aDhZck1qRlpULTJHYzVHX0JZQ3JCMF9uLWNOTzZTVURhczhnMFVIV0dqZE42clFXLTNnNGFQb2dGLW1IdEZ2elBHZGVKTnhYVk9MLXh1dmxZaDhWR2t1RVQ2dG9STjFaNmRNNWRZTk04UGdyTHMwTXZtMFVNZ2RpTUNGSzB5UkNzRXdYOQ?oc=5",
-          "published": "2026-10-23",
-          "publisher": "RotoBaller",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
     },
@@ -261,20 +281,19 @@
       "team": "WAS",
       "position": "RB",
       "snap_share_pct": 57.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 6, Limited Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Rachaad White - Fantasy Football Waiver Wire Pickups for Week 7 (2026) - NFL News - RotoBaller",
           "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcEcwQzdxOW5oaTZzajFJUnV5Qzh3VjRNLW5oMW5CeTFYRll2LTJwVXF3S1kwNnRWTmt0bG5mb1NTV2pRNmZ6RE9YTWk0RTdYbEFaZVdJNE9ldzBBejd2UkVmNWg5S0FWT2o4ZkxaamRSQlotcmVBbTBFTkFjX00ybWdFWGF3c3lxTDJjUXA1MklnNkdXR3BjdkRNN093TGdBV3dKMi1FRGxIYlZaRjBZ?oc=5",
           "published": "2026-10-24",
-          "publisher": "RotoBaller",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Should I Pickup Rachaad White or Austin Ekeler? Fantasy Football Waiver Wire Pickups for Week 6 (2026) - RotoBaller",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOM2g1S3J6QzNtRE5VZnpnd2dIZ1JuTDA4UU5GOFRET1VPWFBQR0R0ckJfNWlIb013c1FENDlPVlRtLUFXYkNSNU43TW94SjFSYUs3VHA5SUcybldkbUNzd0lPRkNUaGpGUWxkRi1EYjFpalVHRTlkTHhxeFdGYlQzUUV3UU5vOWVncE5ROXdHWHlpenZrRDFvQ1A3ejBiVl9BdUZPd0t3VTU1SjRsaTR5Yk1JbERGZC1XR00wQUJQaVZhcVFZTGlranY0dzhoU0U?oc=5",
-          "published": "2026-10-17",
           "publisher": "RotoBaller",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
@@ -286,8 +305,13 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 81.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 2, Out, Did Not Participate In Practice, Not injury related - personal matter. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 81.3%; targets, touches and route trends still need verification.",
@@ -331,21 +355,20 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 47.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 6, Questionable, Full Participation in Practice, Wrist. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Ja'Kobi Lane - Fantasy Football Waiver Wire Pickups for Week 7 (2026) - NFL News - RotoBaller",
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUVhLeFQzbXBKdEZHUlZQZHZabWkyejNFQmdDRVRXQksyOEVUM1hnaUxlT2hwZ3MzTUI0UHBvNE5RckVfaGxPWkkyWVZOYWdHSmNtWE11SW1VVEk0WFNZbTU1dWZjeThucXg1QU44dGhQRzh6RzZSQ0duRmoxMU9uLU9uc1l6UnB4eU8yb3Vwbl9ZLVlpRDBlblc1T1R1ZUY0R0k0?oc=5",
           "published": "2026-10-24",
           "publisher": "RotoBaller",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Fantasy Football Waiver Wire Debate: Omar Cooper Jr Vs Ja'Kobi Lane - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZDlvQmpsNGtXVWYwaXVRVnVLNWQyU09SczJuVWM2SUZuQWN6bnNYZm9ubC1EbjNocWNoeDF6VUxCbmxOa056Z2VQQ1JjWHVCZGttMUJ2WmU4Y2hKOHc3YkxJU0JtLW1nTS1aR1ZsYXNFRVIzUzlpX0hfNnk4UEhOSDlobWlER28wM1ZxVURXZ2s5YnZpQ0VjMUN4QUVCTDlVc3FfS1BGY2NSR01HYUJF?oc=5",
-          "published": "2026-10-19",
-          "publisher": "Sports Illustrated",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -356,10 +379,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Ja’Kobi Lane Fantasy Football Start or Sit Advice for Week 7 - DraftKings Network",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdkwzME5WeWRleDZhUUIwRkc1ZG1NYThxMEs4VXp3R2xEVnYtQmxoVWZRTFRqeUpyUUk5VTU5bGsxNlpzX0JueThCZnVpcGxmZlZSVzlDd3ZUTzBqT0d3MVJqbW5PVjRNYWplVGFPcUF3YnFkWWIwNjBiR2VKOFBPMFB2QkQzcm9zLVM0NzJjeTJpUVIxZkhrNG1VVWxXR2diMjIzWmx5MA?oc=5",
-          "published": "2026-10-25",
-          "publisher": "DraftKings Network",
+          "title": "Fantasy Football Waiver Wire Debate: Omar Cooper Jr Vs Ja'Kobi Lane - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZDlvQmpsNGtXVWYwaXVRVnVLNWQyU09SczJuVWM2SUZuQWN6bnNYZm9ubC1EbjNocWNoeDF6VUxCbmxOa056Z2VQQ1JjWHVCZGttMUJ2WmU4Y2hKOHc3YkxJU0JtLW1nTS1aR1ZsYXNFRVIzUzlpX0hfNnk4UEhOSDlobWlER28wM1ZxVURXZ2s5YnZpQ0VjMUN4QUVCTDlVc3FfS1BGY2NSR01HYUJF?oc=5",
+          "published": "2026-10-19",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Ja'Kobi Lane will have 2026 breakout game in pivotal AFC North battle - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOS2ZIb1ptWDVpblJDRDhfYWdWbTl3ZzFXdTlzR0U1Y3hTdzBpbGozc0pIN1RFT0hBdGZ5aUdXZHVyQTlNWUFpSGNiRUQxN2tNM1lYc01ObFhQS001T0E5LXk1NGVXa3lzczRvdDhJSDA5Wmp6YjRQQk9hVzZYTWxaUzROOW5yUQ?oc=5",
+          "published": "2026-10-24",
+          "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -370,8 +400,14 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 52.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Rashod Bateman practices in full Thursday - Yahoo Sports",
@@ -381,17 +417,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Bateman off Week 7 injury report - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUVF2cnVWNTEwY3IxX3l2a3lwa1Y4YUw0M09vYzRxTDRNQWpGTXBTYmphUWs0b2p5VmlEdVpCUVVQc2NjMVBWeFJ1R0hFbnd6bnpXakQ4S0NfUl9heEV2dUZvWmdOQ1VITVQzRm9Pb1VCZVhRcERicXpoSS1pVE1CT1llOTdDd3U2bDlYaWF3c1ZoMFFCQ1ozd3lxN3N4d0U?oc=5",
-          "published": "2026-10-23",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Rashod Bateman Free of restrictions in Thursday's practice - Fantasy Footballers Podcast",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZThrTzlMc1FPQzdNR2Z0QVNhVEhDX09GVURFMTVZUVBWUTNKUzB1bHFjTUFUcWtLbXFiNGJMajlEemJwdnJXaVl2eXJYcWNVS1N1dVpjaXFzd0RMVTVFR0FRQ3hwODVCUDRVMjZZcTlmZzlOcmtsOHVqbUV3SjRoM0RfZWt0YVBfcTBpcU9lM00wTkJlcG01VGk1Q25mdm85MnI3VDFNYmkxaF9w?oc=5",
           "published": "2026-10-22",
           "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Bateman off Week 7 injury report - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUVF2cnVWNTEwY3IxX3l2a3lwa1Y4YUw0M09vYzRxTDRNQWpGTXBTYmphUWs0b2p5VmlEdVpCUVVQc2NjMVBWeFJ1R0hFbnd6bnpXakQ4S0NfUl9heEV2dUZvWmdOQ1VITVQzRm9Pb1VCZVhRcERicXpoSS1pVE1CT1llOTdDd3U2bDlYaWF3c1ZoMFFCQ1ozd3lxN3N4d0U?oc=5",
+          "published": "2026-10-23",
+          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -409,12 +445,17 @@
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 78.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
           "description": "PHI WR teammates listed ahead in Sleeper: DeVonta Smith (QUESTIONABLE), Dontayvion Wicks (QUESTIONABLE). Verify official injury and role before assuming more work.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Recent target volume",
+          "description": "6.3 targets per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         },
         {
           "type": "High recent participation",
@@ -459,8 +500,14 @@
       "team": "LAC",
       "position": "RB",
       "snap_share_pct": 32.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": []
     },
     {
@@ -469,8 +516,13 @@
       "team": "MIA",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 100.0%; targets, touches and route trends still need verification.",
@@ -514,8 +566,13 @@
       "team": "ARI",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 3, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 100.0%; targets, touches and route trends still need verification.",
@@ -552,7 +609,7 @@
       "team": "DAL",
       "position": "TE",
       "snap_share_pct": 69.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [],
       "news": [
         {
@@ -570,8 +627,14 @@
       "team": "CIN",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 2, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Samaje Perine - Fantasy Football Waiver Wire Pickups for Week 7 (2026) - NFL News - RotoBaller",
@@ -595,12 +658,17 @@
       "team": "LV",
       "position": "RB",
       "snap_share_pct": 21.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
           "description": "Mike Washington Jr.: Questionable. Check official club report before making a claim.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Questionable, Did Not Participate In Practice, Foot. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
       "news": [
@@ -640,8 +708,14 @@
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 60.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 5, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Is Noah Fant Playing Today? Why Saints’ TE Isn’t Doing Anything vs. Giants - Yahoo Sports",
@@ -658,7 +732,7 @@
       "team": "PIT",
       "position": "WR",
       "snap_share_pct": 77.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -701,8 +775,23 @@
       "team": "NYJ",
       "position": "WR",
       "snap_share_pct": 75.5,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
+        {
+          "type": "Recent target volume",
+          "description": "7.5 targets per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        },
+        {
+          "type": "Recent reception volume",
+          "description": "4.5 receptions per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        },
         {
           "type": "High recent participation",
           "description": "Snap share 75.5%; targets, touches and route trends still need verification.",
@@ -746,12 +835,17 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 62.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
           "description": "Mack Hollins: IR. Check official club report before making a claim.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 5, Out, Did Not Participate In Practice, Calf. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
       "news": []
@@ -762,12 +856,17 @@
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 78.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
           "description": "PHI WR teammates listed ahead in Sleeper: DeVonta Smith (QUESTIONABLE), Dontayvion Wicks (QUESTIONABLE). Verify official injury and role before assuming more work.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         },
         {
           "type": "High recent participation",
@@ -798,7 +897,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -814,12 +913,17 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 25.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
           "description": "ATL WR teammates listed ahead in Sleeper: Olamide Zaccheaus (QUESTIONABLE). Verify official injury and role before assuming more work.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 1, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
       "news": []
@@ -830,7 +934,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -841,6 +945,11 @@
           "type": "Teammate depth opportunity — provider-tag only",
           "description": "PHI RB teammates listed ahead in Sleeper: Saquon Barkley (QUESTIONABLE). Verify official injury and role before assuming more work.",
           "source_url": "https://www.nfl.com/injuries/"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
       "news": []
@@ -851,7 +960,7 @@
       "team": "PHI",
       "position": "TE",
       "snap_share_pct": 23.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [],
       "news": [
         {
@@ -890,8 +999,14 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 58.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Recent reception volume",
+          "description": "4.0 receptions per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Dohnte Meyers Stats, Props & Recent Performance - PrizePicks",
@@ -908,8 +1023,14 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 8.3,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 7, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Cyrus Allen Week 7 Outlook for Fantasy Football (2026) - RotoBaller",
@@ -947,8 +1068,14 @@
       "team": "JAX",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
-      "signals": [],
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 2, Limited Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv"
+        }
+      ],
       "news": [
         {
           "title": "Brian Thomas Jr. Trade Linked to Super Bowl Hopefuls in New NFL Rumors, Why Jags 'Relented' Revealed - Bleacher Report",
@@ -986,7 +1113,7 @@
       "team": "JAX",
       "position": "RB",
       "snap_share_pct": null,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [],
       "news": []
     },
@@ -996,7 +1123,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [],
       "news": []
     },
@@ -1006,7 +1133,7 @@
       "team": "PHI",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-10-25T19:50:57.035351+00:00",
+      "checked_at": "2026-10-25T19:55:50.965337+00:00",
       "signals": [
         {
           "type": "High recent participation",
