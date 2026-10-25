@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "last_curated_at_utc": "2026-10-25T17:00:00Z",
-  "method": "Human-reviewed dated coverage; source snapshot, NOT continuous news ingestion. Recheck official reports before bids.",
+  "method": "Human-reviewed dated club and analyst reports, not continuous injury monitoring; verify current status before claims",
   "catalysts": [
     {
       "player": "Antonio Williams",
@@ -50,6 +50,70 @@
         "Verify current waiver eligibility and cost"
       ],
       "confidence": "confirmed_event_unconfirmed_player_role"
+    },
+    {
+      "player": "Ja'Kobi Lane",
+      "team": "BAL",
+      "event_at": "2026-10-23",
+      "event_type": "IR_RETURN_ROLE_WATCH",
+      "event": "Ravens activated Lane from IR Oct 17; Rashod Bateman has a shoulder injury but finished Week 7 practices fully and was not ruled out.",
+      "impact": "Monitor Lane's routes, targets, and the Baltimore QB; no guaranteed role.",
+      "primary_source": {
+        "publisher": "Baltimore Ravens",
+        "url": "https://www.baltimoreravens.com/news/jakobi-lane-ravens-activated-from-injured-reserve-carl-jones-2026",
+        "published": "2026-10-17"
+      },
+      "analysis": [
+        {
+          "publisher": "NBC Sports",
+          "published": "2026-10-23",
+          "url": "https://www.nbcsports.com/nfl/baltimore-ravens/player-news",
+          "takeaway": "Reports Bateman healthy enough for final report, Lane competing for looks."
+        }
+      ],
+      "followups": [
+        "Verify game status",
+        "Check routes and targets"
+      ],
+      "confidence": "verified_event_role_uncertain"
+    },
+    {
+      "player": "DeMario Douglas",
+      "team": "NE",
+      "event_at": "2026-10-22",
+      "event_type": "TEAMMATE_IR_SLOT_OPPORTUNITY",
+      "event": "Patriots placed Romeo Doubs on IR Oct 19 and Mack Hollins on IR Oct 10; Douglas has slot opportunity but A.J. Brown returned.",
+      "impact": "Evaluate Douglas playing time and Thursday usage; not confirmed that he personally returned from IR.",
+      "primary_source": {
+        "publisher": "Patriots transactions",
+        "url": "https://www.patriots.com/team/transactions/2026",
+        "published": "2026-10-22"
+      },
+      "analysis": [],
+      "followups": [
+        "Check slot snap rate",
+        "Check A.J. Brown target competition"
+      ],
+      "confidence": "teammate_ir_verified_role_uncertain"
+    },
+    {
+      "player": "Rashod Bateman",
+      "team": "BAL",
+      "event_at": "2026-10-23",
+      "event_type": "OWN_SHOULDER_ISSUE",
+      "event": "Bateman exited Week 6 with shoulder issue but was not assigned a final Week 7 game designation.",
+      "impact": "Monitor his snaps; does not mean out. Lane provides WR competition.",
+      "primary_source": {
+        "publisher": "NBC Sports",
+        "url": "https://www.nbcsports.com/nfl/baltimore-ravens/player-news",
+        "published": "2026-10-23"
+      },
+      "analysis": [],
+      "followups": [
+        "Compare routes with Lane",
+        "Verify official game-day status"
+      ],
+      "confidence": "shoulder_verified_not_out"
     }
   ]
 }
