@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-25T05:32:07.356091+00:00
-Sleeper snapshot: 2026-10-25T05:32:03.298996+00:00
-nflverse observations: 2026-10-25T05:32:06.049324+00:00; injury feed loaded: True
+Generated: 2026-10-25T06:38:23.318024+00:00
+Sleeper snapshot: 2026-10-25T06:38:15.877542+00:00
+nflverse observations: 2026-10-25T06:38:20.920223+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 5. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,8 +31,11 @@ nflverse observations: 2026-10-25T05:32:06.049324+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Dallas Goedert** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '7'}
+- **DeVonta Smith** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Hamstring', 'report_status': 'Out', 'week': '7'}
+- **Dontayvion Wicks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Ankle', 'report_status': 'Out', 'week': '7'}
+- **Lamar Jackson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Ankle', 'report_status': 'Out', 'week': '7'}
+- **Saquon Barkley** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'report_primary_injury': 'Hamstring', 'report_status': 'Questionable', 'week': '7'}
 
 ## Guardrails
 
