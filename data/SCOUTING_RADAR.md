@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-25T15:30:52.596522+00:00
-Sleeper snapshot: 2026-10-25T15:30:47.880003+00:00
+Generated: 2026-10-25T16:31:49.076880+00:00
+Sleeper snapshot: 2026-10-25T16:31:44.252750+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- CREAM MACHINE: added Baker Mayfield; dropped Jacoby Brissett
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

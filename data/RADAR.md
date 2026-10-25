@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-25T15:30:52.555237+00:00
-Sleeper snapshot: 2026-10-25T15:30:47.880003+00:00
+Generated: 2026-10-25T16:31:49.038177+00:00
+Sleeper snapshot: 2026-10-25T16:31:44.252750+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1420106035414249472` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baker Mayfield → CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
