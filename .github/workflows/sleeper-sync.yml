@@ -23,6 +23,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
+    # Sunday NFL gameday: one additional refresh between hourly runs.
+    # UTC: Sunday daytime plus Sunday afternoon/evening in US Pacific.
+    - cron: '37 15-23 * * 0'
+    - cron: '37 0-5 * * 1'
 
 permissions:
   contents: write
