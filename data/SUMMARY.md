@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-25T14:30:17.378691+00:00
+Updated: 2026-10-25T15:30:47.880003+00:00
 League: 1399157532559192064
 NFL week: 7
 
@@ -19,7 +19,9 @@ NFL week: 7
 - Roster 12: Cokerthestroker | 5-1 | FAAB used: 125
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 2: added Baker Mayfield; dropped Jacoby Brissett
+- lineup_change â roster/transaction 2
+- Transaction 1420106035414249472: free_agent / complete / rosters [2] / adds {'4892': 2} / drops {'3257': 2} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

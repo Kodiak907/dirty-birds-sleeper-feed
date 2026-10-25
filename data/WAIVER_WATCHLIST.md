@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-25T14:30:22.648812+00:00
-Sleeper snapshot: 2026-10-25T14:30:17.378691+00:00
+Generated: 2026-10-25T15:30:52.769897+00:00
+Sleeper snapshot: 2026-10-25T15:30:47.880003+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -21,7 +21,7 @@ Sleeper snapshot: 2026-10-25T14:30:17.378691+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Malik Willis | MIA | 14.72 | 100% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 13.28 | 91% | 98.0% | Questionable |
+| 2 | Jacoby Brissett | ARI | 13.65 | 91% | 100.0% | Not flagged |
 | 3 | Tanner McKee | PHI | 11.72 | 91% | 100.0% | Not flagged |
 
 ### RB
@@ -100,7 +100,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
 | Malik Willis | QB | MIA | 14.72 | 100.0% |
-| Baker Mayfield | QB | TB | 13.28 | 98.0% |
+| Jacoby Brissett | QB | ARI | 13.65 | 100.0% |
 | Jakobi Meyers | WR | JAX | 8.18 | 80.7% |
 | Tyrone Tracy Jr. | RB | NYG | 7.09 | 25.0% |
 | Rachaad White | RB | WAS | 6.97 | 57.3% |

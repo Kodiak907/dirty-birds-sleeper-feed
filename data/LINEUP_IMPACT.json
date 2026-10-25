@@ -2066,7 +2066,7 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": 10.015,
+        "bench_depth_delta_ppg": 10.382,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 124.211,
@@ -2077,7 +2077,7 @@
           "drop_is_fantasy_reserve": false,
           "projected_lineup_gain_ppg": 0.0
         },
-        "candidate": "Baker Mayfield",
+        "candidate": "Jacoby Brissett",
         "candidate_drop_options": [
           {
             "added_starters": [],
@@ -2160,15 +2160,13 @@
             "projected_lineup_gain_ppg": 0.0
           }
         ],
-        "candidate_id": "4892",
+        "candidate_id": "3257",
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 13.284,
-        "team": "TB",
-        "warnings": [
-          "Availability status: questionable"
-        ]
+        "projection_ppg": 13.651,
+        "team": "ARI",
+        "warnings": []
       },
       {
         "bench_depth_delta_ppg": 8.452,
@@ -5292,7 +5290,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-10-25T14:30:22.820125+00:00",
+  "generated_at_utc": "2026-10-25T15:30:53.037458+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5300,6 +5298,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-10-25T14:30:17.378691+00:00",
+  "sleeper_snapshot_utc": "2026-10-25T15:30:47.880003+00:00",
   "source_projection_date": "2026-10-25T13:12:11.619948+00:00"
 }

@@ -10,7 +10,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Malik Willis | 14.72 | +0.12 | 100.0% | — | No modeled flags (not medically cleared) |
-| 2 | Baker Mayfield | 13.28 | -1.32 | 98.0% | — | sleeper_injury_questionable, injury_report_observation_review |
+| 2 | Jacoby Brissett | 13.65 | -0.96 | 100.0% | — | No modeled flags (not medically cleared) |
 | 3 | Tanner McKee | 11.72 | -2.88 | 100.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Jonah Coleman (3.27 PPG)
