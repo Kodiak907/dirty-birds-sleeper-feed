@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dirty-birds-monitor-git",
+  "main": "cloudflare/dirty-birds-monitor-worker.js",
+  "compatibility_date": "2026-10-24",
+  "triggers": {
+    "crons": ["* * * * *"]
+  }
+}
