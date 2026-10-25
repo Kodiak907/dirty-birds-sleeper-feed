@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-25T18:30:00Z",
+  "basis": "Dated official NFL club announcements; manually reviewed. This file is a sourced snapshot and does not certify that all later transactions have been captured.",
+  "records": [
+    {
+      "name": "Christian Kirk",
+      "team": "SF",
+      "date": "2026-10-24",
+      "action_code": "ACTIVATED_FROM_IR",
+      "description": "49ers officially activated Kirk from injured reserve and removed his questionable Week 7 designation.",
+      "source_url": "https://www.49ers.com/news/49ers-announce-roster-moves-ahead-of-sfvsatl",
+      "source": "San Francisco 49ers",
+      "game_availability_note": "NFL roster active; game-day participation must still follow game release."
+    },
+    {
+      "name": "Jonah Coleman",
+      "team": "DEN",
+      "date": "2026-10-24",
+      "action_code": "ACTIVATED_FROM_IR",
+      "description": "Broncos activated Coleman from injured reserve before Week 7.",
+      "source_url": "https://www.denverbroncos.com/news/broncos-activate-rb-jonah-coleman-and-olb-jonathon-cooper-place-rb-tyler-badie-and-olb-jonah-elliss-on-ir",
+      "source": "Denver Broncos",
+      "game_availability_note": "Official NFL roster activation, not game-day active certification."
+    },
+    {
+      "name": "Ja'Kobi Lane",
+      "team": "BAL",
+      "date": "2026-10-17",
+      "action_code": "ACTIVATED_FROM_IR",
+      "description": "Ravens activated Lane after his wrist injury; he returned for their Week 6 game.",
+      "source_url": "https://www.baltimoreravens.com/news/jakobi-lane-ravens-activated-from-injured-reserve-carl-jones-2026",
+      "source": "Baltimore Ravens",
+      "game_availability_note": "Historical activation; recheck subsequent roster and game activity."
+    },
+    {
+      "name": "Zach Charbonnet",
+      "team": "SEA",
+      "date": "2026-10-23",
+      "action_code": "WILL_NOT_PLAY",
+      "description": "Seahawks coach said Charbonnet would not make his season debut in Week 7 while returning from ACL surgery.",
+      "source_url": "https://www.nfl.com/news/seahawks-rb-zach-charbonnet-won-t-return-vs-chiefs-walker-nick-emmanwori-has-new-injury",
+      "source": "NFL.com",
+      "game_availability_note": "Explicit Week 7 out statement, not IR status."
+    }
+  ],
+  "warning": "A roster activation is not game-day active or injury clearance. Later team actions can supersede this dated snapshot. No action should be inferred from an absent record."
+}
