@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-25T02:33:01.079389+00:00
+Generated: 2026-10-25T03:33:07.699158+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections and injury status require manual verification.
@@ -19,12 +19,11 @@ Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | 7.20 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.99 | No flagged data gap; review still required |
 | 2 | Rachaad White | 6.97 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.77 | No flagged data gap; review still required |
-| 3 | Kenny Gainwell | 5.52 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.32 | Limited snap sample |
-| 4 | Samaje Perine | 5.15 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.95 | No flagged data gap; review still required |
-| 5 | Keaton Mitchell | 5.10 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.90 | No flagged data gap; review still required |
-| 6 | Mike Washington Jr. | 4.94 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.74 | Availability status: questionable |
-| 7 | Chris Rodriguez Jr. | 4.71 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.51 | Limited snap sample |
-| 8 | Tank Bigsby | 2.00 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.20 | Availability status: ir; Partial projection coverage |
+| 3 | Samaje Perine | 5.15 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.95 | No flagged data gap; review still required |
+| 4 | Keaton Mitchell | 5.10 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.90 | No flagged data gap; review still required |
+| 5 | Mike Washington Jr. | 4.94 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.74 | Availability status: questionable |
+| 6 | Chris Rodriguez Jr. | 4.71 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.51 | Limited snap sample |
+| 7 | Tank Bigsby | 2.00 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.20 | Availability status: ir; Partial projection coverage |
 
 ## WR
 
@@ -39,9 +38,9 @@ Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections an
 | 7 | Ja'Kobi Lane | 4.53 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.33 | No flagged data gap; review still required |
 | 8 | Rashod Bateman | 4.30 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.10 | No flagged data gap; review still required |
 | 9 | Makai Lemon | 4.02 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.82 | No flagged data gap; review still required |
-| 10 | Adonai Mitchell | 3.50 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.30 | No flagged data gap; review still required |
-| 11 | Brian Thomas Jr. | 2.83 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.37 | Limited snap sample |
-| 12 | Mack Hollins | 2.83 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.38 | Availability status: ir; Partial projection coverage |
+| 10 | Michael Pittman Jr. | 3.56 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.36 | Availability status: ir; Partial projection coverage |
+| 11 | Adonai Mitchell | 3.50 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.30 | No flagged data gap; review still required |
+| 12 | Brian Thomas Jr. | 2.83 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.37 | Limited snap sample |
 
 ## TE
 
@@ -69,9 +68,9 @@ Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Kansas City Chiefs | 6.75 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.55 | No sourced usage |
-| 2 | Baltimore Ravens | 6.29 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.09 | No sourced usage |
-| 3 | Cincinnati Bengals | 6.07 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.87 | No sourced usage |
-| 4 | Carolina Panthers | 6.00 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.80 | No sourced usage |
+| 2 | Jacksonville Jaguars | 6.44 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.24 | No sourced usage |
+| 3 | Baltimore Ravens | 6.29 | Bench-depth scenario: Jonah Coleman | +0.00 | +3.09 | No sourced usage |
+| 4 | Cincinnati Bengals | 6.07 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.87 | No sourced usage |
 | 5 | Green Bay Packers | 5.98 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.78 | No sourced usage |
 | 6 | Buffalo Bills | 5.90 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.69 | No sourced usage |
 | 7 | Indianapolis Colts | 5.77 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.57 | No sourced usage |

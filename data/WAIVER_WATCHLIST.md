@@ -1,17 +1,17 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-25T02:33:00.894717+00:00
-Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
+Generated: 2026-10-25T03:33:07.521185+00:00
+Sleeper snapshot: 2026-10-25T03:33:02.324455+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
-| QB | 330 |
-| RB | 628 |
+| QB | 329 |
+| RB | 627 |
 | WR | 1291 |
 | TE | 614 |
-| K | 140 |
+| K | 141 |
 | DEF | 15 |
 
 ## Position-specific projection rankings (screening only)
@@ -30,12 +30,11 @@ Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | NYG | 7.20 | 91% | 25.0% | Not flagged |
 | 2 | Rachaad White | WAS | 6.97 | 91% | 57.3% | Not flagged |
-| 3 | Kenny Gainwell | TB | 5.52 | 91% | — | Not flagged |
-| 4 | Samaje Perine | CIN | 5.15 | 100% | 39.7% | Not flagged |
-| 5 | Keaton Mitchell | LAC | 5.10 | 91% | 32.0% | Not flagged |
-| 6 | Mike Washington Jr. | LV | 4.94 | 91% | 21.3% | Questionable |
-| 7 | Chris Rodriguez Jr. | JAX | 4.71 | 91% | — | Not flagged |
-| 8 | Tank Bigsby | PHI | 2.00 | 73% | 28.7% | IR |
+| 3 | Samaje Perine | CIN | 5.15 | 100% | 39.7% | Not flagged |
+| 4 | Keaton Mitchell | LAC | 5.10 | 91% | 32.0% | Not flagged |
+| 5 | Mike Washington Jr. | LV | 4.94 | 91% | 21.3% | Questionable |
+| 6 | Chris Rodriguez Jr. | JAX | 4.71 | 91% | — | Not flagged |
+| 7 | Tank Bigsby | PHI | 2.00 | 73% | 28.7% | IR |
 
 ### WR
 
@@ -50,9 +49,9 @@ Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
 | 7 | Ja'Kobi Lane | BAL | 4.53 | 91% | 47.0% | Not flagged |
 | 8 | Rashod Bateman | BAL | 4.30 | 91% | 52.3% | Not flagged |
 | 9 | Makai Lemon | PHI | 4.02 | 91% | 78.7% | Not flagged |
-| 10 | Adonai Mitchell | NYJ | 3.50 | 91% | 75.5% | Not flagged |
-| 11 | Brian Thomas Jr. | JAX | 2.83 | 91% | — | Not flagged |
-| 12 | Mack Hollins | NE | 2.83 | 73% | 62.7% | IR |
+| 10 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
+| 11 | Adonai Mitchell | NYJ | 3.50 | 91% | 75.5% | Not flagged |
+| 12 | Brian Thomas Jr. | JAX | 2.83 | 91% | — | Not flagged |
 
 ### TE
 
@@ -80,9 +79,9 @@ Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Kansas City Chiefs | KC | 6.75 | 100% | — | Not flagged |
-| 2 | Baltimore Ravens | BAL | 6.29 | 91% | — | Not flagged |
-| 3 | Cincinnati Bengals | CIN | 6.07 | 100% | — | Not flagged |
-| 4 | Carolina Panthers | CAR | 6.00 | 100% | — | Not flagged |
+| 2 | Jacksonville Jaguars | JAX | 6.44 | 91% | — | Not flagged |
+| 3 | Baltimore Ravens | BAL | 6.29 | 91% | — | Not flagged |
+| 4 | Cincinnati Bengals | CIN | 6.07 | 100% | — | Not flagged |
 | 5 | Green Bay Packers | GB | 5.98 | 91% | — | Not flagged |
 | 6 | Buffalo Bills | BUF | 5.90 | 91% | — | Not flagged |
 | 7 | Indianapolis Colts | IND | 5.77 | 91% | — | Not flagged |
@@ -118,8 +117,8 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Noah Fant | TE | NO | 4.33 | 60.7% |
 | Rashod Bateman | WR | BAL | 4.30 | 52.3% |
 | Makai Lemon | WR | PHI | 4.02 | 78.7% |
+| Michael Pittman Jr. | WR | PIT | 3.56 | 77.7% |
 | Adonai Mitchell | WR | NYJ | 3.50 | 75.5% |
-| Mack Hollins | WR | NE | 2.83 | 62.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 

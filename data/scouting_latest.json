@@ -1,7 +1,30 @@
 {
-  "generated_at_utc": "2026-10-25T02:33:00.807662+00:00",
+  "generated_at_utc": "2026-10-25T03:33:07.437298+00:00",
   "is_initial_baseline": false,
   "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-10-25T02:32:56.867571+00:00"
+  "roster_changes": [
+    {
+      "adds": [
+        "Jerry Jeudy",
+        "Kenny Gainwell"
+      ],
+      "drops": [],
+      "roster_id": 4,
+      "team": "DANGER CLOSE"
+    },
+    {
+      "adds": [
+        "Michael Penix Jr.",
+        "Carolina Panthers"
+      ],
+      "drops": [
+        "Blake Grupe",
+        "Michael Pittman Jr.",
+        "Jacksonville Jaguars"
+      ],
+      "roster_id": 6,
+      "team": "kfsn"
+    }
+  ],
+  "source_snapshot_utc": "2026-10-25T03:33:02.324455+00:00"
 }

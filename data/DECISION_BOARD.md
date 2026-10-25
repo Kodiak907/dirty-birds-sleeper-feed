@@ -19,12 +19,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Tyrone Tracy Jr. | 7.20 | +3.99 | 25.0% | Carries 3.3 | No modeled flags (not medically cleared) |
 | 2 | Rachaad White | 6.97 | +3.77 | 57.3% | Carries 7.3 | No modeled flags (not medically cleared) |
-| 3 | Kenny Gainwell | 5.52 | +2.32 | — | Carries 3.0 | snap_data_missing, usage_sample_missing |
-| 4 | Samaje Perine | 5.15 | +1.94 | 39.7% | Carries 6.7 | No modeled flags (not medically cleared) |
-| 5 | Keaton Mitchell | 5.10 | +1.90 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
-| 6 | Mike Washington Jr. | 4.94 | +1.74 | 21.3% | Carries 6.3 | sleeper_injury_questionable, injury_report_observation_review |
-| 7 | Chris Rodriguez Jr. | 4.71 | +1.51 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 8 | Tank Bigsby | 2.00 | -1.20 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
+| 3 | Samaje Perine | 5.15 | +1.94 | 39.7% | Carries 6.7 | No modeled flags (not medically cleared) |
+| 4 | Keaton Mitchell | 5.10 | +1.90 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
+| 5 | Mike Washington Jr. | 4.94 | +1.74 | 21.3% | Carries 6.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 6 | Chris Rodriguez Jr. | 4.71 | +1.51 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
+| 7 | Tank Bigsby | 2.00 | -1.20 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
 
 ## WR — reference: Christian Kirk (1.36 PPG)
 
@@ -39,9 +38,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 7 | Ja'Kobi Lane | 4.53 | +3.17 | 47.0% | Tgt 4.0 | injury_report_observation_review |
 | 8 | Rashod Bateman | 4.30 | +2.94 | 52.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 9 | Makai Lemon | 4.02 | +2.66 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
-| 10 | Adonai Mitchell | 3.50 | +2.14 | 75.5% | Tgt 7.5 | No modeled flags (not medically cleared) |
-| 11 | Brian Thomas Jr. | 2.83 | +1.47 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
-| 12 | Mack Hollins | 2.83 | +1.47 | 62.7% | Tgt 5.0 | sleeper_injury_ir, projection_weeks_partial, injury_report_observation_review |
+| 10 | Michael Pittman Jr. | 3.56 | +2.20 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
+| 11 | Adonai Mitchell | 3.50 | +2.14 | 75.5% | Tgt 7.5 | No modeled flags (not medically cleared) |
+| 12 | Brian Thomas Jr. | 2.83 | +1.47 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Michael Mayer (5.22 PPG)
 
@@ -69,9 +68,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kansas City Chiefs | 6.75 | -0.34 | — | — | No modeled flags (not medically cleared) |
-| 2 | Baltimore Ravens | 6.29 | -0.81 | — | — | No modeled flags (not medically cleared) |
-| 3 | Cincinnati Bengals | 6.07 | -1.02 | — | — | No modeled flags (not medically cleared) |
-| 4 | Carolina Panthers | 6.00 | -1.10 | — | — | No modeled flags (not medically cleared) |
+| 2 | Jacksonville Jaguars | 6.44 | -0.66 | — | — | No modeled flags (not medically cleared) |
+| 3 | Baltimore Ravens | 6.29 | -0.81 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cincinnati Bengals | 6.07 | -1.02 | — | — | No modeled flags (not medically cleared) |
 | 5 | Green Bay Packers | 5.98 | -1.12 | — | — | No modeled flags (not medically cleared) |
 | 6 | Buffalo Bills | 5.90 | -1.20 | — | — | No modeled flags (not medically cleared) |
 | 7 | Indianapolis Colts | 5.77 | -1.32 | — | — | No modeled flags (not medically cleared) |

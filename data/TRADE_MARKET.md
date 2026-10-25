@@ -1,7 +1,7 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-10-25T02:33:00.807662+00:00
-Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
+Generated: 2026-10-25T03:33:07.437298+00:00
+Sleeper snapshot: 2026-10-25T03:33:02.324455+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
@@ -10,9 +10,9 @@ Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
 | Dirty Birds | 4-2 | 2 / 6 / 5 / 3 | 9 | 142 |
 | CREAM MACHINE | 3-3 | 2 / 7 / 7 / 2 | 0 | 33 |
 | BigOlBoyle | 1-5 | 3 / 6 / 4 / 1 | 0 | 0 |
-| DANGER CLOSE | 3-3 | 2 / 2 / 7 / 3 | 1 | 85 |
+| DANGER CLOSE | 3-3 | 2 / 3 / 8 / 3 | 1 | 85 |
 | Victorious Secret | 2-4 | 2 / 4 / 6 / 4 | 2 | 25 |
-| kfsn | 5-1 | 1 / 5 / 6 / 3 | 2 | 25 |
+| kfsn | 5-1 | 2 / 5 / 5 / 3 | 2 | 25 |
 | JA’MARRTRIX | 1-5 | 2 / 5 / 7 / 3 | 3 | 170 |
 | DeeboSix0 | 4-2 | 3 / 4 / 8 / 2 | 1 | 30 |
 | To Infinity and Bijan | 3-3 | 2 / 4 / 7 / 2 | 5 | 85 |

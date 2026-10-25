@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-25T02:33:00.849171+00:00",
+  "generated_at_utc": "2026-10-25T03:33:07.478181+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -2281,7 +2281,7 @@
     {
       "completed_trade_count": 1,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 110.93,
+      "observed_optimal_average": 111.98,
       "observed_optimal_lineup": [
         {
           "avg": 23.33,
@@ -2294,8 +2294,8 @@
           "position": "RB"
         },
         {
-          "avg": 1.37,
-          "name": "Tyjae Spears",
+          "avg": 2.42,
+          "name": "Kenny Gainwell",
           "position": "RB"
         },
         {
@@ -2552,6 +2552,42 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "6783",
+          "n_weeks": 6,
+          "name": "Jerry Jeudy",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 14.5,
+          "actual_points_weekly_avg": 2.42,
+          "id": "7567",
+          "n_weeks": 6,
+          "name": "Kenny Gainwell",
+          "nonzero_weeks": 5,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            2.3,
+            3.0,
+            2.0,
+            0.0,
+            4.3,
+            2.9
+          ]
+        },
+        {
           "actual_points_total": 21.1,
           "actual_points_weekly_avg": 3.52,
           "id": "7600",
@@ -2759,6 +2795,24 @@
             ]
           },
           {
+            "actual_points_total": 14.5,
+            "actual_points_weekly_avg": 2.42,
+            "id": "7567",
+            "n_weeks": 6,
+            "name": "Kenny Gainwell",
+            "nonzero_weeks": 5,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              2.3,
+              3.0,
+              2.0,
+              0.0,
+              4.3,
+              2.9
+            ]
+          },
+          {
             "actual_points_total": 8.2,
             "actual_points_weekly_avg": 1.37,
             "id": "9508",
@@ -2950,6 +3004,24 @@
             "name": "De'Zhaun Stribling",
             "nonzero_weeks": 0,
             "on_fantasy_reserve": true,
+            "position": "WR",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "6783",
+            "n_weeks": 6,
+            "name": "Jerry Jeudy",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
             "position": "WR",
             "weekly_points": [
               0.0,
@@ -3693,7 +3765,7 @@
     {
       "completed_trade_count": 2,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 115.66,
+      "observed_optimal_average": 108.66,
       "observed_optimal_lineup": [
         {
           "avg": 19.53,
@@ -3731,8 +3803,8 @@
           "position": "K"
         },
         {
-          "avg": 7.67,
-          "name": "Jacksonville Jaguars",
+          "avg": 0.67,
+          "name": "Carolina Panthers",
           "position": "DEF"
         },
         {
@@ -3784,21 +3856,21 @@
           ]
         },
         {
-          "actual_points_total": 4.0,
-          "actual_points_weekly_avg": 0.67,
-          "id": "11058",
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "11559",
           "n_weeks": 6,
-          "name": "Blake Grupe",
-          "nonzero_weeks": 1,
+          "name": "Michael Penix Jr.",
+          "nonzero_weeks": 0,
           "on_fantasy_reserve": false,
-          "position": "K",
+          "position": "QB",
           "weekly_points": [
             0.0,
             0.0,
             0.0,
             0.0,
             0.0,
-            4.0
+            0.0
           ]
         },
         {
@@ -3946,24 +4018,6 @@
           ]
         },
         {
-          "actual_points_total": 12.4,
-          "actual_points_weekly_avg": 2.07,
-          "id": "6819",
-          "n_weeks": 6,
-          "name": "Michael Pittman Jr.",
-          "nonzero_weeks": 3,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            7.3,
-            0.0,
-            2.6,
-            2.5,
-            0.0,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 117.2,
           "actual_points_weekly_avg": 19.53,
           "id": "7523",
@@ -4054,42 +4108,42 @@
           ]
         },
         {
-          "actual_points_total": 46.0,
-          "actual_points_weekly_avg": 7.67,
-          "id": "JAX",
+          "actual_points_total": 4.0,
+          "actual_points_weekly_avg": 0.67,
+          "id": "CAR",
           "n_weeks": 6,
-          "name": "Jacksonville Jaguars",
-          "nonzero_weeks": 6,
+          "name": "Carolina Panthers",
+          "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
-            15.0,
-            3.0,
-            17.0,
-            8.0,
-            2.0,
-            1.0
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 46.0,
-            "actual_points_weekly_avg": 7.67,
-            "id": "JAX",
+            "actual_points_total": 4.0,
+            "actual_points_weekly_avg": 0.67,
+            "id": "CAR",
             "n_weeks": 6,
-            "name": "Jacksonville Jaguars",
-            "nonzero_weeks": 6,
+            "name": "Carolina Panthers",
+            "nonzero_weeks": 1,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
-              15.0,
-              3.0,
-              17.0,
-              8.0,
-              2.0,
-              1.0
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4.0
             ]
           }
         ],
@@ -4111,24 +4165,6 @@
               21.0,
               9.0
             ]
-          },
-          {
-            "actual_points_total": 4.0,
-            "actual_points_weekly_avg": 0.67,
-            "id": "11058",
-            "n_weeks": 6,
-            "name": "Blake Grupe",
-            "nonzero_weeks": 1,
-            "on_fantasy_reserve": false,
-            "position": "K",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              4.0
-            ]
           }
         ],
         "QB": [
@@ -4148,6 +4184,24 @@
               13.08,
               24.74,
               27.34
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "11559",
+            "n_weeks": 6,
+            "name": "Michael Penix Jr.",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "QB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -4386,24 +4440,6 @@
               3.1,
               18.5,
               7.1,
-              0.0,
-              0.0
-            ]
-          },
-          {
-            "actual_points_total": 12.4,
-            "actual_points_weekly_avg": 2.07,
-            "id": "6819",
-            "n_weeks": 6,
-            "name": "Michael Pittman Jr.",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              7.3,
-              0.0,
-              2.6,
-              2.5,
               0.0,
               0.0
             ]
@@ -8687,6 +8723,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-25T02:32:56.867571+00:00",
+  "snapshot_utc": "2026-10-25T03:33:02.324455+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-6"
 }

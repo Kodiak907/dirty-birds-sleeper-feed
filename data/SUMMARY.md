@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-25T02:32:56.867571+00:00
+Updated: 2026-10-25T03:33:02.324455+00:00
 League: 1399157532559192064
 NFL week: 7
 
@@ -19,7 +19,18 @@ NFL week: 7
 - Roster 12: Cokerthestroker | 5-1 | FAAB used: 125
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 4: added Jerry Jeudy, Kenny Gainwell; dropped none
+- lineup_change â roster/transaction 4
+- Roster 6: added Michael Penix Jr., Carolina Panthers; dropped Blake Grupe, Michael Pittman Jr., Jacksonville Jaguars
+- lineup_change â roster/transaction 6
+- lineup_change â roster/transaction 9
+- lineup_change â roster/transaction 11
+- Transaction 1419925022151065600: free_agent / complete / rosters [6] / adds None / drops {'13545': 6} / FAAB bid None
+- Transaction 1419924761168879616: free_agent / complete / rosters [6] / adds {'13545': 6} / drops {'11058': 6} / FAAB bid None
+- Transaction 1419924455521538048: free_agent / complete / rosters [6] / adds {'CAR': 6} / drops {'JAX': 6} / FAAB bid None
+- Transaction 1419919002389516288: free_agent / complete / rosters [4] / adds {'7567': 4} / drops None / FAAB bid None
+- Transaction 1419918811166969856: free_agent / complete / rosters [6] / adds {'11559': 6} / drops {'6819': 6} / FAAB bid None
+- Transaction 1419917828441505792: free_agent / complete / rosters [4] / adds {'6783': 4} / drops None / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-25T02:33:00.807662+00:00
-Sleeper snapshot: 2026-10-25T02:32:56.867571+00:00
+Generated: 2026-10-25T03:33:07.437298+00:00
+Sleeper snapshot: 2026-10-25T03:33:02.324455+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- DANGER CLOSE: added Jerry Jeudy, Kenny Gainwell; dropped none
+- kfsn: added Michael Penix Jr., Carolina Panthers; dropped Blake Grupe, Michael Pittman Jr., Jacksonville Jaguars
 
 ## Limits
 
