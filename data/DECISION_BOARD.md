@@ -24,6 +24,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Mike Washington Jr. | 4.97 | +1.70 | 21.3% | Carries 6.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Chris Rodriguez Jr. | 4.72 | +1.44 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
 | 7 | Tank Bigsby | 2.00 | -1.27 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
+| 8 | Jaleel McLaughlin | 1.59 | -1.69 | 28.3% | Carries 3.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (1.35 PPG)
 

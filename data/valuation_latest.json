@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-25T20:28:24.856656+00:00",
+  "generated_at_utc": "2026-10-25T20:59:31.853913+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -852,24 +852,6 @@
           ]
         },
         {
-          "actual_points_total": 0.0,
-          "actual_points_weekly_avg": 0.0,
-          "id": "11439",
-          "n_weeks": 6,
-          "name": "Jaleel McLaughlin",
-          "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 40.4,
           "actual_points_weekly_avg": 6.73,
           "id": "11576",
@@ -939,6 +921,24 @@
             0.0,
             0.0,
             0.0
+          ]
+        },
+        {
+          "actual_points_total": 18.5,
+          "actual_points_weekly_avg": 3.08,
+          "id": "13150",
+          "n_weeks": 6,
+          "name": "Darius Cooper",
+          "nonzero_weeks": 2,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            17.1,
+            1.4
           ]
         },
         {
@@ -1363,24 +1363,6 @@
               0.0,
               0.0
             ]
-          },
-          {
-            "actual_points_total": 0.0,
-            "actual_points_weekly_avg": 0.0,
-            "id": "11439",
-            "n_weeks": 6,
-            "name": "Jaleel McLaughlin",
-            "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
           }
         ],
         "TE": [
@@ -1510,6 +1492,24 @@
               0.0,
               0.0,
               0.0
+            ]
+          },
+          {
+            "actual_points_total": 18.5,
+            "actual_points_weekly_avg": 3.08,
+            "id": "13150",
+            "n_weeks": 6,
+            "name": "Darius Cooper",
+            "nonzero_weeks": 2,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              17.1,
+              1.4
             ]
           },
           {
@@ -8723,6 +8723,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-25T20:28:19.128990+00:00",
+  "snapshot_utc": "2026-10-25T20:59:28.579624+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-6"
 }

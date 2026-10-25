@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-25T20:28:25.016992+00:00",
+  "generated_at_utc": "2026-10-25T20:59:32.066065+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -686,6 +686,28 @@
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 3.33,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 28.3,
+          "snap_trend_3_appearances_pp": 60.0,
+          "targets_per_game": 1.67
+        },
+        "name": "Jaleel McLaughlin",
+        "ppg": 1.59,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.275
+        },
+        "same_position_uplift_ppg": -1.69,
+        "screen_only": true,
+        "sleeper_id": "11439",
+        "team": "CLE"
       }
     ],
     "TE": [
@@ -1153,31 +1175,6 @@
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
-            "week": "4"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.909,
-          "recent_snap_pct": 78.7,
-          "snap_trend_3_appearances_pp": -29.0,
-          "targets_per_game": 4.0
-        },
-        "name": "Darius Cooper",
-        "ppg": 2.61,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.351
-        },
-        "same_position_uplift_ppg": 1.26,
-        "screen_only": true,
-        "sleeper_id": "13150",
-        "team": "PHI"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
             "week": "1"
           },
           "not_an_injury_probability": true,
@@ -1247,5 +1244,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-25T20:28:19.128990+00:00"
+  "snapshot_utc": "2026-10-25T20:59:28.579624+00:00"
 }

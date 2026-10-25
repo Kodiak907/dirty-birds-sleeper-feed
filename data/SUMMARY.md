@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-25T20:28:19.128990+00:00
+Updated: 2026-10-25T20:59:28.579624+00:00
 League: 1399157532559192064
 NFL week: 7
 
@@ -19,7 +19,8 @@ NFL week: 7
 - Roster 12: Cokerthestroker | 5-1 | FAAB used: 125
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 2: added Darius Cooper; dropped Jaleel McLaughlin
+- Transaction 1420187481508249600: free_agent / complete / rosters [2] / adds {'13150': 2} / drops {'11439': 2} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

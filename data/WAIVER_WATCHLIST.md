@@ -1,15 +1,15 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-25T20:28:24.905101+00:00
-Sleeper snapshot: 2026-10-25T20:28:19.128990+00:00
+Generated: 2026-10-25T20:59:31.916158+00:00
+Sleeper snapshot: 2026-10-25T20:59:28.579624+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 329 |
-| RB | 627 |
-| WR | 1291 |
+| RB | 628 |
+| WR | 1290 |
 | TE | 614 |
 | K | 141 |
 | DEF | 15 |
@@ -35,6 +35,7 @@ Sleeper snapshot: 2026-10-25T20:28:19.128990+00:00
 | 5 | Mike Washington Jr. | LV | 4.97 | 91% | 21.3% | Questionable |
 | 6 | Chris Rodriguez Jr. | JAX | 4.72 | 91% | — | Not flagged |
 | 7 | Tank Bigsby | PHI | 2.00 | 73% | 28.7% | IR |
+| 8 | Jaleel McLaughlin | CLE | 1.59 | 91% | 28.3% | Not flagged |
 
 ### WR
 

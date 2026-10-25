@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-25T20:28:25.097100+00:00
+Generated: 2026-10-25T20:59:32.173682+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.16**. Weeks with partial projections and injury status require manual verification.
@@ -24,6 +24,7 @@ Baseline illustrative optimal PPG: **126.16**. Weeks with partial projections an
 | 5 | Mike Washington Jr. | 4.97 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.70 | Availability status: questionable |
 | 6 | Chris Rodriguez Jr. | 4.72 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.44 | Limited snap sample |
 | 7 | Tank Bigsby | 2.00 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.27 | Availability status: ir; Partial projection coverage |
+| 8 | Jaleel McLaughlin | 1.59 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.69 | No flagged data gap; review still required |
 
 ## WR
 

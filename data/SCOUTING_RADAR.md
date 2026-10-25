@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-25T20:28:24.796787+00:00
-Sleeper snapshot: 2026-10-25T20:28:19.128990+00:00
+Generated: 2026-10-25T20:59:31.782832+00:00
+Sleeper snapshot: 2026-10-25T20:59:28.579624+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- CREAM MACHINE: added Darius Cooper; dropped Jaleel McLaughlin
 
 ## Limits
 

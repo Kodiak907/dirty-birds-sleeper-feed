@@ -7806,5 +7806,46 @@
       "TEN"
     ],
     "roster_id": 2
+  },
+  {
+    "added": [
+      "13150"
+    ],
+    "detected_at_utc": "2026-10-25T20:59:28.579624+00:00",
+    "dropped": [
+      "11439"
+    ],
+    "kind": "roster_change",
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-10-25T20:59:28.579624+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "13150": 2
+      },
+      "consenter_ids": [
+        2
+      ],
+      "created": 1792961590700,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": {
+        "11439": 2
+      },
+      "leg": 7,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1792961590700,
+      "transaction_id": "1420187481508249600",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1420187481508249600"
   }
 ]
