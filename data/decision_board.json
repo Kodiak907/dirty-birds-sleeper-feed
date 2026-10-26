@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-26T14:46:49.792702+00:00",
+  "generated_at_utc": "2026-10-26T16:04:32.523463+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -491,12 +491,12 @@
           "targets_per_game": 0.0
         },
         "name": "Tanner McKee",
-        "ppg": 11.85,
+        "ppg": 11.84,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.593
         },
-        "same_position_uplift_ppg": -2.74,
+        "same_position_uplift_ppg": -2.76,
         "screen_only": true,
         "sleeper_id": "9230",
         "team": "PHI"
@@ -1266,5 +1266,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-26T14:46:45.550445+00:00"
+  "snapshot_utc": "2026-10-26T16:04:26.948389+00:00"
 }

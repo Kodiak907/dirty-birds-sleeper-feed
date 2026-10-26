@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-26T14:46:53.958020+00:00",
-  "source_snapshot_utc": "2026-10-26T14:46:45.550445+00:00",
-  "source_market_as_of": "2026-10-26T03:09:53.430806+00:00",
-  "source_projection_as_of": "2026-10-26T07:30:19.386028+00:00",
+  "generated_at_utc": "2026-10-26T16:04:36.685225+00:00",
+  "source_snapshot_utc": "2026-10-26T16:04:26.948389+00:00",
+  "source_market_as_of": "2026-10-26T15:44:27.520850+00:00",
+  "source_projection_as_of": "2026-10-26T15:03:26.637053+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -18,12 +18,45 @@
     }
   ],
   "tested": 27513,
-  "market_screened": 7841,
+  "market_screened": 7786,
   "reports": [
     {
       "asset": "Garrett Wilson",
       "owned_now": true,
       "leads": [
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "8228",
+              "name": "Jaylen Warren",
+              "position": "RB"
+            }
+          ],
+          "opponent_roster_id": 3,
+          "opponent": "BigOlBoyle",
+          "our_lineup_delta_ppg": 0.96,
+          "their_lineup_delta_ppg": 0.63,
+          "value_paid_received_ratio": 1.158,
+          "our_extra_cut": null,
+          "opponent_extra_cut": "Blake Corum",
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
         {
           "give": [
             {
@@ -53,45 +86,7 @@
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 0.96,
           "their_lineup_delta_ppg": 0.63,
-          "value_paid_received_ratio": 1.051,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "1373",
-              "name": "Geno Smith",
-              "position": "QB"
-            },
-            {
-              "id": "8228",
-              "name": "Jaylen Warren",
-              "position": "RB"
-            }
-          ],
-          "opponent_roster_id": 3,
-          "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 0.96,
-          "their_lineup_delta_ppg": 0.63,
-          "value_paid_received_ratio": 1.072,
+          "value_paid_received_ratio": 0.956,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -129,7 +124,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.81,
           "their_lineup_delta_ppg": 0.46,
-          "value_paid_received_ratio": 0.741,
+          "value_paid_received_ratio": 0.729,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -139,7 +134,7 @@
           ]
         }
       ],
-      "candidate_count": 15
+      "candidate_count": 16
     },
     {
       "asset": "A.J. Brown",
@@ -174,7 +169,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.11,
           "their_lineup_delta_ppg": 0.73,
-          "value_paid_received_ratio": 0.783,
+          "value_paid_received_ratio": 0.848,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -212,7 +207,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.11,
           "their_lineup_delta_ppg": 0.73,
-          "value_paid_received_ratio": 1.001,
+          "value_paid_received_ratio": 1.065,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -250,7 +245,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 0.55,
           "their_lineup_delta_ppg": 0.74,
-          "value_paid_received_ratio": 0.896,
+          "value_paid_received_ratio": 0.973,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -288,7 +283,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 0.55,
           "their_lineup_delta_ppg": 0.74,
-          "value_paid_received_ratio": 0.784,
+          "value_paid_received_ratio": 0.831,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -321,7 +316,7 @@
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 0.5,
           "their_lineup_delta_ppg": 1.09,
-          "value_paid_received_ratio": 0.99,
+          "value_paid_received_ratio": 1.072,
           "our_extra_cut": null,
           "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -359,7 +354,7 @@
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 0.5,
           "their_lineup_delta_ppg": 1.09,
-          "value_paid_received_ratio": 0.859,
+          "value_paid_received_ratio": 0.903,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -397,7 +392,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.46,
           "their_lineup_delta_ppg": 0.62,
-          "value_paid_received_ratio": 1.143,
+          "value_paid_received_ratio": 1.196,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -435,7 +430,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.46,
           "their_lineup_delta_ppg": 0.62,
-          "value_paid_received_ratio": 1.109,
+          "value_paid_received_ratio": 1.112,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -471,16 +466,16 @@
               "position": "QB"
             },
             {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
+              "id": "3163",
+              "name": "Jared Goff",
+              "position": "QB"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.65,
           "their_lineup_delta_ppg": 1.2,
-          "value_paid_received_ratio": 0.914,
+          "value_paid_received_ratio": 0.735,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -509,8 +504,8 @@
               "position": "QB"
             },
             {
-              "id": "5045",
-              "name": "Courtland Sutton",
+              "id": "13274",
+              "name": "Germie Bernard",
               "position": "WR"
             }
           ],
@@ -518,7 +513,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.65,
           "their_lineup_delta_ppg": 1.2,
-          "value_paid_received_ratio": 0.928,
+          "value_paid_received_ratio": 0.946,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",

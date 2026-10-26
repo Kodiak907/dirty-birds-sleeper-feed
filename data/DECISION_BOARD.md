@@ -11,7 +11,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Malik Willis | 14.75 | +0.16 | 100.0% | — | No modeled flags (not medically cleared) |
 | 2 | Jacoby Brissett | 13.67 | -0.92 | 100.0% | — | No modeled flags (not medically cleared) |
-| 3 | Tanner McKee | 11.85 | -2.74 | 100.0% | — | No modeled flags (not medically cleared) |
+| 3 | Tanner McKee | 11.84 | -2.76 | 100.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Jonah Coleman (3.27 PPG)
 
