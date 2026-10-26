@@ -1,18 +1,18 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-26T01:24:36.831944+00:00 | Forecast as of: 2026-10-25T19:06:13.828658+00:00
+Generated: 2026-10-26T01:47:06.093368+00:00 | Forecast as of: 2026-10-26T01:24:45.056433+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 7
 
-**Projected optimal score:** 138.10
+**Projected optimal score:** 138.15
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | NYG | 17.77 |
 | Bijan Robinson | RB | SF | 21.81 |
-| Kyren Williams | RB | LV | 18.31 |
+| Kyren Williams | RB | LV | 18.36 |
 | Zay Flowers | WR | CIN | 15.80 |
 | Garrett Wilson | WR | MIA | 13.75 |
 | Isaiah Likely | TE | HOU | 10.22 |
@@ -23,31 +23,31 @@ Generated: 2026-10-26T01:24:36.831944+00:00 | Forecast as of: 2026-10-25T19:06:1
 
 ## Week 8
 
-**Projected optimal score:** 126.49
+**Projected optimal score:** 126.80
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Patrick Mahomes | QB | DEN | 17.00 |
-| Bijan Robinson | RB | TB | 19.29 |
+| Patrick Mahomes | QB | DEN | 16.94 |
+| Bijan Robinson | RB | TB | 19.26 |
 | Kyren Williams | RB | LAC | 18.36 |
-| Zay Flowers | WR | BUF | 15.19 |
+| Zay Flowers | WR | BUF | 15.11 |
 | Garrett Wilson | WR | LV | 13.10 |
-| Chig Okonkwo | TE | PHI | 5.48 |
+| Chig Okonkwo | TE | PHI | 5.57 |
 | Will Reichard | K | DET | 7.39 |
 | Minnesota Vikings | DEF | DET | 6.33 |
-| A.J. Brown | WR | MIA | 12.56 |
-| Ollie Gordon II | RB | NE | 11.79 |
+| A.J. Brown | WR | MIA | 12.64 |
+| Ollie Gordon II | RB | NE | 12.10 |
 
 ## Week 9
 
-**Projected optimal score:** 137.03
+**Projected optimal score:** 137.10
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Patrick Mahomes | QB | NYJ | 20.02 |
 | Bijan Robinson | RB | CIN | 22.21 |
 | Kyren Williams | RB | WAS | 17.60 |
-| Zay Flowers | WR | JAX | 15.71 |
+| Zay Flowers | WR | JAX | 15.78 |
 | A.J. Brown | WR | GB | 12.02 |
 | Isaiah Likely | TE | PHI | 10.04 |
 | Will Reichard | K | BUF | 7.49 |

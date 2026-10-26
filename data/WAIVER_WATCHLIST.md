@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-26T01:24:32.083530+00:00
-Sleeper snapshot: 2026-10-26T01:24:28.814170+00:00
+Generated: 2026-10-26T01:47:00.949666+00:00
+Sleeper snapshot: 2026-10-26T01:46:55.896115+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,20 +20,20 @@ Sleeper snapshot: 2026-10-26T01:24:28.814170+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Malik Willis | MIA | 14.72 | 100% | 100.0% | Not flagged |
-| 2 | Jacoby Brissett | ARI | 13.66 | 91% | 100.0% | Not flagged |
-| 3 | Tanner McKee | PHI | 11.85 | 91% | 100.0% | Not flagged |
+| 1 | Malik Willis | MIA | 14.75 | 100% | 100.0% | Not flagged |
+| 2 | Jacoby Brissett | ARI | 13.67 | 91% | 100.0% | Not flagged |
+| 3 | Tanner McKee | PHI | 11.86 | 91% | 100.0% | Not flagged |
 
 ### RB
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | NYG | 7.10 | 91% | 25.0% | Not flagged |
-| 2 | Rachaad White | WAS | 6.90 | 91% | 57.3% | Not flagged |
+| 2 | Rachaad White | WAS | 6.89 | 91% | 57.3% | Not flagged |
 | 3 | Keaton Mitchell | LAC | 5.60 | 91% | 32.0% | Not flagged |
 | 4 | Samaje Perine | CIN | 5.15 | 100% | 39.7% | Not flagged |
-| 5 | Mike Washington Jr. | LV | 4.97 | 91% | 21.3% | Questionable |
-| 6 | Chris Rodriguez Jr. | JAX | 4.72 | 91% | — | Not flagged |
+| 5 | Mike Washington Jr. | LV | 4.98 | 91% | 21.3% | Questionable |
+| 6 | Chris Rodriguez Jr. | JAX | 4.71 | 91% | — | Not flagged |
 | 7 | Tank Bigsby | PHI | 2.00 | 73% | 28.7% | IR |
 | 8 | Jaleel McLaughlin | CLE | 1.59 | 91% | 28.3% | Not flagged |
 
@@ -41,13 +41,13 @@ Sleeper snapshot: 2026-10-26T01:24:28.814170+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Jakobi Meyers | JAX | 8.18 | 91% | 80.7% | Not flagged |
-| 2 | Caleb Douglas | MIA | 6.01 | 100% | 88.5% | Not flagged |
+| 1 | Jakobi Meyers | JAX | 8.17 | 91% | 80.7% | Not flagged |
+| 2 | Caleb Douglas | MIA | 6.02 | 100% | 88.5% | Not flagged |
 | 3 | Antonio Williams | WAS | 5.51 | 91% | 68.0% | Not flagged |
 | 4 | Quentin Johnston | LAC | 5.17 | 91% | 81.3% | Not flagged |
 | 5 | Chris Bell | MIA | 5.12 | 100% | 74.7% | Not flagged |
 | 6 | Jauan Jennings | MIN | 4.80 | 100% | 81.3% | Not flagged |
-| 7 | Ja'Kobi Lane | BAL | 4.60 | 91% | 47.0% | Not flagged |
+| 7 | Ja'Kobi Lane | BAL | 4.61 | 91% | 47.0% | Not flagged |
 | 8 | Rashod Bateman | BAL | 4.35 | 91% | 52.3% | Not flagged |
 | 9 | Makai Lemon | PHI | 4.04 | 91% | 78.7% | Not flagged |
 | 10 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
@@ -80,10 +80,10 @@ Sleeper snapshot: 2026-10-26T01:24:28.814170+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Kansas City Chiefs | KC | 6.77 | 100% | — | Not flagged |
-| 2 | Jacksonville Jaguars | JAX | 6.43 | 91% | — | Not flagged |
+| 1 | Kansas City Chiefs | KC | 6.78 | 100% | — | Not flagged |
+| 2 | Jacksonville Jaguars | JAX | 6.42 | 91% | — | Not flagged |
 | 3 | Baltimore Ravens | BAL | 6.29 | 91% | — | Not flagged |
-| 4 | Cincinnati Bengals | CIN | 6.07 | 100% | — | Not flagged |
+| 4 | Cincinnati Bengals | CIN | 6.08 | 100% | — | Not flagged |
 | 5 | Green Bay Packers | GB | 5.95 | 91% | — | Not flagged |
 | 6 | Buffalo Bills | BUF | 5.87 | 91% | — | Not flagged |
 | 7 | Indianapolis Colts | IND | 5.77 | 91% | — | Not flagged |
@@ -101,22 +101,22 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Malik Willis | QB | MIA | 14.72 | 100.0% |
-| Jacoby Brissett | QB | ARI | 13.66 | 100.0% |
-| Jakobi Meyers | WR | JAX | 8.18 | 80.7% |
+| Malik Willis | QB | MIA | 14.75 | 100.0% |
+| Jacoby Brissett | QB | ARI | 13.67 | 100.0% |
+| Jakobi Meyers | WR | JAX | 8.17 | 80.7% |
 | Tyrone Tracy Jr. | RB | NYG | 7.10 | 25.0% |
-| Rachaad White | RB | WAS | 6.90 | 57.3% |
+| Rachaad White | RB | WAS | 6.89 | 57.3% |
 | Jake Ferguson | TE | DAL | 6.22 | 69.3% |
-| Caleb Douglas | WR | MIA | 6.01 | 88.5% |
+| Caleb Douglas | WR | MIA | 6.02 | 88.5% |
 | Keaton Mitchell | RB | LAC | 5.60 | 32.0% |
 | Antonio Williams | WR | WAS | 5.51 | 68.0% |
 | Michael Mayer | TE | LV | 5.24 | 77.3% |
 | Quentin Johnston | WR | LAC | 5.17 | 81.3% |
 | Samaje Perine | RB | CIN | 5.15 | 39.7% |
 | Chris Bell | WR | MIA | 5.12 | 74.7% |
-| Mike Washington Jr. | RB | LV | 4.97 | 21.3% |
+| Mike Washington Jr. | RB | LV | 4.98 | 21.3% |
 | Jauan Jennings | WR | MIN | 4.80 | 81.3% |
-| Ja'Kobi Lane | WR | BAL | 4.60 | 47.0% |
+| Ja'Kobi Lane | WR | BAL | 4.61 | 47.0% |
 | Rashod Bateman | WR | BAL | 4.35 | 52.3% |
 | Noah Fant | TE | NO | 4.33 | 60.7% |
 | Makai Lemon | WR | PHI | 4.04 | 78.7% |
