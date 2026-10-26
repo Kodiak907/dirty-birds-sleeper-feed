@@ -8,6 +8,7 @@ on:
       - 'waiver.py'
       - 'auto_waiver_scout.py'
       - 'trade_quality_43.py'
+      - 'trade_block_scout.py'
       - 'fetch_market_values.py'
       - 'fetch_projections.py'
       - 'decision_engine.py'
@@ -81,6 +82,7 @@ jobs:
             # Automated candidate-wide injury/role/news research and stronger 1:1/2:2 trade gates.
             python auto_waiver_scout.py
             python trade_quality_43.py
+            python trade_block_scout.py
 
             python weekly_lineups.py
             python pregame_calibration.py
