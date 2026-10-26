@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-25T23:54:50.134572+00:00
-Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
+Generated: 2026-10-26T00:34:26.282787+00:00
+Sleeper snapshot: 2026-10-26T00:34:21.925023+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -10,7 +10,7 @@ Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
 | QB | 329 |
 | RB | 628 |
 | WR | 1290 |
-| TE | 614 |
+| TE | 615 |
 | K | 141 |
 | DEF | 15 |
 
@@ -59,10 +59,11 @@ Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Jake Ferguson | DAL | 6.22 | 91% | 69.3% | Not flagged |
-| 2 | Noah Fant | NO | 4.33 | 91% | 60.7% | Not flagged |
-| 3 | Colby Parkinson | LAR | 3.86 | 91% | — | Not flagged |
-| 4 | David Njoku | LAC | 2.53 | 91% | 35.5% | IR |
-| 5 | Zach Ertz | PHI | 1.48 | 82% | 23.3% | Not flagged |
+| 2 | Michael Mayer | LV | 5.24 | 91% | 77.3% | Not flagged |
+| 3 | Noah Fant | NO | 4.33 | 91% | 60.7% | Not flagged |
+| 4 | Colby Parkinson | LAR | 3.86 | 91% | — | Not flagged |
+| 5 | David Njoku | LAC | 2.53 | 91% | 35.5% | IR |
+| 6 | Zach Ertz | PHI | 1.48 | 82% | 23.3% | Not flagged |
 
 ### K
 
@@ -109,6 +110,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Caleb Douglas | WR | MIA | 6.01 | 88.5% |
 | Keaton Mitchell | RB | LAC | 5.60 | 32.0% |
 | Antonio Williams | WR | WAS | 5.51 | 68.0% |
+| Michael Mayer | TE | LV | 5.24 | 77.3% |
 | Quentin Johnston | WR | LAC | 5.17 | 81.3% |
 | Samaje Perine | RB | CIN | 5.15 | 39.7% |
 | Chris Bell | WR | MIA | 5.12 | 74.7% |
@@ -119,12 +121,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Noah Fant | TE | NO | 4.33 | 60.7% |
 | Makai Lemon | WR | PHI | 4.04 | 78.7% |
 | Michael Pittman Jr. | WR | PIT | 3.56 | 77.7% |
-| Adonai Mitchell | WR | NYJ | 3.49 | 75.5% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **33**
+Candidates with independently sourced projections AND usage data: **34**
 
 ## Coverage and rules
 

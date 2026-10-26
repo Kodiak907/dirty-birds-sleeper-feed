@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-25T23:54:49.952042+00:00
-Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
+Generated: 2026-10-26T00:34:26.121208+00:00
+Sleeper snapshot: 2026-10-26T00:34:21.925023+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1420239596209397760` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-26T00:34:26.121208+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
 - 2026-10-25T20:59:31.748139+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Darius Cooper → CREAM MACHINE  (#2) | Dropped: Jaleel McLaughlin → CREAM MACHINE  (#2)
 - 2026-10-25T15:30:52.555237+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baker Mayfield → CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jerry Jeudy → DANGER CLOSE  (#4)

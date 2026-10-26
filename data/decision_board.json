@@ -17,15 +17,15 @@
       "ppg": 3.275
     },
     "TE": {
-      "name": "Michael Mayer",
-      "ppg": 5.239
+      "name": "Chig Okonkwo",
+      "ppg": 5.433
     },
     "WR": {
       "name": "Christian Kirk",
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-25T23:54:50.292194+00:00",
+  "generated_at_utc": "2026-10-26T00:34:26.408418+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -456,7 +456,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 2.67,
+          "carries_per_game": 3.67,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -605,7 +605,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 6.33,
+          "carries_per_game": 5.33,
           "flags": [
             "sleeper_injury_questionable",
             "injury_report_observation_review"
@@ -621,7 +621,7 @@
           "projection_coverage": 0.909,
           "recent_snap_pct": 21.3,
           "snap_trend_3_appearances_pp": 14.0,
-          "targets_per_game": 1.33
+          "targets_per_game": 1.0
         },
         "name": "Mike Washington Jr.",
         "ppg": 4.97,
@@ -725,13 +725,35 @@
         "name": "Jake Ferguson",
         "ppg": 6.22,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.239
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
         },
-        "same_position_uplift_ppg": 0.98,
+        "same_position_uplift_ppg": 0.79,
         "screen_only": true,
         "sleeper_id": "8110",
         "team": "DAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.909,
+          "recent_snap_pct": 77.3,
+          "snap_trend_3_appearances_pp": -9.0,
+          "targets_per_game": 4.33
+        },
+        "name": "Michael Mayer",
+        "ppg": 5.24,
+        "replacement_reference": {
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
+        },
+        "same_position_uplift_ppg": -0.19,
+        "screen_only": true,
+        "sleeper_id": "9482",
+        "team": "LV"
       },
       {
         "audit": {
@@ -750,10 +772,10 @@
         "name": "Noah Fant",
         "ppg": 4.33,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.239
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
         },
-        "same_position_uplift_ppg": -0.9,
+        "same_position_uplift_ppg": -1.1,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -776,10 +798,10 @@
         "name": "Colby Parkinson",
         "ppg": 3.86,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.239
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
         },
-        "same_position_uplift_ppg": -1.38,
+        "same_position_uplift_ppg": -1.58,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -800,10 +822,10 @@
         "name": "David Njoku",
         "ppg": 2.53,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.239
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
         },
-        "same_position_uplift_ppg": -2.71,
+        "same_position_uplift_ppg": -2.9,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -822,10 +844,10 @@
         "name": "Zach Ertz",
         "ppg": 1.48,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.239
+          "name": "Chig Okonkwo",
+          "ppg": 5.433
         },
-        "same_position_uplift_ppg": -3.76,
+        "same_position_uplift_ppg": -3.96,
         "screen_only": true,
         "sleeper_id": "1339",
         "team": "PHI"
@@ -1244,5 +1266,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-25T23:54:47.041211+00:00"
+  "snapshot_utc": "2026-10-26T00:34:21.925023+00:00"
 }

@@ -21,7 +21,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Rachaad White | 6.90 | +3.63 | 57.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 3 | Keaton Mitchell | 5.60 | +2.33 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
 | 4 | Samaje Perine | 5.15 | +1.87 | 39.7% | Carries 7.0 | No modeled flags (not medically cleared) |
-| 5 | Mike Washington Jr. | 4.97 | +1.70 | 21.3% | Carries 6.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 5 | Mike Washington Jr. | 4.97 | +1.70 | 21.3% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Chris Rodriguez Jr. | 4.72 | +1.44 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
 | 7 | Tank Bigsby | 2.00 | -1.27 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
 | 8 | Jaleel McLaughlin | 1.59 | -1.69 | 28.3% | Carries 3.0 | No modeled flags (not medically cleared) |
@@ -43,15 +43,16 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 11 | Adonai Mitchell | 3.49 | +2.14 | 75.5% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 12 | Brian Thomas Jr. | 2.83 | +1.48 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
-## TE — reference: Michael Mayer (5.24 PPG)
+## TE — reference: Chig Okonkwo (5.43 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Jake Ferguson | 6.22 | +0.98 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 2 | Noah Fant | 4.33 | -0.90 | 60.7% | Tgt 1.3 | No modeled flags (not medically cleared) |
-| 3 | Colby Parkinson | 3.86 | -1.38 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 4 | David Njoku | 2.53 | -2.71 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
-| 5 | Zach Ertz | 1.48 | -3.76 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 1 | Jake Ferguson | 6.22 | +0.79 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 2 | Michael Mayer | 5.24 | -0.19 | 77.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 3 | Noah Fant | 4.33 | -1.10 | 60.7% | Tgt 1.3 | No modeled flags (not medically cleared) |
+| 4 | Colby Parkinson | 3.86 | -1.58 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
+| 5 | David Njoku | 2.53 | -2.90 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
+| 6 | Zach Ertz | 1.48 | -3.96 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
 
 ## K — reference: Will Reichard (7.30 PPG)
 

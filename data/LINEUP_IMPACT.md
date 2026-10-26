@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-25T23:54:50.402789+00:00
+Generated: 2026-10-26T00:34:26.505807+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.16**. Weeks with partial projections and injury status require manual verification.
@@ -48,10 +48,11 @@ Baseline illustrative optimal PPG: **126.16**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Jake Ferguson | 6.22 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.94 | No flagged data gap; review still required |
-| 2 | Noah Fant | 4.33 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.06 | No flagged data gap; review still required |
-| 3 | Colby Parkinson | 3.86 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.58 | No sourced usage; Limited snap sample |
-| 4 | David Njoku | 2.53 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.75 | Availability status: ir |
-| 5 | Zach Ertz | 1.48 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.80 | Partial projection coverage |
+| 2 | Michael Mayer | 5.24 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.96 | No flagged data gap; review still required |
+| 3 | Noah Fant | 4.33 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.06 | No flagged data gap; review still required |
+| 4 | Colby Parkinson | 3.86 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.58 | No sourced usage; Limited snap sample |
+| 5 | David Njoku | 2.53 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.75 | Availability status: ir |
+| 6 | Zach Ertz | 1.48 | Bench-depth scenario: Jonah Coleman | +0.00 | -1.80 | Partial projection coverage |
 
 ## K
 

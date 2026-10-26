@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-25T23:54:54.684493+00:00
-Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
-nflverse observations: 2026-10-25T23:54:49.611155+00:00; injury feed loaded: True
+Generated: 2026-10-26T00:34:31.999648+00:00
+Sleeper snapshot: 2026-10-26T00:34:21.925023+00:00
+nflverse observations: 2026-10-26T00:34:25.638262+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -21,7 +21,6 @@ nflverse observations: 2026-10-25T23:54:49.611155+00:00; injury feed loaded: Tru
 | Garrett Wilson | No tag | No matched report (not clearance) | 97.0% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Chig Okonkwo | No tag | Week 5 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
-| Michael Mayer | No tag | No matched report (not clearance) | 77.3% | Verify current status before kickoff |
 | DeMario Douglas | No tag | No matched report (not clearance) | 57.7% | Verify current status before kickoff |
 | Bijan Robinson | No tag | No matched report (not clearance) | 73.0% | Verify current status before kickoff |
 | Zach Charbonnet | Out | Week 7 observation: Out, Full Participation in Practice, Knee | — | Verify official NFL roster and game status before lineup decisions |

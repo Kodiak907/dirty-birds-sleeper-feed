@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-25T23:54:54.081858+00:00 | Forecast as of: 2026-10-25T19:06:13.828658+00:00
+Generated: 2026-10-26T00:34:31.141906+00:00 | Forecast as of: 2026-10-25T19:06:13.828658+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -23,7 +23,7 @@ Generated: 2026-10-25T23:54:54.081858+00:00 | Forecast as of: 2026-10-25T19:06:1
 
 ## Week 8
 
-**Projected optimal score:** 126.94
+**Projected optimal score:** 126.49
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -32,7 +32,7 @@ Generated: 2026-10-25T23:54:54.081858+00:00 | Forecast as of: 2026-10-25T19:06:1
 | Kyren Williams | RB | LAC | 18.36 |
 | Zay Flowers | WR | BUF | 15.19 |
 | Garrett Wilson | WR | LV | 13.10 |
-| Michael Mayer | TE | NYJ | 5.93 |
+| Chig Okonkwo | TE | PHI | 5.48 |
 | Will Reichard | K | DET | 7.39 |
 | Minnesota Vikings | DEF | DET | 6.33 |
 | A.J. Brown | WR | MIA | 12.56 |
@@ -74,7 +74,7 @@ Generated: 2026-10-25T23:54:54.081858+00:00 | Forecast as of: 2026-10-25T19:06:1
 
 ## Week 11
 
-**Projected optimal score:** 104.13
+**Projected optimal score:** 102.56
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -87,7 +87,7 @@ Generated: 2026-10-25T23:54:54.081858+00:00 | Forecast as of: 2026-10-25T19:06:1
 | Will Reichard | K | SF | 7.13 |
 | Minnesota Vikings | DEF | SF | 7.19 |
 | Chig Okonkwo | TE | CIN | 6.34 |
-| Michael Mayer | TE | DEN | 5.29 |
+| Jonah Coleman | RB | LV | 3.72 |
 
 ## Week 12
 

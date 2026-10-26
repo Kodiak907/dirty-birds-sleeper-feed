@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-25T23:54:50.067150+00:00
-Sleeper snapshot: 2026-10-25T23:54:47.041211+00:00
+Generated: 2026-10-26T00:34:26.230451+00:00
+Sleeper snapshot: 2026-10-26T00:34:21.925023+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -23,7 +23,6 @@ The points below average actual fantasy scoring over completed Weeks 1–6, with
 | Minnesota Vikings | DEF | 37.00 | 6.17 | 3/6 |
 | Will Reichard | K | 35.00 | 5.83 | 2/6 |
 | Ollie Gordon II | RB | 31.80 | 5.30 | 2/6 |
-| Michael Mayer | TE | 21.40 | 3.57 | 4/6 |
 | Kaelon Black | RB | 18.80 | 3.13 | 6/6 |
 | Jonah Coleman | RB | 13.30 | 2.22 | 1/6 |
 | A.J. Brown | WR | 8.30 | 1.38 | 2/6 |
@@ -40,7 +39,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | Cokerthestroker | 5-1 | 122.21 | 2 |
 | JA’MARRTRIX | 1-5 | 119.19 | 3 |
 | suck my dickerson | 4-2 | 116.61 | 1 |
-| Dirty Birds | 4-2 | 115.56 | 9 |
+| Dirty Birds | 4-2 | 115.12 | 9 |
 | To Infinity and Bijan | 3-3 | 114.62 | 5 |
 | DANGER CLOSE | 3-3 | 111.98 | 1 |
 | kfsn | 5-1 | 108.66 | 2 |
