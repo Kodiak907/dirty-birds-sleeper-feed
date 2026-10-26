@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-26T10:41:35.202963+00:00
-Sleeper snapshot: 2026-10-26T10:41:31.883166+00:00
+Generated: 2026-10-26T11:44:14.155905+00:00
+Sleeper snapshot: 2026-10-26T11:44:10.254972+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -28,30 +28,30 @@ Sleeper snapshot: 2026-10-26T10:41:31.883166+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Tyrone Tracy Jr. | NYG | 7.10 | 91% | 25.0% | Not flagged |
+| 1 | Tyrone Tracy Jr. | NYG | 7.10 | 91% | 24.0% | Not flagged |
 | 2 | Rachaad White | WAS | 6.89 | 91% | 57.3% | Not flagged |
 | 3 | Keaton Mitchell | LAC | 5.60 | 91% | 32.0% | Not flagged |
-| 4 | Samaje Perine | CIN | 5.15 | 100% | 39.7% | Not flagged |
-| 5 | Mike Washington Jr. | LV | 4.98 | 91% | 21.3% | Questionable |
+| 4 | Samaje Perine | CIN | 5.15 | 100% | 36.7% | Not flagged |
+| 5 | Mike Washington Jr. | LV | 4.98 | 91% | 23.0% | Questionable |
 | 6 | Chris Rodriguez Jr. | JAX | 4.71 | 91% | — | Not flagged |
 | 7 | Tank Bigsby | PHI | 2.00 | 73% | 28.7% | IR |
-| 8 | Jaleel McLaughlin | CLE | 1.59 | 91% | 28.3% | Not flagged |
+| 8 | Jaleel McLaughlin | CLE | 1.59 | 91% | 27.7% | Not flagged |
 
 ### WR
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Jakobi Meyers | JAX | 8.17 | 91% | 80.7% | Not flagged |
-| 2 | Caleb Douglas | MIA | 6.02 | 100% | 88.5% | Not flagged |
+| 2 | Caleb Douglas | MIA | 6.02 | 100% | 81.7% | Not flagged |
 | 3 | Antonio Williams | WAS | 5.51 | 91% | 68.0% | Not flagged |
 | 4 | Quentin Johnston | LAC | 5.17 | 91% | 81.3% | Not flagged |
-| 5 | Chris Bell | MIA | 5.12 | 100% | 74.7% | Not flagged |
-| 6 | Jauan Jennings | MIN | 4.80 | 100% | 81.3% | Not flagged |
-| 7 | Ja'Kobi Lane | BAL | 4.61 | 91% | 47.0% | Not flagged |
-| 8 | Rashod Bateman | BAL | 4.35 | 91% | 52.3% | Not flagged |
+| 5 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
+| 6 | Jauan Jennings | MIN | 4.80 | 100% | 73.3% | Not flagged |
+| 7 | Ja'Kobi Lane | BAL | 4.61 | 91% | 54.3% | Not flagged |
+| 8 | Rashod Bateman | BAL | 4.35 | 91% | 61.0% | Not flagged |
 | 9 | Makai Lemon | PHI | 4.04 | 91% | 78.7% | Not flagged |
 | 10 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
-| 11 | Adonai Mitchell | NYJ | 3.49 | 91% | 75.5% | Not flagged |
+| 11 | Adonai Mitchell | NYJ | 3.49 | 91% | 65.0% | Not flagged |
 | 12 | Mack Hollins | NE | 2.83 | 73% | 62.7% | IR |
 
 ### TE
@@ -59,8 +59,8 @@ Sleeper snapshot: 2026-10-26T10:41:31.883166+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Jake Ferguson | DAL | 6.22 | 91% | 69.3% | Not flagged |
-| 2 | Michael Mayer | LV | 5.24 | 91% | 77.3% | Not flagged |
-| 3 | Noah Fant | NO | 4.33 | 91% | 60.7% | Not flagged |
+| 2 | Michael Mayer | LV | 5.24 | 91% | 75.3% | Not flagged |
+| 3 | Noah Fant | NO | 4.33 | 91% | 57.0% | Not flagged |
 | 4 | Colby Parkinson | LAR | 3.86 | 91% | — | Not flagged |
 | 5 | David Njoku | LAC | 2.53 | 91% | 35.5% | IR |
 | 6 | Zach Ertz | PHI | 1.48 | 82% | 23.3% | Not flagged |
@@ -104,21 +104,21 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Malik Willis | QB | MIA | 14.75 | 100.0% |
 | Jacoby Brissett | QB | ARI | 13.67 | 100.0% |
 | Jakobi Meyers | WR | JAX | 8.17 | 80.7% |
-| Tyrone Tracy Jr. | RB | NYG | 7.10 | 25.0% |
+| Tyrone Tracy Jr. | RB | NYG | 7.10 | 24.0% |
 | Rachaad White | RB | WAS | 6.89 | 57.3% |
 | Jake Ferguson | TE | DAL | 6.22 | 69.3% |
-| Caleb Douglas | WR | MIA | 6.02 | 88.5% |
+| Caleb Douglas | WR | MIA | 6.02 | 81.7% |
 | Keaton Mitchell | RB | LAC | 5.60 | 32.0% |
 | Antonio Williams | WR | WAS | 5.51 | 68.0% |
-| Michael Mayer | TE | LV | 5.24 | 77.3% |
+| Michael Mayer | TE | LV | 5.24 | 75.3% |
 | Quentin Johnston | WR | LAC | 5.17 | 81.3% |
-| Samaje Perine | RB | CIN | 5.15 | 39.7% |
-| Chris Bell | WR | MIA | 5.12 | 74.7% |
-| Mike Washington Jr. | RB | LV | 4.98 | 21.3% |
-| Jauan Jennings | WR | MIN | 4.80 | 81.3% |
-| Ja'Kobi Lane | WR | BAL | 4.61 | 47.0% |
-| Rashod Bateman | WR | BAL | 4.35 | 52.3% |
-| Noah Fant | TE | NO | 4.33 | 60.7% |
+| Samaje Perine | RB | CIN | 5.15 | 36.7% |
+| Chris Bell | WR | MIA | 5.12 | 67.0% |
+| Mike Washington Jr. | RB | LV | 4.98 | 23.0% |
+| Jauan Jennings | WR | MIN | 4.80 | 73.3% |
+| Ja'Kobi Lane | WR | BAL | 4.61 | 54.3% |
+| Rashod Bateman | WR | BAL | 4.35 | 61.0% |
+| Noah Fant | TE | NO | 4.33 | 57.0% |
 | Makai Lemon | WR | PHI | 4.04 | 78.7% |
 | Michael Pittman Jr. | WR | PIT | 3.56 | 77.7% |
 
