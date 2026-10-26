@@ -25,7 +25,7 @@
       "ppg": 1.351
     }
   },
-  "generated_at_utc": "2026-10-26T19:43:04.114115+00:00",
+  "generated_at_utc": "2026-10-26T20:35:47.013446+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -906,28 +906,6 @@
       },
       {
         "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.909,
-          "recent_snap_pct": 68.0,
-          "snap_trend_3_appearances_pp": -2.0,
-          "targets_per_game": 5.0
-        },
-        "name": "Antonio Williams",
-        "ppg": 5.51,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.351
-        },
-        "same_position_uplift_ppg": 4.16,
-        "screen_only": true,
-        "sleeper_id": "13301",
-        "team": "WAS"
-      },
-      {
-        "audit": {
           "carries_per_game": 0.33,
           "flags": [],
           "injury_report_observation": {
@@ -1266,5 +1244,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-26T19:42:57.825018+00:00"
+  "snapshot_utc": "2026-10-26T20:35:40.429266+00:00"
 }

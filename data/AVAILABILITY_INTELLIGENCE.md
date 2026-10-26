@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-26T19:43:09.158748+00:00
-Sleeper snapshot: 2026-10-26T19:42:57.825018+00:00
-nflverse observations: 2026-10-26T19:43:03.154030+00:00; injury feed loaded: True
+Generated: 2026-10-26T20:35:52.881030+00:00
+Sleeper snapshot: 2026-10-26T20:35:40.429266+00:00
+nflverse observations: 2026-10-26T20:35:45.988337+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -12,6 +12,7 @@ nflverse observations: 2026-10-26T19:43:03.154030+00:00; injury feed loaded: Tru
 |---|---|---|---:|---|
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Ollie Gordon II | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
+| Antonio Williams | No tag | No matched report (not clearance) | 68.0% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 31.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
 | Patrick Mahomes | No tag | Week 7 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |

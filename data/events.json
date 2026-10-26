@@ -7884,5 +7884,47 @@
       "waiver_budget": []
     },
     "transaction_id": "1420239596209397760"
+  },
+  {
+    "added": [
+      "13301"
+    ],
+    "detected_at_utc": "2026-10-26T20:35:40.429266+00:00",
+    "dropped": [],
+    "kind": "roster_change",
+    "roster_id": 1
+  },
+  {
+    "detected_at_utc": "2026-10-26T20:35:40.429266+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "13301": 1
+      },
+      "consenter_ids": [
+        1
+      ],
+      "created": 1792974097700,
+      "creator": "1399093464662073344",
+      "draft_picks": [],
+      "drops": null,
+      "leg": 7,
+      "metadata": {
+        "notes": "Your waiver claim was processed successfully!"
+      },
+      "roster_ids": [
+        1
+      ],
+      "settings": {
+        "seq": 0,
+        "waiver_bid": 2
+      },
+      "status": "complete",
+      "status_updated": 1793044554403,
+      "transaction_id": "1420239939664142336",
+      "type": "waiver",
+      "waiver_budget": []
+    },
+    "transaction_id": "1420239939664142336"
   }
 ]

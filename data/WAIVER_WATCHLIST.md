@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-26T19:43:04.009732+00:00
-Sleeper snapshot: 2026-10-26T19:42:57.825018+00:00
+Generated: 2026-10-26T20:35:46.814392+00:00
+Sleeper snapshot: 2026-10-26T20:35:40.429266+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,7 +9,7 @@ Sleeper snapshot: 2026-10-26T19:42:57.825018+00:00
 |---|---:|
 | QB | 329 |
 | RB | 628 |
-| WR | 1290 |
+| WR | 1289 |
 | TE | 615 |
 | K | 141 |
 | DEF | 15 |
@@ -43,16 +43,16 @@ Sleeper snapshot: 2026-10-26T19:42:57.825018+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Jakobi Meyers | JAX | 8.17 | 91% | 80.7% | Not flagged |
 | 2 | Caleb Douglas | MIA | 6.02 | 100% | 81.7% | Not flagged |
-| 3 | Antonio Williams | WAS | 5.51 | 91% | 68.0% | Not flagged |
-| 4 | Quentin Johnston | LAC | 5.17 | 91% | 81.3% | Not flagged |
-| 5 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
-| 6 | Jauan Jennings | MIN | 4.80 | 100% | 73.3% | Not flagged |
-| 7 | Ja'Kobi Lane | BAL | 4.61 | 91% | 54.3% | Not flagged |
-| 8 | Rashod Bateman | BAL | 4.35 | 91% | 61.0% | Not flagged |
-| 9 | Makai Lemon | PHI | 4.05 | 91% | 78.7% | Not flagged |
-| 10 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
-| 11 | Adonai Mitchell | NYJ | 3.49 | 91% | 65.0% | Not flagged |
-| 12 | Mack Hollins | NE | 2.83 | 73% | 62.7% | IR |
+| 3 | Quentin Johnston | LAC | 5.17 | 91% | 81.3% | Not flagged |
+| 4 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
+| 5 | Jauan Jennings | MIN | 4.80 | 100% | 73.3% | Not flagged |
+| 6 | Ja'Kobi Lane | BAL | 4.61 | 91% | 54.3% | Not flagged |
+| 7 | Rashod Bateman | BAL | 4.35 | 91% | 61.0% | Not flagged |
+| 8 | Makai Lemon | PHI | 4.05 | 91% | 78.7% | Not flagged |
+| 9 | Michael Pittman Jr. | PIT | 3.56 | 73% | 77.7% | IR |
+| 10 | Adonai Mitchell | NYJ | 3.49 | 91% | 65.0% | Not flagged |
+| 11 | Mack Hollins | NE | 2.83 | 73% | 62.7% | IR |
+| 12 | Brian Thomas Jr. | JAX | 2.83 | 91% | — | Not flagged |
 
 ### TE
 
@@ -109,7 +109,6 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Jake Ferguson | TE | DAL | 6.23 | 69.3% |
 | Caleb Douglas | WR | MIA | 6.02 | 81.7% |
 | Keaton Mitchell | RB | LAC | 5.60 | 32.0% |
-| Antonio Williams | WR | WAS | 5.51 | 68.0% |
 | Michael Mayer | TE | LV | 5.24 | 75.3% |
 | Quentin Johnston | WR | LAC | 5.17 | 81.3% |
 | Samaje Perine | RB | CIN | 5.15 | 36.7% |
@@ -121,11 +120,12 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Noah Fant | TE | NO | 4.33 | 57.0% |
 | Makai Lemon | WR | PHI | 4.05 | 78.7% |
 | Michael Pittman Jr. | WR | PIT | 3.56 | 77.7% |
+| Adonai Mitchell | WR | NYJ | 3.49 | 65.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **34**
+Candidates with independently sourced projections AND usage data: **33**
 
 ## Coverage and rules
 

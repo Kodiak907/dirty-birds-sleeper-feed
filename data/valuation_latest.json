@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-26T19:43:03.964946+00:00",
+  "generated_at_utc": "2026-10-26T20:35:46.749009+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -124,6 +124,24 @@
             0.0,
             17.0,
             14.8,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "13301",
+          "n_weeks": 6,
+          "name": "Antonio Williams",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ]
         },
@@ -678,6 +696,24 @@
               0.0,
               0.0,
               4.2
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "13301",
+            "n_weeks": 6,
+            "name": "Antonio Williams",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           },
           {
@@ -8687,6 +8723,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-26T19:42:57.825018+00:00",
+  "snapshot_utc": "2026-10-26T20:35:40.429266+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-6"
 }

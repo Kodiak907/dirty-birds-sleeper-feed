@@ -32,16 +32,16 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Jakobi Meyers | 8.17 | +6.82 | 80.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
 | 2 | Caleb Douglas | 6.02 | +4.67 | 81.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 3 | Antonio Williams | 5.51 | +4.16 | 68.0% | Tgt 5.0 | No modeled flags (not medically cleared) |
-| 4 | Quentin Johnston | 5.17 | +3.82 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 5 | Chris Bell | 5.12 | +3.77 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 6 | Jauan Jennings | 4.80 | +3.45 | 73.3% | Tgt 1.7 | injury_report_observation_review |
-| 7 | Ja'Kobi Lane | 4.61 | +3.25 | 54.3% | Tgt 4.3 | injury_report_observation_review |
-| 8 | Rashod Bateman | 4.35 | +3.00 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 9 | Makai Lemon | 4.05 | +2.70 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
-| 10 | Michael Pittman Jr. | 3.56 | +2.21 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
-| 11 | Adonai Mitchell | 3.49 | +2.14 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 12 | Mack Hollins | 2.83 | +1.48 | 62.7% | Tgt 5.0 | sleeper_injury_ir, projection_weeks_partial, injury_report_observation_review |
+| 3 | Quentin Johnston | 5.17 | +3.82 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.12 | +3.77 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 5 | Jauan Jennings | 4.80 | +3.45 | 73.3% | Tgt 1.7 | injury_report_observation_review |
+| 6 | Ja'Kobi Lane | 4.61 | +3.25 | 54.3% | Tgt 4.3 | injury_report_observation_review |
+| 7 | Rashod Bateman | 4.35 | +3.00 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 8 | Makai Lemon | 4.05 | +2.70 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
+| 9 | Michael Pittman Jr. | 3.56 | +2.21 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
+| 10 | Adonai Mitchell | 3.49 | +2.14 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 11 | Mack Hollins | 2.83 | +1.48 | 62.7% | Tgt 5.0 | sleeper_injury_ir, projection_weeks_partial, injury_report_observation_review |
+| 12 | Brian Thomas Jr. | 2.83 | +1.47 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Chig Okonkwo (5.44 PPG)
 

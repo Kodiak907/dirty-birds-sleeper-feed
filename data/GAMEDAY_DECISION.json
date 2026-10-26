@@ -3,6 +3,7 @@
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
+      "Antonio Williams",
       "Chig Okonkwo",
       "Zach Charbonnet"
     ],
@@ -76,10 +77,11 @@
     "4950",
     "9753"
   ],
-  "generated_at_utc": "2026-10-26T19:43:10.731038+00:00",
+  "generated_at_utc": "2026-10-26T20:35:54.675926+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
+      "Antonio Williams",
       "Chig Okonkwo"
     ],
     "ppg": 138.15,
@@ -167,6 +169,15 @@
       "id": "12495",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Ollie Gordon II",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "13301",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Antonio Williams",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -310,8 +321,8 @@
   "removed_starters": [],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-10-26T19:42:57.825018+00:00",
-  "source_availability_generated_at_utc": "2026-10-26T19:43:09.158748+00:00",
+  "snapshot_utc": "2026-10-26T20:35:40.429266+00:00",
+  "source_availability_generated_at_utc": "2026-10-26T20:35:52.881030+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

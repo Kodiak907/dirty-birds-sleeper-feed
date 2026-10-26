@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-26T19:43:04.248631+00:00
+Generated: 2026-10-26T20:35:47.258574+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,17 +8,9 @@ Generated: 2026-10-26T19:43:04.248631+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Jakobi Meyers | WR | +0.00 | 6.82 | Christian Kirk | depth candidate |
-| Caleb Douglas | WR | +0.00 | 4.67 | Christian Kirk | depth candidate |
-| Antonio Williams | WR | +0.00 | 4.16 | Christian Kirk | depth candidate |
 | Tyrone Tracy Jr. | RB | +0.00 | 3.82 | Jonah Coleman | depth candidate |
-| Quentin Johnston | WR | +0.00 | 3.82 | Christian Kirk | depth candidate |
-| Chris Bell | WR | +0.00 | 3.77 | Christian Kirk | depth candidate |
 | Rachaad White | RB | +0.00 | 3.62 | Jonah Coleman | depth candidate |
-| Jauan Jennings | WR | +0.00 | 3.45 | Christian Kirk | depth candidate |
-| Ja'Kobi Lane | WR | +0.00 | 3.25 | Christian Kirk | depth candidate |
-| Rashod Bateman | WR | +0.00 | 3.0 | Christian Kirk | depth candidate |
-| Makai Lemon | WR | +0.00 | 2.7 | Christian Kirk | depth candidate |
+| Jakobi Meyers | WR | +0.00 | 2.66 | Antonio Williams | depth candidate |
 | Keaton Mitchell | RB | +0.00 | 2.33 | Jonah Coleman | depth candidate |
 
 ## Trade proposals

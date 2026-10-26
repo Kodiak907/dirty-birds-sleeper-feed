@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-26T19:43:03.883465+00:00",
+  "generated_at_utc": "2026-10-26T20:35:46.611364+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 142,
+      "faab_used": 144,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 707.04,
@@ -32,6 +32,7 @@
         ],
         "WR": [
           "A.J. Brown",
+          "Antonio Williams",
           "Christian Kirk",
           "DeMario Douglas",
           "Garrett Wilson",
@@ -103,6 +104,10 @@
         {
           "bid": 1,
           "player": "Michael Mayer"
+        },
+        {
+          "bid": 2,
+          "player": "Antonio Williams"
         }
       ],
       "team": "Dirty Birds",
@@ -662,5 +667,5 @@
       "trades_completed": 2
     }
   ],
-  "source_snapshot_utc": "2026-10-26T19:42:57.825018+00:00"
+  "source_snapshot_utc": "2026-10-26T20:35:40.429266+00:00"
 }
