@@ -1,6 +1,6 @@
 # Dirty Birds — Phase VIII Full-Season Playoff Simulation
 
-Generated: 2026-10-25T15:59:55.072908+00:00
+Generated: 2026-10-26T16:26:21.441543+00:00
 
 Uses verified future Sleeper fixtures and current roster lineup projections. Historical score variation is descriptive, not calibrated pregame projection error.
 
@@ -8,18 +8,18 @@ Status: **complete_schedule_conditional_model**
 
 | Team | Current record | Playoffs | Bye | Final | Title |
 |---|---|---:|---:|---:|---:|
-| kfsn (6) | 5-1 | 99.1% | 66.9% | 51.8% | 30.0% |
-| Dirty Birds (1) | 4-2 | 97.5% | 47.9% | 43.8% | 23.0% |
-| Cokerthestroker (12) | 5-1 | 97.9% | 52.4% | 39.9% | 18.0% |
-| suck my dickerson (11) | 4-2 | 92.2% | 24.3% | 31.1% | 16.4% |
-| JA’MARRTRIX (7) | 1-5 | 33.5% | 0.4% | 9.0% | 4.4% |
-| DeeboSix0 (8) | 4-2 | 74.6% | 6.1% | 11.0% | 3.7% |
-|     Victorious Secret (5) | 2-4 | 35.8% | 0.8% | 6.7% | 2.7% |
-| To Infinity and Bijan (9) | 3-3 | 28.8% | 0.8% | 2.9% | 0.8% |
-| DANGER CLOSE  (4) | 3-3 | 18.7% | 0.2% | 1.8% | 0.6% |
-| BigOlBoyle (3) | 1-5 | 5.0% | 0.0% | 0.8% | 0.3% |
-| CREAM MACHINE  (2) | 3-3 | 16.1% | 0.2% | 1.1% | 0.2% |
-| EmanAndYoMomma (10) | 1-5 | 0.8% | 0.0% | 0.0% | 0.0% |
+| kfsn (6) | 5-1 | 99.0% | 65.3% | 50.5% | 28.5% |
+| Dirty Birds (1) | 4-2 | 98.3% | 53.8% | 48.3% | 26.7% |
+| Cokerthestroker (12) | 5-1 | 97.9% | 50.2% | 38.5% | 17.1% |
+| suck my dickerson (11) | 4-2 | 92.0% | 22.7% | 30.0% | 15.6% |
+| JA’MARRTRIX (7) | 1-5 | 33.8% | 0.3% | 9.1% | 4.4% |
+| DeeboSix0 (8) | 4-2 | 74.4% | 5.7% | 10.7% | 3.5% |
+|     Victorious Secret (5) | 2-4 | 35.3% | 0.7% | 6.5% | 2.5% |
+| To Infinity and Bijan (9) | 3-3 | 28.5% | 0.7% | 2.8% | 0.8% |
+| DANGER CLOSE  (4) | 3-3 | 19.6% | 0.2% | 1.8% | 0.5% |
+| BigOlBoyle (3) | 1-5 | 5.0% | 0.0% | 0.7% | 0.2% |
+| CREAM MACHINE  (2) | 3-3 | 15.4% | 0.2% | 1.1% | 0.2% |
+| EmanAndYoMomma (10) | 1-5 | 0.7% | 0.0% | 0.0% | 0.0% |
 
 ## Assumptions
 
