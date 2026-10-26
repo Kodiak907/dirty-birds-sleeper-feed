@@ -2,19 +2,18 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-10-25T14:46:07.986293+00:00
+Updated: 2026-10-26T15:44:27.625047+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 4. Unpriced candidate packages: 2.
+Fully priced in-range opportunities: 3. Unpriced candidate packages: 1.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 9 | Bijan Robinson | Jaxon Smith-Njigba | 0.99× | +0.83 | +2.09 |
-| 2 | 9 | Bijan Robinson | Jaxon Smith-Njigba, Tyler Shough | 0.81× | +0.83 | +2.09 |
-| 3 | 3 | Patrick Mahomes, Garrett Wilson | Jonathan Taylor | 1.07× | +1.19 | +0.41 |
-| 4 | 2 | Patrick Mahomes, Garrett Wilson | Puka Nacua | 1.00× | +0.65 | +0.28 |
+| 1 | 9 | Bijan Robinson | Jaxon Smith-Njigba | 1.01× | +0.86 | +2.00 |
+| 2 | 3 | Patrick Mahomes, Garrett Wilson | Jonathan Taylor | 0.89× | +1.14 | +0.45 |
+| 3 | 2 | Patrick Mahomes, Garrett Wilson | Puka Nacua | 0.91× | +0.63 | +0.28 |
 
 ## Negotiation protocol
 
