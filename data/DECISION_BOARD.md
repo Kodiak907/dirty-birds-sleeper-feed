@@ -11,7 +11,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Malik Willis | 14.75 | +0.16 | 100.0% | — | No modeled flags (not medically cleared) |
 | 2 | Jacoby Brissett | 13.67 | -0.92 | 100.0% | — | No modeled flags (not medically cleared) |
-| 3 | Tanner McKee | 11.84 | -2.76 | 100.0% | — | No modeled flags (not medically cleared) |
+| 3 | Tanner McKee | 11.86 | -2.73 | 100.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Jonah Coleman (3.27 PPG)
 
@@ -38,7 +38,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 6 | Jauan Jennings | 4.80 | +3.45 | 73.3% | Tgt 1.7 | injury_report_observation_review |
 | 7 | Ja'Kobi Lane | 4.61 | +3.25 | 54.3% | Tgt 4.3 | injury_report_observation_review |
 | 8 | Rashod Bateman | 4.35 | +3.00 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 9 | Makai Lemon | 4.04 | +2.69 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
+| 9 | Makai Lemon | 4.05 | +2.70 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
 | 10 | Michael Pittman Jr. | 3.56 | +2.21 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
 | 11 | Adonai Mitchell | 3.49 | +2.14 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 12 | Mack Hollins | 2.83 | +1.48 | 62.7% | Tgt 5.0 | sleeper_injury_ir, projection_weeks_partial, injury_report_observation_review |
@@ -47,7 +47,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Jake Ferguson | 6.22 | +0.78 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 1 | Jake Ferguson | 6.23 | +0.79 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 2 | Michael Mayer | 5.24 | -0.20 | 75.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 3 | Noah Fant | 4.33 | -1.11 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
 | 4 | Colby Parkinson | 3.86 | -1.58 | — | — | snap_data_missing, usage_sample_missing, targets_missing |

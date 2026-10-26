@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-26T18:47:32.551671+00:00
+Generated: 2026-10-26T19:43:04.248631+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,7 +18,7 @@ Generated: 2026-10-26T18:47:32.551671+00:00
 | Jauan Jennings | WR | +0.00 | 3.45 | Christian Kirk | depth candidate |
 | Ja'Kobi Lane | WR | +0.00 | 3.25 | Christian Kirk | depth candidate |
 | Rashod Bateman | WR | +0.00 | 3.0 | Christian Kirk | depth candidate |
-| Makai Lemon | WR | +0.00 | 2.69 | Christian Kirk | depth candidate |
+| Makai Lemon | WR | +0.00 | 2.7 | Christian Kirk | depth candidate |
 | Keaton Mitchell | RB | +0.00 | 2.33 | Jonah Coleman | depth candidate |
 
 ## Trade proposals

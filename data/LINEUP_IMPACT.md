@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-26T18:47:32.493215+00:00
+Generated: 2026-10-26T19:43:04.183687+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections and injury status require manual verification.
@@ -11,7 +11,7 @@ Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Malik Willis | 14.75 | Bench-depth scenario: Jonah Coleman | +0.00 | +11.48 | No flagged data gap; review still required |
 | 2 | Jacoby Brissett | 13.67 | Bench-depth scenario: Jonah Coleman | +0.00 | +10.40 | No flagged data gap; review still required |
-| 3 | Tanner McKee | 11.84 | Bench-depth scenario: Jonah Coleman | +0.00 | +8.56 | Limited snap sample |
+| 3 | Tanner McKee | 11.86 | Bench-depth scenario: Jonah Coleman | +0.00 | +8.59 | Limited snap sample |
 
 ## RB
 
@@ -38,7 +38,7 @@ Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections an
 | 6 | Jauan Jennings | 4.80 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.53 | No flagged data gap; review still required |
 | 7 | Ja'Kobi Lane | 4.61 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.33 | No flagged data gap; review still required |
 | 8 | Rashod Bateman | 4.35 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.08 | No flagged data gap; review still required |
-| 9 | Makai Lemon | 4.04 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.77 | No flagged data gap; review still required |
+| 9 | Makai Lemon | 4.05 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.78 | No flagged data gap; review still required |
 | 10 | Michael Pittman Jr. | 3.56 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.29 | Availability status: ir; Partial projection coverage |
 | 11 | Adonai Mitchell | 3.49 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.21 | No flagged data gap; review still required |
 | 12 | Mack Hollins | 2.83 | Bench-depth scenario: Jonah Coleman | +0.00 | -0.45 | Availability status: ir; Partial projection coverage |
@@ -47,7 +47,7 @@ Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Jake Ferguson | 6.22 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.94 | No flagged data gap; review still required |
+| 1 | Jake Ferguson | 6.23 | Bench-depth scenario: Jonah Coleman | +0.00 | +2.95 | No flagged data gap; review still required |
 | 2 | Michael Mayer | 5.24 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.97 | No flagged data gap; review still required |
 | 3 | Noah Fant | 4.33 | Bench-depth scenario: Jonah Coleman | +0.00 | +1.06 | No flagged data gap; review still required |
 | 4 | Colby Parkinson | 3.86 | Bench-depth scenario: Jonah Coleman | +0.00 | +0.59 | No sourced usage; Limited snap sample |
