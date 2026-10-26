@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-26T06:45:50.269600+00:00
-Sleeper snapshot: 2026-10-26T06:45:46.023995+00:00
+Generated: 2026-10-26T07:52:43.597218+00:00
+Sleeper snapshot: 2026-10-26T07:52:37.076144+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -22,7 +22,7 @@ Sleeper snapshot: 2026-10-26T06:45:46.023995+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Malik Willis | MIA | 14.75 | 100% | 100.0% | Not flagged |
 | 2 | Jacoby Brissett | ARI | 13.67 | 91% | 100.0% | Not flagged |
-| 3 | Tanner McKee | PHI | 11.86 | 91% | 100.0% | Not flagged |
+| 3 | Tanner McKee | PHI | 11.85 | 91% | 100.0% | Not flagged |
 
 ### RB
 

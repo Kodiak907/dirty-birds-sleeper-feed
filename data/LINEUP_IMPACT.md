@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-26T06:45:50.531518+00:00
+Generated: 2026-10-26T07:52:43.878079+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections and injury status require manual verification.
@@ -11,7 +11,7 @@ Baseline illustrative optimal PPG: **126.21**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Malik Willis | 14.75 | Bench-depth scenario: Jonah Coleman | +0.00 | +11.48 | No flagged data gap; review still required |
 | 2 | Jacoby Brissett | 13.67 | Bench-depth scenario: Jonah Coleman | +0.00 | +10.40 | No flagged data gap; review still required |
-| 3 | Tanner McKee | 11.86 | Bench-depth scenario: Jonah Coleman | +0.00 | +8.58 | Limited snap sample |
+| 3 | Tanner McKee | 11.85 | Bench-depth scenario: Jonah Coleman | +0.00 | +8.57 | Limited snap sample |
 
 ## RB
 

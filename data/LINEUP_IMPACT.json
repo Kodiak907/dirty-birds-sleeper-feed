@@ -2249,7 +2249,7 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": 8.581,
+        "bench_depth_delta_ppg": 8.573,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 126.21,
@@ -2351,7 +2351,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 11.856,
+        "projection_ppg": 11.848,
         "team": "PHI",
         "warnings": [
           "Limited snap sample"
@@ -3225,7 +3225,7 @@
     ],
     "TE": [
       {
-        "bench_depth_delta_ppg": 2.945,
+        "bench_depth_delta_ppg": 2.944,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 126.21,
@@ -3327,7 +3327,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 6.22,
+        "projection_ppg": 6.219,
         "team": "DAL",
         "warnings": []
       },
@@ -4732,7 +4732,7 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": 0.77,
+        "bench_depth_delta_ppg": 0.768,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 126.21,
@@ -4834,7 +4834,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 4.045,
+        "projection_ppg": 4.043,
         "team": "PHI",
         "warnings": []
       },
@@ -5597,7 +5597,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-10-26T06:45:50.531518+00:00",
+  "generated_at_utc": "2026-10-26T07:52:43.878079+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5605,6 +5605,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-10-26T06:45:46.023995+00:00",
-  "source_projection_date": "2026-10-26T01:24:45.056433+00:00"
+  "sleeper_snapshot_utc": "2026-10-26T07:52:37.076144+00:00",
+  "source_projection_date": "2026-10-26T07:30:19.386028+00:00"
 }
