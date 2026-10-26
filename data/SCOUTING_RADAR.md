@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-26T00:34:26.150914+00:00
-Sleeper snapshot: 2026-10-26T00:34:21.925023+00:00
+Generated: 2026-10-26T00:53:55.672814+00:00
+Sleeper snapshot: 2026-10-26T00:53:51.001327+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Dirty Birds: added none; dropped Michael Mayer
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
