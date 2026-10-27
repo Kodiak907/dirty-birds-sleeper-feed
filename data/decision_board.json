@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-27T10:39:30.350080+00:00",
+  "generated_at_utc": "2026-10-27T11:38:03.540220+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -717,8 +717,8 @@
           "injury_report_observation": null,
           "not_an_injury_probability": true,
           "projection_coverage": 0.9,
-          "recent_snap_pct": 69.3,
-          "snap_trend_3_appearances_pp": -17.0,
+          "recent_snap_pct": 64.3,
+          "snap_trend_3_appearances_pp": -27.0,
           "targets_per_game": 3.33
         },
         "name": "Jake Ferguson",
@@ -1046,8 +1046,8 @@
           "injury_report_observation": null,
           "not_an_injury_probability": true,
           "projection_coverage": 0.9,
-          "recent_snap_pct": 78.7,
-          "snap_trend_3_appearances_pp": 7.0,
+          "recent_snap_pct": 84.3,
+          "snap_trend_3_appearances_pp": 10.0,
           "targets_per_game": 7.0
         },
         "name": "Makai Lemon",
@@ -1219,5 +1219,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-27T10:39:24.392752+00:00"
+  "snapshot_utc": "2026-10-27T11:37:56.795657+00:00"
 }

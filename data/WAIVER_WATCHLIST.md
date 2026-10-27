@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-27T10:39:30.208215+00:00
-Sleeper snapshot: 2026-10-27T10:39:24.392752+00:00
+Generated: 2026-10-27T11:38:03.449036+00:00
+Sleeper snapshot: 2026-10-27T11:37:56.795657+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -49,7 +49,7 @@ Sleeper snapshot: 2026-10-27T10:39:24.392752+00:00
 | 6 | Ja'Kobi Lane | BAL | 4.55 | 90% | 54.3% | Not flagged |
 | 7 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
 | 8 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
-| 9 | Makai Lemon | PHI | 3.72 | 90% | 78.7% | Not flagged |
+| 9 | Makai Lemon | PHI | 3.72 | 90% | 84.3% | Not flagged |
 | 10 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
 | 11 | Mack Hollins | NE | 3.11 | 80% | 62.7% | IR |
 | 12 | Brian Thomas Jr. | JAX | 3.11 | 100% | — | Not flagged |
@@ -58,7 +58,7 @@ Sleeper snapshot: 2026-10-27T10:39:24.392752+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Jake Ferguson | DAL | 6.24 | 90% | 69.3% | Not flagged |
+| 1 | Jake Ferguson | DAL | 6.24 | 90% | 64.3% | Not flagged |
 | 2 | Michael Mayer | LV | 5.19 | 90% | 75.3% | Not flagged |
 | 3 | Noah Fant | NO | 4.31 | 90% | 57.0% | Not flagged |
 | 4 | Colby Parkinson | LAR | 3.70 | 90% | — | Not flagged |
@@ -102,10 +102,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 |---|---|---|---:|---:|
 | Malik Willis | QB | MIA | 14.77 | 100.0% |
 | Jacoby Brissett | QB | ARI | 13.72 | 100.0% |
+| Tanner McKee | QB | PHI | 11.51 | 100.0% |
 | Jakobi Meyers | WR | JAX | 8.98 | 80.7% |
 | Rachaad White | RB | WAS | 7.66 | 57.3% |
 | Tyrone Tracy Jr. | RB | NYG | 7.33 | 24.0% |
-| Jake Ferguson | TE | DAL | 6.24 | 69.3% |
+| Jake Ferguson | TE | DAL | 6.24 | 64.3% |
 | Keaton Mitchell | RB | LAC | 6.17 | 32.0% |
 | Caleb Douglas | WR | MIA | 5.99 | 81.7% |
 | Quentin Johnston | WR | LAC | 5.68 | 81.3% |
@@ -118,8 +119,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Rashod Bateman | WR | BAL | 4.34 | 61.0% |
 | Noah Fant | TE | NO | 4.31 | 57.0% |
 | Michael Pittman Jr. | WR | PIT | 3.92 | 77.7% |
-| Makai Lemon | WR | PHI | 3.72 | 78.7% |
-| Adonai Mitchell | WR | NYJ | 3.31 | 65.0% |
+| Makai Lemon | WR | PHI | 3.72 | 84.3% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
