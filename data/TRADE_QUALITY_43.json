@@ -1,15 +1,88 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-10-27T06:43:11.269153+00:00",
+  "generated_at_utc": "2026-10-27T07:48:22.466348+00:00",
   "candidates_evaluated": 60450,
-  "market_matched": 7728,
+  "market_matched": 7723,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-10-27T04:35:11.861322+00:00",
-  "projection_as_of": "2026-10-27T01:20:43.921831+00:00",
+  "projection_as_of": "2026-10-27T07:25:36.752044+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
-  "qualified": [],
+  "qualified": [
+    {
+      "opponent_roster_id": 2,
+      "opponent_name": "CREAM MACHINE ",
+      "give": [
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB"
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        }
+      ],
+      "receive": [
+        {
+          "id": "11576",
+          "name": "Braelon Allen",
+          "pos": "RB"
+        },
+        {
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 1.76,
+      "their_gain": 0.84,
+      "market_paid_received_ratio": 0.98,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.205,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 2,
+      "opponent_name": "CREAM MACHINE ",
+      "give": [
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB"
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        }
+      ],
+      "receive": [
+        {
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR"
+        },
+        {
+          "id": "4892",
+          "name": "Baker Mayfield",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 1.76,
+      "their_gain": 0.84,
+      "market_paid_received_ratio": 1.029,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.176,
+      "not_an_approved_offer": true
+    }
+  ],
   "thresholds": {
     "our_gain_min": 1.5,
     "their_gain_min": 0.5,

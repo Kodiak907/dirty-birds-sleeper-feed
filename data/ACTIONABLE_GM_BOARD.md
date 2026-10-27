@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-27T06:43:08.268020+00:00
+Generated: 2026-10-27T07:48:20.104484+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,9 +8,9 @@ Generated: 2026-10-27T06:43:08.268020+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Tyrone Tracy Jr. | RB | +0.00 | 3.83 | Jonah Coleman | depth candidate |
-| Rachaad White | RB | +0.00 | 3.69 | Jonah Coleman | depth candidate |
-| Jakobi Meyers | WR | +0.00 | 2.64 | Antonio Williams | depth candidate |
+| Rachaad White | RB | +0.00 | 3.83 | Jonah Coleman | depth candidate |
+| Tyrone Tracy Jr. | RB | +0.00 | 3.5 | Jonah Coleman | depth candidate |
+| Jakobi Meyers | WR | +0.00 | 2.9 | Antonio Williams | depth candidate |
 | Keaton Mitchell | RB | +0.00 | 2.34 | Jonah Coleman | depth candidate |
 
 ## Trade proposals
