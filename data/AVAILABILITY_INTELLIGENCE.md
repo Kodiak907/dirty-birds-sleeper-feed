@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-27T11:38:08.277239+00:00
-Sleeper snapshot: 2026-10-27T11:37:56.795657+00:00
-nflverse observations: 2026-10-27T11:38:02.886054+00:00; injury feed loaded: True
+Generated: 2026-10-27T12:44:55.971699+00:00
+Sleeper snapshot: 2026-10-27T12:44:44.081889+00:00
+nflverse observations: 2026-10-27T12:44:49.666275+00:00; injury feed loaded: True
 
-**New observed changes:** 3. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,9 +31,8 @@ nflverse observations: 2026-10-27T11:38:02.886054+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Dameon Pierce** (snap_share_change): Snap share fell 31.0 percentage points between last two recorded appearances (week 7); confirm role/injury context.
-- **Darius Cooper** (snap_share_change): Snap share rose 31.0 percentage points between last two recorded appearances (week 7); confirm role/injury context.
-- **George Pickens** (snap_share_change): Snap share fell 28.0 percentage points between last two recorded appearances (week 7); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
