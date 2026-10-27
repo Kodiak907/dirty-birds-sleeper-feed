@@ -1,6 +1,6 @@
 # Dirty Birds — Lineup Decision Backtesting
 
-Updated: 2026-10-27T16:49:02.885259+00:00
+Updated: 2026-10-27T17:46:52.155226+00:00
 Newly frozen future weeks: none.
 Comparable completed-week evaluations: 0.
 
