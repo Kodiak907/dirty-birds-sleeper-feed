@@ -23,3 +23,6 @@ GET /api/status returns `version: staging-github-0.1` and whether secrets are co
 POST /api/check with JSON `{"feed":"season"}` and header `x-ffo-probe-password` verifies live API reachability and shows only response metadata, not licensed data.
 Expected HTTP 200 for a successful auth and valid endpoint. Other upstream codes (401/403/404/204/304) are surfaced safely.
 This does not prove the 15-20-second latency target, detailed stats, or PFO integration.
+
+## Verification checkpoint — October 27, 2026
+Cloudflare MySportsFeeds current-season route has been verified HTTP 200 using subscription credentials. Runtime secrets are present, GameCast staging status returns true/true. Additional NFL feed entitlement audit is pending; do not mistake this for fully live play-by-play or integrated PFO deployment. This README update triggers a one-time redacted CI feed audit on the isolated `ffo-gamecast-staging` branch.
