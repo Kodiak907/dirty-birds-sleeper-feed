@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T15:44:27.625047+00:00",
+  "generated_at_utc": "2026-10-27T15:02:33.247093+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -11,20 +11,20 @@
   "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
   "no_automatic_trade_offers": true,
   "not_a_probability": true,
-  "priced_candidates": 3,
+  "priced_candidates": 2,
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 127.067,
-      "dirty_birds_before": 126.21,
-      "dirty_birds_delta_ppg": 0.86,
+      "dirty_birds_after": 126.274,
+      "dirty_birds_before": 125.225,
+      "dirty_birds_delta_ppg": 1.05,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 18.25
+          "projected_ppg": 17.91
         }
       ],
       "market_quote": {
@@ -35,140 +35,86 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.3,
+      "mutual_benefit_screen_score": 2.128,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.832,
-      "opponent_before": 100.831,
-      "opponent_delta_ppg": 2.0,
+      "opponent_after": 102.64,
+      "opponent_before": 101.226,
+      "opponent_delta_ppg": 1.41,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
-      "projected_ppg_received": 19.11,
-      "projected_ppg_sent": 18.25,
+      "projected_ppg_received": 18.95,
+      "projected_ppg_sent": 17.91,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 19.11
+          "projected_ppg": 18.95
         }
       ],
       "starter_benefit": {
-        "them": 2.0,
-        "us": 0.86
+        "them": 1.41,
+        "us": 1.05
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 127.351,
-      "dirty_birds_before": 126.21,
-      "dirty_birds_delta_ppg": 1.14,
-      "dirty_birds_drop_to_fit": null,
+      "dirty_birds_after": 126.274,
+      "dirty_birds_before": 125.225,
+      "dirty_birds_delta_ppg": 1.05,
+      "dirty_birds_drop_to_fit": "Antonio Williams",
       "give": [
         {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB",
-          "projected_ppg": 18.66
-        },
-        {
-          "id": "8146",
-          "name": "Garrett Wilson",
-          "pos": "WR",
-          "projected_ppg": 11.7
-        }
-      ],
-      "market_quote": {
-        "paid": 8439,
-        "paid_to_received_ratio": 0.894,
-        "received": 9444,
-        "relative_value_difference_pct": -10.6
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.403,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 103.051,
-      "opponent_before": 102.602,
-      "opponent_delta_ppg": 0.45,
-      "opponent_drop_to_fit": "Blake Corum",
-      "opponent_roster_id": 3,
-      "projected_ppg_received": 16.91,
-      "projected_ppg_sent": 30.36,
-      "receive": [
-        {
-          "id": "6813",
-          "name": "Jonathan Taylor",
+          "id": "9509",
+          "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 16.91
-        }
-      ],
-      "starter_benefit": {
-        "them": 0.45,
-        "us": 1.14
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.844,
-      "dirty_birds_before": 126.21,
-      "dirty_birds_delta_ppg": 0.63,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB",
-          "projected_ppg": 18.66
-        },
-        {
-          "id": "8146",
-          "name": "Garrett Wilson",
-          "pos": "WR",
-          "projected_ppg": 11.7
+          "projected_ppg": 17.91
         }
       ],
       "market_quote": {
-        "paid": 8439,
-        "paid_to_received_ratio": 0.906,
-        "received": 9310,
-        "relative_value_difference_pct": -9.4
+        "paid": 9717,
+        "paid_to_received_ratio": 0.852,
+        "received": 11407,
+        "relative_value_difference_pct": -14.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 0.805,
+      "mutual_benefit_screen_score": 2.128,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 94.711,
-      "opponent_before": 94.429,
-      "opponent_delta_ppg": 0.28,
-      "opponent_drop_to_fit": "Emanuel Wilson",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 16.4,
-      "projected_ppg_sent": 30.36,
+      "opponent_after": 102.64,
+      "opponent_before": 101.226,
+      "opponent_delta_ppg": 1.41,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 33.53,
+      "projected_ppg_sent": 17.91,
       "receive": [
         {
-          "id": "9493",
-          "name": "Puka Nacua",
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 16.4
+          "projected_ppg": 18.95
+        },
+        {
+          "id": "12545",
+          "name": "Tyler Shough",
+          "pos": "QB",
+          "projected_ppg": 14.58
         }
       ],
       "starter_benefit": {
-        "them": 0.28,
-        "us": 0.63
+        "them": 1.41,
+        "us": 1.05
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Puka Nacua: snap coverage absent"
-      ]
+      "warnings": []
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-10-26T15:44:27.520850+00:00",
-  "unpriced_cases": 1,
+  "source_as_of": "2026-10-27T15:02:33.160021+00:00",
+  "unpriced_cases": 6,
   "unpriced_examples": [
     {
       "give": [
@@ -178,6 +124,56 @@
       "reason": "One or more players has no matched market value",
       "receive": [
         "Puka Nacua"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Zach Charbonnet"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Derrick Henry"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Zach Charbonnet"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Christian Watson"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "A.J. Brown"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "James Cook III"
+      ]
+    },
+    {
+      "give": [
+        "Kyren Williams",
+        "Zach Charbonnet"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "James Cook III"
+      ]
+    },
+    {
+      "give": [
+        "Patrick Mahomes",
+        "Ollie Gordon II"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Josh Allen"
       ]
     }
   ]

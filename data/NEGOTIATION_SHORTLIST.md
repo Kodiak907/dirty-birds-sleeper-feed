@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-10-26T15:44:27.595135+00:00
+Generated: 2026-10-27T15:02:33.220713+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 9 | Bijan Robinson | Jaxon Smith-Njigba | +0.86 | +2.00 | +0.1/+1.1/-0.9 | No flagged data gap |
-| 2 | 9 | Bijan Robinson | Jaxon Smith-Njigba, Tyler Shough | +0.86 | +2.00 | +0.1/+2.9/-0.9 | No flagged data gap |
-| 3 | 4 | Zach Charbonnet | Brock Purdy | +0.65 | +0.62 | +3.2/+2.4/+1.9 | Zach Charbonnet: snap coverage absent; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 4 | 3 | Kyren Williams, C.J. Stroud | Jonathan Taylor | +1.19 | +0.40 | -0.0/+5.4/+1.7 | Kyren Williams: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
-| 5 | 4 | A.J. Brown, Zach Charbonnet | George Kittle | +1.11 | +0.73 | +2.3/+0.6/+2.0 | Zach Charbonnet: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 1 | 9 | Bijan Robinson | Jaxon Smith-Njigba | +1.05 | +1.41 | +0.1/+1.1/-0.9 | No flagged data gap |
+| 2 | 9 | Bijan Robinson | Jaxon Smith-Njigba, Tyler Shough | +1.05 | +1.41 | +0.1/+2.9/-0.9 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 3 | 4 | Ollie Gordon II, Zach Charbonnet | Derrick Henry | +1.71 | +0.75 | +2.6/+3.2/+5.4 | Ollie Gordon II: snap coverage absent; Zach Charbonnet: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 4 | 2 | Ollie Gordon II, A.J. Brown | Puka Nacua | +1.23 | +1.39 | +3.8/+0.3/+4.8 | Ollie Gordon II: snap coverage absent; Puka Nacua: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 5 | 4 | Isaiah Likely, Zach Charbonnet | George Kittle | +1.97 | +0.49 | +3.3/+1.0/+1.0 | Zach Charbonnet: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
 
 ## What the other manager might gain
 
-**1. Jaxon Smith-Njigba** — Opponent projected starters improve +2.00 PPG; no clear shallow-position signal.
+**1. Jaxon Smith-Njigba** — Opponent projected starters improve +1.41 PPG; no clear shallow-position signal.
 Diagnostic positional-percentile imbalance: 4% (not a trade price).
 
-**2. Jaxon Smith-Njigba, Tyler Shough** — Opponent projected starters improve +2.00 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 27% (not a trade price).
+**2. Jaxon Smith-Njigba, Tyler Shough** — Opponent projected starters improve +1.41 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 31% (not a trade price).
 
-**3. Brock Purdy** — Opponent projected starters improve +0.62 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 55% (not a trade price).
+**3. Derrick Henry** — Opponent projected starters improve +0.75 PPG; potential shallow position(s): RB.
+Diagnostic positional-percentile imbalance: 33% (not a trade price).
 
-**4. Jonathan Taylor** — Opponent projected starters improve +0.40 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 22% (not a trade price).
+**4. Puka Nacua** — Opponent projected starters improve +1.39 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 34% (not a trade price).
 
-**5. George Kittle** — Opponent projected starters improve +0.73 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 19% (not a trade price).
+**5. George Kittle** — Opponent projected starters improve +0.49 PPG; potential shallow position(s): RB.
+Diagnostic positional-percentile imbalance: 29% (not a trade price).
 
 ## Verification before discussions
 
