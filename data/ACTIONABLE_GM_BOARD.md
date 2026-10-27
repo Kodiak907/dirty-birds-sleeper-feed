@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-27T14:49:35.058260+00:00
+Generated: 2026-10-27T15:47:43.365487+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -22,8 +22,7 @@ The prior two trades are suppressed because both teams' projected gains were mar
 ## Rejected old offers
 
 - Bijan Robinson for Jaxon Smith-Njigba: Too little projected starter benefit for roster disruption
-- Patrick Mahomes, Garrett Wilson for Jonathan Taylor: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Patrick Mahomes, Garrett Wilson for Puka Nacua: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Bijan Robinson for Jaxon Smith-Njigba, Tyler Shough: Too little projected starter benefit for roster disruption; Requires further outgoing roster action
 
 ## Required checks
 
