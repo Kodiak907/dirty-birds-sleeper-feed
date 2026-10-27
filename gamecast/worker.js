@@ -8,6 +8,31 @@ async function checkProvider(env,feed){const start=Date.now();try{const r=await 
 export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
+  if(path==="/api/capabilities"&&req.method==="GET"){
+    if(Date.now()>Date.parse("2026-10-28T02:00:00Z"))return result({error:"audit_expired"},410);
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-audit.invalid/fixed-one-time");
+    const stored=await cache.match(ck);if(stored)return stored;
+    if(!env.MSF_API_KEY)return result({error:"missing_runtime_key"},503);
+    const lookups=[
+      ["season","current_season.json"],
+      ["games","2026-2027-regular/games.json?limit=1"],
+      ["season_stats","2026-2027-regular/player_stats_totals.json?limit=1"],
+      ["weekly_gamelogs","2026-2027-regular/week/8/player_gamelogs.json?limit=1"],
+      ["injuries","injuries.json?limit=1"],
+      ["updates","2026-2027-regular/latest_updates.json"]
+    ];
+    const checks=await Promise.all(lookups.map(async([name,route])=>{
+      try{const start=Date.now(),resp=await fetch(BASE+route,{headers:{Authorization:"Basic "+btoa(env.MSF_API_KEY+":MYSPORTSFEEDS"),Accept:"application/json"},redirect:"error",signal:AbortSignal.timeout(9000)});
+        const check={feed:name,status:resp.status,ok:resp.ok,request_ms:Date.now()-start};
+        if(resp.ok){const data=await resp.json();check.root_keys=Object.keys(data||{}).slice(0,12);
+          check.row_keys=Object.fromEntries(Object.entries(data||{}).filter(([,v])=>Array.isArray(v)&&v.length&&typeof v[0]==="object").slice(0,2).map(([k,v])=>[k,Object.keys(v[0]).slice(0,12)]));
+        }else await resp.body?.cancel();return check;
+      }catch{return {feed:name,error:"timeout_or_invalid_response"};}
+    }));
+    const body=JSON.stringify({source:"Authenticated MySportsFeeds",as_of:new Date().toISOString(),schema_only:true,raw_data_exposed:false,checks});
+    const res=new Response(body,{status:200,headers:{"content-type":"application/json","cache-control":"public,max-age=300"}});
+    await cache.put(ck,res.clone());return res;
+  }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
   if(path!=="/api/check"||req.method!=="POST")return result({error:"not_found"},404);
   if(!env.MSF_API_KEY||!env.FFO_PROBE_PASSWORD)return result({error:"missing_runtime_secrets"},503);
