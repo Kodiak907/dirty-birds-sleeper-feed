@@ -1,0 +1,104 @@
+{
+  "captured_at_utc": "2026-10-27T00:44:17.570139+00:00",
+  "comparison_policy": "Evaluate only after completed week and only if selected players appeared on Dirty Birds game-week roster.",
+  "earliest_league_game_utc": "2026-10-30T00:15:00+00:00",
+  "excluded_fantasy_reserve_ids": [],
+  "lineup": {
+    "complete": true,
+    "missing_projection": [
+      "Kaelon Black",
+      "Christian Kirk",
+      "Isaiah Likely",
+      "C.J. Stroud"
+    ],
+    "ppg": 126.8,
+    "starters": [
+      {
+        "id": "4046",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "ppg": 16.94
+      },
+      {
+        "id": "9509",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "ppg": 19.26
+      },
+      {
+        "id": "8150",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "ppg": 18.36
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 15.11
+      },
+      {
+        "id": "8146",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "ppg": 13.1
+      },
+      {
+        "id": "8210",
+        "name": "Chig Okonkwo",
+        "position": "TE",
+        "ppg": 5.57
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.39
+      },
+      {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF",
+        "ppg": 6.33
+      },
+      {
+        "id": "5859",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "ppg": 12.64
+      },
+      {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.1
+      }
+    ]
+  },
+  "locked_roster_ids": [
+    "11792",
+    "12495",
+    "13301",
+    "13345",
+    "13414",
+    "4046",
+    "4950",
+    "5859",
+    "8131",
+    "8146",
+    "8150",
+    "8210",
+    "9501",
+    "9509",
+    "9753",
+    "9758",
+    "9997",
+    "MIN"
+  ],
+  "model_version": "ffo_weekly_decision_v1",
+  "projection_as_of": "2026-10-26T19:21:26.147634+00:00",
+  "reliability_warning": "Early locked forecast only; later injury/role changes may make it unactionable.",
+  "roster_snapshot_utc": "2026-10-27T00:44:05.897436+00:00",
+  "season": 2026,
+  "week": 8
+}
