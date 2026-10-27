@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-10-27T00:44:17.030599+00:00",
+  "generated_at_utc": "2026-10-27T01:44:16.268238+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-26T19:21:26.147634+00:00",
+  "projection_as_of": "2026-10-27T01:20:43.921831+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-27T00:44:05.897436+00:00",
+  "snapshot_utc": "2026-10-27T01:44:07.290191+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -734,84 +734,84 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 126.8,
+      "ppg": 127.1,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "DEN",
           "position": "QB",
-          "ppg": 16.94
+          "ppg": 16.71
         },
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 19.26
+          "ppg": 19.38
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "LAC",
           "position": "RB",
-          "ppg": 18.36
+          "ppg": 18.19
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 15.11
+          "ppg": 15.26
         },
         {
           "id": "8146",
           "name": "Garrett Wilson",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 13.1
+          "ppg": 13.48
         },
         {
           "id": "8210",
           "name": "Chig Okonkwo",
           "opponent": "PHI",
           "position": "TE",
-          "ppg": 5.57
+          "ppg": 5.79
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "DET",
           "position": "K",
-          "ppg": 7.39
+          "ppg": 7.25
         },
         {
           "id": "MIN",
           "name": "Minnesota Vikings",
           "opponent": "DET",
           "position": "DEF",
-          "ppg": 6.33
+          "ppg": 6.27
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "MIA",
           "position": "WR",
-          "ppg": 12.64
+          "ppg": 12.76
         },
         {
           "id": "12495",
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.1
+          "ppg": 12.01
         }
       ]
     },
     "9": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 137.1,
+      "ppg": 137.07,
       "starters": [
         {
           "id": "4046",
@@ -839,7 +839,7 @@
           "name": "Zay Flowers",
           "opponent": "JAX",
           "position": "WR",
-          "ppg": 15.78
+          "ppg": 15.75
         },
         {
           "id": "5859",
