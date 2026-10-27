@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-27T03:35:55.138709+00:00
-Sleeper snapshot: 2026-10-27T03:35:49.951444+00:00
+Generated: 2026-10-27T04:35:11.042373+00:00
+Sleeper snapshot: 2026-10-27T04:35:08.019547+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -9,46 +9,46 @@ League: 12 teams; half-PPR; 1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF.
 Trade deadline week setting: 11
 
 ## Dirty Birds historical production signals
-The points below average actual fantasy scoring over completed Weeks 1–6, with zeroes included. They are NOT future projections.
+The points below average actual fantasy scoring over completed Weeks 1–7, with zeroes included. They are NOT future projections.
 
 | Player | Pos | Total pts | Pts per calendar week | Nonzero weeks |
 |---|---|---:|---:|---:|
-| Bijan Robinson | RB | 121.50 | 20.25 | 6/6 |
-| Kyren Williams | RB | 104.00 | 17.33 | 6/6 |
-| Patrick Mahomes | QB | 94.06 | 15.68 | 5/6 |
-| Isaiah Likely | TE | 89.80 | 14.97 | 6/6 |
-| Zay Flowers | WR | 81.50 | 13.58 | 5/6 |
-| Garrett Wilson | WR | 77.30 | 12.88 | 6/6 |
-| C.J. Stroud | QB | 60.94 | 10.16 | 3/6 |
-| Minnesota Vikings | DEF | 37.00 | 6.17 | 3/6 |
-| Will Reichard | K | 35.00 | 5.83 | 2/6 |
-| Ollie Gordon II | RB | 31.80 | 5.30 | 2/6 |
-| Kaelon Black | RB | 18.80 | 3.13 | 6/6 |
-| Jonah Coleman | RB | 13.30 | 2.22 | 1/6 |
-| A.J. Brown | WR | 8.30 | 1.38 | 2/6 |
-| Antonio Williams | WR | 0.00 | 0.00 | 0/6 |
-| Christian Kirk | WR | 0.00 | 0.00 | 0/6 |
-| Chig Okonkwo | TE | 0.00 | 0.00 | 0/6 |
-| DeMario Douglas | WR | 0.00 | 0.00 | 0/6 |
-| Zach Charbonnet | RB | 0.00 | 0.00 | 0/6 |
+| Bijan Robinson | RB | 136.20 | 19.46 | 7/7 |
+| Kyren Williams | RB | 121.10 | 17.30 | 7/7 |
+| Zay Flowers | WR | 106.20 | 15.17 | 6/7 |
+| Patrick Mahomes | QB | 100.06 | 14.29 | 6/7 |
+| Isaiah Likely | TE | 92.00 | 13.14 | 7/7 |
+| Garrett Wilson | WR | 80.90 | 11.56 | 7/7 |
+| C.J. Stroud | QB | 77.46 | 11.07 | 4/7 |
+| Ollie Gordon II | RB | 48.60 | 6.94 | 3/7 |
+| Will Reichard | K | 47.00 | 6.71 | 3/7 |
+| Minnesota Vikings | DEF | 47.00 | 6.71 | 4/7 |
+| Kaelon Black | RB | 29.20 | 4.17 | 7/7 |
+| Jonah Coleman | RB | 21.20 | 3.03 | 2/7 |
+| A.J. Brown | WR | 14.60 | 2.09 | 3/7 |
+| DeMario Douglas | WR | 3.80 | 0.54 | 1/7 |
+| Antonio Williams | WR | 0.00 | 0.00 | 0/7 |
+| Christian Kirk | WR | 0.00 | 0.00 | 0/7 |
+| Chig Okonkwo | TE | 0.00 | 0.00 | 0/7 |
+| Zach Charbonnet | RB | 0.00 | 0.00 | 0/7 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Cokerthestroker | 5-1 | 122.21 | 2 |
-| JA’MARRTRIX | 1-5 | 119.19 | 3 |
-| suck my dickerson | 4-2 | 116.61 | 1 |
-| Dirty Birds | 4-2 | 115.12 | 9 |
-| To Infinity and Bijan | 3-3 | 114.62 | 5 |
-| DANGER CLOSE | 3-3 | 111.98 | 1 |
-| kfsn | 5-1 | 108.66 | 2 |
-| DeeboSix0 | 4-2 | 108.19 | 1 |
-| BigOlBoyle | 1-5 | 105.38 | 0 |
-| Victorious Secret | 2-4 | 96.29 | 2 |
-| EmanAndYoMomma | 1-5 | 93.70 | 0 |
-| CREAM MACHINE | 3-3 | 76.29 | 0 |
+| Cokerthestroker | 5-1 | 121.87 | 2 |
+| suck my dickerson | 4-2 | 118.95 | 1 |
+| JA’MARRTRIX | 1-5 | 117.00 | 3 |
+| Dirty Birds | 4-2 | 115.45 | 9 |
+| To Infinity and Bijan | 3-3 | 112.20 | 5 |
+| BigOlBoyle | 1-5 | 106.41 | 0 |
+| DeeboSix0 | 4-2 | 104.47 | 1 |
+| DANGER CLOSE | 3-3 | 102.47 | 1 |
+| Victorious Secret | 2-4 | 100.11 | 2 |
+| kfsn | 5-1 | 99.88 | 2 |
+| EmanAndYoMomma | 1-5 | 94.18 | 0 |
+| CREAM MACHINE | 3-3 | 79.19 | 0 |
 
 ## Trade evaluation gate
 

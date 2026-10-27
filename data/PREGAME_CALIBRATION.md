@@ -1,12 +1,13 @@
 # Pregame forecast locks and calibration
 
-Updated: 2026-10-27T03:35:58.824779+00:00
+Updated: 2026-10-27T04:35:16.450927+00:00
 
-**Current Week 7:** 15 locked player forecasts; 0 newly locked.
-**Completed-week backtest sample:** 0 actual player outcomes.
+**Current Week 8:** 14 locked player forecasts; 14 newly locked.
+**Completed-week backtest sample:** 14 actual player outcomes.
 
 | Completed week | Players | MAE | Mean bias |
 |---:|---:|---:|---:|
+| 7 | 14 | 5.22 | +1.05 |
 
 Forecast locks occur only before a verified NFL kickoff for the given team.
 This is forecast error measurement, not proof of decision effectiveness.

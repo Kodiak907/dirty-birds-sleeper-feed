@@ -1,8 +1,8 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-27T03:35:49.951444+00:00
+Updated: 2026-10-27T04:35:08.019547+00:00
 League: 1399157532559192064
-NFL week: 7
+NFL week: 8
 
 ## All rosters / records
 - Roster 1: Dirty Birds | 4-2 | FAAB used: 144

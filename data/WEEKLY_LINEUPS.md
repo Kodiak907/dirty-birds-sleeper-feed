@@ -1,25 +1,8 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-27T03:35:58.789120+00:00 | Forecast as of: 2026-10-27T01:20:43.921831+00:00
+Generated: 2026-10-27T04:35:16.392388+00:00 | Forecast as of: 2026-10-27T01:20:43.921831+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
-
-## Week 7
-
-**Projected optimal score:** 138.15
-
-| Starter | Position | Opponent | Projection |
-|---|---|---|---:|
-| C.J. Stroud | QB | NYG | 17.77 |
-| Bijan Robinson | RB | SF | 21.81 |
-| Kyren Williams | RB | LV | 18.36 |
-| Zay Flowers | WR | CIN | 15.80 |
-| Garrett Wilson | WR | MIA | 13.75 |
-| Isaiah Likely | TE | HOU | 10.22 |
-| Will Reichard | K | IND | 7.67 |
-| Minnesota Vikings | DEF | IND | 7.72 |
-| A.J. Brown | WR | CHI | 12.58 |
-| Ollie Gordon II | RB | NYJ | 12.47 |
 
 ## Week 8
 
