@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-10-26T16:26:18.696300+00:00",
-  "completed_weeks": 6,
-  "leave_one_out_team_residual_sd": 25.15,
-  "mean_total_points": 112.88,
+  "as_of": "2026-10-27T16:21:12.727048+00:00",
+  "completed_weeks": 7,
+  "leave_one_out_team_residual_sd": 25.5,
+  "mean_total_points": 112.79,
   "method": "Leave-one-out residual from each team's other completed weekly scores; unadjusted for changing lineups and schedules.",
-  "model_sd_points": 25.15,
-  "observations": 72,
-  "observed_total_score_sd": 23.85,
+  "model_sd_points": 25.5,
+  "observations": 84,
+  "observed_total_score_sd": 24.55,
   "status": "descriptive_historical_sample",
   "warning": "Observed score variability is not forecast error calibration. Only genuine archived pregame forecasts can measure predictive accuracy."
 }
