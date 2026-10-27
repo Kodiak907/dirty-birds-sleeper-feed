@@ -17,6 +17,6 @@ export default {
   const feed=payload?.feed||"season";if(!Object.prototype.hasOwnProperty.call(FEEDS,feed))return result({error:"unsupported_feed"},400);
   const out=await checkProvider(env,feed);return result(out,out.error?502:200);
  },
- async scheduled(event,env,ctx){if(!env.MSF_API_KEY){console.log("FFO_GAMECAST_HEALTH",JSON.stringify({error:"missing_key"}));return}
+ async scheduled(event,env,ctx){const scheduledAt=event.scheduledTime||Date.now();if(scheduledAt<Date.parse("2026-10-27T22:36:00Z")||scheduledAt>Date.parse("2026-10-27T22:48:00Z")||(new Date(scheduledAt).getUTCMinutes()%3!==0)){return;}if(!env.MSF_API_KEY){console.log("FFO_GAMECAST_HEALTH",JSON.stringify({error:"missing_key"}));return}
   const out=await checkProvider(env,"season");console.log("FFO_GAMECAST_HEALTH",JSON.stringify({provider_http_status:out.provider_http_status??null,provider_ok:out.provider_ok??false,elapsed_ms:out.elapsed_ms??null,root_keys:out.root_keys??[],error:out.error??null,checked_at:out.checked_at}));}
 };
