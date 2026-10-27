@@ -37,7 +37,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Jauan Jennings | 4.79 | +3.44 | 73.3% | Tgt 1.7 | injury_report_observation_review |
 | 6 | Ja'Kobi Lane | 4.61 | +3.25 | 54.3% | Tgt 4.3 | injury_report_observation_review |
 | 7 | Rashod Bateman | 4.36 | +3.00 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 8 | Makai Lemon | 4.01 | +2.66 | 78.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
+| 8 | Makai Lemon | 4.01 | +2.66 | 78.7% | Tgt 7.0 | No modeled flags (not medically cleared) |
 | 9 | Michael Pittman Jr. | 3.56 | +2.21 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
 | 10 | Adonai Mitchell | 3.49 | +2.14 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 11 | Mack Hollins | 2.83 | +1.48 | 62.7% | Tgt 5.0 | sleeper_injury_ir, projection_weeks_partial, injury_report_observation_review |
@@ -47,7 +47,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Jake Ferguson | 6.25 | +0.78 | 69.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 1 | Jake Ferguson | 6.25 | +0.78 | 69.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
 | 2 | Michael Mayer | 5.22 | -0.24 | 75.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 3 | Noah Fant | 4.33 | -1.13 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
 | 4 | Colby Parkinson | 3.86 | -1.60 | — | — | snap_data_missing, usage_sample_missing, targets_missing |

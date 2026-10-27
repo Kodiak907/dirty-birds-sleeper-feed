@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-27T04:35:11.042373+00:00
-Sleeper snapshot: 2026-10-27T04:35:08.019547+00:00
+Generated: 2026-10-27T05:35:22.722931+00:00
+Sleeper snapshot: 2026-10-27T05:35:18.665174+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -37,18 +37,18 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Cokerthestroker | 5-1 | 121.87 | 2 |
-| suck my dickerson | 4-2 | 118.95 | 1 |
-| JA’MARRTRIX | 1-5 | 117.00 | 3 |
-| Dirty Birds | 4-2 | 115.45 | 9 |
-| To Infinity and Bijan | 3-3 | 112.20 | 5 |
-| BigOlBoyle | 1-5 | 106.41 | 0 |
-| DeeboSix0 | 4-2 | 104.47 | 1 |
-| DANGER CLOSE | 3-3 | 102.47 | 1 |
-| Victorious Secret | 2-4 | 100.11 | 2 |
-| kfsn | 5-1 | 99.88 | 2 |
-| EmanAndYoMomma | 1-5 | 94.18 | 0 |
-| CREAM MACHINE | 3-3 | 79.19 | 0 |
+| Cokerthestroker | 6-1 | 121.87 | 2 |
+| suck my dickerson | 5-2 | 118.95 | 1 |
+| JA’MARRTRIX | 1-6 | 117.00 | 3 |
+| Dirty Birds | 5-2 | 115.45 | 9 |
+| To Infinity and Bijan | 3-4 | 112.20 | 5 |
+| BigOlBoyle | 2-5 | 106.41 | 0 |
+| DeeboSix0 | 5-2 | 104.47 | 1 |
+| DANGER CLOSE | 3-4 | 102.47 | 1 |
+| Victorious Secret | 2-5 | 100.11 | 2 |
+| kfsn | 5-2 | 99.88 | 2 |
+| EmanAndYoMomma | 1-6 | 94.18 | 0 |
+| CREAM MACHINE | 4-3 | 79.19 | 0 |
 
 ## Trade evaluation gate
 
