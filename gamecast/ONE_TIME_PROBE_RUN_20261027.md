@@ -1,0 +1,1 @@
+FFO GameCast isolated staging verification. The build deploy command runs a redacted provider diagnostic with encrypted build secret, then deploys. No secrets are stored in this commit. Reset deploy command to npx wrangler deploy after reading result.
