@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-27T18:45:03.907672+00:00",
-  "source_snapshot_utc": "2026-10-27T18:44:53.630184+00:00",
+  "generated_at_utc": "2026-10-27T19:41:31.769808+00:00",
+  "source_snapshot_utc": "2026-10-27T19:41:22.732513+00:00",
   "source_market_as_of": "2026-10-27T15:02:33.160021+00:00",
-  "source_projection_as_of": "2026-10-27T13:28:23.552052+00:00",
+  "source_projection_as_of": "2026-10-27T19:23:10.415461+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -51,8 +51,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.81,
-          "their_lineup_delta_ppg": 1.81,
+          "our_lineup_delta_ppg": 0.8,
+          "their_lineup_delta_ppg": 1.59,
           "value_paid_received_ratio": 1.155,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -89,8 +89,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.81,
-          "their_lineup_delta_ppg": 1.81,
+          "our_lineup_delta_ppg": 0.8,
+          "their_lineup_delta_ppg": 1.59,
           "value_paid_received_ratio": 1.082,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -134,8 +134,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.75,
-          "their_lineup_delta_ppg": 0.86,
+          "our_lineup_delta_ppg": 1.74,
+          "their_lineup_delta_ppg": 0.65,
           "value_paid_received_ratio": 1.196,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -172,8 +172,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.75,
-          "their_lineup_delta_ppg": 0.86,
+          "our_lineup_delta_ppg": 1.74,
+          "their_lineup_delta_ppg": 0.65,
           "value_paid_received_ratio": 1.12,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -210,8 +210,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.44,
-          "their_lineup_delta_ppg": 0.0,
+          "our_lineup_delta_ppg": 1.45,
+          "their_lineup_delta_ppg": 0.01,
           "value_paid_received_ratio": 0.74,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -248,7 +248,7 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.07,
+          "our_lineup_delta_ppg": 1.06,
           "their_lineup_delta_ppg": 1.4,
           "value_paid_received_ratio": 0.867,
           "our_extra_cut": null,
@@ -286,8 +286,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.69,
-          "their_lineup_delta_ppg": 0.63,
+          "our_lineup_delta_ppg": 0.73,
+          "their_lineup_delta_ppg": 0.57,
           "value_paid_received_ratio": 1.112,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -324,85 +324,9 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.69,
-          "their_lineup_delta_ppg": 0.63,
+          "our_lineup_delta_ppg": 0.73,
+          "their_lineup_delta_ppg": 0.57,
           "value_paid_received_ratio": 0.929,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9753",
-              "name": "Zach Charbonnet",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "6804",
-              "name": "Jordan Love",
-              "position": "QB"
-            },
-            {
-              "id": "4866",
-              "name": "Saquon Barkley",
-              "position": "RB"
-            }
-          ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.31,
-          "their_lineup_delta_ppg": 0.58,
-          "value_paid_received_ratio": 0.995,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9753",
-              "name": "Zach Charbonnet",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4866",
-              "name": "Saquon Barkley",
-              "position": "RB"
-            },
-            {
-              "id": "10213",
-              "name": "Tre Tucker",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.31,
-          "their_lineup_delta_ppg": 0.58,
-          "value_paid_received_ratio": 1.104,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -412,7 +336,7 @@
           ]
         }
       ],
-      "candidate_count": 22
+      "candidate_count": 16
     },
     {
       "asset": "Patrick Mahomes",
@@ -445,8 +369,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 0.38,
-          "their_lineup_delta_ppg": 2.09,
+          "our_lineup_delta_ppg": 0.39,
+          "their_lineup_delta_ppg": 2.08,
           "value_paid_received_ratio": 0.734,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -483,8 +407,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 0.38,
-          "their_lineup_delta_ppg": 2.09,
+          "our_lineup_delta_ppg": 0.39,
+          "their_lineup_delta_ppg": 2.08,
           "value_paid_received_ratio": 0.903,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
