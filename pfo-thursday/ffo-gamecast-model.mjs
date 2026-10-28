@@ -17,7 +17,18 @@ export function playerRows(payload){
 export function plays(payload){
  const candidates=[payload?.gameplaybyplay?.plays,payload?.gamePlayByPlay?.plays,payload?.plays,payload?.gameplaybyplay?.gameplays,payload?.gameplaybyplay?.gamePlays,payload?.gamePlayByPlay?.gamePlays];
  const a=candidates.find(Array.isArray)||[];
- return a.map((x,i)=>({id:String(x.id||x.playId||'seq-'+i),text:String(x.description||x.playDescription||x.text||''),period:String(x.quarter||x.period||''),clock:String(x.time||x.gameClock||x.clock||''),raw:x})).filter(x=>x.text).slice(-120);
+ return a.map((x,i)=>{
+  const state=x?.playStatus||{},q=Number(state.quarter),elapsed=Number(state.secondsElapsed);
+  const hasQuarter=Number.isInteger(q)&&q>=1&&q<=5;
+  // In MSF NFL v2, playStatus.secondsElapsed is quarter-relative.
+  // Do not synthesize a timestamp when the provider sends no usable clock.
+  const validElapsed=state.secondsElapsed!==null&&state.secondsElapsed!==undefined&&Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
+  const remain=validElapsed?900-elapsed:null;
+  const clock=remain===null?String(x.time||x.gameClock||x.clock||''):
+    String(Math.floor(remain/60))+':'+String(remain%60).padStart(2,'0');
+  return {id:String(x.id||x.playId||'seq-'+i),text:String(x.description||x.playDescription||x.text||''),
+   period:hasQuarter?String(q):String(x.quarter||x.period||''),clock,raw:x};
+ }).filter(x=>x.text).slice(-360);
 }
 function first(root,paths){for(const path of paths){let x=root;for(const part of path.split('.'))x=x?.[part];const v=num(x);if(v!==null)return v;}return null;}
 const PATHS={
