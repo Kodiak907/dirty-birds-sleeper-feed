@@ -9,10 +9,11 @@ export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
   if(path==="/api/probe"&&req.method==="GET"){
-    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v7");
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v8");
     const hit=await cache.match(ck);if(hit)return hit;
     if(!env.MSF_API_KEY)return result({error:"missing_key"},503);
     const season="2026-2027-regular";
+    let completedGameIds=[];
     const headers={Authorization:"Basic "+btoa(env.MSF_API_KEY+":MYSPORTSFEEDS"),Accept:"application/json"};
     async function check(name,route,extractId=false){
       const begun=Date.now();
@@ -22,11 +23,17 @@ export default {
         if(response.ok){
           const obj=await response.json();row.root_keys=Object.keys(obj||{}).slice(0,12);
           if(extractId){const g=Array.isArray(obj?.games)?obj.games:[];
-            row.game_count=g.length;let choose=g.find(x=>String(x.schedule?.playedStatus||x.schedule?.status||x.status||"").toLowerCase().includes("completed"))||g[0];
+            row.game_count=g.length;completedGameIds=g.filter(x=>/complete|played|final/i.test(String(x.schedule?.playedStatus||x.schedule?.status||x.status||""))).slice(-3).map(x=>x.schedule?.id||x.game?.id||x.id).filter(Boolean);let choose=g.find(x=>String(x.schedule?.playedStatus||x.schedule?.status||x.status||"").toLowerCase().includes("completed"))||g[0];
             row.first_game_id=choose?.schedule?.id||choose?.game?.id||choose?.id||null;row.game_keys=choose?Object.keys(choose).slice(0,10):[];row.schedule_keys=choose?.schedule?Object.keys(choose.schedule).slice(0,16):[];
           }
           if(name==="boxscore"){const x=obj?.scoring||{};row.scoring_keys=Object.keys(x).slice(0,25);row.scoring_play_shapes=(Array.isArray(x.quarters)?x.quarters:[]).map(q=>({q:q.quarterNumber,count:Array.isArray(q.scoringPlays)?q.scoringPlays.length:0,first_keys:Array.isArray(q.scoringPlays)&&q.scoringPlays[0]?Object.keys(q.scoringPlays[0]).slice(0,22):[]}));row.scoring_fields=Object.fromEntries(Object.entries(x).slice(0,12).map(([k,v])=>[k,Array.isArray(v)?{kind:"array",count:v.length,element_keys:v.length&&typeof v[0]==="object"?Object.keys(v[0]).slice(0,12):[]}:v&&typeof v==="object"?{kind:"object",keys:Object.keys(v).slice(0,16)}:{kind:typeof v}]));}if(name==="season"){row.seasons=Array.isArray(obj?.seasons)?obj.seasons.map(x=>({slug:x.season||x.name||x.label||null})).slice(0,2):[];}
-        }else await response.body?.cancel();
+        }else {
+          if(name.includes("playbyplay")){
+            const limited=await response.text().then(x=>x.slice(0,1600)).catch(()=>"");
+            row.error_class=/subscription|not subscribed|not authorized|unauthorized|forbidden|permission|access denied|not allowed|not entitled/i.test(limited)?"subscription_or_permission":/invalid|does not exist|not found/i.test(limited)?"invalid_game_or_route":/not ready|no data|no content|not available/i.test(limited)?"feed_not_ready":"undetermined";
+            row.error_body_format=/^\\s*</.test(limited)?"html":/^\\s*[{[]/.test(limited)?"json":"text_or_empty";
+          }else await response.body?.cancel();
+        }
         return row;
       }catch(e){return {feed:name,error:e?.name||"network",ms:Date.now()-begun};}
     }
@@ -39,8 +46,13 @@ export default {
     if(game&&/^[0-9A-Za-z_-]+$/.test(String(game))){
       checks.push(await check("playbyplay",season+"/games/"+game+"/playbyplay.json"));
       checks.push(await check("boxscore",season+"/games/"+game+"/boxscore.json"));
+      for(const id of completedGameIds.filter(id=>String(id)!==String(game)).slice(0,2)){
+        checks.push(await check("playbyplay_completed_"+id,season+"/games/"+id+"/playbyplay.json"));
+      }
+      checks.push(await check("playbyplay_invalid_control",season+"/games/999999999/playbyplay.json"));
+      checks.push(await check("boxscore_invalid_control",season+"/games/999999999/boxscore.json"));
     }
-    const out=new Response(JSON.stringify({version:"v7",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
+    const out=new Response(JSON.stringify({version:"v8",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
     await cache.put(ck,out.clone());return out;
   }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
