@@ -20,7 +20,7 @@
  function articleList(data){
   const src=Array.isArray(data?.articles)?data.articles:[];
   return src.map(a=>({
-   title:a.headline||a.title||'',summary:a.description||a.story||'',date:a.published||a.publishedDate||a.lastModified||'',
+   title:a.headline||a.title||'',summary:String(a.description||a.story||'').slice(0,260),date:a.published||a.publishedDate||a.lastModified||'',
    link:validUrl(a.links?.web?.href||a.links?.api?.href||a.link||a.url),
    publisher:'ESPN',categories:a.categories||[],id:String(a.id||'')
   })).filter(x=>x.title&&x.link&&Number.isFinite(Date.parse(x.date)));
@@ -88,7 +88,7 @@
    (items.length?'<div class="pfo596-news-list">'+items.slice(0,18).map(x=>'<article class="pfo596-news-row"><div><small>'+esc(x.kind)+' · '+esc(x.player)+' · '+esc(date(x.date))+'</small><b>'+esc(x.title)+'</b><p>'+esc(x.summary||'Read the full report at the original source.')+'</p><a href="'+esc(x.link)+'" target="_blank" rel="noopener noreferrer">Read source · '+esc(x.publisher)+'</a></div></article>').join('')+'</div>':
    '<p class="pfo596-news-empty">No current roster-matched dated article or report was returned. This is not an all-clear. Check official team news and published injury reports as they become available.</p>')+
    (state.err?'<p class="pfo596-news-source">'+esc(state.err)+'</p>':'');
-  if(!state.loadedAt&&!state.pending)void ensure(host);
+
  }
  async function ensure(host){await fetchNew();if(host&&document.contains(host)&&!host.closest('[hidden]'))render(host);if(document.querySelector('#overview.page.active'))renderBriefing();}
  function refresh(){
@@ -137,13 +137,18 @@
   rosterTab?.addEventListener('click',ev=>{if(ev.target.closest('[data-pfo59-team-tab="news"]'))refresh()});
   const briefing=$('briefing');
   if(briefing&&typeof renderBriefing==='function')renderBriefing();
-  // Schedule fetch is deferred; when verified, refresh only visible week-aware views.
-  void fetchNew().then(()=>{
+  // Load only our small verified schedule on startup. The national news feed
+  // is deliberately fetched ONLY if Coach opens Team News, not during first paint.
+  const loadSchedule=async()=>{
+   if(state.schedule)return;
+   try{const data=await fetchReport('nfl_schedule.json');if(data?.teams)state.schedule=data;}catch{}
    if(document.querySelector('#matchup.page.active')&&typeof pfo52Render==='function')pfo52Render();
    if(document.querySelector('#championship.page.active')&&typeof pfo49RenderPlanner==='function')pfo49RenderPlanner();
-   const visible=$('pfo59-team-news');if(visible&&!visible.closest('[hidden]'))render(visible);
    if(document.querySelector('#overview.page.active')&&typeof renderBriefing==='function')renderBriefing();
-  });
+  };
+  document.querySelector('nav button[data-page="matchup"]')?.addEventListener('click',()=>{void loadSchedule()});
+  document.querySelector('nav button[data-page="championship"]')?.addEventListener('click',()=>{void loadSchedule()});
+  setTimeout(()=>{void loadSchedule()},300);
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
