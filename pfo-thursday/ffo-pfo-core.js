@@ -1335,14 +1335,17 @@ function pfo50StatsFor(id){const p=pfo49Info(id),key=pfo50Key(p.name,p.team);ret
 function pfo50Score(stats){const s=pfo49ScoreFromStats(stats);return s&&Number.isFinite(s.points)?s.points:null;}
 function pfo50Estimate(id){const row=pfo50StatsFor(id);return row?.forecast?pfo50Score(row.forecast):null;}
 function pfo50StatTile(label,val){return '<div><b>'+e(val==null?'—':val)+'</b><span>'+e(label)+'</span></div>';}
-function pfo50StatsStrip(id){const row=pfo50StatsFor(id),p=pfo49Info(id);if(!row)return '<p class="pfo50-micro">Independent game statistics not yet loaded for this player.</p>';
+function pfo50StatsStrip(id){const row=pfo50StatsFor(id),p=pfo49Info(id);if(!row)return '<div class="pfo50-evidence warning"><b>Independent player statistics pending.</b> '+e(pfo50IndependentError||'We are checking a separate published NFL player-stat feed. Official Sleeper scoring and GameCast availability are independently tracked.')+' <button type="button" class="button" id="pfo57-retry-stats">Retry NFL statistics</button></div>';
  const weekly=row.latest||{},project=pfo50Estimate(id);const w=Number(weekly.week);const league=pfo49Observed(id)?.[w];const actual=league?.points??pfo50Score(weekly);
  const hist=league?'Actual FFL':'Reconstructed FFL*';
  const key=p.position||row.position;
  let fields=[['W'+w+' '+hist,pfo49Num(actual,1)],['Next-game model*',pfo49Num(project,1)]];
  if(['QB'].includes(key))fields.push(['Completions / Att.',(weekly.pass_cmp??'—')+' / '+(weekly.pass_att??'—')],['Incompletions',weekly.pass_inc??'—'],['Pass yds',weekly.pass_yd??'—'],['Rush yds',weekly.rush_yd??'—']);
  if(['RB','WR','TE'].includes(key))fields.push(['Rushes',weekly.rush_att??'—'],['Targets',weekly.targets??'—'],['Catches',weekly.rec??'—'],['Rush yds',weekly.rush_yd??'—'],['Rec yds',weekly.rec_yd??'—'],['Target share',weekly.target_share_pct!=null?weekly.target_share_pct+'%':'—']);
- return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">*Independent nflverse player stats; scoring reconstruction can omit some FFL bonuses. FFO model uses documented recent and season stats, not expert projections. NFL games: '+e(row.games_observed)+'.</p>';
+ const totals=row.season_totals||{},seasonFields=[['Passing yards',totals.pass_yd],['Passing TDs',totals.pass_td],['Rush yards',totals.rush_yd],['Rush TDs',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Receiving yards',totals.rec_yd],['Receiving TDs',totals.rec_td]];
+  const published=seasonFields.filter(([label,value])=>value!==null&&value!==undefined);
+  const seasonMarkup=published.length?'<details class="pfo49-disclose" open><summary>Verified NFL season totals · '+e(row.games_observed)+' recorded games</summary><div class="pfo49-statgrid">'+published.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">Source: nflverse published player weeks. Games counted in source may lag live NFL games; no missing category is represented as zero.</p></details>':'<p class="pfo50-micro">Full NFL season totals not yet delivered by the independent stat source.</p>';
+  return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div>'+seasonMarkup+'<p class="pfo50-micro">*Independent nflverse player stats; scoring reconstruction can omit some FFL bonuses. FFO model uses documented recent and season stats, not expert projections. NFL games: '+e(row.games_observed)+'.</p>';
 }
 function pfo50TradeRos(){const players={};for(const x of pfo50Indexed.values()){if(!x.forecast)continue;const pp=pfo50Score(x.forecast);if(pp==null)continue;players[x.name]={ppg:pp,coverage_fraction:1,method:['FFO 5.0 independent nflverse recent-form model'],games_observed:x.games_observed};}
  return {as_of:pfo50Independent?.checked_at||null,players,source:'nflverse independently sourced 2026 player stats; FFO baseline 65% last3 + 35% season; custom FFL scoring'};
@@ -1586,6 +1589,7 @@ document.addEventListener('click',evt=>{const b=evt.target.closest('[data-pfo49-
 });
 $('pfo49-search')?.addEventListener('input',pfo49SearchChange);
 $('pfo49-refresh')?.addEventListener('click',()=>{pfo49LoadSources(true);refreshLive();refreshInjuryOnly();refreshGamedayInactives();});
+document.addEventListener('click',event=>{if(event.target.closest('#pfo57-retry-stats'))pfo50LoadIndependent(true).then(()=>{if(pfo49Selected)pfo49RenderPlayer()})});
 const pfo49OldCompareHook=()=>{};
 function pfo49BindPlayerButtons(){document.querySelectorAll('#actual-lineup tr,#actual-bench tr,#actual-reserve tr').forEach(tr=>{
  const cell=tr.children?.[1]||tr.children?.[0];if(!cell||cell.querySelector('button'))return;
