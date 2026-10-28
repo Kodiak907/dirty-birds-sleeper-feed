@@ -1,6 +1,13 @@
 /* FFO 5.9 odds only in Championship. Never change Overview or existing matchup. */
 .page#championship.active{display:flex;flex-direction:column;gap:14px}
 #pfo59-champ-odds{order:-20;width:100%;min-width:0;margin:0;padding:17px}
+/* Override historic 5.3 rule that hides direct child Championship cards. */
+#championship > #pfo59-champ-odds.card{display:block!important}
+#pfo59-legacy-odds{order:20;border:1px solid #304d60;border-radius:10px;padding:10px 13px}
+#pfo59-legacy-odds>summary{cursor:pointer;font-weight:750;font-size:12px}
+#pfo59-legacy-odds>.grid.two{display:grid;margin:14px 0}
+#pfo59-legacy-odds>.card{display:block;margin-top:12px}
+
 #pfo59-champ-odds *{box-sizing:border-box}
 .pfo59-champ-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .pfo59-champ-header h2{margin:7px 0 3px;font-size:22px}
