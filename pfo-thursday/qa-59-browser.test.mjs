@@ -30,7 +30,7 @@ async function setup(){
 }
 async function teardown(){await browser?.close();await new Promise(r=>server?.close(r));}
 
-async function getPage(){
+async function getPage(withFixtures=false){
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,deviceScaleFactor:2,hasTouch:true});
  const page=await context.newPage();
  const api=[];
@@ -46,7 +46,15 @@ async function getPage(){
   await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(body)});
  });
  await page.route('https://api.sleeper.app/**',route=>route.abort('failed'));
- await page.route('https://raw.githubusercontent.com/**',route=>route.abort('failed'));
+ await page.route('https://raw.githubusercontent.com/**',async route=>{
+  if(!withFixtures)return route.abort('failed');
+  const name=new URL(route.request().url()).pathname.split('/').at(-1);
+  if(!/^[a-zA-Z0-9_\-]+\.json$/.test(name))return route.abort('failed');
+  try{
+   const data=await readFile(resolve(basedir,'../data',name));
+   await route.fulfill({status:200,contentType:'application/json',body:data.toString()});
+  }catch{return route.abort('failed')}
+ });
  await page.goto(base+'/index.html',{waitUntil:'domcontentloaded',timeout:20000});
  return {page,context,api};
 }
@@ -147,5 +155,35 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   console.log('FFO_MOBILE_NAV_PERF '+JSON.stringify({count:measurements.length,maxMs:max,avgMs:Math.round(measurements.reduce((a,b)=>a+b,0)/measurements.length)}));
   assert.ok(max<4000,'No navigation tap may freeze UI for 4 seconds (observed '+max+'ms)');
 
+ }finally{await ctx?.close();await teardown()}
+});
+
+test('PFO 5.9.6 local mobile trade partner and pick interaction stress uses published read-only fixtures', {timeout:110000},async()=>{
+ await setup();
+ let ctx;
+ try{
+  const {page,context}=await getPage(true);ctx=context;
+  await clickTab(page,'market');
+  const partners=page.locator('#pfo59-trade-board [data-pfo59-partner]');
+  await partners.first().waitFor({state:'visible',timeout:15000});
+  const count=await partners.count();assert.ok(count>=2,'More than one eligible partner available for trade research');
+  const times=[];
+  for(let lap=0;lap<3;lap++)for(let i=0;i<Math.min(4,count);i++){
+   const start=Date.now();
+   await partners.nth(i).click({timeout:10000});
+   const give=page.locator('#pfo59-trade-board [data-pfo59-pick][data-pfo59-side="give"]').first();
+   const take=page.locator('#pfo59-trade-board [data-pfo59-pick][data-pfo59-side="take"]').first();
+   await give.click({timeout:10000});await take.click({timeout:10000});
+   assert.equal(await give.getAttribute('aria-pressed'),'true','Dirty Birds selected player');
+   assert.equal(await take.getAttribute('aria-pressed'),'true','Counterparty selected player');
+   assert.match(await page.locator('#pfo59-trade-board .pfo59-trade-bar span').innerText(),/1 giving · 1 receiving/);
+   await page.locator('#pfo59-trade-board [data-pfo59-clear]').click({timeout:10000});
+   const took=Date.now()-start;times.push(took);
+  }
+  const max=Math.max(...times);
+  console.log('FFO_TRADE_MOBILE_PERF '+JSON.stringify({cycles:times.length,maxMs:max,avgMs:Math.round(times.reduce((a,b)=>a+b,0)/times.length)}));
+  assert.ok(max<4000,'Partner/pick/clear cycle cannot stall for 4 seconds (observed '+max+'ms)');
+  assert.equal(await page.locator('#trade-fold').getAttribute('open'),null,'Heavy legacy Trade Lab remains closed');
+  assert.equal(await page.locator('.page.active').count(),1,'Navigation remains stable during repeated trade selections');
  }finally{await ctx?.close();await teardown()}
 });
