@@ -22,7 +22,7 @@
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
 `;document.head.append(polish);
 
- const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
+ const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
@@ -91,7 +91,17 @@
    for(const list of groups){const rows=model.playerRows({playerStats:Array.isArray(list)?list:[]});const match=model.resolvePlayer(s.player,rows);if(match.player)return match.player;}
    return null;
  }
- function getRules(){return (typeof gm47Snapshot!=='undefined'&&gm47Snapshot?.league?.scoring_settings)||null}
+ function getRules(){return s.ownedRules}
+ async function loadFfoRules(){
+  if(s.ownedRules)return s.ownedRules;
+  const r=await fetch('/FFO_FFL_SCORING_V1.json',{credentials:'same-origin',cache:'no-store'});
+  if(!r.ok)throw Error('FFO scoring definition HTTP '+r.status);
+  const x=await r.json();
+  if(x?.schema!=='FFO_SCORING_RULES_V1'||x.league!=='FFL'||x.season!==2026||!x.scoring||Object.keys(x.scoring).length<100)
+   throw Error('FFO scoring file integrity check failed');
+  s.ownedRules=x.scoring;s.rulesVersion=x.version;s.rulesError=null;
+  return s.ownedRules;
+ }
  function projection(){
    if(!s.player||!s.allWeeks.size)return null;
    const games=[...s.allWeeks.entries()].sort((a,b)=>a[0]-b[0]).map(([week,rows])=>({week,entry:model.resolvePlayer(s.player,rows).player})).filter(x=>x.entry?.stats);
@@ -115,13 +125,13 @@
   const matchNote=hasProviderSeason?'MySportsFeeds uniquely matched seasonal NFL statistics, pending stable provider ID mapping.':seasonTags.length?'Season totals from independently published nflverse 2026 player data, matched to the selected name and team; not a MySportsFeeds match.':s.playerRows.length?'No unambiguous player match; season totals withheld until a verified source loads.':'Season totals not yet available. Verify source status or refresh Intel.';
   const official=inj?.official?.official?String(inj.official.official.game_status||'Official designation present'):'No verified current official designation linked. Absence of report is not clearance.';
   const html=`<div class="ffo-gc-intro"><div><span class="ffo-gc-pill">GAMECAST · ${s.enabled?'PROVIDER CONNECTED':'NOT LIVE VERIFIED'}</span><h3>${safe(p.name)}</h3><p>${safe(p.position||'')} · ${safe(p.team||'Team unverified')}</p></div><button type="button" class="button" data-ffo-player-refresh="1">↻</button></div>
-  <div class="ffo-gc-statgrid"><div><b>${livePoints}</b><span>Game FFL partial</span></div><div><b>${projPoints}</b><span>FFO forecast research</span></div>${seasonTags.slice(0,4).join('')||'<div><b>—</b><span>Season stats pending</span></div>'}</div>
+  <div class="ffo-gc-statgrid"><div><b>${livePoints}</b><span>FFO MSF score*</span></div><div><b>${projPoints}</b><span>FFO forecast research</span></div>${seasonTags.slice(0,4).join('')||'<div><b>—</b><span>Season stats pending</span></div>'}</div>
   <p class="ffo-gc-note">${safe(matchNote)}</p>
   <div class="ffo-gc-section"><h3>Current game player stats</h3><div class="ffo-gc-rawstats">${liveTags.length?liveTags.join(''):'<div>Game-specific player box score not verified yet.</div>'}</div></div>
   <div class="ffo-gc-section"><h3>Most recent published NFL game</h3><div class="ffo-gc-rawstats">${latestTags.length?latestTags.join(''):'<div>Independent game statistics not yet loaded.</div>'}</div></div>
    <div class="ffo-gc-section"><h3>2026 NFL season totals</h3><div class="ffo-gc-rawstats">${seasonTags.length?seasonTags.join(''):'<div>Awaiting verifiable published player season totals.</div>'}</div></div>
-  <div class="ffo-gc-evidence"><b>FFL scoring audit</b><p class="ffo-gc-note">${rules?'Using current Sleeper league scoring_settings.':'FFL scoring rules not loaded from Sleeper.'} ${scoring?.points!=null?'Reconstructed '+fmt(scoring.points)+' from '+scoring.covered.length+' stat categories.':'No certified player box-score reconstruction.'} ${scoring&&!scoring.complete?'Missing / unverified scoring categories: '+safe(scoring.missing.slice(0,10).join(', '))+'.':''} ${proj&&!proj.complete?'Projection uses incomplete stat categories and must NOT overwrite trade/waiver valuation.':''}</p><p class="ffo-gc-note">Official injury cross-check: ${safe(official)} <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">Official NFL injuries</a></p></div>
-  <p class="ffo-gc-note">* Game points and projections are experimental when category coverage is incomplete. Sleeper's actual scored league matchup remains authoritative. Latest source check: ${safe(s.latestCheck||'not connected')}. No 15–20-second SLA proven.</p>
+  <div class="ffo-gc-evidence"><b>FFL scoring audit</b><p class="ffo-gc-note">${rules?'FFO-owned 2026 FFL rules '+safe(s.rulesVersion||'v1')+'; stats from MySportsFeeds.':'FFO own scoring rules not loaded: '+safe(s.rulesError||'pending')+'.'} ${scoring?.points!=null?'Reconstructed '+fmt(scoring.points)+' from '+scoring.covered.length+' stat categories.':'No certified player box-score reconstruction.'} ${scoring&&!scoring.complete?'Missing / unverified scoring categories: '+safe(scoring.missing.slice(0,10).join(', '))+'.':''} ${proj&&!proj.complete?'Projection uses incomplete stat categories and must NOT overwrite trade/waiver valuation.':''}</p><p class="ffo-gc-note">Official injury cross-check: ${safe(official)} <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">Official NFL injuries</a></p></div>
+  <p class="ffo-gc-note">* Game points and projections are experimental when category coverage is incomplete. FFO game fantasy scoring is independent of Sleeper; incomplete MSF stat/event coverage is explicitly provisional. Sleeper comparison is a validation check only. Latest source check: ${safe(s.latestCheck||'not connected')}. No 15–20-second SLA proven.</p>
   <div class="ffo-gc-actionrow"><button type="button" data-ffo-goto="1">Full GameCast</button><button type="button" data-ffo-player-refresh="1">Refresh player feeds</button></div>${id==='ffo-gc-profile-embed'?'<details open><summary style="font-weight:800;font-size:12px;color:#f2c67c;margin:10px 0">Game field · player-linked plays</summary><div id="ffo-gc-player-field"></div></details>':''}`;
   el.innerHTML=html;
   el.querySelectorAll('[data-ffo-player-refresh]').forEach(b=>b.onclick=()=>refreshPlayer(true));
@@ -299,18 +309,11 @@
       s.latestCheck=pb.value.checked_at;
     }
     if(bs.status==='fulfilled'){s.liveBox=bs.value;s.latestCheck=bs.value.checked_at}
-    const game=s.games.find(g=>g.id===s.game);
-    let supplemental='';
-    if(game && (!s.playCache.length || pb.status==='rejected' || pb.value?.coverage==='scoring_only' || pb.value?.full_playbyplay_authorized===false)){
-      try{
-        const es=await feed('espnplays',{home:game.home,away:game.away,at:game.start});
-        if(Array.isArray(es.data?.plays)&&es.data.plays.length){
-          const published=model.plays(es.data);s.playCache=model.versionedPlays(s.playCache,published);
-          if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);s.playSource='ESPN NFL game summary · supplemental';
-          s.latestCheck=es.checked_at;supplemental=' · published ESPN drive descriptions';
-        }else supplemental=' · no published ESPN plays yet';
-      }catch(error){supplemental=' · ESPN play timeline unavailable ('+String(error?.message||'source error')+')'}
-    }
+    // MySportsFeeds-only live evaluation: never substitute ESPN play timelines.
+    // An unauthorized MSF play feed is shown as a genuine entitlement gap.
+    const supplemental=pb.status==='fulfilled'&&pb.value.coverage==='scoring_only'
+      ?' · MySportsFeeds scoring plays only: full PBP entitlement not confirmed'
+      :'';
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
     status((s.playSource||'Source unavailable')+' · '+(errs.length?'Some MSF feeds unavailable: '+errs.join('; '):'MSF game requests checked')+supplemental+' · checked '+(s.latestCheck||'unknown')+' · source delay unverified');
     drawPlays();drawPlayer();
@@ -333,7 +336,7 @@
     if(!s.games.length)s.games=allGames.slice(0,24);
     // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
-    status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
+    status('MySportsFeeds schedule · '+s.latestCheck+' · real-time latency and feed coverage must be verified at kickoff.');
     drawGames();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}})();
@@ -358,6 +361,7 @@
  document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(b=>b.addEventListener('click',()=>{s.playFilter=b.dataset.ffoFilter;document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));drawPlays()}));
  $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview(true);if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
  document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
+ void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
  if(gameActive())await refreshOverview();
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
@@ -371,5 +375,5 @@
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
- window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
+ window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
