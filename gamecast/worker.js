@@ -9,7 +9,7 @@ export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
   if(path==="/api/probe"&&req.method==="GET"){
-    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v8");
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v9");
     const hit=await cache.match(ck);if(hit)return hit;
     if(!env.MSF_API_KEY)return result({error:"missing_key"},503);
     const season="2026-2027-regular";
@@ -49,10 +49,11 @@ export default {
       for(const id of completedGameIds.filter(id=>String(id)!==String(game)).slice(0,2)){
         checks.push(await check("playbyplay_completed_"+id,season+"/games/"+id+"/playbyplay.json"));
       }
+      checks.push(await check("playbyplay_packers_lions_163651",season+"/games/163651/playbyplay.json"));
       checks.push(await check("playbyplay_invalid_control",season+"/games/999999999/playbyplay.json"));
       checks.push(await check("boxscore_invalid_control",season+"/games/999999999/boxscore.json"));
     }
-    const out=new Response(JSON.stringify({version:"v8",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
+    const out=new Response(JSON.stringify({version:"v9",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
     await cache.put(ck,out.clone());return out;
   }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
