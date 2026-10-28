@@ -68,14 +68,14 @@
  #pfo59-champ-odds .pfo59-champ-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
  #pfo59-champ-odds .pfo59-champ-metric strong{font-size:23px}
  /* Original long navigation remains the sole full-tools menu and all listeners survive. */
- #nav{display:none;position:fixed;z-index:10051;left:10px;right:10px;bottom:calc(78px + env(safe-area-inset-bottom,0px));top:auto;max-height:min(62dvh,520px);overflow-y:auto;overscroll-behavior:contain;background:#122437;border:1px solid #49687c;border-radius:15px;padding:39px 9px 10px;margin:0;box-shadow:0 15px 45px #000c;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;align-content:start}
+ html.ffo594-ready #nav{display:none;position:fixed;z-index:10051;left:10px;right:10px;bottom:calc(78px + env(safe-area-inset-bottom,0px));top:auto;max-height:min(62dvh,520px);overflow-y:auto;overscroll-behavior:contain;background:#122437;border:1px solid #49687c;border-radius:15px;padding:39px 9px 10px;margin:0;box-shadow:0 15px 45px #000c;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;align-content:start}
  #nav::before{content:"ALL FFO TOOLS";position:absolute;top:13px;left:14px;color:var(--ffo594-copper);font-size:11px;font-weight:800;letter-spacing:.11em}
  #nav button{white-space:normal;text-align:left;font-size:11px;line-height:1.2;min-height:39px;padding:9px 10px;background:#1a3146;border:1px solid #2b495f;border-radius:8px;color:#deedfa}
  #nav button.active{background:#275348;border-color:var(--ffo594-field);color:#eafff8;font-weight:800}
- body.ffo594-more-open #nav{display:grid}
+ html.ffo594-ready body.ffo594-more-open #nav{display:grid}
  #ffo594-backdrop{display:none;position:fixed;inset:0;z-index:10050;background:#0009;border:0;padding:0;cursor:pointer}
  body.ffo594-more-open #ffo594-backdrop{display:block}
- #ffo594-dock{position:fixed;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));left:0;right:0;bottom:0;z-index:10049;min-height:calc(59px + env(safe-area-inset-bottom,0px));padding:5px 5px calc(4px + env(safe-area-inset-bottom,0px));background:#102235;border-top:1px solid #355469;box-shadow:0 -8px 28px #050b1599}
+ html.ffo594-ready #ffo594-dock{position:fixed;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));left:0;right:0;bottom:0;z-index:10049;min-height:calc(59px + env(safe-area-inset-bottom,0px));padding:5px 5px calc(4px + env(safe-area-inset-bottom,0px));background:#102235;border-top:1px solid #355469;box-shadow:0 -8px 28px #050b1599}
  .ffo594-dock-btn{display:flex;align-items:center;justify-content:center;flex-direction:column;min-width:0;gap:2px;padding:3px 1px;background:transparent;border:0;border-radius:8px;color:#a5bbcd;font-size:10px;font-weight:650;white-space:nowrap}
  .ffo594-dock-btn[aria-current=page],.ffo594-dock-btn.ffo594-dock-active,body.ffo594-more-open #ffo594-more{background:#1e433f;color:#a6f1d9}
  .ffo594-dock-label{font-size:clamp(8px,2.4vw,10px);letter-spacing:-.02em}
