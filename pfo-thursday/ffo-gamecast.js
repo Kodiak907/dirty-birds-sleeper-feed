@@ -25,17 +25,49 @@
  const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
- async function feed(name,query={}){
-  const controller=new AbortController(),t=setTimeout(()=>controller.abort(),12500);
-  try{
-   const url=new URL(route+name,location.origin);Object.entries(query).forEach(([k,v])=>{if(v!==undefined&&v!==null)url.searchParams.set(k,String(v))});
-   const response=await fetch(url,{cache:'no-store',credentials:'same-origin',signal:controller.signal,headers:{accept:'application/json'}});
-   let body;try{body=await response.json()}catch{throw Error('Invalid gateway response')}
-   if(!response.ok)throw Error(body.error||'HTTP '+response.status);
-   if(body.available===false)throw Error(body.reason||'Feed not ready');
-   return body;
-  }finally{clearTimeout(t)}
+ const feedCache=new Map(),feedPending=new Map();
+ let playerFeedPending=null,gamePending=null,overviewPending=null;
+ const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
+ const gameActive=()=>sectionActive('gamecast');
+ function cacheTtl(name){
+   if(name==='health')return 60000;
+   if(name==='schedule')return 180000;
+   if(name==='injuries')return 240000;
+   if(name==='updates')return 60000;
+   // Stats and historical logs are stored only as normalized rows, never duplicated here.
+   // Live plays and boxscores are NEVER cached; their polling is limited separately.
+   return 0;
  }
+ async function feed(name,query={},force=false){
+  const url=new URL(route+name,location.origin);
+  Object.entries(query).forEach(([k,v])=>{if(v!==undefined&&v!==null)url.searchParams.set(k,String(v))});
+  const key=url.pathname+url.search,now=Date.now(),ttl=cacheTtl(name),hit=feedCache.get(key);
+  if(!force&&ttl>0&&hit&&now-hit.at<ttl)return hit.body;
+  if(feedPending.has(key))return feedPending.get(key);
+  const promise=(async()=>{
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12500);
+   try{
+    const response=await fetch(url,{cache:'no-store',credentials:'same-origin',signal:controller.signal,headers:{accept:'application/json'}});
+    let body;try{body=await response.json()}catch{throw Error('Invalid gateway response')}
+    if(!response.ok)throw Error(body.error||'HTTP '+response.status);
+    if(body.available===false)throw Error(body.reason||'Feed not ready');
+    if(ttl>0){
+      feedCache.delete(key);feedCache.set(key,{at:Date.now(),body});
+      while(feedCache.size>8)feedCache.delete(feedCache.keys().next().value);
+    }
+    return body;
+   }finally{clearTimeout(timer)}
+  })();
+  feedPending.set(key,promise);
+  try{return await promise}finally{feedPending.delete(key)}
+ }
+ async function ensurePlayerTotals(force=false){
+  if(s.playerRows.length&&!force)return s.playerRows;
+  if(playerFeedPending)return playerFeedPending;
+  playerFeedPending=(async()=>{const data=await feed('stats',{season:s.season},force);s.playerRows=model.playerRows(data.data);s.latestCheck=data.checked_at||s.latestCheck;if(s.player)findPlayer();return s.playerRows})();
+  try{return await playerFeedPending}finally{playerFeedPending=null}
+ }
+
  function friendlyGame(x){
   const z=x?.schedule||x?.game||x||{},home=z.homeTeam||x.homeTeam||{},away=z.awayTeam||x.awayTeam||{};
   const name=t=>typeof t==='string'?t:String(t.abbreviation||t.abbr||t.name||'?');
@@ -128,11 +160,8 @@
  async function refreshEvidencePanels(){
   if(!s.enabled)return;
   try{
-    if(!s.playerRows.length){
-      const feedResult=await feed('stats',{season:s.season});s.playerRows=model.playerRows(feedResult.data);
-      s.latestCheck=feedResult.checked_at;
-    }
-    const rows=s.playerRows;
+    await ensurePlayerTotals();
+     const rows=s.playerRows;
     const item=(p,tag)=>{
       const found=model.resolvePlayer(p,rows);if(!found.player)return null;
       const r=model.normalizeStats(found.player.stats),pos=String(p.position||'').toUpperCase();
@@ -231,20 +260,21 @@
  async function refreshPlayer(force=false){
   if(!s.player||!s.enabled)return;
   try{
-   if(force||!s.playerRows.length){const r=await feed('stats',{season:s.season});s.playerRows=model.playerRows(r.data);s.latestCheck=r.checked_at;findPlayer()}
-   drawPlayer();
-   if(force||!s.allWeeks.size){
+   await ensurePlayerTotals(force);drawPlayer();
+   if(!force&&!s.allWeeks.size){
+    // At most three completed weeks for provisional recent-form context.
+    // Complete season totals remain independent and are shown immediately.
     const week=Math.min(18,Math.max(1,Number(window.dbNflWeek||8)));
-    const previous=Array.from({length:week},(_,i)=>i+1);
-    for(let i=0;i<previous.length;i+=3){await Promise.all(previous.slice(i,i+3).map(async w=>{
-      try{const r=await feed('gamelogs',{season:s.season,week:w});s.allWeeks.set(w,model.playerRows(r.data))}catch{ /* coverage gaps remain explicit */ }
-    }))}
+    const past=Array.from({length:Math.min(3,week-1)},(_,i)=>week-1-i).reverse();
+    const rows=await Promise.allSettled(past.map(w=>feed('gamelogs',{season:s.season,week:w})));
+    rows.forEach((v,i)=>{if(v.status==='fulfilled')s.allWeeks.set(past[i],model.playerRows(v.value.data))});
    }
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
  async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
- async function refreshGame(){if(!s.enabled||!s.game)return;
+ async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
+  gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
   const kickoff=Date.parse(selected?.start||'');
   if(Number.isFinite(kickoff)&&Date.now()<kickoff-5*60000){
@@ -269,7 +299,7 @@
         const es=await feed('espnplays',{home:game.home,away:game.away,at:game.start});
         if(Array.isArray(es.data?.plays)&&es.data.plays.length){
           const published=model.plays(es.data);s.playCache=model.versionedPlays(s.playCache,published);
-          s.activePlay=Math.max(0,s.playCache.length-1);s.playSource='ESPN NFL game summary · supplemental';
+          if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);s.playSource='ESPN NFL game summary · supplemental';
           s.latestCheck=es.checked_at;supplemental=' · published ESPN drive descriptions';
         }else supplemental=' · no published ESPN plays yet';
       }catch(error){supplemental=' · ESPN play timeline unavailable ('+String(error?.message||'source error')+')'}
@@ -277,13 +307,15 @@
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
     status((s.playSource||'Source unavailable')+' · '+(errs.length?'Some MSF feeds unavailable: '+errs.join('; '):'MSF game requests checked')+supplemental+' · checked '+(s.latestCheck||'unknown')+' · source delay unverified');
     drawPlays();drawPlayer();
-  }catch(error){status('Game feed error: '+error.message)}
+  }catch(error){status('Game feed error: '+error.message)}})();
+  try{return await gamePending}finally{gamePending=null}
  }
- async function refreshOverview(){
-  try{
-    const health=await feed('health');s.enabled=!!health.ready;
+ async function refreshOverview(force=false){
+  if(overviewPending)return overviewPending;
+  overviewPending=(async()=>{try{
+    const health=await feed('health',{},force);s.enabled=!!health.ready;
     if(!s.enabled){status('GameCast staging: configure encrypted MSF_API_KEY and enable Worker flag. No live data yet.');drawSignals();return}
-    const sched=await feed('schedule',{season:s.season});
+    const sched=await feed('schedule',{season:s.season},force);
     const src=sched.data?.games||sched.data?.gameSchedule||sched.data?.schedule?.games||[];
     const allGames=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
     const nowMs=Date.now(),dayMs=86400000;
@@ -295,9 +327,10 @@
     // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
-    drawGames();drawPlayer();refreshEvidencePanels();refreshInjuryEvidence();
+    drawGames();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
-  }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}
+  }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}})();
+  try{return await overviewPending}finally{overviewPending=null}
  }
  function setPlayer(id){try{s.playerId=String(id);s.player=pfo49Info(id);const host=$('pfo49-profile');if(host&&!$('ffo-gc-profile-embed')){const child=document.createElement('div');child.id='ffo-gc-profile-embed';child.className='ffo-gc-evidence';host.prepend(child)}s.msfPlayer=null;s.playerMatch='';findPlayer();drawPlayer();if(s.enabled)refreshPlayer(false);
    const g=s.games.find(x=>x.home===s.player.team||x.away===s.player.team);if(g&&s.game!==g.id)selectGame(g.id);
@@ -311,11 +344,13 @@
   const prevRender=pfo49RenderPlayer;pfo49RenderPlayer=function(...args){const out=prevRender(...args);const host=$('pfo49-profile');if(host&&s.player){let child=$('ffo-gc-profile-embed');if(!child){child=document.createElement('div');child.id='ffo-gc-profile-embed';child.className='ffo-gc-evidence';host.prepend(child)}drawPlayer()}return out};
  }
  document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(b=>b.addEventListener('click',()=>{s.playFilter=b.dataset.ffoFilter;document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));drawPlays()}));
- $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview();if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
- document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays()});
- drawSignals();drawGames();drawPlayer();drawPlays();drawField();await refreshOverview();
+ $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview(true);if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
+ document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
+ drawSignals();drawGames();drawPlayer();drawPlays();drawField();
+ if(gameActive())await refreshOverview();
+ if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
  setInterval(()=>{
-   if(document.visibilityState!=='visible'||!s.enabled||!s.game)return;
+   if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
    const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
    const kick=Date.parse(game?.start||''),now=Date.now();
    const likelyLive=/in.progress|in progress|live|halftime|half.time/.test(state)||
@@ -323,6 +358,6 @@
    const refreshMs=likelyLive?20000:120000;
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
- setInterval(()=>{if(document.visibilityState==='visible'&&s.enabled)refreshOverview()},90000);
+ setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
  window.ffoGameCast={selectPlayer:setPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
 })();
