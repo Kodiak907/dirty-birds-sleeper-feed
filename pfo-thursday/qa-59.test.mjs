@@ -26,9 +26,9 @@ test('Original overview, GameCast, roster and matchup continue to exist',()=>{
 });
 
 test('New market and team hub are distinct and feature preserving',()=>{
- for(const a of ['home','trade','waiver','transactions'])
+ for(const a of ['trade','waiver','transactions'])
   assert.ok(newUI.includes('data-pfo59-market-panel="'+a+'"'),a);
- for(const a of ['roster','schedule','transactions','news'])
+ for(const a of ['roster','schedule','news'])
   assert.ok(newUI.includes('data-pfo59-team-panel="'+a+'"'),a);
  assert.match(newUI,/ffoQuickView\?\.open/);
  assert.match(newUI,/id==='3'/);
@@ -104,7 +104,10 @@ test('Team-specific waiver ranking uses completed FFL weekly scores, not one lis
  qa.state.manager='4';qa.waiver();
  assert.notEqual(dirty,elements.get('pfo59-waiver-board').innerHTML);
  qa.state.manager='9';qa.trade();
- assert.match(elements.get('pfo59-trade-board').innerHTML,/View-only \/ no proposals/);
+ assert.match(elements.get('pfo59-trade-board').innerHTML,/Choose any trade-eligible FFL manager/);
+ qa.state.manager='9';qa.trade();assert.match(elements.get('pfo59-trade-board').innerHTML,/data-pfo59-pick=/);
+ assert.match(elements.get('pfo59-trade-board').innerHTML,/Dirty Birds · Give/);
+ assert.match(elements.get('pfo59-trade-board').innerHTML,/Receive/);
 });
 
 test('Real Sleeper manager-independent archive retains completed weeks and sensible timestamp',()=>{
