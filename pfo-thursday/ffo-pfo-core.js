@@ -2711,7 +2711,11 @@ const comUI={unlocked:false,cases:[],selected:null,loaded:false};
 async function comReq(route,opts={}){const response=await fetch('/api/commissioner/'+route,{credentials:'same-origin',cache:'no-store',...opts});const type=response.headers.get('content-type')||'';if(!type.includes('application/json'))throw Error('Cloudflare Access login may be required: open the protected commissioner URL and authenticate.');const obj=await response.json();if(!response.ok)throw Error(obj.error||'HTTP '+response.status);return obj;}
 function comMsg(message,bad=false){const el=$('com-access');if(!el)return;el.textContent=message;el.style.color=bad?'#ffb2a9':'#88e8c3';}
 async function comStatus(){try{const data=await comReq('status');comUI.unlocked=!!data.unlocked;comUI.loaded=true;
-  if(!data.ready){comMsg('Private administrator setup incomplete. D1, R2, verified Cloudflare Access and PIN secrets are required.',true);$('com-unlock').hidden=true;$('com-workspace').hidden=true;return;}
+  if(!data.ready){
+  const v=data.pin_secret_format||{},bad=[v.hash_ok===false?'COMMISSIONER_PIN_HASH':null,v.salt_ok===false?'COMMISSIONER_PIN_SALT':null,v.session_ok===false?'COMMISSIONER_SESSION_SECRET':null].filter(Boolean);
+  comMsg(bad.length?'Preview secret format is invalid: '+bad.join(', ')+'. Check these entries in Cloudflare Preview; your PIN has not been tested.':'Private administrator configuration incomplete. Check Preview settings.',true);
+  $('com-unlock').hidden=true;$('com-workspace').hidden=true;return;
+ }
   $('com-unlock').hidden=!!data.unlocked;$('com-workspace').hidden=!data.unlocked;comMsg(data.unlocked?'Commissioner access verified · session expires after 20 minutes.':'Your admin email is verified. Enter your PIN to open private cases.');if(data.unlocked){$('com-identity').textContent='Authenticated commissioner · '+data.identity;await comRefresh()}
  }catch(err){comUI.unlocked=false;$('com-unlock').hidden=true;$('com-workspace').hidden=true;comMsg('Protected service unavailable: '+err.message,true)}}
 async function comRefresh(){const obj=await comReq('cases');comUI.cases=obj.cases||[];comDrawList()}
