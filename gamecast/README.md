@@ -44,3 +44,6 @@ The PFO preview branch includes corrected ESPN NFL team alias mapping, compact n
 
 ### Final Thursday QA Preview: injury and trade evidence
 Redeploy only dirtybirdstest protected Pages preview from pfo-thursday-staging. Added dated MSF injury source cross-check and compact two-sided screened trade cards with pros, limitations, roster impact, and no actions sent. Existing production remains untouched.
+
+### Authorized Pages Preview Upload — October 27, 2026 PT
+Deploy isolated pfo-thursday-staging PFO revision containing compact two-sided trade cards, dated MySportsFeeds Injury Watch overlay, bounded GameCast game picker, and verified ESPN fallback labeling. Preview only under dirtybirdstest; Pages production/main is not replaced. No credentials are committed.
