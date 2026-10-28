@@ -27,7 +27,7 @@
  function renderImpact(){
   const w=Number(el('com57-week')?.value||0),rid=Number(el('com57-roster')?.value||0),base=Number(el('com57-score')?.value),delta=Number(el('com57-delta')?.value);
   const preview=el('com57-preview');if(!preview)return;
-  const valid=Number.isInteger(w)&&w>=1&&w<=18&&rid>=1&&Number.isFinite(base)&&Number.isFinite(delta);
+  const valid=Number.isInteger(w)&&w>=1&&w<=18&&rid>=1&&el('com57-score')?.value!==''&&el('com57-delta')?.value!==''&&Number.isFinite(base)&&Number.isFinite(delta);
   const total=valid?round(base+delta):null;
   const collisions=activeList().filter(x=>Number(x.week)===w&&Number(x.roster_id)===rid&&Number(x.year)===Number(window.dbNflSeason||2026));
   const caseData=caseById(el('com57-case')?.value);
@@ -53,6 +53,7 @@
    el('com57-score').value=score.toFixed(2);
    el('com57-score-source').textContent='Existing Sleeper historical matchup snapshot · confirm it is final before filing.';
   }else{
+   el('com57-score').value='';
    el('com57-score-source').textContent='No synced matchup total available for that roster/week. Enter the official Sleeper score manually and verify it.';
   }
   renderImpact();
@@ -100,9 +101,14 @@
   el('com57-refresh').addEventListener('click',()=>refresh(true));
   el('com57-form').addEventListener('submit',save);
   shell.addEventListener('click',async ev=>{
-   const b=ev.target.closest('[data-com57-verify],[data-com57-void]');if(!b)return;
+   const b=ev.target.closest('[data-com57-verify],[data-com57-void],[data-com57-receipt]');if(!b)return;
    if(lock)return;
-   const uid=b.dataset.com57Verify||b.dataset.com57Void,a=ledger.find(x=>x.adjustment_id===uid);if(!a)return;
+   const uid=b.dataset.com57Verify||b.dataset.com57Void||b.dataset.com57Receipt,a=ledger.find(x=>x.adjustment_id===uid);if(!a)return;
+   if(b.hasAttribute('data-com57-receipt')){
+    const content=['FFO OFFICIAL COMMISSIONER RULING RECEIPT','Case: '+a.case_no,'League: '+a.league,'Team: '+a.team,'Week '+a.week+' / '+a.year+' · Roster '+a.roster_id,'Adjustment: '+(Number(a.delta_points)>=0?'+':'')+money(a.delta_points)+' points','Previous recorded total: '+money(a.original_points),'FFO decision total: '+money(a.new_total),'Reason: '+a.reason,'Administrative status: '+a.status,'Filed: '+stamped(a.created_at),'Recorded by: '+a.created_by,'Note: This receipt is an FFO administrative record. Sleeper scoring is authoritative only when independently verified.'].join('\n');
+    try{await navigator.clipboard.writeText(content);setMsg('Ruling receipt copied to your clipboard. It has NOT been sent to any manager.')}catch{setMsg('Clipboard permission denied; use the case Export summary for a copy.',true)}
+    return;
+   }
    if(b.hasAttribute('data-com57-void')){
     const why=prompt('Reason for reversing this FFO administrative adjustment (at least 8 characters):');
     if(why===null)return;
@@ -126,7 +132,7 @@
    return '<article class="com57-item"><div class="com57-itemtop"><b>'+E(a.case_no||'Case unknown')+' · '+E(a.team||'Manager unknown')+'</b><span class="'+color+'">'+E(badge)+'</span></div>'+
     '<div class="com57-scoreline">W'+E(a.week)+' · Roster '+E(a.roster_id)+' · '+E(money(a.original_points))+' <strong>'+E((Number(a.delta_points)>=0?'+':'')+money(a.delta_points))+'</strong> → <b>'+E(money(a.new_total))+'</b></div>'+
     '<p>'+E(a.reason||'No reason recorded')+'</p><small>'+E(stamped(a.created_at))+' · '+E(a.created_by||'Admin')+' · '+E(a.adjustment_type||'Adjustment')+'</small>'+
-    (!voided?'<div class="com57-rowactions">'+(!verified?'<button type="button" data-com57-verify="'+E(a.adjustment_id)+'">Verify against Sleeper</button>':'')+'<button type="button" data-com57-void="'+E(a.adjustment_id)+'">Void in FFO</button></div>':'')+'</article>';
+    '<div class="com57-rowactions"><button type="button" data-com57-receipt="'+E(a.adjustment_id)+'">Copy ruling receipt</button>'+(!voided?(!verified?'<button type="button" data-com57-verify="'+E(a.adjustment_id)+'">Verify Sleeper</button>':'')+'<button type="button" data-com57-void="'+E(a.adjustment_id)+'">Void in FFO</button>':'')+'</div></article>';
   }).join(''):'<p class="com57-foot">No FFO score adjustments recorded yet. File and issue a case first.</p>');
  }
  function hydrate(){
@@ -153,7 +159,7 @@
   ev.preventDefault();if(lock||!source())return;
   const c=caseById(el('com57-case').value),week=Number(el('com57-week').value),roster_id=Number(el('com57-roster').value),base=Number(el('com57-score').value),delta=Number(el('com57-delta').value);
   const reason=el('com57-reason').value.trim(),type=el('com57-type').value;
-  if(!c||!roster_id||!Number.isInteger(week)||!Number.isFinite(base)||!Number.isFinite(delta)||Math.abs(delta)<.005||reason.length<12){setMsg('Select a case, roster, week, and valid score/reason.',true);return}
+  if(!c||!roster_id||!Number.isInteger(week)||el('com57-score').value===''||el('com57-delta').value===''||!Number.isFinite(base)||!Number.isFinite(delta)||Math.abs(delta)<.005||reason.length<12){setMsg('Select a case, roster, week, and valid score/reason.',true);return}
   const newTotal=round(base+delta);
   if(!confirm('Record '+(delta>=0?'+':'')+money(delta)+' FFO points for Roster '+roster_id+', Week '+week+'? New FFO total '+money(newTotal)+'. This DOES NOT edit Sleeper.'))return;
   lock=true;setMsg('Recording signed commissioner decision in the private FFO ledger…');
