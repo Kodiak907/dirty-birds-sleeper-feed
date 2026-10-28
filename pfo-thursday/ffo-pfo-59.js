@@ -6,7 +6,7 @@
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
  let statRequested=false;
- const state={market:'home',manager:'1',position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,history:null,historyLoading:null,waiverLoaded:false,tradeLoaded:false};
+ const state={market:'home',manager:'1',position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
   const u=state.snap?.users?.find(x=>String(x.user_id)===String(r?.owner_id));
@@ -173,7 +173,9 @@
   return state.historyLoading;
  }
  async function loadAdvisory(force=false){
-  if(state.loading)return Promise.resolve();state.loading=true;
+  if(state.loading)return Promise.resolve();
+  if(!force&&state.advisoryAt&&Date.now()-state.advisoryAt<60000&&state.snap&&state.names){managerOptions();waiver();trade();teamTxnRender();return;}
+  state.loading=true;
   try{
    const picks=await Promise.allSettled([fetchReport('fast_latest.json'),fetchReport('player_names.json'),fetchReport('AUTOMATED_WAIVER_SCOUTING.json'),fetchReport('TRADE_IDEAS.json')]);
    if(picks[0].status==='fulfilled')state.snap=picks[0].value;
@@ -181,6 +183,7 @@
    if(picks[2].status==='fulfilled')state.scout=picks[2].value;
    if(picks[3].status==='fulfilled')state.ideas=picks[3].value;
    if(state.snap&&!state.snap.rosters?.some(r=>String(r.roster_id)===state.manager))state.manager='1';
+   if(state.snap&&state.names)state.advisoryAt=Date.now();
   }catch(err){console.warn('PFO59 advisory',err)}finally{state.loading=false;managerOptions();waiver();trade();teamTxnRender();teamNewsRender()}
  }
  function managerOptions(){
@@ -253,10 +256,12 @@
  }
  async function loadSchedule(full=false){
   if(state.loadingSchedule)return;
+  if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000){scheduleRender();return;}
   state.loadingSchedule=true;
   try{
-   const snap=await fetchReport('latest.json');if(!state.snap)state.snap=snap;
+   const snap=state.history||await fetchReport('latest.json');if(!state.snap)state.snap=snap;
    if(snap.matchups_by_week)state.history=snap;
+   state.scheduleAt=Date.now();
    for(const [k,v] of Object.entries(snap.matchups_by_week||{}))if(Array.isArray(v))state.schedule.set(Number(k),v);
    scheduleRender();
    if(full&&typeof pfo52GetWeek==='function'){
