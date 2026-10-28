@@ -59,7 +59,7 @@ const comText=(x,n=350)=>String(x||'').trim().slice(0,n);
 // PFO 5.7: Commissioner FFO-only point-adjustment ledger.
 // A record changes the ADMINISTRATIVE ledger, not official Sleeper points.
 // All revisions append D1 events; none overwrite history or submit to Sleeper.
-const comScoreNumber=n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n)<=99999&&Math.round(n*100)===n*100;
+const comScoreNumber=n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n)<=99999&&Math.abs(n*100-Math.round(n*100))<1e-6;
 const comScoreRound=n=>Math.round((n+Number.EPSILON)*100)/100;
 async function comScoreEvents(env,limit=500){
  const result=await env.COMMISSIONER_DB.prepare(
@@ -168,6 +168,14 @@ async function commissionerApi(req,env){
      if(!Number.isInteger(week)||week<1||week>18||(record.week!=null&&Number(record.week)!==week)||!Number.isInteger(roster)||roster<1||roster>32||
          !comScoreNumber(base)||!comScoreNumber(delta)||!comScoreNumber(newTotal)||Math.abs(delta)<.005||!['PENALTY','AWARD','CORRECTION'].includes(type)||reason.length<12)
        return comJson({error:'SCORE_FIELDS_INVALID_OR_CASE_WEEK_MISMATCH'},400);
+     const records=await env.COMMISSIONER_DB.prepare("SELECT event_type FROM commissioner_events WHERE case_id=? ORDER BY id ASC").bind(id).all();
+     const actions=records.results||[];
+     if(!actions.some(x=>x.event_type==='ISSUED')||actions.some(x=>x.event_type==='REVERSED'))return comJson({error:'CASE_MUST_BE_ISSUED_AND_NOT_REVERSED'},409);
+     const previous=await comScoreEvents(env);
+     const active=new Map();
+     for(const ev of previous){if(ev.event_type==='SCORE_RECORDED')active.set(ev.adjustment_id,ev);else if(ev.event_type==='SCORE_VOIDED')active.delete(ev.adjustment_id)}
+     if([...active.values()].some(ev=>ev.league==='FFL'&&Number(ev.year)===Number(record.year)&&Number(ev.week)===week&&Number(ev.roster_id)===roster))
+      return comJson({error:'ACTIVE_ADJUSTMENT_EXISTS_FOR_THIS_ROSTER_AND_WEEK_VOID_OR_RECONCILE_FIRST'},409);
      const now=comIso(),item={schema:'FFO_COMMISSIONER_SCORE_V1',adjustment_id:crypto.randomUUID(),week,year:Number(record.year),roster_id:roster,original_points:base,delta_points:delta,new_total:newTotal,adjustment_type:type,reason,official_score_status:'NOT_SUBMITTED_TO_SLEEPER'};
      await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_events(case_id,event_type,note,created_by,created_utc) VALUES(?,?,?,?,?)').bind(id,'SCORE_RECORDED',JSON.stringify(item),email,now).run();
      return comJson({saved:true,adjustment:item,message:'Recorded in private FFO commissioner ledger only. No Sleeper scores changed.'},201);
