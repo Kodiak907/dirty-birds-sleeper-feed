@@ -50,3 +50,6 @@ Deploy isolated pfo-thursday-staging PFO revision containing compact two-sided t
 
 ## October 27 late QA - NFL play-by-play verified
 Authenticated MySportsFeeds playbyplay returns 200 for three completed NFL Week 7 games, with 159 records for Packers vs Lions. PFO Preview GameCast now parses playStatus quarter/secondsElapsed/down/LOS, retains complete timeline, and shows pregame waiting state. Deploy Pages preview only on pfo-thursday-staging, never main. No public diagnostic or credentials.
+
+### Thursday rehearsal release note
+Final protected Pages PREVIEW upload: verified MSF historical play-by-play and provider-sourced quarter/clock/down/LOS, corrected pregame empty-state copy. Original Pages production main remains unchanged. Temporary preview deploy script is never committed to production Pages.
