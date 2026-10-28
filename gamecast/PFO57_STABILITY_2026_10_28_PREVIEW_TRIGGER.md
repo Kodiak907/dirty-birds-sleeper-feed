@@ -1,0 +1,3 @@
+# FFO 5.7 Stabilization Preview Upload
+
+User-reported failures: Commissioner PRIVATE_STORAGE_NOT_CONFIGURED, Player Intel clear behavior, missing player stats despite nflverse success, live roster snapshots lag, and excessive initial HTML. One-time release uploads immutable PFO preview Git commit `ebeaf31861d0110106185d66b1a2c5ce88fee8f3` with exactly 13 files including separated core JS/CSS, explicit Pages D1 and R2 bindings and GameCast source-safe independent season totals. Target Cloudflare Pages `dirtybirdstest` PREVIEW branch `pfo-thursday-staging` only. No changes to production Pages/main, Sleeper official scoring or commissioner case records. The temporary Worker build command must be reset to None afterward while keeping builds enabled.
