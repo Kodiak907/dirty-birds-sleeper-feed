@@ -1,0 +1,330 @@
+{
+  "schema": "FFO_CHAMPIONSHIP_100K_V1",
+  "status": "completed_conditional_historical_form_model",
+  "generated_at_utc": "2026-10-28T19:17:49.915Z",
+  "league_id": "1399157532559192064",
+  "roster_snapshot_as_of": "2026-10-28T18:47:58.045921+00:00",
+  "simulations": 100000,
+  "random_seed": 20261028,
+  "current_week": 8,
+  "regular_season_end_week": 14,
+  "scoring_variability_sd": 25.5,
+  "model": "100,000 full season and playoff Monte Carlo trials using actual FFL Week 1–7 scores and confirmed Sleeper Week 8–14 matchups. Weekly team average = .65 × Weeks 1–7 average + .35 × Weeks 5–7 average. Each game draws two independent normal scores with historical descriptive SD 25.5, truncated at 0. Rank by wins, PF, PA; best two of six playoff qualifiers receive byes. QF seeds 3–6 and 4–5; reseed semifinal 1 vs lowest surviving seed; final between semifinal winners. No score ties modeled.",
+  "assumptions": [
+    "Current FFL roster and Week 8 current record treated as fixed baseline before Week 8 results.",
+    "Weekly score distributions use observed FFL scoring not published forward player-level projections.",
+    "No future trades, waivers, injury changes, lineup mistakes, NFL correlations or game-to-game dependence modeled.",
+    "Historical point variability is descriptive, not validated forecast uncertainty; 100,000 trials reduce sampling error, not model bias.",
+    "FFL tie-break assumes Wins, then PF, then PA, then roster ID; manual reseeding, league-specific tie rules or division overrides may differ.",
+    "Six playoff qualifiers, two byes, playoffs weeks 15–17; format adopted from league settings and prior model."
+  ],
+  "fixture_source": {
+    "source": "Sleeper public API and feed",
+    "weeks": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "weekly_games": 6,
+    "complete": true
+  },
+  "prior_10000": {
+    "as_of": "2026-10-28T16:25:45.245535+00:00",
+    "simulations": 10000,
+    "source": "archived full season player forecast model retained separately"
+  },
+  "teams": [
+    {
+      "roster_id": 11,
+      "name": "suck my dickerson",
+      "record": "5-2",
+      "assumed_mean_points": 129.94,
+      "playoff_probability": 0.99277,
+      "bye_probability": 0.65696,
+      "final_probability": 0.56448,
+      "championship_probability": 0.33855,
+      "counts": {
+        "playoff": 99277,
+        "bye": 65696,
+        "final": 56448,
+        "title": 33855
+      },
+      "seed_probabilities": {
+        "1": 0.34537,
+        "2": 0.31159,
+        "3": 0.17033,
+        "4": 0.09884,
+        "5": 0.05097,
+        "6": 0.01567
+      }
+    },
+    {
+      "roster_id": 12,
+      "name": "Cokerthestroker",
+      "record": "6-1",
+      "assumed_mean_points": 126.42,
+      "playoff_probability": 0.99747,
+      "bye_probability": 0.74177,
+      "final_probability": 0.53838,
+      "championship_probability": 0.28844,
+      "counts": {
+        "playoff": 99747,
+        "bye": 74177,
+        "final": 53838,
+        "title": 28844
+      },
+      "seed_probabilities": {
+        "1": 0.46843,
+        "2": 0.27334,
+        "3": 0.13786,
+        "4": 0.07377,
+        "5": 0.03578,
+        "6": 0.00829
+      }
+    },
+    {
+      "roster_id": 8,
+      "name": "DeeboSix0",
+      "record": "5-2",
+      "assumed_mean_points": 118.45,
+      "playoff_probability": 0.95707,
+      "bye_probability": 0.24368,
+      "final_probability": 0.28038,
+      "championship_probability": 0.12426,
+      "counts": {
+        "playoff": 95707,
+        "bye": 24368,
+        "final": 28038,
+        "title": 12426
+      },
+      "seed_probabilities": {
+        "1": 0.0785,
+        "2": 0.16518,
+        "3": 0.25445,
+        "4": 0.22371,
+        "5": 0.17033,
+        "6": 0.0649
+      }
+    },
+    {
+      "roster_id": 6,
+      "name": "kfsn",
+      "record": "5-2",
+      "assumed_mean_points": 116.77,
+      "playoff_probability": 0.94481,
+      "bye_probability": 0.19583,
+      "final_probability": 0.24548,
+      "championship_probability": 0.102,
+      "counts": {
+        "playoff": 94481,
+        "bye": 19583,
+        "final": 24548,
+        "title": 10200
+      },
+      "seed_probabilities": {
+        "1": 0.0614,
+        "2": 0.13443,
+        "3": 0.21788,
+        "4": 0.25646,
+        "5": 0.19532,
+        "6": 0.07932
+      }
+    },
+    {
+      "roster_id": 1,
+      "name": "Dirty Birds",
+      "record": "5-2",
+      "assumed_mean_points": 114.54,
+      "playoff_probability": 0.9194,
+      "bye_probability": 0.15108,
+      "final_probability": 0.20201,
+      "championship_probability": 0.07959,
+      "counts": {
+        "playoff": 91940,
+        "bye": 15108,
+        "final": 20201,
+        "title": 7959
+      },
+      "seed_probabilities": {
+        "1": 0.04487,
+        "2": 0.10621,
+        "3": 0.17963,
+        "4": 0.22817,
+        "5": 0.25338,
+        "6": 0.10714
+      }
+    },
+    {
+      "roster_id": 5,
+      "name": "    Victorious Secret",
+      "record": "2-5",
+      "assumed_mean_points": 117.82,
+      "playoff_probability": 0.30033,
+      "bye_probability": 0.00131,
+      "final_probability": 0.06096,
+      "championship_probability": 0.0272,
+      "counts": {
+        "playoff": 30033,
+        "bye": 131,
+        "final": 6096,
+        "title": 2720
+      },
+      "seed_probabilities": {
+        "1": 0.00004,
+        "2": 0.00127,
+        "3": 0.01084,
+        "4": 0.03452,
+        "5": 0.07933,
+        "6": 0.17433
+      }
+    },
+    {
+      "roster_id": 3,
+      "name": "BigOlBoyle",
+      "record": "2-5",
+      "assumed_mean_points": 117.18,
+      "playoff_probability": 0.26988,
+      "bye_probability": 0.00169,
+      "final_probability": 0.05252,
+      "championship_probability": 0.02291,
+      "counts": {
+        "playoff": 26988,
+        "bye": 169,
+        "final": 5252,
+        "title": 2291
+      },
+      "seed_probabilities": {
+        "1": 0.00009,
+        "2": 0.0016,
+        "3": 0.0096,
+        "4": 0.02861,
+        "5": 0.06985,
+        "6": 0.16013
+      }
+    },
+    {
+      "roster_id": 2,
+      "name": "CREAM MACHINE ",
+      "record": "4-3",
+      "assumed_mean_points": 102.96,
+      "playoff_probability": 0.35142,
+      "bye_probability": 0.00686,
+      "final_probability": 0.0325,
+      "championship_probability": 0.00956,
+      "counts": {
+        "playoff": 35142,
+        "bye": 686,
+        "final": 3250,
+        "title": 956
+      },
+      "seed_probabilities": {
+        "1": 0.00128,
+        "2": 0.00558,
+        "3": 0.0158,
+        "4": 0.04015,
+        "5": 0.08862,
+        "6": 0.19999
+      }
+    },
+    {
+      "roster_id": 9,
+      "name": "To Infinity and Bijan",
+      "record": "3-4",
+      "assumed_mean_points": 102.32,
+      "playoff_probability": 0.12741,
+      "bye_probability": 0.00048,
+      "final_probability": 0.01068,
+      "championship_probability": 0.00318,
+      "counts": {
+        "playoff": 12741,
+        "bye": 48,
+        "final": 1068,
+        "title": 318
+      },
+      "seed_probabilities": {
+        "1": 0.00001,
+        "2": 0.00047,
+        "3": 0.00209,
+        "4": 0.00823,
+        "5": 0.02754,
+        "6": 0.08907
+      }
+    },
+    {
+      "roster_id": 7,
+      "name": "JA’MARRTRIX",
+      "record": "1-6",
+      "assumed_mean_points": 110.01,
+      "playoff_probability": 0.0572,
+      "bye_probability": 0,
+      "final_probability": 0.0071,
+      "championship_probability": 0.00266,
+      "counts": {
+        "playoff": 5720,
+        "bye": 0,
+        "final": 710,
+        "title": 266
+      },
+      "seed_probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0.00034,
+        "4": 0.00249,
+        "5": 0.0114,
+        "6": 0.04297
+      }
+    },
+    {
+      "roster_id": 4,
+      "name": "DANGER CLOSE ",
+      "record": "3-4",
+      "assumed_mean_points": 98.26,
+      "playoff_probability": 0.08126,
+      "bye_probability": 0.00034,
+      "final_probability": 0.00551,
+      "championship_probability": 0.00165,
+      "counts": {
+        "playoff": 8126,
+        "bye": 34,
+        "final": 551,
+        "title": 165
+      },
+      "seed_probabilities": {
+        "1": 0.00001,
+        "2": 0.00033,
+        "3": 0.00118,
+        "4": 0.00503,
+        "5": 0.01736,
+        "6": 0.05735
+      }
+    },
+    {
+      "roster_id": 10,
+      "name": "EmanAndYoMomma",
+      "record": "1-6",
+      "assumed_mean_points": 88.05,
+      "playoff_probability": 0.00098,
+      "bye_probability": 0,
+      "final_probability": 0,
+      "championship_probability": 0,
+      "counts": {
+        "playoff": 98,
+        "bye": 0,
+        "final": 0,
+        "title": 0
+      },
+      "seed_probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.00002,
+        "5": 0.00012,
+        "6": 0.00084
+      }
+    }
+  ]
+}
