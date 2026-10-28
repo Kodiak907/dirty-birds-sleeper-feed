@@ -1,0 +1,44 @@
+/* PFO 5.7 player sheet. Does not override original stat swipe or page grid. */
+#ffo57-sheet[hidden]{display:none!important}
+#ffo57-sheet{position:fixed;inset:0;z-index:100001;display:flex;align-items:flex-end;justify-content:center;color:#edf6ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+.ffo57-backdrop{position:absolute;inset:0;background:rgba(3,8,19,.79);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.ffo57-card{position:relative;width:min(100%,670px);max-height:91svh;min-height:340px;display:flex;flex-direction:column;overflow:hidden;border:1px solid #405f73;border-bottom:0;border-radius:22px 22px 0 0;background:linear-gradient(160deg,#14283c,#0c1828 43%,#0a1522);box-shadow:0 -10px 65px #000b;animation:ffo57-slide .23s ease-out both}
+.ffo57-handle{height:4px;width:44px;margin:9px auto 6px;border-radius:20px;background:#7296a7;flex-shrink:0;opacity:.85}
+.ffo57-hero{display:grid;grid-template-columns:77px minmax(0,1fr) 36px;align-items:center;gap:12px;padding:7px 14px 13px;border-bottom:1px solid #2c475a;flex-shrink:0}
+.ffo57-portrait{width:77px;height:82px;border:1px solid #4d7081;background:radial-gradient(ellipse at top,#356c72,#162638);border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.ffo57-portrait img{height:100%;width:100%;object-fit:contain;object-position:bottom}
+.ffo57-portrait span{font-size:22px;font-weight:900;color:#bedde4}
+.ffo57-eyebrow{color:#86e9cd;font-size:10px;font-weight:900;letter-spacing:.12em}
+.ffo57-name{margin:4px 0;font-size:21px;font-weight:900;line-height:1.1;letter-spacing:-.03em;overflow-wrap:anywhere}
+.ffo57-sub{display:flex;gap:6px;align-items:center;flex-wrap:wrap;color:#b8c9d6;font-size:11px;line-height:1.35}
+.ffo57-sub img{width:20px;height:20px;object-fit:contain}
+.ffo57-close{align-self:start;border:1px solid #45677d;border-radius:10px;background:#1c354b;color:#ecf7ff;width:35px;height:35px;font-size:23px;cursor:pointer}
+.ffo57-actions{display:flex;gap:7px;padding:9px 13px 7px;border-bottom:1px solid #263f51;flex-shrink:0}
+.ffo57-actions button{border:1px solid #46657b;background:#193249;color:#dbeff7;border-radius:9px;padding:8px 10px;font-size:11px;font-weight:800;cursor:pointer}
+.ffo57-actions button:first-child{background:#154b43;border-color:#3d8977;color:#cbffe9;flex:1}
+.ffo57-tabs{display:flex;overflow-x:auto;white-space:nowrap;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding:0 9px;gap:5px;flex-shrink:0;border-bottom:1px solid #2f495b}
+.ffo57-tabs::-webkit-scrollbar{display:none}
+.ffo57-tabs button{border:0;border-bottom:2px solid transparent;background:none;color:#a5bacc;padding:12px 9px 10px;min-width:72px;flex:1;font-size:11px;font-weight:800;cursor:pointer}
+.ffo57-tabs button[aria-selected=true]{border-bottom-color:#67dcbc;color:#e5fff2}
+.ffo57-body{padding:14px 14px max(20px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;min-height:120px;flex:1}
+.ffo57-tilegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.ffo57-tile{border:1px solid #334e63;border-radius:11px;background:#152b3d;padding:10px 8px;min-width:0}
+.ffo57-tile b{font-size:19px;font-variant-numeric:tabular-nums;line-height:1.15;display:block}
+.ffo57-tile small{display:block;margin-top:5px;font-size:10px;color:#a8c3d1;line-height:1.35}
+.ffo57-section{margin:17px 0 8px;font-weight:900;font-size:13px;letter-spacing:.01em}
+.ffo57-description,.ffo57-note{font-size:11px;color:#adc6d2;line-height:1.55;margin:8px 0}
+.ffo57-note{border:1px solid #365164;border-radius:9px;background:#122a39;padding:10px}
+.ffo57-warning{border-color:#7e6240;color:#ffe1b9;background:#392b22}
+.ffo57-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid #294356;font-size:12px}
+.ffo57-row:last-child{border-bottom:0}
+.ffo57-row b{display:block;font-size:12px;line-height:1.4;max-width:100%}
+.ffo57-row small{color:#a9bbcc;font-size:10px;line-height:1.35;display:block;margin-top:3px}
+.ffo57-row .ffo57-num{font-size:14px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ffo57-muted{color:#abc3d2}.ffo57-source{color:#94b1c3;font-size:10px;line-height:1.6}.ffo57-source a{color:#a6e0ff}
+.ffo57-links{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.ffo57-links button{background:#1c3849;border:1px solid #46667a;border-radius:8px;color:#dff0fc;padding:8px 9px;font-weight:800;font-size:11px;cursor:pointer}
+#ffo57-sheet button:focus-visible{outline:3px solid #8debd6;outline-offset:2px}
+@keyframes ffo57-slide{from{transform:translateY(24px);opacity:.7}to{transform:translateY(0);opacity:1}}
+@media(min-width:700px){.ffo57-card{border-radius:20px;border-bottom:1px solid #405f73;margin-bottom:3vh;max-height:85vh}}
+@media(max-width:380px){.ffo57-hero{grid-template-columns:60px minmax(0,1fr) 33px;gap:8px}.ffo57-portrait{width:60px;height:70px}.ffo57-name{font-size:18px}.ffo57-tabs button{min-width:68px;padding-left:5px;padding-right:5px}.ffo57-tilegrid{gap:5px}}
+@media(prefers-reduced-motion:reduce){.ffo57-card{animation:none}}
