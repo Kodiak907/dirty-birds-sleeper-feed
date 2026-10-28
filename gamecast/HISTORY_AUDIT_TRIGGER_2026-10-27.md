@@ -1,1 +1,0 @@
-One-time staging audit: check MySportsFeeds play-by-play HTTP status across completed NFL 2026 Weeks 1–7. Credentials remain encrypted in Cloudflare. No historical play data is saved to GitHub or printed. Restore regular deploy command immediately after results.
