@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-28T18:48:04.326558+00:00
-Sleeper snapshot: 2026-10-28T18:47:58.045921+00:00
+Generated: 2026-10-28T19:48:36.307395+00:00
+Sleeper snapshot: 2026-10-28T19:48:32.368226+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,9 +20,9 @@ Sleeper snapshot: 2026-10-28T18:47:58.045921+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Malik Willis | MIA | 14.75 | 100% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 13.20 | 90% | 94.7% | Questionable |
-| 3 | Tanner McKee | PHI | 11.47 | 90% | 100.0% | Not flagged |
+| 1 | Malik Willis | MIA | 14.76 | 100% | 100.0% | Not flagged |
+| 2 | Baker Mayfield | TB | 13.17 | 90% | 94.7% | Questionable |
+| 3 | Tanner McKee | PHI | 11.46 | 90% | 100.0% | Not flagged |
 
 ### RB
 
@@ -30,34 +30,34 @@ Sleeper snapshot: 2026-10-28T18:47:58.045921+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | NYG | 7.33 | 90% | 24.0% | Not flagged |
 | 2 | Keaton Mitchell | LAC | 6.09 | 100% | 32.0% | Not flagged |
-| 3 | Samaje Perine | CIN | 5.21 | 100% | 36.7% | Not flagged |
-| 4 | Chris Rodriguez Jr. | JAX | 5.19 | 100% | — | Not flagged |
+| 3 | Samaje Perine | CIN | 5.22 | 100% | 36.7% | Not flagged |
+| 4 | Chris Rodriguez Jr. | JAX | 5.21 | 100% | — | Not flagged |
 | 5 | Mike Washington Jr. | LV | 4.93 | 90% | 23.0% | Questionable |
 | 6 | Tank Bigsby | PHI | 2.21 | 80% | 28.7% | IR |
-| 7 | Jaleel McLaughlin | CLE | 1.55 | 90% | 27.7% | Not flagged |
+| 7 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
 
 ### WR
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Deebo Samuel Sr. | SF | 7.80 | 90% | — | Out |
-| 2 | Quentin Johnston | LAC | 5.68 | 100% | 81.3% | Not flagged |
+| 2 | Quentin Johnston | LAC | 5.69 | 100% | 81.3% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.25 | 90% | 61.7% | Not flagged |
-| 4 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
-| 5 | DeMario Douglas | NE | 4.86 | 90% | 57.7% | Not flagged |
+| 4 | Chris Bell | MIA | 5.13 | 100% | 67.0% | Not flagged |
+| 5 | DeMario Douglas | NE | 4.87 | 90% | 57.7% | Not flagged |
 | 6 | Jauan Jennings | MIN | 4.79 | 100% | 73.3% | Not flagged |
 | 7 | Ja'Kobi Lane | BAL | 4.56 | 90% | 54.3% | Not flagged |
 | 8 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
 | 9 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
 | 10 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
-| 11 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
+| 11 | Brian Thomas Jr. | JAX | 3.11 | 100% | — | Not flagged |
 | 12 | Mack Hollins | NE | 3.11 | 80% | 62.7% | IR |
 
 ### TE
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Jake Ferguson | DAL | 6.25 | 90% | 64.3% | Not flagged |
+| 1 | Jake Ferguson | DAL | 6.26 | 90% | 64.3% | Not flagged |
 | 2 | Michael Mayer | LV | 5.20 | 90% | 75.3% | Not flagged |
 | 3 | Noah Fant | NO | 4.31 | 90% | 57.0% | Not flagged |
 | 4 | Colby Parkinson | LAR | 3.70 | 90% | — | Not flagged |
@@ -98,19 +98,19 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Malik Willis | QB | MIA | 14.75 | 100.0% |
-| Baker Mayfield | QB | TB | 13.20 | 94.7% |
-| Tanner McKee | QB | PHI | 11.47 | 100.0% |
+| Malik Willis | QB | MIA | 14.76 | 100.0% |
+| Baker Mayfield | QB | TB | 13.17 | 94.7% |
+| Tanner McKee | QB | PHI | 11.46 | 100.0% |
 | Tyrone Tracy Jr. | RB | NYG | 7.33 | 24.0% |
-| Jake Ferguson | TE | DAL | 6.25 | 64.3% |
+| Jake Ferguson | TE | DAL | 6.26 | 64.3% |
 | Keaton Mitchell | RB | LAC | 6.09 | 32.0% |
-| Quentin Johnston | WR | LAC | 5.68 | 81.3% |
+| Quentin Johnston | WR | LAC | 5.69 | 81.3% |
 | Kalif Raymond | WR | CHI | 5.25 | 61.7% |
-| Samaje Perine | RB | CIN | 5.21 | 36.7% |
+| Samaje Perine | RB | CIN | 5.22 | 36.7% |
 | Michael Mayer | TE | LV | 5.20 | 75.3% |
-| Chris Bell | WR | MIA | 5.12 | 67.0% |
+| Chris Bell | WR | MIA | 5.13 | 67.0% |
 | Mike Washington Jr. | RB | LV | 4.93 | 23.0% |
-| DeMario Douglas | WR | NE | 4.86 | 57.7% |
+| DeMario Douglas | WR | NE | 4.87 | 57.7% |
 | Jauan Jennings | WR | MIN | 4.79 | 73.3% |
 | Ja'Kobi Lane | WR | BAL | 4.56 | 54.3% |
 | Rashod Bateman | WR | BAL | 4.34 | 61.0% |

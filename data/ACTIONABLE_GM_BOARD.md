@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-28T18:48:04.648680+00:00
+Generated: 2026-10-28T19:48:36.673591+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,8 +8,8 @@ Generated: 2026-10-28T18:48:04.648680+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Tyrone Tracy Jr. | RB | +0.00 | 3.5 | Jonah Coleman | depth candidate |
-| Keaton Mitchell | RB | +0.00 | 2.26 | Jonah Coleman | depth candidate |
+| Tyrone Tracy Jr. | RB | +0.00 | 3.51 | Jonah Coleman | depth candidate |
+| Keaton Mitchell | RB | +0.00 | 2.27 | Jonah Coleman | depth candidate |
 
 ## Trade proposals
 
