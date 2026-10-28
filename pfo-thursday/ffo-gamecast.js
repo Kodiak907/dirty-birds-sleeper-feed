@@ -40,7 +40,7 @@
   const gameId=z.id??x.id??z.gameId??x.gameId??'';
   const score=x.score||x.scoring||x.scores||x.gameScore||{};
   const n=v=>v===null||v===undefined||v===''?null:(Number.isFinite(Number(v))?Number(v):null);
-  return {id:String(gameId),home:name(home),away:name(away),homePoints:n(score.homeScoreTotal??score.homeScore??x.homeScoreTotal??x.homeScore),awayPoints:n(score.awayScoreTotal??score.awayScore??x.awayScoreTotal??x.awayScore),status:String(x.status||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
+  return {id:String(gameId),home:name(home),away:name(away),homePoints:n(score.homeScoreTotal??score.homeScore??x.homeScoreTotal??x.homeScore),awayPoints:n(score.awayScoreTotal??score.awayScore??x.awayScoreTotal??x.awayScore),status:String(x.status||z.playedStatus||z.scheduleStatus||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
  }
  function drawGames(){const el=$('ffo-gc-games');if(!el)return;
   if(!s.games.length){el.innerHTML='<p class="ffo-gc-note">No games loaded from MySportsFeeds yet. NFL season and schedule feeds must be authenticated first.</p>';return}
@@ -231,6 +231,13 @@
  }
  async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game)return;
+  const selected=s.games.find(g=>g.id===s.game);
+  const kickoff=Date.parse(selected?.start||'');
+  if(Number.isFinite(kickoff)&&Date.now()<kickoff-5*60000){
+    s.playCache=[];s.liveBox=null;s.playSource='Scheduled · awaiting kickoff';
+    status('Game is scheduled · live plays and box scores are not expected before kickoff. MySportsFeeds authenticated. · '+new Date().toISOString());
+    drawPlays();drawPlayer();return;
+  }
   try{
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){
