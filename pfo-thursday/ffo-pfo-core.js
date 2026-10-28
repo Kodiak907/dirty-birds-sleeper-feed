@@ -2727,7 +2727,7 @@ async function comOpen(id){const x=await comReq('cases/'+id);comUI.selected=x.ca
  let h='<div><b>'+e(c.case_no)+'</b> · <span class="com-badge">'+e(c.status)+'</span><p class="com-muted">'+e(c.league)+' · '+e(c.team)+' / '+e(c.owner)+' · Incident '+e(c.occurred_on)+' · W'+e(c.week||'—')+'</p></div>';
  h+='<p><b>Rule:</b> '+e(c.rule_ref||'Not cited')+'</p><p><b>Violation:</b> '+e(c.violation)+'</p><p><b>Proposed/issued consequence:</b> '+e(c.consequence)+'</p><p class="com-muted">Filed '+e(c.created_utc)+' by '+e(c.created_by)+' · No Sleeper action issued by this app.</p>';
  h+='<details><summary><b>Record action / appeal / reversal</b></summary><form id="com-event-form"><label for="com-action">Action</label><select id="com-action" name="event_type"><option value="ISSUED">Issue consequence</option><option value="NOTIFIED">Manager notified</option><option value="APPEALED">Appeal received</option><option value="RESOLVED">Decision resolved</option><option value="REVERSED">Reverse action</option><option value="NOTE">Internal case note</option></select><label for="com-reason">Reason / details / notice reference</label><textarea id="com-reason" name="note" minlength="8" required></textarea><button class="button primary" type="submit">Append immutable audit event</button></form></details>';
- h+='<details><summary><b>Evidence vault ('+x.evidence.length+')</b></summary><form id="com-upload-form"><label for="com-file">Screenshot, image or PDF · max 8 MB</label><input type="file" id="com-file" name="evidence" accept="image/jpeg,image/png,image/webp,application/pdf" required><button class="button" type="submit">Upload private evidence</button></form>'+(x.evidence||[]).map(v=>'<p><button type="button" class="button" data-com-file="'+v.id+'">Download '+e(v.original_name)+'</button><small class="com-quiet">'+e(v.sha256.slice(0,16))+'… · '+e(v.created_utc)+'</small></p>').join('')+'</details>';
+ h+='<details><summary><b>Evidence vault ('+x.evidence.length+')</b></summary><form id="com-upload-form"><label for="com-file">Photo, PDF (8 MB) or video (25 MB)</label><input type="file" id="com-file" name="evidence" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf,video/mp4,video/quicktime,video/webm,.mov,.heic,.heif" required><button class="button" type="submit">Upload private evidence</button></form>'+(x.evidence||[]).map(v=>'<p><button type="button" class="button" data-com-file="'+v.id+'">Download '+e(v.original_name)+'</button><small class="com-quiet">'+e(v.sha256.slice(0,16))+'… · '+e(v.created_utc)+'</small></p>').join('')+'</details>';
  h+='<details><summary><b>Audit history ('+x.events.length+')</b></summary>'+x.events.map(y=>'<div class="com-event"><b>'+e(y.event_type)+'</b> '+e(y.note)+'<small>'+e(y.created_utc)+' · '+e(y.created_by)+'</small></div>').join('')+'</details>';
  h+='<button class="button" type="button" data-com-export="'+c.id+'">Export case summary</button><div id="com-detail-feedback" class="com-feedback" aria-live="polite"></div>';root.innerHTML=h;
 }
@@ -2746,13 +2746,44 @@ async function comChallengeProof(pin){
 $('com-enter')?.addEventListener('click',async()=>{const pin=$('com-pin').value;const btn=$('com-enter');btn.disabled=true;comMsg('Verifying PIN securely…');try{const proof=await comChallengeProof(pin);await comReq('unlock',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(proof)});$('com-pin').value='';await comStatus()}catch(err){$('com-pin').value='';comMsg('PIN not accepted: '+err.message,true)}finally{btn.disabled=false}});
 $('com-lock')?.addEventListener('click',async()=>{try{await comReq('lock',{method:'POST'})}finally{comUI.unlocked=false;comUI.cases=[];comUI.selected=null;$('com-detail').textContent='Locked.';await comStatus()}});
 $('com-filter')?.addEventListener('input',comDrawList);
-$('com-case-form')?.addEventListener('submit',async(ev)=>{ev.preventDefault();const f=ev.target;const values=Object.fromEntries(new FormData(f).entries());try{const r=await comReq('cases',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(values)});f.reset();$('com-new').open=false;await comRefresh();await comOpen(r.case.id);comMsg('Assigned permanent case number '+r.case.case_no+' · draft filed.')}catch(err){comMsg('Case not filed: '+err.message,true)}});
+const comMaxEvidenceBytes=file=>String(file?.type||'').startsWith('video/')?25*1024*1024:8*1024*1024;
+async function comUploadEvidence(caseId,file){
+ if(!file||!file.size||file.size>comMaxEvidenceBytes(file))throw Error((file?.name||'File')+' exceeds its permitted size or is empty');
+ const allowed=['image/jpeg','image/png','image/webp','image/heic','image/heif','application/pdf','video/mp4','video/quicktime','video/webm'];
+ if(!allowed.includes(file.type))throw Error((file.name||'Attachment')+': unsupported file type '+(file.type||'unknown'));
+ return comReq('cases/'+caseId+'/evidence',{method:'POST',headers:{'content-type':file.type,'x-ffo-filename':encodeURIComponent(file.name)},body:file});
+}
+let comSavingNew=false;
+$('com-case-form')?.addEventListener('submit',async(ev)=>{
+ ev.preventDefault();if(comSavingNew)return;const f=ev.target,button=f.querySelector('[type="submit"]');
+ const values=Object.fromEntries(new FormData(f).entries());const files=[...($('com-new-evidence')?.files||[])];
+ comSavingNew=true;if(button)button.disabled=true;comMsg('Saving Commissioner Log entry…');
+ let saved;
+ try{saved=await comReq('cases',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(values)});}
+ catch(err){comMsg('Log entry not filed: '+err.message,true);return;}
+ finally{comSavingNew=false;if(button)button.disabled=false;}
+ const c=saved.case;f.reset();$('com-new').open=false;
+ comMsg('Commissioner Log '+c.case_no+' saved. '+(files.length?'Uploading '+files.length+' evidence file(s) independently…':'No penalty or Sleeper action executed.'));
+ // Refresh and uploads are independent; navigation remains fully usable.
+ void comRefresh().catch(err=>comMsg('Entry saved, but list refresh failed: '+err.message,true));
+ if(!files.length){void comOpen(c.id).catch(()=>{});return;}
+ void (async()=>{
+  let done=0;const errors=[];
+  for(const file of files){
+   try{await comUploadEvidence(c.id,file);done++}
+   catch(err){errors.push(file.name+': '+err.message)}
+  }
+  comMsg('Log '+c.case_no+': '+done+'/'+files.length+' attachments uploaded.'+(errors.length?' Failed: '+errors.join('; '):' All evidence saved privately.'),!!errors.length);
+  void comRefresh().catch(()=>{});
+  if(comUI.selected?.id===c.id||!comUI.selected)void comOpen(c.id).catch(()=>{});
+ })();
+});
 document.addEventListener('click',async(ev)=>{const caseB=ev.target.closest('[data-com-case]'),evidB=ev.target.closest('[data-com-file]'),expB=ev.target.closest('[data-com-export]');
  try{if(caseB){await comOpen(Number(caseB.dataset.comCase))}else if(evidB&&comUI.selected){const id=Number(evidB.dataset.comFile);const r=await fetch('/api/commissioner/cases/'+comUI.selected.id+'/evidence/'+id,{credentials:'same-origin',cache:'no-store'});if(!r.ok)throw Error('Evidence access denied');const blob=await r.blob(),link=document.createElement('a'),evRow=[...$('com-detail').querySelectorAll('[data-com-file]')].find(x=>Number(x.dataset.comFile)===id);link.href=URL.createObjectURL(blob);link.download=(evRow?.textContent||'case-evidence').replace(/^Download /,'');link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);}else if(expB&&comUI.selected){const d=await comReq('cases/'+comUI.selected.id);const content=JSON.stringify({case:d.case,events:d.events,evidence_metadata:d.evidence,exported_at:new Date().toISOString()},null,2);const url=URL.createObjectURL(new Blob([content],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=d.case.case_no+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}}
  catch(err){comMsg('Case action failed: '+err.message,true)}
 });
 document.addEventListener('submit',async(ev)=>{const form=ev.target;if(!['com-event-form','com-upload-form'].includes(form?.id))return;ev.preventDefault();const c=comUI.selected;if(!c)return;
- const msg=$('com-detail-feedback');try{if(form.id==='com-event-form'){const b=Object.fromEntries(new FormData(form).entries());await comReq('cases/'+c.id+'/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});}else{const file=new FormData(form).get('evidence');if(!file||file.size>8*1024*1024)throw Error('Select a supported file under 8 MB');await comReq('cases/'+c.id+'/evidence',{method:'POST',headers:{'content-type':file.type,'x-ffo-filename':file.name},body:file});}await comRefresh();await comOpen(c.id);comMsg('Case '+c.case_no+' updated and saved securely.')}catch(err){if(msg)msg.textContent='Not saved: '+err.message;comMsg('Case action failed: '+err.message,true)}
+ const msg=$('com-detail-feedback');try{if(form.id==='com-event-form'){const b=Object.fromEntries(new FormData(form).entries());await comReq('cases/'+c.id+'/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});}else{const file=new FormData(form).get('evidence');await comUploadEvidence(c.id,file);}await comRefresh();await comOpen(c.id);comMsg('Case '+c.case_no+' updated and saved securely.')}catch(err){if(msg)msg.textContent='Not saved: '+err.message;comMsg('Case action failed: '+err.message,true)}
 });
 document.querySelector('nav button[data-page="commissioner"]')?.addEventListener('click',comStatus);
 
