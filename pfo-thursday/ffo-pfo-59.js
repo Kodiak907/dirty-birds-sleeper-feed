@@ -53,12 +53,15 @@
   return {season,project};
  }
  function playerRow(p,priority){
-  const x=scoreInfo(p),signals=p.scout?.signals||[];
-  const projected=x.project!=null&&Number.isFinite(x.project)?Number(x.project).toFixed(1)+' pts/game model':'Projection unavailable';
-  return '<div class="pfo59-player"><div class="pfo59-player-head"><span><b>'+safe(p.name)+'</b><small>'+safe(p.position)+' · '+safe(p.team||'NFL team not established')+'</small></span><span class="pfo59-chip">'+(p.tracked?'GM tracked':'Directory only')+'</span></div>'+
-   '<div class="pfo59-player-meta"><span>'+safe(projected)+'</span><span>Roster-depth gap '+safe(priority||0)+'</span><span>'+safe(signals.length)+' research flags</span></div>'+
-   (signals.length?'<p>'+safe(String(signals[0].description||'Flag requires verification').slice(0,240))+'</p>':'<p>Unscouted candidate. No source-verified opportunity or current availability established.</p>')+
-   '<small>Unrostered in '+safe(state.snap?.fetched_at_utc||'source time unknown')+' league snapshot; waiver clearance, health and game eligibility still require checking.</small></div>';
+  const x=scoreInfo(p),season=x.season||{},signal=p.scout?.signals?.[0],metric=p.position==='QB'?['PASS YDS',season.pass_yd]:p.position==='RB'?['RUSH YDS',season.rush_yd]:['REC YDS',season.rec_yd];
+  const seasonal=metric[1]!=null?metric[0]+' '+Number(metric[1]).toLocaleString():'Season stat N/A';
+  const forecast=x.project!=null&&Number.isFinite(x.project)?x.project.toFixed(1):'—';
+  return '<button type="button" class="pfo59-compact-row" data-pfo59-player="'+safe(p.id)+'" aria-label="Open '+safe(p.name)+' player intelligence">'+
+  '<span class="pfo59-identity"><b>'+safe(p.name)+'</b><small>'+safe(p.position)+' · '+safe(p.team||'Team unverified')+' · '+safe(seasonal)+'</small></span>'+
+  '<span class="pfo59-compact-stat"><b>'+safe(forecast)+'</b><small>Model PPG</small></span>'+
+  '<span class="pfo59-compact-stat"><b>'+safe(priority||0)+'</b><small>Depth gap</small></span>'+
+  '<span class="pfo59-compact-open" aria-hidden="true">›</span></button>'+
+  (signal&&priority>0?'<p class="pfo59-row-signal">Research watch · '+safe(String(signal.description||'').slice(0,115))+'</p>':'');
  }
  function waiver(){
   const host=$('pfo59-waiver-board');if(!host)return;
@@ -78,13 +81,14 @@
     return (bv==null?-Infinity:bv)-(av==null?-Infinity:av);
    });
    const leaders=list.filter(x=>scoreInfo(x).project!=null);
-   return '<div class="pfo59-leader"><b>'+safe(pos)+'</b><span>'+safe(leaders[0]?.name||'No published model leader')+'</span><small>'+(leaders.length?'Projected model '+safe(scoreInfo(leaders[0]).project.toFixed(1))+' PPG · not actual results':'No supported ranking')+'</small></div>';
+   const leader=leaders[0];
+   return '<button type="button" class="pfo59-leader" '+(leader?'data-pfo59-player="'+safe(leader.id)+'"':'disabled')+'><b>'+safe(pos)+'</b><span>'+safe(leader?.name||'No published model leader')+'</span><small>'+(leader?'Projected '+safe(scoreInfo(leader).project.toFixed(1))+' PPG · model, not season actual':'No supported ranking')+'</small></button>';
   }).join('');
   const gaps=posList.slice(1).filter(pos=>n.priority[pos]>0).sort((a,b)=>n.priority[b]-n.priority[a]);
   host.innerHTML='<div class="pfo59-caveat">Personalized rankings use roster counts as a <b>depth proxy</b>, not proof of talent weakness. Projection fields only appear when independently published. The candidate directory is incomplete; this is not the entire NFL free-agent list. Nothing is claimed or bid.</div>'+
     '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No simple depth gaps')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping; gaps are provisional · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
     '<h3>Published research / model leaders by position</h3><div class="pfo59-leaders">'+leaders+'</div>'+
-    '<div class="pfo59-list-head"><h3>'+safe(state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · sorted by '+(state.position==='ALL'?'position depth then model':'model when covered')+'</small></div>'+
+    '<div class="pfo59-list-head"><h3>'+safe(state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.position==='ALL'?'roster depth then model':'supported model PPG')+'</small></div>'+
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,n.priority[p.position])).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
     (filtered.length>60?'<p>Showing 60 of '+safe(filtered.length)+' source-matched candidates. Narrow by position or name.</p>':'');
  }
@@ -92,7 +96,10 @@
   const host=$('pfo59-trade-board');if(!host)return;
   const ideas=(state.ideas?.suggestions||[]).filter(x=>String(x.opponent_roster_id)===state.manager&&String(x.opponent_roster_id)!=='3');
   const n=needs(state.manager);
+  const partners=(state.snap?.rosters||[]).filter(r=>Number(r.roster_id)!==1).map(r=>
+    '<button type="button" class="pfo59-partner'+(String(r.roster_id)===state.manager?' selected':'')+'" '+(Number(r.roster_id)===3?'disabled title="Roster intelligence only; excluded from trade exploration"':'data-pfo59-partner="'+safe(r.roster_id)+'"')+'><b>'+safe(teamName(r.roster_id))+'</b><small>'+safe((r.players||[]).length)+' rostered · '+safe(r.settings?.wins??'—')+'–'+safe(r.settings?.losses??'—')+'</small>'+ (Number(r.roster_id)===3?'<small>View-only / no proposals</small>':'')+'</button>').join('');
   host.innerHTML='<div class="pfo59-caveat">These are <b>two-sided scenario screens</b>, never actual offers or acceptance probabilities. BigOlBoyle (roster 3) is visible for league intelligence but excluded from trade proposals.</div>'+
+    '<h3>Choose trade partner</h3><div class="pfo59-partners">'+partners+'</div>'+
     '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Depth watch: '+safe(Object.keys(n.priority).filter(k=>n.priority[k]>0).map(k=>k+' '+n.counts[k]+'/'+n.targets[k]).join(' · ')||'No basic depth gap')+'</span></div>'+
     '<h3>Published scenarios involving this manager</h3>'+
     (ideas.length?ideas.slice(0,16).map(x=>'<div class="pfo59-player"><b>Give '+safe((x.give||[]).map(p=>p.name).join(' + '))+'</b><p>Receive '+safe((x.receive||[]).map(p=>p.name).join(' + '))+'</p>'+
@@ -143,7 +150,16 @@
   $('pfo59-txn-existing').appendChild(faab);
   const gamecastTrade=$('ffo-gc-trade-intel');if(gamecastTrade)$('pfo59-trade-existing').prepend(gamecastTrade);
   columns.remove();
-  nav.addEventListener('click',ev=>{const b=ev.target.closest('[data-pfo59-market]');if(b)marketView(b.dataset.pfo59Market)});
+  nav.addEventListener('click',ev=>{
+   const p=ev.target.closest('[data-pfo59-player]');if(p){window.ffoQuickView?.open?.(p.dataset.pfo59Player);return;}
+   const partner=ev.target.closest('[data-pfo59-partner]');if(partner){
+    const id=partner.dataset.pfo59Partner;if(id==='3')return;
+    state.manager=id;managerOptions();trade();waiver();
+    try{const x=tb48State();x.opponent=id;x.take=[];tb45Save();}catch(err){console.warn('Trade partner sync pending',err)}
+    return;
+   }
+   const b=ev.target.closest('[data-pfo59-market]');if(b)marketView(b.dataset.pfo59Market);
+  });
   nav.addEventListener('change',ev=>{
    if(ev.target.id==='pfo59-position'){state.position=ev.target.value;waiver()}
    if(ev.target.id==='pfo59-waiver-manager'||ev.target.id==='pfo59-trade-manager'){state.manager=ev.target.value;managerOptions();waiver();trade()}
