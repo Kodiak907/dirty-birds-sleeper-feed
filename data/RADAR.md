@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T14:55:09.670380+00:00
-Sleeper snapshot: 2026-10-28T14:55:02.909237+00:00
+Generated: 2026-10-28T15:52:38.343345+00:00
+Sleeper snapshot: 2026-10-28T15:52:34.994598+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1421177496627372032` · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

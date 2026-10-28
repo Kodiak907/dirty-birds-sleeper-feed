@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-10-28T14:55:14.168152+00:00",
-  "source_snapshot_utc": "2026-10-28T14:55:02.909237+00:00",
-  "source_market_as_of": "2026-10-28T03:44:45.044208+00:00",
+  "generated_at_utc": "2026-10-28T15:52:43.333261+00:00",
+  "source_snapshot_utc": "2026-10-28T15:52:34.994598+00:00",
+  "source_market_as_of": "2026-10-28T15:07:21.426397+00:00",
   "source_projection_as_of": "2026-10-28T13:35:09.126558+00:00",
   "focus_assets": [
     {
@@ -18,50 +18,12 @@
     }
   ],
   "tested": 28242,
-  "market_screened": 8247,
+  "market_screened": 8170,
   "reports": [
     {
       "asset": "Garrett Wilson",
       "owned_now": true,
       "leads": [
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "9753",
-              "name": "Zach Charbonnet",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4943",
-              "name": "Sam Darnold",
-              "position": "QB"
-            },
-            {
-              "id": "10229",
-              "name": "Rashee Rice",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 2,
-          "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.79,
-          "their_lineup_delta_ppg": 1.61,
-          "value_paid_received_ratio": 1.181,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
         {
           "give": [
             {
@@ -91,7 +53,83 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.79,
           "their_lineup_delta_ppg": 1.61,
-          "value_paid_received_ratio": 1.089,
+          "value_paid_received_ratio": 1.091,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "9753",
+              "name": "Zach Charbonnet",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "10229",
+              "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "11576",
+              "name": "Braelon Allen",
+              "position": "RB"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 0.79,
+          "their_lineup_delta_ppg": 1.61,
+          "value_paid_received_ratio": 1.117,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "9753",
+              "name": "Zach Charbonnet",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "8183",
+              "name": "Brock Purdy",
+              "position": "QB"
+            },
+            {
+              "id": "4217",
+              "name": "George Kittle",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 4,
+          "opponent": "DANGER CLOSE ",
+          "our_lineup_delta_ppg": 0.51,
+          "their_lineup_delta_ppg": 0.97,
+          "value_paid_received_ratio": 0.823,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -101,7 +139,7 @@
           ]
         }
       ],
-      "candidate_count": 6
+      "candidate_count": 5
     },
     {
       "asset": "A.J. Brown",
@@ -136,7 +174,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.77,
           "their_lineup_delta_ppg": 0.63,
-          "value_paid_received_ratio": 1.128,
+          "value_paid_received_ratio": 1.129,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -174,7 +212,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.77,
           "their_lineup_delta_ppg": 0.63,
-          "value_paid_received_ratio": 1.112,
+          "value_paid_received_ratio": 1.156,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -212,7 +250,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.09,
           "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 0.867,
+          "value_paid_received_ratio": 0.886,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -250,7 +288,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.09,
           "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.058,
+          "value_paid_received_ratio": 1.082,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -288,7 +326,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 0.75,
           "their_lineup_delta_ppg": 0.56,
-          "value_paid_received_ratio": 1.041,
+          "value_paid_received_ratio": 1.088,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -326,7 +364,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 0.75,
           "their_lineup_delta_ppg": 0.56,
-          "value_paid_received_ratio": 0.879,
+          "value_paid_received_ratio": 0.916,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -336,7 +374,7 @@
           ]
         }
       ],
-      "candidate_count": 15
+      "candidate_count": 14
     },
     {
       "asset": "Patrick Mahomes",
@@ -371,7 +409,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.4,
           "their_lineup_delta_ppg": 2.06,
-          "value_paid_received_ratio": 0.734,
+          "value_paid_received_ratio": 0.878,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -409,7 +447,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.4,
           "their_lineup_delta_ppg": 2.06,
-          "value_paid_received_ratio": 0.91,
+          "value_paid_received_ratio": 1.134,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -419,7 +457,7 @@
           ]
         }
       ],
-      "candidate_count": 11
+      "candidate_count": 5
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."
