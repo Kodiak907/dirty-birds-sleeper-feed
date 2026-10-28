@@ -1369,7 +1369,7 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),23000);let r;try{r=await fetch('/api/independent-stats?season='+season,{cache:'no-store',signal:controller.signal});}finally{clearTimeout(tm);}
   if(!r.ok)throw Error('Independent stats HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||j.players.length<100)throw Error('Incomplete NFL player-stat sample');
   pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
-  if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';renderTradeScouting();}
+  if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();}
   // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
   // Previously this single refresh rebuilt every large hidden panel on iPhone.
   if(document.querySelector('#radar.page.active'))pfo49RenderRadar();
@@ -1399,8 +1399,35 @@ function pfo49Dir(){const src=cachedPlayerNames||tb45Data?.names||{};const outpu
  for(const p of liveRosterSnapshot?.players||[])output.set(String(p.player_id),{id:String(p.player_id),name:p.name,team:p.team||'',position:p.position||''});
  return [...output.values()];
 }
-function pfo49Info(id){const p=pfo49Players.find(x=>x.id===String(id))||pfo49Dir().find(x=>x.id===String(id));return p||{id:String(id),name:'Player '+id,team:'',position:''};}
-function pfo49Metric(id){const p=pfo49Info(id);return pfo49Metrics?.players?.[String(id)]||Object.values(pfo49Metrics?.players||{}).find(x=>normPlayer(x.name)===normPlayer(p.name)&&gm47CanonicalTeam(x.nfl_team)===gm47CanonicalTeam(p.team))||null;}
+// Indexed NFL identity and metric lookups: avoid repeatedly scanning the full
+// player directory for every visible row. Rebuild only when the source changes.
+let pfo595RosterRef=null,pfo595RosterIndex=new Map(),pfo595MetricRef=null,pfo595MetricIndex=new Map();
+function pfo49Info(id){
+ const key=String(id);
+ if(pfo595RosterRef!==pfo49Players){
+  pfo595RosterRef=pfo49Players;
+  pfo595RosterIndex=new Map(pfo49Players.map(p=>[String(p.id),p]));
+ }
+ const found=pfo595RosterIndex.get(key);
+ if(found)return found;
+ if(!pfo49Players.length)return pfo49Dir().find(x=>x.id===key)||{id:key,name:'Player '+key,team:'',position:''};
+ return {id:key,name:'Player '+key,team:'',position:''};
+}
+function pfo49Metric(id){
+ const players=pfo49Metrics?.players;
+ if(!players)return null;
+ const direct=players[String(id)];if(direct)return direct;
+ const p=pfo49Info(id);
+ if(pfo595MetricRef!==players){
+  pfo595MetricRef=players;pfo595MetricIndex=new Map();
+  for(const x of Object.values(players)){
+   if(!x?.name)continue;
+   const key=normPlayer(x.name)+'|'+gm47CanonicalTeam(x.nfl_team);
+   if(!pfo595MetricIndex.has(key))pfo595MetricIndex.set(key,x);
+  }
+ }
+ return pfo595MetricIndex.get(normPlayer(p.name)+'|'+gm47CanonicalTeam(p.team))||null;
+}
 function pfo49Projected(id){const p=pfo49Info(id),model=pfo50StatsFor(id);const base=pfo50Estimate(id);return base==null?null:{name:p.name,ppg:base,weeks:Object.fromEntries(Array.from({length:18},(_,i)=>[String(i+1),base]))};}
 function pfo49Observed(id){const rows={...(gm47HistorySnapshot?.matchups_by_week||{})};if(pfo49LiveMatchups&&Number(pfo49LiveMatchupWeek)===Number(window.dbNflWeek))rows[String(pfo49LiveMatchupWeek)]=pfo49LiveMatchups;const season=Number(window.dbNflSeason||gm47Snapshot?.nfl_state?.season||2026);if(Number(gm47HistorySnapshot?.nfl_state?.season||gm47HistorySnapshot?.league?.season||season)!==season)return {};
  const out={};for(const [week,matchups] of Object.entries(rows)){
