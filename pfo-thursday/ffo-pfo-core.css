@@ -1,0 +1,302 @@
+
+:root{color-scheme:dark;--bg:#0a101c;--card:#142034;--border:#29384c;--white:#eef4ff;--muted:#9badc4;--gold:#ffbd58;--green:#66e2b0}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0%,#1c3350,#0a101c 48%);font:15px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:var(--white)}main{max-width:1160px;margin:0 auto;padding:30px 18px 70px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--gold)}h1{font-size:39px;letter-spacing:-2px;margin:10px 0 5px;line-height:1.04}h1 span{color:var(--gold)}p{line-height:1.6}.muted{color:var(--muted)}.header{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:28px}.private{border:1px solid #38604f;background:#213c33;color:var(--green);padding:9px 12px;border-radius:24px;font-size:12px;white-space:nowrap}nav{display:flex;gap:7px;overflow-x:auto;border-bottom:1px solid var(--border);padding-bottom:13px;margin-bottom:22px}nav button{white-space:nowrap;border:0;border-radius:9px;padding:12px 14px;background:transparent;color:var(--muted);font:inherit;cursor:pointer}nav button.active{background:var(--gold);color:#151a24;font-weight:800}.page{display:none}.page.active{display:block}.grid{display:grid;gap:16px}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.two{grid-template-columns:1.3fr 1fr}.card{border:1px solid var(--border);background:linear-gradient(#17243a,#111c2c);border-radius:16px;padding:20px;min-width:0}.label{font-size:12px;color:var(--muted)}.value{font-size:36px;font-weight:850;letter-spacing:-1.5px;margin:8px 0 4px}.card h2{font-size:17px;margin:0 0 19px}.bar{height:9px;background:#2e3c51;border-radius:20px;overflow:hidden}.bar span{display:block;height:100%;background:var(--gold);border-radius:20px}.barrow{display:flex;justify-content:space-between;margin:17px 0 6px;gap:12px}.barrow b{white-space:nowrap}.note{border-left:3px solid var(--gold);background:#2c2924;padding:13px 15px;border-radius:0 9px 9px 0;color:#ffe1ab;margin:15px 0;font-size:13px;line-height:1.6}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:11px 7px;border-bottom:1px solid var(--border)}th{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}td:last-child,th:last-child{text-align:right}tr:last-child td{border-bottom:0}.button{border:1px solid #607087;background:#263449;border-radius:10px;padding:11px 15px;color:var(--white);display:inline-block;cursor:pointer;margin:8px 8px 8px 0}.button.primary{background:var(--gold);border-color:var(--gold);color:#182033;font-weight:800}input[type=file]{display:none}.source{padding:13px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:20px}.source:last-child{border-bottom:0}.source span{color:var(--muted);text-align:right}.footer{color:var(--muted);font-size:12px;line-height:1.6;margin-top:30px}a{color:var(--gold)}@media(max-width:760px){main{padding:18px 12px 50px}h1{font-size:30px}.four{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.card{padding:14px}.value{font-size:30px}td,th{font-size:12px;padding:9px 4px}.private{font-size:10px}}
+.roster-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.roster-head h2{margin:0}.roster-label,.buildtag{font-size:10px;letter-spacing:.35px;border-radius:20px;padding:6px 8px;font-weight:800;white-space:nowrap}.confirmed{background:#1d433a;color:#88f0bf}.forecast{background:#3f3425;color:#ffcf85}.buildtag{background:#273449;color:#b9c9e2}.roster-details{margin-top:14px;border-top:1px solid var(--border);padding-top:13px}.roster-details summary{cursor:pointer;font-weight:750;color:var(--gold)}.roster-details table{margin-top:10px}.roster-two{grid-template-columns:1fr 1fr}.tag-note{font-size:11px;color:var(--muted)}@media(max-width:850px){.roster-two{grid-template-columns:1fr}}
+
+.gameday-home h2{margin:0}.gameday-summary{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 16px}.gameday-chip{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:18px;padding:6px 10px;background:#243349;color:#dfe9fa;font-size:12px;font-weight:700}.gameday-chip.good{color:#86e6b4;border-color:#2b6b51;background:#1a382e}.gameday-chip.warn{color:#ffda95;border-color:#715633;background:#383024}.gameday-item{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);padding:13px 0}.gameday-item:last-child{border-bottom:0}.gameday-item b{display:block}.gameday-item small{display:block;color:var(--muted);margin-top:4px;line-height:1.45}.gameday-item .source-link{white-space:nowrap;font-size:12px;align-self:center}.gameday-subhead{font-size:13px;margin:18px 0 5px;color:#dbe5f5}.gameday-soft{font-size:13px;line-height:1.6;color:var(--muted)}.gameday-warning{background:#302922;border-left:3px solid var(--gold);padding:10px 13px;margin:10px 0;font-size:13px;color:#ffe1ab;border-radius:0 8px 8px 0}
+@media(max-width:560px){.gameday-item{flex-direction:column;gap:7px}.gameday-item .source-link{align-self:flex-start}}
+
+/* Dirty Birds 4.3: dedicated transaction history and evidence-based research cards. */
+.market-heading{margin-bottom:16px}.market-heading h2{margin-bottom:0}.market-intro{margin:7px 0 0}
+.market-columns{margin-top:16px;grid-template-columns:1fr 1.15fr}
+.txn-main{font-weight:700;line-height:1.45;font-size:13px}.txn-side{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5}
+.txn-ledger th:last-child,.txn-ledger td:last-child{text-align:right;white-space:nowrap}.txn-ledger td{vertical-align:top}
+.scout-card{padding:15px 0;border-bottom:1px solid var(--border)}.scout-card:last-child{border-bottom:0}
+.scout-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.scout-top b{font-size:14px}
+.scout-meta{color:var(--muted);font-size:12px;margin-top:5px;line-height:1.5}
+.scout-metrics{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.scout-pill{font-size:11px;padding:5px 8px;background:#27344a;border:1px solid #34445b;border-radius:15px}
+.scout-pill.accent{background:#383022;border-color:#6a5233;color:#ffce83}
+.scout-card summary{color:#ffca77;font-size:12px;font-weight:700;cursor:pointer;margin-top:7px}
+.scout-detail{color:var(--muted);font-size:12px;line-height:1.6;margin-top:9px}.scout-detail p{margin:7px 0}
+.screened-no{background:#243047;padding:12px 13px;border-radius:10px;font-size:13px;line-height:1.6;margin:12px 0}
+.market-small{color:var(--muted);font-size:12px;line-height:1.5}.market-case{border-bottom:1px solid var(--border);padding:11px 0;font-size:13px;line-height:1.5}
+.market-case:last-child{border-bottom:0}.market-case small{color:var(--muted);display:block;line-height:1.6;margin-top:5px}
+.market-disclosure summary{cursor:pointer;font-size:13px;color:var(--gold);font-weight:700;padding:9px 0}
+.market-section-label{font-size:11px;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;font-weight:800;margin:15px 0 6px}
+@media(max-width:850px){.market-columns{grid-template-columns:1fr}}
+@media(max-width:560px){.txn-ledger th,.txn-ledger td{font-size:11px;padding:10px 3px}.txn-ledger td:nth-child(2){width:62%}.txn-main{font-size:12px}.txn-side{font-size:10px}.market-heading{padding:13px}}
+
+.trade-lead{padding:13px 0;border-bottom:1px solid var(--border)}.trade-lead strong{font-size:14px}.trade-lead .scout-meta{margin-top:5px}.trade-lead details{margin-top:8px}.trade-lead summary{color:var(--gold);font-size:12px;cursor:pointer}.scout-catalyst{background:#253428;border-left:3px solid #66cfa4;border-radius:0 9px 9px 0;padding:11px 12px;margin:9px 0}.scout-catalyst strong{color:#8af3be}.scout-catalyst a{font-size:12px;margin-right:12px;display:inline-block}.research-pill{display:inline-block;border:1px solid #57617c;border-radius:30px;padding:3px 7px;font-size:11px;margin:2px 5px 2px 0;color:#c4d4e7}.research-pill.ok{color:#90e6ad;border-color:#377c52}.research-pill.warn{color:#f9d292;border-color:#80643e}
+
+/* 4.4: actionable GM briefing, concise trade priorities and player context */
+.brief-top{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}.brief-row{border-top:1px solid var(--border);padding:10px 0;line-height:1.5;font-size:13px}.brief-row b{display:block;color:var(--white);font-size:13px}.brief-row small{display:block;color:var(--muted);margin-top:3px;line-height:1.45}.brief-digest{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.brief-stat{border:1px solid var(--border);border-radius:10px;padding:10px;background:#203049}.brief-stat b{display:block;font-size:19px;color:var(--white)}.brief-stat span{font-size:11px;color:var(--muted)}.brief-links{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px}.brief-links a{font-size:12px}.brief-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:7px}.evidence-preview{padding:9px 10px;margin-top:11px;background:#21372f;border-left:3px solid #65d9ae;border-radius:0 8px 8px 0;font-size:12px;line-height:1.55}.evidence-preview b{color:#9be2bc}.trade-groups{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.trade-groups button{cursor:pointer;background:#283750;color:#dce8f9;border:1px solid #50617b;border-radius:20px;padding:8px 10px;font-size:12px}.trade-groups button.selected{background:var(--gold);color:#181c26;border-color:var(--gold);font-weight:750}.trade-quality{padding:11px;border:1px solid var(--border);border-radius:10px;background:#1e2d42;margin:10px 0}.trade-lead .scout-meta strong{font-size:12px}.status-proof{font-size:11px;color:#b8eccb;background:#1b3930;border:1px solid #2e604e;border-radius:15px;display:inline-block;margin:4px 0;padding:4px 7px}.status-pending{font-size:11px;color:#f5d294}.gm-watch{background:#283324;border-left:3px solid #a0c788;padding:8px 10px;margin:10px 0;font-size:12px;line-height:1.5}.no-verification{font-size:12px;color:var(--muted)}
+.standings-scroll{overflow-x:auto}.standings-table{min-width:300px}.standings-table th:first-child,.standings-table td:first-child{width:27px}.standings-ours{background:#263d35;border-left:3px solid #65d9ae}.standings-ours td{color:#d2fbe8;font-weight:700}.auto-evidence{border:1px solid #38604f;background:#172c2a;padding:11px;border-radius:10px;margin:8px 0;font-size:12px;line-height:1.55}.auto-evidence p{margin:7px 0}.trade-lead{overflow-wrap:anywhere}
+
+/* 4.4: Coach trade-block first: source-grounded read-only scouting */
+.block-shell{border:1px solid #6a5634;border-radius:12px;background:linear-gradient(140deg,#2c2b2b,#1a283e);padding:14px;margin:13px 0 18px}
+.block-header{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+.block-header strong{font-size:16px;color:#ffe0a7}.block-assets{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 12px}
+.block-asset{border:1px solid #805f34;color:#ffdcab;border-radius:18px;padding:6px 9px;font-size:12px;background:#3b3227}
+.block-profile{padding:12px 0;border-top:1px solid #4b4550}.block-profile>strong{font-size:14px}
+.block-sub{color:var(--muted);font-size:12px;line-height:1.5;margin:6px 0}
+.block-lead{padding:10px 0;border-top:1px solid #37465a;font-size:13px;line-height:1.5}
+.block-lead b{display:block;color:#e6f2ff}.block-lead small{display:block;color:var(--muted);line-height:1.5}
+.block-lead details{margin-top:6px}.block-lead summary{cursor:pointer;color:var(--gold);font-size:12px;font-weight:700}
+
+/* 4.5: two-way personalized trade block; all interactions stay on device. */
+.tb45{border:1px solid #6d5940;background:linear-gradient(125deg,#212c40,#15243b);border-radius:13px;padding:15px;margin:0 0 20px}
+.tb45 h3{margin:0;font-size:18px;color:#ffe0a7}.tb45 p{margin:7px 0 12px;color:#b0c2d5;font-size:12px;line-height:1.55}
+.tb45 .tb-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.tb45 label{display:block;color:#cfdeee;font-weight:750;font-size:12px;margin:8px 0 5px}
+.tb45 select,.tb45 input,.tb45 textarea{color:#e5efff;background:#0e1b2d;border:1px solid #4c6077;border-radius:8px;padding:10px;width:100%;font:inherit;font-size:12px;min-width:0}
+.tb45 button{background:#3c4b61;color:#e9f2ff;border:1px solid #60748c;border-radius:9px;padding:9px 11px;font-size:12px;font-weight:800;cursor:pointer}
+.tb45 button.tb-primary{background:#ffba53;color:#101822;border-color:#ffba53}
+.tb45 .tb-flex{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tb45 .tb-chip{display:inline-flex;align-items:center;gap:7px;padding:7px 9px;border-radius:16px;font-size:12px;color:#ffdfad;border:1px solid #806443;background:#383329;margin:3px 4px 3px 0}
+.tb45 .tb-chip.bought{background:#263d45;border-color:#43849a;color:#c8eef3}
+.tb45 .tb-chip button{padding:0 3px;border:0;background:transparent;color:inherit;font-size:17px;line-height:1}
+.tb45 .tb-results{margin-top:13px;border-top:1px solid #42516b;padding-top:13px}
+.tb45 .tb-deal{border:1px solid #374c61;background:#17243a;border-radius:10px;padding:11px;margin:10px 0}
+.tb45 .tb-deal strong{display:block;line-height:1.4;font-size:13px}.tb45 .tb-deal .tb-tag{display:inline-block;border-radius:12px;padding:3px 8px;font-size:10px;font-weight:800;margin:7px 4px 0 0;background:#3a4a5d}
+.tb45 .tb-tag.good{background:#194536;color:#9cffce}.tb45 .tb-tag.warn{background:#453820;color:#ffd992}
+.tb45 .tb-deal small{display:block;color:#aabed5;line-height:1.6;font-size:11px;margin-top:7px}
+.tb45 details{margin:9px 0}.tb45 summary{font-size:12px;font-weight:750;color:#ffd08c;cursor:pointer}
+.tb45 .tb-tabs{display:flex;gap:6px;margin:12px 0;flex-wrap:wrap}
+.tb45 .tb-tabs button[aria-selected=true]{background:#ffbb57;color:#151c28}
+.tb45 .tb-empty{padding:13px;background:#263348;border-radius:9px;font-size:12px;color:#bdcce0;line-height:1.55}
+.tb45 .tb-foot{margin-top:13px;border-top:1px solid #39495e;padding-top:12px;font-size:11px;color:#99acc6;line-height:1.6}
+.tb45 .tb-faab{display:grid;grid-template-columns:minmax(0,1fr) 90px;gap:8px;margin:8px 0}
+.tb45 .tb-source{color:#ffce7c;text-decoration:underline}
+@media(max-width:650px){.tb45 .tb-controls{grid-template-columns:1fr}.tb45{padding:12px}.tb45 .tb-faab{grid-template-columns:1fr 80px}}
+
+
+/* 4.8 trade evaluator: Coach chooses both sides, with unscreened symmetric values. */
+.tb48-eval{border:1px solid #947049;background:linear-gradient(135deg,#23344b,#14243b);border-radius:12px;padding:13px;margin:0 0 19px}
+.tb48-eval h3{margin:0;color:#ffd08c;font-size:17px}
+.tb48-step{font-size:11px;color:#a6bfd7;line-height:1.55;margin:5px 0 9px}
+.tb48-forms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tb48-forms .tb48-wide{grid-column:1/-1}
+.tb48-eval label{display:block;color:#ccdaea;font-size:12px;font-weight:750;margin:8px 0 5px}
+.tb48-eval select{color:#e5efff;background:#0e1b2d;border:1px solid #506b86;border-radius:8px;padding:10px;width:100%;font:inherit;font-size:12px;min-width:0}
+.tb48-eval button{cursor:pointer;background:#40526a;color:#edf3fa;border:1px solid #61778e;border-radius:8px;padding:7px 10px;font-size:12px;font-weight:750}
+.tb48-picked{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0;min-height:22px}
+.tb48-picked .tb-chip{margin:2px 0}
+.tb48-status{font-size:11px;color:#a9c0d6;line-height:1.5;margin:9px 0}
+.tb48-eval-report{margin-top:14px;border-top:1px solid #53657d;padding-top:12px}
+.tb48-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}
+.tb48-team{border:1px solid #405972;background:#17283e;padding:12px;border-radius:10px;min-width:0}
+.tb48-team h4{color:#f3f6fb;margin:0 0 7px;font-size:13px}
+.tb48-team .tb48-row{padding:5px 0;border-top:1px solid #344960;line-height:1.5;font-size:12px}
+.tb48-team .tb48-row b{display:block;font-size:16px;color:#fff}
+.tb48-team .tb48-row small{display:block;color:#9eb5cc}
+.tb48-gain{color:#8de3b9!important}.tb48-loss{color:#ffb0a3!important}
+.tb48-assess{border-left:3px solid #ffbf61;background:#342f29;padding:10px;margin:11px 0;border-radius:0 9px 9px 0;font-size:12px;line-height:1.6}
+.tb48-issues{color:#c3d1e2;font-size:12px;line-height:1.6;margin:9px 0}
+.tb48-eval .tb-player-table{width:100%}
+.tb48-eval .tb-player-table td,.tb48-eval .tb-player-table th{padding:6px 3px;font-size:11px}
+.tb48-eval details{margin:10px 0}
+.tb48-eval details>summary{cursor:pointer;color:#ffcd85;font-size:12px;font-weight:750}
+.tb48-eval .tb48-action{margin:8px 0;background:#e6ad58;color:#172439;border-color:#efb964}
+@media(max-width:620px){.tb48-forms,.tb48-panel{grid-template-columns:1fr}.tb48-eval{padding:11px}}
+
+/* 4.6: compact disclosure-based mobile market layout. */
+.market-fold{padding:0!important;align-self:start}
+.market-fold>summary{display:flex;gap:10px;align-items:center;justify-content:space-between;list-style:none;padding:17px 16px;cursor:pointer;min-height:72px}
+.market-fold>summary::-webkit-details-marker{display:none}
+.market-fold>summary::after{content:'▾';color:#ffbd5c;font-size:17px;order:3}
+.market-fold[open]>summary::after{content:'▴'}
+.market-fold .fold-heading{font-size:18px;font-weight:800;color:#f2f6fc;line-height:1.3}
+.market-fold .fold-heading small{display:block;font-weight:500;font-size:11px;color:#a6b8d1;line-height:1.45;margin-top:5px}
+.market-fold .fold-body{padding:0 16px 16px;border-top:1px solid #304358}
+.market-fold .fold-body>a{display:inline-block;margin-top:7px}
+.txn-fold{margin-top:12px;border-top:1px solid #374c63}
+.txn-fold>summary{color:#ffd08e;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:15px 0;font-size:13px}
+.txn-fold>summary::-webkit-details-marker{display:none}
+.txn-fold summary .fold-caret{color:#ffc16e}
+.txn-fold[open] summary .fold-caret{transform:rotate(180deg)}
+.tb45 .tb-deal details.valuation-audit{border-top:1px solid #394b62;padding-top:7px}
+.tb45 .tb-value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
+.tb45 .tb-metric{background:#223249;border-radius:8px;padding:9px;font-size:12px;line-height:1.45}
+.tb45 .tb-metric small{display:block;color:#aebfd3;font-size:10px;margin-bottom:4px}
+.tb45 .tb-player-table{width:100%;font-size:11px}.tb45 .tb-player-table th,.tb45 .tb-player-table td{padding:6px 4px;vertical-align:top}
+.tb45 .tb-player-table th{color:#bdcce1}.tb45 .tb-audit{font-size:12px;color:#b5c6dc;line-height:1.7}
+.tb45 .tb-audit b{color:#e8f1fd}.tb45 .tb-audit .caution{color:#ffcf8c}
+.tb45 .tb-scan-filter{background:#18283d;border:1px solid #40566e;border-radius:9px;padding:10px;margin:12px 0}
+.tb45 .tb-price-legend{font-size:11px;color:#9fbbd4;line-height:1.6}
+@media(max-width:560px){.market-fold>summary{padding:12px}.market-fold .fold-heading{font-size:16px}.market-fold .fold-body{padding:0 12px 13px}.tb45 .tb-value-grid{grid-template-columns:1fr 1fr}}
+
+/* 4.7: scouting desk, readable on iPhone and keyboard-accessible. */
+.scout47-filter{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:16px 0}
+.scout47-filter label{display:flex;flex-direction:column;gap:7px;font-size:11px;color:#adbed6;font-weight:750}
+.scout47-filter select{width:100%;max-width:100%;min-width:0;min-height:40px;border:1px solid #405772;border-radius:9px;padding:7px;background:#1a2b42;color:#f0f4fc;font-size:12px}
+.scout47-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:9px 0}
+.scout47-toolbar button{min-height:37px}.scout47-toolbar span{font-size:11px}
+.scout47-report>.card{margin-top:13px}
+.scout47-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.scout47-title h2{margin:0 0 6px}.scout47-sub{color:#a6b9d1;font-size:12px;line-height:1.6}
+.scout47-label{display:inline-block;padding:5px 9px;background:#25364c;border-radius:20px;font-size:10px;color:#d9e6f8;font-weight:750}
+.scout47-label.warn{background:#503720;color:#ffe0ad}.scout47-label.good{background:#193d39;color:#b7f3d8}
+.scout47-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
+.scout47-stat{background:#1b2b3d;border-radius:9px;padding:11px;font-size:12px;line-height:1.4;color:#eef4ff}
+.scout47-stat small{display:block;font-size:10px;color:#a7bad1;margin-bottom:5px}.scout47-stat b{font-size:16px}
+.scout47-headers{font-size:13px;color:#ffd089;margin-top:16px;margin-bottom:8px;font-weight:800}
+.scout47-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.scout47-factor{border:1px solid #364960;background:#18283b;border-radius:9px;padding:11px 12px;line-height:1.6;font-size:11px}
+.scout47-factor b{font-size:12px;display:block;color:#edf2f9;margin-bottom:5px}.scout47-factor p{margin:5px 0;color:#b4c6d9}
+.scout47-factor a{color:#ffd08c}.scout47-factor .sctag{font-size:9px;font-weight:800;letter-spacing:.2px;text-transform:uppercase;color:#ffdda4}
+.scout47-factor .sctag.evidenced{color:#8fe3bb}.scout47-factor .sctag.context{color:#a6cbef}
+.scout47-alert{padding:11px 13px;background:#402f23;border:1px solid #8d6941;border-radius:9px;color:#ffdaac;font-size:12px;line-height:1.6;margin:10px 0}
+.scout47-note{padding:10px 12px;border:1px solid #344b65;border-radius:9px;color:#b6cbe0;font-size:12px;line-height:1.6;margin:8px 0}
+.scout47-note b{color:#ebf1f9}
+.scout47-peer{display:grid;grid-template-columns:1fr 1fr;gap:10px}.scout47-peer>div{background:#1c2c41;padding:12px;border-radius:8px;font-size:12px}
+.scout47-source{font-size:11px;line-height:1.7;color:#b8c9dc}.scout47-source a{color:#ffce8b}
+@media(max-width:800px){.scout47-filter{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.scout47-matrix{grid-template-columns:1fr}.scout47-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.scout47-title{flex-direction:column}.scout47-peer{grid-template-columns:1fr}}
+
+/* Build 4.9: ownership filtering and evidence coverage remain readable on mobile. */
+.scout47-factor .sctag.evidenced{color:#a7eccc;border-color:#36775d}.scout47-factor .sctag.context{color:#f6d6a0}
+.market-disclosure .brief-row small{overflow-wrap:anywhere}
+
+/* 4.9 readable intelligence command center */
+.pfo49-navhint{display:none;font-size:11px;color:var(--muted);margin:-12px 0 14px}@media(max-width:760px){.pfo49-navhint{display:block}}
+.pfo49-front{margin-bottom:16px}.pfo49-front .card{padding:18px}.pfo49-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}.pfo49-row h2{margin:0 0 6px}.pfo49-row p{margin:4px 0}.pfo49-small{font-size:12px;color:var(--muted);line-height:1.6}.pfo49-filters{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.pfo49-filters button,.pfo49-pin,.pfo49-quicklinks button,.pfo49-result,.pfo49-text-btn{color:var(--white);border:1px solid #405372;background:#25364d;border-radius:9px;font:inherit;font-size:12px;padding:8px 11px;cursor:pointer}.pfo49-filters button.on{background:var(--gold);border-color:var(--gold);color:#161a22;font-weight:800}.pfo49-brief-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px 0 16px}.pfo49-brief-kpis>div{border-radius:12px;padding:12px;background:#23324a;border:1px solid #384b65}.pfo49-brief-kpis b{display:block;font-size:20px}.pfo49-brief-kpis small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.pfo49-brief-item{border-top:1px solid var(--border);padding:10px 1px;font-size:13px;line-height:1.55}.pfo49-brief-item b{font-size:14px}.pfo49-brief-item p{margin:5px 0}.pfo49-quicklinks{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.pfo49-text-btn{border:0;text-decoration:underline;color:var(--gold);background:transparent;padding:2px}.pfo49-header{margin-bottom:15px}.pfo49-player-link{background:none;border:0;padding:0;color:var(--gold);font-weight:800;cursor:pointer;text-align:left;font:inherit;text-decoration:underline;text-underline-offset:3px}.pfo49-player-link:hover,.pfo49-text-btn:hover{color:#ffe3b3}.pfo49-player-link:focus-visible,.pfo49-filters button:focus-visible,.pfo49-pin:focus-visible{outline:2px solid #fff;outline-offset:3px}.pfo49-radar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pfo49-radar-item,.pfo49-waiver{border:1px solid #334663;border-radius:12px;background:#182940;padding:15px;margin:8px 0}.pfo49-radar-item p,.pfo49-waiver p{font-size:12px;line-height:1.55}.pfo49-radar-item b,.pfo49-waiver b{font-size:13px}.pfo49-statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}.pfo49-statgrid>div{border-radius:9px;padding:9px;background:#24364f}.pfo49-statgrid b{display:block;font-size:17px!important}.pfo49-statgrid span{display:block;color:var(--muted);font-size:10px;line-height:1.35;margin-top:3px}.pfo49-disclose{border:1px solid #344764;padding:12px 14px;border-radius:12px;margin:12px 0}.pfo49-disclose>summary,.pfo49-waiver summary{color:var(--gold);cursor:pointer;font-size:13px;font-weight:700}.pfo49-disclose[open]>summary{margin-bottom:10px}.pfo49-table-wrap{overflow-x:auto}.pfo49-gamelog th,.pfo49-gamelog td{font-size:12px;white-space:nowrap}.pfo49-gamelog th:last-child,.pfo49-gamelog td:last-child{text-align:left}.pfo49-gamelog td:last-child{white-space:normal;min-width:190px}.pfo49-panel{padding:8px 0;color:#c8d5e8;line-height:1.55;font-size:13px}.pfo49-callout{padding:12px 15px;background:#23374a;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13px}.pfo49-callout p{margin:8px 0}.pfo49-callout small{color:var(--muted)}.pfo49-news p{border-bottom:1px solid var(--border);padding:8px 0}.pfo49-news small{color:var(--muted)}.pfo49-searchbar{display:flex;gap:8px;flex-wrap:wrap}.pfo49-searchbar input{flex:1;min-width:180px;border:1px solid #455774;background:#101a2a;color:var(--white);font-size:16px;padding:12px;border-radius:9px}.pfo49-result{display:inline-flex;flex-direction:column;gap:5px;text-align:left;margin:5px;min-width:190px}.pfo49-result small{color:var(--muted)}.pfo49-waiver .pfo49-statgrid{grid-template-columns:repeat(4,minmax(0,1fr))}.pfo49-waiver details{margin-top:10px}.pfo49-pin{white-space:nowrap}.pfo49-score-guide{border-left:3px solid #68e3b0;background:#1c382f;border-radius:0 8px 8px 0;padding:11px;color:#c3f2db;font-size:12px;margin:12px 0}.pfo49-planner{margin-top:16px}.pfo49-report-table th:last-child,.pfo49-report-table td:last-child{text-align:left}.pfo49-disabled{opacity:.6}.pfo49-healthrows{display:flex;gap:7px;flex-wrap:wrap}.pfo49-healthrows span{border:1px solid #40536d;background:#253449;padding:7px 9px;border-radius:11px;font-size:12px}.pfo49-status-line{margin-bottom:9px;font-size:12px;color:var(--muted)}
+@media(max-width:700px){.pfo49-brief-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo49-radar-grid{grid-template-columns:1fr}.pfo49-statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo49-waiver .pfo49-statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo49-header{align-items:flex-start}}
+
+/* FFO 5.0: mobile-first clarity and source provenance */
+#pfo50-top{position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:90;width:50px;height:50px;border:1px solid #bfa56d;border-radius:50%;font-size:26px;line-height:1;background:#ffbe53;color:#132039;box-shadow:0 6px 25px #0008;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+#pfo50-top.visible{opacity:1;pointer-events:auto}
+.pfo50-micro{font-size:11px;color:var(--muted);line-height:1.5}.pfo50-statline{display:flex;gap:8px;flex-wrap:wrap;margin:11px 0}.pfo50-statline span{background:#233850;border:1px solid #3c516f;border-radius:8px;padding:7px 10px;font-size:12px;white-space:nowrap}.pfo50-statline strong{color:#fff}.pfo50-evidence{border-left:3px solid #67ceb5;background:#1b343d;padding:10px 13px;border-radius:0 8px 8px 0;font-size:12px}.pfo50-evidence.warning{border-color:#ffbe53;background:#3a352e}.pfo50-flag{font-weight:700;color:#eac68c}.pfo50-sources{font-size:11px;color:var(--muted);border-top:1px solid #344661;padding-top:7px;margin-top:7px}.pfo50-injury-source{font-size:12px}
+@media(max-width:700px){.pfo49-statgrid{gap:5px}.pfo49-statgrid>div{padding:7px}.pfo49-statgrid b{font-size:15px!important}.pfo50-statline span{font-size:11px}}
+
+/* 5.0 verified gameday watch — evidence, date and usefulness before prose */
+.pfo50-gameday{border-color:#3a5873}.pfo50-game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.pfo50-game-row{background:#1b2b3f;border:1px solid #2f4761;padding:11px 12px;border-radius:10px;min-width:0;font-size:12px;line-height:1.5}.pfo50-game-row b{display:block;color:#edf4ff;font-size:13px;margin-bottom:3px}.pfo50-game-row small{display:block;color:#adc1da;line-height:1.45}.pfo50-game-row a{color:#ffcc85}.pfo50-game-title{font-size:12px;font-weight:800;color:#ffd190;letter-spacing:.2px;margin:15px 0 6px}.pfo50-game-meta{font-size:11px;color:#a4bad2;line-height:1.55}.pfo50-game-blank{font-size:12px;padding:10px 0;color:#b5c4d6}.pfo50-game-tag{display:inline-block;background:#24443c;color:#b8ecd3;border-radius:7px;padding:3px 7px;font-size:10px;font-weight:800;margin-bottom:6px}.pfo50-game-tag.lead{background:#423822;color:#ffdfad}.pfo50-game-banner{border:1px solid #3b5873;background:#1b2e43;border-radius:10px;padding:10px 13px;font-size:12px;line-height:1.6}.pfo50-game-warning{color:#eed3a7}.pfo50-gameday details{margin-top:12px}.pfo50-gameday summary{color:#ffd096;font-size:12px;cursor:pointer}.pfo50-game-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pfo50-game-actions button{padding:8px 10px;background:#263c56;color:#e9f1fc;border:1px solid #45617b;border-radius:8px;cursor:pointer;font-size:12px}
+@media(max-width:700px){.pfo50-game-grid{grid-template-columns:1fr}.pfo50-gameday .pfo49-row{gap:7px}}
+
+/* 5.1: scan-first decision layout, visible workup and evidence-query. */
+.pfo51-record{background:#25364f;border:1px solid #425978;border-radius:10px;padding:9px 14px;text-align:center;min-width:105px}.pfo51-record b{display:block;font-size:23px;color:#ffbd61}.pfo51-record small{font-size:10px;color:#b8c8dd;display:block}.pfo51-brief-section{border-top:1px solid #32465c;padding:13px 0;font-size:13px;line-height:1.5}.pfo51-brief-title{font-size:15px;font-weight:800;color:#f1f5fe}.pfo51-brief-section p{margin:7px 0}.pfo51-brief-section small{font-size:11px;color:#adbed3}.pfo51-sublist{padding:8px 10px;background:#24364b;border-radius:8px}.pfo51-brief-player{display:flex;gap:8px;flex-wrap:wrap;margin:7px 0}.pfo51-brief-player small{align-self:center}.pfo51-sources{color:#a7b9d1;font-size:11px;line-height:1.8;border-top:1px solid #34475e;padding-top:12px}.pfo51-sources span{display:inline-block;margin-right:10px}.pfo51-universal{margin:12px 0 8px}.pfo51-universal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.pfo51-stat{background:#273950;border:1px solid #344b66;border-radius:8px;padding:8px;min-width:0}.pfo51-stat span{display:block;font-size:10px;line-height:1.3;color:#b8c9dd}.pfo51-stat b{font-size:15px;display:block;margin-top:4px}.pfo51-universal small{display:block;color:#aec1d7;font-size:10px;line-height:1.5;margin-top:8px}.pfo51-universal.compact .pfo51-universal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo51-inline{font-size:10px;margin-top:4px;color:#b9d0e5;line-height:1.35}.pfo51-sourced{background:#234038;border-left:3px solid #67c9a5;border-radius:7px;padding:9px;font-size:11px;line-height:1.55}.pfo51-sourced small{display:block}.pfo51-reason{margin:12px 0}.pfo51-alerts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pfo51-alert{background:#23344a;border:1px solid #344a64;border-radius:9px;padding:12px;font-size:12px}.pfo51-alert p{line-height:1.6;margin:6px 0}.pfo51-alert small,.pfo51-changes-card small{font-size:10px;color:#b5c7da;display:block}.pfo51-alert a{font-size:11px;color:#ffca7c}.pfo51-empty{font-size:13px;color:#c5d1e1}.pfo51-ask-form{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin:17px 0}.pfo51-ask-form label{width:100%;font-size:12px;color:#adbed2}.pfo51-ask-form input{background:#121f30;color:#f3f7fb;border:1px solid #536780;padding:13px;border-radius:9px;flex:1;min-width:230px;font-size:15px}.pfo51-prompts{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 17px}.pfo51-prompts button{font-size:12px;color:#ecf3fb;background:#2b3d56;border:1px solid #47607d;border-radius:8px;padding:9px;cursor:pointer}.pfo51-query-result{border-top:1px solid #34475e;padding:10px 0;font-size:12px;line-height:1.6}.pfo51-query-result small{display:block;color:#b9c7dd}.pfo51-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pfo51-box{background:#1b2b42;padding:12px;border-radius:10px}.pfo51-fine{font-size:11px;color:#afc3d8;line-height:1.5}.pfo51-changes-card button:disabled{opacity:.55;cursor:default}
+@media(max-width:640px){.pfo51-alerts,.pfo51-two{grid-template-columns:1fr}.pfo51-universal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.pfo51-stat b{font-size:13px}.pfo51-ask-form input{min-width:100%}.pfo51-record{padding:8px 10px}}
+
+.pfo51-opponent-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0;margin:9px 0;list-style:none}.pfo51-opponent-list li{background:#25374f;border:1px solid #374d67;border-radius:7px;padding:7px 9px;font-size:12px;line-height:1.5}.pfo51-opponent-list small{display:block;font-size:10px;color:#b7c7d8}.pfo51-focus{background:#213e39;border-left:3px solid #60c7a1;padding:10px 12px;border-radius:8px;margin:8px 0;font-size:12px}.pfo51-playlist{font-size:11px;line-height:1.55;padding-left:18px}.pfo51-playlist li{margin:8px 0}.pfo51-gameplays{margin-top:10px}.pfo51-scoregrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.pfo51-scorecard{background:#213249;border:1px solid #3b5269;border-radius:9px;padding:12px;font-size:12px}.pfo51-scorecard b{display:block;font-size:15px}.pfo51-scorecard small{display:block;font-size:11px;color:#aabed6;line-height:1.5;margin-top:6px}.pfo51-scorecard p{font-size:11px;line-height:1.5;color:#c5d7e9}@media(max-width:640px){.pfo51-opponent-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0;margin:9px 0;list-style:none}.pfo51-opponent-list li{background:#25374f;border:1px solid #374d67;border-radius:7px;padding:7px 9px;font-size:12px;line-height:1.5}.pfo51-opponent-list small{display:block;font-size:10px;color:#b7c7d8}.pfo51-focus{background:#213e39;border-left:3px solid #60c7a1;padding:10px 12px;border-radius:8px;margin:8px 0;font-size:12px}.pfo51-scoregrid{grid-template-columns:1fr}}
+/* FFO 5.2: clean mobile-forward matchup lab, historical review and market hierarchy. */
+.pfo52-hd{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}.pfo52-hd h2{margin:0}.pfo52-weekrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0 17px}.pfo52-weekrow button,.pfo52-actions button,.pfo52-pills button,.pfo52-historyrow button{border:1px solid #5a7593;background:#293c53;color:#f3f5fb;padding:9px 11px;border-radius:10px;cursor:pointer;font:inherit;font-size:12px}.pfo52-weekrow button:disabled{opacity:.32}.pfo52-weekrow label{color:#b6d0e9;font-size:12px;font-weight:750}.pfo52-weekrow select{display:block;margin-top:5px;padding:9px 12px;background:#14243a;color:white;border:1px solid #5e7b9e;border-radius:8px;font:inherit;max-width:170px}.pfo52-scoreboard{display:grid;grid-template-columns:1fr 55px 1fr;gap:8px;border:1px solid #426483;border-radius:16px;padding:17px;background:linear-gradient(120deg,#1b3554,#18263d);margin:12px 0 18px;text-align:center}.pfo52-scoreboard>div{min-width:0}.pfo52-scoreboard small{color:#b2c8df;font-size:11px;display:block;overflow-wrap:anywhere}.pfo52-scoreboard strong{display:block;font-size:31px;color:#ffbd68;margin-top:8px}.pfo52-versus{align-self:center;color:#94aabe;font-weight:900}.pfo52-duel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:12px 0}.pfo52-duel>article{border:1px solid #354d67;padding:13px;border-radius:13px;background:#15263b;min-width:0}.pfo52-panhead h3,.pfo52-panhead h2{margin:0 0 5px;color:#f3f6fe}.pfo52-panhead p{margin:5px 0}.pfo52-panhead small{font-size:11px;color:#a9bfd7}.pfo52-playerrow{display:grid;grid-template-columns:50px minmax(0,1fr) 65px;gap:7px;padding:10px 1px;border-top:1px solid #314357;align-items:center;font-size:12px}.pfo52-playerrow strong{display:block;overflow-wrap:anywhere}.pfo52-playerrow small{display:block;color:#a0b8cf;font-size:10px;margin-top:3px}.pfo52-playerrow b{text-align:right;color:#efbd75}.pfo52-slot{font-size:10px;font-weight:800;color:#9ebee1}.pfo52-swap{display:block;margin-top:7px;width:100%;min-width:0;background:#243a54;color:#e5f0ff;border:1px solid #5a7290;border-radius:8px;padding:7px 3px;font-size:11px}.pfo52-lab{margin:19px 0;padding:18px;border:1px solid #96723d;border-radius:15px;background:linear-gradient(115deg,#282d3a,#162943)}.pfo52-lab .pfo52-playerrow{max-width:850px}.pfo52-scorecards,.pfo52-champgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:13px 0}.pfo52-scorecards>div,.pfo52-champbox{padding:12px;background:#233b50;border:1px solid #3d5670;border-radius:12px;min-width:0}.pfo52-scorecards small,.pfo52-champbox small{display:block;color:#bacde2;font-size:10px}.pfo52-scorecards b,.pfo52-champbox strong{display:block;font-size:23px;color:#f8c478;overflow-wrap:anywhere}.pfo52-actions{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.pfo52-pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.pfo52-pill{border:1px solid #426081;border-radius:18px;background:#243853;color:#d7e8fd;font-size:11px;padding:6px 10px;max-width:100%}.pfo52-fullroster h3{margin:0 0 7px}.pfo52-fullroster h4{margin:15px 0 6px;font-size:12px;color:#f5bd72}.pfo52-fine{color:#afc3d9;font-size:12px;line-height:1.6}.pfo52-dim{color:#98adc5;display:block;font-size:10px;margin:4px 0}.pfo52-reviewline{margin:14px 0;padding:11px;border-left:3px solid #e8bd6e;background:#394052;font-size:12px}.pfo52-history{display:grid;gap:7px;margin-top:16px}.pfo52-historyrow{background:#20334d;border:1px solid #324b66;border-radius:10px;padding:12px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr auto;gap:10px;align-items:center;font-size:12px}.pfo52-historyrow small{display:block;color:#a9c1d9;font-size:10px;margin-top:5px}.pfo52-special{margin-top:12px}.pfo52-champbox strong{margin:8px 0}.pfo52-rosterpoints{color:#f1c682;font-size:11px;margin-top:4px}.pfo49-waiver,.pfo49-radar-item{box-shadow:0 6px 24px #0002}.pfo49-waiver:hover,.pfo49-radar-item:hover{border-color:#5d7594}.market-fold{border-color:#49627a!important}.market-fold>summary{background:linear-gradient(100deg,#263e57,#1b2d43);border-radius:12px;font-weight:850}.market-fold .fold-body{padding-top:13px}.tb45 .tb-deal{border:1px solid #42566c;border-radius:12px;padding:12px;margin:9px 0;background:#1e2d43}
+@media(max-width:710px){.pfo52-duel{grid-template-columns:1fr}.pfo52-scoreboard strong{font-size:23px}.pfo52-weekrow{flex-wrap:wrap}.pfo52-weekrow select{max-width:120px}.pfo52-historyrow{grid-template-columns:1fr 1fr}.pfo52-historyrow button{grid-column:2;justify-self:end}.pfo52-scorecards b,.pfo52-champbox strong{font-size:18px}.pfo52-lab{padding:12px}.pfo52-playerrow{grid-template-columns:46px minmax(0,1fr) 54px}.pfo52-champgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.pfo52-champbox{padding:8px}.pfo52-scoreboard{padding:12px 6px}.pfo52-versus{font-size:11px}}
+
+
+/* 5.3 Precision: mobile-density pass, no loss of drill-down content */
+#overview>#kpis{display:none!important} /* Duplicate mid-page KPI strip; briefing's top KPIs remain. */
+.pfo53-weekfocus{margin:0 0 12px;padding:11px 15px;border:1px solid #4e6780;border-radius:12px;background:linear-gradient(110deg,#21364c,#16283c)}
+.pfo53-weekfocus .pfo53-quick{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;font-size:12px;align-items:center}
+.pfo53-weekfocus b{color:#f6c47c}.pfo53-weekfocus button,.pfo53-toggle button{border:1px solid #54718a;border-radius:8px;padding:7px 11px;color:#fff;background:#253a51;cursor:pointer;font-size:12px}
+.pfo53-weekfocus small{display:block;color:#b0bfd1;font-size:10px;margin-top:5px}
+#radar .pfo49-radar-item,#market .pfo49-waiver{padding:8px 10px;margin:3px 0;box-shadow:none;border-radius:8px}
+#radar .pfo49-radar-grid{gap:6px}#radar .pfo49-radar-item p,#market .pfo49-waiver p{margin:4px 0;font-size:11px;line-height:1.4}
+#radar .pfo49-statgrid,#market .pfo49-statgrid{gap:3px;margin:6px 0}
+#radar .pfo49-statgrid>div,#market .pfo49-statgrid>div{padding:5px;border-radius:6px}
+#radar .pfo49-statgrid b,#market .pfo49-statgrid b{font-size:13px!important}
+#radar .pfo49-statgrid span,#market .pfo49-statgrid span{font-size:9px}
+#market .market-fold{margin:7px 0}#market .market-fold summary{padding:8px 10px;font-size:12px}
+#market .tb45 .tb-deal{padding:7px;margin:4px 0}
+.pfo52-playerrow{padding:6px 0;grid-template-columns:36px minmax(0,1fr) 57px}
+.pfo52-duel{gap:8px}.pfo52-duel>article{padding:8px;border-radius:9px}
+.pfo52-scoreboard{padding:10px;margin:7px 0 10px}.pfo52-scoreboard strong{font-size:23px;margin:3px 0}
+.pfo52-lab{padding:12px;margin:10px 0}.pfo52-champgrid{gap:6px;margin:6px 0}.pfo52-champbox{padding:7px;border-radius:8px}
+.pfo52-champbox strong{font-size:19px;margin:3px 0}.pfo52-weekrow{margin:5px 0 8px}.pfo52-panhead h2{font-size:18px}
+.pfo53-toggle{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 9px}
+.pfo53-toggle button[aria-pressed="true"]{border-color:#ebb970;color:#1b2633;background:#f0bf7d;font-weight:850}
+.pfo53-toggle small{font-size:10px;color:#aebed0;margin-left:auto}
+.pfo53-sim{margin:8px 0;padding:9px 11px;border-radius:9px;background:#1b3247;border:1px solid #45617c;font-size:11px;line-height:1.55}
+.pfo53-sim button{background:#efc27b;color:#172335;border:0;border-radius:7px;padding:7px 10px;cursor:pointer;font-weight:700}
+.pfo53-compact{font-size:11px!important;line-height:1.45!important}.pfo53-noactual{color:#edc9a1;font-size:11px}
+#championship>.grid.two,#championship>.card:not(#pfo49-playoff-plan){display:none}
+@media(max-width:710px){.pfo52-duel{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo52-duel>article{padding:5px}.pfo52-playerrow{grid-template-columns:26px minmax(0,1fr);gap:3px;font-size:10px}.pfo52-playerrow>b{grid-column:2;justify-self:end;font-size:11px}.pfo52-slot{font-size:9px}.pfo52-playerrow strong{font-size:10px}.pfo52-playerrow small{font-size:9px}.pfo53-weekfocus{padding:9px}.pfo52-scoreboard strong{font-size:20px}.pfo52-champgrid{gap:4px}}
+
+.pfo53-k-model{font-size:10px;color:#e8c690;margin:3px 0}.pfo53-club-report{margin:9px 0;padding:10px;background:#1b3344;border-left:3px solid #efbf72;font-size:12px}.pfo53-club-report blockquote{margin:6px 0;font-weight:650}.pfo53-club-report p{margin:6px 0}
+#market .card,#radar .card{padding:12px}#radar .pfo49-radar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#market .market-fold>summary{padding:9px 11px;min-height:42px}#market .market-fold .fold-heading{font-size:14px}#market .market-fold .fold-heading small{font-size:10px;margin:1px 0 0}#market .market-heading{padding:12px;margin:0 0 7px}#market .market-intro{font-size:11px;line-height:1.4}#championship .pfo49-planner{padding:12px;margin-top:0}#championship .pfo49-gamelog td{padding:5px}#championship .pfo49-gamelog th{padding:7px}#pfo53-weekfocus{scroll-margin-top:70px}
+@media(max-width:710px){#radar .pfo49-radar-grid{grid-template-columns:1fr}#championship .pfo49-gamelog th,#championship .pfo49-gamelog td{font-size:10px}#championship .pfo49-gamelog td small{font-size:9px}#market .market-columns{gap:8px}#market .card{padding:10px}}
+.pfo53-dense-details{border-top:1px solid #405670;margin:6px 0 0;padding:5px 0}.pfo53-dense-details summary{font-size:11px;font-weight:700;color:#ecc385;cursor:pointer}.pfo53-moremetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:7px}#radar .pfo51-universal,#market .pfo51-universal{margin:4px 0}#radar .pfo51-universal-grid:not(.pfo53-moremetrics),#market .pfo51-universal-grid:not(.pfo53-moremetrics){grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}#radar .pfo51-universal-grid>div,#market .pfo51-universal-grid>div{padding:5px;border-radius:6px}#radar .pfo51-universal-grid b,#market .pfo51-universal-grid b{font-size:13px}#radar .pfo51-universal-grid small,#market .pfo51-universal-grid small{font-size:9px}
+@media(max-width:560px){main{padding:11px 11px 42px}.header{display:block;margin-bottom:11px}.header h1{font-size:26px;letter-spacing:-1.35px;white-space:nowrap;margin:5px 0 3px}.header .eyebrow{font-size:9px;letter-spacing:1.2px}.header .muted{font-size:11px}.header .private{display:inline-flex;margin-top:7px;padding:4px 8px;font-size:9px;gap:5px}.header .buildtag{font-size:9px}nav{margin-bottom:12px;padding-bottom:8px}nav button{padding:9px 10px;font-size:12px}.pfo49-navhint{font-size:10px}#matchup>.card{padding:10px}.pfo52-weekrow{margin:8px 0 10px}.pfo52-weekrow button{padding:7px;font-size:11px}.pfo52-weekrow select{padding:6px}.pfo52-duel>article h3{font-size:13px}.pfo52-scoreboard{margin:7px 0 9px}.pfo52-panhead small{font-size:9px}.pfo52-fine{font-size:11px;line-height:1.35}}
+
+/* 5.4 – compact research, secure commissioner case desk. */
+#market .pfo51-universal-grid,#radar .pfo51-universal-grid{display:flex!important;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;gap:6px!important;padding:3px 0 8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+#market .pfo51-universal-grid>div,#radar .pfo51-universal-grid>div{flex:0 0 93px;min-width:93px;scroll-snap-align:start;border:1px solid #384960}
+#market .pfo51-universal-grid b,#radar .pfo51-universal-grid b{font-size:13px}
+#market .pfo51-universal-grid small,#radar .pfo51-universal-grid small{white-space:normal}
+#market article.pfo49-waiver,#radar article.pfo51-radar-card{padding:10px 11px;margin:7px 0;border-radius:11px}
+.pfo54-swipelabel{display:block;font-size:10px;color:#9baeca;margin:3px 0 1px}
+#market .market-heading{padding:12px!important;margin-bottom:8px}#market .market-heading .market-intro{font-size:11px;line-height:1.3}
+#market .market-fold{padding:11px!important}#market .market-columns{gap:9px;margin-top:9px}
+.pfo54-proj{display:block;font-size:11px;color:#f5c575;margin-top:3px;line-height:1.3}
+.pfo54-coach-score{border:1px solid #5c805d;background:#17312a;padding:12px;border-radius:10px;margin-bottom:12px;display:flex;gap:13px;align-items:center}
+.pfo54-coach-score strong{font-size:29px;color:#6ce3b3;white-space:nowrap}.pfo54-coach-score p{margin:3px 0;font-size:11px;color:#b9cdd5}
+.pfo54-champmessage{font-size:12px;line-height:1.5;border-left:3px solid #ffbd58;background:#2d2a25;padding:10px;margin:10px 0}
+#commissioner .com-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#commissioner .com-muted{font-size:12px;color:var(--muted);line-height:1.5;margin:5px 0 10px}
+#commissioner .com-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#commissioner label{display:block;font-size:11px;color:#b9c9df;font-weight:700;margin-bottom:4px}
+#commissioner input,#commissioner select,#commissioner textarea{background:#1b2b42;border:1px solid #465a78;border-radius:8px;color:var(--white);width:100%;padding:10px;font:inherit;min-width:0}
+#commissioner input[type=file]{display:block;font-size:12px;padding:6px}
+#commissioner textarea{min-height:72px;resize:vertical}
+#commissioner .com-wide{grid-column:1/-1}
+#commissioner .com-card{padding:13px;margin-bottom:12px}
+#commissioner .com-case{border:1px solid #384f68;border-radius:10px;padding:10px;margin:7px 0;background:#16273c;text-align:left;width:100%;color:var(--white);cursor:pointer}
+#commissioner .com-case strong{color:var(--gold);font-size:13px}
+#commissioner .com-case small{display:block;color:var(--muted);margin-top:4px;line-height:1.4}
+#commissioner .com-badge{display:inline-flex;border:1px solid #475e74;border-radius:10px;font-size:10px;padding:3px 6px;color:#e6edf7}
+#commissioner .com-quiet{color:#a4b8c7;font-size:11px}
+#commissioner .com-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#commissioner button{cursor:pointer}
+#commissioner .com-feedback{font-size:12px;min-height:20px;margin:10px 0;line-height:1.5}
+#commissioner .com-event{border-left:2px solid #49637e;margin:8px 0;padding:2px 0 2px 11px;font-size:12px;line-height:1.5}
+#commissioner .com-event small{display:block;color:var(--muted)}
+@media(max-width:500px){#commissioner .com-grid{grid-template-columns:1fr}#commissioner .com-wide{grid-column:auto}#commissioner .com-top h2{margin-bottom:2px}}
+
+
+#overview #kpis{display:none} /* duplicate KPI widgets above standings; summary remains in briefing */
+#pfo54-briefing-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0 0 12px}
+#pfo54-briefing-nav .pulse{background:#192a41;border:1px solid #36516a;border-radius:10px;padding:9px;min-width:0}
+#pfo54-briefing-nav b{display:block;font-size:10px;color:#ffc575}
+#pfo54-briefing-nav span{display:block;font-size:11px;color:#e0e8f6;margin-top:5px;overflow-wrap:anywhere}
+@media(max-width:480px){#pfo54-briefing-nav{grid-template-columns:1fr}#pfo54-briefing-nav .pulse{display:flex;gap:12px;align-items:center}#pfo54-briefing-nav .pulse b{min-width:100px}#pfo54-briefing-nav span{margin-top:0}}
+
+/* 0.4 GameCast add-on; isolated styles, no global nav/scroll overrides. */
+.ffo-gc-shell{padding:15px!important}.ffo-gc-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}.ffo-gc-heading h2{margin:4px 0}.ffo-gc-heading p{font-size:12px;margin:4px 0 14px}.ffo-gc-status{padding:8px 10px;border:1px solid var(--border);background:#101a2b;border-radius:9px;font-size:12px;color:#b9cce3;margin:10px 0}.ffo-gc-games{display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding:4px 0 12px}.ffo-gc-game{flex:0 0 158px;scroll-snap-align:start;appearance:none;background:#18283b;border:1px solid #355070;border-radius:10px;color:var(--white);padding:10px;text-align:left;font:inherit}.ffo-gc-game.active{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}.ffo-gc-game strong{display:block;font-size:13px;margin-top:5px}.ffo-gc-game small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.ffo-gc-player{padding-top:6px}.ffo-gc-intro{display:flex;justify-content:space-between;gap:12px;align-items:start}.ffo-gc-intro h3{margin:3px 0 1px;font-size:17px}.ffo-gc-intro p{margin:3px 0;font-size:12px;color:var(--muted)}.ffo-gc-pill{display:inline-block;border-radius:30px;padding:4px 7px;border:1px solid #44607a;background:#1c2e43;font-size:10px;color:#bfd6ed;font-weight:700;letter-spacing:.4px}.ffo-gc-statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:11px 0}.ffo-gc-statgrid>div{border:1px solid #34475d;border-radius:9px;background:#17263b;padding:9px 6px}.ffo-gc-statgrid b{display:block;font-size:17px;font-variant-numeric:tabular-nums}.ffo-gc-statgrid span{color:var(--muted);font-size:10px}.ffo-gc-note{font-size:11px!important;color:#b8cbe2!important;line-height:1.5!important}.ffo-gc-playfeed{border-top:1px solid var(--border);margin-top:9px;padding-top:9px}.ffo-gc-play{border-bottom:1px solid #26354a;padding:8px 0;font-size:12px}.ffo-gc-play strong{color:var(--gold)}.ffo-gc-play small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.ffo-gc-section{margin:14px 0 9px}.ffo-gc-section h3{margin:0 0 5px;font-size:15px}.ffo-gc-evidence{border:1px solid #375576;border-radius:10px;margin:10px 0;padding:11px;background:#111d2e}.ffo-gc-evidence button{border:1px solid var(--gold);background:#2b333d;border-radius:7px;color:#fff;padding:6px 12px;font-weight:700;margin-top:8px}.ffo-gc-actionrow{display:flex;gap:8px;flex-wrap:wrap}.ffo-gc-actionrow button{background:#233b55;color:#fff;border:1px solid #486580;border-radius:8px;padding:7px 11px;font-size:12px}.ffo-gc-rawstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));font-variant-numeric:tabular-nums;gap:5px;font-size:12px}.ffo-gc-rawstats>div{background:#1c2a3d;padding:8px;border-radius:7px}.ffo-gc-integration{font-size:12px;color:#c5d4e3;margin-bottom:10px}
+@media(min-width:680px){.ffo-gc-statgrid{grid-template-columns:repeat(6,minmax(0,1fr))}.ffo-gc-rawstats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+
+/* FFO 5.5 THURSDAY: viewport invariant; only the nested stat rails pan horizontally. */
+html,body{width:100%;max-width:100%;overflow-x:clip;}
+body>main,main,#nav,.page,.page>.card,#market,#radar,#pfo49-radar,#waiverlive,.market-columns,.market-columns>*{box-sizing:border-box;min-width:0;max-width:100%}
+#radar article.pfo49-radar-item,#market article.pfo49-waiver,#radar .pfo51-radar-card{box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow:hidden!important}
+#radar .pfo49-row,#market .pfo49-row,#radar .pfo49-row>div,#market .pfo49-row>div{min-width:0;max-width:100%}
+#radar .pfo49-row strong,#market .pfo49-row strong{overflow-wrap:anywhere}
+#radar .pfo51-universal,#market .pfo51-universal,#radar .pfo49-statgrid,#market .pfo49-statgrid{width:100%!important;min-width:0!important;max-width:100%!important}
+#radar .pfo51-universal-grid:not(.pfo53-moremetrics),#market .pfo51-universal-grid:not(.pfo53-moremetrics){display:flex!important;overflow-x:auto!important;overflow-y:hidden;max-width:100%;min-width:0;touch-action:pan-x;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+#radar .pfo51-universal-grid:not(.pfo53-moremetrics)>div,#market .pfo51-universal-grid:not(.pfo53-moremetrics)>div{flex:0 0 90px;min-width:90px;max-width:90px;scroll-snap-align:start}
+.ffo-compact-detail{display:block;border-top:1px solid #32495f;margin-top:7px;padding-top:7px;min-width:0;max-width:100%}.ffo-compact-detail>summary{cursor:pointer;font-size:11px;color:#fac783;font-weight:800;padding:5px 0}.ffo-compact-detail>:not(summary){max-width:100%;min-width:0}
+.ffo-gc-shell,.ffo-gc-heading,.ffo-gc-player,.ffo-gc-playfeed,.ffo-gc-gameview{min-width:0;max-width:100%;box-sizing:border-box}
+.ffo-gc-gameview{margin:8px 0 15px;border-radius:14px;overflow:hidden;border:1px solid #405b77;background:#111d2e}
+.ffo-gc-scoreboard{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px;padding:10px;background:#07111f}
+.ffo-gc-scoreboard .team{font-size:13px;font-weight:850}.ffo-gc-scoreboard .team:last-child{text-align:right}.ffo-gc-scoreboard b{font-variant-numeric:tabular-nums;color:#f9d088;font-size:23px}.ffo-gc-scoreboard small{display:block;color:#a9b9cb;font-size:10px;font-weight:600}.ffo-gc-center{text-align:center;color:#ced6e2;font-size:10px}.ffo-gc-center strong{font-size:13px;display:block;white-space:nowrap}
+.ffo-gc-stadium{background:linear-gradient(180deg,#132c4a 0%,#233a56 33%,#071423 33.4%,#0a1420 49%,#11262d 50%,#0d3026 100%);position:relative;width:100%;aspect-ratio:16/9;max-height:335px}
+.ffo-gc-stadium>svg{width:100%;height:100%;display:block}.ffo-gc-field-caption{position:absolute;left:9px;right:9px;bottom:7px;font-size:10px;line-height:1.4;color:#edf4fb;background:#0b172bd9;padding:5px 8px;border-radius:7px;pointer-events:none}
+.ffo-gc-controls{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:8px 10px;background:#122237}.ffo-gc-controls button,.ffo-gc-filters button{border:1px solid #456885;background:#273d54;color:#f4f7ff;border-radius:7px;cursor:pointer;padding:7px 10px;font-size:11px;min-height:34px}.ffo-gc-controls button:disabled{opacity:.45}.ffo-gc-controls span{font-size:11px;color:#b6cde5;min-width:0;text-align:center}
+.ffo-gc-filters{display:flex;gap:6px;margin:9px 0;flex-wrap:wrap}.ffo-gc-filters button[aria-pressed="true"]{background:#a77931;color:#0b1828;border-color:#edc581;font-weight:900}
+.ffo-gc-play{cursor:pointer;transition:background .15s;padding:9px;border-radius:7px;margin:3px 0}.ffo-gc-play.active{background:#243b53;border:1px solid #8dbbde}.ffo-gc-play:focus-visible{outline:2px solid #ecb55d}.ffo-gc-play .ffo-gc-playtop{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.ffo-gc-play .ffo-gc-playtop strong{color:#ffd08b}.ffo-gc-play .ffo-gc-playtop small{margin:0}
+.ffo-gc-testplan{font-size:12px;border:1px solid #6a5438;background:#2d2a2d;border-radius:9px;padding:9px 11px;margin:7px 0 12px;line-height:1.5}.ffo-gc-testplan b{color:#ffd08b}.ffo-gc-provenance{font-size:10px;color:#adc3d7;padding:7px 10px;border-top:1px solid #2f4b64}
+.ffo-gc-latest{font-size:11px;color:#c9dbed;margin:7px 0}.ffo-gc-testplan a{color:#ffcc84}
+@media(max-width:430px){.ffo-gc-shell{padding:10px!important}.ffo-gc-scoreboard b{font-size:20px}.ffo-gc-scoreboard .team{font-size:12px}.ffo-gc-game{flex-basis:143px}.ffo-gc-statgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.ffo-gc-statgrid b{font-size:16px}#market .market-columns{display:grid;grid-template-columns:minmax(0,1fr)}#radar .pfo49-row,#market .pfo49-row{gap:6px;align-items:center}}
+@media(prefers-reduced-motion:reduce){.ffo-gc-play{transition:none}}
+
+/* 5.6: compact intel without altering approved horizontal stat scroll. */
+.pfo56-source-rail{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0 10px;max-width:100%}
+.pfo56-source-chip{font-size:9px;font-weight:750;letter-spacing:.02em;color:#b8eccc;border:1px solid #386e59;background:#163b32;padding:5px 7px;border-radius:7px}
+.pfo56-source-chip.caution{background:#453521;color:#ffe0ac;border-color:#926b37}
+.pfo56-model-caveat{font-size:11px;line-height:1.5;color:#aebfd1;margin:7px 0 12px}
+#trade-intel .trade-lead,#trade-intel .pfo55-screened-offer{padding:10px 11px;margin:8px 0;border:1px solid #354b60;border-radius:10px;background:#15243a}
+#trade-intel .pfo55-offer-side{display:flex;gap:7px;min-width:0;align-items:center}
+#trade-intel .pfo55-offer-side>div{min-width:0;flex:1}
+#trade-intel .pfo55-offer-metrics{display:flex;gap:7px;flex-wrap:wrap}
+#trade-intel .pfo55-offer-procon{font-size:11px;line-height:1.5}
+#waiverlive .scout-card{padding:9px 11px!important;margin:7px 0;border:1px solid #354963;border-radius:10px;background:#14243a}
+#waiverlive .scout-metrics{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:5px}
+#waiverlive .scout-metrics>*{flex:0 0 auto;scroll-snap-align:start}
+@media(max-width:600px){#trade-intel .pfo55-offer-procon{grid-template-columns:minmax(0,1fr)!important}#waiverlive .scout-card{padding:8px 9px!important}}
