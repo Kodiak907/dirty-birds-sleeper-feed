@@ -448,6 +448,11 @@ async function ffo50Stats(season){
   x.games.sort((a,b)=>a.week-b.week);const total=x.games.length;
   for(const g of x.games){const n=teamTargets.get(x.team+'|'+g.week);g.target_share_pct=(n>0&&g.stats.targets!=null)?Math.round(g.stats.targets/n*1000)/10:null;}
   const seasonTotal=k=>x.games.reduce((n,g)=>n+(g.stats[k]||0),0);
+   // Full season totals survive transport that trims the per-game history to recent weeks.
+   // Missing stat categories remain absent, not fabricated zeroes.
+   x.season_totals=Object.fromEntries(Object.keys(FFO50_STATS_FIELDS)
+      .filter(k=>x.games.some(g=>g.stats[k]!==undefined))
+      .map(k=>[k,Math.round(seasonTotal(k)*100)/100]));
   const last=x.games.at(-1),last3=x.games.slice(-3),avg=(gs,k)=>gs.reduce((n,g)=>n+(g.stats[k]||0),0)/gs.length;
   // Low-complexity explainable statistical baseline; not externally published expert forecasts.
   const forecast={};if(total>=2)for(const key of Object.keys(FFO50_STATS_FIELDS)){
