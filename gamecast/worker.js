@@ -9,26 +9,38 @@ export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
   if(path==="/api/probe"&&req.method==="GET"){
-    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v4");
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v5");
     const hit=await cache.match(ck);if(hit)return hit;
     if(!env.MSF_API_KEY)return result({error:"missing_key"},503);
     const season="2026-2027-regular";
-    const routes=[["season","current_season.json"],["games",season+"/games.json?limit=1"],["stats",season+"/player_stats_totals.json?limit=1"],["injuries","injuries.json?limit=1"]];
-    const checks=[];
-    for(const [name,route] of routes){
+    const headers={Authorization:"Basic "+btoa(env.MSF_API_KEY+":MYSPORTSFEEDS"),Accept:"application/json"};
+    async function check(name,route,extractId=false){
       const begun=Date.now();
       try{
-        const response=await fetch(BASE+route,{headers:{"Authorization":"Basic "+btoa(env.MSF_API_KEY+":MYSPORTSFEEDS"),"Accept":"application/json"},signal:AbortSignal.timeout(8000),redirect:"manual"});
-        const row={feed:name,http_status:response.status,ms:Date.now()-begun};
-        if(response.ok&&response.status!==204){
-          try{const obj=await response.json();row.root_keys=Object.keys(obj||{}).slice(0,10);
-            if(name==="season"){row.seasons=Array.isArray(obj?.seasons)?obj.seasons.map(x=>({slug:x.season||x.name||x.label||null,year:x.year||null})).slice(0,3):[]}}
-          catch(e){row.parse_error=e?.name||"parse";}
-        }else {await response.body?.cancel();}
-        checks.push(row);
-      }catch(e){checks.push({feed:name,error:e?.name||"network",ms:Date.now()-begun})}
+        const response=await fetch(BASE+route,{headers,redirect:"manual",signal:AbortSignal.timeout(8500)});
+        const row={feed:name,http_status:response.status,ms:Date.now()-begun,redirect:response.status>=300&&response.status<400};
+        if(response.ok){
+          const obj=await response.json();row.root_keys=Object.keys(obj||{}).slice(0,12);
+          if(extractId){const g=Array.isArray(obj?.games)?obj.games:[];
+            row.game_count=g.length;let choose=g.find(x=>String(x.schedule?.playedStatus||x.schedule?.status||x.status||"").toLowerCase().includes("completed"))||g[0];
+            row.first_game_id=choose?.schedule?.id||choose?.game?.id||choose?.id||null;row.game_keys=choose?Object.keys(choose).slice(0,10):[];
+          }
+          if(name==="season"){row.seasons=Array.isArray(obj?.seasons)?obj.seasons.map(x=>({slug:x.season||x.name||x.label||null})).slice(0,2):[];}
+        }else await response.body?.cancel();
+        return row;
+      }catch(e){return {feed:name,error:e?.name||"network",ms:Date.now()-begun};}
     }
-    const out=new Response(JSON.stringify({version:"v4",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=300"}});
+    const checks=[await check("season","current_season.json"),await check("games",season+"/games.json?limit=3",true),
+      await check("stats",season+"/player_stats_totals.json?limit=1"),
+      await check("gamelogs",season+"/week/7/player_gamelogs.json?limit=1"),
+      await check("injuries","injuries.json?limit=1"),
+      await check("latest_updates",season+"/latest_updates.json")];
+    const game=checks[1]?.first_game_id;
+    if(game&&/^[0-9A-Za-z_-]+$/.test(String(game))){
+      checks.push(await check("playbyplay",season+"/games/"+game+"/playbyplay.json"));
+      checks.push(await check("boxscore",season+"/games/"+game+"/boxscore.json"));
+    }
+    const out=new Response(JSON.stringify({version:"v5",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
     await cache.put(ck,out.clone());return out;
   }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
