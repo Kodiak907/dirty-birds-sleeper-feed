@@ -54,3 +54,11 @@
 #com57 button:focus-visible{outline:3px solid #9cecd5;outline-offset:2px}
 @media(max-width:600px){#com57{padding:10px;margin:10px -4px 14px}#com57 .com57-toolgrid{grid-template-columns:1fr}#com57 .com57-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#com57 .com57-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:375px){#com57 .com57-form{grid-template-columns:1fr}#com57 .com57-tabs button{font-size:10px;padding:9px 6px}}
+
+/* PFO 5.9: isolated Log and score panels, touch-friendly locked Commissioner workspaces. */
+#com57 [data-com57-panel="log"]{display:block;min-width:0}
+#com57 [data-com57-panel="log"] .com-card{margin:10px 0}
+#com57 [data-com57-panel="log"] .com-grid{min-width:0}
+#com57 [data-com57-panel="log"] input[type=file]{max-width:100%;font-size:12px}
+#com57 .com57-tabs button{min-width:max-content;flex:0 0 auto}
+#com57 .com57-panel{min-width:0}
