@@ -1337,7 +1337,13 @@ $('gm47-open-from-roster')?.addEventListener('click',()=>{document.querySelector
    authority for league settings, ownership, recorded FFL scores and transactions. */
 let pfo50Independent=null,pfo50Indexed=new Map(),pfo50IndependentError='',pfo50IndependentPromise=null,pfo50IndependentAt=0,pfo50ScheduleError='';
 function pfo50Key(name,team){return normPlayer(name)+'|'+gm47CanonicalTeam(team||'');}
-function pfo50StatsFor(id){const p=pfo49Info(id),key=pfo50Key(p.name,p.team);return pfo50Indexed.get(key)||null;}
+function pfo50StatsFor(id){const p=pfo49Info(id),key=pfo50Key(p.name,p.team),exact=pfo50Indexed.get(key);if(exact)return exact;
+ // Sleeper can retain roman-numeral/Jr suffixes that nflverse omits. Match only
+ // a unique, SAME-TEAM first+last base name; never silently map another player.
+ const stem=String(p.name||'').replace(/\s+(?:jr\.?|sr\.?|ii|iii|iv)$/i,'').trim();
+ const matches=[...pfo50Indexed.values()].filter(x=>gm47CanonicalTeam(x.team)===gm47CanonicalTeam(p.team)&&String(x.name||'').replace(/\s+(?:jr\.?|sr\.?|ii|iii|iv)$/i,'').trim().toLowerCase()===stem.toLowerCase());
+ return matches.length===1?matches[0]:null;
+}
 function pfo50Score(stats){const s=pfo49ScoreFromStats(stats);return s&&Number.isFinite(s.points)?s.points:null;}
 function pfo50Estimate(id){const row=pfo50StatsFor(id);return row?.forecast?pfo50Score(row.forecast):null;}
 function pfo50StatTile(label,val){return '<div><b>'+e(val==null?'—':val)+'</b><span>'+e(label)+'</span></div>';}
@@ -1364,7 +1370,7 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(!r.ok)throw Error('Independent stats HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||j.players.length<100)throw Error('Incomplete NFL player-stat sample');
   pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';renderTradeScouting();}
-  pfo49RenderRadar();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderWaiverScouting();pfo49RenderPlayer();pfo49RenderPlanner();pfo49OverviewHealth();updateInjuryView();renderBriefing();gm47Render();
+  pfo49RenderRadar();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderWaiverScouting();pfo49RenderPlayer();if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();pfo49OverviewHealth();updateInjuryView();renderBriefing();if(document.querySelector('#scouting.page.active'))gm47Render();
   return j;
  }catch(err){pfo50IndependentError=String(err.message||err);return null;}finally{pfo50IndependentPromise=null;}})();
  return pfo50IndependentPromise;
@@ -1659,7 +1665,7 @@ function pfo49RenderPlanner(){const el=$('pfo49-playoff-plan');if(!el)return;con
 }
 // Supplements source refreshes without modifying the old trade engine or safety policy.
 // Historical evidence loads on its research view rather than during startup.
-setInterval(()=>{if(!document.hidden){pfo49InjurySummary();pfo49OverviewHealth();pfo49RenderPlanner();}},90000);
+setInterval(()=>{if(!document.hidden){pfo49InjurySummary();pfo49OverviewHealth();if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();}},90000);
 
 // Refresh current-week fantasy matchup points directly from Sleeper, separately from the
 // slower GitHub historical snapshots. Recorded points may be provisional while games run.
