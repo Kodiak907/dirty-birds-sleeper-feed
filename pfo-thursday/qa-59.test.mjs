@@ -61,6 +61,9 @@ test('Commissioner Log actions remain separated and protected, with video eviden
  assert.match(core,/comUploadEvidence\(c\.id,file\)/);
  assert.match(html,/General league administration/);
  assert.match(worker,/COMMISSIONER_EVIDENCE\.put/);
+ assert.match(worker,/new FixedLengthStream\(declared\)/);
+ assert.match(worker,/new crypto\.DigestStream\('SHA-256'\)/);
+ assert.match(worker,/Promise\.allSettled\(tasks\)/);
  assert.match(worker,/video\/quicktime/);
  assert.match(worker,/75\*1024\*1024/);
  assert.match(worker,/FILE_CONTENT_INVALID/);
