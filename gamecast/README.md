@@ -47,3 +47,6 @@ Redeploy only dirtybirdstest protected Pages preview from pfo-thursday-staging. 
 
 ### Authorized Pages Preview Upload — October 27, 2026 PT
 Deploy isolated pfo-thursday-staging PFO revision containing compact two-sided trade cards, dated MySportsFeeds Injury Watch overlay, bounded GameCast game picker, and verified ESPN fallback labeling. Preview only under dirtybirdstest; Pages production/main is not replaced. No credentials are committed.
+
+## October 27 late QA - NFL play-by-play verified
+Authenticated MySportsFeeds playbyplay returns 200 for three completed NFL Week 7 games, with 159 records for Packers vs Lions. PFO Preview GameCast now parses playStatus quarter/secondsElapsed/down/LOS, retains complete timeline, and shows pregame waiting state. Deploy Pages preview only on pfo-thursday-staging, never main. No public diagnostic or credentials.
