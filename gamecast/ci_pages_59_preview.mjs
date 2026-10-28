@@ -9,7 +9,7 @@ import {resolve,join} from 'node:path';
 import {tmpdir} from 'node:os';
 
 const repo='Kodiak907/dirty-birds-sleeper-feed';
-const commit='64480fca1389cb5f10213a084f5e73794846e5fb';
+const commit='42c9cafd2594b986ae695c2643e5d5e1a469376a';
 const project='dirtybirdstest',previewBranch='pfo-thursday-staging';
 const files=[
  'index.html','_worker.js','wrangler.jsonc',
@@ -19,6 +19,7 @@ const files=[
  'ffo-commissioner-57.js','ffo-commissioner-57.css',
  'ffo-pfo-59.js','ffo-pfo-59.css',
  'ffo-championship-59.js','ffo-championship-59.css',
+ 'ffo-mobile-594.js','ffo-mobile-594.css',
  'FFO_CHAMPIONSHIP_100K.json',
  'FFO_FFL_SCORING_V1.json',
  'commissioner-pin-setup.html'
@@ -56,6 +57,8 @@ const rules=JSON.parse(await get('FFO_FFL_SCORING_V1.json'));
 if(rules.schema!=='FFO_SCORING_RULES_V1'||Object.keys(rules.scoring||{}).length!==133||
  !msf.includes('/FFO_FFL_SCORING_V1.json')||msf.includes("feed('espnplays'")||
  worker.includes('ffoScEndpoint')||!worker.includes('ffoGamecastHandle'))throw Error('FFO_MSF_ONLY_PRIMARY_SCORING_CHECK_FAILED');
+const mobile=await get('ffo-mobile-594.js');
+if(!mobile.includes('ffo594-dock')||!html.includes('/ffo-mobile-594.js')||!html.includes('/ffo-mobile-594.css'))throw Error('PFO594_MOBILE_APP_MISSING');
 if(!html.includes('5.9 DEVELOPMENT')||!html.includes('/ffo-championship-59.js')||!html.includes('/ffo-pfo-59.js')||
  !newJS.includes('pfo59-team-hub')||!cjs.includes('CHAMP_REPORT')||
  !worker.includes('FixedLengthStream(declared)')||!worker.includes('COMMISSIONER_EVIDENCE')||
