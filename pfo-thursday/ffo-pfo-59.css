@@ -1,0 +1,34 @@
+/* PFO 5.9 — mobile workspaces, no existing columns or horizontal championship scroll altered. */
+#pfo59-market [hidden]{display:none!important}
+#pfo59-market{min-width:0;margin:14px 0}
+.pfo59-market-tabs{display:flex;overflow-x:auto;gap:6px;margin:0 0 14px;padding:2px 1px 9px;scrollbar-width:thin}
+.pfo59-market-tabs button{border:1px solid #344a60;background:#14283d;color:#c9d9e9;border-radius:9px;padding:11px 15px;white-space:nowrap;font-size:12px;font-weight:800}
+.pfo59-market-tabs button[aria-selected=true]{background:#214c4a;border-color:#78d8bc;color:#e7fff9}
+.pfo59-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pfo59-tiles button{padding:20px 14px;background:#16283e;border:1px solid #34556f;border-radius:13px;display:flex;gap:8px;flex-direction:column;align-items:flex-start;color:#e9f8ff;text-align:left;min-height:120px}
+.pfo59-tiles b{font-size:15px}.pfo59-tiles span{font-size:12px;color:#b2c7d7;line-height:1.4}
+.pfo59-subhead,.pfo59-schedule-head,.pfo59-list-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.pfo59-subhead h2,.pfo59-schedule h2{font-size:18px;margin:8px 0}
+.pfo59-subhead select,.pfo59-filters select,.pfo59-filters input{background:#122336;color:#f2f9fc;border:1px solid #45637b;border-radius:9px;padding:11px 9px;max-width:100%}
+.pfo59-subhead label,.pfo59-filters label{font-size:12px;color:#b9d0df;font-weight:700;display:flex;flex-direction:column;gap:5px}
+.pfo59-filters{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin:12px 0}
+.pfo59-caveat{font-size:12px;color:#e9cda1;padding:12px;border:1px solid #5c4d39;border-radius:9px;background:#2c2b2a;line-height:1.5}
+.pfo59-metrics{display:flex;flex-direction:column;gap:5px;padding:13px 2px;font-size:12px}
+.pfo59-metrics strong{font-size:15px;color:#e5f4fc}.pfo59-metrics small{color:#9db5c4;line-height:1.5}
+.pfo59-leaders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:12px}
+.pfo59-leader{border:1px solid #34566a;background:#172b3e;border-radius:9px;padding:9px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pfo59-leader b{color:#ffbd58}.pfo59-leader span{font-size:12px;line-height:1.3}.pfo59-leader small{font-size:10px;color:#a9c0d0}
+.pfo59-player{background:#14283b;border:1px solid #345063;border-radius:10px;padding:12px;margin:8px 0;min-width:0}
+.pfo59-player-head{display:flex;gap:8px;justify-content:space-between;align-items:flex-start}
+.pfo59-player-head span:first-child{min-width:0}.pfo59-player-head small{display:block;color:#a2b8c9;font-size:10px;margin-top:4px}
+.pfo59-chip{font-size:10px;color:#b9ecd9;border:1px solid #3c7166;border-radius:6px;padding:5px;white-space:nowrap}
+.pfo59-player-meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:11px;color:#f4cf8e}
+.pfo59-player p{font-size:11px;line-height:1.4;margin:5px 0}.pfo59-player>small,.pfo59-foot{display:block;color:#9db3c4;font-size:10px;line-height:1.5}
+.pfo59-legacy{margin:15px 0}.pfo59-legacy>summary{padding:12px;border:1px solid #45627a;border-radius:9px}
+#pfo59-trade-existing #trade-fold,#pfo59-waiver-existing #waiver-fold{display:block;max-width:100%;margin:12px 0}
+.pfo59-schedule{padding:15px;margin-bottom:16px}
+.pfo59-schedule-head button,.pfo59-week button{background:#224a49;color:#d3fff1;border:1px solid #558177;border-radius:8px;padding:8px;font-size:11px}
+.pfo59-schedule-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.pfo59-week{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:7px;align-items:center;padding:9px;border:1px solid #2d4960;border-radius:9px;min-width:0}
+.pfo59-week>span{font-size:11px;color:#ffbd58}.pfo59-week>strong{font-size:11px;overflow-wrap:anywhere}.pfo59-week>small{font-size:10px;color:#bacdd7;grid-column:2;grid-row:2}.pfo59-week>button{grid-column:3;grid-row:1 / 3}
+@media(max-width:650px){.pfo59-tiles{grid-template-columns:1fr}.pfo59-tiles button{min-height:0;padding:14px}.pfo59-leaders{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo59-schedule-list{grid-template-columns:1fr}.pfo59-subhead{align-items:stretch}.pfo59-subhead select{width:100%}}
