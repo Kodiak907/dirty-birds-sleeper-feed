@@ -104,8 +104,8 @@ test('Team-specific waiver ranking uses completed FFL weekly scores, not one lis
  qa.state.manager='4';qa.waiver();
  assert.notEqual(dirty,elements.get('pfo59-waiver-board').innerHTML);
  qa.state.manager='9';qa.trade();
- assert.match(elements.get('pfo59-trade-board').innerHTML,/Choose any trade-eligible FFL manager/);
- qa.state.manager='9';qa.trade();assert.match(elements.get('pfo59-trade-board').innerHTML,/data-pfo59-pick=/);
+ assert.match(elements.get('pfo59-trade-board').innerHTML,/disabled title="View in Scouting; trade research is excluded"/,'Boyle excluded');
+ assert.match(elements.get('pfo59-trade-board').innerHTML,/data-pfo59-pick=/);
  assert.match(elements.get('pfo59-trade-board').innerHTML,/Dirty Birds · Give/);
  assert.match(elements.get('pfo59-trade-board').innerHTML,/Receive/);
 });
