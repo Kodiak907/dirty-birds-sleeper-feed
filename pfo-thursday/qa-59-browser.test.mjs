@@ -132,5 +132,20 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(await page.locator('#overview').isVisible(),true,'Overview remains available');
   assert.equal(await page.locator('#league-standings').count(),1,'Only one standings table exists');
   assert.equal(await page.locator('#overview .pfo59-standings-top').count(),1,'Standings moved toward top');
+  // Stress navigation on a 390px touch viewport. No network-dependent assumptions:
+  // rapid switching must remain responsive even with upstream feeds unavailable.
+  const laps=['roster','market','overview','matchup','gamecast','overview','roster','market'];
+  const measurements=[];
+  for(let lap=0;lap<3;lap++)for(const destination of laps){
+   const started=Date.now();
+   await clickTab(page,destination);
+   const took=Date.now()-started;measurements.push(took);
+   assert.equal(await page.locator('.page.active').count(),1,'Only one visible workspace after '+destination);
+   assert.equal(await page.locator('#ffo594-dock [data-ffo594-page="'+destination+'"]').getAttribute('aria-current'),'page','Dock stays synced at '+destination);
+  }
+  const max=Math.max(...measurements);
+  console.log('FFO_MOBILE_NAV_PERF '+JSON.stringify({count:measurements.length,maxMs:max,avgMs:Math.round(measurements.reduce((a,b)=>a+b,0)/measurements.length)}));
+  assert.ok(max<4000,'No navigation tap may freeze UI for 4 seconds (observed '+max+'ms)');
+
  }finally{await ctx?.close();await teardown()}
 });
