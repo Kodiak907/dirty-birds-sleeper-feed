@@ -1,0 +1,3 @@
+# FFO PFO 5.6 Preview Upload
+
+2026-10-27 PT: One-time Cloudflare staging build trigger using `node ci_pages_stadium_http.mjs` (temporary build command). The script pins immutable Git commit `24de6eb698b036d35294c4f0ef63b9aa30e706a6` and uploads only files from `pfo-thursday/` to Cloudflare Pages project `dirtybirdstest` **preview branch `pfo-thursday-staging`**, never production/main. The code includes lazy GameCast boot, report fetch deduplication, deferred nonessential research, compact trade/waiver layout and dated evidence notices. After upload, restore Worker staging Build command to None.
