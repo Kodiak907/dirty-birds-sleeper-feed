@@ -619,7 +619,7 @@ async function refreshLive(){
      fastStatus='Fast Sleeper: '+ageText(Date.now()-fastMs)+' old';
    } else fastStatus='Fast Sleeper: older than research snapshot';
  } catch(e) {fastStatus='Fast Sleeper: not available yet ('+(e?.message||'error')+')';}
- if(good){lastGoodSync=new Date();render()}
+ if(good){lastGoodSync=new Date();if(document.querySelector('#overview.page.active'))render(true)}
  // Defer the large historical FAAB ledger until Trade/Waiver is requested.
  if(document.querySelector('nav button[data-page="market"].active'))void refreshFaab();
  if(window.dbLeagueId&&!liveRosterSnapshot)refreshInjuryOnly();
@@ -1370,7 +1370,16 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(!r.ok)throw Error('Independent stats HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||j.players.length<100)throw Error('Incomplete NFL player-stat sample');
   pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';renderTradeScouting();}
-  pfo49RenderRadar();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderWaiverScouting();pfo49RenderPlayer();if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();pfo49OverviewHealth();updateInjuryView();renderBriefing();if(document.querySelector('#scouting.page.active'))gm47Render();
+  // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
+  // Previously this single refresh rebuilt every large hidden panel on iPhone.
+  if(document.querySelector('#radar.page.active'))pfo49RenderRadar();
+  if(document.querySelector('#overview.page.active')){pfo50RenderHomeKPIs();pfo49OverviewHealth();renderBriefing();}
+  if(document.querySelector('#matchup.page.active'))pfo50RenderProjectedLineup();
+  if(document.querySelector('#market.page.active'))renderWaiverScouting();
+  if(document.querySelector('#playerhub.page.active'))pfo49RenderPlayer();
+  if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
+  if(document.querySelector('#availability.page.active'))updateInjuryView();
+  if(document.querySelector('#scouting.page.active'))gm47Render();
   return j;
  }catch(err){pfo50IndependentError=String(err.message||err);return null;}finally{pfo50IndependentPromise=null;}})();
  return pfo50IndependentPromise;
@@ -1589,7 +1598,14 @@ async function pfo49LoadSources(force=false){if(pfo49RefreshBusy)return;const no
  if(files[0].status==='fulfilled'&&files[0].value?.players){pfo49Metrics=files[0].value;pfo49MetricsAt=now;pfo49MetricsError=null;}else pfo49MetricsError='2026 usage feed unavailable; retaining last successful statistics';
  /* Projections come only from nflverse stats via pfo50LoadIndependent; no Sleeper or older ROS prediction feeds. */
  if(files[3].status==='fulfilled'&&Array.isArray(files[3].value)){pfo49Trend=new Map(files[3].value.map(x=>[String(x.player_id),Number(x.count)]));pfo49TrendAt=new Date().toISOString();}
- pfo49Players=pfo49Dir();pfo49BindPlayerButtons();pfo49RenderRadar();renderBriefing();renderWaiverScouting();pfo49RenderPlayer();pfo49InjurySummary();pfo49RenderPlanner();pfo49OverviewHealth();pfo49RefreshBusy=false;
+ pfo49Players=pfo49Dir();
+ if(document.querySelector('#roster.page.active'))pfo49BindPlayerButtons();
+ if(document.querySelector('#radar.page.active'))pfo49RenderRadar();
+ if(document.querySelector('#overview.page.active')){renderBriefing();pfo49InjurySummary();pfo49OverviewHealth();}
+ if(document.querySelector('#market.page.active'))renderWaiverScouting();
+ if(document.querySelector('#playerhub.page.active'))pfo49RenderPlayer();
+ if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
+ pfo49RefreshBusy=false;
 }
 function pfo49OpenPage(page){document.querySelector('nav button[data-page="'+page+'"]').click();}
 document.addEventListener('click',evt=>{const b=evt.target.closest('[data-pfo49-id], [data-pfo49-pin], [data-pfo49-mode], [data-pfo49-filter], [data-pfo49-go]');if(!b)return;
@@ -1610,8 +1626,8 @@ function pfo49BindPlayerButtons(){document.querySelectorAll('#actual-lineup tr,#
  });}
 const pfo49Watch=new MutationObserver(list=>{if(!pfo49Players.length)return;for(const record of list){if(record.target?.id==='actual-lineup'||record.target?.id==='actual-bench'||record.target?.id==='actual-reserve'){pfo49BindPlayerButtons();break;}}});
 for(const id of ['actual-lineup','actual-bench','actual-reserve']){const node=$(id);if(node)pfo49Watch.observe(node,{childList:true});}
-setInterval(()=>{if(!document.hidden)pfo49LoadSources()},240000);
-setInterval(()=>{if(!document.hidden){renderBriefing();pfo49RenderRadar();}},60000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#playerhub.page.active,#radar.page.active,#market.page.active,#scouting.page.active'))pfo49LoadSources()},240000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#overview.page.active'))renderBriefing();if(!document.hidden&&document.querySelector('#radar.page.active'))pfo49RenderRadar();},60000);
 // Don't block core Sleeper and injury checks on slower advanced-stat research.
 // Open Player Intel / Radar / Market / Scouting to fetch expensive NFL/player catalogs.
 for(const page of ['playerhub','radar','market','scouting'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>pfo49LoadSources());
@@ -1732,7 +1748,7 @@ $('pfo50-gameday-refresh')?.addEventListener('click',()=>pfo50LoadGameday(true))
 setTimeout(()=>pfo50LoadGameday(),4800);
 // No duplicate background gameday load; on-demand and periodic refresh remain.
 setInterval(()=>{if(!document.hidden)pfo50LoadGameday()},360000);
-setInterval(()=>{if(!document.hidden)pfo50RenderGameday()},60000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#overview.page.active'))pfo50RenderGameday()},60000);
 
 /* FFO 5.1 major intelligence review build: source-labelled, read-only.
  * This module uses the 5.0 league, stat, injury and evidence state already loaded.
@@ -2002,7 +2018,7 @@ document.addEventListener('click',event=>{const btn=event.target.closest('[data-
 // Keep source changes visible after asynchronous loads without overstating source availability.
 function pfo51Tick(){try{pfo51FixRosterRows();pfo51UpdateChanges();pfo51RenderChanges();}catch(err){console.warn('FFO change-feed unavailable',err)}}
 // Changes digest updates on-demand and on its regular 25s visible-page cycle.
-setInterval(()=>{if(!document.hidden)pfo51Tick()},25000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#overview.page.active'))pfo51Tick()},25000);
 // Original injury and player pages stay read-only. This build cannot convert an outdated
 // questionable practice report into an official game-day active without specific evidence.
 
@@ -2049,7 +2065,7 @@ async function pfo51LoadPlays(id){
 document.addEventListener('click',event=>{const btn=event.target.closest('[data-pfo51-gameplays]');if(btn)pfo51LoadPlays(btn.dataset.pfo51Gameplays)});
 $('pfo51-refreshgames')?.addEventListener('click',pfo51FetchGames);
 setTimeout(pfo51FetchGames,5500);
-setInterval(()=>{if(!document.hidden)pfo51FetchGames()},60000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#overview.page.active'))pfo51FetchGames()},60000);
 
 // 5.0 QA correction: after an NFL box-score records genuine participation in
 // the *same* game week, don't leave an old Questionable label as the headline.
@@ -2481,10 +2497,24 @@ pfo50StatsStrip=function(id){const pos=pfo52Pos(pfo52Info(id));if(!['K','DEF'].i
  const rows=pfo53Scored(id),last=rows.at(-1),pred=pfo52Points(id,pfo52Cur()),avg=rows.length?rows.reduce((a,x)=>a+x.points,0)/rows.length:null;
  return '<div class="pfo49-statgrid">'+[['Latest FFL actual',last==null?'—':pfo52Money(last.points)],['Recorded PPG',pfo52Money(avg)],['Week '+pfo52Cur()+' model',pfo52Money(pred?.points)],['Games scored',rows.length||'—']].map(([k,v])=>pfo50StatTile(k,v)).join('')+'</div><p class="pfo50-micro">'+e(pred?.source||'No supported projection')+' · League-scored history from per-week Sleeper matchups. FG-distance and XP attempt counts require a separate verified source; not inferred.</p>';
 };
-function pfo53RerenderFromHistory(){if(pfo53HistoryRenderPending)return;pfo53HistoryRenderPending=true;setTimeout(()=>{pfo53HistoryRenderPending=false;try{pfo52Render();pfo49RenderPlanner();pfo49RenderPlayer();gm47Render();pfo50RenderProjectedLineup();renderRosterComparison();pfo53WeekFocus();}catch(err){console.warn('FFO history refresh',err)}},60);}
+function pfo53RerenderFromHistory(){
+ if(pfo53HistoryRenderPending)return;
+ // Coalesce multiweek fetch completions into one visible-workspace paint.
+ pfo53HistoryRenderPending=true;
+ setTimeout(()=>{pfo53HistoryRenderPending=false;
+  if(document.hidden)return;
+  try{
+   if(document.querySelector('#matchup.page.active,#coaching.page.active')){pfo52Render();pfo53WeekFocus();}
+   if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
+   if(document.querySelector('#playerhub.page.active'))pfo49RenderPlayer();
+   if(document.querySelector('#scouting.page.active'))gm47Render();
+   if(document.querySelector('#overview.page.active'))renderRosterComparison();
+  }catch(err){console.warn('FFO history visible-view refresh',err)}
+ },350);
+}
 async function pfo53WarmHistory(){const max=Math.min(pfo52Cur()-1,17),weeks=Array.from({length:max},(_,i)=>max-i);
  if(!max){pfo53HistoryState='loaded';return;}pfo53HistoryState='loading';let i=0,ok=0;
- async function worker(){while(i<weeks.length){const wk=weeks[i++];const rows=await pfo52GetWeek(wk);if(Array.isArray(rows)&&rows.length){ok++;pfo53RerenderFromHistory();}}}
+ async function worker(){while(i<weeks.length){const wk=weeks[i++];const rows=await pfo52GetWeek(wk);if(Array.isArray(rows)&&rows.length)ok++;}}
  await Promise.all([worker(),worker(),worker()]);pfo53HistoryState=ok?'loaded':'unavailable';pfo53RerenderFromHistory();}
 // Matchup: submitted starters (both teams) take precedence; the best model is a separate toggle.
 function pfo53CurrentTeam(w,side){const rid=Number(window.dbRosterId||1),match=pfo52Match(w),record=match?.[side];
@@ -2627,7 +2657,7 @@ let pfo53HistoryBusy=false;
 const pfo53OriginalHistory=pfo53WarmHistory;
 pfo53WarmHistory=async function(){if(pfo53HistoryBusy)return;pfo53HistoryBusy=true;try{await pfo53OriginalHistory();}finally{pfo53HistoryBusy=false;}};
 setTimeout(()=>{if(pfo53HistoryState==='unavailable'&&(window.dbLeagueId||LEAGUE_ID_OVERRIDE))pfo53WarmHistory();},11000);
-setInterval(()=>{if(!document.hidden&&(pfo53HistoryState==='unavailable'||(pfo53HistoryState==='loaded'&&![...PFO52_WEEK_CACHE.keys()].length)))pfo53WarmHistory();},120000);
+setInterval(()=>{if(!document.hidden&&document.querySelector('#matchup.page.active,#coaching.page.active,#championship.page.active')&&(pfo53HistoryState==='unavailable'||(pfo53HistoryState==='loaded'&&!PFO52_WEEK_CACHE.size)))pfo53WarmHistory();},120000);
 
 
 // Progressive disclosure on existing research cards: three decision numbers stay visible; all source metrics remain accessible.
