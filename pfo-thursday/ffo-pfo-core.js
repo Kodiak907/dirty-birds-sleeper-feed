@@ -2782,8 +2782,29 @@ document.addEventListener('click',async(ev)=>{const caseB=ev.target.closest('[da
  try{if(caseB){await comOpen(Number(caseB.dataset.comCase))}else if(evidB&&comUI.selected){const id=Number(evidB.dataset.comFile);const r=await fetch('/api/commissioner/cases/'+comUI.selected.id+'/evidence/'+id,{credentials:'same-origin',cache:'no-store'});if(!r.ok)throw Error('Evidence access denied');const blob=await r.blob(),link=document.createElement('a'),evRow=[...$('com-detail').querySelectorAll('[data-com-file]')].find(x=>Number(x.dataset.comFile)===id);link.href=URL.createObjectURL(blob);link.download=(evRow?.textContent||'case-evidence').replace(/^Download /,'');link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);}else if(expB&&comUI.selected){const d=await comReq('cases/'+comUI.selected.id);const content=JSON.stringify({case:d.case,events:d.events,evidence_metadata:d.evidence,exported_at:new Date().toISOString()},null,2);const url=URL.createObjectURL(new Blob([content],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=d.case.case_no+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}}
  catch(err){comMsg('Case action failed: '+err.message,true)}
 });
-document.addEventListener('submit',async(ev)=>{const form=ev.target;if(!['com-event-form','com-upload-form'].includes(form?.id))return;ev.preventDefault();const c=comUI.selected;if(!c)return;
- const msg=$('com-detail-feedback');try{if(form.id==='com-event-form'){const b=Object.fromEntries(new FormData(form).entries());await comReq('cases/'+c.id+'/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});}else{const file=new FormData(form).get('evidence');await comUploadEvidence(c.id,file);}await comRefresh();await comOpen(c.id);comMsg('Case '+c.case_no+' updated and saved securely.')}catch(err){if(msg)msg.textContent='Not saved: '+err.message;comMsg('Case action failed: '+err.message,true)}
+const comSubmissionInFlight=new Set();
+document.addEventListener('submit',async(ev)=>{
+ const form=ev.target;if(!['com-event-form','com-upload-form'].includes(form?.id))return;
+ ev.preventDefault();const c=comUI.selected;if(!c)return;
+ const key=form.id+':'+c.id;if(comSubmissionInFlight.has(key))return;
+ const msg=$('com-detail-feedback'),button=form.querySelector('[type="submit"]');comSubmissionInFlight.add(key);
+ if(button)button.disabled=true;if(msg)msg.textContent='Saving securely…';
+ try{
+  if(form.id==='com-event-form'){
+   const b=Object.fromEntries(new FormData(form).entries());
+   await comReq('cases/'+c.id+'/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});
+  }else{
+   const file=new FormData(form).get('evidence');
+   await comUploadEvidence(c.id,file);
+  }
+  if(msg)msg.textContent='Saved securely. Refreshing case history…';
+  comMsg('Commissioner Log '+c.case_no+' saved. You can continue navigating.');
+  void comRefresh().catch(()=>{});
+  if(comUI.selected?.id===c.id)void comOpen(c.id).catch(err=>comMsg('Saved, but case display refresh failed: '+err.message,true));
+ }catch(err){
+  if(msg)msg.textContent='Not saved: '+err.message;
+  comMsg('Case action failed: '+err.message,true);
+ }finally{comSubmissionInFlight.delete(key);if(button)button.disabled=false}
 });
 document.querySelector('nav button[data-page="commissioner"]')?.addEventListener('click',comStatus);
 
