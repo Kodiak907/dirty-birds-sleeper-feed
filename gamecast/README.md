@@ -34,3 +34,5 @@ Cloudflare MySportsFeeds current-season route has been verified HTTP 200 using s
 The 2026-10-27 preview build now uses PFO_PAGES_DEPLOY_TOKEN (Account Pages Edit, 7-day) only inside the `wrangler pages deploy` subprocess, targeting project dirtybirdstest branch pfo-thursday-staging. Does NOT deploy Pages production/main.
 
 2026-10-27: Re-upload Pages preview after configuring preview-only GAMECAST_INTERNAL service binding and FFO_GAMECAST_ENABLED=true. Production Pages remains untouched.
+
+2026-10-27 19:4x PT: Redeploy dirtybirdstest Pages PREVIEW pfo-thursday-staging so the three Access JWT verification settings and private GameCast service binding are active. Main production remains unchanged.
