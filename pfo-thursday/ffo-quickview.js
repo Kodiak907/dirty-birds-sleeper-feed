@@ -60,7 +60,14 @@
    '<p>FFO projection is an estimate, not a verified outcome. Official FFL fantasy scores come from Sleeper; missing stats are never assumed to be zero.</p></details>';
  };
  const games=d=>{const obs=Object.entries(d.recorded).filter(([w,v])=>Number.isInteger(Number(w))&&Number.isFinite(Number(v?.points))).sort((a,b)=>Number(b[0])-Number(a[0]));
-  let h='<div class="ffo57-note">Only recorded Sleeper FFL points are labeled official. In-progress weeks may change. Missing weekly data is not a zero.</div>';
+  const p=d.p||{},pos=String(p.position||'').toUpperCase(),published=(d.ind?.games||[]).slice().sort((a,b)=>Number(b.week)-Number(a.week));
+  let h='<h3 class="ffo57-section">Published NFL weekly production</h3>';
+  const keys=pos==='QB'?[['pass_yd','Pass YD'],['pass_td','Pass TD'],['rush_yd','Rush YD']]:pos==='RB'?[['rush_att','Carries'],['rush_yd','Rush YD'],['targets','Targets'],['rec','Rec']]:[['targets','Targets'],['rec','Rec'],['rec_yd','Rec YD']];
+  if(published.length){h+='<div class="ffo59-gamelog-wrap"><table class="ffo59-gamelog"><thead><tr><th>Wk</th>'+keys.map(x=>'<th>'+E(x[1])+'</th>').join('')+'</tr></thead><tbody>';
+   h+=published.slice(0,8).map(g=>'<tr><td>'+E(g.week)+'</td>'+keys.map(([key])=>'<td>'+fmt(g.stats?.[key],0)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+   h+='<small class="ffo57-evidence">NFLverse independent box-score reconstruction. Most recent published weeks only; missing categories shown as —.</small>';
+  }else h+='<p class="ffo57-muted">NFL weekly records not available in this source. No missing scores imputed.</p>';
+  h+='<h3 class="ffo57-section">Official Sleeper FFL scores</h3><p class="ffo57-evidence">Recorded fantasy points are separate from the NFL statistical table.</p>';
   h+=obs.length?obs.slice(0,18).map(([w,v])=>line('Week '+w,Number(w)<d.week?'Sleeper recorded points':'Sleeper in-progress / provisional',fmt(v.points,2))).join(''):'<p class="ffo57-muted">No official FFL score history available in the current league snapshot.</p>';
   return h;
  };
@@ -89,7 +96,7 @@
  function mount(){
   if(root)return;
   root=document.createElement('div');root.id='ffo57-sheet';root.hidden=true;
-  root.innerHTML='<div class="ffo57-backdrop" data-ffo57-close="1"></div><section class="ffo57-card" role="dialog" aria-modal="true" aria-labelledby="ffo57-name"><div class="ffo57-handle"></div><div class="ffo57-hero"><div class="ffo57-portrait" id="ffo57-photo"></div><div><div class="ffo57-eyebrow">FFO · PLAYER INTELLIGENCE</div><h2 class="ffo57-name" id="ffo57-name"></h2><div class="ffo57-sub" id="ffo57-sub"></div></div><button class="ffo57-close" type="button" data-ffo57-close="1" aria-label="Close player profile">×</button></div><div class="ffo57-actions"><button type="button" data-ffo57-dest="playerhub">Full Player Intel</button><button type="button" data-ffo57-dest="radar">Radar</button><button type="button" data-ffo57-dest="market">Trades / Waivers</button></div><div class="ffo57-tabs" role="tablist" aria-label="Player profile tabs"></div><div class="ffo57-body" role="tabpanel" tabindex="0"></div></section>';
+  root.innerHTML='<div class="ffo57-backdrop" data-ffo57-close="1"></div><section class="ffo57-card" role="dialog" aria-modal="true" aria-labelledby="ffo57-name"><div class="ffo57-handle"></div><div class="ffo57-hero"><div class="ffo57-portrait" id="ffo57-photo"></div><div><div class="ffo57-eyebrow">FFO · PLAYER INTELLIGENCE</div><h2 class="ffo57-name" id="ffo57-name"></h2><div class="ffo57-sub" id="ffo57-sub"></div></div><button class="ffo57-close" type="button" data-ffo57-close="1" aria-label="Close player profile">×</button></div><div class="ffo57-actions"><button type="button" data-ffo57-dest="playerhub">View complete player research</button></div><div class="ffo57-tabs" role="tablist" aria-label="Player profile tabs"></div><div class="ffo57-body" role="tabpanel" tabindex="0"></div></section>';
   document.body.append(root);
   root.addEventListener('click',ev=>{
    if(ev.target.closest('[data-ffo57-close]')){close();return}
@@ -115,8 +122,7 @@
  function draw(){
   if(!root||!id)return;
   root.querySelector('.ffo57-tabs').innerHTML=tabs.map(([key,label])=>'<button type="button" role="tab" data-ffo57-tab="'+key+'" aria-selected="'+(tab===key?'true':'false')+'">'+E(label)+'</button>').join('');
-  root.querySelector('.ffo57-body').innerHTML=(views[tab]||summary)(info())+
-   '<h3 class="ffo57-section">FFO tools</h3><div class="ffo57-links"><button type="button" data-ffo57-dest="playerhub">Detailed Intel</button><button type="button" data-ffo57-dest="availability">Injury Watch</button><button type="button" data-ffo57-dest="radar">Opportunity Radar</button><button type="button" data-ffo57-dest="market">Trade Analyzer & Waivers</button></div>';
+  root.querySelector('.ffo57-body').innerHTML=(views[tab]||summary)(info());
   root.querySelector('.ffo57-body').scrollTop=0;
  }
  function open(player,from){
