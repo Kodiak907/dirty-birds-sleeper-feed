@@ -31,6 +31,15 @@
  document.documentElement.classList.add('ffo594-ready');
  nav.setAttribute('aria-label','All Front Office tools');
  nav.setAttribute('aria-hidden','false');
+ const search=document.createElement('label');
+ search.className='ffo594-search';
+ search.innerHTML='<span>FIND A TOOL</span><input type="search" aria-label="Search all FFO tools" placeholder="Search 14 tools…" autocomplete="off">';
+ nav.prepend(search);
+ const searchInput=search.querySelector('input');
+ searchInput.addEventListener('input',()=>{
+  const query=searchInput.value.trim().toLowerCase();
+  for(const button of buttons)button.hidden=!!query&&!button.textContent.toLowerCase().includes(query);
+ });
  const more=$('#ffo594-more');
  const isMobile=()=>matchMedia('(max-width: 720px)').matches;
  const update=()=>{
@@ -43,6 +52,7 @@
  const close=(returnFocus=false)=>{
   document.body.classList.remove('ffo594-more-open');
   more.setAttribute('aria-expanded','false');
+  searchInput.value='';for(const button of buttons)button.hidden=false;
   if(returnFocus&&lastFocus?.isConnected)lastFocus.focus({preventScroll:true});
  };
  const open=()=>{
@@ -50,9 +60,8 @@
   lastFocus=document.activeElement;
   document.body.classList.add('ffo594-more-open');
   more.setAttribute('aria-expanded','true');
-  const selected=nav.querySelector('button.active');
-  selected?.scrollIntoView({block:'nearest',inline:'nearest'});
-  selected?.focus({preventScroll:true});
+  nav.scrollTop=0;
+  searchInput.focus({preventScroll:true});
  };
  const goto=page=>{
   if(!pages.has(page))return;
@@ -92,7 +101,7 @@
   if(!document.body.classList.contains('ffo594-more-open'))return;
   if(e.key==='Escape'){e.preventDefault();close(true);return}
   if(e.key==='Tab'){
-   const first=buttons[0],last=buttons[buttons.length-1];
+   const visible=buttons.filter(x=>!x.hidden),first=searchInput,last=visible[visible.length-1]||searchInput;
    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus({preventScroll:true})}
    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus({preventScroll:true})}
   }
