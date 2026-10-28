@@ -9,7 +9,7 @@ permissions:
 jobs:
   regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,3 +17,9 @@ jobs:
           node-version: '22'
       - name: PFO JS, Commissioner, 100k Championship, owner-specific research tests
         run: node --test pfo-thursday/qa-59.test.mjs
+      - name: Install isolated Chromium smoke test dependencies
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: PFO mobile-browser navigation and Commissioner isolation smoke
+        run: node --test pfo-thursday/qa-59-browser.test.mjs
