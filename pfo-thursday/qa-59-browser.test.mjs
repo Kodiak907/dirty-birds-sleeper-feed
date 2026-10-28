@@ -83,6 +83,8 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   await page.waitForTimeout(800);
   assert.match(await page.locator('#pfo59-champ-result').innerText(),/100,000|100000|playoffs/i);
   assert.equal(await page.locator('#chances').count(),1,'Archived original odds retained');
+  assert.equal(await page.locator('#pfo59-legacy-odds #chances').count(),1,'Archived model accessible in Championship disclosure');
+  assert.equal(await page.locator('#pfo59-legacy-odds #contenders').count(),1,'Original contender percentages remain available');
   await clickTab(page,'commissioner');
   await page.waitForTimeout(300);
   assert.equal(await page.locator('#com57 [data-com57-tab]').count(),4,'Commissioner sub-tabs mounted');
