@@ -1,0 +1,25 @@
+/* FFO 5.9.6 -- readable roster news, dense briefing, no duplicate Overview tool buttons */
+#roster .pfo596-news-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#roster .pfo596-news-head h3{margin:0;font-size:1rem}
+#roster .pfo596-news-head small,.pfo596-news-source{color:var(--muted,#9ca3af);font-size:12px;line-height:1.45}
+#roster .pfo596-news-source{margin:7px 0 14px}
+#roster .pfo596-news-list{display:grid;gap:8px}
+#roster .pfo596-news-row{padding:12px 14px;border:1px solid var(--line,rgba(148,163,184,.2));border-radius:12px;background:rgba(127,145,170,.04);min-width:0}
+#roster .pfo596-news-row b{display:block;font-size:13px;line-height:1.35;margin:5px 0 4px;overflow-wrap:anywhere}
+#roster .pfo596-news-row small{display:block;color:var(--muted,#9ca3af);font-size:10px;line-height:1.45}
+#roster .pfo596-news-row p{font-size:12px;line-height:1.5;margin:5px 0 7px;overflow-wrap:anywhere}
+#roster .pfo596-news-row a{color:var(--accent,#75c3ff);font-size:12px;font-weight:650;text-decoration:underline;text-underline-offset:3px}
+#roster .pfo596-news-empty{font-size:12px;padding:14px;border:1px solid var(--line,rgba(148,163,184,.2));border-radius:10px}
+#overview .pfo49-quicklinks,#overview [data-pfo49-go],#overview .brief-links{display:none!important}
+#briefing.pfo596-brief .pfo51-heading{margin-bottom:8px}
+#briefing.pfo596-brief .pfo49-filters{display:flex;gap:7px;margin:5px 0 10px}
+#briefing.pfo596-brief .pfo51-brief-section{padding:8px 0;border-bottom:1px solid var(--line,rgba(148,163,184,.15))}
+#briefing.pfo596-brief .pfo51-brief-section p{margin:5px 0;font-size:12px;line-height:1.45}
+#briefing.pfo596-brief .pfo51-brief-section .pfo51-brief-title{font-size:12px;font-weight:750}
+#briefing.pfo596-brief .pfo51-sources{font-size:10px;line-height:1.45;margin-top:10px}
+#briefing .pfo596-brief-news{border-top:1px solid var(--line,rgba(148,163,184,.18));padding:8px 0 2px;font-size:12px}
+#briefing .pfo596-brief-news b{font-size:12px}
+#briefing .pfo596-brief-news p{margin:5px 0;line-height:1.4}
+#briefing .pfo596-brief-news a{color:var(--accent,#75c3ff)}
+#matchup .pfo52-playerrow b{white-space:nowrap}
+@media(max-width:540px){#roster .pfo596-news-row{padding:11px}#briefing.pfo596-brief .pfo51-heading{gap:6px}}
