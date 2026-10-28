@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-28T05:43:22.471130+00:00
-Sleeper snapshot: 2026-10-28T05:43:10.629536+00:00
-nflverse observations: 2026-10-28T05:43:16.310412+00:00; injury feed loaded: True
+Generated: 2026-10-28T06:52:30.992840+00:00
+Sleeper snapshot: 2026-10-28T06:52:20.242287+00:00
+nflverse observations: 2026-10-28T06:52:24.474013+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 3. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,8 +31,9 @@ nflverse observations: 2026-10-28T05:43:16.310412+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Bryce Young** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **Jalen Coker** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **Matthew Golden** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
 
 ## Guardrails
 
