@@ -1,15 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T17:45:46.892245+00:00
-Sleeper snapshot: 2026-10-28T17:45:40.981268+00:00
+Generated: 2026-10-28T18:48:04.134741+00:00
+Sleeper snapshot: 2026-10-28T18:47:58.045921+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1421222997041086464` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Jacksonville Jaguars →     Victorious Secret (#5) | Dropped: Cleveland Browns →     Victorious Secret (#5)
-- **NEW** · transaction `1421220253630803968` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
