@@ -9,7 +9,7 @@ export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
   if(path==="/api/probe"&&req.method==="GET"){
-    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v3");
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v4");
     const hit=await cache.match(ck);if(hit)return hit;
     if(!env.MSF_API_KEY)return result({error:"missing_key"},503);
     const season="2026-2027-regular";
@@ -28,7 +28,7 @@ export default {
         checks.push(row);
       }catch(e){checks.push({feed:name,error:e?.name||"network",ms:Date.now()-begun})}
     }
-    const out=new Response(JSON.stringify({version:"v3",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=300"}});
+    const out=new Response(JSON.stringify({version:"v4",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=300"}});
     await cache.put(ck,out.clone());return out;
   }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
