@@ -5,6 +5,7 @@
  const $=id=>document.getElementById(id);
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
+ let statRequested=false;
  const state={market:'home',manager:'1',position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,waiverLoaded:false,tradeLoaded:false};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
@@ -119,6 +120,9 @@
   for(const b of document.querySelectorAll('[data-pfo59-market]'))b.setAttribute('aria-selected',String(b.dataset.pfo59Market===view));
   for(const panel of document.querySelectorAll('[data-pfo59-market-panel]'))panel.hidden=panel.dataset.pfo59MarketPanel!==view;
   if(view==='waiver'||view==='trade')void loadAdvisory();
+  if(view==='waiver'&&!statRequested&&typeof pfo50LoadIndependent==='function'){
+   statRequested=true;void pfo50LoadIndependent().then(()=>waiver()).catch(()=>{});
+  }
   if(view==='transactions')try{if(typeof refreshFaab==='function')void refreshFaab()}catch{}
  }
  function mountMarket(){
