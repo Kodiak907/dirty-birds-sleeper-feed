@@ -115,7 +115,7 @@
    if(picks[2].status==='fulfilled')state.scout=picks[2].value;
    if(picks[3].status==='fulfilled')state.ideas=picks[3].value;
    if(state.snap&&!state.snap.rosters?.some(r=>String(r.roster_id)===state.manager))state.manager='1';
-  }catch(err){console.warn('PFO59 advisory',err)}finally{state.loading=false;managerOptions();waiver();trade()}
+  }catch(err){console.warn('PFO59 advisory',err)}finally{state.loading=false;managerOptions();waiver();trade();teamTxnRender();teamNewsRender()}
  }
  function managerOptions(){
   for(const id of ['pfo59-waiver-manager','pfo59-trade-manager']){
@@ -203,15 +203,70 @@
   }catch(err){const host=$('pfo59-schedule');if(host&&!state.schedule.size)host.textContent='FFL schedule source unavailable: '+String(err.message||err)}
   finally{state.loadingSchedule=false}
  }
+
+ function teamTxnRender(){
+  const host=$('pfo59-team-transactions');if(!host)return;
+  const snap=state.snap;
+  if(!snap){host.innerHTML='<p>Loading published Sleeper transaction feed…</p>';return;}
+  const rows=Object.entries(snap.transactions_by_week||{}).flatMap(([week,items])=>(Array.isArray(items)?items:[]).filter(t=>t.status==='complete'&&(t.roster_ids||[]).some(id=>Number(id)===1)).map(t=>({...t,ffo_week:Number(week)}))).sort((a,b)=>Number(b.created||0)-Number(a.created||0));
+  const name=id=>state.names?.[String(id)]?.name||(String(id).length<4?String(id):'Player ID '+id);
+  const fmt=entries=>Object.entries(entries||{}).filter(([,rid])=>Number(rid)===1).map(([id])=>name(id)).join(', ');
+  host.innerHTML='<div class="pfo59-caveat">Read-only completed Sleeper transactions for Dirty Birds in the published source window. Missing weeks are not evidence that no transactions occurred.</div>'+
+  (rows.length?rows.slice(0,24).map(t=>'<div class="pfo59-txn-row"><b>W'+safe(t.ffo_week)+' · '+safe(t.type||'Move')+'</b>'+
+  '<span>'+safe(fmt(t.adds)||'No additions recorded')+(fmt(t.drops)?' · Dropped '+safe(fmt(t.drops)):'')+'</span><small>'+safe(Number.isFinite(Number(t.created))?new Date(Number(t.created)).toLocaleString():'Date missing')+'</small></div>').join(''):'<p>No completed transactions by Dirty Birds were included in the checked report window.</p>')+
+  '<button type="button" class="pfo59-link-to-market" data-pfo59-team-market="transactions">Open full Transactions & FAAB history</button>';
+ }
+ function teamNewsRender(){
+  const host=$('pfo59-team-news');if(!host)return;
+  const fetched=state.snap?.fetched_at_utc||'Source not loaded';
+  host.innerHTML='<h3>Dirty Birds News & Intelligence</h3>'+
+  '<p class="pfo59-foot">FFO reports are source-driven. A missing headline is not medical clearance or confirmation of a roster change. Published roster checked: '+safe(fetched)+'.</p>'+
+  '<div class="pfo59-team-links"><button type="button" data-pfo59-team-page="scouting"><b>GM Scouting</b><small>Roster-based workload and matchup evaluation</small></button>'+
+  '<button type="button" data-pfo59-team-page="availability"><b>Injury Watch</b><small>Source-dated health and inactive verification</small></button>'+
+  '<button type="button" data-pfo59-team-page="radar"><b>Opportunity Radar</b><small>Relevant NFL changes and research flags</small></button>'+
+  '<button type="button" data-pfo59-team-page="playerhub"><b>Player Intel</b><small>Season totals, weekly evidence and player cards</small></button></div>';
+ }
+ function teamTab(tab){
+  const h=$('pfo59-team-hub');if(!h)return;
+  for(const b of h.querySelectorAll('[data-pfo59-team-tab]'))b.setAttribute('aria-selected',String(b.dataset.pfo59TeamTab===tab));
+  for(const p of h.querySelectorAll('[data-pfo59-team-panel]'))p.hidden=p.dataset.pfo59TeamPanel!==tab;
+  if(tab==='schedule')void loadSchedule();
+  if(tab==='transactions'){void loadAdvisory();teamTxnRender()}
+  if(tab==='news')teamNewsRender();
+ }
  function mountRoster(){
-  const root=$('roster');if(!root||$('pfo59-schedule'))return;
-  const schedule=document.createElement('section');schedule.id='pfo59-schedule';schedule.className='card pfo59-schedule';schedule.innerHTML='<h2>Team HQ · Schedule</h2><p>Load Sleeper matchups when you open Team HQ.</p>';
-  root.querySelector('.card')?.after(schedule);
-  schedule.addEventListener('click',ev=>{
-   if(ev.target.closest('#pfo59-schedule-load'))void loadSchedule(true);
-   const b=ev.target.closest('[data-pfo59-week]');if(b){document.querySelector('nav button[data-page="matchup"]')?.click();if(typeof pfo52Switch==='function')pfo52Switch(Number(b.dataset.pfo59Week));}
+  const root=$('roster');if(!root||$('pfo59-team-hub'))return;
+  const rosterNodes=[...root.children];
+  const hub=document.createElement('div');hub.id='pfo59-team-hub';hub.innerHTML=
+   '<div class="pfo59-team-heading"><h2>Dirty Birds · Team HQ</h2><span class="pfo59-chip">SLEEPER + FFO INTELLIGENCE</span></div>'+
+   '<div class="pfo59-team-tabs" aria-label="Team HQ tools">'+
+   '<button type="button" data-pfo59-team-tab="roster" aria-selected="true">Roster &amp; Tester</button>'+
+   '<button type="button" data-pfo59-team-tab="schedule" aria-selected="false">Schedule</button>'+
+   '<button type="button" data-pfo59-team-tab="transactions" aria-selected="false">Transactions</button>'+
+   '<button type="button" data-pfo59-team-tab="news" aria-selected="false">News &amp; Intel</button></div>'+
+   '<section data-pfo59-team-panel="roster"></section>'+
+   '<section data-pfo59-team-panel="schedule" hidden><div class="card pfo59-schedule" id="pfo59-schedule"><h2>Team HQ · FFL Schedule</h2><p>Loading published matchups…</p></div></section>'+
+   '<section data-pfo59-team-panel="transactions" hidden><div class="card" id="pfo59-team-transactions">Loading read-only transactions…</div></section>'+
+   '<section data-pfo59-team-panel="news" hidden><div class="card" id="pfo59-team-news"></div></section>';
+  root.prepend(hub);
+  for(const n of rosterNodes)hub.querySelector('[data-pfo59-team-panel="roster"]').appendChild(n);
+  hub.addEventListener('click',ev=>{
+   const tab=ev.target.closest('[data-pfo59-team-tab]');if(tab){teamTab(tab.dataset.pfo59TeamTab);return;}
+   const go=ev.target.closest('[data-pfo59-team-page]');if(go){document.querySelector('nav button[data-page="'+go.dataset.pfo59TeamPage+'"]')?.click();return;}
+   if(ev.target.closest('#pfo59-schedule-load')){void loadSchedule(true);return;}
+   const m=ev.target.closest('[data-pfo59-team-market]');if(m){
+    document.querySelector('nav button[data-page="market"]')?.click();
+    marketView(m.dataset.pfo59TeamMarket);return;
+   }
+   const week=ev.target.closest('[data-pfo59-week]');if(week){
+    document.querySelector('nav button[data-page="matchup"]')?.click();
+    if(typeof pfo52Switch==='function')pfo52Switch(Number(week.dataset.pfo59Week));
+   }
   });
-  document.querySelector('nav button[data-page="roster"]')?.addEventListener('click',()=>{void loadSchedule();void loadAdvisory()});
+  document.querySelector('nav button[data-page="roster"]')?.addEventListener('click',()=>{
+   void loadAdvisory().then(()=>{teamTxnRender();teamNewsRender()});
+   if(hub.querySelector('[data-pfo59-team-tab="schedule"]')?.getAttribute('aria-selected')==='true')void loadSchedule();
+  });
  }
  function start(){mountMarket();mountRoster();document.querySelector('nav button[data-page="market"]')?.addEventListener('click',()=>{if(state.market==='home')return;});}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
