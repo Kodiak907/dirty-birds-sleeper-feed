@@ -4,6 +4,22 @@
  'use strict';
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const model=await import('/ffo-gamecast-model.mjs');
+ const polish=document.createElement('style');polish.textContent=\`
+#radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
+#radar .pfo49-radar-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%;max-width:100%;min-width:0;gap:8px}
+#radar .pfo49-radar-item,#market .scout-card{width:100%;max-width:100%;min-width:0;overflow:hidden;box-sizing:border-box}
+#radar .pfo49-radar-item{padding:10px 12px}
+#radar .pfo49-radar-item .pfo49-row,#market .scout-top{display:flex;align-items:center;justify-content:space-between;min-width:0;gap:8px;flex-wrap:wrap}
+#radar .pfo49-radar-item .pfo49-row>div,#market .scout-top>div{min-width:0;flex:1 1 170px}
+#radar .pfo49-radar-item .pfo49-statgrid,#market .scout-card .scout-metrics{display:flex!important;gap:8px;width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x;overscroll-behavior-x:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch;padding-bottom:6px;scroll-snap-type:x proximity}
+#radar .pfo49-radar-item .pfo49-statgrid>div{flex:0 0 112px!important;min-width:112px!important;max-width:140px!important;scroll-snap-align:start}
+#market .scout-card .scout-metrics>*{flex:0 0 auto;scroll-snap-align:start}
+#radar .pfo49-radar-item p,#market .scout-card p{overflow-wrap:anywhere}
+#market .market-columns,#market .grid.two{grid-template-columns:minmax(0,1fr)!important;max-width:100%;min-width:0}
+#market .market-fold,#market .fold-body,#market .scout-card,#radar .card{min-width:0;max-width:100%}
+@media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
+\`;document.head.append(polish);
+
  const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
@@ -23,7 +39,7 @@
   const name=t=>typeof t==='string'?t:String(t.abbreviation||t.abbr||t.name||'?');
   const gameId=z.id??x.id??z.gameId??x.gameId??'';
   const score=x.score||x.scoring||x.scores||x.gameScore||{};
-  const n=v=>Number.isFinite(Number(v))?Number(v):null;
+  const n=v=>v===null||v===undefined||v===''?null:(Number.isFinite(Number(v))?Number(v):null);
   return {id:String(gameId),home:name(home),away:name(away),homePoints:n(score.homeScoreTotal??score.homeScore??x.homeScoreTotal??x.homeScore),awayPoints:n(score.awayScoreTotal??score.awayScore??x.awayScoreTotal??x.awayScore),status:String(x.status||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
  }
  function drawGames(){const el=$('ffo-gc-games');if(!el)return;
@@ -123,7 +139,7 @@
   const selected=numbered.filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
   const show=selected.slice(-60).reverse();
   el.innerHTML=`<h3>${s.playFilter==='player'?safe(s.player?.name||'Player not selected')+' · ':''}${s.playSource?.includes('SCORING PLAYS ONLY')?'Published scoring plays (partial)':'Published plays'} <small style="color:#acc4d7">(${selected.length} matching / ${s.playCache.length} loaded)</small></h3>`+
-   (show.length?show.map(({event,i})=>`<div class="ffo-gc-play ${s.activePlay===i?'active':''}" data-ffo-play="${i}" role="button" tabindex="0"><div class="ffo-gc-playtop"><strong>${safe(event.update==='corrected'?'CORRECTED':event.update==='new'?'NEW':'PLAY')}</strong><small>${safe(event.period?'Q'+event.period:'Quarter unknown')} ${safe(event.clock||'Time unknown')}</small></div><div>${safe(event.text)}</div><small>Provider description · provisional · tap for schematic field</small></div>`).join(''):'<p class="ffo-gc-note">No matching plays in this subset. This does not prove zero involvement.</p>');
+   (show.length?show.map(({event,i})=>`<div class="ffo-gc-play ${s.activePlay===i?'active':''}" data-ffo-play="${i}" role="button" tabindex="0"><div class="ffo-gc-playtop"><strong>${safe(event.update==='corrected'?'CORRECTED':event.update==='new'?'NEW':'PLAY')}</strong><small>${safe(event.period?'Q'+event.period:'Quarter unknown')} ${safe(event.clock||'Time unknown')}</small></div><div>${safe(event.text)}</div><small>${safe(s.playSource||'Source not verified')} · provisional · schematic only</small></div>`).join(''):'<p class="ffo-gc-note">No matching plays in this subset. This does not prove zero involvement.</p>');
   el.querySelectorAll('[data-ffo-play]').forEach(row=>{const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);drawField();drawPlays()};row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});
   drawField();
  }
@@ -147,16 +163,28 @@
  async function refreshGame(){if(!s.enabled||!s.game)return;
   try{
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
-    if(pb.status==='fulfilled'){const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));s.latestCheck=pb.value.checked_at}
-    if(bs.status==='fulfilled'){s.liveBox=bs.value;s.latestCheck=bs.value.checked_at}
-    // The licensed boxscore is a scoring-only fallback, NOT full play-by-play.
     if(pb.status==='fulfilled'){
-      s.playSource=pb.value.coverage==='scoring_only'
-        ? 'MySportsFeeds · SCORING PLAYS ONLY (full play-by-play restricted)'
-        : 'MySportsFeeds · published play-by-play';
-    }else s.playSource='Full play-by-play not verified';
+      const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
+      s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only (full PBP restricted)':'MySportsFeeds · published play-by-play';
+      if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
+      else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
+      s.latestCheck=pb.value.checked_at;
+    }
+    if(bs.status==='fulfilled'){s.liveBox=bs.value;s.latestCheck=bs.value.checked_at}
+    const game=s.games.find(g=>g.id===s.game);
+    let supplemental='';
+    if(game && (!s.playCache.length || pb.status==='rejected' || pb.value?.coverage==='scoring_only' || pb.value?.full_playbyplay_authorized===false)){
+      try{
+        const es=await feed('espnplays',{home:game.home,away:game.away,at:game.start});
+        if(Array.isArray(es.data?.plays)&&es.data.plays.length){
+          const published=model.plays(es.data);s.playCache=model.versionedPlays(s.playCache,published);
+          s.activePlay=Math.max(0,s.playCache.length-1);s.playSource='ESPN NFL game summary · supplemental';
+          s.latestCheck=es.checked_at;supplemental=' · published ESPN drive descriptions';
+        }else supplemental=' · no published ESPN plays yet';
+      }catch(error){supplemental=' · ESPN play timeline unavailable ('+String(error?.message||'source error')+')'}
+    }
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
-    status((s.playSource||'MySportsFeeds')+' · '+(errs.length?'MSF play-feed limitation: '+errs.join('; '):'MSF game requests succeeded')+' · checked '+(s.latestCheck||'unknown')+' · latency not verified');
+    status((s.playSource||'Source unavailable')+' · '+(errs.length?'Some MSF feeds unavailable: '+errs.join('; '):'MSF game requests checked')+supplemental+' · checked '+(s.latestCheck||'unknown')+' · source delay unverified');
     drawPlays();drawPlayer();
   }catch(error){status('Game feed error: '+error.message)}
  }
@@ -168,7 +196,7 @@
     const src=sched.data?.games||sched.data?.gameSchedule||sched.data?.schedule?.games||[];
     s.games=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
     s.latestCheck=sched.checked_at;
-    status('MySportsFeeds schedule HTTP 200 · '+s.latestCheck+' · PLAY-BY-PLAY SCHEMA & LATENCY NOT YET VERIFIED');
+    status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
     drawGames();drawPlayer();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}
