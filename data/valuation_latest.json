@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-28T13:58:44.220633+00:00",
+  "generated_at_utc": "2026-10-28T14:55:09.765920+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -7806,6 +7806,25 @@
       ],
       "players": [
         {
+          "actual_points_total": 23.0,
+          "actual_points_weekly_avg": 3.29,
+          "id": "11786",
+          "n_weeks": 7,
+          "name": "Cam Little",
+          "nonzero_weeks": 3,
+          "on_fantasy_reserve": false,
+          "position": "K",
+          "weekly_points": [
+            12.0,
+            7.0,
+            4.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 70.2,
           "actual_points_weekly_avg": 10.03,
           "id": "12512",
@@ -7915,25 +7934,6 @@
             20.44,
             18.88,
             0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
-          "actual_points_total": 55.4,
-          "actual_points_weekly_avg": 7.91,
-          "id": "5872",
-          "n_weeks": 7,
-          "name": "Deebo Samuel Sr.",
-          "nonzero_weeks": 5,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            15.0,
-            5.0,
-            18.4,
-            15.5,
-            1.5,
             0.0,
             0.0
           ]
@@ -8132,6 +8132,25 @@
               11.0,
               11.0
             ]
+          },
+          {
+            "actual_points_total": 23.0,
+            "actual_points_weekly_avg": 3.29,
+            "id": "11786",
+            "n_weeks": 7,
+            "name": "Cam Little",
+            "nonzero_weeks": 3,
+            "on_fantasy_reserve": false,
+            "position": "K",
+            "weekly_points": [
+              12.0,
+              7.0,
+              4.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "QB": [
@@ -8329,25 +8348,6 @@
               15.8,
               0.0,
               6.4
-            ]
-          },
-          {
-            "actual_points_total": 55.4,
-            "actual_points_weekly_avg": 7.91,
-            "id": "5872",
-            "n_weeks": 7,
-            "name": "Deebo Samuel Sr.",
-            "nonzero_weeks": 5,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              15.0,
-              5.0,
-              18.4,
-              15.5,
-              1.5,
-              0.0,
-              0.0
             ]
           },
           {
@@ -9193,6 +9193,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-28T13:58:39.667158+00:00",
+  "snapshot_utc": "2026-10-28T14:55:02.909237+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }

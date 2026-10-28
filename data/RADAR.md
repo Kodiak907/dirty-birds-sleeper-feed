@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T13:58:44.156318+00:00
-Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
+Generated: 2026-10-28T14:55:09.670380+00:00
+Sleeper snapshot: 2026-10-28T14:55:02.909237+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1421177496627372032` · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-28T14:55:09.670380+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Caleb Douglas → Dirty Birds (#1) | Dropped: DeMario Douglas → Dirty Birds (#1) | FAAB bid: $26
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Devin Singletary → Cokerthestroker (#12) | Dropped: Kalif Raymond → Cokerthestroker (#12) | FAAB bid: $8
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Cincinnati Bengals → DeeboSix0 (#8) | Dropped: New York Jets → DeeboSix0 (#8) | FAAB bid: $10

@@ -29,18 +29,18 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Quentin Johnston | 5.68 | +4.76 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 2 | Kalif Raymond | 5.25 | +4.33 | 61.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 3 | Chris Bell | 5.12 | +4.20 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 4 | DeMario Douglas | 4.86 | +3.94 | 57.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
-| 5 | Jauan Jennings | 4.79 | +3.87 | 73.3% | Tgt 1.7 | injury_report_observation_review |
-| 6 | Ja'Kobi Lane | 4.56 | +3.64 | 54.3% | Tgt 4.3 | injury_report_observation_review |
-| 7 | Rashod Bateman | 4.34 | +3.42 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 8 | Michael Pittman Jr. | 3.92 | +2.99 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 9 | Makai Lemon | 3.90 | +2.97 | 84.3% | Tgt 7.0 | No modeled flags (not medically cleared) |
-| 10 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 11 | Brian Thomas Jr. | 3.12 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
-| 12 | Mack Hollins | 3.11 | +2.19 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
+| 1 | Deebo Samuel Sr. | 7.80 | +6.88 | — | Tgt 3.0 | sleeper_injury_out, snap_data_missing, usage_sample_missing, injury_report_observation_review |
+| 2 | Quentin Johnston | 5.68 | +4.76 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 3 | Kalif Raymond | 5.25 | +4.33 | 61.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.12 | +4.20 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 5 | DeMario Douglas | 4.86 | +3.94 | 57.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
+| 6 | Jauan Jennings | 4.79 | +3.87 | 73.3% | Tgt 1.7 | injury_report_observation_review |
+| 7 | Ja'Kobi Lane | 4.56 | +3.64 | 54.3% | Tgt 4.3 | injury_report_observation_review |
+| 8 | Rashod Bateman | 4.34 | +3.42 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 9 | Michael Pittman Jr. | 3.92 | +2.99 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 10 | Makai Lemon | 3.90 | +2.97 | 84.3% | Tgt 7.0 | No modeled flags (not medically cleared) |
+| 11 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 12 | Brian Thomas Jr. | 3.12 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Chig Okonkwo (6.01 PPG)
 
@@ -56,12 +56,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Cam Little | 6.62 | -0.64 | — | — | No modeled flags (not medically cleared) |
-| 2 | Trey Smack | 6.35 | -0.91 | — | — | No modeled flags (not medically cleared) |
-| 3 | Cameron Dicker | 6.32 | -0.94 | — | — | No modeled flags (not medically cleared) |
-| 4 | Dominic Zvada | 6.13 | -1.12 | — | — | No modeled flags (not medically cleared) |
-| 5 | Cairo Santos | 5.52 | -1.74 | — | — | No modeled flags (not medically cleared) |
-| 6 | Chris Boswell | 5.47 | -1.79 | — | — | No modeled flags (not medically cleared) |
+| 1 | Trey Smack | 6.35 | -0.91 | — | — | No modeled flags (not medically cleared) |
+| 2 | Cameron Dicker | 6.32 | -0.94 | — | — | No modeled flags (not medically cleared) |
+| 3 | Dominic Zvada | 6.13 | -1.12 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cairo Santos | 5.52 | -1.74 | — | — | No modeled flags (not medically cleared) |
+| 5 | Chris Boswell | 5.47 | -1.79 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: Minnesota Vikings (7.03 PPG)
 

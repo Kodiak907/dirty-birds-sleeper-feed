@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-28T13:58:44.180967+00:00
-Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
+Generated: 2026-10-28T14:55:09.706096+00:00
+Sleeper snapshot: 2026-10-28T14:55:02.909237+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- suck my dickerson: added Cam Little; dropped Deebo Samuel Sr.
 
 ## Limits
 

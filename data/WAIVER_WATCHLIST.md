@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-28T13:58:44.263361+00:00
-Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
+Generated: 2026-10-28T14:55:09.830109+00:00
+Sleeper snapshot: 2026-10-28T14:55:02.909237+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,9 +9,9 @@ Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
 |---|---:|
 | QB | 329 |
 | RB | 626 |
-| WR | 1290 |
+| WR | 1291 |
 | TE | 615 |
-| K | 141 |
+| K | 140 |
 | DEF | 15 |
 
 ## Position-specific projection rankings (screening only)
@@ -40,18 +40,18 @@ Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Quentin Johnston | LAC | 5.68 | 100% | 81.3% | Not flagged |
-| 2 | Kalif Raymond | CHI | 5.25 | 90% | 61.7% | Not flagged |
-| 3 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
-| 4 | DeMario Douglas | NE | 4.86 | 90% | 57.7% | Not flagged |
-| 5 | Jauan Jennings | MIN | 4.79 | 100% | 73.3% | Not flagged |
-| 6 | Ja'Kobi Lane | BAL | 4.56 | 90% | 54.3% | Not flagged |
-| 7 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
-| 8 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
-| 9 | Makai Lemon | PHI | 3.90 | 90% | 84.3% | Not flagged |
-| 10 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
-| 11 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
-| 12 | Mack Hollins | NE | 3.11 | 80% | 62.7% | IR |
+| 1 | Deebo Samuel Sr. | SF | 7.80 | 90% | — | Out |
+| 2 | Quentin Johnston | LAC | 5.68 | 100% | 81.3% | Not flagged |
+| 3 | Kalif Raymond | CHI | 5.25 | 90% | 61.7% | Not flagged |
+| 4 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
+| 5 | DeMario Douglas | NE | 4.86 | 90% | 57.7% | Not flagged |
+| 6 | Jauan Jennings | MIN | 4.79 | 100% | 73.3% | Not flagged |
+| 7 | Ja'Kobi Lane | BAL | 4.56 | 90% | 54.3% | Not flagged |
+| 8 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
+| 9 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
+| 10 | Makai Lemon | PHI | 3.90 | 90% | 84.3% | Not flagged |
+| 11 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
+| 12 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
 
 ### TE
 
@@ -67,12 +67,11 @@ Sleeper snapshot: 2026-10-28T13:58:39.667158+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Cam Little | JAX | 6.62 | 100% | — | Not flagged |
-| 2 | Trey Smack | GB | 6.35 | 90% | — | Not flagged |
-| 3 | Cameron Dicker | LAC | 6.32 | 100% | — | Not flagged |
-| 4 | Dominic Zvada | NYG | 6.13 | 90% | — | Not flagged |
-| 5 | Cairo Santos | CHI | 5.52 | 90% | — | Not flagged |
-| 6 | Chris Boswell | PIT | 5.47 | 90% | — | Not flagged |
+| 1 | Trey Smack | GB | 6.35 | 90% | — | Not flagged |
+| 2 | Cameron Dicker | LAC | 6.32 | 100% | — | Not flagged |
+| 3 | Dominic Zvada | NYG | 6.13 | 90% | — | Not flagged |
+| 4 | Cairo Santos | CHI | 5.52 | 90% | — | Not flagged |
+| 5 | Chris Boswell | PIT | 5.47 | 90% | — | Not flagged |
 
 ### DEF
 
@@ -123,7 +122,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **32**
+Candidates with independently sourced projections AND usage data: **33**
 
 ## Coverage and rules
 
