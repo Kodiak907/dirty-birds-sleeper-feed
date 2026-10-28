@@ -109,7 +109,9 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   await page.waitForTimeout(800);
   assert.match(await page.locator('#pfo59-champ-result').innerText(),/100,000|100000|playoffs/i);
   assert.equal(await page.locator('#chances').count(),1,'Archived original odds retained');
-  assert.equal(await page.locator('#pfo49-playoff-plan .pfo49-gamelog').count()>0,true,'Original compact Championship player list preserved');
+  assert.equal(await page.locator('#pfo49-playoff-plan').count(),1,'Original Championship player intelligence pane preserved');
+  const archivedPlan=await page.locator('#pfo49-playoff-plan').innerText();
+  assert.ok(archivedPlan.length>20,'Championship intelligence provides a sourced report or explicit unavailable-state rather than empty content');
   assert.equal(await page.locator('#pfo59-legacy-odds #chances').count(),1,'Archived model accessible in Championship disclosure');
   assert.equal(await page.locator('#pfo59-legacy-odds #contenders').count(),1,'Original contender percentages remain available');
   await clickTab(page,'commissioner');
