@@ -9,7 +9,7 @@ import {resolve,join} from 'node:path';
 import {tmpdir} from 'node:os';
 
 const repo='Kodiak907/dirty-birds-sleeper-feed';
-const commit='0d47f3e30ff0597eb54cf46c112471956c08ff8d';
+const commit='64480fca1389cb5f10213a084f5e73794846e5fb';
 const project='dirtybirdstest',previewBranch='pfo-thursday-staging';
 const files=[
  'index.html','_worker.js','wrangler.jsonc',
@@ -20,6 +20,7 @@ const files=[
  'ffo-pfo-59.js','ffo-pfo-59.css',
  'ffo-championship-59.js','ffo-championship-59.css',
  'FFO_CHAMPIONSHIP_100K.json',
+ 'FFO_FFL_SCORING_V1.json',
  'commissioner-pin-setup.html'
 ];
 if(!process.env.PFO_PAGES_DEPLOY_TOKEN)throw Error('EXISTING_CLOUDFLARE_BUILD_SECRET_NOT_PRESENT__DO_NOT_PASTE_TOKEN_IN_GITHUB');
@@ -50,6 +51,11 @@ const wrangler=await get('wrangler.jsonc');
 const report=JSON.parse(model);
 if(report.schema!=='FFO_CHAMPIONSHIP_100K_V1'||report.simulations!==100000||report.teams?.length!==12)
  throw Error('PFO59_SIMULATION_INTEGRITY_FAILED');
+const msf=await get('ffo-gamecast.js');
+const rules=JSON.parse(await get('FFO_FFL_SCORING_V1.json'));
+if(rules.schema!=='FFO_SCORING_RULES_V1'||Object.keys(rules.scoring||{}).length!==133||
+ !msf.includes('/FFO_FFL_SCORING_V1.json')||msf.includes("feed('espnplays'")||
+ worker.includes('ffoScEndpoint')||!worker.includes('ffoGamecastHandle'))throw Error('FFO_MSF_ONLY_PRIMARY_SCORING_CHECK_FAILED');
 if(!html.includes('5.9 DEVELOPMENT')||!html.includes('/ffo-championship-59.js')||!html.includes('/ffo-pfo-59.js')||
  !newJS.includes('pfo59-team-hub')||!cjs.includes('CHAMP_REPORT')||
  !worker.includes('FixedLengthStream(declared)')||!worker.includes('COMMISSIONER_EVIDENCE')||
