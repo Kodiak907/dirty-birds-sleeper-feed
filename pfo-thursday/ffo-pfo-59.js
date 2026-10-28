@@ -256,7 +256,9 @@
  }
  async function loadSchedule(full=false){
   if(state.loadingSchedule)return;
-  if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000){scheduleRender();return;}
+  // Render the 17-week skeleton instantly, even when Sleeper or GitHub is offline.
+  scheduleRender();
+  if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000)return;
   state.loadingSchedule=true;
   try{
    const snap=state.history||await fetchReport('latest.json');if(!state.snap)state.snap=snap;
@@ -278,7 +280,14 @@
      scheduleRender();
     }
    }
-  }catch(err){const host=$('pfo59-schedule');if(host&&!state.schedule.size)host.textContent='FFL schedule source unavailable: '+String(err.message||err)}
+  }catch(err){
+   // Never erase the schedule table when an upstream source is slow or unavailable.
+   scheduleRender();
+   const host=$('pfo59-schedule');
+   if(host){const msg=document.createElement('p');msg.className='pfo59-foot';
+    msg.textContent='FFL schedule sync unavailable: '+String(err.message||err)+'. Unknown matchups remain unverified.';
+    host.prepend(msg);}
+  }
   finally{state.loadingSchedule=false}
  }
 
