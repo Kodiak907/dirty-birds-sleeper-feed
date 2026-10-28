@@ -244,15 +244,15 @@
  }
  function scheduleRender(){
   const host=$('pfo59-schedule');if(!host)return;
-  const snap=state.snap||{},weeks=[...Array(18)].map((_,i)=>i+1),current=Number(snap.nfl_state?.week||8);
+  const snap=state.snap||{},weeks=[...Array(17)].map((_,i)=>i+1),current=Number(snap.nfl_state?.week||8);
   host.innerHTML='<div class="pfo59-schedule-head"><h2>FFL Team Schedule</h2><button type="button" id="pfo59-schedule-load">Load full 18-week schedule</button></div>'+
    '<div class="pfo59-schedule-list">'+weeks.map(w=>{
     const rows=state.schedule.get(w)||[];
     const match=entryMatch(rows),other=match?.peer,ours=match?.ours;
-    let label=other?teamName(other.roster_id):rows.length?'Opponent not established':'Schedule not yet retrieved';
+    let label=other?teamName(other.roster_id):w>=15?'Playoffs · opponent TBD':rows.length?'Opponent not established':'Schedule not yet retrieved';
     let outcome='';if(w<current&&other&&ours&&Number.isFinite(Number(ours.points))&&Number.isFinite(Number(other.points)))outcome=Number(ours.points)>Number(other.points)?'W':Number(ours.points)<Number(other.points)?'L':'T';
     return '<div class="pfo59-week"><span>Week '+w+'</span><strong>'+safe(label)+'</strong><small>'+safe(outcome)+' '+(w<current&&other?'FFL '+safe(ours?.points??'—')+'–'+safe(other?.points??'—'):w===current?'Current week':'')+'</small><button type="button" data-pfo59-week="'+w+'">View</button></div>';
-   }).join('')+'</div><p class="pfo59-foot">Matchups from Sleeper only. Weeks without retrieved pairings remain unconfirmed; no future opponents are guessed.</p>';
+   }).join('')+'</div><p class="pfo59-foot">Weeks 1–14: Sleeper league pairings. Weeks 15–17: playoff opponents TBD until bracket is established. Unretrieved pairings stay unconfirmed.</p>';
  }
  async function loadSchedule(full=false){
   if(state.loadingSchedule)return;
@@ -264,11 +264,17 @@
    state.scheduleAt=Date.now();
    for(const [k,v] of Object.entries(snap.matchups_by_week||{}))if(Array.isArray(v))state.schedule.set(Number(k),v);
    scheduleRender();
-   if(full&&typeof pfo52GetWeek==='function'){
-    for(let start=1;start<=18;start+=4){
-     const weeks=[start,start+1,start+2,start+3].filter(w=>w<=18);
-     const rows=await Promise.allSettled(weeks.map(w=>pfo52GetWeek(w)));
-     rows.forEach((r,i)=>{if(r.status==='fulfilled'&&Array.isArray(r.value))state.schedule.set(weeks[i],r.value)});
+   // Opening Schedule should show the verified future regular-season fixtures automatically.
+   // Only load unretrieved regular-season weeks (max 4 at a time) so other tabs remain responsive.
+   if(typeof pfo52GetWeek==='function'){
+    const missing=Array.from({length:14},(_,i)=>i+1).filter(w=>(full||w>=current)&&!state.schedule.has(w));
+    for(let i=0;i<missing.length;i+=4){
+     const batch=missing.slice(i,i+4);
+     const results=await Promise.allSettled(batch.map(w=>pfo52GetWeek(w)));
+     results.forEach((result,j)=>{
+      if(result.status==='fulfilled'&&Array.isArray(result.value)&&result.value.length===12)
+       state.schedule.set(batch[j],result.value);
+     });
      scheduleRender();
     }
    }
