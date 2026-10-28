@@ -26,3 +26,6 @@ This does not prove the 15-20-second latency target, detailed stats, or PFO inte
 
 ## Verification checkpoint — October 27, 2026
 Cloudflare MySportsFeeds current-season route has been verified HTTP 200 using subscription credentials. Runtime secrets are present, GameCast staging status returns true/true. Additional NFL feed entitlement audit is pending; do not mistake this for fully live play-by-play or integrated PFO deployment. This README update triggers a one-time redacted CI feed audit on the isolated `ffo-gamecast-staging` branch.
+
+## Thursday protected PFO preview
+2026-10-27: Trigger staging-only Cloudflare Pages PREVIEW deployment from pfo-thursday-staging source into dirtybirdstest project via isolated GameCast staging CI. Pages production branch main is not modified by this script. Review build logs before promotion.
