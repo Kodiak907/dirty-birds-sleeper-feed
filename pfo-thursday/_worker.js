@@ -166,7 +166,7 @@ async function commissionerApi(req,env){
      const week=Number(d.week),roster=Number(d.roster_id),base=Number(d.original_points),delta=Number(d.delta_points),newTotal=comScoreRound(base+delta);
      const reason=comText(d.reason,1000),type=comText(d.adjustment_type,30).toUpperCase();
      if(!Number.isInteger(week)||week<1||week>18||(record.week!=null&&Number(record.week)!==week)||!Number.isInteger(roster)||roster<1||roster>32||
-         !comScoreNumber(base)||!comScoreNumber(delta)||!comScoreNumber(newTotal)||Math.abs(delta)<.005||!['PENALTY','AWARD','CORRECTION'].includes(type)||reason.length<12)
+         !comScoreNumber(base)||!comScoreNumber(delta)||!comScoreNumber(newTotal)||Math.abs(delta)<.005||!['PENALTY','AWARD','CORRECTION'].includes(type)||(type==='PENALTY'&&delta>=0)||(type==='AWARD'&&delta<=0)||reason.length<12)
        return comJson({error:'SCORE_FIELDS_INVALID_OR_CASE_WEEK_MISMATCH'},400);
      const records=await env.COMMISSIONER_DB.prepare("SELECT event_type FROM commissioner_events WHERE case_id=? ORDER BY id ASC").bind(id).all();
      const actions=records.results||[];
