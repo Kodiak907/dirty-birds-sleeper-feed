@@ -3,7 +3,7 @@ const initial={snapshot:'October 24, 2026 • Week 7',record:'4–2',rosterCount
 let data=JSON.parse(JSON.stringify(initial));const $=x=>document.getElementById(x),pc=x=>(100*(x||0)).toFixed(1)+'%',e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 $('pfo50-top')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 window.addEventListener('scroll',()=>{$('pfo50-top')?.classList.toggle('visible',window.scrollY>350)},{passive:true});
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.page).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})});
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.page).classList.add('active');window.scrollTo(0,0)});
 let liveStandings=[],standingsStamp=null;
 function renderLeagueStandings(){
  const el=$('league-standings');if(!el)return;
