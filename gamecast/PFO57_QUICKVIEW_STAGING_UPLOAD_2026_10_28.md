@@ -1,0 +1,3 @@
+# FFO PFO 5.7 QuickView preview upload
+
+Staging-only trigger. Upload immutable PFO source commit `6a7635e8137c82d67ac7675aa9cd0ff59a7a75a8` via `node ci_pages_stadium_http.mjs` to Cloudflare Pages project `dirtybirdstest`, branch `pfo-thursday-staging` ONLY. Nine files include original GameCast, PFO, gateway and new `ffo-quickview.js` + `ffo-quickview.css`. Preserve Radar, waiver research, Trade Analyzer, daily briefings, Injury Watch, roster, Championship, approved swipeable stat rows, all existing FFO screens. Restore temporary Worker Build command to `None` after this run. No production Pages deployment, no trading, no Sleeper writes.
