@@ -53,3 +53,18 @@
 .pfo59-leader{cursor:pointer;text-align:left;color:#e2f8ff}
 .pfo59-leader:disabled{opacity:.65;cursor:default}
 @media(min-width:800px){.pfo59-partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Team HQ: segmented navigation, continuous roster tester and source-linked intelligence. */
+#pfo59-team-hub [hidden]{display:none!important}
+.pfo59-team-heading{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.pfo59-team-heading h2{font-size:19px;margin:0;color:#f2fbff}
+.pfo59-team-tabs{display:flex;overflow-x:auto;gap:6px;margin:0 0 14px;padding-bottom:9px;scrollbar-width:thin}
+.pfo59-team-tabs button{flex:0 0 auto;background:#11273b;color:#b5c8d9;border:1px solid #314e68;border-radius:10px;padding:12px 14px;font-size:12px;font-weight:750}
+.pfo59-team-tabs button[aria-selected=true]{color:#e5fff5;background:#245348;border-color:#7edec0}
+.pfo59-txn-row{display:grid;grid-template-columns:85px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid #2d455c;padding:11px 4px;font-size:11px}
+.pfo59-txn-row>b{color:#f8cb83}.pfo59-txn-row>small{color:#9db5c4;text-align:right}
+.pfo59-team-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pfo59-team-links button{background:#1a3348;border:1px solid #3c5b70;border-radius:10px;text-align:left;color:#f0faff;padding:13px;display:flex;flex-direction:column;gap:5px}
+.pfo59-team-links b{font-size:12px}.pfo59-team-links small{font-size:10px;color:#a8c2d1;line-height:1.4}
+.pfo59-link-to-market{background:#245348;border:1px solid #61a895;border-radius:10px;padding:11px;color:#e9fff3;margin-top:15px;font-size:12px;font-weight:750}
+@media(max-width:500px){.pfo59-txn-row{grid-template-columns:78px minmax(0,1fr)}.pfo59-txn-row>small{grid-column:2;justify-self:start}.pfo59-team-links{grid-template-columns:1fr}}
