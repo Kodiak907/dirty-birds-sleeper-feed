@@ -2397,10 +2397,14 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  let h='<div class="pfo52-panhead"><h2>Dirty Birds · Championship Weeks 15–17</h2><p class="pfo52-fine">Player-by-player points, NFL opponent, and legal starting-lineup totals—not a bracket predicting other league managers. Weekly estimates are opponent-adjusted only when sufficient independently observed defensive data exists; otherwise labeled unchanged recent-form baselines.</p></div>';
  h+='<div class="pfo52-champgrid">'+wks.map(w=>{const best=pfo52Best(team,w,false);return '<div class="pfo52-champbox"><b>W'+w+' ideal*</b><strong>'+pfo52PointLabel(best.total,best.complete)+'</strong><small>'+best.known+'/'+best.required+' legal slots</small></div>';}).join('')+'</div>';
  h+='<div class="pfo49-table-wrap"><table class="pfo49-gamelog"><thead><tr><th>Dirty Birds player</th>'+wks.map(w=>'<th>Week '+w+'</th>').join('')+'</tr></thead><tbody>';
- for(const p of team.members){if(!['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)))continue;
-  h+='<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+pfo52PointLabel(x?.points)+'</b><small class="pfo52-dim">'+e(opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
- }
- h+='</tbody></table></div><p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
+ const first=(team.starters||[]).map(String);
+ const members=team.members.filter(p=>['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)));
+ const starting=members.filter(p=>first.includes(String(p.id))),bench=members.filter(p=>!first.includes(String(p.id)));
+ const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+pfo52PointLabel(x?.points)+'</b><small class="pfo52-dim">'+e(opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
+ h+=(starting.length?starting:members.slice(0,10)).map(statrow).join('');
+ h+='</tbody></table></div>';
+ if(starting.length&&bench.length)h+='<details class="pfo59-bench-forecast"><summary>Bench & reserve playoff projections · '+bench.length+' players</summary><div class="pfo49-table-wrap"><table class="pfo49-gamelog"><thead><tr><th>Player</th>'+wks.map(w=>'<th>W'+w+'</th>').join('')+'</tr></thead><tbody>'+bench.map(statrow).join('')+'</tbody></table></div></details>';
+ h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
  el.innerHTML=h;
 };
 // Scouting K/DST: visibly render actual historical league scoring, even when NFL kicking stat feed lacks FG distances.
@@ -2712,8 +2716,7 @@ function pfo54OverviewPulse(){const page=$('overview');if(!page)return;
  const latest=(liveRosterSnapshot?.starters||[]).filter(x=>x!=='0').length;
  const health=(liveRosterSnapshot?.players||[]).filter(p=>(liveRosterSnapshot.starters||[]).includes(p.player_id)&&/^(OUT|IR|PUP|DOUBTFUL)$/i.test(p.injury_status||''));
  el.innerHTML='<div class="pulse"><b>STARTERS · W'+wk+'</b><span>'+(verified?e(latest)+' submitted · '+e(Number.isFinite(age)?age+'m old':'age unknown'):'Live lineup unverified')+'</span></div>'+
- '<div class="pulse"><b>HEALTH CHECK</b><span>'+(health.length?health.length+' Sleeper-tagged starter(s) · verify official status':'No confirmed medical clearance implied')+'</span></div>'+
- '<div class="pulse"><b>WEEKLY MATCHUP</b><span>Detailed lineup laboratory available in Weekly Matchup tab</span></div>';
+ '<div class="pulse"><b>HEALTH CHECK</b><span>'+(health.length?health.length+' Sleeper-tagged starter(s) · verify official status':'No confirmed medical clearance implied')+'</span></div>';
 }
 const pfo54OldFocus=pfo53WeekFocus;
 pfo53WeekFocus=function(){pfo54OldFocus();pfo54OverviewPulse()};
