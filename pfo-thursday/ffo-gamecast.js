@@ -4,6 +4,8 @@
  'use strict';
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const model=await import('/ffo-gamecast-model.mjs');
+ const stadium=await import('/ffo-gamecast-stadium.mjs');
+ const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
 #radar .pfo49-radar-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%;max-width:100%;min-width:0;gap:8px}
@@ -20,7 +22,7 @@
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
 `;document.head.append(polish);
 
- const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,sourceErrors:[],lastGamesCheck:null};
+ const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  async function feed(name,query={}){
@@ -184,45 +186,45 @@
     reportedSpot:yard!==null&&spotTeam?spotTeam+' '+yard:null,
     quarter:event?.period??null,clock:event?.clock??null};
  }
- function fieldMarkup(embedded=false){const g=s.games.find(x=>x.id===s.game),event=s.playCache[s.activePlay]||null;
-  const d=playDetails(event),start=d.start,end=d.end;
-  const x=yard=>Math.round(38+yard*5.64),xb=yard=>Math.round(yard*6.4);
-  const lines=Array.from({length:11},(_,i)=>{const yard=i*10;return `<line x1="${x(yard)}" y1="170" x2="${xb(yard)}" y2="350" stroke="${i===0||i===10?'#d2e9de':'#bdedcf'}" stroke-width="${i===0||i===10?2.8:1.2}" opacity=".77"/><text x="${x(yard)}" y="192" fill="#d7eddc" font-size="11" text-anchor="middle" opacity=".83">${yard}</text>`;}).join('');
-  const ten=(start!==null&&d.toGo!==null&&d.direction!==null)?between(start+d.direction*d.toGo,0,100):null;
-  const firstDown=ten!==null?`<line x1="${x(ten)}" x2="${xb(ten)}" y1="170" y2="350" stroke="#e7b949" stroke-width="4" stroke-dasharray="9 6" opacity=".95"/>`:'';
-  // If both real yardline endpoints exist, render a data-derived *schematic* arrow, not tracking.
-  const path=(start!==null&&end!==null&&start!==end)?`<path d="M ${x(start)} 278 Q ${Math.round((x(start)+x(end))/2)} 205 ${x(end)} 275" fill="none" stroke="#ffcb70" stroke-width="4.2" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="${x(end)}" cy="275" r="7" fill="#ffdc85" stroke="#071725" stroke-width="3"/>`:'';
-  const ball=start!==null?`<ellipse cx="${x(start)}" cy="278" rx="12" ry="7" transform="rotate(-18 ${x(start)} 278)" fill="#b66837" stroke="#f5d4a5" stroke-width="2"/>`:'';
-  const score=v=>v===null||v===undefined?'—':safe(v);
-  const tags=d.down&&d.toGo?`${safe(d.down)} & ${safe(d.toGo)}`:'Down and distance unverified';
-  const quarter=safe(d.quarter?'Q'+d.quarter:'Q —'),clock=safe(d.clock||'Clock —');
-  const caption=event?(start!==null?`Provider line of scrimmage: ${safe(d.reportedSpot||start+' yd')}. Field position schematic, not tracking.`:'Provider line of scrimmage unavailable or orientation unresolved; ball position hidden.'):'Select a published play. No score or play is invented.';
-  return `<div class="ffo-gc-scoreboard"><div class="team">${safe(g?.away||'AWAY')} <b>${score(g?.awayPoints)}</b><small>${safe(g?.status||'Game not selected')}</small></div><div class="ffo-gc-center"><strong>${quarter} · ${clock}</strong><span>${safe(tags)}</span></div><div class="team"><b>${score(g?.homePoints)}</b> ${safe(g?.home||'HOME')}<small>MSF snapshot · not calibrated</small></div></div>
-  <div class="ffo-gc-stadium" role="img" aria-label="Schematic football field${start===null?'; no position known':'; play at yard '+start}"><svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ffo-grass-${embedded?'small':'large'}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#286947"/><stop offset="1" stop-color="#0c4935"/></linearGradient></defs><path d="M0 76 Q320 2 640 76 L640 170 L0 170Z" fill="#172b44"/><path d="M0 97 Q320 30 640 97 M0 111 Q320 50 640 111 M0 125 Q320 67 640 125" fill="none" stroke="#485f76" stroke-width="2"/><path d="M0 141 L640 141 L640 172 L0 172Z" fill="#0b1728"/><g fill="#f1d2a5" opacity=".58">${Array.from({length:42},(_,i)=>`<circle cx="${i*16}" cy="155" r="2"/>`).join('')}</g><path d="M38 170 L602 170 L640 350 L0 350Z" fill="url(#ffo-grass-${embedded?'small':'large'})" stroke="#cde0df" stroke-width="2"/><path d="M38 170 L93 170 L64 350 L0 350Z" fill="#224b5a" opacity=".55"/><path d="M547 170 L602 170 L640 350 L576 350Z" fill="#224b5a" opacity=".55"/>${lines}${firstDown}${path}${ball}</svg><div class="ffo-gc-field-caption">${safe(caption)}</div></div>
-  ${embedded?'':`<div class="ffo-gc-controls"><button data-ffo-step="-1" ${s.activePlay<=0?'disabled':''}>◀ Earlier</button><span>${event?`Play ${s.activePlay+1} / ${s.playCache.length}`:'Awaiting published plays'}</span><button data-ffo-step="1" ${s.activePlay>=s.playCache.length-1?'disabled':''}>Later ▶</button></div>`}
-  <div class="ffo-gc-provenance">${event?safe(event.text):'No verified provider play selected.'} · ${safe(s.latestCheck||'No live check yet')} · schematic field, not measured player tracking</div>`;
+
+ function drawField(){
+  const el=$('ffo-gc-gameview');
+  const g=s.games.find(x=>x.id===s.game)||null;
+  const event=s.playCache[s.activePlay]||null;
+  const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:s.playerRows,selectedPlayer:s.player,source:s.playSource,isLive:s.game&&/in.progress|in progress|live|half.time|halftime/i.test(String(g?.status||''))};
+  if(el){
+   el.innerHTML=stadium.fieldMarkup(input);
+   el.querySelectorAll('[data-gc6-step]').forEach(btn=>btn.onclick=()=>{
+    s.followLatest=false;s.activePlay=between(s.activePlay+Number(btn.dataset.gc6Step),0,Math.max(0,s.playCache.length-1));drawField();drawPlays();
+   });
+   el.querySelector('[data-gc6-latest]')?.addEventListener('click',()=>{
+    s.followLatest=true;s.activePlay=Math.max(0,s.playCache.length-1);drawField();drawPlays();
+   });
+  }
+  const small=$('ffo-gc-player-field');
+  if(small)small.innerHTML=stadium.fieldMarkup({...input,embedded:true});
  }
- function drawField(){const el=$('ffo-gc-gameview');if(el){el.innerHTML=fieldMarkup(false);el.querySelectorAll('[data-ffo-step]').forEach(btn=>btn.onclick=()=>{s.activePlay=between(s.activePlay+Number(btn.dataset.ffoStep),0,Math.max(0,s.playCache.length-1));drawField();drawPlays()})}
-  const small=$('ffo-gc-player-field');if(small)small.innerHTML=fieldMarkup(true);
- }
- function drawPlays(){const el=$('ffo-gc-playfeed');if(!el)return;
-  if(!s.game){el.innerHTML='<p class="ffo-gc-note">Select a game to see the provider play timeline.</p>';drawField();return;}
-  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="ffo-gc-note">No published plays for this selected game yet. Scheduled games populate when the provider publishes their plays; completed-game coverage may vary. No plays are generated or guessed.</p>';drawField();return;}
+ function drawPlays(){
+  const el=$('ffo-gc-playfeed');if(!el)return;
+  if(!s.game){el.innerHTML='<p class="gc6-quiet">Select an NFL game to see its verified published play timeline.</p>';drawField();return;}
+  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="gc6-quiet">No published plays for this game yet. Scheduled games appear when the provider publishes data; restricted historical feeds are not fabricated.</p>';drawField();return;}
   const needle=s.player?model.normalizeName(s.player.name):'';
   const isScoring=x=>/touchdown|field goal (is good|made)|extra point (is good|made)|safety/i.test(x.text||'');
-  const matching=(x)=>needle&&model.normalizeName(x.text).includes(needle);
-  const numbered=s.playCache.map((event,i)=>({event,i}));
-  const selected=numbered.filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
+  const matching=x=>needle&&model.normalizeName(x.text).includes(needle);
+  const selected=s.playCache.map((event,i)=>({event,i})).filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
   const limit=Math.max(60,Number(s.visiblePlays||60)),show=selected.slice(-limit).reverse();
-  el.innerHTML=`<h3>${s.playFilter==='player'?safe(s.player?.name||'Player not selected')+' · ':''}${s.playSource?.includes('SCORING PLAYS ONLY')?'Published scoring plays (partial)':'Published plays'} <small style="color:#acc4d7">(${selected.length} matching / ${s.playCache.length} loaded)</small></h3>`+
-   (show.length?show.map(({event,i})=>`<div class="ffo-gc-play ${s.activePlay===i?'active':''}" data-ffo-play="${i}" role="button" tabindex="0"><div class="ffo-gc-playtop"><strong>${safe(event.update==='corrected'?'CORRECTED':event.update==='new'?'NEW':'PLAY')}</strong><small>${safe(event.period?'Q'+event.period:'Quarter unknown')} ${safe(event.clock||'Time unknown')}</small></div><div>${safe(event.text)}</div><small>${safe(s.playSource||'Source not verified')} · provisional · schematic only</small></div>`).join(''):'<p class="ffo-gc-note">No matching plays in this subset. This does not prove zero involvement.</p>');
+  el.innerHTML='<div class="gc6-feedtitle"><h3>'+safe(s.playFilter==='player'?(s.player?.name||'Player')+' · ':'')+(s.playSource?.includes('scoring plays only')?'Scoring plays (partial)':'Live & historical play-by-play')+'</h3><small>'+selected.length+' of '+s.playCache.length+' published plays</small></div>'+
+  (show.length?show.map(({event,i})=>stadium.playRow(event,i,s.activePlay===i,s.games.find(g=>g.id===s.game),s.playSource,s.playerRows,s.player)).join(''):'<p class="gc6-quiet">No matching plays in the published subset. This does not prove zero involvement.</p>');
   if(selected.length>show.length){
     const more=document.createElement('button');more.type='button';more.className='ffo-gc-refresh';
     more.textContent='Show '+Math.min(40,selected.length-show.length)+' earlier plays';
     more.onclick=()=>{s.visiblePlays=Math.min(selected.length,limit+40);drawPlays();};
     el.appendChild(more);
   }
-  el.querySelectorAll('[data-ffo-play]').forEach(row=>{const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);drawField();drawPlays()};row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});
+  el.querySelectorAll('[data-ffo-play]').forEach(row=>{
+    const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);s.followLatest=s.activePlay===s.playCache.length-1;drawField();drawPlays()};
+    row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
+  });
   drawField();
  }
 
@@ -241,7 +243,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game)return;
   const selected=s.games.find(g=>g.id===s.game);
   const kickoff=Date.parse(selected?.start||'');
@@ -255,7 +257,7 @@
     if(pb.status==='fulfilled'){
       const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
       s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
-      if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
+      if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
       s.latestCheck=pb.value.checked_at;
     }
