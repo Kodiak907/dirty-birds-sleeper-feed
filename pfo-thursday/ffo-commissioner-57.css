@@ -1,0 +1,56 @@
+/* FFO 5.7 Commissioner Command: additive, only inside existing private admin workspace. */
+#com57{border:1px solid #35576a;border-radius:15px;background:linear-gradient(145deg,#14293c,#0d1a2a);padding:14px;margin:12px 0 18px;color:#eef7fd}
+#com57 *{box-sizing:border-box}
+#com57 [hidden]{display:none!important}
+#com57 .com57-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+#com57 .com57-heading h3{font-size:19px;letter-spacing:-.03em;margin:5px 0 4px}
+#com57 .com57-heading p{font-size:11px;line-height:1.4;color:#abc2d2;margin:2px 0 10px}
+#com57 .com57-private{color:#adefd7;background:#1b4038;border:1px solid #477d69;border-radius:8px;font-size:10px;font-weight:900;padding:6px 8px}
+#com57 .com57-tabs{display:flex;overflow-x:auto;gap:6px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:1px solid #385267;margin:3px -6px 12px;padding:0 6px}
+#com57 .com57-tabs::-webkit-scrollbar{display:none}
+#com57 .com57-tabs button{border:0;border-bottom:3px solid transparent;color:#a8bdd0;background:transparent;padding:10px 11px;font-size:11px;font-weight:800;cursor:pointer;flex:1}
+#com57 .com57-tabs button[aria-selected=true]{color:#d8fff0;border-color:#72d8bf}
+#com57 .com57-alert{border-radius:10px;border:1px solid #65593e;background:#342f26;color:#ffe1a8;padding:10px 12px;line-height:1.5;font-size:11px;margin-bottom:12px}
+#com57 .com57-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#com57 .com57-form label{font-size:11px;font-weight:800;color:#c0d5e4;display:block;min-width:0}
+#com57 .com57-form input,#com57 .com57-form select,#com57 .com57-form textarea{display:block;margin-top:6px;width:100%;min-width:0;border:1px solid #49647c;border-radius:9px;color:#f5fbff;background:#1a3348;padding:10px 9px;font-size:12px}
+#com57 .com57-form textarea{min-height:65px;resize:vertical}
+#com57 .com57-full{grid-column:1 / -1}
+#com57 .com57-foot{font-size:10px;color:#aec5d4;line-height:1.5;grid-column:1 / -1;margin:2px 0 4px}
+#com57 .com57-preview{border:1px solid #49766b;background:#183b3c;border-radius:10px;padding:11px;line-height:1.6;font-size:12px}
+#com57 .com57-preview strong{font-size:17px;color:#dcffef}
+#com57 .com57-preview small{display:block;color:#b5cbd6;margin-top:5px;line-height:1.5}
+#com57 .com57-preview .com57-warn{color:#ffdb9e}
+#com57 .com57-actions{display:flex;gap:8px;flex-wrap:wrap}
+#com57 .com57-actions button{flex:1;white-space:normal;min-width:120px}
+#com57 .com57-bottom{border-top:1px solid #385467;margin-top:15px;padding-top:12px}
+#com57 .com57-rail{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+#com57 .com57-rail h4{margin:0}
+#com57 #com57-status{color:#b4decf;font-size:10px}
+#com57 #com57-status.com57-bad{color:#ffc0ac}
+#com57 .com57-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:12px}
+#com57 .com57-kpis>div{min-width:0;border:1px solid #36566b;background:#152d42;border-radius:10px;padding:10px 7px}
+#com57 .com57-kpis strong{font-size:16px;font-variant-numeric:tabular-nums;display:block;overflow-wrap:anywhere}
+#com57 .com57-kpis small{font-size:9px;color:#aec4d3;line-height:1.35;display:block;margin-top:5px}
+#com57 .com57-item{border:1px solid #39586a;border-radius:10px;background:#102437;padding:11px;margin:8px 0}
+#com57 .com57-itemtop{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px}
+#com57 .com57-itemtop span{font-size:9px;letter-spacing:.02em;font-weight:900;border-radius:5px;padding:4px 6px}
+#com57 .com57-good{background:#20483c;color:#b3f9d3}
+#com57 .com57-pending{background:#503c27;color:#ffe2ac}
+#com57 .com57-neutral{background:#344152;color:#b9c9d6}
+#com57 .com57-scoreline{font-size:11px;line-height:1.5;color:#c7e1ed;margin-top:7px;font-variant-numeric:tabular-nums}
+#com57 .com57-scoreline b{font-size:15px;color:#fff}
+#com57 .com57-scoreline strong{color:#f9c77b}
+#com57 .com57-item p{font-size:11px;line-height:1.5;margin:7px 0}
+#com57 .com57-item small{color:#a6becd;font-size:10px}
+#com57 .com57-rowactions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}
+#com57 .com57-rowactions button{cursor:pointer;font-size:11px;border:1px solid #4c7488;border-radius:8px;color:#d7f7f0;background:#174039;padding:8px 10px}
+#com57 .com57-rowactions button:last-child{background:#383031;border-color:#81605d;color:#ffcfce}
+#com57 .com57-toolgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+#com57 .com57-tool{border-radius:11px;border:1px solid #344d64;background:#162b3e;padding:11px;min-width:0}
+#com57 .com57-tool b{display:block;font-size:12px}
+#com57 .com57-tool small{display:block;font-size:10px;color:#a8bdcf;line-height:1.4;margin:5px 0}
+#com57 .com57-tool span{font-size:9px;font-weight:900;color:#86d7c2}
+#com57 button:focus-visible{outline:3px solid #9cecd5;outline-offset:2px}
+@media(max-width:600px){#com57{padding:10px;margin:10px -4px 14px}#com57 .com57-toolgrid{grid-template-columns:1fr}#com57 .com57-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}#com57 .com57-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:375px){#com57 .com57-form{grid-template-columns:1fr}#com57 .com57-tabs button{font-size:10px;padding:9px 6px}}
