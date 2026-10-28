@@ -36,3 +36,5 @@ The 2026-10-27 preview build now uses PFO_PAGES_DEPLOY_TOKEN (Account Pages Edit
 2026-10-27: Re-upload Pages preview after configuring preview-only GAMECAST_INTERNAL service binding and FFO_GAMECAST_ENABLED=true. Production Pages remains untouched.
 
 2026-10-27 19:4x PT: Redeploy dirtybirdstest Pages PREVIEW pfo-thursday-staging so the three Access JWT verification settings and private GameCast service binding are active. Main production remains unchanged.
+
+2026-10-27 20:xx PT: Deploy PFO 5.5 preview with dated ESPN supplemental play descriptions, 2026 MSF Radar/Waiver evidence, and compact mobile stat rails. Preview-only Pages branch pfo-thursday-staging; main Pages remains unchanged.
