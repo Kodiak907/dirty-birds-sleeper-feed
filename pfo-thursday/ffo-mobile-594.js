@@ -27,6 +27,7 @@
  const backdrop=document.createElement('button');
  backdrop.type='button';backdrop.id='ffo594-backdrop';backdrop.setAttribute('aria-label','Close All Tools menu');
  document.body.append(backdrop,toolbar);
+ document.documentElement.classList.add('ffo594-ready');
  nav.setAttribute('aria-label','All Front Office tools');
  nav.setAttribute('aria-hidden','false');
  const more=$('#ffo594-more');
