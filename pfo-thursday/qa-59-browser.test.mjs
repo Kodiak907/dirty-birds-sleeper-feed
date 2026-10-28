@@ -72,6 +72,8 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(await page.locator('#ffo594-dock [data-ffo594-page="overview"]').getAttribute('aria-current'),'page','Overview active in mobile dock');
   await page.locator('#ffo594-more').click();
   assert.equal(await page.locator('#nav').isVisible(),true,'All Tools opens mobile drawer');
+  await page.locator('#nav .ffo594-search input').fill('championship');
+  assert.equal(await page.locator('#nav button[data-page]:visible').count(),1,'Search isolates matching feature without removing routes');
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#nav').isVisible(),false,'Escape dismisses mobile drawer');
   await clickTab(page,'roster');
