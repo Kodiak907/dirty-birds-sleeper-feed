@@ -167,30 +167,36 @@
  const get=(o,keys)=>{for(const k of keys){const v=k.split('.').reduce((a,t)=>a?.[t],o);if(v!==undefined&&v!==null&&v!=='')return v;}return null;};
  const at=(o,keys)=>{const v=get(o,keys);return v!==null&&Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=100?Number(v):null;};
  const between=(n,low,high)=>Math.max(low,Math.min(high,n));
- function playDetails(event){const raw=event?.raw||{};
-  const start=at(raw,['lineOfScrimmage','startYardLine','startingYardLine','fieldPosition.yardLine','situation.yardLine','playSituation.yardLine']);
-  const end=at(raw,['endYardLine','endingYardLine','ballOnYardLine','newYardLine']);
-  const yards=get(raw,['yardsGained','playYards','yards']);
-  const delta=Number.isFinite(Number(yards))&&Math.abs(Number(yards))<=100?Number(yards):null;
-  const realEnd=end!==null?end:(start!==null&&delta!==null?between(start+delta,0,100):null);
-  const dist=get(raw,['yardsToFirstDown','distance','downAndDistance.distance','situation.distance']);
-  const down=get(raw,['down','downAndDistance.down','situation.down']);
+ function playDetails(event){const raw=event?.raw||{},state=raw.playStatus||{},g=s.games.find(x=>x.id===s.game)||{};
+  const alias=t=>({GBP:'GB',GNB:'GB',JAC:'JAX',ARZ:'ARI',TAM:'TB',NOR:'NO',SFO:'SF',KAN:'KC'}[String(t||'').toUpperCase()]||String(t||'').toUpperCase());
+  const scrimmage=state.lineOfScrimmage||{},spotTeam=alias(typeof scrimmage.team==='object'?scrimmage.team?.abbreviation:scrimmage.team);
+  const yard=at(scrimmage,['yardLine']);
+  // Yardline is relative to the source-reported side of the field, not an absolute coordinate.
+  // Resolve orientation only when both the side team and selected game's teams agree.
+  const start=yard===null?null:spotTeam===alias(g.away)?yard:spotTeam===alias(g.home)?100-yard:null;
+  const poss=alias(state.teamInPossession?.abbreviation||state.teamInPossession||'');
+  const direction=poss===alias(g.away)?1:poss===alias(g.home)?-1:null;
+  const rawEnd=at(raw,['endYardLine','endingYardLine','ballOnYardLine','newYardLine']);
+  const dist=get(raw,['playStatus.yardsRemaining','yardsToFirstDown','distance','downAndDistance.distance','situation.distance']);
+  const down=get(raw,['playStatus.currentDown','down','downAndDistance.down','situation.down']);
   const toGo=Number.isFinite(Number(dist))&&Number(dist)>0&&Number(dist)<=100?Number(dist):null;
-  return {start,end:realEnd,yards:delta,down,toGo,quarter:event?.period??null,clock:event?.clock??null};
+  return {start,end:rawEnd,yards:null,down,toGo,direction,
+    reportedSpot:yard!==null&&spotTeam?spotTeam+' '+yard:null,
+    quarter:event?.period??null,clock:event?.clock??null};
  }
  function fieldMarkup(embedded=false){const g=s.games.find(x=>x.id===s.game),event=s.playCache[s.activePlay]||null;
   const d=playDetails(event),start=d.start,end=d.end;
   const x=yard=>Math.round(38+yard*5.64),xb=yard=>Math.round(yard*6.4);
   const lines=Array.from({length:11},(_,i)=>{const yard=i*10;return `<line x1="${x(yard)}" y1="170" x2="${xb(yard)}" y2="350" stroke="${i===0||i===10?'#d2e9de':'#bdedcf'}" stroke-width="${i===0||i===10?2.8:1.2}" opacity=".77"/><text x="${x(yard)}" y="192" fill="#d7eddc" font-size="11" text-anchor="middle" opacity=".83">${yard}</text>`;}).join('');
-  const ten=(start!==null&&d.toGo!==null)?between(start+d.toGo,0,100):null;
+  const ten=(start!==null&&d.toGo!==null&&d.direction!==null)?between(start+d.direction*d.toGo,0,100):null;
   const firstDown=ten!==null?`<line x1="${x(ten)}" x2="${xb(ten)}" y1="170" y2="350" stroke="#e7b949" stroke-width="4" stroke-dasharray="9 6" opacity=".95"/>`:'';
   // If both real yardline endpoints exist, render a data-derived *schematic* arrow, not tracking.
   const path=(start!==null&&end!==null&&start!==end)?`<path d="M ${x(start)} 278 Q ${Math.round((x(start)+x(end))/2)} 205 ${x(end)} 275" fill="none" stroke="#ffcb70" stroke-width="4.2" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="${x(end)}" cy="275" r="7" fill="#ffdc85" stroke="#071725" stroke-width="3"/>`:'';
   const ball=start!==null?`<ellipse cx="${x(start)}" cy="278" rx="12" ry="7" transform="rotate(-18 ${x(start)} 278)" fill="#b66837" stroke="#f5d4a5" stroke-width="2"/>`:'';
   const score=v=>v===null||v===undefined?'—':safe(v);
   const tags=d.down&&d.toGo?`${safe(d.down)} & ${safe(d.toGo)}`:'Down and distance unverified';
-  const quarter=safe(d.quarter||'Q —'),clock=safe(d.clock||'Clock —');
-  const caption=event?(start!==null?`Data-linked spot: ${start} yd${end!==null&&end!==start?' → '+end+' yd':''}. Field positions schematic, not tracking.`:'Yardline not supplied: field position deliberately blank.'):'Select a published play. No score or play is invented.';
+  const quarter=safe(d.quarter?'Q'+d.quarter:'Q —'),clock=safe(d.clock||'Clock —');
+  const caption=event?(start!==null?`Provider line of scrimmage: ${safe(d.reportedSpot||start+' yd')}. Field position schematic, not tracking.`:'Provider line of scrimmage unavailable or orientation unresolved; ball position hidden.'):'Select a published play. No score or play is invented.';
   return `<div class="ffo-gc-scoreboard"><div class="team">${safe(g?.away||'AWAY')} <b>${score(g?.awayPoints)}</b><small>${safe(g?.status||'Game not selected')}</small></div><div class="ffo-gc-center"><strong>${quarter} · ${clock}</strong><span>${safe(tags)}</span></div><div class="team"><b>${score(g?.homePoints)}</b> ${safe(g?.home||'HOME')}<small>MSF snapshot · not calibrated</small></div></div>
   <div class="ffo-gc-stadium" role="img" aria-label="Schematic football field${start===null?'; no position known':'; play at yard '+start}"><svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ffo-grass-${embedded?'small':'large'}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#286947"/><stop offset="1" stop-color="#0c4935"/></linearGradient></defs><path d="M0 76 Q320 2 640 76 L640 170 L0 170Z" fill="#172b44"/><path d="M0 97 Q320 30 640 97 M0 111 Q320 50 640 111 M0 125 Q320 67 640 125" fill="none" stroke="#485f76" stroke-width="2"/><path d="M0 141 L640 141 L640 172 L0 172Z" fill="#0b1728"/><g fill="#f1d2a5" opacity=".58">${Array.from({length:42},(_,i)=>`<circle cx="${i*16}" cy="155" r="2"/>`).join('')}</g><path d="M38 170 L602 170 L640 350 L0 350Z" fill="url(#ffo-grass-${embedded?'small':'large'})" stroke="#cde0df" stroke-width="2"/><path d="M38 170 L93 170 L64 350 L0 350Z" fill="#224b5a" opacity=".55"/><path d="M547 170 L602 170 L640 350 L576 350Z" fill="#224b5a" opacity=".55"/>${lines}${firstDown}${path}${ball}</svg><div class="ffo-gc-field-caption">${safe(caption)}</div></div>
   ${embedded?'':`<div class="ffo-gc-controls"><button data-ffo-step="-1" ${s.activePlay<=0?'disabled':''}>◀ Earlier</button><span>${event?`Play ${s.activePlay+1} / ${s.playCache.length}`:'Awaiting published plays'}</span><button data-ffo-step="1" ${s.activePlay>=s.playCache.length-1?'disabled':''}>Later ▶</button></div>`}
@@ -207,9 +213,15 @@
   const matching=(x)=>needle&&model.normalizeName(x.text).includes(needle);
   const numbered=s.playCache.map((event,i)=>({event,i}));
   const selected=numbered.filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
-  const show=selected.slice(-60).reverse();
+  const limit=Math.max(60,Number(s.visiblePlays||60)),show=selected.slice(-limit).reverse();
   el.innerHTML=`<h3>${s.playFilter==='player'?safe(s.player?.name||'Player not selected')+' · ':''}${s.playSource?.includes('SCORING PLAYS ONLY')?'Published scoring plays (partial)':'Published plays'} <small style="color:#acc4d7">(${selected.length} matching / ${s.playCache.length} loaded)</small></h3>`+
    (show.length?show.map(({event,i})=>`<div class="ffo-gc-play ${s.activePlay===i?'active':''}" data-ffo-play="${i}" role="button" tabindex="0"><div class="ffo-gc-playtop"><strong>${safe(event.update==='corrected'?'CORRECTED':event.update==='new'?'NEW':'PLAY')}</strong><small>${safe(event.period?'Q'+event.period:'Quarter unknown')} ${safe(event.clock||'Time unknown')}</small></div><div>${safe(event.text)}</div><small>${safe(s.playSource||'Source not verified')} · provisional · schematic only</small></div>`).join(''):'<p class="ffo-gc-note">No matching plays in this subset. This does not prove zero involvement.</p>');
+  if(selected.length>show.length){
+    const more=document.createElement('button');more.type='button';more.className='ffo-gc-refresh';
+    more.textContent='Show '+Math.min(40,selected.length-show.length)+' earlier plays';
+    more.onclick=()=>{s.visiblePlays=Math.min(selected.length,limit+40);drawPlays();};
+    el.appendChild(more);
+  }
   el.querySelectorAll('[data-ffo-play]').forEach(row=>{const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);drawField();drawPlays()};row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});
   drawField();
  }
@@ -229,7 +241,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game)return;
   const selected=s.games.find(g=>g.id===s.game);
   const kickoff=Date.parse(selected?.start||'');
