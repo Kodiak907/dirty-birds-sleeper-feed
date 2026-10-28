@@ -38,3 +38,6 @@ The 2026-10-27 preview build now uses PFO_PAGES_DEPLOY_TOKEN (Account Pages Edit
 2026-10-27 19:4x PT: Redeploy dirtybirdstest Pages PREVIEW pfo-thursday-staging so the three Access JWT verification settings and private GameCast service binding are active. Main production remains unchanged.
 
 2026-10-27 20:xx PT: Deploy PFO 5.5 preview with dated ESPN supplemental play descriptions, 2026 MSF Radar/Waiver evidence, and compact mobile stat rails. Preview-only Pages branch pfo-thursday-staging; main Pages remains unchanged.
+
+### PFO Thursday preview QA revision
+The PFO preview branch includes corrected ESPN NFL team alias mapping, compact nearby game selector, and reduced pregame refresh polling. Rebuild and upload PREVIEW only. Do not modify Pages main.
