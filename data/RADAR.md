@@ -1,17 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T21:41:29.412255+00:00
-Sleeper snapshot: 2026-10-28T21:41:25.622349+00:00
+Generated: 2026-10-28T22:41:05.468922+00:00
+Sleeper snapshot: 2026-10-28T22:41:00.843058+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**4 transaction changes:** 4 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1421284337906716672` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
-- **NEW** · transaction `1421283676016103424` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
-- **NEW** · transaction `1421283008698183680` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
-- **NEW** · transaction `1421281914169421824` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
