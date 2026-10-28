@@ -320,7 +320,10 @@ function tradeBlockHTML(){
  return h;
 }
 function renderTradeScouting(){
- const box=$('trade-intel');if(!box)return;const priorExpanded=[...box.querySelectorAll('details')].map((z,i)=>z.open?i:-1).filter(i=>i>=0);
+ const box=$('trade-intel');if(!box)return;
+ // Legacy Trade Laboratory is expensive. Hydrate only when explicitly expanded;
+ // all background source updates still refresh cached research without painting it.
+ if($('pfo59-market')&&(!$('trade-fold')?.open||!document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])')))return;const priorExpanded=[...box.querySelectorAll('details')].map((z,i)=>z.open?i:-1).filter(i=>i>=0);
  const live=broaderTradeIdeas.filter(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name||x.opponent)&&Number.isFinite(Number(x.dirty_birds_delta_ppg))&&Number.isFinite(Number(x.opponent_delta_ppg)));
  const scored=live.map(x=>({...x,_grade:tradeLeadGrade(x),_opp:tradeProfiles.get(Number(x.opponent_roster_id))}));
  const qualified=scored.filter(x=>x._grade.tier==='PROMISING SCAN');
