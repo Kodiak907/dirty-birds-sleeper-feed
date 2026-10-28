@@ -42,3 +42,23 @@
 @media(min-width:700px){.ffo57-card{border-radius:20px;border-bottom:1px solid #405f73;margin-bottom:3vh;max-height:85vh}}
 @media(max-width:380px){.ffo57-hero{grid-template-columns:60px minmax(0,1fr) 33px;gap:8px}.ffo57-portrait{width:60px;height:70px}.ffo57-name{font-size:18px}.ffo57-tabs button{min-width:68px;padding-left:5px;padding-right:5px}.ffo57-tilegrid{gap:5px}}
 @media(prefers-reduced-motion:reduce){.ffo57-card{animation:none}}
+
+/* Coach 5.9.2: more sourced player stats, less empty space, easy thumb navigation. */
+#ffo57-sheet .ffo57-card{max-height:93svh}
+#ffo57-sheet .ffo57-hero{grid-template-columns:60px minmax(0,1fr) 33px;gap:9px;padding:7px 10px}
+#ffo57-sheet .ffo57-portrait{width:60px;height:64px;border-radius:9px}
+#ffo57-sheet .ffo57-name{font-size:18px}
+#ffo57-sheet .ffo57-actions{padding:6px 9px;gap:4px}
+#ffo57-sheet .ffo57-actions button{padding:7px 6px;font-size:10px}
+#ffo57-sheet .ffo57-body{padding:8px 9px max(13px,env(safe-area-inset-bottom))}
+#ffo57-sheet .ffo57-tabs button{padding:9px 5px 7px;min-width:61px;font-size:10px}
+#ffo57-sheet .ffo57-section{margin:9px 0 6px;font-size:12px}
+#ffo57-sheet .ffo57-tilegrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+#ffo57-sheet .ffo57-tile{border-radius:6px;padding:7px 4px}
+#ffo57-sheet .ffo57-tile b{font-size:16px}
+#ffo57-sheet .ffo57-tile small{font-size:9px;line-height:1.2;margin-top:2px}
+#ffo57-sheet .ffo59-scoring-note{font-size:10px;line-height:1.35;border-top:1px solid #334e60;margin-top:8px;padding:8px 0}
+#ffo57-sheet .ffo59-scoring-note summary{cursor:pointer;color:#bad7e5}
+#ffo57-sheet .ffo57-evidence{font-size:10px;line-height:1.45;color:#abc4d6;margin:8px 0}
+#ffo57-sheet .ffo57-evidence a{color:#9ae1d1}
+#ffo57-sheet .ffo57-row{padding:7px 2px}
