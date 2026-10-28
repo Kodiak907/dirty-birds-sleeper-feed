@@ -533,9 +533,10 @@ function updateInjuryView(){
  if(!roster.length){body.innerHTML='<tr><td colspan="3">Current roster has not loaded. No injury status can be verified yet.</td></tr>';return;}
  const starterIds=new Set((liveRosterSnapshot?.starters||[]).map(String));
  const rows=roster.map(p=>{const o=official.find(x=>normPlayer(x.name)===normPlayer(p.name)),a=alt.find(x=>normPlayer(x.name)===normPlayer(p.name));const tag=p.sleeper_injury_status||'';
-  const game=String(o?.game_status||'').trim();const label=o&&game?(game+' · OFFICIAL'):(a?String(a.status||'ESPN injury entry')+' · ESPN':(tag?tag+' · fantasy tag':'No confirmed designation'));
-  const checked=o?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener">NFL injury report ↗</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener">ESPN injuries ↗</a>':'Source confirmation unavailable');
-  const note=o?('Practice: '+e(o.practice_status||'not published')+(o.injury?' · '+e(o.injury):'')):a?e(a.detail||'Reported injury; see original report'):'No listed injury is NOT confirmation of clearance.';
+  const game=String(o?.game_status||'').trim(),checkedOfficial=!!nflVerified?.checked_at;
+  const label=o&&game?(game+' · NFL REPORT'):o?'NFL REPORT · no final game designation':a?(String(a.status||'ESPN injury entry')+' · ESPN'):tag?(tag+' · fantasy tag'):checkedOfficial?'NOT LISTED · NFL report checked':'STATUS UNVERIFIED · source pending';
+  const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report ↗</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN injuries ↗</a>':'Source confirmation unavailable');
+  const note=o?('Practice: '+e(o.practice_status||'not published')+(o.injury?' · '+e(o.injury):'')+' · No game-day availability assumed'):a?e(a.detail||'Reported injury; verify team'):checkedOfficial?'Not included among matched injury-report entries as of '+e(pfo49Today(nflVerified.checked_at))+'. This is NOT a verified active or game-day clearance.':'No verified report available. Missing designation is NOT confirmation of clearance.';
   return {p,label,checked,note,important:!!o||!!a||!!tag||starterIds.has(String(p.player_id))};
  });
  rows.sort((a,b)=>Number(!!b.p.sleeper_injury_status)-Number(!!a.p.sleeper_injury_status));
@@ -546,7 +547,7 @@ async function loadLiveRoster(){
  const id=window.dbLeagueId||LEAGUE_ID_OVERRIDE, rid=window.dbRosterId||1;
  if(!id){liveRosterError='Waiting for live league ID from GitHub; saved watch list used';return;}
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),18000);
- try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;renderRosterComparison();renderGamedayInactives();renderBriefing();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderTradeScouting();gm47Render();}
+ try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;renderRosterComparison();renderGamedayInactives();renderBriefing();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderTradeScouting();gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
  catch(err){liveRosterError=String(err.message||err);renderRosterComparison();}
  finally{clearTimeout(timer)}
 }
@@ -595,7 +596,7 @@ async function refreshInjuryOnly(){
   await loadLiveRoster();
   await Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]);
  }catch(err){injuryError='Injury refresh error: '+String(err?.message||err);}
- finally{latestInjuryCheck=new Date();injuryBusy=false;updateInjuryView();renderGamedayInactives();if(document.querySelector('nav button[data-page="scouting"].active'))gm47Render();}
+ finally{latestInjuryCheck=new Date();injuryBusy=false;updateInjuryView();renderGamedayInactives();if(document.querySelector('nav button[data-page="scouting"].active'))gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
 }
 async function refreshLive(){
  if(activeSync)return;activeSync=true;
@@ -2240,12 +2241,13 @@ function pfo52PointLabel(val,complete=true){return val==null?'—':pfo52Money(va
 function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
  const reserve=(t?.members||[]).filter(y=>pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
  const selector=mode==='ours'?'<select class="pfo52-swap" data-pfo52-swap="'+i+'" aria-label="Change '+e(x.slot)+' player"><option value="'+e(x.id||'')+'">'+e(p?.name||'Open slot')+'</option>'+reserve.map(y=>'<option value="'+e(y.id||y.player_id)+'">'+e(y.name)+'</option>').join('')+'</select>':'';
- return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div><strong>'+e(p?.name||'No verified option')+'</strong><small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+pfo52PointLabel(val)+'</b></div>';
+ const proj=!past&&x.id?pfo52Points(x.id,w):null;
+ return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div><strong>'+e(p?.name||'No verified option')+'</strong><small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':pfo52PointLabel(val))+'</b></div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
  const starters=new Set(team.starters),ids=team.members,reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
- const list=items=>items.length?items.map(p=>'<span class="pfo52-pill">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+pfo52PointLabel(pfo52Value(team,String(p.id),w,past))+'</span>').join(''):'<span class="pfo52-dim">None verified</span>';
+ const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<span class="pfo52-pill">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</span>';}).join(''):'<span class="pfo52-dim">None verified</span>';
  const bench=ids.filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
  const health=ids.filter(p=>pfo52Pos(p)!=='DEF').map(p=>{const raw=pfo52HealthCatalog.get(String(p.id))||(liveRosterSnapshot?.players||[]).find(x=>String(x.player_id)===String(p.id))||{};const tag=raw.injury_status||raw.sleeper_injury_status||null;
   const confirmed=w===pfo52Cur()&&reportMatchesCurrentWeek(officialInactiveEvidence)?officialInactiveEvidence?.confirmed_official_inactives?.[String(p.id)]:null;
@@ -2441,13 +2443,12 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  let h='<div class="pfo52-panhead"><h2>Dirty Birds · Championship Weeks 15–17</h2><p class="pfo52-fine">Player-by-player points, NFL opponent, and legal starting-lineup totals—not a bracket predicting other league managers. Weekly estimates are opponent-adjusted only when sufficient independently observed defensive data exists; otherwise labeled unchanged recent-form baselines.</p></div>';
  h+='<div class="pfo52-champgrid">'+wks.map(w=>{const best=pfo52Best(team,w,false);return '<div class="pfo52-champbox"><b>W'+w+' ideal*</b><strong>'+pfo52PointLabel(best.total,best.complete)+'</strong><small>'+best.known+'/'+best.required+' legal slots</small></div>';}).join('')+'</div>';
  h+='<div class="pfo49-table-wrap"><table class="pfo49-gamelog"><thead><tr><th>Dirty Birds player</th>'+wks.map(w=>'<th>Week '+w+'</th>').join('')+'</tr></thead><tbody>';
- const first=(team.starters||[]).map(String);
- const members=team.members.filter(p=>['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)));
- const starting=members.filter(p=>first.includes(String(p.id))),bench=members.filter(p=>!first.includes(String(p.id)));
- const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+pfo52PointLabel(x?.points)+'</b><small class="pfo52-dim">'+e(opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
- h+=(starting.length?starting:members.slice(0,10)).map(statrow).join('');
- h+='</tbody></table></div>';
- if(starting.length&&bench.length)h+='<details class="pfo59-bench-forecast"><summary>Bench & reserve playoff projections · '+bench.length+' players</summary><div class="pfo49-table-wrap"><table class="pfo49-gamelog"><thead><tr><th>Player</th>'+wks.map(w=>'<th>W'+w+'</th>').join('')+'</tr></thead><tbody>'+bench.map(statrow).join('')+'</tbody></table></div></details>';
+ const members=team.members.filter(p=>['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)))
+   .sort((a,b)=>['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(a))-['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(b))||String(a.name).localeCompare(String(b.name)));
+ // Playoff starters cannot be inferred from today's lineup. Show everyone together.
+ const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+(x?.bye?'BYE':pfo52PointLabel(x?.points))+'</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
+ h+=members.map(statrow).join('');
+ h+='</tbody></table></div><p class="pfo52-fine">All currently rostered players appear together. Today's starters and bench do not predict playoff lineup assignments.</p>';
  h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
  el.innerHTML=h;
 };
