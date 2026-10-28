@@ -19,14 +19,31 @@
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(rid));
   const names=state.names||{},counts={QB:0,RB:0,WR:0,TE:0,K:0,DEF:0},unknown=[];
   for(const id of r?.players||[]){
-   const p=names[id];const pos=String(p?.position||'').replace('D/ST','DEF').toUpperCase();
+   const p=names[id],pos=String(p?.position||'').replace('D/ST','DEF').toUpperCase();
    if(Object.hasOwn(counts,pos))counts[pos]++;else unknown.push(id);
   }
   const slots=state.snap?.league?.roster_positions||[];
   const required={QB:Math.max(1,slots.filter(x=>x==='QB').length),RB:Math.max(1,slots.filter(x=>x==='RB').length),WR:Math.max(1,slots.filter(x=>x==='WR').length),TE:Math.max(1,slots.filter(x=>x==='TE').length),K:slots.includes('K')?1:0,DEF:slots.includes('DEF')?1:0};
   const targets={QB:required.QB+1,RB:required.RB+2,WR:required.WR+2,TE:required.TE+1,K:required.K,DEF:required.DEF};
   const priority=Object.fromEntries(Object.keys(counts).map(pos=>[pos,Math.max(0,targets[pos]-counts[pos])]));
-  return {counts,targets,priority,unknown,known:!!r};
+  // Secondary weakness signal: compare source-backed starter projections across actual league rosters.
+  // Require sufficient team coverage before computing a league comparison. No model values are inferred.
+  const weakness={};
+  const projectionFor=(roster,pos)=>{
+   const scores=(roster?.players||[]).map(id=>({id,p:names[id]})).filter(x=>String(x.p?.position||'').replace('D/ST','DEF')===pos)
+     .map(x=>scoreInfo({id:String(x.id),name:x.p.name,team:x.p.team}).project)
+     .filter(v=>v!==null&&Number.isFinite(v)).sort((a,b)=>b-a);
+   const want=required[pos];
+   return want>0&&scores.length>=want?scores.slice(0,want).reduce((a,b)=>a+b,0)/want:null;
+  };
+  for(const pos of posList.slice(1)){
+   const ours=projectionFor(r,pos),all=(state.snap?.rosters||[]).map(t=>projectionFor(t,pos)).filter(v=>v!==null);
+   if(ours===null||all.length<6)continue;
+   const leagueAverage=all.reduce((a,b)=>a+b,0)/all.length,difference=leagueAverage-ours;
+   if(difference>0.75)weakness[pos]={difference,ours,leagueAverage,coverage:all.length};
+  }
+  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*4+Math.min(8,Math.max(0,weakness[pos]?.difference||0))]));
+  return {counts,targets,priority,rank,weakness,unknown,known:!!r};
  }
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
  function entryPool(){
@@ -68,7 +85,7 @@
   if(!state.snap||!state.names){host.innerHTML='<p>Loading published league roster and player directory…</p>';return}
   const n=needs(state.manager),pool=entryPool(),filtered=pool.filter(p=>(state.position==='ALL'||p.position===state.position)&&p.name.toLowerCase().includes(state.search.toLowerCase()));
   filtered.sort((a,b)=>{
-   const gap=Number(n.priority[b.position]||0)-Number(n.priority[a.position]||0);
+   const gap=Number(n.rank[b.position]||0)-Number(n.rank[a.position]||0);
    if(state.position==='ALL'&&gap)return gap;
    const pa=scoreInfo(a).project,pb=scoreInfo(b).project;
    if(pa!=null&&pb!=null&&pa!==pb)return pb-pa;
@@ -85,8 +102,9 @@
    return '<button type="button" class="pfo59-leader" '+(leader?'data-pfo59-player="'+safe(leader.id)+'"':'disabled')+'><b>'+safe(pos)+'</b><span>'+safe(leader?.name||'No published model leader')+'</span><small>'+(leader?'Projected '+safe(scoreInfo(leader).project.toFixed(1))+' PPG · model, not season actual':'No supported ranking')+'</small></button>';
   }).join('');
   const gaps=posList.slice(1).filter(pos=>n.priority[pos]>0).sort((a,b)=>n.priority[b]-n.priority[a]);
-  host.innerHTML='<div class="pfo59-caveat">Personalized rankings use roster counts as a <b>depth proxy</b>, not proof of talent weakness. Projection fields only appear when independently published. The candidate directory is incomplete; this is not the entire NFL free-agent list. Nothing is claimed or bid.</div>'+
-    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No simple depth gaps')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping; gaps are provisional · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
+  const weak=posList.slice(1).filter(pos=>n.weakness[pos]).sort((a,b)=>n.weakness[b].difference-n.weakness[a].difference);
+  host.innerHTML='<div class="pfo59-caveat">Personalized recommendations combine <b>roster depth</b> and, where source coverage permits, starter model comparisons to league baselines. Model deficits are estimates, not proven roster weaknesses. This player directory remains incomplete, and eligibility is not established. Nothing is claimed or bid.</div>'+
+    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No simple depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
     '<h3>Published research / model leaders by position</h3><div class="pfo59-leaders">'+leaders+'</div>'+
     '<div class="pfo59-list-head"><h3>'+safe(state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.position==='ALL'?'roster depth then model':'supported model PPG')+'</small></div>'+
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,n.priority[p.position])).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
