@@ -41,3 +41,6 @@ The 2026-10-27 preview build now uses PFO_PAGES_DEPLOY_TOKEN (Account Pages Edit
 
 ### PFO Thursday preview QA revision
 The PFO preview branch includes corrected ESPN NFL team alias mapping, compact nearby game selector, and reduced pregame refresh polling. Rebuild and upload PREVIEW only. Do not modify Pages main.
+
+### Final Thursday QA Preview: injury and trade evidence
+Redeploy only dirtybirdstest protected Pages preview from pfo-thursday-staging. Added dated MSF injury source cross-check and compact two-sided screened trade cards with pros, limitations, roster impact, and no actions sent. Existing production remains untouched.
