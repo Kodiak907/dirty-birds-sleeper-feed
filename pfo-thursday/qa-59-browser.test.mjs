@@ -51,7 +51,13 @@ async function getPage(){
  return {page,context,api};
 }
 async function clickTab(page,id){
- await page.locator('nav button[data-page="'+id+'"]').click({timeout:10000});
+ const mobile=page.locator('#ffo594-dock [data-ffo594-page="'+id+'"]');
+ if(await mobile.count()){
+  await mobile.click({timeout:10000});
+ }else{
+  await page.locator('#ffo594-more').click({timeout:10000});
+  await page.locator('#nav button[data-page="'+id+'"]').click({timeout:10000});
+ }
  await page.waitForTimeout(60);
 }
 test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected tabs', {timeout:110000},async()=>{
@@ -61,8 +67,16 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   const {page,context,api}=await getPage();ctx=context;
   await page.waitForTimeout(900);
   assert.equal(await page.locator('#overview').count(),1);
+  assert.equal(await page.locator('#ffo594-dock .ffo594-dock-btn').count(),6,'FFO six-item dock mounted');
+  assert.equal(await page.locator('#nav button[data-page]').count(),14,'Original 14 destination controls retained');
+  assert.equal(await page.locator('#ffo594-dock [data-ffo594-page="overview"]').getAttribute('aria-current'),'page','Overview active in mobile dock');
+  await page.locator('#ffo594-more').click();
+  assert.equal(await page.locator('#nav').isVisible(),true,'All Tools opens mobile drawer');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#nav').isVisible(),false,'Escape dismisses mobile drawer');
   await clickTab(page,'roster');
   assert.equal(await page.locator('#pfo59-team-hub').count(),1,'Team HQ mounted');
+  assert.equal(await page.locator('#ffo594-dock [data-ffo594-page="roster"]').getAttribute('aria-current'),'page','Mobile dock syncs Team HQ');
   assert.equal(await page.locator('#pfo59-team-hub [data-pfo59-team-tab]').count(),3,'Three focused Team HQ tabs');
   assert.equal(await page.locator('nav button[data-page="roster"]').innerText(),'Team HQ','Main Team HQ named correctly');
   assert.equal(await page.locator('[data-pfo59-team-tab="roster"]').innerText(),'Roster','Subtab labeled Roster');
@@ -77,6 +91,14 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(await page.locator('.pfo59-market-tabs button').count(),3,'No redundant market home');
   await page.locator('.pfo59-market-tabs [data-pfo59-market="trade"]').click();
   assert.equal(await page.locator('#pfo59-trade-existing #trade-fold').count(),1,'Original multi-player trade engine still mounted');
+  await page.waitForTimeout(300);
+  // Never submit a trade; assert two-sided roster chooser and selection work when
+  // the published manager snapshot is available.
+  const owner=page.locator('#pfo59-trade-board [data-pfo59-partner]:not([disabled])').first();
+  if(await owner.count()){
+   await owner.click();
+   assert.equal(await page.locator('#pfo59-trade-board .pfo59-trade-dual>section').count(),2,'Both sides of trade show player selectors');
+  }
   await page.locator('.pfo59-market-tabs [data-pfo59-market="waiver"]').click();
   assert.equal(await page.locator('#pfo59-position option').count(),7,'Position filters exist');
   assert.equal(await page.locator('#pfo59-waiver-existing #waiver-fold').count(),1,'Original waiver research preserved');
