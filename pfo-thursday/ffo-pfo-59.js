@@ -266,6 +266,10 @@
   root.querySelector('.market-heading')?.after(nav);
   const legacyTrade=$('trade-intel')?.closest('#trade-fold');
   $('pfo59-trade-existing').appendChild(tradeFold);
+  tradeFold.addEventListener('toggle',()=>{
+   if(tradeFold.open&&document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))
+    requestAnimationFrame(()=>{if(tradeFold.open&&typeof renderTradeScouting==='function')renderTradeScouting()});
+  });
   $('pfo59-waiver-existing').appendChild(waiverFold);
   $('pfo59-txn-existing').appendChild(faab);
   const gamecastTrade=$('ffo-gc-trade-intel');if(gamecastTrade)$('pfo59-trade-existing').prepend(gamecastTrade);
@@ -275,7 +279,8 @@
    const partner=ev.target.closest('[data-pfo59-partner]');if(partner){
     const id=partner.dataset.pfo59Partner;if(id==='3')return;
     state.manager=id;state.tradeTake=[];state.tradeGive=[];managerOptions();trade();
-    try{const x=tb48State();x.opponent=id;x.take=[];x.give=[];tb45Save();}catch(err){console.warn('Trade lab sync unavailable',err)}
+    // Do not synchronously rebuild the old Trade Laboratory when a partner is tapped.
+    // Selected players are synchronized only when Coach requests Analyze.
     return;
    }
    const pick=ev.target.closest('[data-pfo59-pick]');
