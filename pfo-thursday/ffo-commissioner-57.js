@@ -71,8 +71,8 @@
   const shell=document.createElement('section');shell.id='com57';shell.className='com57-shell';
   shell.innerHTML=
   '<div class="com57-heading"><div><div class="eyebrow">FFO ADMINISTRATION · 5.7</div><h3>Commissioner Score Control</h3><p>Auditable decisions, immediate FFO ledger entry, and separate Sleeper reconciliation.</p></div><span class="com57-private">PRIVATE · PIN REQUIRED</span></div>'+
-  '<div class="com57-tabs" role="tablist" aria-label="Commissioner tools"><button type="button" data-com57-tab="scores" aria-selected="true">Score adjustments</button><button type="button" data-com57-tab="audit" aria-selected="false">Discipline ledger</button><button type="button" data-com57-tab="toolbox" aria-selected="false">League toolbox</button></div>'+
-  '<div data-com57-panel="scores" class="com57-panel"><div class="com57-alert">Sleeper official score changes are made only inside Sleeper Commissioner Control after the NFL week finishes. This panel records FFO decisions immediately and checks official scores later. No silent league changes.</div>'+
+  '<div class="com57-tabs" role="tablist" aria-label="Commissioner tools"><button type="button" data-com57-tab="log" aria-selected="true">Commissioner Log</button><button type="button" data-com57-tab="scores" aria-selected="false">Score adjustments</button><button type="button" data-com57-tab="audit" aria-selected="false">Score audit</button><button type="button" data-com57-tab="toolbox" aria-selected="false">League toolbox</button></div>'+ '<div data-com57-panel="log" class="com57-panel"></div>'+
+  '<div data-com57-panel="scores" class="com57-panel" hidden><div class="com57-alert">Sleeper official score changes are made only inside Sleeper Commissioner Control after the NFL week finishes. This panel records FFO decisions immediately and checks official scores later. No silent league changes.</div>'+
   '<form id="com57-form" class="com57-form">'+
   '<label>Issued disciplinary case<select id="com57-case" required><option value="">Choose filed FFL case</option></select></label>'+
   '<label>Fantasy week<input id="com57-week" type="number" min="1" max="18" required placeholder="Week"></label>'+
@@ -85,12 +85,17 @@
   '<div id="com57-preview" class="com57-preview com57-full" aria-live="polite"></div>'+
   '<div class="com57-full com57-actions"><button type="submit" class="button primary">Record adjustment in FFO</button><button type="button" id="com57-refresh" class="button">Refresh ledger</button></div>'+
   '</form></div>'+
-  '<div data-com57-panel="audit" class="com57-panel" hidden><div id="com57-pulse"></div><p class="com57-foot">Case decisions and evidence stay in the existing private Commissioner Command case ledger. Score adjustments below are append-only, including reversals.</p></div>'+
+  '<div data-com57-panel="audit" class="com57-panel" hidden><div id="com57-pulse"></div><p class="com57-foot">Case decisions and evidence are maintained exclusively in Commissioner Log. Score adjustment history is append-only, including reversals.</p></div>'+
   '<div data-com57-panel="toolbox" class="com57-panel" hidden><h4>Commissioner toolbox · planned controls</h4><div class="com57-toolgrid">'+
   [['Score adjustment history','Active FFO ledger, rollback and Sleeper verification','active'],['Disciplinary precedent finder','Find prior cases sharing a rule code','active'],['Appeal and evidence timeline','Existing private cases, uploaded evidence and appeals','active'],['League roster force-edit','Read-only: perform any action in Sleeper','inactive'],['Schedule / playoff reseeding','Read-only: retain Sleeper as the system of record','inactive'],['Waiver / transaction override','Read-only: no automated transactions','inactive'],['Penalty impact simulator','Future: playoff and standings recalculation with source-complete matchup data','inactive'],['Manager notice generator','Future: draft notifications from case evidence, never auto-send','inactive']].map(([name,desc,status])=>'<div class="com57-tool"><b>'+E(name)+'</b><small>'+E(desc)+'</small><span>'+E(status==='active'?'Available via FFO':'Planned / no action')+'</span></div>').join('')+
   '</div></div>'+
   '<div class="com57-bottom"><div class="com57-rail"><h4>Point adjustment ledger</h4><div id="com57-status" aria-live="polite">Waiting for commissioner unlock…</div></div><div id="com57-ledger" class="com57-ledger"></div></div>';
   host.prepend(shell);
+  // Move existing, working case-management DOM into Log ONLY; keep identity/Lock visible.
+  const log=shell.querySelector('[data-com57-panel="log"]');
+  for(const node of [...host.children])if(node!==shell&&!node.querySelector?.('#com-identity'))log.appendChild(node);
+  // The score ledger belongs only to the score workspace, never underneath other tabs.
+  shell.querySelector('[data-com57-panel="scores"]').appendChild(shell.querySelector('.com57-bottom'));
   shell.querySelectorAll('[data-com57-tab]').forEach(btn=>btn.addEventListener('click',()=>{
    shell.querySelectorAll('[data-com57-tab]').forEach(n=>n.setAttribute('aria-selected',String(n===btn)));
    shell.querySelectorAll('[data-com57-panel]').forEach(n=>{n.hidden=n.dataset.com57Panel!==btn.dataset.com57Tab});
