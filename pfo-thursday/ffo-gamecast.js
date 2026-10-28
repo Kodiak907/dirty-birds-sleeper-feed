@@ -4,7 +4,7 @@
  'use strict';
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const model=await import('/ffo-gamecast-model.mjs');
- const polish=document.createElement('style');polish.textContent=\`
+ const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
 #radar .pfo49-radar-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%;max-width:100%;min-width:0;gap:8px}
 #radar .pfo49-radar-item,#market .scout-card{width:100%;max-width:100%;min-width:0;overflow:hidden;box-sizing:border-box}
@@ -18,7 +18,7 @@
 #market .market-columns,#market .grid.two{grid-template-columns:minmax(0,1fr)!important;max-width:100%;min-width:0}
 #market .market-fold,#market .fold-body,#market .scout-card,#radar .card{min-width:0;max-width:100%}
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
-\`;document.head.append(polish);
+`;document.head.append(polish);
 
  const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,playFilter:'all',activePlay:-1,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
