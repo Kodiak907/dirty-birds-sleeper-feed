@@ -551,9 +551,10 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
    const board=await fetch(base+'scoreboard?dates='+date,{headers:{accept:'application/json'},cf:{cacheEverything:true,cacheTtl:90},signal:AbortSignal.timeout(8000)});
    if(!board.ok)return ffoReply({source:'ESPN summary',error:'scoreboard_unavailable',provider_http_status:board.status,checked_at:now()},502);
    const events=(await board.json()).events||[];
+   const espnTeam=t=>({GBP:'GB',GNB:'GB',KCC:'KC',KAN:'KC',LAR:'LAR',LA:'LAR',JAC:'JAX',JAX:'JAX',WAS:'WSH',WSH:'WSH',OAK:'LV',STL:'LAR',SD:'LAC',ARZ:'ARI',NOR:'NO',TAM:'TB',SFO:'SF'}[String(t||'').toUpperCase()]||String(t||'').toUpperCase());
    const matches=events.filter(evt=>{
      const c=evt.competitions?.[0]?.competitors||[];
-     return c.some(t=>t.homeAway==='home'&&t.team?.abbreviation===home)&&c.some(t=>t.homeAway==='away'&&t.team?.abbreviation===away);
+     return c.some(t=>t.homeAway==='home'&&espnTeam(t.team?.abbreviation)===espnTeam(home))&&c.some(t=>t.homeAway==='away'&&espnTeam(t.team?.abbreviation)===espnTeam(away));
    });
    if(matches.length!==1)return ffoReply({source:'ESPN summary',available:false,reason:'unique_game_match_not_found',checked_at:now(),games_found:matches.length});
    const event=matches[0],eventId=String(event.id);
