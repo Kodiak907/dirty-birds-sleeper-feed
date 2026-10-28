@@ -541,7 +541,183 @@ async function ffo50Schedule(season){
  return {season,source_url:source,checked_at:new Date().toISOString(),games:count,weeks_covered:weeks.size,teams,complete:valid};
 }
 
-export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
+
+/* FFO 5.9 independent NFL scorebook. No Sleeper player points, projections or game stats.
+ * ESPN public NFL boxscore and scoring-play data; locally frozen FFO scoring settings.
+ * All award math has traceable source-category audit; unknown event attribution is flagged.
+ */
+const ffoScTeam=x=>({JAC:'JAX',WSH:'WAS',LA:'LAR',STL:'LAR',OAK:'LV'})[String(x||'').toUpperCase()]||String(x||'').toUpperCase();
+const ffoScNum=x=>{const n=Number(String(x??'').replace(/,/g,''));return Number.isFinite(n)?n:0};
+function ffoScBuild(game,config){
+ const rules=config?.scoring||{},teams=game?.boxscore?.players||[],playByPlay=[
+   ...(Array.isArray(game?.drives?.previous)?game.drives.previous:[]).flatMap(d=>d.plays||[]),
+   ...(game?.drives?.current?.plays||[])
+ ],plays=game?.scoringPlays||[],players=new Map(),warnings=[];
+ const award=(player,key,amount,description)=>{
+  const multiplier=Number(rules[key]||0),value=Math.round(amount*multiplier*100)/100;
+  if(amount===0||multiplier===0||!Number.isFinite(value))return;
+  player.points=Math.round((player.points+value)*100)/100;
+  player.breakdown.push({rule:key,units:amount,multiplier,points:value,evidence:description});
+ };
+ const get=(team,athlete)=>{
+  const name=String(athlete?.displayName||'').trim();
+  if(!name)return null;
+  const k=ffoScTeam(team)+'|'+name.toLowerCase();
+  if(!players.has(k))players.set(k,{id:String(athlete?.id||''),name,team:ffoScTeam(team),points:0,breakdown:[],stats:{},evidence_source:'ESPN NFL boxscore'});
+  return players.get(k);
+ };
+ const getByName=(team,name)=>[...players.values()].find(x=>x.team===ffoScTeam(team)&&x.name.toLowerCase()===String(name||'').toLowerCase());
+ const capture={passing:{'YDS':['pass_yd',1],'TD':['pass_td',1],'INT':['pass_int',1]},
+  rushing:{'CAR':['rush_att',1],'YDS':['rush_yd',1],'TD':['rush_td',1]},
+  receiving:{'REC':['rec',1],'YDS':['rec_yd',1],'TD':['rec_td',1],'TGTS':['targets',1]},
+  fumbles:{'FUM':['fum',1],'LOST':['fum_lost',1],'REC':['fum_rec',1]},
+  defensive:{'SACKS':['sack',1]},
+  interceptions:{'INT':['int',1]},
+  kickReturns:{'YDS':['kr_yd',1],'TD':['st_td',1]},
+  puntReturns:{'YDS':['pr_yd',1],'TD':['st_td',1]}
+ };
+ let hasBoxscore=false;
+ for(const club of teams){
+  const team=ffoScTeam(club.team?.abbreviation);
+  for(const category of club.statistics||[]){
+   const type=category.name,labels=category.labels||[];
+   for(const row of category.athletes||[]){
+    const p=get(team,row.athlete);if(!p)continue;hasBoxscore=true;
+    for(let i=0;i<labels.length;i++){
+     const key=capture[type]?.[labels[i]]?.[0];
+     if(!key)continue;
+     const num=Number(row.stats?.[i]);
+     if(!Number.isFinite(num))continue;
+     p.stats[key]=num;
+    }
+    if(type==='passing'){
+     const st=String(row.stats?.[0]||'').match(/^(\d+)\/(\d+)$/);
+     if(st){p.stats.pass_cmp=+st[1];p.stats.pass_att=+st[2];}
+    }
+    if(type==='kicking'){
+     const fg=String(row.stats?.[labels.indexOf('FG')]||'').match(/^(\d+)\/(\d+)$/);
+     const xp=String(row.stats?.[labels.indexOf('XP')]||'').match(/^(\d+)\/(\d+)$/);
+     if(fg){p.stats.fgm=+fg[1];p.stats.fga=+fg[2]}
+     if(xp){p.stats.xpm=+xp[1];p.stats.xpa=+xp[2]}
+    }
+   }
+  }
+ }
+ const sig=name=>String(name||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+ const lookup=(team,name)=>{
+  const same=[...players.values()].filter(p=>p.team===ffoScTeam(team));
+  const exact=same.filter(p=>sig(p.name)===sig(name));
+  if(exact.length===1)return exact[0];
+  const soft=same.filter(p=>sig(p.name).split(' ').slice(0,2).join(' ')===sig(name).split(' ').slice(0,2).join(' '));
+  return soft.length===1?soft[0]:null;
+ };
+ // Award baseline boxscore values once. Extra stats such as targets and carries do not
+ // generate points unless explicitly enabled in the frozen commissioner rules.
+ for(const p of players.values())for(const [key,amount] of Object.entries(p.stats)){
+  if(['fgm','fga','xpm','xpa'].includes(key))continue;
+  award(p,key,amount,'ESPN player boxscore: '+key);
+ }
+ const kickResults=new Map();
+ const addKick=(team,name,distance)=>{
+  const p=lookup(team,name);if(!p){warnings.push('Made FG player not uniquely mapped: '+name+' / '+team);return}
+  if(!kickResults.has(p))kickResults.set(p,[]);
+  kickResults.get(p).push(distance);
+ };
+ for(const play of plays){
+  const t=String(play.text||''),team=ffoScTeam(play.team?.abbreviation),type=String(play.type?.text||'');
+  if(/field goal good/i.test(type)||/field goal/i.test(String(play.scoringType?.name))&&/field goal/i.test(t)){
+   const found=t.match(/^(.+?)\s+(\d{1,2})\s*(?:yd|yard)\s+field goal/i);
+   if(found)addKick(team,found[1],+found[2]);
+   else warnings.push('Unable to read made field goal distance from '+t.slice(0,100));
+  }
+  const td=t.match(/^(.*?)\s+(\d+)\s+Yd\s+(?:pass from|Rush|Run)/i);
+  if(td&&/touchdown/i.test(type)){
+   const yards=+td[2],receiver=lookup(team,td[1]),passer=t.match(/\bpass from\s+(.+?)(?:\s*\(|$)/i),thrower=passer?lookup(team,passer[1]):null;
+   const isPass=!!passer;
+   const amount=yards>=50?3:yards>=40?1:0;
+   // FFL long-TD settings: 40+ = +1 and 50+ = +2; 50+ awards stack.
+   // Mark as assumed pending validation of whether the league stacks the two bonuses.
+   if(amount){
+    if(isPass&&thrower){award(thrower,'pass_td_40p',1,'ESPN scoring play: '+yards+'-yard passing TD');if(yards>=50)award(thrower,'pass_td_50p',1,'ESPN scoring play: '+yards+'-yard passing TD')}
+    if(receiver){const key=isPass?'rec_td':'rush_td';award(receiver,key+'_40p',1,'ESPN scoring play: '+yards+'-yard TD');if(yards>=50)award(receiver,key+'_50p',1,'ESPN scoring play: '+yards+'-yard TD')}
+    if((isPass&&!thrower)||!receiver)warnings.push('Long touchdown name mapping incomplete: '+t.slice(0,100));
+   }
+  }
+ }
+ for(const p of players.values())if(p.stats.fga!=null||p.stats.xpa!=null){
+  const made=kickResults.get(p)||[];
+  const expected=p.stats.fgm||0;
+  if(made.length!==expected)warnings.push('Made FG distance events '+made.length+' vs boxscore '+expected+' for '+p.name);
+  for(const y of made){
+   const bucket=y>=60?'fgm_60p':y>=50?'fgm_50_59':y>=40?'fgm_40_49':y>=30?'fgm_30_39':y>=20?'fgm_20_29':'fgm_0_19';
+   award(p,bucket,1,'ESPN scoring play: '+y+'-yard made field goal');
+  }
+  if(p.stats.fga!=null)award(p,'fgmiss',Math.max(0,p.stats.fga-(p.stats.fgm||0)),'ESPN kicking boxscore: missed field goals');
+  if(p.stats.xpm!=null)award(p,'xpm',p.stats.xpm,'ESPN kicking boxscore: made PATs');
+  if(p.stats.xpa!=null)award(p,'xpmiss',Math.max(0,p.stats.xpa-(p.stats.xpm||0)),'ESPN kicking boxscore: missed PATs');
+ }
+ // FFO team-defense scores use NFL game opponents, never Sleeper DST fantasy points.
+ const scoreboard=game?.header?.competitions?.[0]?.competitors||[];
+ const defense=[];
+ for(const c of scoreboard){
+  const team=ffoScTeam(c.team?.abbreviation),op=scoreboard.find(x=>ffoScTeam(x.team?.abbreviation)!==team);
+  if(!team||!op)continue;
+  const d={team,name:team+' D/ST',points:0,breakdown:[],stats:{},source:'ESPN NFL summary and play-by-play'};
+  let allowed=ffoScNum(op.score);
+  // A defensive touchdown against opponent offense (pick-six, fumble return)
+  // is not charged to the opponent D/ST. Returns/FGs remain charged.
+  for(const play of plays){
+   const text=String(play.text||''),scoringTeam=ffoScTeam(play.team?.abbreviation),type=String(play.type?.text||'');
+   if(scoringTeam!==team&&/touchdown/i.test(type)&&/interception return|intercepted.*touchdown|fumble return|fumble recovery.*touchdown/i.test(text)){
+    allowed=Math.max(0,allowed-6);
+   }
+  }
+  d.stats.points_allowed=allowed;
+  const pa=allowed===0?'pts_allow_0':allowed<=6?'pts_allow_1_6':allowed<=13?'pts_allow_7_13':allowed<=20?'pts_allow_14_20':allowed<=27?'pts_allow_21_27':allowed<=34?'pts_allow_28_34':'pts_allow_35p';
+  award(d,pa,1,'ESPN score and defensive TD correction; provisional');
+  const opponent=teams.find(x=>ffoScTeam(x.team?.abbreviation)===ffoScTeam(op.team?.abbreviation));
+  if(opponent){
+   const passing=opponent.statistics?.find(x=>x.name==='passing');
+   const sacks=passing?.athletes?.reduce((sum,a)=>sum+ffoScNum(String(a.stats?.[5]||'').split('-')[0]),0)||0;
+   award(d,'sack',sacks,'ESPN opposing QB passing sacks');
+   const ints=passing?.athletes?.reduce((sum,a)=>sum+ffoScNum(a.stats?.[4]),0)||0;
+   award(d,'int',ints,'ESPN opposing QB interceptions thrown');
+   const fumbles=opponent.statistics?.find(x=>x.name==='fumbles');
+   const lost=fumbles?.athletes?.reduce((sum,a)=>sum+ffoScNum(a.stats?.[1]),0)||0;
+   award(d,'fum_rec',lost,'ESPN opponent fumbles lost');
+  }
+  for(const play of plays){
+   const type=String(play.type?.text||''),text=String(play.text||''),scoringTeam=ffoScTeam(play.team?.abbreviation);
+   if(scoringTeam===team&&/interception return.*touchdown|fumble return.*touchdown|fumble recovery.*touchdown/i.test(type+' '+text))award(d,'def_td',1,'ESPN scoring play: defensive touchdown');
+   if(scoringTeam===team&&/punt return.*touchdown|kickoff return.*touchdown/i.test(type+' '+text))award(d,'st_td',1,'ESPN scoring play: special teams touchdown');
+  }
+  defense.push(d);
+ }
+ return {source:'FFO independently computed from ESPN NFL boxscore + play-by-play',provider:'ESPN',source_url:'https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event='+String(game?.header?.id||''),rules_version:config.version,players:[...players.values()].sort((a,b)=>b.points-a.points),defense,warnings,
+  completeness:hasBoxscore?'PROVISIONAL__SPECIAL_EVENTS_NEED_CROSS_CHECK':'PREGAME__NO_PLAYER_STATS',reported_points_are_ffo_calculations:true,sleeper_points_used:false,
+  limitations:['ESPN play attribution for 2-point conversions, fumble recovery TDs, safety returns, forced fumbles and blocked kicks may be incomplete. Never label these numbers reconciled or official until audited.','Long touchdown bonuses of 40+ and 50+ assumed cumulative; verify commissioner rule semantics.','Defensive points allowed may need turnover-TD adjustments and D/ST event reconciliation.','ESPN game summaries can change as scoring corrections are published.']};
+}
+async function ffoScEndpoint(req,env){
+ const url=new URL(req.url),date=url.searchParams.get('date')||new Date().toISOString().slice(0,10).replaceAll('-',''),event=url.searchParams.get('event');
+ if(event&&!/^\d{9,12}$/.test(event))return comJson({error:'INVALID_NFL_EVENT_ID'},400);
+ if(!event&&!/^\d{8}$/.test(date))return comJson({error:'INVALID_NFL_DATE'},400);
+ const base='https://site.api.espn.com/apis/site/v2/sports/football/nfl/';
+ const resource=event?'summary?event='+event:'scoreboard?dates='+date;
+ const response=await fetch(base+resource,{headers:{accept:'application/json'},cf:{cacheEverything:true,cacheTtl:12}});
+ if(!response.ok)return comJson({error:'ESPN_NFL_SOURCE_UNAVAILABLE',upstream_status:response.status},502);
+ const json=await response.json();
+ if(!event)return comJson({source:'ESPN NFL scoreboard',date,provider:'ESPN',checked_at:new Date().toISOString(),games:(json.events||[]).map(x=>({
+   id:x.id,date:x.date,status:x.status?.type?.name||'unknown',teams:x.competitions?.[0]?.competitors?.map(c=>({team:ffoScTeam(c.team?.abbreviation),score:c.score,homeAway:c.homeAway}))||[]
+ }))});
+ const frozen=await env.ASSETS.fetch(new Request(url.origin+'/FFO_FFL_SCORING_V1.json'));
+ if(!frozen.ok)return comJson({error:'FFO_OWN_SCORING_RULES_MISSING'},503);
+ const rules=await frozen.json();
+ const result=ffoScBuild(json,rules);
+ result.event_id=event;result.checked_at=new Date().toISOString();result.game_status=json.header?.competitions?.[0]?.status?.type?.name||null;
+ return comJson(result,200,{'cache-control':'private, max-age=8'});
+}
+
+export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname==='/api/ffo/independent-score'||url.pathname==='/api/ffo/independent-schedule'){if(request.method!=='GET')return comJson({error:'METHOD_NOT_ALLOWED'},405);try{return await ffoScEndpoint(request,env)}catch{return comJson({error:'FFO_NFL_SCORING_FEED_UNAVAILABLE'},503)}}if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
  if(url.pathname==='/api/gameday-news'){
   // ESPN news metadata are leads, not proof that a headline is true or a coach quote was verified.
   const names=(url.searchParams.get('names')||'').split(',').map(x=>x.trim()).filter(x=>/^[a-z .'-]{3,65}$/i.test(x)).slice(0,35);
