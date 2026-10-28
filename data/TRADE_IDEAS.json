@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T15:02:32.799898+00:00",
+  "generated_at_utc": "2026-10-28T15:07:21.034047+00:00",
   "league_trade_deadline_week": 11,
   "model": "Screen packages where both clubs can fill legal starting lineups and each gains projected lineup PPG.",
   "not_estimated": [
@@ -10,43 +10,43 @@
     "negotiation history",
     "week-by-week expected wins"
   ],
-  "projections_as_of": "2026-10-27T13:28:23.552052+00:00",
-  "source_snapshot_utc": "2026-10-27T14:49:28.209456+00:00",
+  "projections_as_of": "2026-10-28T13:35:09.126558+00:00",
+  "source_snapshot_utc": "2026-10-28T14:55:02.909237+00:00",
   "suggestions": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         },
         {
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB",
-          "projected_ppg": 8.1
+          "projected_ppg": 8.09
         }
       ],
-      "mutual_benefit_screen_score": 2.801,
-      "opponent_after": 103.657,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 2.43,
+      "mutual_benefit_screen_score": 2.809,
+      "opponent_after": 103.697,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 2.39,
       "opponent_drop_to_fit": "Woody Marks",
       "opponent_roster_id": 9,
-      "projected_ppg_received": 18.95,
-      "projected_ppg_sent": 26.0,
+      "projected_ppg_received": 18.97,
+      "projected_ppg_sent": 25.98,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -56,163 +56,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.976,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.75,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR",
-          "projected_ppg": 14.42
-        },
-        {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 8.1
-        }
-      ],
-      "mutual_benefit_screen_score": 2.323,
-      "opponent_after": 96.802,
-      "opponent_before": 95.935,
-      "opponent_delta_ppg": 0.87,
-      "opponent_drop_to_fit": "Emanuel Wilson",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 16.17,
-      "projected_ppg_sent": 22.51,
-      "receive": [
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR",
-          "projected_ppg": 16.17
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Zach Charbonnet: snap coverage absent",
-        "Puka Nacua: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.451,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.23,
+      "dirty_birds_after": 126.926,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.69,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "12495",
           "name": "Ollie Gordon II",
           "pos": "RB",
-          "projected_ppg": 12.45
-        },
-        {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "pos": "WR",
-          "projected_ppg": 10.59
-        }
-      ],
-      "mutual_benefit_screen_score": 2.32,
-      "opponent_after": 97.327,
-      "opponent_before": 95.935,
-      "opponent_delta_ppg": 1.39,
-      "opponent_drop_to_fit": "Emanuel Wilson",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 16.17,
-      "projected_ppg_sent": 23.04,
-      "receive": [
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR",
-          "projected_ppg": 16.17
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Ollie Gordon II: snap coverage absent",
-        "Puka Nacua: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.978,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.75,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "pos": "WR",
-          "projected_ppg": 10.59
+          "projected_ppg": 12.46
         },
         {
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB",
-          "projected_ppg": 8.1
+          "projected_ppg": 8.09
         }
       ],
-      "mutual_benefit_screen_score": 2.313,
-      "opponent_after": 96.8,
-      "opponent_before": 95.935,
-      "opponent_delta_ppg": 0.86,
-      "opponent_drop_to_fit": "Emanuel Wilson",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 12.34,
-      "projected_ppg_sent": 18.68,
-      "receive": [
-        {
-          "id": "10229",
-          "name": "Rashee Rice",
-          "pos": "WR",
-          "projected_ppg": 12.34
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Zach Charbonnet: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.937,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.71,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "pos": "RB",
-          "projected_ppg": 12.45
-        },
-        {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 8.1
-        }
-      ],
-      "mutual_benefit_screen_score": 2.176,
-      "opponent_after": 94.37,
-      "opponent_before": 93.617,
-      "opponent_delta_ppg": 0.75,
+      "mutual_benefit_screen_score": 2.177,
+      "opponent_after": 94.327,
+      "opponent_before": 93.555,
+      "opponent_delta_ppg": 0.77,
       "opponent_drop_to_fit": "Keon Coleman",
       "opponent_roster_id": 4,
-      "projected_ppg_received": 14.16,
+      "projected_ppg_received": 14.15,
       "projected_ppg_sent": 20.55,
       "receive": [
         {
           "id": "3198",
           "name": "Derrick Henry",
           "pos": "RB",
-          "projected_ppg": 14.16
+          "projected_ppg": 14.15
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -223,8 +98,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 127.199,
-      "dirty_birds_before": 125.225,
+      "dirty_birds_after": 127.208,
+      "dirty_birds_before": 125.234,
       "dirty_birds_delta_ppg": 1.97,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -238,17 +113,17 @@
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB",
-          "projected_ppg": 8.1
+          "projected_ppg": 8.09
         }
       ],
       "mutual_benefit_screen_score": 2.155,
-      "opponent_after": 94.108,
-      "opponent_before": 93.617,
+      "opponent_after": 94.045,
+      "opponent_before": 93.555,
       "opponent_delta_ppg": 0.49,
       "opponent_drop_to_fit": "Keon Coleman",
       "opponent_roster_id": 4,
       "projected_ppg_received": 11.65,
-      "projected_ppg_sent": 17.77,
+      "projected_ppg_sent": 17.76,
       "receive": [
         {
           "id": "4217",
@@ -264,32 +139,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.29,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.07,
+      "dirty_birds_after": 126.321,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.09,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "5859",
           "name": "A.J. Brown",
           "pos": "WR",
-          "projected_ppg": 10.59
+          "projected_ppg": 10.56
         },
         {
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB",
-          "projected_ppg": 8.1
+          "projected_ppg": 8.09
         }
       ],
-      "mutual_benefit_screen_score": 2.144,
-      "opponent_after": 95.017,
-      "opponent_before": 93.617,
-      "opponent_delta_ppg": 1.4,
+      "mutual_benefit_screen_score": 2.153,
+      "opponent_after": 94.932,
+      "opponent_before": 93.555,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": "Keon Coleman",
       "opponent_roster_id": 4,
       "projected_ppg_received": 11.65,
-      "projected_ppg_sent": 18.68,
+      "projected_ppg_sent": 18.65,
       "receive": [
         {
           "id": "4217",
@@ -305,32 +180,74 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
+      "dirty_birds_after": 126.465,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.23,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "12495",
+          "name": "Ollie Gordon II",
+          "pos": "RB",
+          "projected_ppg": 12.46
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR",
+          "projected_ppg": 10.56
+        }
+      ],
+      "mutual_benefit_screen_score": 2.148,
+      "opponent_after": 98.595,
+      "opponent_before": 97.434,
+      "opponent_delta_ppg": 1.16,
+      "opponent_drop_to_fit": "Emanuel Wilson",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 16.17,
+      "projected_ppg_sent": 23.02,
+      "receive": [
+        {
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR",
+          "projected_ppg": 16.17
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Ollie Gordon II: snap coverage absent",
+        "Puka Nacua: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         }
       ],
-      "mutual_benefit_screen_score": 2.128,
-      "opponent_after": 102.64,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 1.41,
+      "mutual_benefit_screen_score": 2.142,
+      "opponent_after": 102.689,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
-      "projected_ppg_received": 18.95,
-      "projected_ppg_sent": 17.91,
+      "projected_ppg_received": 18.97,
+      "projected_ppg_sent": 17.89,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -338,16 +255,16 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         },
         {
           "id": "9758",
@@ -356,20 +273,20 @@
           "projected_ppg": 14.28
         }
       ],
-      "mutual_benefit_screen_score": 2.128,
-      "opponent_after": 102.64,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 1.41,
+      "mutual_benefit_screen_score": 2.142,
+      "opponent_after": 102.689,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": "Tyler Shough",
       "opponent_roster_id": 9,
-      "projected_ppg_received": 18.95,
-      "projected_ppg_sent": 32.18,
+      "projected_ppg_received": 18.97,
+      "projected_ppg_sent": 32.17,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -377,32 +294,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
-      "dirty_birds_drop_to_fit": "Antonio Williams",
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
+      "dirty_birds_drop_to_fit": "Caleb Douglas",
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         }
       ],
-      "mutual_benefit_screen_score": 2.128,
-      "opponent_after": 102.64,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 1.41,
+      "mutual_benefit_screen_score": 2.142,
+      "opponent_after": 102.689,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
-      "projected_ppg_received": 33.53,
-      "projected_ppg_sent": 17.91,
+      "projected_ppg_received": 33.55,
+      "projected_ppg_sent": 17.89,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         },
         {
           "id": "12545",
@@ -416,211 +333,126 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.037,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 0.81,
+      "dirty_birds_after": 126.999,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.77,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR",
+          "projected_ppg": 10.56
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 8.09
+        }
+      ],
+      "mutual_benefit_screen_score": 2.114,
+      "opponent_after": 98.061,
+      "opponent_before": 97.434,
+      "opponent_delta_ppg": 0.63,
+      "opponent_drop_to_fit": "Emanuel Wilson",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 12.33,
+      "projected_ppg_sent": 18.65,
+      "receive": [
+        {
+          "id": "10229",
+          "name": "Rashee Rice",
+          "pos": "WR",
+          "projected_ppg": 12.33
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Zach Charbonnet: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 126.953,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.72,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR",
+          "projected_ppg": 14.45
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 8.09
+        }
+      ],
+      "mutual_benefit_screen_score": 2.109,
+      "opponent_after": 98.107,
+      "opponent_before": 97.434,
+      "opponent_delta_ppg": 0.67,
+      "opponent_drop_to_fit": "Emanuel Wilson",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 16.17,
+      "projected_ppg_sent": 22.54,
+      "receive": [
+        {
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR",
+          "projected_ppg": 16.17
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Zach Charbonnet: snap coverage absent",
+        "Puka Nacua: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 126.019,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 0.79,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "8146",
           "name": "Garrett Wilson",
           "pos": "WR",
-          "projected_ppg": 11.53
+          "projected_ppg": 11.54
         },
         {
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB",
-          "projected_ppg": 8.1
+          "projected_ppg": 8.09
         }
       ],
-      "mutual_benefit_screen_score": 2.118,
-      "opponent_after": 97.741,
-      "opponent_before": 95.935,
-      "opponent_delta_ppg": 1.81,
+      "mutual_benefit_screen_score": 1.963,
+      "opponent_after": 99.041,
+      "opponent_before": 97.434,
+      "opponent_delta_ppg": 1.61,
       "opponent_drop_to_fit": "Emanuel Wilson",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.34,
-      "projected_ppg_sent": 19.62,
+      "projected_ppg_received": 12.33,
+      "projected_ppg_sent": 19.63,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.34
+          "projected_ppg": 12.33
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
         "Zach Charbonnet: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.035,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 0.81,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "pos": "RB",
-          "projected_ppg": 12.45
-        },
-        {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 8.1
-        }
-      ],
-      "mutual_benefit_screen_score": 1.223,
-      "opponent_after": 105.333,
-      "opponent_before": 104.769,
-      "opponent_delta_ppg": 0.56,
-      "opponent_drop_to_fit": "Roschon Johnson",
-      "opponent_roster_id": 8,
-      "projected_ppg_received": 13.26,
-      "projected_ppg_sent": 20.55,
-      "receive": [
-        {
-          "id": "8167",
-          "name": "Christian Watson",
-          "pos": "WR",
-          "projected_ppg": 13.26
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Ollie Gordon II: snap coverage absent",
-        "Zach Charbonnet: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.315,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.09,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "pos": "RB",
-          "projected_ppg": 12.45
-        },
-        {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "pos": "WR",
-          "projected_ppg": 10.59
-        }
-      ],
-      "mutual_benefit_screen_score": 1.201,
-      "opponent_after": 105.053,
-      "opponent_before": 104.769,
-      "opponent_delta_ppg": 0.28,
-      "opponent_drop_to_fit": "Roschon Johnson",
-      "opponent_roster_id": 8,
-      "projected_ppg_received": 16.03,
-      "projected_ppg_sent": 23.04,
-      "receive": [
-        {
-          "id": "8138",
-          "name": "James Cook III",
-          "pos": "RB",
-          "projected_ppg": 16.03
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Ollie Gordon II: snap coverage absent",
-        "James Cook III: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 125.811,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 0.59,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "8150",
-          "name": "Kyren Williams",
-          "pos": "RB",
-          "projected_ppg": 15.45
-        },
-        {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 8.1
-        }
-      ],
-      "mutual_benefit_screen_score": 1.194,
-      "opponent_after": 105.557,
-      "opponent_before": 104.769,
-      "opponent_delta_ppg": 0.79,
-      "opponent_drop_to_fit": "Roschon Johnson",
-      "opponent_roster_id": 8,
-      "projected_ppg_received": 16.03,
-      "projected_ppg_sent": 23.54,
-      "receive": [
-        {
-          "id": "8138",
-          "name": "James Cook III",
-          "pos": "RB",
-          "projected_ppg": 16.03
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Kyren Williams: snap coverage absent",
-        "Zach Charbonnet: snap coverage absent",
-        "James Cook III: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.025,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 0.8,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB",
-          "projected_ppg": 18.94
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "pos": "RB",
-          "projected_ppg": 12.45
-        }
-      ],
-      "mutual_benefit_screen_score": 0.773,
-      "opponent_after": 96.77,
-      "opponent_before": 96.677,
-      "opponent_delta_ppg": 0.09,
-      "opponent_drop_to_fit": "Tre Tucker",
-      "opponent_roster_id": 10,
-      "projected_ppg_received": 24.09,
-      "projected_ppg_sent": 31.39,
-      "receive": [
-        {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB",
-          "projected_ppg": 24.09
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Ollie Gordon II: snap coverage absent"
       ]
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T15:02:33.247093+00:00",
+  "generated_at_utc": "2026-10-28T15:07:21.561139+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -15,16 +15,16 @@
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         }
       ],
       "market_quote": {
@@ -35,42 +35,42 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.128,
+      "mutual_benefit_screen_score": 2.142,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.64,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 1.41,
+      "opponent_after": 102.689,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
-      "projected_ppg_received": 18.95,
-      "projected_ppg_sent": 17.91,
+      "projected_ppg_received": 18.97,
+      "projected_ppg_sent": 17.89,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         }
       ],
       "starter_benefit": {
-        "them": 1.41,
-        "us": 1.05
+        "them": 1.38,
+        "us": 1.08
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.274,
-      "dirty_birds_before": 125.225,
-      "dirty_birds_delta_ppg": 1.05,
-      "dirty_birds_drop_to_fit": "Antonio Williams",
+      "dirty_birds_after": 126.314,
+      "dirty_birds_before": 125.234,
+      "dirty_birds_delta_ppg": 1.08,
+      "dirty_birds_drop_to_fit": "Caleb Douglas",
       "give": [
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "pos": "RB",
-          "projected_ppg": 17.91
+          "projected_ppg": 17.89
         }
       ],
       "market_quote": {
@@ -81,21 +81,21 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.128,
+      "mutual_benefit_screen_score": 2.142,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.64,
-      "opponent_before": 101.226,
-      "opponent_delta_ppg": 1.41,
+      "opponent_after": 102.689,
+      "opponent_before": 101.312,
+      "opponent_delta_ppg": 1.38,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
-      "projected_ppg_received": 33.53,
-      "projected_ppg_sent": 17.91,
+      "projected_ppg_received": 33.55,
+      "projected_ppg_sent": 17.89,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.95
+          "projected_ppg": 18.97
         },
         {
           "id": "12545",
@@ -105,27 +105,17 @@
         }
       ],
       "starter_benefit": {
-        "them": 1.41,
-        "us": 1.05
+        "them": 1.38,
+        "us": 1.08
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-10-27T15:02:33.160021+00:00",
-  "unpriced_cases": 6,
+  "source_as_of": "2026-10-28T15:07:21.426397+00:00",
+  "unpriced_cases": 2,
   "unpriced_examples": [
-    {
-      "give": [
-        "Ollie Gordon II",
-        "A.J. Brown"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Puka Nacua"
-      ]
-    },
     {
       "give": [
         "Ollie Gordon II",
@@ -139,41 +129,11 @@
     {
       "give": [
         "Ollie Gordon II",
-        "Zach Charbonnet"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Christian Watson"
-      ]
-    },
-    {
-      "give": [
-        "Ollie Gordon II",
         "A.J. Brown"
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
-        "James Cook III"
-      ]
-    },
-    {
-      "give": [
-        "Kyren Williams",
-        "Zach Charbonnet"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "James Cook III"
-      ]
-    },
-    {
-      "give": [
-        "Patrick Mahomes",
-        "Ollie Gordon II"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Josh Allen"
+        "Puka Nacua"
       ]
     }
   ]
