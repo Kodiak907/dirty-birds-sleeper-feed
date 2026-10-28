@@ -55,7 +55,46 @@ async function comSession(req,env,email){const raw=(req.headers.get('cookie')||'
  }
 
 const comText=(x,n=350)=>String(x||'').trim().slice(0,n);
-const comCaseListSql="SELECT c.*,COALESCE((SELECT e.event_type FROM commissioner_events e WHERE e.case_id=c.id AND e.event_type<>'NOTE' ORDER BY e.id DESC LIMIT 1),'FILED') AS status,(SELECT COUNT(*) FROM commissioner_evidence v WHERE v.case_id=c.id) AS evidence_count FROM commissioner_cases c";
+
+// PFO 5.7: Commissioner FFO-only point-adjustment ledger.
+// A record changes the ADMINISTRATIVE ledger, not official Sleeper points.
+// All revisions append D1 events; none overwrite history or submit to Sleeper.
+const comScoreNumber=n=>typeof n==='number'&&Number.isFinite(n)&&Math.abs(n)<=99999&&Math.round(n*100)===n*100;
+const comScoreRound=n=>Math.round((n+Number.EPSILON)*100)/100;
+async function comScoreEvents(env,limit=500){
+ const result=await env.COMMISSIONER_DB.prepare(
+  "SELECT e.id,e.case_id,e.event_type,e.note,e.created_utc,e.created_by,c.case_no,c.league,c.year,c.week AS case_week,c.team,c.owner FROM commissioner_events e JOIN commissioner_cases c ON c.id=e.case_id WHERE e.event_type IN ('SCORE_RECORDED','SCORE_VOIDED','SCORE_VERIFIED') ORDER BY e.id ASC LIMIT ?"
+ ).bind(limit).all();
+ const events=[];
+ for(const row of result.results||[]){
+  try{
+   const d=JSON.parse(row.note);
+   if(d?.schema!=='FFO_COMMISSIONER_SCORE_V1'||!/^[a-f0-9-]{36}$/.test(String(d.adjustment_id||'')))continue;
+   events.push({id:row.id,case_id:row.case_id,case_no:row.case_no,league:row.league,year:row.year,team:row.team,owner:row.owner,created_at:row.created_utc,created_by:row.created_by,event_type:row.event_type,...d});
+  }catch{/* Existing generic notes are not score events. */}
+ }
+ return events;
+}
+async function comSleeperScoreVerify(env,a){
+ const league=String(env.COMMISSIONER_FFL_LEAGUE_ID||'');
+ if(!/^\d{12,22}$/.test(league))return {verified:false,reason:'SLEEPER_LEAGUE_ID_NOT_CONFIGURED'};
+ const stateResp=await fetch('https://api.sleeper.app/v1/state/nfl',{signal:AbortSignal.timeout(8000)});
+ if(!stateResp.ok)return {verified:false,reason:'SLEEPER_STATE_UNAVAILABLE'};
+ const state=await stateResp.json();
+ if(Number(state.season)!==Number(a.year)||Number(state.week)<=Number(a.week))return {verified:false,reason:'WEEK_NOT_COMPLETED_OR_SEASON_MISMATCH'};
+ const response=await fetch('https://api.sleeper.app/v1/league/'+league+'/matchups/'+a.week,{signal:AbortSignal.timeout(9000)});
+ if(!response.ok)return {verified:false,reason:'SLEEPER_MATCHUP_UNAVAILABLE'};
+ const list=await response.json();
+ if(!Array.isArray(list))return {verified:false,reason:'SLEEPER_MATCHUP_INVALID'};
+ const found=list.find(m=>Number(m.roster_id)===Number(a.roster_id));
+ if(!found)return {verified:false,reason:'ROSTER_NOT_FOUND_IN_SAFELY_CONFIGURED_LEAGUE'};
+ const actual=Number(found.custom_points);
+ if(found.custom_points===null||found.custom_points===undefined||!Number.isFinite(actual))return {verified:false,reason:'NO_COMMISSIONER_OVERRIDE_PUBLISHED',observed_points:found.points??null};
+ if(Math.abs(actual-Number(a.new_total))>.011)return {verified:false,reason:'SLEEPER_CUSTOM_SCORE_DIFFERENT',observed_override:actual};
+ return {verified:true,official_custom_points:actual,source:'Sleeper public matchup API',checked_at:comIso()};
+}
+
+const comCaseListSql="SELECT c.*,COALESCE((SELECT e.event_type FROM commissioner_events e WHERE e.case_id=c.id AND e.event_type NOT IN ('NOTE','SCORE_RECORDED','SCORE_VOIDED','SCORE_VERIFIED') ORDER BY e.id DESC LIMIT 1),'FILED') AS status,(SELECT COUNT(*) FROM commissioner_evidence v WHERE v.case_id=c.id) AS evidence_count FROM commissioner_cases c";
 async function comGetCase(env,id){return env.COMMISSIONER_DB.prepare(comCaseListSql+' WHERE c.id=?').bind(id).first()}
 async function comJsonBody(req){if(!req.headers.get('content-type')?.toLowerCase().startsWith('application/json'))throw Error('JSON_REQUIRED');const text=await req.text();if(text.length>30000)throw Error('BODY_TOO_LARGE');return JSON.parse(text)}
 async function commissionerApi(req,env){
@@ -95,6 +134,16 @@ async function commissionerApi(req,env){
  }
  if(parts[2]==='lock'&&method==='POST')return comJson({unlocked:false},200,{'set-cookie':'ffo_commissioner=; Max-Age=0; HttpOnly; Secure; SameSite=Strict; Path=/api/commissioner'});
  if(!(await comSession(req,env,email)))return comJson({error:'ADMIN_PIN_REQUIRED'},401);
+ if(parts[2]==='score-ledger'&&parts.length===3&&method==='GET'){
+  const events=await comScoreEvents(env);
+  const map=new Map();
+  for(const ev of events){
+   const prev=map.get(ev.adjustment_id);
+   if(ev.event_type==='SCORE_RECORDED')map.set(ev.adjustment_id,{...ev,status:'RECORDED_IN_FFO',history:[{event_type:ev.event_type,at:ev.created_at,by:ev.created_by}]});
+   else if(prev){prev.history.push({event_type:ev.event_type,at:ev.created_at,by:ev.created_by});if(ev.event_type==='SCORE_VOIDED')prev.status='VOIDED_IN_FFO';if(ev.event_type==='SCORE_VERIFIED')prev.status='VERIFIED_IN_SLEEPER';}
+  }
+  return comJson({adjustments:[...map.values()].sort((a,b)=>String(b.created_at).localeCompare(String(a.created_at))).slice(0,150),source:'FFO private commissioner D1 record; Sleeper has NOT been changed by this portal',truncated:events.length>=500});
+ }
  if(parts[2]==='cases'&&parts.length===3&&method==='GET'){
   const rows=await env.COMMISSIONER_DB.prepare(comCaseListSql+' ORDER BY c.id DESC LIMIT 150').all();return comJson({cases:rows.results||[],identity:email});
  }
@@ -110,7 +159,39 @@ async function commissionerApi(req,env){
  }
  const id=Number(parts[3]);if(parts[2]==='cases'&&Number.isInteger(id)&&id>0){
   const record=await comGetCase(env,id);if(!record)return comJson({error:'CASE_NOT_FOUND'},404);
-  if(parts.length===4&&method==='GET'){
+  
+   if(parts[4]==='score-adjustments'&&parts.length===5&&method==='POST'){
+     let d;try{d=await comJsonBody(req)}catch{return comJson({error:'SCORE_REQUEST_INVALID'},400)}
+     if(record.league!=='FFL')return comJson({error:'FFL_SCORE_LEDGER_ONLY_FOR_NOW'},409);
+     const week=Number(d.week),roster=Number(d.roster_id),base=Number(d.original_points),delta=Number(d.delta_points),newTotal=comScoreRound(base+delta);
+     const reason=comText(d.reason,1000),type=comText(d.adjustment_type,30).toUpperCase();
+     if(!Number.isInteger(week)||week<1||week>18||(record.week!=null&&Number(record.week)!==week)||!Number.isInteger(roster)||roster<1||roster>32||
+         !comScoreNumber(base)||!comScoreNumber(delta)||!comScoreNumber(newTotal)||Math.abs(delta)<.005||!['PENALTY','AWARD','CORRECTION'].includes(type)||reason.length<12)
+       return comJson({error:'SCORE_FIELDS_INVALID_OR_CASE_WEEK_MISMATCH'},400);
+     const now=comIso(),item={schema:'FFO_COMMISSIONER_SCORE_V1',adjustment_id:crypto.randomUUID(),week,year:Number(record.year),roster_id:roster,original_points:base,delta_points:delta,new_total:newTotal,adjustment_type:type,reason,official_score_status:'NOT_SUBMITTED_TO_SLEEPER'};
+     await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_events(case_id,event_type,note,created_by,created_utc) VALUES(?,?,?,?,?)').bind(id,'SCORE_RECORDED',JSON.stringify(item),email,now).run();
+     return comJson({saved:true,adjustment:item,message:'Recorded in private FFO commissioner ledger only. No Sleeper scores changed.'},201);
+   }
+   if(parts[4]==='score-adjustments'&&parts.length===7&&method==='POST'){
+     const uid=String(parts[5]||''),op=String(parts[6]||'');
+     if(!/^[a-f0-9-]{36}$/.test(uid)||!['void','verify'].includes(op))return comJson({error:'INVALID_SCORE_EVENT'},400);
+     const all=await comScoreEvents(env),matched=all.filter(x=>x.adjustment_id===uid&&Number(x.case_id)===id);
+     const base=matched.find(x=>x.event_type==='SCORE_RECORDED');
+     if(!base)return comJson({error:'ADJUSTMENT_NOT_FOUND'},404);
+     if(matched.some(x=>x.event_type==='SCORE_VOIDED'))return comJson({error:'ALREADY_VOIDED_IN_FFO'},409);
+     if(op==='void'){
+       let body;try{body=await comJsonBody(req)}catch{return comJson({error:'REASON_REQUIRED'},400)}
+       const reason=comText(body.reason,650);if(reason.length<8)return comJson({error:'REVERSAL_REASON_REQUIRED'},400);
+       await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_events(case_id,event_type,note,created_by,created_utc) VALUES(?,?,?,?,?)').bind(id,'SCORE_VOIDED',JSON.stringify({schema:'FFO_COMMISSIONER_SCORE_V1',adjustment_id:uid,reason}),email,comIso()).run();
+       return comJson({voided:true,message:'FFO ledger adjustment voided. A separate Sleeper change, if any, must be reversed in Sleeper.'});
+     }
+     if(matched.some(x=>x.event_type==='SCORE_VERIFIED'))return comJson({verified:true,already:true});
+     const check=await comSleeperScoreVerify(env,base);
+     if(!check.verified)return comJson(check,409);
+     await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_events(case_id,event_type,note,created_by,created_utc) VALUES(?,?,?,?,?)').bind(id,'SCORE_VERIFIED',JSON.stringify({schema:'FFO_COMMISSIONER_SCORE_V1',adjustment_id:uid,verified_at:check.checked_at,official_custom_points:check.official_custom_points}),email,comIso()).run();
+     return comJson({verified:true,source:check.source,observed_override:check.official_custom_points});
+   }
+if(parts.length===4&&method==='GET'){
    const events=await env.COMMISSIONER_DB.prepare('SELECT * FROM commissioner_events WHERE case_id=? ORDER BY id ASC').bind(id).all();
    const evidence=await env.COMMISSIONER_DB.prepare('SELECT id,case_id,original_name,mime,bytes,sha256,created_utc,created_by FROM commissioner_evidence WHERE case_id=? ORDER BY id DESC').bind(id).all();
    return comJson({case:record,events:events.results||[],evidence:evidence.results||[]});
