@@ -211,28 +211,77 @@ if(parts.length===4&&method==='GET'){
    await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_events(case_id,event_type,note,created_by,created_utc) VALUES(?,?,?,?,?)').bind(id,kind,note,email,comIso()).run();return comJson({case:await comGetCase(env,id)},201);
   }
   if(parts[4]==='evidence'&&parts.length===5&&method==='POST'){
-   const mime=req.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase(),name=(()=>{let raw=String(req.headers.get('x-ffo-filename')||'evidence');try{raw=decodeURIComponent(raw)}catch{}return comText(raw,115).replace(/[^\w.() -]/g,'_')})();
+   const mime=req.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase();
+   const name=(()=>{let raw=String(req.headers.get('x-ffo-filename')||'evidence');try{raw=decodeURIComponent(raw)}catch{}return comText(raw,115).replace(/[^\w.() -]/g,'_')})();
    const allowed=['image/png','image/jpeg','image/webp','image/heic','image/heif','application/pdf','video/mp4','video/quicktime','video/webm'];
    if(!allowed.includes(mime))return comJson({error:'FILE_TYPE_NOT_ALLOWED'},415);
    const maxBytes=mime.startsWith('video/')?75*1024*1024:8*1024*1024;
-   if(Number(req.headers.get('content-length')||0)>maxBytes)return comJson({error:'FILE_TOO_LARGE'},413);
-   const buf=await req.arrayBuffer();if(buf.byteLength>maxBytes||buf.byteLength<12)return comJson({error:'FILE_SIZE_INVALID'},413);
-   const b=new Uint8Array(buf.slice(0,16));const sig={
-    'image/png':b[0]===137&&b[1]===80&&b[2]===78&&b[3]===71,
-    'image/jpeg':b[0]===255&&b[1]===216&&b[2]===255,
-    'image/webp':String.fromCharCode(...b.slice(0,4))==='RIFF'&&String.fromCharCode(...b.slice(8,12))==='WEBP',
-    'application/pdf':String.fromCharCode(...b.slice(0,5))==='%PDF-',
-    'image/heic':String.fromCharCode(...b.slice(4,8))==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(String.fromCharCode(...b.slice(8,12))),
-    'image/heif':String.fromCharCode(...b.slice(4,8))==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(String.fromCharCode(...b.slice(8,12))),
-    'video/mp4':String.fromCharCode(...b.slice(4,8))==='ftyp',
-    'video/quicktime':String.fromCharCode(...b.slice(4,8))==='ftyp',
-    'video/webm':b[0]===26&&b[1]===69&&b[2]===223&&b[3]===163
+   const declared=Number(req.headers.get('content-length')||0);
+   if(declared>maxBytes)return comJson({error:'FILE_TOO_LARGE'},413);
+   if(!req.body&&mime.startsWith('video/'))return comJson({error:'EVIDENCE_BODY_REQUIRED'},400);
+   // Real format signature verification. Headers and file extensions are not trusted.
+   const validMagic=b=>{
+    const text=(a,z)=>String.fromCharCode(...b.slice(a,z));
+    return !!({
+     'image/png':b[0]===137&&b[1]===80&&b[2]===78&&b[3]===71,
+     'image/jpeg':b[0]===255&&b[1]===216&&b[2]===255,
+     'image/webp':text(0,4)==='RIFF'&&text(8,12)==='WEBP',
+     'application/pdf':text(0,5)==='%PDF-',
+     'image/heic':text(4,8)==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(text(8,12)),
+     'image/heif':text(4,8)==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(text(8,12)),
+     'video/mp4':text(4,8)==='ftyp',
+     'video/quicktime':text(4,8)==='ftyp',
+     'video/webm':b[0]===26&&b[1]===69&&b[2]===223&&b[3]===163
+    })[mime];
    };
-   if(!sig[mime])return comJson({error:'FILE_CONTENT_INVALID'},415);
-   const digest=new Uint8Array(await crypto.subtle.digest('SHA-256',buf));const sha=[...digest].map(x=>x.toString(16).padStart(2,'0')).join('');
-   const key='commissioner/'+record.case_no+'/'+crypto.randomUUID();await env.COMMISSIONER_EVIDENCE.put(key,buf,{httpMetadata:{contentType:mime},customMetadata:{sha256:sha}});
-   try{await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_evidence(case_id,original_name,mime,bytes,sha256,object_key,created_utc,created_by) VALUES(?,?,?,?,?,?,?,?)').bind(id,name,mime,buf.byteLength,sha,key,comIso(),email).run();}catch(err){await env.COMMISSIONER_EVIDENCE.delete(key);throw err}
-   return comJson({saved:true,name,sha256:sha},201);
+   const hex=bytes=>Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+   const key='commissioner/'+record.case_no+'/'+crypto.randomUUID();
+   let size=0,sha='';
+   if(mime.startsWith('video/')&&declared>8*1024*1024){
+    // Cloudflare Workers: streamed SHA-256 and fixed-length R2 upload, no 75MB ArrayBuffer.
+    // Both browser and server cap at 75MiB. Length must be known for R2.put(stream).
+    if(!req.body||typeof crypto.DigestStream!=='function'||typeof FixedLengthStream!=='function')
+     return comJson({error:'LARGE_VIDEO_STREAMING_NOT_CONFIGURED'},503);
+    const [peek,body]=req.body.tee();
+    const reader=peek.getReader(),head=[];let got=0;
+    try{
+     while(got<16){
+      const part=await reader.read();if(part.done)break;
+      const piece=part.value;if(piece?.byteLength){head.push(piece.slice(0,Math.min(16-got,piece.byteLength)));got+=Math.min(16-got,piece.byteLength)}
+     }
+    }catch{return comJson({error:'EVIDENCE_STREAM_READ_FAILED'},400)}
+    finally{void reader.cancel().catch(()=>{})}
+    const signature=new Uint8Array(got);let offset=0;
+    for(const chunk of head){signature.set(chunk,offset);offset+=chunk.byteLength}
+    if(got<12||!validMagic(signature))return comJson({error:'FILE_CONTENT_INVALID'},415);
+    const [forR2,forDigest]=body.tee();
+    const fixed=new FixedLengthStream(declared),hashStream=new crypto.DigestStream('SHA-256');
+    const tasks=[
+     forR2.pipeTo(fixed.writable),
+     forDigest.pipeTo(hashStream),
+     env.COMMISSIONER_EVIDENCE.put(key,fixed.readable,{httpMetadata:{contentType:mime}})
+    ];
+    const finished=await Promise.allSettled(tasks);
+    if(finished.some(x=>x.status==='rejected')||!finished[2].value){
+     await env.COMMISSIONER_EVIDENCE.delete(key).catch(()=>{});
+     return comJson({error:'EVIDENCE_STREAM_UPLOAD_FAILED'},503);
+    }
+    try{sha=hex(new Uint8Array(await hashStream.digest));size=declared}
+    catch{await env.COMMISSIONER_EVIDENCE.delete(key).catch(()=>{});return comJson({error:'EVIDENCE_HASH_FAILED'},503)}
+   }else{
+    // Small images/PDFs and small video clips retain the previously verified path.
+    // Unknown-length video bodies are refused rather than buffering potentially 75MiB.
+    if(mime.startsWith('video/')&&declared===0)return comJson({error:'VIDEO_CONTENT_LENGTH_REQUIRED'},411);
+    const buf=await req.arrayBuffer();
+    if(buf.byteLength>maxBytes||buf.byteLength<12||declared&&declared!==buf.byteLength)return comJson({error:'FILE_SIZE_INVALID'},413);
+    if(!validMagic(new Uint8Array(buf.slice(0,16))))return comJson({error:'FILE_CONTENT_INVALID'},415);
+    size=buf.byteLength;sha=hex(new Uint8Array(await crypto.subtle.digest('SHA-256',buf)));
+    await env.COMMISSIONER_EVIDENCE.put(key,buf,{httpMetadata:{contentType:mime},customMetadata:{sha256:sha}});
+   }
+   try{
+    await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_evidence(case_id,original_name,mime,bytes,sha256,object_key,created_utc,created_by) VALUES(?,?,?,?,?,?,?,?)').bind(id,name,mime,size,sha,key,comIso(),email).run();
+   }catch(err){await env.COMMISSIONER_EVIDENCE.delete(key).catch(()=>{});return comJson({error:'EVIDENCE_METADATA_WRITE_FAILED'},503)}
+   return comJson({saved:true,name,sha256:sha,bytes:size},201);
   }
   if(parts[4]==='evidence'&&parts.length===6&&method==='GET'){
    const evid=await env.COMMISSIONER_DB.prepare('SELECT * FROM commissioner_evidence WHERE case_id=? AND id=?').bind(id,Number(parts[5])).first();if(!evid)return comJson({error:'EVIDENCE_NOT_FOUND'},404);
