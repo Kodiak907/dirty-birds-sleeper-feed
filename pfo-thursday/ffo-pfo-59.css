@@ -32,3 +32,24 @@
 .pfo59-week{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:7px;align-items:center;padding:9px;border:1px solid #2d4960;border-radius:9px;min-width:0}
 .pfo59-week>span{font-size:11px;color:#ffbd58}.pfo59-week>strong{font-size:11px;overflow-wrap:anywhere}.pfo59-week>small{font-size:10px;color:#bacdd7;grid-column:2;grid-row:2}.pfo59-week>button{grid-column:3;grid-row:1 / 3}
 @media(max-width:650px){.pfo59-tiles{grid-template-columns:1fr}.pfo59-tiles button{min-height:0;padding:14px}.pfo59-leaders{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo59-schedule-list{grid-template-columns:1fr}.pfo59-subhead{align-items:stretch}.pfo59-subhead select{width:100%}}
+
+/* 5.9 post-video refinements: Sleeper-like information density, FFO-original styling. */
+.pfo59-compact-row{display:grid;grid-template-columns:minmax(0,1fr) 68px 63px 14px;align-items:center;gap:7px;width:100%;padding:11px 7px;background:transparent;color:#e9f4ff;border:0;border-bottom:1px solid #30475d;text-align:left;cursor:pointer;border-radius:0}
+.pfo59-compact-row:hover,.pfo59-compact-row:focus-visible{background:#193448;outline-color:#85dfc3}
+.pfo59-identity{display:flex;flex-direction:column;gap:4px;min-width:0}
+.pfo59-identity b{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pfo59-identity small{font-size:10px;color:#9db7c9;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pfo59-compact-stat{display:flex;flex-direction:column;gap:3px;text-align:right}
+.pfo59-compact-stat b{font-size:12px;font-variant-numeric:tabular-nums}
+.pfo59-compact-stat small{font-size:9px;color:#9fb8c9}
+.pfo59-compact-open{font-size:23px;color:#8bcbb8}
+.pfo59-row-signal{font-size:10px;line-height:1.4;color:#b2bfcb;background:#152c3a;padding:5px 9px;margin:0}
+.pfo59-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.pfo59-partner{display:flex;flex-direction:column;gap:5px;text-align:left;border:1px solid #35536b;border-radius:9px;background:#162b40;color:#e8f6ff;min-width:0;padding:10px;cursor:pointer}
+.pfo59-partner.selected{background:#18483f;border-color:#7adbb6}
+.pfo59-partner:disabled{opacity:.6;cursor:not-allowed}
+.pfo59-partner b{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pfo59-partner small{font-size:10px;color:#a9bbcc}
+.pfo59-leader{cursor:pointer;text-align:left;color:#e2f8ff}
+.pfo59-leader:disabled{opacity:.65;cursor:default}
+@media(min-width:800px){.pfo59-partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
