@@ -285,6 +285,21 @@ body>main,main,#nav,.page,.page>.card,#market,#radar,#pfo49-radar,#waiverlive,.m
 .ffo-gc-latest{font-size:11px;color:#c9dbed;margin:7px 0}.ffo-gc-testplan a{color:#ffcc84}
 @media(max-width:430px){.ffo-gc-shell{padding:10px!important}.ffo-gc-scoreboard b{font-size:20px}.ffo-gc-scoreboard .team{font-size:12px}.ffo-gc-game{flex-basis:143px}.ffo-gc-statgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.ffo-gc-statgrid b{font-size:16px}#market .market-columns{display:grid;grid-template-columns:minmax(0,1fr)}#radar .pfo49-row,#market .pfo49-row{gap:6px;align-items:center}}
 @media(prefers-reduced-motion:reduce){.ffo-gc-play{transition:none}}
+
+/* 5.6: compact intel without altering approved horizontal stat scroll. */
+.pfo56-source-rail{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0 10px;max-width:100%}
+.pfo56-source-chip{font-size:9px;font-weight:750;letter-spacing:.02em;color:#b8eccc;border:1px solid #386e59;background:#163b32;padding:5px 7px;border-radius:7px}
+.pfo56-source-chip.caution{background:#453521;color:#ffe0ac;border-color:#926b37}
+.pfo56-model-caveat{font-size:11px;line-height:1.5;color:#aebfd1;margin:7px 0 12px}
+#trade-intel .trade-lead,#trade-intel .pfo55-screened-offer{padding:10px 11px;margin:8px 0;border:1px solid #354b60;border-radius:10px;background:#15243a}
+#trade-intel .pfo55-offer-side{display:flex;gap:7px;min-width:0;align-items:center}
+#trade-intel .pfo55-offer-side>div{min-width:0;flex:1}
+#trade-intel .pfo55-offer-metrics{display:flex;gap:7px;flex-wrap:wrap}
+#trade-intel .pfo55-offer-procon{font-size:11px;line-height:1.5}
+#waiverlive .scout-card{padding:9px 11px!important;margin:7px 0;border:1px solid #354963;border-radius:10px;background:#14243a}
+#waiverlive .scout-metrics{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:5px}
+#waiverlive .scout-metrics>*{flex:0 0 auto;scroll-snap-align:start}
+@media(max-width:600px){#trade-intel .pfo55-offer-procon{grid-template-columns:minmax(0,1fr)!important}#waiverlive .scout-card{padding:8px 9px!important}}
 </style><style>
 .pfo55-screened-offer{padding:10px 12px!important;margin:9px 0!important;max-width:100%;overflow:hidden}
 .pfo55-offer-side{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:6px;align-items:center}
@@ -668,7 +683,12 @@ function tradeLeadGrade(x){
  if((x.warnings||[]).length)issues.push('Incomplete health/workload evidence');
  if(x.dirty_birds_drop_to_fit)issues.push('Would need to cut '+x.dirty_birds_drop_to_fit);
  if(x.opponent_drop_to_fit)issues.push('They would need to drop '+x.opponent_drop_to_fit);
- let tier=issues.length===0&&ours>=1.5&&theirs>=1?'PROMISING SCAN':'RESEARCH ONLY';
+ const researchAge=tradeIdeasStamp?Date.now()-Date.parse(tradeIdeasStamp):Infinity;
+  const dated=Number.isFinite(researchAge)&&researchAge>=0&&researchAge<=48*3600000;
+  const ownershipReady=!!leagueOwnedIds&&!!ownershipCheckedMs&&Date.now()-ownershipCheckedMs<=300000;
+  if(!dated)issues.push('Underlying trade scan is old or missing a source date');
+  if(!ownershipReady)issues.push('Verify current FFL roster ownership before treating this as a lead');
+  let tier=issues.length===0&&ours>=1.5&&theirs>=1?'PROMISING SCAN':'RESEARCH ONLY';
  return {issues,tier,ratio,sent,got};
 }
 function tradeBlockHTML(){
@@ -3130,6 +3150,42 @@ document.addEventListener('submit',async(ev)=>{const form=ev.target;if(!['com-ev
 });
 document.querySelector('nav button[data-page="commissioner"]')?.addEventListener('click',comStatus);
 
+
+// PFO 5.6: dated source confidence, not a made-up projection confidence percentage.
+const pfo56Age=v=>{const n=Date.parse(v||'');return Number.isFinite(n)?Date.now()-n:null};
+function pfo56SourceRail(area){
+ const host=$(area);if(!host)return;
+ let rail=host.querySelector('.pfo56-source-rail');
+ if(!rail){rail=document.createElement('div');rail.className='pfo56-source-rail';host.prepend(rail)}
+ const ownAge=ownershipCheckedMs?Date.now()-ownershipCheckedMs:null,ownFresh=ownAge!==null&&ownAge>=0&&ownAge<=300000&&!!leagueOwnedIds;
+ const usageStamp=pfo50Independent?.checked_at||pfo49Metrics?.as_of||null,usageAge=pfo56Age(usageStamp);
+ const researchStamp=area==='trade-intel'?tradeIdeasStamp||marketValueAsOf:waiverUsageStamp,researchAge=pfo56Age(researchStamp);
+ const cells=[
+  {label:ownFresh?'FFL OWNERSHIP CHECKED '+Math.floor(ownAge/60000)+'m AGO':'FFL OWNERSHIP STALE / UNVERIFIED',warn:!ownFresh},
+  {label:usageStamp?'NFL USAGE AS OF '+new Date(usageStamp).toLocaleString():'NFL USAGE DATE UNKNOWN',warn:usageAge===null||usageAge>86400000},
+  {label:researchStamp?'MODEL REPORT '+new Date(researchStamp).toLocaleString():'MODEL REPORT UNDATED',warn:researchAge===null||researchAge>172800000}
+ ];
+ rail.replaceChildren();
+ for(const item of cells){const el=document.createElement('span');el.className='pfo56-source-chip'+(item.warn?' caution':'');el.textContent=item.label;rail.append(el)}
+ let note=host.querySelector('.pfo56-model-caveat');
+ if(!note){note=document.createElement('p');note.className='pfo56-model-caveat';host.prepend(note)}
+ note.textContent='Observed NFL production and verified Sleeper ownership are not future projections or guaranteed player availability. Source gaps and stale scans remain labeled. No trades or claims submitted.';
+}
+const pfo56OldTrade=renderTradeScouting;
+renderTradeScouting=function(){pfo56OldTrade();pfo56SourceRail('trade-intel')};
+const pfo56OldWaiver=renderWaiverScouting;
+renderWaiverScouting=function(){pfo56OldWaiver();pfo56SourceRail('waiverlive')};
+const pfo56OldRadar=pfo49RenderRadar;
+pfo49RenderRadar=function(){
+ pfo56OldRadar();const host=$('pfo49-radar');if(!host)return;
+ host.querySelector('.pfo56-source-rail')?.remove();
+ const rail=document.createElement('div');rail.className='pfo56-source-rail';
+ const valid=!!ownershipCheckedMs&&!!leagueOwnedIds&&Date.now()-ownershipCheckedMs<=300000;
+ for(const [label,warn] of [[valid?'CURRENT FFL OWNERSHIP':'OWNERSHIP STALE / UNVERIFIED',!valid],['OBSERVED USAGE · RESEARCH RANK, NOT BREAKOUT PROBABILITY',false]]){
+  const tag=document.createElement('span');tag.className='pfo56-source-chip'+(warn?' caution':'');tag.textContent=label;rail.append(tag);
+ }
+ host.prepend(rail);
+};
 // Initialize only after all lexical declarations have run.
 render();
 renderGamedayInactives();
