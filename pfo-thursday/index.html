@@ -285,6 +285,18 @@ body>main,main,#nav,.page,.page>.card,#market,#radar,#pfo49-radar,#waiverlive,.m
 .ffo-gc-latest{font-size:11px;color:#c9dbed;margin:7px 0}.ffo-gc-testplan a{color:#ffcc84}
 @media(max-width:430px){.ffo-gc-shell{padding:10px!important}.ffo-gc-scoreboard b{font-size:20px}.ffo-gc-scoreboard .team{font-size:12px}.ffo-gc-game{flex-basis:143px}.ffo-gc-statgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.ffo-gc-statgrid b{font-size:16px}#market .market-columns{display:grid;grid-template-columns:minmax(0,1fr)}#radar .pfo49-row,#market .pfo49-row{gap:6px;align-items:center}}
 @media(prefers-reduced-motion:reduce){.ffo-gc-play{transition:none}}
+</style><style>
+.pfo55-screened-offer{padding:10px 12px!important;margin:9px 0!important;max-width:100%;overflow:hidden}
+.pfo55-offer-side{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:6px;align-items:center}
+.pfo55-offer-side>div{min-width:0}.pfo55-offer-side small{display:block;font-size:10px;letter-spacing:.08em;opacity:.75}
+.pfo55-offer-side strong{display:block;overflow-wrap:anywhere;font-size:13px;line-height:1.3}
+.pfo55-offer-metrics{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0}
+.pfo55-offer-metrics>span{font-size:11px;border:1px solid #557287;border-radius:7px;padding:5px;white-space:nowrap}
+.pfo55-offer-procon{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}
+.pfo55-offer-procon>div{min-width:0;font-size:11px;line-height:1.4}
+.pfo55-offer-procon b{display:block;margin-bottom:4px}
+.pfo55-offer-line{margin:2px 0;overflow-wrap:anywhere}
+@media(max-width:390px){.pfo55-offer-procon{grid-template-columns:minmax(0,1fr)}}
 </style></head><body><main><header class="header"><div><div class="eyebrow">FFO • PHASE X • DIRTY BIRDS</div><h1>PRIVATE <span>FRONT OFFICE</span></h1><div class="muted">Coach's read-only command center</div></div><div class="private">● READ-ONLY COMMAND <span class="buildtag">5.5 THURSDAY FIELD TEST</span></div></header>
 <nav id="nav"><button class="active" data-page="overview">Overview</button><button data-page="roster">Roster</button><button data-page="scouting">GM Scouting</button><button data-page="playerhub">Player Intel</button><button data-page="gamecast">🏈 GameCast</button><button data-page="radar">Opportunity Radar</button><button data-page="ask">Ask Front Office</button><button data-page="matchup">Weekly Matchup</button><button data-page="coaching">Coaching Review</button><button data-page="championship">Championship</button><button data-page="availability">Injury Watch</button><button data-page="market">Trade / Waiver</button><button data-page="privacy">Sources / Privacy</button><button data-page="commissioner">🔒 Commissioner</button></nav><div class="pfo49-navhint">Swipe the tabs to see Player Intel, Opportunity Radar, Injury Watch, and Trade / Waiver.</div>
 <section class="page active" id="overview">
@@ -693,7 +705,21 @@ function renderTradeScouting(){
  } if(tradeQuality43){
   const v=tradeQuality43;
   h+='<div class="market-section-label">Trade Opportunities · 4.3 Quality Screen</div><p class="market-small">'+e((v.qualified||[]).filter(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name)).length)+' packages met the two-sided lineup gain and market-value gates · '+e(v.candidates_evaluated||0)+' configurations evaluated · updated '+e(v.generated_at_utc?new Date(v.generated_at_utc).toLocaleString():'unknown')+'. Market baseline is full-PPR, not an exact FFL valuation.</p>';
-  if((v.qualified||[]).some(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name)))h+=v.qualified.filter(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name)).slice(0,8).map(x=>'<div class="trade-lead"><b>'+e(x.give.map(y=>y.name).join(' + '))+' → '+e(x.receive.map(y=>y.name).join(' + '))+'</b><div class="scout-meta">'+e(x.opponent_name||'Opponent roster '+x.opponent_roster_id)+' · Dirty Birds +'+e(x.our_gain)+' PPG · Opponent +'+e(x.their_gain)+' PPG · Value ratio '+e(x.market_paid_received_ratio)+'×</div><small>'+e(x.why_both_benefit||'Model-approved for further review only; not a verified acceptance forecast.')+'</small></div>').join('');
+  if((v.qualified||[]).some(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name))){
+   h+=v.qualified.filter(x=>!isTradeExcludedOpponent(x.opponent_roster_id,x.opponent_name)).slice(0,8).map(x=>{
+    const give=(x.give||[]).map(y=>y.name).join(' + '),receive=(x.receive||[]).map(y=>y.name).join(' + ');
+    const ours=Number(x.our_gain),theirs=Number(x.their_gain),ratio=Number(x.market_paid_received_ratio);
+    const sourceDate=v.generated_at_utc?new Date(v.generated_at_utc).toLocaleString():'undated model';
+    const line=(t)=>'<div class="pfo55-offer-line">'+e(t)+'</div>';
+    return '<article class="trade-lead pfo55-screened-offer">'+
+     '<div class="pfo55-offer-side"><div><small>GIVE</small><strong>'+e(give)+'</strong></div><b>→</b><div><small>RECEIVE</small><strong>'+e(receive)+'</strong></div></div>'+
+     '<small class="market-small">'+e(x.opponent_name||'Opponent roster '+x.opponent_roster_id)+' · FFL candidate, no offer sent</small>'+
+     '<div class="pfo55-offer-metrics"><span>Our model <b>'+(Number.isFinite(ours)?(ours>=0?'+':'')+ours.toFixed(2):'—')+' PPG</b></span><span>Their model <b>'+(Number.isFinite(theirs)?(theirs>=0?'+':'')+theirs.toFixed(2):'—')+' PPG</b></span><span>Value ratio <b>'+(Number.isFinite(ratio)?ratio.toFixed(2)+'×':'—')+'</b></span></div>'+
+     '<div class="pfo55-offer-procon"><div><b>Why it could work</b>'+line('Dirty Birds lineup impact '+(Number.isFinite(ours)?ours.toFixed(2)+' PPG':'unverified'))+line('Opponent lineup impact '+(Number.isFinite(theirs)?theirs.toFixed(2)+' PPG':'unverified'))+line(x.why_both_benefit||'Both-team fit requires further verification')+'</div>'+
+     '<div><b>Risks / limits</b>'+line('Market baseline uses full PPR, FFL is half PPR')+line('NFL health and playoff-week impact require fresh checks')+line('Manager interest and offer acceptance are unknown')+'</div></div>'+
+     '<details><summary>Evidence, assumptions and source dates</summary><p class="market-small">Model as of '+e(sourceDate)+'. Roster replacement effects are included only to the extent the source model documents them. No action can be submitted from this analysis.</p></details></article>';
+   }).join('');
+  }
   else h+='<div class="screened-no">No packages cleared the stricter two-sided market and lineup gates. No recommendations are better than a forced bad trade.</div>';
  }
 
