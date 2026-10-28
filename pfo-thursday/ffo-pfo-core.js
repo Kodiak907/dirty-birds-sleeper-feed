@@ -132,7 +132,7 @@ function pfo50RenderProjectedLineup(){
  }).join('');
  if($('projection-status'))$('projection-status').innerHTML='* FFO independent recent-form model under FFL scoring. No opponent or injury adjustment; incomplete stat categories can affect bonuses. Submitted lineup remains separate.';
 }
-function render(){let p=data.playoff;pfo50RenderHomeKPIs();let max=Math.max(...data.teams.map(x=>x[2]),.01);$('contenders').innerHTML=data.teams.map(x=>`<div class="barrow"><span>${e(x[0])} <small class="muted">${e(x[1])}</small></span><b>${pc(x[2])}</b></div><div class="bar"><span style="width:${x[2]/max*100}%"></span></div>`).join('');renderBriefing();renderLeagueStandings();pfo50RenderProjectedLineup();renderRosterComparison();$('chances').innerHTML=[['Playoffs',p.playoff_probability],['Bye',p.bye_probability],['Final',p.final_probability],['Championship',p.championship_probability]].map(x=>`<div class="barrow"><span>${e(x[0])}</span><b>${pc(x[1])}</b></div><div class="bar"><span style="width:${x[1]*100}%"></span></div>`).join('');if(!injurySnapshot) $('injuries').innerHTML='<tr><td colspan="3">Waiting for current source…</td></tr>';else updateInjuryView();renderTradeScouting();renderWaiverScouting();gm47Render();$('sources').innerHTML=data.sources.map(x=>`<div class="source"><b>${e(x[0])}</b><span>${e(x[1])}</span></div>`).join('')}
+function render(light=false){let p=data.playoff;pfo50RenderHomeKPIs();let max=Math.max(...data.teams.map(x=>x[2]),.01);$('contenders').innerHTML=data.teams.map(x=>`<div class="barrow"><span>${e(x[0])} <small class="muted">${e(x[1])}</small></span><b>${pc(x[2])}</b></div><div class="bar"><span style="width:${x[2]/max*100}%"></span></div>`).join('');renderBriefing();renderLeagueStandings();pfo50RenderProjectedLineup();renderRosterComparison();$('chances').innerHTML=[['Playoffs',p.playoff_probability],['Bye',p.bye_probability],['Final',p.final_probability],['Championship',p.championship_probability]].map(x=>`<div class="barrow"><span>${e(x[0])}</span><b>${pc(x[1])}</b></div><div class="bar"><span style="width:${x[1]*100}%"></span></div>`).join('');if(!injurySnapshot) $('injuries').innerHTML='<tr><td colspan="3">Waiting for current source…</td></tr>';else updateInjuryView();if(!light){renderTradeScouting();renderWaiverScouting();gm47Render();}$('sources').innerHTML=data.sources.map(x=>`<div class="source"><b>${e(x[0])}</b><span>${e(x[1])}</span></div>`).join('')}
 $('reset').onclick=()=>{data=JSON.parse(JSON.stringify(initial));render();$('importstatus').textContent='Restored embedded snapshot (not verified live).'};$('file').onchange=async ev=>{let ok=0,problems=[];for(let f of ev.target.files){try{let x=JSON.parse(await f.text()),n=f.name.toUpperCase();if(n.includes('FULL_SEASON_PLAYOFF_SIMULATION')&&Array.isArray(x.teams)){let d=x.teams.find(y=>y.roster_id===1);if(d){data.playoff=d;data.teams=x.teams.map(y=>[y.name,y.record,y.championship_probability]);data.sources[1][1]=x.generated_at_utc||'Imported';ok++}}else if(n.includes('AVAILABILITY_INTELLIGENCE')&&x.dirty_birds_watch){data.injuries=x.dirty_birds_watch.map(t=>[t.name,t.sleeper_injury_status||'No tag',t.injury_report?.week?'Week '+t.injury_report.week+' '+(t.injury_report.practice_status||''):'No matched report; not clearance']);ok++}else if(n.includes('GAMEDAY_DECISION')){data.sources[2][1]=(x.third_party_inactive_source_status||'Unknown')+' • '+(x.generated_at_utc||'imported');ok++}else if(n.includes('MARKET_OFFER_GUIDE')){data.trades=(x.qualified_top_five||[]).map(t=>[(t.give||[]).map(y=>y.name).join(' + '),(t.receive||[]).map(y=>y.name).join(' + '),'+'+t.dirty_birds_delta_ppg+' PPG']);ok++}else if(n.includes('WEEKLY_LINEUPS')&&x.weeks){let w=x.weeks['7'];if(w?.starters){data.lineup=w.starters.map(t=>[t.position,t.name,t.opponent,t.ppg]);data.projection=w.ppg;ok++}}else if(n==='LATEST.JSON'){let r=x.rosters?.find(t=>t.roster_id===1);if(r){data.record=r.settings.wins+'–'+r.settings.losses;data.rosterCount=r.players.length;data.faabSpent=r.settings.waiver_budget_used;data.snapshot='FFL Week '+x.nfl_state?.week+' • imported';data.sources[0][1]=x.fetched_at_utc||'Imported';ok++}}else problems.push(f.name+': incompatible or unknown format')}catch(err){problems.push(f.name+': invalid JSON')}}render();$('importstatus').textContent='Imported '+ok+' reports. '+problems.join('; ');ev.target.value=''}; // Initial render deferred until state is initialized
 
 
@@ -732,7 +732,7 @@ function ffoResearchStart(force=false){
 }
 for(const page of ['market','radar','scouting','availability'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>ffoResearchStart());
 setTimeout(()=>{if(!document.hidden)refreshBackgroundMonitor()},9000);
-setTimeout(()=>ffoResearchStart(),13000);
+// All trade/waiver research loads on-demand when its navigation tab is opened.
 setInterval(()=>{if(!document.hidden)ffoResearchStart(true)},900000);
 setInterval(()=>{if(!document.hidden)refreshBackgroundMonitor()},60000);
 
@@ -1601,7 +1601,7 @@ for(const id of ['actual-lineup','actual-bench','actual-reserve']){const node=$(
 setInterval(()=>{if(!document.hidden)pfo49LoadSources()},240000);
 setInterval(()=>{if(!document.hidden){renderBriefing();pfo49RenderRadar();}},60000);
 // Don't block core Sleeper and injury checks on slower advanced-stat research.
-setTimeout(()=>{if(!document.hidden)pfo49LoadSources()},4800);
+// Open Player Intel / Radar / Market / Scouting to fetch expensive NFL/player catalogs.
 for(const page of ['playerhub','radar','market','scouting'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>pfo49LoadSources());
 
 /* 4.9 source checks: never turn a current check time into a false publication time. */
@@ -1652,7 +1652,7 @@ function pfo49RenderPlanner(){const el=$('pfo49-playoff-plan');if(!el)return;con
  el.innerHTML=h;
 }
 // Supplements source refreshes without modifying the old trade engine or safety policy.
-setTimeout(()=>{if(!document.hidden)pfo49LoadEvidence49()},9500);
+// Historical evidence loads on its research view rather than during startup.
 setInterval(()=>{if(!document.hidden){pfo49InjurySummary();pfo49OverviewHealth();pfo49RenderPlanner();}},90000);
 
 // Refresh current-week fantasy matchup points directly from Sleeper, separately from the
@@ -1718,7 +1718,7 @@ async function pfo50LoadGameday(force=false){if(pfo50Gameday.busy)return;const r
 }
 $('pfo50-gameday-refresh')?.addEventListener('click',()=>pfo50LoadGameday(true));
 setTimeout(()=>pfo50LoadGameday(),4800);
-setTimeout(()=>{if(!pfo50Gameday.attempted_at)pfo50LoadGameday()},18000);
+// No duplicate background gameday load; on-demand and periodic refresh remain.
 setInterval(()=>{if(!document.hidden)pfo50LoadGameday()},360000);
 setInterval(()=>{if(!document.hidden)pfo50RenderGameday()},60000);
 
@@ -1989,7 +1989,7 @@ document.addEventListener('click',event=>{const btn=event.target.closest('[data-
 });
 // Keep source changes visible after asynchronous loads without overstating source availability.
 function pfo51Tick(){try{pfo51FixRosterRows();pfo51UpdateChanges();pfo51RenderChanges();}catch(err){console.warn('FFO change-feed unavailable',err)}}
-setTimeout(pfo51Tick,3500);
+// Changes digest updates on-demand and on its regular 25s visible-page cycle.
 setInterval(()=>{if(!document.hidden)pfo51Tick()},25000);
 // Original injury and player pages stay read-only. This build cannot convert an outdated
 // questionable practice report into an official game-day active without specific evidence.
@@ -2411,7 +2411,7 @@ setTimeout(pfo52FetchHealth,13000);
 function pfo52OpenPage(page){if(page==='matchup'){pfo52Week=pfo52Week||pfo52Cur();pfo52Render();pfo52GetWeek(pfo52Week).then(()=>pfo52Render());}
  if(page==='coaching')pfo52Review();}
 document.querySelectorAll('nav button[data-page="matchup"],nav button[data-page="coaching"]').forEach(b=>b.addEventListener('click',()=>pfo52OpenPage(b.dataset.page)));
-setTimeout(()=>{pfo52Week=pfo52Cur();pfo52GetWeek(pfo52Week).then(()=>pfo52Render());},4000);
+// Full weekly matchup download is deferred until Matchup/Coaching is opened.
 
 // Strict position-aware universal player statistics. No QB catches, irrelevant receiving placeholders,
 // or misleading empty defense/kicker offensive categories.
@@ -2566,7 +2566,7 @@ pfo49RenderPlayer=function(){pfo53PrevPlayer();const id=pfo49Selected;if(!id)ret
 };
 // Start once after the initial DOM setup; progressive network history hydration never blocks page open.
 setTimeout(()=>{pfo53ReorderChamp();pfo53WeekFocus();},1900);
-setTimeout(()=>{if(!document.hidden)pfo53WarmHistory()},13000);
+// Full-season history is requested when matchup, championship or coaching is entered.
 document.querySelector('nav button[data-page="championship"]')?.addEventListener('click',()=>{pfo49RenderPlanner();});
 
 
@@ -2730,7 +2730,7 @@ async function comOpen(id){const x=await comReq('cases/'+id);comUI.selected=x.ca
 async function comChallengeProof(pin){
  const c=await comReq('challenge');
  if(!window.crypto?.subtle)throw Error('SECURE_BROWSER_REQUIRED');
- if(!/^[0-9]{4}$/.test(pin))throw Error('ENTER_FOUR_DIGITS');
+ if(typeof pin!=='string'||pin.length<6||pin.length>64)throw Error('ENTER_YOUR_COMPLETE_6_TO_64_CHARACTER_PIN');
  const salt=Uint8Array.from(String(c.salt).match(/.{2}/g),h=>parseInt(h,16));
  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pin),'PBKDF2',false,['deriveBits']);
  const derived=await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:c.iterations,hash:'SHA-256'},base,256);
@@ -2816,14 +2816,24 @@ setInterval(()=>{if(!document.hidden&&document.querySelector('nav button[data-pa
 document.querySelector('nav button[data-page="market"]')?.addEventListener('click',()=>void refreshFaab());
 
 // Initialize only after all lexical declarations have run.
-render();
+render(true); // Paint Overview, roster placeholders, and briefings without rendering inactive research panels.
 renderGamedayInactives();
-refreshGamedayInactives();
+setTimeout(()=>{if(!document.hidden){void refreshGamedayInactives();void refreshInjuryOnly();void refreshLive();}},300);
 setInterval(()=>{if(!document.hidden)refreshGamedayInactives()},60000);
-// Launch the critical status checks first, without waiting for any GitHub requests.
-refreshInjuryOnly();
-refreshLive();
-gm47LoadGames(gm47Week());
+// Lazy view hydration: preserve existing research engines, but let touch navigation paint first.
+const pfo58HydratedViews=new Set();
+function pfo58HydrateView(page){
+ if(pfo58HydratedViews.has(page))return;pfo58HydratedViews.add(page);
+ try{
+  if(page==='market'){renderTradeScouting();renderWaiverScouting();void refreshFaab();}
+  else if(page==='radar'){pfo49RenderRadar();}
+  else if(page==='scouting'){gm47Render();void gm47LoadGames(gm47Week());}
+  else if(page==='matchup'||page==='coaching'||page==='championship'){void pfo53WarmHistory();}
+  else if(page==='availability'){void pfo50LoadGameday();}
+  else if(page==='privacy'){void refreshBackgroundMonitor();}
+ }catch(err){console.warn('Deferred FFO view hydration issue',err);pfo58HydratedViews.delete(page);}
+}
+document.querySelectorAll('nav button[data-page]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(()=>pfo58HydrateView(btn.dataset.page),0)));
 
 
 /* P0 lineup integrity: if two genuine Sleeper endpoints disagree, never mark one "confirmed" silently. */
