@@ -29,3 +29,6 @@ Cloudflare MySportsFeeds current-season route has been verified HTTP 200 using s
 
 ## Thursday protected PFO preview
 2026-10-27: Trigger staging-only Cloudflare Pages PREVIEW deployment from pfo-thursday-staging source into dirtybirdstest project via isolated GameCast staging CI. Pages production branch main is not modified by this script. Review build logs before promotion.
+
+## Preview upload retry (Pages-scoped token)
+The 2026-10-27 preview build now uses PFO_PAGES_DEPLOY_TOKEN (Account Pages Edit, 7-day) only inside the `wrangler pages deploy` subprocess, targeting project dirtybirdstest branch pfo-thursday-staging. Does NOT deploy Pages production/main.
