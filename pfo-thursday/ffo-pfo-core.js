@@ -2448,7 +2448,7 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  // Playoff starters cannot be inferred from today's lineup. Show everyone together.
  const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+(x?.bye?'BYE':pfo52PointLabel(x?.points))+'</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
  h+=members.map(statrow).join('');
- h+='</tbody></table></div><p class="pfo52-fine">All currently rostered players appear together. Today's starters and bench do not predict playoff lineup assignments.</p>';
+ h+='</tbody></table></div><p class="pfo52-fine">All currently rostered players appear together. Current starters and bench do not predict playoff lineup assignments.</p>';
  h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
  el.innerHTML=h;
 };
