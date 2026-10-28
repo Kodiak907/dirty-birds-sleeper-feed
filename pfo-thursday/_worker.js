@@ -214,7 +214,7 @@ if(parts.length===4&&method==='GET'){
    const mime=req.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase(),name=(()=>{let raw=String(req.headers.get('x-ffo-filename')||'evidence');try{raw=decodeURIComponent(raw)}catch{}return comText(raw,115).replace(/[^\w.() -]/g,'_')})();
    const allowed=['image/png','image/jpeg','image/webp','image/heic','image/heif','application/pdf','video/mp4','video/quicktime','video/webm'];
    if(!allowed.includes(mime))return comJson({error:'FILE_TYPE_NOT_ALLOWED'},415);
-   const maxBytes=mime.startsWith('video/')?25*1024*1024:8*1024*1024;
+   const maxBytes=mime.startsWith('video/')?75*1024*1024:8*1024*1024;
    if(Number(req.headers.get('content-length')||0)>maxBytes)return comJson({error:'FILE_TOO_LARGE'},413);
    const buf=await req.arrayBuffer();if(buf.byteLength>maxBytes||buf.byteLength<12)return comJson({error:'FILE_SIZE_INVALID'},413);
    const b=new Uint8Array(buf.slice(0,16));const sig={
