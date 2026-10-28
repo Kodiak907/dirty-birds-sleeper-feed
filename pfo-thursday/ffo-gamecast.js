@@ -207,7 +207,7 @@
  }
  function drawPlays(){const el=$('ffo-gc-playfeed');if(!el)return;
   if(!s.game){el.innerHTML='<p class="ffo-gc-note">Select a game to see the provider play timeline.</p>';drawField();return;}
-  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="ffo-gc-note">No published plays available for this game yet. The licensed MySportsFeeds boxscore may provide scoring plays only; full play-by-play is not yet authorized.</p>';drawField();return;}
+  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="ffo-gc-note">No published plays for this selected game yet. Scheduled games populate when the provider publishes their plays; completed-game coverage may vary. No plays are generated or guessed.</p>';drawField();return;}
   const needle=s.player?model.normalizeName(s.player.name):'';
   const isScoring=x=>/touchdown|field goal (is good|made)|extra point (is good|made)|safety/i.test(x.text||'');
   const matching=(x)=>needle&&model.normalizeName(x.text).includes(needle);
@@ -254,7 +254,7 @@
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){
       const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
-      s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · SCORING PLAYS ONLY (full PBP restricted)':'MySportsFeeds · published play-by-play';
+      s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
       if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
       s.latestCheck=pb.value.checked_at;
