@@ -1,14 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-28T07:58:25.588536+00:00
-Sleeper snapshot: 2026-10-28T07:58:20.197285+00:00
+Generated: 2026-10-28T08:52:53.993072+00:00
+Sleeper snapshot: 2026-10-28T08:52:49.653387+00:00
 
-Roster change entries: 4. New completed trade entries: 0.
-
-- Dirty Birds: added Caleb Douglas; dropped DeMario Douglas
-- CREAM MACHINE: added Jacoby Brissett, Jakobi Meyers; dropped Jordan Watkins, Baker Mayfield
-- DeeboSix0: added Rachaad White, Cincinnati Bengals; dropped New York Jets
-- Cokerthestroker: added Devin Singletary; dropped Kalif Raymond
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

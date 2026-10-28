@@ -1,22 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T07:58:25.550828+00:00
-Sleeper snapshot: 2026-10-28T07:58:20.197285+00:00
+Generated: 2026-10-28T08:52:53.963538+00:00
+Sleeper snapshot: 2026-10-28T08:52:49.653387+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**9 transaction changes:** 6 completed, 0 pending/processing, 3 failed.
-
-- **NEW** · transaction `1420961598721269760` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jakobi Meyers → CREAM MACHINE  (#2) | Dropped: Jordan Watkins → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1420961539728449536` · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Rachaad White → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1420961445935411200` · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Cincinnati Bengals → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1420960650691084288` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jacoby Brissett → CREAM MACHINE  (#2) | Dropped: Baker Mayfield → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1420855747549376512` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Rachaad White → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1420836177430237184` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Rachaad White → DeeboSix0 (#8) | FAAB bid: $5
-- **NEW** · transaction `1420835816984281088` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Cincinnati Bengals → DeeboSix0 (#8) | Dropped: New York Jets → DeeboSix0 (#8) | FAAB bid: $10
-- **NEW** · transaction `1420583733190238208` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Devin Singletary → Cokerthestroker (#12) | Dropped: Kalif Raymond → Cokerthestroker (#12) | FAAB bid: $8
-- **NEW** · transaction `1420181118325444608` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Caleb Douglas → Dirty Birds (#1) | Dropped: DeMario Douglas → Dirty Birds (#1) | FAAB bid: $26
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
