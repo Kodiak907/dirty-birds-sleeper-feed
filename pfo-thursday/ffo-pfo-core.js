@@ -21,7 +21,7 @@ function updateLeagueStandings(snap){
  const users=new Map(snap.users.map(u=>[String(u.user_id),u]));
  liveStandings=snap.rosters.map(r=>{const u=users.get(String(r.owner_id))||{},st=r.settings||{};let name=(u.metadata||{}).team_name||u.display_name||'Roster '+r.roster_id;
  return {roster_id:Number(r.roster_id),team:name,w:Number(st.wins)||0,l:Number(st.losses)||0,pf:(Number(st.fpts)||0)+(Number(st.fpts_decimal)||0)/100};}).sort((a,b)=>b.w-a.w||b.pf-a.pf||a.roster_id-b.roster_id);
- standingsStamp=snap.fetched_at_utc||null;renderLeagueStandings();
+ standingsStamp=snap.fetched_at_utc||null;if(document.querySelector('#overview.page.active'))renderLeagueStandings();
 }
 // League-specific Coach policy: Boyle (BigOlBoyle), Sleeper roster #3, is view-only.
 // Keep his players in league roster/standings. Never construct, display or copy a trade with him.
@@ -76,7 +76,7 @@ function updateLeagueOwnership(rosters,checkedAt,source='Sleeper snapshot',names
  const ids=new Set(rosters.flatMap(r=>(r.players||[]).map(String)));
  const people=new Set();for(const id of ids){const obj=names?.[id];if(obj?.name)people.add(normPlayer(obj.name));}
  leagueOwnedIds=ids;leagueOwnedNames=people;ownershipStamp=checkedAt;ownershipCheckedMs=at;ownershipSource=source;
- renderWaiverScouting();return true;
+ if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])'))renderWaiverScouting();return true;
 }
 function waiverIsRostered(player,id){
  if(!leagueOwnedIds)return false;
@@ -459,7 +459,8 @@ function mergeFeed(name,x){
   if(Array.isArray(x.rosters)){
     updateLeagueOwnership(x.rosters,x.fetched_at_utc||'', 'Published Sleeper snapshot',cachedPlayerNames);
   }
-  renderGamedayInactives();renderWaiverScouting();
+  if(document.querySelector('#overview.page.active'))renderGamedayInactives();
+  if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])'))renderWaiverScouting();
  }
  if(name==='FULL_SEASON_PLAYOFF_SIMULATION.json'){
   const me=x.teams?.find(t=>t.roster_id===1);
@@ -473,11 +474,11 @@ function mergeFeed(name,x){
   const target=Number((data.snapshot.match(/Week (\d+)/)||[])[1]);
   const w=weeks[String(target)]||weeks[String(keys.find(k=>k>=target))]||weeks[String(keys[keys.length-1])];
   if(w?.starters){data.lineup=w.starters.map(v=>[v.position,v.name,v.opponent,v.ppg]);data.projection=w.ppg;
-   modelLineupMeta={week:Number(weeks[String(target)]?target:(keys.find(k=>k>=target)||keys[keys.length-1])),published:x.generated_at_utc||x.fetched_at_utc||null,source:'WEEKLY_LINEUPS.json'};renderRosterComparison();}
+   modelLineupMeta={week:Number(weeks[String(target)]?target:(keys.find(k=>k>=target)||keys[keys.length-1])),published:x.generated_at_utc||x.fetched_at_utc||null,source:'WEEKLY_LINEUPS.json'};if(document.querySelector('#roster.page.active,#matchup.page.active'))renderRosterComparison();}
  }
  if(name==='AVAILABILITY_INTELLIGENCE.json'){
   gm47Availability=x;
-  if(Array.isArray(x.dirty_birds_watch)){injurySnapshot={stamp:x.generated_at_utc||x.fetched_at_utc||null,watch:x.dirty_birds_watch};updateInjuryView();}
+  if(Array.isArray(x.dirty_birds_watch)){injurySnapshot={stamp:x.generated_at_utc||x.fetched_at_utc||null,watch:x.dirty_birds_watch};if(document.querySelector('#availability.page.active'))updateInjuryView();}
  }
  if(name==='GAMEDAY_DECISION.json'){gm47Gameday=x;}
  if(name==='GAMEDAY_DECISION.json')data.sources[2][1]=(x.third_party_inactive_source_status||'Not independently verified')+' • '+(x.generated_at_utc||'');
@@ -2953,7 +2954,12 @@ const pfo58HydratedViews=new Set();
 function pfo58HydrateView(page){
  if(pfo58HydratedViews.has(page))return;pfo58HydratedViews.add(page);
  try{
-  if(page==='market'){renderTradeScouting();renderWaiverScouting();void refreshFaab();}
+  if(page==='market'){
+   const pane=document.querySelector('#market [data-pfo59-market-panel]:not([hidden])')?.dataset.pfo59MarketPanel||'trade';
+   if(pane==='trade')renderTradeScouting();
+   else if(pane==='waiver')renderWaiverScouting();
+   else if(pane==='transactions')void refreshFaab();
+  }
   else if(page==='radar'){pfo49RenderRadar();}
   else if(page==='scouting'){gm47Render();void gm47LoadGames(gm47Week());}
   else if(page==='matchup'||page==='coaching'||page==='championship'){void pfo53WarmHistory();}
@@ -2961,7 +2967,13 @@ function pfo58HydrateView(page){
   else if(page==='privacy'){void refreshBackgroundMonitor();}
  }catch(err){console.warn('Deferred FFO view hydration issue',err);pfo58HydratedViews.delete(page);}
 }
-document.querySelectorAll('nav button[data-page]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(()=>pfo58HydrateView(btn.dataset.page),0)));
+document.querySelectorAll('nav button[data-page]').forEach(btn=>btn.addEventListener('click',()=>{
+ const target=btn.dataset.page;
+ // Allow Safari to paint the destination before beginning heavier research.
+ const run=()=>{if(document.querySelector('#'+target+'.page.active'))pfo58HydrateView(target)};
+ if(typeof requestIdleCallback==='function')requestIdleCallback(run,{timeout:850});
+ else setTimeout(run,120);
+}));
 
 
 /* P0 lineup integrity: if two genuine Sleeper endpoints disagree, never mark one "confirmed" silently. */
