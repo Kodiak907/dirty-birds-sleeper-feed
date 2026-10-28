@@ -9,7 +9,7 @@ export default {
  async fetch(req,env){const path=new URL(req.url).pathname;
   if(path==="/"&&req.method==="GET")return new Response(HTML,{headers:{"content-type":"text/html; charset=utf-8","cache-control":"no-store","content-security-policy":"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'"}});
   if(path==="/api/probe"&&req.method==="GET"){
-    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v11");
+    const cache=caches.default,ck=new Request("https://ffo-gamecast-cache.invalid/probe-v12");
     const hit=await cache.match(ck);if(hit)return hit;
     if(!env.MSF_API_KEY)return result({error:"missing_key"},503);
     const season="2026-2027-regular";
@@ -26,7 +26,7 @@ export default {
             row.game_count=g.length;recentCompleted=g.filter(x=>Number(x.schedule?.week)===7&&String(x.schedule?.playedStatus||"").toUpperCase()==="COMPLETED").slice(0,2).map(x=>x.schedule?.id||x.id).filter(Boolean);row.game_status_checks=g.filter(x=>[163541,163859,163860,163651].includes(Number(x.schedule?.id||x.game?.id||x.id))).map(x=>({id:x.schedule?.id||x.game?.id||x.id,week:x.schedule?.week||null,playedStatus:x.schedule?.playedStatus||null,scheduleStatus:x.schedule?.scheduleStatus||null,startTime:x.schedule?.startTime||null,endedTime:x.schedule?.endedTime||null}));completedGameIds=g.filter(x=>/complete|played|final/i.test(String(x.schedule?.playedStatus||x.schedule?.status||x.status||""))).slice(-3).map(x=>x.schedule?.id||x.game?.id||x.id).filter(Boolean);let choose=g.find(x=>String(x.schedule?.playedStatus||x.schedule?.status||x.status||"").toLowerCase().includes("completed"))||g[0];
             row.first_game_id=choose?.schedule?.id||choose?.game?.id||choose?.id||null;row.game_keys=choose?Object.keys(choose).slice(0,10):[];row.schedule_keys=choose?.schedule?Object.keys(choose.schedule).slice(0,16):[];
           }
-          if(name.includes("playbyplay")){const arr=[obj?.plays,obj?.gameplaybyplay?.plays,obj?.gamePlayByPlay?.plays].find(Array.isArray)||[];row.play_count=arr.length;if(arr.length){row.play_keys=Object.keys(arr[0]).slice(0,26);row.play_field_shapes=Object.fromEntries(Object.entries(arr[0]).filter(([k])=>/quarter|period|time|clock|down|line|yard|play|description|id|event|possess|start|end/i.test(k)).slice(0,18).map(([k,v])=>[k,Array.isArray(v)?"array":v===null?"null":typeof v==="object"?{type:"object",keys:Object.keys(v).slice(0,12)}:typeof v]));}}
+          if(name.includes("playbyplay")){const arr=[obj?.plays,obj?.gameplaybyplay?.plays,obj?.gamePlayByPlay?.plays].find(Array.isArray)||[];row.play_count=arr.length;if(arr.length){row.play_keys=Object.keys(arr[0]).slice(0,26);const ps=arr[0].playStatus||{};row.play_status_shapes=Object.fromEntries(Object.entries(ps).filter(([k])=>/quarter|second|down|yard|line|possess|drive/i.test(k)).map(([k,v])=>[k,Array.isArray(v)?"array":v===null?"null":typeof v==="object"?{type:"object",keys:Object.keys(v).slice(0,10)}:typeof v]));row.play_field_shapes=Object.fromEntries(Object.entries(arr[0]).filter(([k])=>/quarter|period|time|clock|down|line|yard|play|description|id|event|possess|start|end/i.test(k)).slice(0,18).map(([k,v])=>[k,Array.isArray(v)?"array":v===null?"null":typeof v==="object"?{type:"object",keys:Object.keys(v).slice(0,12)}:typeof v]));}}
           if(name==="boxscore"){const x=obj?.scoring||{};row.scoring_keys=Object.keys(x).slice(0,25);row.scoring_play_shapes=(Array.isArray(x.quarters)?x.quarters:[]).map(q=>({q:q.quarterNumber,count:Array.isArray(q.scoringPlays)?q.scoringPlays.length:0,first_keys:Array.isArray(q.scoringPlays)&&q.scoringPlays[0]?Object.keys(q.scoringPlays[0]).slice(0,22):[]}));row.scoring_fields=Object.fromEntries(Object.entries(x).slice(0,12).map(([k,v])=>[k,Array.isArray(v)?{kind:"array",count:v.length,element_keys:v.length&&typeof v[0]==="object"?Object.keys(v[0]).slice(0,12):[]}:v&&typeof v==="object"?{kind:"object",keys:Object.keys(v).slice(0,16)}:{kind:typeof v}]));}if(name==="season"){row.seasons=Array.isArray(obj?.seasons)?obj.seasons.map(x=>({slug:x.season||x.name||x.label||null})).slice(0,2):[];}
         }else {
           if(name.includes("playbyplay")){
@@ -55,7 +55,7 @@ export default {
       checks.push(await check("playbyplay_invalid_control",season+"/games/999999999/playbyplay.json"));
       checks.push(await check("boxscore_invalid_control",season+"/games/999999999/boxscore.json"));
     }
-    const out=new Response(JSON.stringify({version:"v11",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
+    const out=new Response(JSON.stringify({version:"v12",at:new Date().toISOString(),checks}),{headers:{"content-type":"application/json","cache-control":"public,max-age=90"}});
     await cache.put(ck,out.clone());return out;
   }
   if(path==="/api/status"&&req.method==="GET")return result({app:"FFO GameCast",version:"staging-github-0.2",key_configured:!!env.MSF_API_KEY,password_configured:!!env.FFO_PROBE_PASSWORD,live_verified:false});
