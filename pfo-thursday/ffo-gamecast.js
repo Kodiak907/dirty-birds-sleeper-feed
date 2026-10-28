@@ -88,6 +88,36 @@
  }
  drawField();drawSignals();
  }
+ async function refreshInjuryEvidence(){
+  const above=$('injuryhealth');if(!above||!s.enabled)return;
+  if(Date.now()-(s.lastInjuryCheck||0)<300000)return;
+  s.lastInjuryCheck=Date.now();
+  let pane=$('ffo-gc-injury-intel');
+  if(!pane){pane=document.createElement('details');pane.id='ffo-gc-injury-intel';pane.className='ffo-gc-evidence';above.insertAdjacentElement('afterend',pane);}
+  try {
+    const response=await feed('injuries'),entries=Array.isArray(response.data?.players)?response.data.players:[];
+    const roster=Array.isArray(typeof liveRosterSnapshot!=='undefined'&&liveRosterSnapshot?.players)?liveRosterSnapshot.players:[];
+    const matches=[];
+    for(const member of roster){
+      const fullName=model.normalizeName(member.name||''),team=String(member.team||'').toUpperCase();
+      if(!fullName||!team)continue;
+      const candidates=entries.filter(x=>{
+        const p=x.player||x,msfName=model.normalizeName(p.fullName||[p.firstName,p.lastName].filter(Boolean).join(' '));
+        const msfTeam=String(p.currentTeam?.abbreviation||p.team?.abbreviation||'').toUpperCase();
+        return msfName===fullName&&msfTeam===team;
+      });
+      if(candidates.length!==1)continue;
+      const row=candidates[0],p=row.player||row,inj=p.currentInjury||row.currentInjury;
+      if(!inj)continue;
+      const description=String(typeof inj==='string'?inj:inj.description||inj.comment||inj.status||'Injury information supplied without a designation').slice(0,200);
+      matches.push({name:member.name,description});
+    }
+    const stamp=String(response.data?.lastUpdatedOn||response.checked_at||'unknown');
+    pane.innerHTML='<summary><b>MySportsFeeds injury cross-check</b> · '+matches.length+' uniquely linked roster reports</summary>'+
+      '<p class="ffo-gc-note">Source timestamp: '+safe(stamp)+'. Current injury text is NOT an official Week 8 game designation, activation or clearance. Sleeper/NFL injury fields above remain separate.</p>'+
+      (matches.length?'<div class="ffo-gc-intel-list">'+matches.slice(0,15).map(x=>'<div class="ffo-gc-intel-row"><b>'+safe(x.name)+'</b><span>'+safe(x.description)+'</span><small>MySportsFeeds current injury · identity matched to NFL team</small></div>').join('')+'</div>':'<p class="ffo-gc-note">No unambiguous Dirty Birds injury record matched this source. This does not mean players are healthy.</p>');
+  }catch(e){pane.innerHTML='<summary><b>MySportsFeeds injury cross-check unavailable</b></summary><p class="ffo-gc-note">Provider check unsuccessful; rely on separately dated official injury reports. '+safe(String(e?.message||'unknown'))+'</p>';}
+ }
  function drawSignals(){
   const proj=projection(),status=proj?.complete?'Validated coverage (still needs live replay backtest)':proj?.points!=null?'Partial FFL scoring · research only':'Awaiting verified game logs';
   const notice=`<div class="ffo-gc-evidence"><b>FFO Sports Intelligence feed</b><p class="ffo-gc-note">${safe(status)}. ${proj?'Recent-form research baseline '+fmt(proj.points)+' pts from '+proj.n+' games.':''} GameCast stats will inform workload, opportunity and trade differential models after identity, completeness and correction audits. Existing Sleeper and nflverse-derived decision systems are preserved.</p><button type="button" data-ffo-goto="1">Inspect GameCast</button></div>`;
@@ -244,7 +274,7 @@
     // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
-    drawGames();drawPlayer();refreshEvidencePanels();
+    drawGames();drawPlayer();refreshEvidencePanels();refreshInjuryEvidence();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}
  }
