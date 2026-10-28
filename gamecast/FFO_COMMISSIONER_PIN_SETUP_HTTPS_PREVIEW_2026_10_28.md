@@ -1,0 +1,3 @@
+# FFO Commissioner secure HTTPS PIN generator — staging preview upload
+
+User reported downloaded HTML generator not generating secrets on iPhone. Local file previews may lack a secure Web Crypto context. We added `pfo-thursday/commissioner-pin-setup.html` at immutable commit `39a6052673325eec804343bfe7888908e8b76490` with browser security detection, no network access, PBKDF2-SHA256 (210000 iterations), random 16-byte salt and 48-byte session signing key; PIN never sent to servers. This staging-only trigger runs `node ci_pages_stadium_http.mjs` and deploys exactly 14 files to Cloudflare Pages `dirtybirdstest` Preview branch `pfo-thursday-staging`; production/main unchanged. Restore staging Worker temporary Build command to None after upload; Disable builds OFF.
