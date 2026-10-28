@@ -69,7 +69,7 @@ const FILTERS={
 };
 /**
  * Source coverage is intentionally conservative; a legitimate 0 must be supplied by the source.
- * Scoring bonuses, special team categories, and opponent points MUST reconcile with Sleeper before production use.
+ * Scoring bonuses, special teams, and opponent points must be verified from independent NFL/MSF events. Sleeper comparison is optional external validation, never a scoring input.
  */
 export function fflScore(raw,settings,position=''){
  if(!raw||!settings||typeof settings!=='object')return {points:null,complete:false,missing:['scoring_rules_or_stats_missing'],covered:[],source:'FFL Scoring Model'};
@@ -82,7 +82,7 @@ export function fflScore(raw,settings,position=''){
   covered.push(key);subtotal+=stats[key]*Number(weight);
  }
  // Never equate an incomplete reconstruction to recorded Sleeper points.
- return {points:covered.length?Math.round(subtotal*100)/100:null,complete:covered.length>0&&missing.length===0,missing,covered,source:'PARTIAL unless complete · provider stats × current Sleeper FFL scoring_settings',raw_stat_categories:Object.keys(stats),position:pos};
+ return {points:covered.length?Math.round(subtotal*100)/100:null,complete:covered.length>0&&missing.length===0,missing,covered,source:'FFO provisional unless complete · MySportsFeeds stats × frozen FFO FFL rules',raw_stat_categories:Object.keys(stats),position:pos};
 }
 export function fflProjection(gameRows,rules,position=''){
  const values=gameRows.map(r=>fflScore(r.stats,rules,position||r.position)).filter(x=>x.points!==null);
