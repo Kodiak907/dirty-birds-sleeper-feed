@@ -37,7 +37,7 @@
  };
  const summary=d=>{
   const {p,ind,m}=d,pos=String(p.position||'').toUpperCase(),verified=officialKnown(p),
-   sourceWeek=Number(ind?.latest?.week||0),current=verified&&sourceWeek<verified.week?verified.latest:(ind?.latest||{});
+   sourceWeek=Number(ind?.latest?.week||0),current=verified&&sourceWeek<=verified.week?verified.latest:(ind?.latest||{});
   const latest=pos==='QB'?[['Pass att.',current.pass_att],['Pass yds',current.pass_yd],['Pass TD',current.pass_td],['Rush yds',current.rush_yd]]:
    pos==='RB'?[['Rush att.',current.rush_att],['Rush yds',current.rush_yd],['Rush TD',current.rush_td],['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd]]:
    pos==='WR'||pos==='TE'?[['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd],['Rec TD',current.rec_td]]:
@@ -47,8 +47,8 @@
    pos==='RB'?[['Rush att.',totals.rush_att],['Rush yards',totals.rush_yd],['Rush TD',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd]]:
    [['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd],['Rec TD',totals.rec_td]];
   const series=x=>x.filter(([,n])=>n!==null&&n!==undefined).map(([label,n])=>tile(fmt(n,0),label)).join('');
-  const source=verified&&sourceWeek<verified.week?
-   '<p class="ffo57-evidence">NFL team official box score through Week '+verified.week+' ('+E(verified.through)+'). <a href="'+verified.link+'" target="_blank" rel="noopener">Miami Dolphins player log ↗</a>. Independent nflverse feed currently only reaches '+E(sourceWeek||'unverified')+' for this player. This correction does not change the FFO forecast.</p>':
+  const source=verified&&sourceWeek<=verified.week?
+   '<p class="ffo57-evidence">NFL team official box score through Week '+verified.week+' ('+E(verified.through)+'). <a href="'+verified.link+'" target="_blank" rel="noopener">Miami Dolphins player log ↗</a>. Independent nflverse Week 7 data is not authoritative here (last observed week '+E(sourceWeek||'unverified')+' for this player). This correction does not change the FFO forecast.</p>':
    '<p class="ffo57-evidence">Independent NFL stats: last published week '+E(current.week??'unavailable')+' · source checked '+E(when(d.source))+'. Not necessarily current live data.</p>';
   return '<div class="ffo57-tilegrid ffo59-player-kpis">'+tile(fmt(d.avg),'Recorded FFL PPG · '+d.closed.length+' games')+
    tile(fmt(d.recent),'Last '+Math.min(3,d.closed.length)+' FFL games')+
