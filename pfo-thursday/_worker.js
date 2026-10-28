@@ -546,6 +546,24 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  finally{clearTimeout(timer)}
  const meta={source:'MySportsFeeds',feed:route,checked_at:now(),provider_http_status:resp.status,provisional:true,live_delay_verified:false,licensed:true};
  if(resp.status===204||resp.status===304)return ffoReply({...meta,available:false,reason:resp.status===304?'provider_not_modified':'feed_not_ready'});
+ if((resp.status===403||resp.status===404)&&route==='plays'){
+   // This subscription does not currently authorize the full PBP feed.
+   // Use ONLY the licensed MySportsFeeds boxscore's published scoring plays;
+   // do not imply this is complete play-by-play or generate missing plays.
+   try{
+     const boxpath=ffoBuildPath('boxscore',u.searchParams);
+     const backup=await transport(MSF_ROOT+boxpath,{method:'GET',headers:{authorization:env.MSF_API_KEY?'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'):'Service-Binding',accept:'application/json'},redirect:'manual',signal:AbortSignal.timeout(11000)});
+     if(backup.ok){
+       const payload=await backup.json(),quarters=Array.isArray(payload?.scoring?.quarters)?payload.scoring.quarters:[];
+       const plays=quarters.flatMap(q=>(Array.isArray(q.scoringPlays)?q.scoringPlays:[]).map((p,i)=>{
+         const elapsed=Number(p.quarterSecondsElapsed),secs=Number.isFinite(elapsed)?Math.max(0,900-elapsed):null;
+         const clock=secs===null?'':Math.floor(secs/60)+':'+String(secs%60).padStart(2,'0');
+         return {id:'msf-boxscore-'+String(q.quarterNumber)+'-'+i,description:String(p.playDescription||''),quarter:q.quarterNumber,time:clock,source:'MSF boxscore',scoreChange:p.scoreChange,awayScore:p.awayScore,homeScore:p.homeScore};
+       })).filter(p=>p.description);
+       return ffoReply({...meta,source:'MySportsFeeds boxscore',provider_http_status:backup.status,original_playbyplay_status:resp.status,available:true,coverage:'scoring_only',full_playbyplay_authorized:false,verified_boxscore_feed:true,data:{plays,scoring_context:{quarter:payload?.scoring?.currentQuarter,down:payload?.scoring?.currentDown,remaining:payload?.scoring?.currentYardsRemaining,awayScoreTotal:payload?.scoring?.awayScoreTotal,homeScoreTotal:payload?.scoring?.homeScoreTotal}}});
+     }
+   }catch{/* A missing partial-scoring feed is never represented as zero plays. */}
+ }
  if(resp.status===401||resp.status===403)return ffoReply({...meta,error:'provider_auth_or_entitlement_denied'},502);
  if(resp.status===404)return ffoReply({...meta,error:'provider_feed_not_found'},502);
  if(!resp.ok)return ffoReply({...meta,error:'provider_upstream_error'},502);
