@@ -115,14 +115,14 @@
  }
  function drawPlays(){const el=$('ffo-gc-playfeed');if(!el)return;
   if(!s.game){el.innerHTML='<p class="ffo-gc-note">Select a game to see the provider play timeline.</p>';drawField();return;}
-  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="ffo-gc-note">No authenticated provider play records loaded. A missing play feed is not a score of zero.</p>';drawField();return;}
+  if(!s.playCache.length){el.innerHTML='<h3>Play-by-play</h3><p class="ffo-gc-note">No published plays available for this game yet. The licensed MySportsFeeds boxscore may provide scoring plays only; full play-by-play is not yet authorized.</p>';drawField();return;}
   const needle=s.player?model.normalizeName(s.player.name):'';
   const isScoring=x=>/touchdown|field goal (is good|made)|extra point (is good|made)|safety/i.test(x.text||'');
   const matching=(x)=>needle&&model.normalizeName(x.text).includes(needle);
   const numbered=s.playCache.map((event,i)=>({event,i}));
   const selected=numbered.filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
   const show=selected.slice(-60).reverse();
-  el.innerHTML=`<h3>${s.playFilter==='player'?safe(s.player?.name||'Player not selected')+' · ':''}Published plays <small style="color:#acc4d7">(${selected.length} matching / ${s.playCache.length} loaded)</small></h3>`+
+  el.innerHTML=`<h3>${s.playFilter==='player'?safe(s.player?.name||'Player not selected')+' · ':''}${s.playSource?.includes('SCORING PLAYS ONLY')?'Published scoring plays (partial)':'Published plays'} <small style="color:#acc4d7">(${selected.length} matching / ${s.playCache.length} loaded)</small></h3>`+
    (show.length?show.map(({event,i})=>`<div class="ffo-gc-play ${s.activePlay===i?'active':''}" data-ffo-play="${i}" role="button" tabindex="0"><div class="ffo-gc-playtop"><strong>${safe(event.update==='corrected'?'CORRECTED':event.update==='new'?'NEW':'PLAY')}</strong><small>${safe(event.period?'Q'+event.period:'Quarter unknown')} ${safe(event.clock||'Time unknown')}</small></div><div>${safe(event.text)}</div><small>Provider description · provisional · tap for schematic field</small></div>`).join(''):'<p class="ffo-gc-note">No matching plays in this subset. This does not prove zero involvement.</p>');
   el.querySelectorAll('[data-ffo-play]').forEach(row=>{const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);drawField();drawPlays()};row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});
   drawField();
@@ -149,24 +149,12 @@
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));s.latestCheck=pb.value.checked_at}
     if(bs.status==='fulfilled'){s.liveBox=bs.value;s.latestCheck=bs.value.checked_at}
-    // The MSF playbyplay feed returned 403 during entitlement QA. Only in that
-    // case, use ESPN's dated public play descriptions, explicitly labeled.
-    if(pb.status==='rejected' && /403|entitlement|denied|provider_auth/i.test(String(pb.reason?.message||pb.reason))){
-      try{
-        const week=8; const season=Number(s.season.slice(0,4));
-        const weekRes=await fetch('/api/nfl-week?season='+season+'&week='+week,{credentials:'same-origin',cache:'no-store'});
-        if(weekRes.ok){const weekData=await weekRes.json(),game=s.games.find(g=>g.id===s.game),
-          team=x=>String(x||'').replace(/^(GBP)$/,'GB').replace(/^(CAR)$/,'CAR').toUpperCase();
-          const opp=(weekData.games||[]).find(g=>team(g.home)===team(game?.home)&&team(g.away)===team(game?.away));
-          if(opp?.id){const fallback=await fetch('/api/game-plays?event_id='+encodeURIComponent(opp.id),{cache:'no-store'});
-            if(fallback.ok){const j=await fallback.json();const ps=model.plays({plays:j.plays||[]});
-              s.playCache=model.versionedPlays(s.playCache,ps);s.activePlay=Math.max(0,s.playCache.length-1);
-              s.playSource='ESPN GAME SUMMARY (fallback; last 12 published plays)';s.latestCheck=j.checked_at;
-            }
-          }
-        }
-      }catch{/* Do not fabricate any missing provider play. */}
-    }
+    // The licensed boxscore is a scoring-only fallback, NOT full play-by-play.
+    if(pb.status==='fulfilled'){
+      s.playSource=pb.value.coverage==='scoring_only'
+        ? 'MySportsFeeds · SCORING PLAYS ONLY (full play-by-play restricted)'
+        : 'MySportsFeeds · published play-by-play';
+    }else s.playSource='Full play-by-play not verified';
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
     status((s.playSource||'MySportsFeeds')+' · '+(errs.length?'MSF play-feed limitation: '+errs.join('; '):'MSF game requests succeeded')+' · checked '+(s.latestCheck||'unknown')+' · latency not verified');
     drawPlays();drawPlayer();
