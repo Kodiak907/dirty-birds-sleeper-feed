@@ -53,3 +53,20 @@ export default {
   const out=await checkProvider(env,feed);return result(out,out.error?502:200);
  }
 };
+// Private RPC-only entrypoint for Cloudflare Pages service bindings.
+// It has no public URL. Pages authenticates the Coach with Cloudflare Access
+// before invoking it; the MySportsFeeds key never leaves this Worker.
+import { WorkerEntrypoint } from "cloudflare:workers";
+export class GamecastInternal extends WorkerEntrypoint {
+  async fetch(request) {
+    const u=new URL(request.url);
+    if(request.method!=="GET"||u.protocol!=="https:"||u.hostname!=="api.mysportsfeeds.com"||!u.pathname.startsWith("/v2.1/pull/nfl/"))
+      return new Response(null,{status:403});
+    if(!this.env.MSF_API_KEY)return new Response(null,{status:503});
+    // No arbitrary upstream hosts, redirects, or client-provided auth headers.
+    try {
+      const upstream=await fetch(u.href,{method:"GET",headers:{Authorization:"Basic "+btoa(this.env.MSF_API_KEY+":MYSPORTSFEEDS"),Accept:"application/json"},redirect:"manual",signal:AbortSignal.timeout(11500)});
+      return new Response(upstream.body,{status:upstream.status,headers:{"content-type":upstream.headers.get("content-type")||"application/json","cache-control":"private, no-store"}});
+    }catch{return new Response(JSON.stringify({error:"upstream_unreachable"}),{status:502,headers:{"content-type":"application/json"}});}
+  }
+}
