@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-28T20:42:35.601787+00:00
+Generated: 2026-10-28T21:41:29.895909+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections and injury status require manual verification.
@@ -24,6 +24,7 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 5 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.06 | Availability status: questionable |
 | 6 | Tank Bigsby | 2.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | Availability status: ir; Partial projection coverage |
 | 7 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
+| 8 | Dameon Pierce | 1.23 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.76 | No flagged data gap; review still required |
 
 ## WR
 
@@ -35,22 +36,21 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 4 | Chris Bell | 5.13 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.86 | No flagged data gap; review still required |
 | 5 | DeMario Douglas | 4.87 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.12 | No flagged data gap; review still required |
 | 6 | Jauan Jennings | 4.79 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.19 | No flagged data gap; review still required |
-| 7 | Ja'Kobi Lane | 4.56 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.43 | No flagged data gap; review still required |
-| 8 | Rashod Bateman | 4.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.64 | No flagged data gap; review still required |
-| 9 | Michael Pittman Jr. | 3.92 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.07 | Availability status: ir; Partial projection coverage |
-| 10 | Adonai Mitchell | 3.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.68 | No flagged data gap; review still required |
-| 11 | Brian Thomas Jr. | 3.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.88 | Limited snap sample |
-| 12 | Mack Hollins | 3.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.88 | Availability status: ir; Partial projection coverage |
+| 7 | Rashid Shaheed | 4.74 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.25 | No flagged data gap; review still required |
+| 8 | Ja'Kobi Lane | 4.56 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.43 | No flagged data gap; review still required |
+| 9 | Rashod Bateman | 4.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.64 | No flagged data gap; review still required |
+| 10 | Michael Pittman Jr. | 3.92 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.07 | Availability status: ir; Partial projection coverage |
+| 11 | Adonai Mitchell | 3.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.68 | No flagged data gap; review still required |
+| 12 | Brian Thomas Jr. | 3.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.88 | Limited snap sample |
 
 ## TE
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Jake Ferguson | 6.26 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.28 | No flagged data gap; review still required |
-| 2 | Michael Mayer | 5.20 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.79 | No flagged data gap; review still required |
-| 3 | Noah Fant | 4.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.68 | No flagged data gap; review still required |
-| 4 | Colby Parkinson | 3.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.28 | No sourced usage; Limited snap sample |
-| 5 | David Njoku | 2.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.29 | Availability status: ir |
+| 1 | Michael Mayer | 5.20 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.79 | No flagged data gap; review still required |
+| 2 | Noah Fant | 4.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.68 | No flagged data gap; review still required |
+| 3 | Colby Parkinson | 3.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.28 | No sourced usage; Limited snap sample |
+| 4 | David Njoku | 2.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.29 | Availability status: ir |
 
 ## K
 
@@ -71,13 +71,13 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 3 | Baltimore Ravens | 6.28 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.29 | No sourced usage |
 | 4 | Green Bay Packers | 5.98 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.01 | No sourced usage |
 | 5 | Indianapolis Colts | 5.73 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.26 | No sourced usage |
-| 6 | Washington Commanders | 5.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.37 | No sourced usage |
-| 7 | Chicago Bears | 5.57 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.42 | No sourced usage |
-| 8 | New York Giants | 5.54 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.45 | No sourced usage |
-| 9 | Cleveland Browns | 5.48 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.51 | No sourced usage |
-| 10 | Tampa Bay Buccaneers | 5.32 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.67 | No sourced usage |
-| 11 | New Orleans Saints | 5.26 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.73 | No sourced usage |
-| 12 | New York Jets | 4.57 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.42 | No sourced usage |
+| 6 | Chicago Bears | 5.57 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.42 | No sourced usage |
+| 7 | New York Giants | 5.54 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.45 | No sourced usage |
+| 8 | Cleveland Browns | 5.48 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.51 | No sourced usage |
+| 9 | Tampa Bay Buccaneers | 5.32 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.67 | No sourced usage |
+| 10 | New Orleans Saints | 5.26 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.73 | No sourced usage |
+| 11 | New York Jets | 4.57 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.42 | No sourced usage |
+| 12 | Tennessee Titans | 4.43 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.56 | No sourced usage |
 
 ## Before making any claim
 

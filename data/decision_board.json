@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-28T20:42:35.511640+00:00",
+  "generated_at_utc": "2026-10-28T21:41:29.783940+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -138,28 +138,6 @@
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Washington Commanders",
-        "ppg": 5.62,
-        "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 7.028
-        },
-        "same_position_uplift_ppg": -1.41,
-        "screen_only": true,
-        "sleeper_id": "WAS",
-        "team": "WAS"
       },
       {
         "audit": {
@@ -292,6 +270,28 @@
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Tennessee Titans",
+        "ppg": 4.43,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.028
+        },
+        "same_position_uplift_ppg": -2.6,
+        "screen_only": true,
+        "sleeper_id": "TEN",
+        "team": "TEN"
       }
     ],
     "K": [
@@ -665,31 +665,31 @@
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
-      }
-    ],
-    "TE": [
+      },
       {
         "audit": {
-          "carries_per_game": 0.0,
+          "carries_per_game": 12.33,
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
           "projection_coverage": 0.9,
-          "recent_snap_pct": 64.3,
-          "snap_trend_3_appearances_pp": -27.0,
-          "targets_per_game": 3.33
+          "recent_snap_pct": 78.7,
+          "snap_trend_3_appearances_pp": -13.0,
+          "targets_per_game": 3.67
         },
-        "name": "Jake Ferguson",
-        "ppg": 6.26,
+        "name": "Dameon Pierce",
+        "ppg": 1.23,
         "replacement_reference": {
-          "name": "Chig Okonkwo",
-          "ppg": 6.017
+          "name": "Jonah Coleman",
+          "ppg": 3.817
         },
-        "same_position_uplift_ppg": 0.25,
+        "same_position_uplift_ppg": -2.59,
         "screen_only": true,
-        "sleeper_id": "8110",
-        "team": "DAL"
-      },
+        "sleeper_id": "8129",
+        "team": "PHI"
+      }
+    ],
+    "TE": [
       {
         "audit": {
           "carries_per_game": 0.0,
@@ -943,6 +943,31 @@
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 41.3,
+          "snap_trend_3_appearances_pp": -14.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Rashid Shaheed",
+        "ppg": 4.74,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 0.924
+        },
+        "same_position_uplift_ppg": 3.82,
+        "screen_only": true,
+        "sleeper_id": "8676",
+        "team": "SEA"
       },
       {
         "audit": {
@@ -1229,5 +1254,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-28T20:42:31.022494+00:00"
+  "snapshot_utc": "2026-10-28T21:41:25.622349+00:00"
 }

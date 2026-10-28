@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-28T20:42:35.282869+00:00
-Sleeper snapshot: 2026-10-28T20:42:31.022494+00:00
+Generated: 2026-10-28T21:41:29.459289+00:00
+Sleeper snapshot: 2026-10-28T21:41:25.622349+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- CREAM MACHINE: added AJ Barner, Elijah Mitchell, Jake Ferguson, Washington Commanders; dropped Dameon Pierce, Rashid Shaheed, Tennessee Titans
+- CREAM MACHINE: reserve status changed
 
 ## Limits
 

@@ -228,5 +228,33 @@
       }
     ],
     "source_snapshot_utc": "2026-10-28T17:45:40.981268+00:00"
+  },
+  {
+    "generated_at_utc": "2026-10-28T21:41:29.459289+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [
+          "AJ Barner",
+          "Elijah Mitchell",
+          "Jake Ferguson",
+          "Washington Commanders"
+        ],
+        "drops": [
+          "Dameon Pierce",
+          "Rashid Shaheed",
+          "Tennessee Titans"
+        ],
+        "roster_id": 2,
+        "team": "CREAM MACHINE"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 2,
+        "team": "CREAM MACHINE"
+      }
+    ],
+    "source_snapshot_utc": "2026-10-28T21:41:25.622349+00:00"
   }
 ]

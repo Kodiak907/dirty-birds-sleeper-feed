@@ -24,6 +24,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Mike Washington Jr. | 4.93 | +1.11 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Tank Bigsby | 2.21 | -1.61 | 28.7% | Carries 9.0 | sleeper_injury_ir |
 | 7 | Jaleel McLaughlin | 1.49 | -2.33 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 8 | Dameon Pierce | 1.23 | -2.59 | 78.7% | Carries 12.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (0.92 PPG)
 
@@ -35,22 +36,21 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 4 | Chris Bell | 5.13 | +4.20 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 5 | DeMario Douglas | 4.87 | +3.94 | 57.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
 | 6 | Jauan Jennings | 4.79 | +3.87 | 73.3% | Tgt 1.7 | injury_report_observation_review |
-| 7 | Ja'Kobi Lane | 4.56 | +3.64 | 54.3% | Tgt 4.3 | injury_report_observation_review |
-| 8 | Rashod Bateman | 4.34 | +3.42 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 9 | Michael Pittman Jr. | 3.92 | +2.99 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 10 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 11 | Brian Thomas Jr. | 3.11 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
-| 12 | Mack Hollins | 3.11 | +2.19 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
+| 7 | Rashid Shaheed | 4.74 | +3.82 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 8 | Ja'Kobi Lane | 4.56 | +3.64 | 54.3% | Tgt 4.3 | injury_report_observation_review |
+| 9 | Rashod Bateman | 4.34 | +3.42 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 10 | Michael Pittman Jr. | 3.92 | +2.99 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 11 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 12 | Brian Thomas Jr. | 3.11 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Chig Okonkwo (6.02 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Jake Ferguson | 6.26 | +0.25 | 64.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 2 | Michael Mayer | 5.20 | -0.82 | 75.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 3 | Noah Fant | 4.31 | -1.71 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
-| 4 | Colby Parkinson | 3.70 | -2.31 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 5 | David Njoku | 2.70 | -3.32 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
+| 1 | Michael Mayer | 5.20 | -0.82 | 75.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 2 | Noah Fant | 4.31 | -1.71 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
+| 3 | Colby Parkinson | 3.70 | -2.31 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
+| 4 | David Njoku | 2.70 | -3.32 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
 
 ## K — reference: Will Reichard (7.26 PPG)
 
@@ -71,13 +71,13 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 3 | Baltimore Ravens | 6.28 | -0.75 | — | — | No modeled flags (not medically cleared) |
 | 4 | Green Bay Packers | 5.98 | -1.05 | — | — | No modeled flags (not medically cleared) |
 | 5 | Indianapolis Colts | 5.73 | -1.30 | — | — | No modeled flags (not medically cleared) |
-| 6 | Washington Commanders | 5.62 | -1.41 | — | — | No modeled flags (not medically cleared) |
-| 7 | Chicago Bears | 5.57 | -1.46 | — | — | No modeled flags (not medically cleared) |
-| 8 | New York Giants | 5.54 | -1.48 | — | — | No modeled flags (not medically cleared) |
-| 9 | Cleveland Browns | 5.48 | -1.55 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tampa Bay Buccaneers | 5.32 | -1.71 | — | — | No modeled flags (not medically cleared) |
-| 11 | New Orleans Saints | 5.26 | -1.77 | — | — | No modeled flags (not medically cleared) |
-| 12 | New York Jets | 4.57 | -2.46 | — | — | No modeled flags (not medically cleared) |
+| 6 | Chicago Bears | 5.57 | -1.46 | — | — | No modeled flags (not medically cleared) |
+| 7 | New York Giants | 5.54 | -1.48 | — | — | No modeled flags (not medically cleared) |
+| 8 | Cleveland Browns | 5.48 | -1.55 | — | — | No modeled flags (not medically cleared) |
+| 9 | Tampa Bay Buccaneers | 5.32 | -1.71 | — | — | No modeled flags (not medically cleared) |
+| 10 | New Orleans Saints | 5.26 | -1.77 | — | — | No modeled flags (not medically cleared) |
+| 11 | New York Jets | 4.57 | -2.46 | — | — | No modeled flags (not medically cleared) |
+| 12 | Tennessee Titans | 4.43 | -2.60 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

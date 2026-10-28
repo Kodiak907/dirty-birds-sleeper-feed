@@ -1,15 +1,24 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T20:42:35.251965+00:00
-Sleeper snapshot: 2026-10-28T20:42:31.022494+00:00
+Generated: 2026-10-28T21:41:29.412255+00:00
+Sleeper snapshot: 2026-10-28T21:41:25.622349+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**4 transaction changes:** 4 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1421284337906716672` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
+- **NEW** · transaction `1421283676016103424` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
+- **NEW** · transaction `1421283008698183680` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
+- **NEW** · transaction `1421281914169421824` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
+- 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
+- 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
+- 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
 - 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
 - 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Jacksonville Jaguars →     Victorious Secret (#5) | Dropped: Cleveland Browns →     Victorious Secret (#5)
 - 2026-10-28T14:55:09.670380+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
@@ -31,10 +40,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Kenny Gainwell → DANGER CLOSE  (#4)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Carolina Panthers → kfsn (#6) | Dropped: Jacksonville Jaguars → kfsn (#6)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Trey Smack → kfsn (#6) | Dropped: Blake Grupe → kfsn (#6)
-- 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Dropped: Trey Smack → kfsn (#6)
-- 2026-10-24T21:29:58.825461+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Antonio Williams → Dirty Birds (#1)
-- 2026-10-24T21:29:58.825461+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Caleb Douglas → Dirty Birds (#1)
-- 2026-10-24T21:29:58.825461+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Dominic Zvada → JA’MARRTRIX (#7)
 
 ## Important limits
 

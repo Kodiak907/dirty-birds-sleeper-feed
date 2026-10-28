@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-28T20:42:35.331241+00:00",
+  "generated_at_utc": "2026-10-28T21:41:29.561835+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -797,7 +797,7 @@
     {
       "completed_trade_count": 0,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 79.19,
+      "observed_optimal_average": 79.62,
       "observed_optimal_lineup": [
         {
           "avg": 10.26,
@@ -835,8 +835,8 @@
           "position": "K"
         },
         {
-          "avg": 0.86,
-          "name": "Tennessee Titans",
+          "avg": 1.29,
+          "name": "Washington Commanders",
           "position": "DEF"
         },
         {
@@ -920,6 +920,25 @@
           "weekly_points": [
             6.7,
             1.6,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "11603",
+          "n_weeks": 7,
+          "name": "AJ Barner",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "TE",
+          "weekly_points": [
+            0.0,
+            0.0,
             0.0,
             0.0,
             0.0,
@@ -1048,7 +1067,7 @@
           "n_weeks": 7,
           "name": "Terry McLaurin",
           "nonzero_weeks": 5,
-          "on_fantasy_reserve": false,
+          "on_fantasy_reserve": true,
           "position": "WR",
           "weekly_points": [
             2.4,
@@ -1080,6 +1099,25 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "7561",
+          "n_weeks": 7,
+          "name": "Elijah Mitchell",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 59.0,
           "actual_points_weekly_avg": 8.43,
           "id": "7839",
@@ -1099,22 +1137,22 @@
           ]
         },
         {
-          "actual_points_total": 24.3,
-          "actual_points_weekly_avg": 3.47,
-          "id": "8129",
+          "actual_points_total": 36.0,
+          "actual_points_weekly_avg": 5.14,
+          "id": "8110",
           "n_weeks": 7,
-          "name": "Dameon Pierce",
-          "nonzero_weeks": 2,
+          "name": "Jake Ferguson",
+          "nonzero_weeks": 6,
           "on_fantasy_reserve": false,
-          "position": "RB",
+          "position": "TE",
           "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            13.0,
-            11.3
+            1.6,
+            18.3,
+            7.8,
+            2.6,
+            3.4,
+            2.3,
+            0.0
           ]
         },
         {
@@ -1134,25 +1172,6 @@
             0.0,
             0.0,
             0.0
-          ]
-        },
-        {
-          "actual_points_total": 1.1,
-          "actual_points_weekly_avg": 0.16,
-          "id": "8676",
-          "n_weeks": 7,
-          "name": "Rashid Shaheed",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.1
           ]
         },
         {
@@ -1213,11 +1232,11 @@
           ]
         },
         {
-          "actual_points_total": 6.0,
-          "actual_points_weekly_avg": 0.86,
-          "id": "TEN",
+          "actual_points_total": 9.0,
+          "actual_points_weekly_avg": 1.29,
+          "id": "WAS",
           "n_weeks": 7,
-          "name": "Tennessee Titans",
+          "name": "Washington Commanders",
           "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
           "position": "DEF",
@@ -1226,20 +1245,20 @@
             0.0,
             0.0,
             0.0,
+            9.0,
             0.0,
-            0.0,
-            6.0
+            0.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 6.0,
-            "actual_points_weekly_avg": 0.86,
-            "id": "TEN",
+            "actual_points_total": 9.0,
+            "actual_points_weekly_avg": 1.29,
+            "id": "WAS",
             "n_weeks": 7,
-            "name": "Tennessee Titans",
+            "name": "Washington Commanders",
             "nonzero_weeks": 1,
             "on_fantasy_reserve": false,
             "position": "DEF",
@@ -1248,9 +1267,9 @@
               0.0,
               0.0,
               0.0,
+              9.0,
               0.0,
-              0.0,
-              6.0
+              0.0
             ]
           }
         ],
@@ -1374,25 +1393,6 @@
             ]
           },
           {
-            "actual_points_total": 24.3,
-            "actual_points_weekly_avg": 3.47,
-            "id": "8129",
-            "n_weeks": 7,
-            "name": "Dameon Pierce",
-            "nonzero_weeks": 2,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              13.0,
-              11.3
-            ]
-          },
-          {
             "actual_points_total": 21.1,
             "actual_points_weekly_avg": 3.01,
             "id": "9226",
@@ -1423,6 +1423,25 @@
             "weekly_points": [
               6.7,
               1.6,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "7561",
+            "n_weeks": 7,
+            "name": "Elijah Mitchell",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
               0.0,
               0.0,
               0.0,
@@ -1468,6 +1487,44 @@
               0.0,
               0.0,
               14.5
+            ]
+          },
+          {
+            "actual_points_total": 36.0,
+            "actual_points_weekly_avg": 5.14,
+            "id": "8110",
+            "n_weeks": 7,
+            "name": "Jake Ferguson",
+            "nonzero_weeks": 6,
+            "on_fantasy_reserve": false,
+            "position": "TE",
+            "weekly_points": [
+              1.6,
+              18.3,
+              7.8,
+              2.6,
+              3.4,
+              2.3,
+              0.0
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "11603",
+            "n_weeks": 7,
+            "name": "AJ Barner",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "TE",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -1536,7 +1593,7 @@
             "n_weeks": 7,
             "name": "Terry McLaurin",
             "nonzero_weeks": 5,
-            "on_fantasy_reserve": false,
+            "on_fantasy_reserve": true,
             "position": "WR",
             "weekly_points": [
               2.4,
@@ -1603,25 +1660,6 @@
               17.1,
               1.4,
               2.2
-            ]
-          },
-          {
-            "actual_points_total": 1.1,
-            "actual_points_weekly_avg": 0.16,
-            "id": "8676",
-            "n_weeks": 7,
-            "name": "Rashid Shaheed",
-            "nonzero_weeks": 1,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              1.1
             ]
           }
         ]
@@ -9193,6 +9231,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-28T20:42:31.022494+00:00",
+  "snapshot_utc": "2026-10-28T21:41:25.622349+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }

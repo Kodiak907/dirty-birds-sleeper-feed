@@ -8722,5 +8722,211 @@
       "waiver_budget": []
     },
     "transaction_id": "1421220253630803968"
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "4046",
+      "9509",
+      "8150",
+      "9997",
+      "8146",
+      "8210",
+      "13301",
+      "12495",
+      "11792",
+      "MIN"
+    ],
+    "old": [
+      "4046",
+      "9509",
+      "8150",
+      "9997",
+      "8146",
+      "8210",
+      "13296",
+      "12495",
+      "11792",
+      "MIN"
+    ],
+    "roster_id": 1
+  },
+  {
+    "added": [
+      "11603",
+      "7561",
+      "8110",
+      "WAS"
+    ],
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "dropped": [
+      "8129",
+      "8676",
+      "TEN"
+    ],
+    "kind": "roster_change",
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "4943",
+      "8155",
+      "11435",
+      "9493",
+      "13279",
+      "11603",
+      "10229",
+      "9500",
+      "7839",
+      "WAS"
+    ],
+    "old": [
+      "4943",
+      "11576",
+      "11435",
+      "9493",
+      "13279",
+      "2505",
+      "0",
+      "9500",
+      "7839",
+      "TEN"
+    ],
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "reserve_change",
+    "new": [
+      "11583",
+      "5927",
+      "9226"
+    ],
+    "old": [
+      "11583",
+      "9226"
+    ],
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "8110": 2
+      },
+      "consenter_ids": [
+        2
+      ],
+      "created": 1793223101645,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": {
+        "8676": 2
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793223101645,
+      "transaction_id": "1421284337906716672",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421284337906716672"
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "7561": 2
+      },
+      "consenter_ids": [
+        2
+      ],
+      "created": 1793222943838,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": {
+        "8129": 2
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793222943838,
+      "transaction_id": "1421283676016103424",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421283676016103424"
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "WAS": 2
+      },
+      "consenter_ids": [
+        2
+      ],
+      "created": 1793222784736,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": {
+        "TEN": 2
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793222784736,
+      "transaction_id": "1421283008698183680",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421283008698183680"
+  },
+  {
+    "detected_at_utc": "2026-10-28T21:41:25.622349+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "11603": 2
+      },
+      "consenter_ids": [
+        2
+      ],
+      "created": 1793222523780,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": null,
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793222523780,
+      "transaction_id": "1421281914169421824",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421281914169421824"
   }
 ]

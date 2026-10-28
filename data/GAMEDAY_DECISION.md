@@ -1,6 +1,6 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 8 | Snapshot: 2026-10-28T20:42:31.022494+00:00
+Week 8 | Snapshot: 2026-10-28T21:41:25.622349+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
