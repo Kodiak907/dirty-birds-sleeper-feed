@@ -1,5 +1,11 @@
 
-const initial={snapshot:'October 24, 2026 • Week 7',record:'4–2',rosterCount:20,faabSpent:null,projection:137.95,playoff:{playoff_probability:.9864,bye_probability:.5691,final_probability:.5001,championship_probability:.2816},teams:[['kfsn','5–1',.2902],['Dirty Birds','4–2',.2816],['Cokerthestroker','5–1',.1619],['suck my dickerson','4–2',.1479],['JA’MARRTRIX','1–5',.0437],['DeeboSix0','4–2',.0332]],lineup:[['QB','C.J. Stroud','NYG',17.92],['RB','Bijan Robinson','SF',21.81],['RB','Kyren Williams','LV',18.31],['WR','Zay Flowers','CIN',15.78],['WR','Garrett Wilson','MIA',13.90],['TE','Isaiah Likely','HOU',10],['FLEX','A.J. Brown','CHI',12.58],['FLEX','Ollie Gordon II','NYJ',12.30],['K','Will Reichard','IND',7.65],['DEF','Minnesota Vikings','IND',7.70]],injuries:[['Jonah Coleman','IR','Fantasy reserve; NFL status must be verified'],['Christian Kirk','Unverified','Historical tag was IR; verify activation against official source'],['Zach Charbonnet','Out','On fantasy active roster; Sleeper injury Out'],['Kaelon Black','No tag','Week 6 did-not-practice observation; not current clearance']],trades:[],sources:[['Sleeper','2026-10-24 18:32 UTC'],['Championship simulation','2026-10-24 18:45 UTC'],['ESPN inactives','Week 7 live verification pending'],['Pregame calibration','Completed-week test sample pending']]};
+const initial={
+ snapshot:'Awaiting current Sleeper data',record:'Source pending',rosterCount:null,
+ faabSpent:null,projection:null,
+ playoff:{playoff_probability:null,bye_probability:null,final_probability:null,championship_probability:null},
+ teams:[],lineup:[],injuries:[],trades:[],
+ sources:[['Sleeper','Not yet loaded'],['FFO analysis','Not yet loaded']]
+}
 let data=JSON.parse(JSON.stringify(initial));const $=x=>document.getElementById(x),pc=x=>(100*(x||0)).toFixed(1)+'%',e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 $('pfo50-top')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 window.addEventListener('scroll',()=>{$('pfo50-top')?.classList.toggle('visible',window.scrollY>350)},{passive:true});
