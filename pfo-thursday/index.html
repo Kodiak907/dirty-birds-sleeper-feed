@@ -606,14 +606,25 @@ const FAST_FILE='fast_latest.json'; // lightweight independently published Sleep
 let activeSync=false, lastGoodSync=null;
 const LEAGUE_ID_OVERRIDE=''; // Optional: set if the GitHub latest report lacks league_id
 let liveFaab=null, lastFaabSuccess=null;
+const ffoReportMemo=new Map(),ffoReportInflight=new Map();
 async function fetchReport(file){
- const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),12000);
- try{
-  const response=await fetch(FEED+file+'?v='+Date.now(),{cache:'no-store',signal:controller.signal,credentials:'omit'});
-  if(!response.ok)throw Error(file+' HTTP '+response.status);
-  const item=await response.json();if(!item||typeof item!=='object')throw Error(file+' invalid JSON');
-  return item;
- }finally{clearTimeout(timeout)}
+ const now=Date.now(),ttl=file==='fast_latest.json'?15000:file==='player_names.json'?900000:/TRADE|MARKET|AUTOMATED_WAIVER|QUALITY/.test(file)?300000:90000;
+ const cached=ffoReportMemo.get(file);if(cached&&now-cached.at<ttl)return cached.data;
+ if(ffoReportInflight.has(file))return ffoReportInflight.get(file);
+ const pending=(async()=>{
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),12000);
+  try{
+   const res=await fetch(FEED+file+'?v='+Math.floor(now/ttl),{cache:'no-store',signal:ctrl.signal,credentials:'omit'});
+   if(!res.ok)throw Error(file+' HTTP '+res.status);
+   const item=await res.json();if(!item||typeof item!=='object')throw Error(file+' invalid JSON');
+   if(file!=='player_names.json'&&file!=='external_metrics.json'){
+    ffoReportMemo.delete(file);ffoReportMemo.set(file,{at:Date.now(),data:item});
+    while(ffoReportMemo.size>12)ffoReportMemo.delete(ffoReportMemo.keys().next().value);
+   }return item;
+  }finally{clearTimeout(timer)}
+ })();
+ ffoReportInflight.set(file,pending);
+ try{return await pending}finally{ffoReportInflight.delete(file)}
 }
 // Read-only waiver usage feed is research, not evidence of current claim eligibility.
 async function refreshWaiverUsage(){
@@ -1095,11 +1106,16 @@ async function refreshBackgroundMonitor(){
  }catch(err){host.textContent='Background monitor unavailable: '+String(err.message||err)+'; dashboard injury and Sleeper checks operate independently.'}
  finally{clearTimeout(timer)}
 }
-refreshBackgroundMonitor();
-refreshWaiverUsage();
-refreshSupplementaryResearch();
-refreshRosterActions();
-setInterval(()=>{if(!document.hidden){refreshWaiverUsage();refreshSupplementaryResearch();}},900000);
+let ffoResearchStarted=false,ffoResearchCheckedAt=0;
+function ffoResearchStart(force=false){
+ if(document.hidden||(!force&&ffoResearchStarted&&Date.now()-ffoResearchCheckedAt<300000))return;
+ ffoResearchStarted=true;ffoResearchCheckedAt=Date.now();
+ refreshWaiverUsage();refreshSupplementaryResearch();refreshRosterActions();
+}
+for(const page of ['market','radar','scouting','availability'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>ffoResearchStart());
+setTimeout(()=>{if(!document.hidden)refreshBackgroundMonitor()},9000);
+setTimeout(()=>ffoResearchStart(),13000);
+setInterval(()=>{if(!document.hidden)ffoResearchStart(true)},900000);
 setInterval(()=>{if(!document.hidden)refreshBackgroundMonitor()},60000);
 
 $('refreshlive').onclick=()=>{refreshInjuryOnly();refreshLive()};
@@ -1963,7 +1979,8 @@ for(const id of ['actual-lineup','actual-bench','actual-reserve']){const node=$(
 setInterval(()=>{if(!document.hidden)pfo49LoadSources()},240000);
 setInterval(()=>{if(!document.hidden){renderBriefing();pfo49RenderRadar();}},60000);
 // Don't block core Sleeper and injury checks on slower advanced-stat research.
-setTimeout(()=>pfo49LoadSources(),1200);
+setTimeout(()=>{if(!document.hidden)pfo49LoadSources()},4800);
+for(const page of ['playerhub','radar','market','scouting'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>pfo49LoadSources());
 
 /* 4.9 source checks: never turn a current check time into a false publication time. */
 let pfo49Targets={},pfo49TargetErrors={},pfo49Schedule=null,pfo49Backtest=null,pfo49LiveNews={},pfo49NewsError={};
@@ -2013,7 +2030,7 @@ function pfo49RenderPlanner(){const el=$('pfo49-playoff-plan');if(!el)return;con
  el.innerHTML=h;
 }
 // Supplements source refreshes without modifying the old trade engine or safety policy.
-setTimeout(()=>pfo49LoadEvidence49(),2600);
+setTimeout(()=>{if(!document.hidden)pfo49LoadEvidence49()},9500);
 setInterval(()=>{if(!document.hidden){pfo49InjurySummary();pfo49OverviewHealth();pfo49RenderPlanner();}},90000);
 
 // Refresh current-week fantasy matchup points directly from Sleeper, separately from the
@@ -2926,7 +2943,8 @@ pfo49RenderPlayer=function(){pfo53PrevPlayer();const id=pfo49Selected;if(!id)ret
  const coach=pfo49CoachData(id);if(['jonah coleman','garrett wilson'].includes(String(p.name).toLowerCase())&&!coach&&!PFO53_ROLE_REPORTS[normPlayer(p.name)]){const details=[...root.querySelectorAll('details')].find(x=>/Coaching \/ role updates/.test(x.textContent));if(details){const hint=document.createElement('p');hint.className='pfo53-noactual';hint.textContent=p.name+': increased-touch coaching comments have been requested for sourcing, but no verified dated primary-source quotation is connected. Do not assume the coach promised a workload increase.';details.appendChild(hint);}}
 };
 // Start once after the initial DOM setup; progressive network history hydration never blocks page open.
-setTimeout(()=>{pfo53ReorderChamp();pfo53WeekFocus();pfo53WarmHistory();},1900);
+setTimeout(()=>{pfo53ReorderChamp();pfo53WeekFocus();},1900);
+setTimeout(()=>{if(!document.hidden)pfo53WarmHistory()},13000);
 document.querySelector('nav button[data-page="championship"]')?.addEventListener('click',()=>{pfo49RenderPlanner();});
 
 
@@ -3157,4 +3175,14 @@ gm47LoadGames(gm47Week());
   }
  };
 })();
-</script><script src="/ffo-gamecast.js" defer></script></body></html>
+</script><script>
+/* Load the separate GameCast application only when a related section is opened. */
+(function(){let inflight=null;const load=()=>{if(inflight)return inflight;
+ inflight=new Promise((ok,bad)=>{const script=document.createElement('script');script.src='/ffo-gamecast.js';script.async=true;
+ script.onload=()=>ok(true);script.onerror=()=>{inflight=null;const label=document.getElementById('ffo-gc-status');if(label)label.textContent='GameCast could not load. Reopen to retry.';bad(Error('gamecast_script_unavailable'))};
+ document.body.append(script)});return inflight;};
+ window.ffoLoadGameCast=load;
+ for(const page of ['gamecast','playerhub'])document.querySelector('nav button[data-page="'+page+'"]')?.addEventListener('click',()=>load().catch(()=>{}));
+ if(document.querySelector('nav button[data-page="gamecast"].active'))load().catch(()=>{});
+})();
+</script></body></html>
