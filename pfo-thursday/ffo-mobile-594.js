@@ -16,6 +16,7 @@
  const buttons=[...nav.querySelectorAll('button[data-page]')];
  const pages=new Set(buttons.map(b=>b.dataset.page));
  let active=buttons.find(b=>b.classList.contains('active'))?.dataset.page||'overview';
+ const scrollPositions=new Map();
  let lastFocus=null;
  const toolbar=document.createElement('div');
  toolbar.id='ffo594-dock';toolbar.setAttribute('role','navigation');toolbar.setAttribute('aria-label','Primary Front Office navigation');
@@ -49,7 +50,9 @@
   lastFocus=document.activeElement;
   document.body.classList.add('ffo594-more-open');
   more.setAttribute('aria-expanded','true');
-  nav.querySelector('button.active')?.scrollIntoView({block:'nearest',inline:'nearest'});
+  const selected=nav.querySelector('button.active');
+  selected?.scrollIntoView({block:'nearest',inline:'nearest'});
+  selected?.focus({preventScroll:true});
  };
  const goto=page=>{
   if(!pages.has(page))return;
@@ -66,13 +69,33 @@
   }
  });
  backdrop.addEventListener('click',()=>close(true));
+ // Capture before legacy onclick resets scroll. Keep per-page position, like a native app.
+ nav.addEventListener('click',e=>{
+  const next=e.target.closest('button[data-page]')?.dataset.page;
+  if(!next||!pages.has(next))return;
+  const previous=buttons.find(b=>b.classList.contains('active'))?.dataset.page||active;
+  if(previous!==next){
+   scrollPositions.set(previous,window.scrollY||0);
+   requestAnimationFrame(()=>{
+    const previousY=scrollPositions.get(next)||0;
+    const max=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+    window.scrollTo(0,Math.min(previousY,max));
+   });
+  }
+ },true);
  nav.addEventListener('click',e=>{
   if(e.target.closest('button[data-page]')){
    close();requestAnimationFrame(update);
   }
  });
  document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&document.body.classList.contains('ffo594-more-open')){e.preventDefault();close(true)}
+  if(!document.body.classList.contains('ffo594-more-open'))return;
+  if(e.key==='Escape'){e.preventDefault();close(true);return}
+  if(e.key==='Tab'){
+   const first=buttons[0],last=buttons[buttons.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus({preventScroll:true})}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus({preventScroll:true})}
+  }
  });
  window.addEventListener('resize',()=>{if(!isMobile())close()},{passive:true});
  update();
