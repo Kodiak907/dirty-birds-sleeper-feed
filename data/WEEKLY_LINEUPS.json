@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-10-28T12:53:20.601012+00:00",
+  "generated_at_utc": "2026-10-28T13:58:48.650800+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-28T07:36:59.801556+00:00",
+  "projection_as_of": "2026-10-28T13:35:09.126558+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-28T12:53:11.201713+00:00",
+  "snapshot_utc": "2026-10-28T13:58:39.667158+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -652,21 +652,21 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 126.92,
+      "ppg": 127.13,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "DEN",
           "position": "QB",
-          "ppg": 16.37
+          "ppg": 16.5
         },
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 19.16
+          "ppg": 19.25
         },
         {
           "id": "8150",
@@ -694,7 +694,7 @@
           "name": "Chig Okonkwo",
           "opponent": "PHI",
           "position": "TE",
-          "ppg": 5.76
+          "ppg": 5.82
         },
         {
           "id": "11792",
@@ -715,14 +715,14 @@
           "name": "A.J. Brown",
           "opponent": "MIA",
           "position": "WR",
-          "ppg": 12.57
+          "ppg": 12.46
         },
         {
           "id": "12495",
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.06
+          "ppg": 12.1
         }
       ]
     },
