@@ -6,6 +6,8 @@
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
  let statRequested=false;
+ // Keep expensive per-player model lookups out of every Trade repaint.
+ const tradeEstimateCache=new Map();let tradeEstimateSource=null,tradeEstimateNames=null;
  const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false,playerPoolCache:null,playerPoolRefs:null,scoredCache:null,scoredRef:null,scoredAt:0};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
@@ -159,7 +161,14 @@
   const roster=state.snap?.rosters?.find(r=>String(r.roster_id)===String(rid));
   if(!roster)return '<p class="pfo59-foot">Roster source unavailable. No players were invented.</p>';
   const selected=side==='give'?state.tradeGive:state.tradeTake;
-  const players=(roster.players||[]).map(id=>{const p=state.names?.[String(id)],x=p&&scoreInfo({id:String(id),name:p.name,team:p.team});return {id:String(id),p,x}});
+  const source=typeof pfo50Indexed==='undefined'?null:pfo50Indexed;
+  if(tradeEstimateSource!==source||tradeEstimateNames!==state.names){tradeEstimateCache.clear();tradeEstimateSource=source;tradeEstimateNames=state.names;}
+  const players=(roster.players||[]).map(id=>{
+   const p=state.names?.[String(id)];let x=null;
+   if(p){const key=String(id);if(!tradeEstimateCache.has(key))tradeEstimateCache.set(key,scoreInfo({id:key,name:p.name,team:p.team}));
+    x=tradeEstimateCache.get(key);}
+   return {id:String(id),p,x};
+  });
   players.sort((a,b)=>(a.p?.position||'ZZ').localeCompare(b.p?.position||'ZZ')||String(a.p?.name||a.id).localeCompare(String(b.p?.name||b.id)));
   return '<div class="pfo59-trade-roster">'+players.map(({id,p,x})=>
     '<button type="button" class="pfo59-trade-player'+(selected.includes(id)?' selected':'')+'" data-pfo59-pick="'+safe(id)+'" data-pfo59-side="'+side+'" aria-pressed="'+selected.includes(id)+'">'+
@@ -274,7 +283,17 @@
     const side=pick.dataset.pfo59Side,id=pick.dataset.pfo59Pick,arr=side==='give'?state.tradeGive:state.tradeTake;
     if(!['give','take'].includes(side))return;
     if(arr.includes(id))arr.splice(arr.indexOf(id),1);else if(arr.length<3)arr.push(id);
-    trade();return;
+    // Update only selected rows and the analysis bar; rebuilding both roster trees
+    // on every tap was blocking mobile input during data refreshes.
+    nav.querySelectorAll('[data-pfo59-pick]').forEach(node=>{
+     const chosen=(node.dataset.pfo59Side==='give'?state.tradeGive:state.tradeTake).includes(node.dataset.pfo59Pick);
+     node.classList.toggle('selected',chosen);node.setAttribute('aria-pressed',String(chosen));
+     const mark=node.querySelector('.pfo59-pick-mark');if(mark)mark.textContent=chosen?'✓':'+';
+    });
+    nav.querySelectorAll('.pfo59-trade-dual h3 small').forEach((node,i)=>node.textContent=(i===0?state.tradeGive.length:state.tradeTake.length)+'/3');
+    const summary=nav.querySelector('.pfo59-trade-bar span');if(summary)summary.textContent=state.tradeGive.length+' giving · '+state.tradeTake.length+' receiving';
+    const compare=nav.querySelector('[data-pfo59-compare]');if(compare)compare.disabled=!state.tradeGive.length||!state.tradeTake.length;
+    return;
    }
    if(ev.target.closest('[data-pfo59-clear]')){state.tradeGive=[];state.tradeTake=[];trade();return;}
    if(ev.target.closest('[data-pfo59-compare]')){
@@ -370,14 +389,10 @@
  }
  function teamNewsRender(){
   const host=$('pfo59-team-news');if(!host)return;
-  const fetched=state.snap?.fetched_at_utc||'Source not loaded';
-  host.innerHTML='<h3>Dirty Birds News & Intelligence</h3>'+
-  '<p class="pfo59-foot">FFO reports are source-driven. A missing headline is not medical clearance or confirmation of a roster change. Published roster checked: '+safe(fetched)+'.</p>'+
-  '<div class="pfo59-team-links"><button type="button" data-pfo59-team-page="scouting"><b>GM Scouting</b><small>Roster-based workload and matchup evaluation</small></button>'+
-  '<button type="button" data-pfo59-team-page="availability"><b>Injury Watch</b><small>Source-dated health and inactive verification</small></button>'+
-  '<button type="button" data-pfo59-team-page="radar"><b>Opportunity Radar</b><small>Relevant NFL changes and research flags</small></button>'+
-  '<button type="button" data-pfo59-team-page="playerhub"><b>Player Intel</b><small>Season totals, weekly evidence and player cards</small></button></div>';
+  if(window.ffoPfoNews596?.render){window.ffoPfoNews596.render(host);return;}
+  host.innerHTML='<h3>Dirty Birds · Team News</h3><p class="pfo59-foot">Loading sourced player articles and team availability reports…</p>';
  }
+
  function teamTab(tab){
   const h=$('pfo59-team-hub');if(!h)return;
   for(const b of h.querySelectorAll('[data-pfo59-team-tab]'))b.setAttribute('aria-selected',String(b.dataset.pfo59TeamTab===tab));
