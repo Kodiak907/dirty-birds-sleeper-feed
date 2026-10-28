@@ -93,6 +93,46 @@
   const notice=`<div class="ffo-gc-evidence"><b>FFO Sports Intelligence feed</b><p class="ffo-gc-note">${safe(status)}. ${proj?'Recent-form research baseline '+fmt(proj.points)+' pts from '+proj.n+' games.':''} GameCast stats will inform workload, opportunity and trade differential models after identity, completeness and correction audits. Existing Sleeper and nflverse-derived decision systems are preserved.</p><button type="button" data-ffo-goto="1">Inspect GameCast</button></div>`;
   for(const id of ['ffo-gc-radar-intel','ffo-gc-trade-intel']){const el=$(id);if(!el)continue;el.innerHTML=notice;el.querySelector('[data-ffo-goto]').onclick=()=>document.querySelector('nav button[data-page="gamecast"]')?.click();}
  }
+ async function refreshEvidencePanels(){
+  if(!s.enabled)return;
+  try{
+    if(!s.playerRows.length){
+      const feedResult=await feed('stats',{season:s.season});s.playerRows=model.playerRows(feedResult.data);
+      s.latestCheck=feedResult.checked_at;
+    }
+    const rows=s.playerRows;
+    const item=(p,tag)=>{
+      const found=model.resolvePlayer(p,rows);if(!found.player)return null;
+      const r=model.normalizeStats(found.player.stats),pos=String(p.position||'').toUpperCase();
+      const keys=pos==='QB'?[['pass_att','Att'],['pass_yd','Pass Yds'],['pass_td','Pass TDs']]:
+        pos==='RB'?[['rush_att','Carries'],['rush_yd','Rush Yds'],['targets','Targets']]:
+        [['targets','Targets'],['rec','Recs'],['rec_yd','Rec Yds']];
+      const metrics=keys.filter(([k])=>r[k]!==undefined&&r[k]!==null).map(([k,label])=>label+' '+Number(r[k]).toLocaleString());
+      if(!metrics.length)return null;
+      return '<div class="ffo-gc-intel-row"><b>'+safe(p.name)+'</b><small>'+safe(pos)+' · '+safe(p.team||'')+'</small><span>'+metrics.map(safe).join(' · ')+'</span><small>MSF 2026 season total · verified unique name/team match · '+safe(tag)+'</small></div>';
+    };
+    const rad=typeof pfo49RadarPool==='function'?pfo49RadarPool():[];
+    const rated=rad.slice(0,12).map(x=>item(x.p,'Radar research')).filter(Boolean).slice(0,6);
+    let waivers=[];
+    try{
+      if(typeof waiverResearch!=='undefined'&&Array.isArray(waiverResearch)&&typeof waiverIsRostered==='function'&&typeof leagueOwnedIds!=='undefined'&&leagueOwnedIds){
+        const candidates=waiverResearch.filter(x=>!waiverIsRostered(x.player,x.source_player_id||x.player_id)).slice(0,12);
+        waivers=candidates.map(x=>item({name:x.player,position:x.position,team:x.team},'Sleeper unrostered at check')).filter(Boolean).slice(0,6);
+      }
+    }catch{}
+    const panel=(records,kind)=>'<details class="ffo-gc-evidence"><summary><b>MySportsFeeds 2026 season totals · '+safe(kind)+'</b> · '+records.length+' unique verified matches</summary>'+
+       '<p class="ffo-gc-note">NFL stats are real season-to-date totals. Ownership is still checked through Sleeper. These are NOT upcoming FFL projections or trade valuations. Source checked '+safe(s.latestCheck||'time unverified')+'.</p>'+
+       (records.length?'<div class="ffo-gc-intel-list">'+records.join('')+'</div>':'<p class="ffo-gc-note">No unambiguous candidate matches available yet. Do not infer zero stats or waiver eligibility.</p>')+
+       '</details>';
+    const radHost=$('ffo-gc-radar-intel'),marketHost=$('ffo-gc-trade-intel');
+    if(radHost)radHost.innerHTML=panel(rated,'Opportunity Radar');
+    if(marketHost)marketHost.innerHTML=panel(waivers,'Waiver research candidates')+
+       '<p class="ffo-gc-note">Two-sided trade and offer models remain evidence-based and read-only; incomplete MSF stat categories cannot silently overwrite valuation.</p>';
+  }catch(err){
+    const message='Provider season totals unavailable for intelligence crosscheck ('+safe(err?.message||'unknown')+'). Existing Sleeper/independent data remains.';
+    for(const id of ['ffo-gc-radar-intel','ffo-gc-trade-intel'])if($(id))$(id).innerHTML='<p class="ffo-gc-note">'+message+'</p>';
+  }
+ }
  // The field is a schematic. Neither MSF nor this app supplies actual ball tracking coordinates.
  const get=(o,keys)=>{for(const k of keys){const v=k.split('.').reduce((a,t)=>a?.[t],o);if(v!==undefined&&v!==null&&v!=='')return v;}return null;};
  const at=(o,keys)=>{const v=get(o,keys);return v!==null&&Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=100?Number(v):null;};
@@ -165,7 +205,7 @@
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){
       const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
-      s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only (full PBP restricted)':'MySportsFeeds · published play-by-play';
+      s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · SCORING PLAYS ONLY (full PBP restricted)':'MySportsFeeds · published play-by-play';
       if(s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
       s.latestCheck=pb.value.checked_at;
@@ -197,7 +237,7 @@
     s.games=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
-    drawGames();drawPlayer();
+    drawGames();drawPlayer();refreshEvidencePanels();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}
  }
