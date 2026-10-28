@@ -43,3 +43,11 @@ Private user videos were reviewed locally. **Do not upload screen recordings to 
 - Actual Pages Preview URL and /api/commissioner/status checked after build; never treat a green Worker build as Pages release success.
 
 FFO motto: Embrace the Fuckery. Respect the Competition.
+
+## Coach's October 28 Championship-only odds specification — built in development branch
+- The Overview page is explicitly **unchanged**. Do not add playoff or title odds to Overview.
+- Preserve existing Championship historical odds, existing 100,000-player-score simulations and all Championship player research.
+- New `ffo-championship-59.js` and `.css` render a 100,000-trial **full FFL league season/playoff simulation** only inside the Championship tab, with Dirty Birds probabilities for Playoffs, Bye, Reach Championship Final and Win Title plus an expandable twelve-manager comparison.
+- Private/front-office static report path: `pfo-thursday/FFO_CHAMPIONSHIP_100K.json`. Data source: actual Sleeper public league records and completed Week 1–7 fantasy scores as of Oct 28, 2026; Sleeper fixture pairings Week 8–14. 100,000 trials, deterministic RNG seed 20261028; six playoff berths, two byes, two finalists and one winner per trial, validated conservation checks.
+- **The 100,000 model is historical-scoring-form based**, whereas the archived 10,000 model used position/player forward projections. It is a distinct model, not an increased sample of exactly the earlier distribution. Never imply 100,000 draws alone increased predictive accuracy.
+- Static JS checks 15/15 pass (source report dimensions and conservation, no Overview changes, preserved archived Championship + score simulator, browser JS parse). Still needs Cloudflare Pages Preview deployment, private on-device verification and update pipeline for future weeks.
