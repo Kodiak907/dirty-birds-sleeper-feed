@@ -26,13 +26,38 @@
   const fields=[['rec','per reception'],['pass_td','per passing TD'],['rush_td','per rushing TD'],['rec_td','per receiving TD']].filter(([k])=>s[k]!=null).map(([k,d])=>fmt(s[k],2)+' '+d);
   return 'Sleeper FFL rules: '+fields.join(' · ')+'. Other custom scoring and bonus categories may apply.';
  };
- const summary=d=>{const {p,ind,m}=d,last=ind?.latest||{},pos=String(p.position||'').toUpperCase();
-  const metrics=pos==='QB'?[['Pass attempts',last.pass_att],['Pass yards',last.pass_yd],['Passing TDs',last.pass_td]]:
-  pos==='RB'?[['Carries',last.rush_att],['Targets',last.targets],['Rush yards',last.rush_yd]]:
-  pos==='WR'||pos==='TE'?[['Targets',last.targets],['Catches',last.rec],['Receiving yards',last.rec_yd]]:
-  [['Games observed',ind?.games_observed],['Snap share',m?.snap_share_pct],['Last NFL week',last.week]];
-  const cards=metrics.map(([k,v])=>tile(fmt(v,Number.isInteger(Number(v))?0:1),k)).join('');
-  return '<div class="ffo57-tilegrid">'+tile(fmt(d.avg),'Official FFL PPG · '+d.closed.length+' games')+tile(fmt(d.recent),'Last '+Math.min(3,d.closed.length)+' FFL games')+tile(fmt(safe(()=>pfo50Estimate(id))),'FFO future model*')+'</div><h3 class="ffo57-section">Latest published NFL performance</h3><div class="ffo57-tilegrid">'+cards+'</div><div class="ffo57-note">'+E(scoring())+'</div><p class="ffo57-description">*FFO projections are independent estimates, not observed outcomes. NFL stat reconstructions may omit specialty FFL bonuses; official FFL scores always come from Sleeper.</p>';
+ // Explicit dated official box-score correction when independent NFL player-feed coverage lags.
+ // These observed stats NEVER replace projected PPG or official Sleeper fantasy scores.
+ const officialKnown=(p)=>{
+  if(String(p.id)==='12495'||(/^ollie gordon(?: ii)?$/i.test(String(p.name||''))&&String(p.team||'').toUpperCase()==='MIA'))
+   return {week:7,through:'2026-10-25',link:'https://www.miamidolphins.com/team/players-roster/ollie-gordon-ii/logs/',
+    latest:{week:7,rush_att:25,rush_yd:103,rush_td:1,rec:1,targets:3,rec_yd:0},
+    season:{rush_att:72,rush_yd:339,rush_td:4,rec:6,targets:8,rec_yd:14},team:'MIA'};
+  return null;
+ };
+ const summary=d=>{
+  const {p,ind,m}=d,pos=String(p.position||'').toUpperCase(),verified=officialKnown(p),
+   sourceWeek=Number(ind?.latest?.week||0),current=verified&&sourceWeek<verified.week?verified.latest:(ind?.latest||{});
+  const latest=pos==='QB'?[['Pass att.',current.pass_att],['Pass yds',current.pass_yd],['Pass TD',current.pass_td],['Rush yds',current.rush_yd]]:
+   pos==='RB'?[['Rush att.',current.rush_att],['Rush yds',current.rush_yd],['Rush TD',current.rush_td],['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd]]:
+   pos==='WR'||pos==='TE'?[['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd],['Rec TD',current.rec_td]]:
+   [['Games',ind?.games_observed],['Snap %',m?.snap_share_pct],['NFL week',current.week]];
+  const officialSeason=verified?.season,totals=officialSeason||ind?.season_totals||{};
+  const seasonList=pos==='QB'?[['Pass yards',totals.pass_yd],['Pass TD',totals.pass_td],['Rush yards',totals.rush_yd]]:
+   pos==='RB'?[['Rush att.',totals.rush_att],['Rush yards',totals.rush_yd],['Rush TD',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd]]:
+   [['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd],['Rec TD',totals.rec_td]];
+  const series=x=>x.filter(([,n])=>n!==null&&n!==undefined).map(([label,n])=>tile(fmt(n,0),label)).join('');
+  const source=verified&&sourceWeek<verified.week?
+   '<p class="ffo57-evidence">NFL team official box score through Week '+verified.week+' ('+E(verified.through)+'). <a href="'+verified.link+'" target="_blank" rel="noopener">Miami Dolphins player log ↗</a>. Independent nflverse feed currently only reaches '+E(sourceWeek||'unverified')+' for this player. This correction does not change the FFO forecast.</p>':
+   '<p class="ffo57-evidence">Independent NFL stats: last published week '+E(current.week??'unavailable')+' · source checked '+E(when(d.source))+'. Not necessarily current live data.</p>';
+  return '<div class="ffo57-tilegrid ffo59-player-kpis">'+tile(fmt(d.avg),'Recorded FFL PPG · '+d.closed.length+' games')+
+   tile(fmt(d.recent),'Last '+Math.min(3,d.closed.length)+' FFL games')+
+   tile(fmt(safe(()=>pfo50Estimate(id))),'FFO model · estimate')+'</div>'+
+   '<h3 class="ffo57-section">Latest verifiable NFL game · W'+E(current.week??'?')+'</h3>'+
+   '<div class="ffo57-tilegrid ffo59-player-stats">'+(series(latest)||'<p>Verified game data unavailable</p>')+'</div>'+
+   '<h3 class="ffo57-section">2026 season totals</h3><div class="ffo57-tilegrid ffo59-player-stats">'+(series(seasonList)||'<p>Season source coverage unavailable</p>')+'</div>'+
+   source+'<details class="ffo59-scoring-note"><summary>FFL scoring and modeling limitations</summary><p>'+E(scoring())+'</p>'+
+   '<p>FFO projection is an estimate, not a verified outcome. Official FFL fantasy scores come from Sleeper; missing stats are never assumed to be zero.</p></details>';
  };
  const games=d=>{const obs=Object.entries(d.recorded).filter(([w,v])=>Number.isInteger(Number(w))&&Number.isFinite(Number(v?.points))).sort((a,b)=>Number(b[0])-Number(a[0]));
   let h='<div class="ffo57-note">Only recorded Sleeper FFL points are labeled official. In-progress weeks may change. Missing weekly data is not a zero.</div>';
