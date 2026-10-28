@@ -127,8 +127,15 @@
    if(past)return original(id,w,past);
    const p=typeof pfo52Info==='function'?pfo52Info(id):null;
    const code=String(p?.team||'').toUpperCase();
-   if(code&&state.schedule?.teams?.[code]?.weeks?.[String(w)]?.bye===true)
+   const weekInfo=state.schedule?.teams?.[code]?.weeks?.[String(w)];
+   if(code&&weekInfo?.bye===true)
     return {points:null,source:'VERIFIED NFL BYE WEEK '+w,bye:true,adjustment:null};
+   // Never show a positive projection for a potential bye while schedule evidence
+   // is still loading. Verified core full-season schedule may still be used.
+   const full=typeof pfo49Schedule!=='undefined'&&pfo49Schedule?.complete;
+   const now=Number(window.dbNflWeek||8);
+   if(code&&!full&&!weekInfo&&Number(w)>=now&&Number(w)<=17)
+    return {points:null,source:'NFL schedule not yet verified for Week '+w,schedulePending:true,adjustment:null};
    return original(id,w,past);
   };
  }
