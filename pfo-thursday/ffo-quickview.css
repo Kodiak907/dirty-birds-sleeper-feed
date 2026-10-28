@@ -62,3 +62,12 @@
 #ffo57-sheet .ffo57-evidence{font-size:10px;line-height:1.45;color:#abc4d6;margin:8px 0}
 #ffo57-sheet .ffo57-evidence a{color:#9ae1d1}
 #ffo57-sheet .ffo57-row{padding:7px 2px}
+
+/* PFO 5.9.3: player info density + single navigation action. */
+#ffo57-sheet .ffo57-actions{padding:4px 8px}
+#ffo57-sheet .ffo57-actions button:first-child{flex:0 0 auto;background:#17483e;min-height:31px;padding:5px 12px}
+#ffo57-sheet .ffo57-body{font-size:11px}
+#ffo57-sheet .ffo59-gamelog-wrap{width:100%;overflow-x:auto}
+#ffo57-sheet table.ffo59-gamelog{width:100%;table-layout:fixed;border-collapse:collapse;font-variant-numeric:tabular-nums}
+#ffo57-sheet .ffo59-gamelog th,#ffo57-sheet .ffo59-gamelog td{font-size:10px;padding:6px 3px;border-bottom:1px solid #33495b;text-align:right}
+#ffo57-sheet .ffo59-gamelog th:first-child,#ffo57-sheet .ffo59-gamelog td:first-child{text-align:left;width:12%}
