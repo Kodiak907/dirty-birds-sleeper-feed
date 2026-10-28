@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; form-action 'none'; base-uri 'none'">
+<title>FFO Commissioner · Secure PIN Setup</title>
+<style>
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#071421;color:#ecf7ff}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 100% 0%,#294662,#071421 55%);padding:env(safe-area-inset-top) 13px env(safe-area-inset-bottom)}
+main{max-width:650px;margin:0 auto;padding:28px 0 50px}h1{font-size:clamp(26px,7vw,35px);margin:8px 0;letter-spacing:-.04em;line-height:1.08}
+h2{font-size:18px;margin:0 0 8px}p,li{line-height:1.55;color:#bfd3e0;font-size:13px}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:.16em;color:#f0b961}
+.card{border:1px solid #36586d;border-radius:15px;padding:17px;background:#10283b;margin:15px 0}
+.status{border-radius:10px;padding:10px 12px;background:#183c35;border:1px solid #4b9380;color:#b7fae0;font-size:12px;line-height:1.5}
+.status.bad{border-color:#a77645;background:#43301e;color:#ffddae}
+.warning{font-size:12px;border-left:3px solid #ebb567;padding:8px 11px;color:#ffdcb5;background:#322a25;border-radius:7px;line-height:1.5}
+label{display:block;font-weight:800;font-size:12px;margin:12px 0 6px}
+input,textarea{width:100%;border:1px solid #55758d;border-radius:9px;background:#081c2d;color:#e9f5ff;padding:12px;font-size:16px}
+textarea{font:12px ui-monospace,monospace;overflow-wrap:anywhere;resize:vertical;min-height:80px}
+button{cursor:pointer;background:#205c52;border:1px solid #60a895;color:white;font-weight:800;border-radius:9px;padding:12px 14px;font-size:13px}
+button:disabled{opacity:.45;cursor:not-allowed}.primary{width:100%;margin-top:14px;color:#152638;background:#f0b85d;border-color:#f0b85d}
+.output{margin-top:15px;border-top:1px solid #35576b;padding-top:13px}small{color:#aac4d6;display:block;font-size:11px;line-height:1.4;margin:5px 0}
+.field{padding:10px 0;border-bottom:1px solid #355367}.field:last-child{border:0}
+.copy{margin-top:6px}.hidden{display:none!important}.foot{font-size:11px;color:#abc6d4}
+ol{padding-left:24px}li{margin:8px 0}code{color:#c8e4ff}
+</style></head><body><main>
+<div class="eyebrow">FFO • PRIVATE COMMISSIONER</div><h1>Secure Preview PIN setup</h1>
+<p>Generate your Commissioner PIN verifier and session secret directly inside Safari, over HTTPS. The calculation runs in this browser: your PIN and generated values are not sent to the FFO server.</p>
+<div id="secure" class="status" role="status" aria-live="polite">Checking secure browser…</div>
+<section class="card">
+<div class="warning">Do not paste your PIN or generated secrets into ChatGPT, GitHub, screenshots or league chat. Enter each generated value only in Cloudflare <strong>Preview → Variables and Secrets</strong> as type <strong>Secret</strong>.</div>
+<label for="pin">Choose Commissioner PIN / passphrase</label><input id="pin" type="password" maxlength="64" autocomplete="new-password" autocapitalize="off" spellcheck="false" placeholder="6–64 characters; longer is safer">
+<label for="pin2">Repeat the same PIN / passphrase</label><input id="pin2" type="password" maxlength="64" autocomplete="new-password" autocapitalize="off" spellcheck="false" placeholder="Re-enter your PIN">
+<button id="go" class="primary" type="button" disabled>Generate three Preview secrets</button>
+<p id="state" aria-live="polite"></p>
+<section id="results" class="hidden" aria-label="Generated secrets">
+<div class="field"><label for="hash">COMMISSIONER_PIN_HASH</label><textarea id="hash" readonly spellcheck="false"></textarea><button class="copy" type="button" data-field="hash">Copy hash</button><small>PBKDF2-SHA256, 210,000 iterations; 64 hexadecimal characters.</small></div>
+<div class="field"><label for="salt">COMMISSIONER_PIN_SALT</label><textarea id="salt" readonly spellcheck="false"></textarea><button class="copy" type="button" data-field="salt">Copy salt</button><small>16 random bytes; 32 hexadecimal characters.</small></div>
+<div class="field"><label for="session">COMMISSIONER_SESSION_SECRET</label><textarea id="session" readonly spellcheck="false"></textarea><button class="copy" type="button" data-field="session">Copy session secret</button><small>48 random bytes; 96 hexadecimal characters.</small></div>
+<p id="copied" class="foot" role="status" aria-live="polite"></p>
+</section>
+</section>
+<section class="card"><h2>After generation</h2><ol>
+<li>Keep this Safari tab open while configuring Cloudflare.</li>
+<li>Open <strong>Cloudflare → Workers & Pages → dirtybirdstest → Settings → Preview → Variables and Secrets</strong>.</li>
+<li>Create three entries of type <strong>Secret</strong> with the exact names above. Copy and paste one value at a time, then save.</li>
+<li>A new <strong>Preview</strong> deployment is required before the Commissioner API shows <code>ready: true</code>. Production must remain unchanged.</li>
+</ol><p class="foot">If generation is blocked, this page reports the browser security problem instead of silently failing. The browser keeps these outputs only in this tab; it does not persist them across reloads.</p></section>
+</main><script>
+(()=>{'use strict';
+ const $=id=>document.getElementById(id);
+ const hex=a=>Array.from(a,x=>x.toString(16).padStart(2,'0')).join('');
+ const canCrypto=()=>Boolean(window.isSecureContext&&globalThis.crypto?.subtle&&globalThis.crypto?.getRandomValues&&globalThis.TextEncoder);
+ function report(msg,bad=false){const e=$('state');e.textContent=msg;e.style.color=bad?'#ffd1ad':'#b7fae0'}
+ function health(){const ok=canCrypto(),e=$('secure');
+   e.classList.toggle('bad',!ok);
+   e.textContent=ok?'Secure HTTPS browser ready. Keys will be generated on your device.':
+    'Web Crypto is unavailable in this viewer. Open the HTTPS site directly in Safari, not an HTML file preview.';
+   $('go').disabled=!ok;
+ }
+ health();
+ $('go').addEventListener('click',async()=>{
+  const pin=$('pin').value,again=$('pin2').value;
+  if(pin.length<6||pin.length>64){report('Use 6–64 characters. A long passphrase is recommended.',true);return}
+  if(pin!==again){report('Your PIN entries do not match.',true);return}
+  if(!canCrypto()){health();report('Open this secure HTTPS page in Safari.',true);return}
+  $('go').disabled=true;report('Generating locally with PBKDF2-SHA256…');
+  try{
+    const salt=crypto.getRandomValues(new Uint8Array(16)),session=crypto.getRandomValues(new Uint8Array(48));
+    const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(pin),'PBKDF2',false,['deriveBits']);
+    const bits=await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt,iterations:210000},key,256);
+    if(bits.byteLength!==32)throw Error('Unexpected hash length');
+    $('hash').value=hex(new Uint8Array(bits));$('salt').value=hex(salt);$('session').value=hex(session);
+    $('pin').value='';$('pin2').value='';
+    $('results').classList.remove('hidden');
+    report('Generated successfully. Your PIN inputs have been cleared. Add the three secrets to Cloudflare Preview.');
+  }catch(err){report('Generation failed: '+String(err?.message||err),true)}
+  finally{$('go').disabled=!canCrypto()}
+ });
+ document.querySelectorAll('button[data-field]').forEach(button=>button.addEventListener('click',async()=>{
+   const field=$(button.dataset.field);
+   try{await navigator.clipboard.writeText(field.value);$('copied').textContent=button.dataset.field.toUpperCase()+' copied. Paste into Cloudflare Preview.'}
+   catch{field.focus();field.select();$('copied').textContent='Clipboard access blocked. The value is selected; choose Copy from the iOS selection menu.'}
+ }));
+})();
+</script></body></html>
