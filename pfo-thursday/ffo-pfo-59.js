@@ -216,7 +216,7 @@
   state.market=view;
   for(const b of document.querySelectorAll('[data-pfo59-market]'))b.setAttribute('aria-selected',String(b.dataset.pfo59Market===view));
   for(const panel of document.querySelectorAll('[data-pfo59-market-panel]'))panel.hidden=panel.dataset.pfo59MarketPanel!==view;
-  if(view==='waiver'||view==='trade'){void loadAdvisory();void loadHistoricalScores();}
+  if((view==='waiver'||view==='trade')&&document.querySelector('nav button[data-page="market"].active')){void loadAdvisory();void loadHistoricalScores();}
   if(view==='waiver'&&!statRequested&&typeof pfo50LoadIndependent==='function'){
    statRequested=true;void pfo50LoadIndependent().then(()=>waiver()).catch(()=>{});
   }
@@ -395,6 +395,7 @@
  }
  function start(){
   mountMarket();mountRoster();
+  document.querySelector('nav button[data-page="market"]')?.addEventListener('click',()=>marketView(state.market));
   // Reposition the *existing* official league standings (no duplicate data or separate fetch).
   const overview=$('overview'),standings=$('league-standings')?.closest('.card');
   if(overview&&standings){standings.classList.add('pfo59-standings-top');overview.prepend(standings);}
