@@ -1,0 +1,3 @@
+# FFO Commissioner Preview secret activation
+
+Coach replaced the PIN hash and salt in Cloudflare Pages project `dirtybirdstest` Preview environment. One-time GitHub staging commit triggers Worker `ffo-gamecast-api-staging` with temporary build command `node ci_pages_stadium_http.mjs`, which fetches immutable PFO source 5cf2c0cd49b87e6b6a7bd6ba4281fa13db58f33a (14 files), uploads only Pages project `dirtybirdstest` branch `pfo-thursday-staging` (NOT Production/main), and activates configured Preview values on next deployment. Do not expose PIN, change any secret, case, Sleeper record, or Production configuration. Verify `/api/commissioner/status` secret format booleans after Pages deploy. Restore Worker Build command to None after upload, keep automatic builds enabled.
