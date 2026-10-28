@@ -6,7 +6,7 @@
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
  let statRequested=false;
- const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false};
+ const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false,playerPoolCache:null,playerPoolRefs:null,scoredCache:null,scoredRef:null,scoredAt:0};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
   const u=state.snap?.users?.find(x=>String(x.user_id)===String(r?.owner_id));
@@ -80,6 +80,8 @@
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
  function entryPool(){
   if(!state.snap?.rosters?.length||!state.names)return [];
+  const refs=state.playerPoolRefs;
+  if(state.playerPoolCache&&refs&&refs.snap===state.snap&&refs.names===state.names&&refs.scout===state.scout)return state.playerPoolCache;
   const owned=ownership(),memo=new Map();
   for(const [id,p] of Object.entries(state.names)){
    const pos=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
@@ -90,7 +92,18 @@
    const id=String(x.id||x.player_id||''),p=memo.get(id);
    if(p){p.scout=x;p.tracked=true}
   }
-  return [...memo.values()];
+  state.playerPoolRefs={snap:state.snap,names:state.names,scout:state.scout};
+  state.playerPoolCache=[...memo.values()];
+  state.scoredCache=null;state.scoredRef=null;
+  return state.playerPoolCache;
+ }
+ function scoredPool(){
+  const pool=entryPool(),ind=typeof pfo50Indexed==='undefined'?null:pfo50Indexed;
+  if(state.scoredCache&&state.scoredRef===ind&&Date.now()-state.scoredAt<90000&&state.scoredCache.length===pool.length)return state.scoredCache;
+  // Calculate forward-model outputs ONCE per source refresh; never inside sort callbacks.
+  state.scoredCache=pool.map(p=>{const x=scoreInfo(p);return {...p,modelPPG:x.project,seasonTotals:x.season}});
+  state.scoredRef=ind;state.scoredAt=Date.now();
+  return state.scoredCache;
  }
  function scoreInfo(p){
   let season=null,project=null;
@@ -102,7 +115,7 @@
   return {season,project};
  }
  function playerRow(p,priority,historical){
-  const x=scoreInfo(p),season=x.season||{},signal=p.scout?.signals?.[0],metric=p.position==='QB'?['PASS YDS',season.pass_yd]:p.position==='RB'?['RUSH YDS',season.rush_yd]:['REC YDS',season.rec_yd];
+  const x=p.modelPPG!==undefined?{season:p.seasonTotals,project:p.modelPPG}:scoreInfo(p),season=x.season||{},signal=p.scout?.signals?.[0],metric=p.position==='QB'?['PASS YDS',season.pass_yd]:p.position==='RB'?['RUSH YDS',season.rush_yd]:['REC YDS',season.rec_yd];
   const seasonal=metric[1]!=null?metric[0]+' '+Number(metric[1]).toLocaleString():'Season stat N/A';
   const forecast=x.project!=null&&Number.isFinite(x.project)?x.project.toFixed(1):'—';
   return '<button type="button" class="pfo59-compact-row" data-pfo59-player="'+safe(p.id)+'" aria-label="Open '+safe(p.name)+' player intelligence">'+
@@ -115,23 +128,19 @@
  function waiver(){
   const host=$('pfo59-waiver-board');if(!host)return;
   if(!state.snap||!state.names){host.innerHTML='<p>Loading published league roster and player directory…</p>';return}
-  const n=needs(state.manager),pool=entryPool(),filtered=pool.filter(p=>(state.position==='ALL'||p.position===state.position)&&p.name.toLowerCase().includes(state.search.toLowerCase()));
+  const n=needs(state.manager),pool=scoredPool(),query=state.search.trim().toLowerCase();
+  const filtered=pool.filter(p=>(state.position==='ALL'||p.position===state.position)&&p.name.toLowerCase().includes(query));
   filtered.sort((a,b)=>{
    const gap=Number(n.rank[b.position]||0)-Number(n.rank[a.position]||0);
    if(state.position==='ALL'&&gap)return gap;
-   const pa=scoreInfo(a).project,pb=scoreInfo(b).project;
-   if(pa!=null&&pb!=null&&pa!==pb)return pb-pa;
-   if(pa!=null&&pb==null)return -1;if(pb!=null&&pa==null)return 1;
+   if(a.modelPPG!=null&&b.modelPPG!=null&&a.modelPPG!==b.modelPPG)return b.modelPPG-a.modelPPG;
+   if(a.modelPPG!=null&&b.modelPPG==null)return -1;if(b.modelPPG!=null&&a.modelPPG==null)return 1;
    return Number(b.tracked)-Number(a.tracked)||a.name.localeCompare(b.name);
   });
   const leaders=posList.slice(1).map(pos=>{
-   const list=pool.filter(p=>p.position===pos).sort((a,b)=>{
-    const av=scoreInfo(a).project,bv=scoreInfo(b).project;
-    return (bv==null?-Infinity:bv)-(av==null?-Infinity:av);
-   });
-   const leaders=list.filter(x=>scoreInfo(x).project!=null);
-   const leader=leaders[0];
-   return '<button type="button" class="pfo59-leader" '+(leader?'data-pfo59-player="'+safe(leader.id)+'"':'disabled')+'><b>'+safe(pos)+'</b><span>'+safe(leader?.name||'No published model leader')+'</span><small>'+(leader?'Projected '+safe(scoreInfo(leader).project.toFixed(1))+' PPG · model, not season actual':'No supported ranking')+'</small></button>';
+   let leader=null;
+   for(const p of pool)if(p.position===pos&&p.modelPPG!=null&&(!leader||p.modelPPG>leader.modelPPG))leader=p;
+   return '<button type="button" class="pfo59-leader" '+(leader?'data-pfo59-player="'+safe(leader.id)+'"':'disabled')+'><b>'+safe(pos)+'</b><span>'+safe(leader?.name||'No published model leader')+'</span><small>'+(leader?'Projected '+safe(leader.modelPPG.toFixed(1))+' PPG · model, not season actual':'No supported ranking')+'</small></button>';
   }).join('');
   const gaps=posList.slice(1).filter(pos=>n.priority[pos]>0).sort((a,b)=>n.priority[b]-n.priority[a]);
   const scoredGaps=posList.slice(1).filter(pos=>n.historical?.[pos]).sort((a,b)=>n.historical[b].difference-n.historical[a].difference);
@@ -186,7 +195,8 @@
     const d=await fetchReport('latest.json');
     if(!d?.matchups_by_week||!Array.isArray(d.rosters))throw Error('Completed matchup scores not published');
     state.history=d;
-    waiver();trade();
+    if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])'))waiver();
+    if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))trade();
     return d;
    }catch(err){console.warn('FFO scoring-history coverage pending',err);return null}
    finally{state.historyLoading=null}
@@ -195,7 +205,7 @@
  }
  async function loadAdvisory(force=false){
   if(state.loading)return Promise.resolve();
-  if(!force&&state.advisoryAt&&Date.now()-state.advisoryAt<60000&&state.snap&&state.names){managerOptions();waiver();trade();teamTxnRender();return;}
+  if(!force&&state.advisoryAt&&Date.now()-state.advisoryAt<60000&&state.snap&&state.names){managerOptions();renderSelectedMarket();return;}
   state.loading=true;
   try{
    const picks=await Promise.allSettled([fetchReport('fast_latest.json'),fetchReport('player_names.json'),fetchReport('AUTOMATED_WAIVER_SCOUTING.json'),fetchReport('TRADE_IDEAS.json')]);
@@ -205,9 +215,15 @@
    if(picks[3].status==='fulfilled')state.ideas=picks[3].value;
    if(state.snap&&!state.snap.rosters?.some(r=>String(r.roster_id)===state.manager))state.manager='1';
    if(state.snap&&state.names)state.advisoryAt=Date.now();
-  }catch(err){console.warn('PFO59 advisory',err)}finally{state.loading=false;managerOptions();waiver();trade();teamTxnRender();teamNewsRender()}
+  }catch(err){console.warn('PFO59 advisory',err)}finally{state.loading=false;managerOptions();renderSelectedMarket();if(document.querySelector('#roster.page.active'))teamNewsRender()}
  }
- function managerOptions(){
+ function renderSelectedMarket(){
+  if(!document.querySelector('#market.page.active'))return;
+  if(state.market==='trade')trade();
+  else if(state.market==='waiver')waiver();
+  else if(state.market==='transactions')teamTxnRender();
+ }
+  function managerOptions(){
   for(const id of ['pfo59-waiver-manager','pfo59-trade-manager']){
    const select=$(id);if(select){const chosen=state.manager;select.innerHTML=options();select.value=chosen;}
   }
@@ -216,7 +232,12 @@
   state.market=view;
   for(const b of document.querySelectorAll('[data-pfo59-market]'))b.setAttribute('aria-selected',String(b.dataset.pfo59Market===view));
   for(const panel of document.querySelectorAll('[data-pfo59-market-panel]'))panel.hidden=panel.dataset.pfo59MarketPanel!==view;
-  if((view==='waiver'||view==='trade')&&document.querySelector('nav button[data-page="market"].active')){void loadAdvisory();void loadHistoricalScores();}
+  if(document.querySelector('#market.page.active')){
+   // Paint only the selected workspace immediately, then refresh its data.
+   renderSelectedMarket();
+   if(view==='waiver'||view==='trade'){void loadAdvisory();if(view==='waiver')void loadHistoricalScores();}
+   if(view==='transactions')teamTxnRender();
+  }
   if(view==='waiver'&&!statRequested&&typeof pfo50LoadIndependent==='function'){
    statRequested=true;void pfo50LoadIndependent().then(()=>waiver()).catch(()=>{});
   }
@@ -272,7 +293,12 @@
    if(ev.target.id==='pfo59-waiver-manager'){state.manager=ev.target.value;managerOptions();waiver();trade()}
    if(ev.target.id==='pfo59-trade-manager'){const id=ev.target.value;if(id!=='3'){state.manager=id;state.tradeGive=[];state.tradeTake=[];managerOptions();trade()}}
   });
-  nav.addEventListener('input',ev=>{if(ev.target.id==='pfo59-find'){state.search=ev.target.value;waiver()}});
+  let searchTimer=0;
+  nav.addEventListener('input',ev=>{if(ev.target.id==='pfo59-find'){
+   state.search=ev.target.value;
+   clearTimeout(searchTimer);
+   searchTimer=setTimeout(()=>{if(document.querySelector('#market.page.active'))waiver()},120);
+  }});
   marketView('trade');
  }
  function entryMatch(rows){
