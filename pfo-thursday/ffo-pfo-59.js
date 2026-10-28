@@ -107,7 +107,7 @@
     '<small>Published scenario report: '+safe(state.ideas?.generated_at_utc||'Not loaded')+'. Trade Laboratory below remains the original full multi-player comparison engine.</small>';
  }
  async function loadAdvisory(force=false){
-  if(state.loading)return;state.loading=true;
+  if(state.loading)return Promise.resolve();state.loading=true;
   try{
    const picks=await Promise.allSettled([fetchReport('fast_latest.json'),fetchReport('player_names.json'),fetchReport('AUTOMATED_WAIVER_SCOUTING.json'),fetchReport('TRADE_IDEAS.json')]);
    if(picks[0].status==='fulfilled')state.snap=picks[0].value;
