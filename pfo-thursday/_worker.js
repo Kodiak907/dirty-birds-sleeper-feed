@@ -508,7 +508,7 @@ export default {async fetch(request,env){const url=new URL(request.url);if(!url.
 const MSF_ROOT='https://api.mysportsfeeds.com/v2.1/pull/nfl';
 const FFO_SEASON=/^(latest|20\d{2}-20\d{2}-(regular|preseason|playoff))$/;
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
-const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup']);
+const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
 function ffoBuildPath(route,params){
  if(!FFO_ROUTE.has(route))throw Error('unsupported_feed');
@@ -536,6 +536,48 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  if(typeof verifyAccess!=='function')return ffoReply({error:'authentication_not_configured'},503);
  try{await verifyAccess(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
  if(env.FFO_GAMECAST_ENABLED!=='true'&&!env.GAMECAST_INTERNAL)return ffoReply({ready:false,live:false,error:'gamecast_staging_disabled'},503);
+ if(route==='espnplays'){
+  // Supplemental third-party game-summary descriptions when licensed MSF PBP is unavailable.
+  // Verified Cloudflare Access identity is required; NEVER claim an official MSF play feed.
+  const home=String(u.searchParams.get('home')||'').toUpperCase(),away=String(u.searchParams.get('away')||'').toUpperCase();
+  const when=String(u.searchParams.get('at')||'');const kickoff=new Date(when);
+  if(!/^[A-Z]{2,3}$/.test(home)||!/^[A-Z]{2,3}$/.test(away)||home===away||!Number.isFinite(kickoff.getTime())||kickoff.getUTCFullYear()<2026||kickoff.getUTCFullYear()>2035)
+    return ffoReply({error:'verified_game_teams_and_start_required'},400);
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(kickoff);
+  const dates=Object.fromEntries(parts.filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+  const date=dates.year+dates.month+dates.day;
+  const base='https://site.api.espn.com/apis/site/v2/sports/football/nfl/';
+  try{
+   const board=await fetch(base+'scoreboard?dates='+date,{headers:{accept:'application/json'},cf:{cacheEverything:true,cacheTtl:90},signal:AbortSignal.timeout(8000)});
+   if(!board.ok)return ffoReply({source:'ESPN summary',error:'scoreboard_unavailable',provider_http_status:board.status,checked_at:now()},502);
+   const events=(await board.json()).events||[];
+   const matches=events.filter(evt=>{
+     const c=evt.competitions?.[0]?.competitors||[];
+     return c.some(t=>t.homeAway==='home'&&t.team?.abbreviation===home)&&c.some(t=>t.homeAway==='away'&&t.team?.abbreviation===away);
+   });
+   if(matches.length!==1)return ffoReply({source:'ESPN summary',available:false,reason:'unique_game_match_not_found',checked_at:now(),games_found:matches.length});
+   const event=matches[0],eventId=String(event.id);
+   if(!/^\d{8,12}$/.test(eventId))return ffoReply({error:'invalid_provider_event_identifier'},502);
+   const summary=await fetch(base+'summary?event='+eventId,{headers:{accept:'application/json'},cf:{cacheEverything:true,cacheTtl:15},signal:AbortSignal.timeout(9000)});
+   if(!summary.ok)return ffoReply({source:'ESPN summary',error:'summary_unavailable',provider_http_status:summary.status,checked_at:now()},502);
+   const doc=await summary.json(),drives=[...(Array.isArray(doc.drives?.previous)?doc.drives.previous:[]),...(doc.drives?.current?[doc.drives.current]:[])];
+   const plays=drives.flatMap(d=>Array.isArray(d.plays)?d.plays:[]).map(p=>({
+     id:String(p.id||''),description:String(p.text||'').slice(0,420),quarter:Number(p.period?.number)||null,
+     time:String(p.clock?.displayValue||''),down:Number(p.start?.down)||null,
+     yardsToFirstDown:Number.isFinite(Number(p.start?.distance))?Number(p.start.distance):null,
+     startYardLine:Number.isFinite(Number(p.start?.yardLine))?Number(p.start.yardLine):null,
+     endYardLine:Number.isFinite(Number(p.end?.yardLine))?Number(p.end.yardLine):null,
+     yardsGained:Number.isFinite(Number(p.statYardage))?Number(p.statYardage):null,
+     awayScore:Number.isFinite(Number(p.awayScore))?Number(p.awayScore):null,
+     homeScore:Number.isFinite(Number(p.homeScore))?Number(p.homeScore):null,
+     modified:String(p.modified||''),scoringPlay:!!p.scoringPlay
+   })).filter(p=>p.id&&p.description).slice(-220);
+   return ffoReply({source:'ESPN NFL game summary · supplemental',source_url:'https://www.espn.com/nfl/game/_/gameId/'+eventId,
+     checked_at:now(),available:true,coverage:'published_drive_play_descriptions',full_playbyplay_authorized:false,
+     live_delay_verified:false,provisional:true,game_status:event.status?.type?.description||null,
+     event_id:eventId,provider_http_status:summary.status,data:{plays}});
+  }catch{return ffoReply({source:'ESPN NFL game summary',error:'source_unreachable',checked_at:now()},502)}
+ }
  if(route==='health')return ffoReply({source:'FFO GameCast',version:'0.4',ready:!!(env.MSF_API_KEY||env.GAMECAST_INTERNAL),live:false,live_verified:false,authenticated:true,provider_credential_configured:!!(env.MSF_API_KEY||env.GAMECAST_INTERNAL),checked_at:now()});
  if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return ffoReply({error:'mysportsfeeds_key_not_configured'},503);
  let path;try{path=ffoBuildPath(route,u.searchParams)}catch(error){return ffoReply({error:error.message},400)}
