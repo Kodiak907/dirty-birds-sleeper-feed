@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-28T06:52:25.091934+00:00
-Sleeper snapshot: 2026-10-28T06:52:20.242287+00:00
+Generated: 2026-10-28T07:58:25.673253+00:00
+Sleeper snapshot: 2026-10-28T07:58:20.197285+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -26,7 +26,7 @@ The points below average actual fantasy scoring over completed Weeks 1–7, with
 | Kaelon Black | RB | 29.20 | 4.17 | 7/7 |
 | Jonah Coleman | RB | 21.20 | 3.03 | 2/7 |
 | A.J. Brown | WR | 14.60 | 2.09 | 3/7 |
-| DeMario Douglas | WR | 3.80 | 0.54 | 1/7 |
+| Caleb Douglas | WR | 0.00 | 0.00 | 0/7 |
 | Antonio Williams | WR | 0.00 | 0.00 | 0/7 |
 | Christian Kirk | WR | 0.00 | 0.00 | 0/7 |
 | Chig Okonkwo | TE | 0.00 | 0.00 | 0/7 |
@@ -42,8 +42,8 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | JA’MARRTRIX | 1-6 | 117.00 | 3 |
 | Dirty Birds | 5-2 | 115.45 | 9 |
 | To Infinity and Bijan | 3-4 | 112.20 | 5 |
+| DeeboSix0 | 5-2 | 107.09 | 1 |
 | BigOlBoyle | 2-5 | 106.41 | 0 |
-| DeeboSix0 | 5-2 | 104.47 | 1 |
 | DANGER CLOSE | 3-4 | 102.47 | 1 |
 | Victorious Secret | 2-5 | 100.11 | 2 |
 | kfsn | 5-2 | 99.88 | 2 |

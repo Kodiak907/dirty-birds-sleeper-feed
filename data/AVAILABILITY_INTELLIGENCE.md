@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-28T06:52:30.992840+00:00
-Sleeper snapshot: 2026-10-28T06:52:20.242287+00:00
-nflverse observations: 2026-10-28T06:52:24.474013+00:00; injury feed loaded: True
+Generated: 2026-10-28T07:58:31.355853+00:00
+Sleeper snapshot: 2026-10-28T07:58:20.197285+00:00
+nflverse observations: 2026-10-28T07:58:25.112338+00:00; injury feed loaded: True
 
-**New observed changes:** 3. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -12,6 +12,7 @@ nflverse observations: 2026-10-28T06:52:24.474013+00:00; injury feed loaded: Tru
 |---|---|---|---:|---|
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Ollie Gordon II | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
+| Caleb Douglas | No tag | Week 7 observation: Full Participation in Practice | 81.7% | Verify current status before kickoff |
 | Antonio Williams | No tag | No matched report (not clearance) | 68.0% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 31.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
@@ -22,7 +23,6 @@ nflverse observations: 2026-10-28T06:52:24.474013+00:00; injury feed loaded: Tru
 | Garrett Wilson | No tag | No matched report (not clearance) | 92.0% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Chig Okonkwo | No tag | Week 5 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
-| DeMario Douglas | No tag | No matched report (not clearance) | 57.7% | Verify current status before kickoff |
 | Bijan Robinson | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
 | Zach Charbonnet | Out | Week 7 observation: Out, Full Participation in Practice, Knee | — | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
@@ -31,9 +31,8 @@ nflverse observations: 2026-10-28T06:52:24.474013+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Bryce Young** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Jalen Coker** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Matthew Golden** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 

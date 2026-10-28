@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-28T06:52:24.950770+00:00",
+  "generated_at_utc": "2026-10-28T07:58:25.588536+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 144,
+      "faab_used": 170,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 827.36,
@@ -33,8 +33,8 @@
         "WR": [
           "A.J. Brown",
           "Antonio Williams",
+          "Caleb Douglas",
           "Christian Kirk",
-          "DeMario Douglas",
           "Garrett Wilson",
           "Zay Flowers"
         ]
@@ -108,6 +108,10 @@
         {
           "bid": 2,
           "player": "Antonio Williams"
+        },
+        {
+          "bid": 26,
+          "player": "Caleb Douglas"
         }
       ],
       "team": "Dirty Birds",
@@ -127,7 +131,7 @@
           "Evan McPherson"
         ],
         "QB": [
-          "Baker Mayfield",
+          "Jacoby Brissett",
           "Sam Darnold"
         ],
         "RB": [
@@ -145,7 +149,7 @@
         "WR": [
           "Carnell Tate",
           "Darius Cooper",
-          "Jordan Watkins",
+          "Jakobi Meyers",
           "Josh Downs",
           "Puka Nacua",
           "Rashee Rice",
@@ -417,13 +421,13 @@
       "trades_completed": 3
     },
     {
-      "faab_used": 30,
+      "faab_used": 45,
       "id": 8,
       "manager": "DeeboSix0",
       "points_for": 821.28,
       "positions": {
         "DEF": [
-          "New York Jets"
+          "Cincinnati Bengals"
         ],
         "K": [
           "Matt Gay"
@@ -436,6 +440,7 @@
         "RB": [
           "Chuba Hubbard",
           "James Cook III",
+          "Rachaad White",
           "Roschon Johnson",
           "TreVeyon Henderson"
         ],
@@ -463,6 +468,14 @@
         {
           "bid": 25,
           "player": "Romeo Doubs"
+        },
+        {
+          "bid": 5,
+          "player": "Rachaad White"
+        },
+        {
+          "bid": 10,
+          "player": "Cincinnati Bengals"
         }
       ],
       "team": "DeeboSix0",
@@ -602,7 +615,7 @@
       "trades_completed": 1
     },
     {
-      "faab_used": 125,
+      "faab_used": 133,
       "id": 12,
       "manager": "Cokerthestroker",
       "points_for": 886.4,
@@ -620,6 +633,7 @@
         "RB": [
           "Aaron Jones Sr.",
           "Bhayshul Tuten",
+          "Devin Singletary",
           "Jadarian Price",
           "Javonte Williams",
           "Jeremiyah Love",
@@ -634,7 +648,6 @@
           "CeeDee Lamb",
           "Devaughn Vele",
           "Jalen Coker",
-          "Kalif Raymond",
           "Omar Cooper Jr.",
           "Rome Odunze"
         ]
@@ -660,6 +673,10 @@
         {
           "bid": 20,
           "player": "Omar Cooper Jr."
+        },
+        {
+          "bid": 8,
+          "player": "Devin Singletary"
         }
       ],
       "team": "Cokerthestroker",
@@ -667,5 +684,5 @@
       "trades_completed": 2
     }
   ],
-  "source_snapshot_utc": "2026-10-28T06:52:20.242287+00:00"
+  "source_snapshot_utc": "2026-10-28T07:58:20.197285+00:00"
 }

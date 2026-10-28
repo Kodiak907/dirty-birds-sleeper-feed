@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-28T06:52:29.230922+00:00",
-  "source_snapshot_utc": "2026-10-28T06:52:20.242287+00:00",
+  "generated_at_utc": "2026-10-28T07:58:29.663081+00:00",
+  "source_snapshot_utc": "2026-10-28T07:58:20.197285+00:00",
   "source_market_as_of": "2026-10-28T03:44:45.044208+00:00",
-  "source_projection_as_of": "2026-10-28T01:33:26.404153+00:00",
+  "source_projection_as_of": "2026-10-28T07:36:59.801556+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 28242,
-  "market_screened": 8054,
+  "market_screened": 8247,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -39,8 +39,8 @@
           ],
           "receive": [
             {
-              "id": "4892",
-              "name": "Baker Mayfield",
+              "id": "4943",
+              "name": "Sam Darnold",
               "position": "QB"
             },
             {
@@ -51,9 +51,9 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.79,
-          "their_lineup_delta_ppg": 1.6,
-          "value_paid_received_ratio": 1.155,
+          "our_lineup_delta_ppg": 0.78,
+          "their_lineup_delta_ppg": 1.61,
+          "value_paid_received_ratio": 1.181,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -82,16 +82,16 @@
               "position": "WR"
             },
             {
-              "id": "11576",
-              "name": "Braelon Allen",
-              "position": "RB"
+              "id": "9500",
+              "name": "Josh Downs",
+              "position": "WR"
             }
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.79,
-          "their_lineup_delta_ppg": 1.6,
-          "value_paid_received_ratio": 1.074,
+          "our_lineup_delta_ppg": 0.78,
+          "their_lineup_delta_ppg": 1.61,
+          "value_paid_received_ratio": 1.089,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -101,7 +101,7 @@
           ]
         }
       ],
-      "candidate_count": 5
+      "candidate_count": 6
     },
     {
       "asset": "A.J. Brown",
@@ -122,21 +122,21 @@
           ],
           "receive": [
             {
-              "id": "4892",
-              "name": "Baker Mayfield",
-              "position": "QB"
-            },
-            {
               "id": "10229",
               "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "9500",
+              "name": "Josh Downs",
               "position": "WR"
             }
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.74,
+          "our_lineup_delta_ppg": 1.75,
           "their_lineup_delta_ppg": 0.65,
-          "value_paid_received_ratio": 1.196,
+          "value_paid_received_ratio": 1.128,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -172,7 +172,7 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.74,
+          "our_lineup_delta_ppg": 1.75,
           "their_lineup_delta_ppg": 0.65,
           "value_paid_received_ratio": 1.112,
           "our_extra_cut": null,
@@ -210,8 +210,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.46,
-          "their_lineup_delta_ppg": 0.01,
+          "our_lineup_delta_ppg": 1.49,
+          "their_lineup_delta_ppg": 0.0,
           "value_paid_received_ratio": 0.74,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -248,8 +248,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.06,
-          "their_lineup_delta_ppg": 1.4,
+          "our_lineup_delta_ppg": 1.08,
+          "their_lineup_delta_ppg": 1.39,
           "value_paid_received_ratio": 0.867,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -286,8 +286,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.73,
-          "their_lineup_delta_ppg": 0.58,
+          "our_lineup_delta_ppg": 0.74,
+          "their_lineup_delta_ppg": 0.57,
           "value_paid_received_ratio": 1.041,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -324,8 +324,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.73,
-          "their_lineup_delta_ppg": 0.58,
+          "our_lineup_delta_ppg": 0.74,
+          "their_lineup_delta_ppg": 0.57,
           "value_paid_received_ratio": 0.879,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -369,8 +369,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 0.39,
-          "their_lineup_delta_ppg": 2.07,
+          "our_lineup_delta_ppg": 0.41,
+          "their_lineup_delta_ppg": 2.05,
           "value_paid_received_ratio": 0.734,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -407,8 +407,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 0.39,
-          "their_lineup_delta_ppg": 2.07,
+          "our_lineup_delta_ppg": 0.41,
+          "their_lineup_delta_ppg": 2.05,
           "value_paid_received_ratio": 0.91,
           "our_extra_cut": null,
           "opponent_extra_cut": null,

@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-10-28T06:52:28.397706+00:00",
-  "candidates_evaluated": 60450,
-  "market_matched": 7704,
+  "generated_at_utc": "2026-10-28T07:58:28.508357+00:00",
+  "candidates_evaluated": 61386,
+  "market_matched": 7821,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-10-28T03:44:45.044208+00:00",
-  "projection_as_of": "2026-10-28T01:33:26.404153+00:00",
+  "projection_as_of": "2026-10-28T07:36:59.801556+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -63,23 +63,23 @@
       ],
       "receive": [
         {
+          "id": "11583",
+          "name": "Jonathon Brooks",
+          "pos": "RB"
+        },
+        {
           "id": "9493",
           "name": "Puka Nacua",
           "pos": "WR"
-        },
-        {
-          "id": "4892",
-          "name": "Baker Mayfield",
-          "pos": "QB"
         }
       ],
       "our_gain": 1.72,
       "their_gain": 0.67,
-      "market_paid_received_ratio": 1.029,
+      "market_paid_received_ratio": 1.041,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.034,
+      "score": 2.0,
       "not_an_approved_offer": true
     }
   ],

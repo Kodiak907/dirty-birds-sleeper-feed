@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-28T06:52:25.393335+00:00",
-  "roster_snapshot_utc": "2026-10-28T06:52:20.242287+00:00",
+  "generated_at_utc": "2026-10-28T07:58:26.107696+00:00",
+  "roster_snapshot_utc": "2026-10-28T07:58:20.197285+00:00",
   "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
@@ -31,28 +31,7 @@
   "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [
     {
-      "bench_depth_difference_ppg": 3.87,
-      "coach_authorization_required": true,
-      "drop_id": "13345",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Jonah Coleman",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Rachaad White",
-      "position": "RB",
-      "research_tier": "depth candidate",
-      "source_player_id": "8136",
-      "team": "WAS"
-    },
-    {
-      "bench_depth_difference_ppg": 3.51,
+      "bench_depth_difference_ppg": 3.5,
       "coach_authorization_required": true,
       "drop_id": "13345",
       "evidence_flags": [
@@ -73,28 +52,7 @@
       "team": "NYG"
     },
     {
-      "bench_depth_difference_ppg": 2.85,
-      "coach_authorization_required": true,
-      "drop_id": "13301",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Antonio Williams",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Jakobi Meyers",
-      "position": "WR",
-      "research_tier": "depth candidate",
-      "source_player_id": "5947",
-      "team": "JAX"
-    },
-    {
-      "bench_depth_difference_ppg": 2.27,
+      "bench_depth_difference_ppg": 2.26,
       "coach_authorization_required": true,
       "drop_id": "13345",
       "evidence_flags": [
@@ -115,7 +73,7 @@
       "team": "LAC"
     }
   ],
-  "waiver_screened_count": 4,
+  "waiver_screened_count": 2,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",
