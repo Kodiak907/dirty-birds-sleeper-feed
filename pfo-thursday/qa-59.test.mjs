@@ -37,6 +37,11 @@ test('New market and team hub are distinct and feature preserving',()=>{
  assert.match(html,/id="trade-fold"/);
  assert.match(html,/id="waiver-fold"/);
  assert.match(html,/id="faabpanel"/);
+ assert.match(newUI,/Array\.from\(\{length:14\}/);
+ assert.match(newUI,/const missing=Array\.from\(\{length:14\}/);
+ assert.match(newUI,/Playoffs · opponent TBD/);
+ assert.match(newUI,/if\(result\.status==='fulfilled'&&Array\.isArray\(result\.value\)&&result\.value\.length===12\)/);
+ assert.doesNotMatch(newUI,/\[\.\.\.Array\(18\)\]/);
 });
 
 test('100,000-trial Monte Carlo report conserves entrants, byes, finalists and winners',()=>{
