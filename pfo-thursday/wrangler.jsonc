@@ -11,5 +11,18 @@
   ],
   "vars": {
     "FFO_GAMECAST_ENABLED": "true"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "COMMISSIONER_DB",
+      "database_name": "pfo-commissioner-cases",
+      "database_id": "bad6c753-6f5a-4654-948c-818e0ad05455"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "COMMISSIONER_EVIDENCE",
+      "bucket_name": "pfo-commissioner-evidence"
+    }
+  ]
 }
