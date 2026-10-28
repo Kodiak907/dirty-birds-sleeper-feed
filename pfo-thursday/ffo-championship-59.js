@@ -9,6 +9,17 @@
  const CHAMP_REPORT='/FFO_CHAMPIONSHIP_100K.json';
  function mount(){
   const page=$('championship');if(!page)return null;
+  // The old 5.3 style hides archived direct child cards: move both archived
+  // league-model sections under one accessible disclosure without deleting data.
+  if(!$('pfo59-legacy-odds')){
+   const previous=page.querySelector(':scope > .grid.two');
+   const contenders=[...page.children].find(n=>n.classList?.contains('card')&&n.querySelector?.('#contenders'));
+   if(previous&&contenders){
+    const archive=document.createElement('details');archive.id='pfo59-legacy-odds';
+    archive.innerHTML='<summary>Archived league odds &amp; original contender percentages · previous model</summary>';
+    archive.appendChild(previous);archive.appendChild(contenders);page.appendChild(archive);
+   }
+  }
   let el=$('pfo59-champ-odds');
   if(el)return el;
   el=document.createElement('section');el.id='pfo59-champ-odds';el.className='card pfo59-champ-odds';
