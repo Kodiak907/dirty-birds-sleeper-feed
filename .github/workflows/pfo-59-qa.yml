@@ -1,0 +1,19 @@
+name: PFO 5.9 isolated regression QA
+on:
+  push:
+    branches:
+      - pfo-59-commissioner-ui-20261028
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: PFO JS, Commissioner, 100k Championship, owner-specific research tests
+        run: node --test pfo-thursday/qa-59.test.mjs
