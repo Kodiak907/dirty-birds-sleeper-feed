@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-28T16:51:46.208180+00:00
-Sleeper snapshot: 2026-10-28T16:51:39.526793+00:00
+Generated: 2026-10-28T17:45:47.026439+00:00
+Sleeper snapshot: 2026-10-28T17:45:40.981268+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -49,9 +49,9 @@ Sleeper snapshot: 2026-10-28T16:51:39.526793+00:00
 | 7 | Ja'Kobi Lane | BAL | 4.56 | 90% | 54.3% | Not flagged |
 | 8 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
 | 9 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
-| 10 | Makai Lemon | PHI | 3.90 | 90% | 84.3% | Not flagged |
-| 11 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
-| 12 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
+| 10 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
+| 11 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
+| 12 | Mack Hollins | NE | 3.11 | 80% | 62.7% | IR |
 
 ### TE
 
@@ -77,15 +77,15 @@ Sleeper snapshot: 2026-10-28T16:51:39.526793+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Jacksonville Jaguars | JAX | 7.06 | 100% | — | Not flagged |
-| 2 | Kansas City Chiefs | KC | 6.81 | 100% | — | Not flagged |
-| 3 | Buffalo Bills | BUF | 6.47 | 100% | — | Not flagged |
-| 4 | Baltimore Ravens | BAL | 6.28 | 90% | — | Not flagged |
-| 5 | Green Bay Packers | GB | 5.98 | 90% | — | Not flagged |
-| 6 | Indianapolis Colts | IND | 5.73 | 90% | — | Not flagged |
-| 7 | Washington Commanders | WAS | 5.62 | 100% | — | Not flagged |
-| 8 | Chicago Bears | CHI | 5.57 | 90% | — | Not flagged |
-| 9 | New York Giants | NYG | 5.54 | 90% | — | Not flagged |
+| 1 | Kansas City Chiefs | KC | 6.81 | 100% | — | Not flagged |
+| 2 | Buffalo Bills | BUF | 6.47 | 100% | — | Not flagged |
+| 3 | Baltimore Ravens | BAL | 6.28 | 90% | — | Not flagged |
+| 4 | Green Bay Packers | GB | 5.98 | 90% | — | Not flagged |
+| 5 | Indianapolis Colts | IND | 5.73 | 90% | — | Not flagged |
+| 6 | Washington Commanders | WAS | 5.62 | 100% | — | Not flagged |
+| 7 | Chicago Bears | CHI | 5.57 | 90% | — | Not flagged |
+| 8 | New York Giants | NYG | 5.54 | 90% | — | Not flagged |
+| 9 | Cleveland Browns | CLE | 5.48 | 90% | — | Not flagged |
 | 10 | Tampa Bay Buccaneers | TB | 5.32 | 90% | — | Not flagged |
 | 11 | New Orleans Saints | NO | 5.26 | 90% | — | Not flagged |
 | 12 | New York Jets | NYJ | 4.57 | 90% | — | Not flagged |
@@ -116,13 +116,13 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Rashod Bateman | WR | BAL | 4.34 | 61.0% |
 | Noah Fant | TE | NO | 4.31 | 57.0% |
 | Michael Pittman Jr. | WR | PIT | 3.92 | 77.7% |
-| Makai Lemon | WR | PHI | 3.90 | 84.3% |
 | Adonai Mitchell | WR | NYJ | 3.31 | 65.0% |
+| Mack Hollins | WR | NE | 3.11 | 62.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **33**
+Candidates with independently sourced projections AND usage data: **32**
 
 ## Coverage and rules
 

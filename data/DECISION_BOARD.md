@@ -38,9 +38,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 7 | Ja'Kobi Lane | 4.56 | +3.64 | 54.3% | Tgt 4.3 | injury_report_observation_review |
 | 8 | Rashod Bateman | 4.34 | +3.42 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 9 | Michael Pittman Jr. | 3.92 | +2.99 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 10 | Makai Lemon | 3.90 | +2.97 | 84.3% | Tgt 7.0 | No modeled flags (not medically cleared) |
-| 11 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 12 | Brian Thomas Jr. | 3.12 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
+| 10 | Adonai Mitchell | 3.31 | +2.39 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 11 | Brian Thomas Jr. | 3.12 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
+| 12 | Mack Hollins | 3.11 | +2.19 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
 
 ## TE — reference: Chig Okonkwo (6.01 PPG)
 
@@ -66,15 +66,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Jacksonville Jaguars | 7.06 | +0.04 | — | — | No modeled flags (not medically cleared) |
-| 2 | Kansas City Chiefs | 6.81 | -0.22 | — | — | No modeled flags (not medically cleared) |
-| 3 | Buffalo Bills | 6.47 | -0.56 | — | — | No modeled flags (not medically cleared) |
-| 4 | Baltimore Ravens | 6.28 | -0.75 | — | — | No modeled flags (not medically cleared) |
-| 5 | Green Bay Packers | 5.98 | -1.05 | — | — | No modeled flags (not medically cleared) |
-| 6 | Indianapolis Colts | 5.73 | -1.30 | — | — | No modeled flags (not medically cleared) |
-| 7 | Washington Commanders | 5.62 | -1.41 | — | — | No modeled flags (not medically cleared) |
-| 8 | Chicago Bears | 5.57 | -1.46 | — | — | No modeled flags (not medically cleared) |
-| 9 | New York Giants | 5.54 | -1.48 | — | — | No modeled flags (not medically cleared) |
+| 1 | Kansas City Chiefs | 6.81 | -0.22 | — | — | No modeled flags (not medically cleared) |
+| 2 | Buffalo Bills | 6.47 | -0.56 | — | — | No modeled flags (not medically cleared) |
+| 3 | Baltimore Ravens | 6.28 | -0.75 | — | — | No modeled flags (not medically cleared) |
+| 4 | Green Bay Packers | 5.98 | -1.05 | — | — | No modeled flags (not medically cleared) |
+| 5 | Indianapolis Colts | 5.73 | -1.30 | — | — | No modeled flags (not medically cleared) |
+| 6 | Washington Commanders | 5.62 | -1.41 | — | — | No modeled flags (not medically cleared) |
+| 7 | Chicago Bears | 5.57 | -1.46 | — | — | No modeled flags (not medically cleared) |
+| 8 | New York Giants | 5.54 | -1.48 | — | — | No modeled flags (not medically cleared) |
+| 9 | Cleveland Browns | 5.48 | -1.55 | — | — | No modeled flags (not medically cleared) |
 | 10 | Tampa Bay Buccaneers | 5.32 | -1.71 | — | — | No modeled flags (not medically cleared) |
 | 11 | New Orleans Saints | 5.26 | -1.77 | — | — | No modeled flags (not medically cleared) |
 | 12 | New York Jets | 4.57 | -2.46 | — | — | No modeled flags (not medically cleared) |

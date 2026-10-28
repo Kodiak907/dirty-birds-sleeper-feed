@@ -1,15 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-28T16:51:46.072984+00:00
-Sleeper snapshot: 2026-10-28T16:51:39.526793+00:00
+Generated: 2026-10-28T17:45:46.892245+00:00
+Sleeper snapshot: 2026-10-28T17:45:40.981268+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1421222997041086464` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Jacksonville Jaguars →     Victorious Secret (#5) | Dropped: Cleveland Browns →     Victorious Secret (#5)
+- **NEW** · transaction `1421220253630803968` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
+- 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Jacksonville Jaguars →     Victorious Secret (#5) | Dropped: Cleveland Browns →     Victorious Secret (#5)
 - 2026-10-28T14:55:09.670380+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Caleb Douglas → Dirty Birds (#1) | Dropped: DeMario Douglas → Dirty Birds (#1) | FAAB bid: $26
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Devin Singletary → Cokerthestroker (#12) | Dropped: Kalif Raymond → Cokerthestroker (#12) | FAAB bid: $8

@@ -69,147 +69,6 @@
   "by_position": {
     "DEF": [
       {
-        "bench_depth_delta_ppg": 1.078,
-        "best_candidate_drop": {
-          "added_starters": [
-            "Jacksonville Jaguars"
-          ],
-          "after_ppg": 125.269,
-          "before_ppg": 125.234,
-          "displaced_starters": [
-            "Minnesota Vikings"
-          ],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.035
-        },
-        "candidate": "Jacksonville Jaguars",
-        "candidate_drop_options": [
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Jonah Coleman",
-            "drop_id": "13345",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Christian Kirk",
-            "drop_id": "4950",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Chig Okonkwo",
-            "drop_id": "8210",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          },
-          {
-            "added_starters": [
-              "Jacksonville Jaguars"
-            ],
-            "after_ppg": 125.269,
-            "before_ppg": 125.234,
-            "displaced_starters": [
-              "Minnesota Vikings"
-            ],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.035
-          }
-        ],
-        "candidate_id": "JAX",
-        "improves_projected_starters": true,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "DEF",
-        "projection_ppg": 7.063,
-        "team": "JAX",
-        "warnings": [
-          "No sourced usage"
-        ]
-      },
-      {
         "bench_depth_delta_ppg": 0.823,
         "best_candidate_drop": {
           "added_starters": [],
@@ -1045,6 +904,111 @@
         "position": "DEF",
         "projection_ppg": 5.543,
         "team": "NYG",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "bench_depth_delta_ppg": -0.504,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 125.234,
+          "before_ppg": 125.234,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cleveland Browns",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "CLE",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.481,
+        "team": "CLE",
         "warnings": [
           "No sourced usage"
         ]
@@ -4392,109 +4356,6 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -2.088,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 125.234,
-          "before_ppg": 125.234,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Makai Lemon",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Jonah Coleman",
-            "drop_id": "13345",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Christian Kirk",
-            "drop_id": "4950",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Chig Okonkwo",
-            "drop_id": "8210",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 125.234,
-            "before_ppg": 125.234,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "13294",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "WR",
-        "projection_ppg": 3.897,
-        "team": "PHI",
-        "warnings": []
-      },
-      {
         "bench_depth_delta_ppg": -2.675,
         "best_candidate_drop": {
           "added_starters": [],
@@ -4806,6 +4667,112 @@
         "warnings": [
           "Availability status: ir",
           "Partial projection coverage"
+        ]
+      },
+      {
+        "bench_depth_delta_ppg": -3.507,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 125.234,
+          "before_ppg": 125.234,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Konata Mumpfield",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 125.234,
+            "before_ppg": 125.234,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "12718",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 2.478,
+        "team": "LAR",
+        "warnings": [
+          "No sourced usage",
+          "Limited snap sample"
         ]
       },
       {
@@ -5222,7 +5189,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-10-28T16:51:46.424548+00:00",
+  "generated_at_utc": "2026-10-28T17:45:47.243831+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5230,6 +5197,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-10-28T16:51:39.526793+00:00",
+  "sleeper_snapshot_utc": "2026-10-28T17:45:40.981268+00:00",
   "source_projection_date": "2026-10-28T13:35:09.126558+00:00"
 }

@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-28T16:51:46.153812+00:00",
+  "generated_at_utc": "2026-10-28T17:45:46.971922+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -3191,7 +3191,7 @@
     {
       "completed_trade_count": 2,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 100.11,
+      "observed_optimal_average": 105.82,
       "observed_optimal_lineup": [
         {
           "avg": 18.3,
@@ -3229,8 +3229,8 @@
           "position": "K"
         },
         {
-          "avg": 0.86,
-          "name": "Cleveland Browns",
+          "avg": 6.57,
+          "name": "Jacksonville Jaguars",
           "position": "DEF"
         },
         {
@@ -3569,44 +3569,44 @@
           ]
         },
         {
-          "actual_points_total": 6.0,
-          "actual_points_weekly_avg": 0.86,
-          "id": "CLE",
+          "actual_points_total": 46.0,
+          "actual_points_weekly_avg": 6.57,
+          "id": "JAX",
           "n_weeks": 7,
-          "name": "Cleveland Browns",
-          "nonzero_weeks": 1,
+          "name": "Jacksonville Jaguars",
+          "nonzero_weeks": 6,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            6.0
+            15.0,
+            3.0,
+            17.0,
+            8.0,
+            2.0,
+            1.0,
+            0.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 6.0,
-            "actual_points_weekly_avg": 0.86,
-            "id": "CLE",
+            "actual_points_total": 46.0,
+            "actual_points_weekly_avg": 6.57,
+            "id": "JAX",
             "n_weeks": 7,
-            "name": "Cleveland Browns",
-            "nonzero_weeks": 1,
+            "name": "Jacksonville Jaguars",
+            "nonzero_weeks": 6,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              6.0
+              15.0,
+              3.0,
+              17.0,
+              8.0,
+              2.0,
+              1.0,
+              0.0
             ]
           }
         ],
@@ -4899,25 +4899,6 @@
           ]
         },
         {
-          "actual_points_total": 2.0,
-          "actual_points_weekly_avg": 0.29,
-          "id": "12718",
-          "n_weeks": 7,
-          "name": "Konata Mumpfield",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            2.0
-          ]
-        },
-        {
           "actual_points_total": 0.0,
           "actual_points_weekly_avg": 0.0,
           "id": "13281",
@@ -4933,6 +4914,25 @@
             0.0,
             0.0,
             0.0,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 21.2,
+          "actual_points_weekly_avg": 3.03,
+          "id": "13294",
+          "n_weeks": 7,
+          "name": "Makai Lemon",
+          "nonzero_weeks": 6,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            1.0,
+            1.4,
+            4.4,
+            4.2,
+            6.8,
+            3.4,
             0.0
           ]
         },
@@ -5425,6 +5425,25 @@
             ]
           },
           {
+            "actual_points_total": 21.2,
+            "actual_points_weekly_avg": 3.03,
+            "id": "13294",
+            "n_weeks": 7,
+            "name": "Makai Lemon",
+            "nonzero_weeks": 6,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              1.0,
+              1.4,
+              4.4,
+              4.2,
+              6.8,
+              3.4,
+              0.0
+            ]
+          },
+          {
             "actual_points_total": 14.1,
             "actual_points_weekly_avg": 2.01,
             "id": "11610",
@@ -5460,25 +5479,6 @@
               0.0,
               0.0,
               5.0
-            ]
-          },
-          {
-            "actual_points_total": 2.0,
-            "actual_points_weekly_avg": 0.29,
-            "id": "12718",
-            "n_weeks": 7,
-            "name": "Konata Mumpfield",
-            "nonzero_weeks": 1,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              2.0
             ]
           },
           {
@@ -9193,6 +9193,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-28T16:51:39.526793+00:00",
+  "snapshot_utc": "2026-10-28T17:45:40.981268+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }
