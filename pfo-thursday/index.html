@@ -632,7 +632,8 @@ async function fetchReport(file){
    const res=await fetch(FEED+file+'?v='+Math.floor(now/ttl),{cache:'no-store',signal:ctrl.signal,credentials:'omit'});
    if(!res.ok)throw Error(file+' HTTP '+res.status);
    const item=await res.json();if(!item||typeof item!=='object')throw Error(file+' invalid JSON');
-   if(file!=='player_names.json'&&file!=='external_metrics.json'){
+   const responseBytes=Number(res.headers.get('content-length')||0);
+   if(file!=='player_names.json'&&file!=='external_metrics.json'&&responseBytes>0&&responseBytes<=125000){
     ffoReportMemo.delete(file);ffoReportMemo.set(file,{at:Date.now(),data:item});
     while(ffoReportMemo.size>12)ffoReportMemo.delete(ffoReportMemo.keys().next().value);
    }return item;
@@ -3153,6 +3154,7 @@ document.querySelector('nav button[data-page="commissioner"]')?.addEventListener
 
 // PFO 5.6: dated source confidence, not a made-up projection confidence percentage.
 const pfo56Age=v=>{const n=Date.parse(v||'');return Number.isFinite(n)?Date.now()-n:null};
+const pfo56FmtStamp=v=>Number.isFinite(Date.parse(v||''))?new Date(v).toLocaleString():'Date not verified';
 function pfo56SourceRail(area){
  const host=$(area);if(!host)return;
  let rail=host.querySelector('.pfo56-source-rail');
@@ -3162,8 +3164,8 @@ function pfo56SourceRail(area){
  const researchStamp=area==='trade-intel'?tradeIdeasStamp||marketValueAsOf:waiverUsageStamp,researchAge=pfo56Age(researchStamp);
  const cells=[
   {label:ownFresh?'FFL OWNERSHIP CHECKED '+Math.floor(ownAge/60000)+'m AGO':'FFL OWNERSHIP STALE / UNVERIFIED',warn:!ownFresh},
-  {label:usageStamp?'NFL USAGE AS OF '+new Date(usageStamp).toLocaleString():'NFL USAGE DATE UNKNOWN',warn:usageAge===null||usageAge>86400000},
-  {label:researchStamp?'MODEL REPORT '+new Date(researchStamp).toLocaleString():'MODEL REPORT UNDATED',warn:researchAge===null||researchAge>172800000}
+  {label:usageStamp?'NFL USAGE AS OF '+pfo56FmtStamp(usageStamp):'NFL USAGE DATE UNKNOWN',warn:usageAge===null||usageAge>86400000},
+  {label:researchStamp?'MODEL REPORT '+pfo56FmtStamp(researchStamp):'MODEL REPORT UNDATED',warn:researchAge===null||researchAge>172800000}
  ];
  rail.replaceChildren();
  for(const item of cells){const el=document.createElement('span');el.className='pfo56-source-chip'+(item.warn?' caution':'');el.textContent=item.label;rail.append(el)}
