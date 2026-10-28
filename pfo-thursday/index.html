@@ -89,20 +89,20 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
  <div id="com-workspace" hidden>
   <div class="com-row" style="justify-content:space-between"><span id="com-identity" class="com-quiet"></span><button type="button" class="button" id="com-lock">Lock session</button></div>
   <div id="com-summary" class="com-row"></div>
-  <details class="com-card card" id="com-new"><summary><strong>+ Create administrative case</strong> <span class="com-quiet">· Draft first; issue separately</span></summary>
+  <details class="com-card card" id="com-new"><summary><strong>+ Add Commissioner Log entry</strong> <span class="com-quiet">· Recorded as draft; any penalty is a separate action</span></summary>
    <form id="com-case-form" class="com-grid" style="margin-top:14px">
     <div><label>League</label><select name="league"><option>FFL</option><option>DoF</option></select></div>
     <div><label>Fantasy week</label><input name="week" type="number" min="1" max="18" placeholder="Optional"></div>
-    <div><label>Team name</label><input name="team" maxlength="100" required></div>
-    <div><label>Owner / manager</label><input name="owner" maxlength="100" required></div>
+    <div><label>Team / scope (optional)</label><input name="team" maxlength="100" placeholder="League-wide"></div>
+    <div><label>Manager / stakeholder (optional)</label><input name="owner" maxlength="100" placeholder="Commissioner Office"></div>
     <div><label>Date of incident</label><input name="occurred_on" type="date" required></div>
     <div><label>Consequence effective date</label><input name="effective_on" type="date"></div>
-    <div class="com-wide"><label>Rule / violation code</label><input name="rule_ref" maxlength="100" placeholder="e.g. FFL lineup policy"></div>
-    <div class="com-wide"><label>Violation and supporting facts</label><textarea name="violation" minlength="12" maxlength="2500" required placeholder="Describe the incident and evidence objectively"></textarea></div>
-    <div class="com-wide"><label>Proposed consequence</label><textarea name="consequence" maxlength="1500" required placeholder="Warning, deduction, etc. No change is sent to Sleeper"></textarea></div>
-    <div class="com-wide"><button class="button primary" type="submit">File draft and assign case number</button></div>
+    <div><label>Log category</label><select name="action_category"><option value="GENERAL">General league administration</option><option value="RULE_ENFORCEMENT">Rule enforcement</option><option value="MANAGER_NOTICE">Manager notice</option><option value="TRADE_REVIEW">Trade review</option><option value="SCHEDULE">Schedule / league operation</option><option value="SCORING">Scoring review</option><option value="APPEAL">Appeal / dispute</option><option value="OTHER">Other</option></select></div><div><label>Rule / reference (optional)</label><input name="rule_ref" maxlength="100" placeholder="e.g. FFL lineup policy"></div>
+    <div class="com-wide"><label>Administrative action / supporting facts</label><textarea name="violation" minlength="12" maxlength="2500" required placeholder="Document the action, date, factual basis and decision objectively"></textarea></div>
+    <div class="com-wide"><label>Decision / follow-up (optional)</label><textarea name="consequence" maxlength="1500" placeholder="Leave blank for documentation only. No action is sent to Sleeper."></textarea></div><div class="com-wide"><label for="com-new-evidence">Photo, screenshot, PDF or video evidence (optional)</label><input id="com-new-evidence" type="file" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf,video/mp4,video/quicktime,video/webm,.mov,.heic,.heif"><small class="com-quiet">Images/PDFs up to 8 MB each; videos up to 25 MB each. Secure upload begins after the entry receives its case number.</small></div>
+    <div class="com-wide"><button class="button primary" type="submit">Create Commissioner Log entry</button></div>
    </form></details>
-  <div class="com-grid"><div class="card com-card"><h3>Administrative ledger</h3><label for="com-filter">Search team, owner, rule, case number</label><input id="com-filter" type="search" placeholder="Search cases"><div id="com-list">Checking filed cases…</div></div>
+  <div class="com-grid"><div class="card com-card"><h3>Commissioner Log history</h3><label for="com-filter">Search team, owner, rule, case number</label><input id="com-filter" type="search" placeholder="Search cases"><div id="com-list">Checking filed cases…</div></div>
   <div class="card com-card"><h3>Case file</h3><div id="com-detail" class="com-muted">Choose a case from the ledger. Every update is logged as a separate event.</div></div></div>
  </div>
  </div>
