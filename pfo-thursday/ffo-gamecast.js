@@ -102,17 +102,24 @@
   const el=$(id);if(!el)continue;
   if(!s.player){el.innerHTML='<p class="ffo-gc-note">Choose a player from Player Intel or your roster to see their personalized GameCast.</p>';continue;}
   const p=s.player,stats=model.normalizeStats(s.msfPlayer?.stats||{}),live=gameLivePlayer(),liveStats=model.normalizeStats(live?.stats||{}),rules=getRules(),scoring=live?.stats?model.fflScore(live.stats,rules,p.position):null,proj=projection(),inj=typeof pfo49Injury==='function'&&pfoPlayerId()?pfo49Injury(pfoPlayerId()):null;
+   const independent=typeof pfo50StatsFor==='function'?pfo50StatsFor(pfoPlayerId()):null;
+   const backupSeason=independent?.season_totals||{};
+   const seasonEvidence=Object.keys(stats).length?stats:backupSeason;
+   const hasProviderSeason=Object.keys(stats).length>0;
+   const latestIndependent=independent?.latest||{};
   const fields=[['Pass YD','pass_yd'],['Pass TD','pass_td'],['Rush YD','rush_yd'],['Rush TD','rush_td'],['Rec','rec'],['Rec YD','rec_yd'],['Rec TD','rec_td'],['Targets','targets'],['FUM Lost','fum_lost']];
-  const seasonTags=fields.filter(([n,k])=>Object.hasOwn(stats,k)).map(([n,k])=>`<div><b>${fmt(stats[k])}</b><span>${safe(n)} · Season</span></div>`);
+  const seasonTags=fields.filter(([n,k])=>Object.hasOwn(seasonEvidence,k)).map(([n,k])=>`<div><b>${fmt(seasonEvidence[k])}</b><span>${safe(n)} · Season</span></div>`);
+   const latestTags=fields.filter(([n,k])=>Object.hasOwn(latestIndependent,k)).map(([n,k])=>`<div><b>${fmt(latestIndependent[k])}</b><span>${safe(n)} · Week ${safe(latestIndependent.week||'—')}</span></div>`);
   const liveTags=fields.filter(([n,k])=>Object.hasOwn(liveStats,k)).map(([n,k])=>`<div><b>${fmt(liveStats[k])}</b><span>${safe(n)} · Game</span></div>`);
   const livePoints=scoring?.points!=null?fmt(scoring.points)+'*':'—',projPoints=proj?.points!=null?fmt(proj.points)+'*':'—';
-  const matchNote=s.msfPlayer?'Unique player/team match found; linked by name and team pending permanent provider-to-Sleeper ID reconciliation.':s.playerRows.length?'No unique MySportsFeeds player record matched; stats withheld rather than guessing.':'Season player stats not yet loaded.';
+  const matchNote=hasProviderSeason?'MySportsFeeds uniquely matched seasonal NFL statistics, pending stable provider ID mapping.':seasonTags.length?'Season totals from independently published nflverse 2026 player data, matched to the selected name and team; not a MySportsFeeds match.':s.playerRows.length?'No unambiguous player match; season totals withheld until a verified source loads.':'Season totals not yet available. Verify source status or refresh Intel.';
   const official=inj?.official?.official?String(inj.official.official.game_status||'Official designation present'):'No verified current official designation linked. Absence of report is not clearance.';
   const html=`<div class="ffo-gc-intro"><div><span class="ffo-gc-pill">GAMECAST · ${s.enabled?'PROVIDER CONNECTED':'NOT LIVE VERIFIED'}</span><h3>${safe(p.name)}</h3><p>${safe(p.position||'')} · ${safe(p.team||'Team unverified')}</p></div><button type="button" class="button" data-ffo-player-refresh="1">↻</button></div>
   <div class="ffo-gc-statgrid"><div><b>${livePoints}</b><span>Game FFL partial</span></div><div><b>${projPoints}</b><span>FFO forecast research</span></div>${seasonTags.slice(0,4).join('')||'<div><b>—</b><span>Season stats pending</span></div>'}</div>
   <p class="ffo-gc-note">${safe(matchNote)}</p>
   <div class="ffo-gc-section"><h3>Current game player stats</h3><div class="ffo-gc-rawstats">${liveTags.length?liveTags.join(''):'<div>Game-specific player box score not verified yet.</div>'}</div></div>
-  <div class="ffo-gc-section"><h3>Season totals</h3><div class="ffo-gc-rawstats">${seasonTags.length?seasonTags.join(''):'<div>Awaiting licensed seasonal player totals.</div>'}</div></div>
+  <div class="ffo-gc-section"><h3>Most recent published NFL game</h3><div class="ffo-gc-rawstats">${latestTags.length?latestTags.join(''):'<div>Independent game statistics not yet loaded.</div>'}</div></div>
+   <div class="ffo-gc-section"><h3>2026 NFL season totals</h3><div class="ffo-gc-rawstats">${seasonTags.length?seasonTags.join(''):'<div>Awaiting verifiable published player season totals.</div>'}</div></div>
   <div class="ffo-gc-evidence"><b>FFL scoring audit</b><p class="ffo-gc-note">${rules?'Using current Sleeper league scoring_settings.':'FFL scoring rules not loaded from Sleeper.'} ${scoring?.points!=null?'Reconstructed '+fmt(scoring.points)+' from '+scoring.covered.length+' stat categories.':'No certified player box-score reconstruction.'} ${scoring&&!scoring.complete?'Missing / unverified scoring categories: '+safe(scoring.missing.slice(0,10).join(', '))+'.':''} ${proj&&!proj.complete?'Projection uses incomplete stat categories and must NOT overwrite trade/waiver valuation.':''}</p><p class="ffo-gc-note">Official injury cross-check: ${safe(official)} <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">Official NFL injuries</a></p></div>
   <p class="ffo-gc-note">* Game points and projections are experimental when category coverage is incomplete. Sleeper's actual scored league matchup remains authoritative. Latest source check: ${safe(s.latestCheck||'not connected')}. No 15–20-second SLA proven.</p>
   <div class="ffo-gc-actionrow"><button type="button" data-ffo-goto="1">Full GameCast</button><button type="button" data-ffo-player-refresh="1">Refresh player feeds</button></div>${id==='ffo-gc-profile-embed'?'<details open><summary style="font-weight:800;font-size:12px;color:#f2c67c;margin:10px 0">Game field · player-linked plays</summary><div id="ffo-gc-player-field"></div></details>':''}`;
@@ -332,7 +339,12 @@
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}})();
   try{return await overviewPending}finally{overviewPending=null}
  }
- function setPlayer(id){try{s.playerId=String(id);s.player=pfo49Info(id);const host=$('pfo49-profile');if(host&&!$('ffo-gc-profile-embed')){const child=document.createElement('div');child.id='ffo-gc-profile-embed';child.className='ffo-gc-evidence';host.prepend(child)}s.msfPlayer=null;s.playerMatch='';findPlayer();drawPlayer();if(s.enabled)refreshPlayer(false);
+ function clearPlayer(){
+    s.player=null;s.playerId=null;s.msfPlayer=null;s.playerMatch='';s.allWeeks.clear();
+    const embed=$('ffo-gc-profile-embed');if(embed)embed.remove();
+    drawPlayer();drawPlays();
+  }
+  function setPlayer(id){try{s.playerId=String(id);s.player=pfo49Info(id);const host=$('pfo49-profile');if(host&&!$('ffo-gc-profile-embed')){const child=document.createElement('div');child.id='ffo-gc-profile-embed';child.className='ffo-gc-evidence';host.prepend(child)}s.msfPlayer=null;s.playerMatch='';findPlayer();drawPlayer();if(s.enabled)refreshPlayer(false);
    const g=s.games.find(x=>x.home===s.player.team||x.away===s.player.team);if(g&&s.game!==g.id)selectGame(g.id);
   }catch(error){status('Player integration unavailable: '+error.message)}
  }
@@ -359,5 +371,5 @@
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
- window.ffoGameCast={selectPlayer:setPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
+ window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
 })();
