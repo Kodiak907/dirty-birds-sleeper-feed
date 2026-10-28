@@ -63,7 +63,10 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(await page.locator('#overview').count(),1);
   await clickTab(page,'roster');
   assert.equal(await page.locator('#pfo59-team-hub').count(),1,'Team HQ mounted');
-  assert.equal(await page.locator('#pfo59-team-hub [data-pfo59-team-tab]').count(),4,'Four Team HQ tabs');
+  assert.equal(await page.locator('#pfo59-team-hub [data-pfo59-team-tab]').count(),3,'Three focused Team HQ tabs');
+  assert.equal(await page.locator('nav button[data-page="roster"]').innerText(),'Team HQ','Main Team HQ named correctly');
+  assert.equal(await page.locator('[data-pfo59-team-tab="roster"]').innerText(),'Roster','Subtab labeled Roster');
+  assert.equal(await page.locator('#pfo59-team-hub [data-pfo59-team-tab="transactions"]').count(),0,'No duplicate transactions tab');
   await page.locator('[data-pfo59-team-tab="schedule"]').click();
   await page.waitForTimeout(500);
   assert.equal(await page.locator('#pfo59-schedule .pfo59-week').count(),17,'17 FFL weeks, no fake Week18');
@@ -71,6 +74,7 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(await page.locator('#actual-lineup').count(),1,'Legacy submitted lineup preserved');
   await clickTab(page,'market');
   assert.equal(await page.locator('#pfo59-market').count(),1,'Market workspace mounted');
+  assert.equal(await page.locator('.pfo59-market-tabs button').count(),3,'No redundant market home');
   await page.locator('.pfo59-market-tabs [data-pfo59-market="trade"]').click();
   assert.equal(await page.locator('#pfo59-trade-existing #trade-fold').count(),1,'Original multi-player trade engine still mounted');
   await page.locator('.pfo59-market-tabs [data-pfo59-market="waiver"]').click();
@@ -83,6 +87,7 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   await page.waitForTimeout(800);
   assert.match(await page.locator('#pfo59-champ-result').innerText(),/100,000|100000|playoffs/i);
   assert.equal(await page.locator('#chances').count(),1,'Archived original odds retained');
+  assert.equal(await page.locator('#pfo49-playoff-plan .pfo49-gamelog').count()>0,true,'Original compact Championship player list preserved');
   assert.equal(await page.locator('#pfo59-legacy-odds #chances').count(),1,'Archived model accessible in Championship disclosure');
   assert.equal(await page.locator('#pfo59-legacy-odds #contenders').count(),1,'Original contender percentages remain available');
   await clickTab(page,'commissioner');
@@ -99,5 +104,7 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   assert.equal(api.length,0,'Smoke test did not submit any case');
   await clickTab(page,'overview');
   assert.equal(await page.locator('#overview').isVisible(),true,'Overview remains available');
+  assert.equal(await page.locator('#league-standings').count(),1,'Only one standings table exists');
+  assert.equal(await page.locator('#overview .pfo59-standings-top').count(),1,'Standings moved toward top');
  }finally{await ctx?.close();await teardown()}
 });
