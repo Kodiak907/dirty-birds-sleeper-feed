@@ -2388,7 +2388,7 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  for(const p of team.members){if(!['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)))continue;
   h+='<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+pfo52PointLabel(x?.points)+'</b><small class="pfo52-dim">'+e(opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
  }
- h+='</tbody></table></div><p class="pfo52-fine">No fabricated opponent variance: an unchanged baseline across weeks means opponent effect was not supported. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
+ h+='</tbody></table></div><p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
  el.innerHTML=h;
 };
 // Scouting K/DST: visibly render actual historical league scoring, even when NFL kicking stat feed lacks FG distances.
@@ -2502,7 +2502,7 @@ document.addEventListener('click',event=>{const b=event.target.closest('[data-pf
 // Automatic weekly PFO status, current data first; displayed timestamps are those of the source.
 function pfo53WeekFocus(){const over=$('overview');if(!over)return;let host=$('pfo53-weekfocus');if(!host){host=document.createElement('div');host.id='pfo53-weekfocus';host.className='pfo53-weekfocus';(over.querySelector('.pfo49-front')||over.firstElementChild).after(host);}
  const wk=pfo52Cur(),team=pfo53CurrentTeam(wk,'ours'),match=pfo52Match(wk),other=match?.theirs,starters=team?.starters?.filter(x=>x!=='0').length;
- host.innerHTML='<div class="pfo53-quick"><b>WEEK '+wk+' · DIRTY BIRDS</b><span>Submitted '+e(starters==null?'unavailable':starters)+' · '+e(other?pfo52Owner(other.roster_id):'Opponent pending')+'</span><button type="button" data-pfo53-gomatch>Open matchup / lab</button></div><small>Submitted roster read: '+e(liveRosterSnapshot?.checked_at?new Date(liveRosterSnapshot.checked_at).toLocaleString():'not connected')+' · Individual projections are FFO estimates, not verified NFL outcomes.</small>';
+ host.innerHTML='<div class="pfo53-quick"><b>WEEK '+wk+' · DIRTY BIRDS</b><span>Submitted '+e(starters==null?'unavailable':starters)+' · '+e(other?pfo52Owner(other.roster_id):'Opponent pending')+'</span></div><small>Submitted roster read: '+e(liveRosterSnapshot?.checked_at?new Date(liveRosterSnapshot.checked_at).toLocaleString():'not connected')+' · Individual projections are FFO estimates, not verified NFL outcomes.</small>';
 }
 document.addEventListener('click',event=>{if(event.target.closest('[data-pfo53-gomatch]'))document.querySelector('nav button[data-page="matchup"]')?.click()});
 const pfo53PreviousRoster=renderRosterComparison;
@@ -2701,7 +2701,7 @@ function pfo54OverviewPulse(){const page=$('overview');if(!page)return;
  const health=(liveRosterSnapshot?.players||[]).filter(p=>(liveRosterSnapshot.starters||[]).includes(p.player_id)&&/^(OUT|IR|PUP|DOUBTFUL)$/i.test(p.injury_status||''));
  el.innerHTML='<div class="pulse"><b>STARTERS · W'+wk+'</b><span>'+(verified?e(latest)+' submitted · '+e(Number.isFinite(age)?age+'m old':'age unknown'):'Live lineup unverified')+'</span></div>'+
  '<div class="pulse"><b>HEALTH CHECK</b><span>'+(health.length?health.length+' Sleeper-tagged starter(s) · verify official status':'No confirmed medical clearance implied')+'</span></div>'+
- '<div class="pulse"><b>NEXT DECISION</b><span><button type="button" class="pfo49-pin" data-pfo54-open="matchup">Open matchup lab</button></span></div>';
+ '<div class="pulse"><b>WEEKLY MATCHUP</b><span>Detailed lineup laboratory available in Weekly Matchup tab</span></div>';
 }
 const pfo54OldFocus=pfo53WeekFocus;
 pfo53WeekFocus=function(){pfo54OldFocus();pfo54OverviewPulse()};
