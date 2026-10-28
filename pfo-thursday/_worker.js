@@ -149,7 +149,7 @@ async function commissionerApi(req,env){
  }
  if(parts[2]==='cases'&&parts.length===3&&method==='POST'){
   let d;try{d=await comJsonBody(req)}catch{return comJson({error:'INVALID_JSON'},400)}
-  const league=comText(d.league,4),team=comText(d.team,100),owner=comText(d.owner,100),violation=comText(d.violation,2500),consequence=comText(d.consequence,1500),occurred=comText(d.occurred_on,10),effective=comText(d.effective_on,10),rule=comText(d.rule_ref,100),week=Number(d.week||0)||null,year=Number(occurred.slice(0,4));
+  const league=comText(d.league,4),team=comText(d.team,100)||'League-wide',owner=comText(d.owner,100)||'Commissioner Office',violation=comText(d.violation,2500),consequence=comText(d.consequence,1500)||'Administrative record only; no consequence imposed.',occurred=comText(d.occurred_on,10),effective=comText(d.effective_on,10),category=comText(d.action_category,24).toUpperCase()||'GENERAL',rule=comText((category==='GENERAL'?'':category+' / ')+comText(d.rule_ref,100),100)||'GENERAL',week=Number(d.week||0)||null,year=Number(occurred.slice(0,4));
   if(!['FFL','DoF'].includes(league)||!team||!owner||violation.length<12||!consequence||!/^(20[2-9][0-9])-\d{2}-\d{2}$/.test(occurred)||Number.isNaN(Date.parse(occurred))||effective&&!/^20\d\d-\d\d-\d\d$/.test(effective)||week!==null&&(!Number.isInteger(week)||week<1||week>18))return comJson({error:'REQUIRED_FIELDS_INVALID'},400);
   const now=comIso();const write=await env.COMMISSIONER_DB.prepare('INSERT INTO commissioner_cases(league,year,week,team,owner,rule_ref,violation,consequence,occurred_on,effective_on,created_utc,created_by) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)').bind(league,year,week,team,owner,rule,violation,consequence,occurred,effective||null,now,email).run();
   const id=Number(write.meta?.last_row_id);if(!Number.isInteger(id)||id<1)throw Error('CASE_INSERT_NO_ID');const number=league+'-'+year+'-'+String(id).padStart(6,'0');
@@ -212,14 +212,21 @@ if(parts.length===4&&method==='GET'){
   }
   if(parts[4]==='evidence'&&parts.length===5&&method==='POST'){
    const mime=req.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase(),name=comText(req.headers.get('x-ffo-filename')||'evidence',115).replace(/[^\w.() -]/g,'_');
-   if(!['image/png','image/jpeg','image/webp','application/pdf'].includes(mime))return comJson({error:'FILE_TYPE_NOT_ALLOWED'},415);
-   if(Number(req.headers.get('content-length')||0)>8*1024*1024)return comJson({error:'FILE_TOO_LARGE'},413);
-   const buf=await req.arrayBuffer();if(buf.byteLength>8*1024*1024||buf.byteLength<8)return comJson({error:'FILE_SIZE_INVALID'},413);
+   const allowed=['image/png','image/jpeg','image/webp','image/heic','image/heif','application/pdf','video/mp4','video/quicktime','video/webm'];
+   if(!allowed.includes(mime))return comJson({error:'FILE_TYPE_NOT_ALLOWED'},415);
+   const maxBytes=mime.startsWith('video/')?25*1024*1024:8*1024*1024;
+   if(Number(req.headers.get('content-length')||0)>maxBytes)return comJson({error:'FILE_TOO_LARGE'},413);
+   const buf=await req.arrayBuffer();if(buf.byteLength>maxBytes||buf.byteLength<12)return comJson({error:'FILE_SIZE_INVALID'},413);
    const b=new Uint8Array(buf.slice(0,16));const sig={
     'image/png':b[0]===137&&b[1]===80&&b[2]===78&&b[3]===71,
     'image/jpeg':b[0]===255&&b[1]===216&&b[2]===255,
     'image/webp':String.fromCharCode(...b.slice(0,4))==='RIFF'&&String.fromCharCode(...b.slice(8,12))==='WEBP',
-    'application/pdf':String.fromCharCode(...b.slice(0,5))==='%PDF-'
+    'application/pdf':String.fromCharCode(...b.slice(0,5))==='%PDF-',
+    'image/heic':String.fromCharCode(...b.slice(4,8))==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(String.fromCharCode(...b.slice(8,12))),
+    'image/heif':String.fromCharCode(...b.slice(4,8))==='ftyp'&&/^(heic|heix|hevc|mif1|msf1)$/.test(String.fromCharCode(...b.slice(8,12))),
+    'video/mp4':String.fromCharCode(...b.slice(4,8))==='ftyp',
+    'video/quicktime':String.fromCharCode(...b.slice(4,8))==='ftyp',
+    'video/webm':b[0]===26&&b[1]===69&&b[2]===223&&b[3]===163
    };
    if(!sig[mime])return comJson({error:'FILE_CONTENT_INVALID'},415);
    const digest=new Uint8Array(await crypto.subtle.digest('SHA-256',buf));const sha=[...digest].map(x=>x.toString(16).padStart(2,'0')).join('');
