@@ -1,0 +1,3 @@
+# FFO 5.7 Stabilization preview retry
+
+One-time Pages preview upload via staging Worker `ffo-gamecast-api-staging` temporary Build command `node ci_pages_stadium_http.mjs`. Fixed uploader preflight false negative: `ffoReportMemo` moved from HTML to separate `ffo-pfo-core.js`; 18 of 18 integrity checks passed. Immutable PFO staging source commit `ebeaf31861d0110106185d66b1a2c5ce88fee8f3`. Strict target `dirtybirdstest` Cloudflare Pages branch `pfo-thursday-staging`, never `main`. Contains D1/R2 explicit Wrangler bindings, cacheable separated PFO core, independent verified season totals, player clear, active roster refresh and preserved tools. Reset temporary Worker Build command to None after build; Disable builds OFF.
