@@ -6,7 +6,7 @@
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
  let statRequested=false;
- const state={market:'home',manager:'1',position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false};
+ const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
   const u=state.snap?.users?.find(x=>String(x.user_id)===String(r?.owner_id));
@@ -143,19 +143,40 @@
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,n.priority[p.position],n.historical?.[p.position])).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
     (filtered.length>60?'<p>Showing 60 of '+safe(filtered.length)+' source-matched candidates. Narrow by position or name.</p>':'');
  }
+
+ // The selected manager's ACTUAL published roster opens immediately, not a highlighted name only.
+ // Keep visual selections read-only until Coach explicitly authorizes an actual trade.
+ function tradeRoster(rid,side){
+  const roster=state.snap?.rosters?.find(r=>String(r.roster_id)===String(rid));
+  if(!roster)return '<p class="pfo59-foot">Roster source unavailable. No players were invented.</p>';
+  const selected=side==='give'?state.tradeGive:state.tradeTake;
+  const players=(roster.players||[]).map(id=>{const p=state.names?.[String(id)],x=p&&scoreInfo({id:String(id),name:p.name,team:p.team});return {id:String(id),p,x}});
+  players.sort((a,b)=>(a.p?.position||'ZZ').localeCompare(b.p?.position||'ZZ')||String(a.p?.name||a.id).localeCompare(String(b.p?.name||b.id)));
+  return '<div class="pfo59-trade-roster">'+players.map(({id,p,x})=>
+    '<button type="button" class="pfo59-trade-player'+(selected.includes(id)?' selected':'')+'" data-pfo59-pick="'+safe(id)+'" data-pfo59-side="'+side+'" aria-pressed="'+selected.includes(id)+'">'+
+    '<span class="pfo59-player-pos">'+safe(p?.position||'—')+'</span><span class="pfo59-trade-identity"><b>'+safe(p?.name||'Unmapped player '+id)+'</b><small>'+safe(p?.team||'NFL team unverified')+'</small></span>'+
+    '<span class="pfo59-trade-value">'+(x?.project==null?'—':safe(x.project.toFixed(1)))+'<small>model</small></span>'+
+    '<span class="pfo59-pick-mark">'+(selected.includes(id)?'✓':'+')+'</span></button>').join('')+'</div>';
+ }
  function trade(){
   const host=$('pfo59-trade-board');if(!host)return;
-  const ideas=(state.ideas?.suggestions||[]).filter(x=>String(x.opponent_roster_id)===state.manager&&String(x.opponent_roster_id)!=='3');
-  const n=needs(state.manager);
   const partners=(state.snap?.rosters||[]).filter(r=>Number(r.roster_id)!==1).map(r=>
-    '<button type="button" class="pfo59-partner'+(String(r.roster_id)===state.manager?' selected':'')+'" '+(Number(r.roster_id)===3?'disabled title="Roster intelligence only; excluded from trade exploration"':'data-pfo59-partner="'+safe(r.roster_id)+'"')+'><b>'+safe(teamName(r.roster_id))+'</b><small>'+safe((r.players||[]).length)+' rostered · '+safe(r.settings?.wins??'—')+'–'+safe(r.settings?.losses??'—')+'</small>'+ (Number(r.roster_id)===3?'<small>View-only / no proposals</small>':'')+'</button>').join('');
-  host.innerHTML='<div class="pfo59-caveat">These are <b>two-sided scenario screens</b>, never actual offers or acceptance probabilities. BigOlBoyle (roster 3) is visible for league intelligence but excluded from trade proposals.</div>'+
-    '<h3>Choose trade partner</h3><div class="pfo59-partners">'+partners+'</div>'+
-    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Depth watch: '+safe(Object.keys(n.priority).filter(k=>n.priority[k]>0).map(k=>k+' '+n.counts[k]+'/'+n.targets[k]).join(' · ')||'No basic depth gap')+'</span></div>'+
-    '<h3>Published scenarios involving this manager</h3>'+
-    (ideas.length?ideas.slice(0,16).map(x=>'<div class="pfo59-player"><b>Give '+safe((x.give||[]).map(p=>p.name).join(' + '))+'</b><p>Receive '+safe((x.receive||[]).map(p=>p.name).join(' + '))+'</p>'+
-      '<div class="pfo59-player-meta">Dirty Birds model '+safe(Number(x.dirty_birds_delta_ppg||0).toFixed(2))+' PPG · Opponent model '+safe(Number(x.opponent_delta_ppg||0).toFixed(2))+' PPG</div><small>'+safe((x.warnings||[]).join('; ')||'Acceptance, market value, availability and current roles require independent verification')+'</small></div>').join(''):'<p>No dated model-screened scenarios for this manager. No proposal has been invented.</p>')+
-    '<small>Published scenario report: '+safe(state.ideas?.generated_at_utc||'Not loaded')+'. Trade Laboratory below remains the original full multi-player comparison engine.</small>';
+   '<button type="button" class="pfo59-partner'+(String(r.roster_id)===state.manager?' selected':'')+'" '+(Number(r.roster_id)===3?'disabled title="View in Scouting; trade research is excluded"':'data-pfo59-partner="'+safe(r.roster_id)+'"')+'><b>'+safe(teamName(r.roster_id))+'</b><small>'+safe(r.settings?.wins??'—')+'–'+safe(r.settings?.losses??'—')+' · '+safe((r.players||[]).length)+' players</small></button>').join('');
+  const isPartner=state.manager!=='1'&&state.manager!=='3',team=state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager);
+  const ideas=(state.ideas?.suggestions||[]).filter(x=>String(x.opponent_roster_id)===state.manager&&String(x.opponent_roster_id)!=='3');
+  host.innerHTML=
+    '<div class="pfo59-subsection"><h3>Trade partner</h3><small>Select a team to view its real roster and choose players for a research-only comparison.</small></div>'+
+    '<div class="pfo59-partners">'+(partners||'')+'</div>'+
+    (isPartner&&team?'<div class="pfo59-trade-selected"><b>'+safe(teamName(state.manager))+'</b><span>'+safe((team.players||[]).length)+' currently rostered · Sleeper snapshot '+safe(state.snap?.fetched_at_utc||'unknown')+'</span></div>'+
+    '<div class="pfo59-trade-dual"><section><h3>Dirty Birds · Give <small>'+state.tradeGive.length+'/3</small></h3>'+tradeRoster('1','give')+'</section>'+
+    '<section><h3>'+safe(teamName(state.manager))+' · Receive <small>'+state.tradeTake.length+'/3</small></h3>'+tradeRoster(state.manager,'take')+'</section></div>'+
+    '<div class="pfo59-trade-bar"><span>'+safe(state.tradeGive.length)+' giving · '+safe(state.tradeTake.length)+' receiving</span>'+
+    '<button type="button" data-pfo59-compare '+(!state.tradeGive.length||!state.tradeTake.length?'disabled':'')+'>Analyze selected players</button><button type="button" data-pfo59-clear>Clear</button></div>'+
+    '<p class="pfo59-foot">Model PPG is a forward estimate, not verified NFL production or guaranteed trade value. Selecting players never sends an offer.</p>'+
+    '<details class="pfo59-legacy" id="pfo59-scenarios"><summary>Published two-sided model scenarios ('+ideas.length+')</summary>'+
+      (ideas.length?ideas.slice(0,12).map(x=>'<div class="pfo59-scenario"><b>Give '+safe((x.give||[]).map(p=>p.name).join(' + '))+'</b><span>Receive '+safe((x.receive||[]).map(p=>p.name).join(' + '))+'</span><small>Dirty Birds '+safe(Number(x.dirty_birds_delta_ppg||0).toFixed(1))+' PPG · other side '+safe(Number(x.opponent_delta_ppg||0).toFixed(1))+' PPG</small></div>').join(''):'<p>No validated scenarios in this published report.</p>')+
+    '</details>'
+    :'<p class="pfo59-foot">Choose any trade-eligible FFL manager above. BigOlBoyle remains visible for scouting intelligence but cannot be used for proposed trades.</p>');
  }
  async function loadHistoricalScores(){
   if(state.history)return state.history;
@@ -206,8 +227,8 @@
   if(!root||!columns||!tradeFold||!waiverFold||!faab)return;
   const nav=document.createElement('div');nav.id='pfo59-market';nav.innerHTML=
    '<div class="pfo59-market-tabs" aria-label="Front Office market tools">'+
-   '<button type="button" data-pfo59-market="home">Market home</button><button type="button" data-pfo59-market="trade">Trades</button><button type="button" data-pfo59-market="waiver">Waivers</button><button type="button" data-pfo59-market="transactions">Transactions</button></div>'+
-   '<section data-pfo59-market-panel="home"><div class="pfo59-tiles"><button type="button" data-pfo59-market="trade"><b>Trade Command</b><span>Build offers and examine two-sided roster fit</span></button><button type="button" data-pfo59-market="waiver"><b>Waiver Command</b><span>Manager-specific priorities and position leaders</span></button><button type="button" data-pfo59-market="transactions"><b>Transactions</b><span>FAAB, executed moves and Sleeper history</span></button></div></section>'+
+   '<button type="button" data-pfo59-market="trade">Trades</button><button type="button" data-pfo59-market="waiver">Waivers</button><button type="button" data-pfo59-market="transactions">Transactions</button></div>'+
+   
    '<section data-pfo59-market-panel="trade" hidden><div class="pfo59-subhead"><h2>Trade Command</h2><label>Analyze manager <select id="pfo59-trade-manager"></select></label></div><div id="pfo59-trade-board"></div><div id="pfo59-trade-existing"></div></section>'+
    '<section data-pfo59-market-panel="waiver" hidden><div class="pfo59-subhead"><h2>Waiver Command</h2><label>Roster <select id="pfo59-waiver-manager"></select></label></div>'+
    '<div class="pfo59-filters"><label>Available players <select id="pfo59-position">'+posList.map(p=>'<option>'+p+'</option>').join('')+'</select></label><label>Search <input id="pfo59-find" type="search" placeholder="Player name…" autocomplete="off"></label></div><div id="pfo59-waiver-board"></div><details class="pfo59-legacy"><summary>Existing GM waiver scouting and source trail</summary><div id="pfo59-waiver-existing"></div></details></section>'+
@@ -223,18 +244,36 @@
    const p=ev.target.closest('[data-pfo59-player]');if(p){window.ffoQuickView?.open?.(p.dataset.pfo59Player);return;}
    const partner=ev.target.closest('[data-pfo59-partner]');if(partner){
     const id=partner.dataset.pfo59Partner;if(id==='3')return;
-    state.manager=id;managerOptions();trade();waiver();
-    try{const x=tb48State();x.opponent=id;x.take=[];tb45Save();}catch(err){console.warn('Trade partner sync pending',err)}
+    state.manager=id;state.tradeTake=[];state.tradeGive=[];managerOptions();trade();
+    try{const x=tb48State();x.opponent=id;x.take=[];x.give=[];tb45Save();}catch(err){console.warn('Trade lab sync unavailable',err)}
+    return;
+   }
+   const pick=ev.target.closest('[data-pfo59-pick]');
+   if(pick){
+    const side=pick.dataset.pfo59Side,id=pick.dataset.pfo59Pick,arr=side==='give'?state.tradeGive:state.tradeTake;
+    if(!['give','take'].includes(side))return;
+    if(arr.includes(id))arr.splice(arr.indexOf(id),1);else if(arr.length<3)arr.push(id);
+    trade();return;
+   }
+   if(ev.target.closest('[data-pfo59-clear]')){state.tradeGive=[];state.tradeTake=[];trade();return;}
+   if(ev.target.closest('[data-pfo59-compare]')){
+    if(!state.tradeGive.length||!state.tradeTake.length||state.manager==='3')return;
+    try{
+     const x=tb48State();x.opponent=state.manager;x.give=[...state.tradeGive];x.take=[...state.tradeTake];tb45Save();
+     const fold=$('trade-fold');if(fold){fold.open=true;fold.scrollIntoView({behavior:'instant',block:'start'});}
+     $('pfo59-compare-notice')?.remove();
+    }catch(err){console.warn('Trade valuation engine unavailable',err);alert('The existing comparison engine is still syncing. Your selections remain on screen.');}
     return;
    }
    const b=ev.target.closest('[data-pfo59-market]');if(b)marketView(b.dataset.pfo59Market);
   });
   nav.addEventListener('change',ev=>{
    if(ev.target.id==='pfo59-position'){state.position=ev.target.value;waiver()}
-   if(ev.target.id==='pfo59-waiver-manager'||ev.target.id==='pfo59-trade-manager'){state.manager=ev.target.value;managerOptions();waiver();trade()}
+   if(ev.target.id==='pfo59-waiver-manager'){state.manager=ev.target.value;managerOptions();waiver();trade()}
+   if(ev.target.id==='pfo59-trade-manager'){const id=ev.target.value;if(id!=='3'){state.manager=id;state.tradeGive=[];state.tradeTake=[];managerOptions();trade()}}
   });
   nav.addEventListener('input',ev=>{if(ev.target.id==='pfo59-find'){state.search=ev.target.value;waiver()}});
-  marketView('home');
+  marketView('trade');
  }
  function entryMatch(rows){
   const ours=rows.find(x=>Number(x.roster_id)===1);if(!ours)return null;
@@ -245,7 +284,7 @@
  function scheduleRender(){
   const host=$('pfo59-schedule');if(!host)return;
   const snap=state.snap||{},weeks=[...Array(17)].map((_,i)=>i+1),current=Number(snap.nfl_state?.week||8);
-  host.innerHTML='<div class="pfo59-schedule-head"><h2>FFL Team Schedule</h2><button type="button" id="pfo59-schedule-load">Load full 18-week schedule</button></div>'+
+  host.innerHTML='<div class="pfo59-schedule-head"><h2>FFL Team Schedule</h2><button type="button" id="pfo59-schedule-load">Refresh schedule</button></div>'+
    '<div class="pfo59-schedule-list">'+weeks.map(w=>{
     const rows=state.schedule.get(w)||[];
     const match=entryMatch(rows),other=match?.peer,ours=match?.ours;
@@ -318,7 +357,6 @@
   for(const b of h.querySelectorAll('[data-pfo59-team-tab]'))b.setAttribute('aria-selected',String(b.dataset.pfo59TeamTab===tab));
   for(const p of h.querySelectorAll('[data-pfo59-team-panel]'))p.hidden=p.dataset.pfo59TeamPanel!==tab;
   if(tab==='schedule')void loadSchedule();
-  if(tab==='transactions'){void loadAdvisory();teamTxnRender()}
   if(tab==='news')teamNewsRender();
  }
  function mountRoster(){
@@ -327,13 +365,13 @@
   const hub=document.createElement('div');hub.id='pfo59-team-hub';hub.innerHTML=
    '<div class="pfo59-team-heading"><h2>Dirty Birds · Team HQ</h2><span class="pfo59-chip">SLEEPER + FFO INTELLIGENCE</span></div>'+
    '<div class="pfo59-team-tabs" aria-label="Team HQ tools">'+
-   '<button type="button" data-pfo59-team-tab="roster" aria-selected="true">Roster &amp; Tester</button>'+
+   '<button type="button" data-pfo59-team-tab="roster" aria-selected="true">Roster</button>'+
    '<button type="button" data-pfo59-team-tab="schedule" aria-selected="false">Schedule</button>'+
-   '<button type="button" data-pfo59-team-tab="transactions" aria-selected="false">Transactions</button>'+
+
    '<button type="button" data-pfo59-team-tab="news" aria-selected="false">News &amp; Intel</button></div>'+
    '<section data-pfo59-team-panel="roster"></section>'+
    '<section data-pfo59-team-panel="schedule" hidden><div class="card pfo59-schedule" id="pfo59-schedule"><h2>Team HQ · FFL Schedule</h2><p>Loading published matchups…</p></div></section>'+
-   '<section data-pfo59-team-panel="transactions" hidden><div class="card" id="pfo59-team-transactions">Loading read-only transactions…</div></section>'+
+
    '<section data-pfo59-team-panel="news" hidden><div class="card" id="pfo59-team-news"></div></section>';
   root.prepend(hub);
   for(const n of rosterNodes)hub.querySelector('[data-pfo59-team-panel="roster"]').appendChild(n);
@@ -351,11 +389,16 @@
    }
   });
   document.querySelector('nav button[data-page="roster"]')?.addEventListener('click',()=>{
-   void loadAdvisory().then(()=>{teamTxnRender();teamNewsRender()});
+   teamNewsRender();
    if(hub.querySelector('[data-pfo59-team-tab="schedule"]')?.getAttribute('aria-selected')==='true')void loadSchedule();
   });
  }
- function start(){mountMarket();mountRoster();document.querySelector('nav button[data-page="market"]')?.addEventListener('click',()=>{if(state.market==='home')return;});}
+ function start(){
+  mountMarket();mountRoster();
+  // Reposition the *existing* official league standings (no duplicate data or separate fetch).
+  const overview=$('overview'),standings=$('league-standings')?.closest('.card');
+  if(overview&&standings){standings.classList.add('pfo59-standings-top');overview.prepend(standings);}
+ }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory};
 })();
