@@ -234,7 +234,14 @@
     if(!s.enabled){status('GameCast staging: configure encrypted MSF_API_KEY and enable Worker flag. No live data yet.');drawSignals();return}
     const sched=await feed('schedule',{season:s.season});
     const src=sched.data?.games||sched.data?.gameSchedule||sched.data?.schedule?.games||[];
-    s.games=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
+    const allGames=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
+    const nowMs=Date.now(),dayMs=86400000;
+    const dated=allGames.map(g=>({...g,kickoffMs:Date.parse(g.start)})).filter(g=>Number.isFinite(g.kickoffMs));
+    const nearby=dated.filter(g=>g.kickoffMs>=nowMs-4*dayMs&&g.kickoffMs<=nowMs+8*dayMs);
+    s.games=(nearby.length?nearby:dated.sort((a,b)=>Math.abs(a.kickoffMs-nowMs)-Math.abs(b.kickoffMs-nowMs)).slice(0,24))
+      .sort((a,b)=>a.kickoffMs-b.kickoffMs).slice(0,30);
+    if(!s.games.length)s.games=allGames.slice(0,24);
+    // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · ESPN supplemental play descriptions are labeled separately; live delay not verified');
     drawGames();drawPlayer();refreshEvidencePanels();
@@ -256,7 +263,15 @@
  $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview();if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
  document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays()});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();await refreshOverview();
- setInterval(()=>{if(document.visibilityState==='visible'&&s.enabled&&s.game)refreshGame()},20000);
+ setInterval(()=>{
+   if(document.visibilityState!=='visible'||!s.enabled||!s.game)return;
+   const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
+   const kick=Date.parse(game?.start||''),now=Date.now();
+   const likelyLive=/in.progress|in progress|live|halftime|half.time/.test(state)||
+     (Number.isFinite(kick)&&now>=kick&&now<=kick+5*3600000&&!/final|complete|post|scheduled|pre|not started/.test(state));
+   const refreshMs=likelyLive?20000:120000;
+   if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
+  },20000);
  setInterval(()=>{if(document.visibilityState==='visible'&&s.enabled)refreshOverview()},90000);
  window.ffoGameCast={selectPlayer:setPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
 })();
