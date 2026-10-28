@@ -23,7 +23,7 @@ async function comIdentity(request,env){
  const ok=await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,comB64(segments[2]),new TextEncoder().encode(segments[0]+'.'+segments[1]));
  if(!ok)throw Error('INVALID_IDENTITY');return email;
 }
-async function comHmacKey(env){const secret=String(env.COMMISSIONER_SESSION_SECRET||'');if(secret.length<32)throw Error('SESSION_NOT_CONFIGURED');return crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign','verify'])}
+async function comHmacKey(env){const secret=String(env.COMMISSIONER_SESSION_SECRET||'').trim();if(secret.length<32)throw Error('SESSION_NOT_CONFIGURED');return crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign','verify'])}
 async function comSign(payload,env){const key=await comHmacKey(env);const signature=await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(payload));return payload+'.'+comUrlB64(new Uint8Array(signature))}
 async function comSession(req,env,email){const raw=(req.headers.get('cookie')||'').match(/(?:^|;\s*)ffo_commissioner=([^;]+)/)?.[1];if(!raw)return false;
  const dot=raw.lastIndexOf('.');if(dot<1)return false;const payload=raw.slice(0,dot);const sig=raw.slice(dot+1);
@@ -46,7 +46,7 @@ async function comSession(req,env,email){const raw=(req.headers.get('cookie')||'
  async function comPinProofOkay(proof,token,env){
   if(!/^[a-f0-9]{64}$/.test(String(proof||'')))return false;
   try {
-   const verifier=String(env.COMMISSIONER_PIN_HASH||'');if(!/^[a-f0-9]{64}$/.test(verifier))return false;
+   const verifier=String(env.COMMISSIONER_PIN_HASH||'').trim().toLowerCase();if(!/^[a-f0-9]{64}$/.test(verifier))return false;
    const key=await crypto.subtle.importKey('raw',Uint8Array.from(verifier.match(/.{2}/g),h=>parseInt(h,16)),{name:'HMAC',hash:'SHA-256'},false,['sign']);
    const result=new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode('FFO-COMMISSIONER-PROOF-v1:'+token)));
    const supplied=Uint8Array.from(String(proof).match(/.{2}/g),h=>parseInt(h,16));
@@ -105,14 +105,14 @@ async function commissionerApi(req,env){
  if(method==='POST'){
   if(req.headers.get('origin')!==url.origin)return comJson({error:'ORIGIN_CHECK_FAILED'},403);
  }
- const ready=!!(env.COMMISSIONER_PIN_HASH&&env.COMMISSIONER_PIN_SALT&&env.COMMISSIONER_SESSION_SECRET);
- if(parts[2]==='status'&&method==='GET')return comJson({ready,identity:email,unlocked:ready&&await comSession(req,env,email)});
+ const pinHashValid=/^[a-f0-9]{64}$/.test(String(env.COMMISSIONER_PIN_HASH||'').trim().toLowerCase()),pinSaltValid=/^[a-f0-9]{32}$/.test(String(env.COMMISSIONER_PIN_SALT||'').trim().toLowerCase()),pinSessionValid=String(env.COMMISSIONER_SESSION_SECRET||'').trim().length>=32;const ready=pinHashValid&&pinSaltValid&&pinSessionValid;
+ if(parts[2]==='status'&&method==='GET')return comJson({ready,identity:email,unlocked:ready&&await comSession(req,env,email),pin_secret_format:{hash_ok:pinHashValid,salt_ok:pinSaltValid,session_ok:pinSessionValid}});
  if(parts[2]==='challenge'&&method==='GET'){
   if(!ready)return comJson({error:'PIN_OR_SESSION_NOT_CONFIGURED'},503);
   const now=Math.floor(Date.now()/1000);
   const lim=await env.COMMISSIONER_DB.prepare('SELECT failures,blocked_until FROM commissioner_pin_limits WHERE email=?').bind(email).first();
   if(Number(lim?.blocked_until||0)>now)return comJson({error:'PIN_TEMPORARILY_LOCKED',retry_after_seconds:Number(lim.blocked_until)-now},429);
-  const salt=String(env.COMMISSIONER_PIN_SALT||'');if(!/^[a-f0-9]{32}$/.test(salt))return comJson({error:'PIN_NOT_CONFIGURED'},503);
+  const salt=String(env.COMMISSIONER_PIN_SALT||'').trim().toLowerCase();if(!/^[a-f0-9]{32}$/.test(salt))return comJson({error:'PIN_SALT_INVALID_FORMAT'},503);
   const challengePayload=comUrlB64(new TextEncoder().encode(JSON.stringify({purpose:'pin_unlock',email,exp:Date.now()+90000,nonce:crypto.randomUUID()})));
   const token=await comSign(challengePayload,env);
   return comJson({challenge:token,salt,kdf:'PBKDF2-SHA256',iterations:210000,expires_in_seconds:90},200,{'set-cookie':'ffo_com_challenge='+token+'; HttpOnly; Secure; SameSite=Strict; Path=/api/commissioner; Max-Age=90'});
