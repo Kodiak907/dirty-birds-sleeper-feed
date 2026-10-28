@@ -1,0 +1,43 @@
+
+/* FFO Stadium v1: SCOPED GameCast rendering. Do not change Radar / Trade stat rails. */
+#ffo-gc-gameview{min-width:0}
+#ffo-gc-gameview .gc6-shell{border:1px solid #294154;background:linear-gradient(155deg,#101f31,#07121f 75%);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px #02060b70;color:#f3f7fc}
+#ffo-gc-gameview .gc6-hdr{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center;padding:16px 13px 12px;background:linear-gradient(90deg,#16243a,#0d1927 45%,#1b2738);border-bottom:1px solid #344b60}
+.gc6-team{display:flex;align-items:center;gap:8px;min-width:0}.gc6-team:last-child{justify-content:flex-end}.gc6-teamlogo{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 2px 5px #0008)}.gc6-teamname{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#b7c9da;font-weight:800}.gc6-teamname small{font-size:9px;color:#8da6b9;display:block}.gc6-score{font-size:27px;line-height:1.05;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.gc6-gameclock{text-align:center;white-space:nowrap}.gc6-gameclock strong{display:block;font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:.03em}.gc6-gameclock span{font-size:10px;color:#92d9d2;font-weight:800;letter-spacing:.06em}
+.gc6-statebar{padding:9px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#0b1a26;font-size:10px;letter-spacing:.03em;color:#b9d1dc}
+.gc6-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;background:#6dd4bb;box-shadow:0 0 0 3px #2d736555}.gc6-note{color:#8ea8b8;font-size:10px;line-height:1.4}
+.gc6-stadium{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0,#243d4d,#091b26 60%);isolation:isolate}
+.gc6-stadium svg{width:100%;height:auto;display:block}.gc6-stadium .gc6-venue-title{font-size:12px;font-weight:900;fill:#eafaf5;letter-spacing:2px;text-shadow:0 2px 6px #0015}
+.gc6-stadium .gc6-endzone-word{font-size:22px;letter-spacing:2px;font-weight:950;fill:#fff;opacity:.95;paint-order:stroke;stroke:#001b;stroke-width:1.2}
+.gc6-attack{position:absolute;left:10px;bottom:10px;right:10px;display:flex;justify-content:space-between;gap:6px;pointer-events:none}
+.gc6-attack span{border:1px solid #ffffff25;background:#061b29da;color:#d5f3ec;border-radius:7px;padding:5px 7px;font-size:9px;font-weight:750}
+.gc6-feature{margin:0 11px 11px;border:1px solid #395469;background:linear-gradient(120deg,#152b3e,#102030);border-radius:14px;padding:12px;display:flex;gap:11px;align-items:center;min-width:0;position:relative}
+.gc6-portrait{flex:0 0 53px;height:61px;width:53px;border-radius:10px;background:linear-gradient(160deg,#2f4c62,#142536);border:1px solid #627d91;display:grid;place-items:center;overflow:hidden}
+.gc6-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}.gc6-portrait .gc6-initial{font-size:22px;color:#c4e0e2;font-weight:900}
+.gc6-feature-copy{min-width:0;flex:1}.gc6-eyebrow{font-size:10px;letter-spacing:.1em;color:#a4c4cd;font-weight:800;text-transform:uppercase}
+.gc6-feature h4{font-size:15px;color:#fff;margin:4px 0;line-height:1.2}.gc6-feature p{font-size:12px;color:#bed2dd;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.gc6-tag{border:1px solid #507e87;background:#224e50;color:#baf3dd;border-radius:6px;padding:4px 6px;font-weight:850;font-size:9px;white-space:nowrap}
+.gc6-bottomline{font-size:10px;color:#a5bfca;padding:0 13px 13px;line-height:1.5}.gc6-bottomline b{color:#d6e7eb}
+.gc6-controls{display:flex;align-items:center;gap:7px;padding:0 12px 12px;flex-wrap:wrap;justify-content:space-between}
+.gc6-controls button{border-radius:9px;border:1px solid #48667a;background:#183248;color:#d9f1f4;padding:8px 10px;font-weight:800;font-size:11px;cursor:pointer}
+.gc6-controls button[disabled]{opacity:.4}.gc6-controls button[aria-pressed=true]{border-color:#78cfae;color:#baf8dd;background:#174439}
+#ffo-gc-playfeed{min-width:0;max-width:100%}
+#ffo-gc-playfeed .gc6-feedtitle{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:13px 0 10px}
+#ffo-gc-playfeed .gc6-feedtitle h3{font-size:15px;letter-spacing:-.015em;margin:0}
+#ffo-gc-playfeed .gc6-play{display:flex!important;align-items:flex-start;gap:10px;border:1px solid #314a5b;border-radius:12px;padding:10px 11px;margin:0 0 7px;background:linear-gradient(115deg,#142639,#0e1d2c);width:100%;max-width:100%;min-width:0;box-sizing:border-box;cursor:pointer;color:#edf5fd}
+#ffo-gc-playfeed .gc6-play.active{border-color:#80dcc8;background:linear-gradient(115deg,#193c44,#132b37);box-shadow:inset 3px 0 0 #73dac1}
+#ffo-gc-playfeed .gc6-play.gc6-big{border-left:3px solid #eec36b}
+#ffo-gc-playfeed .gc6-feedlogo{width:30px;height:30px;object-fit:contain;flex:0 0 30px}
+#ffo-gc-playfeed .gc6-play-body{min-width:0;flex:1}
+#ffo-gc-playfeed .gc6-rowtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+#ffo-gc-playfeed .gc6-rowtop strong{font-size:10px;font-weight:900;color:#a7d8dd}
+#ffo-gc-playfeed .gc6-rowtop span{font-size:10px;color:#a7bfcf;font-variant-numeric:tabular-nums}
+#ffo-gc-playfeed .gc6-description{font-size:12px;color:#e4edf5;line-height:1.5;overflow-wrap:anywhere}
+#ffo-gc-playfeed .gc6-description strong{color:#fff}
+#ffo-gc-playfeed .gc6-rowfoot{margin-top:5px;font-size:10px;color:#91acba}
+#ffo-gc-playfeed .gc6-quiet{padding:13px;border:1px dashed #416273;border-radius:11px;color:#aac4d0}
+#ffo-gc-playfeed .gc6-flag{background:#294c43;color:#c5efdc;border:1px solid #496d66;padding:3px 5px;border-radius:5px;font-weight:800;font-size:9px}
+.gc6-shell button:focus-visible,#ffo-gc-playfeed .gc6-play:focus-visible{outline:3px solid #8fe7df;outline-offset:2px}
+@media(max-width:450px){#ffo-gc-gameview .gc6-hdr{padding:12px 9px;gap:4px}.gc6-teamlogo{width:29px;height:29px}.gc6-teamname{font-size:10px}.gc6-score{font-size:24px}.gc6-gameclock strong{font-size:11px}.gc6-gameclock span{font-size:9px}.gc6-feature{margin:0 8px 8px;padding:9px}.gc6-feature h4{font-size:13px}.gc6-feature p{font-size:11px}.gc6-statebar{padding:8px 10px}.gc6-endzone-word{font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){#ffo-gc-playfeed .gc6-play,#ffo-gc-gameview *{scroll-behavior:auto;transition:none!important;animation:none!important}}
