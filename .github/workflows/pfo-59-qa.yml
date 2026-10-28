@@ -17,6 +17,8 @@ jobs:
           node-version: '22'
       - name: PFO JS, Commissioner, 100k Championship, owner-specific research tests
         run: node --test pfo-thursday/qa-59.test.mjs
+      - name: PFO 5.9.6 roster news, trade, injury, matchup and playoff UI regression
+        run: node --test pfo-thursday/qa-596.test.mjs
       - name: FFO-owned rules and MySportsFeeds-only independent scoring regression
         run: node --test pfo-thursday/qa-ffo-msf.test.mjs
       - name: Install isolated Chromium smoke test dependencies
