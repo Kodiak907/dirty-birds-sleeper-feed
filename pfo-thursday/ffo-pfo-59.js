@@ -581,7 +581,9 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,
-  refreshCurrent:()=>{if(!document.querySelector('#market.page.active'))return;
+  refreshCurrent:(rulesChanged=false)=>{
+   if(rulesChanged){tradeEstimateCache.clear();state.scoredCache=null;state.scoredRef=null;}
+   if(!document.querySelector('#market.page.active'))return;
    if(state.market==='trade')trade();
    else if(state.market==='waiver')waiver();
   }};
