@@ -29,12 +29,14 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/site"
           find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) -exec cp {} "$RUNNER_TEMP/site/" \;
-          (cd "$RUNNER_TEMP/site" && zip -q -r "$GITHUB_WORKSPACE/pfo-596-preview.zip" .)
-          unzip -l pfo-596-preview.zip
-      - name: Upload immutable preview ZIP
+          test -f "$RUNNER_TEMP/site/_worker.js"
+          test -f "$RUNNER_TEMP/site/index.html"
+          echo "Root deployment assets:"
+          find "$RUNNER_TEMP/site" -maxdepth 1 -type f -printf '%f\n' | sort
+      - name: Upload root-level Pages deployment assets
         uses: actions/upload-artifact@v4
         with:
           name: pfo-596-preview-site
-          path: pfo-596-preview.zip
+          path: ${{ runner.temp }}/site/
           if-no-files-found: error
           retention-days: 7
