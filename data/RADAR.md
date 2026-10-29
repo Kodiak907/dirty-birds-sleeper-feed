@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-29T04:47:34.564280+00:00
-Sleeper snapshot: 2026-10-29T04:47:28.741414+00:00
+Generated: 2026-10-29T05:44:54.696714+00:00
+Sleeper snapshot: 2026-10-29T05:44:48.256919+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1421392358045433856` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Wil Lutz → DANGER CLOSE  (#4) | Dropped: Tyjae Spears → DANGER CLOSE  (#4)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

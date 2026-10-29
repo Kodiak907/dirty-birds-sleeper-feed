@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-29T04:47:34.597459+00:00
-Sleeper snapshot: 2026-10-29T04:47:28.741414+00:00
+Generated: 2026-10-29T05:44:54.730747+00:00
+Sleeper snapshot: 2026-10-29T05:44:48.256919+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- DANGER CLOSE: added Wil Lutz; dropped Tyjae Spears
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
