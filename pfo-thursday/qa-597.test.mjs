@@ -38,7 +38,7 @@ test('Both matchup teams open player cards; no Sleeper scoring for live estimate
  assert.match(core,/class="pfo597-player-link" type="button" data-pfo49-id/);
  assert.match(core,/class="pfo52-pill pfo597-player-pill" data-pfo49-id/);
  assert.match(js,/FFO independent NFL-stat forecast under FFL scoring/);
- assert.match(js,/pfo50Score\(g\.stats\)/);
+ assert.match(js,/pfo50Score\(g\.stats\|\|g\)/);
  assert.doesNotMatch(js,/sleeperGet\(/);
 });
 test('A sourced playing week gets an independent FFL projection while a verified bye gets BYE',async()=>{
