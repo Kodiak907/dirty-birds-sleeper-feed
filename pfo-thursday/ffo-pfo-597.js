@@ -69,9 +69,10 @@
   if(typeof pfo50Indexed==='undefined'||!pfo50Indexed?.size||typeof pfo50Score!=='function')return null;
   const p=typeof pfo52Info==='function'?pfo52Info(id):null;
   if(!p?.name||!p?.team)return null;
-  const rows=[...pfo50Indexed.values()].filter(x=>canonical(x.team)===canonical(p.team)&&norm(x.name)===norm(p.name));
-  if(rows.length!==1)return null;
-  const row=rows[0];
+  // MSF-to-Sleeper matching is already indexed and duplicate identities excluded.
+  // Do NOT scan every MSF player on each market card or tap on iPhone.
+  const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):pfo50Indexed.get(typeof pfo50Key==='function'?pfo50Key(p.name,p.team):norm(p.name)+'|'+canonical(p.team));
+  if(!row)return null;
   if(row.forecast){
    const pts=pfo50Score(row.forecast);
    if(pts!=null&&Number.isFinite(pts))return {points:pts,source:'FFO NFL-stat model · verified same-team player mapping'};
@@ -148,11 +149,23 @@
  // Keep legacy full-PPR market screens archived in source, not visible as FFL valuations.
  // Preserve existing manual comparison inputs and event routing; only remove irrelevant
  // pricing sections from the mobile trade report.
- if(typeof renderTradeScouting==='function'&&typeof tb48FeatureHTML==='function'){
+ if(typeof renderTradeScouting==='function'&&typeof tb48Deal==='function'){
+  // The compact Trade Command owns player selection. The expanded analysis is
+  // exclusively FFO FFL points / team lineup impact — not external full-PPR pricing.
   renderTradeScouting=function(){
    const host=$('trade-intel'),fold=$('trade-fold');
    if(!host||!fold?.open||!document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))return;
-   host.innerHTML='<div class="pfo597-trade-report"><h3>FFO FFL trade research</h3><p class="pfo597-rank-note">Uses the frozen league-specific scoring model and independent NFL statistics. The legacy full-PPR pricing display is excluded.</p>'+tb48FeatureHTML()+'</div>';
+   const chosen=typeof tb48State==='function'?tb48State():null;
+   let z=null;try{z=tb48Deal();}catch(err){console.warn('FFO trade research incomplete',err)}
+   if(z){
+    host.innerHTML=tb48ReportHTML(z);
+   }else{
+    lastTrade=null;
+    host.innerHTML='<section class="pfo597-trade-report"><h3>FFO FFL trade evaluation</h3>'+
+     '<p>Choose a trade partner and players in the compact lists above. Model calculations require current ownership and matched MySportsFeeds season statistics.</p>'+
+     '<p class="pfo597-trade-warning">No full-PPR market value or unsupported numeric trade verdict will be substituted.</p>'+
+     (chosen?.give?.length&&chosen?.take?.length?'<p>Source coverage pending. This proposal remains unsent.</p>':'')+'</section>';
+   }
   };
  }
  if(typeof tb48ReportHTML==='function'){
