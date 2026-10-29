@@ -179,15 +179,21 @@
    };
    const sum=ids=>{const vals=ids.map(projection);return vals.every(v=>v.pts!=null)?vals.reduce((a,b)=>a+b.pts,0):null;};
    const out=sum(z.give),incoming=sum(z.take),difference=out!=null&&incoming!=null?incoming-out:null;
+   // The previous trade evaluator can calculate depth proxies from cached
+   // Sleeper/market estimates. These are not FFO-verified projections.
+   // Suppress them whenever the MSF-backed FFL package itself is incomplete.
+   const impactKnown=difference!==null&&[...z.give,...z.take].every(id=>sourceForecast(id)?.points!=null);
    const outcome=difference==null?'FFL model coverage incomplete':Math.abs(difference)<0.5?'Comparable FFL projected package output':difference>0?'Dirty Birds receives higher projected FFL production':'Dirty Birds sends higher projected FFL production';
    const row=(title,ids)=>'<section class="pfo597-trade-half"><h4>'+esc(title)+'</h4>'+
-    ids.map(id=>{const x=projection(id);return '<div class="pfo597-trade-person">'+(/^[0-9]{2,9}$/.test(String(id))?'<img class="pfo598-eval-photo" alt="" loading="lazy" src="https://sleepercdn.com/content/nfl/players/thumb/'+esc(id)+'.jpg" onerror="this.hidden=true">':'')+'<button type="button" class="pfo597-player-link" data-pfo49-id="'+esc(id)+'">'+esc(x.p?.name||id)+'</button><span>'+fmt(x.pts,2)+' <small>FFL PPG*</small></span></div>';}).join('')+'</section>';
+    ids.map(id=>{const x=projection(id);return '<div class="pfo597-trade-person">'+(/^[0-9]{2,9}$/.test(String(id))?'<img class="pfo598-eval-photo" width="24" height="29" alt="" loading="lazy" decoding="async" src="https://sleepercdn.com/content/nfl/players/thumb/'+esc(id)+'.jpg" onerror="this.hidden=true">':'<span class="pfo598-eval-team">DEF</span>')+'<button type="button" class="pfo597-player-link" data-pfo49-id="'+esc(id)+'">'+esc(x.p?.name||id)+'</button><span>'+fmt(x.pts,2)+' <small>FFL PPG*</small></span></div>';}).join('')+'</section>';
    let h='<section class="pfo597-trade-report" aria-live="polite"><div class="pfo597-trade-title"><h3>FFL-specific trade evaluation</h3><span>'+z.give.length+' FOR '+z.take.length+'</span></div>'+
     '<p class="pfo597-rank-note">FFO independently scores NFL performance using the league’s actual custom scoring rules. No full-PPR market-value scale or outside trade price is used to grade this package.</p>'+
     '<div class="pfo597-trade-result"><b>'+esc(outcome)+'</b><span>Outgoing '+fmt(out)+' / Incoming '+fmt(incoming)+' projected FFL points per game · Net '+signed(difference)+'*</span></div>'+
     '<div class="pfo597-trade-sides">'+sides.map(x=>row(...x)).join('')+'</div>'+
-    '<div class="pfo597-trade-sides"><div><h4>Dirty Birds</h4><b>'+signed(z.ourDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.ourBenchDelta)+' PPG</p></div>'+
-    '<div><h4>'+esc(typeof tb45Manager==='function'?tb45Manager(z.x.opponent):'Opposing manager')+'</h4><b>'+signed(z.theirDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.theirBenchDelta)+' PPG</p></div></div>';
+    '<div class="pfo597-trade-sides"><div><h4>Dirty Birds</h4>'+
+    (impactKnown?'<b>'+signed(z.ourDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.ourBenchDelta)+' PPG · source-limited estimate</p>':'<p class="pfo597-trade-impact-pending">Starter impact pending verified MSF + FFO scoring. No substitute depth estimate.</p>')+'</div>'+
+    '<div><h4>'+esc(typeof tb45Manager==='function'?tb45Manager(z.x.opponent):'Opposing manager')+'</h4>'+
+    (impactKnown?'<b>'+signed(z.theirDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.theirBenchDelta)+' PPG · source-limited estimate</p>':'<p class="pfo597-trade-impact-pending">Starter impact pending verified MSF + FFO scoring. No substitute depth estimate.</p>')+'</div></div>';
    if(z.ourCut.length||z.theirCut.length)h+='<p class="pfo597-trade-warning">Hypothetical roster cuts only: Dirty Birds '+esc(z.ourCut.map(id=>tb45Player(id).name).join(', ')||'none')+' · Opponent '+esc(z.theirCut.map(id=>tb45Player(id).name).join(', ')||'none')+'. Nothing is submitted.</p>';
    if(z.injuryFlags?.length)h+='<p class="pfo597-trade-warning">Injury flags require official verification: '+esc(z.injuryFlags.join(', '))+'</p>';
    h+='<details><summary>FFL calculation and source limitations</summary><p>*Projected FFL points per game are independent recent-form estimates from NFL statistics, not future game results, guaranteed trade prices or true manager willingness. The two sides’ package totals are not equivalent to lineup improvement. Missing data is shown as unverified rather than zero. Opponent, byes, snaps, injury decisions and each team’s roster structure matter.</p><p>Roster membership is read from Sleeper only; NFL performance comes from independent data. No full-PPR valuation influences the displayed recommendation.</p></details>';
