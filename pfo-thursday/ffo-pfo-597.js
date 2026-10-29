@@ -141,11 +141,8 @@
   finally{loadPending=null;}})();
   return loadPending;
  }
- // Data refreshes can arrive after page paint. Repaint only the active tool.
- if(typeof pfo50LoadIndependent==='function'){
-  const original=pfo50LoadIndependent;
-  pfo50LoadIndependent=async function(...args){const v=await original(...args);if(v)redraw();return v;};
- }
+ // pfo50LoadIndependent already selectively updates the active screen.
+ // Do not register a second app-wide repaint on every stat response (iPhone freeze).
  // Keep legacy full-PPR market screens archived in source, not visible as FFL valuations.
  // Preserve existing manual comparison inputs and event routing; only remove irrelevant
  // pricing sections from the mobile trade report.
