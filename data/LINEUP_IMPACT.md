@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-29T06:53:37.778068+00:00
+Generated: 2026-10-29T08:00:32.559454+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections and injury status require manual verification.
@@ -10,7 +10,7 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Malik Willis | 14.75 | Bench-depth scenario: Caleb Douglas | +0.00 | +8.77 | No flagged data gap; review still required |
-| 2 | Baker Mayfield | 13.16 | Bench-depth scenario: Caleb Douglas | +0.00 | +7.17 | Availability status: questionable |
+| 2 | Baker Mayfield | 13.16 | Bench-depth scenario: Caleb Douglas | +0.00 | +7.18 | Availability status: questionable |
 | 3 | Tanner McKee | 11.48 | Bench-depth scenario: Caleb Douglas | +0.00 | +5.50 | No flagged data gap; review still required |
 
 ## RB
@@ -19,10 +19,10 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | 7.33 | Bench-depth scenario: Caleb Douglas | +0.00 | +1.34 | No flagged data gap; review still required |
 | 2 | Keaton Mitchell | 6.09 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.10 | No flagged data gap; review still required |
-| 3 | Tyjae Spears | 5.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.36 | Availability status: questionable |
+| 3 | Tyjae Spears | 5.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.37 | Availability status: questionable |
 | 4 | Samaje Perine | 5.22 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.77 | No flagged data gap; review still required |
-| 5 | Chris Rodriguez Jr. | 5.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.78 | Limited snap sample |
-| 6 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.05 | Availability status: questionable |
+| 5 | Chris Rodriguez Jr. | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.80 | Limited snap sample |
+| 6 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.06 | Availability status: questionable |
 | 7 | Tank Bigsby | 2.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | Availability status: ir; Partial projection coverage |
 | 8 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
 | 9 | Dameon Pierce | 0.79 | Bench-depth scenario: Caleb Douglas | +0.00 | -5.20 | Partial projection coverage |
@@ -42,13 +42,13 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 9 | Rashod Bateman | 4.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.64 | No flagged data gap; review still required |
 | 10 | Michael Pittman Jr. | 3.92 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.07 | Availability status: ir; Partial projection coverage |
 | 11 | Adonai Mitchell | 3.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.67 | No flagged data gap; review still required |
-| 12 | Brian Thomas Jr. | 3.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.87 | Limited snap sample |
+| 12 | Brian Thomas Jr. | 3.12 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.87 | Limited snap sample |
 
 ## TE
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Michael Mayer | 5.20 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.79 | No flagged data gap; review still required |
+| 1 | Michael Mayer | 5.20 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.78 | No flagged data gap; review still required |
 | 2 | Noah Fant | 4.31 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.67 | No flagged data gap; review still required |
 | 3 | Colby Parkinson | 3.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.28 | No sourced usage; Limited snap sample |
 | 4 | David Njoku | 2.70 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.28 | Availability status: ir |
@@ -70,7 +70,7 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 1 | Kansas City Chiefs | 6.81 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.82 | No sourced usage |
 | 2 | Buffalo Bills | 6.47 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.48 | No sourced usage |
 | 3 | Baltimore Ravens | 6.28 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.29 | No sourced usage |
-| 4 | Green Bay Packers | 5.98 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.00 | No sourced usage |
+| 4 | Green Bay Packers | 5.98 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.01 | No sourced usage |
 | 5 | Indianapolis Colts | 5.73 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.26 | No sourced usage |
 | 6 | Chicago Bears | 5.57 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.42 | No sourced usage |
 | 7 | New York Giants | 5.54 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.44 | No sourced usage |

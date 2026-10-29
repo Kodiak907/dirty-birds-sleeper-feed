@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-29T06:53:37.505637+00:00
-Sleeper snapshot: 2026-10-29T06:53:32.307356+00:00
+Generated: 2026-10-29T08:00:32.293044+00:00
+Sleeper snapshot: 2026-10-29T08:00:28.077037+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -30,9 +30,9 @@ Sleeper snapshot: 2026-10-29T06:53:32.307356+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | NYG | 7.33 | 90% | 24.0% | Not flagged |
 | 2 | Keaton Mitchell | LAC | 6.09 | 100% | 32.0% | Not flagged |
-| 3 | Tyjae Spears | TEN | 5.62 | 90% | 38.0% | Questionable |
+| 3 | Tyjae Spears | TEN | 5.61 | 90% | 38.0% | Questionable |
 | 4 | Samaje Perine | CIN | 5.22 | 100% | 36.7% | Not flagged |
-| 5 | Chris Rodriguez Jr. | JAX | 5.21 | 100% | — | Not flagged |
+| 5 | Chris Rodriguez Jr. | JAX | 5.19 | 100% | — | Not flagged |
 | 6 | Mike Washington Jr. | LV | 4.93 | 90% | 23.0% | Questionable |
 | 7 | Tank Bigsby | PHI | 2.21 | 80% | 28.7% | IR |
 | 8 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
@@ -53,7 +53,7 @@ Sleeper snapshot: 2026-10-29T06:53:32.307356+00:00
 | 9 | Rashod Bateman | BAL | 4.34 | 90% | 61.0% | Not flagged |
 | 10 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
 | 11 | Adonai Mitchell | NYJ | 3.31 | 90% | 65.0% | Not flagged |
-| 12 | Brian Thomas Jr. | JAX | 3.11 | 100% | — | Not flagged |
+| 12 | Brian Thomas Jr. | JAX | 3.12 | 100% | — | Not flagged |
 
 ### TE
 
@@ -105,7 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tyrone Tracy Jr. | RB | NYG | 7.33 | 24.0% |
 | Keaton Mitchell | RB | LAC | 6.09 | 32.0% |
 | Quentin Johnston | WR | LAC | 5.69 | 81.3% |
-| Tyjae Spears | RB | TEN | 5.62 | 38.0% |
+| Tyjae Spears | RB | TEN | 5.61 | 38.0% |
 | Kalif Raymond | WR | CHI | 5.25 | 61.7% |
 | Samaje Perine | RB | CIN | 5.22 | 36.7% |
 | Michael Mayer | TE | LV | 5.20 | 75.3% |
