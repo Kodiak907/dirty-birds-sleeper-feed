@@ -543,13 +543,19 @@ function updateInjuryView(){
  const starterIds=new Set((liveRosterSnapshot?.starters||[]).map(String));
  const rows=roster.map(p=>{const o=official.find(x=>normPlayer(x.name)===normPlayer(p.name)),a=alt.find(x=>normPlayer(x.name)===normPlayer(p.name));const tag=p.sleeper_injury_status||'';
   const game=String(o?.game_status||'').trim(),checkedOfficial=recent&&matchingWeek;
-  const label=o&&game?(game+' · NFL REPORT'):o?'NFL REPORT · no final game designation':a?(String(a.status||'ESPN injury entry')+' · ESPN'):tag?(tag+' · fantasy tag'):checkedOfficial?'NOT LISTED · NFL report checked':'STATUS UNVERIFIED · source pending';
-  const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report ↗</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN injuries ↗</a>':'Source confirmation unavailable');
-  const note=o?('Practice: '+e(o.practice_status||'not published')+(o.injury?' · '+e(o.injury):'')+' · No game-day availability assumed'):a?e(a.detail||'Reported injury; verify team'):checkedOfficial?'Not included among matched injury-report entries as of '+e(pfo49Today(nflVerified.checked_at))+'. This is NOT a verified active or game-day clearance.':'No verified report available. Missing designation is NOT confirmation of clearance.';
+  const label=o&&game?(game+' · NFL'):o?'On NFL report':a?(String(a.status||'Injury reported')+' · ESPN'):tag?(tag+' · fantasy'):checkedOfficial?'Not listed · NFL':'Source pending';
+  const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN</a>':'');
+  // Global header contains source limitations; don't paste the same three-line
+  // missing-clearance warning into every row and drown out real injuries.
+  const note=o?('Practice '+e(o.practice_status||'unlisted')+(o.injury?' · '+e(o.injury):'')):
+    a?e(a.detail||'Reported injury — team confirmation pending'):
+    tag?'Fantasy designation only · verify official report':
+    checkedOfficial?'Not listed in current matched NFL report':
+    'No report available';
   return {p,label,checked,note,important:!!o||!!a||!!tag||starterIds.has(String(p.player_id))};
  });
  rows.sort((a,b)=>Number(!!b.p.sleeper_injury_status)-Number(!!a.p.sleeper_injury_status));
- body.innerHTML=rows.map(x=>'<tr><td>'+e(x.p.name)+(starterIds.has(String(x.p.player_id))?' <small>STARTER</small>':'')+'</td><td><b>'+e(x.label)+'</b></td><td>'+x.note+'<div class="pfo49-small">'+x.checked+'</div></td></tr>').join('');
+ body.innerHTML=rows.map(x=>'<tr><td>'+e(x.p.name)+(starterIds.has(String(x.p.player_id))?' <small>STARTER</small>':'')+'</td><td><b>'+e(x.label)+'</b></td><td>'+x.note+(x.checked?'<div class="pfo49-small">'+x.checked+'</div>':'')+'</td></tr>').join('');
 }
 function watchNames(){return [...new Set([(liveRosterSnapshot?.players||[]).map(p=>p.name),...(liveRosterSnapshot?.players?.length?[]:[(injurySnapshot?.watch||[]).map(p=>p.name),(data?.lineup||[]).map(p=>p[1])])].flat().filter(Boolean).filter(n=>!/(vikings|defense|d\/st)/i.test(n)))].slice(0,45);}
 async function loadLiveRoster(){
