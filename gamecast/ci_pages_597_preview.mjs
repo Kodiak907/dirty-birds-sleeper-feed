@@ -1,4 +1,4 @@
-// FFO PFO 5.9.7 — one-time, immutable Preview-only deployment; approved by Coach.
+// FFO PFO 5.9.7 original-token GameCast kickoff safe re-pin; PREVIEW ONLY.
 // Run ONLY in the existing ffo-gamecast-staging Cloudflare Worker build environment
 // where PFO_PAGES_DEPLOY_TOKEN already exists. NEVER commit a credential to GitHub.
 // Commit of this helper does not itself deploy PFO Pages.
@@ -9,7 +9,7 @@ import {resolve,join} from 'node:path';
 import {tmpdir} from 'node:os';
 
 const repo='Kodiak907/dirty-birds-sleeper-feed';
-const commit='eb751b942fb733ad48bae673cdce159827de9287';
+const commit='90639d2b9e0b4027af42b9c393e46cedbfeaa4e2';
 const project='dirtybirdstest',previewBranch='pfo-59-commissioner-ui-20261028';
 const files=[
  'index.html','_worker.js','wrangler.jsonc',
@@ -55,10 +55,19 @@ const report=JSON.parse(model);
 if(report.schema!=='FFO_CHAMPIONSHIP_100K_V1'||report.simulations!==100000||report.teams?.length!==12)
  throw Error('PFO59_SIMULATION_INTEGRITY_FAILED');
 const msf=await get('ffo-gamecast.js');
+const gcModel=await get('ffo-gamecast-model.mjs');
 const rules=JSON.parse(await get('FFO_FFL_SCORING_V1.json'));
 if(rules.schema!=='FFO_SCORING_RULES_V1'||Object.keys(rules.scoring||{}).length!==133||
  !msf.includes('/FFO_FFL_SCORING_V1.json')||msf.includes("feed('espnplays'")||
  worker.includes('ffoScEndpoint')||!worker.includes('ffoGamecastHandle'))throw Error('FFO_MSF_ONLY_PRIMARY_SCORING_CHECK_FAILED');
+if(!msf.includes("model.shouldPollGameLive(game,now)")||
+ !msf.includes("model.retainPublishedPlays(s.playCache,ps)")||
+ !msf.includes("s.lastGamePoll=Date.now()")||
+ !msf.includes("model.mjs?v=597-gc-1029")||
+ !gcModel.includes("export function shouldPollGameLive")||
+ !gcModel.includes("export function retainPublishedPlays")||
+ !html.includes("/ffo-gamecast.js?v=597-gc-1029"))
+ throw Error('FFO_GAMECAST_KICKOFF_FAST_POLL_INTEGRITY_FAILED');
 const mobile=await get('ffo-mobile-594.js');
 if(!mobile.includes('ffo594-dock')||!html.includes('/ffo-mobile-594.js')||!html.includes('/ffo-mobile-594.css'))throw Error('PFO594_MOBILE_APP_MISSING');
 if(!html.includes('5.9.7 COACH REVIEW')||!html.includes('/ffo-championship-59.js')||!html.includes('/ffo-pfo-59.js')||!html.includes('ffo-pfo-596.js?v=596')||!html.includes('ffo-pfo-596.css?v=596')||!html.includes('ffo-pfo-597.js?v=597')||!html.includes('ffo-pfo-597.css?v=597')||!html.includes('ffo-waiver-meta-597.js?v=597')||
@@ -74,11 +83,11 @@ for(const p of [...html.matchAll(/(?:src|href)=["'](\/[^"']+\.(?:js|mjs|css|json
  if(!files.includes(p))throw Error('INDEX_REFERENCES_MISSING_ASSET '+p);
 }
 const token=process.env.PFO_PAGES_DEPLOY_TOKEN;
-console.log('FFO_PFO_597_PREVIEW_ONLY_PAGES_UPLOAD '+JSON.stringify({project,previewBranch,commit,simulations:report.simulations}));
-const args=['--yes','wrangler','pages','deploy',directory,'--project-name',project,'--branch',previewBranch,'--commit-message','FFO PFO 5.9.7 Coach QA Release - pinned '+commit.slice(0,12)];
+console.log('FFO_PFO_597_GAMECAST_PREVIEW_ONLY_UPLOAD '+JSON.stringify({project,previewBranch,commit,simulations:report.simulations}));
+const args=['--yes','wrangler','pages','deploy',directory,'--project-name',project,'--branch',previewBranch,'--commit-message','FFO PFO 5.9.7 Live GameCast kickoff QA - pinned '+commit.slice(0,12)];
 await new Promise((resolve,reject)=>{
  const child=spawn('npx',args,{shell:false,stdio:'inherit',env:{...process.env,CLOUDFLARE_API_TOKEN:token}});
  child.on('error',reject);
  child.on('exit',code=>code===0?resolve():reject(Error('PREVIEW_DEPLOY_EXIT_'+code)));
 });
-console.log('FFO_PFO_597_PREVIEW_UPLOADED__CHECK_ACCESS_AND_STATUS_BEFORE_USER_TEST');
+console.log('FFO_PFO_597_GAMECAST_PREVIEW_UPLOADED__VERIFY_ACCESS_AND_TIMING');
