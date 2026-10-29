@@ -11,7 +11,7 @@ test('5.9.7 assets parse, load after previous model and preserve Commissioner bo
  assert.match(html,/ffo-waiver-meta-597\.js\?v=597/);
  assert.match(html,/ffo-pfo-597\.js\?v=597/);
  assert.match(html,/ffo-pfo-597\.css\?v=597/);
- assert.match(core,/if\(url\.pathname\.startsWith/);
+ assert.doesNotMatch(js,/\/api\/commissioner\/.*POST/);
  assert.match(css,/#pfo59-waiver-board/);
 });
 test('Trade Clear updates picks in-place, not two roster DOM trees',()=>{
