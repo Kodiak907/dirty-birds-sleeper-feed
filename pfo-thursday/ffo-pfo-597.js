@@ -9,6 +9,42 @@
  const signed=n=>n==null||!Number.isFinite(Number(n))?'Unverified':(n>0?'+':'')+Number(n).toFixed(2);
  const norm=x=>String(x??'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/(?:jr|sr|ii|iii|iv)$/,'');
  const canonical=t=>typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(t):String(t||'').toUpperCase();
+ // Official FFO scoring file is the model's authority; Sleeper remains roster/history only.
+ let frozenFFLRules=null,rulesPending=null;
+ const FFL_SUPPORTED_STATS=['pass_yd','pass_td','pass_int','pass_int_td','rush_yd','rush_td','rush_att','rush_40p','rush_td_40p','rush_td_50p','rec','rec_yd','rec_td','rec_td_40p','rec_td_50p','pass_td_40p','pass_td_50p','fum_lost','fum','rush_2pt','rec_2pt','pass_2pt','pass_cmp','pass_att','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss','sack','int','def_td','ff','fum_rec','safe','blk_kick'];
+ const frozenScore=(stats)=>{
+  if(!stats||!frozenFFLRules)return null;
+  let points=0,observed=0;
+  for(const stat of FFL_SUPPORTED_STATS){
+   const multiplier=Number(frozenFFLRules[stat]||0);
+   if(!Number.isFinite(multiplier)||multiplier===0)continue;
+   if(stats[stat]===null||stats[stat]===undefined||stats[stat]==='')continue;
+   const count=Number(stats[stat]);
+   if(!Number.isFinite(count))continue;
+   points+=multiplier*count;observed++;
+  }
+  return observed?{points,partial:true,source:'FFO_FFL_SCORING_V1.json × NFL statistical categories · unverified bonuses/tiers are excluded'}:null;
+ };
+ if(typeof pfo49ScoreFromStats==='function')pfo49ScoreFromStats=frozenScore;
+ const loadFFLRules=()=>{
+  if(frozenFFLRules)return Promise.resolve(frozenFFLRules);
+  if(rulesPending)return rulesPending;
+  if(typeof fetch!=='function')return Promise.resolve(null);
+  rulesPending=(async()=>{
+   try{
+    const response=await fetch('/FFO_FFL_SCORING_V1.json',{cache:'force-cache'});
+    if(!response.ok)throw Error('FFO scoring file HTTP '+response.status);
+    const payload=await response.json();
+    if(payload?.schema!=='FFO_SCORING_RULES_V1'||!payload.scoring||Object.keys(payload.scoring).length<100)throw Error('FFL scoring schema incomplete');
+    frozenFFLRules=payload.scoring;
+    estimateCache.clear();
+    redraw();
+    return frozenFFLRules;
+   }catch(err){console.warn('FFO frozen-scoring file unavailable; independent point estimates withheld',err);return null;}
+   finally{rulesPending=null;}
+  })();
+  return rulesPending;
+ };
  let verifiedSchedule=null,loadPending=null,lastTrade=null;
  let estimateIndexRef=null;const estimateCache=new Map();
  const originalEstimate=typeof pfo50Estimate==='function'?pfo50Estimate:null;
@@ -144,8 +180,8 @@
    'No full-PPR market valuation. Independent NFL-stat FFL scoring model; missing projections unverified. No trade submitted.'].join('\n');
   if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied';}).catch(()=>{btn.textContent='Copy unavailable';});
  });
- document.addEventListener('DOMContentLoaded',()=>{void loadSchedule();},{once:true});
- if(document.readyState!=='loading')void loadSchedule();
+ document.addEventListener('DOMContentLoaded',()=>{void loadFFLRules();void loadSchedule();},{once:true});
+ if(document.readyState!=='loading'){void loadFFLRules();void loadSchedule();}
  const nav=$('nav');
  nav?.addEventListener('click',event=>{
   const page=event.target.closest('[data-page]')?.dataset.page;
@@ -158,5 +194,5 @@
    if(typeof refreshInjuryOnly==='function'&&typeof injuryBusy!=='undefined'&&!injuryBusy)void refreshInjuryOnly();
   }
  });
- window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule};
+ window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules};
 })();
