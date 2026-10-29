@@ -93,3 +93,16 @@ export function fflProjection(gameRows,rules,position=''){
 }
 
 export function versionedPlays(prev,next){const canonical=p=>{const {update,...body}=p;return JSON.stringify(body)};const map=new Map(prev.map(p=>[p.id||p.text,canonical(p)]));return next.map(p=>({...p,update:!map.has(p.id||p.text)?'new':map.get(p.id||p.text)!==canonical(p)?'corrected':'unchanged'}));}
+/** Kickoff wins over stale "scheduled" labels, but terminal status always wins. */
+export function shouldPollGameLive(game,nowMs=Date.now()){
+ const state=String(game?.status||'').toLowerCase();
+ if(/final|completed|complete|postponed|cancelled|canceled|suspended|abandoned/.test(state))return false;
+ const kickoff=Date.parse(game?.start||'');
+ return /in.progress|in progress|live|half.time|halftime|ongoing/.test(state)||
+  (Number.isFinite(kickoff)&&nowMs>=kickoff&&nowMs<=kickoff+6*3600000);
+}
+/** Retain successfully published play history through transient empty feeds. */
+export function retainPublishedPlays(previous,updated){
+ if(!Array.isArray(updated)||updated.length===0)return Array.isArray(previous)?previous:[];
+ return versionedPlays(Array.isArray(previous)?previous:[],updated);
+}
