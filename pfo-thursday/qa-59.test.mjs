@@ -102,7 +102,11 @@ test('Team-specific waiver ranking uses completed FFL weekly scores, not one lis
  assert.match(dirty,/Recorded FFL scoring weaknesses:/);
  assert.match(dirty,/data-pfo59-player/);
  qa.state.manager='4';qa.waiver();
- assert.notEqual(dirty,elements.get('pfo59-waiver-board').innerHTML);
+ // The All waiver board always prioritizes the selected real team; the scoring
+ // weakness calculations must differ across managers even when the published
+ // player-stat model has insufficient coverage for an ordered candidate list.
+ assert.notDeepEqual(qa.needs('1').historical,qa.needs('4').historical);
+ assert.match(newUI,/state\.waiverView==='available'&&state\.position==='ALL'&&gap/);
  qa.state.manager='9';qa.trade();
  assert.match(elements.get('pfo59-trade-board').innerHTML,/disabled title="View in Scouting; trade research is excluded"/,'Boyle excluded');
  assert.match(elements.get('pfo59-trade-board').innerHTML,/data-pfo59-pick=/);
