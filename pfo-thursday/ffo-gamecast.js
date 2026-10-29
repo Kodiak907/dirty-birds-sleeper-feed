@@ -281,6 +281,7 @@
  }
  async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
+  s.lastGamePoll=Date.now();
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
   const kickoff=Date.parse(selected?.start||'');
@@ -292,7 +293,7 @@
   try{
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){
-      const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
+      const ps=model.plays(pb.value.data);s.playCache=model.retainPublishedPlays(s.playCache,ps);
       s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
       if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
@@ -357,19 +358,19 @@
  }
  document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(b=>b.addEventListener('click',()=>{s.playFilter=b.dataset.ffoFilter;document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));drawPlays()}));
  $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview(true);if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
- document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
+ document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().then(()=>{if(s.game)return refreshGame()}).catch(()=>{})});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
  if(gameActive())await refreshOverview();
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
  setInterval(()=>{
    if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
-   const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
-   const kick=Date.parse(game?.start||''),now=Date.now();
-   const likelyLive=/in.progress|in progress|live|halftime|half.time/.test(state)||
-     (Number.isFinite(kick)&&now>=kick&&now<=kick+5*3600000&&!/final|complete|post|scheduled|pre|not started/.test(state));
+   const game=s.games.find(g=>g.id===s.game),now=Date.now();
+   // MSF can still call a game 'scheduled' after kickoff: check the actual clock.
+   const likelyLive=model.shouldPollGameLive(game,now);
    const refreshMs=likelyLive?20000:120000;
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled&&s.game)refreshGame().catch(()=>{})});
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
  window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,projection:projection()})};
 })();
