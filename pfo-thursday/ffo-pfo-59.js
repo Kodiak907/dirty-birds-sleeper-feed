@@ -5,7 +5,7 @@
  const $=id=>document.getElementById(id);
  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const posList=['ALL','QB','RB','WR','TE','K','DEF'];
- let statRequested=false;
+ let statRequested=false, broadCatalogPending=null,broadCatalogLoaded=false;
  // Keep expensive per-player model lookups out of every Trade repaint.
  const tradeEstimateCache=new Map();let tradeEstimateSource=null,tradeEstimateNames=null;
  const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',waiverView:'available',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false,playerPoolCache:null,playerPoolRefs:null,scoredCache:null,scoredRef:null,scoredAt:0};
@@ -80,6 +80,27 @@
   return {counts,targets,priority,rank,weakness,historical,unknown,known:!!r};
  }
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
+ async function broadenWaiverDirectory(){
+  if(broadCatalogLoaded||broadCatalogPending)return broadCatalogPending;
+  broadCatalogPending=(async()=>{
+   try{
+    const meta=await fetchReport('player_metadata.json');
+    if(!meta||Object.keys(meta).length<500)throw Error('Broader waiver metadata not published');
+    const relevant={};
+    for(const [id,p] of Object.entries(meta)){
+     const position=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
+     if(!p?.name||!p.team||!posList.includes(position)||!p.active)continue;
+     if(/^(retired|inactive|deceased|suspended)$/i.test(String(p.status||'')))continue;
+     relevant[id]={name:p.name,team:p.team,position,injury_status:p.injury_status||null,status:p.status||null};
+    }
+    state.names={...relevant,...(state.names||{})};
+    state.playerPoolCache=null;state.scoredCache=null;broadCatalogLoaded=true;
+    if(state.market==='waiver'&&document.querySelector('#market.page.active'))waiver();
+   }catch(err){console.warn('FFO broad waiver catalog source unavailable',err);}
+   finally{broadCatalogPending=null;}
+  })();
+  return broadCatalogPending;
+ }
  function entryPool(){
   if(!state.snap?.rosters?.length||!state.names)return [];
   const refs=state.playerPoolRefs;
@@ -138,9 +159,10 @@
   const n=needs(state.manager),pool=scoredPool(),query=state.search.trim().toLowerCase();
   const filtered=pool.filter(p=>{
    const pos=state.position;
-   const meta=state.names?.[p.id]||{};
-   const ir=/^(IR|PUP|NFI|RESERVE|INJURED_RESERVE)$/i.test(String(meta.injury_status||meta.status||''));
-   const veteran=Number(meta.years_exp)>=4&&Number(meta.years_exp)<30;
+   const meta={...(state.names?.[p.id]||{}),...(window.ffoWaiverMeta597?.[p.id]||{})};
+   const ir=/\b(IR|PUP|NFI|INJURED[ _-]?RESERVE)\b/i.test(String(meta.injury_status||'')+' '+String(meta.status||''));
+   const years=meta.years_exp!=null?Number(meta.years_exp):null;
+   const veteran=years!=null&&Number.isFinite(years)&&years>=1&&years<30;
    const matches=pos==='ALL'||pos===p.position||(pos==='FLEX'&&['RB','WR','TE'].includes(p.position))||(pos==='VETS'&&veteran)||(pos==='IR'&&ir);
    return matches&&p.name.toLowerCase().includes(query);
   });
@@ -260,7 +282,10 @@
   if(document.querySelector('#market.page.active')){
    // Paint only the selected workspace immediately, then refresh its data.
    renderSelectedMarket();
-   if(view==='waiver'||view==='trade'){void loadAdvisory();if(view==='waiver')void loadHistoricalScores();}
+   if(view==='waiver'||view==='trade'){
+    void loadAdvisory();
+    if(view==='waiver'){void loadHistoricalScores();void broadenWaiverDirectory();}
+   }
    if(view==='transactions')teamTxnRender();
   }
   if(view==='waiver'&&!statRequested&&typeof pfo50LoadIndependent==='function'){
