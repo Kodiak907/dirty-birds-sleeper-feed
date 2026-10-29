@@ -596,8 +596,12 @@ async function refreshInjuryOnly(){
  const health=$('injuryhealth');
  if(health)health.textContent='Checking live NFL and ESPN sources…';
  try{
-  await loadLiveRoster();
-  await Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]);
+  const knownRoster=!!liveRosterSnapshot?.players?.length;
+  const rosterTask=loadLiveRoster();
+  const sourceTask=knownRoster?Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]):Promise.resolve();
+  // Avoid serial 18s roster then 12s injury fetches on repeat checks.
+  await Promise.allSettled([rosterTask,sourceTask]);
+  if(!knownRoster)await Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]);
  }catch(err){injuryError='Injury refresh error: '+String(err?.message||err);}
  finally{latestInjuryCheck=new Date();injuryBusy=false;updateInjuryView();renderGamedayInactives();if(document.querySelector('nav button[data-page="scouting"].active'))gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
 }
@@ -965,7 +969,7 @@ const tb48Num=(x,precision=1)=>x==null?'Not verified':Number(x).toFixed(precisio
 const tb48Signed=(x,precision=1)=>x==null?'Not computable':(x>0?'+':'')+Number(x).toFixed(precision);
 function tb48Deal(){
  tb48Sanitize();const x=tb48State();
- if(!tb45Data.snap||!tb45Data.market||!pfo50Independent||!x.opponent||!x.give.length||!x.take.length)return null;
+ if(!tb45Data.snap||!pfo50Independent||!x.opponent||!x.give.length||!x.take.length)return null;
  if(isTradeExcludedOpponent(x.opponent,tb45Manager(x.opponent)))return null;
  const give=x.give,take=x.take,ourOld=tb45RosterPlayers(1),theirOld=tb45RosterPlayers(x.opponent);
  if(!give.every(id=>ourOld.includes(id))||!take.every(id=>theirOld.includes(id)))return null;
@@ -1052,7 +1056,7 @@ function tb48FeatureHTML(){
  h+='<div><label for="tb48-add-give">2 · Dirty Birds GIVE ('+e(x.give.length)+'/3)</label><select id="tb48-add-give" '+(x.give.length>=3||!d.snap?'disabled':'')+'>'+tb45SelectOptions(ours,'Select outgoing player…')+'</select><div class="tb48-picked">'+tb48Chips(x.give,'give')+'</div></div>';
  h+='<div><label for="tb48-add-take">3 · Dirty Birds RECEIVE ('+e(x.take.length)+'/3)</label><select id="tb48-add-take" '+(!x.opponent||x.take.length>=3||!d.snap?'disabled':'')+'>'+tb45SelectOptions(theirs,x.opponent?'Select incoming player…':'Select opponent first…')+'</select><div class="tb48-picked">'+tb48Chips(x.take,'take')+'</div></div></div>';
  h+='<div class="tb48-status">Players and teams are restricted to currently reported Sleeper ownership. BigOlBoyle is excluded from negotiating but remains in roster-only intelligence. The evaluator never sends trades.</div>';
- if(d.snap&&d.market&&d.ros){const res=tb48Deal();h+=res?tb48ReportHTML(res):'<div class="tb48-status">Add at least one player on each side and choose a partner to see the valuation. There is no acceptance/quality gate on manual comparisons.</div>';}
+ if(d.snap&&d.ros){const res=tb48Deal();h+=res?tb48ReportHTML(res):'<div class="tb48-status">Add at least one player on each side and choose a partner to see the valuation. There is no acceptance/quality gate on manual comparisons.</div>';}
  else h+='<div class="tb48-status">Awaiting all three verified data inputs: Sleeper roster, dated market values and ROS projections.</div>';
  h+='<button type="button" data-tb48-clear>Clear this proposal</button></div>';
  return h;
@@ -1653,8 +1657,8 @@ document.addEventListener('click',event=>{if(event.target.closest('#pfo57-retry-
 const pfo49OldCompareHook=()=>{};
 function pfo49BindPlayerButtons(){document.querySelectorAll('#actual-lineup tr,#actual-bench tr,#actual-reserve tr').forEach(tr=>{
  const cell=tr.children?.[1]||tr.children?.[0];if(!cell||cell.querySelector('button'))return;
- const t=cell.textContent?.trim();const match=pfo49Players.find(x=>normPlayer(x.name)===normPlayer(t));if(!match)return;
- cell.innerHTML=pfo49Link(match.id);
+ const t=cell.textContent?.trim();const match=pfo49Players.find(x=>normPlayer(x.name)===normPlayer(t))||(liveRosterSnapshot?.players||[]).find(x=>normPlayer(x.name)===normPlayer(t));if(!match)return;
+ cell.innerHTML=pfo49Link(match.id||match.player_id);
  });}
 const pfo49Watch=new MutationObserver(list=>{if(!pfo49Players.length)return;for(const record of list){if(record.target?.id==='actual-lineup'||record.target?.id==='actual-bench'||record.target?.id==='actual-reserve'){pfo49BindPlayerButtons();break;}}});
 for(const id of ['actual-lineup','actual-bench','actual-reserve']){const node=$(id);if(node)pfo49Watch.observe(node,{childList:true});}
@@ -2245,12 +2249,12 @@ function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[];return 
  const reserve=(t?.members||[]).filter(y=>pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
  const selector=mode==='ours'?'<select class="pfo52-swap" data-pfo52-swap="'+i+'" aria-label="Change '+e(x.slot)+' player"><option value="'+e(x.id||'')+'">'+e(p?.name||'Open slot')+'</option>'+reserve.map(y=>'<option value="'+e(y.id||y.player_id)+'">'+e(y.name)+'</option>').join('')+'</select>':'';
  const proj=!past&&x.id?pfo52Points(x.id,w):null;
- return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div><strong>'+e(p?.name||'No verified option')+'</strong><small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':pfo52PointLabel(val))+'</b></div>';
+ return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+(x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+'<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':pfo52PointLabel(val))+'</b></div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
  const starters=new Set(team.starters),ids=team.members,reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
- const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<span class="pfo52-pill">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</span>';}).join(''):'<span class="pfo52-dim">None verified</span>';
+ const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<button type="button" class="pfo52-pill pfo597-player-pill" data-pfo49-id="'+e(p.id)+'">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</button>';}).join(''):'<span class="pfo52-dim">None verified</span>';
  const bench=ids.filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
  const health=ids.filter(p=>pfo52Pos(p)!=='DEF').map(p=>{const raw=pfo52HealthCatalog.get(String(p.id))||(liveRosterSnapshot?.players||[]).find(x=>String(x.player_id)===String(p.id))||{};const tag=raw.injury_status||raw.sleeper_injury_status||null;
   const confirmed=w===pfo52Cur()&&reportMatchesCurrentWeek(officialInactiveEvidence)?officialInactiveEvidence?.confirmed_official_inactives?.[String(p.id)]:null;
