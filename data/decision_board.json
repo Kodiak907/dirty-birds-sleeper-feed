@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-29T18:50:27.239363+00:00",
+  "generated_at_utc": "2026-10-29T19:50:54.517649+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -422,12 +422,12 @@
           "targets_per_game": 0.0
         },
         "name": "Malik Willis",
-        "ppg": 14.75,
+        "ppg": 14.76,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.275
         },
-        "same_position_uplift_ppg": 0.47,
+        "same_position_uplift_ppg": 0.48,
         "screen_only": true,
         "sleeper_id": "8161",
         "team": "MIA"
@@ -575,7 +575,7 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.22,
+        "ppg": 5.21,
         "replacement_reference": {
           "name": "Jonah Coleman",
           "ppg": 3.824
@@ -605,7 +605,7 @@
           "name": "Jonah Coleman",
           "ppg": 3.824
         },
-        "same_position_uplift_ppg": 1.37,
+        "same_position_uplift_ppg": 1.36,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
@@ -1087,12 +1087,12 @@
           "targets_per_game": 6.0
         },
         "name": "Adonai Mitchell",
-        "ppg": 3.31,
+        "ppg": 3.32,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.924
         },
-        "same_position_uplift_ppg": 2.39,
+        "same_position_uplift_ppg": 2.4,
         "screen_only": true,
         "sleeper_id": "11625",
         "team": "NYJ"
@@ -1278,5 +1278,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-29T18:50:21.529145+00:00"
+  "snapshot_utc": "2026-10-29T19:50:48.704091+00:00"
 }
