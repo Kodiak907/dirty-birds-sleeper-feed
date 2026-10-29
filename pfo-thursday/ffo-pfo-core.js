@@ -2406,12 +2406,21 @@ pfo51PlayerSummary=function(id){const obj=pfo52BaseSummary(id),p=pfo52Info(id),p
 const pfo52PreviousRoster=renderRosterComparison;
 renderRosterComparison=function(){pfo52PreviousRoster();pfo52RosterPoints();};
 function pfo52RosterPoints(){const el=$('actual-lineup');if(!el)return;
- const week=pfo52Cur(),rows=pfo52Hist(week)||[],ours=rows.find(x=>Number(x.roster_id)===Number(window.dbRosterId||1));
- const started=(liveRosterSnapshot?.starters||[]).map(String);for(const [i,tr] of [...el.querySelectorAll('tr')].entries()){
+ const week=pfo52Cur(),started=(liveRosterSnapshot?.starters||[]).map(String);
+ for(const [i,tr] of [...el.querySelectorAll('tr')].entries()){
   const id=started[i],player=pfo52Info(id);if(!id||!pfo52Pos(player))continue;
-  let cell=tr.cells?.[1];if(!cell)continue;const old=cell.querySelector('.pfo52-rosterpoints');if(old)old.remove();
-  const points=ours?.players_points?.[id],tag=document.createElement('div');tag.className='pfo52-rosterpoints';
-  tag.textContent=points!=null&&Number.isFinite(Number(points))?'Week '+week+' · '+Number(points).toFixed(2)+' recorded FFL points':'Week '+week+' · FFL points not yet reported';
+  const cell=tr.cells?.[1];if(!cell)continue;
+  const old=cell.querySelector('.pfo52-rosterpoints');if(old)old.remove();
+  // Sleeper matchup players_points may be initialized to 0 before kickoff
+  // and is NOT our independent fantasy-point calculation. Never call it
+  // verified FFO recorded points. Only score same-week sourced NFL stats.
+  const row=pfo50StatsFor(id);
+  const observed=(row?.games||[]).find(g=>Number(g.week)===week);
+  const raw=observed?.stats||observed;
+  const scoring=observed&&raw&&Object.keys(raw).some(k=>k!=='week')?pfo50Score(raw):null;
+  const tag=document.createElement('div');tag.className='pfo52-rosterpoints';
+  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFO model pts · NFL stats verified':
+   'W'+week+' · FFO live stats pending';
   cell.append(tag);
  }
 }
