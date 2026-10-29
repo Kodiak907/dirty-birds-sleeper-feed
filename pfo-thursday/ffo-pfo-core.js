@@ -1388,8 +1388,23 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
  if(pfo50IndependentPromise)return pfo50IndependentPromise;
  if(!force&&pfo50Independent&&Date.now()-pfo50IndependentAt<20*60*1000)return pfo50Independent;
  pfo50IndependentPromise=(async()=>{try{
-  const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),23000);let r;try{r=await fetch('/api/independent-stats?season='+season,{cache:'no-store',signal:controller.signal});}finally{clearTimeout(tm);}
-  if(!r.ok)throw Error('Independent stats HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||j.players.length<100)throw Error('Incomplete NFL player-stat sample');
+  // Serve a source-dated stat snapshot from our own static asset first.
+  // Prevents a cold Cloudflare Worker from fetching/parsing multi-megabyte CSV
+  // separately for Team HQ, Waivers, QuickView and Championship on an iPhone.
+  const sources=season===2026?['/FFO_NFL_2026_STATS.json','/api/independent-stats?season='+season]:['/api/independent-stats?season='+season];
+  let j=null,lastError=null;
+  for(const endpoint of sources){
+   const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),endpoint.startsWith('/api/')?16000:12000);
+   try{
+    const r=await fetch(endpoint,{cache:endpoint.startsWith('/api/')?'no-store':'default',signal:controller.signal});
+    if(!r.ok)throw Error(endpoint+' HTTP '+r.status);
+    const data=await r.json();
+    if(!Array.isArray(data.players)||data.players.length<500||!Number.isInteger(Number(data.max_week??8)))throw Error(endpoint+' incomplete NFL stats');
+    j=data;break;
+   }catch(err){lastError=err;console.warn('FFO independent stat source failed',endpoint,String(err?.message||err));}
+   finally{clearTimeout(tm);}
+  }
+  if(!j)throw lastError||Error('No independently verified 2026 NFL stats');
   pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();}
   // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
@@ -1399,6 +1414,7 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(document.querySelector('#matchup.page.active'))pfo50RenderProjectedLineup();
   if(document.querySelector('#market.page.active'))renderWaiverScouting();
   if(document.querySelector('#playerhub.page.active'))pfo49RenderPlayer();
+  window.ffoQuickView?.refresh?.();
   if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
   if(document.querySelector('#availability.page.active'))updateInjuryView();
   if(document.querySelector('#scouting.page.active'))gm47Render();
