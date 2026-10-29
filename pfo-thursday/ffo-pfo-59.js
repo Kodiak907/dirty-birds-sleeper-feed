@@ -402,6 +402,16 @@
    }
    if(ev.target.closest('[data-pfo59-clear]')){
     state.tradeGive=[];state.tradeTake=[];
+    // Clear any previously saved hypothetical package WITHOUT invoking heavy legacy redraw.
+    try{
+     if(typeof tb48State==='function'){
+      const saved=tb48State();saved.give=[];saved.take=[];saved.opponent='';
+      if(typeof tb45State!=='undefined'&&typeof TB45_KEY!=='undefined')localStorage.setItem(TB45_KEY,JSON.stringify(tb45State));
+     }
+     if(typeof tb45CacheKey!=='undefined')tb45CacheKey='';
+    }catch(err){console.warn('Trade clear persistence unavailable',err)}
+    const details=$('trade-fold');if(details)details.open=false;
+    const stale=$('trade-intel');if(stale)stale.replaceChildren();
     // Clear is identical to deselecting a pick: update existing nodes, no whole-roster rebuild.
     for(const node of nav.querySelectorAll('[data-pfo59-pick]')){
      node.classList.remove('selected');node.setAttribute('aria-pressed','false');
