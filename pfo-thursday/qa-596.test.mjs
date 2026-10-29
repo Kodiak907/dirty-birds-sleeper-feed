@@ -21,7 +21,7 @@ test('Trade stays incremental; heavy legacy only renders when expanded',()=>{
  assert.match(market,/x\.opponent=state\.manager;x\.give=\[\.\.\.state\.tradeGive\]/);
 });
 test('Week forecasts distinguish verified bye, unknown forecast and no inferred playoff bench',()=>{
- assert.match(core,/proj\?\.bye\?'BYE':pfo52PointLabel\(val\)/);
+ assert.match(core,/proj\?\.bye\?'BYE':proj\?\.modelPending/);
  assert.match(core,/v\?\.bye\?'BYE'/);
  assert.match(core,/h\+=members\.map\(statrow\)\.join\(''\)/);
  assert.doesNotMatch(core,/Bench & reserve playoff projections/);
