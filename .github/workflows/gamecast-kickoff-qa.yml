@@ -1,0 +1,26 @@
+name: FFO PFO GameCast kickoff polling QA
+on:
+  push:
+    branches:
+      - feature/pfo597-gamecast-kickoff-20261029
+      - pfo-thursday-staging
+  pull_request:
+    branches:
+      - pfo-thursday-staging
+permissions:
+  contents: read
+jobs:
+  gamecast-polling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check browser and model
+        run: |
+          node --check pfo-thursday/ffo-gamecast.js
+          node --check pfo-thursday/ffo-gamecast-model.mjs
+      - name: Verify 20-second kickoff polling and no play loss
+        run: node --test pfo-thursday/gamecast-polling.test.mjs
