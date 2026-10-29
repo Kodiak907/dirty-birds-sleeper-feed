@@ -77,8 +77,26 @@
     if(difference>1.25)historical[pos]={difference,mine,leagueMean,coverage:peers.length,weeks:priorWeeks};
    }
   }
-  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(10,Math.max(0,historical[pos]?.difference||0))*1.3+Math.min(6,Math.max(0,weakness[pos]?.difference||0))]));
-  return {counts,targets,priority,rank,weakness,historical,unknown,known:!!r};
+  // Diagnose actual starter quality, rather than recommending surplus QBs or
+  // defenses merely because their raw season totals are high.
+  const starterPPG={};
+  const onRoster=(r?.players||[]).map(String);
+  const starting=(r?.starters||[]).map(String).filter(id=>onRoster.includes(id)&&id!=='0');
+  for(const pos of Object.keys(counts)){
+   const candidates=(starting.length?starting:onRoster).map(id=>({id,p:names[id]}))
+    .filter(x=>String(x.p?.position||'').toUpperCase().replace('D/ST','DEF')===pos)
+    .map(x=>scoreInfo({id:x.id,name:x.p?.name,team:x.p?.team}).project)
+    .filter(x=>x!==null&&Number.isFinite(x)).sort((a,b)=>b-a);
+   starterPPG[pos]=candidates.length?candidates[0]:null;
+  }
+  const injuryRisk={};
+  for(const id of onRoster){
+   const p=names[id],pos=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
+   if(!Object.hasOwn(counts,pos))continue;
+   if(/\\b(IR|PUP|NFI|OUT|DOUBTFUL)\\b/i.test(String(p?.injury_status||'')+' '+String(p?.status||'')))injuryRisk[pos]=(injuryRisk[pos]||0)+1;
+  }
+  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(10,Math.max(0,historical[pos]?.difference||0))*1.3+Math.min(6,Math.max(0,weakness[pos]?.difference||0))+Math.min(4,injuryRisk[pos]||0)*1.5]));
+  return {counts,targets,priority,rank,weakness,historical,starterPPG,injuryRisk,unknown,known:!!r};
  }
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
  async function broadenWaiverDirectory(){
@@ -214,7 +232,13 @@
   const n=needs(state.waiverManager),pool=scoredPool(),query=state.search.trim().toLowerCase();
   const filtered=pool.filter(p=>{
    if(state.waiverView==='available'&&state.position==='ALL'&&
-      ['QB','DEF','K'].includes(p.position)&&n.counts[p.position]>=n.targets[p.position])return false;
+      ['QB','DEF','K'].includes(p.position)&&n.counts[p.position]>=n.targets[p.position]){
+    // Only show a surplus-position candidate if sourced FFL production makes
+    // a genuinely meaningful upgrade over the current best available starter.
+    const current=n.starterPPG[p.position],next=p.modelPPG;
+    const threshold=p.position==='QB'?3.5:2.5;
+    if(current===null||next===null||!Number.isFinite(next)||next-current<threshold)return false;
+   }
    const pos=state.position;
    const meta={...(state.names?.[p.id]||{}),...(window.ffoWaiverMeta597?.[p.id]||{})};
    const ir=/\b(IR|PUP|NFI|INJURED[ _-]?RESERVE)\b/i.test(String(meta.injury_status||'')+' '+String(meta.status||''));
@@ -228,8 +252,11 @@
     const depth=Math.max(0,n.priority[p.position]||0);
     // Weakness claims cannot override good positional depth without a verified upgrade.
     const upgrade=p.modelPPG!=null?Math.min(6,Math.max(0,n.weakness[p.position]?.difference||0)):0;
+    const better=n.starterPPG[p.position]!=null&&p.modelPPG!=null
+     ?Math.min(9,Math.max(0,p.modelPPG-n.starterPPG[p.position])):0;
+    const missing=Number(n.injuryRisk[p.position]||0);
     const evidence=p.modelPPG!=null?2+Math.min(2,p.modelPPG/10):0;
-    return depth*8+upgrade+evidence;
+    return depth*8+upgrade+better*1.5+Math.min(3,missing)*1.5+evidence;
    };
    const gap=teamValue(b)-teamValue(a);
    if(state.waiverView==='available'&&state.position==='ALL'&&gap)return gap;
@@ -245,7 +272,7 @@
   '<div class="pfo597-position-strip" aria-label="Waiver position filters">'+filterTabs.map(pos=>'<button type="button" data-pfo597-waiver-pos="'+pos+'" aria-pressed="'+(pos===state.position)+'">'+(pos==='VETS'?'Veterans':pos==='ROOKIES'?'Rookies':pos)+'</button>').join('')+'</div>';
   const rankLine=state.waiverView==='leaders'?'NFL-stat FFL season scoring leaders · all NFL players, including rostered':state.position==='ALL'?'CUSTOM FOR '+safe(teamName(state.waiverManager))+' · roster depth, scored league gaps and FFL projections':'Best available '+safe(state.position)+' · independent FFL model, no team-need weighting';
   host.innerHTML=pills+'<div class="pfo597-rank-note">'+rankLine+'</div>'+ (state.waiverView==='available'?'<div class="pfo59-caveat">Personalized recommendations combine <b>roster depth</b> and, where source coverage permits, starter model comparisons to league baselines. Model deficits are estimates, not proven roster weaknesses. This player directory remains incomplete, and eligibility is not established. Nothing is claimed or bid.</div>'+
-    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.waiverManager))+'</strong><span>Recorded FFL scoring weaknesses: '+safe(scoredGaps.map(p=>p+' '+n.historical[p].difference.toFixed(1)+' points/start below league mean').join(' · ')||(state.history?'No notable recent scoring deficits':'Retrieving four completed weeks of league scores…'))+'</span><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No basic depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
+    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.waiverManager))+'</strong><span>Injury flags requiring verification: '+safe(Object.entries(n.injuryRisk).map(([pos,count])=>pos+' '+count).join(' · ')||'None recorded in roster metadata; this does NOT certify health')+'</span><span>Recorded FFL scoring weaknesses: '+safe(scoredGaps.map(p=>p+' '+n.historical[p].difference.toFixed(1)+' points/start below league mean').join(' · ')||(state.history?'No notable recent scoring deficits':'Retrieving four completed weeks of league scores…'))+'</span><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No basic depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
     '': '')+
     '<div class="pfo59-list-head"><h3>'+safe(state.waiverView==='leaders'?'Independent FFL model leaders':state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.waiverView==='available'&&state.position==='ALL'?'team fit and source-backed model':'supported FFL model PPG')+'</small></div>'+
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,state.position==='ALL'?n.priority[p.position]:null,state.position==='ALL'?n.historical?.[p.position]:null)).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
