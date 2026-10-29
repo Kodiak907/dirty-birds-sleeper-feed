@@ -4,7 +4,7 @@
  */
 (()=>{'use strict';
  const $=id=>document.getElementById(id);
- const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;':'&quot;',"'":'&#39;'}[c]));
+ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=(n,d=1)=>n!=null&&Number.isFinite(Number(n))?Number(n).toFixed(d):'Unverified';
  const signed=n=>n==null||!Number.isFinite(Number(n))?'Unverified':(n>0?'+':'')+Number(n).toFixed(2);
  const norm=x=>String(x??'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/(?:jr|sr|ii|iii|iv)$/,'');
