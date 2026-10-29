@@ -3,7 +3,7 @@
 (async function(){
  'use strict';
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const model=await import('/ffo-gamecast-model.mjs');
+ const model=await import('/ffo-gamecast-model.mjs?v=597-gc-1029');
  const stadium=await import('/ffo-gamecast-stadium.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
