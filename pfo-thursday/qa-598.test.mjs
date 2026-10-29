@@ -19,6 +19,8 @@ test('MSF season source is the singular PFO production-statistics foundation',()
  assert.match(worker,/await comIdentity\(req,env\)/);
  assert.match(worker,/ffo598SeasonRoute\(request,env\)/);
  assert.match(worker,/env\.MSF_API_KEY/);
+ assert.match(worker,/MSF_ROOT\+'\/2026-regular\/player_stats_totals\.json'/);
+ assert.doesNotMatch(worker,/MSF_ROOT\+'\/2026-2027-regular\/player_stats_totals\.json'/);
  assert.match(patch,/FFO_FFL_SCORING_V1\.json/);
 });
 test('MSF documented season rows normalize and never invent weekly game logs',()=>{
