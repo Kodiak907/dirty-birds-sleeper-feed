@@ -1,4 +1,4 @@
-name: PFO 5.9.8 deploy Access-protected Preview (never production)
+name: PFO 5.9.8 trade-mobile hotfix Preview (never production)
 on:
   push:
     branches:
@@ -22,6 +22,9 @@ jobs:
       - name: Verify source and regression suite
         run: |
           node --test pfo-thursday/qa-598.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-596.test.mjs
+          node --check pfo-thursday/ffo-pfo-59.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          node --check pfo-thursday/ffo-pfo-core.js
           cp pfo-thursday/_worker.js /tmp/ffo-worker.mjs
           node --check /tmp/ffo-worker.mjs
       - name: Assemble safe root-level Pages Preview files
