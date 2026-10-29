@@ -9,7 +9,7 @@ import {resolve,join} from 'node:path';
 import {tmpdir} from 'node:os';
 
 const repo='Kodiak907/dirty-birds-sleeper-feed';
-const commit='fa98be1c67228e5aa03b6dcc5f835c036f72d98b';
+const commit='eb751b942fb733ad48bae673cdce159827de9287';
 const project='dirtybirdstest',previewBranch='pfo-59-commissioner-ui-20261028';
 const files=[
  'index.html','_worker.js','wrangler.jsonc',
@@ -62,7 +62,7 @@ if(rules.schema!=='FFO_SCORING_RULES_V1'||Object.keys(rules.scoring||{}).length!
 const mobile=await get('ffo-mobile-594.js');
 if(!mobile.includes('ffo594-dock')||!html.includes('/ffo-mobile-594.js')||!html.includes('/ffo-mobile-594.css'))throw Error('PFO594_MOBILE_APP_MISSING');
 if(!html.includes('5.9.7 COACH REVIEW')||!html.includes('/ffo-championship-59.js')||!html.includes('/ffo-pfo-59.js')||!html.includes('ffo-pfo-596.js?v=596')||!html.includes('ffo-pfo-596.css?v=596')||!html.includes('ffo-pfo-597.js?v=597')||!html.includes('ffo-pfo-597.css?v=597')||!html.includes('ffo-waiver-meta-597.js?v=597')||
- !newJS.includes('pfo59-team-hub')||!(await get('ffo-pfo-596.js')).includes('ffoPfoNews596')||!(await get('ffo-pfo-597.js')).includes('FFL-specific trade evaluation')||!cjs.includes('CHAMP_REPORT')||
+ !newJS.includes('pfo59-team-hub')||!newJS.includes('seasonLeaders')||!newJS.includes('pfo597-waiver-tabs')||!(await get('ffo-pfo-596.js')).includes('ffoPfoNews596')||!(await get('ffo-pfo-597.js')).includes('FFL-specific trade evaluation')||!cjs.includes('CHAMP_REPORT')||
  !worker.includes('FixedLengthStream(declared)')||!worker.includes('COMMISSIONER_EVIDENCE')||
  !wrangler.includes('COMMISSIONER_EVIDENCE')||!wrangler.includes('COMMISSIONER_DB'))
  throw Error('PFO59_PREVIEW_CONTENT_INTEGRITY_FAILED');
