@@ -1,11 +1,11 @@
-name: PFO 5.9.6 protected preview build package
+name: PFO 5.9.7 protected preview build package
 on:
   push:
     branches:
       - pfo-59-commissioner-ui-20261028
     paths:
       - 'pfo-thursday/**'
-      - '.github/workflows/pfo-596-preview-package.yml'
+      - '.github/workflows/pfo-597-preview-package.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,16 +15,19 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - name: Confirm immutable 5.9.6 asset set
+      - name: Confirm immutable 5.9.7 asset set
         run: |
           test -f pfo-thursday/index.html
           test -f pfo-thursday/_worker.js
           test -f pfo-thursday/ffo-pfo-596.js
           test -f pfo-thursday/ffo-pfo-596.css
-          grep -q '5.9.6 COACH REVIEW' pfo-thursday/index.html
+          test -f pfo-thursday/ffo-pfo-597.js
+          test -f pfo-thursday/ffo-pfo-597.css
+          grep -q '5.9.7 COACH REVIEW' pfo-thursday/index.html
           node --check pfo-thursday/ffo-pfo-core.js
           node --check pfo-thursday/ffo-pfo-59.js
           node --check pfo-thursday/ffo-pfo-596.js
+          node --check pfo-thursday/ffo-pfo-597.js
       - name: Package only deployment assets (no repo data or CI files)
         run: |
           mkdir -p "$RUNNER_TEMP/site"
@@ -36,7 +39,7 @@ jobs:
       - name: Upload root-level Pages deployment assets
         uses: actions/upload-artifact@v4
         with:
-          name: pfo-596-preview-site
+          name: pfo-597-preview-site
           path: ${{ runner.temp }}/site/
           if-no-files-found: error
           retention-days: 7
