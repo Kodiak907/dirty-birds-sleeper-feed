@@ -10,7 +10,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Malik Willis | 14.75 | +0.48 | 100.0% | — | No modeled flags (not medically cleared) |
-| 2 | Baker Mayfield | 13.16 | -1.12 | 94.7% | — | sleeper_injury_questionable, injury_report_observation_review |
+| 2 | Baker Mayfield | 13.16 | -1.12 | 94.7% | — | sleeper_injury_questionable |
 | 3 | Tanner McKee | 11.48 | -2.79 | 100.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Jonah Coleman (3.82 PPG)
@@ -19,7 +19,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Tyrone Tracy Jr. | 7.33 | +3.51 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 6.09 | +2.27 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
-| 3 | Tyjae Spears | 5.62 | +1.80 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 3 | Tyjae Spears | 5.62 | +1.80 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
 | 4 | Samaje Perine | 5.22 | +1.40 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 5 | Chris Rodriguez Jr. | 5.21 | +1.39 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
 | 6 | Mike Washington Jr. | 4.93 | +1.11 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |

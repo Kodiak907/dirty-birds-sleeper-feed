@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-29T05:44:54.995242+00:00",
+  "generated_at_utc": "2026-10-29T06:53:37.664790+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -413,7 +413,7 @@
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
-            "week": "7"
+            "week": "8"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -436,14 +436,11 @@
         "audit": {
           "carries_per_game": 2.33,
           "flags": [
-            "sleeper_injury_questionable",
-            "injury_report_observation_review"
+            "sleeper_injury_questionable"
           ],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
-            "report_primary_injury": "Thumb",
-            "report_status": "Questionable",
-            "week": "7"
+            "week": "8"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.9,
@@ -540,15 +537,11 @@
         "audit": {
           "carries_per_game": 1.67,
           "flags": [
-            "sleeper_injury_questionable",
-            "injury_report_observation_review"
+            "sleeper_injury_questionable"
           ],
           "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
-            "report_primary_injury": "Not injury related - resting player",
-            "report_secondary_injury": "Knee",
-            "report_status": "Questionable",
-            "week": "7"
+            "practice_status": "Did Not Participate In Practice",
+            "week": "8"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.9,
@@ -1285,5 +1278,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-29T05:44:48.256919+00:00"
+  "snapshot_utc": "2026-10-29T06:53:32.307356+00:00"
 }
