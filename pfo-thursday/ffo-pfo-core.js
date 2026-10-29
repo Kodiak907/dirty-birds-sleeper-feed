@@ -596,12 +596,14 @@ async function refreshInjuryOnly(){
  const health=$('injuryhealth');
  if(health)health.textContent='Checking live NFL and ESPN sources…';
  try{
-  const knownRoster=!!liveRosterSnapshot?.players?.length;
+  const initialNames=watchNames(),seen=new Set(initialNames.map(normPlayer));
+  // Fetch roster and available injury sources at the same time; don't add
+  // a full extra network wait when a saved roster/name list already exists.
   const rosterTask=loadLiveRoster();
-  const sourceTask=knownRoster?Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]):Promise.resolve();
-  // Avoid serial 18s roster then 12s injury fetches on repeat checks.
+  const sourceTask=initialNames.length?Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]):Promise.resolve();
   await Promise.allSettled([rosterTask,sourceTask]);
-  if(!knownRoster)await Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]);
+  if(watchNames().some(n=>!seen.has(normPlayer(n))))
+   await Promise.allSettled([loadOfficialInjuryVerification(),loadEspnInjuries()]);
  }catch(err){injuryError='Injury refresh error: '+String(err?.message||err);}
  finally{latestInjuryCheck=new Date();injuryBusy=false;updateInjuryView();renderGamedayInactives();if(document.querySelector('nav button[data-page="scouting"].active'))gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
 }
