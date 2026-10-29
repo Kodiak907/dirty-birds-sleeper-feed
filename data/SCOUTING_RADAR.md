@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-29T16:54:26.537556+00:00
-Sleeper snapshot: 2026-10-29T16:54:18.746384+00:00
+Generated: 2026-10-29T17:50:13.671770+00:00
+Sleeper snapshot: 2026-10-29T17:50:10.196906+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- BigOlBoyle: reserve status changed
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
