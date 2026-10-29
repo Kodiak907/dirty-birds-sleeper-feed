@@ -222,5 +222,5 @@
    if(typeof refreshInjuryOnly==='function'&&typeof injuryBusy!=='undefined'&&!injuryBusy)void refreshInjuryOnly();
   }
  });
- window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules};
+ window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules,clearEvaluation:()=>{lastTrade=null;}};
 })();
