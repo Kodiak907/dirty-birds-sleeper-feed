@@ -1421,8 +1421,15 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
   if(document.querySelector('#availability.page.active'))updateInjuryView();
   if(document.querySelector('#scouting.page.active'))gm47Render();
+  // Trade + Waiver are independent workspaces; refresh the visible one after
+  // MSF resolves so previously empty projections no longer remain on screen.
+  if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
   return j;
- }catch(err){pfo50IndependentError=String(err.message||err);return null;}finally{pfo50IndependentPromise=null;}})();
+ }catch(err){
+  pfo50IndependentError=String(err.message||err);
+  if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
+  return null;
+ }finally{pfo50IndependentPromise=null;}})();
  return pfo50IndependentPromise;
 }
 
