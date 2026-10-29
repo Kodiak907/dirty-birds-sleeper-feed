@@ -62,7 +62,7 @@
   for(const id of rosterIds){
    const p=names[id],pos=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
    if(!Object.hasOwn(counts,pos))continue;
-   if(/\\b(IR|PUP|NFI|OUT|DOUBTFUL)\\b/i.test(String(p?.injury_status||'')+' '+String(p?.status||'')))injuryRisk[pos]=(injuryRisk[pos]||0)+1;
+   if(/\b(IR|PUP|NFI|OUT|DOUBTFUL)\b/i.test(String(p?.injury_status||'')+' '+String(p?.status||'')))injuryRisk[pos]=(injuryRisk[pos]||0)+1;
   }
   const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(6,Math.max(0,weakness[pos]?.difference||0))+Math.min(4,injuryRisk[pos]||0)*1.5]));
   return {counts,targets,priority,rank,weakness,historical,starterPPG,injuryRisk,unknown,known:!!r};
