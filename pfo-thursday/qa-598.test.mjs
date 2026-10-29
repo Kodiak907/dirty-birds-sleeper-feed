@@ -97,3 +97,24 @@ test('Injury status never silently treats stale week reports as current',()=>{
  assert.match(patch,/pfo598-injury-coverage/);
  assert.match(patch,/No match does not mean ACTIVE/);
 });
+
+
+test('FFO never labels Sleeper initialized 0.00 as verified independent score',()=>{
+ assert.match(core,/W'\+week\+' · FFO live stats pending/);
+ assert.match(core,/Only score same-week sourced NFL stats/);
+ assert.doesNotMatch(core,/Number\(points\)\.toFixed\(2\)\+' recorded FFL points'/);
+});
+test('Both trade renderers bound player portraits and withhold unsupported impacts',()=>{
+ const reportCss=read('ffo-pfo-597.css');
+ assert.match(reportCss,/#trade-intel \.pfo597-trade-person img\.pfo598-eval-photo/);
+ assert.match(reportCss,/max-width:24px!important/);
+ assert.match(reportCss,/max-height:29px!important/);
+ assert.match(patch,/impactKnown=difference!==null/);
+ assert.match(patch,/Starter impact pending verified MSF/);
+});
+test('Injury Watch summarizes source coverage once instead of repeating a full disclaimer for every player',()=>{
+ assert.match(core,/const label=o&&game\?/);
+ assert.match(core,/No report available/);
+ assert.doesNotMatch(core,/No verified report available\. Missing designation is NOT confirmation of clearance/);
+ assert.match(patch,/No match does not mean ACTIVE/);
+});
