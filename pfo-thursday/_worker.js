@@ -607,7 +607,7 @@ function ffo598NormalizeSeason(payload,checkedAt){
  if(!players.length)throw Error('MSF_NO_IDENTIFIABLE_PLAYER_ROWS');
  return {schema:'FFO_MSF_SEASON_V1',source:'MySportsFeeds',source_type:'licensed_primary',checked_at:checkedAt,
   provider_updated_at:payload.lastUpdatedOn||null,history_available:false,
-  projection_method:'verified source season totals divided by sourced games played (no last-three trends)',
+  projection_method:'MSF-reported season totals divided by sourced games played (no last-three trends)',
   players_count:players.length,players};
 }
 let ffo598SeasonCache=null,ffo598SeasonPending=null;
@@ -618,19 +618,30 @@ async function ffo598SeasonRoute(req,env){
  if(ffo598SeasonCache&&now-ffo598SeasonCache.at<90000)return ffoReply(ffo598SeasonCache.data);
  if(ffo598SeasonPending)return ffoReply(await ffo598SeasonPending);
  ffo598SeasonPending=(async()=>{
-  const url=new URL(req.url);url.pathname='/api/ffo/gamecast/stats';url.search='?season=2026-2027-regular';
-  const upstream=await ffoGamecastHandle(new Request(url,{headers:req.headers}),env,{
-   verifyAccess:comIdentity,
-   transport:env.GAMECAST_INTERNAL?(endpoint,options)=>env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'})):fetch});
-  let body;try{body=await upstream.json()}catch{return {error:'msf_gateway_invalid_response',available:false}}
-  if(!upstream.ok||!body.available||!body.data)return {
-   source:'MySportsFeeds',available:false,error:body.error||body.reason||'licensed_season_feed_unavailable',
-   provider_http_status:body.provider_http_status??null,checked_at:new Date().toISOString()};
+  // Season statistics must be available independently of the GameCast enable
+  // switch; this remains protected by the same verified Cloudflare Access identity.
+  if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,error:'licensed_provider_not_configured',checked_at:new Date().toISOString()};
+  const endpoint=MSF_ROOT+'/2026-2027-regular/player_stats_totals.json';
+  let upstream;
   try{
-   const data=ffo598NormalizeSeason(body.data,body.checked_at||new Date().toISOString());
-   data.provider_http_status=body.provider_http_status;
+   upstream=env.GAMECAST_INTERNAL
+    ?await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}))
+    :await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)});
+  }catch{return {source:'MySportsFeeds',available:false,error:'licensed_provider_unreachable',checked_at:new Date().toISOString()}}
+  const checked_at=new Date().toISOString();
+  if(!upstream.ok)return {source:'MySportsFeeds',available:false,
+   error:upstream.status===401||upstream.status===403?'provider_auth_or_entitlement_denied':'provider_http_error',
+   provider_http_status:upstream.status,checked_at};
+  try{
+   const size=Number(upstream.headers.get('content-length')||0);
+   if(size>6500000)throw Error('MSF_SEASON_PAYLOAD_TOO_LARGE');
+   const raw=await upstream.text();
+   if(raw.length>6500000)throw Error('MSF_SEASON_PAYLOAD_TOO_LARGE');
+   const data=ffo598NormalizeSeason(JSON.parse(raw),checked_at);
+   data.provider_http_status=upstream.status;
+   data.cross_reference_status='not_yet_checked';
    ffo598SeasonCache={data,at:Date.now()};return data;
-  }catch(err){return {source:'MySportsFeeds',available:false,error:String(err.message||err),provider_http_status:body.provider_http_status??null,checked_at:new Date().toISOString()}}
+  }catch(err){return {source:'MySportsFeeds',available:false,error:String(err.message||err),provider_http_status:upstream.status,checked_at}}
  })();
  try{return ffoReply(await ffo598SeasonPending)}finally{ffo598SeasonPending=null}
 }
