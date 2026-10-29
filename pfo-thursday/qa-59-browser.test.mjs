@@ -110,7 +110,8 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
    assert.equal(await page.locator('#pfo59-trade-board .pfo59-trade-dual>section').count(),2,'Both sides of trade show player selectors');
   }
   await page.locator('.pfo59-market-tabs [data-pfo59-market="waiver"]').click();
-  assert.equal(await page.locator('#pfo59-position option').count(),7,'Position filters exist');
+  assert.equal(await page.locator('#pfo59-waiver-board [data-pfo597-waiver-pos]').count(),10,'FFO Waiver positions, veterans and IR filters exist');
+  assert.equal(await page.locator('#pfo59-waiver-board [data-pfo597-waiver-view]').count(),2,'Available and Leaders tabs exist');
   assert.equal(await page.locator('#pfo59-waiver-existing #waiver-fold').count(),1,'Original waiver research preserved');
   await page.locator('.pfo59-market-tabs [data-pfo59-market="transactions"]').click();
   assert.equal(await page.locator('#pfo59-txn-existing #faabpanel').count(),1,'FAAB remains in Transactions');
