@@ -1355,7 +1355,7 @@ $('gm47-week').addEventListener('change',ev=>{gm47State.manualWeek=true;gm47Stat
 $('gm47-refresh').addEventListener('click',()=>{gm47Games.delete(gm47Week());gm47GamesError.delete(gm47Week());gm47LoadGames(gm47Week());refreshLive();refreshInjuryOnly();});
 $('gm47-open-from-roster')?.addEventListener('click',()=>{document.querySelector('nav button[data-page="scouting"]')?.click();});
 
-/* FFO 5.0 · Independent NFLverse statistical evidence. Sleeper remains ONLY the
+/* FFO 5.9.8 · Licensed MySportsFeeds statistical evidence. Sleeper remains ONLY the
    authority for league settings, ownership, recorded FFL scores and transactions. */
 let pfo50Independent=null,pfo50Indexed=new Map(),pfo50IndependentError='',pfo50IndependentPromise=null,pfo50IndependentAt=0,pfo50ScheduleError='';
 function pfo50Key(name,team){return normPlayer(name)+'|'+gm47CanonicalTeam(team||'');}
@@ -1370,28 +1370,27 @@ function pfo50Score(stats){const s=pfo49ScoreFromStats(stats);return s&&Number.i
 function pfo50Estimate(id){const row=pfo50StatsFor(id);return row?.forecast?pfo50Score(row.forecast):null;}
 function pfo50StatTile(label,val){return '<div><b>'+e(val==null?'—':val)+'</b><span>'+e(label)+'</span></div>';}
 function pfo50StatsStrip(id){const row=pfo50StatsFor(id),p=pfo49Info(id);if(!row)return '<div class="pfo50-evidence warning"><b>Independent player statistics pending.</b> '+e(pfo50IndependentError||'We are checking a separate published NFL player-stat feed. Official Sleeper scoring and GameCast availability are independently tracked.')+' <button type="button" class="button" id="pfo57-retry-stats">Retry NFL statistics</button></div>';
- const weekly=row.latest||{},project=pfo50Estimate(id);const w=Number(weekly.week);const league=pfo49Observed(id)?.[w];const actual=league?.points??pfo50Score(weekly);
+ const weekly=row.latest||{},project=pfo50Estimate(id);const w=Number(weekly.week);const league=pfo49Observed(id)?.[w];const actual=league?.points??(w?pfo50Score(weekly):null);
  const hist=league?'Actual FFL':'Reconstructed FFL*';
  const key=p.position||row.position;
- let fields=[['W'+w+' '+hist,pfo49Num(actual,1)],['Next-game model*',pfo49Num(project,1)]];
+ let fields=[['Latest NFL game '+(w?'W'+w:'unavailable'),w?pfo49Num(actual,1):'—'],['Next-game model*',pfo49Num(project,1)]];
  if(['QB'].includes(key))fields.push(['Completions / Att.',(weekly.pass_cmp??'—')+' / '+(weekly.pass_att??'—')],['Incompletions',weekly.pass_inc??'—'],['Pass yds',weekly.pass_yd??'—'],['Rush yds',weekly.rush_yd??'—']);
  if(['RB','WR','TE'].includes(key))fields.push(['Rushes',weekly.rush_att??'—'],['Targets',weekly.targets??'—'],['Catches',weekly.rec??'—'],['Rush yds',weekly.rush_yd??'—'],['Rec yds',weekly.rec_yd??'—'],['Target share',weekly.target_share_pct!=null?weekly.target_share_pct+'%':'—']);
  const totals=row.season_totals||{},seasonFields=[['Passing yards',totals.pass_yd],['Passing TDs',totals.pass_td],['Rush yards',totals.rush_yd],['Rush TDs',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Receiving yards',totals.rec_yd],['Receiving TDs',totals.rec_td]];
   const published=seasonFields.filter(([label,value])=>value!==null&&value!==undefined);
-  const seasonMarkup=published.length?'<details class="pfo49-disclose" open><summary>Verified NFL season totals · '+e(row.games_observed)+' recorded games</summary><div class="pfo49-statgrid">'+published.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">Source: nflverse published player weeks. Games counted in source may lag live NFL games; no missing category is represented as zero.</p></details>':'<p class="pfo50-micro">Full NFL season totals not yet delivered by the independent stat source.</p>';
-  return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div>'+seasonMarkup+'<p class="pfo50-micro">*Independent nflverse player stats; scoring reconstruction can omit some FFL bonuses. FFO model uses documented recent and season stats, not expert projections. NFL games: '+e(row.games_observed)+'.</p>';
+  const seasonMarkup=published.length?'<details class="pfo49-disclose" open><summary>Verified NFL season totals · '+e(row.games_observed??'unverified')+' recorded games</summary><div class="pfo49-statgrid">'+published.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">Source: MySportsFeeds licensed season totals; games played must be verified. Missing categories are not represented as zero.</p></details>':'<p class="pfo50-micro">Full NFL season totals not yet delivered by the independent stat source.</p>';
+  return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div>'+seasonMarkup+'<p class="pfo50-micro">*MySportsFeeds season totals; partial FFL scoring can omit unverified bonuses. No recent-game trend inferred from unavailable logs. Games played: '+e(row.games_observed??'unverified')+'.</p>';
 }
-function pfo50TradeRos(){const players={};for(const x of pfo50Indexed.values()){if(!x.forecast)continue;const pp=pfo50Score(x.forecast);if(pp==null)continue;players[x.name]={ppg:pp,coverage_fraction:1,method:['FFO 5.0 independent nflverse recent-form model'],games_observed:x.games_observed};}
- return {as_of:pfo50Independent?.checked_at||null,players,source:'nflverse independently sourced 2026 player stats; FFO baseline 65% last3 + 35% season; custom FFL scoring'};
+function pfo50TradeRos(){const players={};for(const x of pfo50Indexed.values()){if(!x.forecast)continue;const pp=pfo50Score(x.forecast);if(pp==null)continue;players[x.name]={ppg:pp,coverage_fraction:1,method:['FFO 5.9.8 MSF season-to-date baseline (not recent-form)'],games_observed:x.games_observed};}
+ return {as_of:pfo50Independent?.checked_at||null,players,source:'MySportsFeeds independently sourced 2026 season totals per verified game played; FFO custom FFL scoring, partial where needed'};
 }
 async function pfo50LoadIndependent(force=false){const season=Number(window.dbNflSeason||2026);
  if(pfo50IndependentPromise)return pfo50IndependentPromise;
  if(!force&&pfo50Independent&&Date.now()-pfo50IndependentAt<20*60*1000)return pfo50Independent;
  pfo50IndependentPromise=(async()=>{try{
-  // Serve a source-dated stat snapshot from our own static asset first.
-  // Prevents a cold Cloudflare Worker from fetching/parsing multi-megabyte CSV
-  // separately for Team HQ, Waivers, QuickView and Championship on an iPhone.
-  const sources=season===2026?['/FFO_NFL_2026_STATS.json','/api/independent-stats?season='+season]:['/api/independent-stats?season='+season];
+  // One protected compact MSF season source; no nflverse or Sleeper statistics.
+  // Front-end never fetches the raw multi-megabyte licensed feed.
+  const sources=['/api/ffo/stats/season'];
   let j=null,lastError=null;
   for(const endpoint of sources){
    const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),endpoint.startsWith('/api/')?16000:12000);
@@ -1399,13 +1398,17 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
     const r=await fetch(endpoint,{cache:endpoint.startsWith('/api/')?'no-store':'default',signal:controller.signal});
     if(!r.ok)throw Error(endpoint+' HTTP '+r.status);
     const data=await r.json();
-    if(!Array.isArray(data.players)||data.players.length<500||!Number.isInteger(Number(data.max_week??8)))throw Error(endpoint+' incomplete NFL stats');
+    if(data.source!=='MySportsFeeds'||data.available===false||!Array.isArray(data.players)||data.players.length<100||!data.checked_at)throw Error(endpoint+' MSF season feed unavailable or incomplete: '+String(data.error||r.status));
     j=data;break;
    }catch(err){lastError=err;console.warn('FFO independent stat source failed',endpoint,String(err?.message||err));}
    finally{clearTimeout(tm);}
   }
   if(!j)throw lastError||Error('No independently verified 2026 NFL stats');
-  pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
+  // Duplicate identities are ambiguous. Withhold these players until MSF identity is resolved.
+  const matched=new Map(),ambiguous=new Set();
+  for(const item of j.players){const key=pfo50Key(item.name,item.team);if(matched.has(key))ambiguous.add(key);else matched.set(key,item);}
+  for(const key of ambiguous)matched.delete(key);
+  pfo50Independent=j;pfo50Indexed=matched;pfo50IndependentError='';pfo50IndependentAt=Date.now();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();}
   // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
   // Previously this single refresh rebuilt every large hidden panel on iPhone.
@@ -1664,7 +1667,7 @@ function renderWaiverScouting(){const el=$('waiverlive');if(!el)return;const ori
 async function pfo49LoadSources(force=false){if(pfo49RefreshBusy)return;const now=Date.now();if(!force&&now-pfo49LastFetch<210000)return;pfo49RefreshBusy=true;pfo49LastFetch=now;
  const files=await Promise.allSettled([fetchReport('external_metrics.json'),pfo50LoadIndependent(force),ensureNameCatalog(),sleeperGet('/players/nfl/trending/add?lookback_hours=24&limit=100')]);
  if(files[0].status==='fulfilled'&&files[0].value?.players){pfo49Metrics=files[0].value;pfo49MetricsAt=now;pfo49MetricsError=null;}else pfo49MetricsError='2026 usage feed unavailable; retaining last successful statistics';
- /* Projections come only from nflverse stats via pfo50LoadIndependent; no Sleeper or older ROS prediction feeds. */
+ /* Projections come from protected MySportsFeeds season totals; no Sleeper scoring or NFLverse substitutions. */
  if(files[3].status==='fulfilled'&&Array.isArray(files[3].value)){pfo49Trend=new Map(files[3].value.map(x=>[String(x.player_id),Number(x.count)]));pfo49TrendAt=new Date().toISOString();}
  pfo49Players=pfo49Dir();
  if(document.querySelector('#roster.page.active'))pfo49BindPlayerButtons();
