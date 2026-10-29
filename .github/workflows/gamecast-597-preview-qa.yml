@@ -1,0 +1,31 @@
+name: FFO PFO 5.9.7 original-token GameCast preview release QA
+on:
+  push:
+    branches:
+      - feature/pfo597-kickoff-preview-deploy
+      - ffo-gamecast-staging
+  pull_request:
+    branches:
+      - ffo-gamecast-staging
+permissions:
+  contents: read
+jobs:
+  preview-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check isolated preview deployment helper and GameCast Worker
+        run: |
+          node --check gamecast/ci_pages_597_preview.mjs
+          node --check gamecast/ci_pages_597_kickoff_preview.mjs
+          node --check gamecast/worker.js
+      - name: Assert preview-only target and expected approved release
+        run: |
+          grep -q "const commit='90639d2b9e0b4027af42b9c393e46cedbfeaa4e2';" gamecast/ci_pages_597_preview.mjs
+          grep -q "previewBranch='pfo-59-commissioner-ui-20261028'" gamecast/ci_pages_597_preview.mjs
+          grep -q "FFO_GAMECAST_KICKOFF_FAST_POLL_INTEGRITY_FAILED" gamecast/ci_pages_597_preview.mjs
+          ! grep -q "wrangler pages deploy.*--branch.*main" gamecast/ci_pages_597_preview.mjs
