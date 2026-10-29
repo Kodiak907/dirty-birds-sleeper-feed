@@ -621,7 +621,7 @@ async function ffo598SeasonRoute(req,env){
   // Season statistics must be available independently of the GameCast enable
   // switch; this remains protected by the same verified Cloudflare Access identity.
   if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,error:'licensed_provider_not_configured',checked_at:new Date().toISOString()};
-  const endpoint=MSF_ROOT+'/2026-2027-regular/player_stats_totals.json';
+  const endpoint=MSF_ROOT+'/2026-regular/player_stats_totals.json';
   let upstream;
   try{
    upstream=env.GAMECAST_INTERNAL
@@ -761,7 +761,7 @@ export default {async fetch(request,env){const url=new URL(request.url);if(!url.
    NO provider data is stored or logged. Private API; staging gate defaults OFF.
 */
 const MSF_ROOT='https://api.mysportsfeeds.com/v2.1/pull/nfl';
-const FFO_SEASON=/^(latest|20\d{2}-20\d{2}-(regular|preseason|playoff))$/;
+const FFO_SEASON=/^(latest|current|20\d{2}-(regular|preseason|playoff)|20\d{2}-20\d{2}-(regular|preseason|playoff))$/;
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
 const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
