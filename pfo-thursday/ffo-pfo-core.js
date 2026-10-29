@@ -1432,6 +1432,9 @@ function pfo49Info(id){
  }
  const found=pfo595RosterIndex.get(key);
  if(found)return found;
+ // Also resolve opposing FFL roster IDs from the read-only Sleeper-owned name catalog.
+ const catalog=cachedPlayerNames?.[key]||tb45Data?.names?.[key];
+ if(catalog?.name)return {id:key,name:catalog.name,team:catalog.team||'',position:catalog.position||''};
  if(!pfo49Players.length)return pfo49Dir().find(x=>x.id===key)||{id:key,name:'Player '+key,team:'',position:''};
  return {id:key,name:'Player '+key,team:'',position:''};
 }
