@@ -9,7 +9,7 @@ import {resolve,join} from 'node:path';
 import {tmpdir} from 'node:os';
 
 const repo='Kodiak907/dirty-birds-sleeper-feed';
-const commit='e1394379ae310e97c18472e037422ddbf5024a2b';
+const commit='fa98be1c67228e5aa03b6dcc5f835c036f72d98b';
 const project='dirtybirdstest',previewBranch='pfo-59-commissioner-ui-20261028';
 const files=[
  'index.html','_worker.js','wrangler.jsonc',
