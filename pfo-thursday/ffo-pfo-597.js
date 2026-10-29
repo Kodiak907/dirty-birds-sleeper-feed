@@ -38,7 +38,11 @@
     if(payload?.schema!=='FFO_SCORING_RULES_V1'||!payload.scoring||Object.keys(payload.scoring).length<100)throw Error('FFL scoring schema incomplete');
     frozenFFLRules=payload.scoring;
     estimateCache.clear();
+    try{
+     if(typeof tb45Data!=='undefined'&&tb45Data?.snap&&typeof pfo50TradeRos==='function')tb45Data.ros=pfo50TradeRos();
+    }catch(err){console.warn('FFO trade model refresh pending',err)}
     redraw();
+    if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])')&&typeof renderTradeScouting==='function')renderTradeScouting();
     return frozenFFLRules;
    }catch(err){console.warn('FFO frozen-scoring file unavailable; independent point estimates withheld',err);return null;}
    finally{rulesPending=null;}
@@ -123,6 +127,7 @@
   try{if(document.querySelector('#matchup.page.active')&&typeof pfo52Render==='function')pfo52Render();}catch(e){console.warn('FFO matchup redraw',e)}
   try{if(document.querySelector('#championship.page.active')&&typeof pfo52Championship==='function')pfo52Championship();else if(document.querySelector('#championship.page.active')&&typeof pfo49RenderPlanner==='function')pfo49RenderPlanner();}catch(e){console.warn('FFO championship redraw',e)}
   try{if(document.querySelector('#roster.page.active')&&typeof pfo50RenderProjectedLineup==='function')pfo50RenderProjectedLineup();}catch(e){console.warn('FFO team model redraw',e)}
+  try{if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])')&&window.ffoPfo59?.openMarket)window.ffoPfo59.openMarket('waiver');}catch(e){console.warn('FFO waiver leaderboard redraw',e)}
  }
  async function loadSchedule(){
   if(verifiedSchedule||loadPending)return loadPending;
