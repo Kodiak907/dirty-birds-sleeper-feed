@@ -61,3 +61,24 @@ test('two-sided iPhone Trade player rows keep portraits bounded and all five slo
   assert.ok(d.scroll<=1,'no sideways page overflow');
  }finally{await browser.close()}
 });
+
+
+test('expanded FFL trade EVALUATION keeps portraits compact inside two iPhone columns',{timeout:60000},async()=>{
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ try{
+  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  const sample='<div class="pfo597-trade-person"><img class="pfo598-eval-photo" width="24" height="29" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'1200\'%3E%3Crect width=\'800\' height=\'1200\' fill=\'red\'/%3E%3C/svg%3E"><button type="button" class="pfo597-player-link">Long Fictional Player Name</button><span>Unverified<small>FFL PPG</small></span></div>';
+  await page.setContent('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0"><div style="width:390px;padding:12px;box-sizing:border-box"><div id="trade-intel"><div class="pfo597-trade-report"><div class="pfo597-trade-sides"><section><h4>Dirty Birds sends</h4>'+sample+'</section><section><h4>Dirty Birds receives</h4>'+sample+'</section></div></div></div></div></body></html>');
+  await page.addStyleTag({path:join(import.meta.dirname,'ffo-pfo-597.css')});
+  const dim=await page.evaluate(()=>{
+   const root=document.querySelector('#trade-intel'),r=root.getBoundingClientRect();
+   const cards=[...root.querySelectorAll('.pfo597-trade-person')];
+   const items=cards.map(c=>{const el=c.querySelector('img'),p=el.getBoundingClientRect(),cr=c.getBoundingClientRect();return {w:p.width,h:p.height,rowH:cr.height,rowW:cr.width,overflow:c.scrollWidth>c.clientWidth+1}});
+   return {rootW:r.width,items,viewport:window.innerWidth,scroll:document.documentElement.scrollWidth};
+  });
+  assert.equal(dim.items.length,2);
+  assert.ok(dim.items.every(x=>x.w<=25&&x.h<=30&&x.rowH<=70),'report faces must not fill half the phone');
+  assert.ok(dim.items.every(x=>!x.overflow),'no list row sideways scroll');
+  assert.ok(dim.scroll<=dim.viewport+1,'no page-wide horizontal overflow');
+ }finally{await browser.close();}
+});
