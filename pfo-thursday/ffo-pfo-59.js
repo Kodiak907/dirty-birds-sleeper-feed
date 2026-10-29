@@ -129,7 +129,12 @@
  }
  function waiver(){
   const host=$('pfo59-waiver-board');if(!host)return;
-  if(!state.snap||!state.names){host.innerHTML='<p>Loading published league roster and player directory…</p>';return}
+  if(!state.snap||!state.names){
+   const filters=['ALL','QB','RB','WR','TE','K','DEF','FLEX','VETS','IR'];
+   host.innerHTML='<div class="pfo597-waiver-tabs" role="tablist">'+[['available','Available'],['leaders','Leaders']].map(([id,label])=>'<button type="button" data-pfo597-waiver-view="'+id+'" role="tab" aria-selected="'+(state.waiverView===id)+'">'+label+'</button>').join('')+'</div>'+
+    '<div class="pfo597-position-strip">'+filters.map(id=>'<button type="button" data-pfo597-waiver-pos="'+id+'" aria-pressed="'+(state.position===id)+'">'+(id==='VETS'?'Veterans':id)+'</button>').join('')+'</div><p>Loading ownership-checked players and FFL model rankings…</p>';
+   return;
+  }
   const n=needs(state.manager),pool=scoredPool(),query=state.search.trim().toLowerCase();
   const filtered=pool.filter(p=>{
    const pos=state.position;
