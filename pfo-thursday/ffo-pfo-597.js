@@ -42,6 +42,9 @@
      if(typeof tb45Data!=='undefined'&&tb45Data?.snap&&typeof pfo50TradeRos==='function')tb45Data.ros=pfo50TradeRos();
     }catch(err){console.warn('FFO trade model refresh pending',err)}
     redraw();
+    // Stats may load ahead of the frozen FFL scoring rules. Earlier null
+    // Trade/Market evaluations must not stay cached once rules become ready.
+    window.ffoPfo59?.refreshCurrent?.(true);
     if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])')&&typeof renderTradeScouting==='function')renderTradeScouting();
     return frozenFFLRules;
    }catch(err){console.warn('FFO frozen-scoring file unavailable; independent point estimates withheld',err);return null;}
