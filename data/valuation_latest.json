@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-29T03:47:15.997818+00:00",
+  "generated_at_utc": "2026-10-29T04:47:34.669147+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -2638,6 +2638,25 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "3678",
+          "n_weeks": 7,
+          "name": "Wil Lutz",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "K",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 90.5,
           "actual_points_weekly_avg": 12.93,
           "id": "4217",
@@ -2790,25 +2809,6 @@
           ]
         },
         {
-          "actual_points_total": 8.2,
-          "actual_points_weekly_avg": 1.17,
-          "id": "9508",
-          "n_weeks": 7,
-          "name": "Tyjae Spears",
-          "nonzero_weeks": 4,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.5,
-            1.1,
-            5.3,
-            1.3,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 50.0,
           "actual_points_weekly_avg": 7.14,
           "id": "NE",
@@ -2907,6 +2907,25 @@
               4.0,
               1.0
             ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "3678",
+            "n_weeks": 7,
+            "name": "Wil Lutz",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "K",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "QB": [
@@ -2986,25 +3005,6 @@
               4.3,
               2.9,
               8.8
-            ]
-          },
-          {
-            "actual_points_total": 8.2,
-            "actual_points_weekly_avg": 1.17,
-            "id": "9508",
-            "n_weeks": 7,
-            "name": "Tyjae Spears",
-            "nonzero_weeks": 4,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.5,
-              1.1,
-              5.3,
-              1.3,
-              0.0
             ]
           }
         ],
@@ -9231,6 +9231,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-29T03:47:07.065686+00:00",
+  "snapshot_utc": "2026-10-29T04:47:28.741414+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-29T03:47:16.317342+00:00
+Generated: 2026-10-29T04:47:34.977503+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections and injury status require manual verification.
@@ -19,12 +19,13 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | 7.33 | Bench-depth scenario: Caleb Douglas | +0.00 | +1.34 | No flagged data gap; review still required |
 | 2 | Keaton Mitchell | 6.09 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.10 | No flagged data gap; review still required |
-| 3 | Samaje Perine | 5.22 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.77 | No flagged data gap; review still required |
-| 4 | Chris Rodriguez Jr. | 5.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.78 | Limited snap sample |
-| 5 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.05 | Availability status: questionable |
-| 6 | Tank Bigsby | 2.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | Availability status: ir; Partial projection coverage |
-| 7 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
-| 8 | Dameon Pierce | 0.79 | Bench-depth scenario: Caleb Douglas | +0.00 | -5.20 | Partial projection coverage |
+| 3 | Tyjae Spears | 5.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.36 | Availability status: questionable |
+| 4 | Samaje Perine | 5.22 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.77 | No flagged data gap; review still required |
+| 5 | Chris Rodriguez Jr. | 5.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.78 | Limited snap sample |
+| 6 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.05 | Availability status: questionable |
+| 7 | Tank Bigsby | 2.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | Availability status: ir; Partial projection coverage |
+| 8 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
+| 9 | Dameon Pierce | 0.79 | Bench-depth scenario: Caleb Douglas | +0.00 | -5.20 | Partial projection coverage |
 
 ## WR
 

@@ -1,17 +1,17 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-29T03:47:16.060367+00:00
-Sleeper snapshot: 2026-10-29T03:47:07.065686+00:00
+Generated: 2026-10-29T04:47:34.729751+00:00
+Sleeper snapshot: 2026-10-29T04:47:28.741414+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 329 |
-| RB | 626 |
+| RB | 627 |
 | WR | 1292 |
 | TE | 613 |
-| K | 140 |
+| K | 139 |
 | DEF | 15 |
 
 ## Position-specific projection rankings (screening only)
@@ -30,12 +30,13 @@ Sleeper snapshot: 2026-10-29T03:47:07.065686+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tyrone Tracy Jr. | NYG | 7.33 | 90% | 24.0% | Not flagged |
 | 2 | Keaton Mitchell | LAC | 6.09 | 100% | 32.0% | Not flagged |
-| 3 | Samaje Perine | CIN | 5.22 | 100% | 36.7% | Not flagged |
-| 4 | Chris Rodriguez Jr. | JAX | 5.21 | 100% | — | Not flagged |
-| 5 | Mike Washington Jr. | LV | 4.93 | 90% | 23.0% | Questionable |
-| 6 | Tank Bigsby | PHI | 2.21 | 80% | 28.7% | IR |
-| 7 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
-| 8 | Dameon Pierce | PHI | 0.79 | 80% | 78.7% | Not flagged |
+| 3 | Tyjae Spears | TEN | 5.62 | 90% | 38.0% | Questionable |
+| 4 | Samaje Perine | CIN | 5.22 | 100% | 36.7% | Not flagged |
+| 5 | Chris Rodriguez Jr. | JAX | 5.21 | 100% | — | Not flagged |
+| 6 | Mike Washington Jr. | LV | 4.93 | 90% | 23.0% | Questionable |
+| 7 | Tank Bigsby | PHI | 2.21 | 80% | 28.7% | IR |
+| 8 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
+| 9 | Dameon Pierce | PHI | 0.79 | 80% | 78.7% | Not flagged |
 
 ### WR
 
@@ -104,6 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tyrone Tracy Jr. | RB | NYG | 7.33 | 24.0% |
 | Keaton Mitchell | RB | LAC | 6.09 | 32.0% |
 | Quentin Johnston | WR | LAC | 5.69 | 81.3% |
+| Tyjae Spears | RB | TEN | 5.62 | 38.0% |
 | Kalif Raymond | WR | CHI | 5.25 | 61.7% |
 | Samaje Perine | RB | CIN | 5.22 | 36.7% |
 | Michael Mayer | TE | LV | 5.20 | 75.3% |
@@ -117,12 +119,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Noah Fant | TE | NO | 4.31 | 57.0% |
 | Michael Pittman Jr. | WR | PIT | 3.92 | 77.7% |
 | Adonai Mitchell | WR | NYJ | 3.31 | 65.0% |
-| Mack Hollins | WR | NE | 3.11 | 62.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **33**
+Candidates with independently sourced projections AND usage data: **34**
 
 ## Coverage and rules
 

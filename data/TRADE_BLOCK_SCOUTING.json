@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-29T03:47:23.124149+00:00",
-  "source_snapshot_utc": "2026-10-29T03:47:07.065686+00:00",
+  "generated_at_utc": "2026-10-29T04:47:38.625198+00:00",
+  "source_snapshot_utc": "2026-10-29T04:47:28.741414+00:00",
   "source_market_as_of": "2026-10-29T03:47:17.039613+00:00",
   "source_projection_as_of": "2026-10-29T01:34:32.535092+00:00",
   "focus_assets": [
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 28242,
-  "market_screened": 8199,
+  "tested": 27864,
+  "market_screened": 8121,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -128,7 +128,7 @@
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.51,
-          "their_lineup_delta_ppg": 0.97,
+          "their_lineup_delta_ppg": 1.19,
           "value_paid_received_ratio": 0.823,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -236,8 +236,8 @@
           ],
           "receive": [
             {
-              "id": "3163",
-              "name": "Jared Goff",
+              "id": "8183",
+              "name": "Brock Purdy",
               "position": "QB"
             },
             {
@@ -248,9 +248,9 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.09,
-          "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 0.891,
+          "our_lineup_delta_ppg": 1.49,
+          "their_lineup_delta_ppg": 0.21,
+          "value_paid_received_ratio": 0.852,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -274,21 +274,21 @@
           ],
           "receive": [
             {
+              "id": "3163",
+              "name": "Jared Goff",
+              "position": "QB"
+            },
+            {
               "id": "4217",
               "name": "George Kittle",
               "position": "TE"
-            },
-            {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.09,
-          "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.082,
+          "their_lineup_delta_ppg": 1.59,
+          "value_paid_received_ratio": 0.891,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -374,7 +374,7 @@
           ]
         }
       ],
-      "candidate_count": 14
+      "candidate_count": 15
     },
     {
       "asset": "Patrick Mahomes",
@@ -408,7 +408,7 @@
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.4,
-          "their_lineup_delta_ppg": 2.07,
+          "their_lineup_delta_ppg": 2.28,
           "value_paid_received_ratio": 0.884,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -446,7 +446,7 @@
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 0.4,
-          "their_lineup_delta_ppg": 2.07,
+          "their_lineup_delta_ppg": 2.28,
           "value_paid_received_ratio": 1.134,
           "our_extra_cut": null,
           "opponent_extra_cut": null,

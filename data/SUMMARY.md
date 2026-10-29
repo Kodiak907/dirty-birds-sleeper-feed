@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-29T03:47:07.065686+00:00
+Updated: 2026-10-29T04:47:28.741414+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,7 +19,9 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 4: added Wil Lutz; dropped Tyjae Spears
+- lineup_change â roster/transaction 4
+- Transaction 1421392358045433856: free_agent / complete / rosters [4] / adds {'3678': 4} / drops {'9508': 4} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

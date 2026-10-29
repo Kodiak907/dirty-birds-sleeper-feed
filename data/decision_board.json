@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-29T03:47:16.208803+00:00",
+  "generated_at_utc": "2026-10-29T04:47:34.872763+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -535,6 +535,37 @@
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 1.67,
+          "flags": [
+            "sleeper_injury_questionable",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "report_primary_injury": "Not injury related - resting player",
+            "report_secondary_injury": "Knee",
+            "report_status": "Questionable",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 38.0,
+          "snap_trend_3_appearances_pp": -12.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Tyjae Spears",
+        "ppg": 5.62,
+        "replacement_reference": {
+          "name": "Jonah Coleman",
+          "ppg": 3.818
+        },
+        "same_position_uplift_ppg": 1.8,
+        "screen_only": true,
+        "sleeper_id": "9508",
+        "team": "TEN"
       },
       {
         "audit": {
@@ -1254,5 +1285,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-29T03:47:07.065686+00:00"
+  "snapshot_utc": "2026-10-29T04:47:28.741414+00:00"
 }

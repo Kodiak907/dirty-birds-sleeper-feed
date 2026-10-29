@@ -1,8 +1,8 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-10-29T03:47:21.982811+00:00",
-  "candidates_evaluated": 61386,
-  "market_matched": 7696,
+  "generated_at_utc": "2026-10-29T04:47:37.563327+00:00",
+  "candidates_evaluated": 60528,
+  "market_matched": 7632,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-10-29T03:47:17.039613+00:00",
@@ -10,6 +10,42 @@
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
+    {
+      "opponent_roster_id": 4,
+      "opponent_name": "DANGER CLOSE ",
+      "give": [
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB"
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        }
+      ],
+      "receive": [
+        {
+          "id": "13274",
+          "name": "Germie Bernard",
+          "pos": "WR"
+        },
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 1.97,
+      "their_gain": 0.71,
+      "market_paid_received_ratio": 1.063,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.207,
+      "not_an_approved_offer": true
+    },
     {
       "opponent_roster_id": 2,
       "opponent_name": "CREAM MACHINE ",
@@ -44,6 +80,42 @@
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
       "score": 2.12,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 4,
+      "opponent_name": "DANGER CLOSE ",
+      "give": [
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB"
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        }
+      ],
+      "receive": [
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
+        },
+        {
+          "id": "3163",
+          "name": "Jared Goff",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 1.97,
+      "their_gain": 0.71,
+      "market_paid_received_ratio": 0.876,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.024,
       "not_an_approved_offer": true
     },
     {
