@@ -265,7 +265,9 @@
   players.sort((a,b)=>(a.p?.position||'ZZ').localeCompare(b.p?.position||'ZZ')||String(a.p?.name||a.id).localeCompare(String(b.p?.name||b.id)));
   return '<div class="pfo59-trade-roster">'+players.map(({id,p,x})=>
     '<button type="button" class="pfo59-trade-player'+(selected.includes(id)?' selected':'')+'" data-pfo59-pick="'+safe(id)+'" data-pfo59-side="'+side+'" aria-pressed="'+selected.includes(id)+'">'+
-    '<span class="pfo59-player-pos">'+safe(p?.position||'—')+'</span><span class="pfo598-trade-photo"><img loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/'+safe(/^[0-9]{2,9}$/.test(id)?id:'0')+'.jpg" onerror="this.hidden=true"></span><span class="pfo59-trade-identity"><b>'+safe(p?.name||'Unmapped player '+id)+'</b><small>'+safe(p?.team||'NFL team unverified')+'</small></span>'+
+    '<span class="pfo59-player-pos">'+safe(p?.position||'—')+'</span><span class="pfo598-trade-photo">'+
+    (p?.position!=='DEF'&&/^[0-9]{2,9}$/.test(id)?'<img width="24" height="29" loading="lazy" decoding="async" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/'+safe(id)+'.jpg" onerror="this.hidden=true">':'<span class="pfo598-team-placeholder">'+safe(p?.team||'DST')+'</span>')+
+    '</span><span class="pfo59-trade-identity"><b>'+safe(p?.name||'Unmapped player '+id)+'</b><small>'+safe(p?.team||'NFL team unverified')+'</small></span>'+
     '<span class="pfo59-trade-value">'+(x?.project==null?'—':safe(x.project.toFixed(1)))+'<small>model</small></span>'+
     '<span class="pfo59-pick-mark">'+(selected.includes(id)?'✓':'+')+'</span></button>').join('')+'</div>';
  }
@@ -275,7 +277,13 @@
    '<button type="button" class="pfo59-partner'+(String(r.roster_id)===state.manager?' selected':'')+'" '+(Number(r.roster_id)===3?'disabled title="View in Scouting; trade research is excluded"':'data-pfo59-partner="'+safe(r.roster_id)+'"')+'><b>'+safe(teamName(r.roster_id))+'</b><small>'+safe(r.settings?.wins??'—')+'–'+safe(r.settings?.losses??'—')+' · '+safe((r.players||[]).length)+' players</small></button>').join('');
   const isPartner=state.manager!=='1'&&state.manager!=='3',team=state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager);
   const ideas=(state.ideas?.suggestions||[]).filter(x=>String(x.opponent_roster_id)===state.manager&&String(x.opponent_roster_id)!=='3');
+  const msfStatus=typeof pfo50Independent!=='undefined'&&pfo50Independent?.source==='MySportsFeeds'
+   ?'MSF NFL season feed connected · FFO custom scoring; incomplete bonuses withheld'
+   :typeof pfo50IndependentError!=='undefined'&&pfo50IndependentError
+    ?'MSF statistics unavailable: '+String(pfo50IndependentError).slice(0,190)
+    :'Checking MySportsFeeds statistics… No unsupported zero-valued predictions';
   host.innerHTML=
+    '<div class="pfo59-model-state" role="status">'+safe(msfStatus)+'</div>'+
     '<div class="pfo59-subsection"><h3>Trade partner</h3><small>Select a team to view its real roster and choose players for a research-only comparison.</small></div>'+
     '<div class="pfo59-partners">'+(partners||'')+'</div>'+
     (isPartner&&team?'<div class="pfo59-trade-selected"><b>'+safe(teamName(state.manager))+'</b><span>'+safe((team.players||[]).length)+' currently rostered · Sleeper snapshot '+safe(state.snap?.fetched_at_utc||'unknown')+'</span></div>'+
@@ -402,7 +410,8 @@
     return;
    }
    if(ev.target.closest('[data-pfo59-clear]')){
-    state.tradeGive=[];state.tradeTake=[];
+    // Clear resets the entire trade comparison, including the opponent.
+    state.tradeGive=[];state.tradeTake=[];state.manager='1';
     window.ffoPfo597?.clearEvaluation?.();
     // Clear any previously saved hypothetical package WITHOUT invoking heavy legacy redraw.
     try{
@@ -422,6 +431,7 @@
     nav.querySelectorAll('.pfo59-trade-dual h3 small').forEach(node=>node.textContent='0/3');
     const count=nav.querySelector('.pfo59-trade-bar span');if(count)count.textContent='0 giving · 0 receiving';
     const compare=nav.querySelector('[data-pfo59-compare]');if(compare)compare.disabled=true;
+    managerOptions();trade(); // immediately replace the stale roster and report
     return;
    }
    if(ev.target.closest('[data-pfo59-compare]')){
@@ -570,5 +580,9 @@
   if(overview&&standings){standings.classList.add('pfo59-standings-top');overview.prepend(standings);}
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
- window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory};
+ window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,
+  refreshCurrent:()=>{if(!document.querySelector('#market.page.active'))return;
+   if(state.market==='trade')trade();
+   else if(state.market==='waiver')waiver();
+  }};
 })();
