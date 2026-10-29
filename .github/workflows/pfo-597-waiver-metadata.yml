@@ -14,7 +14,7 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
-          const names=JSON.parse(fs.readFileSync('data/player_names.json','utf8'));
+          const names=JSON.parse(fs.readFileSync('data/player_metadata.json','utf8')); // full NFL directory, not narrow FFL roster sample
           const source=JSON.parse(fs.readFileSync('data/players.json','utf8'));
           const out={};
           for(const id of Object.keys(names)){
