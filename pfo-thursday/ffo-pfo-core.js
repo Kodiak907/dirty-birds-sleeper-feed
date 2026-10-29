@@ -531,12 +531,18 @@ let espnInjuries=null, espnFetchedAt=null, espnError=null, espnSourceAge=null;
 function normPlayer(x){return String(x||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');}
 function updateInjuryView(){
  const health=$('injuryhealth'),body=$('injuries');if(!health||!body)return;
- const roster=liveRosterSnapshot?.players||[];const official=nflVerified?.players||[];const alt=espnInjuries||[];
+ const roster=liveRosterSnapshot?.players||[];
+ const expectedWeek=Number(window.dbNflWeek||8),expectedYear=Number(window.dbNflSeason||2026);
+ const verifiedAt=Date.parse(nflVerified?.checked_at||'');
+ const recent=Number.isFinite(verifiedAt)&&Date.now()-verifiedAt>=0&&Date.now()-verifiedAt<INJURY_MAX_AGE_MS;
+ const matchingWeek=Number(nflVerified?.report_week)===expectedWeek&&Number(nflVerified?.report_season)===expectedYear;
+ const official=recent&&matchingWeek?(nflVerified?.players||[]):[];
+ const alt=espnInjuries||[];
  health.innerHTML='<b>Official NFL report:</b> '+e(pfo49Today(nflVerified?.checked_at))+' · <b>ESPN:</b> '+e(pfo49Today(espnFetchedAt))+' · <b>Roster:</b> '+e(pfo49Today(liveRosterSnapshot?.checked_at))+'<div class="pfo49-small">Only a direct NFL injury-report match is called official. Sleeper tags are fantasy indicators, not confirmed inactives.</div>';
  if(!roster.length){body.innerHTML='<tr><td colspan="3">Current roster has not loaded. No injury status can be verified yet.</td></tr>';return;}
  const starterIds=new Set((liveRosterSnapshot?.starters||[]).map(String));
  const rows=roster.map(p=>{const o=official.find(x=>normPlayer(x.name)===normPlayer(p.name)),a=alt.find(x=>normPlayer(x.name)===normPlayer(p.name));const tag=p.sleeper_injury_status||'';
-  const game=String(o?.game_status||'').trim(),checkedOfficial=!!nflVerified?.checked_at;
+  const game=String(o?.game_status||'').trim(),checkedOfficial=recent&&matchingWeek;
   const label=o&&game?(game+' · NFL REPORT'):o?'NFL REPORT · no final game designation':a?(String(a.status||'ESPN injury entry')+' · ESPN'):tag?(tag+' · fantasy tag'):checkedOfficial?'NOT LISTED · NFL report checked':'STATUS UNVERIFIED · source pending';
   const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report ↗</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN injuries ↗</a>':'Source confirmation unavailable');
   const note=o?('Practice: '+e(o.practice_status||'not published')+(o.injury?' · '+e(o.injury):'')+' · No game-day availability assumed'):a?e(a.detail||'Reported injury; verify team'):checkedOfficial?'Not included among matched injury-report entries as of '+e(pfo49Today(nflVerified.checked_at))+'. This is NOT a verified active or game-day clearance.':'No verified report available. Missing designation is NOT confirmation of clearance.';
