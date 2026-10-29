@@ -624,21 +624,31 @@ async function ffo598SeasonRoute(req,env){
   const endpoint=MSF_ROOT+'/2026-regular/player_stats_totals.json';
   let upstream;
   try{
-   upstream=env.GAMECAST_INTERNAL
-    ?await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}))
-    :await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)});
+   // Prefer direct licensed MSF credentials when configured; do not route
+   // raw external URLs through a Pages/Workers service binding unnecessarily.
+   upstream=env.MSF_API_KEY
+    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
+    :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
   }catch{return {source:'MySportsFeeds',available:false,error:'licensed_provider_unreachable',checked_at:new Date().toISOString()}}
   const checked_at=new Date().toISOString();
-  if(!upstream.ok)return {source:'MySportsFeeds',available:false,
-   error:upstream.status===401||upstream.status===403?'provider_auth_or_entitlement_denied':'provider_http_error',
+  if(!upstream.ok||upstream.status===204||upstream.status===304)return {source:'MySportsFeeds',available:false,
+   error:upstream.status===401||upstream.status===403?'provider_auth_or_entitlement_denied':
+    upstream.status===204||upstream.status===304?'feed_not_ready_or_not_modified':'provider_http_error',
    provider_http_status:upstream.status,checked_at};
   try{
    const size=Number(upstream.headers.get('content-length')||0);
    if(size>6500000)throw Error('MSF_SEASON_PAYLOAD_TOO_LARGE');
    const raw=await upstream.text();
    if(raw.length>6500000)throw Error('MSF_SEASON_PAYLOAD_TOO_LARGE');
-   const data=ffo598NormalizeSeason(JSON.parse(raw),checked_at);
-   data.provider_http_status=upstream.status;
+   const json=JSON.parse(raw);
+   // A bound internal gateway may return {available, data, provider_http_status}
+   // whereas the direct MSF route returns playerStatsTotals at the root.
+   // Never call a success/failure envelope a verified season feed.
+   if(json?.available===false||json?.error)throw Error('MSF_GATEWAY_'+String(json.error||json.reason||'UNAVAILABLE').slice(0,50).replace(/[^A-Z0-9_-]/gi,'_'));
+   const payload=Array.isArray(json?.playerStatsTotals)?json:json?.data;
+   if(!Array.isArray(payload?.playerStatsTotals))throw Error('MSF_SEASON_SCHEMA_UNRECOGNIZED');
+   const data=ffo598NormalizeSeason(payload,checked_at);
+   data.provider_http_status=Number.isInteger(json?.provider_http_status)?json.provider_http_status:upstream.status;
    data.cross_reference_status='not_yet_checked';
    ffo598SeasonCache={data,at:Date.now()};return data;
   }catch(err){return {source:'MySportsFeeds',available:false,error:String(err.message||err),provider_http_status:upstream.status,checked_at}}
