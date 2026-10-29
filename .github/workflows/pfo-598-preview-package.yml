@@ -1,0 +1,46 @@
+name: PFO 5.9.8 preview-only ZIP (no production deployment)
+on:
+  push:
+    branches:
+      - pfo-598-msf-core-and-mobile-20261029
+    paths:
+      - 'pfo-thursday/**'
+      - '.github/workflows/pfo-598-preview-package.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify critical PFO 5.9.8 fixes before packaging
+        run: |
+          node --test pfo-thursday/qa-598.test.mjs pfo-thursday/qa-ffo-msf.test.mjs
+          node --check pfo-thursday/ffo-quickview.js
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-59.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          cp pfo-thursday/_worker.js /tmp/pfo-worker.mjs
+          node --check /tmp/pfo-worker.mjs
+      - name: Package root-level Cloudflare Pages deployment assets
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) -exec cp {} "$RUNNER_TEMP/site/" \;
+          test -s "$RUNNER_TEMP/site/index.html"
+          test -s "$RUNNER_TEMP/site/_worker.js"
+          test -s "$RUNNER_TEMP/site/FFO_FFL_SCORING_V1.json"
+          test -s "$RUNNER_TEMP/site/ffo-quickview.js"
+          grep -q '/api/ffo/stats/season' "$RUNNER_TEMP/site/ffo-pfo-core.js"
+          grep -q '2026-regular/player_stats_totals.json' "$RUNNER_TEMP/site/_worker.js"
+          (cd "$RUNNER_TEMP/site" && zip -q -r "$RUNNER_TEMP/pfo-598-protected-preview.zip" .)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PFO-598-protected-preview-NOT-PRODUCTION
+          path: ${{ runner.temp }}/pfo-598-protected-preview.zip
+          if-no-files-found: error
+          retention-days: 7
