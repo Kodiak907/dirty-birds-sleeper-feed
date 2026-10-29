@@ -133,8 +133,8 @@ function pfo50RenderProjectedLineup(){
  const host=$('lineup');if(!host)return;
  const week=Number(window.dbNflWeek||8);
  host.innerHTML=(data.lineup||[]).map(x=>{const id=pfo49Players.find(p=>normPlayer(p.name)===normPlayer(x[1]))?.id||(liveRosterSnapshot?.players||[]).find(p=>normPlayer(p.name)===normPlayer(x[1]))?.player_id;
-  const p=id?pfo49Info(id):null,match=p?pfo49ScheduleWeek(p,week):null,score=id&&match?pfo49ProjectedWeek(id,week):null;
-  return '<tr><td>'+e(x[0])+'</td><td>'+(id?pfo49Link(id):e(x[1]))+'</td><td>'+e(match?.opponent||'Unverified')+'</td><td>'+(score==null?'—':pfo49Num(score,1)+'*')+'</td></tr>';
+  const p=id?pfo49Info(id):null,match=p?pfo49ScheduleWeek(p,week):null,model=id&&typeof pfo52Points==='function'?pfo52Points(id,week):null,score=model?.points??null;
+  return '<tr><td>'+e(x[0])+'</td><td>'+(id?pfo49Link(id):e(x[1]))+'</td><td>'+e(model?.bye?'BYE':model?.opponent||match?.opponent||'Schedule pending')+'</td><td>'+(model?.bye?'BYE':score==null?'PENDING':pfo49Num(score,1)+'*')+'</td></tr>';
  }).join('');
  if($('projection-status'))$('projection-status').innerHTML='* FFO independent recent-form model under FFL scoring. No opponent or injury adjustment; incomplete stat categories can affect bonuses. Submitted lineup remains separate.';
 }
@@ -2249,12 +2249,12 @@ function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[];return 
  const reserve=(t?.members||[]).filter(y=>pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
  const selector=mode==='ours'?'<select class="pfo52-swap" data-pfo52-swap="'+i+'" aria-label="Change '+e(x.slot)+' player"><option value="'+e(x.id||'')+'">'+e(p?.name||'Open slot')+'</option>'+reserve.map(y=>'<option value="'+e(y.id||y.player_id)+'">'+e(y.name)+'</option>').join('')+'</select>':'';
  const proj=!past&&x.id?pfo52Points(x.id,w):null;
- return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+(x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+'<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':pfo52PointLabel(val))+'</b></div>';
+ return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+(x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+'<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b></div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
  const starters=new Set(team.starters),ids=team.members,reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
- const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<button type="button" class="pfo52-pill pfo597-player-pill" data-pfo49-id="'+e(p.id)+'">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</button>';}).join(''):'<span class="pfo52-dim">None verified</span>';
+ const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<button type="button" class="pfo52-pill pfo597-player-pill" data-pfo49-id="'+e(p.id)+'">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':v?.modelPending||v?.schedulePending?'PENDING':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</button>';}).join(''):'<span class="pfo52-dim">None verified</span>';
  const bench=ids.filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
  const health=ids.filter(p=>pfo52Pos(p)!=='DEF').map(p=>{const raw=pfo52HealthCatalog.get(String(p.id))||(liveRosterSnapshot?.players||[]).find(x=>String(x.player_id)===String(p.id))||{};const tag=raw.injury_status||raw.sleeper_injury_status||null;
   const confirmed=w===pfo52Cur()&&reportMatchesCurrentWeek(officialInactiveEvidence)?officialInactiveEvidence?.confirmed_official_inactives?.[String(p.id)]:null;
@@ -2453,7 +2453,7 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  const members=team.members.filter(p=>['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)))
    .sort((a,b)=>['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(a))-['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(b))||String(a.name).localeCompare(String(b.name)));
  // Playoff starters cannot be inferred from today's lineup. Show everyone together.
- const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+(x?.bye?'BYE':pfo52PointLabel(x?.points))+'</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
+ const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+(x?.bye?'BYE':x?.modelPending||x?.schedulePending?'PENDING':pfo52PointLabel(x?.points))+'</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
  h+=members.map(statrow).join('');
  h+='</tbody></table></div><p class="pfo52-fine">All currently rostered players appear together. Current starters and bench do not predict playoff lineup assignments.</p>';
  h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
