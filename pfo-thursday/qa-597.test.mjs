@@ -76,3 +76,19 @@ test('Two-sided trade research is FFL-derived, never reports misleading full-PPR
  assert.match(report,/FFL PPG/);
  assert.doesNotMatch(report,/55\.6%|listed market value|full-PPR market units/);
 });
+
+test('Frozen FFL league rules, not Sleeper market pricing, determine player point values',async()=>{
+ const official=JSON.parse(read('./FFO_FFL_SCORING_V1.json'));
+ const doc={readyState:'loading',getElementById:()=>null,querySelector:()=>null,addEventListener(){}};
+ const ctx=createContext({window:{},document:doc,console,Date,Map,
+  pfo49ScoreFromStats:()=>({points:-999}),pfo50Estimate:()=>null,
+  fetch:async()=>({ok:true,json:async()=>official})});
+ new Script(js).runInContext(ctx);
+ await ctx.window.ffoPfo597.loadFFLRules();
+ assert.equal(ctx.window.ffoPfo597.hasFrozenRules(),true);
+ const row=ctx.pfo49ScoreFromStats({rec:6,rec_yd:80,rec_td:1});
+ const expectation=6*official.scoring.rec+80*official.scoring.rec_yd+official.scoring.rec_td;
+ assert.equal(row.points,expectation);
+ assert.equal(ctx.pfo49ScoreFromStats({made_up_stat:7}),null);
+ assert.equal(row.source.includes('FFO_FFL_SCORING_V1.json'),true);
+});
