@@ -781,10 +781,12 @@ async function tb45Refresh(){
  if(tb45Loading)return;tb45Loading=true;
  try{const sources=['fast_latest.json','player_names.json','market_values.json'];
   const settled=await Promise.allSettled(sources.map(fetchReport));
-  if(settled.some(x=>x.status!=='fulfilled'))throw Error(sources.filter((_,i)=>settled[i].status!=='fulfilled').join(', ')+' unavailable');
-  const [snap,names,market]=settled.map(x=>x.value);
-  if(!Array.isArray(snap.rosters)||!snap.rosters.length||!names||!market.players)throw Error('Incomplete Sleeper, projection or trade value schema');
-  tb45Data={snap,names,ros:pfo50TradeRos(),market,error:null,asOf:new Date().toISOString()};tb45CacheKey='';
+  // Market quotation is optional: FFO trade evaluation uses our NFL-stat FFL model.
+  if(settled[0].status!=='fulfilled'||settled[1].status!=='fulfilled')
+   throw Error('Roster ownership or player mapping unavailable');
+  const [snap,names,market]=settled.map(x=>x.status==='fulfilled'?x.value:null);
+  if(!Array.isArray(snap.rosters)||!snap.rosters.length||!names)throw Error('Incomplete Sleeper ownership or player directory');
+  tb45Data={snap,names,ros:pfo50TradeRos(),market:market?.players?market:null,error:null,asOf:new Date().toISOString()};tb45CacheKey='';
   tb45State.targets=tb45State.targets.filter(pid=>!isTradeExcludedOpponent((snap.rosters||[]).find(r=>(r.players||[]).map(String).includes(String(pid)))?.roster_id));
   tb48Sanitize();
   try{localStorage.setItem(TB45_KEY,JSON.stringify(tb45State));}catch(_){}
