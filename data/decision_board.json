@@ -14,18 +14,18 @@
     },
     "RB": {
       "name": "Jonah Coleman",
-      "ppg": 3.817
+      "ppg": 3.818
     },
     "TE": {
       "name": "Chig Okonkwo",
-      "ppg": 6.017
+      "ppg": 6.016
     },
     "WR": {
       "name": "Christian Kirk",
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-29T00:53:13.552949+00:00",
+  "generated_at_utc": "2026-10-29T01:56:39.397681+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -422,7 +422,7 @@
           "targets_per_game": 0.0
         },
         "name": "Malik Willis",
-        "ppg": 14.76,
+        "ppg": 14.75,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.275
@@ -452,12 +452,12 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 13.17,
+        "ppg": 13.16,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.275
         },
-        "same_position_uplift_ppg": -1.11,
+        "same_position_uplift_ppg": -1.12,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -474,12 +474,12 @@
           "targets_per_game": 0.0
         },
         "name": "Tanner McKee",
-        "ppg": 11.46,
+        "ppg": 11.48,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.275
         },
-        "same_position_uplift_ppg": -2.81,
+        "same_position_uplift_ppg": -2.79,
         "screen_only": true,
         "sleeper_id": "9230",
         "team": "PHI"
@@ -504,7 +504,7 @@
         "ppg": 7.33,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": 3.51,
         "screen_only": true,
@@ -529,7 +529,7 @@
         "ppg": 6.09,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": 2.27,
         "screen_only": true,
@@ -554,7 +554,7 @@
         "ppg": 5.22,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": 1.4,
         "screen_only": true,
@@ -579,7 +579,7 @@
         "ppg": 5.21,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": 1.39,
         "screen_only": true,
@@ -610,7 +610,7 @@
         "ppg": 4.93,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": 1.11,
         "screen_only": true,
@@ -637,7 +637,7 @@
         "ppg": 2.21,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": -1.61,
         "screen_only": true,
@@ -659,7 +659,7 @@
         "ppg": 1.49,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
         "same_position_uplift_ppg": -2.33,
         "screen_only": true,
@@ -672,18 +672,18 @@
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
+          "projection_coverage": 0.8,
           "recent_snap_pct": 78.7,
           "snap_trend_3_appearances_pp": -13.0,
           "targets_per_game": 3.67
         },
         "name": "Dameon Pierce",
-        "ppg": 1.23,
+        "ppg": 0.79,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.817
+          "ppg": 3.818
         },
-        "same_position_uplift_ppg": -2.59,
+        "same_position_uplift_ppg": -3.03,
         "screen_only": true,
         "sleeper_id": "8129",
         "team": "PHI"
@@ -705,7 +705,7 @@
         "ppg": 5.2,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.017
+          "ppg": 6.016
         },
         "same_position_uplift_ppg": -0.82,
         "screen_only": true,
@@ -730,7 +730,7 @@
         "ppg": 4.31,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.017
+          "ppg": 6.016
         },
         "same_position_uplift_ppg": -1.71,
         "screen_only": true,
@@ -756,7 +756,7 @@
         "ppg": 3.7,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.017
+          "ppg": 6.016
         },
         "same_position_uplift_ppg": -2.31,
         "screen_only": true,
@@ -780,9 +780,9 @@
         "ppg": 2.7,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.017
+          "ppg": 6.016
         },
-        "same_position_uplift_ppg": -3.32,
+        "same_position_uplift_ppg": -3.31,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -883,7 +883,7 @@
           "targets_per_game": 3.0
         },
         "name": "Chris Bell",
-        "ppg": 5.13,
+        "ppg": 5.12,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.924
@@ -905,7 +905,7 @@
           "targets_per_game": 5.67
         },
         "name": "DeMario Douglas",
-        "ppg": 4.87,
+        "ppg": 4.86,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.924
@@ -1194,12 +1194,12 @@
           "targets_per_game": 4.33
         },
         "name": "Dohnte Meyers",
-        "ppg": 1.04,
+        "ppg": 1.15,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.924
         },
-        "same_position_uplift_ppg": 0.12,
+        "same_position_uplift_ppg": 0.22,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1254,5 +1254,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-29T00:53:10.007625+00:00"
+  "snapshot_utc": "2026-10-29T01:56:33.529346+00:00"
 }

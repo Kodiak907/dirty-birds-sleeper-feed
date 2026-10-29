@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-29T00:53:13.398850+00:00
-Sleeper snapshot: 2026-10-29T00:53:10.007625+00:00
+Generated: 2026-10-29T01:56:39.288429+00:00
+Sleeper snapshot: 2026-10-29T01:56:33.529346+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,9 +20,9 @@ Sleeper snapshot: 2026-10-29T00:53:10.007625+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Malik Willis | MIA | 14.76 | 100% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 13.17 | 90% | 94.7% | Questionable |
-| 3 | Tanner McKee | PHI | 11.46 | 90% | 100.0% | Not flagged |
+| 1 | Malik Willis | MIA | 14.75 | 100% | 100.0% | Not flagged |
+| 2 | Baker Mayfield | TB | 13.16 | 90% | 94.7% | Questionable |
+| 3 | Tanner McKee | PHI | 11.48 | 90% | 100.0% | Not flagged |
 
 ### RB
 
@@ -35,7 +35,7 @@ Sleeper snapshot: 2026-10-29T00:53:10.007625+00:00
 | 5 | Mike Washington Jr. | LV | 4.93 | 90% | 23.0% | Questionable |
 | 6 | Tank Bigsby | PHI | 2.21 | 80% | 28.7% | IR |
 | 7 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
-| 8 | Dameon Pierce | PHI | 1.23 | 90% | 78.7% | Not flagged |
+| 8 | Dameon Pierce | PHI | 0.79 | 80% | 78.7% | Not flagged |
 
 ### WR
 
@@ -44,8 +44,8 @@ Sleeper snapshot: 2026-10-29T00:53:10.007625+00:00
 | 1 | Deebo Samuel Sr. | SF | 7.80 | 90% | — | Out |
 | 2 | Quentin Johnston | LAC | 5.69 | 100% | 81.3% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.25 | 90% | 61.7% | Not flagged |
-| 4 | Chris Bell | MIA | 5.13 | 100% | 67.0% | Not flagged |
-| 5 | DeMario Douglas | NE | 4.87 | 90% | 57.7% | Not flagged |
+| 4 | Chris Bell | MIA | 5.12 | 100% | 67.0% | Not flagged |
+| 5 | DeMario Douglas | NE | 4.86 | 90% | 57.7% | Not flagged |
 | 6 | Jauan Jennings | MIN | 4.79 | 100% | 73.3% | Not flagged |
 | 7 | Rashid Shaheed | SEA | 4.74 | 90% | 41.3% | Not flagged |
 | 8 | Ja'Kobi Lane | BAL | 4.56 | 90% | 54.3% | Not flagged |
@@ -98,18 +98,18 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Malik Willis | QB | MIA | 14.76 | 100.0% |
-| Baker Mayfield | QB | TB | 13.17 | 94.7% |
-| Tanner McKee | QB | PHI | 11.46 | 100.0% |
+| Malik Willis | QB | MIA | 14.75 | 100.0% |
+| Baker Mayfield | QB | TB | 13.16 | 94.7% |
+| Tanner McKee | QB | PHI | 11.48 | 100.0% |
 | Tyrone Tracy Jr. | RB | NYG | 7.33 | 24.0% |
 | Keaton Mitchell | RB | LAC | 6.09 | 32.0% |
 | Quentin Johnston | WR | LAC | 5.69 | 81.3% |
 | Kalif Raymond | WR | CHI | 5.25 | 61.7% |
 | Samaje Perine | RB | CIN | 5.22 | 36.7% |
 | Michael Mayer | TE | LV | 5.20 | 75.3% |
-| Chris Bell | WR | MIA | 5.13 | 67.0% |
+| Chris Bell | WR | MIA | 5.12 | 67.0% |
 | Mike Washington Jr. | RB | LV | 4.93 | 23.0% |
-| DeMario Douglas | WR | NE | 4.87 | 57.7% |
+| DeMario Douglas | WR | NE | 4.86 | 57.7% |
 | Jauan Jennings | WR | MIN | 4.79 | 73.3% |
 | Rashid Shaheed | WR | SEA | 4.74 | 41.3% |
 | Ja'Kobi Lane | WR | BAL | 4.56 | 54.3% |
