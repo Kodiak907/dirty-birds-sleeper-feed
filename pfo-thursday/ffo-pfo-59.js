@@ -434,6 +434,7 @@
    }
    if(ev.target.closest('[data-pfo59-clear]')){
     state.tradeGive=[];state.tradeTake=[];
+    window.ffoPfo597?.clearEvaluation?.();
     // Clear any previously saved hypothetical package WITHOUT invoking heavy legacy redraw.
     try{
      if(typeof tb48State==='function'){
