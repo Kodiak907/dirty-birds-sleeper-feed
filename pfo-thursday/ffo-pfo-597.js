@@ -140,6 +140,16 @@
   const original=pfo50LoadIndependent;
   pfo50LoadIndependent=async function(...args){const v=await original(...args);if(v)redraw();return v;};
  }
+ // Keep legacy full-PPR market screens archived in source, not visible as FFL valuations.
+ // Preserve existing manual comparison inputs and event routing; only remove irrelevant
+ // pricing sections from the mobile trade report.
+ if(typeof renderTradeScouting==='function'&&typeof tb48FeatureHTML==='function'){
+  renderTradeScouting=function(){
+   const host=$('trade-intel'),fold=$('trade-fold');
+   if(!host||!fold?.open||!document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))return;
+   host.innerHTML='<div class="pfo597-trade-report"><h3>FFO FFL trade research</h3><p class="pfo597-rank-note">Uses the frozen league-specific scoring model and independent NFL statistics. The legacy full-PPR pricing display is excluded.</p>'+tb48FeatureHTML()+'</div>';
+  };
+ }
  if(typeof tb48ReportHTML==='function'){
   tb48ReportHTML=function(z){
    lastTrade=z;
