@@ -87,3 +87,12 @@
  #trade-intel .pfo597-trade-person img.pfo598-eval-photo{width:21px!important;max-width:21px!important;height:27px!important;max-height:27px!important}
  #trade-intel .pfo597-trade-person button.pfo597-player-link{font-size:10px}
 }
+
+
+#trade-intel .pfo598-eval-team{
+ display:grid;place-items:center;width:24px;height:26px;min-width:0;
+ background:#243c50;color:#bbd2e8;border-radius:5px;font-size:9px;
+ font-weight:800;grid-column:1;grid-row:1;overflow:hidden
+}
+#availability #injuries .pfo49-small{font-size:10px;line-height:1.4;margin-top:2px}
+#availability #injuries b{font-size:11px;font-weight:700}
