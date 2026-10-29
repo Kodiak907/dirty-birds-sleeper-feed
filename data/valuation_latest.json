@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-28T23:38:25.037472+00:00",
+  "generated_at_utc": "2026-10-29T00:53:13.332820+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -2828,12 +2828,12 @@
           ]
         },
         {
-          "actual_points_total": 49.0,
-          "actual_points_weekly_avg": 7.0,
+          "actual_points_total": 50.0,
+          "actual_points_weekly_avg": 7.14,
           "id": "SF",
           "n_weeks": 7,
           "name": "San Francisco 49ers",
-          "nonzero_weeks": 7,
+          "nonzero_weeks": 6,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
@@ -2843,7 +2843,7 @@
             5.0,
             20.0,
             5.0,
-            -1.0
+            0.0
           ]
         }
       ],
@@ -2869,12 +2869,12 @@
             ]
           },
           {
-            "actual_points_total": 49.0,
-            "actual_points_weekly_avg": 7.0,
+            "actual_points_total": 50.0,
+            "actual_points_weekly_avg": 7.14,
             "id": "SF",
             "n_weeks": 7,
             "name": "San Francisco 49ers",
-            "nonzero_weeks": 7,
+            "nonzero_weeks": 6,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
@@ -2884,7 +2884,7 @@
               5.0,
               20.0,
               5.0,
-              -1.0
+              0.0
             ]
           }
         ],
@@ -9231,6 +9231,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-28T23:38:18.697985+00:00",
+  "snapshot_utc": "2026-10-29T00:53:10.007625+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }
