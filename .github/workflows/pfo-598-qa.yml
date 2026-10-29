@@ -30,6 +30,12 @@ jobs:
         run: node --test pfo-thursday/qa-597.test.mjs
       - name: Existing mobile UI regression
         run: node --test pfo-thursday/qa-596.test.mjs
+      - name: Install Chromium for isolated mobile smoke test
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Full mobile navigation and protected Commissioner regression
+        run: node --test pfo-thursday/qa-59-browser.test.mjs
       - name: Install Chromium for touch-gesture regression
         run: |
           npm install --no-save playwright@1.55.1
