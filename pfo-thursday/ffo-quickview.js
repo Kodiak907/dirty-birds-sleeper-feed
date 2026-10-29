@@ -33,10 +33,14 @@
   const latest=pos==='QB'?[['Pass att.',current.pass_att],['Pass yds',current.pass_yd],['Pass TD',current.pass_td],['Rush yds',current.rush_yd]]:
    pos==='RB'?[['Rush att.',current.rush_att],['Rush yds',current.rush_yd],['Rush TD',current.rush_td],['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd]]:
    pos==='WR'||pos==='TE'?[['Targets',current.targets],['Catches',current.rec],['Rec yds',current.rec_yd],['Rec TD',current.rec_td]]:
+   pos==='K'?[['FG 0–19',current.fgm_0_19],['FG 20–29',current.fgm_20_29],['FG 30–39',current.fgm_30_39],['FG 40–49',current.fgm_40_49],['FG 50–59',current.fgm_50_59],['FG 60+',current.fgm_60p],['Extra points',current.xpm]]:
+   pos==='DEF'?[['Sacks',current.sack],['INT',current.int],['FF',current.ff],['Fumble recoveries',current.fum_rec]]:
    [['Games',ind?.games_observed],['Snap %',m?.snap_share_pct],['NFL week',current.week]];
   const officialSeason=verified?.season,totals=officialSeason||ind?.season_totals||{};
   const seasonList=pos==='QB'?[['Pass yards',totals.pass_yd],['Pass TD',totals.pass_td],['Rush yards',totals.rush_yd]]:
    pos==='RB'?[['Rush att.',totals.rush_att],['Rush yards',totals.rush_yd],['Rush TD',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd]]:
+   pos==='K'?[['FG 0–19',totals.fgm_0_19],['FG 20–29',totals.fgm_20_29],['FG 30–39',totals.fgm_30_39],['FG 40–49',totals.fgm_40_49],['FG 50–59',totals.fgm_50_59],['FG 60+',totals.fgm_60p],['Extra points',totals.xpm]]:
+   pos==='DEF'?[['Sacks',totals.sack],['Interceptions',totals.int],['Forced fumbles',totals.ff],['Recoveries',totals.fum_rec]]:
    [['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd],['Rec TD',totals.rec_td]];
   const series=x=>x.filter(([,n])=>n!==null&&n!==undefined).map(([label,n])=>tile(fmt(n,0),label)).join('');
   const source=verified&&sourceWeek<=verified.week?
@@ -54,7 +58,7 @@
  const games=d=>{const obs=Object.entries(d.recorded).filter(([w,v])=>Number.isInteger(Number(w))&&Number.isFinite(Number(v?.points))).sort((a,b)=>Number(b[0])-Number(a[0]));
   const p=d.p||{},pos=String(p.position||'').toUpperCase(),published=(d.ind?.games||[]).slice().sort((a,b)=>Number(b.week)-Number(a.week));
   let h='<h3 class="ffo57-section">Published NFL weekly production</h3>';
-  const keys=pos==='QB'?[['pass_yd','Pass YD'],['pass_td','Pass TD'],['rush_yd','Rush YD']]:pos==='RB'?[['rush_att','Carries'],['rush_yd','Rush YD'],['targets','Targets'],['rec','Rec']]:[['targets','Targets'],['rec','Rec'],['rec_yd','Rec YD']];
+  const keys=pos==='QB'?[['pass_yd','Pass YD'],['pass_td','Pass TD'],['rush_yd','Rush YD']]:pos==='RB'?[['rush_att','Carries'],['rush_yd','Rush YD'],['targets','Targets'],['rec','Rec']]:pos==='K'?[['fgm_40_49','FG 40–49'],['fgm_50_59','FG 50–59'],['xpm','XP']]:pos==='DEF'?[['sack','Sacks'],['int','INT'],['fum_rec','FR']]:[['targets','Targets'],['rec','Rec'],['rec_yd','Rec YD']];
   if(published.length){h+='<div class="ffo59-gamelog-wrap"><table class="ffo59-gamelog"><thead><tr><th>Wk</th>'+keys.map(x=>'<th>'+E(x[1])+'</th>').join('')+'</tr></thead><tbody>';
    h+=published.slice(0,8).map(g=>'<tr><td>'+E(g.week)+'</td>'+keys.map(([key])=>'<td>'+fmt(g.stats?.[key],0)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
    h+='<small class="ffo57-evidence">MySportsFeeds NFL data where licensed. Historical game logs may be unavailable; missing categories shown as —.</small>';
@@ -67,6 +71,8 @@
   const values=pos==='QB'?[['Pass attempts',last.pass_att],['Completions',last.pass_cmp],['Passing yards',last.pass_yd],['Rush attempts',last.rush_att]]:
   pos==='RB'?[['Carries',last.rush_att],['Rush yards',last.rush_yd],['Targets',last.targets],['Receptions',last.rec]]:
   pos==='WR'||pos==='TE'?[['Targets',last.targets],['Receptions',last.rec],['Receiving yards',last.rec_yd],['Receiving TDs',last.rec_td]]:
+  pos==='K'?[['Made FG 40–49',last.fgm_40_49],['Made FG 50–59',last.fgm_50_59],['Extra points',last.xpm]]:
+  pos==='DEF'?[['Sacks',last.sack],['INT',last.int],['Fumble recoveries',last.fum_rec]]:
   [['Latest NFL week',last.week],['Recorded NFL games',d.ind?.games_observed]];
   let h='<div class="ffo57-note">Usage = published NFL participation, not guaranteed next-week workload.</div>';
   h+=values.map(([k,v])=>line(k,'Latest published game',fmt(v,Number.isInteger(Number(v))?0:1))).join('');
