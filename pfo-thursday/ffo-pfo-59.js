@@ -163,7 +163,7 @@
   const rows=all.filter(p=>{
    const meta={...(state.names?.[p.id]||{}),...(window.ffoWaiverMeta597?.[p.id]||{})};
    const years=meta.years_exp!=null?Number(meta.years_exp):null;
-   const ir=/\\b(IR|PUP|NFI|INJURED[ _-]?RESERVE)\\b/i.test(String(meta.injury_status||'')+' '+String(meta.status||''));
+   const ir=/\b(IR|PUP|NFI|INJURED[ _-]?RESERVE)\b/i.test(String(meta.injury_status||'')+' '+String(meta.status||''));
    const match=pos==='ALL'||pos===p.position||(pos==='FLEX'&&['RB','WR','TE'].includes(p.position))||(pos==='VETS'&&years>=1&&years<30)||(pos==='ROOKIES'&&years===0)||(pos==='IR'&&ir);
    return match&&p.name.toLowerCase().includes(search);
   });
