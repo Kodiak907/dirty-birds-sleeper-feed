@@ -14,7 +14,7 @@
     },
     "RB": {
       "name": "Jonah Coleman",
-      "ppg": 3.815
+      "ppg": 3.824
     },
     "TE": {
       "name": "Chig Okonkwo",
@@ -25,7 +25,7 @@
       "ppg": 0.924
     }
   },
-  "generated_at_utc": "2026-10-29T12:53:58.293274+00:00",
+  "generated_at_utc": "2026-10-29T14:02:19.533418+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -427,7 +427,7 @@
           "name": "C.J. Stroud",
           "ppg": 14.275
         },
-        "same_position_uplift_ppg": 0.48,
+        "same_position_uplift_ppg": 0.47,
         "screen_only": true,
         "sleeper_id": "8161",
         "team": "MIA"
@@ -501,9 +501,9 @@
         "ppg": 7.33,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": 3.51,
+        "same_position_uplift_ppg": 3.5,
         "screen_only": true,
         "sleeper_id": "11655",
         "team": "NYG"
@@ -526,9 +526,9 @@
         "ppg": 6.09,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": 2.27,
+        "same_position_uplift_ppg": 2.26,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
@@ -553,9 +553,9 @@
         "ppg": 5.61,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": 1.8,
+        "same_position_uplift_ppg": 1.79,
         "screen_only": true,
         "sleeper_id": "9508",
         "team": "TEN"
@@ -578,9 +578,9 @@
         "ppg": 5.22,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": 1.4,
+        "same_position_uplift_ppg": 1.39,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -603,7 +603,7 @@
         "ppg": 5.19,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
         "same_position_uplift_ppg": 1.37,
         "screen_only": true,
@@ -634,9 +634,9 @@
         "ppg": 4.93,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": 1.11,
+        "same_position_uplift_ppg": 1.1,
         "screen_only": true,
         "sleeper_id": "13305",
         "team": "LV"
@@ -661,9 +661,9 @@
         "ppg": 2.21,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": -1.61,
+        "same_position_uplift_ppg": -1.62,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -683,9 +683,9 @@
         "ppg": 1.49,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": -2.33,
+        "same_position_uplift_ppg": -2.34,
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
@@ -705,9 +705,9 @@
         "ppg": 0.79,
         "replacement_reference": {
           "name": "Jonah Coleman",
-          "ppg": 3.815
+          "ppg": 3.824
         },
-        "same_position_uplift_ppg": -3.03,
+        "same_position_uplift_ppg": -3.04,
         "screen_only": true,
         "sleeper_id": "8129",
         "team": "PHI"
@@ -1243,7 +1243,7 @@
           "targets_per_game": 1.67
         },
         "name": "Cyrus Allen",
-        "ppg": 0.89,
+        "ppg": 0.88,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.924
@@ -1278,5 +1278,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-29T12:53:53.377113+00:00"
+  "snapshot_utc": "2026-10-29T14:02:12.540264+00:00"
 }

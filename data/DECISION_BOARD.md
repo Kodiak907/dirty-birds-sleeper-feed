@@ -9,23 +9,23 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Malik Willis | 14.75 | +0.48 | 100.0% | — | No modeled flags (not medically cleared) |
+| 1 | Malik Willis | 14.75 | +0.47 | 100.0% | — | No modeled flags (not medically cleared) |
 | 2 | Baker Mayfield | 13.16 | -1.11 | 94.7% | — | sleeper_injury_questionable |
 | 3 | Tanner McKee | 11.48 | -2.79 | 100.0% | — | No modeled flags (not medically cleared) |
 
-## RB — reference: Jonah Coleman (3.81 PPG)
+## RB — reference: Jonah Coleman (3.82 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Tyrone Tracy Jr. | 7.33 | +3.51 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
-| 2 | Keaton Mitchell | 6.09 | +2.27 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
-| 3 | Tyjae Spears | 5.61 | +1.80 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
-| 4 | Samaje Perine | 5.22 | +1.40 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
+| 1 | Tyrone Tracy Jr. | 7.33 | +3.50 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
+| 2 | Keaton Mitchell | 6.09 | +2.26 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
+| 3 | Tyjae Spears | 5.61 | +1.79 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
+| 4 | Samaje Perine | 5.22 | +1.39 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 5 | Chris Rodriguez Jr. | 5.19 | +1.37 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 6 | Mike Washington Jr. | 4.93 | +1.11 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
-| 7 | Tank Bigsby | 2.21 | -1.61 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 8 | Jaleel McLaughlin | 1.49 | -2.33 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 9 | Dameon Pierce | 0.79 | -3.03 | 78.7% | Carries 12.3 | No modeled flags (not medically cleared) |
+| 6 | Mike Washington Jr. | 4.93 | +1.10 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 7 | Tank Bigsby | 2.21 | -1.62 | 28.7% | Carries 9.0 | sleeper_injury_ir |
+| 8 | Jaleel McLaughlin | 1.49 | -2.34 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 9 | Dameon Pierce | 0.79 | -3.04 | 78.7% | Carries 12.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (0.92 PPG)
 

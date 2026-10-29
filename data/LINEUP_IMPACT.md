@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-29T12:53:58.407341+00:00
+Generated: 2026-10-29T14:02:19.635465+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **125.23**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -21,7 +21,7 @@ Baseline illustrative optimal PPG: **125.24**. Weeks with partial projections an
 | 2 | Keaton Mitchell | 6.09 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.10 | No flagged data gap; review still required |
 | 3 | Tyjae Spears | 5.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.37 | Availability status: questionable |
 | 4 | Samaje Perine | 5.22 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.77 | No flagged data gap; review still required |
-| 5 | Chris Rodriguez Jr. | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.80 | Limited snap sample |
+| 5 | Chris Rodriguez Jr. | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.79 | Limited snap sample |
 | 6 | Mike Washington Jr. | 4.93 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.06 | Availability status: questionable |
 | 7 | Tank Bigsby | 2.21 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | Availability status: ir; Partial projection coverage |
 | 8 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
