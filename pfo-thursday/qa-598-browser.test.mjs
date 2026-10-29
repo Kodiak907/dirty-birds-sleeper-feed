@@ -42,3 +42,22 @@ test('iPhone-sized player-card gesture: drag handle down closes, ordinary page s
   assert.ok(scrolled.scrollTop>=50);
  }finally{await browser.close();}
 });
+
+test('two-sided iPhone Trade player rows keep portraits bounded and all five slots on one line',{timeout:60000},async()=>{
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ try{
+  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  await page.setContent('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="pfo59-trade-board"><div class="pfo59-trade-dual"><section><div class="pfo59-trade-roster"><button class="pfo59-trade-player"><span class="pfo59-player-pos">K</span><span class="pfo598-trade-photo"><img width="24" height="29" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'1500\'%3E%3Crect width=\'800\' height=\'1500\' fill=\'purple\'/%3E%3C/svg%3E"></span><span class="pfo59-trade-identity"><b>Very Long Kicker Name</b><small>MIN</small></span><span class="pfo59-trade-value">—<small>model</small></span><span class="pfo59-pick-mark">+</span></button></div></section></div></div></body></html>');
+  await page.addStyleTag({path:join(import.meta.dirname,'ffo-pfo-59.css')});
+  const d=await page.evaluate(()=>{
+   const row=document.querySelector('.pfo59-trade-player'),img=row.querySelector('img');
+   const parts=[...row.children].map(x=>{const b=x.getBoundingClientRect();return {x:b.x,y:b.y,w:b.width,h:b.height}});
+   const b=row.getBoundingClientRect(),p=img.getBoundingClientRect();
+   return {w:b.width,h:b.height,imgW:p.width,imgH:p.height,parts,scroll:row.scrollWidth-row.clientWidth};
+  });
+  assert.ok(d.h<=41&&d.h>=37,'trade rows remain compact');
+  assert.ok(d.imgW<=25&&d.imgH<=30,'portrait cannot take over a card');
+  assert.ok(d.parts.every(x=>Math.abs(x.y-d.parts[0].y)<15),'five fields stay in the same grid row');
+  assert.ok(d.scroll<=1,'no sideways page overflow');
+ }finally{await browser.close()}
+});
