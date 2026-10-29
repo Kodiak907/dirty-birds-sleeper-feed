@@ -50,7 +50,21 @@
   // coverage permits FFO_FFL_SCORING_V1 reconstruction; season-model weaknesses
   // above remain individually computed from MSF verified season baselines.
   const historical={};
-  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(10,Math.max(0,historical[pos]?.difference||0))*1.3+Math.min(6,Math.max(0,weakness[pos]?.difference||0))+Math.min(4,injuryRisk[pos]||0)*1.5]));
+  const starterPPG={},injuryRisk={};
+  const rosterIds=(r?.players||[]).map(String),starterIds=(r?.starters||[]).map(String).filter(id=>rosterIds.includes(id)&&id!=='0');
+  for(const pos of Object.keys(counts)){
+   const scored=(starterIds.length?starterIds:rosterIds).map(id=>({id,p:names[id]}))
+    .filter(x=>String(x.p?.position||'').toUpperCase().replace('D/ST','DEF')===pos)
+    .map(x=>scoreInfo({id:x.id,name:x.p?.name,team:x.p?.team}).project)
+    .filter(v=>v!==null&&Number.isFinite(v)).sort((a,b)=>b-a);
+   starterPPG[pos]=scored.length?scored[0]:null;
+  }
+  for(const id of rosterIds){
+   const p=names[id],pos=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
+   if(!Object.hasOwn(counts,pos))continue;
+   if(/\\b(IR|PUP|NFI|OUT|DOUBTFUL)\\b/i.test(String(p?.injury_status||'')+' '+String(p?.status||'')))injuryRisk[pos]=(injuryRisk[pos]||0)+1;
+  }
+  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(6,Math.max(0,weakness[pos]?.difference||0))+Math.min(4,injuryRisk[pos]||0)*1.5]));
   return {counts,targets,priority,rank,weakness,historical,starterPPG,injuryRisk,unknown,known:!!r};
  }
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
