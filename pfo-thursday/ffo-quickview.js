@@ -1,5 +1,5 @@
 /* FFO PFO 5.7: player quickview, additive to every existing Front Office tool.
- * Zero new data API calls. Uses current Sleeper FFL rules and existing verified NFL sources.
+ * Zero extra data API calls. Uses frozen FFO scoring and the shared MySportsFeeds source.
  * Preserves GameCast, Radar, Trade, Waivers, Briefings, Injury Watch, stat scrolling. */
 (()=>{'use strict';
  const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -22,19 +22,11 @@
  };
  const tile=(v,k)=>'<div class="ffo57-tile"><b>'+E(v)+'</b><small>'+E(k)+'</small></div>';
  const line=(title,detail,val)=>'<div class="ffo57-row"><div><b>'+E(title)+'</b><small>'+E(detail)+'</small></div><span class="ffo57-num">'+E(val)+'</span></div>';
- const scoring=()=>{const s=safe(()=>gm47Snapshot?.league?.scoring_settings);if(!s)return 'Current league scoring settings not yet loaded. Sleeper remains the official scoring authority.';
-  const fields=[['rec','per reception'],['pass_td','per passing TD'],['rush_td','per rushing TD'],['rec_td','per receiving TD']].filter(([k])=>s[k]!=null).map(([k,d])=>fmt(s[k],2)+' '+d);
-  return 'Sleeper FFL rules: '+fields.join(' · ')+'. Other custom scoring and bonus categories may apply.';
- };
+ const scoring=()=> 'FFO_FFL_SCORING_V1.json is the independent scoring authority, including half-PPR and custom scoring. Missing stat categories and bonuses remain unverified.';
  // Explicit dated official box-score correction when independent NFL player-feed coverage lags.
  // These observed stats NEVER replace projected PPG or official Sleeper fantasy scores.
- const officialKnown=(p)=>{
-  if(String(p.id)==='12495'||(/^ollie gordon(?: ii)?$/i.test(String(p.name||''))&&String(p.team||'').toUpperCase()==='MIA'))
-   return {week:7,through:'2026-10-25',link:'https://www.miamidolphins.com/team/players-roster/ollie-gordon-ii/logs/',
-    latest:{week:7,rush_att:25,rush_yd:103,rush_td:1,rec:1,targets:3,rec_yd:0},
-    season:{rush_att:72,rush_yd:339,rush_td:4,rec:6,targets:8,rec_yd:14},team:'MIA'};
-  return null;
- };
+ // No hard-coded individual box scores: all player stat claims must be source-backed.
+ const officialKnown=()=>null;
  const summary=d=>{
   const {p,ind,m}=d,pos=String(p.position||'').toUpperCase(),verified=officialKnown(p),
    sourceWeek=Number(ind?.latest?.week||0),current=verified&&sourceWeek<=verified.week?verified.latest:(ind?.latest||{});
@@ -48,8 +40,8 @@
    [['Targets',totals.targets],['Receptions',totals.rec],['Rec yards',totals.rec_yd],['Rec TD',totals.rec_td]];
   const series=x=>x.filter(([,n])=>n!==null&&n!==undefined).map(([label,n])=>tile(fmt(n,0),label)).join('');
   const source=verified&&sourceWeek<=verified.week?
-   '<p class="ffo57-evidence">NFL team official box score through Week '+verified.week+' ('+E(verified.through)+'). <a href="'+verified.link+'" target="_blank" rel="noopener">Miami Dolphins player log ↗</a>. Independent nflverse Week 7 data is not authoritative here (last observed week '+E(sourceWeek||'unverified')+' for this player). This correction does not change the FFO forecast.</p>':
-   '<p class="ffo57-evidence">Independent NFL stats: last published week '+E(current.week??'unavailable')+' · source checked '+E(when(d.source))+'. Not necessarily current live data.</p>';
+   '<p class="ffo57-evidence">NFL team official box score through Week '+verified.week+' ('+E(verified.through)+'). <a href="'+verified.link+'" target="_blank" rel="noopener">Miami Dolphins player log ↗</a>. Published source data may lag completed games (last observed week '+E(sourceWeek||'unverified')+' for this player). This correction does not change the FFO forecast.</p>':
+   '<p class="ffo57-evidence">MySportsFeeds NFL stats: last published week '+E(current.week??'unavailable')+' · source checked '+E(when(d.source))+'. Not necessarily current live data.</p>';
   return '<div class="ffo57-tilegrid ffo59-player-kpis">'+tile(fmt(d.avg),'Recorded FFL PPG · '+d.closed.length+' games')+
    tile(fmt(d.recent),'Last '+Math.min(3,d.closed.length)+' FFL games')+
    tile(fmt(safe(()=>pfo50Estimate(id))),'FFO model · estimate')+'</div>'+
@@ -65,7 +57,7 @@
   const keys=pos==='QB'?[['pass_yd','Pass YD'],['pass_td','Pass TD'],['rush_yd','Rush YD']]:pos==='RB'?[['rush_att','Carries'],['rush_yd','Rush YD'],['targets','Targets'],['rec','Rec']]:[['targets','Targets'],['rec','Rec'],['rec_yd','Rec YD']];
   if(published.length){h+='<div class="ffo59-gamelog-wrap"><table class="ffo59-gamelog"><thead><tr><th>Wk</th>'+keys.map(x=>'<th>'+E(x[1])+'</th>').join('')+'</tr></thead><tbody>';
    h+=published.slice(0,8).map(g=>'<tr><td>'+E(g.week)+'</td>'+keys.map(([key])=>'<td>'+fmt(g.stats?.[key],0)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
-   h+='<small class="ffo57-evidence">NFLverse independent box-score reconstruction. Most recent published weeks only; missing categories shown as —.</small>';
+   h+='<small class="ffo57-evidence">MySportsFeeds NFL data where licensed. Historical game logs may be unavailable; missing categories shown as —.</small>';
   }else h+='<p class="ffo57-muted">NFL weekly records not available in this source. No missing scores imputed.</p>';
   h+='<h3 class="ffo57-section">Official Sleeper FFL scores</h3><p class="ffo57-evidence">Recorded fantasy points are separate from the NFL statistical table.</p>';
   h+=obs.length?obs.slice(0,18).map(([w,v])=>line('Week '+w,Number(w)<d.week?'Sleeper recorded points':'Sleeper in-progress / provisional',fmt(v.points,2))).join(''):'<p class="ffo57-muted">No official FFL score history available in the current league snapshot.</p>';
@@ -106,6 +98,37 @@
    if(where==='playerhub'){if(typeof pfo49Open==='function')pfo49Open(player);return}
    document.querySelector('nav button[data-page="'+where+'"]')?.click();
   });
+  // iPhone bottom-sheet: swipe down from the handle/header, or from the body
+  // only when it is already at the top. Keep upward/native body scrolling.
+  const card=root.querySelector('.ffo57-card'),body=root.querySelector('.ffo57-body');
+  let gesture=null;
+  card.addEventListener('touchstart',ev=>{
+   if(ev.touches.length!==1||ev.target.closest('button,a,input,select,textarea,[role="tablist"]'))return;
+   const header=!!ev.target.closest('.ffo57-handle,.ffo57-hero');
+   if(!header&&(!ev.target.closest('.ffo57-body')||body.scrollTop>1))return;
+   const touch=ev.touches[0];
+   gesture={x:touch.clientX,y:touch.clientY,time:Date.now(),header,dragging:false};
+  },{passive:true});
+  card.addEventListener('touchmove',ev=>{
+   if(!gesture||ev.touches.length!==1)return;
+   const touch=ev.touches[0],dy=touch.clientY-gesture.y,dx=touch.clientX-gesture.x;
+   if(!gesture.dragging&&(dy<9||Math.abs(dx)>Math.abs(dy)*1.2))return;
+   if(!gesture.header&&body.scrollTop>1){gesture=null;return;}
+   if(dy<=0)return;
+   gesture.dragging=true;ev.preventDefault();
+   card.style.transition='none';
+   card.style.transform='translate3d(0,'+Math.min(dy,window.innerHeight*.85)+'px,0)';
+  },{passive:false});
+  const release=ev=>{
+   if(!gesture)return;
+   const g=gesture;gesture=null;
+   const touch=ev.changedTouches?.[0],dy=touch?touch.clientY-g.y:0;
+   card.style.transition='transform .18s ease-out';
+   card.style.transform='';
+   if(g.dragging&&dy>0&&(dy>=90||(dy>=55&&Date.now()-g.time<330)))close();
+  };
+  card.addEventListener('touchend',release,{passive:true});
+  card.addEventListener('touchcancel',release,{passive:true});
   root.addEventListener('keydown',ev=>{
    if(ev.key==='Escape'){ev.preventDefault();close();return}
    if((ev.key==='ArrowLeft'||ev.key==='ArrowRight')&&ev.target.closest('[role=tablist]')){
@@ -134,10 +157,10 @@
   head.innerHTML=src?'<img src="'+E(src)+'" alt="'+E(name)+' headshot" loading="lazy" onerror="this.replaceWith(document.createTextNode(\'—\'))">':'<span>'+E(name.split(/\s+/).map(z=>z[0]||'').slice(0,2).join('').toUpperCase())+'</span>';
   const tm=logo(p.team);
   root.querySelector('#ffo57-sub').innerHTML=(tm?'<img src="'+E(tm)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<span>'+E(p.position||'Position pending')+' · '+E(p.team||'Team pending')+'</span><span>· '+E(d.owner)+'</span>';
-  draw();root.hidden=false;document.body.style.overflow='hidden';
+  draw();root.hidden=false;root.querySelector('.ffo57-card').style.transform='';document.body.style.overflow='hidden';
   root.querySelector('.ffo57-close')?.focus({preventScroll:true});return true;
  }
- function close(){if(!root||root.hidden)return;root.hidden=true;document.body.style.overflow=oldOverflow;id=null;safe(()=>oldFocus?.focus?.({preventScroll:true}));}
+ function close(){if(!root||root.hidden)return;root.querySelector('.ffo57-card').style.transform='';root.hidden=true;document.body.style.overflow=oldOverflow;id=null;safe(()=>oldFocus?.focus?.({preventScroll:true}));}
  // Capture only user-selected player links; all ordinary Front Office interactions remain unchanged.
  document.addEventListener('click',ev=>{
   if(root&&!root.hidden)return;
@@ -146,5 +169,5 @@
   if(!player||!open(player,t))return;
   ev.preventDefault();ev.stopImmediatePropagation();
  },true);
- window.ffoQuickView={open:player=>open(player),close,current:()=>id};
+ window.ffoQuickView={open:player=>open(player),close,current:()=>id,refresh:()=>{if(root&&!root.hidden&&id)draw();}};
 })();
