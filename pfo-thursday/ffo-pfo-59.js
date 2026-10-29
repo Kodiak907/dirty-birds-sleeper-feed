@@ -300,7 +300,18 @@
     const compare=nav.querySelector('[data-pfo59-compare]');if(compare)compare.disabled=!state.tradeGive.length||!state.tradeTake.length;
     return;
    }
-   if(ev.target.closest('[data-pfo59-clear]')){state.tradeGive=[];state.tradeTake=[];trade();return;}
+   if(ev.target.closest('[data-pfo59-clear]')){
+    state.tradeGive=[];state.tradeTake=[];
+    // Clear is identical to deselecting a pick: update existing nodes, no whole-roster rebuild.
+    for(const node of nav.querySelectorAll('[data-pfo59-pick]')){
+     node.classList.remove('selected');node.setAttribute('aria-pressed','false');
+     const mark=node.querySelector('.pfo59-pick-mark');if(mark)mark.textContent='+';
+    }
+    nav.querySelectorAll('.pfo59-trade-dual h3 small').forEach(node=>node.textContent='0/3');
+    const count=nav.querySelector('.pfo59-trade-bar span');if(count)count.textContent='0 giving · 0 receiving';
+    const compare=nav.querySelector('[data-pfo59-compare]');if(compare)compare.disabled=true;
+    return;
+   }
    if(ev.target.closest('[data-pfo59-compare]')){
     if(!state.tradeGive.length||!state.tradeTake.length||state.manager==='3')return;
     try{
