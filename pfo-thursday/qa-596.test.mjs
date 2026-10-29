@@ -9,7 +9,7 @@ test('5.9.6 scripts parse and are wired into preview',()=>{
  for(const [n,src] of Object.entries({core,market,news}))assert.doesNotThrow(()=>new Script(src,{filename:n}),n);
  assert.match(html,/ffo-pfo-596\.js\?v=596/);
  assert.match(html,/ffo-pfo-596\.css\?v=596/);
- assert.match(html,/5\.9\.6 COACH REVIEW — DEVELOPMENT/);
+ assert.match(html,/5\.9\.7 COACH REVIEW — DEVELOPMENT/);
  assert.match(css,/#overview \.pfo49-quicklinks/);
 });
 test('Trade stays incremental; heavy legacy only renders when expanded',()=>{
