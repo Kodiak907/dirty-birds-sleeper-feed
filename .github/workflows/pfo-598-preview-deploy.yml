@@ -35,16 +35,16 @@ jobs:
       - name: Verify deploy-only credentials available
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error::GitHub Actions needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository or environment secrets; preview NOT deployed"
+            echo "::error::GitHub Actions needs CLOUDFLARE_API_TOKEN repository/environment secret; preview NOT deployed"
             exit 1
           fi
       - name: Deploy ONLY the existing Cloudflare Pages Preview branch
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
           CLOUDFLARE_SEND_METRICS: 'false'
         run: |
           set -euo pipefail
