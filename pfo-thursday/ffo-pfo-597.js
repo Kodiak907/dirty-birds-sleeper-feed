@@ -10,14 +10,15 @@
  const norm=x=>String(x??'').toLowerCase().replace(/[^a-z0-9]/g,'').replace(/(?:jr|sr|ii|iii|iv)$/,'');
  const canonical=t=>typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(t):String(t||'').toUpperCase();
  let verifiedSchedule=null,loadPending=null,lastTrade=null;
+ const originalEstimate=typeof pfo50Estimate==='function'?pfo50Estimate:null;
  const weekRow=(team,week)=>{
   const rows=verifiedSchedule?.teams;
   const t=canonical(team),key=String(week);
   return rows?.[t]?.weeks?.[key]||rows?.[t]?.weeks?.[Number(week)]||null;
  };
  const sourceForecast=id=>{
-  if(typeof pfo50Estimate==='function'){
-   const a=pfo50Estimate(id);if(a!=null&&Number.isFinite(a))return {points:a,source:'FFO independent NFL-stat forecast under FFL scoring'};
+  if(originalEstimate){
+   const a=originalEstimate(id);if(a!=null&&Number.isFinite(a))return {points:a,source:'FFO independent NFL-stat forecast under FFL scoring'};
   }
   if(typeof pfo50Indexed==='undefined'||!pfo50Indexed?.size||typeof pfo50Score!=='function')return null;
   const p=typeof pfo52Info==='function'?pfo52Info(id):null;
@@ -29,12 +30,32 @@
    const pts=pfo50Score(row.forecast);
    if(pts!=null&&Number.isFinite(pts))return {points:pts,source:'FFO NFL-stat model · verified same-team player mapping'};
   }
-  const games=(row.games||[]).filter(x=>x?.stats&&Number.isFinite(Number(x.week))).sort((a,b)=>Number(a.week)-Number(b.week));
-  const scores=games.map(g=>pfo50Score(g.stats)).filter(v=>v!=null&&Number.isFinite(v));
-  if(scores.length<2)return null;
-  const recent=scores.slice(-3),last=recent.reduce((a,b)=>a+b,0)/recent.length,season=scores.reduce((a,b)=>a+b,0)/scores.length;
-  return {points:0.65*last+0.35*season,source:'FFO independently reconstructed FFL points · 65% last 3 / 35% season · no matchup adjustment'};
+  const games=(row.games||[]).filter(x=>Number.isFinite(Number(x.week))).sort((a,b)=>Number(a.week)-Number(b.week));
+  const scores=games.map(g=>pfo50Score(g.stats||g)).filter(v=>v!=null&&Number.isFinite(v));
+  const seasonTotal=row.season_totals?pfo50Score(row.season_totals):null;
+  const played=Number(row.games_played||row.season_totals?.games_played||row.season_totals?.games||scores.length||0);
+  const seasonMean=seasonTotal!=null&&Number.isFinite(played)&&played>0?seasonTotal/played:scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:null;
+  if(seasonMean==null)return null;
+  if(scores.length>=2){
+   const recent=scores.slice(-3),last=recent.reduce((a,b)=>a+b,0)/recent.length;
+   return {points:0.65*last+0.35*seasonMean,source:'FFO independently reconstructed FFL points · 65% last 3 / 35% season · no unsupported injury adjustment'};
+  }
+  if(played>=2)return {points:seasonMean,source:'FFO independent NFL-season stats / verified games played · low-confidence average'};
+  return null;
  };
+ // A single independently scored forecast feeds Team HQ, weekly matchup, trade
+ // analysis and playoff calendar. It replaces a null-only native forecast, not NFL facts.
+ if(originalEstimate)pfo50Estimate=function(id){return sourceForecast(id)?.points??null;};
+ if(typeof pfo49ProjectedWeek==='function'){
+  const originalProjectedWeek=pfo49ProjectedWeek;
+  pfo49ProjectedWeek=function(id,w){
+   const p=typeof pfo52Info==='function'?pfo52Info(id):null,row=weekRow(p?.team,w);
+   if(row?.bye===true)return null;
+   if(row?.opponent)return sourceForecast(id)?.points??null;
+   if(verifiedSchedule&&p?.team)return null;
+   return originalProjectedWeek(id,w);
+  };
+ }
  const basePoints=typeof pfo52Points==='function'?pfo52Points:null;
  if(basePoints){
   pfo52Points=function(id,week,past=false){
