@@ -1,0 +1,94 @@
+name: PFO independent 2026 NFL statistical model snapshot
+on:
+  push:
+    branches: [pfo-59-commissioner-ui-20261028]
+    paths: ['.github/workflows/pfo-598-nfl-snapshot.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pfo-59-commissioner-ui-20261028
+      - name: Download dated independent NFL stats and reconstruct 2026 player baseline
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');
+          const csvUrl='https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv';
+          const rules=JSON.parse(fs.readFileSync('pfo-thursday/FFO_FFL_SCORING_V1.json','utf8')).scoring;
+          if(!rules||rules.rec!==0.5)throw Error('Unexpected frozen FFL rules');
+          function csvRows(s){let rows=[],row=[],field='',q=false;for(let i=0;i<s.length;i++){const c=s[i];if(c==='"'){if(q&&s[i+1]==='"'){field+='"';i++}else q=!q;}else if(c===','&&!q){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&s[i+1]==='\n')i++;row.push(field);field='';if(row.some(v=>v!==''))rows.push(row);row=[]}else field+=c;}if(field||row.length){row.push(field);rows.push(row)}return rows}
+          const response=await fetch(csvUrl,{signal:AbortSignal.timeout(80000),headers:{'user-agent':'FFO-private-stat-snapshot/1.0'}});
+          if(!response.ok)throw Error('Verified nflverse release HTTP '+response.status);
+          const csv=await response.text();
+          if(csv.length<200000||csv.length>16000000)throw Error('Unexpected source CSV size '+csv.length);
+          const rows=csvRows(csv),cols=rows.shift(),idx=n=>cols.indexOf(n),lookup=(r,n)=>idx(n)>=0?r[idx(n)]:null;
+          const nameCol=idx('player_display_name')>=0?'player_display_name':'player_name';
+          const teamCol=idx('team')>=0?'team':'recent_team';
+          const required=['week',nameCol,teamCol,'receptions','receiving_yards','rushing_yards','passing_yards'];
+          for(const k of required)if(idx(k)<0)throw Error('Missing upstream nflverse CSV column '+k);
+          const fields={pass_att:'attempts',pass_cmp:'completions',pass_yd:'passing_yards',pass_td:'passing_tds',pass_int:'passing_interceptions',rush_att:'carries',rush_yd:'rushing_yards',rush_td:'rushing_tds',rec:'receptions',rec_yd:'receiving_yards',rec_td:'receiving_tds',targets:'targets',pass_2pt:'passing_2pt_conversions',rush_2pt:'rushing_2pt_conversions',rec_2pt:'receiving_2pt_conversions'};
+          const players=new Map(),teamTargets=new Map();let all=0,maxWeek=0;
+          const teamFix={JAC:'JAX',WSH:'WAS',LA:'LAR',STL:'LAR',SD:'LAC',OAK:'LV'};
+          const team=v=>teamFix[String(v||'').toUpperCase()]||String(v||'').toUpperCase();
+          const norm=v=>String(v||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+          for(const r of rows){
+            if(idx('season')>=0&&Number(lookup(r,'season'))!==2026)continue;
+            if(idx('season_type')>=0&&lookup(r,'season_type')!=='REG')continue;
+            const wk=Number(lookup(r,'week')),name=String(lookup(r,nameCol)||'').trim(),tm=team(lookup(r,teamCol));
+            if(!name||!tm||!Number.isInteger(wk)||wk<1||wk>18)continue;
+            const stats={};
+            for(const [key,source] of Object.entries(fields)){const v=lookup(r,source);if(v!==null&&v!==''&&Number.isFinite(Number(v)))stats[key]=Number(v)}
+            const k=norm(name)+'|'+tm;
+            const p=players.get(k)||{name,team:tm,position:String(lookup(r,'position')||''),games:[]};
+            if(p.games.some(g=>g.week===wk))throw Error('Nonunique source player/team/week '+name+tm+wk);
+            p.games.push({week:wk,stats});
+            players.set(k,p);all++;maxWeek=Math.max(maxWeek,wk);
+            if(stats.targets!=null)teamTargets.set(tm+'|'+wk,(teamTargets.get(tm+'|'+wk)||0)+stats.targets);
+          }
+          if(players.size<500||maxWeek<7)throw Error('Incomplete 2026 stats coverage players='+players.size+' week='+maxWeek);
+          const vals=[...players.values()];
+          for(const p of vals){
+            p.games.sort((a,b)=>a.week-b.week);
+            const total=p.games.length;
+            for(const g of p.games){const n=teamTargets.get(p.team+'|'+g.week);g.target_share_pct=n>0&&g.stats.targets!=null?Math.round(g.stats.targets/n*1000)/10:null;}
+            const sum=k=>p.games.reduce((v,g)=>v+(g.stats[k]||0),0);
+            const totalStats={};
+            for(const k of Object.keys(fields))if(p.games.some(g=>g.stats[k]!=null))totalStats[k]=Math.round(sum(k)*100)/100;
+            p.season_totals=totalStats;
+            p.latest={week:p.games.at(-1).week,...p.games.at(-1).stats,target_share_pct:p.games.at(-1).target_share_pct};
+            p.last_three=p.games.slice(-3);
+            const forecast={};
+            if(total>=2)for(const k of Object.keys(totalStats)){
+              const last=p.last_three.reduce((v,g)=>v+(g.stats[k]||0),0)/p.last_three.length;
+              forecast[k]=Math.round((0.65*last+0.35*sum(k)/total)*100)/100;
+            }
+            p.forecast=total>=2?forecast:null;
+            p.games_observed=total;
+            p.targets_per_game=sum('targets')/total;
+            p.receptions_per_game=sum('rec')/total;
+            p.carries_per_game=sum('rush_att')/total;
+            p.pass_att_per_game=sum('pass_att')/total;
+            // Preview requests a compact gamelog; retain recent six actual games.
+            p.games=p.games.slice(-6);
+          }
+          const source={schema:'FFO_NFL_INDEPENDENT_STATS_V1',season:2026,source:'nflverse 2026 weekly NFL player statistics',source_url:csvUrl,checked_at:new Date().toISOString(),source_rows:all,max_week:maxWeek,players:vals};
+          const out='pfo-thursday/FFO_NFL_2026_STATS.json';
+          fs.writeFileSync(out,JSON.stringify(source));
+          const named=['Patrick Mahomes','Bijan Robinson','Kyren Williams','Garrett Wilson','Zay Flowers','Zach Charbonnet','Jaxon Smith-Njigba'];
+          console.log('FFO_NFL_DATA_DIAGNOSTICS='+JSON.stringify({source_bytes:csv.length,output_bytes:fs.statSync(out).size,players:vals.length,source_rows:all,max_week:maxWeek,columns:cols.slice(0,15),sample:named.map(name=>({name,match:vals.filter(x=>norm(x.name)===norm(name)).map(x=>({team:x.team,games:x.games_observed,forecast:!!x.forecast,latest:x.latest?.week}))}))}));
+          NODE
+      - name: Commit exact snapshot to development preview branch only
+        shell: bash
+        run: |
+          git config user.name "ffo-preview-statbot"
+          git config user.email "ffo-statbot@users.noreply.github.com"
+          git add pfo-thursday/FFO_NFL_2026_STATS.json
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Refresh independent nflverse 2026 NFL player stat snapshot for PFO QA"
+          git push origin HEAD:pfo-59-commissioner-ui-20261028
