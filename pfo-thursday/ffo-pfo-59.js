@@ -8,7 +8,7 @@
  let statRequested=false;
  // Keep expensive per-player model lookups out of every Trade repaint.
  const tradeEstimateCache=new Map();let tradeEstimateSource=null,tradeEstimateNames=null;
- const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false,playerPoolCache:null,playerPoolRefs:null,scoredCache:null,scoredRef:null,scoredAt:0};
+ const state={market:'trade',manager:'1',tradeGive:[],tradeTake:[],position:'ALL',waiverView:'available',search:'',snap:null,names:null,scout:null,ideas:null,schedule:new Map(),loading:false,advisoryAt:0,history:null,historyLoading:null,scheduleAt:0,waiverLoaded:false,tradeLoaded:false,playerPoolCache:null,playerPoolRefs:null,scoredCache:null,scoredRef:null,scoredAt:0};
  function teamName(id){
   const r=state.snap?.rosters?.find(x=>String(x.roster_id)===String(id));
   const u=state.snap?.users?.find(x=>String(x.user_id)===String(r?.owner_id));
@@ -131,10 +131,17 @@
   const host=$('pfo59-waiver-board');if(!host)return;
   if(!state.snap||!state.names){host.innerHTML='<p>Loading published league roster and player directory…</p>';return}
   const n=needs(state.manager),pool=scoredPool(),query=state.search.trim().toLowerCase();
-  const filtered=pool.filter(p=>(state.position==='ALL'||p.position===state.position)&&p.name.toLowerCase().includes(query));
+  const filtered=pool.filter(p=>{
+   const pos=state.position;
+   const meta=state.names?.[p.id]||{};
+   const ir=/^(IR|PUP|NFI|RESERVE|INJURED_RESERVE)$/i.test(String(meta.injury_status||meta.status||''));
+   const veteran=Number(meta.years_exp)>=4&&Number(meta.years_exp)<30;
+   const matches=pos==='ALL'||pos===p.position||(pos==='FLEX'&&['RB','WR','TE'].includes(p.position))||(pos==='VETS'&&veteran)||(pos==='IR'&&ir);
+   return matches&&p.name.toLowerCase().includes(query);
+  });
   filtered.sort((a,b)=>{
    const gap=Number(n.rank[b.position]||0)-Number(n.rank[a.position]||0);
-   if(state.position==='ALL'&&gap)return gap;
+   if(state.waiverView==='available'&&state.position==='ALL'&&gap)return gap;
    if(a.modelPPG!=null&&b.modelPPG!=null&&a.modelPPG!==b.modelPPG)return b.modelPPG-a.modelPPG;
    if(a.modelPPG!=null&&b.modelPPG==null)return -1;if(b.modelPPG!=null&&a.modelPPG==null)return 1;
    return Number(b.tracked)-Number(a.tracked)||a.name.localeCompare(b.name);
@@ -147,10 +154,14 @@
   const gaps=posList.slice(1).filter(pos=>n.priority[pos]>0).sort((a,b)=>n.priority[b]-n.priority[a]);
   const scoredGaps=posList.slice(1).filter(pos=>n.historical?.[pos]).sort((a,b)=>n.historical[b].difference-n.historical[a].difference);
   const weak=posList.slice(1).filter(pos=>n.weakness[pos]).sort((a,b)=>n.weakness[b].difference-n.weakness[a].difference);
-  host.innerHTML='<div class="pfo59-caveat">Personalized recommendations combine <b>roster depth</b> and, where source coverage permits, starter model comparisons to league baselines. Model deficits are estimates, not proven roster weaknesses. This player directory remains incomplete, and eligibility is not established. Nothing is claimed or bid.</div>'+
+  const filterTabs=['ALL','QB','RB','WR','TE','K','DEF','FLEX','VETS','IR'];
+  const pills='<div class="pfo597-waiver-tabs" role="tablist" aria-label="Waiver views">'+[['available','Available'],['leaders','Leaders']].map(([id,label])=>'<button type="button" role="tab" data-pfo597-waiver-view="'+id+'" aria-selected="'+(state.waiverView===id)+'">'+label+'</button>').join('')+'</div>'+
+  '<div class="pfo597-position-strip" aria-label="Waiver position filters">'+filterTabs.map(pos=>'<button type="button" data-pfo597-waiver-pos="'+pos+'" aria-pressed="'+(pos===state.position)+'">'+(pos==='VETS'?'Veterans':pos)+'</button>').join('')+'</div>';
+  const rankLine=state.waiverView==='leaders'?'Independent FFL points model · positions ranked without team-need weighting':state.position==='ALL'?'CUSTOM FOR '+safe(teamName(state.manager))+' · team gaps, recorded history and FFL projections':'Best available '+safe(state.position)+' · independent FFL model, no team-need weighting';
+  host.innerHTML=pills+'<div class="pfo597-rank-note">'+rankLine+'</div>'+ (state.waiverView==='available'?'<div class="pfo59-caveat">Personalized recommendations combine <b>roster depth</b> and, where source coverage permits, starter model comparisons to league baselines. Model deficits are estimates, not proven roster weaknesses. This player directory remains incomplete, and eligibility is not established. Nothing is claimed or bid.</div>'+
     '<div class="pfo59-metrics"><strong>'+safe(teamName(state.manager))+'</strong><span>Recorded FFL scoring weaknesses: '+safe(scoredGaps.map(p=>p+' '+n.historical[p].difference.toFixed(1)+' points/start below league mean').join(' · ')||(state.history?'No notable recent scoring deficits':'Retrieving four completed weeks of league scores…'))+'</span><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No basic depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
-    '<h3>Published research / model leaders by position</h3><div class="pfo59-leaders">'+leaders+'</div>'+
-    '<div class="pfo59-list-head"><h3>'+safe(state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.position==='ALL'?'roster depth then model':'supported model PPG')+'</small></div>'+
+    '<h3>FFL projection leaders by position</h3><div class="pfo59-leaders">'+leaders+'</div>': '<h3>FFL projection leaders</h3><div class="pfo59-leaders">'+leaders+'</div>')+
+    '<div class="pfo59-list-head"><h3>'+safe(state.waiverView==='leaders'?'Independent FFL model leaders':state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.waiverView==='available'&&state.position==='ALL'?'team fit and source-backed model':'supported FFL model PPG')+'</small></div>'+
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,n.priority[p.position],n.historical?.[p.position])).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
     (filtered.length>60?'<p>Showing 60 of '+safe(filtered.length)+' source-matched candidates. Narrow by position or name.</p>':'');
  }
@@ -261,7 +272,7 @@
    
    '<section data-pfo59-market-panel="trade" hidden><div class="pfo59-subhead"><h2>Trade Command</h2><label>Analyze manager <select id="pfo59-trade-manager"></select></label></div><div id="pfo59-trade-board"></div><div id="pfo59-trade-existing"></div></section>'+
    '<section data-pfo59-market-panel="waiver" hidden><div class="pfo59-subhead"><h2>Waiver Command</h2><label>Roster <select id="pfo59-waiver-manager"></select></label></div>'+
-   '<div class="pfo59-filters"><label>Available players <select id="pfo59-position">'+posList.map(p=>'<option>'+p+'</option>').join('')+'</select></label><label>Search <input id="pfo59-find" type="search" placeholder="Player name…" autocomplete="off"></label></div><div id="pfo59-waiver-board"></div><details class="pfo59-legacy"><summary>Existing GM waiver scouting and source trail</summary><div id="pfo59-waiver-existing"></div></details></section>'+
+   '<div class="pfo59-filters"><label>Find available players <input id="pfo59-find" type="search" placeholder="Search by name…" autocomplete="off"></label></div><div id="pfo59-waiver-board"></div><details class="pfo59-legacy"><summary>Existing GM waiver scouting and source trail</summary><div id="pfo59-waiver-existing"></div></details></section>'+
    '<section data-pfo59-market-panel="transactions" hidden><h2>League Transactions / FAAB</h2><p>Read-only Sleeper transactions, FAAB spent, budget and ledger history. No transaction is performed by FFO.</p><div id="pfo59-txn-existing"></div></section>';
   root.querySelector('.market-heading')?.after(nav);
   const legacyTrade=$('trade-intel')?.closest('#trade-fold');
@@ -275,6 +286,10 @@
   const gamecastTrade=$('ffo-gc-trade-intel');if(gamecastTrade)$('pfo59-trade-existing').prepend(gamecastTrade);
   columns.remove();
   nav.addEventListener('click',ev=>{
+   const view=ev.target.closest('[data-pfo597-waiver-view]');
+   if(view){state.waiverView=view.dataset.pfo597WaiverView;waiver();return;}
+   const position=ev.target.closest('[data-pfo597-waiver-pos]');
+   if(position){state.position=position.dataset.pfo597WaiverPos;waiver();return;}
    const p=ev.target.closest('[data-pfo59-player]');if(p){window.ffoQuickView?.open?.(p.dataset.pfo59Player);return;}
    const partner=ev.target.closest('[data-pfo59-partner]');if(partner){
     const id=partner.dataset.pfo59Partner;if(id==='3')return;
