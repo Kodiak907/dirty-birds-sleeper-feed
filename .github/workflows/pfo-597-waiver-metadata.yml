@@ -1,0 +1,31 @@
+name: PFO 5.9.7 audited waiver metadata extraction
+on:
+  push:
+    branches: [pfo-59-commissioner-ui-20261028]
+    paths: ['.github/workflows/pfo-597-waiver-metadata.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  derive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Derive limited veteran and IR facts from committed player directory
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const names=JSON.parse(fs.readFileSync('data/player_names.json','utf8'));
+          const source=JSON.parse(fs.readFileSync('data/players.json','utf8'));
+          const out={};
+          for(const id of Object.keys(names)){
+           const row=source[id];if(!row)continue;
+           const years=Number(row.years_exp);
+           out[id]={
+            years_exp:Number.isFinite(years)&&years>=0&&years<30?years:null,
+            injury_status:row.injury_status||null,
+            status:row.status||null
+           };
+          }
+          console.log('FFO_WAIVER_META_597='+JSON.stringify(out));
+          console.log('FFO_WAIVER_META_COUNTS='+JSON.stringify({players:Object.keys(out).length,experience:Object.values(out).filter(x=>x.years_exp!=null).length,ir:Object.values(out).filter(x=>/IR|PUP|INJURED RESERVE/i.test(String(x.injury_status||'')+' '+String(x.status||''))).length}));
+          NODE
