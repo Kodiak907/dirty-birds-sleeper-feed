@@ -126,6 +126,7 @@
    const root=$('injuries');
    if(root&&!root.children.length)root.innerHTML='<tr><td colspan="3">Checking roster-specific NFL injury reports. Previous data is not medical clearance.</td></tr>';
    if(typeof updateInjuryView==='function'&&(typeof liveRosterSnapshot!=='undefined'&&liveRosterSnapshot))updateInjuryView();
+   if(typeof refreshInjuryOnly==='function'&&typeof injuryBusy!=='undefined'&&!injuryBusy)void refreshInjuryOnly();
   }
  });
  window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule};
