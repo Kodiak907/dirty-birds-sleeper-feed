@@ -71,3 +71,29 @@ test('Waiver personalized All uses MSF starter comparisons, not Sleeper fantasy 
  assert.doesNotMatch(waiver,/state\.history\?\.matchups_by_week/);
  assert.ok(waiver.includes('if(/\\b(IR|PUP|NFI|OUT|DOUBTFUL)\\b/i.test'),'injury-risk word boundaries must be actual regex boundaries');
 });
+
+test('Trade roster: five grid tracks, bounded portraits and real DEF placeholder',()=>{
+ const css=read('ffo-pfo-59.css'),market=read('ffo-pfo-59.js');
+ assert.match(css,/grid-template-columns:18px 25px minmax\(0,1fr\) 37px 14px!important/);
+ assert.match(css,/\.pfo598-trade-photo img\{/);
+ assert.match(css,/max-width:24px!important/);
+ assert.match(css,/max-height:29px!important/);
+ assert.match(market,/p\?\.position!=='DEF'/);
+ assert.match(market,/pfo598-team-placeholder/);
+ assert.match(market,/state\.manager='1';/);
+ assert.match(market,/managerOptions\(\);trade\(\); \/\/ immediately replace/);
+ assert.match(market,/refreshCurrent:/);
+});
+test('MSF load success or failure refreshes the visible Market; no recycled dashes',()=>{
+ assert.match(core,/window\.ffoPfo59\?\.refreshCurrent\?\.\(\)/);
+ assert.match(worker,/json\?\.data/);
+ assert.match(worker,/MSF_GATEWAY_/);
+ assert.match(core,/MSF season feed unavailable or incomplete/);
+});
+test('Injury status never silently treats stale week reports as current',()=>{
+ assert.match(core,/const official=recent&&matchingWeek/);
+ assert.match(core,/checkedOfficial=recent&&matchingWeek/);
+ assert.match(core,/if\(document\.querySelector\('#scouting\.page\.active'\)\)gm47Render\(\)/);
+ assert.match(patch,/pfo598-injury-coverage/);
+ assert.match(patch,/No match does not mean ACTIVE/);
+});
