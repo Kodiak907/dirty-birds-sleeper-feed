@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-29T14:02:25.002571+00:00
-Sleeper snapshot: 2026-10-29T14:02:12.540264+00:00
-nflverse observations: 2026-10-29T14:02:18.783139+00:00; injury feed loaded: True
+Generated: 2026-10-29T14:57:37.312299+00:00
+Sleeper snapshot: 2026-10-29T14:57:24.668161+00:00
+nflverse observations: 2026-10-29T14:57:30.759668+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 6. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,8 +31,12 @@ nflverse observations: 2026-10-29T14:02:18.783139+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Dallas Goedert** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **DeVonta Smith** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
+- **Dontayvion Wicks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
+- **Ladd McConkey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **Saquon Barkley** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
+- **Tre' Harris** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
 
 ## Guardrails
 
