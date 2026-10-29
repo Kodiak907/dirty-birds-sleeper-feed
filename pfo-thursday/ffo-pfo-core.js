@@ -550,7 +550,14 @@ async function loadLiveRoster(){
  const id=window.dbLeagueId||LEAGUE_ID_OVERRIDE, rid=window.dbRosterId||1;
  if(!id){liveRosterError='Waiting for live league ID from GitHub; saved watch list used';return;}
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),18000);
- try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;renderRosterComparison();renderGamedayInactives();renderBriefing();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderTradeScouting();gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
+ try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;
+  // Injury Watch needs a roster, not a costly redraw of every hidden tool.
+  renderRosterComparison();renderGamedayInactives();
+  if(document.querySelector('#overview.page.active')){renderBriefing();pfo50RenderHomeKPIs();}
+  if(document.querySelector('#matchup.page.active,#roster.page.active'))pfo50RenderProjectedLineup();
+  if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();
+  if(document.querySelector('#scouting.page.active'))gm47Render();
+  if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
  catch(err){liveRosterError=String(err.message||err);renderRosterComparison();}
  finally{clearTimeout(timer)}
 }
