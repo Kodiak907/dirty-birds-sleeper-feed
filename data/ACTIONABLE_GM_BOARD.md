@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-10-29T14:57:31.787073+00:00
+Generated: 2026-10-29T15:55:01.334908+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -20,7 +20,6 @@ The prior two trades are suppressed because both teams' projected gains were mar
 ## Rejected old offers
 
 - Bijan Robinson for Jaxon Smith-Njigba: Too little projected starter benefit for roster disruption
-- Bijan Robinson for Jaxon Smith-Njigba, Tyler Shough: Too little projected starter benefit for roster disruption; Requires further outgoing roster action
 
 ## Required checks
 
