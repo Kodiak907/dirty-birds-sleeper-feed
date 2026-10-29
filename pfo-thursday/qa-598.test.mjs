@@ -61,3 +61,13 @@ test('All production stats fail closed without provider or verified player ident
  assert.match(worker,/source_type:'licensed_primary'/);
  assert.match(core,/No recent-game trend inferred from unavailable logs/);
 });
+
+test('Waiver personalized All uses MSF starter comparisons, not Sleeper fantasy score history',()=>{
+ const waiver=read('ffo-pfo-59.js');
+ assert.match(waiver,/waiverManager:'1'/);
+ assert.match(waiver,/const historical=\{\}/);
+ assert.match(waiver,/const starterPPG=\{\},injuryRisk=\{\}/);
+ assert.match(waiver,/p\.modelPPG-n\.starterPPG\[/);
+ assert.doesNotMatch(waiver,/state\.history\?\.matchups_by_week/);
+ assert.ok(waiver.includes('if(/\\b(IR|PUP|NFI|OUT|DOUBTFUL)\\b/i.test'),'injury-risk word boundaries must be actual regex boundaries');
+});
