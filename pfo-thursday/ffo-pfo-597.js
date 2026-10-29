@@ -205,6 +205,39 @@
    'No full-PPR market valuation. Independent NFL-stat FFL scoring model; missing projections unverified. No trade submitted.'].join('\n');
   if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied';}).catch(()=>{btn.textContent='Copy unavailable';});
  });
+ // Injury Watch runs separately from statistical scouting. Show a concise,
+ // provenance-aware source-health banner rather than silently carrying stale tags.
+ if(typeof updateInjuryView==='function'){
+  const inheritedInjuryView=updateInjuryView;
+  updateInjuryView=function(){
+   inheritedInjuryView();
+   const host=$('injuryhealth');
+   if(!host)return;
+   let line=host.querySelector('.pfo598-injury-coverage');
+   if(!line){line=document.createElement('p');line.className='pfo598-injury-coverage';host.append(line)}
+   const now=Date.now(),stamp=x=>{
+    const v=typeof x==='number'?x:Date.parse(x||'');
+    if(!Number.isFinite(v))return null;
+    return Math.max(0,Math.round((now-v)/60000));
+   };
+   const official=typeof nflVerified==='undefined'?null:nflVerified;
+   const officialAge=stamp(official?.checked_at),w=Number(window.dbNflWeek||8);
+   const matches=!!official&&Number(official.report_week)===w&&Number(official.report_season)===Number(window.dbNflSeason||2026);
+   const fresh=matches&&officialAge!==null&&officialAge<80;
+   const espnAge=typeof espnFetchedAt!=='undefined'?stamp(espnFetchedAt):null;
+   const findings=[
+    fresh?'NFL report: Week '+w+' verified '+officialAge+'m ago':
+     'NFL Week '+w+' official verification pending'+(officialAge!==null?' (available source '+officialAge+'m old)':''),
+    espnAge!==null?'ESPN injury scan: '+espnAge+'m ago':'ESPN injury scan unavailable',
+    typeof liveRosterError!=='undefined'&&liveRosterError?'Roster issue: '+String(liveRosterError).slice(0,100):null,
+    typeof injuryError!=='undefined'&&injuryError?'Official source: '+String(injuryError).slice(0,100):null,
+    typeof espnError!=='undefined'&&espnError?'ESPN source: '+String(espnError).slice(0,100):null
+   ].filter(Boolean);
+   line.textContent=findings.join(' · ')+' · No match does not mean ACTIVE.';
+   line.style.cssText='font-size:11px;line-height:1.5;margin:7px 0 0;color:#c3d6e5';
+  };
+ }
+
  document.addEventListener('DOMContentLoaded',()=>{void loadFFLRules();void loadSchedule();},{once:true});
  if(document.readyState!=='loading'){void loadFFLRules();void loadSchedule();}
  const nav=$('nav');
