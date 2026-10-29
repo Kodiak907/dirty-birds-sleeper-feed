@@ -1152,7 +1152,16 @@ function tb45ChangeSelect(e){const t=e.target;
 }
 function tb45Click(e){const b=e.target.closest('button');if(!b)return;
  if(b.hasAttribute('data-tb48-remove')){const x=tb48State(),side=b.dataset.tb48Remove;if(['give','take'].includes(side))x[side]=x[side].filter(id=>id!==b.dataset.player);tb45Save();return;}
- if(b.hasAttribute('data-tb48-clear')){tb45State.compare={opponent:'',give:[],take:[]};tb45Save();return;}
+ if(b.hasAttribute('data-tb48-clear')){
+  // The legacy Clear button previously repainted the entire Trade Laboratory,
+  // causing a noticeable iPhone stall after a package valuation.
+  tb45State.compare={opponent:'',give:[],take:[]};
+  try{localStorage.setItem(TB45_KEY,JSON.stringify(tb45State));}catch(_){}
+  tb45CacheKey='';
+  const old=document.getElementById('tb48-eval');
+  if(old)old.outerHTML=tb48FeatureHTML(); // only the compact proposal form
+  return;
+ }
  if(b.hasAttribute('data-tb48-copy')){tb48CopyReport();return;}
  if(b.hasAttribute('data-tb-view')){tb45State.view=b.dataset.tbView;tb45Save();}
  if(b.hasAttribute('data-tb-remove-mine')){tb45State.mine=tb45State.mine.filter(x=>x!==b.dataset.tbRemoveMine);tb45Save();}
