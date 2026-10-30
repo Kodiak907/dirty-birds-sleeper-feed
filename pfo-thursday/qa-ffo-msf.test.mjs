@@ -618,7 +618,7 @@ test('Audit renders compact specialist evidence and verifies a single licensed g
  assert.match(core,/D\/ST source evidence/);
  assert.match(core,/model\.kickingPlayEvidence/);
  assert.match(core,/model\.auditTeamGameFeed\(source\.data\|\|\{\},team,s\.ownedRules\)/);
- assert.match(core,/Final kicker scoring not certified/);
+ assert.match(core,/Provisional points not certified/);
  assert.match(core,/No final D\/ST fantasy score is certified/);
  assert.match(core,/\.filter\(x=>x\.week>=1&&x\.week<=6/);
 });
@@ -829,7 +829,7 @@ test('FFO mobile scoring audit shows independent MSF crosscheck and no synthetic
  assert.match(core,/weeks needing count review/);
  assert.match(core,/model\.auditTeamGameFeed/);
  assert.match(core,/report\.kickWeeks\.push\(\{week,game,gameId:String\(g\.id\),evidence\}\)/);
- assert.match(core,/Final kicker scoring not certified/);
+ assert.match(core,/Provisional points not certified/);
 });
 
 test('Historical stat audits reuse only successful source responses briefly; do not cache failures or change live GameCast polling',()=>{
