@@ -76,6 +76,13 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
  <div id="ffo-gc-history-status" role="status" aria-live="polite" style="font-size:12px;margin:7px 0"></div>
  <div id="ffo-gc-history-results" style="font-size:12px"></div>
  </details>
+ <details id="ffo-gc-stat-audit" class="card" style="padding:10px;margin:8px 0">
+  <summary style="cursor:pointer;font-weight:700">Independent MSF statistics &amp; FFL scoring audit · Weeks 1–6</summary>
+  <p class="muted" style="font-size:12px;margin:8px 0">Read-only checks of provider game logs, season totals, player ID matching and FFO-owned scoring categories. Incomplete statistics remain unknown, never certified fantasy scores.</p>
+  <button class="button" type="button" id="ffo-gc-stat-audit-check">Audit MSF player stats · Weeks 1–6</button>
+  <div id="ffo-gc-stat-audit-status" role="status" aria-live="polite" style="font-size:12px;margin:7px 0"></div>
+  <div id="ffo-gc-stat-audit-results" style="font-size:12px"></div>
+ </details>
   <div id="ffo-gc-gameview" class="ffo-gc-gameview"><p class="ffo-gc-note" style="padding:12px">Select an authenticated NFL game. The field display does not simulate physical tracking.</p></div><div id="ffo-gc-player" class="ffo-gc-player"><p class="muted">Open any player in Player Intel, Roster, Radar, or Trade / Waiver to inspect their live game evidence.</p></div>
   <div class="ffo-gc-filters" id="ffo-gc-filters" role="group" aria-label="Play filters"><button type="button" data-ffo-filter="all" aria-pressed="true">All plays</button><button type="button" data-ffo-filter="player" aria-pressed="false">Selected player</button><button type="button" data-ffo-filter="scoring" aria-pressed="false">Scoring</button></div><div id="ffo-gc-playfeed" class="ffo-gc-playfeed" aria-live="polite"></div>
  </div>
