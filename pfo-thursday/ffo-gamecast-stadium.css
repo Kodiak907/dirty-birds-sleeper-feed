@@ -41,3 +41,11 @@
 .gc6-shell button:focus-visible,#ffo-gc-playfeed .gc6-play:focus-visible{outline:3px solid #8fe7df;outline-offset:2px}
 @media(max-width:450px){#ffo-gc-gameview .gc6-hdr{padding:12px 9px;gap:4px}.gc6-teamlogo{width:29px;height:29px}.gc6-teamname{font-size:10px}.gc6-score{font-size:24px}.gc6-gameclock strong{font-size:11px}.gc6-gameclock span{font-size:9px}.gc6-feature{margin:0 8px 8px;padding:9px}.gc6-feature h4{font-size:13px}.gc6-feature p{font-size:11px}.gc6-statebar{padding:8px 10px}.gc6-endzone-word{font-size:16px!important}}
 @media(prefers-reduced-motion:reduce){#ffo-gc-playfeed .gc6-play,#ffo-gc-gameview *{scroll-behavior:auto;transition:none!important;animation:none!important}}
+
+
+/* GameCast fast-poll source heartbeat: verified source clock, not simulated game time. */
+.ffo-gc-live-status{
+ margin:5px 0 9px;padding:7px 10px;border:1px solid #395d70;
+ border-radius:8px;background:#142e40;color:#d6ecf4;font-size:11px;
+ font-variant-numeric:tabular-nums;line-height:1.45;overflow-wrap:anywhere
+}
