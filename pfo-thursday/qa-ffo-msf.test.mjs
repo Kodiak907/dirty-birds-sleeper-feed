@@ -204,7 +204,7 @@ test('Live and OT remain refresh-eligible, historical scan samples Weeks 1–6',
  assert.equal(gamePhase('COMPLETED'),'final');
  assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
  assert.match(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/);
- assert.match(core,/box-score match certifies full PBP or player fantasy totals/);
+ assert.match(core,/full-play completeness and fantasy scoring are separate verification milestones/i);
 });
 
 
@@ -264,7 +264,7 @@ test('Week 1–6 audit reports missing and repeated provider IDs separately',()=
  assert.match(core,/inspectHistoricalGame/);
  assert.match(core,/ID gaps/);
  assert.match(core,/repeated native IDs/);
- assert.match(core,/MSF published plays/);
+ assert.match(core,/Published plays/);
  assert.doesNotMatch(core,/!sameId\?'Duplicate play IDs'/);
 });
 
@@ -376,8 +376,8 @@ test('MSF historical audit still fails genuine regulation clock gaps',()=>{
 });
 test('GameCast historical cards are compact on iPhone and show OT exception distinctly',()=>{
  assert.match(core,/gc-history-row/);
- assert.match(core,/a\.clockCoverage==='ot_exception'/);
+ assert.match(core,/clockCoverage==='ot_exception'/);
  assert.match(core,/const ok=a\.usablePlaySequence&&a\.clockCoverage!=='incomplete'/);
- assert.match(core,/published plays/);
+ assert.match(core,/Published plays/);
  assert.match(core,/full-play completeness/i);
 });
