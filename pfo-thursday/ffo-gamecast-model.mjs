@@ -520,6 +520,12 @@ export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
   if(!teamAudit?.teamFilterVerified||!ref){
    result.reason='Independent team kicking totals unavailable';return result;
   }
+  if(!row.gameId||!ref.gameId){
+   result.reason='One or both independent MSF game IDs unverified';return result;
+  }
+  if(String(row.gameId)!==String(ref.gameId)){
+   result.reason='MSF PBP game ID differs from team game-log ID';return result;
+  }
   const actors=(row.evidence.kickers||[]).filter(x=>x.identityVerified&&String(x.playerTeam||'').toUpperCase()===wanted);
   const unknownOpposing=(row.evidence.kickers||[]).filter(x=>!x.identityVerified||String(x.playerTeam||'').toUpperCase()!==wanted);
   result.pbpEvents=row.evidence.candidatePlays??null;
