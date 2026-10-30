@@ -204,7 +204,7 @@ test('Live and OT remain refresh-eligible, historical scan samples Weeks 1–6',
  assert.equal(gamePhase('COMPLETED'),'final');
  assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
  assert.match(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/);
- assert.match(core,/No full play feed verified|Full PBP not demonstrated/);
+ assert.match(core,/full-game coverage unverified|Full MSF PBP not demonstrated/);
 });
 
 
