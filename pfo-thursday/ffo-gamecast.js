@@ -428,8 +428,11 @@
    '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+
    '</details>';
   const kickHistory=model.summarizeKickerWeeks(report.kickWeeks||[],report.team);
+  const kickChecks=model.reconcileKickerWeeks(report.kickWeeks||[],report.teamWeeks||[],report.team);
   const kickWeekRows=kickHistory.weeks.map(w=>{
    const observed=w.status==='pbp_published';
+   const check=kickChecks.weeks.find(c=>c.week===w.week);
+   const checkDesc=check?(check.status==='four_counts_match'?'All 4 team FG/XP counts match published events':check.status==='partial_counts_match'?check.comparedCategories+'/4 team kick counts match':'Team cross-check '+check.status+' · '+check.reason):'Team kick counts not yet checked';
    const evidence=(w.players||[]).map(p=>
     '<div class="muted" style="font-size:12px">'+safe(p.playerName||p.actor)+
     ' · ID '+safe(p.providerId||'unknown')+' · observed '+(p.observedSubtotal===null?'unknown':safe(p.observedSubtotal)+' pts')+
@@ -440,7 +443,9 @@
     '<span style="width:100%;font-size:11px;opacity:.8">'+safe(w.game||w.error||'Game unverified')+'</span></summary>'+
     (observed?'<div class="muted" style="font-size:12px;margin:6px 0">'+
      'GB player-ID-matched plays '+safe(w.knownEvents)+' · unknown or opposing actors '+safe(w.unverifiedEvents)+
-     ' · observed GB subtotal '+(w.observedPoints===null?'unknown':safe(w.observedPoints)+' pts')+'</div>'+evidence:
+     ' · observed GB subtotal '+(w.observedPoints===null?'unknown':safe(w.observedPoints)+' pts')+'</div>'+evidence+
+     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(checkDesc)+'</div>'+ 
+     (check?.disagreements?.length?'<div class="muted" style="font-size:12px">'+safe(check.disagreements.map(d=>d.category+' PBP '+d.pbpCount+' vs MSF team '+d.teamCount).join(' · '))+'</div>':''):
      '<div class="muted" style="font-size:12px">Unknown, not zero. '+safe(w.error||'No licensed play data')+'</div>')+
     '</details>';
   }).join('');
@@ -455,7 +460,7 @@
    '<summary style="cursor:pointer;font-weight:700">Kicker evidence · Weeks 1–6</summary>'+
    '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(kickHistory.publishedFeeds)+
    '/6 historical game feeds · '+safe(kickHistory.identityVerifiedWeeks)+
-   ' with uniquely verified GB kicker IDs. Final kicker scoring not certified.</div>'+
+   ' with uniquely verified GB kicker IDs · '+safe(kickChecks.matched)+' team FG/XP four-category reconciliations · '+safe(kickChecks.discrepancies)+' detected cross-check mismatches. Final kicker scoring not certified.</div>'+
    (kickHistory.players.length?kickHistory.players.map(p=>
     '<div style="font-size:12px"><b>'+safe(p.playerName)+'</b> · '+
     safe(p.weeksWithObservedEvents)+' weeks · observed subtotal '+safe(p.observedSubtotal)+' pts (not final)</div>').join(''):'')+
