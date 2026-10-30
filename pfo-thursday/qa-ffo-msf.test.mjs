@@ -460,3 +460,22 @@ test('Team-scoped FFO stat audit rejects ignored MSF team filter',()=>{
  assert.match(core,/report\.seasonFilterVerified/);
  assert.match(core,/No independent FFL final score certified/);
 });
+
+test('Gateway preserves binding versus MSF failure layers without exposing response bodies',()=>{
+ assert.match(worker,/legacy_gamecast_service_binding/);
+ assert.match(worker,/binding_http_status:viaBinding\?resp.status:null/);
+ assert.match(worker,/msf_http_status_via_binding:verifiedInnerStatus/);
+ assert.match(worker,/inner_gateway_error:safeInnerError/);
+ assert.match(worker,/size>8192/);
+ assert.match(worker,/provider_gateway_or_server_error/);
+ assert.match(worker,/upstream_layer:viaBinding\?'legacy_gamecast_worker':'mysportsfeeds'/);
+ assert.doesNotMatch(worker,/JSON\.stringify\(inner\)/);
+});
+test('Read-only MSF stat audit shows specific errors instead of opaque provider_upstream_error',()=>{
+ assert.match(core,/legacy GameCast binding/);
+ assert.match(core,/binding HTTP/);
+ assert.match(core,/MSF status reported by binding/);
+ assert.match(core,/inner error/);
+ assert.match(core,/report\.seasonError=String\(error\.message\|\|error\)\.slice\(0,230\)/);
+ assert.doesNotMatch(core,/MSF player game logs.*certified NFL fantasy score/);
+});
