@@ -1,4 +1,4 @@
-name: PFO GameCast MSF portrait and scoreboard Preview (never production)
+name: PFO GameCast 5s refresh and portraits Preview (never production)
 on:
   push:
     branches:
@@ -54,5 +54,5 @@ jobs:
           CLOUDFLARE_SEND_METRICS: 'false'
         run: |
           set -euo pipefail
-          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO MSF scoreboard and player portraits preview only"
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO gamecast 5s countdown and player portraits preview only"
           echo "Deployment targeted preview branch only. Confirm Access challenge and data before any green light."
