@@ -39,13 +39,25 @@ const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);ret
    this published play, with MSF record identity first and the Sleeper player
    directory used for images only. Never interpret an MSF ID as a Sleeper ID. */
 const cleanSubject=x=>normalizeName(x).replace(/\b(?:jr|sr|ii|iii|iv)\b/g,'').trim();
+const abbreviatedActors=fragment=>{
+ // Real MSF descriptions commonly use "10-J.Love" and "14-C.Watson".
+ // Match first initial + full surname ONLY if the team roster identifies
+ // exactly one player. Jersey numbers are hints, not trusted identity keys.
+ const a=[];
+ for(const m of String(fragment||'').matchAll(/(?:^|[^A-Za-z])(?:\d{1,2}-)?([A-Z])\.([A-Za-z][A-Za-z'-]+)/g))
+  a.push({initial:m[1].toLowerCase(),surname:cleanSubject(m[2])});
+ return a;
+};
 function findNamedPlayer(fragment,rows,team){
  const named=cleanSubject(fragment);
  if(!named)return null;
+ const shorthand=abbreviatedActors(fragment);
  const candidates=(Array.isArray(rows)?rows:[]).filter(p=>{
    const n=cleanSubject(p.name),pt=abbrev(p.team);
    if(n.length<6||team&&pt&&pt!==team)return false;
-   return named.includes(n);
+   if(named.includes(n))return true;
+   const parts=n.split(' ');
+   return shorthand.some(a=>parts.length>=2&&parts[0][0]===a.initial&&parts[parts.length-1]===a.surname);
  });
  if(!candidates.length)return null;
  const max=Math.max(...candidates.map(p=>cleanSubject(p.name).length));
@@ -57,7 +69,7 @@ function findNamedPlayer(fragment,rows,team){
  return dedup.size===1?[...dedup.values()][0]:null;
 }
 export function playSubject(event,rows,selected,game){
- const desc=String(event?.text||''),norm=cleanSubject(desc),raw=event?.raw||{};
+ const desc=String(event?.text||''),raw=event?.raw||{};
  const poss=eventInfo(event,game).offense;
  const pool=[...(Array.isArray(rows)?rows:[]),...(selected?.name?[selected]:[])];
  // Explicit play roles trump a merely mentioned defensive/teammate name.
@@ -80,6 +92,15 @@ export function playSubject(event,rows,selected,game){
   if(!m)continue;
   const matched=findNamedPlayer(m[1],pool,rule.kind==='interception'?null:poss);
   if(matched)return {player:matched,role:rule.kind};
+ }
+ // MSF shorthand fallback: when a play starts "(Shotgun) 10-J.Love pass"
+ // the role regex might consume only a partial actor. Resolve an initial +
+ // surname on this offense before giving up or displaying an empty portrait.
+ const abbreviations=abbreviatedActors(desc);
+ if(abbreviations.length){
+  const first=abbreviations[0];
+  const actor=findNamedPlayer(first.initial.toUpperCase()+'.'+first.surname,pool,poss);
+  if(actor&&!isPick)return {player:actor,role:incomplete?'passer':'named'};
  }
  // For provider lines with a different syntax, choose only one named
  // player on the correct offensive team, never an arbitrary first match.
