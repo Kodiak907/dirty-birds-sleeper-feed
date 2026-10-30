@@ -872,3 +872,37 @@ test('Kicker discrepancy is visible and expanded on narrow mobile GameCast',()=>
  assert.match(core,/published team FG\/XP categories reconcile/);
  assert.match(core,/weeks needing count review/);
 });
+
+test('MSF kicker attribution gap preserves original unaffiliated kick text without assigning fantasy points',()=>{
+ const payload={gameplaybyplay:{plays:[
+  {id:'fg1',description:'28-T.Smack extra point is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}},
+  {id:'fg2',description:'(03:10) GB field goal is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}},
+  {id:'fg3',description:'4-C.McLaughlin 48 yard field goal is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'TB'}}}
+ ]}};
+ const pb=kickingPlayEvidence(payload,own.scoring,[{id:'802',name:'Terry Smack',position:'K',team:'GB',jersey:'28'}]);
+ assert.equal(pb.unattributedEvents,1);
+ assert.equal(pb.unattributedPlayDetails.length,1);
+ assert.equal(pb.unattributedPlayDetails[0].sourcePossessionTeam,'GB');
+ assert.match(pb.unattributedPlayDetails[0].description,/GB field goal is GOOD/);
+ const totals=auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'g4'},stats:{fieldGoals:{fgAtt:1,fgMade:1}}
+ }]},'GB',own.scoring);
+ const result=reconcileKickerWeeks([{week:4,gameId:'g4',evidence:pb}],[{week:4,evidence:totals}],'GB');
+ assert.equal(result.discrepancies,1);
+ assert.equal(result.weeks[0].crossFeedDifferenceMayBeAttributionGap,true);
+ assert.equal(result.weeks[0].unattributedPlays,1);
+ assert.equal(result.weeks[0].unresolvedPlayDetails.length,2);
+ assert.equal(result.weeks[0].unresolvedPlayDetails.find(x=>!x.kickerToken).sourcePossessionTeam,'GB');
+ assert.equal(result.fullFantasyScoresCertified,false);
+ assert.match(core,/Inspect original MSF plays needing identification/);
+ assert.match(core,/source possession/);
+});
+test('No unassigned field goal is given a kicker or team identity from possession alone',()=>{
+ const pb=kickingPlayEvidence({gameplaybyplay:{plays:[{
+  description:'(00:05) Field Goal from 39 yards is GOOD',playStatus:{teamInPossession:{abbreviation:'GB'}}}
+ ]}},own.scoring,[]);
+ assert.equal(pb.kickers.length,0);
+ assert.equal(pb.unattributedEvents,1);
+ assert.equal(pb.unattributedPlayDetails[0].sourcePossessionTeam,'GB');
+ assert.equal(pb.kickingFantasyScoreCertified,false);
+});
