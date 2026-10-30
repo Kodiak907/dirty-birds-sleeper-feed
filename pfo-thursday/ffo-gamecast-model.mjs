@@ -292,6 +292,52 @@ export function fflProjection(gameRows,rules,position=''){
 
 
 /** Independently observed player-stat scoring components; never full FFL certification. */
+/**
+ * Return *field names only* from provider stat objects. This is schema
+ * discovery, NOT a claim that an unknown field maps to FFL scoring.
+ * Private GameCast only; do not serialize any raw player values.
+ */
+export function statFieldPaths(source,{maxDepth=4,limit=48}={}){
+ const out=[],walk=(node,prefix,depth)=>{
+  if(!node||typeof node!=='object'||Array.isArray(node)||depth>maxDepth)return;
+  for(const [key,value] of Object.entries(node)){
+   if(out.length>=limit)return;
+   if(!/^[A-Za-z][A-Za-z0-9_]{0,47}$/.test(key))continue;
+   const path=prefix?prefix+'.'+key:key;
+   if(value!==null&&typeof value==='object')walk(value,path,depth+1);
+   else if((typeof value==='number'&&Number.isFinite(value))||
+     (typeof value==='string'&&value.length<24&&value.trim()!==''&&Number.isFinite(Number(value))))
+    out.push(path);
+  }
+ };
+ walk(source,'',0);
+ return [...new Set(out)].slice(0,limit);
+}
+/** A D/ST is a team, not a player. Verify access to team gamelogs separately. */
+export function auditTeamGameFeed(payload,team=''){
+ const candidates=[
+  ['teamgamelogs',payload?.teamgamelogs],
+  ['teamGameLogs',payload?.teamGameLogs],
+  ['teamGamelogs',payload?.teamGamelogs],
+  ['gamelogs',payload?.gamelogs],
+  ['teamStats',payload?.teamStats]
+ ];
+ const [collection,rows]=candidates.find(x=>Array.isArray(x[1]))||['unrecognized',[]];
+ const wanted=String(team||'').toUpperCase();
+ const records=rows.map(x=>{
+  const o=x.team||x.teamInfo||{},abbr=String(o.abbreviation||o.abbr||x.teamAbbreviation||'').toUpperCase();
+  const stats=x.stats||x.teamStats||{};
+  return {team:abbr,gameId:String(x.game?.id??x.game?.gameId??''),
+   fields:statFieldPaths(stats,{limit:60}),hasNumericFields:statFieldPaths(stats,{limit:1}).length>0};
+ });
+ const teamFilterVerified=records.length>0&&records.every(x=>x.team===wanted);
+ return {collection,rawCount:rows.length,team:wanted,teamFilterVerified,
+  records:records.length,numericRecords:records.filter(x=>x.hasNumericFields).length,
+  exampleFieldPaths:[...new Set(records.flatMap(x=>x.fields))].slice(0,48),
+  // Team logs do not themselves provide opponent scoring corrections,
+  // kick return touchdown allocation or final D/ST fantasy points.
+  dstScoreCertified:false};
+}
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
  for(const [index,entry] of weeklyPayloads.entries()){
@@ -301,6 +347,7 @@ export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
    if(!positions.includes(row.position)||!row.stats)continue;
    const stats=normalizeStats(row.stats),result=fflScore(row.stats,rules,row.position);
    samples.push({player:row.name,id:row.id,position:row.position,week,
+    rawFieldPaths:statFieldPaths(row.stats,{limit:40}),
     observedPoints:result.points,complete:result.complete,covered:result.covered,
     missing:result.missing,components:result.components||[],hasKnownStats:Object.keys(stats).length>0});
   }
@@ -318,6 +365,7 @@ export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
   groups[position]={records:rows.length,withAnyStats:rows.filter(r=>r.hasKnownStats).length,
    withPartialPoints:rows.filter(r=>r.observedPoints!==null).length,
    fullyCovered:rows.filter(r=>r.complete).length,coveredCategories,
+   observedRawFieldPaths:[...new Set(rows.flatMap(r=>r.rawFieldPaths))].sort().slice(0,55),
    missingCategories:[...new Set(rows.flatMap(r=>r.missing))].sort(),
    coreCoverage:CORE_SCORING_GROUPS[position].filter(k=>Number(rules[k]||0)!==0)
     .map(k=>({category:k,records:rows.filter(r=>r.covered.includes(k)).length,
