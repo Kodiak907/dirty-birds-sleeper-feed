@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -543,4 +543,40 @@ test('MSF scoring audit displays component breakdown and lower-bound comparison 
  assert.match(core,/six-week totals exceeding published season totals/);
  assert.match(core,/model\.auditSeasonLowerBound\(goodWeeks\.map\(x=>x\.payload\),seasonPayload\)/);
  assert.doesNotMatch(core,/Sleeper fantasy points as source/);
+});
+
+test('Unknown MSF kicker fields are discoverable as private schema names but never treated as points',()=>{
+ const stats={fieldGoalShooting:{fgGood:1,fgLong:53},patKicking:{patGood:3},playerName:'example'};
+ const keys=statFieldPaths(stats);
+ assert.deepEqual(keys,['fieldGoalShooting.fgGood','fieldGoalShooting.fgLong','patKicking.patGood']);
+ const sample={gamelogs:[{player:{id:15,fullName:'FFO Test Kicker',primaryPosition:'K'},
+   team:{abbreviation:'GB'},stats}]};
+ const a=scoringEvidence([{week:6,payload:sample}],own.scoring,'GB');
+ assert.equal(a.byPosition.K.records,1);
+ assert.equal(a.byPosition.K.withPartialPoints,0);
+ assert.ok(a.byPosition.K.observedRawFieldPaths.includes('fieldGoalShooting.fgGood'));
+ assert.equal(a.exactFantasyPointsCertified,false);
+});
+test('MSF team gamelog source is verified independently from individual players',()=>{
+ const payload={teamgamelogs:[{team:{abbreviation:'GB'},game:{id:'G-1'},
+   stats:{defense:{sacks:3},turnovers:{takeaways:2}}}]};
+ const a=auditTeamGameFeed(payload,'GB');
+ assert.equal(a.collection,'teamgamelogs');
+ assert.equal(a.records,1);
+ assert.equal(a.numericRecords,1);
+ assert.equal(a.teamFilterVerified,true);
+ assert.ok(a.exampleFieldPaths.includes('defense.sacks'));
+ assert.equal(a.dstScoreCertified,false);
+ assert.equal(auditTeamGameFeed(payload,'CAR').teamFilterVerified,false);
+ assert.equal(auditTeamGameFeed({gamelogs:[]},'GB').dstScoreCertified,false);
+});
+test('Player audit reports special-teams source gaps and team-gamelog endpoint securely',()=>{
+ assert.match(worker,/teamgamelogs/);
+ assert.match(worker,/team_gamelogs/);
+ assert.match(worker,/ffoTeamFilter\(params\)/);
+ assert.match(core,/auditedStatRequest\('teamgamelogs',\{season:s.season,week:1,team\}/);
+ assert.match(core,/model\.auditTeamGameFeed/);
+ assert.match(core,/observedRawFieldPaths/);
+ assert.match(core,/D\/ST is a team, not a player/);
+ assert.doesNotMatch(core,/D\/ST.*0\.0 points/);
 });
