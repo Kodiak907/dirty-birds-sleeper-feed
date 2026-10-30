@@ -25,14 +25,22 @@ const playSourceId=x=>{
  return v===null||v===undefined||v===''?null:String(v);
 };
 const playClock=x=>{
- const st=x?.playStatus||{},q=Number(st.quarter);
+ const st=x?.playStatus||{},q=Number(st.quarter??x.quarter??x.period);
  const hasQuarter=Number.isInteger(q)&&q>=1&&q<=7;
+ const period=hasQuarter?String(q):'';
+ const explicit=String(x.time||x.gameClock||x.clock||'').trim();
+ const match=explicit.match(/^(\d{1,2}):([0-5]\d)$/);
+ const fromText=String(x.description||x.playDescription||x.text||'').match(/^\s*\((\d{1,2}):([0-5]\d)\)/);
  const elapsed=Number(st.secondsElapsed);
- const valid=st.secondsElapsed!==null&&st.secondsElapsed!==undefined&&Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
- const remain=valid?900-elapsed:null;
- return {period:hasQuarter?String(q):String(x.quarter||x.period||''),
-  clock:remain===null?String(x.time||x.gameClock||x.clock||''):
-   String(Math.floor(remain/60))+':'+String(remain%60).padStart(2,'0')};
+ // MSF secondsElapsed is 15-minute regulation-quarter-relative. NFL regular
+ // season overtime can be 10 minutes; never calculate a fake 15-minute OT
+ // clock from elapsed without provider period duration.
+ const valid=st.secondsElapsed!==null&&st.secondsElapsed!==undefined&&
+   Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
+ const remain=valid&&q>=1&&q<=4?900-elapsed:null;
+ const derived=remain===null?'':Math.floor(remain/60)+':'+String(remain%60).padStart(2,'0');
+ return {period,clock:match?explicit:fromText?fromText[1]+':'+fromText[2]:derived,
+  source:match?'provider_clock':fromText?'published_description':derived?'regulation_elapsed':'unknown'};
 };
 // Deterministic, non-cryptographic fingerprint for identity fallback only;
 // do not represent this as an actual MSF play identifier.
@@ -93,6 +101,92 @@ export function diagnosePlayFeed(payload,metadata={}){
   // Provider success + parseable plays is evidence of historical access,
   // never automatic proof of complete PBP or every game's entitlement.
   fullGameVerified:false};
+}
+
+
+/**
+ * Read-only historical QA. Checks source order, regulation vs OT clock
+ * provenance, and independent MSF final box-score evidence. No fabricated
+ * event totals, no claim that one sample certifies full-game coverage.
+ */
+export function inspectHistoricalGame(playResponse,boxResponse=null,scheduleGame={}){
+ const payload=playResponse?.data||playResponse||{};
+ const raw=sourcePlayRows(payload).filter(x=>String(x?.description||x?.playDescription||x?.text||''));
+ const diagnostics=diagnosePlayFeed(payload,playResponse||{});
+ const entries=raw.map((x,i)=>{
+  const clock=playClock(x),q=Number(clock.period),elapsed=num(x?.playStatus?.secondsElapsed);
+  return {index:i,quarter:Number.isInteger(q)&&q>=1&&q<=7?q:null,
+   elapsed:elapsed!==null&&elapsed>=0&&elapsed<=900?elapsed:null,
+   clock:clock.clock,clockSource:clock.source,
+   description:String(x?.description||x?.playDescription||x?.text||'')};
+ });
+ let forwardViolations=0,reverseViolations=0,comparablePairs=0;
+ for(let i=1;i<entries.length;i++){
+  const a=entries[i-1],b=entries[i];
+  if(a.quarter===null||b.quarter===null)continue;
+  if(a.quarter===b.quarter&&(a.elapsed===null||b.elapsed===null))continue;
+  comparablePairs++;
+  if(b.quarter<a.quarter||(b.quarter===a.quarter&&b.elapsed<a.elapsed))forwardViolations++;
+  if(b.quarter>a.quarter||(b.quarter===a.quarter&&b.elapsed>a.elapsed))reverseViolations++;
+ }
+ const chronologicalOrder=!comparablePairs?'unknown':
+  forwardViolations===0?'forward':
+  reverseViolations===0?'reverse':'mixed';
+ const ordered=chronologicalOrder==='reverse'?[...entries].reverse():entries;
+ const first=ordered[0]||null,last=ordered[ordered.length-1]||null;
+ const lastQ=last?.quarter||null;
+ const ot=entries.filter(x=>x.quarter!==null&&x.quarter>4);
+ const otClockUnknown=ot.filter(x=>!x.clock).length;
+ const checkGame={id:scheduleGame.id??'',status:'Unverified',homePoints:null,awayPoints:null};
+ const scored=boxResponse&&boxResponse.available!==false?
+  gameScoreUpdate(checkGame,boxResponse):checkGame;
+ const boxScorePublished=scored.scoreSource==='MySportsFeeds game boxscore'&&
+  scored.homePoints!==null&&scored.awayPoints!==null;
+ const scheduleHome=num(scheduleGame.homePoints),scheduleAway=num(scheduleGame.awayPoints);
+ const matchesSchedule=boxScorePublished&&scheduleHome!==null&&scheduleAway!==null?
+  scored.homePoints===scheduleHome&&scored.awayPoints===scheduleAway:null;
+ const providerFinal=gamePhase(scored.status)==='final';
+ const scheduledFinal=gamePhase(scheduleGame.status)==='final';
+ const warnings=[];
+ if(diagnostics.scoringOnly)warnings.push('Scoring-only fallback, not full PBP');
+ if(diagnostics.capped)warnings.push('Visible timeline capped at 360 plays');
+ if(chronologicalOrder==='mixed')warnings.push('Published play chronology is inconsistent');
+ if(chronologicalOrder==='unknown')warnings.push('Insufficient native clock/order evidence');
+ if(diagnostics.missingClock)warnings.push('Some plays lack a verified clock');
+ if(otClockUnknown)warnings.push('OT contains plays with no verifiable clock');
+ if(!boxScorePublished)warnings.push('Independent MSF final box-score values unavailable');
+ if(matchesSchedule===false)warnings.push('MSF box score differs from MSF schedule');
+ if(!providerFinal&&!scheduledFinal)warnings.push('Final status not verified');
+ const boxData=boxResponse?.data||boxResponse||{};
+ const body=boxData.gameboxscore||boxData.gameBoxscore||boxData.boxscore||boxData;
+ const score=body.scoring||body.score||body.gameScore||{};
+ const quarters=Array.isArray(score.quarters)?score.quarters:[];
+ const val=(o,names)=>{for(const n of names){const x=num(o?.[n]);if(x!==null)return x}return null};
+ let quarterScoreMatches=null;
+ if(quarters.length&&boxScorePublished){
+  const qScores=quarters.map(q=>({
+   home:val(q,['homeScore','homeScoreTotal','homePoints']),
+   away:val(q,['awayScore','awayScoreTotal','awayPoints'])
+  }));
+  if(qScores.every(q=>q.home!==null&&q.away!==null)){
+   const home=qScores.reduce((sum,q)=>sum+q.home,0),away=qScores.reduce((sum,q)=>sum+q.away,0);
+   quarterScoreMatches=home===scored.homePoints&&away===scored.awayPoints;
+   if(!quarterScoreMatches)warnings.push('Box-score period totals disagree with final');
+  }
+ }
+ return {diagnostics,chronologicalOrder,comparablePairs,forwardViolations,reverseViolations,
+  first:{quarter:first?.quarter??null,clock:first?.clock||null,description:first?.description||null},
+  last:{quarter:last?.quarter??null,clock:last?.clock||null,description:last?.description||null},
+  lastQuarter:lastQ,otPlayCount:ot.length,otClockUnknown,
+  boxScorePublished,boxHome:boxScorePublished?scored.homePoints:null,
+  boxAway:boxScorePublished?scored.awayPoints:null,
+  boxStatus:scored.status,providerFinal,scheduledFinal,
+  matchesSchedule,quarterScoreMatches,warnings,
+  // Evidence tier only. Never certify full history from a six-game sample.
+  usablePlaySequence:diagnostics.hasPublishedPlays&&
+   diagnostics.duplicateResolvedIds===0&&
+   chronologicalOrder!=='mixed',
+  fullGameCertified:false};
 }
 
 function first(root,paths){for(const path of paths){let x=root;for(const part of path.split('.'))x=x?.[part];const v=num(x);if(v!==null)return v;}return null;}
