@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -664,10 +664,12 @@ test('Kicker audit deduplicates native IDs and withholds unknown actor/distance 
  assert.equal(a.kickers[0].providerId,null);
  assert.equal(a.kickingFantasyScoreCertified,false);
 });
-test('PFO kicker audit shows sourced provisional points and crosswalk status',()=>{
- assert.match(core,/kickerRows/);
- assert.match(core,/s\.ownedRules,s\.playerRows/);
- assert.match(core,/PBP actor only; MSF player ID unverified/);
+test('PFO kicker audit matches weekly MSF team player rows and shows separate six-week evidence',()=>{
+ assert.match(core,/model\.playerRows\(weekly\.payload\)/);
+ assert.match(core,/model\.kickingPlayEvidence\(response\.data\|\|\{\},s\.ownedRules,players\)/);
+ assert.match(core,/model\.summarizeKickerWeeks\(report\.kickWeeks\|\|\[\],report\.team\)/);
+ assert.match(core,/Kicker evidence · Weeks 1–6/);
+ assert.match(core,/Opposing kickers and players without uniquely verified MSF identity/);
 });
 
 test('D/ST Weeks 1-6 scoring evidence distinguishes valid zero sacks from missing game',()=>{
@@ -698,4 +700,59 @@ test('Historical D/ST audit requests all six weeks and reports independent compo
  assert.match(core,/for\(let week=2;week<=6;week\+\+\)/);
  assert.match(core,/model\.summarizeDstWeeks\(report\.teamWeeks\|\|\[\],report\.team\)/);
  assert.match(core,/full D\/ST score NOT certified/);
+});
+
+test('Kicker Weeks 1–6 attribution accepts only current-week GB name, jersey, team and MSF ID',()=>{
+ const rows=playerRows({gamelogs:[{
+  player:{id:802,fullName:'Terry Smack',jerseyNumber:28,primaryPosition:'K'},
+  team:{abbreviation:'GB'},stats:{}
+ }]});
+ const descriptions=[
+  '(12:16) 28-T.Smack 59 yard field goal is GOOD',
+  '28-T.Smack extra point is NO GOOD',
+  '16-W.Reichard 38 yard field goal is GOOD',
+  '28-T.Smack extra point is GOOD'
+ ];
+ const pb={gameplaybyplay:{plays:descriptions.map((description,i)=>({
+  id:'kick-'+i,description,playStatus:{quarter:1,secondsElapsed:i*80}}))}};
+ const e=kickingPlayEvidence(pb,own.scoring,rows);
+ const r=summarizeKickerWeeks([{week:3,game:'MIN @ GB',evidence:e},
+  {week:4,game:'GB @ CHI',error:'MSF provider request failed'}],'GB');
+ assert.equal(r.publishedFeeds,1);
+ assert.equal(r.identityVerifiedWeeks,1);
+ assert.equal(r.weeks[0].knownEvents,3);
+ assert.equal(r.weeks[0].unverifiedEvents,1);
+ assert.equal(r.weeks[0].observedPoints,5);
+ assert.equal(r.players.length,1);
+ assert.equal(r.players[0].providerId,'802');
+ assert.equal(r.players[0].observedSubtotal,5);
+ assert.equal(r.weeks[1].observedPoints,null);
+ assert.equal(r.weeks[1].status,'feed_unverified');
+ assert.equal(r.finalScoresCertified,false);
+});
+test('Kicker actor with matching name but wrong jersey or team remains unverified',()=>{
+ const pb={gameplaybyplay:{plays:[
+ {id:'1',description:'(5:00) 28-T.Smack 43 yard field goal is GOOD'}
+ ]}};
+ const wrong=playerRows({gamelogs:[{
+ player:{id:10,fullName:'Terry Smack',jerseyNumber:99,primaryPosition:'K'},
+ team:{abbreviation:'GB'},stats:{}
+ },{
+ player:{id:11,fullName:'Terry Smack',jerseyNumber:28,primaryPosition:'K'},
+ team:{abbreviation:'MIN'},stats:{}
+ }]});
+ const e=kickingPlayEvidence(pb,own.scoring,wrong);
+ const r=summarizeKickerWeeks([{week:1,evidence:e}],'GB');
+ assert.equal(r.identityVerifiedWeeks,0);
+ assert.equal(r.weeks[0].observedPoints,null);
+ assert.equal(r.weeks[0].unverifiedEvents,1);
+ assert.equal(r.finalScoresCertified,false);
+});
+test('Kicker historical audit checks at most one matching team game each week and never credits BYE or ambiguity as zero',()=>{
+ assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
+ assert.match(core,/matches\\.length!==1/);
+ assert.match(core,/Multiple matching schedule games; attribution withheld/);
+ assert.match(core,/No scheduled MSF team game located/);
+ assert.match(core,/report\\.kickWeeks\\.push/);
+ assert.match(core,/Unknown, not zero/);
 });
