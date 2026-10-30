@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: pfo-599-protected-preview
+  cancel-in-progress: true
 jobs:
   qa:
     runs-on: ubuntu-latest
