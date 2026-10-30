@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-10-30T12:53:42.744150+00:00
-Sleeper snapshot: 2026-10-30T12:53:38.204707+00:00
+Generated: 2026-10-30T13:59:42.155813+00:00
+Sleeper snapshot: 2026-10-30T13:59:37.202091+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -20,6 +20,7 @@ The points below average actual fantasy scoring over completed Weeks 1–7, with
 | Isaiah Likely | TE | 92.00 | 13.14 | 7/7 |
 | Garrett Wilson | WR | 80.90 | 11.56 | 7/7 |
 | C.J. Stroud | QB | 77.46 | 11.07 | 4/7 |
+| Deebo Samuel Sr. | WR | 55.40 | 7.91 | 5/7 |
 | Ollie Gordon II | RB | 48.60 | 6.94 | 3/7 |
 | Will Reichard | K | 47.00 | 6.71 | 3/7 |
 | Minnesota Vikings | DEF | 47.00 | 6.71 | 4/7 |
@@ -28,7 +29,6 @@ The points below average actual fantasy scoring over completed Weeks 1–7, with
 | A.J. Brown | WR | 14.60 | 2.09 | 3/7 |
 | Caleb Douglas | WR | 0.00 | 0.00 | 0/7 |
 | Antonio Williams | WR | 0.00 | 0.00 | 0/7 |
-| Christian Kirk | WR | 0.00 | 0.00 | 0/7 |
 | Chig Okonkwo | TE | 0.00 | 0.00 | 0/7 |
 | Zach Charbonnet | RB | 0.00 | 0.00 | 0/7 |
 
@@ -38,9 +38,9 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
 | Cokerthestroker | 6-1 | 121.87 | 2 |
+| Dirty Birds | 5-2 | 119.19 | 9 |
 | suck my dickerson | 5-2 | 118.95 | 1 |
 | JA’MARRTRIX | 1-6 | 117.00 | 3 |
-| Dirty Birds | 5-2 | 115.45 | 9 |
 | To Infinity and Bijan | 3-4 | 112.20 | 5 |
 | DeeboSix0 | 5-2 | 107.09 | 1 |
 | BigOlBoyle | 2-5 | 106.41 | 0 |

@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-30T12:53:47.623691+00:00
-Sleeper snapshot: 2026-10-30T12:53:38.204707+00:00
-nflverse observations: 2026-10-30T12:53:42.331671+00:00; injury feed loaded: True
+Generated: 2026-10-30T13:59:48.381084+00:00
+Sleeper snapshot: 2026-10-30T13:59:37.202091+00:00
+nflverse observations: 2026-10-30T13:59:41.566637+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -17,8 +17,8 @@ nflverse observations: 2026-10-30T12:53:42.331671+00:00; injury feed loaded: Tru
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 31.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
 | Patrick Mahomes | No tag | Week 8 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
-| Christian Kirk | IR | Week 7 observation: Questionable, Full Participation in Practice, Calf | 30.0% | Verify official NFL roster and game status before lineup decisions |
 | A.J. Brown | No tag | Week 8 observation: Did Not Participate In Practice | 70.3% | Verify current status before kickoff |
+| Deebo Samuel Sr. | Out | Week 7 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
 | Garrett Wilson | No tag | No matched report (not clearance) | 92.0% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |

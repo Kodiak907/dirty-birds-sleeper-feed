@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-30T12:53:46.378857+00:00",
-  "source_snapshot_utc": "2026-10-30T12:53:38.204707+00:00",
+  "generated_at_utc": "2026-10-30T13:59:46.583759+00:00",
+  "source_snapshot_utc": "2026-10-30T13:59:37.202091+00:00",
   "source_market_as_of": "2026-10-30T03:47:40.739408+00:00",
-  "source_projection_as_of": "2026-10-30T07:38:47.802612+00:00",
+  "source_projection_as_of": "2026-10-30T13:36:50.272246+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 27864,
-  "market_screened": 8162,
+  "market_screened": 8304,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -179,6 +179,82 @@
               "position": "WR"
             },
             {
+              "id": "8131",
+              "name": "Isaiah Likely",
+              "position": "TE"
+            }
+          ],
+          "receive": [
+            {
+              "id": "5849",
+              "name": "Kyler Murray",
+              "position": "QB"
+            },
+            {
+              "id": "11604",
+              "name": "Brock Bowers",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 7,
+          "opponent": "JA’MARRTRIX",
+          "our_lineup_delta_ppg": 0.72,
+          "their_lineup_delta_ppg": 0.31,
+          "value_paid_received_ratio": 0.9,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "8131",
+              "name": "Isaiah Likely",
+              "position": "TE"
+            }
+          ],
+          "receive": [
+            {
+              "id": "11604",
+              "name": "Brock Bowers",
+              "position": "TE"
+            },
+            {
+              "id": "11610",
+              "name": "Malik Washington",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 7,
+          "opponent": "JA’MARRTRIX",
+          "our_lineup_delta_ppg": 0.72,
+          "their_lineup_delta_ppg": 0.31,
+          "value_paid_received_ratio": 0.94,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
               "id": "13345",
               "name": "Jonah Coleman",
               "position": "RB"
@@ -243,7 +319,7 @@
           ]
         }
       ],
-      "candidate_count": 32
+      "candidate_count": 40
     },
     {
       "asset": "A.J. Brown",
@@ -276,8 +352,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.88,
-          "their_lineup_delta_ppg": 1.45,
+          "our_lineup_delta_ppg": 1.89,
+          "their_lineup_delta_ppg": 1.44,
           "value_paid_received_ratio": 1.035,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -314,8 +390,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.88,
-          "their_lineup_delta_ppg": 1.45,
+          "our_lineup_delta_ppg": 1.89,
+          "their_lineup_delta_ppg": 1.44,
           "value_paid_received_ratio": 0.997,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -352,8 +428,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.32,
-          "their_lineup_delta_ppg": 1.37,
+          "our_lineup_delta_ppg": 1.33,
+          "their_lineup_delta_ppg": 1.35,
           "value_paid_received_ratio": 0.766,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -390,8 +466,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.15,
-          "their_lineup_delta_ppg": 2.75,
+          "our_lineup_delta_ppg": 1.16,
+          "their_lineup_delta_ppg": 2.74,
           "value_paid_received_ratio": 0.801,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -428,8 +504,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.88,
-          "their_lineup_delta_ppg": 1.37,
+          "our_lineup_delta_ppg": 0.89,
+          "their_lineup_delta_ppg": 1.36,
           "value_paid_received_ratio": 1.072,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -466,8 +542,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 0.88,
-          "their_lineup_delta_ppg": 1.37,
+          "our_lineup_delta_ppg": 0.89,
+          "their_lineup_delta_ppg": 1.36,
           "value_paid_received_ratio": 0.855,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -478,13 +554,90 @@
           ]
         }
       ],
-      "candidate_count": 46
+      "candidate_count": 49
     },
     {
       "asset": "Patrick Mahomes",
       "owned_now": true,
-      "leads": [],
-      "candidate_count": 0
+      "leads": [
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4881",
+              "name": "Lamar Jackson",
+              "position": "QB"
+            },
+            {
+              "id": "96",
+              "name": "Aaron Rodgers",
+              "position": "QB"
+            }
+          ],
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 0.62,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 0.998,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4881",
+              "name": "Lamar Jackson",
+              "position": "QB"
+            },
+            {
+              "id": "3271",
+              "name": "Tyler Higbee",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 0.62,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 1.089,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        }
+      ],
+      "candidate_count": 3
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."

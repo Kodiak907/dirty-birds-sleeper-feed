@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-30T12:53:42.684687+00:00
-Sleeper snapshot: 2026-10-30T12:53:38.204707+00:00
+Generated: 2026-10-30T13:59:42.014005+00:00
+Sleeper snapshot: 2026-10-30T13:59:37.202091+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1421178008932188160` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Deebo Samuel Sr. → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1) | FAAB bid: $16
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-30T13:59:42.014005+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Deebo Samuel Sr. → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1) | FAAB bid: $16
 - 2026-10-30T06:54:28.616045+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: DeMario Douglas → Cokerthestroker (#12) | Dropped: Devin Singletary → Cokerthestroker (#12) | FAAB bid: $0
 - 2026-10-29T04:47:34.564280+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Wil Lutz → DANGER CLOSE  (#4) | Dropped: Tyjae Spears → DANGER CLOSE  (#4)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-25T15:30:52.555237+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baker Mayfield → CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jerry Jeudy → DANGER CLOSE  (#4)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Michael Penix Jr. → kfsn (#6) | Dropped: Michael Pittman Jr. → kfsn (#6)
-- 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Kenny Gainwell → DANGER CLOSE  (#4)
 
 ## Important limits
 

@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-30T12:53:42.707469+00:00
-Sleeper snapshot: 2026-10-30T12:53:38.204707+00:00
+Generated: 2026-10-30T13:59:42.051218+00:00
+Sleeper snapshot: 2026-10-30T13:59:37.202091+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- Dirty Birds: added Deebo Samuel Sr.; dropped Christian Kirk
 
 ## Limits
 

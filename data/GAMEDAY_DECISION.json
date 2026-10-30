@@ -4,23 +4,23 @@
     "complete": true,
     "missing_projection": [
       "Kaelon Black",
-      "Christian Kirk",
+      "Deebo Samuel Sr.",
       "Isaiah Likely",
       "C.J. Stroud"
     ],
-    "ppg": 125.71,
+    "ppg": 125.46,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 16.4
+        "ppg": 16.41
       },
       {
         "id": "9509",
         "name": "Bijan Robinson",
         "position": "RB",
-        "ppg": 19.07
+        "ppg": 18.94
       },
       {
         "id": "8150",
@@ -32,7 +32,7 @@
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 15.58
+        "ppg": 15.67
       },
       {
         "id": "8146",
@@ -50,35 +50,35 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.33
+        "ppg": 7.25
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.28
+        "ppg": 6.27
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 11.94
+        "ppg": 11.88
       },
       {
         "id": "5859",
         "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 11.13
+        "ppg": 11.06
       }
     ]
   },
   "difference_ppg": 0.0,
   "explicit_excluded_ids": [
     "13345",
-    "4950",
+    "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-10-30T12:53:50.377754+00:00",
+  "generated_at_utc": "2026-10-30T13:59:51.436748+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
@@ -86,19 +86,19 @@
       "Isaiah Likely",
       "C.J. Stroud"
     ],
-    "ppg": 125.71,
+    "ppg": 125.46,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 16.4
+        "ppg": 16.41
       },
       {
         "id": "9509",
         "name": "Bijan Robinson",
         "position": "RB",
-        "ppg": 19.07
+        "ppg": 18.94
       },
       {
         "id": "8150",
@@ -110,7 +110,7 @@
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 15.58
+        "ppg": 15.67
       },
       {
         "id": "8146",
@@ -128,25 +128,25 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.33
+        "ppg": 7.25
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.28
+        "ppg": 6.27
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 11.94
+        "ppg": 11.88
       },
       {
         "id": "5859",
         "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 11.13
+        "ppg": 11.06
       }
     ]
   },
@@ -222,19 +222,19 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "4950",
-      "model_handling": "exclude_explicit_unavailable_tag",
-      "name": "Christian Kirk",
-      "sleeper_injury_status": "IR",
+      "id": "5859",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "A.J. Brown",
+      "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "5859",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "A.J. Brown",
-      "sleeper_injury_status": null,
+      "id": "5872",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Deebo Samuel Sr.",
+      "sleeper_injury_status": "Out",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -323,8 +323,8 @@
   "removed_starters": [],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-10-30T12:53:38.204707+00:00",
-  "source_availability_generated_at_utc": "2026-10-30T12:53:47.623691+00:00",
+  "snapshot_utc": "2026-10-30T13:59:37.202091+00:00",
+  "source_availability_generated_at_utc": "2026-10-30T13:59:48.381084+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

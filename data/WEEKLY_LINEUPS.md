@@ -1,25 +1,25 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-30T12:53:46.941858+00:00 | Forecast as of: 2026-10-30T07:38:47.802612+00:00
+Generated: 2026-10-30T13:59:47.562557+00:00 | Forecast as of: 2026-10-30T13:36:50.272246+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 8
 
-**Projected optimal score:** 125.71
+**Projected optimal score:** 125.46
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Patrick Mahomes | QB | DEN | 16.40 |
-| Bijan Robinson | RB | TB | 19.07 |
+| Patrick Mahomes | QB | DEN | 16.41 |
+| Bijan Robinson | RB | TB | 18.94 |
 | Kyren Williams | RB | LAC | 18.30 |
-| Zay Flowers | WR | BUF | 15.58 |
+| Zay Flowers | WR | BUF | 15.67 |
 | Garrett Wilson | WR | LV | 13.79 |
 | Chig Okonkwo | TE | PHI | 5.89 |
-| Will Reichard | K | DET | 7.33 |
-| Minnesota Vikings | DEF | DET | 6.28 |
-| Ollie Gordon II | RB | NE | 11.94 |
-| A.J. Brown | WR | MIA | 11.13 |
+| Will Reichard | K | DET | 7.25 |
+| Minnesota Vikings | DEF | DET | 6.27 |
+| Ollie Gordon II | RB | NE | 11.88 |
+| A.J. Brown | WR | MIA | 11.06 |
 
 ## Week 9
 
@@ -57,7 +57,7 @@ Generated: 2026-10-30T12:53:46.941858+00:00 | Forecast as of: 2026-10-30T07:38:4
 
 ## Week 11
 
-**Projected optimal score:** 111.67
+**Projected optimal score:** 113.42
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -69,8 +69,8 @@ Generated: 2026-10-30T12:53:46.941858+00:00 | Forecast as of: 2026-10-30T07:38:4
 | Isaiah Likely | TE | JAX | 10.59 |
 | Will Reichard | K | SF | 7.13 |
 | Minnesota Vikings | DEF | SF | 7.19 |
+| Deebo Samuel Sr. | WR | MIN | 8.09 |
 | Antonio Williams | WR | CIN | 6.42 |
-| Chig Okonkwo | TE | CIN | 6.34 |
 
 ## Week 12
 
@@ -91,7 +91,7 @@ Generated: 2026-10-30T12:53:46.941858+00:00 | Forecast as of: 2026-10-30T07:38:4
 
 ## Week 13
 
-**Projected optimal score:** 120.33
+**Projected optimal score:** 122.86
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -99,7 +99,7 @@ Generated: 2026-10-30T12:53:46.941858+00:00 | Forecast as of: 2026-10-30T07:38:4
 | Bijan Robinson | RB | DET | 22.07 |
 | Kyren Williams | RB | KC | 16.43 |
 | A.J. Brown | WR | BUF | 11.49 |
-| Antonio Williams | WR | TEN | 6.51 |
+| Deebo Samuel Sr. | WR | NYG | 9.04 |
 | Isaiah Likely | TE | SF | 10.00 |
 | Will Reichard | K | CAR | 7.13 |
 | Minnesota Vikings | DEF | CAR | 7.19 |
