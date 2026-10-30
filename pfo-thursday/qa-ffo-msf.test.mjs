@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -205,4 +205,65 @@ test('Live and OT remain refresh-eligible, historical scan samples Weeks 1–6',
  assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
  assert.match(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/);
  assert.match(core,/No full play feed verified|Full PBP not demonstrated/);
+});
+
+
+test('Historical MSF PBP with NO native IDs is not falsely labeled duplicate IDs',()=>{
+ const data={gameplaybyplay:{plays:[
+  {description:'First published punt',playStatus:{quarter:1,secondsElapsed:25}},
+  {description:'Second published pass',playStatus:{quarter:1,secondsElapsed:26}},
+  {description:'Third published rush',playStatus:{quarter:2,secondsElapsed:13}}
+ ]}};
+ const list=plays(data),d=diagnosePlayFeed(data,{coverage:'full'});
+ assert.equal(sourcePlayRows(data).length,3);
+ assert.equal(list.length,3);
+ assert.equal(new Set(list.map(p=>p.id)).size,3);
+ assert.ok(list.every(p=>p.identitySource==='derived_from_published_play'));
+ assert.equal(d.providerIdCount,0);
+ assert.equal(d.missingProviderIds,3);
+ assert.equal(d.repeatedProviderIds,0);
+ assert.equal(d.duplicateResolvedIds,0);
+ assert.equal(d.withClock,3);
+ assert.deepEqual(d.quarters,['1','2']);
+ assert.equal(d.hasPublishedPlays,true);
+ assert.equal(d.fullGameVerified,false);
+});
+test('Repeated native MSF play IDs are diagnosed separately and safely scoped',()=>{
+ const data={gameplaybyplay:{plays:[
+  {id:'5',description:'Play in Q1',playStatus:{quarter:1,secondsElapsed:10}},
+  {id:'5',description:'Play in Q2',playStatus:{quarter:2,secondsElapsed:19}},
+  {id:'5',description:'Different play at same clock',playStatus:{quarter:2,secondsElapsed:19}}
+ ]}};
+ const rows=plays(data),d=diagnosePlayFeed(data);
+ assert.equal(new Set(rows.map(p=>p.id)).size,3);
+ assert.equal(d.providerIdCount,3);
+ assert.equal(d.missingProviderIds,0);
+ assert.equal(d.repeatedProviderIds,2);
+ assert.equal(d.duplicateResolvedIds,0);
+ assert.equal(d.limitedIdentity,true);
+ assert.equal(d.fullGameVerified,false);
+});
+test('MSF scoring-only fallback cannot certify historical access to full PBP',()=>{
+ const data={plays:[{id:'score1',description:'Made 49-yard field goal',quarter:4,time:'0:50'}]};
+ const d=diagnosePlayFeed(data,{coverage:'scoring_only',full_playbyplay_authorized:false});
+ assert.equal(d.describedCount,1);
+ assert.equal(d.scoringOnly,true);
+ assert.equal(d.hasPublishedPlays,false);
+ assert.equal(d.fullGameVerified,false);
+});
+test('Reordering an identifier-free snapshot preserves deterministic play keys',()=>{
+ const p={description:'Published return',playStatus:{quarter:1,secondsElapsed:75}};
+ const q={description:'Published tackle',playStatus:{quarter:1,secondsElapsed:80}};
+ const first=plays({plays:[p,q]});
+ const second=plays({plays:[q,p]});
+ const byText=rows=>new Map(rows.map(r=>[r.text,r.id]));
+ assert.equal(byText(first).get(p.description),byText(second).get(p.description));
+ assert.equal(byText(first).get(q.description),byText(second).get(q.description));
+});
+test('Week 1–6 audit reports missing and repeated provider IDs separately',()=>{
+ assert.match(core,/diagnosePlayFeed/);
+ assert.match(core,/missing IDs/);
+ assert.match(core,/repeated native IDs/);
+ assert.match(core,/MSF published descriptions/);
+ assert.doesNotMatch(core,/!sameId\?'Duplicate play IDs'/);
 });
