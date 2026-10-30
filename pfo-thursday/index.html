@@ -79,7 +79,9 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
  <details id="ffo-gc-stat-audit" class="card" style="padding:10px;margin:8px 0">
   <summary style="cursor:pointer;font-weight:700">Independent MSF statistics &amp; FFL scoring audit · Weeks 1–6</summary>
   <p class="muted" style="font-size:12px;margin:8px 0">Read-only checks of provider game logs, season totals, player ID matching and FFO-owned scoring categories. Incomplete statistics remain unknown, never certified fantasy scores.</p>
-  <button class="button" type="button" id="ffo-gc-stat-audit-check">Audit MSF player stats · Weeks 1–6</button>
+  <label for="ffo-gc-stat-audit-team" style="display:block;font-size:12px;margin:9px 0 4px">Team-scoped MSF sample (limits response size)</label>
+  <select id="ffo-gc-stat-audit-team" aria-label="Team to audit" style="max-width:100%;width:150px;min-height:36px;margin-bottom:7px"><option value="GB" selected>GB · Packers</option></select>
+  <button class="button" type="button" id="ffo-gc-stat-audit-check">Audit selected team · Weeks 1–6</button>
   <div id="ffo-gc-stat-audit-status" role="status" aria-live="polite" style="font-size:12px;margin:7px 0"></div>
   <div id="ffo-gc-stat-audit-results" style="font-size:12px"></div>
  </details>
