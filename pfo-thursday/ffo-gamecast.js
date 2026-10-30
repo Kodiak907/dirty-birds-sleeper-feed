@@ -375,9 +375,38 @@
    'Season totals unverified'+(report.seasonError?' · '+report.seasonError:'');
   const a=report.lowerBound,comparison=a?a.matchedPlayers+' MSF player IDs matched · '+
    a.comparedCategories+' compared categories · '+a.overSeasonTotals+' mismatches':'Season reconciliation unavailable';
+  const e=report.scoringEvidence,by=e?.byPosition||{};
+  const positionRows=e?['QB','RB','WR','TE','K','DEF'].map(position=>{
+   const p=by[position]||{},total=p.records||0;
+   const core=p.coreCoverage||[],observed=(p.coveredCategories||[]).slice(0,10);
+   const coreText=core.length?core.map(c=>c.category+' '+c.records+'/'+total).join(' · '):
+    'No verified scoring core categories';
+   const examples=(p.samples||[]).map(x=>{
+    const parts=(x.components||[]).map(c=>c.key+': '+c.stat+' × '+c.weight+' = '+c.points).join(' · ');
+    return '<div style="padding:6px 0;border-top:1px solid #315069">'+
+     '<strong>'+safe(x.player)+' · sample W'+safe(x.week)+'</strong>'+
+     '<div class="muted">Observed subtotal '+safe(x.observedPoints)+' (NOT final FFL score)</div>'+
+     '<div class="muted">'+safe(parts||'No observed components')+'</div>'+
+     '<div class="muted">Unknown / unverified: '+safe(x.missing.join(', ')||'None in mapped weights; game events still need review')+'</div></div>';
+   }).join('');
+   return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
+    '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">'+
+    '<strong>'+position+'</strong><span>'+total+' records · '+(p.withPartialPoints||0)+' provisional subtotals</span>'+
+    '<span style="width:100%;font-size:11px;opacity:.8">'+(p.fullyCovered||0)+' mapped-weight completions · full FFL score not certified</span></summary>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">Core scoring coverage: '+safe(coreText)+'</div>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Observed category mappings: '+
+     safe(observed.map(x=>x.name+' ('+x.records+')').join(', ')||'None')+'</div>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Unverified categories: '+
+     safe((p.missingCategories||[]).slice(0,15).join(', ')||'None in parsed categories')+'</div>'+
+    examples+'</details>';
+  }).join(''):'';
+  const scoringCard=e?'<details style="border-top:1px solid #315069;margin:8px 0;padding-top:8px">'+
+   '<summary style="cursor:pointer;font-weight:700">FFL scoring components · '+safe(e.records)+' player-week records</summary>'+
+   '<p class="muted" style="font-size:12px">Every value uses MSF published stats and frozen FFL rules only. Missing components stay unknown. Long-TD bonuses, K and D/ST require separate event verification.</p>'+
+   positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
@@ -385,7 +414,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -417,6 +446,7 @@
     report.seasonFilterVerified=rows.length>0&&rows.every(r=>r.team===team);
     if(!report.seasonFilterVerified)report.seasonError='Filtered MSF season players unverified';
    }catch(error){report.seasonError=String(error.message||error).slice(0,220)}
+   if(goodWeeks.length)report.scoringEvidence=model.scoringEvidence(goodWeeks,s.ownedRules,team);
    if(report.seasonFilterVerified&&goodWeeks.length)
     report.lowerBound=model.auditSeasonLowerBound(goodWeeks,seasonPayload);
    renderStatAudit(report);
