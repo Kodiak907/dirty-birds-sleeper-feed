@@ -467,7 +467,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[]};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -523,21 +523,36 @@
     }catch(error){report.teamWeeks.push({week,error:String(error.message||error).slice(0,180)})}
     renderStatAudit(report);
    }
-   // Inspect one real MSF historical game involving the selected team.
-   // This is event evidence, never reconstructed kicker attribution or scoring.
-   const choice=s.archiveGames.map(g=>({g,week:auditWeekForGame(g).week}))
-    .filter(x=>x.week>=1&&x.week<=6&&[stadium.abbrev(x.g.home),stadium.abbrev(x.g.away)].includes(team))
-    .sort((a,b)=>a.week-b.week)[0];
-   if(choice){
-    if(indicator)indicator.textContent='Checking one published '+team+' game for FG/XP events…';
+   // Verify historical FG/XP events against one team-specific game per week.
+   // Never use a season-wide actor identity to prove a historical weekly roster.
+   const candidates=s.archiveGames.map(g=>({g,week:auditWeekForGame(g).week}))
+    .filter(x=>x.week>=1&&x.week<=6&&
+     [stadium.abbrev(x.g.home),stadium.abbrev(x.g.away)].includes(team));
+   for(let week=1;week<=6;week++){
+    const matches=candidates.filter(x=>x.week===week);
+    if(matches.length!==1){
+     report.kickWeeks.push({week,error:matches.length?'Multiple matching schedule games; attribution withheld':'No scheduled MSF team game located'});
+     continue;
+    }
+    const g=matches[0].g,game=g.away+' @ '+g.home;
+    if(indicator)indicator.textContent='MSF kicker play evidence · '+team+' Week '+week+' of 6…';
+    const weekly=goodWeeks.find(x=>x.week===week);
+    // A historical MSF player row may supply the verified full name, jersey,
+    // provider ID, team and position needed to safely resolve PBP initials.
+    const players=weekly?model.playerRows(weekly.payload):[];
+    if(week>1)await auditPause(1250);
     try{
-     const response=await auditedStatRequest('plays',{season:s.season,game_id:choice.g.id},
-      msg=>{if(indicator)indicator.textContent='FG/XP check · '+msg});
-     report.kickEvidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,s.playerRows);
-     report.kickEvidence.sampleWeek=choice.week;
-     report.kickEvidence.sampleGame=choice.g.away+' @ '+choice.g.home;
-    }catch(error){report.kickEvidenceError=String(error.message||error).slice(0,150)}
-   }else report.kickEvidenceError='No matching MSF schedule game found for Weeks 1–6';
+     const response=await auditedStatRequest('plays',{season:s.season,game_id:g.id},
+      msg=>{if(indicator)indicator.textContent='Kicker W'+week+' · '+msg});
+     const evidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,players);
+     report.kickWeeks.push({week,game,evidence});
+     if(!report.kickEvidence){report.kickEvidence=evidence;
+      report.kickEvidence.sampleWeek=week;report.kickEvidence.sampleGame=game;}
+    }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)})}
+    renderStatAudit(report);
+   }
+   if(!report.kickEvidence)
+    report.kickEvidenceError='No team-specific historical MSF kick plays verified';
    if(goodWeeks.length)report.scoringEvidence=model.scoringEvidence(goodWeeks,s.ownedRules,team);
    if(report.seasonFilterVerified&&goodWeeks.length)
     report.lowerBound=model.auditSeasonLowerBound(goodWeeks.map(x=>x.payload),seasonPayload);
