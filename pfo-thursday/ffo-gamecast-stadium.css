@@ -41,3 +41,10 @@
 .gc6-shell button:focus-visible,#ffo-gc-playfeed .gc6-play:focus-visible{outline:3px solid #8fe7df;outline-offset:2px}
 @media(max-width:450px){#ffo-gc-gameview .gc6-hdr{padding:12px 9px;gap:4px}.gc6-teamlogo{width:29px;height:29px}.gc6-teamname{font-size:10px}.gc6-score{font-size:24px}.gc6-gameclock strong{font-size:11px}.gc6-gameclock span{font-size:9px}.gc6-feature{margin:0 8px 8px;padding:9px}.gc6-feature h4{font-size:13px}.gc6-feature p{font-size:11px}.gc6-statebar{padding:8px 10px}.gc6-endzone-word{font-size:16px!important}}
 @media(prefers-reduced-motion:reduce){#ffo-gc-playfeed .gc6-play,#ffo-gc-gameview *{scroll-behavior:auto;transition:none!important;animation:none!important}}
+
+
+.gc6-statebar .gc6-refresh-tracker{display:inline-flex;align-items:center;gap:4px;margin-left:auto;padding:2px 6px;border-radius:7px;background:#193949;color:#8ce8d0;white-space:nowrap;font-size:10px;line-height:1.2;min-width:0}
+.gc6-statebar .gc6-refresh-tracker small{font-size:9px;color:#a6c8cf}
+.gc6-statebar .gc6-refresh-tracker b{font-size:11px;min-width:19px;text-align:right;font-variant-numeric:tabular-nums}
+.gc6-statebar .gc6-refresh-tracker.gc6-refresh-wait{color:#e4c48c}
+@media(max-width:390px){.gc6-statebar .gc6-refresh-tracker small{display:none}.gc6-statebar .gc6-refresh-tracker{padding:2px 4px}}
