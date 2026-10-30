@@ -234,7 +234,13 @@ const PATHS={
  fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','fieldGoalsMissed','fgmiss'],
  xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade','extraPointsMade','xpm'],
  xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','extraPointsMissed','xpmiss'],
+ // Only explicit MSF distance band fields qualify; do not infer 50–59 from 50+.
+ fgm_0_19:['fieldGoals.fieldGoalsMade0To19','fieldGoals.fieldGoalsMade1To19','fgm_0_19'],
+ fgm_20_29:['fieldGoals.fieldGoalsMade20To29','fieldGoals.fieldGoalsMade20to29','fgm_20_29'],
+ fgm_30_39:['fieldGoals.fieldGoalsMade30To39','fieldGoals.fieldGoalsMade30to39','fgm_30_39'],
  fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40to49','fgm_40_49'],
+ fgm_50_59:['fieldGoals.fieldGoalsMade50To59','fieldGoals.fieldGoalsMade50to59','fgm_50_59'],
+ fgm_60p:['fieldGoals.fieldGoalsMade60Plus','fieldGoals.fieldGoalsMade60p','fgm_60p'],
  fgm_50p:['fieldGoals.fieldGoalsMade50Plus','kicking.fieldGoalsMade50Plus','fgm_50p'],
  rush_2pt:['rushing.rushTwoPt','rushing.twoPointConversions','rush_2pt'],
  rec_2pt:['receiving.recTwoPt','receiving.twoPointConversions','rec_2pt'],
@@ -243,12 +249,20 @@ const PATHS={
 export function normalizeStats(source){if(!source||typeof source!=='object')return {};const out={};for(const [k,paths] of Object.entries(PATHS)){const v=first(source,paths);if(v!==null)out[k]=v;}return out;}
 /** Compute only rule weights applicable to the player's position; never substitute 0 for absent stats. */
 const FILTERS={
- QB:k=>/^(pass_|rush_|fum_|bonus_pass|bonus_rush)/.test(k),
- RB:k=>/^(rush_|rec|rec_|fum_|bonus_rush|bonus_rec)/.test(k),
- WR:k=>/^(rush_|rec|rec_|fum_|bonus_rush|bonus_rec)/.test(k),
- TE:k=>/^(rush_|rec|rec_|fum_|bonus_rush|bonus_rec)/.test(k),
+ QB:k=>/^(pass_|rush_|rec|rec_|fum_|bonus_pass|bonus_rush|bonus_rec)/.test(k),
+ RB:k=>/^(pass_|rush_|rec|rec_|fum_|bonus_pass|bonus_rush|bonus_rec)/.test(k),
+ WR:k=>/^(pass_|rush_|rec|rec_|fum_|bonus_pass|bonus_rush|bonus_rec)/.test(k),
+ TE:k=>/^(pass_|rush_|rec|rec_|fum_|bonus_pass|bonus_rush|bonus_rec)/.test(k),
  K:k=>/^(fg|xp|bonus_fg|bonus_xp)/.test(k),
  DEF:k=>/^(def_|dst_|sack|int|fum_rec|pts_allow|yds_allow|blk_kick|safe|td)/.test(k)
+};
+const CORE_SCORING_GROUPS={
+ QB:['pass_yd','pass_td','pass_int','rush_yd','rush_td','fum_lost'],
+ RB:['rush_yd','rush_td','rec','rec_yd','rec_td','fum_lost'],
+ WR:['rec','rec_yd','rec_td','rush_yd','rush_td','fum_lost'],
+ TE:['rec','rec_yd','rec_td','fum_lost'],
+ K:['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss'],
+ DEF:['pts_allow_0','pts_allow_1_6','pts_allow_7_13','pts_allow_14_20','pts_allow_21_27','pts_allow_28_34','pts_allow_35p','sack','int','def_td','fum_rec','safe','blk_kick']
 };
 /**
  * Source coverage is intentionally conservative; a legitimate 0 must be supplied by the source.
@@ -259,13 +273,13 @@ export function fflScore(raw,settings,position=''){
  const stats=normalizeStats(raw),pos=String(position||'').toUpperCase(),filter=FILTERS[pos]||(()=>true);
  const selected=Object.entries(settings).filter(([key,val])=>filter(key)&&Number.isFinite(Number(val))&&Number(val)!==0);
  if(!selected.length)return {points:null,complete:false,missing:['no_applicable_scoring_categories'],covered:[],source:'FFL Scoring Model'};
- let subtotal=0;const covered=[],missing=[];
+ let subtotal=0;const covered=[],missing=[],components=[];
  for(const [key,weight] of selected){
   if(!Object.prototype.hasOwnProperty.call(stats,key)) {missing.push(key);continue;}
-  covered.push(key);subtotal+=stats[key]*Number(weight);
+  covered.push(key);const contribution=stats[key]*Number(weight);subtotal+=contribution;components.push({key,stat:stats[key],weight:Number(weight),points:Math.round(contribution*100)/100});
  }
  // Never equate an incomplete reconstruction to recorded Sleeper points.
- return {points:covered.length?Math.round(subtotal*100)/100:null,complete:covered.length>0&&missing.length===0,missing,covered,source:'FFO provisional unless complete · MySportsFeeds stats × frozen FFO FFL rules',raw_stat_categories:Object.keys(stats),position:pos};
+ return {points:covered.length?Math.round(subtotal*100)/100:null,complete:covered.length>0&&missing.length===0,missing,covered,components,source:'FFO provisional unless complete · MySportsFeeds stats × frozen FFO FFL rules',raw_stat_categories:Object.keys(stats),position:pos};
 }
 export function fflProjection(gameRows,rules,position=''){
  const values=gameRows.map(r=>fflScore(r.stats,rules,position||r.position)).filter(x=>x.points!==null);
@@ -275,6 +289,43 @@ export function fflProjection(gameRows,rules,position=''){
  return {points:Math.round((.65*recent+.35*season)*100)/100,complete:values.every(x=>x.complete),n:values.length,missing,season_average:Math.round(season*100)/100,last3_average:Math.round(recent*100)/100,source:'FFO 65% recent + 35% season baseline; not opponent-adjusted / NOT Sleeper actual points'};
 }
 
+
+
+/** Independently observed player-stat scoring components; never full FFL certification. */
+export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
+ const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
+ for(const [index,payload] of weeklyPayloads.entries()){
+  for(const row of playerRows(payload)){
+   if(wanted&&row.team!==wanted)continue;
+   if(!positions.includes(row.position)||!row.stats)continue;
+   const stats=normalizeStats(row.stats),result=fflScore(row.stats,rules,row.position);
+   samples.push({player:row.name,id:row.id,position:row.position,week:index+1,
+    observedPoints:result.points,complete:result.complete,covered:result.covered,
+    missing:result.missing,components:result.components||[],hasKnownStats:Object.keys(stats).length>0});
+  }
+ }
+ const groups={};
+ for(const position of positions){
+  const rows=samples.filter(x=>x.position===position),counts=new Map();
+  for(const row of rows)for(const c of row.covered)counts.set(c,(counts.get(c)||0)+1);
+  const coveredCategories=[...counts].sort((a,b)=>b[1]-a[1]).map(([name,records])=>({name,records}));
+  const best=rows.filter(r=>r.observedPoints!==null)
+   .sort((a,b)=>b.covered.length-a.covered.length||a.missing.length-b.missing.length).slice(0,2)
+   .map(r=>({player:r.player,id:r.id,week:r.week,covered:r.covered,
+    missing:r.missing.slice(0,12),components:r.components,
+    observedPoints:r.observedPoints,complete:r.complete}));
+  groups[position]={records:rows.length,withAnyStats:rows.filter(r=>r.hasKnownStats).length,
+   withPartialPoints:rows.filter(r=>r.observedPoints!==null).length,
+   fullyCovered:rows.filter(r=>r.complete).length,coveredCategories,
+   missingCategories:[...new Set(rows.flatMap(r=>r.missing))].sort(),
+   coreCoverage:CORE_SCORING_GROUPS[position].filter(k=>Number(rules[k]||0)!==0)
+    .map(k=>({category:k,records:rows.filter(r=>r.covered.includes(k)).length,
+      gaps:rows.filter(r=>r.missing.includes(k)).length})),samples:best};
+ }
+ return {team:wanted,weekFeeds:weeklyPayloads.length,records:samples.length,
+  byPosition:groups,exactFantasyPointsCertified:false,
+  reason:'Only published component values were scored. Missing categories, long TD bonuses, K and D/ST events require independent evidence.'};
+}
 
 /** Read-only MSF stats/schema verification. Partial FFL reconstruction never
  * becomes an authoritative league score or projection. */
