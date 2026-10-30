@@ -514,7 +514,7 @@ export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
   const ref=teamRow?.evidence?.kickingReference||null;
   const result={week:row.week,game:row.game||null,status:'unverified',reason:null,
    pbpEvents:null,providerTotals:ref?{...ref}:null,observedCounts:null,
-   comparedCategories:0,disagreements:[],fullKickerScoreCertified:false};
+   comparedCategories:0,disagreements:[],unresolvedActorTokens:[],unattributedPlays:0,fullKickerScoreCertified:false};
   if(!row.evidence){result.reason='PBP unavailable';return result}
   const teamAudit=teamRow?.evidence;
   if(!teamAudit?.teamFilterVerified||!ref){
@@ -528,6 +528,8 @@ export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
   }
   const actors=(row.evidence.kickers||[]).filter(x=>x.identityVerified&&String(x.playerTeam||'').toUpperCase()===wanted);
   const unknownOpposing=(row.evidence.kickers||[]).filter(x=>!x.identityVerified||String(x.playerTeam||'').toUpperCase()!==wanted);
+  result.unresolvedActorTokens=unknownOpposing.filter(x=>!x.identityVerified).map(x=>x.kickerToken).filter(Boolean).slice(0,6);
+  result.unattributedPlays=row.evidence.unattributedEvents||0;
   result.pbpEvents=row.evidence.candidatePlays??null;
   result.observedCounts={fgAttempts:actors.reduce((n,x)=>n+(x.counts?.fgAttempts||0),0),
    fgMade:actors.reduce((n,x)=>n+(x.counts?.fgMade||0),0),
@@ -550,7 +552,7 @@ export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
     result.disagreements.push({category:key,teamCount:Number(ref[key]),pbpCount:result.observedCounts[key]});
   }
   if(!fields.length){result.reason='MSF team kicking counts not mapped';return result}
-  if(result.disagreements.length){result.status='mismatch';result.reason='Published counts disagree';return result}
+  if(result.disagreements.length){result.status='mismatch';result.reason='Published team counts disagree with identity-matched PBP; check missing, corrected or unassigned kick plays';return result}
   result.status=fields.length===keys.length?'four_counts_match':'partial_counts_match';
   result.reason=fields.length===keys.length?'Four kicking categories reconcile; score still provisional':
    fields.length+' of four kicking categories reconcile; other counts unknown';
@@ -559,6 +561,7 @@ export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
  return {team:wanted,weeks:reconciliations,matched:reconciliations.filter(x=>x.status==='four_counts_match').length,
   partialMatches:reconciliations.filter(x=>x.status==='partial_counts_match').length,
   discrepancies:reconciliations.filter(x=>x.status==='mismatch').length,
+  unverified:reconciliations.filter(x=>x.status==='unverified').length,
   fullFantasyScoresCertified:false};
 }
 
