@@ -34,31 +34,76 @@ export function eventInfo(e,g){
  return {offense,side,yl,spot,down,distance,dir,target,end,explicitYds,quarter:e?.period||null,clock:e?.clock||null};
 }
 const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);return u.protocol==='https:'&&['mysportsfeeds.com','sleepercdn.com','sleeper.com','espncdn.com','nfl.com'].some(d=>u.hostname===d||u.hostname.endsWith('.'+d))?u.href:''}catch{return ''}};
-function uniqueMatchingPlayer(event,playerRows,selected){
- const norm=normalizeName(event?.text||'');if(!norm)return null;
- const matches=(Array.isArray(playerRows)?playerRows:[]).filter(p=>{const n=normalizeName(p?.name||'');return n.length>=6&&norm.includes(n)});
- const length=matches.length?Math.max(...matches.map(x=>normalizeName(x.name).length)):0;
- const choices=matches.filter(x=>normalizeName(x.name).length===length);
- if(choices.length===1)return choices[0];
- if(selected?.name&&norm.includes(normalizeName(selected.name))&&normalizeName(selected.name).length>=6)return selected;
- return null;
+
+/* Play portraits come from one uniquely identifiable player actually named in
+   this published play, with MSF record identity first and the Sleeper player
+   directory used for images only. Never interpret an MSF ID as a Sleeper ID. */
+const cleanSubject=x=>normalizeName(x).replace(/\\b(?:jr|sr|ii|iii|iv)\\b/g,'').trim();
+const escaped=x=>String(x).replace(/[.*+?^${}()|[\\]\\]/g,'\\$&');
+function findNamedPlayer(fragment,rows,team){
+ const named=cleanSubject(fragment);
+ if(!named)return null;
+ const candidates=(Array.isArray(rows)?rows:[]).filter(p=>{
+   const n=cleanSubject(p.name),pt=abbrev(p.team);
+   if(n.length<6||team&&pt&&pt!==team)return false;
+   return named.includes(n);
+ });
+ if(!candidates.length)return null;
+ const max=Math.max(...candidates.map(p=>cleanSubject(p.name).length));
+ const choices=candidates.filter(p=>cleanSubject(p.name).length===max);
+ const dedup=new Map();
+ for(const p of choices){const key=cleanSubject(p.name)+'|'+abbrev(p.team);
+   if(!dedup.has(key)||p.sleeper&&!dedup.get(key).sleeper)dedup.set(key,p);
+ }
+ return dedup.size===1?[...dedup.values()][0]:null;
 }
-function playerPortrait(event,rows,selected){
- const p=uniqueMatchingPlayer(event,rows,selected);
+export function playSubject(event,rows,selected,game){
+ const desc=String(event?.text||''),norm=cleanSubject(desc),raw=event?.raw||{};
+ const poss=eventInfo(event,game).offense;
+ const pool=[...(Array.isArray(rows)?rows:[]),...(selected?.name?[selected]:[])];
+ // Explicit play roles trump a merely mentioned defensive/teammate name.
+ const patterns=[
+  {kind:'interception',re:/(?:intercepted|interception)\\s+by\\s+(.+?)(?:\\s+(?:at|for|to|return|returned|tackled|\\(|\\.|,)|$)/i},
+  {kind:'reception',re:/(?:pass\\s+(?:complete\\s+)?to|completed\\s+to|pass\\s+to|pass\\s+caught\\s+by)\\s+(.+?)(?:\\s+(?:for|at|to|is|was|\\(|\\.|,)|$)/i},
+  {kind:'punt',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:punts|punted|punt\\s+for)\\b/i},
+  {kind:'field_goal',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:(?:attempts|kicks|made|missed)\\s+)?(?:\\d{1,2}[- ]yard\\s+)?(?:field goal|extra point|PAT)\\b/i},
+  {kind:'sack',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:sacked|was sacked|is sacked)\\b/i},
+  {kind:'rush',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:rushed|rushes|ran|runs|up the middle|left end|right end|left guard|right guard)\\b/i},
+  {kind:'passer',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:pass(?:es|ed)?|throws|threw)\\b/i},
+ ];
+ const isPick=/intercepted|interception/i.test(desc);
+ const incomplete=/incomplete|intended for|pass dropped|tipped pass/i.test(desc);
+ const chosen=patterns.filter(x=>!(incomplete&&x.kind==='reception')&&!(isPick&&x.kind==='reception'));
+ // For incompletions and sacks, the passer is the subject.
+ if(incomplete)chosen.sort((a,b)=>(a.kind==='passer'?-1:0)-(b.kind==='passer'?-1:0));
+ for(const rule of chosen){
+  const m=desc.match(rule.re);
+  if(!m)continue;
+  const matched=findNamedPlayer(m[1],pool,rule.kind==='interception'?null:poss);
+  if(matched)return {player:matched,role:rule.kind};
+ }
+ // For provider lines with a different syntax, choose only one named
+ // player on the correct offensive team, never an arbitrary first match.
+ const fallback=findNamedPlayer(desc,pool,poss);
+ if(fallback&&!isPick)return {player:fallback,role:'named'};
+ return {player:null,role:'unknown'};
+}
+function playerPortrait(event,rows,selected,game){
+ const resolved=playSubject(event,rows,selected,game),p=resolved.player;
  const raw=p?.raw?.player||p?.raw?.playerInfo||p||{};
  let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl']));
- // Only use Sleeper ID when uniquely matched to the roster member, never a MSF ID.
- if(!src&&p?.name&&selected?.name&&normalizeName(p.name)===normalizeName(selected.name)){
-   const id=String(selected.id||'');if(/^[0-9]{1,8}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
+ if(!src&&p?.sleeper&&/^[0-9]{1,9}$/.test(String(p.id||'')))src='https://sleepercdn.com/content/nfl/players/thumb/'+p.id+'.jpg';
+ if(!src&&p?.name&&selected?.name&&cleanSubject(p.name)===cleanSubject(selected.name)&&abbrev(p.team)===abbrev(selected.team)){
+   const id=String(selected.id||'');if(/^[0-9]{1,9}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
  }
  const label=p?.name||'Player unavailable';
- return {name:label,src,initials:label==='Player unavailable'?'—':label.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
+ return {name:label,src,role:resolved.role,initials:label==='Player unavailable'?'—':label.split(/\\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
 }
 function escColor(hex){return /^#[A-Fa-f0-9]{6}$/.test(hex)?hex:'#1a4550'}
 const score=x=>x===null||x===undefined?'—':H(x);
 const clockFmt=e=>e?(e.period?'Q'+H(e.period):'Q —')+' · '+H(e.clock||'Clock unavailable'):'PRE-GAME';
 export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCount=0,activePlay=-1,followLatest=true,playerRows=[],selectedPlayer=null,source='',isLive=false}){
- const away=brand(g?.away),home=brand(g?.home),i=eventInfo(event,g),p=playerPortrait(event,playerRows,selectedPlayer);
+ const away=brand(g?.away),home=brand(g?.home),i=eventInfo(event,g),p=playerPortrait(event,playerRows,selectedPlayer,g);
  const goalX=v=>Math.round(88+v*6.04),x=goalX,down=i.down!==null?String(i.down):'—',dist=i.distance!==null?String(i.distance):'—';
  const offense=i.offense?brand(i.offense):null;
  const leftEnd=home,rightEnd=away; // end zones show attack targets, not painted venue branding.
@@ -93,7 +138,7 @@ export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCoun
  return '<div class="gc6-shell">'+front+state+'<div class="gc6-stadium">'+field+'<div class="gc6-attack"><span>← '+H(home.abbr)+' SCORING TARGET</span><span>'+H(away.abbr)+' SCORING TARGET →</span></div></div>'+featured+control+extra+'</div>';
 }
 export function playRow(event,index,selected,game,source,playerRows,selectedPlayer){
- const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer);
+ const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer,g);
  const big=highlight(event);
  const badge=outcome(event);
  const desc=String(event.text||'');
