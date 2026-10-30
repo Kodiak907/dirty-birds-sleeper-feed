@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -755,4 +755,79 @@ test('Kicker historical audit checks at most one matching team game each week an
  assert.match(core,/No scheduled MSF team game located/);
  assert.match(core,/report\.kickWeeks\.push/);
  assert.match(core,/Unknown, not zero/);
+});
+
+test('FFO MSF weekly kicker FG/XP play counts reconcile only with same game ID and independent team counts',()=>{
+ const rows=playerRows({gamelogs:[{player:{id:802,fullName:'Terry Smack',jerseyNumber:28,primaryPosition:'K'},team:{abbreviation:'GB'},stats:{}}]});
+ const pb={gameplaybyplay:{plays:[
+  {id:'a',description:'28-T.Smack 59 yard field goal is GOOD'},
+  {id:'b',description:'28-T.Smack extra point is NO GOOD'},
+  {id:'c',description:'28-T.Smack 26 yard field goal is GOOD'},
+  {id:'d',description:'28-T.Smack extra point is GOOD'}
+ ]}};
+ const evidence=kickingPlayEvidence(pb,own.scoring,rows);
+ const team=auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'g1'},stats:{
+   fieldGoals:{fgAtt:2,fgMade:2},extraPoints:{xpAtt:2,xpMade:1},
+   tackles:{sacks:3},interceptions:{interceptions:1}
+  }
+ }]},'GB',own.scoring);
+ assert.equal(team.kickingReference.fgAttempts,2);
+ assert.equal(team.kickingReference.fgMade,2);
+ assert.equal(team.kickingReference.xpAttempts,2);
+ assert.equal(team.kickingReference.xpMade,1);
+ const audit=reconcileKickerWeeks([{week:1,gameId:'g1',evidence}],
+  [{week:1,evidence:team}],'GB');
+ assert.equal(audit.matched,1);
+ assert.equal(audit.discrepancies,0);
+ assert.equal(audit.weeks[0].comparedCategories,4);
+ assert.equal(audit.weeks[0].status,'four_counts_match');
+ assert.deepEqual(audit.weeks[0].observedCounts,{fgAttempts:2,fgMade:2,xpAttempts:2,xpMade:1});
+ assert.equal(audit.fullFantasyScoresCertified,false);
+});
+test('Kicker audit flags independently published FG disagreement, never silently overwrites it',()=>{
+ const evidence=kickingPlayEvidence({gameplaybyplay:{plays:[{
+  id:'p1',description:'28-T.Smack 43 yard field goal is GOOD'
+ }]}},own.scoring,[{id:'802',name:'Terry Smack',jersey:'28',position:'K',team:'GB'}]);
+ const team=auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'g1'},stats:{fieldGoals:{fgAtt:2,fgMade:1}}
+ }]},'GB',own.scoring);
+ const r=reconcileKickerWeeks([{week:1,gameId:'g1',evidence}],[{week:1,evidence:team}],'GB');
+ assert.equal(r.discrepancies,1);
+ assert.equal(r.weeks[0].status,'mismatch');
+ assert.equal(r.weeks[0].comparedCategories,2);
+ assert.deepEqual(r.weeks[0].disagreements,[{category:'fgAttempts',teamCount:2,pbpCount:1}]);
+ assert.equal(r.fullFantasyScoresCertified,false);
+});
+test('Kicker reconciliation rejects mismatched game IDs, missing totals and missing week feeds',()=>{
+ const evidence=kickingPlayEvidence({gameplaybyplay:{plays:[{id:'p1',description:'28-T.Smack extra point is GOOD'}]}},
+  own.scoring,[{id:'802',name:'Terry Smack',jersey:'28',position:'K',team:'GB'}]);
+ const ref=auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'g1'},stats:{extraPoints:{xpAtt:1,xpMade:1}}
+ }]},'GB',own.scoring);
+ const absent=auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'g3'},stats:{tackles:{sacks:2}}
+ }]},'GB',own.scoring);
+ const r=reconcileKickerWeeks([
+  {week:1,gameId:'g2',evidence},
+  {week:2,gameId:'g2',evidence},
+  {week:3,gameId:'g3',evidence},
+  {week:4,error:'MSF timeout'}],[
+  {week:1,evidence:ref},{week:2,evidence:{teamFilterVerified:false}},
+  {week:3,evidence:absent}], 'GB');
+ assert.equal(r.matched,0);
+ assert.equal(r.weeks[0].status,'unverified');
+ assert.match(r.weeks[0].reason,/game ID differs/);
+ assert.match(r.weeks[1].reason,/team kicking totals unavailable/);
+ assert.match(r.weeks[2].reason,/counts not mapped/);
+ assert.equal(r.weeks[3].status,'unverified');
+ assert.equal(r.weeks[3].observedCounts,null);
+});
+test('FFO mobile scoring audit shows independent MSF crosscheck and no synthetic kicker certification',()=>{
+ assert.match(core,/model\.reconcileKickerWeeks\(report\.kickWeeks\|\|\[\],report\.teamWeeks\|\|\[\],report\.team\)/);
+ assert.match(core,/four-category reconciliations/);
+ assert.match(core,/detected cross-check mismatches/);
+ assert.match(core,/model\.auditTeamGameFeed/);
+ assert.match(core,/report\.kickWeeks\.push\(\{week,game,gameId:String\(g\.id\),evidence\}\)/);
+ assert.match(core,/Final kicker scoring not certified/);
 });
