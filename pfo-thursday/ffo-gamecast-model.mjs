@@ -11,7 +11,7 @@ export function playerRows(payload){
  if(!Array.isArray(rows))return [];
  return rows.map(x=>{
   const p=x.player||x.playerInfo||{},t=x.team||x.teamInfo||{};
-  return {id:String(p.id??x.playerId??''),name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
+  return {id:String(p.id??x.playerId??''),image: p.officialImageSrc||p.officialImageUrl||p.headshot||p.headshotUrl||p.imageUrl||p.photoUrl||null,name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
  }).filter(x=>x.name);
 }
 export function plays(payload){
@@ -93,3 +93,32 @@ export function fflProjection(gameRows,rules,position=''){
 }
 
 export function versionedPlays(prev,next){const canonical=p=>{const {update,...body}=p;return JSON.stringify(body)};const map=new Map(prev.map(p=>[p.id||p.text,canonical(p)]));return next.map(p=>({...p,update:!map.has(p.id||p.text)?'new':map.get(p.id||p.text)!==canonical(p)?'corrected':'unchanged'}));}
+
+/** Verified game scoreboard from MSF game_boxscore or games response.
+ * This deliberately does not infer scores from offensive yardage/play text.
+ * Missing values stay null, not zero. */
+export function gameScoreUpdate(game,boxResponse){
+ const payload=boxResponse?.data||boxResponse||{};
+ const body=payload.gameboxscore||payload.gameBoxscore||payload.boxscore||payload;
+ const info=body.game||body.schedule||payload.game||{};
+ const score=body.scoring||body.score||body.gameScore||body.scores||
+   info.scoring||info.score||payload.scoring||payload.score||{};
+ const get=(o,paths)=>{for(const path of paths){
+  const v=path.split('.').reduce((a,k)=>a?.[k],o);
+  if(v!==null&&v!==undefined&&v!=='')return v;
+ }return null;};
+ const n=v=>v===null||v===undefined||v===''||typeof v==='object'?null:
+  Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=300?Number(v):null;
+ const id=String(info.id??info.gameId??body.gameId??'');
+ if(id&&String(game?.id||'')&&id!==String(game.id))return {...game};
+ const home=n(get(score,['homeScoreTotal','homeScore','homeTotal','home.score','home.scoreTotal','homeTeamScore','homeTeam.score','homeTeam.scoreTotal','homeTeam.totalScore'])??
+   get(body,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score','homeTeam.scoreTotal'])??get(info,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score']));
+ const away=n(get(score,['awayScoreTotal','awayScore','awayTotal','away.score','away.scoreTotal','awayTeamScore','awayTeam.score','awayTeam.scoreTotal','awayTeam.totalScore'])??
+   get(body,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score','awayTeam.scoreTotal'])??get(info,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score']));
+ const state=get(info,['playedStatus','gameStatus','status'])??get(body,['playedStatus','gameStatus','status']);
+ return {...game,
+  homePoints:home===null?game?.homePoints??null:home,
+  awayPoints:away===null?game?.awayPoints??null:away,
+  status:state?String(state):game?.status||'Unverified',
+  scoreSource:home!==null||away!==null?'MySportsFeeds game boxscore':game?.scoreSource||null};
+}

@@ -34,37 +34,102 @@ export function eventInfo(e,g){
  return {offense,side,yl,spot,down,distance,dir,target,end,explicitYds,quarter:e?.period||null,clock:e?.clock||null};
 }
 const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);return u.protocol==='https:'&&['mysportsfeeds.com','sleepercdn.com','sleeper.com','espncdn.com','nfl.com'].some(d=>u.hostname===d||u.hostname.endsWith('.'+d))?u.href:''}catch{return ''}};
-function uniqueMatchingPlayer(event,playerRows,selected){
- const norm=normalizeName(event?.text||'');if(!norm)return null;
- const matches=(Array.isArray(playerRows)?playerRows:[]).filter(p=>{const n=normalizeName(p?.name||'');return n.length>=6&&norm.includes(n)});
- const length=matches.length?Math.max(...matches.map(x=>normalizeName(x.name).length)):0;
- const choices=matches.filter(x=>normalizeName(x.name).length===length);
- if(choices.length===1)return choices[0];
- if(selected?.name&&norm.includes(normalizeName(selected.name))&&normalizeName(selected.name).length>=6)return selected;
- return null;
+
+/* Play portraits come from one uniquely identifiable player actually named in
+   this published play, with MSF record identity first and the Sleeper player
+   directory used for images only. Never interpret an MSF ID as a Sleeper ID. */
+const cleanSubject=x=>normalizeName(x).replace(/\b(?:jr|sr|ii|iii|iv)\b/g,'').trim();
+const abbreviatedActors=fragment=>{
+ // Real MSF descriptions commonly use "10-J.Love" and "14-C.Watson".
+ // Match first initial + full surname ONLY if the team roster identifies
+ // exactly one player. Jersey numbers are hints, not trusted identity keys.
+ const a=[];
+ for(const m of String(fragment||'').matchAll(/(?:^|[^A-Za-z])(?:\d{1,2}-)?([A-Z])\.([A-Za-z][A-Za-z'-]+)/g))
+  a.push({initial:m[1].toLowerCase(),surname:cleanSubject(m[2])});
+ return a;
+};
+function findNamedPlayer(fragment,rows,team){
+ const named=cleanSubject(fragment);
+ if(!named)return null;
+ const shorthand=abbreviatedActors(fragment);
+ const candidates=(Array.isArray(rows)?rows:[]).filter(p=>{
+   const n=cleanSubject(p.name),pt=abbrev(p.team);
+   if(n.length<6||team&&pt&&pt!==team)return false;
+   if(named.includes(n))return true;
+   const parts=n.split(' ');
+   return shorthand.some(a=>parts.length>=2&&parts[0][0]===a.initial&&parts[parts.length-1]===a.surname);
+ });
+ if(!candidates.length)return null;
+ const max=Math.max(...candidates.map(p=>cleanSubject(p.name).length));
+ const choices=candidates.filter(p=>cleanSubject(p.name).length===max);
+ const dedup=new Map();
+ for(const p of choices){const key=cleanSubject(p.name)+'|'+abbrev(p.team);
+   if(!dedup.has(key)||p.image&&!dedup.get(key).image||p.raw?.player&&!dedup.get(key).raw?.player)dedup.set(key,p);
+ }
+ return dedup.size===1?[...dedup.values()][0]:null;
 }
-function playerPortrait(event,rows,selected){
- const p=uniqueMatchingPlayer(event,rows,selected);
+export function playSubject(event,rows,selected,game){
+ const desc=String(event?.text||''),raw=event?.raw||{};
+ const poss=eventInfo(event,game).offense;
+ const pool=[...(Array.isArray(rows)?rows:[]),...(selected?.name?[selected]:[])];
+ // Explicit play roles trump a merely mentioned defensive/teammate name.
+ const patterns=[
+  {kind:'interception',re:/(?:intercepted|interception)\s+by\s+(.+?)(?:\s+(?:at|for|to|return|returned|tackled|\(|\.|,)|$)/i},
+  {kind:'reception',re:/(?:pass\s+(?:complete\s+)?to|completed\s+to|pass\s+to|pass\s+caught\s+by)\s+(.+?)(?:\s+(?:for|at|to|is|was|\(|\.|,)|$)/i},
+  {kind:'punt',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:punts|punted|punt\s+for)\b/i},
+  {kind:'field_goal',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:(?:attempts|kicks|made|missed)\s+)?(?:\d{1,2}[- ]yard\s+)?(?:field goal|extra point|PAT)\b/i},
+  {kind:'sack',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:sacked|was sacked|is sacked)\b/i},
+  {kind:'rush',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:rushed|rushes|ran|runs|up the middle|left end|right end|left guard|right guard)\b/i},
+  {kind:'passer',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:pass(?:es|ed)?|throws|threw)\b/i},
+ ];
+ const isPick=/intercepted|interception/i.test(desc);
+ const incomplete=/incomplete|intended for|pass dropped|tipped pass/i.test(desc);
+ const chosen=patterns.filter(x=>!(incomplete&&x.kind==='reception')&&!(isPick&&x.kind==='reception'));
+ // For incompletions and sacks, the passer is the subject.
+ if(incomplete)chosen.sort((a,b)=>(a.kind==='passer'?-1:0)-(b.kind==='passer'?-1:0));
+ for(const rule of chosen){
+  const m=desc.match(rule.re);
+  if(!m)continue;
+  const matched=findNamedPlayer(m[1],pool,rule.kind==='interception'?null:poss);
+  if(matched)return {player:matched,role:rule.kind};
+ }
+ // MSF shorthand fallback: when a play starts "(Shotgun) 10-J.Love pass"
+ // the role regex might consume only a partial actor. Resolve an initial +
+ // surname on this offense before giving up or displaying an empty portrait.
+ const abbreviations=abbreviatedActors(desc);
+ if(abbreviations.length){
+  const first=abbreviations[0];
+  const actor=findNamedPlayer(first.initial.toUpperCase()+'.'+first.surname,pool,poss);
+  if(actor&&!isPick)return {player:actor,role:incomplete?'passer':'named'};
+ }
+ // For provider lines with a different syntax, choose only one named
+ // player on the correct offensive team, never an arbitrary first match.
+ const fallback=findNamedPlayer(desc,pool,poss);
+ if(fallback&&!isPick)return {player:fallback,role:'named'};
+ return {player:null,role:'unknown'};
+}
+function playerPortrait(event,rows,selected,game){
+ const resolved=playSubject(event,rows,selected,game),p=resolved.player;
  const raw=p?.raw?.player||p?.raw?.playerInfo||p||{};
- let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl']));
- // Only use Sleeper ID when uniquely matched to the roster member, never a MSF ID.
- if(!src&&p?.name&&selected?.name&&normalizeName(p.name)===normalizeName(selected.name)){
-   const id=String(selected.id||'');if(/^[0-9]{1,8}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
+ let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl'])||p?.image);
+ if(!src&&p?.sleeper&&/^[0-9]{1,9}$/.test(String(p.id||'')))src='https://sleepercdn.com/content/nfl/players/thumb/'+p.id+'.jpg';
+ if(!src&&p?.name&&selected?.name&&cleanSubject(p.name)===cleanSubject(selected.name)&&abbrev(p.team)===abbrev(selected.team)){
+   const id=String(selected.id||'');if(/^[0-9]{1,9}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
  }
  const label=p?.name||'Player unavailable';
- return {name:label,src,initials:label==='Player unavailable'?'—':label.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
+ return {name:label,src,role:resolved.role,initials:label==='Player unavailable'?'—':label.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
 }
 function escColor(hex){return /^#[A-Fa-f0-9]{6}$/.test(hex)?hex:'#1a4550'}
 const score=x=>x===null||x===undefined?'—':H(x);
 const clockFmt=e=>e?(e.period?'Q'+H(e.period):'Q —')+' · '+H(e.clock||'Clock unavailable'):'PRE-GAME';
 export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCount=0,activePlay=-1,followLatest=true,playerRows=[],selectedPlayer=null,source='',isLive=false}){
- const away=brand(g?.away),home=brand(g?.home),i=eventInfo(event,g),p=playerPortrait(event,playerRows,selectedPlayer);
+ const away=brand(g?.away),home=brand(g?.home),i=eventInfo(event,g),p=playerPortrait(event,playerRows,selectedPlayer,g);
  const goalX=v=>Math.round(88+v*6.04),x=goalX,down=i.down!==null?String(i.down):'—',dist=i.distance!==null?String(i.distance):'—';
  const offense=i.offense?brand(i.offense):null;
  const leftEnd=home,rightEnd=away; // end zones show attack targets, not painted venue branding.
  const scrim=i.spot!==null?'<line x1="'+x(i.spot)+'" y1="112" x2="'+x(i.spot)+'" y2="325" stroke="#76E3ED" stroke-width="3.4" opacity=".97"/>':'';
  const togo=i.target!==null?'<line x1="'+x(i.target)+'" y1="112" x2="'+x(i.target)+'" y2="325" stroke="#F5D16A" stroke-width="3" opacity=".98"/>':'';
- const ball=i.spot!==null?'<ellipse cx="'+x(i.spot)+'" cy="235" rx="11" ry="6.5" transform="rotate(-20 '+x(i.spot)+' 235)" fill="#A96332" stroke="#F9E0B9" stroke-width="2"/>':'';
+ const ball=i.spot!==null?'<ellipse class="gc6-ball" data-source-spot="'+i.spot+'" cx="'+x(i.spot)+'" cy="235" rx="11" ry="6.5" fill="#A96332" stroke="#F9E0B9" stroke-width="2"/>':'';
  const travel=i.end!==null&&i.spot!==null&&i.end!==i.spot?'<path d="M'+x(i.spot)+' 225 Q'+Math.round((x(i.spot)+x(i.end))/2)+' 174 '+x(i.end)+' 225" fill="none" stroke="#FFC66A" stroke-width="3" stroke-dasharray="8 6"/><circle cx="'+x(i.end)+'" cy="225" r="5" fill="#FFC66A" stroke="#091d26" stroke-width="2"/>':'';
  let stripes='',ticks='',yardNumbers='';
  for(let j=0;j<=10;j++){const xx=x(j*10);stripes+='<line x1="'+xx+'" y1="113" x2="'+xx+'" y2="329" stroke="#D3F1DC" stroke-width="'+(j===0||j===10?2:1.3)+'" opacity=".65"/>';if(j>0&&j<10)yardNumbers+='<text x="'+xx+'" y="143" text-anchor="middle" font-size="11" font-weight="800" fill="#DBF4E7" opacity=".8">'+(j<=5?j*10:(10-j)*10)+'</text>'}
@@ -93,7 +158,7 @@ export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCoun
  return '<div class="gc6-shell">'+front+state+'<div class="gc6-stadium">'+field+'<div class="gc6-attack"><span>← '+H(home.abbr)+' SCORING TARGET</span><span>'+H(away.abbr)+' SCORING TARGET →</span></div></div>'+featured+control+extra+'</div>';
 }
 export function playRow(event,index,selected,game,source,playerRows,selectedPlayer){
- const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer);
+ const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer,game);
  const big=highlight(event);
  const badge=outcome(event);
  const desc=String(event.text||'');

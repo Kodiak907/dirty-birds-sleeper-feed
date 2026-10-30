@@ -42,6 +42,9 @@
      if(typeof tb45Data!=='undefined'&&tb45Data?.snap&&typeof pfo50TradeRos==='function')tb45Data.ros=pfo50TradeRos();
     }catch(err){console.warn('FFO trade model refresh pending',err)}
     redraw();
+    // Stats may load ahead of the frozen FFL scoring rules. Earlier null
+    // Trade/Market evaluations must not stay cached once rules become ready.
+    window.ffoPfo59?.refreshCurrent?.(true);
     if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])')&&typeof renderTradeScouting==='function')renderTradeScouting();
     return frozenFFLRules;
    }catch(err){console.warn('FFO frozen-scoring file unavailable; independent point estimates withheld',err);return null;}
@@ -69,9 +72,10 @@
   if(typeof pfo50Indexed==='undefined'||!pfo50Indexed?.size||typeof pfo50Score!=='function')return null;
   const p=typeof pfo52Info==='function'?pfo52Info(id):null;
   if(!p?.name||!p?.team)return null;
-  const rows=[...pfo50Indexed.values()].filter(x=>canonical(x.team)===canonical(p.team)&&norm(x.name)===norm(p.name));
-  if(rows.length!==1)return null;
-  const row=rows[0];
+  // MSF-to-Sleeper matching is already indexed and duplicate identities excluded.
+  // Do NOT scan every MSF player on each market card or tap on iPhone.
+  const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):pfo50Indexed.get(typeof pfo50Key==='function'?pfo50Key(p.name,p.team):norm(p.name)+'|'+canonical(p.team));
+  if(!row)return null;
   if(row.forecast){
    const pts=pfo50Score(row.forecast);
    if(pts!=null&&Number.isFinite(pts))return {points:pts,source:'FFO NFL-stat model · verified same-team player mapping'};
@@ -140,19 +144,28 @@
   finally{loadPending=null;}})();
   return loadPending;
  }
- // Data refreshes can arrive after page paint. Repaint only the active tool.
- if(typeof pfo50LoadIndependent==='function'){
-  const original=pfo50LoadIndependent;
-  pfo50LoadIndependent=async function(...args){const v=await original(...args);if(v)redraw();return v;};
- }
+ // pfo50LoadIndependent already selectively updates the active screen.
+ // Do not register a second app-wide repaint on every stat response (iPhone freeze).
  // Keep legacy full-PPR market screens archived in source, not visible as FFL valuations.
  // Preserve existing manual comparison inputs and event routing; only remove irrelevant
  // pricing sections from the mobile trade report.
- if(typeof renderTradeScouting==='function'&&typeof tb48FeatureHTML==='function'){
+ if(typeof renderTradeScouting==='function'&&typeof tb48Deal==='function'){
+  // The compact Trade Command owns player selection. The expanded analysis is
+  // exclusively FFO FFL points / team lineup impact — not external full-PPR pricing.
   renderTradeScouting=function(){
    const host=$('trade-intel'),fold=$('trade-fold');
    if(!host||!fold?.open||!document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))return;
-   host.innerHTML='<div class="pfo597-trade-report"><h3>FFO FFL trade research</h3><p class="pfo597-rank-note">Uses the frozen league-specific scoring model and independent NFL statistics. The legacy full-PPR pricing display is excluded.</p>'+tb48FeatureHTML()+'</div>';
+   const chosen=typeof tb48State==='function'?tb48State():null;
+   let z=null;try{z=tb48Deal();}catch(err){console.warn('FFO trade research incomplete',err)}
+   if(z){
+    host.innerHTML=tb48ReportHTML(z);
+   }else{
+    lastTrade=null;
+    host.innerHTML='<section class="pfo597-trade-report"><h3>FFO FFL trade evaluation</h3>'+
+     '<p>Choose a trade partner and players in the compact lists above. Model calculations require current ownership and matched MySportsFeeds season statistics.</p>'+
+     '<p class="pfo597-trade-warning">No full-PPR market value or unsupported numeric trade verdict will be substituted.</p>'+
+     (chosen?.give?.length&&chosen?.take?.length?'<p>Source coverage pending. This proposal remains unsent.</p>':'')+'</section>';
+   }
   };
  }
  if(typeof tb48ReportHTML==='function'){
@@ -166,15 +179,21 @@
    };
    const sum=ids=>{const vals=ids.map(projection);return vals.every(v=>v.pts!=null)?vals.reduce((a,b)=>a+b.pts,0):null;};
    const out=sum(z.give),incoming=sum(z.take),difference=out!=null&&incoming!=null?incoming-out:null;
+   // The previous trade evaluator can calculate depth proxies from cached
+   // Sleeper/market estimates. These are not FFO-verified projections.
+   // Suppress them whenever the MSF-backed FFL package itself is incomplete.
+   const impactKnown=difference!==null&&[...z.give,...z.take].every(id=>sourceForecast(id)?.points!=null);
    const outcome=difference==null?'FFL model coverage incomplete':Math.abs(difference)<0.5?'Comparable FFL projected package output':difference>0?'Dirty Birds receives higher projected FFL production':'Dirty Birds sends higher projected FFL production';
    const row=(title,ids)=>'<section class="pfo597-trade-half"><h4>'+esc(title)+'</h4>'+
-    ids.map(id=>{const x=projection(id);return '<div class="pfo597-trade-person">'+(/^[0-9]{2,9}$/.test(String(id))?'<img class="pfo598-eval-photo" alt="" loading="lazy" src="https://sleepercdn.com/content/nfl/players/thumb/'+esc(id)+'.jpg" onerror="this.hidden=true">':'')+'<button type="button" class="pfo597-player-link" data-pfo49-id="'+esc(id)+'">'+esc(x.p?.name||id)+'</button><span>'+fmt(x.pts,2)+' <small>FFL PPG*</small></span></div>';}).join('')+'</section>';
+    ids.map(id=>{const x=projection(id);return '<div class="pfo597-trade-person">'+(/^[0-9]{2,9}$/.test(String(id))?'<img class="pfo598-eval-photo" width="24" height="29" alt="" loading="lazy" decoding="async" src="https://sleepercdn.com/content/nfl/players/thumb/'+esc(id)+'.jpg" onerror="this.hidden=true">':'<span class="pfo598-eval-team">DEF</span>')+'<button type="button" class="pfo597-player-link" data-pfo49-id="'+esc(id)+'">'+esc(x.p?.name||id)+'</button><span>'+fmt(x.pts,2)+' <small>FFL PPG*</small></span></div>';}).join('')+'</section>';
    let h='<section class="pfo597-trade-report" aria-live="polite"><div class="pfo597-trade-title"><h3>FFL-specific trade evaluation</h3><span>'+z.give.length+' FOR '+z.take.length+'</span></div>'+
     '<p class="pfo597-rank-note">FFO independently scores NFL performance using the league’s actual custom scoring rules. No full-PPR market-value scale or outside trade price is used to grade this package.</p>'+
     '<div class="pfo597-trade-result"><b>'+esc(outcome)+'</b><span>Outgoing '+fmt(out)+' / Incoming '+fmt(incoming)+' projected FFL points per game · Net '+signed(difference)+'*</span></div>'+
     '<div class="pfo597-trade-sides">'+sides.map(x=>row(...x)).join('')+'</div>'+
-    '<div class="pfo597-trade-sides"><div><h4>Dirty Birds</h4><b>'+signed(z.ourDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.ourBenchDelta)+' PPG</p></div>'+
-    '<div><h4>'+esc(typeof tb45Manager==='function'?tb45Manager(z.x.opponent):'Opposing manager')+'</h4><b>'+signed(z.theirDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.theirBenchDelta)+' PPG</p></div></div>';
+    '<div class="pfo597-trade-sides"><div><h4>Dirty Birds</h4>'+
+    (impactKnown?'<b>'+signed(z.ourDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.ourBenchDelta)+' PPG · source-limited estimate</p>':'<p class="pfo597-trade-impact-pending">Starter impact pending verified MSF + FFO scoring. No substitute depth estimate.</p>')+'</div>'+
+    '<div><h4>'+esc(typeof tb45Manager==='function'?tb45Manager(z.x.opponent):'Opposing manager')+'</h4>'+
+    (impactKnown?'<b>'+signed(z.theirDelta)+' starter PPG impact</b><p>Depth proxy '+signed(z.theirBenchDelta)+' PPG · source-limited estimate</p>':'<p class="pfo597-trade-impact-pending">Starter impact pending verified MSF + FFO scoring. No substitute depth estimate.</p>')+'</div></div>';
    if(z.ourCut.length||z.theirCut.length)h+='<p class="pfo597-trade-warning">Hypothetical roster cuts only: Dirty Birds '+esc(z.ourCut.map(id=>tb45Player(id).name).join(', ')||'none')+' · Opponent '+esc(z.theirCut.map(id=>tb45Player(id).name).join(', ')||'none')+'. Nothing is submitted.</p>';
    if(z.injuryFlags?.length)h+='<p class="pfo597-trade-warning">Injury flags require official verification: '+esc(z.injuryFlags.join(', '))+'</p>';
    h+='<details><summary>FFL calculation and source limitations</summary><p>*Projected FFL points per game are independent recent-form estimates from NFL statistics, not future game results, guaranteed trade prices or true manager willingness. The two sides’ package totals are not equivalent to lineup improvement. Missing data is shown as unverified rather than zero. Opponent, byes, snaps, injury decisions and each team’s roster structure matter.</p><p>Roster membership is read from Sleeper only; NFL performance comes from independent data. No full-PPR valuation influences the displayed recommendation.</p></details>';
@@ -195,6 +214,39 @@
    'No full-PPR market valuation. Independent NFL-stat FFL scoring model; missing projections unverified. No trade submitted.'].join('\n');
   if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied';}).catch(()=>{btn.textContent='Copy unavailable';});
  });
+ // Injury Watch runs separately from statistical scouting. Show a concise,
+ // provenance-aware source-health banner rather than silently carrying stale tags.
+ if(typeof updateInjuryView==='function'){
+  const inheritedInjuryView=updateInjuryView;
+  updateInjuryView=function(){
+   inheritedInjuryView();
+   const host=$('injuryhealth');
+   if(!host)return;
+   let line=host.querySelector('.pfo598-injury-coverage');
+   if(!line){line=document.createElement('p');line.className='pfo598-injury-coverage';host.append(line)}
+   const now=Date.now(),stamp=x=>{
+    const v=typeof x==='number'?x:Date.parse(x||'');
+    if(!Number.isFinite(v))return null;
+    return Math.max(0,Math.round((now-v)/60000));
+   };
+   const official=typeof nflVerified==='undefined'?null:nflVerified;
+   const officialAge=stamp(official?.checked_at),w=Number(window.dbNflWeek||8);
+   const matches=!!official&&Number(official.report_week)===w&&Number(official.report_season)===Number(window.dbNflSeason||2026);
+   const fresh=matches&&officialAge!==null&&officialAge<80;
+   const espnAge=typeof espnFetchedAt!=='undefined'?stamp(espnFetchedAt):null;
+   const findings=[
+    fresh?'NFL report: Week '+w+' verified '+officialAge+'m ago':
+     'NFL Week '+w+' official verification pending'+(officialAge!==null?' (available source '+officialAge+'m old)':''),
+    espnAge!==null?'ESPN injury scan: '+espnAge+'m ago':'ESPN injury scan unavailable',
+    typeof liveRosterError!=='undefined'&&liveRosterError?'Roster issue: '+String(liveRosterError).slice(0,100):null,
+    typeof injuryError!=='undefined'&&injuryError?'Official source: '+String(injuryError).slice(0,100):null,
+    typeof espnError!=='undefined'&&espnError?'ESPN source: '+String(espnError).slice(0,100):null
+   ].filter(Boolean);
+   line.textContent=findings.join(' · ')+' · No match does not mean ACTIVE.';
+   line.style.cssText='font-size:11px;line-height:1.5;margin:7px 0 0;color:#c3d6e5';
+  };
+ }
+
  document.addEventListener('DOMContentLoaded',()=>{void loadFFLRules();void loadSchedule();},{once:true});
  if(document.readyState!=='loading'){void loadFFLRules();void loadSchedule();}
  const nav=$('nav');
@@ -209,5 +261,5 @@
    if(typeof refreshInjuryOnly==='function'&&typeof injuryBusy!=='undefined'&&!injuryBusy)void refreshInjuryOnly();
   }
  });
- window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules};
+ window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules,clearEvaluation:()=>{lastTrade=null;}};
 })();

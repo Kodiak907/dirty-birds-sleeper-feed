@@ -14,13 +14,15 @@ test('5.9.7 assets parse, load after previous model and preserve Commissioner bo
  assert.doesNotMatch(js,/\/api\/commissioner\/.*POST/);
  assert.match(css,/#pfo59-waiver-board/);
 });
-test('Trade Clear updates picks in-place, not two roster DOM trees',()=>{
+test('Trade Clear fully resets the opposing manager and stale evaluation on request',()=>{
  const at=market.indexOf("if(ev.target.closest('[data-pfo59-clear]'))"),end=market.indexOf("if(ev.target.closest('[data-pfo59-compare]'))",at);
  assert.ok(at>=0&&end>at);
  const action=market.slice(at,end);
  assert.match(action,/state\.tradeGive=\[\];state\.tradeTake=\[\]/);
  assert.match(action,/querySelectorAll\('\[data-pfo59-pick\]'\)/);
- assert.doesNotMatch(action,/\btrade\(\)/);
+ assert.match(action,/state\.manager='1'/);
+ assert.match(action,/managerOptions\(\);trade\(\)/);
+ assert.match(action,/clearEvaluation/);
 });
 test('Original waiver views include personalized All, neutral positions, Veterans, IR and Leaders',()=>{
  assert.match(market,/waiverView:'available'/);

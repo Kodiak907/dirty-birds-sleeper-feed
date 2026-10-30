@@ -121,3 +121,51 @@
 #pfo59-team-hub .ffo-gc-testplan{font-size:11px}
 #pfo53-weekfocus .pfo53-quick button{display:none!important}
 @media(max-width:350px){.pfo59-trade-dual{gap:3px}.pfo59-trade-dual>section{padding:4px}.pfo59-trade-player{grid-template-columns:21px minmax(0,1fr) 24px 12px}}
+
+
+/* PFO 5.9.9: five explicit trade row slots; native compact iPhone list.
+   The earlier four-column layout auto-placed the fifth element (portrait)
+   in a second row, letting the headshot grow to hundreds of pixels. */
+#pfo59-trade-board .pfo59-trade-roster{min-width:0;max-width:100%;overflow-x:hidden;overflow-y:auto;max-height:440px}
+#pfo59-trade-board .pfo59-trade-player{
+ display:grid!important;grid-template-columns:18px 25px minmax(0,1fr) 37px 14px!important;
+ grid-template-rows:38px!important;grid-auto-rows:38px;align-items:center;column-gap:4px;row-gap:0;
+ height:39px;min-height:39px;max-height:39px;width:100%;min-width:0;max-width:100%;
+ margin:0;padding:2px 1px;overflow:hidden;box-sizing:border-box
+}
+#pfo59-trade-board .pfo598-trade-photo{
+ display:flex;align-items:center;justify-content:center;overflow:hidden;
+ width:25px!important;height:30px!important;min-width:25px;max-width:25px;
+ max-height:30px;grid-row:1;line-height:1;font-size:9px
+}
+#pfo59-trade-board .pfo598-trade-photo img{
+ display:block;width:24px!important;height:29px!important;max-width:24px!important;
+ max-height:29px!important;min-width:0!important;min-height:0!important;
+ object-fit:contain!important;object-position:bottom!important;border:0!important
+}
+#pfo59-trade-board .pfo598-trade-photo .pfo598-team-placeholder{
+ display:grid;place-items:center;height:24px;width:24px;overflow:hidden;
+ background:#223b50;border:1px solid #3f6278;border-radius:5px;color:#b7e3d3;
+ font-size:8px;font-weight:800;white-space:nowrap
+}
+#pfo59-trade-board .pfo59-trade-identity{
+ display:flex;flex-direction:column;justify-content:center;gap:1px;
+ min-width:0;max-width:100%;overflow:hidden;grid-row:1
+}
+#pfo59-trade-board .pfo59-trade-identity b,
+#pfo59-trade-board .pfo59-trade-identity small{
+ max-width:100%;width:100%;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+#pfo59-trade-board .pfo59-trade-identity b{font-size:10px;line-height:1.2}
+#pfo59-trade-board .pfo59-trade-value{min-width:0;max-width:37px;overflow:hidden;grid-row:1}
+#pfo59-trade-board .pfo59-trade-value small{font-size:8px}
+#pfo59-trade-board .pfo59-pick-mark{grid-row:1}
+#pfo59-trade-board .pfo59-trade-dual>section{min-width:0;max-width:100%;overflow:hidden}
+#pfo59-trade-board .pfo59-trade-dual{width:100%;max-width:100%;min-width:0;overflow:hidden}
+#pfo59-trade-board .pfo59-model-state{font-size:11px;line-height:1.45;color:#bdd0dd;margin:8px 1px}
+@media(max-width:350px){
+ #pfo59-trade-board .pfo59-trade-player{grid-template-columns:17px 22px minmax(0,1fr) 31px 12px!important;column-gap:2px}
+ #pfo59-trade-board .pfo598-trade-photo{width:22px!important;min-width:22px;max-width:22px}
+ #pfo59-trade-board .pfo598-trade-photo img{width:21px!important;max-width:21px!important}
+ #pfo59-trade-board .pfo59-trade-value{max-width:31px}
+}

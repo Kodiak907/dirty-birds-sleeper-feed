@@ -45,40 +45,27 @@
    const leagueAverage=all.reduce((a,b)=>a+b,0)/all.length,difference=leagueAverage-ours;
    if(difference>0.75)weakness[pos]={difference,ours,leagueAverage,coverage:all.length};
   }
-  // Use *recorded* FFL starter performance from completed weeks, distinct from forecasts.
-  // Each manager is compared on per-started-player positional output, so FLEX-heavy
-  // starting lineups do not automatically appear better than standard lineups.
-  const historical={};const rows=state.history?.matchups_by_week;
-  if(rows){
-   const seasonWeek=Math.max(2,Number(state.history?.nfl_state?.week||8));
-   const priorWeeks=Array.from({length:4},(_,i)=>seasonWeek-1-i).filter(w=>w>0);
-   const observe=(ownerId,pos)=>{
-    let points=0,starts=0,covered=0;
-    for(const week of priorWeeks){
-     const match=rows[String(week)]?.find(x=>Number(x.roster_id)===Number(ownerId));
-     if(!match)continue;
-     let perWeek=0;
-     for(const id of match.starters||[]){
-      if(String(names[id]?.position||'').toUpperCase().replace('D/ST','DEF')!==pos)continue;
-      const val=match.players_points?.[id];
-      if(!Number.isFinite(Number(val))||val===null)continue;
-      points+=Number(val);starts++;perWeek++;
-     }
-     if(perWeek)covered++;
-    }
-    return starts>=2&&covered>=2?points/starts:null;
-   };
-   for(const pos of Object.keys(counts)){
-    const mine=observe(rid,pos);
-    const peers=(state.snap?.rosters||[]).map(team=>observe(team.roster_id,pos)).filter(x=>x!==null);
-    if(mine===null||peers.length<8)continue;
-    const leagueMean=peers.reduce((a,b)=>a+b,0)/peers.length;
-    const difference=leagueMean-mine;
-    if(difference>1.25)historical[pos]={difference,mine,leagueMean,coverage:peers.length,weeks:priorWeeks};
-   }
+  // Sleeper is a roster/transaction source, not a fantasy-scoring input.
+  // Weekly historical deficits are withheld until independent MSF game-level
+  // coverage permits FFO_FFL_SCORING_V1 reconstruction; season-model weaknesses
+  // above remain individually computed from MSF verified season baselines.
+  const historical={};
+  const starterPPG={},injuryRisk={};
+  const rosterIds=(r?.players||[]).map(String),starterIds=(r?.starters||[]).map(String).filter(id=>rosterIds.includes(id)&&id!=='0');
+  for(const pos of Object.keys(counts)){
+   const scored=(starterIds.length?starterIds:rosterIds).map(id=>({id,p:names[id]}))
+    .filter(x=>String(x.p?.position||'').toUpperCase().replace('D/ST','DEF')===pos)
+    .map(x=>scoreInfo({id:x.id,name:x.p?.name,team:x.p?.team}).project)
+    .filter(v=>v!==null&&Number.isFinite(v)).sort((a,b)=>b-a);
+   starterPPG[pos]=scored.length?scored[0]:null;
   }
-  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(10,Math.max(0,historical[pos]?.difference||0))*1.3+Math.min(6,Math.max(0,weakness[pos]?.difference||0))]));
-  return {counts,targets,priority,rank,weakness,historical,unknown,known:!!r};
+  for(const id of rosterIds){
+   const p=names[id],pos=String(p?.position||'').toUpperCase().replace('D/ST','DEF');
+   if(!Object.hasOwn(counts,pos))continue;
+   if(/\b(IR|PUP|NFI|OUT|DOUBTFUL)\b/i.test(String(p?.injury_status||'')+' '+String(p?.status||'')))injuryRisk[pos]=(injuryRisk[pos]||0)+1;
+  }
+  const rank=Object.fromEntries(Object.keys(counts).map(pos=>[pos,priority[pos]*5+Math.min(6,Math.max(0,weakness[pos]?.difference||0))+Math.min(4,injuryRisk[pos]||0)*1.5]));
+  return {counts,targets,priority,rank,weakness,historical,starterPPG,injuryRisk,unknown,known:!!r};
  }
  function ownership(){const s=new Set();for(const r of state.snap?.rosters||[])for(const id of r.players||[])s.add(String(id));return s}
  async function broadenWaiverDirectory(){
@@ -214,7 +201,13 @@
   const n=needs(state.waiverManager),pool=scoredPool(),query=state.search.trim().toLowerCase();
   const filtered=pool.filter(p=>{
    if(state.waiverView==='available'&&state.position==='ALL'&&
-      ['QB','DEF','K'].includes(p.position)&&n.counts[p.position]>=n.targets[p.position])return false;
+      ['QB','DEF','K'].includes(p.position)&&n.counts[p.position]>=n.targets[p.position]){
+    // Only show a surplus-position candidate if sourced FFL production makes
+    // a genuinely meaningful upgrade over the current best available starter.
+    const current=n.starterPPG[p.position],next=p.modelPPG;
+    const threshold=p.position==='QB'?3.5:2.5;
+    if(current===null||next===null||!Number.isFinite(next)||next-current<threshold)return false;
+   }
    const pos=state.position;
    const meta={...(state.names?.[p.id]||{}),...(window.ffoWaiverMeta597?.[p.id]||{})};
    const ir=/\b(IR|PUP|NFI|INJURED[ _-]?RESERVE)\b/i.test(String(meta.injury_status||'')+' '+String(meta.status||''));
@@ -228,8 +221,11 @@
     const depth=Math.max(0,n.priority[p.position]||0);
     // Weakness claims cannot override good positional depth without a verified upgrade.
     const upgrade=p.modelPPG!=null?Math.min(6,Math.max(0,n.weakness[p.position]?.difference||0)):0;
+    const better=n.starterPPG[p.position]!=null&&p.modelPPG!=null
+     ?Math.min(9,Math.max(0,p.modelPPG-n.starterPPG[p.position])):0;
+    const missing=Number(n.injuryRisk[p.position]||0);
     const evidence=p.modelPPG!=null?2+Math.min(2,p.modelPPG/10):0;
-    return depth*8+upgrade+evidence;
+    return depth*8+upgrade+better*1.5+Math.min(3,missing)*1.5+evidence;
    };
    const gap=teamValue(b)-teamValue(a);
    if(state.waiverView==='available'&&state.position==='ALL'&&gap)return gap;
@@ -245,7 +241,7 @@
   '<div class="pfo597-position-strip" aria-label="Waiver position filters">'+filterTabs.map(pos=>'<button type="button" data-pfo597-waiver-pos="'+pos+'" aria-pressed="'+(pos===state.position)+'">'+(pos==='VETS'?'Veterans':pos==='ROOKIES'?'Rookies':pos)+'</button>').join('')+'</div>';
   const rankLine=state.waiverView==='leaders'?'NFL-stat FFL season scoring leaders · all NFL players, including rostered':state.position==='ALL'?'CUSTOM FOR '+safe(teamName(state.waiverManager))+' · roster depth, scored league gaps and FFL projections':'Best available '+safe(state.position)+' · independent FFL model, no team-need weighting';
   host.innerHTML=pills+'<div class="pfo597-rank-note">'+rankLine+'</div>'+ (state.waiverView==='available'?'<div class="pfo59-caveat">Personalized recommendations combine <b>roster depth</b> and, where source coverage permits, starter model comparisons to league baselines. Model deficits are estimates, not proven roster weaknesses. This player directory remains incomplete, and eligibility is not established. Nothing is claimed or bid.</div>'+
-    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.waiverManager))+'</strong><span>Recorded FFL scoring weaknesses: '+safe(scoredGaps.map(p=>p+' '+n.historical[p].difference.toFixed(1)+' points/start below league mean').join(' · ')||(state.history?'No notable recent scoring deficits':'Retrieving four completed weeks of league scores…'))+'</span><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No basic depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
+    '<div class="pfo59-metrics"><strong>'+safe(teamName(state.waiverManager))+'</strong><span>Injury flags requiring verification: '+safe(Object.entries(n.injuryRisk).map(([pos,count])=>pos+' '+count).join(' · ')||'None recorded in roster metadata; this does NOT certify health')+'</span><span>Independent weekly scoring gaps: '+safe(scoredGaps.map(p=>p+' '+n.historical[p].difference.toFixed(1)+' points/start below league mean').join(' · ')||(state.history?'No independently verified weekly gaps':'MySportsFeeds game logs not licensed; weekly gaps withheld'))+'</span><span>Depth watch: '+safe(gaps.map(p=>p+' ('+n.counts[p]+'/'+n.targets[p]+')').join(' · ')||'No basic depth gaps')+'</span><span>Below published league starter-model mean: '+safe(weak.map(pos=>pos+' '+n.weakness[pos].difference.toFixed(1)+' PPG ('+n.weakness[pos].coverage+' team samples)').join(' · ')||'Insufficient evidence of a positional projection gap')+'</span><small>'+safe(n.unknown.length)+' player IDs lacked position mapping · Sleeper roster snapshot '+safe(state.snap.fetched_at_utc||'unknown')+'</small></div>'+
     '': '')+
     '<div class="pfo59-list-head"><h3>'+safe(state.waiverView==='leaders'?'Independent FFL model leaders':state.position==='ALL'?'Personalized available player board':state.position+' available player board')+'</h3><small>'+safe(filtered.length)+' unrostered names in published directory · tap a row for full player QuickView · sorted by '+(state.waiverView==='available'&&state.position==='ALL'?'team fit and source-backed model':'supported FFL model PPG')+'</small></div>'+
     (filtered.length?filtered.slice(0,60).map(p=>playerRow(p,state.position==='ALL'?n.priority[p.position]:null,state.position==='ALL'?n.historical?.[p.position]:null)).join(''):'<p>No matching published unrostered player IDs. Do not infer league-wide absence.</p>')+
@@ -269,7 +265,9 @@
   players.sort((a,b)=>(a.p?.position||'ZZ').localeCompare(b.p?.position||'ZZ')||String(a.p?.name||a.id).localeCompare(String(b.p?.name||b.id)));
   return '<div class="pfo59-trade-roster">'+players.map(({id,p,x})=>
     '<button type="button" class="pfo59-trade-player'+(selected.includes(id)?' selected':'')+'" data-pfo59-pick="'+safe(id)+'" data-pfo59-side="'+side+'" aria-pressed="'+selected.includes(id)+'">'+
-    '<span class="pfo59-player-pos">'+safe(p?.position||'—')+'</span><span class="pfo598-trade-photo"><img loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/'+safe(/^[0-9]{2,9}$/.test(id)?id:'0')+'.jpg" onerror="this.hidden=true"></span><span class="pfo59-trade-identity"><b>'+safe(p?.name||'Unmapped player '+id)+'</b><small>'+safe(p?.team||'NFL team unverified')+'</small></span>'+
+    '<span class="pfo59-player-pos">'+safe(p?.position||'—')+'</span><span class="pfo598-trade-photo">'+
+    (p?.position!=='DEF'&&/^[0-9]{2,9}$/.test(id)?'<img width="24" height="29" loading="lazy" decoding="async" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/'+safe(id)+'.jpg" onerror="this.hidden=true">':'<span class="pfo598-team-placeholder">'+safe(p?.team||'DST')+'</span>')+
+    '</span><span class="pfo59-trade-identity"><b>'+safe(p?.name||'Unmapped player '+id)+'</b><small>'+safe(p?.team||'NFL team unverified')+'</small></span>'+
     '<span class="pfo59-trade-value">'+(x?.project==null?'—':safe(x.project.toFixed(1)))+'<small>model</small></span>'+
     '<span class="pfo59-pick-mark">'+(selected.includes(id)?'✓':'+')+'</span></button>').join('')+'</div>';
  }
@@ -279,7 +277,13 @@
    '<button type="button" class="pfo59-partner'+(String(r.roster_id)===state.manager?' selected':'')+'" '+(Number(r.roster_id)===3?'disabled title="View in Scouting; trade research is excluded"':'data-pfo59-partner="'+safe(r.roster_id)+'"')+'><b>'+safe(teamName(r.roster_id))+'</b><small>'+safe(r.settings?.wins??'—')+'–'+safe(r.settings?.losses??'—')+' · '+safe((r.players||[]).length)+' players</small></button>').join('');
   const isPartner=state.manager!=='1'&&state.manager!=='3',team=state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager);
   const ideas=(state.ideas?.suggestions||[]).filter(x=>String(x.opponent_roster_id)===state.manager&&String(x.opponent_roster_id)!=='3');
+  const msfStatus=typeof pfo50Independent!=='undefined'&&pfo50Independent?.source==='MySportsFeeds'
+   ?'MSF NFL season feed connected · FFO custom scoring; incomplete bonuses withheld'
+   :typeof pfo50IndependentError!=='undefined'&&pfo50IndependentError
+    ?'MSF statistics unavailable: '+String(pfo50IndependentError).slice(0,190)
+    :'Checking MySportsFeeds statistics… No unsupported zero-valued predictions';
   host.innerHTML=
+    '<div class="pfo59-model-state" role="status">'+safe(msfStatus)+'</div>'+
     '<div class="pfo59-subsection"><h3>Trade partner</h3><small>Select a team to view its real roster and choose players for a research-only comparison.</small></div>'+
     '<div class="pfo59-partners">'+(partners||'')+'</div>'+
     (isPartner&&team?'<div class="pfo59-trade-selected"><b>'+safe(teamName(state.manager))+'</b><span>'+safe((team.players||[]).length)+' currently rostered · Sleeper snapshot '+safe(state.snap?.fetched_at_utc||'unknown')+'</span></div>'+
@@ -406,7 +410,9 @@
     return;
    }
    if(ev.target.closest('[data-pfo59-clear]')){
-    state.tradeGive=[];state.tradeTake=[];
+    // Clear resets the entire trade comparison, including the opponent.
+    state.tradeGive=[];state.tradeTake=[];state.manager='1';
+    window.ffoPfo597?.clearEvaluation?.();
     // Clear any previously saved hypothetical package WITHOUT invoking heavy legacy redraw.
     try{
      if(typeof tb48State==='function'){
@@ -425,6 +431,7 @@
     nav.querySelectorAll('.pfo59-trade-dual h3 small').forEach(node=>node.textContent='0/3');
     const count=nav.querySelector('.pfo59-trade-bar span');if(count)count.textContent='0 giving · 0 receiving';
     const compare=nav.querySelector('[data-pfo59-compare]');if(compare)compare.disabled=true;
+    managerOptions();trade(); // immediately replace the stale roster and report
     return;
    }
    if(ev.target.closest('[data-pfo59-compare]')){
@@ -573,5 +580,11 @@
   if(overview&&standings){standings.classList.add('pfo59-standings-top');overview.prepend(standings);}
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
- window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory};
+ window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,
+  refreshCurrent:(rulesChanged=false)=>{
+   if(rulesChanged){tradeEstimateCache.clear();state.scoredCache=null;state.scoredRef=null;}
+   if(!document.querySelector('#market.page.active'))return;
+   if(state.market==='trade')trade();
+   else if(state.market==='waiver')waiver();
+  }};
 })();

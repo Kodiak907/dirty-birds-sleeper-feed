@@ -531,26 +531,45 @@ let espnInjuries=null, espnFetchedAt=null, espnError=null, espnSourceAge=null;
 function normPlayer(x){return String(x||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');}
 function updateInjuryView(){
  const health=$('injuryhealth'),body=$('injuries');if(!health||!body)return;
- const roster=liveRosterSnapshot?.players||[];const official=nflVerified?.players||[];const alt=espnInjuries||[];
+ const roster=liveRosterSnapshot?.players||[];
+ const expectedWeek=Number(window.dbNflWeek||8),expectedYear=Number(window.dbNflSeason||2026);
+ const verifiedAt=Date.parse(nflVerified?.checked_at||'');
+ const recent=Number.isFinite(verifiedAt)&&Date.now()-verifiedAt>=0&&Date.now()-verifiedAt<INJURY_MAX_AGE_MS;
+ const matchingWeek=Number(nflVerified?.report_week)===expectedWeek&&Number(nflVerified?.report_season)===expectedYear;
+ const official=recent&&matchingWeek?(nflVerified?.players||[]):[];
+ const alt=espnInjuries||[];
  health.innerHTML='<b>Official NFL report:</b> '+e(pfo49Today(nflVerified?.checked_at))+' · <b>ESPN:</b> '+e(pfo49Today(espnFetchedAt))+' · <b>Roster:</b> '+e(pfo49Today(liveRosterSnapshot?.checked_at))+'<div class="pfo49-small">Only a direct NFL injury-report match is called official. Sleeper tags are fantasy indicators, not confirmed inactives.</div>';
  if(!roster.length){body.innerHTML='<tr><td colspan="3">Current roster has not loaded. No injury status can be verified yet.</td></tr>';return;}
  const starterIds=new Set((liveRosterSnapshot?.starters||[]).map(String));
  const rows=roster.map(p=>{const o=official.find(x=>normPlayer(x.name)===normPlayer(p.name)),a=alt.find(x=>normPlayer(x.name)===normPlayer(p.name));const tag=p.sleeper_injury_status||'';
-  const game=String(o?.game_status||'').trim(),checkedOfficial=!!nflVerified?.checked_at;
-  const label=o&&game?(game+' · NFL REPORT'):o?'NFL REPORT · no final game designation':a?(String(a.status||'ESPN injury entry')+' · ESPN'):tag?(tag+' · fantasy tag'):checkedOfficial?'NOT LISTED · NFL report checked':'STATUS UNVERIFIED · source pending';
-  const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report ↗</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN injuries ↗</a>':'Source confirmation unavailable');
-  const note=o?('Practice: '+e(o.practice_status||'not published')+(o.injury?' · '+e(o.injury):'')+' · No game-day availability assumed'):a?e(a.detail||'Reported injury; verify team'):checkedOfficial?'Not included among matched injury-report entries as of '+e(pfo49Today(nflVerified.checked_at))+'. This is NOT a verified active or game-day clearance.':'No verified report available. Missing designation is NOT confirmation of clearance.';
+  const game=String(o?.game_status||'').trim(),checkedOfficial=recent&&matchingWeek;
+  const label=o&&game?(game+' · NFL'):o?'On NFL report':a?(String(a.status||'Injury reported')+' · ESPN'):tag?(tag+' · fantasy'):checkedOfficial?'Not listed · NFL':'Source pending';
+  const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN</a>':'');
+  // Global header contains source limitations; don't paste the same three-line
+  // missing-clearance warning into every row and drown out real injuries.
+  const note=o?('Practice '+e(o.practice_status||'unlisted')+(o.injury?' · '+e(o.injury):'')):
+    a?e(a.detail||'Reported injury — team confirmation pending'):
+    tag?'Fantasy designation only · verify official report':
+    checkedOfficial?'Not listed in current matched NFL report':
+    'No report available';
   return {p,label,checked,note,important:!!o||!!a||!!tag||starterIds.has(String(p.player_id))};
  });
  rows.sort((a,b)=>Number(!!b.p.sleeper_injury_status)-Number(!!a.p.sleeper_injury_status));
- body.innerHTML=rows.map(x=>'<tr><td>'+e(x.p.name)+(starterIds.has(String(x.p.player_id))?' <small>STARTER</small>':'')+'</td><td><b>'+e(x.label)+'</b></td><td>'+x.note+'<div class="pfo49-small">'+x.checked+'</div></td></tr>').join('');
+ body.innerHTML=rows.map(x=>'<tr><td>'+e(x.p.name)+(starterIds.has(String(x.p.player_id))?' <small>STARTER</small>':'')+'</td><td><b>'+e(x.label)+'</b></td><td>'+x.note+(x.checked?'<div class="pfo49-small">'+x.checked+'</div>':'')+'</td></tr>').join('');
 }
 function watchNames(){return [...new Set([(liveRosterSnapshot?.players||[]).map(p=>p.name),...(liveRosterSnapshot?.players?.length?[]:[(injurySnapshot?.watch||[]).map(p=>p.name),(data?.lineup||[]).map(p=>p[1])])].flat().filter(Boolean).filter(n=>!/(vikings|defense|d\/st)/i.test(n)))].slice(0,45);}
 async function loadLiveRoster(){
  const id=window.dbLeagueId||LEAGUE_ID_OVERRIDE, rid=window.dbRosterId||1;
  if(!id){liveRosterError='Waiting for live league ID from GitHub; saved watch list used';return;}
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),18000);
- try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;renderRosterComparison();renderGamedayInactives();renderBriefing();pfo50RenderHomeKPIs();pfo50RenderProjectedLineup();renderTradeScouting();gm47Render();if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
+ try{const r=await fetch('/api/roster?league_id='+encodeURIComponent(id)+'&roster_id='+encodeURIComponent(rid),{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();if(!Array.isArray(j.players)||!j.players.length)throw Error('Empty Sleeper player list');liveRosterSnapshot=j;liveRosterCheckedAt=Date.now();liveRosterError=null;
+  // Injury Watch needs a roster, not a costly redraw of every hidden tool.
+  renderRosterComparison();renderGamedayInactives();
+  if(document.querySelector('#overview.page.active')){renderBriefing();pfo50RenderHomeKPIs();}
+  if(document.querySelector('#matchup.page.active,#roster.page.active'))pfo50RenderProjectedLineup();
+  if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();
+  if(document.querySelector('#scouting.page.active'))gm47Render();
+  if(document.querySelector('#pfo59-team-hub [data-pfo59-team-panel="news"]:not([hidden])'))window.ffoPfoNews596?.refresh?.();}
  catch(err){liveRosterError=String(err.message||err);renderRosterComparison();}
  finally{clearTimeout(timer)}
 }
@@ -1355,7 +1374,7 @@ $('gm47-week').addEventListener('change',ev=>{gm47State.manualWeek=true;gm47Stat
 $('gm47-refresh').addEventListener('click',()=>{gm47Games.delete(gm47Week());gm47GamesError.delete(gm47Week());gm47LoadGames(gm47Week());refreshLive();refreshInjuryOnly();});
 $('gm47-open-from-roster')?.addEventListener('click',()=>{document.querySelector('nav button[data-page="scouting"]')?.click();});
 
-/* FFO 5.0 · Independent NFLverse statistical evidence. Sleeper remains ONLY the
+/* FFO 5.9.8 · Licensed MySportsFeeds statistical evidence. Sleeper remains ONLY the
    authority for league settings, ownership, recorded FFL scores and transactions. */
 let pfo50Independent=null,pfo50Indexed=new Map(),pfo50IndependentError='',pfo50IndependentPromise=null,pfo50IndependentAt=0,pfo50ScheduleError='';
 function pfo50Key(name,team){return normPlayer(name)+'|'+gm47CanonicalTeam(team||'');}
@@ -1370,28 +1389,27 @@ function pfo50Score(stats){const s=pfo49ScoreFromStats(stats);return s&&Number.i
 function pfo50Estimate(id){const row=pfo50StatsFor(id);return row?.forecast?pfo50Score(row.forecast):null;}
 function pfo50StatTile(label,val){return '<div><b>'+e(val==null?'—':val)+'</b><span>'+e(label)+'</span></div>';}
 function pfo50StatsStrip(id){const row=pfo50StatsFor(id),p=pfo49Info(id);if(!row)return '<div class="pfo50-evidence warning"><b>Independent player statistics pending.</b> '+e(pfo50IndependentError||'We are checking a separate published NFL player-stat feed. Official Sleeper scoring and GameCast availability are independently tracked.')+' <button type="button" class="button" id="pfo57-retry-stats">Retry NFL statistics</button></div>';
- const weekly=row.latest||{},project=pfo50Estimate(id);const w=Number(weekly.week);const league=pfo49Observed(id)?.[w];const actual=league?.points??pfo50Score(weekly);
+ const weekly=row.latest||{},project=pfo50Estimate(id);const w=Number(weekly.week);const league=pfo49Observed(id)?.[w];const actual=league?.points??(w?pfo50Score(weekly):null);
  const hist=league?'Actual FFL':'Reconstructed FFL*';
  const key=p.position||row.position;
- let fields=[['W'+w+' '+hist,pfo49Num(actual,1)],['Next-game model*',pfo49Num(project,1)]];
+ let fields=[['Latest NFL game '+(w?'W'+w:'unavailable'),w?pfo49Num(actual,1):'—'],['Next-game model*',pfo49Num(project,1)]];
  if(['QB'].includes(key))fields.push(['Completions / Att.',(weekly.pass_cmp??'—')+' / '+(weekly.pass_att??'—')],['Incompletions',weekly.pass_inc??'—'],['Pass yds',weekly.pass_yd??'—'],['Rush yds',weekly.rush_yd??'—']);
  if(['RB','WR','TE'].includes(key))fields.push(['Rushes',weekly.rush_att??'—'],['Targets',weekly.targets??'—'],['Catches',weekly.rec??'—'],['Rush yds',weekly.rush_yd??'—'],['Rec yds',weekly.rec_yd??'—'],['Target share',weekly.target_share_pct!=null?weekly.target_share_pct+'%':'—']);
  const totals=row.season_totals||{},seasonFields=[['Passing yards',totals.pass_yd],['Passing TDs',totals.pass_td],['Rush yards',totals.rush_yd],['Rush TDs',totals.rush_td],['Targets',totals.targets],['Receptions',totals.rec],['Receiving yards',totals.rec_yd],['Receiving TDs',totals.rec_td]];
   const published=seasonFields.filter(([label,value])=>value!==null&&value!==undefined);
-  const seasonMarkup=published.length?'<details class="pfo49-disclose" open><summary>Verified NFL season totals · '+e(row.games_observed)+' recorded games</summary><div class="pfo49-statgrid">'+published.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">Source: nflverse published player weeks. Games counted in source may lag live NFL games; no missing category is represented as zero.</p></details>':'<p class="pfo50-micro">Full NFL season totals not yet delivered by the independent stat source.</p>';
-  return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div>'+seasonMarkup+'<p class="pfo50-micro">*Independent nflverse player stats; scoring reconstruction can omit some FFL bonuses. FFO model uses documented recent and season stats, not expert projections. NFL games: '+e(row.games_observed)+'.</p>';
+  const seasonMarkup=published.length?'<details class="pfo49-disclose" open><summary>Verified NFL season totals · '+e(row.games_observed??'unverified')+' recorded games</summary><div class="pfo49-statgrid">'+published.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div><p class="pfo50-micro">Source: MySportsFeeds licensed season totals; games played must be verified. Missing categories are not represented as zero.</p></details>':'<p class="pfo50-micro">Full NFL season totals not yet delivered by the independent stat source.</p>';
+  return '<div class="pfo49-statgrid">'+fields.map(([label,value])=>pfo50StatTile(label,value)).join('')+'</div>'+seasonMarkup+'<p class="pfo50-micro">*MySportsFeeds season totals; partial FFL scoring can omit unverified bonuses. No recent-game trend inferred from unavailable logs. Games played: '+e(row.games_observed??'unverified')+'.</p>';
 }
-function pfo50TradeRos(){const players={};for(const x of pfo50Indexed.values()){if(!x.forecast)continue;const pp=pfo50Score(x.forecast);if(pp==null)continue;players[x.name]={ppg:pp,coverage_fraction:1,method:['FFO 5.0 independent nflverse recent-form model'],games_observed:x.games_observed};}
- return {as_of:pfo50Independent?.checked_at||null,players,source:'nflverse independently sourced 2026 player stats; FFO baseline 65% last3 + 35% season; custom FFL scoring'};
+function pfo50TradeRos(){const players={};for(const x of pfo50Indexed.values()){if(!x.forecast)continue;const pp=pfo50Score(x.forecast);if(pp==null)continue;players[x.name]={ppg:pp,coverage_fraction:1,method:['FFO 5.9.8 MSF season-to-date baseline (not recent-form)'],games_observed:x.games_observed};}
+ return {as_of:pfo50Independent?.checked_at||null,players,source:'MySportsFeeds independently sourced 2026 season totals per verified game played; FFO custom FFL scoring, partial where needed'};
 }
 async function pfo50LoadIndependent(force=false){const season=Number(window.dbNflSeason||2026);
  if(pfo50IndependentPromise)return pfo50IndependentPromise;
  if(!force&&pfo50Independent&&Date.now()-pfo50IndependentAt<20*60*1000)return pfo50Independent;
  pfo50IndependentPromise=(async()=>{try{
-  // Serve a source-dated stat snapshot from our own static asset first.
-  // Prevents a cold Cloudflare Worker from fetching/parsing multi-megabyte CSV
-  // separately for Team HQ, Waivers, QuickView and Championship on an iPhone.
-  const sources=season===2026?['/FFO_NFL_2026_STATS.json','/api/independent-stats?season='+season]:['/api/independent-stats?season='+season];
+  // One protected compact MSF season source; no nflverse or Sleeper statistics.
+  // Front-end never fetches the raw multi-megabyte licensed feed.
+  const sources=['/api/ffo/stats/season'];
   let j=null,lastError=null;
   for(const endpoint of sources){
    const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),endpoint.startsWith('/api/')?16000:12000);
@@ -1399,13 +1417,17 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
     const r=await fetch(endpoint,{cache:endpoint.startsWith('/api/')?'no-store':'default',signal:controller.signal});
     if(!r.ok)throw Error(endpoint+' HTTP '+r.status);
     const data=await r.json();
-    if(!Array.isArray(data.players)||data.players.length<500||!Number.isInteger(Number(data.max_week??8)))throw Error(endpoint+' incomplete NFL stats');
+    if(data.source!=='MySportsFeeds'||data.available===false||!Array.isArray(data.players)||data.players.length<100||!data.checked_at)throw Error(endpoint+' MSF season feed unavailable or incomplete: '+String(data.error||r.status));
     j=data;break;
    }catch(err){lastError=err;console.warn('FFO independent stat source failed',endpoint,String(err?.message||err));}
    finally{clearTimeout(tm);}
   }
   if(!j)throw lastError||Error('No independently verified 2026 NFL stats');
-  pfo50Independent=j;pfo50Indexed=new Map(j.players.map(x=>[pfo50Key(x.name,x.team),x]));pfo50IndependentError='';pfo50IndependentAt=Date.now();
+  // Duplicate identities are ambiguous. Withhold these players until MSF identity is resolved.
+  const matched=new Map(),ambiguous=new Set();
+  for(const item of j.players){const key=pfo50Key(item.name,item.team);if(matched.has(key))ambiguous.add(key);else matched.set(key,item);}
+  for(const key of ambiguous)matched.delete(key);
+  pfo50Independent=j;pfo50Indexed=matched;pfo50IndependentError='';pfo50IndependentAt=Date.now();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();}
   // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
   // Previously this single refresh rebuilt every large hidden panel on iPhone.
@@ -1418,8 +1440,15 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
   if(document.querySelector('#availability.page.active'))updateInjuryView();
   if(document.querySelector('#scouting.page.active'))gm47Render();
+  // Trade + Waiver are independent workspaces; refresh the visible one after
+  // MSF resolves so previously empty projections no longer remain on screen.
+  if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
   return j;
- }catch(err){pfo50IndependentError=String(err.message||err);return null;}finally{pfo50IndependentPromise=null;}})();
+ }catch(err){
+  pfo50IndependentError=String(err.message||err);
+  if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
+  return null;
+ }finally{pfo50IndependentPromise=null;}})();
  return pfo50IndependentPromise;
 }
 
@@ -1664,7 +1693,7 @@ function renderWaiverScouting(){const el=$('waiverlive');if(!el)return;const ori
 async function pfo49LoadSources(force=false){if(pfo49RefreshBusy)return;const now=Date.now();if(!force&&now-pfo49LastFetch<210000)return;pfo49RefreshBusy=true;pfo49LastFetch=now;
  const files=await Promise.allSettled([fetchReport('external_metrics.json'),pfo50LoadIndependent(force),ensureNameCatalog(),sleeperGet('/players/nfl/trending/add?lookback_hours=24&limit=100')]);
  if(files[0].status==='fulfilled'&&files[0].value?.players){pfo49Metrics=files[0].value;pfo49MetricsAt=now;pfo49MetricsError=null;}else pfo49MetricsError='2026 usage feed unavailable; retaining last successful statistics';
- /* Projections come only from nflverse stats via pfo50LoadIndependent; no Sleeper or older ROS prediction feeds. */
+ /* Projections come from protected MySportsFeeds season totals; no Sleeper scoring or NFLverse substitutions. */
  if(files[3].status==='fulfilled'&&Array.isArray(files[3].value)){pfo49Trend=new Map(files[3].value.map(x=>[String(x.player_id),Number(x.count)]));pfo49TrendAt=new Date().toISOString();}
  pfo49Players=pfo49Dir();
  if(document.querySelector('#roster.page.active'))pfo49BindPlayerButtons();
@@ -2383,12 +2412,21 @@ pfo51PlayerSummary=function(id){const obj=pfo52BaseSummary(id),p=pfo52Info(id),p
 const pfo52PreviousRoster=renderRosterComparison;
 renderRosterComparison=function(){pfo52PreviousRoster();pfo52RosterPoints();};
 function pfo52RosterPoints(){const el=$('actual-lineup');if(!el)return;
- const week=pfo52Cur(),rows=pfo52Hist(week)||[],ours=rows.find(x=>Number(x.roster_id)===Number(window.dbRosterId||1));
- const started=(liveRosterSnapshot?.starters||[]).map(String);for(const [i,tr] of [...el.querySelectorAll('tr')].entries()){
+ const week=pfo52Cur(),started=(liveRosterSnapshot?.starters||[]).map(String);
+ for(const [i,tr] of [...el.querySelectorAll('tr')].entries()){
   const id=started[i],player=pfo52Info(id);if(!id||!pfo52Pos(player))continue;
-  let cell=tr.cells?.[1];if(!cell)continue;const old=cell.querySelector('.pfo52-rosterpoints');if(old)old.remove();
-  const points=ours?.players_points?.[id],tag=document.createElement('div');tag.className='pfo52-rosterpoints';
-  tag.textContent=points!=null&&Number.isFinite(Number(points))?'Week '+week+' · '+Number(points).toFixed(2)+' recorded FFL points':'Week '+week+' · FFL points not yet reported';
+  const cell=tr.cells?.[1];if(!cell)continue;
+  const old=cell.querySelector('.pfo52-rosterpoints');if(old)old.remove();
+  // Sleeper matchup players_points may be initialized to 0 before kickoff
+  // and is NOT our independent fantasy-point calculation. Never call it
+  // verified FFO recorded points. Only score same-week sourced NFL stats.
+  const row=pfo50StatsFor(id);
+  const observed=(row?.games||[]).find(g=>Number(g.week)===week);
+  const raw=observed?.stats||observed;
+  const scoring=observed&&raw&&Object.keys(raw).some(k=>k!=='week')?pfo50Score(raw):null;
+  const tag=document.createElement('div');tag.className='pfo52-rosterpoints';
+  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFO model pts · NFL stats verified':
+   'W'+week+' · FFO live stats pending';
   cell.append(tag);
  }
 }

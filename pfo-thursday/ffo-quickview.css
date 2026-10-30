@@ -71,3 +71,7 @@
 #ffo57-sheet table.ffo59-gamelog{width:100%;table-layout:fixed;border-collapse:collapse;font-variant-numeric:tabular-nums}
 #ffo57-sheet .ffo59-gamelog th,#ffo57-sheet .ffo59-gamelog td{font-size:10px;padding:6px 3px;border-bottom:1px solid #33495b;text-align:right}
 #ffo57-sheet .ffo59-gamelog th:first-child,#ffo57-sheet .ffo59-gamelog td:first-child{text-align:left;width:12%}
+
+/* PFO 5.9.8: drag handle is a genuine iOS sheet control; body keeps native scroll. */
+.ffo57-handle,.ffo57-hero{touch-action:pan-x;-webkit-user-select:none;user-select:none}
+@media (prefers-reduced-motion:reduce){.ffo57-card{animation:none}}

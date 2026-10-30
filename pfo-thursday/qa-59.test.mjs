@@ -89,23 +89,22 @@ test('Team-specific waiver ranking uses completed FFL weekly scores, not one lis
  ideas=load('../data/TRADE_IDEAS.json');
  Object.assign(qa.state,{snap,history,names,scout,ideas});
  const m1=qa.needs('1'),m4=qa.needs('4'),m11=qa.needs('11');
- assert.ok(Object.keys(m1.historical).length>0);
- assert.ok(Object.keys(m4.historical).length>0);
- assert.notDeepEqual(m1.historical,m4.historical);
- assert.notDeepEqual(m4.historical,m11.historical);
+ assert.deepEqual(m1.historical,{},'Only independent FFO scoring inputs permitted');
+ assert.deepEqual(m4.historical,{});
+ assert.notDeepEqual(m1.counts,m4.counts);
  const pool=qa.entryPool();
  assert.ok(pool.length>0&&pool.every(p=>!snap.rosters.some(r=>(r.players||[]).includes(p.id))));
  const available=new Set(pool.map(p=>p.id));
  assert.ok(available.size===pool.length);
  qa.state.manager='1';qa.waiver();
  const dirty=elements.get('pfo59-waiver-board').innerHTML;
- assert.match(dirty,/Recorded FFL scoring weaknesses:/);
+ assert.match(dirty,/Independent weekly scoring gaps:/);
  assert.match(dirty,/data-pfo59-player/);
  qa.state.manager='4';qa.waiver();
  // The All waiver board always prioritizes the selected real team; the scoring
  // weakness calculations must differ across managers even when the published
  // player-stat model has insufficient coverage for an ordered candidate list.
- assert.notDeepEqual(qa.needs('1').historical,qa.needs('4').historical);
+ assert.notDeepEqual(qa.needs('1').counts,qa.needs('4').counts);
  assert.match(newUI,/state\.waiverView==='available'&&state\.position==='ALL'&&gap/);
  qa.state.manager='9';qa.trade();
  assert.match(elements.get('pfo59-trade-board').innerHTML,/disabled title="View in Scouting; trade research is excluded"/,'Boyle excluded');

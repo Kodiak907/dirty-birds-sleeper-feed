@@ -1,0 +1,44 @@
+name: PFO 5.9.8 MSF foundation and iPhone regression
+on:
+  push:
+    branches:
+      - pfo-598-msf-core-and-mobile-20261029
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check modified PFO scripts
+        run: |
+          node --check pfo-thursday/ffo-quickview.js
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          cp pfo-thursday/_worker.js /tmp/pfo-worker-check.mjs
+          node --check /tmp/pfo-worker-check.mjs
+      - name: New 5.9.8 MSF adapter and swipe regression
+        run: node --test pfo-thursday/qa-598.test.mjs
+      - name: Existing scoring and GameCast model regression
+        run: node --test pfo-thursday/qa-ffo-msf.test.mjs
+      - name: Existing 5.9.7 advisory and valuation regression
+        run: node --test pfo-thursday/qa-597.test.mjs
+      - name: Existing mobile UI regression
+        run: node --test pfo-thursday/qa-596.test.mjs
+      - name: Install Chromium for isolated mobile smoke test
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Full mobile navigation and protected Commissioner regression
+        run: node --test pfo-thursday/qa-59-browser.test.mjs
+      - name: Install Chromium for touch-gesture regression
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Validate player-sheet swipe on mobile viewport
+        run: node --test pfo-thursday/qa-598-browser.test.mjs
