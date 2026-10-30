@@ -52,7 +52,10 @@ const playClock=x=>{
  const period=hasQuarter?String(q):'';
  const explicit=String(x.time||x.gameClock||x.clock||'').trim();
  const match=explicit.match(/^(\d{1,2}):([0-5]\d)$/);
- const fromText=String(x.description||x.playDescription||x.text||'').match(/^\s*\((\d{1,2}):([0-5]\d)\)/);
+ const sourceText=String(x.description||x.playDescription||x.text||'');
+ const fromText=sourceText.match(/^\s*\((\d{1,2}):([0-5]\d)\)/);
+ // Provider shorthand "(:02)" means 0:02, not an absent clock.
+ const fromShort=sourceText.match(/^\s*\(:([0-5]\d)\)/);
  const elapsed=Number(st.secondsElapsed);
  // MSF secondsElapsed is 15-minute regulation-quarter-relative. NFL regular
  // season overtime can be 10 minutes; never calculate a fake 15-minute OT
@@ -61,8 +64,8 @@ const playClock=x=>{
    Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
  const remain=valid&&q>=1&&q<=4?900-elapsed:null;
  const derived=remain===null?'':Math.floor(remain/60)+':'+String(remain%60).padStart(2,'0');
- return {period,clock:match?explicit:fromText?fromText[1]+':'+fromText[2]:derived,
-  source:match?'provider_clock':fromText?'published_description':derived?'regulation_elapsed':'unknown'};
+ return {period,clock:match?explicit:fromText?fromText[1]+':'+fromText[2]:fromShort?'0:'+fromShort[1]:derived,
+  source:match?'provider_clock':fromText||fromShort?'published_description':derived?'regulation_elapsed':'unknown'};
 };
 // Deterministic, non-cryptographic fingerprint for identity fallback only;
 // do not represent this as an actual MSF play identifier.
@@ -417,7 +420,11 @@ export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
  });
  const scored=unique.map(ev=>{
   // Use the leading kicker in each play, never the center/holder later in text.
-  const m=ev.description.match(/^\s*(?:\(?\d{1,2}:\d{2}\)?\s*)?(\d{1,2})-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$)/);
+  // MSF occasionally publishes the last minute as "(:02)" instead of
+  // "(0:02)". Both are actual clock prefixes; neither changes kicker identity.
+  // Require the jersey/initial/surname to follow immediately after the clock
+  // so player names in Center-/Holder- text cannot be awarded points.
+  const m=ev.description.match(/^\s*(?:\((?:\d{1,2})?:[0-5]\d\)\s*|\d{1,2}:[0-5]\d\s*)?(\d{1,2})-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$)/);
   const kickerToken=m?m[1]+'-'+m[2].toUpperCase()+'.'+m[3]:null;
   let component=null;
   if(ev.publishedOutcome==='reported_missed')component=ev.kind==='FG'?'fgmiss':'xpmiss';
