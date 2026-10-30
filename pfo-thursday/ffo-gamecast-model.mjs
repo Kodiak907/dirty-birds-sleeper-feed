@@ -294,12 +294,13 @@ export function fflProjection(gameRows,rules,position=''){
 /** Independently observed player-stat scoring components; never full FFL certification. */
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
- for(const [index,payload] of weeklyPayloads.entries()){
+ for(const [index,entry] of weeklyPayloads.entries()){
+  const payload=entry?.payload||entry,week=Number.isInteger(entry?.week)?entry.week:index+1;
   for(const row of playerRows(payload)){
    if(wanted&&row.team!==wanted)continue;
    if(!positions.includes(row.position)||!row.stats)continue;
    const stats=normalizeStats(row.stats),result=fflScore(row.stats,rules,row.position);
-   samples.push({player:row.name,id:row.id,position:row.position,week:index+1,
+   samples.push({player:row.name,id:row.id,position:row.position,week,
     observedPoints:result.points,complete:result.complete,covered:result.covered,
     missing:result.missing,components:result.components||[],hasKnownStats:Object.keys(stats).length>0});
   }
