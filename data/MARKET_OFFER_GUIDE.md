@@ -2,16 +2,17 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-10-29T15:09:15.671474+00:00
+Updated: 2026-10-30T15:08:13.915266+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 1. Unpriced candidate packages: 2.
+Fully priced in-range opportunities: 0. Unpriced candidate packages: 11.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 9 | Bijan Robinson | Jaxon Smith-Njigba | 1.01× | +1.08 | +1.38 |
+
+No fully priced, mutually beneficial packages passed the conservative market screen. Do not force a trade.
 
 ## Negotiation protocol
 

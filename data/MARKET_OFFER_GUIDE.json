@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-29T15:09:15.671474+00:00",
+  "generated_at_utc": "2026-10-30T15:08:13.915266+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -11,67 +11,30 @@
   "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
   "no_automatic_trade_offers": true,
   "not_a_probability": true,
-  "priced_candidates": 1,
-  "qualified_top_five": [
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 126.319,
-      "dirty_birds_before": 125.235,
-      "dirty_birds_delta_ppg": 1.08,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9509",
-          "name": "Bijan Robinson",
-          "pos": "RB",
-          "projected_ppg": 17.89
-        }
-      ],
-      "market_quote": {
-        "paid": 9717,
-        "paid_to_received_ratio": 1.014,
-        "received": 9580,
-        "relative_value_difference_pct": 1.4
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.142,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.717,
-      "opponent_before": 101.341,
-      "opponent_delta_ppg": 1.38,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 9,
-      "projected_ppg_received": 18.97,
-      "projected_ppg_sent": 17.89,
-      "receive": [
-        {
-          "id": "9488",
-          "name": "Jaxon Smith-Njigba",
-          "pos": "WR",
-          "projected_ppg": 18.97
-        }
-      ],
-      "starter_benefit": {
-        "them": 1.38,
-        "us": 1.08
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    }
-  ],
+  "priced_candidates": 0,
+  "qualified_top_five": [],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-10-29T15:09:15.586609+00:00",
-  "unpriced_cases": 2,
+  "source_as_of": "2026-10-30T15:08:13.796436+00:00",
+  "unpriced_cases": 11,
   "unpriced_examples": [
     {
       "give": [
         "Ollie Gordon II",
-        "Zach Charbonnet"
+        "Jonah Coleman"
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
         "Derrick Henry"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Jonah Coleman"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Chris Olave"
       ]
     },
     {
@@ -82,6 +45,76 @@
       "reason": "One or more players has no matched market value",
       "receive": [
         "Puka Nacua"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Garrett Wilson"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Puka Nacua"
+      ]
+    },
+    {
+      "give": [
+        "Patrick Mahomes",
+        "Ollie Gordon II"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Josh Allen"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Jonah Coleman"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Christian Watson"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Garrett Wilson"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Chuba Hubbard"
+      ]
+    },
+    {
+      "give": [
+        "Kyren Williams",
+        "Jonah Coleman"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "James Cook III"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Garrett Wilson"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "James Cook III"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Garrett Wilson"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Ja'Marr Chase"
       ]
     }
   ]
