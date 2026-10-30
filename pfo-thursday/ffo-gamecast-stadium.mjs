@@ -64,7 +64,7 @@ export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCoun
  const leftEnd=home,rightEnd=away; // end zones show attack targets, not painted venue branding.
  const scrim=i.spot!==null?'<line x1="'+x(i.spot)+'" y1="112" x2="'+x(i.spot)+'" y2="325" stroke="#76E3ED" stroke-width="3.4" opacity=".97"/>':'';
  const togo=i.target!==null?'<line x1="'+x(i.target)+'" y1="112" x2="'+x(i.target)+'" y2="325" stroke="#F5D16A" stroke-width="3" opacity=".98"/>':'';
- const ball=i.spot!==null?'<ellipse cx="'+x(i.spot)+'" cy="235" rx="11" ry="6.5" transform="rotate(-20 '+x(i.spot)+' 235)" fill="#A96332" stroke="#F9E0B9" stroke-width="2"/>':'';
+ const ball=i.spot!==null?'<ellipse class="gc6-ball" data-source-spot="'+i.spot+'" cx="'+x(i.spot)+'" cy="235" rx="11" ry="6.5" fill="#A96332" stroke="#F9E0B9" stroke-width="2"/>':'';
  const travel=i.end!==null&&i.spot!==null&&i.end!==i.spot?'<path d="M'+x(i.spot)+' 225 Q'+Math.round((x(i.spot)+x(i.end))/2)+' 174 '+x(i.end)+' 225" fill="none" stroke="#FFC66A" stroke-width="3" stroke-dasharray="8 6"/><circle cx="'+x(i.end)+'" cy="225" r="5" fill="#FFC66A" stroke="#091d26" stroke-width="2"/>':'';
  let stripes='',ticks='',yardNumbers='';
  for(let j=0;j<=10;j++){const xx=x(j*10);stripes+='<line x1="'+xx+'" y1="113" x2="'+xx+'" y2="329" stroke="#D3F1DC" stroke-width="'+(j===0||j===10?2:1.3)+'" opacity=".65"/>';if(j>0&&j<10)yardNumbers+='<text x="'+xx+'" y="143" text-anchor="middle" font-size="11" font-weight="800" fill="#DBF4E7" opacity=".8">'+(j<=5?j*10:(10-j)*10)+'</text>'}
