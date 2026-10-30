@@ -11,7 +11,7 @@ export function playerRows(payload){
  if(!Array.isArray(rows))return [];
  return rows.map(x=>{
   const p=x.player||x.playerInfo||{},t=x.team||x.teamInfo||{};
-  return {id:String(p.id??x.playerId??''),name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
+  return {id:String(p.id??x.playerId??''),image: p.officialImageSrc||p.officialImageUrl||p.headshot||p.headshotUrl||p.imageUrl||p.photoUrl||null,name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
  }).filter(x=>x.name);
 }
 export function plays(payload){
