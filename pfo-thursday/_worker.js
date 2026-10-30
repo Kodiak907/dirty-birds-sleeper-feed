@@ -880,5 +880,7 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  let str,payload;
  try{str=await resp.text();if(str.length>4_000_000)throw Error('too_large');payload=JSON.parse(str);if(!payload||typeof payload!=='object')throw Error('bad_payload');}
  catch{return ffoReply({...meta,error:'provider_payload_invalid_or_too_large'},502)}
- return ffoReply({...meta,available:true,unverified_schema:true,data:payload});
+ return ffoReply({...meta,available:true,unverified_schema:true,
+  provider_updated_at:payload.lastUpdatedOn||payload.gameboxscore?.lastUpdatedOn||payload.gameplaybyplay?.lastUpdatedOn||payload.gamePlayByPlay?.lastUpdatedOn||null,
+  data:payload});
 }
