@@ -444,7 +444,7 @@ test('MSF stats route supports validated team filter and isolated size errors',(
  assert.match(worker,/function ffoTeamFilter\(params\)/);
  assert.match(worker,/throw Error\('invalid_team_filter'\)/);
  assert.match(worker,/if\(route==='stats'\)return .*ffoTeamFilter\(params\)/);
- assert.match(worker,/if\(route==='gamelogs'\)[\s\S]*?ffoTeamFilter\(params\)/);
+ assert.match(worker,/if\(route==='gamelogs'\|\|route==='teamgamelogs'\)[\s\S]*?ffoTeamFilter\(params\)/);
  assert.match(worker,/provider_payload_exceeds_limit/);
  assert.match(worker,/provider_json_invalid/);
  assert.match(worker,/provider_body_read_failed/);
