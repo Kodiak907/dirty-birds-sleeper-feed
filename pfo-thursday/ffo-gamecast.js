@@ -449,22 +449,32 @@
   const kickWeekRows=kickHistory.weeks.map(w=>{
    const observed=w.status==='pbp_published';
    const check=kickChecks.weeks.find(c=>c.week===w.week);
-   const checkDesc=check?(check.status==='four_counts_match'?'All 4 team FG/XP counts match published events':
-    check.status==='partial_counts_match'?check.comparedCategories+'/4 available team kicking counts match':
-    check.status==='mismatch'?'Published MSF team/PBP count disagreement · inspect categories below':
+   const checkDesc=check?(check.status==='four_counts_match'?'All 4 published team FG/XP counts reconcile':
+    check.status==='partial_counts_match'?check.comparedCategories+'/4 published team FG/XP categories reconcile':
+    check.status==='mismatch'?'Discrepancy found · '+(check.disagreements||[]).map(d=>d.category).join(', '):
     'Not independently verifiable · '+check.reason):'Team kick counts not yet checked';
+   const fields=[['fgAttempts','FG attempts'],['fgMade','FG made'],['xpAttempts','XP attempts'],['xpMade','XP made']];
+   const countSummary=check?.observedCounts?fields.map(([key,label])=>{
+    const provider=check.providerTotals?.[key];
+    const usable=provider!==null&&provider!==undefined&&Number.isFinite(Number(provider));
+    return label+': PBP '+Number(check.observedCounts[key]??0)+' / team '+(usable?Number(provider):'not published');
+   }).join(' · '):'';
+   const needsReview=check?.status==='mismatch';
+   const warningText=needsReview?'Review required: '+check.disagreements.map(d=>d.category+' ('+d.pbpCount+' play-by-play vs '+d.teamCount+' team total)').join('; '):'';
    const evidence=(w.players||[]).map(p=>
     '<div class="muted" style="font-size:12px">'+safe(p.playerName||p.actor)+
     ' · ID '+safe(p.providerId||'unknown')+' · observed '+(p.observedSubtotal===null?'unknown':safe(p.observedSubtotal)+' pts')+
     ' · '+safe(p.unknownEvents)+' uncertain plays</div>').join('');
-   return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
+   return '<details '+(needsReview?'open ':'')+'style="border-bottom:1px solid #315069;padding:7px 0">'+
     '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">'+
-    '<strong>Week '+safe(w.week)+'</strong><span style="font-size:12px">'+safe(observed?w.candidatePlays+' published FG/XP mentions':'Unverified')+'</span>'+
+    '<strong>Week '+safe(w.week)+(needsReview?' · CHECK COUNTS':'')+'</strong><span style="font-size:12px">'+safe(observed?w.candidatePlays+' published FG/XP mentions':'Unverified')+'</span>'+
     '<span style="width:100%;font-size:11px;opacity:.8">'+safe(w.game||w.error||'Game unverified')+'</span></summary>'+
     (observed?'<div class="muted" style="font-size:12px;margin:6px 0">'+
      'GB player-ID-matched plays '+safe(w.knownEvents)+' · unknown or opposing actors '+safe(w.unverifiedEvents)+
      ' · observed GB subtotal '+(w.observedPoints===null?'unknown':safe(w.observedPoints)+' pts')+'</div>'+evidence+
-     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(checkDesc)+'</div>'+ 
+     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(checkDesc)+'</div>'+
+     (countSummary?'<div class="muted" style="font-size:11px;overflow-wrap:anywhere;margin:5px 0">Team/PBP evidence: '+safe(countSummary)+'</div>':'')+
+     (warningText?'<div style="font-size:12px;font-weight:700;margin:4px 0">Reconciliation needs review: '+safe(warningText)+'</div>':'')+
      (check?.disagreements?.length?'<div style="font-size:12px;font-weight:600;overflow-wrap:anywhere;margin:5px 0">Disagreement: '+
       safe(check.disagreements.map(d=>d.category+': published PBP '+d.pbpCount+' vs MSF team '+d.teamCount).join(' · '))+'</div>'+
       (check.unresolvedActorTokens?.length?'<div class="muted" style="font-size:11px">Unresolved actors: '+safe(check.unresolvedActorTokens.join(', '))+'</div>':'')+
@@ -483,7 +493,7 @@
    '<summary style="cursor:pointer;font-weight:700">Kicker evidence · Weeks 1–6</summary>'+
    '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(kickHistory.publishedFeeds)+
    '/6 historical game feeds · '+safe(kickHistory.identityVerifiedWeeks)+
-   ' with uniquely verified '+safe(report.team)+' kicker IDs · '+safe(kickChecks.matched)+' four-category matches · '+safe(kickChecks.partialMatches)+' partial matches · '+safe(kickChecks.discrepancies)+' count disagreements · '+safe(kickChecks.unverified)+' unverified checks. Final kicker scoring not certified.</div>'+
+   ' with uniquely verified '+safe(report.team)+' kicker IDs · '+safe(kickChecks.matched)+' full count matches · '+safe(kickChecks.partialMatches)+' partial count matches · '+safe(kickChecks.discrepancies)+' weeks needing count review · '+safe(kickChecks.unverified)+' unverified checks. Provisional points not certified.</div>'+
    (kickHistory.players.length?kickHistory.players.map(p=>
     '<div style="font-size:12px"><b>'+safe(p.playerName)+'</b> · '+
     safe(p.weeksWithObservedEvents)+' weeks · observed subtotal '+safe(p.observedSubtotal)+' pts (not final)</div>').join(''):'')+
