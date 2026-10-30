@@ -341,10 +341,27 @@
  }
  
  const auditPause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+ // Five-minute reuse of successfully authenticated historical MSF responses.
+ // Failure responses and the regular live GameCast feed are never cached here.
+ const auditSuccessCache=new Map(),AUDIT_REUSE_MS=300000;
  const transientStatError=e=>/upstream_unreachable|gateway_or_server_error|provider_unreachable|provider_body_read_failed|fetch is aborted|aborterror|network|http 502|http 503|rate_limited/i.test(String(e?.message||e));
  async function auditedStatRequest(name,query,progress){
+  const permitted=['stats','gamelogs','teamgamelogs','plays'].includes(name);
+  const key=name+':'+Object.entries(query||{}).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>k+'='+v).join('&');
+  const prior=permitted?auditSuccessCache.get(key):null;
+  if(prior&&Date.now()-prior.at<AUDIT_REUSE_MS){
+   progress?.('Reusing successful MSF historical '+name+' snapshot (<5 min old)');
+   return prior.data;
+  }
   for(let attempt=1;attempt<=2;attempt++){
-   try{return await feed(name,query,true)}catch(error){
+   try{
+    const result=await feed(name,query,true);
+    if(permitted&&result?.available!==false){
+     auditSuccessCache.set(key,{at:Date.now(),data:result});
+     while(auditSuccessCache.size>28)auditSuccessCache.delete(auditSuccessCache.keys().next().value);
+    }
+    return result;
+   }catch(error){
     if(attempt===2||!transientStatError(error))throw error;
     progress?.('Temporary gateway failure · one controlled retry for '+name);
     await auditPause(3600);
@@ -432,7 +449,10 @@
   const kickWeekRows=kickHistory.weeks.map(w=>{
    const observed=w.status==='pbp_published';
    const check=kickChecks.weeks.find(c=>c.week===w.week);
-   const checkDesc=check?(check.status==='four_counts_match'?'All 4 team FG/XP counts match published events':check.status==='partial_counts_match'?check.comparedCategories+'/4 team kick counts match':'Team cross-check '+check.status+' · '+check.reason):'Team kick counts not yet checked';
+   const checkDesc=check?(check.status==='four_counts_match'?'All 4 team FG/XP counts match published events':
+    check.status==='partial_counts_match'?check.comparedCategories+'/4 available team kicking counts match':
+    check.status==='mismatch'?'Published MSF team/PBP count disagreement · inspect categories below':
+    'Not independently verifiable · '+check.reason):'Team kick counts not yet checked';
    const evidence=(w.players||[]).map(p=>
     '<div class="muted" style="font-size:12px">'+safe(p.playerName||p.actor)+
     ' · ID '+safe(p.providerId||'unknown')+' · observed '+(p.observedSubtotal===null?'unknown':safe(p.observedSubtotal)+' pts')+
@@ -445,7 +465,10 @@
      'GB player-ID-matched plays '+safe(w.knownEvents)+' · unknown or opposing actors '+safe(w.unverifiedEvents)+
      ' · observed GB subtotal '+(w.observedPoints===null?'unknown':safe(w.observedPoints)+' pts')+'</div>'+evidence+
      '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(checkDesc)+'</div>'+ 
-     (check?.disagreements?.length?'<div class="muted" style="font-size:12px">'+safe(check.disagreements.map(d=>d.category+' PBP '+d.pbpCount+' vs MSF team '+d.teamCount).join(' · '))+'</div>':''):
+     (check?.disagreements?.length?'<div style="font-size:12px;font-weight:600;overflow-wrap:anywhere;margin:5px 0">Disagreement: '+
+      safe(check.disagreements.map(d=>d.category+': published PBP '+d.pbpCount+' vs MSF team '+d.teamCount).join(' · '))+'</div>'+
+      (check.unresolvedActorTokens?.length?'<div class="muted" style="font-size:11px">Unresolved actors: '+safe(check.unresolvedActorTokens.join(', '))+'</div>':'')+
+      (check.unattributedPlays?'<div class="muted" style="font-size:11px">Unattributed kick mentions: '+safe(check.unattributedPlays)+'</div>':''):''):
      '<div class="muted" style="font-size:12px">Unknown, not zero. '+safe(w.error||'No licensed play data')+'</div>')+
     '</details>';
   }).join('');
@@ -460,7 +483,7 @@
    '<summary style="cursor:pointer;font-weight:700">Kicker evidence · Weeks 1–6</summary>'+
    '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(kickHistory.publishedFeeds)+
    '/6 historical game feeds · '+safe(kickHistory.identityVerifiedWeeks)+
-   ' with uniquely verified GB kicker IDs · '+safe(kickChecks.matched)+' team FG/XP four-category reconciliations · '+safe(kickChecks.discrepancies)+' detected cross-check mismatches. Final kicker scoring not certified.</div>'+
+   ' with uniquely verified '+safe(report.team)+' kicker IDs · '+safe(kickChecks.matched)+' four-category matches · '+safe(kickChecks.partialMatches)+' partial matches · '+safe(kickChecks.discrepancies)+' count disagreements · '+safe(kickChecks.unverified)+' unverified checks. Final kicker scoring not certified.</div>'+
    (kickHistory.players.length?kickHistory.players.map(p=>
     '<div style="font-size:12px"><b>'+safe(p.playerName)+'</b> · '+
     safe(p.weeksWithObservedEvents)+' weeks · observed subtotal '+safe(p.observedSubtotal)+' pts (not final)</div>').join(''):'')+
