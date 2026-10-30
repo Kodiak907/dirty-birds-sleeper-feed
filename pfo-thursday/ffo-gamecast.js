@@ -26,7 +26,7 @@
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
- let playerFeedPending=null,gamePending=null,overviewPending=null;
+ let playerFeedPending=null,gamePending=null,overviewPending=null,historyAuditStarted=false;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
  let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0,finalObservedAt=0;
  const LIVE_PLAY_MS=5000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
@@ -260,7 +260,7 @@
    const previousX=switched?null:priorVerifiedBallX;
    el.innerHTML=stadium.fieldMarkup(input);
    const bar=el.querySelector('.gc6-statebar');
-   if(bar){
+   if(bar&&['live','overtime'].includes(model.gamePhase(g?.status))){
     const tracker=document.createElement('span');
     tracker.className='gc6-refresh-tracker';
     tracker.setAttribute('aria-label','Next MSF poll countdown');
@@ -353,7 +353,7 @@
   const el=$('ffo-gc-history-results');if(!el)return;
   el.innerHTML=s.historyResults.map(r=>{
    const label=r.ok?'Published '+r.count+' plays':r.reason;
-   const note=r.ok?(r.complete?'Provider claims full play feed; verify actual continuity':'Coverage unverified; never assume full game'):'No full play feed verified';
+   const note=r.ok?(r.complete?'Provider indicates full PBP; verify entire game continuity':'Published plays returned, full-game coverage unverified'):'Full PBP not demonstrated for this sample';
    return '<div style="border-bottom:1px solid #315069;padding:7px 0"><b>Week '+r.week+'</b> · '+safe(r.game||'Game unavailable')+
     ' · '+safe(label)+'<div class="muted">'+safe(note)+
     (r.method==='calendar_estimate'?' · Week inferred from kickoff date':'')+'</div>'+
@@ -372,8 +372,8 @@
   button.disabled=true;s.historyResults=[];
   const all=s.archiveGames;
   try{
-   for(let week=1;week<=7;week++){
-    if(indicator)indicator.textContent='MSF week '+week+' of 7 · authenticating historical plays…';
+   for(let week=1;week<=6;week++){
+    if(indicator)indicator.textContent='MSF week '+week+' of 6 · authenticating historical plays…';
     const candidates=all.map(g=>({g,tag:auditWeekForGame(g)})).filter(x=>x.tag.week===week)
       .sort((a,b)=>Date.parse(a.g.start||'')-Date.parse(b.g.start||''));
     const choice=candidates[0];
@@ -383,7 +383,8 @@
      const response=await feed('plays',{season:s.season,game_id:g.id},true);
      const rows=model.plays(response.data||{});
      const limited=response.coverage==='scoring_only'||response.full_playbyplay_authorized===false;
-     const sameId=new Set(rows.map(p=>String(p.id))).size===rows.length;
+     const sameId=new Set(rows.map(p=>String(p.id))).size===rows.length&&
+       rows.every(p=>p.raw&&(p.raw.id||p.raw.playId));
      const ordered=rows.every(p=>p.period&&p.clock);
      const ok=rows.length>0&&sameId&&ordered&&!limited;
      s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,
@@ -397,7 +398,7 @@
     renderHistoryAudit();
    }
    const available=s.historyResults.filter(r=>r.ok).length;
-   if(indicator)indicator.textContent=available+'/7 sample games returned non-scoring-only chronological plays. Complete historical entitlement remains unverified until all games and full coverage are audited.';
+   if(indicator)indicator.textContent=available+'/6 sample games returned non-scoring-only chronological plays. Complete historical entitlement remains unverified until all games and full coverage are audited.';
   }finally{button.disabled=false;}
  }
 
@@ -498,6 +499,9 @@
        return before?model.mergeScheduledGame(before,g):g;
       });
     if(!s.games.length)s.games=allGames.slice(0,24);
+    // Read-only MSF historical entitlement sample starts automatically after
+    // Coach opens the Access-protected GameCast with an authenticated schedule.
+    if(gameActive()&&!historyAuditStarted&&allGames.length){historyAuditStarted=true;void runHistoricalAudit();}
     // An explicitly selected historical game stays inspectable after minute refresh.
     const selectedHistory=s.archiveGames.find(g=>g.id===s.game)||preserved.get(s.game);
     if(selectedHistory&&!s.games.some(g=>g.id===s.game))s.games.push(preserved.get(s.game)||selectedHistory);
@@ -546,7 +550,7 @@
  }
  setInterval(()=>{
    const ticker=document.querySelector('[data-gc6-refresh]');
-   if(ticker&&gameActive()&&s.enabled&&s.game){
+   if(ticker&&gameActive()&&s.enabled&&s.game&&['live','overtime'].includes(model.gamePhase(s.games.find(g=>g.id===s.game)?.status))){
     const interval=activeRefreshMs(),last=s.lastGamePoll||0;
     const seconds=Math.max(0,Math.ceil((interval-Math.max(0,Date.now()-last))/1000));
     ticker.textContent=interval===LIVE_PLAY_MS?seconds+'s':seconds+'s';
