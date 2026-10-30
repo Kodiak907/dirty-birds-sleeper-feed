@@ -111,10 +111,10 @@ export function gameScoreUpdate(game,boxResponse){
   Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=300?Number(v):null;
  const id=String(info.id??info.gameId??body.gameId??'');
  if(id&&String(game?.id||'')&&id!==String(game.id))return {...game};
- const home=n(get(score,['homeScoreTotal','homeScore','homeTotal','home.score','home.scoreTotal'])??
-   get(body,['homeScoreTotal','homeScore'])??get(info,['homeScoreTotal','homeScore']));
- const away=n(get(score,['awayScoreTotal','awayScore','awayTotal','away.score','away.scoreTotal'])??
-   get(body,['awayScoreTotal','awayScore'])??get(info,['awayScoreTotal','awayScore']));
+ const home=n(get(score,['homeScoreTotal','homeScore','homeTotal','home.score','home.scoreTotal','homeTeamScore','homeTeam.score','homeTeam.scoreTotal','homeTeam.totalScore'])??
+   get(body,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score','homeTeam.scoreTotal'])??get(info,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score']));
+ const away=n(get(score,['awayScoreTotal','awayScore','awayTotal','away.score','away.scoreTotal','awayTeamScore','awayTeam.score','awayTeam.scoreTotal','awayTeam.totalScore'])??
+   get(body,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score','awayTeam.scoreTotal'])??get(info,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score']));
  const state=get(info,['playedStatus','gameStatus','status'])??get(body,['playedStatus','gameStatus','status']);
  return {...game,
   homePoints:home===null?game?.homePoints??null:home,
