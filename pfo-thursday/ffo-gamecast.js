@@ -27,6 +27,8 @@
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null;
+ let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
+ let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
  function cacheTtl(name){
@@ -72,9 +74,12 @@
   const z=x?.schedule||x?.game||x||{},home=z.homeTeam||x.homeTeam||{},away=z.awayTeam||x.awayTeam||{};
   const name=t=>typeof t==='string'?t:String(t.abbreviation||t.abbr||t.name||'?');
   const gameId=z.id??x.id??z.gameId??x.gameId??'';
-  const score=x.score||x.scoring||x.scores||x.gameScore||{};
+  const score=x.score||x.scoring||x.scores||x.gameScore||z.score||z.scoring||{};
   const n=v=>v===null||v===undefined||v===''?null:(Number.isFinite(Number(v))?Number(v):null);
-  return {id:String(gameId),home:name(home),away:name(away),homePoints:n(score.homeScoreTotal??score.homeScore??x.homeScoreTotal??x.homeScore),awayPoints:n(score.awayScoreTotal??score.awayScore??x.awayScoreTotal??x.awayScore),status:String(x.status||z.playedStatus||z.scheduleStatus||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
+  return {id:String(gameId),home:name(home),away:name(away),
+   homePoints:n(score.homeScoreTotal??score.homeScore??z.homeScoreTotal??x.homeScoreTotal??x.homeScore),
+   awayPoints:n(score.awayScoreTotal??score.awayScore??z.awayScoreTotal??x.awayScoreTotal??x.awayScore),
+   status:String(x.status||z.playedStatus||z.scheduleStatus||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
  }
  function drawGames(){const el=$('ffo-gc-games');if(!el)return;
   if(!s.games.length){el.innerHTML='<p class="ffo-gc-note">No games loaded from MySportsFeeds yet. NFL season and schedule feeds must be authenticated first.</p>';return}
@@ -239,12 +244,27 @@
   const event=s.playCache[s.activePlay]||null;
   const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:s.playerRows,selectedPlayer:s.player,source:s.playSource,isLive:s.game&&/in.progress|in progress|live|half.time|halftime/i.test(String(g?.status||''))};
   if(el){
+   const currentPlayId=event?.id||null;
+   const switched=lastStadiumGameId!==s.game;
+   const changed=!switched&&currentPlayId&&lastStadiumPlayId&&currentPlayId!==lastStadiumPlayId&&s.followLatest;
+   const previousX=switched?null:priorVerifiedBallX;
    el.innerHTML=stadium.fieldMarkup(input);
+   const marker=el.querySelector('.gc6-ball');
+   const nextX=marker?Number(marker.getAttribute('cx')):null;
+   // Animate only between two provider-verified spots from consecutive displayed
+   // plays, never move a stale, unverified or synthetic ball position.
+   if(changed&&marker&&Number.isFinite(previousX)&&Number.isFinite(nextX)&&Math.abs(previousX-nextX)>.5&&
+      typeof marker.animate==='function'&&!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+    marker.animate([{transform:'translateX('+(previousX-nextX)+'px)'},{transform:'translateX(0px)'}],
+     {duration:900,easing:'ease-out'});
+   }
+   lastStadiumGameId=s.game;lastStadiumPlayId=currentPlayId;
+   priorVerifiedBallX=Number.isFinite(nextX)?nextX:null;
    el.querySelectorAll('[data-gc6-step]').forEach(btn=>btn.onclick=()=>{
-    s.followLatest=false;s.activePlay=between(s.activePlay+Number(btn.dataset.gc6Step),0,Math.max(0,s.playCache.length-1));drawField();drawPlays();
+    s.followLatest=false;s.activePlay=between(s.activePlay+Number(btn.dataset.gc6Step),0,Math.max(0,s.playCache.length-1));drawPlays();
    });
    el.querySelector('[data-gc6-latest]')?.addEventListener('click',()=>{
-    s.followLatest=true;s.activePlay=Math.max(0,s.playCache.length-1);drawField();drawPlays();
+    s.followLatest=true;s.activePlay=Math.max(0,s.playCache.length-1);drawPlays();
    });
   }
   const small=$('ffo-gc-player-field');
@@ -268,7 +288,7 @@
     el.appendChild(more);
   }
   el.querySelectorAll('[data-ffo-play]').forEach(row=>{
-    const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);s.followLatest=s.activePlay===s.playCache.length-1;drawField();drawPlays()};
+    const open=()=>{s.activePlay=Number(row.dataset.ffoPlay);s.followLatest=s.activePlay===s.playCache.length-1;drawPlays()};
     row.onclick=open;row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
   });
   drawField();
@@ -302,20 +322,51 @@
   try{
     const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
     if(pb.status==='fulfilled'){
-      const ps=model.plays(pb.value.data);s.playCache=model.versionedPlays(s.playCache,ps);
+      const ps=model.plays(pb.value.data);
+      if(ps.length>=s.playCache.length||s.playCache.length===0){
+       s.playCache=model.versionedPlays(s.playCache,ps);
+      }
+      if(s.playCache.length>lastPlayCount){lastNewPlayAt=Date.now();lastPlayCount=s.playCache.length;}
+      lastSuccessfulGamePollAt=Date.now();
       s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
       if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
       s.latestCheck=pb.value.checked_at;
     }
-    if(bs.status==='fulfilled'){s.liveBox=bs.value;s.latestCheck=bs.value.checked_at}
+    if(bs.status==='fulfilled'){
+      s.liveBox=bs.value;s.latestCheck=bs.value.checked_at;
+      const idx=s.games.findIndex(g=>g.id===s.game);
+      if(idx>=0){
+       const enriched=model.gameScoreUpdate(s.games[idx],bs.value);
+       s.games[idx]=enriched;
+       if(enriched.scoreSource)lastScorePollAt=Date.now();
+       drawGames();
+      }
+    }
+    // Some licensed play-by-play records also include explicit verified score totals.
+    // Do not infer a score from scoring-play descriptions.
+    if(pb.status==='fulfilled'&&s.playCache.length){
+      const last=s.playCache[s.playCache.length-1];
+      const idx=s.games.findIndex(g=>g.id===s.game);
+      const st=last?.raw?.playStatus||{};
+      if(idx>=0&&(st.homeScoreTotal!=null||st.awayScoreTotal!=null)){
+       const scored=model.gameScoreUpdate(s.games[idx],{gameboxscore:{scoring:st}});
+       if(scored.scoreSource){s.games[idx]=scored;drawGames()}
+      }
+    }
     // MySportsFeeds-only live evaluation: never substitute ESPN play timelines.
     // An unauthorized MSF play feed is shown as a genuine entitlement gap.
     const supplemental=pb.status==='fulfilled'&&pb.value.coverage==='scoring_only'
       ?' · MySportsFeeds scoring plays only: full PBP entitlement not confirmed'
       :'';
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
-    status((s.playSource||'Source unavailable')+' · '+(errs.length?'Some MSF feeds unavailable: '+errs.join('; '):'MSF game requests checked')+supplemental+' · checked '+(s.latestCheck||'unknown')+' · source delay unverified');
+    const age=lastNewPlayAt?Math.round((Date.now()-lastNewPlayAt)/1000):null;
+    const current=s.games.find(g=>g.id===s.game);
+    const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score verified':'MSF score unavailable';
+    status((s.playSource||'Source unavailable')+' · '+scoreCoverage+
+      (errs.length?' · '+errs.join('; '):' · MSF poll complete')+
+      (age!==null?' · last NEW published play '+age+'s ago':' · no new published play observed')+
+      supplemental+' · checked '+(s.latestCheck||'unknown')+' · feed delay not certified');
     drawPlays();drawPlayer();
   }catch(error){status('Game feed error: '+error.message)}})();
   try{return await gamePending}finally{gamePending=null}
@@ -331,14 +382,23 @@
     const nowMs=Date.now(),dayMs=86400000;
     const dated=allGames.map(g=>({...g,kickoffMs:Date.parse(g.start)})).filter(g=>Number.isFinite(g.kickoffMs));
     const nearby=dated.filter(g=>g.kickoffMs>=nowMs-4*dayMs&&g.kickoffMs<=nowMs+8*dayMs);
+    const preserved=new Map(s.games.map(g=>[g.id,g]));
     s.games=(nearby.length?nearby:dated.sort((a,b)=>Math.abs(a.kickoffMs-nowMs)-Math.abs(b.kickoffMs-nowMs)).slice(0,24))
-      .sort((a,b)=>a.kickoffMs-b.kickoffMs).slice(0,30);
+      .sort((a,b)=>a.kickoffMs-b.kickoffMs).slice(0,30)
+      .map(g=>{
+       const before=preserved.get(g.id);
+       return before?{...g,
+        homePoints:g.homePoints??before.homePoints,
+        awayPoints:g.awayPoints??before.awayPoints,
+        scoreSource:g.homePoints!=null&&g.awayPoints!=null?'MySportsFeeds schedule':before.scoreSource}:g;
+      });
     if(!s.games.length)s.games=allGames.slice(0,24);
     // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · real-time latency and feed coverage must be verified at kickoff.');
     drawGames();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
     if(!s.game){const thu=s.games.find(x=>['GB','GBP','GREEN BAY'].includes(String(x.home).toUpperCase())&&['CAR','CAROLINA'].includes(String(x.away).toUpperCase()));if(thu)selectGame(thu.id)}
+    else if(s.games.some(x=>x.id===s.game))drawField();
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}})();
   try{return await overviewPending}finally{overviewPending=null}
  }
@@ -374,6 +434,12 @@
    const refreshMs=likelyLive?20000:120000;
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
- setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
- window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,gameFeedError:s.lastError||null,pollIntervalMs:20000,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
+ setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},60000);
+ window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,
+  lastSuccessfulGamePollAt:lastSuccessfulGamePollAt?new Date(lastSuccessfulGamePollAt).toISOString():null,
+  lastNewPlayAt:lastNewPlayAt?new Date(lastNewPlayAt).toISOString():null,
+  scoreUpdateAt:lastScorePollAt?new Date(lastScorePollAt).toISOString():null,
+  homeScore:s.games.find(g=>g.id===s.game)?.homePoints??null,
+  awayScore:s.games.find(g=>g.id===s.game)?.awayPoints??null,
+  gameFeedError:s.lastError||null,pollIntervalMs:20000,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
