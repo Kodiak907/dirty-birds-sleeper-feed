@@ -28,7 +28,7 @@
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
- let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0;
+ let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0,finalObservedAt=0;
  const LIVE_PLAY_MS=5000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
  let consecutivePlayFailures=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
@@ -83,7 +83,7 @@
   return {id:String(gameId),home:name(home),away:name(away),
    homePoints:n(score.homeScoreTotal??score.homeScore??z.homeScoreTotal??x.homeScoreTotal??x.homeScore),
    awayPoints:n(score.awayScoreTotal??score.awayScore??z.awayScoreTotal??x.awayScoreTotal??x.awayScore),
-   status:String(x.status||z.playedStatus||z.scheduleStatus||z.status||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
+   status:String(z.playedStatus||z.gameStatus||z.status||x.playedStatus||x.gameStatus||x.status||z.scheduleStatus||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
  }
  function drawGames(){const el=$('ffo-gc-games');if(!el)return;
   if(!s.games.length){el.innerHTML='<p class="ffo-gc-note">No games loaded from MySportsFeeds yet. NFL season and schedule feeds must be authenticated first.</p>';return}
@@ -250,7 +250,7 @@
   const el=$('ffo-gc-gameview');
   const g=s.games.find(x=>x.id===s.game)||null;
   const event=s.playCache[s.activePlay]||null;
-  const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:portraitDirectory(),selectedPlayer:s.player,source:s.playSource,isLive:s.game&&/in.progress|in progress|live|half.time|halftime/i.test(String(g?.status||''))};
+  const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:portraitDirectory(),selectedPlayer:s.player,source:s.playSource,isLive:s.game&&['live','overtime'].includes(model.gamePhase(g?.status))};
   if(el){
    const currentPlayId=event?.id||null;
    const switched=lastStadiumGameId!==s.game;
@@ -325,7 +325,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;finalObservedAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
@@ -345,9 +345,7 @@
     if(pb.status==='fulfilled'&&!pb.value.notModified){
       consecutivePlayFailures=0;
       const ps=model.plays(pb.value.data);
-      if(ps.length>=s.playCache.length||s.playCache.length===0){
-       s.playCache=model.versionedPlays(s.playCache,ps);
-      }
+      s.playCache=model.mergePlayTimeline(s.playCache,ps);
       if(lastPlayCount>0&&s.playCache.length>lastPlayCount)lastNewPlayAt=Date.now();
       lastPlayCount=s.playCache.length;
       lastSuccessfulGamePollAt=Date.now();
@@ -366,8 +364,9 @@
       if(bs.value.provider_updated_at&&Number.isFinite(Date.parse(bs.value.provider_updated_at)))lastProviderUpdateAt=Math.max(lastProviderUpdateAt,Date.parse(bs.value.provider_updated_at));
       const idx=s.games.findIndex(g=>g.id===s.game);
       if(idx>=0){
-       const enriched=model.gameScoreUpdate(s.games[idx],bs.value);
+       const previous=s.games[idx],enriched=model.gameScoreUpdate(previous,bs.value);
        s.games[idx]=enriched;
+       if(model.gamePhase(enriched.status)==='final'&&!finalObservedAt)finalObservedAt=Date.now();
        if(enriched.scoreSource)lastScorePollAt=Date.now();
        drawGames();
       }
@@ -391,9 +390,10 @@
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
     const age=lastNewPlayAt?Math.round((Date.now()-lastNewPlayAt)/1000):null;
     const current=s.games.find(g=>g.id===s.game);
-    const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score reported':'MSF score unavailable';
+     if(model.gamePhase(current?.status)==='final'&&!finalObservedAt)finalObservedAt=Date.now();
+     const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score reported':'MSF score unavailable';
     const publishLag=lastProviderUpdateAt?Math.max(0,Math.floor((Date.now()-lastProviderUpdateAt)/1000)):null;
-    status((s.playSource||'Source unavailable')+' · '+scoreCoverage+
+    status((model.gamePhase(current?.status)==='final'?'FINAL · ':'')+(s.playSource||'Source unavailable')+' · '+scoreCoverage+
       (errs.length?' · '+errs.join('; '):pb.status==='fulfilled'&&pb.value.notModified?' · MSF unchanged':' · MSF poll complete')+
       (age!==null?' · last NEW published play '+age+'s ago':' · no new published play observed')+
       (publishLag!==null?' · provider updated '+publishLag+'s ago':' · provider update time unavailable')+
@@ -418,10 +418,7 @@
       .sort((a,b)=>a.kickoffMs-b.kickoffMs).slice(0,30)
       .map(g=>{
        const before=preserved.get(g.id);
-       return before?{...g,
-        homePoints:g.homePoints??before.homePoints,
-        awayPoints:g.awayPoints??before.awayPoints,
-        scoreSource:g.homePoints!=null&&g.awayPoints!=null?'MySportsFeeds schedule':before.scoreSource}:g;
+       return before?model.mergeScheduledGame(before,g):g;
       });
     if(!s.games.length)s.games=allGames.slice(0,24);
     // Always keep the league schedule in the source; this is only a compact display window.
@@ -462,12 +459,9 @@
  if(gameActive())await refreshOverview();
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
  function activeRefreshMs(){
-   const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
-   const kick=Date.parse(game?.start||''),now=Date.now();
-   const likelyLive=/in.progress|in progress|live|halftime|half.time/.test(state)||
-     (Number.isFinite(kick)&&now>=kick&&now<=kick+5*3600000&&!/final|complete|post|scheduled|pre|not started/.test(state));
-   // Only slow down when provider calls fail, never on unchanged responses.
-   return (likelyLive?LIVE_PLAY_MS:IDLE_PLAY_MS)*Math.min(4,2**consecutivePlayFailures);
+    const game=s.games.find(g=>g.id===s.game);
+    return model.gamePollInterval({status:game?.status,finalObservedAt,now:Date.now(),
+      kickoff:game?.start,failures:consecutivePlayFailures});
  }
  setInterval(()=>{
    const ticker=document.querySelector('[data-gc6-refresh]');
@@ -494,6 +488,6 @@
   scoreUpdateAt:lastScorePollAt?new Date(lastScorePollAt).toISOString():null,
   homeScore:s.games.find(g=>g.id===s.game)?.homePoints??null,
   awayScore:s.games.find(g=>g.id===s.game)?.awayPoints??null,
-  gameFeedError:s.lastError||null,pollIntervalMs:activeRefreshMs(),boxPollIntervalMs:LIVE_BOX_MS,
+  gameFeedError:s.lastError||null,gamePhase:model.gamePhase(s.games.find(g=>g.id===s.game)?.status),finalObservedAt:finalObservedAt?new Date(finalObservedAt).toISOString():null,pollIntervalMs:activeRefreshMs(),boxPollIntervalMs:LIVE_BOX_MS,
   consecutivePlayFailures,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
