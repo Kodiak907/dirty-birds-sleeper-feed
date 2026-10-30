@@ -872,6 +872,7 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
      }
    }catch{/* A missing partial-scoring feed is never represented as zero plays. */}
  }
+ if(resp.status===429)return ffoReply({...meta,error:'provider_rate_limited',retry_after_seconds:Number(resp.headers.get('retry-after'))||null},429);
  if(resp.status===401||resp.status===403)return ffoReply({...meta,error:'provider_auth_or_entitlement_denied'},502);
  if(resp.status===404)return ffoReply({...meta,error:'provider_feed_not_found'},502);
  if(!resp.ok)return ffoReply({...meta,error:'provider_upstream_error'},502);
