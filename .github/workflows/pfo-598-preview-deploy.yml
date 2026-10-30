@@ -25,6 +25,7 @@ jobs:
           node --check pfo-thursday/ffo-pfo-59.js
           node --check pfo-thursday/ffo-pfo-597.js
           node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-gamecast.js
           cp pfo-thursday/_worker.js /tmp/ffo-worker.mjs
           node --check /tmp/ffo-worker.mjs
       - name: Assemble safe root-level Pages Preview files
