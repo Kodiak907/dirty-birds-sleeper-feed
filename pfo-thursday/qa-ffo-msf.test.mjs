@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -117,4 +117,68 @@ test('GameCast polling is five seconds with a visible compact countdown',()=>{
  assert.match(core,/LIVE_PLAY_MS=5000/);
  assert.match(core,/data-gc6-refresh/);
  assert.match(core,/gc6-refresh-tracker/);
+});
+
+test('Provider state is authoritative: Q4 zero is not final; OT stays live',()=>{
+ assert.equal(gamePhase('IN_PROGRESS'),'live');
+ assert.equal(gamePhase('Q4'),'live');
+ assert.equal(gamePhase('OVERTIME'),'overtime');
+ assert.equal(gamePhase('COMPLETED'),'final');
+ assert.equal(gamePhase('FINAL_OT'),'final');
+ assert.equal(gameStatusLabel('completed'),'FINAL');
+ assert.equal(gameStatusLabel('overtime'),'OT');
+ assert.equal(gamePhase('0:00'),'unknown');
+ const g={home:'GB',away:'CAR',homePoints:27,awayPoints:19,status:'COMPLETED',scoreSource:'MySportsFeeds game boxscore'};
+ const stale={...g,homePoints:21,awayPoints:19,status:'IN_PROGRESS',scoreSource:'MySportsFeeds schedule'};
+ assert.deepEqual(mergeScheduledGame(g,stale),g);
+});
+test('Final box scores accept provider corrections but refuse stale LIVE downgrades',()=>{
+ const g={id:'G1',home:'GB',away:'CAR',homePoints:27,awayPoints:19,status:'COMPLETED'};
+ const correction=gameScoreUpdate(g,{data:{gameboxscore:{game:{id:'G1',playedStatus:'COMPLETED'},scoring:{homeScoreTotal:28,awayScoreTotal:19}}}});
+ assert.equal(correction.homePoints,28);
+ assert.equal(correction.status,'COMPLETED');
+ const stale=gameScoreUpdate(correction,{data:{gameboxscore:{game:{id:'G1',playedStatus:'LIVE'},scoring:{}}}});
+ assert.equal(stale.status,'COMPLETED');
+});
+test('Truncated provider response retains published plays; corrections replace by stable ID',()=>{
+ const previous=[
+  {id:'a',period:'4',clock:'0:40',text:'Punt to end zone'},
+  {id:'b',period:'4',clock:'0:30',text:'Packers timeout'}];
+ const truncated=mergePlayTimeline(previous,[{id:'b',period:'4',clock:'0:30',text:'Packers timeout corrected'}]);
+ assert.equal(truncated.length,2);
+ assert.equal(truncated[0].id,'a');
+ assert.equal(truncated[1].update,'corrected');
+ const restored=mergePlayTimeline(truncated,[previous[0],{id:'b',period:'4',clock:'0:30',text:'Packers timeout corrected'}]);
+ assert.equal(restored.length,2);
+ assert.equal(new Set(restored.map(p=>p.id)).size,2);
+});
+test('Postgame poll stays fast for 90 seconds before reducing to two minutes',()=>{
+ const now=Date.parse('2026-10-30T04:30:00Z');
+ assert.equal(gamePollInterval({status:'LIVE',now}),5000);
+ assert.equal(gamePollInterval({status:'OVERTIME',now}),5000);
+ assert.equal(gamePollInterval({status:'COMPLETED',now,finalObservedAt:now-15000}),5000);
+ assert.equal(gamePollInterval({status:'COMPLETED',now,finalObservedAt:now-100000}),120000);
+ assert.equal(gamePollInterval({status:'Q4',now}),5000);
+});
+test('Special teams: verified D. Whelan roster player gets real portrait and unaudited actor stays labeled',()=>{
+ const g={home:'GB',away:'CAR',status:'COMPLETED',homePoints:27,awayPoints:19};
+ const e={text:'(:30) 19-D.Whelan punts 37 yards to end zone, Touchback.',period:'4',clock:'0:30',raw:{playStatus:{teamInPossession:{abbreviation:'GB'}}}};
+ const directory=[{id:'4248789',name:'Daniel Whelan',team:'GB',position:'P',image:'https://a.espncdn.com/i/headshots/nfl/players/full/4248789.png',source:'ESPN 2026 team roster'}];
+ const p=playSubject(e,directory,null,g);
+ assert.equal(p.player?.name,'Daniel Whelan');
+ const rendered=fieldMarkup({game:g,event:e,playerRows:directory});
+ assert.match(rendered,/4248789.png/);
+ assert.match(rendered,/>FINAL</);
+ assert.doesNotMatch(rendered,/LIVE CHECKING/);
+ const unknown=playSubject(e,[],null,g);
+ assert.equal(unknown.player?.name,'D. Whelan');
+ assert.equal(unknown.player?.unverified,true);
+ assert.doesNotMatch(fieldMarkup({game:g,event:e,playerRows:[]}),/4248789.png/);
+});
+test('Historical audit is MSF-only and player imagery is backed by protected roster',()=>{
+ assert.match(core,/runHistoricalAudit/);
+ assert.match(core,/feed\\('plays',\\{season:s.season,game_id:g.id\\},true\\)/);
+ assert.match(core,/ensurePortraits/);
+ assert.match(worker,/route==='portraits'/);
+ assert.match(worker,/site.api.espn.com\\/apis\\/site\\/v2\\/sports\\/football\\/nfl\\/teams/);
 });
