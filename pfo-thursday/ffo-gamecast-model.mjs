@@ -7,12 +7,33 @@ export function resolvePlayer(sleeper,msfRows){
  return matches.length===1?{player:matches[0],status:'unique_name_team_match'}:{player:null,status:matches.length?'ambiguous_player_identity':'not_mapped'};
 }
 export function playerRows(payload){
- const rows=payload?.playerStatsTotals||payload?.playerGamelogs||payload?.playerGameLogs||payload?.playerStats||[];
- if(!Array.isArray(rows))return [];
+ const candidates=[
+ ['playerStatsTotals',payload?.playerStatsTotals],
+ ['playerGamelogs',payload?.playerGamelogs],
+ ['playerGameLogs',payload?.playerGameLogs],
+ ['gamelogs',payload?.gamelogs],
+ ['playerStats',payload?.playerStats],
+ ['players',payload?.players]
+ ];
+ const found=candidates.find(([name,rows])=>Array.isArray(rows))||[null,[]];
+ const rows=found[1];
  return rows.map(x=>{
   const p=x.player||x.playerInfo||{},t=x.team||x.teamInfo||{};
-  return {id:String(p.id??x.playerId??''),image: p.officialImageSrc||p.officialImageUrl||p.headshot||p.headshotUrl||p.imageUrl||p.photoUrl||null,name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
+  const pos=p.primaryPosition||p.position||x.position||'';
+  const id=p.id??x.playerId??'';
+  return {id:id===null||id===undefined?'':String(id),
+   image:p.officialImageSrc||p.officialImageUrl||p.headshot||p.headshotUrl||p.imageUrl||p.photoUrl||null,
+   name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),
+   team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),
+   position:String(typeof pos==='object'?(pos.abbreviation||pos.name||''):pos).toUpperCase(),
+   game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
  }).filter(x=>x.name);
+}
+export function playerFeedShape(payload){
+ for(const key of ['playerStatsTotals','playerGamelogs','playerGameLogs','gamelogs','playerStats','players']){
+  if(Array.isArray(payload?.[key]))return {collection:key,rawCount:payload[key].length};
+ }
+ return {collection:'unrecognized',rawCount:null};
 }
 /** One raw MSF NFL game play record per item. Other-provider scoring fallbacks
  * are never treated as licensed full play-by-play. */
@@ -254,6 +275,71 @@ export function fflProjection(gameRows,rules,position=''){
  return {points:Math.round((.65*recent+.35*season)*100)/100,complete:values.every(x=>x.complete),n:values.length,missing,season_average:Math.round(season*100)/100,last3_average:Math.round(recent*100)/100,source:'FFO 65% recent + 35% season baseline; not opponent-adjusted / NOT Sleeper actual points'};
 }
 
+
+/** Read-only MSF stats/schema verification. Partial FFL reconstruction never
+ * becomes an authoritative league score or projection. */
+export function auditStatFeed(payload,rules){
+ const shape=playerFeedShape(payload),rows=playerRows(payload);
+ const positions=['QB','RB','WR','TE','K','DEF'];
+ const withStats=rows.filter(r=>r.stats&&typeof r.stats==='object'&&Object.keys(normalizeStats(r.stats)).length);
+ const ids=new Set(rows.map(r=>r.id).filter(Boolean));
+ const observed={};
+ for(const pos of positions){
+  const group=rows.filter(r=>r.position===pos),scored=group.filter(r=>r.stats)
+   .map(r=>({row:r,result:fflScore(r.stats,rules,pos)}));
+  const partial=scored.filter(x=>x.result.points!==null),complete=scored.filter(x=>x.result.complete);
+  const unavailable=[...new Set(scored.flatMap(x=>x.result.missing))].sort();
+  observed[pos]={records:group.length,withNumericEvidence:scored.filter(x=>Object.keys(normalizeStats(x.row.stats)).length>0).length,
+   partialScoring:partial.length,completeScoring:complete.length,
+   example:partial.slice(0,1).map(x=>({player:x.row.name,team:x.row.team,providerId:x.row.id||null,
+     provisionalPoints:x.result.points,covered:x.result.covered.slice(0,12),missing:x.result.missing.slice(0,12)})),
+   missingCategories:unavailable.slice(0,15)};
+ }
+ const supported=shape.collection!=='unrecognized'&&rows.length>0;
+ return {supported,collection:shape.collection,rawCount:shape.rawCount,
+  parsedCount:rows.length,uniqueProviderIds:ids.size,missingProviderIds:rows.filter(r=>!r.id).length,
+  statsRecognized:withStats.length,positionCoverage:observed,
+  // A usable list is not proof of complete statistics, accurate FFL totals, or a license for all games.
+  scoringCertified:false};
+}
+/** A six-week window is only a lower bound on season-to-date counting stats,
+ * not a full season reconciliation. Compare only unambiguously matched MSF IDs,
+ * and only attributes actually published by both feeds. */
+export function auditSeasonLowerBound(weeklyFeeds=[],seasonPayload={}){
+ const season=playerRows(seasonPayload),byId=new Map();
+ for(const row of season){if(row.id&&!byId.has(row.id))byId.set(row.id,row);}
+ const weekly=new Map(),seenGame=new Set();
+ for(const feed of weeklyFeeds)for(const row of playerRows(feed)){
+  if(!row.id||!row.stats)continue;
+  const key=row.id+'|'+String(row.game?.id??row.game?.gameId??'');
+  // A missing game ID cannot safely be deduplicated across multiple weeks.
+  if(row.game?.id&&seenGame.has(key))continue;
+  if(row.game?.id)seenGame.add(key);
+  const entry=weekly.get(row.id)||[];
+  entry.push(row);weekly.set(row.id,entry);
+ }
+ const keys=['pass_yd','pass_td','pass_int','rush_yd','rush_td','rec','rec_yd','rec_td','fgm','xpm'];
+ let matchedPlayers=0,comparedCategories=0,overSeasonTotals=0;
+ const examples=[];
+ for(const [id,logs] of weekly){
+  const current=byId.get(id);if(!current?.stats)continue;
+  const base=normalizeStats(current.stats);matchedPlayers++;
+  for(const category of keys){
+   const values=logs.map(x=>normalizeStats(x.stats)[category]);
+   if(!values.length||values.some(x=>x===undefined)||base[category]===undefined)continue;
+   const sum=values.reduce((a,b)=>a+b,0);
+   comparedCategories++;
+   if(sum>base[category]+0.0001){
+    overSeasonTotals++;
+    if(examples.length<4)examples.push({player:current.name,category,weekSum:sum,seasonValue:base[category]});
+   }
+  }
+ }
+ return {seasonRecords:season.length,playersWithWeeklyLogs:weekly.size,matchedPlayers,
+  comparedCategories,overSeasonTotals,examples,
+  // Only a comparison floor: no claim that six-week logs sum to season-to-date.
+  certifiedSeasonReconciliation:false};
+}
 /**
  * Only explicit licensed provider status can end an NFL game.
  * A zero Q4 clock is NOT final (review, untimed down and OT are possible).
