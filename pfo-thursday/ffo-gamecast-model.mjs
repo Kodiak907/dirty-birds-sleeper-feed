@@ -339,8 +339,14 @@ export function auditTeamGameFeed(payload,team='',rules={}){
    return {category:c.key,label:c.label,value,weight:Number(rules[c.key]||0),
     points:value!==null?Math.round(value*Number(rules[c.key]||0)*100)/100:null};
   });
+  const kickingTotals={
+   fgAttempts:first(stats,['fieldGoals.fgAtt','fieldGoals.fgAttempts','fieldGoals.fieldGoalAttempts','fieldGoals.fieldGoalsAttempted','fieldGoals.attempts','kicking.fieldGoalAttempts']),
+   fgMade:first(stats,['fieldGoals.fgMade','fieldGoals.fieldGoalsMade','fieldGoals.made','kicking.fieldGoalsMade']),
+   xpAttempts:first(stats,['extraPoints.xpAtt','extraPoints.xpAttempts','extraPoints.extraPointAttempts','extraPoints.extraPointsAttempted','extraPoints.attempts','kicking.extraPointAttempts']),
+   xpMade:first(stats,['extraPoints.xpMade','extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade'])
+  };
   return {team:abbr,gameId:String(x.game?.id??x.game?.gameId??''),
-   published,defensiveFieldPaths:defensivelyRelevant.slice(0,24),
+   published,kickingTotals,defensiveFieldPaths:defensivelyRelevant.slice(0,24),
    hasNumericFields:all.length>0};
  });
  const teamFilterVerified=records.length>0&&records.every(x=>x.team===wanted);
@@ -350,6 +356,8 @@ export function auditTeamGameFeed(payload,team='',rules={}){
   records:records.length,numericRecords:records.filter(x=>x.hasNumericFields).length,
   exampleFieldPaths:[...new Set(records.flatMap(x=>x.defensiveFieldPaths))].slice(0,24),
   observedComponents:teamFilterVerified?records.flatMap(x=>x.published):[],
+  kickingReference:teamFilterVerified&&records.length===1?{gameId:records[0].gameId,
+   ...records[0].kickingTotals}:null,
   knownComponentCount:known.length,missingComponents:missing,
   // Final opponent points do not equal D/ST points allowed when there are
   // defensive, return, or other non-offensive touchdowns.
@@ -429,8 +437,14 @@ export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
   }
   const player=matched.size===1?[...matched.values()][0]:null;
   const known=actorEvents.filter(x=>x.observedEventPoints!==null);
+  const counts={
+   fgAttempts:actorEvents.filter(x=>x.kind==='FG').length,
+   fgMade:actorEvents.filter(x=>x.kind==='FG'&&x.publishedOutcome==='reported_good').length,
+   xpAttempts:actorEvents.filter(x=>x.kind==='XP').length,
+   xpMade:actorEvents.filter(x=>x.kind==='XP'&&x.publishedOutcome==='reported_good').length
+  };
   return {kickerToken:token,playerName:player?.name||null,playerTeam:player?.team||null,
-   providerId:player?.id||null,identityVerified:!!player,events:actorEvents.length,
+   providerId:player?.id||null,identityVerified:!!player,events:actorEvents.length,counts,
    unknownEvents:actorEvents.length-known.length,
    observedSubtotal:known.length?Math.round(known.reduce((sum,x)=>sum+x.observedEventPoints,0)*100)/100:null,
    certified:false};
