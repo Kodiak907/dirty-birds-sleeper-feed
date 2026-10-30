@@ -309,7 +309,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
@@ -326,7 +326,8 @@
       if(ps.length>=s.playCache.length||s.playCache.length===0){
        s.playCache=model.versionedPlays(s.playCache,ps);
       }
-      if(s.playCache.length>lastPlayCount){lastNewPlayAt=Date.now();lastPlayCount=s.playCache.length;}
+      if(lastPlayCount>0&&s.playCache.length>lastPlayCount)lastNewPlayAt=Date.now();
+      lastPlayCount=s.playCache.length;
       lastSuccessfulGamePollAt=Date.now();
       s.playSource=pb.value.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
       if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
