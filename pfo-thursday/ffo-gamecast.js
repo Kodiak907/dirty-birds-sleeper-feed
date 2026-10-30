@@ -29,7 +29,7 @@
  let playerFeedPending=null,gamePending=null,overviewPending=null;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
  let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0;
- const LIVE_PLAY_MS=10000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
+ const LIVE_PLAY_MS=5000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
  let consecutivePlayFailures=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
@@ -244,7 +244,7 @@
 
  function portraitDirectory(){
    const names=typeof pfo49Dir==='function'?pfo49Dir():[];
-   return [...names.map(p=>({...p,sleeper:true})),...s.playerRows];
+   return [...s.playerRows,...names.map(p=>({...p,sleeper:true}))];
   }
   function drawField(){
   const el=$('ffo-gc-gameview');
@@ -257,6 +257,14 @@
    const changed=!switched&&currentPlayId&&lastStadiumPlayId&&currentPlayId!==lastStadiumPlayId&&s.followLatest;
    const previousX=switched?null:priorVerifiedBallX;
    el.innerHTML=stadium.fieldMarkup(input);
+   const bar=el.querySelector('.gc6-statebar');
+   if(bar){
+    const tracker=document.createElement('span');
+    tracker.className='gc6-refresh-tracker';
+    tracker.setAttribute('aria-label','Next MSF poll countdown');
+    tracker.innerHTML='<small>MSF refresh</small> <b data-gc6-refresh>0–5s</b>';
+    bar.appendChild(tracker);
+   }
    const marker=el.querySelector('.gc6-ball');
    const nextX=marker?Number(marker.getAttribute('cx')):null;
    // Animate only between two provider-verified spots from consecutive displayed
@@ -462,10 +470,17 @@
    return (likelyLive?LIVE_PLAY_MS:IDLE_PLAY_MS)*Math.min(4,2**consecutivePlayFailures);
  }
  setInterval(()=>{
+   const ticker=document.querySelector('[data-gc6-refresh]');
+   if(ticker&&gameActive()&&s.enabled&&s.game){
+    const interval=activeRefreshMs(),last=s.lastGamePoll||0;
+    const seconds=Math.max(0,Math.ceil((interval-Math.max(0,Date.now()-last))/1000));
+    ticker.textContent=interval===LIVE_PLAY_MS?seconds+'s':seconds+'s';
+    ticker.parentElement?.classList.toggle('gc6-refresh-wait',interval>LIVE_PLAY_MS);
+   }
    if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
    const now=Date.now(),interval=activeRefreshMs();
    if(now-(s.lastGamePoll||0)>=interval){s.lastGamePoll=now;void refreshGame();}
- },2000);
+ },500);
  document.addEventListener('visibilitychange',()=>{
    if(document.visibilityState==='visible'&&gameActive()&&s.enabled&&s.game){
      s.lastGamePoll=Date.now();void refreshGame();
