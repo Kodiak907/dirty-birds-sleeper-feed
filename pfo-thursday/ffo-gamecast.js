@@ -408,6 +408,7 @@
     const last=s.playCache.at(-1);
     const beforeLast=before.at(-1);
     const changed=before.length!==s.playCache.length||
+      s.playCache.some(p=>p.update==='corrected')||
       (last&&beforeLast&&(last.id!==beforeLast.id||last.text!==beforeLast.text||
         last.clock!==beforeLast.clock||last.period!==beforeLast.period));
     if(changed){
