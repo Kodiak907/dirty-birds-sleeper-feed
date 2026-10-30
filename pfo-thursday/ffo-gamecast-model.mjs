@@ -92,7 +92,62 @@ export function fflProjection(gameRows,rules,position=''){
  return {points:Math.round((.65*recent+.35*season)*100)/100,complete:values.every(x=>x.complete),n:values.length,missing,season_average:Math.round(season*100)/100,last3_average:Math.round(recent*100)/100,source:'FFO 65% recent + 35% season baseline; not opponent-adjusted / NOT Sleeper actual points'};
 }
 
-export function versionedPlays(prev,next){const canonical=p=>{const {update,...body}=p;return JSON.stringify(body)};const map=new Map(prev.map(p=>[p.id||p.text,canonical(p)]));return next.map(p=>({...p,update:!map.has(p.id||p.text)?'new':map.get(p.id||p.text)!==canonical(p)?'corrected':'unchanged'}));}
+/**
+ * Only explicit licensed provider status can end an NFL game.
+ * A zero Q4 clock is NOT final (review, untimed down and OT are possible).
+ */
+export function gamePhase(value){
+ const v=String(value??'').trim().toLowerCase().replace(/[_-]+/g,' ');
+ if(!v)return 'unknown';
+ if(/^(final|finished|complete|completed|closed|game over|postgame|post game|ended|official final|final ot|final overtime)(?:\\b|$)/.test(v))return 'final';
+ if(/^(ot|overtime|in overtime|extra period)(?:\\b|$)/.test(v))return 'overtime';
+ if(/^(live|in progress|inprogress|started|playing|halftime|half time|half|q[1-4]|quarter [1-4]|1st quarter|2nd quarter|3rd quarter|4th quarter)(?:\\b|$)/.test(v))return 'live';
+ if(/^(scheduled|not started|notstarted|pre game|pregame|unplayed|future|pending)(?:\\b|$)/.test(v))return 'scheduled';
+ return 'unknown';
+}
+export function gameStatusLabel(value){
+ const phase=gamePhase(value);
+ return phase==='final'?'FINAL':phase==='overtime'?'OT':phase==='live'?'LIVE':phase==='scheduled'?'SCHEDULED':String(value||'STATUS UNVERIFIED').toUpperCase();
+}
+/** Never regress a verified final to an older game schedule snapshot. */
+export function mergeScheduledGame(previous,incoming){
+ if(!previous)return incoming;
+ const final=gamePhase(previous.status)==='final';
+ return {...incoming,
+  status:final?previous.status:gamePhase(incoming.status)==='unknown'?previous.status:incoming.status,
+  homePoints:final?(previous.homePoints??incoming.homePoints):(incoming.homePoints??previous.homePoints),
+  awayPoints:final?(previous.awayPoints??incoming.awayPoints):(incoming.awayPoints??previous.awayPoints),
+  scoreSource:final?(previous.scoreSource||incoming.scoreSource):
+    (incoming.homePoints!=null&&incoming.awayPoints!=null?'MySportsFeeds schedule':previous.scoreSource)};
+}
+/** Preserve last published events if MSF briefly truncates/rewrites a play feed.
+ * The provider's stable play ID is authoritative for corrections and de-duplication.
+ */
+export function mergePlayTimeline(previous=[],incoming=[]){
+ const key=p=>String(p?.id||[p?.period,p?.clock,p?.text].join('|'));
+ const canon=p=>{const {update,...body}=p;return JSON.stringify(body)};
+ const dedup=new Map(),old=new Map(previous.map(p=>[key(p),p]));
+ for(const p of previous){if(p?.text)dedup.set(key(p),p);}
+ for(const p of incoming){
+  if(!p?.text)continue;
+  const k=key(p),before=old.get(k),changed=before&&canon(before)!==canon(p);
+  dedup.set(k,{...p,update:!before?'new':changed?'corrected':'unchanged'});
+ }
+ const full=incoming.length>=previous.length&&previous.every(p=>incoming.some(n=>key(n)===key(p)));
+ const ordered=full?[...new Map(incoming.filter(p=>p?.text).map(p=>[key(p),dedup.get(key(p))])).values()]:
+  [...dedup.values()];
+ return ordered.slice(-360);
+}
+export const versionedPlays=mergePlayTimeline;
+/** Postgame verification remains at live cadence briefly, then drops to idle. */
+export function gamePollInterval({status,finalObservedAt=0,now=Date.now(),kickoff=null,failures=0}={}){
+ const phase=gamePhase(status),t=Date.parse(kickoff||'');
+ let interval=120000;
+ if(phase==='final')interval=finalObservedAt&&now-finalObservedAt<90000?5000:120000;
+ else if(phase==='live'||phase==='overtime')interval=5000;
+ else if(phase==='unknown'&&Number.isFinite(t)&&now>=t&&now<=t+6*3600000)interval=5000;
+ return interval*Math.min(4,2**Math.max(0,Math.min(3,failures)));
+}
 
 /** Verified game scoreboard from MSF game_boxscore or games response.
  * This deliberately does not infer scores from offensive yardage/play text.
@@ -119,6 +174,6 @@ export function gameScoreUpdate(game,boxResponse){
  return {...game,
   homePoints:home===null?game?.homePoints??null:home,
   awayPoints:away===null?game?.awayPoints??null:away,
-  status:state?String(state):game?.status||'Unverified',
+  status:state?(gamePhase(game?.status)==='final'&&gamePhase(state)!=='final'?game.status:String(state)):game?.status||'Unverified',
   scoreSource:home!==null||away!==null?'MySportsFeeds game boxscore':game?.scoreSource||null};
 }
