@@ -420,38 +420,48 @@
     (x.value!==null?' × '+x.weight+' = '+x.points+' provisional points':'')).join(' · '):'';
   const missing=t?.teamFilterVerified?(t.missingComponents||[]).join(', '):'';
   const teamCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<summary style="cursor:pointer;font-weight:700">D/ST source evidence · Weeks 1–6</summary>'+
    '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(dstWeeks.verifiedWeeks)+'/6 MSF team games verified. Sacks/INTs are independent provisional components.</div>'+dstWeekRows+
-   '<summary style="cursor:pointer;font-weight:700">D/ST source evidence · separate MSF team stats</summary>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(teamside)+'</div>'+
    (defenseLine?'<div style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(defenseLine)+'</div>':'')+
    (missing?'<div class="muted" style="font-size:12px">Missing verified categories: '+safe(missing)+'</div>':'')+
    '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+
    '</details>';
-  const kickerRows=(pb?.kickers||[]).map(k=>
-   '<div style="font-size:12px;padding:6px 0;border-top:1px solid #315069"><b>'+
-   safe(k.playerName||k.kickerToken)+'</b> · '+safe(k.events)+' PBP events'+
-   '<div class="muted">Observed FFL event subtotal: '+
-   (k.observedSubtotal===null?'unknown':safe(k.observedSubtotal)+' pts')+
-   ' · '+safe(k.unknownEvents)+' unresolved events</div>'+
-   '<div class="muted">'+safe(k.identityVerified?'Unique MSF player ID / name / jersey crosswalk':'PBP actor only; MSF player ID unverified')+
-   '</div></div>').join('');
+  const kickHistory=model.summarizeKickerWeeks(report.kickWeeks||[],report.team);
+  const kickWeekRows=kickHistory.weeks.map(w=>{
+   const observed=w.status==='pbp_published';
+   const evidence=(w.players||[]).map(p=>
+    '<div class="muted" style="font-size:12px">'+safe(p.playerName||p.actor)+
+    ' · ID '+safe(p.providerId||'unknown')+' · observed '+(p.observedSubtotal===null?'unknown':safe(p.observedSubtotal)+' pts')+
+    ' · '+safe(p.unknownEvents)+' uncertain plays</div>').join('');
+   return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
+    '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">'+
+    '<strong>Week '+safe(w.week)+'</strong><span style="font-size:12px">'+safe(observed?w.candidatePlays+' published FG/XP mentions':'Unverified')+'</span>'+
+    '<span style="width:100%;font-size:11px;opacity:.8">'+safe(w.game||w.error||'Game unverified')+'</span></summary>'+
+    (observed?'<div class="muted" style="font-size:12px;margin:6px 0">'+
+     'GB player-ID-matched plays '+safe(w.knownEvents)+' · unknown or opposing actors '+safe(w.unverifiedEvents)+
+     ' · observed GB subtotal '+(w.observedPoints===null?'unknown':safe(w.observedPoints)+' pts')+'</div>'+evidence:
+     '<div class="muted" style="font-size:12px">Unknown, not zero. '+safe(w.error||'No licensed play data')+'</div>')+
+    '</details>';
+  }).join('');
+  const sample=(pb?.publishedEvents||[]).slice(0,10).map(x=>
+   '<div style="padding:6px 0;border-bottom:1px solid #315069;font-size:12px">'+
+   '<b>'+safe(x.kind)+'</b> · '+safe(x.publishedOutcome)+
+   (x.kickerToken?' · '+safe(x.kickerToken):' · kicker unverified')+
+   (x.observedEventPoints!==null?' · '+safe(x.observedEventPoints)+' provisional pts':' · scoring unknown')+
+   (x.distance!==null?' · '+safe(x.distance)+' yards':' · distance unknown')+
+   '<div class="muted">'+safe(x.description)+'</div></div>').join('');
   const kickCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
-   '<summary style="cursor:pointer;font-weight:700">Kicker · published play-by-play evidence</summary>'+
-   '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(
-    pb?.candidatePlays!=null
-    ?('One game sample · '+pb.fgCandidates+' FG mentions · '+pb.xpCandidates+' XP mentions')
-    :('Play-by-play check unavailable · '+String(report.kickEvidenceError||'No sampled game'))
-   )+'</div>'+
-   kickerRows+
-   (pb?.publishedEvents?.length?
-     pb.publishedEvents.slice(0,10).map(x=>
-      '<div style="font-size:12px;padding:5px 0;border-top:1px solid #315069">'+
-      '<strong>'+safe(x.kind)+'</strong> · '+safe(x.publishedOutcome)+
-      (x.kickerToken?' · '+safe(x.kickerToken):' · kicker unverified')+
-      (x.observedEventPoints!==null?' · '+safe(x.observedEventPoints)+' provisional pts':' · score unresolved')+
-      (x.distance!==null?' · '+safe(x.distance)+' yd':' · distance unverified')+
-      '<div class="muted">'+safe(x.description)+'</div></div>').join(''):'')+
-   '<div class="muted" style="font-size:12px;margin:7px 0">No individual kicker credit, six-week completeness or fantasy score is certified from this sample.</div>'+
+   '<summary style="cursor:pointer;font-weight:700">Kicker evidence · Weeks 1–6</summary>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(kickHistory.publishedFeeds)+
+   '/6 historical game feeds · '+safe(kickHistory.identityVerifiedWeeks)+
+   ' with uniquely verified GB kicker IDs. Final kicker scoring not certified.</div>'+
+   (kickHistory.players.length?kickHistory.players.map(p=>
+    '<div style="font-size:12px"><b>'+safe(p.playerName)+'</b> · '+
+    safe(p.weeksWithObservedEvents)+' weeks · observed subtotal '+safe(p.observedSubtotal)+' pts (not final)</div>').join(''):'')+
+   kickWeekRows+
+   (sample?'<details style="padding:8px 0"><summary style="cursor:pointer;font-size:12px">Inspect published kick plays · '+safe(pb.sampleGame||'')+'</summary>'+sample+'</details>':'')+
+   '<p class="muted" style="font-size:12px">Opposing kickers and players without uniquely verified MSF identity receive no GB credit. Missing weeks and missing fields remain unknown, not zero.</p>'+
    '</details>';
   const scoringCard=e?'<details style="border-top:1px solid #315069;margin:8px 0;padding-top:8px">'+
    '<summary style="cursor:pointer;font-weight:700">FFL scoring components · '+safe(e.records)+' player-week records</summary>'+
