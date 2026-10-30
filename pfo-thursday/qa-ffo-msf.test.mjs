@@ -825,9 +825,41 @@ test('Kicker reconciliation rejects mismatched game IDs, missing totals and miss
 });
 test('FFO mobile scoring audit shows independent MSF crosscheck and no synthetic kicker certification',()=>{
  assert.match(core,/model\.reconcileKickerWeeks\(report\.kickWeeks\|\|\[\],report\.teamWeeks\|\|\[\],report\.team\)/);
- assert.match(core,/four-category reconciliations/);
- assert.match(core,/detected cross-check mismatches/);
+ assert.match(core,/four-category matches/);
+ assert.match(core,/count disagreements/);
  assert.match(core,/model\.auditTeamGameFeed/);
  assert.match(core,/report\.kickWeeks\.push\(\{week,game,gameId:String\(g\.id\),evidence\}\)/);
  assert.match(core,/Final kicker scoring not certified/);
+});
+
+test('Historical stat audits reuse only successful source responses briefly; do not cache failures or change live GameCast polling',()=>{
+ assert.match(core,/const auditSuccessCache=new Map\(\),AUDIT_REUSE_MS=300000/);
+ assert.match(core,/if\(prior&&Date\.now\(\)-prior\.at<AUDIT_REUSE_MS\)/);
+ assert.match(core,/if\(permitted&&result\?\.available!==false\)/);
+ assert.match(core,/while\(auditSuccessCache\.size>28\)/);
+ assert.match(core,/for\(let attempt=1;attempt<=2;attempt\+\+\)/);
+ assert.match(core,/await auditPause\(3600\)/);
+ assert.match(core,/name==='plays'\|\|name==='boxscore'\?9000/);
+});
+test('Kicker crosschecks expose exact mismatched counts and unresolved identity, never imply certification',()=>{
+ const unverified={gameplaybyplay:{plays:[
+  {id:'a',description:'28-T.Smack 43 yard field goal is GOOD'},
+  {id:'b',description:'16-W.Reichard 38 yard field goal is GOOD'},
+  {id:'c',description:'unassigned field goal is GOOD'}
+ ]}};
+ const pb=kickingPlayEvidence(unverified,own.scoring,[
+  {id:'802',name:'Terry Smack',jersey:'28',position:'K',team:'GB'}
+ ]);
+ const ref=auditTeamGameFeed({teamgamelogs:[{team:{abbreviation:'GB'},game:{id:'g1'},
+   stats:{fieldGoals:{fgAtt:2,fgMade:2}}}]},'GB',own.scoring);
+ const result=reconcileKickerWeeks([{week:1,gameId:'g1',evidence:pb}],
+  [{week:1,evidence:ref}],'GB');
+ assert.equal(result.discrepancies,1);
+ assert.equal(result.unverified,0);
+ assert.ok(result.weeks[0].unresolvedActorTokens.includes('16-W.Reichard'));
+ assert.ok(result.weeks[0].unattributedPlays>0);
+ assert.equal(result.weeks[0].disagreements[0].category,'fgAttempts');
+ assert.equal(result.fullFantasyScoresCertified,false);
+ assert.match(core,/Disagreement:/);
+ assert.match(core,/Unresolved actors:/);
 });
