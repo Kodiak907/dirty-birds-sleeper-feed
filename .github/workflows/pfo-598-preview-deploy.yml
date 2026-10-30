@@ -1,4 +1,4 @@
-name: PFO 5.9.8 paid-MSF GameCast second-half Preview (never production)
+name: PFO 5.9.8 live scoreboard and ball tracking Preview (never production)
 on:
   push:
     branches:
@@ -52,5 +52,5 @@ jobs:
           CLOUDFLARE_SEND_METRICS: 'false'
         run: |
           set -euo pipefail
-          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO 5.9.8 private paid MSF GameCast 2026-regular preview"
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO live scoreboard and sourced ball tracking fix - Preview only"
           echo "Deployment targeted preview branch only. Confirm Access challenge and data before any green light."
