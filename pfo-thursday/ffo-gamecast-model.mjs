@@ -99,10 +99,10 @@ export function fflProjection(gameRows,rules,position=''){
 export function gamePhase(value){
  const v=String(value??'').trim().toLowerCase().replace(/[_-]+/g,' ');
  if(!v)return 'unknown';
- if(/^(final|finished|complete|completed|closed|game over|postgame|post game|ended|official final|final ot|final overtime)(?:\\b|$)/.test(v))return 'final';
- if(/^(ot|overtime|in overtime|extra period)(?:\\b|$)/.test(v))return 'overtime';
- if(/^(live|in progress|inprogress|started|playing|halftime|half time|half|q[1-4]|quarter [1-4]|1st quarter|2nd quarter|3rd quarter|4th quarter)(?:\\b|$)/.test(v))return 'live';
- if(/^(scheduled|not started|notstarted|pre game|pregame|unplayed|future|pending)(?:\\b|$)/.test(v))return 'scheduled';
+ if(/^(final|finished|complete|completed|closed|game over|postgame|post game|ended|official final|final ot|final overtime)(?:\b|$)/.test(v))return 'final';
+ if(/^(ot|overtime|in overtime|extra period)(?:\b|$)/.test(v))return 'overtime';
+ if(/^(live|in progress|inprogress|started|playing|halftime|half time|half|q[1-4]|quarter [1-4]|1st quarter|2nd quarter|3rd quarter|4th quarter)(?:\b|$)/.test(v))return 'live';
+ if(/^(scheduled|not started|notstarted|pre game|pregame|unplayed|future|pending)(?:\b|$)/.test(v))return 'scheduled';
  return 'unknown';
 }
 export function gameStatusLabel(value){
