@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -261,9 +261,87 @@ test('Reordering an identifier-free snapshot preserves deterministic play keys',
  assert.equal(byText(first).get(q.description),byText(second).get(q.description));
 });
 test('Week 1–6 audit reports missing and repeated provider IDs separately',()=>{
- assert.match(core,/diagnosePlayFeed/);
- assert.match(core,/missing IDs/);
+ assert.match(core,/inspectHistoricalGame/);
+ assert.match(core,/ID gaps/);
  assert.match(core,/repeated native IDs/);
- assert.match(core,/MSF published descriptions/);
+ assert.match(core,/MSF published plays/);
  assert.doesNotMatch(core,/!sameId\?'Duplicate play IDs'/);
+});
+
+
+test('MSF historical integrity: final box score and independently sourced schedule align',()=>{
+ const p={data:{gameplaybyplay:{plays:[
+  {description:'Kickoff return',playStatus:{quarter:1,secondsElapsed:20}},
+  {description:'Half ends',playStatus:{quarter:2,secondsElapsed:900}},
+  {description:'Third-quarter rush',playStatus:{quarter:3,secondsElapsed:40}},
+  {description:'Final kneel',playStatus:{quarter:4,secondsElapsed:898}}
+ ]}}};
+ const box={available:true,data:{gameboxscore:{game:{id:'G1',playedStatus:'COMPLETED'},
+  scoring:{homeScoreTotal:27,awayScoreTotal:19,
+    quarters:[{homeScore:7,awayScore:3},{homeScore:7,awayScore:7},{homeScore:7,awayScore:3},{homeScore:6,awayScore:6}]}}}};
+ const g={id:'G1',home:'GB',away:'CAR',status:'COMPLETED',homePoints:27,awayPoints:19};
+ const r=inspectHistoricalGame(p,box,g);
+ assert.equal(r.usablePlaySequence,true);
+ assert.equal(r.boxScorePublished,true);
+ assert.equal(r.providerFinal,true);
+ assert.equal(r.chronologicalOrder,'forward');
+ assert.equal(r.matchesSchedule,true);
+ assert.equal(r.quarterScoreMatches,true);
+ assert.equal(r.first.quarter,1);assert.equal(r.last.quarter,4);
+ assert.equal(r.first.clock,'14:40');
+ assert.equal(r.last.clock,'0:02');
+ assert.equal(r.fullGameCertified,false);
+});
+test('MSF historical integrity: reverse PBP chronology is surfaced, not reordered silently',()=>{
+ const p={data:{gameplaybyplay:{plays:[
+  {description:'Last play',playStatus:{quarter:4,secondsElapsed:899}},
+  {description:'Before halftime',playStatus:{quarter:2,secondsElapsed:850}},
+  {description:'Opening play',playStatus:{quarter:1,secondsElapsed:10}}
+ ]}}};
+ const r=inspectHistoricalGame(p,null,{id:'G1'});
+ assert.equal(r.chronologicalOrder,'reverse');
+ assert.equal(r.first.quarter,1);
+ assert.equal(r.last.quarter,4);
+ assert.equal(r.boxScorePublished,false);
+ assert.ok(r.warnings.some(w=>/box-score/i.test(w)));
+});
+test('MSF historical integrity: quarter sequence regression reports mixed chronology',()=>{
+ const p={data:{gameplaybyplay:{plays:[
+  {description:'Q1 play',playStatus:{quarter:1,secondsElapsed:30}},
+  {description:'Q3 play',playStatus:{quarter:3,secondsElapsed:120}},
+  {description:'Q2 play',playStatus:{quarter:2,secondsElapsed:120}}
+ ]}}};
+ const r=inspectHistoricalGame(p,null,{id:'G1'});
+ assert.equal(r.chronologicalOrder,'mixed');
+ assert.equal(r.usablePlaySequence,false);
+ assert.ok(r.warnings.some(w=>/chronology/.test(w)));
+});
+test('MSF regular-season overtime: do not fabricate a 15-minute clock from secondsElapsed',()=>{
+ const p={gameplaybyplay:{plays:[
+  {description:'Overtime first play',playStatus:{quarter:5,secondsElapsed:20}},
+  {description:'(8:40) Verified overtime pass',playStatus:{quarter:5,secondsElapsed:80}}
+ ]}};
+ const r=inspectHistoricalGame({data:p},null,{id:'G1'});
+ const a=plays(p);
+ assert.equal(a[0].period,'5');
+ assert.equal(a[0].clock,'');
+ assert.equal(a[1].clock,'8:40');
+ assert.equal(r.otPlayCount,2);
+ assert.equal(r.otClockUnknown,1);
+ assert.ok(r.warnings.some(w=>/OT contains/.test(w)));
+ assert.equal(r.fullGameCertified,false);
+});
+test('MSF reconciliation: distinguish box score failure and mismatched schedule score',()=>{
+ const p={data:{plays:[{description:'(14:59) kickoff',quarter:1,time:'14:59'}]}};
+ const box={data:{gameboxscore:{game:{id:'G1',playedStatus:'COMPLETED'},scoring:{homeScoreTotal:20,awayScoreTotal:17}}}};
+ const r=inspectHistoricalGame(p,box,{id:'G1',status:'COMPLETED',homePoints:21,awayPoints:17});
+ assert.equal(r.matchesSchedule,false);
+ assert.ok(r.warnings.some(w=>/differs from MSF schedule/.test(w)));
+ assert.equal(r.quarterScoreMatches,null);
+});
+test('Historical QA requests BOTH MSF play-by-play and game box score for each sample',()=>{
+ assert.match(core,/feed\('plays',\{season:s.season,game_id:g.id\},true\)/);
+ assert.match(core,/feed\('boxscore',\{season:s.season,game_id:g.id\},true\)/);
+ assert.match(core,/final box scores with both scores/);
+ assert.doesNotMatch(core,/fullGameCertified:true/);
 });
