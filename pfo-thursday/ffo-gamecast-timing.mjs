@@ -15,6 +15,6 @@ export function nextPlayPollMs(game,failures=0,now=Date.now()){
 }
 export function providerClock(play){
  const q=Number(play?.period),clock=String(play?.clock||'');
- if(!Number.isInteger(q)||q<1||q>5||!/^\d{1,2}:[0-5]\d$/.test(clock))return null;
+ if(!Number.isInteger(q)||q<1||q>5||!/^(?:0?[0-9]|1[0-5]):[0-5]\d$/.test(clock))return null;
  return {period:'Q'+q,clock,playId:String(play.id||'')};
 }
