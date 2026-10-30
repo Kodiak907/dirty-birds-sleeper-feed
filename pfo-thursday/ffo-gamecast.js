@@ -349,7 +349,7 @@
     '<div class="muted">All points here are evidence-limited reconstructions; this audit never publishes a final FFL player score.</div></details>';
   }).join('');
   const a=report.seasonAudit,lower=report.lowerBound;
-  const season=a?.supported?'MSF season rows '+a.parsedCount+
+  const season=a?.supported&&report.seasonFilterVerified?'MSF season rows '+a.parsedCount+
     ' · player IDs '+a.uniqueProviderIds+' · numeric stat rows '+a.statsRecognized:
     'Season feed not validated: '+(report.seasonError||'Unknown schema');
   const comparison=lower?'Week 1–6 compared to season: '+lower.matchedPlayers+
