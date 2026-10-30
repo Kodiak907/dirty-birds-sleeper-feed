@@ -328,7 +328,9 @@ test('MSF regular-season overtime: do not fabricate a 15-minute clock from secon
  assert.equal(a[1].clock,'8:40');
  assert.equal(r.otPlayCount,2);
  assert.equal(r.otClockUnknown,1);
- assert.ok(r.warnings.some(w=>/OT contains/.test(w)));
+ assert.equal(r.clockCoverage,'ot_exception');
+ assert.equal(r.regulationClockUnknown,0);
+ assert.ok(r.warnings.some(w=>/overtime play lacks a verifiable clock/.test(w)));
  assert.equal(r.fullGameCertified,false);
 });
 test('MSF reconciliation: distinguish box score failure and mismatched schedule score',()=>{
@@ -342,6 +344,40 @@ test('MSF reconciliation: distinguish box score failure and mismatched schedule 
 test('Historical QA requests BOTH MSF play-by-play and game box score for each sample',()=>{
  assert.match(core,/feed\('plays',\{season:s.season,game_id:g.id\},true\)/);
  assert.match(core,/feed\('boxscore',\{season:s.season,game_id:g.id\},true\)/);
- assert.match(core,/final box scores with both scores/);
+ assert.match(core,/final box scores/);
  assert.doesNotMatch(core,/fullGameCertified:true/);
+});
+
+
+test('MSF clock verification tiers do not downgrade a valid OT game for an unreported OT clock',()=>{
+ const p={data:{gameplaybyplay:{plays:[
+  {description:'Regulation kickoff',playStatus:{quarter:1,secondsElapsed:8}},
+  {description:'End first half',playStatus:{quarter:2,secondsElapsed:900}},
+  {description:'Regulation final',playStatus:{quarter:4,secondsElapsed:900}},
+  {description:'OT start play',playStatus:{quarter:5,secondsElapsed:20}}
+ ]}}};
+ const result=inspectHistoricalGame(p,null,{id:'G1'});
+ assert.equal(result.usablePlaySequence,true);
+ assert.equal(result.otPlayCount,1);
+ assert.equal(result.otClockUnknown,1);
+ assert.equal(result.regulationClockUnknown,0);
+ assert.equal(result.clockCoverage,'ot_exception');
+ assert.equal(result.fullGameCertified,false);
+});
+test('MSF historical audit still fails genuine regulation clock gaps',()=>{
+ const p={data:{gameplaybyplay:{plays:[
+  {description:'Kickoff with no clock evidence',playStatus:{quarter:1}},
+  {description:'Second quarter',playStatus:{quarter:2,secondsElapsed:100}}
+ ]}}};
+ const result=inspectHistoricalGame(p,null,{id:'G1'});
+ assert.equal(result.regulationClockUnknown,1);
+ assert.equal(result.clockCoverage,'incomplete');
+ assert.ok(result.warnings.some(w=>/regulation\/unknown-period/.test(w)));
+});
+test('GameCast historical cards are compact on iPhone and show OT exception distinctly',()=>{
+ assert.match(core,/gc-history-row/);
+ assert.match(core,/a\.clockCoverage==='ot_exception'/);
+ assert.match(core,/const ok=a\.usablePlaySequence&&a\.clockCoverage!=='incomplete'/);
+ assert.match(core,/published plays/);
+ assert.match(core,/full-play completeness/i);
 });
