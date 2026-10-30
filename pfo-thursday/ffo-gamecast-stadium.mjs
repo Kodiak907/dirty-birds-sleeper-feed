@@ -1,7 +1,7 @@
 /* FFO GameCast Stadium v1, preview only. Read-only visualization of published play records.
    End-zone names mark SCHEMATIC ATTACK TARGETS, not the venue's painted end zones.
    No invented routes, positions, players, scores, or provider update speeds. */
-import {normalizeName} from './ffo-gamecast-model.mjs';
+import {normalizeName,gamePhase,gameStatusLabel} from './ffo-gamecast-model.mjs';
 const H=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const A=x=>typeof x==='string'?x:String(x?.abbreviation||x?.abbr||x?.name||'');
 const aliases={GBP:'GB',GNB:'GB',JAC:'JAX',ARZ:'ARI',TAM:'TB',NOR:'NO',SFO:'SF',KAN:'KC',WAS:'WSH',LA:'LAR'};
@@ -106,6 +106,11 @@ export function playSubject(event,rows,selected,game){
  // player on the correct offensive team, never an arbitrary first match.
  const fallback=findNamedPlayer(desc,pool,poss);
  if(fallback&&!isPick)return {player:fallback,role:'named'};
+ // For a published punt/kick with no matching directory player, retain
+ // only the actor's exact published abbreviation. Never guess a headshot.
+ const special=desc.match(/(?:^|[)\s])(?:\d{1,2}-)?([A-Z]\.[A-Za-z][A-Za-z'-]+)\s+(punts|punted|kicks|kickoff|field goal|extra point|PAT)\b/i);
+ if(special)return {player:{name:special[1].replace('.', '. '),team:poss||'',image:null,unverified:true},
+    role:/punt/i.test(special[2])?'punt':'kicking'};
  return {player:null,role:'unknown'};
 }
 function playerPortrait(event,rows,selected,game){
@@ -121,7 +126,7 @@ function playerPortrait(event,rows,selected,game){
 }
 function escColor(hex){return /^#[A-Fa-f0-9]{6}$/.test(hex)?hex:'#1a4550'}
 const score=x=>x===null||x===undefined?'—':H(x);
-const clockFmt=e=>e?(e.period?'Q'+H(e.period):'Q —')+' · '+H(e.clock||'Clock unavailable'):'PRE-GAME';
+const clockFmt=(e,g)=>gamePhase(g?.status)==='final'?'FINAL':e?(String(e.period)==='5'?'OT':e.period?'Q'+H(e.period):'Q —')+' · '+H(e.clock||'Clock unavailable'):'PRE-GAME';
 export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCount=0,activePlay=-1,followLatest=true,playerRows=[],selectedPlayer=null,source='',isLive=false}){
  const away=brand(g?.away),home=brand(g?.home),i=eventInfo(event,g),p=playerPortrait(event,playerRows,selectedPlayer,g);
  const goalX=v=>Math.round(88+v*6.04),x=goalX,down=i.down!==null?String(i.down):'—',dist=i.distance!==null?String(i.distance):'—';
@@ -148,9 +153,9 @@ export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCoun
  '<text x="390" y="65" text-anchor="middle" class="gc6-venue-title">FFO · GAMECAST STADIUM</text>'+
  scrim+togo+travel+ball+'</svg>';
  const tag=event?outcome(event):'AWAITING PLAY';
- const front='<div class="gc6-hdr"><div class="gc6-team">'+icon(away.abbr,'gc6-teamlogo')+'<div><div class="gc6-teamname">'+H(away.name)+'<small>AWAY</small></div><div class="gc6-score">'+score(g?.awayPoints)+'</div></div></div><div class="gc6-gameclock"><strong>'+clockFmt(event)+'</strong><span>'+H(i.down!==null?down+' & '+dist:(g?.status||'STATUS PENDING'))+'</span></div><div class="gc6-team"><div style="text-align:right"><div class="gc6-teamname">'+H(home.name)+'<small>HOME</small></div><div class="gc6-score">'+score(g?.homePoints)+'</div></div>'+icon(home.abbr,'gc6-teamlogo')+'</div></div>';
- const state='<div class="gc6-statebar"><span>'+ (isLive?'<i class="gc6-live-dot"></i>':'')+H(isLive?'LIVE CHECKING':String(g?.status||'GAME STATUS UNVERIFIED').toUpperCase())+'</span><span>'+H(offense?offense.abbr+' POSSESSION · '+(i.dir===1?'ATTACK →':'← ATTACK'):'POSSESSION UNVERIFIED')+'</span></div>';
- const portrait=p.src?'<img loading="lazy" src="'+H(p.src)+'" alt="'+H(p.name)+' portrait" onerror="this.parentElement.innerHTML=\'<span class=gc6-initial>—</span>\'">':'<span class="gc6-initial">'+H(p.initials)+'</span>';
+ const front='<div class="gc6-hdr"><div class="gc6-team">'+icon(away.abbr,'gc6-teamlogo')+'<div><div class="gc6-teamname">'+H(away.name)+'<small>AWAY</small></div><div class="gc6-score">'+score(g?.awayPoints)+'</div></div></div><div class="gc6-gameclock"><strong>'+clockFmt(event,g)+'</strong><span>'+H(i.down!==null?down+' & '+dist:(g?.status||'STATUS PENDING'))+'</span></div><div class="gc6-team"><div style="text-align:right"><div class="gc6-teamname">'+H(home.name)+'<small>HOME</small></div><div class="gc6-score">'+score(g?.homePoints)+'</div></div>'+icon(home.abbr,'gc6-teamlogo')+'</div></div>';
+ const state='<div class="gc6-statebar"><span>'+ (isLive?'<i class="gc6-live-dot"></i>':'')+H(isLive?'LIVE CHECKING':gameStatusLabel(g?.status))+'</span><span>'+H(offense?offense.abbr+' POSSESSION · '+(i.dir===1?'ATTACK →':'← ATTACK'):'POSSESSION UNVERIFIED')+'</span></div>';
+ const portrait=p.src?'<img loading="lazy" src="'+H(p.src)+'" data-fallback="'+H(p.initials)+'" alt="'+H(p.name)+' portrait" onerror="this.replaceWith(document.createTextNode(this.dataset.fallback))">':'<span class="gc6-initial">'+H(p.initials)+'</span>';
  const featured='<div class="gc6-feature"><div class="gc6-portrait">'+portrait+'</div><div class="gc6-feature-copy"><span class="gc6-eyebrow">'+H(event?'SELECTED PLAY · '+(offense?offense.abbr:'TEAM UNVERIFIED'):'PREGAME / NO PLAY')+'</span><h4>'+H(p.name==='Player unavailable'?(event?'Published play':'Awaiting official play data'):p.name)+'</h4><p>'+H(event?.text||'Plays appear when an authorized source publishes them. No simulated live events.')+'</p></div><span class="gc6-tag">'+H(tag)+'</span></div>';
  const specLabel=event&&i.spot!==null?'Line of scrimmage: '+H(i.side)+' '+i.yl+' · '+(i.down||'—')+' & '+(i.distance===null?'—':i.distance):'Ball position unavailable or not yet published';
  const extra='<div class="gc6-bottomline"><b>'+H(specLabel)+'</b> · '+H(source||'Source not verified')+' · schematic attack targets, not stadium paint, routes or tracking.<br>'+H(latestCheck||'Refresh not verified')+'</div>';
