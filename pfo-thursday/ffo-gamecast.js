@@ -328,6 +328,85 @@
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
  
+ function renderStatAudit(report){
+  const el=$('ffo-gc-stat-audit-results');if(!el)return;
+  const weekPanels=(report.weeks||[]).map(r=>{
+   const a=r.audit,cover=a?.positionCoverage||{};
+   const pos=['QB','RB','WR','TE','K','DEF'].map(p=>{
+    const x=cover[p]||{};
+    return p+' '+(x.records||0)+' records / '+(x.partialScoring||0)+' partial scores / '+(x.completeScoring||0)+' fully covered';
+   }).join(' · ');
+   const title=a?.supported?'MSF LOGS PARSED':r.error||'Feed schema unavailable';
+   return '<details style="border-bottom:1px solid #315069;padding:8px 0"'+
+    (a?.supported?'':' open')+'><summary style="cursor:pointer;display:flex;flex-wrap:wrap;gap:5px;justify-content:space-between"><strong>Week '+r.week+'</strong>'+
+    '<span>'+(a?safe(a.parsedCount)+' players':'No verified rows')+'</span>'+
+    '<span style="width:100%;opacity:.8">'+safe(title)+'</span></summary>'+
+    '<div class="muted" style="margin:7px 0;overflow-wrap:anywhere">Provider collection: '+safe(a?.collection||'unknown')+
+    ' · raw '+safe(a?.rawCount??'unknown')+' · matched numeric stats '+safe(a?.statsRecognized??'unknown')+
+    ' · native player IDs '+safe(a?.uniqueProviderIds??'unknown')+
+    ' · no ID '+safe(a?.missingProviderIds??'unknown')+'</div>'+
+    '<div class="muted" style="margin:7px 0;overflow-wrap:anywhere">'+safe(pos)+'</div>'+
+    '<div class="muted">All points here are evidence-limited reconstructions; this audit never publishes a final FFL player score.</div></details>';
+  }).join('');
+  const a=report.seasonAudit,lower=report.lowerBound;
+  const season=a?.supported?'MSF season rows '+a.parsedCount+
+    ' · player IDs '+a.uniqueProviderIds+' · numeric stat rows '+a.statsRecognized:
+    'Season feed not validated: '+(report.seasonError||'Unknown schema');
+  const comparison=lower?'Week 1–6 compared to season: '+lower.matchedPlayers+
+    ' provider-ID matches · '+lower.comparedCategories+
+    ' comparable cumulative categories · '+lower.overSeasonTotals+
+    ' cases where six-week logs exceed season totals':
+    'Weekly / season comparison unavailable';
+  el.innerHTML='<div style="padding:7px 0"><strong>'+safe(season)+'</strong></div>'+
+   '<div class="muted" style="overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
+   (lower?.examples?.length?'<details><summary>Investigate '+lower.examples.length+' example discrepancies</summary>'+
+    lower.examples.map(x=>'<div class="muted">'+safe(x.player)+' · '+safe(x.category)+
+      ' · 6-week subtotal '+safe(x.weekSum)+' / season '+safe(x.seasonValue)+'</div>').join('')+'</details>':'')+
+   '<p class="muted">Week 1–6 is not necessarily the entire season. Missing categories and game logs are unknown, not zero. Kicker distance bands, long-TD bonuses, defensive events and adjustments require source-specific reconciliation.</p>'+
+   weekPanels;
+ }
+ async function runStatAudit(){
+  const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
+  if(!button||button.disabled)return;
+  if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required before checking player statistics.';return;}
+  button.disabled=true;
+  const report={weeks:[],seasonAudit:null,seasonError:null,lowerBound:null};
+  let seasonPayload=null;
+  const weekPayloads=[];
+  try{
+   if(!s.ownedRules)await loadFfoRules();
+   if(indicator)indicator.textContent='Verifying MSF season totals and FFO-owned scoring rules…';
+   try{
+    const totals=await feed('stats',{season:s.season},true);
+    seasonPayload=totals.data||{};
+    report.seasonAudit=model.auditStatFeed(seasonPayload,s.ownedRules);
+   }catch(error){report.seasonError=String(error.message||error).slice(0,110);}
+   renderStatAudit(report);
+   for(let week=1;week<=6;week++){
+    if(indicator)indicator.textContent='MSF player game logs Week '+week+' of 6 · checking FFO scoring coverage…';
+    try{
+     const res=await feed('gamelogs',{season:s.season,week},true),payload=res.data||{};
+     const audit=model.auditStatFeed(payload,s.ownedRules);
+     report.weeks.push({week,audit});
+     if(audit.supported)weekPayloads.push(payload);
+    }catch(error){report.weeks.push({week,error:String(error.message||error).slice(0,100)});}
+    renderStatAudit(report);
+   }
+   if(seasonPayload&&weekPayloads.length){
+    report.lowerBound=model.auditSeasonLowerBound(weekPayloads,seasonPayload);
+   }
+   renderStatAudit(report);
+   const valid=report.weeks.filter(r=>r.audit?.supported).length;
+   const matches=report.lowerBound?.matchedPlayers??null;
+   if(indicator)indicator.textContent=valid+'/6 weekly player-log feeds parsed · '+
+     (report.seasonAudit?.supported?'MSF season totals parsed':'season totals unverified')+
+     (matches!==null?' · '+matches+' player IDs cross-referenced':'')+
+     '. No independent FFL final score certified by this diagnostic.';
+  }catch(error){
+   if(indicator)indicator.textContent='Statistics audit incomplete: '+String(error.message||error).slice(0,130);
+  }finally{button.disabled=false;}
+ }
+
  function auditWeekForGame(g){
   if(Number.isInteger(g.week))return {week:g.week,method:'provider'};
   // Calendar fallback used only to LOCATE a test game; not a claim of
@@ -593,6 +672,7 @@
  });
  document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
  $('ffo-gc-history-check')?.addEventListener('click',()=>void runHistoricalAudit());
+  $('ffo-gc-stat-audit-check')?.addEventListener('click',()=>void runStatAudit());
   void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
  if(gameActive())await refreshOverview();
