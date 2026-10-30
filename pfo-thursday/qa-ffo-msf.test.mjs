@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
 import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate} from './ffo-gamecast-model.mjs';
-import {fieldMarkup,eventInfo} from './ffo-gamecast-stadium.mjs';
+import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
 const own=JSON.parse(readFileSync(join(base,'FFO_FFL_SCORING_V1.json'),'utf8'));
@@ -98,4 +98,23 @@ test('Stadium uses verified line of scrimmage for ball position and renders late
  assert.match(rendered,/CAR POSSESSION/);
  const missing=fieldMarkup({game,event:{...event,raw:{playStatus:{quarter:3}}}});
  assert.doesNotMatch(missing,/class="gc6-ball"/);
+});
+
+test('MSF shorthand 10-J.Love resolves QB by team and 14-C.Watson resolves receiver',()=>{
+ const rows=[{id:'sleeper-love',name:'Jordan Love',team:'GB',sleeper:true},
+ {id:'sleeper-watson',name:'Christian Watson',team:'GB',sleeper:true},
+ {id:'sleeper-other',name:'Jordan Love',team:'CAR',sleeper:true}];
+ const game={home:'GB',away:'CAR'};
+ const mk=text=>({text,raw:{playStatus:{teamInPossession:{abbreviation:'GB'}}}});
+ assert.equal(playSubject(mk('(4:50) (Shotgun) 10-J.Love pass incomplete short right.'),rows,null,game).player?.id,'sleeper-love');
+ assert.equal(playSubject(mk('(4:30) (Shotgun) 10-J.Love pass to 14-C.Watson for 11 yards.'),rows,null,game).player?.id,'sleeper-watson');
+ assert.equal(playSubject(mk('(4:15) 10-J.Love pass incomplete intended for 14-C.Watson.'),rows,null,game).player?.id,'sleeper-love');
+ const rendered=fieldMarkup({game:{...game,homePoints:27,awayPoints:19,status:'LIVE'},event:mk('(4:50) (Shotgun) 10-J.Love pass incomplete short right.'),playerRows:rows});
+ assert.match(rendered,/Jordan Love/);
+ assert.match(rendered,/sleepercdn.com/);
+});
+test('GameCast polling is five seconds with a visible compact countdown',()=>{
+ assert.match(core,/LIVE_PLAY_MS=5000/);
+ assert.match(core,/data-gc6-refresh/);
+ assert.match(core,/gc6-refresh-tracker/);
 });
