@@ -346,7 +346,7 @@ export function auditTeamGameFeed(payload,team='',rules={}){
    xpMade:first(stats,['extraPoints.xpMade','extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade'])
   };
   return {team:abbr,gameId:String(x.game?.id??x.game?.gameId??''),
-   published,kickingTotals,defensiveFieldPaths:defensivelyRelevant.slice(0,24),
+   published,kickingTotals,kickingFieldPaths:all.filter(k=>/^(fieldGoals|extraPoints|kicking)\./i.test(k)).slice(0,28),defensiveFieldPaths:defensivelyRelevant.slice(0,24),
    hasNumericFields:all.length>0};
  });
  const teamFilterVerified=records.length>0&&records.every(x=>x.team===wanted);
@@ -358,6 +358,7 @@ export function auditTeamGameFeed(payload,team='',rules={}){
   observedComponents:teamFilterVerified?records.flatMap(x=>x.published):[],
   kickingReference:teamFilterVerified&&records.length===1?{gameId:records[0].gameId,
    ...records[0].kickingTotals}:null,
+  kickingFieldPaths:teamFilterVerified&&records.length===1?records[0].kickingFieldPaths:[],
   knownComponentCount:known.length,missingComponents:missing,
   // Final opponent points do not equal D/ST points allowed when there are
   // defensive, return, or other non-offensive touchdowns.
@@ -499,6 +500,60 @@ export function summarizeKickerWeeks(weekly=[],team=''){
   identityVerifiedWeeks:weeks.filter(x=>x.players?.length).length,
   weeks,players:[...playerTotals.values()].map(x=>({...x,observedSubtotal:Math.round(x.observedSubtotal*100)/100})),
   finalScoresCertified:false};
+}
+
+
+/** Match published PBP kicker actor counts to independently published team
+ * kicking counts, by week. This never certifies an FFL score. A team may have
+ * multiple kickers; avoid treating an unmatched actor as a zero. */
+export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
+ const wanted=String(team||'').toUpperCase();
+ const defenseByWeek=new Map(teamWeeks.map(x=>[x.week,x]));
+ const reconciliations=kickWeeks.map(row=>{
+  const teamRow=defenseByWeek.get(row.week);
+  const ref=teamRow?.evidence?.kickingReference||null;
+  const result={week:row.week,game:row.game||null,status:'unverified',reason:null,
+   pbpEvents:null,providerTotals:ref?{...ref}:null,observedCounts:null,
+   comparedCategories:0,disagreements:[],fullKickerScoreCertified:false};
+  if(!row.evidence){result.reason='PBP unavailable';return result}
+  const teamAudit=teamRow?.evidence;
+  if(!teamAudit?.teamFilterVerified||!ref){
+   result.reason='Independent team kicking totals unavailable';return result;
+  }
+  const actors=(row.evidence.kickers||[]).filter(x=>x.identityVerified&&String(x.playerTeam||'').toUpperCase()===wanted);
+  const unknownOpposing=(row.evidence.kickers||[]).filter(x=>!x.identityVerified||String(x.playerTeam||'').toUpperCase()!==wanted);
+  result.pbpEvents=row.evidence.candidatePlays??null;
+  result.observedCounts={fgAttempts:actors.reduce((n,x)=>n+(x.counts?.fgAttempts||0),0),
+   fgMade:actors.reduce((n,x)=>n+(x.counts?.fgMade||0),0),
+   xpAttempts:actors.reduce((n,x)=>n+(x.counts?.xpAttempts||0),0),
+   xpMade:actors.reduce((n,x)=>n+(x.counts?.xpMade||0),0)};
+  if(!actors.length){result.reason='No unique team kicker actor identified';return result}
+  if(!row.evidence?.publishedEvents?.length && !row.evidence?.candidatePlays){
+   result.reason='No licensed kick events published';return result;
+  }
+  if(unknownOpposing.length===0&&row.evidence.unattributedEvents>0){
+   result.reason='Some published kicks lack an attributed actor';return result;
+  }
+  // Even after resolving the kicking side, the source must publish actual
+  // team field-goal and point-after totals. Missing fields are unknown.
+  const keys=['fgAttempts','fgMade','xpAttempts','xpMade'];
+  const fields=keys.filter(k=>ref[k]!==null&&ref[k]!==undefined&&Number.isFinite(Number(ref[k])));
+  result.comparedCategories=fields.length;
+  for(const key of fields){
+   if(Number(ref[key])!==result.observedCounts[key])
+    result.disagreements.push({category:key,teamCount:Number(ref[key]),pbpCount:result.observedCounts[key]});
+  }
+  if(!fields.length){result.reason='MSF team kicking counts not mapped';return result}
+  if(result.disagreements.length){result.status='mismatch';result.reason='Published counts disagree';return result}
+  result.status=fields.length===keys.length?'four_counts_match':'partial_counts_match';
+  result.reason=fields.length===keys.length?'Four kicking categories reconcile; score still provisional':
+   fields.length+' of four kicking categories reconcile; other counts unknown';
+  return result;
+ });
+ return {team:wanted,weeks:reconciliations,matched:reconciliations.filter(x=>x.status==='four_counts_match').length,
+  partialMatches:reconciliations.filter(x=>x.status==='partial_counts_match').length,
+  discrepancies:reconciliations.filter(x=>x.status==='mismatch').length,
+  fullFantasyScoresCertified:false};
 }
 
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
