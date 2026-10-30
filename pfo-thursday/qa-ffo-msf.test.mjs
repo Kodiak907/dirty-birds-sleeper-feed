@@ -438,3 +438,25 @@ test('Statistics audit is private, read-only, on demand, and calls MSF not Sleep
  assert.match(core,/No independent FFL final score certified/);
  assert.doesNotMatch(core,/feed\('sleeperPoints'/);
 });
+
+test('MSF stats route supports validated team filter and isolated size errors',()=>{
+ assert.match(worker,/const FFO_NFL_TEAMS=new Set/);
+ assert.match(worker,/function ffoTeamFilter\(params\)/);
+ assert.match(worker,/throw Error\('invalid_team_filter'\)/);
+ assert.match(worker,/if\(route==='stats'\)return .*ffoTeamFilter\(params\)/);
+ assert.match(worker,/if\(route==='gamelogs'\)[\s\S]*?ffoTeamFilter\(params\)/);
+ assert.match(worker,/provider_payload_exceeds_limit/);
+ assert.match(worker,/provider_json_invalid/);
+ assert.match(worker,/provider_body_read_failed/);
+ assert.doesNotMatch(worker,/provider_payload_invalid_or_too_large/);
+});
+test('Team-scoped FFO stat audit rejects ignored MSF team filter',()=>{
+ const index=readFileSync(join(base,'index.html'),'utf8');
+ assert.match(index,/id="ffo-gc-stat-audit-team"/);
+ assert.match(core,/const team=String\(\$\('ffo-gc-stat-audit-team'\)/);
+ assert.match(core,/feed\('stats',\{season:s.season,team\},true\)/);
+ assert.match(core,/feed\('gamelogs',\{season:s.season,week,team\},true\)/);
+ assert.match(core,/rows\.length>0&&rows\.every\(r=>r\.team===team\)/);
+ assert.match(core,/report\.seasonFilterVerified/);
+ assert.match(core,/No independent FFL final score certified/);
+});
