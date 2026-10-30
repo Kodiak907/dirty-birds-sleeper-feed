@@ -242,11 +242,15 @@
     quarter:event?.period??null,clock:event?.clock??null};
  }
 
- function drawField(){
+ function portraitDirectory(){
+   const names=typeof pfo49Dir==='function'?pfo49Dir():[];
+   return [...names.map(p=>({...p,sleeper:true})),...s.playerRows];
+  }
+  function drawField(){
   const el=$('ffo-gc-gameview');
   const g=s.games.find(x=>x.id===s.game)||null;
   const event=s.playCache[s.activePlay]||null;
-  const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:s.playerRows,selectedPlayer:s.player,source:s.playSource,isLive:s.game&&/in.progress|in progress|live|half.time|halftime/i.test(String(g?.status||''))};
+  const input={game:g,event,embedded:false,latestCheck:s.latestCheck,playCount:s.playCache.length,activePlay:s.activePlay,followLatest:s.followLatest!==false,playerRows:portraitDirectory(),selectedPlayer:s.player,source:s.playSource,isLive:s.game&&/in.progress|in progress|live|half.time|halftime/i.test(String(g?.status||''))};
   if(el){
    const currentPlayId=event?.id||null;
    const switched=lastStadiumGameId!==s.game;
@@ -284,7 +288,7 @@
   const selected=s.playCache.map((event,i)=>({event,i})).filter(({event})=>s.playFilter==='scoring'?isScoring(event):s.playFilter==='player'?matching(event):true);
   const limit=Math.max(60,Number(s.visiblePlays||60)),show=selected.slice(-limit).reverse();
   el.innerHTML='<div class="gc6-feedtitle"><h3>'+safe(s.playFilter==='player'?(s.player?.name||'Player')+' · ':'')+(s.playSource?.includes('scoring plays only')?'Scoring plays (partial)':'Live & historical play-by-play')+'</h3><small>'+selected.length+' of '+s.playCache.length+' published plays</small></div>'+
-  (show.length?show.map(({event,i})=>stadium.playRow(event,i,s.activePlay===i,s.games.find(g=>g.id===s.game),s.playSource,s.playerRows,s.player)).join(''):'<p class="gc6-quiet">No matching plays in the published subset. This does not prove zero involvement.</p>');
+  (show.length?show.map(({event,i})=>stadium.playRow(event,i,s.activePlay===i,s.games.find(g=>g.id===s.game),s.playSource,portraitDirectory(),s.player)).join(''):'<p class="gc6-quiet">No matching plays in the published subset. This does not prove zero involvement.</p>');
   if(selected.length>show.length){
     const more=document.createElement('button');more.type='button';more.className='ffo-gc-refresh';
     more.textContent='Show '+Math.min(40,selected.length-show.length)+' earlier plays';
