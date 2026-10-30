@@ -431,7 +431,7 @@
      const teamFilterVerified=rows.length>0&&rows.every(r=>r.team===team);
      report.weeks.push({week,audit,teamFilterVerified,
       error:teamFilterVerified?null:'MSF player/team identity was not verified'});
-     if(audit.supported&&teamFilterVerified)goodWeeks.push(payload);
+     if(audit.supported&&teamFilterVerified)goodWeeks.push({week,payload});
     }catch(error){report.weeks.push({week,error:String(error.message||error).slice(0,220)})}
     renderStatAudit(report);
     if(week<6)await auditPause(1600);
@@ -448,7 +448,7 @@
    }catch(error){report.seasonError=String(error.message||error).slice(0,220)}
    if(goodWeeks.length)report.scoringEvidence=model.scoringEvidence(goodWeeks,s.ownedRules,team);
    if(report.seasonFilterVerified&&goodWeeks.length)
-    report.lowerBound=model.auditSeasonLowerBound(goodWeeks,seasonPayload);
+    report.lowerBound=model.auditSeasonLowerBound(goodWeeks.map(x=>x.payload),seasonPayload);
    renderStatAudit(report);
    const valid=report.weeks.filter(r=>r.audit?.supported&&r.teamFilterVerified).length;
    if(indicator)indicator.textContent=team+' · '+valid+'/6 weeks parsed · '+
