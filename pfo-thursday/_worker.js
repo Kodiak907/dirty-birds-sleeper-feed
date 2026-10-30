@@ -876,7 +876,14 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  try {resp=await transport(MSF_ROOT+path,{method:'GET',headers:{authorization:env.MSF_API_KEY?'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'):'Service-Binding',accept:'application/json'},redirect:'manual',signal:controller.signal});}
  catch {return ffoReply({source:'MySportsFeeds',route,error:'provider_unreachable',checked_at:now()},502)}
  finally{clearTimeout(timer)}
- const meta={source:'MySportsFeeds',feed:route,checked_at:now(),provider_http_status:resp.status,provisional:true,live_delay_verified:false,licensed:true};
+ const viaBinding=!!env.GAMECAST_INTERNAL;
+ const meta={source:'MySportsFeeds',feed:route,checked_at:now(),
+  // The service binding may itself return HTTP 502 while hiding the real MSF HTTP status.
+  // Preserve this legacy field for existing consumers, but explicitly label the layer.
+  provider_http_status:resp.status,provider_status_direct:!viaBinding,
+  transport:viaBinding?'legacy_gamecast_service_binding':'direct_msf',
+  binding_http_status:viaBinding?resp.status:null,
+  provisional:true,live_delay_verified:false,licensed:true};
  if(resp.status===204||resp.status===304)return ffoReply({...meta,available:false,reason:resp.status===304?'provider_not_modified':'feed_not_ready'});
  if((resp.status===403||resp.status===404)&&route==='plays'){
    // This subscription does not currently authorize the full PBP feed.
@@ -896,9 +903,29 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
      }
    }catch{/* A missing partial-scoring feed is never represented as zero plays. */}
  }
- if(resp.status===401||resp.status===403)return ffoReply({...meta,error:'provider_auth_or_entitlement_denied'},502);
- if(resp.status===404)return ffoReply({...meta,error:'provider_feed_not_found'},502);
- if(!resp.ok)return ffoReply({...meta,error:'provider_upstream_error'},502);
+ // Recover only recognized, non-sensitive diagnostic metadata from the legacy
+ // Worker; never return provider response bodies, authorization or request headers.
+ if(!resp.ok){
+  let inner=null;
+  const declared=Number(resp.headers.get('content-length')||0);
+  if(viaBinding&&declared>0&&declared<=8192&&String(resp.headers.get('content-type')||'').includes('application/json')){
+   try{inner=await resp.json()}catch{}
+  }
+  const innerStatus=Number(inner?.provider_http_status);
+  const verifiedInnerStatus=viaBinding&&Number.isInteger(innerStatus)&&innerStatus>=100&&innerStatus<=599?innerStatus:null;
+  const innerError=String(inner?.error||'').slice(0,80);
+  const safeInnerError=/^[a-z0-9_-]{1,80}$/i.test(innerError)?innerError:null;
+  const code=resp.status===429?'provider_rate_limited':
+   resp.status===400?'provider_request_rejected':
+   resp.status===401||resp.status===403?'provider_auth_or_entitlement_denied':
+   resp.status===404?'provider_feed_not_found':
+   resp.status>=500?'provider_gateway_or_server_error':'provider_upstream_error';
+  return ffoReply({...meta,error:code,
+   // Status from the binding is diagnostic, not asserted as a direct MSF response.
+   upstream_layer:viaBinding?'legacy_gamecast_worker':'mysportsfeeds',
+   msf_http_status_via_binding:verifiedInnerStatus,
+   inner_gateway_error:safeInnerError},502);
+ }
  const len=Number(resp.headers.get('content-length')||0);
  const MAX_PROVIDER_BYTES=4_000_000;
  if(len>MAX_PROVIDER_BYTES)return ffoReply({...meta,error:'provider_payload_exceeds_limit',
