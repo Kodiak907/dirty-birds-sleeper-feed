@@ -93,7 +93,7 @@ test('GameCast live UI consumes MSF boxscore score, refreshes play and animates 
   await page.route('https://pfo.test/**',async route=>{
    const u=new URL(route.request().url()),path=u.pathname;
    if(path==='/')return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><nav><button data-page="gamecast" class="active">GameCast</button></nav><div id="ffo-gc-status"></div><div id="ffo-gc-games"></div><div id="ffo-gc-gameview"></div><div id="ffo-gc-playfeed"></div><div id="ffo-gc-player-field"></div><button id="ffo-gc-refresh">Refresh</button></body></html>'});
-   if(path==='/ffo-gamecast.js'||path==='/ffo-gamecast-model.mjs'||path==='/ffo-gamecast-stadium.mjs')return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
+   if(path==='/ffo-gamecast.js'||path==='/ffo-gamecast-model.mjs'||path==='/ffo-gamecast-stadium.mjs'||path==='/ffo-gamecast-timing.mjs')return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
    if(path==='/ffo-gamecast-stadium.css')return route.fulfill({contentType:'text/css',body:file(path.slice(1))});
    if(path==='/FFO_FFL_SCORING_V1.json')return route.fulfill({contentType:'application/json',body:file('FFO_FFL_SCORING_V1.json')});
    if(path==='/api/ffo/gamecast/health')return route.fulfill({json:{ready:true,checked_at:new Date().toISOString()}});
@@ -119,6 +119,7 @@ test('GameCast live UI consumes MSF boxscore score, refreshes play and animates 
   stage=1;
   await page.locator('#ffo-gc-refresh').click();
   await page.waitForFunction(()=>window.ffoGameCast?.getStatus()?.playCount===2,{timeout:10000});
+  await page.waitForFunction(()=>[...document.querySelectorAll('#ffo-gc-gameview .gc6-score')].map(x=>x.textContent).join(',')==='10,10',{timeout:10000});
   const after=await page.evaluate(()=>({scores:[...document.querySelectorAll('#ffo-gc-gameview .gc6-score')].map(x=>x.textContent),ball:document.querySelector('#ffo-gc-gameview .gc6-ball')?.getAttribute('data-source-spot'),animations:window.__ballAnimateCount,health:window.ffoGameCast?.getStatus()}));
   assert.deepEqual(after.scores,['10','10']);
   assert.equal(after.ball,'47');
