@@ -129,7 +129,7 @@ test('Live GameCast uses MSF v2.1 2026-regular route and original secret stays s
  assert.match(gamecast,/setInterval\(\(\)=>\{[\s\S]*?activeRefreshMs\(\)/);
  assert.match(gamecast,/document\.addEventListener\('visibilitychange'/);
  assert.match(gamecast,/consecutivePlayFailures/);
- assert.match(gamecast,/name==='plays'\|\|name==='boxscore'\?9000:12500/);
+ assert.match(gamecast,/name==='plays'\|\|name==='boxscore'\?9000:name==='stats'\|\|name==='gamelogs'\?26000:12500/);
  assert.match(worker,/env\.GAMECAST_INTERNAL\.fetch\(new Request\(upstream,\{method:'GET'\}\)\)/);
  assert.doesNotMatch(gamecast,/env\.(MSF_API_KEY|FFOI_MSF_API_KEY)|Basic\s*\+\s*btoa/);
 });
