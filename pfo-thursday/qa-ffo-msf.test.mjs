@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -380,4 +380,61 @@ test('GameCast historical cards are compact on iPhone and show OT exception dist
  assert.match(core,/const ok=a\.usablePlaySequence&&a\.clockCoverage!=='incomplete'/);
  assert.match(core,/Published plays/);
  assert.match(core,/full-play completeness/i);
+});
+
+test('MSF gamelogs response schema is parsed, not silently treated as an empty feed',()=>{
+ const payload={gamelogs:[{player:{id:11,fullName:'FFO Test Receiver',primaryPosition:'WR'},
+   team:{abbreviation:'GB'},game:{id:'G1'},stats:{receiving:{receptions:5,recYards:100,recTD:1}}}]};
+ assert.deepEqual(playerFeedShape(payload),{collection:'gamelogs',rawCount:1});
+ const rows=playerRows(payload);
+ assert.equal(rows.length,1);
+ assert.equal(rows[0].id,'11');
+ assert.equal(rows[0].team,'GB');
+ assert.equal(rows[0].position,'WR');
+ const audit=auditStatFeed(payload,own.scoring);
+ assert.equal(audit.supported,true);
+ assert.equal(audit.parsedCount,1);
+ assert.equal(audit.positionCoverage.WR.records,1);
+ assert.equal(audit.positionCoverage.WR.partialScoring,1);
+ assert.equal(audit.positionCoverage.WR.completeScoring,0);
+ assert.equal(audit.scoringCertified,false);
+});
+test('MSF season totals parsed with native provider IDs; unavailable stats remain unknown',()=>{
+ const totals={playerStatsTotals:[{player:{id:17,fullName:'FFO Test QB',primaryPosition:'QB'},
+  team:{abbreviation:'CAR'},stats:{passing:{passYards:200,passTD:2}}}]};
+ const a=auditStatFeed(totals,own.scoring);
+ assert.equal(a.supported,true);assert.equal(a.collection,'playerStatsTotals');
+ assert.equal(a.uniqueProviderIds,1);assert.equal(a.statsRecognized,1);
+ assert.equal(a.positionCoverage.QB.partialScoring,1);
+ assert.ok(a.positionCoverage.QB.missingCategories.length);
+ assert.equal(a.scoringCertified,false);
+ assert.equal(auditStatFeed({gamelogs:[]},own.scoring).supported,false);
+});
+test('Six-week log totals are compared only by matching native player IDs and observed categories',()=>{
+ const season={playerStatsTotals:[{player:{id:11,fullName:'FFO Test Receiver',primaryPosition:'WR'},
+  team:{abbreviation:'GB'},stats:{receiving:{receptions:10,recYards:190,recTD:2}}}]};
+ const logs=[{gamelogs:[{player:{id:11,fullName:'FFO Test Receiver'},team:{abbreviation:'GB'},
+  game:{id:'G1'},stats:{receiving:{receptions:4,recYards:80,recTD:1}}}]},
+  {gamelogs:[{player:{id:11,fullName:'FFO Test Receiver'},team:{abbreviation:'GB'},
+  game:{id:'G2'},stats:{receiving:{receptions:6,recYards:110,recTD:1}}}]}];
+ const a=auditSeasonLowerBound(logs,season);
+ assert.equal(a.matchedPlayers,1);
+ assert.equal(a.overSeasonTotals,0);
+ assert.ok(a.comparedCategories>=3);
+ assert.equal(a.certifiedSeasonReconciliation,false);
+ const wrong={playerStatsTotals:[{player:{id:11,fullName:'FFO Test Receiver'},
+  stats:{receiving:{receptions:9,recYards:190,recTD:2}}}]};
+ const b=auditSeasonLowerBound(logs,wrong);
+ assert.equal(b.overSeasonTotals,1);
+ assert.equal(b.examples[0].category,'rec');
+});
+test('Statistics audit is private, read-only, on demand, and calls MSF not Sleeper for points',()=>{
+ const index=readFileSync(join(base,'index.html'),'utf8');
+ assert.match(index,/id="ffo-gc-stat-audit-check"/);
+ assert.match(core,/runStatAudit/);
+ assert.match(core,/feed\('gamelogs',\{season:s.season,week\},true\)/);
+ assert.match(core,/feed\('stats',\{season:s.season\},true\)/);
+ assert.match(core,/auditSeasonLowerBound/);
+ assert.match(core,/No independent FFL final score certified/);
+ assert.doesNotMatch(core,/feed\('sleeperPoints'/);
 });
