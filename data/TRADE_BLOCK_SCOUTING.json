@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-30T15:51:53.314057+00:00",
-  "source_snapshot_utc": "2026-10-30T15:51:44.287455+00:00",
+  "generated_at_utc": "2026-10-30T16:48:39.943589+00:00",
+  "source_snapshot_utc": "2026-10-30T16:48:30.814062+00:00",
   "source_market_as_of": "2026-10-30T15:08:13.796436+00:00",
   "source_projection_as_of": "2026-10-30T13:36:50.272246+00:00",
   "focus_assets": [
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 27864,
-  "market_screened": 8301,
+  "market_screened": 8342,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -199,7 +199,7 @@
           "opponent_roster_id": 7,
           "opponent": "JA’MARRTRIX",
           "our_lineup_delta_ppg": 0.72,
-          "their_lineup_delta_ppg": 0.31,
+          "their_lineup_delta_ppg": 0.03,
           "value_paid_received_ratio": 0.9,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -229,16 +229,16 @@
               "position": "TE"
             },
             {
-              "id": "11610",
-              "name": "Malik Washington",
-              "position": "WR"
+              "id": "13287",
+              "name": "Jeremiyah Love",
+              "position": "RB"
             }
           ],
           "opponent_roster_id": 7,
           "opponent": "JA’MARRTRIX",
           "our_lineup_delta_ppg": 0.72,
-          "their_lineup_delta_ppg": 0.31,
-          "value_paid_received_ratio": 0.94,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 0.85,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",

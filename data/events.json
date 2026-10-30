@@ -9215,5 +9215,61 @@
       "waiver_budget": []
     },
     "transaction_id": "1421178008932188160"
+  },
+  {
+    "added": [
+      "13287"
+    ],
+    "detected_at_utc": "2026-10-30T16:48:30.814062+00:00",
+    "dropped": [
+      "12506"
+    ],
+    "kind": "roster_change",
+    "roster_id": 7
+  },
+  {
+    "added": [
+      "12506"
+    ],
+    "detected_at_utc": "2026-10-30T16:48:30.814062+00:00",
+    "dropped": [
+      "13287"
+    ],
+    "kind": "roster_change",
+    "roster_id": 12
+  },
+  {
+    "detected_at_utc": "2026-10-30T16:48:30.814062+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "12506": 12,
+        "13287": 7
+      },
+      "consenter_ids": [
+        7,
+        12
+      ],
+      "created": 1793223262164,
+      "creator": "1399626237600624640",
+      "draft_picks": [],
+      "drops": {
+        "12506": 7,
+        "13287": 12
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        7,
+        12
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793376399480,
+      "transaction_id": "1421285011176292352",
+      "type": "trade",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421285011176292352"
   }
 ]

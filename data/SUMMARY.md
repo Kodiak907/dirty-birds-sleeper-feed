@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-30T15:51:44.287455+00:00
+Updated: 2026-10-30T16:48:30.814062+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,7 +19,9 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 7: added Jeremiyah Love; dropped Harold Fannin Jr.
+- Roster 12: added Harold Fannin Jr.; dropped Jeremiyah Love
+- Transaction 1421285011176292352: trade / complete / rosters [7, 12] / adds {'12506': 12, '13287': 7} / drops {'12506': 7, '13287': 12} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
