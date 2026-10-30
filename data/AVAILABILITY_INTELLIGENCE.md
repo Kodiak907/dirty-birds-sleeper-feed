@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-30T11:40:30.204566+00:00
-Sleeper snapshot: 2026-10-30T11:40:20.501285+00:00
-nflverse observations: 2026-10-30T11:40:23.740893+00:00; injury feed loaded: True
+Generated: 2026-10-30T12:53:47.623691+00:00
+Sleeper snapshot: 2026-10-30T12:53:38.204707+00:00
+nflverse observations: 2026-10-30T12:53:42.331671+00:00; injury feed loaded: True
 
-**New observed changes:** 7. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,13 +31,8 @@ nflverse observations: 2026-10-30T11:40:23.740893+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Bryce Young** (snap_share_change): Snap share rose 23.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Christian Watson** (snap_share_change): Snap share fell 32.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Chuba Hubbard** (snap_share_change): Snap share rose 31.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Darren Waller** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jalen Coker** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **MarShawn Lloyd** (snap_share_change): Snap share fell 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Tetairoa McMillan** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
