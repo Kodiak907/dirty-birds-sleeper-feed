@@ -1,0 +1,56 @@
+name: PFO GameCast 5-second Access-protected Preview only
+on:
+  push:
+    branches:
+      - pfo-gamecast-fast-5s-20261029
+    paths:
+      - '.github/workflows/pfo-gamecast-fast-preview-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy-preview:
+    if: github.ref == 'refs/heads/pfo-gamecast-fast-5s-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate live timing, correct play subject and existing PFO regression
+        run: |
+          set -euo pipefail
+          node --test pfo-thursday/qa-fast-gamecast.test.mjs pfo-thursday/qa-gamecast-subject.test.mjs pfo-thursday/qa-598.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-596.test.mjs
+          node --check pfo-thursday/ffo-gamecast.js
+          node --check pfo-thursday/ffo-gamecast-timing.mjs
+          node --check pfo-thursday/ffo-gamecast-stadium.mjs
+          cp pfo-thursday/_worker.js /tmp/pfo-fast-worker.mjs
+          node --check /tmp/pfo-fast-worker.mjs
+      - name: Assemble PFO preview, never build the FFOI repo or production
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-preview"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) ! -name 'qa-*' -exec cp {} "$RUNNER_TEMP/pfo-preview/" \;
+          test -s "$RUNNER_TEMP/pfo-preview/index.html"
+          test -s "$RUNNER_TEMP/pfo-preview/_worker.js"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-gamecast-timing.mjs"
+          test -s "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
+      - name: Require scoped Pages deployment token
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Cloudflare Pages deployment token missing; no deployment performed"
+            exit 1
+          fi
+      - name: Deploy to a NEW Preview branch only; never main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-gamecast-fast-5s-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO 5s MSF live GameCast, source clock and verified play subject - Preview ONLY"
+          echo "Preview deployed on new branch; production and Commissioner storage untouched."
