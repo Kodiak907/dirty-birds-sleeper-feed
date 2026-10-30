@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-30T19:46:58.166125+00:00
-Sleeper snapshot: 2026-10-30T19:46:48.030821+00:00
-nflverse observations: 2026-10-30T19:46:51.976886+00:00; injury feed loaded: True
+Generated: 2026-10-30T20:40:20.596938+00:00
+Sleeper snapshot: 2026-10-30T20:40:11.135556+00:00
+nflverse observations: 2026-10-30T20:40:14.302553+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
