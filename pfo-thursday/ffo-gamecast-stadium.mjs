@@ -138,7 +138,7 @@ export function fieldMarkup({game:g,event,embedded=false,latestCheck='',playCoun
  return '<div class="gc6-shell">'+front+state+'<div class="gc6-stadium">'+field+'<div class="gc6-attack"><span>← '+H(home.abbr)+' SCORING TARGET</span><span>'+H(away.abbr)+' SCORING TARGET →</span></div></div>'+featured+control+extra+'</div>';
 }
 export function playRow(event,index,selected,game,source,playerRows,selectedPlayer){
- const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer,g);
+ const info=eventInfo(event,game),team=info.offense?brand(info.offense):null,p=playerPortrait(event,playerRows,selectedPlayer,game);
  const big=highlight(event);
  const badge=outcome(event);
  const desc=String(event.text||'');
