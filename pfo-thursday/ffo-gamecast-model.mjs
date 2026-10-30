@@ -314,7 +314,7 @@ export function statFieldPaths(source,{maxDepth=4,limit=48}={}){
  return [...new Set(out)].slice(0,limit);
 }
 /** A D/ST is a team, not a player. Verify access to team gamelogs separately. */
-export function auditTeamGameFeed(payload,team=''){
+export function auditTeamGameFeed(payload,team='',rules={}){
  const candidates=[
   ['teamgamelogs',payload?.teamgamelogs],
   ['teamGameLogs',payload?.teamGameLogs],
@@ -324,20 +324,63 @@ export function auditTeamGameFeed(payload,team=''){
  ];
  const [collection,rows]=candidates.find(x=>Array.isArray(x[1]))||['unrecognized',[]];
  const wanted=String(team||'').toUpperCase();
+ const components=[
+  {key:'sack',label:'Defensive sacks',paths:['tackles.sacks','defense.sacks']},
+  {key:'int',label:'Defensive interceptions',paths:['interceptions.interceptions','defense.interceptions']}
+ ];
  const records=rows.map(x=>{
   const o=x.team||x.teamInfo||{},abbr=String(o.abbreviation||o.abbr||x.teamAbbreviation||'').toUpperCase();
   const stats=x.stats||x.teamStats||{};
+  const all=statFieldPaths(stats,{limit:120});
+  const defensivelyRelevant=all.filter(k=>/^(tackles|interceptions|fumbles|kickoffReturns|puntReturns|defense)\./i.test(k));
+  const published=components.map(c=>{
+   const value=first(stats,c.paths);
+   return {category:c.key,label:c.label,value,weight:Number(rules[c.key]||0),
+    points:value!==null?Math.round(value*Number(rules[c.key]||0)*100)/100:null};
+  });
   return {team:abbr,gameId:String(x.game?.id??x.game?.gameId??''),
-   fields:statFieldPaths(stats,{limit:60}),hasNumericFields:statFieldPaths(stats,{limit:1}).length>0};
+   published,defensiveFieldPaths:defensivelyRelevant.slice(0,24),
+   hasNumericFields:all.length>0};
  });
  const teamFilterVerified=records.length>0&&records.every(x=>x.team===wanted);
+ const known=teamFilterVerified?records.flatMap(x=>x.published).filter(x=>x.value!==null):[];
+ const missing=components.filter(c=>!known.some(x=>x.category===c.key)).map(x=>x.label);
  return {collection,rawCount:rows.length,team:wanted,teamFilterVerified,
   records:records.length,numericRecords:records.filter(x=>x.hasNumericFields).length,
-  exampleFieldPaths:[...new Set(records.flatMap(x=>x.fields))].slice(0,48),
-  // Team logs do not themselves provide opponent scoring corrections,
-  // kick return touchdown allocation or final D/ST fantasy points.
+  exampleFieldPaths:[...new Set(records.flatMap(x=>x.defensiveFieldPaths))].slice(0,24),
+  observedComponents:teamFilterVerified?records.flatMap(x=>x.published):[],
+  knownComponentCount:known.length,missingComponents:missing,
+  // Final opponent points do not equal D/ST points allowed when there are
+  // defensive, return, or other non-offensive touchdowns.
   dstScoreCertified:false};
 }
+/** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
+ * Do not infer player credit or successful kicks from unsupported text. */
+export function kickingPlayEvidence(payload){
+ const events=sourcePlayRows(payload).map((x,i)=>{
+  const description=String(x?.description||x?.playDescription||x?.text||'').trim();
+  if(!description)return null;
+  const fg=/\bfield[\s-]?goal\b|\bFG (?:attempt|kick|is good|is no good)\b/i.test(description);
+  const xp=/\bextra[\s-]?point\b|\bPAT (?:attempt|kick|is good|is no good)\b/i.test(description);
+  if(!fg&&!xp)return null;
+  // PBP mentions blocked kicks or attempts in many spellings. Keep status
+  // tentative unless an unambiguous phrase actually appears in the play.
+  const made=/\b(?:is good|was good|good!|kick good|successful|made)\b/i.test(description);
+  const failed=/\b(?:no good|missed|blocked|wide (?:left|right)|unsuccessful)\b/i.test(description);
+  const distance=fg?(description.match(/\b(\d{1,2})[\s-]?yard(?:s)?\s+(?:field[\s-]?goal|FG)\b/i)||
+   description.match(/\b(?:field[\s-]?goal|FG)\s+(?:attempt\s+)?(?:of\s+|from\s+)?(\d{1,2})[\s-]?yards?\b/i))?.[1]:null;
+  const quarter=Number(x?.playStatus?.quarter??x?.quarter);
+  return {index:i,kind:fg?'FG':'XP',quarter:Number.isInteger(quarter)?quarter:null,
+   distance:distance!==undefined&&distance!==null?Number(distance):null,
+   publishedOutcome:made!==failed?(made?'reported_good':'reported_missed'):'unverified',
+   description:description.slice(0,180)};
+ }).filter(Boolean);
+ return {candidatePlays:events.length,fgCandidates:events.filter(x=>x.kind==='FG').length,
+  xpCandidates:events.filter(x=>x.kind==='XP').length,
+  publishedEvents:events.slice(0,18),kickingFantasyScoreCertified:false,
+  note:'MSF published PBP only. Game completeness, individual kicker attribution, distances and corrections must be cross-verified.'};
+}
+
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
  for(const [index,entry] of weeklyPayloads.entries()){
