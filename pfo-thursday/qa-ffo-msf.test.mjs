@@ -577,7 +577,8 @@ test('Player audit reports special-teams source gaps and team-gamelog endpoint s
  assert.match(core,/auditedStatRequest\('teamgamelogs',\{season:s.season,week:1,team\}/);
  assert.match(core,/model\.auditTeamGameFeed/);
  assert.match(core,/observedRawFieldPaths/);
- assert.match(core,/D\/ST is a team, not a player/);
+ assert.match(core,/D\/ST source evidence/);
+ assert.match(core,/No final D\/ST fantasy score is certified/);
  assert.doesNotMatch(core,/D\/ST.*0\.0 points/);
 });
 
