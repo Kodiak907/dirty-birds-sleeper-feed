@@ -52,7 +52,7 @@ function findNamedPlayer(fragment,rows,team){
  const choices=candidates.filter(p=>cleanSubject(p.name).length===max);
  const dedup=new Map();
  for(const p of choices){const key=cleanSubject(p.name)+'|'+abbrev(p.team);
-   if(!dedup.has(key)||p.sleeper&&!dedup.get(key).sleeper)dedup.set(key,p);
+   if(!dedup.has(key)||p.image&&!dedup.get(key).image||p.raw?.player&&!dedup.get(key).raw?.player)dedup.set(key,p);
  }
  return dedup.size===1?[...dedup.values()][0]:null;
 }
@@ -90,7 +90,7 @@ export function playSubject(event,rows,selected,game){
 function playerPortrait(event,rows,selected,game){
  const resolved=playSubject(event,rows,selected,game),p=resolved.player;
  const raw=p?.raw?.player||p?.raw?.playerInfo||p||{};
- let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl']));
+ let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl'])||p?.image);
  if(!src&&p?.sleeper&&/^[0-9]{1,9}$/.test(String(p.id||'')))src='https://sleepercdn.com/content/nfl/players/thumb/'+p.id+'.jpg';
  if(!src&&p?.name&&selected?.name&&cleanSubject(p.name)===cleanSubject(selected.name)&&abbrev(p.team)===abbrev(selected.team)){
    const id=String(selected.id||'');if(/^[0-9]{1,9}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
