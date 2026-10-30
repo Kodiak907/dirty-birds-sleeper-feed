@@ -22,7 +22,7 @@
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
 `;document.head.append(polish);
 
- const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-'+(n+1)+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
+ const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
@@ -375,5 +375,5 @@
    if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
   },20000);
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},180000);
- window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
+ window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,gameFeedError:s.lastError||null,pollIntervalMs:20000,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
