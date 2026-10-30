@@ -773,6 +773,8 @@ export default {async fetch(request,env){const url=new URL(request.url);if(!url.
 const MSF_ROOT='https://api.mysportsfeeds.com/v2.1/pull/nfl';
 const FFO_SEASON=/^(latest|current|20\d{2}-(regular|preseason|playoff)|20\d{2}-20\d{2}-(regular|preseason|playoff))$/;
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
+const FFO_NFL_TEAMS=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WSH'.split(' '));
+function ffoTeamFilter(params){const raw=params.get('team');if(raw===null)return '';const team=raw.toUpperCase();if(!FFO_NFL_TEAMS.has(team))throw Error('invalid_team_filter');return '?team='+encodeURIComponent(team)}
 const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
 function ffoBuildPath(route,params){
@@ -782,12 +784,12 @@ function ffoBuildPath(route,params){
  if(route==='injuries')return '/injuries.json';
  if(route==='health')throw Error('health_is_local');
  if(route==='schedule')return `/${season}/games.json`;
- if(route==='stats')return `/${season}/player_stats_totals.json`;
+ if(route==='stats')return `/${season}/player_stats_totals.json`+ffoTeamFilter(params);
  if(route==='updates')return `/${season}/latest_updates.json`;
  if(route==='gamelogs'){
    const week=Number(params.get('week'));
    if(!Number.isInteger(week)||week<1||week>18)throw Error('week_required_1_to_18');
-   return `/${season}/week/${week}/player_gamelogs.json`;
+   return `/${season}/week/${week}/player_gamelogs.json`+ffoTeamFilter(params);
  }
  const game=params.get('game_id')||'';
  if(!FFO_GAME.test(game))throw Error('invalid_game_id');
@@ -898,10 +900,17 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  if(resp.status===404)return ffoReply({...meta,error:'provider_feed_not_found'},502);
  if(!resp.ok)return ffoReply({...meta,error:'provider_upstream_error'},502);
  const len=Number(resp.headers.get('content-length')||0);
- if(len>4_000_000)return ffoReply({...meta,error:'provider_payload_exceeds_limit'},502);
+ const MAX_PROVIDER_BYTES=4_000_000;
+ if(len>MAX_PROVIDER_BYTES)return ffoReply({...meta,error:'provider_payload_exceeds_limit',
+  limit_bytes:MAX_PROVIDER_BYTES,reported_content_length_bytes:len,
+  suggestion:'Use a validated team filter for large season/statistics feeds'},502);
  let str,payload;
- try{str=await resp.text();if(str.length>4_000_000)throw Error('too_large');payload=JSON.parse(str);if(!payload||typeof payload!=='object')throw Error('bad_payload');}
- catch{return ffoReply({...meta,error:'provider_payload_invalid_or_too_large'},502)}
+ try{str=await resp.text()}catch{return ffoReply({...meta,error:'provider_body_read_failed'},502)}
+ if(str.length>MAX_PROVIDER_BYTES)return ffoReply({...meta,error:'provider_payload_exceeds_limit',
+   limit_bytes:MAX_PROVIDER_BYTES,received_characters:str.length,
+   suggestion:'Use a validated team filter for large season/statistics feeds'},502);
+ try{payload=JSON.parse(str)}catch{return ffoReply({...meta,error:'provider_json_invalid'},502)}
+ if(!payload||typeof payload!=='object')return ffoReply({...meta,error:'provider_payload_schema_invalid'},502);
  return ffoReply({...meta,available:true,unverified_schema:true,
   provider_updated_at:payload.lastUpdatedOn||payload.gameboxscore?.lastUpdatedOn||payload.gameplaybyplay?.lastUpdatedOn||payload.gamePlayByPlay?.lastUpdatedOn||null,
   data:payload});
