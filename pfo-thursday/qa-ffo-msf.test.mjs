@@ -101,14 +101,14 @@ test('Stadium uses verified line of scrimmage for ball position and renders late
 });
 
 test('MSF shorthand 10-J.Love resolves QB by team and 14-C.Watson resolves receiver',()=>{
- const rows=[{id:'sleeper-love',name:'Jordan Love',team:'GB',sleeper:true},
- {id:'sleeper-watson',name:'Christian Watson',team:'GB',sleeper:true},
- {id:'sleeper-other',name:'Jordan Love',team:'CAR',sleeper:true}];
+ const rows=[{id:'1136',name:'Jordan Love',team:'GB',sleeper:true},
+ {id:'7562',name:'Christian Watson',team:'GB',sleeper:true},
+ {id:'2244',name:'Jordan Love',team:'CAR',sleeper:true}];
  const game={home:'GB',away:'CAR'};
  const mk=text=>({text,raw:{playStatus:{teamInPossession:{abbreviation:'GB'}}}});
- assert.equal(playSubject(mk('(4:50) (Shotgun) 10-J.Love pass incomplete short right.'),rows,null,game).player?.id,'sleeper-love');
- assert.equal(playSubject(mk('(4:30) (Shotgun) 10-J.Love pass to 14-C.Watson for 11 yards.'),rows,null,game).player?.id,'sleeper-watson');
- assert.equal(playSubject(mk('(4:15) 10-J.Love pass incomplete intended for 14-C.Watson.'),rows,null,game).player?.id,'sleeper-love');
+ assert.equal(playSubject(mk('(4:50) (Shotgun) 10-J.Love pass incomplete short right.'),rows,null,game).player?.id,'1136');
+ assert.equal(playSubject(mk('(4:30) (Shotgun) 10-J.Love pass to 14-C.Watson for 11 yards.'),rows,null,game).player?.id,'7562');
+ assert.equal(playSubject(mk('(4:15) 10-J.Love pass incomplete intended for 14-C.Watson.'),rows,null,game).player?.id,'1136');
  const rendered=fieldMarkup({game:{...game,homePoints:27,awayPoints:19,status:'LIVE'},event:mk('(4:50) (Shotgun) 10-J.Love pass incomplete short right.'),playerRows:rows});
  assert.match(rendered,/Jordan Love/);
  assert.match(rendered,/sleepercdn.com/);
