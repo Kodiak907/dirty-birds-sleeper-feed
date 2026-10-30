@@ -28,7 +28,7 @@
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
- let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0;
+ let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
  function cacheTtl(name){
@@ -309,7 +309,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
@@ -333,9 +333,11 @@
       if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
       else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
       s.latestCheck=pb.value.checked_at;
+      if(pb.value.provider_updated_at&&Number.isFinite(Date.parse(pb.value.provider_updated_at)))lastProviderUpdateAt=Date.parse(pb.value.provider_updated_at);
     }
     if(bs.status==='fulfilled'){
       s.liveBox=bs.value;s.latestCheck=bs.value.checked_at;
+      if(bs.value.provider_updated_at&&Number.isFinite(Date.parse(bs.value.provider_updated_at)))lastProviderUpdateAt=Math.max(lastProviderUpdateAt,Date.parse(bs.value.provider_updated_at));
       const idx=s.games.findIndex(g=>g.id===s.game);
       if(idx>=0){
        const enriched=model.gameScoreUpdate(s.games[idx],bs.value);
@@ -363,10 +365,12 @@
     const errs=[pb,bs].filter(x=>x.status==='rejected').map(x=>String(x.reason.message||x.reason));
     const age=lastNewPlayAt?Math.round((Date.now()-lastNewPlayAt)/1000):null;
     const current=s.games.find(g=>g.id===s.game);
-    const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score verified':'MSF score unavailable';
+    const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score reported':'MSF score unavailable';
+    const publishLag=lastProviderUpdateAt?Math.max(0,Math.floor((Date.now()-lastProviderUpdateAt)/1000)):null;
     status((s.playSource||'Source unavailable')+' · '+scoreCoverage+
       (errs.length?' · '+errs.join('; '):' · MSF poll complete')+
       (age!==null?' · last NEW published play '+age+'s ago':' · no new published play observed')+
+      (publishLag!==null?' · provider updated '+publishLag+'s ago':' · provider update time unavailable')+
       supplemental+' · checked '+(s.latestCheck||'unknown')+' · feed delay not certified');
     drawPlays();drawPlayer();
   }catch(error){status('Game feed error: '+error.message)}})();
@@ -439,6 +443,7 @@
  window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,
   lastSuccessfulGamePollAt:lastSuccessfulGamePollAt?new Date(lastSuccessfulGamePollAt).toISOString():null,
   lastNewPlayAt:lastNewPlayAt?new Date(lastNewPlayAt).toISOString():null,
+  providerUpdatedAt:lastProviderUpdateAt?new Date(lastProviderUpdateAt).toISOString():null,
   scoreUpdateAt:lastScorePollAt?new Date(lastScorePollAt).toISOString():null,
   homeScore:s.games.find(g=>g.id===s.game)?.homePoints??null,
   awayScore:s.games.find(g=>g.id===s.game)?.awayPoints??null,
