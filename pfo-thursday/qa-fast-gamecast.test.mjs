@@ -1,0 +1,50 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {dirname,join} from 'node:path';
+import {LIVE_PLAY_MS,LIVE_BOX_MS,IDLE_PLAY_MS,isGamePollingLive,nextPlayPollMs,providerClock} from './ffo-gamecast-timing.mjs';
+const dir=dirname(fileURLToPath(import.meta.url));
+const gamecast=readFileSync(join(dir,'ffo-gamecast.js'),'utf8');
+const worker=readFileSync(join(dir,'_worker.js'),'utf8');
+const html=readFileSync(join(dir,'index.html'),'utf8');
+test('5s PBP, 10s independent scoreboard, 120s outside game',()=>{
+ assert.equal(LIVE_PLAY_MS,5000);assert.equal(LIVE_BOX_MS,10000);assert.equal(IDLE_PLAY_MS,120000);
+ const kickoff=Date.parse('2026-10-30T00:15:00Z');
+ const game={start:new Date(kickoff).toISOString(),status:'Scheduled'};
+ assert.equal(isGamePollingLive(game,kickoff+2*3600000),true,'provider schedule can remain stale at halftime');
+ assert.equal(nextPlayPollMs(game,0,kickoff+2*3600000),5000);
+ assert.equal(nextPlayPollMs(game,1,kickoff+2*3600000),10000);
+ assert.equal(nextPlayPollMs(game,3,kickoff+2*3600000),40000);
+ assert.equal(isGamePollingLive({...game,status:'Final'},kickoff+2*3600000),false);
+ assert.equal(nextPlayPollMs({...game,status:'Final'},0,kickoff+2*3600000),120000);
+ assert.equal(isGamePollingLive(game,kickoff-3600000),false);
+ assert.equal(isGamePollingLive({...game,status:'In Progress',start:null},kickoff+3600000),true);
+});
+test('clock is source-published only, never interpolated from wall time',()=>{
+ assert.deepEqual(providerClock({id:'play-100',period:'3',clock:'08:17'}),{period:'Q3',clock:'08:17',playId:'play-100'});
+ assert.equal(providerClock({period:'3',clock:''}),null);
+ assert.equal(providerClock({period:'3',clock:'61:11'}),null);
+ assert.equal(providerClock({period:0,clock:'08:17'}),null);
+ assert.match(gamecast,/not interpolated/);
+ assert.match(gamecast,/providerClock\(last\)/);
+ assert.match(html,/id="ffo-gc-live-status"/);
+});
+test('new play renders immediately without waiting for boxscore, and poll failure backs off',()=>{
+ assert.match(gamecast,/void refreshBoxscore\(gameId\)/);
+ assert.match(gamecast,/pb=await feed\('plays'/);
+ assert.doesNotMatch(gamecast,/const \[pb,bs\]=await Promise\.allSettled/);
+ assert.match(gamecast,/if\(changed\)drawPlays\(\)/);
+ assert.match(gamecast,/if\(boxPending\)return boxPending/);
+ assert.match(gamecast,/if\(s\.game!==gameId\)return/);
+ assert.match(gamecast,/consecutivePlayFailures=Math\.min\(3,consecutivePlayFailures\+1\)/);
+ assert.match(gamecast,/name==='plays'\?5500:name==='boxscore'\?7500:12500/);
+ assert.match(worker,/provider_rate_limited/);
+});
+test('only active game polls when visible; app restores polling after foreground',()=>{
+ assert.match(gamecast,/document\.visibilityState!=='visible'\|\|!gameActive\(\)/);
+ assert.match(gamecast,/document\.addEventListener\('visibilitychange'/);
+ assert.match(gamecast,/setInterval\(\(\)=>\{[\s\S]*?activeRefreshMs\(\)/);
+ assert.match(gamecast,/timing\.isGamePollingLive/);
+ assert.match(gamecast,/timing\.nextPlayPollMs/);
+});
