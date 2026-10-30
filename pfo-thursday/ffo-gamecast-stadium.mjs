@@ -39,7 +39,6 @@ const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);ret
    this published play, with MSF record identity first and the Sleeper player
    directory used for images only. Never interpret an MSF ID as a Sleeper ID. */
 const cleanSubject=x=>normalizeName(x).replace(/\\b(?:jr|sr|ii|iii|iv)\\b/g,'').trim();
-const escaped=x=>String(x).replace(/[.*+?^${}()|[\\]\\]/g,'\\$&');
 function findNamedPlayer(fragment,rows,team){
  const named=cleanSubject(fragment);
  if(!named)return null;
