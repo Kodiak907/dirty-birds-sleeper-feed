@@ -25,6 +25,6 @@ test('rushing and kicking selects the action player',()=>{
  assert.equal(subject('Kyle Kicker field goal 41 yards is good'),'Kyle Kicker');
 });
 test('ambiguous play and unknown name never borrow a random portrait',()=>{
- assert.equal(subject('Casey Quarterback pass to Robin Receiver and Taylor Tightend penalty no play'),null);
+ assert.equal(subject('Casey Quarterback pass complete involving Robin Receiver and Taylor Tightend'),null);
  assert.equal(subject('unidentified passer throws deep ball'),null);
 });
