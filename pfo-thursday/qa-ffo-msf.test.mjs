@@ -432,8 +432,8 @@ test('Statistics audit is private, read-only, on demand, and calls MSF not Sleep
  const index=readFileSync(join(base,'index.html'),'utf8');
  assert.match(index,/id="ffo-gc-stat-audit-check"/);
  assert.match(core,/runStatAudit/);
- assert.match(core,/feed\('gamelogs',\{season:s.season,week\},true\)/);
- assert.match(core,/feed\('stats',\{season:s.season\},true\)/);
+ assert.match(core,/feed\('gamelogs',\{season:s.season,week,team\},true\)/);
+ assert.match(core,/feed\('stats',\{season:s.season,team\},true\)/);
  assert.match(core,/auditSeasonLowerBound/);
  assert.match(core,/No independent FFL final score certified/);
  assert.doesNotMatch(core,/feed\('sleeperPoints'/);
