@@ -402,6 +402,14 @@
     examples+'</details>';
   }).join(''):'';
   const t=report.teamEvidence,pb=report.kickEvidence;
+  const dstWeeks=model.summarizeDstWeeks(report.teamWeeks||[],report.team);
+  const dstWeekRows=dstWeeks.weeks.map(w=>'<div style="padding:6px 0;border-top:1px solid #315069;font-size:12px">'+
+   '<b>Week '+safe(w.week)+'</b> · '+safe(w.status==='team_stats_verified'?'MSF team game identified':'Team game unverified')+
+   '<div class="muted">Sacks '+safe(w.sacks===null?'unknown':w.sacks)+
+   ' · INT '+safe(w.interceptions===null?'unknown':w.interceptions)+
+   ' · observed subtotal '+safe(w.observedSubtotal===null?'unknown':w.observedSubtotal+' pts')+
+   ' · full D/ST score NOT certified</div>'+
+   (w.error?'<div class="muted">'+safe(w.error)+'</div>':'')+'</div>').join('');
   const teamside=t?.teamFilterVerified
    ?'MSF team log verified · '+t.records+' record'+(t.records===1?'':'s')+
      ' · '+t.numericRecords+' with numeric stats'
@@ -412,6 +420,7 @@
     (x.value!==null?' × '+x.weight+' = '+x.points+' provisional points':'')).join(' · '):'';
   const missing=t?.teamFilterVerified?(t.missingComponents||[]).join(', '):'';
   const teamCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(dstWeeks.verifiedWeeks)+'/6 MSF team games verified. Sacks/INTs are independent provisional components.</div>'+dstWeekRows+
    '<summary style="cursor:pointer;font-weight:700">D/ST source evidence · separate MSF team stats</summary>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(teamside)+'</div>'+
    (defenseLine?'<div style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(defenseLine)+'</div>':'')+
@@ -458,7 +467,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,kickEvidence:null,kickEvidenceError:null};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -495,9 +504,25 @@
     const source=await auditedStatRequest('teamgamelogs',{season:s.season,week:1,team},
       message=>{if(indicator)indicator.textContent='D/ST · '+message});
     report.teamEvidence=model.auditTeamGameFeed(source.data||{},team,s.ownedRules);
+    report.teamWeeks.push({week:1,evidence:report.teamEvidence});
     if(!report.teamEvidence.teamFilterVerified)
       report.teamEvidenceError='Returned team IDs or schema unverified';
-   }catch(error){report.teamEvidenceError=String(error.message||error).slice(0,180)}
+   }catch(error){
+    report.teamEvidenceError=String(error.message||error).slice(0,180);
+    report.teamWeeks.push({week:1,error:report.teamEvidenceError});
+   }
+   // Verify team-specific MSF gamelogs across Weeks 1–6, with controlled
+   // pacing and no invented 0.0s for missed games or unverified team IDs.
+   for(let week=2;week<=6;week++){
+    if(indicator)indicator.textContent='D/ST historical game log · Week '+week+' / 6…';
+    await auditPause(1600);
+    try{
+     const data=await auditedStatRequest('teamgamelogs',{season:s.season,week,team},
+      msg=>{if(indicator)indicator.textContent='D/ST W'+week+' · '+msg});
+     report.teamWeeks.push({week,evidence:model.auditTeamGameFeed(data.data||{},team,s.ownedRules)});
+    }catch(error){report.teamWeeks.push({week,error:String(error.message||error).slice(0,180)})}
+    renderStatAudit(report);
+   }
    // Inspect one real MSF historical game involving the selected team.
    // This is event evidence, never reconstructed kicker attribution or scoring.
    const choice=s.archiveGames.map(g=>({g,week:auditWeekForGame(g).week}))

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -668,4 +668,34 @@ test('PFO kicker audit shows sourced provisional points and crosswalk status',()
  assert.match(core,/kickerRows/);
  assert.match(core,/s\.ownedRules,s\.playerRows/);
  assert.match(core,/PBP actor only; MSF player ID unverified/);
+});
+
+test('D/ST Weeks 1-6 scoring evidence distinguishes valid zero sacks from missing game',()=>{
+ const make=(week,sack,ints)=>({week,evidence:auditTeamGameFeed({teamgamelogs:[{
+  team:{abbreviation:'GB'},game:{id:'GB-'+week},stats:{tackles:{sacks:sack},interceptions:{interceptions:ints}}
+ }]},'GB',own.scoring)});
+ const r=summarizeDstWeeks([make(1,3,1),make(2,0,0),{week:3,error:'MSF 503'}],'GB');
+ assert.equal(r.verifiedWeeks,2);
+ assert.equal(r.weeks[0].observedSubtotal,5);
+ assert.equal(r.weeks[1].observedSubtotal,0);
+ assert.equal(r.weeks[2].observedSubtotal,null);
+ assert.equal(r.weeks[2].sacks,null);
+ assert.equal(r.finalDstCertified,false);
+});
+test('D/ST team mismatches and duplicate team games do not become certified points',()=>{
+ const bad=auditTeamGameFeed({teamgamelogs:[{team:{abbreviation:'CAR'},stats:{tackles:{sacks:4}}}]},'GB',own.scoring);
+ const dupe=auditTeamGameFeed({teamgamelogs:[
+  {team:{abbreviation:'GB'},stats:{tackles:{sacks:2}}},
+  {team:{abbreviation:'GB'},stats:{tackles:{sacks:2}}}
+ ]},'GB',own.scoring);
+ const r=summarizeDstWeeks([{week:1,evidence:bad},{week:2,evidence:dupe}],'GB');
+ assert.equal(r.verifiedWeeks,0);
+ assert.equal(r.weeks[0].observedSubtotal,null);
+ assert.equal(r.weeks[1].observedSubtotal,null);
+ assert.equal(r.weeks[1].status,'ambiguous_game_records');
+});
+test('Historical D/ST audit requests all six weeks and reports independent components only',()=>{
+ assert.match(core,/for\(let week=2;week<=6;week\+\+\)/);
+ assert.match(core,/model\.summarizeDstWeeks\(report\.teamWeeks\|\|\[\],report\.team\)/);
+ assert.match(core,/full D\/ST score NOT certified/);
 });

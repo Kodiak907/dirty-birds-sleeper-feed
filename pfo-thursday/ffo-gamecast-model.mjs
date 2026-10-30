@@ -355,6 +355,23 @@ export function auditTeamGameFeed(payload,team='',rules={}){
   // defensive, return, or other non-offensive touchdowns.
   dstScoreCertified:false};
 }
+/** Team D/ST weeks must remain source-attributed and not imply a final
+ * fantasy score from sacks/INT alone. Duplicate/missing games are unknown. */
+export function summarizeDstWeeks(entries=[],team=''){
+ const expected=String(team||'').toUpperCase();
+ const weeks=entries.map(e=>{
+  const a=e.evidence,verified=!!(a?.teamFilterVerified&&a.team===expected&&a.records===1);
+  const components=verified?(a.observedComponents||[]).filter(x=>x.value!==null&&x.points!==null):[];
+  const sums=new Map(components.map(x=>[x.category,x.value]));
+  return {week:e.week,status:verified?'team_stats_verified':a?.teamFilterVerified?'ambiguous_game_records':'unverified',
+   sacks:sums.has('sack')?sums.get('sack'):null,
+   interceptions:sums.has('int')?sums.get('int'):null,
+   observedSubtotal:components.length?Math.round(components.reduce((n,x)=>n+x.points,0)*100)/100:null,
+   missing:['sack','int'].filter(x=>!sums.has(x)),
+   finalDstCertified:false,error:e.error||null};
+ });
+ return {team:expected,weeks,verifiedWeeks:weeks.filter(x=>x.status==='team_stats_verified').length,finalDstCertified:false};
+}
 /** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
  * Do not infer player credit or successful kicks from unsupported text. */
 export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
