@@ -118,3 +118,14 @@ test('Injury Watch summarizes source coverage once instead of repeating a full d
  assert.doesNotMatch(core,/No verified report available\. Missing designation is NOT confirmation of clearance/);
  assert.match(patch,/No match does not mean ACTIVE/);
 });
+
+
+test('Live GameCast uses MSF v2.1 2026-regular route and original secret stays server-side',()=>{
+ const gamecast=read('ffo-gamecast.js');
+ assert.ok(gamecast.includes("return n+'-regular'"),'MSF GameCast must use 2026-regular per live Worker endpoint');
+ assert.ok(!gamecast.includes("return n+'-'+(n+1)+'-regular'"),'wrong 2026-2027-regular path must not recur');
+ assert.match(gamecast,/gameFeedError:s\.lastError\|\|null/);
+ assert.match(gamecast,/refreshMs=likelyLive\?20000:120000/);
+ assert.match(worker,/env\.GAMECAST_INTERNAL\.fetch\(new Request\(upstream,\{method:'GET'\}\)\)/);
+ assert.doesNotMatch(gamecast,/MSF_API_KEY|FFOI_MSF_API_KEY/);
+});
