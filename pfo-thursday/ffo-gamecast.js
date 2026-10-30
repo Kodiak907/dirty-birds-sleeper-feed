@@ -5,6 +5,7 @@
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const model=await import('/ffo-gamecast-model.mjs');
  const stadium=await import('/ffo-gamecast-stadium.mjs');
+ const timing=await import('/ffo-gamecast-timing.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -29,7 +30,7 @@
  let playerFeedPending=null,gamePending=null,overviewPending=null,boxPending=null;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
  let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0,lastPublishedClock=null,lastPollMs=0,lastPlayFailureMessage=null;
- const LIVE_PLAY_MS=5000,LIVE_BOX_MS=10000,IDLE_PLAY_MS=120000;
+ const {LIVE_PLAY_MS,LIVE_BOX_MS,IDLE_PLAY_MS}=timing;
  let consecutivePlayFailures=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
@@ -315,19 +316,8 @@
  }
  async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;lastPublishedClock=null;lastPollMs=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
 
- function livePollingWindow(){
-  const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
-  const now=Date.now(),kick=Date.parse(game?.start||'');
-  if(/final|complete|postgame|post.game|cancel|postpon|suspend/.test(state))return false;
-  if(/in.progress|in progress|live|halftime|half.time|inprogress/.test(state))return true;
-  // Provider schedule can remain 'scheduled' after kickoff, especially in the
-  // second half. Kickoff window is a polling heuristic, never a LIVE claim.
-  return Number.isFinite(kick)&&now>=kick-5*60000&&now<=kick+5.5*3600000;
- }
- function activeRefreshMs(){
-  // Backoff on provider errors; an unchanged/304 response is not an error.
-  return (livePollingWindow()?LIVE_PLAY_MS:IDLE_PLAY_MS)*Math.min(8,2**consecutivePlayFailures);
- }
+ function livePollingWindow(){return timing.isGamePollingLive(s.games.find(g=>g.id===s.game));}
+ function activeRefreshMs(){return timing.nextPlayPollMs(s.games.find(g=>g.id===s.game),consecutivePlayFailures);}
  function updateLiveHeartbeat(){
   const statusRoot=$('ffo-gc-live-status');if(!statusRoot||!s.game)return;
   const checked=lastSuccessfulGamePollAt?Math.max(0,Math.round((Date.now()-lastSuccessfulGamePollAt)/1000)):null;
@@ -415,8 +405,8 @@
       lastNewPlayAt=Date.now();
       lastPlayCount=s.playCache.length;
     }
-    if(last?.period&&last?.clock)
-      lastPublishedClock={period:'Q'+last.period,clock:last.clock,playId:last.id};
+    const published=timing.providerClock(last);
+    if(published)lastPublishedClock=published;
     s.playSource=pb.coverage==='scoring_only'?'MySportsFeeds · scoring plays only for this specific game':'MySportsFeeds · published play-by-play';
     if(s.followLatest||s.activePlay<0)s.activePlay=Math.max(0,s.playCache.length-1);
     else s.activePlay=Math.min(s.activePlay,Math.max(0,s.playCache.length-1));
