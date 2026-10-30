@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-30T13:59:42.014005+00:00
-Sleeper snapshot: 2026-10-30T13:59:37.202091+00:00
+Generated: 2026-10-30T14:56:35.475737+00:00
+Sleeper snapshot: 2026-10-30T14:56:31.739788+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1421178008932188160` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Deebo Samuel Sr. → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1) | FAAB bid: $16
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

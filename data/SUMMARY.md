@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-30T13:59:37.202091+00:00
+Updated: 2026-10-30T14:56:31.739788+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,8 +19,7 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 1: added Deebo Samuel Sr.; dropped Christian Kirk
-- Transaction 1421178008932188160: waiver / complete / rosters [1] / adds {'5872': 1} / drops {'4950': 1} / FAAB bid 16
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

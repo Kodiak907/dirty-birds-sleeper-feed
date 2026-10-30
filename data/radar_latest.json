@@ -1,48 +1,12 @@
 {
-  "changes": [
-    {
-      "id": "1421178008932188160",
-      "kind": "new_transaction",
-      "status": "complete",
-      "transaction": {
-        "adds": {
-          "5872": 1
-        },
-        "consenter_ids": [
-          1
-        ],
-        "created": 1793197750841,
-        "creator": "1399093464662073344",
-        "draft_picks": [],
-        "drops": {
-          "4950": 1
-        },
-        "leg": 8,
-        "metadata": {
-          "notes": "Your waiver claim was processed successfully!"
-        },
-        "roster_ids": [
-          1
-        ],
-        "settings": {
-          "seq": 0,
-          "waiver_bid": 16
-        },
-        "status": "complete",
-        "status_updated": 1793367362117,
-        "transaction_id": "1421178008932188160",
-        "type": "waiver",
-        "waiver_budget": []
-      }
-    }
-  ],
-  "changes_count": 1,
-  "completed_count": 1,
+  "changes": [],
+  "changes_count": 0,
+  "completed_count": 0,
   "failed_count": 0,
-  "generated_at_utc": "2026-10-30T13:59:42.014005+00:00",
+  "generated_at_utc": "2026-10-30T14:56:35.475737+00:00",
   "is_initial_baseline": false,
   "league_id": "1399157532559192064",
   "pending_count": 0,
-  "sleeper_snapshot_at_utc": "2026-10-30T13:59:37.202091+00:00",
+  "sleeper_snapshot_at_utc": "2026-10-30T14:56:31.739788+00:00",
   "transactions_indexed": 263
 }
