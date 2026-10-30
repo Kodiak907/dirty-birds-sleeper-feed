@@ -137,6 +137,9 @@ export function inspectHistoricalGame(playResponse,boxResponse=null,scheduleGame
  const lastQ=last?.quarter||null;
  const ot=entries.filter(x=>x.quarter!==null&&x.quarter>4);
  const otClockUnknown=ot.filter(x=>!x.clock).length;
+ const missingClocks=entries.filter(x=>!x.clock);
+ const regulationClockUnknown=missingClocks.filter(x=>x.quarter===null||x.quarter<=4).length;
+ const clockCoverage=missingClocks.length===0?'all_verified':regulationClockUnknown===0&&otClockUnknown===missingClocks.length?'ot_exception':'incomplete';
  const checkGame={id:scheduleGame.id??'',status:'Unverified',homePoints:null,awayPoints:null};
  const scored=boxResponse&&boxResponse.available!==false?
   gameScoreUpdate(checkGame,boxResponse):checkGame;
@@ -152,8 +155,8 @@ export function inspectHistoricalGame(playResponse,boxResponse=null,scheduleGame
  if(diagnostics.capped)warnings.push('Visible timeline capped at 360 plays');
  if(chronologicalOrder==='mixed')warnings.push('Published play chronology is inconsistent');
  if(chronologicalOrder==='unknown')warnings.push('Insufficient native clock/order evidence');
- if(diagnostics.missingClock)warnings.push('Some plays lack a verified clock');
- if(otClockUnknown)warnings.push('OT contains plays with no verifiable clock');
+ if(regulationClockUnknown)warnings.push(regulationClockUnknown+' regulation/unknown-period plays lack a verifiable clock');
+ if(otClockUnknown)warnings.push(otClockUnknown+' overtime play'+(otClockUnknown===1?'':'s')+' lack'+(otClockUnknown===1?'s':'')+' a verifiable clock');
  if(!boxScorePublished)warnings.push('Independent MSF final box-score values unavailable');
  if(matchesSchedule===false)warnings.push('MSF box score differs from MSF schedule');
  if(!providerFinal&&!scheduledFinal)warnings.push('Final status not verified');
@@ -177,7 +180,7 @@ export function inspectHistoricalGame(playResponse,boxResponse=null,scheduleGame
  return {diagnostics,chronologicalOrder,comparablePairs,forwardViolations,reverseViolations,
   first:{quarter:first?.quarter??null,clock:first?.clock||null,description:first?.description||null},
   last:{quarter:last?.quarter??null,clock:last?.clock||null,description:last?.description||null},
-  lastQuarter:lastQ,otPlayCount:ot.length,otClockUnknown,
+  lastQuarter:lastQ,otPlayCount:ot.length,otClockUnknown,regulationClockUnknown,clockCoverage,
   boxScorePublished,boxHome:boxScorePublished?scored.homePoints:null,
   boxAway:boxScorePublished?scored.awayPoints:null,
   boxStatus:scored.status,providerFinal,scheduledFinal,
