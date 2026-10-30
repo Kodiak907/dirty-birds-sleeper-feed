@@ -773,7 +773,7 @@ export default {async fetch(request,env){const url=new URL(request.url);if(!url.
 const MSF_ROOT='https://api.mysportsfeeds.com/v2.1/pull/nfl';
 const FFO_SEASON=/^(latest|current|20\d{2}-(regular|preseason|playoff)|20\d{2}-20\d{2}-(regular|preseason|playoff))$/;
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
-const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays']);
+const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
 function ffoBuildPath(route,params){
  if(!FFO_ROUTE.has(route))throw Error('unsupported_feed');
@@ -843,6 +843,28 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
      live_delay_verified:false,provisional:true,game_status:event.status?.type?.description||null,
      event_id:eventId,provider_http_status:summary.status,data:{plays}});
   }catch{return ffoReply({source:'ESPN NFL game summary',error:'source_unreachable',checked_at:now()},502)}
+ }
+ if(route==='portraits'){
+  // ESPN roster is identity/portrait verification ONLY. No scores or PBP.
+  // Never pass a user-supplied host or URL to the provider.
+  const team=String(u.searchParams.get('team')||'').toUpperCase();
+  const teams=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WSH'.split(' '));
+  if(!teams.has(team))return ffoReply({error:'valid_team_required'},400);
+  const upstream='https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/'+team.toLowerCase()+'/roster';
+  try{
+   const resp=await fetch(upstream,{headers:{accept:'application/json'},cf:{cacheEverything:true,cacheTtl:3600},signal:AbortSignal.timeout(9000)});
+   if(!resp.ok)return ffoReply({error:'roster_directory_unavailable',provider_http_status:resp.status},502);
+   const payload=await resp.json();
+   const groups=Array.isArray(payload?.athletes)?payload.athletes:[];
+   const players=groups.flatMap(g=>Array.isArray(g?.items)?g.items:[]).filter(p=>p?.fullName&&/^\\d{1,10}$/.test(String(p.id||''))).map(p=>{
+    const url=String(p.headshot?.href||'');
+    const image=/^https:\\/\\/a\\.espncdn\\.com\\/i\\/headshots\\/nfl\\/players\\/full\\/\\d{1,10}\\.png$/.test(url)?url:null;
+    return {id:String(p.id),name:String(p.fullName).slice(0,110),shortName:String(p.shortName||'').slice(0,60),
+      team,position:String(p.position?.abbreviation||''),image,source:'ESPN 2026 team roster'};
+   });
+   return ffoReply({source:'ESPN team roster · identity and portraits only',team,
+     checked_at:now(),available:true,players,season:payload?.season?.year||null});
+  }catch{return ffoReply({error:'roster_directory_unreachable'},502)}
  }
  if(route==='health')return ffoReply({source:'FFO GameCast',version:'0.4',ready:!!(env.MSF_API_KEY||env.GAMECAST_INTERNAL),live:false,live_verified:false,authenticated:true,provider_credential_configured:!!(env.MSF_API_KEY||env.GAMECAST_INTERNAL),checked_at:now()});
  if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return ffoReply({error:'mysportsfeeds_key_not_configured'},503);
