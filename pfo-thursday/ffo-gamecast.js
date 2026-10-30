@@ -398,27 +398,48 @@
      safe(observed.map(x=>x.name+' ('+x.records+')').join(', ')||'None')+'</div>'+
     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Unverified categories: '+
      safe((p.missingCategories||[]).slice(0,15).join(', ')||'None in parsed categories')+'</div>'+
-    (position==='K'?'<div class="muted" style="font-size:12px;overflow-wrap:anywhere">MSF kicker numeric field names: '+safe((p.observedRawFieldPaths||[]).join(', ')||'No numeric fields returned')+'</div>':'')+
+    (position==='K'?'<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Kicking-related MSF player fields: '+safe((p.observedRawFieldPaths||[]).filter(x=>/fieldgoal|extraPoint|pat|kick(?!offReturn)/i.test(x)).join(', ')||'Not present in sampled player game logs')+'</div>':'')+
     examples+'</details>';
   }).join(''):'';
-  const t=report.teamEvidence;
+  const t=report.teamEvidence,pb=report.kickEvidence;
+  const teamside=t?.teamFilterVerified
+   ?'MSF team log verified · '+t.records+' record'+(t.records===1?'':'s')+
+     ' · '+t.numericRecords+' with numeric stats'
+   :'Team log not verified · '+String(report.teamEvidenceError||'No evidence yet');
+  const defense=t?.observedComponents||[];
+  const defenseLine=t?.teamFilterVerified?defense.map(x=>
+    x.label+': '+(x.value===null?'unknown':x.value)+
+    (x.value!==null?' × '+x.weight+' = '+x.points+' provisional points':'')).join(' · '):'';
+  const missing=t?.teamFilterVerified?(t.missingComponents||[]).join(', '):'';
   const teamCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
-   '<summary style="cursor:pointer;font-weight:700">D/ST · separate MSF team game-log check</summary>'+
-   '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+
-   (t?.teamFilterVerified?
-    'Week 1 MSF team log '+safe(t.team)+' · '+safe(t.records)+' records · '+safe(t.numericRecords)+' numeric-stat records. Observed numeric field names: '+
-     safe(t.exampleFieldPaths.join(', ')||'None')+
-     '. Defensive touchdowns, return events and points-allowed adjustments require separate verification.':
-    'MSF team log not verified · '+safe(report.teamEvidenceError||'No sample yet')+
-    '. D/ST is a team, not a player; zero player rows never means zero D/ST points.')+
-   '</div></details>';
+   '<summary style="cursor:pointer;font-weight:700">D/ST source evidence · separate MSF team stats</summary>'+
+   '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(teamside)+'</div>'+
+   (defenseLine?'<div style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(defenseLine)+'</div>':'')+
+   (missing?'<div class="muted" style="font-size:12px">Missing verified categories: '+safe(missing)+'</div>':'')+
+   '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+
+   '</details>';
+  const kickCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<summary style="cursor:pointer;font-weight:700">Kicker · published play-by-play evidence</summary>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(
+    pb?.candidatePlays!=null
+    ?('One game sample · '+pb.fgCandidates+' FG mentions · '+pb.xpCandidates+' XP mentions')
+    :('Play-by-play check unavailable · '+String(report.kickEvidenceError||'No sampled game'))
+   )+'</div>'+
+   (pb?.publishedEvents?.length?
+     pb.publishedEvents.slice(0,10).map(x=>
+      '<div style="font-size:12px;padding:5px 0;border-top:1px solid #315069">'+
+      '<strong>'+safe(x.kind)+'</strong> · '+safe(x.publishedOutcome)+
+      (x.distance!==null?' · '+safe(x.distance)+' yd':' · distance unverified')+
+      '<div class="muted">'+safe(x.description)+'</div></div>').join(''):'')+
+   '<div class="muted" style="font-size:12px;margin:7px 0">No individual kicker credit, six-week completeness or fantasy score is certified from this sample.</div>'+
+   '</details>';
   const scoringCard=e?'<details style="border-top:1px solid #315069;margin:8px 0;padding-top:8px">'+
    '<summary style="cursor:pointer;font-weight:700">FFL scoring components · '+safe(e.records)+' player-week records</summary>'+
    '<p class="muted" style="font-size:12px">Every value uses MSF published stats and frozen FFL rules only. Missing components stay unknown. Long-TD bonuses, K and D/ST require separate event verification.</p>'+
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+teamCard+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+kickCard+teamCard+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
@@ -426,7 +447,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,kickEvidence:null,kickEvidenceError:null};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -462,10 +483,25 @@
    try{
     const source=await auditedStatRequest('teamgamelogs',{season:s.season,week:1,team},
       message=>{if(indicator)indicator.textContent='D/ST · '+message});
-    report.teamEvidence=model.auditTeamGameFeed(source.data||{},team);
+    report.teamEvidence=model.auditTeamGameFeed(source.data||{},team,s.ownedRules);
     if(!report.teamEvidence.teamFilterVerified)
       report.teamEvidenceError='Returned team IDs or schema unverified';
    }catch(error){report.teamEvidenceError=String(error.message||error).slice(0,180)}
+   // Inspect one real MSF historical game involving the selected team.
+   // This is event evidence, never reconstructed kicker attribution or scoring.
+   const choice=s.archiveGames.map(g=>({g,week:auditWeekForGame(g).week}))
+    .filter(x=>x.week>=1&&x.week<=6&&[stadium.abbrev(x.g.home),stadium.abbrev(x.g.away)].includes(team))
+    .sort((a,b)=>a.week-b.week)[0];
+   if(choice){
+    if(indicator)indicator.textContent='Checking one published '+team+' game for FG/XP events…';
+    try{
+     const response=await auditedStatRequest('plays',{season:s.season,game_id:choice.g.id},
+      msg=>{if(indicator)indicator.textContent='FG/XP check · '+msg});
+     report.kickEvidence=model.kickingPlayEvidence(response.data||{});
+     report.kickEvidence.sampleWeek=choice.week;
+     report.kickEvidence.sampleGame=choice.g.away+' @ '+choice.g.home;
+    }catch(error){report.kickEvidenceError=String(error.message||error).slice(0,150)}
+   }else report.kickEvidenceError='No matching MSF schedule game found for Weeks 1–6';
    if(goodWeeks.length)report.scoringEvidence=model.scoringEvidence(goodWeeks,s.ownedRules,team);
    if(report.seasonFilterVerified&&goodWeeks.length)
     report.lowerBound=model.auditSeasonLowerBound(goodWeeks.map(x=>x.payload),seasonPayload);
