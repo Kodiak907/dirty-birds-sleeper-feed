@@ -26,6 +26,7 @@ export function playerRows(payload){
    name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),
    team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),
    position:String(typeof pos==='object'?(pos.abbreviation||pos.name||''):pos).toUpperCase(),
+   jersey:String(p.jerseyNumber??p.jersey??x.jerseyNumber??''),
    game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
  }).filter(x=>x.name);
 }
@@ -356,7 +357,7 @@ export function auditTeamGameFeed(payload,team='',rules={}){
 }
 /** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
  * Do not infer player credit or successful kicks from unsupported text. */
-export function kickingPlayEvidence(payload){
+export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
  const events=sourcePlayRows(payload).map((x,i)=>{
   const description=String(x?.description||x?.playDescription||x?.text||'').trim();
   if(!description)return null;
@@ -375,10 +376,53 @@ export function kickingPlayEvidence(payload){
    publishedOutcome:made!==failed?(made?'reported_good':'reported_missed'):'unverified',
    description:description.slice(0,180)};
  }).filter(Boolean);
- return {candidatePlays:events.length,fgCandidates:events.filter(x=>x.kind==='FG').length,
-  xpCandidates:events.filter(x=>x.kind==='XP').length,
-  publishedEvents:events.slice(0,18),kickingFantasyScoreCertified:false,
-  note:'MSF published PBP only. Game completeness, individual kicker attribution, distances and corrections must be cross-verified.'};
+ const source=sourcePlayRows(payload),seen=new Set();
+ const unique=events.filter(ev=>{
+  const p=source[ev.index],id=p?.id??p?.playId??null;
+  if(id==null)return true;
+  const key=[id,ev.quarter,ev.description].join('|');
+  if(seen.has(key))return false;
+  seen.add(key);return true;
+ });
+ const scored=unique.map(ev=>{
+  // Use the leading kicker in each play, never the center/holder later in text.
+  const m=ev.description.match(/^\s*(?:\(?\d{1,2}:\d{2}\)?\s*)?(\d{1,2})-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$)/);
+  const kickerToken=m?m[1]+'-'+m[2].toUpperCase()+'.'+m[3]:null;
+  let component=null;
+  if(ev.publishedOutcome==='reported_missed')component=ev.kind==='FG'?'fgmiss':'xpmiss';
+  else if(ev.publishedOutcome==='reported_good'&&ev.kind==='XP')component='xpm';
+  else if(ev.publishedOutcome==='reported_good'&&ev.kind==='FG'&&Number.isInteger(ev.distance))
+   component='fgm_'+(ev.distance<20?'0_19':ev.distance<30?'20_29':ev.distance<40?'30_39':ev.distance<50?'40_49':ev.distance<60?'50_59':'60p');
+  const observedEventPoints=component&&Number.isFinite(Number(rules[component]))?Number(rules[component]):null;
+  return {...ev,kickerToken,component,observedEventPoints};
+ });
+ const actors=new Map();
+ for(const ev of scored)if(ev.kickerToken){
+  if(!actors.has(ev.kickerToken))actors.set(ev.kickerToken,[]);
+  actors.get(ev.kickerToken).push(ev);
+ }
+ const kickers=[...actors].map(([token,actorEvents])=>{
+  const m=token.match(/^(\d{1,2})-([A-Z])\.([A-Za-z][A-Za-z'-]+)$/),matched=new Map();
+  if(m)for(const p of (Array.isArray(msfPlayers)?msfPlayers:[])){
+   if(String(p.position||'').toUpperCase()!=='K'||!p.team||!p.id||
+      String(p.jersey??p.jerseyNumber??'')!==m[1])continue;
+   const name=normalizeName(p.name||'').split(' ');
+   if(name.length>=2&&name[0][0]===m[2].toLowerCase()&&name.at(-1)===normalizeName(m[3]))
+    matched.set(String(p.id),p);
+  }
+  const player=matched.size===1?[...matched.values()][0]:null;
+  const known=actorEvents.filter(x=>x.observedEventPoints!==null);
+  return {kickerToken:token,playerName:player?.name||null,playerTeam:player?.team||null,
+   providerId:player?.id||null,identityVerified:!!player,events:actorEvents.length,
+   unknownEvents:actorEvents.length-known.length,
+   observedSubtotal:known.length?Math.round(known.reduce((sum,x)=>sum+x.observedEventPoints,0)*100)/100:null,
+   certified:false};
+ });
+ return {candidatePlays:unique.length,fgCandidates:unique.filter(x=>x.kind==='FG').length,
+  xpCandidates:unique.filter(x=>x.kind==='XP').length,
+  unattributedEvents:scored.filter(x=>!x.kickerToken).length,kickers,
+  publishedEvents:scored.slice(0,18),kickingFantasyScoreCertified:false,
+  note:'PBP kicker labels and frozen FFL rule components are observed evidence only. Game completeness and corrections are not verified; no final kicker fantasy score is certified.'};
 }
 
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){

@@ -622,3 +622,50 @@ test('Audit renders compact specialist evidence and verifies a single licensed g
  assert.match(core,/No final D\/ST fantasy score is certified/);
  assert.match(core,/\.filter\(x=>x\.week>=1&&x\.week<=6/);
 });
+
+test('PBP kicker events compute independent FFL kick-point subtotals without certifying scores',()=>{
+ const descriptions=[
+  '(12:16) 28-T.Smack 59 yard field goal is GOOD, Center-42-M.Orzech',
+  '28-T.Smack extra point is No Good, Wide Right',
+  '(1:42) 16-W.Reichard 38 yard field goal is GOOD',
+  '(13:56) 28-T.Smack 43 yard field goal is GOOD',
+  '16-W.Reichard extra point is GOOD',
+  '28-T.Smack extra point is GOOD',
+  '(5:12) 28-T.Smack 26 yard field goal is GOOD',
+  '16-W.Reichard extra point is GOOD',
+  '16-W.Reichard extra point is GOOD',
+  '16-W.Reichard extra point is GOOD'
+ ];
+ const payload={gameplaybyplay:{plays:descriptions.map((description,i)=>({id:'event'+i,description,playStatus:{quarter:1}}))}};
+ const a=kickingPlayEvidence(payload,own.scoring,[
+  {id:'msf-a',name:'Terry Smack',team:'GB',jersey:'28',position:'K'},
+  {id:'msf-b',name:'Will Reichard',team:'MIN',jersey:'16',position:'K'}
+ ]);
+ assert.equal(a.candidatePlays,10);
+ assert.equal(a.kickers.find(x=>x.kickerToken==='28-T.Smack').observedSubtotal,12);
+ assert.equal(a.kickers.find(x=>x.kickerToken==='16-W.Reichard').observedSubtotal,7);
+ assert.equal(a.kickers.find(x=>x.kickerToken==='28-T.Smack').providerId,'msf-a');
+ assert.equal(a.kickingFantasyScoreCertified,false);
+ assert.ok(a.publishedEvents.every(x=>x.observedEventPoints!==null));
+});
+test('Kicker audit deduplicates native IDs and withholds unknown actor/distance credit',()=>{
+ const payload={gameplaybyplay:{plays:[
+  {id:'x1',description:'31-B.Kicker 65 yard field goal is GOOD'},
+  {id:'x1',description:'31-B.Kicker 65 yard field goal is GOOD'},
+  {id:'x2',description:'31-B.Kicker field goal is GOOD'},
+  {description:'extra point is GOOD, Center-22-C.Long'},
+  {description:'31-B.Kicker extra point is NO GOOD'}
+ ]}};
+ const a=kickingPlayEvidence(payload,own.scoring);
+ assert.equal(a.candidatePlays,4);
+ assert.equal(a.unattributedEvents,1);
+ assert.equal(a.kickers[0].observedSubtotal,5);
+ assert.equal(a.kickers[0].unknownEvents,1);
+ assert.equal(a.kickers[0].providerId,null);
+ assert.equal(a.kickingFantasyScoreCertified,false);
+});
+test('PFO kicker audit shows sourced provisional points and crosswalk status',()=>{
+ assert.match(core,/kickerRows/);
+ assert.match(core,/s\.ownedRules,s\.playerRows/);
+ assert.match(core,/PBP actor only; MSF player ID unverified/);
+});

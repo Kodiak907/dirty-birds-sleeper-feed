@@ -418,6 +418,14 @@
    (missing?'<div class="muted" style="font-size:12px">Missing verified categories: '+safe(missing)+'</div>':'')+
    '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+
    '</details>';
+  const kickerRows=(pb?.kickers||[]).map(k=>
+   '<div style="font-size:12px;padding:6px 0;border-top:1px solid #315069"><b>'+
+   safe(k.playerName||k.kickerToken)+'</b> · '+safe(k.events)+' PBP events'+
+   '<div class="muted">Observed FFL event subtotal: '+
+   (k.observedSubtotal===null?'unknown':safe(k.observedSubtotal)+' pts')+
+   ' · '+safe(k.unknownEvents)+' unresolved events</div>'+
+   '<div class="muted">'+safe(k.identityVerified?'Unique MSF player ID / name / jersey crosswalk':'PBP actor only; MSF player ID unverified')+
+   '</div></div>').join('');
   const kickCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
    '<summary style="cursor:pointer;font-weight:700">Kicker · published play-by-play evidence</summary>'+
    '<div class="muted" style="font-size:12px;margin:7px 0">'+safe(
@@ -425,10 +433,13 @@
     ?('One game sample · '+pb.fgCandidates+' FG mentions · '+pb.xpCandidates+' XP mentions')
     :('Play-by-play check unavailable · '+String(report.kickEvidenceError||'No sampled game'))
    )+'</div>'+
+   kickerRows+
    (pb?.publishedEvents?.length?
      pb.publishedEvents.slice(0,10).map(x=>
       '<div style="font-size:12px;padding:5px 0;border-top:1px solid #315069">'+
       '<strong>'+safe(x.kind)+'</strong> · '+safe(x.publishedOutcome)+
+      (x.kickerToken?' · '+safe(x.kickerToken):' · kicker unverified')+
+      (x.observedEventPoints!==null?' · '+safe(x.observedEventPoints)+' provisional pts':' · score unresolved')+
       (x.distance!==null?' · '+safe(x.distance)+' yd':' · distance unverified')+
       '<div class="muted">'+safe(x.description)+'</div></div>').join(''):'')+
    '<div class="muted" style="font-size:12px;margin:7px 0">No individual kicker credit, six-week completeness or fantasy score is certified from this sample.</div>'+
@@ -497,7 +508,7 @@
     try{
      const response=await auditedStatRequest('plays',{season:s.season,game_id:choice.g.id},
       msg=>{if(indicator)indicator.textContent='FG/XP check · '+msg});
-     report.kickEvidence=model.kickingPlayEvidence(response.data||{});
+     report.kickEvidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,s.playerRows);
      report.kickEvidence.sampleWeek=choice.week;
      report.kickEvidence.sampleGame=choice.g.away+' @ '+choice.g.home;
     }catch(error){report.kickEvidenceError=String(error.message||error).slice(0,150)}
