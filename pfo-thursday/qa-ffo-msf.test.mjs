@@ -432,10 +432,10 @@ test('Statistics audit is private, read-only, on demand, and calls MSF not Sleep
  const index=readFileSync(join(base,'index.html'),'utf8');
  assert.match(index,/id="ffo-gc-stat-audit-check"/);
  assert.match(core,/runStatAudit/);
- assert.match(core,/feed\('gamelogs',\{season:s.season,week,team\},true\)/);
- assert.match(core,/feed\('stats',\{season:s.season,team\},true\)/);
+ assert.match(core,/auditedStatRequest\('gamelogs',\{season:s.season,week,team\}/);
+ assert.match(core,/auditedStatRequest\('stats',\{season:s.season,team\}/);
  assert.match(core,/auditSeasonLowerBound/);
- assert.match(core,/No independent FFL final score certified/);
+ assert.match(core,/No final FFL score certified/);
  assert.doesNotMatch(core,/feed\('sleeperPoints'/);
 });
 
@@ -454,11 +454,11 @@ test('Team-scoped FFO stat audit rejects ignored MSF team filter',()=>{
  const index=readFileSync(join(base,'index.html'),'utf8');
  assert.match(index,/id="ffo-gc-stat-audit-team"/);
  assert.match(core,/const team=String\(\$\('ffo-gc-stat-audit-team'\)/);
- assert.match(core,/feed\('stats',\{season:s.season,team\},true\)/);
- assert.match(core,/feed\('gamelogs',\{season:s.season,week,team\},true\)/);
+ assert.match(core,/auditedStatRequest\('stats',\{season:s.season,team\}/);
+ assert.match(core,/auditedStatRequest\('gamelogs',\{season:s.season,week,team\}/);
  assert.match(core,/rows\.length>0&&rows\.every\(r=>r\.team===team\)/);
  assert.match(core,/report\.seasonFilterVerified/);
- assert.match(core,/No independent FFL final score certified/);
+ assert.match(core,/No final FFL score certified/);
 });
 
 test('Gateway preserves binding versus MSF failure layers without exposing response bodies',()=>{
@@ -476,6 +476,18 @@ test('Read-only MSF stat audit shows specific errors instead of opaque provider_
  assert.match(core,/binding HTTP/);
  assert.match(core,/MSF status reported by binding/);
  assert.match(core,/inner error/);
- assert.match(core,/report\.seasonError=String\(error\.message\|\|error\)\.slice\(0,230\)/);
+ assert.match(core,/report\.seasonError=String\(error\.message\|\|error\)\.slice\(0,220\)/);
  assert.doesNotMatch(core,/MSF player game logs.*certified NFL fantasy score/);
+});
+
+test('MSF historical stat audit paces weekly requests, retries transient gateway failure once, and leaves absent data unknown',()=>{
+ assert.match(core,/statAuditRunning=true/);
+ assert.match(core,/if\(statAuditRunning\)return s\.playerRows/);
+ assert.match(core,/if\(!s\.player\|\|!s\.enabled\|\|statAuditRunning\)return/);
+ assert.match(core,/await auditPause\(1600\)/);
+ assert.match(core,/await auditPause\(3600\)/);
+ assert.match(core,/for\(let attempt=1;attempt<=2;attempt\+\+\)/);
+ assert.match(core,/auditedStatRequest\('gamelogs',\{season:s.season,week,team\}/);
+ assert.match(core,/auditedStatRequest\('stats',\{season:s.season,team\}/);
+ assert.match(core,/Missing games or statistics are unknown, not zero/);
 });
