@@ -38,7 +38,7 @@ const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);ret
 /* Play portraits come from one uniquely identifiable player actually named in
    this published play, with MSF record identity first and the Sleeper player
    directory used for images only. Never interpret an MSF ID as a Sleeper ID. */
-const cleanSubject=x=>normalizeName(x).replace(/\\b(?:jr|sr|ii|iii|iv)\\b/g,'').trim();
+const cleanSubject=x=>normalizeName(x).replace(/\b(?:jr|sr|ii|iii|iv)\b/g,'').trim();
 function findNamedPlayer(fragment,rows,team){
  const named=cleanSubject(fragment);
  if(!named)return null;
@@ -62,13 +62,13 @@ export function playSubject(event,rows,selected,game){
  const pool=[...(Array.isArray(rows)?rows:[]),...(selected?.name?[selected]:[])];
  // Explicit play roles trump a merely mentioned defensive/teammate name.
  const patterns=[
-  {kind:'interception',re:/(?:intercepted|interception)\\s+by\\s+(.+?)(?:\\s+(?:at|for|to|return|returned|tackled|\\(|\\.|,)|$)/i},
-  {kind:'reception',re:/(?:pass\\s+(?:complete\\s+)?to|completed\\s+to|pass\\s+to|pass\\s+caught\\s+by)\\s+(.+?)(?:\\s+(?:for|at|to|is|was|\\(|\\.|,)|$)/i},
-  {kind:'punt',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:punts|punted|punt\\s+for)\\b/i},
-  {kind:'field_goal',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:(?:attempts|kicks|made|missed)\\s+)?(?:\\d{1,2}[- ]yard\\s+)?(?:field goal|extra point|PAT)\\b/i},
-  {kind:'sack',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:sacked|was sacked|is sacked)\\b/i},
-  {kind:'rush',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:rushed|rushes|ran|runs|up the middle|left end|right end|left guard|right guard)\\b/i},
-  {kind:'passer',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\\s+(?:pass(?:es|ed)?|throws|threw)\\b/i},
+  {kind:'interception',re:/(?:intercepted|interception)\s+by\s+(.+?)(?:\s+(?:at|for|to|return|returned|tackled|\(|\.|,)|$)/i},
+  {kind:'reception',re:/(?:pass\s+(?:complete\s+)?to|completed\s+to|pass\s+to|pass\s+caught\s+by)\s+(.+?)(?:\s+(?:for|at|to|is|was|\(|\.|,)|$)/i},
+  {kind:'punt',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:punts|punted|punt\s+for)\b/i},
+  {kind:'field_goal',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:(?:attempts|kicks|made|missed)\s+)?(?:\d{1,2}[- ]yard\s+)?(?:field goal|extra point|PAT)\b/i},
+  {kind:'sack',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:sacked|was sacked|is sacked)\b/i},
+  {kind:'rush',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:rushed|rushes|ran|runs|up the middle|left end|right end|left guard|right guard)\b/i},
+  {kind:'passer',re:/([A-Za-z][A-Za-z .'-]{3,65}?)\s+(?:pass(?:es|ed)?|throws|threw)\b/i},
  ];
  const isPick=/intercepted|interception/i.test(desc);
  const incomplete=/incomplete|intended for|pass dropped|tipped pass/i.test(desc);
@@ -96,7 +96,7 @@ function playerPortrait(event,rows,selected,game){
    const id=String(selected.id||'');if(/^[0-9]{1,9}$/.test(id))src='https://sleepercdn.com/content/nfl/players/thumb/'+id+'.jpg';
  }
  const label=p?.name||'Player unavailable';
- return {name:label,src,role:resolved.role,initials:label==='Player unavailable'?'—':label.split(/\\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
+ return {name:label,src,role:resolved.role,initials:label==='Player unavailable'?'—':label.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase()};
 }
 function escColor(hex){return /^#[A-Fa-f0-9]{6}$/.test(hex)?hex:'#1a4550'}
 const score=x=>x===null||x===undefined?'—':H(x);
