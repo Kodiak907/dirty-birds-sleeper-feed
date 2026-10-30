@@ -182,3 +182,27 @@ test('Historical audit is MSF-only and player imagery is backed by protected ros
  assert.match(worker,/route==='portraits'/);
  assert.match(worker,/site.api.espn.com\/apis\/site\/v2\/sports\/football\/nfl\/teams/);
 });
+
+
+test('Completed game hides countdown and stale possession while preserving final score',()=>{
+ const game={id:'F1',home:'GB',away:'CAR',status:'COMPLETED',homePoints:27,awayPoints:19};
+ const event={id:'last',period:'4',clock:'0:00',text:'End of game',raw:{playStatus:{teamInPossession:{abbreviation:'CAR'},currentDown:3,yardsRemaining:14}}};
+ const final=fieldMarkup({game,event,isLive:false});
+ assert.match(final,/>FINAL</);
+ assert.match(final,/GAME COMPLETE/);
+ assert.match(final,/LAST PUBLISHED PLAY/);
+ assert.doesNotMatch(final,/CAR POSSESSION/);
+ assert.doesNotMatch(final,/3 &amp; 14/);
+ assert.match(final,/class="gc6-score">19</);
+ assert.match(final,/class="gc6-score">27</);
+ assert.match(core,/if\(bar&&\['live','overtime'\]\.includes\(model\.gamePhase\(g\?\.status\)\)\)/);
+ assert.match(core,/if\(ticker&&gameActive\(\)&&s\.enabled&&s\.game&&\['live','overtime'\]\.includes/);
+});
+test('Live and OT remain refresh-eligible, historical scan samples Weeks 1–6',()=>{
+ assert.equal(gamePhase('LIVE'),'live');
+ assert.equal(gamePhase('OVERTIME'),'overtime');
+ assert.equal(gamePhase('COMPLETED'),'final');
+ assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
+ assert.match(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/);
+ assert.match(core,/No full play feed verified|Full PBP not demonstrated/);
+});
