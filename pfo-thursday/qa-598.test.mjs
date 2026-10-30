@@ -127,5 +127,5 @@ test('Live GameCast uses MSF v2.1 2026-regular route and original secret stays s
  assert.match(gamecast,/gameFeedError:s\.lastError\|\|null/);
  assert.match(gamecast,/refreshMs=likelyLive\?20000:120000/);
  assert.match(worker,/env\.GAMECAST_INTERNAL\.fetch\(new Request\(upstream,\{method:'GET'\}\)\)/);
- assert.doesNotMatch(gamecast,/MSF_API_KEY|FFOI_MSF_API_KEY/);
+ assert.doesNotMatch(gamecast,/env\.(MSF_API_KEY|FFOI_MSF_API_KEY)|Basic\s*\+\s*btoa/);
 });
