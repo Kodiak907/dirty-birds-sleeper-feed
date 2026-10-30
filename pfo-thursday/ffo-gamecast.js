@@ -451,7 +451,7 @@
    const check=kickChecks.weeks.find(c=>c.week===w.week);
    const checkDesc=check?(check.status==='four_counts_match'?'All 4 published team FG/XP counts reconcile':
     check.status==='partial_counts_match'?check.comparedCategories+'/4 published team FG/XP categories reconcile':
-    check.status==='mismatch'?'Discrepancy found · '+(check.disagreements||[]).map(d=>d.category).join(', '):
+    check.status==='mismatch'?(check.crossFeedDifferenceMayBeAttributionGap?'Possible PBP player-attribution gap · ':'Count difference · ')+(check.disagreements||[]).map(d=>d.category).join(', '):
     'Not independently verifiable · '+check.reason):'Team kick counts not yet checked';
    const fields=[['fgAttempts','FG attempts'],['fgMade','FG made'],['xpAttempts','XP attempts'],['xpMade','XP made']];
    const countSummary=check?.observedCounts?fields.map(([key,label])=>{
@@ -460,7 +460,12 @@
     return label+': PBP '+Number(check.observedCounts[key]??0)+' / team '+(usable?Number(provider):'not published');
    }).join(' · '):'';
    const needsReview=check?.status==='mismatch';
-   const warningText=needsReview?'Review required: '+check.disagreements.map(d=>d.category+' ('+d.pbpCount+' play-by-play vs '+d.teamCount+' team total)').join('; '):'';
+   const warningText=needsReview?(check.crossFeedDifferenceMayBeAttributionGap?'Investigate unidentified published kicks: ':'Review count difference: ')+check.disagreements.map(d=>d.category+' ('+d.pbpCount+' attributed PBP vs '+d.teamCount+' team total)').join('; '):'';
+   const missingPlayDetails=needsReview?(check.unresolvedPlayDetails||[]).map(x=>
+    '<div style="font-size:11px;padding:5px 0;border-top:1px solid #315069;overflow-wrap:anywhere">'+
+    '<b>'+safe(x.kickerToken||'Unattributed kick')+'</b> · '+safe(x.kind)+' · '+safe(x.outcome)+
+    (x.sourcePossessionTeam?' · source possession '+safe(x.sourcePossessionTeam):' · possession unverified')+
+    '<div class="muted">'+safe(x.description)+'</div></div>').join(''):'';
    const evidence=(w.players||[]).map(p=>
     '<div class="muted" style="font-size:12px">'+safe(p.playerName||p.actor)+
     ' · ID '+safe(p.providerId||'unknown')+' · observed '+(p.observedSubtotal===null?'unknown':safe(p.observedSubtotal)+' pts')+
@@ -478,7 +483,8 @@
      (check?.disagreements?.length?'<div style="font-size:12px;font-weight:600;overflow-wrap:anywhere;margin:5px 0">Disagreement: '+
       safe(check.disagreements.map(d=>d.category+': published PBP '+d.pbpCount+' vs MSF team '+d.teamCount).join(' · '))+'</div>'+
       (check.unresolvedActorTokens?.length?'<div class="muted" style="font-size:11px">Unresolved actors: '+safe(check.unresolvedActorTokens.join(', '))+'</div>':'')+
-      (check.unattributedPlays?'<div class="muted" style="font-size:11px">Unattributed kick mentions: '+safe(check.unattributedPlays)+'</div>':''):''):
+      (check.unattributedPlays?'<div class="muted" style="font-size:11px">Unattributed kick mentions: '+safe(check.unattributedPlays)+'</div>':'')+
+      (missingPlayDetails?'<details style="padding:4px 0"><summary style="font-size:12px;cursor:pointer">Inspect original MSF plays needing identification</summary>'+missingPlayDetails+'</details>':''):''):
      '<div class="muted" style="font-size:12px">Unknown, not zero. '+safe(w.error||'No licensed play data')+'</div>')+
     '</details>';
   }).join('');
