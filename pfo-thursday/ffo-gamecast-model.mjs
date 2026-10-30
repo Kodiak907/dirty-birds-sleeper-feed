@@ -14,22 +14,87 @@ export function playerRows(payload){
   return {id:String(p.id??x.playerId??''),image: p.officialImageSrc||p.officialImageUrl||p.headshot||p.headshotUrl||p.imageUrl||p.photoUrl||null,name:String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||x.name||''),team:String(t.abbreviation||t.abbr||x.teamAbbreviation||'').toUpperCase(),position:String(p.primaryPosition||p.position||x.position||''),game:x.game||null,stats:x.stats||x.playerStats||null,raw:x};
  }).filter(x=>x.name);
 }
-export function plays(payload){
+/** One raw MSF NFL game play record per item. Other-provider scoring fallbacks
+ * are never treated as licensed full play-by-play. */
+export function sourcePlayRows(payload){
  const candidates=[payload?.gameplaybyplay?.plays,payload?.gamePlayByPlay?.plays,payload?.plays,payload?.gameplaybyplay?.gameplays,payload?.gameplaybyplay?.gamePlays,payload?.gamePlayByPlay?.gamePlays];
- const a=candidates.find(Array.isArray)||[];
- return a.map((x,i)=>{
-  const state=x?.playStatus||{},q=Number(state.quarter),elapsed=Number(state.secondsElapsed);
-  const hasQuarter=Number.isInteger(q)&&q>=1&&q<=5;
-  // In MSF NFL v2, playStatus.secondsElapsed is quarter-relative.
-  // Do not synthesize a timestamp when the provider sends no usable clock.
-  const validElapsed=state.secondsElapsed!==null&&state.secondsElapsed!==undefined&&Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
-  const remain=validElapsed?900-elapsed:null;
-  const clock=remain===null?String(x.time||x.gameClock||x.clock||''):
-    String(Math.floor(remain/60))+':'+String(remain%60).padStart(2,'0');
-  return {id:String(x.id||x.playId||'seq-'+i),text:String(x.description||x.playDescription||x.text||''),
-   period:hasQuarter?String(q):String(x.quarter||x.period||''),clock,raw:x};
+ return candidates.find(Array.isArray)||[];
+}
+const playSourceId=x=>{
+ const v=x?.id??x?.playId??x?.eventId;
+ return v===null||v===undefined||v===''?null:String(v);
+};
+const playClock=x=>{
+ const st=x?.playStatus||{},q=Number(st.quarter);
+ const hasQuarter=Number.isInteger(q)&&q>=1&&q<=7;
+ const elapsed=Number(st.secondsElapsed);
+ const valid=st.secondsElapsed!==null&&st.secondsElapsed!==undefined&&Number.isFinite(elapsed)&&elapsed>=0&&elapsed<=900;
+ const remain=valid?900-elapsed:null;
+ return {period:hasQuarter?String(q):String(x.quarter||x.period||''),
+  clock:remain===null?String(x.time||x.gameClock||x.clock||''):
+   String(Math.floor(remain/60))+':'+String(remain%60).padStart(2,'0')};
+};
+// Deterministic, non-cryptographic fingerprint for identity fallback only;
+// do not represent this as an actual MSF play identifier.
+const playFingerprint=text=>{
+ let h=2166136261;
+ for(const ch of String(text)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}
+ return (h>>>0).toString(36);
+};
+export function plays(payload){
+ const raw=sourcePlayRows(payload);
+ const nativeCounts=new Map();
+ for(const x of raw){
+  const id=playSourceId(x);
+  if(id!==null)nativeCounts.set(id,(nativeCounts.get(id)||0)+1);
+ }
+ const seen=new Map();
+ return raw.map((x,i)=>{
+  const {period,clock}=playClock(x);
+  const text=String(x.description||x.playDescription||x.text||'');
+  const native=playSourceId(x),repeated=native!==null&&nativeCounts.get(native)>1;
+  // If the provider recycles a play ID, scope it to quarter and clock.
+  // For records without native IDs, use a fingerprint of the actual play,
+  // not an array index which may shift when MSF truncates its feed.
+  const base=native!==null?
+   (repeated?'msf:'+native+':q'+period+':'+clock:'msf:'+native):
+   'observed:q'+period+':'+clock+':'+playFingerprint(text);
+  const occurrence=(seen.get(base)||0)+1;seen.set(base,occurrence);
+  const id=base+(occurrence>1?':occ'+occurrence:'');
+  return {id,text,period,clock,raw:x,providerId:native,
+   identitySource:native===null?'derived_from_published_play':repeated?'scoped_repeated_provider_id':'provider_id'};
  }).filter(x=>x.text).slice(-360);
 }
+/** Audit diagnostics never confuse absent provider IDs with actual duplicates.
+ * 360 recent plays can be displayed without claiming an entire-game archive. */
+export function diagnosePlayFeed(payload,metadata={}){
+ const raw=sourcePlayRows(payload);
+ const available=raw.filter(x=>String(x?.description||x?.playDescription||x?.text||''));
+ const normalized=plays(payload);
+ const nativeIds=available.map(playSourceId).filter(x=>x!==null);
+ const seen=new Set();
+ let repeatedNative=0;
+ for(const id of nativeIds){if(seen.has(id))repeatedNative++;else seen.add(id);}
+ const resolved=new Set(normalized.map(p=>p.id));
+ const quarters=[...new Set(normalized.map(p=>p.period).filter(Boolean))].sort((a,b)=>Number(a)-Number(b));
+ const withClock=normalized.filter(p=>p.clock).length;
+ const withoutNative=available.length-nativeIds.length;
+ const scoringOnly=metadata.coverage==='scoring_only'||metadata.full_playbyplay_authorized===false;
+ const supported=available.length>0&&!scoringOnly;
+ return {rawCount:raw.length,describedCount:available.length,displayedCount:normalized.length,
+  capped:available.length>normalized.length,providerIdCount:nativeIds.length,
+  missingProviderIds:withoutNative,repeatedProviderIds:repeatedNative,
+  duplicateResolvedIds:normalized.length-resolved.size,
+  quarters,withClock,missingClock:normalized.length-withClock,
+  source:metadata.source||'MySportsFeeds',coverage:metadata.coverage||'unspecified',
+  providerHttpStatus:metadata.provider_http_status??null,
+  scoringOnly,hasPublishedPlays:supported,
+  limitedIdentity:withoutNative>0||repeatedNative>0,
+  // Provider success + parseable plays is evidence of historical access,
+  // never automatic proof of complete PBP or every game's entitlement.
+  fullGameVerified:false};
+}
+
 function first(root,paths){for(const path of paths){let x=root;for(const part of path.split('.'))x=x?.[part];const v=num(x);if(v!==null)return v;}return null;}
 const PATHS={
  pass_yd:['passing.passYards','passing.passingYards','passing.yards','passYards','pass_yd'],
