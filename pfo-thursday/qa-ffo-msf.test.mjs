@@ -825,8 +825,8 @@ test('Kicker reconciliation rejects mismatched game IDs, missing totals and miss
 });
 test('FFO mobile scoring audit shows independent MSF crosscheck and no synthetic kicker certification',()=>{
  assert.match(core,/model\.reconcileKickerWeeks\(report\.kickWeeks\|\|\[\],report\.teamWeeks\|\|\[\],report\.team\)/);
- assert.match(core,/four-category matches/);
- assert.match(core,/count disagreements/);
+ assert.match(core,/full count matches/);
+ assert.match(core,/weeks needing count review/);
  assert.match(core,/model\.auditTeamGameFeed/);
  assert.match(core,/report\.kickWeeks\.push\(\{week,game,gameId:String\(g\.id\),evidence\}\)/);
  assert.match(core,/Final kicker scoring not certified/);
@@ -862,4 +862,13 @@ test('Kicker crosschecks expose exact mismatched counts and unresolved identity,
  assert.equal(result.fullFantasyScoresCertified,false);
  assert.match(core,/Disagreement:/);
  assert.match(core,/Unresolved actors:/);
+});
+
+test('Kicker discrepancy is visible and expanded on narrow mobile GameCast',()=>{
+ assert.match(core,/needsReview\?'open '/);
+ assert.match(core,/CHECK COUNTS/);
+ assert.match(core,/Reconciliation needs review:/);
+ assert.match(core,/Team\/PBP evidence:/);
+ assert.match(core,/published team FG\/XP categories reconcile/);
+ assert.match(core,/weeks needing count review/);
 });
