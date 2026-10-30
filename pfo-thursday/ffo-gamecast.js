@@ -54,7 +54,18 @@
    try{
     const response=await fetch(url,{cache:'no-store',credentials:'same-origin',signal:controller.signal,headers:{accept:'application/json'}});
     let body;try{body=await response.json()}catch{throw Error('Invalid gateway response')}
-    if(!response.ok){const err=Error(body.error||'HTTP '+response.status);err.status=response.status;throw err;}
+    if(!response.ok){
+      // Cloudflare binding status is not proof of an MSF HTTP status.
+      const details=[];
+      if(body.transport==='legacy_gamecast_service_binding')details.push('legacy GameCast binding');
+      else if(body.transport==='direct_msf')details.push('direct MSF');
+      if(Number.isInteger(body.binding_http_status))details.push('binding HTTP '+body.binding_http_status);
+      if(Number.isInteger(body.msf_http_status_via_binding))details.push('MSF status reported by binding '+body.msf_http_status_via_binding);
+      if(Number.isInteger(body.provider_http_status)&&body.provider_status_direct===true)details.push('MSF HTTP '+body.provider_http_status);
+      if(typeof body.inner_gateway_error==='string'&&/^[a-z0-9_-]{1,80}$/i.test(body.inner_gateway_error))details.push('inner error '+body.inner_gateway_error);
+      const err=Error((body.error||'HTTP '+response.status)+(details.length?' · '+details.join(' · '):''));
+      err.status=response.status;err.diagnostics=details;throw err;
+     }
     // A licensed not-modified feed is normal, not a lost connection.
     if(body.available===false&&body.reason==='provider_not_modified')return {...body,notModified:true};
     if(body.available===false)throw Error(body.reason||'Feed not ready');
@@ -383,7 +394,7 @@
     report.seasonAudit=model.auditStatFeed(seasonPayload,s.ownedRules);
     report.seasonFilterVerified=model.playerRows(seasonPayload).length>0&&model.playerRows(seasonPayload).every(r=>r.team===team);
     if(!report.seasonFilterVerified){report.seasonError='MSF team filter not verifiable; season rows cannot be used for reconciliation';}
-   }catch(error){report.seasonError=String(error.message||error).slice(0,110);}
+   }catch(error){report.seasonError=String(error.message||error).slice(0,230);}
    renderStatAudit(report);
    for(let week=1;week<=6;week++){
     if(indicator)indicator.textContent='MSF player game logs Week '+week+' of 6 · checking FFO scoring coverage…';
@@ -394,7 +405,7 @@
      const teamFilterVerified=rows.length>0&&rows.every(r=>r.team===team);
      report.weeks.push({week,audit,teamFilterVerified});
      if(audit.supported&&teamFilterVerified)weekPayloads.push(payload);
-    }catch(error){report.weeks.push({week,error:String(error.message||error).slice(0,100)});}
+    }catch(error){report.weeks.push({week,error:String(error.message||error).slice(0,230)});}
     renderStatAudit(report);
    }
    if(report.seasonFilterVerified&&seasonPayload&&weekPayloads.length){
