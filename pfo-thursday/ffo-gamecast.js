@@ -560,7 +560,7 @@
      const response=await auditedStatRequest('plays',{season:s.season,game_id:g.id},
       msg=>{if(indicator)indicator.textContent='Kicker W'+week+' · '+msg});
      const evidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,players);
-     report.kickWeeks.push({week,game,evidence});
+     report.kickWeeks.push({week,game,gameId:String(g.id),evidence});
      if(!report.kickEvidence){report.kickEvidence=evidence;
       report.kickEvidence.sampleWeek=week;report.kickEvidence.sampleGame=game;}
     }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)})}
