@@ -1,0 +1,68 @@
+name: PFO 5.9.9 endgame, specialists and historical MSF Preview
+on:
+  push:
+    branches:
+      - pfo-599-endgame-portraits-history-20261029
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check PFO scripts and worker syntax
+        run: |
+          node --check pfo-thursday/ffo-gamecast.js
+          node --check pfo-thursday/ffo-gamecast-model.mjs
+          node --check pfo-thursday/ffo-gamecast-stadium.mjs
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-59.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          cp pfo-thursday/_worker.js /tmp/pfo-599-worker.mjs
+          node --check /tmp/pfo-599-worker.mjs
+      - name: MSF final/OT/portrait/history and all existing unit regressions
+        run: node --test pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-598.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-596.test.mjs pfo-thursday/qa-59.test.mjs
+      - name: Browser smoke and iPhone touch navigation
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs
+  deploy-preview:
+    needs: qa
+    if: github.ref == 'refs/heads/pfo-599-endgame-portraits-history-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assemble existing PFO static files and read-only Worker
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-preview"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) ! -name 'qa-*' -exec cp {} "$RUNNER_TEMP/pfo-preview/" \;
+          test -s "$RUNNER_TEMP/pfo-preview/index.html"
+          test -s "$RUNNER_TEMP/pfo-preview/_worker.js"
+          test -s "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
+      - name: Verify Preview-only deploy credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy to EXISTING Access-protected Cloudflare Preview branch, never production
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO 5.9.9 endgame specialists and historical MSF audit preview only"
+          echo "Protected Preview only. Production and Commissioner records untouched."
