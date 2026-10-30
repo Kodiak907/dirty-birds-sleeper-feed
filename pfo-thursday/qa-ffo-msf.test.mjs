@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -579,4 +579,45 @@ test('Player audit reports special-teams source gaps and team-gamelog endpoint s
  assert.match(core,/observedRawFieldPaths/);
  assert.match(core,/D\/ST is a team, not a player/);
  assert.doesNotMatch(core,/D\/ST.*0\.0 points/);
+});
+
+test('Historical MSF FG/XP PBP detection reports events without inventing player credit',()=>{
+ const payload={gameplaybyplay:{plays:[
+  {description:'(:44) 19-D.Whelan punts 37 yards, Touchback.',playStatus:{quarter:4}},
+  {description:'(11:53) 31-B.Kicker 45 yard Field Goal is good',playStatus:{quarter:1}},
+  {description:'(05:21) 31-B.Kicker extra point is good',playStatus:{quarter:1}},
+  {description:'(1:30) 31-B.Kicker 53 yard field goal no good',playStatus:{quarter:2}},
+  {description:'(0:30) field goal attempt blocked',playStatus:{quarter:3}}
+ ]}};
+ const evidence=kickingPlayEvidence(payload);
+ assert.equal(evidence.candidatePlays,4);
+ assert.equal(evidence.fgCandidates,3);
+ assert.equal(evidence.xpCandidates,1);
+ assert.deepEqual(evidence.publishedEvents.map(e=>e.publishedOutcome),
+  ['reported_good','reported_good','reported_missed','reported_missed']);
+ assert.equal(evidence.publishedEvents[0].distance,45);
+ assert.equal(evidence.publishedEvents[2].distance,53);
+ assert.equal(evidence.kickingFantasyScoreCertified,false);
+ assert.doesNotMatch(JSON.stringify(evidence),/fantasyPoints/);
+});
+test('Published MSF defensive sacks and interceptions score as isolated, provisional components',()=>{
+ const payload={teamgamelogs:[{team:{abbreviation:'GB'},game:{id:'G1'},
+  stats:{tackles:{sacks:2},interceptions:{interceptions:1},fumbles:{fumOppRec:3}}}]};
+ const evidence=auditTeamGameFeed(payload,'GB',own.scoring);
+ assert.equal(evidence.teamFilterVerified,true);
+ assert.equal(evidence.knownComponentCount,2);
+ assert.deepEqual(evidence.observedComponents.map(x=>[x.category,x.value,x.points]),
+  [['sack',2,2],['int',1,2]]);
+ assert.equal(evidence.dstScoreCertified,false);
+ assert.ok(evidence.exampleFieldPaths.some(x=>x.startsWith('fumbles.')));
+ assert.ok(!evidence.observedComponents.some(x=>x.category==='fum_rec'));
+});
+test('Audit renders compact specialist evidence and verifies a single licensed game without guessed points',()=>{
+ assert.match(core,/Kicker · published play-by-play evidence/);
+ assert.match(core,/D\/ST source evidence/);
+ assert.match(core,/model\.kickingPlayEvidence/);
+ assert.match(core,/model\.auditTeamGameFeed\(source\.data\|\|\{\},team,s\.ownedRules\)/);
+ assert.match(core,/No individual kicker credit, six-week completeness or fantasy score is certified/);
+ assert.match(core,/No final D\/ST fantasy score is certified/);
+ assert.match(core,/\.filter\(x=>x\.week>=1&&x\.week<=6/);
 });
