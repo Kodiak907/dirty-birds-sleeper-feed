@@ -351,32 +351,44 @@
  }
  function renderHistoryAudit(){
   const el=$('ffo-gc-history-results');if(!el)return;
+  // Compact summary first. Audit diagnostics stay available without occupying
+  // the whole mobile viewport unless Coach opens a specific game.
   el.innerHTML=s.historyResults.map(r=>{
-   const d=r.integrity?.diagnostics||r.diagnostics||null,a=r.integrity||null;
-   const counts=d?'MSF published plays '+d.describedCount+' · native IDs '+d.providerIdCount+
-     ' · ID gaps '+d.missingProviderIds+' · repeated native IDs '+d.repeatedProviderIds+
-     ' · unresolved collisions '+d.duplicateResolvedIds+
-     ' · clocks '+d.withClock+'/'+d.displayedCount+
-     ' · quarters '+(d.quarters.join(', ')||'unknown')+(d.capped?' · 360-play display cap':''):'No parsed MSF play records';
-   const box=a?(a.boxScorePublished?'MSF final box score '+a.boxAway+'–'+a.boxHome+
-     ' (away–home) · '+(a.providerFinal?'FINAL':'Final status unconfirmed'):
-     'Independent MSF box score unavailable'):'Box score not checked';
-   const check=a?'Source chronology '+a.chronologicalOrder+
-     (a.comparablePairs?' ('+a.comparablePairs+' comparable transitions)':'')+
-     (a.matchesSchedule===true?' · matches MSF schedule':
-       a.matchesSchedule===false?' · MSF scoreboard mismatch':' · schedule comparison unavailable')+
+   const a=r.integrity||null,d=a?.diagnostics||r.diagnostics||null;
+   const home=a?.boxHome,away=a?.boxAway;
+   const score=a?.boxScorePublished?away+'–'+home:'Score unavailable';
+   const clock=d?d.withClock+'/'+d.displayedCount+' clocks':'Clock coverage unknown';
+   const available=!!(a?.usablePlaySequence&&a.clockCoverage!=='incomplete');
+   const exception=a?.clockCoverage==='ot_exception';
+   const tier=available?'PBP available'+(exception?' · OT clock exception':''):r.reason||'Not verified';
+   const notes=a?.warnings?.length?a.warnings.join(' · '):'No flagged fields in limited audit';
+   const counts=d?'Published plays '+d.describedCount+
+    ' · native IDs '+d.providerIdCount+' · ID gaps '+d.missingProviderIds+
+    ' · repeated native IDs '+d.repeatedProviderIds+
+    ' · collisions '+d.duplicateResolvedIds+
+    ' · '+clock+' · Q'+(d.quarters.join(', Q')||'unknown')+
+    (d.capped?' · 360-play viewing cap':''):'No published play diagnostics';
+   const box=a?(a.boxScorePublished?'MSF box score '+score+
+       ' · '+(a.providerFinal?'FINAL':'Final unconfirmed'):'MSF box score unavailable'):'Box score unchecked';
+   const order=a?'Source chronology '+a.chronologicalOrder+
+     (a.matchesSchedule===true?' · final scores match':
+      a.matchesSchedule===false?' · score mismatch':' · score comparison unavailable')+
      (a.quarterScoreMatches===true?' · period totals reconcile':
-       a.quarterScoreMatches===false?' · period-total discrepancy':'')+
-     (a.otPlayCount?' · OT plays '+a.otPlayCount:''):'No chronology assessment';
-   const warning=a?.warnings?.length?a.warnings.join(' · '):'No flagged fields in this limited sample';
-   return '<div style="border-bottom:1px solid #315069;padding:9px 0"><b>Week '+r.week+'</b> · '+safe(r.game||'Game unavailable')+
-    '<div>'+safe(r.ok?'MSF HISTORICAL PLAYS AVAILABLE':r.reason)+'</div>'+
-    '<div class="muted">'+safe(counts)+'</div>'+
-    '<div class="muted">'+safe(box)+'</div>'+
-    '<div class="muted">'+safe(check)+'</div>'+
-    '<div class="muted">'+safe(warning)+'</div>'+
-    (r.method==='calendar_estimate'?'<div class="muted">Week inferred from kickoff date, not a native MSF week designation</div>':'')+
-    (r.gameId?'<button type="button" class="button" style="padding:4px 7px;margin-top:5px" data-ffo-history-game="'+safe(r.gameId)+'">Inspect actual plays</button>':'')+'</div>';
+      a.quarterScoreMatches===false?' · period totals mismatch':'')+
+     (a.otPlayCount?' · '+a.otPlayCount+' OT plays':''):'Chronology unchecked';
+   return '<details class="gc-history-row" style="border-bottom:1px solid #315069;padding:8px 0"'+
+     (available?'':' open')+'><summary style="cursor:pointer;display:flex;flex-wrap:wrap;gap:5px;align-items:center;justify-content:space-between">'+
+     '<strong>W'+r.week+' · '+safe(r.game||'Game unavailable')+'</strong>'+
+     '<span style="font-size:11px;opacity:.9">'+safe(d?d.describedCount+' plays · '+score:'No PBP')+'</span>'+
+     '<span style="font-size:11px;width:100%;opacity:.85">'+safe(tier)+'</span></summary>'+
+     '<div style="font-size:12px;margin:7px 0;line-height:1.45">'+
+     '<div>'+safe(counts)+'</div><div class="muted">'+safe(box)+'</div>'+
+     '<div class="muted">'+safe(order)+'</div>'+
+     '<div class="muted">'+safe(notes)+'</div>'+
+     (r.method==='calendar_estimate'?'<div class="muted">Week inferred from kickoff date</div>':'')+
+     '<div class="muted">This sample alone does not certify every play or independent fantasy totals.</div>'+
+     (r.gameId?'<button type="button" class="button" style="padding:5px 8px;margin-top:5px" data-ffo-history-game="'+safe(r.gameId)+'">Inspect actual plays</button>':'')+
+     '</div></details>';
   }).join('');
   el.querySelectorAll('[data-ffo-history-game]').forEach(button=>button.addEventListener('click',async()=>{
    const id=button.dataset.ffoHistoryGame,g=s.archiveGames.find(x=>x.id===id);
@@ -385,6 +397,7 @@
    await selectGame(id);
   }));
  }
+
  async function runHistoricalAudit(){
   const button=$('ffo-gc-history-check'),indicator=$('ffo-gc-history-status');
   if(button?.disabled||!s.enabled){if(indicator)indicator.textContent='Authenticate the private MSF gateway before auditing.';return;}
@@ -415,12 +428,12 @@
      const response=pb.value;
      const box=bs.status==='fulfilled'&&!bs.value?.notModified&&bs.value?.available!==false?bs.value:null;
      const a=model.inspectHistoricalGame(response,box,g);
-     const ok=a.usablePlaySequence&&a.diagnostics.missingClock===0;
+     const ok=a.usablePlaySequence&&a.clockCoverage!=='incomplete';
      if(bs.status==='rejected')a.warnings.push('MSF box score request failed: '+String(bs.reason?.message||bs.reason).slice(0,65));
      const reason=a.diagnostics.scoringOnly?'Only MSF scoring-play fallback':
        !a.diagnostics.describedCount?'No published plays recognized':
        a.chronologicalOrder==='mixed'?'Chronology inconsistent':
-       a.diagnostics.missingClock?'Some clocks unverified':
+       a.clockCoverage==='incomplete'?'Incomplete clock evidence':
        a.diagnostics.duplicateResolvedIds?'Unresolved play identities':
        'Published MSF PBP observed';
      s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,
@@ -434,9 +447,12 @@
    const available=s.historyResults.filter(r=>r.ok).length;
    const boxes=s.historyResults.filter(r=>r.integrity?.boxScorePublished).length;
    const matching=s.historyResults.filter(r=>r.integrity?.matchesSchedule===true).length;
-   if(indicator)indicator.textContent=available+'/6 games have usable MSF PBP · '+boxes+
-    '/6 final box scores with both scores · '+matching+
-    ' matching available MSF schedule scores. Neither the sample nor a box-score match certifies full PBP or player fantasy totals.';
+   const exceptions=s.historyResults.filter(r=>r.integrity?.clockCoverage==='ot_exception').length;
+   const total=s.historyResults.reduce((n,r)=>n+(r.integrity?.diagnostics?.describedCount||0),0);
+   if(indicator)indicator.textContent=available+'/6 MSF PBP samples available · '+total+' published plays · '+boxes+
+    '/6 final box scores · '+matching+'/6 matching schedule scores'+
+    (exceptions?' · '+exceptions+' overtime clock exception'+(exceptions===1?'':'s'):'')+
+    '. Full-play completeness and fantasy scoring are separate verification milestones.';
   }finally{button.disabled=false;}
  }
 
