@@ -856,9 +856,9 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
    if(!resp.ok)return ffoReply({error:'roster_directory_unavailable',provider_http_status:resp.status},502);
    const payload=await resp.json();
    const groups=Array.isArray(payload?.athletes)?payload.athletes:[];
-   const players=groups.flatMap(g=>Array.isArray(g?.items)?g.items:[]).filter(p=>p?.fullName&&/^\\d{1,10}$/.test(String(p.id||''))).map(p=>{
+   const players=groups.flatMap(g=>Array.isArray(g?.items)?g.items:[]).filter(p=>p?.fullName&&/^\d{1,10}$/.test(String(p.id||''))).map(p=>{
     const url=String(p.headshot?.href||'');
-    const image=/^https:\\/\\/a\\.espncdn\\.com\\/i\\/headshots\\/nfl\\/players\\/full\\/\\d{1,10}\\.png$/.test(url)?url:null;
+    const image=/^https:\/\/a\.espncdn\.com\/i\/headshots\/nfl\/players\/full\/\d{1,10}\.png$/.test(url)?url:null;
     return {id:String(p.id),name:String(p.fullName).slice(0,110),shortName:String(p.shortName||'').slice(0,60),
       team,position:String(p.position?.abbreviation||''),image,source:'ESPN 2026 team roster'};
    });
