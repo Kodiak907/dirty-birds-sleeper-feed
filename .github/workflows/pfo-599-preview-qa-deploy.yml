@@ -26,7 +26,7 @@ jobs:
           cp pfo-thursday/_worker.js /tmp/pfo-599-worker.mjs
           node --check /tmp/pfo-599-worker.mjs
       - name: MSF final/OT/portrait/history and all existing unit regressions
-        run: node --test pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-598.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-596.test.mjs pfo-thursday/qa-59.test.mjs
+        run: node --test pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-598.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-596.test.mjs
       - name: Browser smoke and iPhone touch navigation
         run: |
           npm install --no-save playwright@1.55.1
