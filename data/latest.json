@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-10-30T05:45:58.176018+00:00",
+  "fetched_at_utc": "2026-10-30T06:54:22.997190+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": "06a7a98b6f1801cd134db689a08ddb92",
-    "last_author_display_name": "Kodiak907",
-    "last_author_id": "1399093464662073344",
-    "last_author_is_bot": false,
+    "last_author_avatar": null,
+    "last_author_display_name": "sys",
+    "last_author_id": "166666666666666666",
+    "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1421733990599012352",
+    "last_message_id": "1421778666232258560",
     "last_message_text_map": null,
-    "last_message_time": 1793330307201,
+    "last_message_time": 1793340958701,
     "last_pinned_message_id": "1410724395902611456",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -11426,12 +11426,12 @@
           "13287",
           "4199",
           "4993",
-          "6130",
           "6786",
           "7547",
           "7588",
           "9228",
           "9484",
+          "9501",
           "DEN"
         ],
         "players_points": {
@@ -11447,12 +11447,12 @@
           "13287": 0.0,
           "4199": 0.0,
           "4993": 0.0,
-          "6130": 0.0,
           "6786": 0.0,
           "7547": 0.0,
           "7588": 0.0,
           "9228": 10.36,
           "9484": 14.3,
+          "9501": 0.0,
           "DEN": 0.0
         },
         "points": 22.9,
@@ -11607,7 +11607,7 @@
         "ties": 0,
         "total_moves": 0,
         "waiver_budget_used": 33,
-        "waiver_position": 12,
+        "waiver_position": 11,
         "wins": 4
       },
       "starters": [
@@ -11979,7 +11979,7 @@
         "ties": 0,
         "total_moves": 0,
         "waiver_budget_used": 45,
-        "waiver_position": 11,
+        "waiver_position": 10,
         "wins": 5
       },
       "starters": [
@@ -12193,12 +12193,12 @@
         "13287",
         "4199",
         "4993",
-        "6130",
         "6786",
         "7547",
         "7588",
         "9228",
         "9484",
+        "9501",
         "DEN"
       ],
       "reserve": [
@@ -12216,7 +12216,7 @@
         "ties": 0,
         "total_moves": 0,
         "waiver_budget_used": 133,
-        "waiver_position": 10,
+        "waiver_position": 12,
         "wins": 6
       },
       "starters": [
@@ -18930,6 +18930,36 @@
         "status_updated": 1793248855653,
         "transaction_id": "1421392358045433856",
         "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "9501": 12
+        },
+        "consenter_ids": [
+          12
+        ],
+        "created": 1793243983701,
+        "creator": "1400281937381240832",
+        "draft_picks": [],
+        "drops": {
+          "6130": 12
+        },
+        "leg": 8,
+        "metadata": {
+          "notes": "Your waiver claim was processed successfully!"
+        },
+        "roster_ids": [
+          12
+        ],
+        "settings": {
+          "seq": 0,
+          "waiver_bid": 0
+        },
+        "status": "complete",
+        "status_updated": 1793340958667,
+        "transaction_id": "1421371923601838080",
+        "type": "waiver",
         "waiver_budget": []
       },
       {

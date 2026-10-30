@@ -25,7 +25,7 @@
       "ppg": 0.917
     }
   },
-  "generated_at_utc": "2026-10-30T05:46:02.937610+00:00",
+  "generated_at_utc": "2026-10-30T06:54:28.943764+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -537,6 +537,28 @@
       },
       {
         "audit": {
+          "carries_per_game": 4.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 31.7,
+          "snap_trend_3_appearances_pp": 3.0,
+          "targets_per_game": 1.67
+        },
+        "name": "Devin Singletary",
+        "ppg": 5.6,
+        "replacement_reference": {
+          "name": "Kaelon Black",
+          "ppg": 4.197
+        },
+        "same_position_uplift_ppg": 1.4,
+        "screen_only": true,
+        "sleeper_id": "6130",
+        "team": "NYG"
+      },
+      {
+        "audit": {
           "carries_per_game": 7.0,
           "flags": [],
           "injury_report_observation": {
@@ -869,28 +891,6 @@
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": 57.7,
-          "snap_trend_3_appearances_pp": 16.0,
-          "targets_per_game": 5.67
-        },
-        "name": "DeMario Douglas",
-        "ppg": 4.94,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.917
-        },
-        "same_position_uplift_ppg": 4.02,
-        "screen_only": true,
-        "sleeper_id": "9501",
-        "team": "NE"
       },
       {
         "audit": {
@@ -1231,5 +1231,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-30T05:45:58.176018+00:00"
+  "snapshot_utc": "2026-10-30T06:54:22.997190+00:00"
 }

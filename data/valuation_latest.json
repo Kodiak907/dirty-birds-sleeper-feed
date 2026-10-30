@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-10-30T05:46:02.724023+00:00",
+  "generated_at_utc": "2026-10-30T06:54:28.727464+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -8718,25 +8718,6 @@
           ]
         },
         {
-          "actual_points_total": 0.0,
-          "actual_points_weekly_avg": 0.0,
-          "id": "6130",
-          "n_weeks": 7,
-          "name": "Devin Singletary",
-          "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 129.0,
           "actual_points_weekly_avg": 18.43,
           "id": "6786",
@@ -8829,6 +8810,25 @@
             9.1,
             6.2,
             12.8
+          ]
+        },
+        {
+          "actual_points_total": 3.8,
+          "actual_points_weekly_avg": 0.54,
+          "id": "9501",
+          "n_weeks": 7,
+          "name": "DeMario Douglas",
+          "nonzero_weeks": 1,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.8
           ]
         },
         {
@@ -9048,25 +9048,6 @@
               0.0,
               0.0
             ]
-          },
-          {
-            "actual_points_total": 0.0,
-            "actual_points_weekly_avg": 0.0,
-            "id": "6130",
-            "n_weeks": 7,
-            "name": "Devin Singletary",
-            "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
           }
         ],
         "TE": [
@@ -9223,6 +9204,25 @@
               0.0,
               20.0
             ]
+          },
+          {
+            "actual_points_total": 3.8,
+            "actual_points_weekly_avg": 0.54,
+            "id": "9501",
+            "n_weeks": 7,
+            "name": "DeMario Douglas",
+            "nonzero_weeks": 1,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              3.8
+            ]
           }
         ]
       },
@@ -9231,6 +9231,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-10-30T05:45:58.176018+00:00",
+  "snapshot_utc": "2026-10-30T06:54:22.997190+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-7"
 }

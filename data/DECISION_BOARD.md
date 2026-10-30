@@ -19,11 +19,12 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Keaton Mitchell | 6.08 | +1.88 | 32.0% | Carries 6.0 | No modeled flags (not medically cleared) |
 | 2 | Tyjae Spears | 5.61 | +1.42 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
-| 3 | Samaje Perine | 5.24 | +1.04 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
-| 4 | Chris Rodriguez Jr. | 5.16 | +0.96 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 5 | Mike Washington Jr. | 4.89 | +0.69 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
-| 6 | Tank Bigsby | 2.20 | -2.00 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 7 | Jaleel McLaughlin | 1.49 | -2.71 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 3 | Devin Singletary | 5.60 | +1.40 | 31.7% | Carries 4.0 | No modeled flags (not medically cleared) |
+| 4 | Samaje Perine | 5.24 | +1.04 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
+| 5 | Chris Rodriguez Jr. | 5.16 | +0.96 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
+| 6 | Mike Washington Jr. | 4.89 | +0.69 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 7 | Tank Bigsby | 2.20 | -2.00 | 28.7% | Carries 9.0 | sleeper_injury_ir |
+| 8 | Jaleel McLaughlin | 1.49 | -2.71 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (0.92 PPG)
 
@@ -33,14 +34,14 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Kalif Raymond | 5.73 | +4.81 | 61.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
 | 3 | Quentin Johnston | 5.68 | +4.76 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 4 | Chris Bell | 5.10 | +4.18 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 5 | DeMario Douglas | 4.94 | +4.02 | 57.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
-| 6 | Jauan Jennings | 4.82 | +3.90 | 73.3% | Tgt 1.7 | injury_report_observation_review |
-| 7 | Rashid Shaheed | 4.73 | +3.81 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
-| 8 | Ja'Kobi Lane | 4.57 | +3.65 | 54.3% | Tgt 4.3 | injury_report_observation_review |
-| 9 | Rashod Bateman | 4.35 | +3.43 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 10 | Michael Pittman Jr. | 3.92 | +3.00 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 11 | Adonai Mitchell | 3.31 | +2.40 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 12 | Brian Thomas Jr. | 3.10 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
+| 5 | Jauan Jennings | 4.82 | +3.90 | 73.3% | Tgt 1.7 | injury_report_observation_review |
+| 6 | Rashid Shaheed | 4.73 | +3.81 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 7 | Ja'Kobi Lane | 4.57 | +3.65 | 54.3% | Tgt 4.3 | injury_report_observation_review |
+| 8 | Rashod Bateman | 4.35 | +3.43 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 9 | Michael Pittman Jr. | 3.92 | +3.00 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 10 | Adonai Mitchell | 3.31 | +2.40 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 11 | Brian Thomas Jr. | 3.10 | +2.19 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
+| 12 | Mack Hollins | 3.11 | +2.19 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
 
 ## TE — reference: Chig Okonkwo (6.06 PPG)
 

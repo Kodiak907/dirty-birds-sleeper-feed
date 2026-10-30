@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-30T05:46:02.628245+00:00
-Sleeper snapshot: 2026-10-30T05:45:58.176018+00:00
+Generated: 2026-10-30T06:54:28.616045+00:00
+Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1421371923601838080` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: DeMario Douglas → Cokerthestroker (#12) | Dropped: Devin Singletary → Cokerthestroker (#12) | FAAB bid: $0
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-30T06:54:28.616045+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: DeMario Douglas → Cokerthestroker (#12) | Dropped: Devin Singletary → Cokerthestroker (#12) | FAAB bid: $0
 - 2026-10-29T04:47:34.564280+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Wil Lutz → DANGER CLOSE  (#4) | Dropped: Tyjae Spears → DANGER CLOSE  (#4)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jerry Jeudy → DANGER CLOSE  (#4)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Michael Penix Jr. → kfsn (#6) | Dropped: Michael Pittman Jr. → kfsn (#6)
 - 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Kenny Gainwell → DANGER CLOSE  (#4)
-- 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · kfsn (#6) | Added: Carolina Panthers → kfsn (#6) | Dropped: Jacksonville Jaguars → kfsn (#6)
 
 ## Important limits
 

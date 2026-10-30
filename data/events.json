@@ -9123,5 +9123,51 @@
       "CIN"
     ],
     "roster_id": 8
+  },
+  {
+    "added": [
+      "9501"
+    ],
+    "detected_at_utc": "2026-10-30T06:54:22.997190+00:00",
+    "dropped": [
+      "6130"
+    ],
+    "kind": "roster_change",
+    "roster_id": 12
+  },
+  {
+    "detected_at_utc": "2026-10-30T06:54:22.997190+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "9501": 12
+      },
+      "consenter_ids": [
+        12
+      ],
+      "created": 1793243983701,
+      "creator": "1400281937381240832",
+      "draft_picks": [],
+      "drops": {
+        "6130": 12
+      },
+      "leg": 8,
+      "metadata": {
+        "notes": "Your waiver claim was processed successfully!"
+      },
+      "roster_ids": [
+        12
+      ],
+      "settings": {
+        "seq": 0,
+        "waiver_bid": 0
+      },
+      "status": "complete",
+      "status_updated": 1793340958667,
+      "transaction_id": "1421371923601838080",
+      "type": "waiver",
+      "waiver_budget": []
+    },
+    "transaction_id": "1421371923601838080"
   }
 ]
