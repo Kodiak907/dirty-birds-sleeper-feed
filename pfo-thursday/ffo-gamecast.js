@@ -29,6 +29,8 @@
  let playerFeedPending=null,gamePending=null,overviewPending=null;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
  let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0;
+ const LIVE_PLAY_MS=10000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
+ let consecutivePlayFailures=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
  function cacheTtl(name){
@@ -47,11 +49,13 @@
   if(!force&&ttl>0&&hit&&now-hit.at<ttl)return hit.body;
   if(feedPending.has(key))return feedPending.get(key);
   const promise=(async()=>{
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12500);
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),name==='plays'||name==='boxscore'?9000:12500);
    try{
     const response=await fetch(url,{cache:'no-store',credentials:'same-origin',signal:controller.signal,headers:{accept:'application/json'}});
     let body;try{body=await response.json()}catch{throw Error('Invalid gateway response')}
-    if(!response.ok)throw Error(body.error||'HTTP '+response.status);
+    if(!response.ok){const err=Error(body.error||'HTTP '+response.status);err.status=response.status;throw err;}
+    // A licensed not-modified feed is normal, not a lost connection.
+    if(body.available===false&&body.reason==='provider_not_modified')return {...body,notModified:true};
     if(body.available===false)throw Error(body.reason||'Feed not ready');
     if(ttl>0){
       feedCache.delete(key);feedCache.set(key,{at:Date.now(),body});
@@ -309,7 +313,7 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
@@ -320,8 +324,14 @@
     drawPlays();drawPlayer();return;
   }
   try{
-    const [pb,bs]=await Promise.allSettled([feed('plays',{season:s.season,game_id:s.game}),feed('boxscore',{season:s.season,game_id:s.game})]);
-    if(pb.status==='fulfilled'){
+    const boxDue=!s.liveBox||!s.lastBoxPoll||Date.now()-s.lastBoxPoll>=LIVE_BOX_MS;
+    if(boxDue)s.lastBoxPoll=Date.now();
+    const [pb,bs]=await Promise.allSettled([
+      feed('plays',{season:s.season,game_id:s.game}),
+      boxDue?feed('boxscore',{season:s.season,game_id:s.game}):Promise.resolve(null)
+    ]);
+    if(pb.status==='fulfilled'&&!pb.value.notModified){
+      consecutivePlayFailures=0;
       const ps=model.plays(pb.value.data);
       if(ps.length>=s.playCache.length||s.playCache.length===0){
        s.playCache=model.versionedPlays(s.playCache,ps);
@@ -335,7 +345,11 @@
       s.latestCheck=pb.value.checked_at;
       if(pb.value.provider_updated_at&&Number.isFinite(Date.parse(pb.value.provider_updated_at)))lastProviderUpdateAt=Date.parse(pb.value.provider_updated_at);
     }
-    if(bs.status==='fulfilled'){
+    if(pb.status==='fulfilled'&&pb.value.notModified){
+      consecutivePlayFailures=0;lastSuccessfulGamePollAt=Date.now();
+    }
+    if(pb.status==='rejected')consecutivePlayFailures=Math.min(3,consecutivePlayFailures+1);
+    if(bs.status==='fulfilled'&&bs.value&&!bs.value.notModified){
       s.liveBox=bs.value;s.latestCheck=bs.value.checked_at;
       if(bs.value.provider_updated_at&&Number.isFinite(Date.parse(bs.value.provider_updated_at)))lastProviderUpdateAt=Math.max(lastProviderUpdateAt,Date.parse(bs.value.provider_updated_at));
       const idx=s.games.findIndex(g=>g.id===s.game);
@@ -368,7 +382,7 @@
     const scoreCoverage=current?.homePoints!=null&&current?.awayPoints!=null?'MSF score reported':'MSF score unavailable';
     const publishLag=lastProviderUpdateAt?Math.max(0,Math.floor((Date.now()-lastProviderUpdateAt)/1000)):null;
     status((s.playSource||'Source unavailable')+' · '+scoreCoverage+
-      (errs.length?' · '+errs.join('; '):' · MSF poll complete')+
+      (errs.length?' · '+errs.join('; '):pb.status==='fulfilled'&&pb.value.notModified?' · MSF unchanged':' · MSF poll complete')+
       (age!==null?' · last NEW published play '+age+'s ago':' · no new published play observed')+
       (publishLag!==null?' · provider updated '+publishLag+'s ago':' · provider update time unavailable')+
       supplemental+' · checked '+(s.latestCheck||'unknown')+' · feed delay not certified');
@@ -424,21 +438,35 @@
   const prevRender=pfo49RenderPlayer;pfo49RenderPlayer=function(...args){const out=prevRender(...args);const host=$('pfo49-profile');if(host&&s.player){let child=$('ffo-gc-profile-embed');if(!child){child=document.createElement('div');child.id='ffo-gc-profile-embed';child.className='ffo-gc-evidence';host.prepend(child)}drawPlayer()}return out};
  }
  document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(b=>b.addEventListener('click',()=>{s.playFilter=b.dataset.ffoFilter;document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));drawPlays()}));
- $('ffo-gc-refresh')?.addEventListener('click',async()=>{await refreshOverview(true);if(s.player)await refreshPlayer(true);if(s.game)await refreshGame()});
+ $('ffo-gc-refresh')?.addEventListener('click',async()=>{
+   // Immediate game data first. Don't block plays behind season/health feeds.
+   if(s.enabled&&s.game){s.lastGamePoll=Date.now();s.lastBoxPoll=0;await refreshGame();}
+   else await refreshOverview(true);
+   if(s.player)await refreshPlayer(false);
+ });
  document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
  void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
  if(gameActive())await refreshOverview();
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
- setInterval(()=>{
-   if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
+ function activeRefreshMs(){
    const game=s.games.find(g=>g.id===s.game),state=String(game?.status||'').toLowerCase();
    const kick=Date.parse(game?.start||''),now=Date.now();
    const likelyLive=/in.progress|in progress|live|halftime|half.time/.test(state)||
      (Number.isFinite(kick)&&now>=kick&&now<=kick+5*3600000&&!/final|complete|post|scheduled|pre|not started/.test(state));
-   const refreshMs=likelyLive?20000:120000;
-   if(now-(s.lastGamePoll||0)>=refreshMs){s.lastGamePoll=now;refreshGame();}
-  },20000);
+   // Only slow down when provider calls fail, never on unchanged responses.
+   return (likelyLive?LIVE_PLAY_MS:IDLE_PLAY_MS)*Math.min(4,2**consecutivePlayFailures);
+ }
+ setInterval(()=>{
+   if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
+   const now=Date.now(),interval=activeRefreshMs();
+   if(now-(s.lastGamePoll||0)>=interval){s.lastGamePoll=now;void refreshGame();}
+ },2000);
+ document.addEventListener('visibilitychange',()=>{
+   if(document.visibilityState==='visible'&&gameActive()&&s.enabled&&s.game){
+     s.lastGamePoll=Date.now();void refreshGame();
+   }
+ });
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},60000);
  window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,
   lastSuccessfulGamePollAt:lastSuccessfulGamePollAt?new Date(lastSuccessfulGamePollAt).toISOString():null,
@@ -447,5 +475,6 @@
   scoreUpdateAt:lastScorePollAt?new Date(lastScorePollAt).toISOString():null,
   homeScore:s.games.find(g=>g.id===s.game)?.homePoints??null,
   awayScore:s.games.find(g=>g.id===s.game)?.awayPoints??null,
-  gameFeedError:s.lastError||null,pollIntervalMs:20000,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
+  gameFeedError:s.lastError||null,pollIntervalMs:activeRefreshMs(),boxPollIntervalMs:LIVE_BOX_MS,
+  consecutivePlayFailures,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
