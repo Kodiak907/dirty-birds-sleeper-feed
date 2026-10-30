@@ -1,7 +1,7 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-30T14:56:35.516742+00:00
-Sleeper snapshot: 2026-10-30T14:56:31.739788+00:00
+Generated: 2026-10-30T15:51:48.865815+00:00
+Sleeper snapshot: 2026-10-30T15:51:44.287455+00:00
 
 No roster changes or newly completed trades detected since previous scouting run.
 
