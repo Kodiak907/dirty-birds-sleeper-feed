@@ -34,17 +34,63 @@ export function eventInfo(e,g){
  return {offense,side,yl,spot,down,distance,dir,target,end,explicitYds,quarter:e?.period||null,clock:e?.clock||null};
 }
 const validImage=x=>{if(typeof x!=='string')return '';try{const u=new URL(x);return u.protocol==='https:'&&['mysportsfeeds.com','sleepercdn.com','sleeper.com','espncdn.com','nfl.com'].some(d=>u.hostname===d||u.hostname.endsWith('.'+d))?u.href:''}catch{return ''}};
-function uniqueMatchingPlayer(event,playerRows,selected){
- const norm=normalizeName(event?.text||'');if(!norm)return null;
- const matches=(Array.isArray(playerRows)?playerRows:[]).filter(p=>{const n=normalizeName(p?.name||'');return n.length>=6&&norm.includes(n)});
- const length=matches.length?Math.max(...matches.map(x=>normalizeName(x.name).length)):0;
- const choices=matches.filter(x=>normalizeName(x.name).length===length);
- if(choices.length===1)return choices[0];
- if(selected?.name&&norm.includes(normalizeName(selected.name))&&normalizeName(selected.name).length>=6)return selected;
+/**
+ * Choose a verified play subject, NOT just the longest name in the description.
+ * A complete pass features the receiver, an incompletion or sack the QB, a pick
+ * the intercepting defender and a kick the kicker. Ambiguities remain unknown.
+ */
+export function selectPlaySubject(event,rows,selected=null){
+ const text=normalizeName(event?.text||'');
+ if(!text)return null;
+ const raw=Array.isArray(rows)?rows:[];
+ const candidates=raw.filter(p=>{
+  const name=normalizeName(p?.name||'');
+  return name.length>=6&&text.includes(name);
+ });
+ if(selected?.name&&normalizeName(selected.name).length>=6&&text.includes(normalizeName(selected.name))&&
+    !candidates.some(x=>normalizeName(x.name)===normalizeName(selected.name)))candidates.push(selected);
+ const unique=new Map();
+ for(const p of candidates){
+  const key=normalizeName(p.name);
+  if(!unique.has(key))unique.set(key,p);
+ }
+ const pool=[...unique.values()];
+ if(pool.length===1)return pool[0];
+ if(!pool.length)return null;
+ const position=p=>String(p.position||p.primaryPosition||'').toUpperCase();
+ const choose=match=>{
+  const v=pool.filter(match);
+  return v.length===1?v[0]:null;
+ };
+ const byContext=(prefix)=>{
+  const hit=pool.filter(p=>text.includes(prefix+' '+normalizeName(p.name)));
+  return hit.length===1?hit[0]:null;
+ };
+ if(/intercept|picked off|pick six/.test(text)){
+  return byContext('intercepted by')||byContext('picked off by')||
+   choose(p=>/^(CB|S|SS|FS|DB|LB|ILB|OLB|MLB|DE|DT|DL|EDGE)$/.test(position(p)));
+ }
+ if(/incomplete|pass falls|pass dropped|pass intended/.test(text))
+  return choose(p=>position(p)==='QB');
+ if(/sack|sacked/.test(text))return choose(p=>position(p)==='QB');
+ if(/field goal|extra point|pat attempt|kick attempt/.test(text))
+  return choose(p=>position(p)==='K'||position(p)==='PK');
+ if(/\bpunt\b|punts/.test(text))return choose(p=>position(p)==='P');
+ if(/pass|passing|complete|reception|caught/.test(text)){
+  const receiver=byContext('pass to')||byContext('passes to')||byContext('caught by')||byContext('complete to');
+  if(receiver&&position(receiver)!=='QB')return receiver;
+  return choose(p=>['WR','TE','RB','FB'].includes(position(p)));
+ }
+ if(/rush|ran|run for|scramble|handoff|carries/.test(text)){
+  const runner=byContext('rush by')||byContext('rushes by')||byContext('run by');
+  if(runner)return runner;
+  if(/scramble/.test(text))return choose(p=>position(p)==='QB');
+  return choose(p=>['RB','FB','WR'].includes(position(p)));
+ }
  return null;
 }
 function playerPortrait(event,rows,selected){
- const p=uniqueMatchingPlayer(event,rows,selected);
+ const p=selectPlaySubject(event,rows,selected);
  const raw=p?.raw?.player||p?.raw?.playerInfo||p||{};
  let src=validImage(first(raw,['officialImageSrc','officialImageUrl','headshot','headshotUrl','imageUrl','photoUrl']));
  // Only use Sleeper ID when uniquely matched to the roster member, never a MSF ID.
