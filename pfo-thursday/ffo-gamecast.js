@@ -352,10 +352,21 @@
  function renderHistoryAudit(){
   const el=$('ffo-gc-history-results');if(!el)return;
   el.innerHTML=s.historyResults.map(r=>{
-   const label=r.ok?'Published '+r.count+' plays':r.reason;
-   const note=r.ok?(r.complete?'Provider indicates full PBP; verify entire game continuity':'Published plays returned, full-game coverage unverified'):'Full PBP not demonstrated for this sample';
-   return '<div style="border-bottom:1px solid #315069;padding:7px 0"><b>Week '+r.week+'</b> · '+safe(r.game||'Game unavailable')+
-    ' · '+safe(label)+'<div class="muted">'+safe(note)+
+   const count=r.count??0,diag=r.diagnostics||null;
+   const counts=diag?'MSF published descriptions '+diag.describedCount+
+     ' · parsed '+diag.displayedCount+
+     (diag.capped?' (360-play display cap)':'')+
+     ' · native IDs '+diag.providerIdCount+
+     ' · missing IDs '+diag.missingProviderIds+
+     ' · repeated native IDs '+diag.repeatedProviderIds+
+     ' · unresolved collisions '+diag.duplicateResolvedIds+
+     ' · clocks '+diag.withClock+'/'+diag.displayedCount+
+     ' · quarters '+(diag.quarters.join(', ')||'unavailable'):'No authenticated play records';
+   const label=r.ok?'HISTORICAL PLAYS AVAILABLE':r.reason;
+   const note=r.ok?'A usable MSF play sequence was returned; this does not certify every play or all games.':'Full MSF PBP not demonstrated for this sample.';
+   return '<div style="border-bottom:1px solid #315069;padding:8px 0"><b>Week '+r.week+'</b> · '+safe(r.game||'Game unavailable')+
+    '<div>'+safe(label)+'</div><div class="muted">'+safe(counts)+'</div>'+
+    '<div class="muted">'+safe(note)+
     (r.method==='calendar_estimate'?' · Week inferred from kickoff date':'')+'</div>'+
     (r.gameId?'<button type="button" class="button" style="padding:4px 7px;margin-top:5px" data-ffo-history-game="'+safe(r.gameId)+'">Inspect actual plays</button>':'')+'</div>';
   }).join('');
@@ -377,20 +388,21 @@
     const candidates=all.map(g=>({g,tag:auditWeekForGame(g)})).filter(x=>x.tag.week===week)
       .sort((a,b)=>Date.parse(a.g.start||'')-Date.parse(b.g.start||''));
     const choice=candidates[0];
-    if(!choice){s.historyResults.push({week,ok:false,reason:'No schedule-matched game returned by MSF',method:'unknown'});renderHistoryAudit();continue;}
+    if(!choice){
+     s.historyResults.push({week,ok:false,reason:'No MSF schedule-matched game returned',method:'unknown'});
+     renderHistoryAudit();continue;
+    }
     const g=choice.g,short=g.away+' @ '+g.home;
     try{
      const response=await feed('plays',{season:s.season,game_id:g.id},true);
-     const rows=model.plays(response.data||{});
-     const limited=response.coverage==='scoring_only'||response.full_playbyplay_authorized===false;
-     const sameId=new Set(rows.map(p=>String(p.id))).size===rows.length&&
-       rows.every(p=>p.raw&&(p.raw.id||p.raw.playId));
-     const ordered=rows.every(p=>p.period&&p.clock);
-     const ok=rows.length>0&&sameId&&ordered&&!limited;
+     const diag=model.diagnosePlayFeed(response.data||{},response);
+     const ok=diag.hasPublishedPlays&&diag.duplicateResolvedIds===0&&diag.missingClock===0;
+     const reason=diag.scoringOnly?'Scoring-only MSF fallback; full play-by-play unavailable':
+       !diag.describedCount?'MSF returned no recognized published plays':
+       diag.duplicateResolvedIds?'Unresolved play identity collisions':
+       diag.missingClock?'Some plays missing a provider clock':'MSF published play records observed';
      s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,
-      ok,reason:limited?'Scoring-only fallback; full PBP not authorized':!rows.length?'Empty or unrecognized PBP feed':
-       !sameId?'Duplicate play IDs':!ordered?'Missing chronology in plays':'Play feed not confirmed',
-      count:rows.length,complete:ok&&response.full_playbyplay_authorized===true});
+      ok,reason,count:diag.describedCount,diagnostics:diag});
     }catch(error){
      s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,ok:false,
       reason:'MSF request failed: '+String(error.message||error).slice(0,100)});
@@ -398,7 +410,7 @@
     renderHistoryAudit();
    }
    const available=s.historyResults.filter(r=>r.ok).length;
-   if(indicator)indicator.textContent=available+'/6 sample games returned non-scoring-only chronological plays. Complete historical entitlement remains unverified until all games and full coverage are audited.';
+   if(indicator)indicator.textContent=available+'/6 sample games returned MSF plays with usable identities and clocks. A sample is not full-season entitlement or complete-game verification.';
   }finally{button.disabled=false;}
  }
 
