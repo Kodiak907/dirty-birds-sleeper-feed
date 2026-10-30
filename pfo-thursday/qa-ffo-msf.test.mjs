@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -490,4 +490,57 @@ test('MSF historical stat audit paces weekly requests, retries transient gateway
  assert.match(core,/auditedStatRequest\('gamelogs',\{season:s.season,week,team\}/);
  assert.match(core,/auditedStatRequest\('stats',\{season:s.season,team\}/);
  assert.match(core,/Missing games or statistics are unknown, not zero/);
+});
+
+
+test('FFL out-of-position passing touchdown is not lost when a WR throws the ball',()=>{
+ const stats={passing:{passYards:40,passTD:1},receiving:{receptions:2,recYards:20},rushing:{rushYards:0,rushTD:0},fumbles:{fumblesLost:0}};
+ const r=fflScore(stats,own.scoring,'WR');
+ assert.equal(r.points,8.6);
+ assert.ok(r.components.some(x=>x.key==='pass_td'&&x.points===4));
+ assert.ok(r.components.some(x=>x.key==='pass_yd'&&x.points===1.6));
+ assert.equal(r.complete,false,'unverified event-only scoring still blocks certification');
+});
+test('Kicker scoring uses FFO 40-49 and 50-59 distance bands, not a made-FG shortcut',()=>{
+ const stats={fieldGoals:{fieldGoalsMade40To49:1,fieldGoalsMade50To59:1,fieldGoalsMissed:0},
+  extraPoints:{extraPointsMade:2,extraPointsMissed:0}};
+ const norm=normalizeStats(stats);
+ assert.equal(norm.fgm_40_49,1);
+ assert.equal(norm.fgm_50_59,1);
+ const r=fflScore(stats,own.scoring,'K');
+ assert.equal(r.points,11);
+ assert.equal(r.complete,false);
+ assert.ok(r.missing.includes('fgm_60p'));
+ assert.ok(r.components.some(x=>x.key==='fgm_50_59'&&x.points===5));
+ const generic=fflScore({fieldGoals:{fieldGoalsMade:2},extraPoints:{extraPointsMade:2}},own.scoring,'K');
+ assert.equal(generic.points,2,'2 XP are evidenced, made FG distances not invented');
+ assert.ok(generic.missing.includes('fgm_40_49'));
+ assert.ok(generic.missing.includes('fgm_50_59'));
+});
+test('Per-position FFL evidence exposes component weights and category coverage but no certified scores',()=>{
+ const feed={gamelogs:[
+  {player:{id:101,fullName:'FFO Test WR',primaryPosition:'WR'},team:{abbreviation:'GB'},stats:{receiving:{receptions:4,recYards:60,recTD:1}}},
+  {player:{id:102,fullName:'FFO Test K',primaryPosition:'K'},team:{abbreviation:'GB'},stats:{extraPoints:{extraPointsMade:2},fieldGoals:{fieldGoalsMade40To49:1}}},
+  {player:{id:103,fullName:'Other Team QB',primaryPosition:'QB'},team:{abbreviation:'CAR'},stats:{passing:{passYards:200}}}
+ ]};
+ const a=scoringEvidence([{week:6,payload:feed}],own.scoring,'GB');
+ assert.equal(a.team,'GB');assert.equal(a.records,2);assert.equal(a.weekFeeds,1);
+ assert.equal(a.exactFantasyPointsCertified,false);
+ assert.equal(a.byPosition.WR.records,1);assert.equal(a.byPosition.K.records,1);
+ assert.equal(a.byPosition.QB.records,0);
+ const w=a.byPosition.WR.samples[0];
+ assert.equal(w.week,6);assert.equal(w.observedPoints,14);
+ assert.ok(w.components.some(x=>x.key==='rec'&&x.points===2));
+ assert.ok(w.components.some(x=>x.key==='rec_yd'&&x.points===6));
+ assert.ok(w.missing.length);
+ assert.equal(a.byPosition.K.samples[0].observedPoints,6);
+});
+test('MSF scoring audit displays component breakdown and lower-bound comparison accurately',()=>{
+ assert.match(core,/model\.scoringEvidence\(goodWeeks,s\.ownedRules,team\)/);
+ assert.match(core,/FFL scoring components/);
+ assert.match(core,/Observed subtotal/);
+ assert.match(core,/lower-bound checks/);
+ assert.match(core,/six-week totals exceeding published season totals/);
+ assert.match(core,/model\.auditSeasonLowerBound\(goodWeeks\.map\(x=>x\.payload\),seasonPayload\)/);
+ assert.doesNotMatch(core,/Sleeper fantasy points as source/);
 });
