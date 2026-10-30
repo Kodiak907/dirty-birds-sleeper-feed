@@ -1,13 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-30T16:48:35.891446+00:00
-Sleeper snapshot: 2026-10-30T16:48:30.814062+00:00
+Generated: 2026-10-30T17:43:01.334906+00:00
+Sleeper snapshot: 2026-10-30T17:42:53.517568+00:00
 
-Roster change entries: 2. New completed trade entries: 1.
-
-- JA’MARRTRIX: added Jeremiyah Love; dropped Harold Fannin Jr.
-- Cokerthestroker: added Harold Fannin Jr.; dropped Jeremiyah Love
-- Completed trade 1421285011176292352: {'Harold Fannin Jr.': 'Cokerthestroker', 'Jeremiyah Love': 'JA’MARRTRIX'}; FAAB transfers []
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
