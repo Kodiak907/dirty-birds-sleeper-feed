@@ -907,9 +907,26 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
  // Worker; never return provider response bodies, authorization or request headers.
  if(!resp.ok){
   let inner=null;
-  const declared=Number(resp.headers.get('content-length')||0);
-  if(viaBinding&&declared>0&&declared<=8192&&String(resp.headers.get('content-type')||'').includes('application/json')){
-   try{inner=await resp.json()}catch{}
+  // Cloudflare service bindings commonly omit Content-Length even for small JSON
+  // errors. Read at most 8 KiB, never log or forward the raw provider response.
+  if(viaBinding&&String(resp.headers.get('content-type')||'').includes('application/json')){
+   try{
+    const reader=resp.body?.getReader(),parts=[];let size=0,overflow=false;
+    if(reader){
+     while(true){
+      const chunk=await reader.read();if(chunk.done)break;
+      size+=chunk.value?.byteLength||0;
+      if(size>8192){overflow=true;break}
+      parts.push(chunk.value);
+     }
+     if(overflow)await reader.cancel();
+     if(!overflow){
+      const bytes=new Uint8Array(size);let offset=0;
+      for(const part of parts){bytes.set(part,offset);offset+=part.byteLength}
+      inner=JSON.parse(new TextDecoder().decode(bytes));
+     }
+    }
+   }catch{}
   }
   const innerStatus=Number(inner?.provider_http_status);
   const verifiedInnerStatus=viaBinding&&Number.isInteger(innerStatus)&&innerStatus>=100&&innerStatus<=599?innerStatus:null;
