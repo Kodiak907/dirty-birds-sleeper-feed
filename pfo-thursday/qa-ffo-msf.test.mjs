@@ -177,8 +177,8 @@ test('Special teams: verified D. Whelan roster player gets real portrait and una
 });
 test('Historical audit is MSF-only and player imagery is backed by protected roster',()=>{
  assert.match(core,/runHistoricalAudit/);
- assert.match(core,/feed\\('plays',\\{season:s.season,game_id:g.id\\},true\\)/);
+ assert.match(core,/feed\('plays',\{season:s.season,game_id:g.id\},true\)/);
  assert.match(core,/ensurePortraits/);
  assert.match(worker,/route==='portraits'/);
- assert.match(worker,/site.api.espn.com\\/apis\\/site\\/v2\\/sports\\/football\\/nfl\\/teams/);
+ assert.match(worker,/site.api.espn.com\/apis\/site\/v2\/sports\/football\/nfl\/teams/);
 });
