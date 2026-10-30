@@ -374,7 +374,7 @@
    'Season totals · '+report.seasonAudit.parsedCount+' player records':
    'Season totals unverified'+(report.seasonError?' · '+report.seasonError:'');
   const a=report.lowerBound,comparison=a?a.matchedPlayers+' MSF player IDs matched · '+
-   a.comparedCategories+' compared categories · '+a.overSeasonTotals+' mismatches':'Season reconciliation unavailable';
+   a.comparedCategories+' lower-bound checks · '+a.overSeasonTotals+' six-week totals exceeding published season totals':'Season reconciliation unavailable';
   const e=report.scoringEvidence,by=e?.byPosition||{};
   const positionRows=e?['QB','RB','WR','TE','K','DEF'].map(position=>{
    const p=by[position]||{},total=p.records||0;
