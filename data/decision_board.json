@@ -25,7 +25,7 @@
       "ppg": 0.917
     }
   },
-  "generated_at_utc": "2026-10-30T06:54:28.943764+00:00",
+  "generated_at_utc": "2026-10-30T08:00:24.474527+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -422,12 +422,12 @@
           "targets_per_game": 0.0
         },
         "name": "Malik Willis",
-        "ppg": 14.65,
+        "ppg": 14.66,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": 0.41,
+        "same_position_uplift_ppg": 0.42,
         "screen_only": true,
         "sleeper_id": "8161",
         "team": "MIA"
@@ -882,12 +882,12 @@
           "targets_per_game": 3.0
         },
         "name": "Chris Bell",
-        "ppg": 5.1,
+        "ppg": 5.11,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 0.917
         },
-        "same_position_uplift_ppg": 4.18,
+        "same_position_uplift_ppg": 4.19,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -1154,7 +1154,7 @@
           "name": "Christian Kirk",
           "ppg": 0.917
         },
-        "same_position_uplift_ppg": 1.17,
+        "same_position_uplift_ppg": 1.16,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1231,5 +1231,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-30T06:54:22.997190+00:00"
+  "snapshot_utc": "2026-10-30T08:00:21.291723+00:00"
 }

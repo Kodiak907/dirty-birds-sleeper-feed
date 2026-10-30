@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-30T06:54:28.792118+00:00
-Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
+Generated: 2026-10-30T08:00:24.349403+00:00
+Sleeper snapshot: 2026-10-30T08:00:21.291723+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,7 +20,7 @@ Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Malik Willis | MIA | 14.65 | 100% | 100.0% | Not flagged |
+| 1 | Malik Willis | MIA | 14.66 | 100% | 100.0% | Not flagged |
 | 2 | Baker Mayfield | TB | 13.22 | 90% | 94.7% | Questionable |
 | 3 | Tanner McKee | PHI | 11.36 | 90% | 100.0% | Not flagged |
 
@@ -44,7 +44,7 @@ Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
 | 1 | Deebo Samuel Sr. | SF | 7.75 | 90% | — | Out |
 | 2 | Kalif Raymond | CHI | 5.73 | 90% | 61.7% | Not flagged |
 | 3 | Quentin Johnston | LAC | 5.68 | 100% | 81.3% | Not flagged |
-| 4 | Chris Bell | MIA | 5.10 | 100% | 67.0% | Not flagged |
+| 4 | Chris Bell | MIA | 5.11 | 100% | 67.0% | Not flagged |
 | 5 | Jauan Jennings | MIN | 4.82 | 100% | 73.3% | Not flagged |
 | 6 | Rashid Shaheed | SEA | 4.73 | 90% | 41.3% | Not flagged |
 | 7 | Ja'Kobi Lane | BAL | 4.57 | 90% | 54.3% | Not flagged |
@@ -98,7 +98,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Malik Willis | QB | MIA | 14.65 | 100.0% |
+| Malik Willis | QB | MIA | 14.66 | 100.0% |
 | Baker Mayfield | QB | TB | 13.22 | 94.7% |
 | Tanner McKee | QB | PHI | 11.36 | 100.0% |
 | Keaton Mitchell | RB | LAC | 6.08 | 32.0% |
@@ -108,7 +108,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Devin Singletary | RB | NYG | 5.60 | 31.7% |
 | Samaje Perine | RB | CIN | 5.24 | 36.7% |
 | Michael Mayer | TE | LV | 5.19 | 75.3% |
-| Chris Bell | WR | MIA | 5.10 | 67.0% |
+| Chris Bell | WR | MIA | 5.11 | 67.0% |
 | Mike Washington Jr. | RB | LV | 4.89 | 23.0% |
 | Jauan Jennings | WR | MIN | 4.82 | 73.3% |
 | Rashid Shaheed | WR | SEA | 4.73 | 41.3% |

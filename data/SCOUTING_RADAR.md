@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-30T06:54:28.651885+00:00
-Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
+Generated: 2026-10-30T08:00:24.211539+00:00
+Sleeper snapshot: 2026-10-30T08:00:21.291723+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Cokerthestroker: added DeMario Douglas; dropped Devin Singletary
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

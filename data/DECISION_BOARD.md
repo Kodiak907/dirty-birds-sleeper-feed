@@ -9,7 +9,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Malik Willis | 14.65 | +0.41 | 100.0% | — | No modeled flags (not medically cleared) |
+| 1 | Malik Willis | 14.66 | +0.42 | 100.0% | — | No modeled flags (not medically cleared) |
 | 2 | Baker Mayfield | 13.22 | -1.02 | 94.7% | — | sleeper_injury_questionable |
 | 3 | Tanner McKee | 11.36 | -2.88 | 100.0% | — | No modeled flags (not medically cleared) |
 
@@ -33,7 +33,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Deebo Samuel Sr. | 7.75 | +6.83 | — | Tgt 3.0 | sleeper_injury_out, snap_data_missing, usage_sample_missing, injury_report_observation_review |
 | 2 | Kalif Raymond | 5.73 | +4.81 | 61.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
 | 3 | Quentin Johnston | 5.68 | +4.76 | 81.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 4 | Chris Bell | 5.10 | +4.18 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.11 | +4.19 | 67.0% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 5 | Jauan Jennings | 4.82 | +3.90 | 73.3% | Tgt 1.7 | injury_report_observation_review |
 | 6 | Rashid Shaheed | 4.73 | +3.81 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
 | 7 | Ja'Kobi Lane | 4.57 | +3.65 | 54.3% | Tgt 4.3 | injury_report_observation_review |

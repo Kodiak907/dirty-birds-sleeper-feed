@@ -1,25 +1,25 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-10-30T06:54:34.057554+00:00 | Forecast as of: 2026-10-30T01:37:24.885474+00:00
+Generated: 2026-10-30T08:00:29.000108+00:00 | Forecast as of: 2026-10-30T07:38:47.802612+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 8
 
-**Projected optimal score:** 125.51
+**Projected optimal score:** 125.71
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Patrick Mahomes | QB | DEN | 16.40 |
-| Bijan Robinson | RB | TB | 18.99 |
+| Bijan Robinson | RB | TB | 19.07 |
 | Kyren Williams | RB | LAC | 18.30 |
-| Zay Flowers | WR | BUF | 15.59 |
+| Zay Flowers | WR | BUF | 15.58 |
 | Garrett Wilson | WR | LV | 13.79 |
 | Chig Okonkwo | TE | PHI | 5.89 |
 | Will Reichard | K | DET | 7.33 |
 | Minnesota Vikings | DEF | DET | 6.28 |
-| Ollie Gordon II | RB | NE | 12.12 |
-| A.J. Brown | WR | MIA | 10.82 |
+| Ollie Gordon II | RB | NE | 11.94 |
+| A.J. Brown | WR | MIA | 11.13 |
 
 ## Week 9
 

@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-30T06:54:22.997190+00:00
+Updated: 2026-10-30T08:00:21.291723+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,8 +19,7 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 12: added DeMario Douglas; dropped Devin Singletary
-- Transaction 1421371923601838080: waiver / complete / rosters [12] / adds {'9501': 12} / drops {'6130': 12} / FAAB bid 0
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

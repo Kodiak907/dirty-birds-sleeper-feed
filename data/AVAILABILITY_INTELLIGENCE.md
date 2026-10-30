@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-10-30T06:54:34.625195+00:00
-Sleeper snapshot: 2026-10-30T06:54:22.997190+00:00
-nflverse observations: 2026-10-30T06:54:28.169133+00:00; injury feed loaded: True
+Generated: 2026-10-30T08:00:29.531904+00:00
+Sleeper snapshot: 2026-10-30T08:00:21.291723+00:00
+nflverse observations: 2026-10-30T08:00:23.933621+00:00; injury feed loaded: True
 
-**New observed changes:** 18. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,24 +31,8 @@ nflverse observations: 2026-10-30T06:54:28.169133+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **A.J. Brown** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **Amon-Ra St. Brown** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Braelon Allen** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Brock Bowers** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Bucky Irving** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **Chris Godwin Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **Darnell Washington** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Ja'Marr Chase** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Jahmyr Gibbs** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Jaylen Waddle** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
-- **Kenny Gainwell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
-- **Kyle Monangai** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **RJ Harvey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
-- **Stefon Diggs** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Tony Pollard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **Travis Kelce** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
-- **TreVeyon Henderson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '8'}
-- **Tyler Allgeier** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '8'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
