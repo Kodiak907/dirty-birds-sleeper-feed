@@ -1,22 +1,94 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-10-30T00:55:24.038667+00:00",
+  "generated_at_utc": "2026-10-30T01:57:21.695312+00:00",
   "candidates_evaluated": 60528,
-  "market_matched": 7805,
+  "market_matched": 8036,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-10-29T15:09:15.586609+00:00",
-  "projection_as_of": "2026-10-29T19:28:13.219348+00:00",
+  "projection_as_of": "2026-10-30T01:37:24.885474+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
     {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB"
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "4035",
+          "name": "Alvin Kamara",
+          "pos": "RB"
+        },
+        {
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 3.45,
+      "their_gain": 0.87,
+      "market_paid_received_ratio": 1.026,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.894,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB"
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
+          "pos": "WR"
+        },
+        {
+          "id": "13330",
+          "name": "Kenyon Sadiq",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 3.45,
+      "their_gain": 0.87,
+      "market_paid_received_ratio": 1.033,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.874,
+      "not_an_approved_offer": true
+    },
+    {
       "opponent_roster_id": 4,
       "opponent_name": "DANGER CLOSE ",
       "give": [
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
+          "id": "13345",
+          "name": "Jonah Coleman",
           "pos": "RB"
         },
         {
@@ -27,9 +99,9 @@
       ],
       "receive": [
         {
-          "id": "7567",
-          "name": "Kenny Gainwell",
-          "pos": "RB"
+          "id": "11637",
+          "name": "Keon Coleman",
+          "pos": "WR"
         },
         {
           "id": "4217",
@@ -37,13 +109,13 @@
           "pos": "TE"
         }
       ],
-      "our_gain": 1.97,
-      "their_gain": 0.67,
-      "market_paid_received_ratio": 1.019,
+      "our_gain": 1.81,
+      "their_gain": 2.09,
+      "market_paid_received_ratio": 1.006,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.315,
+      "score": 3.045,
       "not_an_approved_offer": true
     },
     {
@@ -51,8 +123,8 @@
       "opponent_name": "DANGER CLOSE ",
       "give": [
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
+          "id": "13345",
+          "name": "Jonah Coleman",
           "pos": "RB"
         },
         {
@@ -63,8 +135,8 @@
       ],
       "receive": [
         {
-          "id": "13274",
-          "name": "Germie Bernard",
+          "id": "5045",
+          "name": "Courtland Sutton",
           "pos": "WR"
         },
         {
@@ -73,13 +145,13 @@
           "pos": "TE"
         }
       ],
-      "our_gain": 1.97,
-      "their_gain": 0.67,
-      "market_paid_received_ratio": 1.052,
+      "our_gain": 1.81,
+      "their_gain": 2.09,
+      "market_paid_received_ratio": 0.901,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.215,
+      "score": 2.768,
       "not_an_approved_offer": true
     },
     {
@@ -87,8 +159,8 @@
       "opponent_name": "CREAM MACHINE ",
       "give": [
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
+          "id": "13345",
+          "name": "Jonah Coleman",
           "pos": "RB"
         },
         {
@@ -99,8 +171,8 @@
       ],
       "receive": [
         {
-          "id": "11576",
-          "name": "Braelon Allen",
+          "id": "11435",
+          "name": "Emanuel Wilson",
           "pos": "RB"
         },
         {
@@ -109,13 +181,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.73,
-      "their_gain": 0.62,
-      "market_paid_received_ratio": 0.984,
+      "our_gain": 1.67,
+      "their_gain": 1.66,
+      "market_paid_received_ratio": 1.016,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.055,
+      "score": 2.619,
       "not_an_approved_offer": true
     },
     {
@@ -123,8 +195,8 @@
       "opponent_name": "CREAM MACHINE ",
       "give": [
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
+          "id": "13345",
+          "name": "Jonah Coleman",
           "pos": "RB"
         },
         {
@@ -140,18 +212,18 @@
           "pos": "WR"
         },
         {
-          "id": "4943",
-          "name": "Sam Darnold",
-          "pos": "QB"
+          "id": "8110",
+          "name": "Jake Ferguson",
+          "pos": "TE"
         }
       ],
-      "our_gain": 1.73,
-      "their_gain": 0.62,
-      "market_paid_received_ratio": 1.056,
+      "our_gain": 1.67,
+      "their_gain": 1.66,
+      "market_paid_received_ratio": 0.976,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.934,
+      "score": 2.593,
       "not_an_approved_offer": true
     }
   ],
