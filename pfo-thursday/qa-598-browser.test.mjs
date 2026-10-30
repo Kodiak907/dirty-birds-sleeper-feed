@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {chromium} from 'playwright';
@@ -81,4 +82,47 @@ test('expanded FFL trade EVALUATION keeps portraits compact inside two iPhone co
   assert.ok(dim.items.every(x=>!x.overflow),'no list row sideways scroll');
   assert.ok(dim.scroll<=dim.viewport+1,'no page-wide horizontal overflow');
  }finally{await browser.close();}
+});
+
+test('GameCast live UI consumes MSF boxscore score, refreshes play and animates only verified ball movement',{timeout:60000},async()=>{
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ try{
+  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  const file=n=>readFileSync(join(import.meta.dirname,n),'utf8');
+  let stage=0;
+  await page.route('https://pfo.test/**',async route=>{
+   const u=new URL(route.request().url()),path=u.pathname;
+   if(path==='/')return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><nav><button data-page="gamecast" class="active">GameCast</button></nav><div id="ffo-gc-status"></div><div id="ffo-gc-games"></div><div id="ffo-gc-gameview"></div><div id="ffo-gc-playfeed"></div><div id="ffo-gc-player-field"></div><button id="ffo-gc-refresh">Refresh</button></body></html>'});
+   if(path==='/ffo-gamecast.js'||path==='/ffo-gamecast-model.mjs'||path==='/ffo-gamecast-stadium.mjs')return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
+   if(path==='/ffo-gamecast-stadium.css')return route.fulfill({contentType:'text/css',body:file(path.slice(1))});
+   if(path==='/FFO_FFL_SCORING_V1.json')return route.fulfill({contentType:'application/json',body:file('FFO_FFL_SCORING_V1.json')});
+   if(path==='/api/ffo/gamecast/health')return route.fulfill({json:{ready:true,checked_at:new Date().toISOString()}});
+   if(path==='/api/ffo/gamecast/schedule')return route.fulfill({json:{available:true,checked_at:new Date().toISOString(),data:{games:[{schedule:{id:'CAR-GB-26',homeTeam:{abbreviation:'GB'},awayTeam:{abbreviation:'CAR'},startTime:new Date(Date.now()-3600000).toISOString(),playedStatus:'LIVE'},score:{homeScoreTotal:10,awayScoreTotal:3}}]}}});
+   if(path==='/api/ffo/gamecast/plays'){
+    const mock=i=>({id:String(i),description:'Verified provider play '+i,playStatus:{quarter:3,secondsElapsed:70+i,teamInPossession:{abbreviation:'CAR'},lineOfScrimmage:{team:{abbreviation:'CAR'},yardLine:i===1?42:47},currentDown:1,yardsRemaining:10}});
+    return route.fulfill({json:{available:true,coverage:'full',checked_at:new Date().toISOString(),data:{gameplaybyplay:{plays:stage?[mock(1),mock(2)]:[mock(1)]}}}});
+   }
+   if(path==='/api/ffo/gamecast/boxscore')return route.fulfill({json:{available:true,checked_at:new Date().toISOString(),data:{gameboxscore:{game:{id:'CAR-GB-26',playedStatus:'LIVE'},scoring:{homeScoreTotal:10,awayScoreTotal:stage?10:3}}}}});
+   return route.fulfill({status:404,json:{error:'not_found'}});
+  });
+  await page.goto('https://pfo.test/');
+  await page.evaluate(()=>{
+   window.dbNflSeason=2026;window.dbNflWeek=8;window.__ballAnimateCount=0;
+   const original=Element.prototype.animate;
+   Element.prototype.animate=function(...args){if(this.classList?.contains('gc6-ball'))window.__ballAnimateCount++;return original.apply(this,args)};
+  });
+  await page.addScriptTag({url:'https://pfo.test/ffo-gamecast.js'});
+  await page.waitForFunction(()=>window.ffoGameCast?.getStatus()?.playCount===1,{timeout:10000});
+  let before=await page.evaluate(()=>({scores:[...document.querySelectorAll('#ffo-gc-gameview .gc6-score')].map(x=>x.textContent),ball:document.querySelector('#ffo-gc-gameview .gc6-ball')?.getAttribute('data-source-spot')}));
+  assert.deepEqual(before.scores,['3','10']);
+  assert.equal(before.ball,'42');
+  stage=1;
+  await page.locator('#ffo-gc-refresh').click();
+  await page.waitForFunction(()=>window.ffoGameCast?.getStatus()?.playCount===2,{timeout:10000});
+  const after=await page.evaluate(()=>({scores:[...document.querySelectorAll('#ffo-gc-gameview .gc6-score')].map(x=>x.textContent),ball:document.querySelector('#ffo-gc-gameview .gc6-ball')?.getAttribute('data-source-spot'),animations:window.__ballAnimateCount,health:window.ffoGameCast?.getStatus()}));
+  assert.deepEqual(after.scores,['10','10']);
+  assert.equal(after.ball,'47');
+  assert.ok(after.animations>=1,'new verified yardline should trigger ball movement animation');
+  assert.equal(after.health.season,'2026-regular');
+ }finally{await browser.close()}
 });
