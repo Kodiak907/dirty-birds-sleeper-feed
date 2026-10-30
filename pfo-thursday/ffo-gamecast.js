@@ -398,15 +398,27 @@
      safe(observed.map(x=>x.name+' ('+x.records+')').join(', ')||'None')+'</div>'+
     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Unverified categories: '+
      safe((p.missingCategories||[]).slice(0,15).join(', ')||'None in parsed categories')+'</div>'+
+    (position==='K'?'<div class="muted" style="font-size:12px;overflow-wrap:anywhere">MSF kicker numeric field names: '+safe((p.observedRawFieldPaths||[]).join(', ')||'No numeric fields returned')+'</div>':'')+
     examples+'</details>';
   }).join(''):'';
+  const t=report.teamEvidence;
+  const teamCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<summary style="cursor:pointer;font-weight:700">D/ST · separate MSF team game-log check</summary>'+
+   '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+
+   (t?.teamFilterVerified?
+    'Week 1 MSF team log '+safe(t.team)+' · '+safe(t.records)+' records · '+safe(t.numericRecords)+' numeric-stat records. Observed numeric field names: '+
+     safe(t.exampleFieldPaths.join(', ')||'None')+
+     '. Defensive touchdowns, return events and points-allowed adjustments require separate verification.':
+    'MSF team log not verified · '+safe(report.teamEvidenceError||'No sample yet')+
+    '. D/ST is a team, not a player; zero player rows never means zero D/ST points.')+
+   '</div></details>';
   const scoringCard=e?'<details style="border-top:1px solid #315069;margin:8px 0;padding-top:8px">'+
    '<summary style="cursor:pointer;font-weight:700">FFL scoring components · '+safe(e.records)+' player-week records</summary>'+
    '<p class="muted" style="font-size:12px">Every value uses MSF published stats and frozen FFL rules only. Missing components stay unknown. Long-TD bonuses, K and D/ST require separate event verification.</p>'+
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+teamCard+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
@@ -414,7 +426,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -446,6 +458,14 @@
     report.seasonFilterVerified=rows.length>0&&rows.every(r=>r.team===team);
     if(!report.seasonFilterVerified)report.seasonError='Filtered MSF season players unverified';
    }catch(error){report.seasonError=String(error.message||error).slice(0,220)}
+   if(indicator)indicator.textContent='Checking MSF team game logs for independent D/ST stats…';
+   try{
+    const source=await auditedStatRequest('teamgamelogs',{season:s.season,week:1,team},
+      message=>{if(indicator)indicator.textContent='D/ST · '+message});
+    report.teamEvidence=model.auditTeamGameFeed(source.data||{},team);
+    if(!report.teamEvidence.teamFilterVerified)
+      report.teamEvidenceError='Returned team IDs or schema unverified';
+   }catch(error){report.teamEvidenceError=String(error.message||error).slice(0,180)}
    if(goodWeeks.length)report.scoringEvidence=model.scoringEvidence(goodWeeks,s.ownedRules,team);
    if(report.seasonFilterVerified&&goodWeeks.length)
     report.lowerBound=model.auditSeasonLowerBound(goodWeeks.map(x=>x.payload),seasonPayload);
