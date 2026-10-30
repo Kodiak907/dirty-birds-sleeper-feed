@@ -28,6 +28,8 @@ jobs:
         run: node --test pfo-thursday/qa-598.test.mjs
       - name: Fast in-game scheduling, provider clock and score isolation
         run: node --test pfo-thursday/qa-fast-gamecast.test.mjs
+      - name: Verify play-specific featured player and headshot attribution
+        run: node --test pfo-thursday/qa-gamecast-subject.test.mjs
       - name: Existing scoring and GameCast model regression
         run: node --test pfo-thursday/qa-ffo-msf.test.mjs
       - name: Existing 5.9.7 advisory and valuation regression
