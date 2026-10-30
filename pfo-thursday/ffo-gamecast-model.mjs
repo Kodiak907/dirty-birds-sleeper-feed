@@ -442,6 +442,51 @@ export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
   note:'PBP kicker labels and frozen FFL rule components are observed evidence only. Game completeness and corrections are not verified; no final kicker fantasy score is certified.'};
 }
 
+
+/** Six-week specialist evidence. Preserve unknowns; a missing PBP feed
+ * or absent actor identity must never become a zero kicker fantasy score.
+ * Team association requires matching MSF ID + team + jersey + name, not
+ * the PBP actor token alone. */
+export function summarizeKickerWeeks(weekly=[],team=''){
+ const wanted=String(team||'').toUpperCase();
+ const weeks=weekly.map(item=>{
+  const e=item.evidence;
+  if(!e)return {week:item.week,game:item.game||null,status:'feed_unverified',
+   knownEvents:0,unverifiedEvents:null,observedPoints:null,players:[],error:item.error||'No authenticated play feed'};
+  const actors=(e.kickers||[]).map(k=>({
+   actor:k.kickerToken,playerName:k.playerName||null,providerId:k.providerId||null,
+   team:k.playerTeam||null,identityVerified:!!(k.identityVerified&&k.playerTeam===wanted),
+   events:k.events,unknownEvents:k.unknownEvents,observedSubtotal:k.observedSubtotal
+  }));
+  const verified=actors.filter(x=>x.identityVerified);
+  const observed=verified.filter(x=>x.observedSubtotal!==null);
+  return {week:item.week,game:item.game||null,status:'pbp_published',
+   candidatePlays:e.candidatePlays??0,
+   knownEvents:verified.reduce((sum,x)=>sum+Math.max(0,x.events-x.unknownEvents),0),
+   unverifiedEvents:(e.unattributedEvents||0)+actors.filter(x=>!x.identityVerified).reduce((sum,x)=>sum+x.events,0)+
+    verified.reduce((sum,x)=>sum+x.unknownEvents,0),
+   observedPoints:observed.length?Math.round(observed.reduce((sum,x)=>sum+x.observedSubtotal,0)*100)/100:null,
+   players:verified,unmatchedActors:actors.filter(x=>!x.identityVerified).map(x=>x.actor),
+   gameCompleteCertified:false};
+ });
+ const playerTotals=new Map();
+ for(const week of weeks)if(week.status==='pbp_published'){
+  for(const p of week.players){
+   const id=String(p.providerId||'');if(!id)continue;
+   let rec=playerTotals.get(id);
+   if(!rec){rec={providerId:id,playerName:p.playerName,team:wanted,
+    weeksWithObservedEvents:0,observedSubtotal:0,unverifiedEvents:0};playerTotals.set(id,rec);}
+   if(p.observedSubtotal!==null){rec.weeksWithObservedEvents++;rec.observedSubtotal+=p.observedSubtotal;}
+   rec.unverifiedEvents+=p.unknownEvents;
+  }
+ }
+ return {team:wanted,checkedWeeks:weeks.length,
+  publishedFeeds:weeks.filter(x=>x.status==='pbp_published').length,
+  identityVerifiedWeeks:weeks.filter(x=>x.players?.length).length,
+  weeks,players:[...playerTotals.values()].map(x=>({...x,observedSubtotal:Math.round(x.observedSubtotal*100)/100})),
+  finalScoresCertified:false};
+}
+
 export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
  for(const [index,entry] of weeklyPayloads.entries()){
