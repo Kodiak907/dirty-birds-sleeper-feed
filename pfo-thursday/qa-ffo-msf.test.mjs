@@ -614,11 +614,11 @@ test('Published MSF defensive sacks and interceptions score as isolated, provisi
  assert.ok(!evidence.observedComponents.some(x=>x.category==='fum_rec'));
 });
 test('Audit renders compact specialist evidence and verifies a single licensed game without guessed points',()=>{
- assert.match(core,/Kicker · published play-by-play evidence/);
+ assert.match(core,/Kicker evidence · Weeks 1–6/);
  assert.match(core,/D\/ST source evidence/);
  assert.match(core,/model\.kickingPlayEvidence/);
  assert.match(core,/model\.auditTeamGameFeed\(source\.data\|\|\{\},team,s\.ownedRules\)/);
- assert.match(core,/No individual kicker credit, six-week completeness or fantasy score is certified/);
+ assert.match(core,/Final kicker scoring not certified/);
  assert.match(core,/No final D\/ST fantasy score is certified/);
  assert.match(core,/\.filter\(x=>x\.week>=1&&x\.week<=6/);
 });
@@ -750,9 +750,9 @@ test('Kicker actor with matching name but wrong jersey or team remains unverifie
 });
 test('Kicker historical audit checks at most one matching team game each week and never credits BYE or ambiguity as zero',()=>{
  assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
- assert.match(core,/matches\\.length!==1/);
+ assert.match(core,/matches\.length!==1/);
  assert.match(core,/Multiple matching schedule games; attribution withheld/);
  assert.match(core,/No scheduled MSF team game located/);
- assert.match(core,/report\\.kickWeeks\\.push/);
+ assert.match(core,/report\.kickWeeks\.push/);
  assert.match(core,/Unknown, not zero/);
 });
