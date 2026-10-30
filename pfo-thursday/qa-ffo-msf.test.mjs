@@ -906,3 +906,54 @@ test('No unassigned field goal is given a kicker or team identity from possessio
  assert.equal(pb.unattributedPlayDetails[0].sourcePossessionTeam,'GB');
  assert.equal(pb.kickingFantasyScoreCertified,false);
 });
+
+
+test('Week 4 GB at TB real MSF (:02) clock credits Trey Smack 58-yard field goal exactly once',()=>{
+ const roster=[{id:'208128',name:'Trey Smack',team:'GB',position:'K',jersey:'28'}];
+ const play='(:02) 28-T.Smack 58 yard field goal is GOOD, Center-42-M.Orzech, Holder-19-D.Whelan.';
+ const payload={gameplaybyplay:{plays:[
+  {id:'game-kick-1',description:play,playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}},
+  // Provider can republish a corrected play with the same native ID.
+  {id:'game-kick-1',description:play,playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}},
+  {id:'tb-xp',description:'4-C.McLaughlin extra point is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'TB'}}},
+  {id:'gb-xp-1',description:'28-T.Smack extra point is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}},
+  {id:'gb-xp-2',description:'28-T.Smack extra point is GOOD',playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}}
+ ]}};
+ const p=kickingPlayEvidence(payload,own.scoring,roster);
+ assert.equal(p.candidatePlays,4,'duplicate native-ID play must count once');
+ assert.equal(p.unattributedEvents,0);
+ assert.equal(p.fgCandidates,1);
+ assert.equal(p.kickers.find(x=>x.providerId==='208128').playerTeam,'GB');
+ assert.equal(p.kickers.find(x=>x.providerId==='208128').counts.fgAttempts,1);
+ assert.equal(p.kickers.find(x=>x.providerId==='208128').counts.fgMade,1);
+ assert.equal(p.kickers.find(x=>x.providerId==='208128').observedSubtotal,7);
+ const kick=p.publishedEvents.find(x=>x.kind==='FG');
+ assert.equal(kick.kickerToken,'28-T.Smack');
+ assert.equal(kick.distance,58);
+ assert.equal(kick.observedEventPoints,5);
+ assert.equal(kick.sourcePossessionTeam,'GB');
+ const team=auditTeamGameFeed({teamgamelogs:[{team:{abbreviation:'GB'},game:{id:'week4'},
+  stats:{fieldGoals:{fgAtt:1,fgMade:1}}}]},'GB',own.scoring);
+ const check=reconcileKickerWeeks([{week:4,gameId:'week4',evidence:p}],[{week:4,evidence:team}],'GB');
+ assert.equal(check.weeks[0].status,'partial_counts_match');
+ assert.equal(check.weeks[0].comparedCategories,2);
+ assert.equal(check.discrepancies,0);
+ assert.equal(check.weeks[0].observedCounts.fgAttempts,1);
+ assert.equal(check.weeks[0].observedCounts.fgMade,1);
+ assert.equal(check.fullFantasyScoresCertified,false);
+});
+test('Abbreviated MSF clock is preserved as 0:02 without conflating a holder with a kicker',()=>{
+ const payload={gameplaybyplay:{plays:[{id:'game-kick-1',
+  description:'(:02) 28-T.Smack 58 yard field goal is GOOD, Center-42-M.Orzech, Holder-19-D.Whelan.',
+  playStatus:{quarter:4,teamInPossession:{abbreviation:'GB'}}}]}};
+ const normalized=plays(payload);
+ assert.equal(normalized.length,1);
+ assert.equal(normalized[0].clock,'0:02');
+ assert.equal(normalized[0].period,'4');
+ const p=kickingPlayEvidence(payload,own.scoring,[]);
+ assert.equal(p.unattributedEvents,0,'kicker token still resolves even without roster');
+ assert.equal(p.kickers[0].kickerToken,'28-T.Smack');
+ assert.equal(p.kickers[0].identityVerified,false,'cannot award to unknown roster');
+ assert.equal(p.kickers[0].providerId,null);
+ assert.equal(p.kickingFantasyScoreCertified,false);
+});
