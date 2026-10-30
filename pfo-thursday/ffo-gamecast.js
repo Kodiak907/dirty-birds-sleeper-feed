@@ -22,7 +22,7 @@
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
 `;document.head.append(polish);
 
- const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-regular'})(),games:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
+ const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-regular'})(),games:[],archiveGames:[],portraitRows:[],historyResults:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
@@ -35,6 +35,7 @@
  const gameActive=()=>sectionActive('gamecast');
  function cacheTtl(name){
    if(name==='health')return 60000;
+    if(name==='portraits')return 3600000;
    if(name==='schedule')return 180000;
    if(name==='injuries')return 240000;
    if(name==='updates')return 60000;
@@ -78,9 +79,10 @@
   const z=x?.schedule||x?.game||x||{},home=z.homeTeam||x.homeTeam||{},away=z.awayTeam||x.awayTeam||{};
   const name=t=>typeof t==='string'?t:String(t.abbreviation||t.abbr||t.name||'?');
   const gameId=z.id??x.id??z.gameId??x.gameId??'';
+   const weekNum=Number(z.week??x.week??z.weekNumber??x.weekNumber);
   const score=x.score||x.scoring||x.scores||x.gameScore||z.score||z.scoring||{};
   const n=v=>v===null||v===undefined||v===''?null:(Number.isFinite(Number(v))?Number(v):null);
-  return {id:String(gameId),home:name(home),away:name(away),
+  return {id:String(gameId),home:name(home),away:name(away),week:Number.isInteger(weekNum)&&weekNum>=1&&weekNum<=18?weekNum:null,
    homePoints:n(score.homeScoreTotal??score.homeScore??z.homeScoreTotal??x.homeScoreTotal??x.homeScore),
    awayPoints:n(score.awayScoreTotal??score.awayScore??z.awayScoreTotal??x.awayScoreTotal??x.awayScore),
    status:String(z.playedStatus||z.gameStatus||z.status||x.playedStatus||x.gameStatus||x.status||z.scheduleStatus||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
@@ -244,7 +246,7 @@
 
  function portraitDirectory(){
    const names=typeof pfo49Dir==='function'?pfo49Dir():[];
-   return [...s.playerRows,...names.map(p=>({...p,sleeper:true}))];
+   return [...s.playerRows,...s.portraitRows,...names.map(p=>({...p,sleeper:true}))];
   }
   function drawField(){
   const el=$('ffo-gc-gameview');
@@ -325,7 +327,81 @@
    drawPlayer();
   }catch(error){s.lastError=String(error.message||error);status('Player feed unavailable: '+s.lastError);drawPlayer()}
  }
- async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;finalObservedAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();await refreshGame()}
+ 
+ function auditWeekForGame(g){
+  if(Number.isInteger(g.week))return {week:g.week,method:'provider'};
+  // Calendar fallback used only to LOCATE a test game; not a claim of
+  // provider-verified week labels or historical completeness.
+  const kickoff=Date.parse(g.start||''),regularStart=Date.parse('2026-09-10T00:00:00Z');
+  if(!Number.isFinite(kickoff)||kickoff<regularStart)return {week:null,method:'unknown'};
+  const week=Math.floor((kickoff-regularStart)/604800000)+1;
+  return {week:week>=1&&week<=18?week:null,method:'calendar_estimate'};
+ }
+ async function ensurePortraits(gameId){
+  const g=s.games.find(x=>x.id===gameId)||s.archiveGames.find(x=>x.id===gameId);
+  if(!g)return;
+  const teams=[...new Set([stadium.abbrev(g.home),stadium.abbrev(g.away)])].filter(Boolean);
+  const responses=await Promise.allSettled(teams.map(team=>feed('portraits',{team})));
+  if(s.game!==gameId)return;
+  s.portraitRows=responses.flatMap(r=>r.status==='fulfilled'&&Array.isArray(r.value.players)?r.value.players:[]);
+  if(responses.some(r=>r.status==='rejected'))
+    s.photoWarning='Portrait directory partly unavailable; initials shown for unverified identities.';
+  else s.photoWarning='';
+  drawField();drawPlays();
+ }
+ function renderHistoryAudit(){
+  const el=$('ffo-gc-history-results');if(!el)return;
+  el.innerHTML=s.historyResults.map(r=>{
+   const label=r.ok?'Published '+r.count+' plays':r.reason;
+   const note=r.ok?(r.complete?'Provider claims full play feed; verify actual continuity':'Coverage unverified; never assume full game'):'No full play feed verified';
+   return '<div style="border-bottom:1px solid #315069;padding:7px 0"><b>Week '+r.week+'</b> · '+safe(r.game||'Game unavailable')+
+    ' · '+safe(label)+'<div class="muted">'+safe(note)+
+    (r.method==='calendar_estimate'?' · Week inferred from kickoff date':'')+'</div>'+
+    (r.gameId?'<button type="button" class="button" style="padding:4px 7px;margin-top:5px" data-ffo-history-game="'+safe(r.gameId)+'">Inspect actual plays</button>':'')+'</div>';
+  }).join('');
+  el.querySelectorAll('[data-ffo-history-game]').forEach(button=>button.addEventListener('click',async()=>{
+   const id=button.dataset.ffoHistoryGame,g=s.archiveGames.find(x=>x.id===id);
+   if(!g||!s.enabled)return;
+   if(!s.games.some(x=>x.id===id))s.games.push(g);
+   await selectGame(id);
+  }));
+ }
+ async function runHistoricalAudit(){
+  const button=$('ffo-gc-history-check'),indicator=$('ffo-gc-history-status');
+  if(button?.disabled||!s.enabled){if(indicator)indicator.textContent='Authenticate the private MSF gateway before auditing.';return;}
+  button.disabled=true;s.historyResults=[];
+  const all=s.archiveGames;
+  try{
+   for(let week=1;week<=7;week++){
+    if(indicator)indicator.textContent='MSF week '+week+' of 7 · authenticating historical plays…';
+    const candidates=all.map(g=>({g,tag:auditWeekForGame(g)})).filter(x=>x.tag.week===week)
+      .sort((a,b)=>Date.parse(a.g.start||'')-Date.parse(b.g.start||''));
+    const choice=candidates[0];
+    if(!choice){s.historyResults.push({week,ok:false,reason:'No schedule-matched game returned by MSF',method:'unknown'});renderHistoryAudit();continue;}
+    const g=choice.g,short=g.away+' @ '+g.home;
+    try{
+     const response=await feed('plays',{season:s.season,game_id:g.id},true);
+     const rows=model.plays(response.data||{});
+     const limited=response.coverage==='scoring_only'||response.full_playbyplay_authorized===false;
+     const sameId=new Set(rows.map(p=>String(p.id))).size===rows.length;
+     const ordered=rows.every(p=>p.period&&p.clock);
+     const ok=rows.length>0&&sameId&&ordered&&!limited;
+     s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,
+      ok,reason:limited?'Scoring-only fallback; full PBP not authorized':!rows.length?'Empty or unrecognized PBP feed':
+       !sameId?'Duplicate play IDs':!ordered?'Missing chronology in plays':'Play feed not confirmed',
+      count:rows.length,complete:ok&&response.full_playbyplay_authorized===true});
+    }catch(error){
+     s.historyResults.push({week,game:short,gameId:g.id,method:choice.tag.method,ok:false,
+      reason:'MSF request failed: '+String(error.message||error).slice(0,100)});
+    }
+    renderHistoryAudit();
+   }
+   const available=s.historyResults.filter(r=>r.ok).length;
+   if(indicator)indicator.textContent=available+'/7 sample games returned non-scoring-only chronological plays. Complete historical entitlement remains unverified until all games and full coverage are audited.';
+  }finally{button.disabled=false;}
+ }
+
+ async function selectGame(id){if(!s.enabled)return;s.game=String(id);s.followLatest=true;s.visiblePlays=60;s.playCache=[];s.portraitRows=[];s.playSource=null;s.activePlay=-1;s.liveBox=null;lastPlayCount=0;lastNewPlayAt=0;lastProviderUpdateAt=0;consecutivePlayFailures=0;s.lastGamePoll=0;s.lastBoxPoll=0;finalObservedAt=0;lastStadiumPlayId=null;lastStadiumGameId=null;priorVerifiedBallX=null;drawGames();drawPlays();void ensurePortraits(s.game);await refreshGame()}
  async function refreshGame(){if(!s.enabled||!s.game||gamePending)return gamePending;
   gamePending=(async()=>{
   const selected=s.games.find(g=>g.id===s.game);
@@ -410,6 +486,7 @@
     const sched=await feed('schedule',{season:s.season},force);
     const src=sched.data?.games||sched.data?.gameSchedule||sched.data?.schedule?.games||[];
     const allGames=Array.isArray(src)?src.map(friendlyGame).filter(x=>x.id):[];
+    s.archiveGames=allGames;
     const nowMs=Date.now(),dayMs=86400000;
     const dated=allGames.map(g=>({...g,kickoffMs:Date.parse(g.start)})).filter(g=>Number.isFinite(g.kickoffMs));
     const nearby=dated.filter(g=>g.kickoffMs>=nowMs-4*dayMs&&g.kickoffMs<=nowMs+8*dayMs);
@@ -421,6 +498,9 @@
        return before?model.mergeScheduledGame(before,g):g;
       });
     if(!s.games.length)s.games=allGames.slice(0,24);
+    // An explicitly selected historical game stays inspectable after minute refresh.
+    const selectedHistory=s.archiveGames.find(g=>g.id===s.game)||preserved.get(s.game);
+    if(selectedHistory&&!s.games.some(g=>g.id===s.game))s.games.push(preserved.get(s.game)||selectedHistory);
     // Always keep the league schedule in the source; this is only a compact display window.
     s.latestCheck=sched.checked_at;
     status('MySportsFeeds schedule · '+s.latestCheck+' · real-time latency and feed coverage must be verified at kickoff.');
@@ -454,7 +534,8 @@
    if(s.player)await refreshPlayer(false);
  });
  document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
- void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
+ $('ffo-gc-history-check')?.addEventListener('click',()=>void runHistoricalAudit());
+  void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
  if(gameActive())await refreshOverview();
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
