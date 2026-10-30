@@ -775,7 +775,7 @@ const FFO_SEASON=/^(latest|current|20\d{2}-(regular|preseason|playoff)|20\d{2}-2
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
 const FFO_NFL_TEAMS=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WSH'.split(' '));
 function ffoTeamFilter(params){const raw=params.get('team');if(raw===null)return '';const team=raw.toUpperCase();if(!FFO_NFL_TEAMS.has(team))throw Error('invalid_team_filter');return '?team='+encodeURIComponent(team)}
-const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
+const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','teamgamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
 function ffoBuildPath(route,params){
  if(!FFO_ROUTE.has(route))throw Error('unsupported_feed');
@@ -786,10 +786,10 @@ function ffoBuildPath(route,params){
  if(route==='schedule')return `/${season}/games.json`;
  if(route==='stats')return `/${season}/player_stats_totals.json`+ffoTeamFilter(params);
  if(route==='updates')return `/${season}/latest_updates.json`;
- if(route==='gamelogs'){
+ if(route==='gamelogs'||route==='teamgamelogs'){
    const week=Number(params.get('week'));
    if(!Number.isInteger(week)||week<1||week>18)throw Error('week_required_1_to_18');
-   return `/${season}/week/${week}/player_gamelogs.json`+ffoTeamFilter(params);
+   return `/${season}/week/${week}/${route==='teamgamelogs'?'team_gamelogs':'player_gamelogs'}.json`+ffoTeamFilter(params);
  }
  const game=params.get('game_id')||'';
  if(!FFO_GAME.test(game))throw Error('invalid_game_id');
