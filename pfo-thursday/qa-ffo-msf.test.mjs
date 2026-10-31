@@ -1308,3 +1308,55 @@ test('New PFO event audit reuses six licensed MSF play responses without separat
  assert.match(core,/Provisional source observations do not modify FFL player totals/);
  assert.match(core,/report\.playerEventWeeks\.push\(\{week,game,error:'MSF historical play request failed'\}\)/);
 });
+
+test('MSF screenshots: touchdown explicitly nullified by penalty is excluded, not a long-TD bonus candidate',()=>{
+ const roster=[
+  {id:'18607',name:'Jordan Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'208628',name:'J. Michael Sturdivant',team:'GB',position:'WR',jersey:'87'},
+  {id:'39108',name:'Christian Watson',team:'GB',position:'WR',jersey:'9'}];
+ const feed={gameplaybyplay:{plays:[
+  {id:17,description:'(13:26) (Shotgun) 10-J.Love pass deep right to 87-J.Sturdivant for 43 yards, TOUCHDOWN NULLIFIED by Penalty. PENALTY on GB-87-J.Sturdivant, Offensive Pass Interference, 10 yards enforced at CHI 43 - No Play.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:'GB'}}},
+  {id:18,description:'(13:19) (Shotgun) 10-J.Love pass deep middle to 9-C.Watson for 53 yards, TOUCHDOWN.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:'GB'}}}
+ ]}};
+ const r=playerScoringPlayCandidates(feed,roster,'GB',own.scoring);
+ assert.equal(r.rawPlayCount,2);
+ assert.equal(r.excludedNullifiedPlays,1);
+ assert.match(r.excludedExamples[0].description,/NULLIFIED by Penalty/);
+ assert.equal(r.publishedCandidates,1);
+ assert.equal(r.longTouchdowns,1);
+ assert.equal(r.events[0].matched[0].providerId,'18607');
+ assert.equal(r.events[0].matched[1].providerId,'39108');
+ assert.equal(r.unverifiedCandidateEvents,0);
+ assert.equal(r.fantasyBonusesCertified,false);
+});
+test('MSF screenshots: ATTEMPT SUCCEEDS and ATTEMPT FAILS are recognized without awarding unverified 2PT points',()=>{
+ const roster=[
+  {id:'18607',name:'Jordan Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'166697',name:'Matthew Golden',team:'GB',position:'WR',jersey:'0'}];
+ const feed={gameplaybyplay:{plays:[
+  {id:22,description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:'GB'}}},
+  {id:23,description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is incomplete. ATTEMPT FAILS.',
+   playStatus:{quarter:3,teamInPossession:{abbreviation:'GB'}}}
+ ]}};
+ const r=playerScoringPlayCandidates(feed,roster,'GB',own.scoring);
+ assert.equal(r.publishedCandidates,2);
+ assert.equal(r.twoPointAttempts,2);
+ assert.equal(r.events[0].publishedResult,'reported_good');
+ assert.equal(r.events[1].publishedResult,'reported_missed');
+ assert.deepEqual(r.events[0].matched.map(x=>x.providerId),['18607','166697']);
+ assert.equal(r.events[0].matched[0].creditedFantasyPoints,null);
+ assert.equal(r.fantasyBonusesCertified,false);
+});
+test('MSF touchdown nullification does not drop valid scoring plays with declined penalty',()=>{
+ const roster=[{id:'18607',name:'Jordan Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'39108',name:'Christian Watson',team:'GB',position:'WR',jersey:'9'}];
+ const feed={gameplaybyplay:{plays:[{id:35,description:'(7:54) 10-J.Love pass deep middle to 9-C.Watson for 81 yards, TOUCHDOWN. Penalty on MIN defense declined.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:'GB'}}}]}};
+ const r=playerScoringPlayCandidates(feed,roster,'GB',own.scoring);
+ assert.equal(r.excludedNullifiedPlays,0);
+ assert.equal(r.longTouchdowns,1);
+ assert.equal(r.events[0].matched[1].providerId,'39108');
+});
