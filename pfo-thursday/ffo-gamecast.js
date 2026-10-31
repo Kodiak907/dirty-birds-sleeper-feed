@@ -431,6 +431,23 @@
   const boxRows=dstBoxWeeks.map(row=>{
    const e=row.evidence,verified=e?.status==='scoreboard_reconciled',mismatch=e?.status==='scoreboard_mismatch';
    const label=verified?'Final scores match':mismatch?'SCORES DIFFER':e?.sourceFinalVerified?'Final box available · schedule unverified':'Unverified';
+   const ledger=row.scoringPlays;
+   const ledgerRows=(ledger?.events||[]).slice(0,14).map(play=>
+    '<div style="font-size:12px;padding:6px 0;border-top:1px solid #315069;overflow-wrap:anywhere">'+
+    '<b>'+safe(play.scoringSide||'Scoring side not verified')+
+    (play.scoringPoints===null?'':' +'+safe(play.scoringPoints))+'</b> · '+
+    safe(play.scoreType.replaceAll('_',' '))+
+    '<div class="muted">'+safe(play.description||'Published score snapshot without description')+'</div></div>').join('');
+   const ledgerStatus=ledger?.available?(ledger.finalScoreMatchesLedger===true?
+    'Scoring deltas match final score':'Scoring sequence not fully reconciled'):'Scoring-play evidence unavailable';
+   const ledgerCard=ledger?
+    '<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12px">MSF scoring-play review · '+
+    safe(ledger.scoringPlays)+' published entries</summary>'+
+    '<div class="muted" style="font-size:12px;margin:5px 0">'+safe(ledgerStatus)+
+    ' · '+safe(ledger.nonOffenseCandidates)+' defensive/special-teams TD candidates · '+safe(ledger.unverifiedSideEvents)+
+    ' events with uncertain scoring side</div>'+ledgerRows+
+    '<div class="muted" style="font-size:12px;margin-top:6px">Descriptions and score changes are evidence only; no non-offensive scoring adjustment is automatically credited or deducted.</div></details>':'';
+
    return '<details '+(mismatch?'open ':'')+'style="border-bottom:1px solid #315069;padding:7px 0">'+
     '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">'+
     '<b>Week '+safe(row.week)+'</b><span style="font-size:12px">'+safe(label)+'</span>'+
@@ -441,7 +458,7 @@
       '<div class="muted" style="font-size:12px">Opponent scoreboard points: '+
       (e.rawOpponentPoints===null?'unverified':safe(e.rawOpponentPoints))+
       ' · FFL points allowed: unverified · D/ST points: unverified</div>'+
-      '<div class="muted" style="font-size:12px">'+safe(e.reason||'Unverified')+'</div>':
+      '<div class="muted" style="font-size:12px">'+safe(e.reason||'Unverified')+'</div>'+ledgerCard:
       '<div class="muted" style="font-size:12px">'+safe(row.error||'No authenticated box score')+'</div>')+
     '</details>';
   }).join('');
@@ -681,7 +698,8 @@
      const schedule={id:g.id,home:stadium.abbrev(g.home),away:stadium.abbrev(g.away),
       homePoints:g.homePoints,awayPoints:g.awayPoints,status:g.status};
      report.dstBoxWeeks.push({week,game,
-      evidence:model.dstScoreboardEvidence(response,schedule,team,s.ownedRules)});
+      evidence:model.dstScoreboardEvidence(response,schedule,team,s.ownedRules),
+      scoringPlays:model.dstScoringPlayLedger(response,schedule,team)});
     }catch(error){report.dstBoxWeeks.push({week,game,error:String(error.message||error).slice(0,150)})}
     renderStatAudit(report);
     if(week<6)await auditPause(1100);
