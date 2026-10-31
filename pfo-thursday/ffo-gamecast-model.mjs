@@ -384,6 +384,48 @@ export function summarizeDstWeeks(entries=[],team=''){
  });
  return {team:expected,weeks,verifiedWeeks:weeks.filter(x=>x.status==='team_stats_verified').length,finalDstCertified:false};
 }
+/**
+ * Read-only D/ST event candidates from the same licensed historical MSF play
+ * sequence used by GameCast. Descriptions alone do NOT prove which defense
+ * receives points. Team attribution and score adjustments stay unverified.
+ */
+export function dstPlayEvidence(payload){
+ const rows=sourcePlayRows(payload);
+ const seen=new Set(),events=[];
+ const patterns=[
+  ['interception',/\bintercept(?:ed|ion|s)?\b/i],
+  ['fumble',/\bfumbl(?:e|ed|es)\b/i],
+  ['safety',/\bsafety\b|\bsafeties\b/i],
+  ['blocked_kick',/\b(?:punt|kick|field[\s-]?goal|extra[\s-]?point)\b.{0,35}\bblock(?:ed)?\b|\bblock(?:ed)?\b.{0,35}\b(?:punt|kick|field[\s-]?goal|extra[\s-]?point)\b/i],
+  ['return_touchdown',/\b(?:kickoff|punt|interception|fumble|pick[\s-]?six|return)\b.{0,100}\b(?:touchdown|TD)\b|\b(?:touchdown|TD)\b.{0,100}\b(?:return|interception|punt|kickoff)\b/i],
+  ['two_point_return',/\b(?:two[\s-]?point|2[\s-]?point)\b.{0,80}\b(?:return|defense|defensive)\b/i]
+ ];
+ for(const [index,play] of rows.entries()){
+  const description=String(play?.description||play?.playDescription||play?.text||'').trim();
+  if(!description)continue;
+  const categories=patterns.filter(([,re])=>re.test(description)).map(([name])=>name);
+  if(!categories.length)continue;
+  const native=playSourceId(play);
+  // Duplicate native IDs occasionally appear in corrected provider feeds.
+  // Exact duplicates must not create phantom scoring events.
+  const key=native!==null?'msf:'+native+'|'+String(play?.playStatus?.quarter??'')+'|'+description:
+   'text:'+String(play?.playStatus?.quarter??'')+'|'+description;
+  if(seen.has(key))continue;seen.add(key);
+  const team=String(play?.playStatus?.teamInPossession?.abbreviation||
+   play?.playStatus?.teamInPossession?.abbr||'').toUpperCase();
+  events.push({index,providerId:native,quarter:Number.isInteger(Number(play?.playStatus?.quarter))?
+   Number(play.playStatus.quarter):null,
+   sourcePossessionTeam:/^[A-Z]{2,3}$/.test(team)?team:null,
+   categories,description:description.slice(0,210),
+   creditedDefense:null,independentFantasyPoints:null});
+ }
+ const categoryCounts=Object.fromEntries(patterns.map(([name])=>[name,events.filter(x=>x.categories.includes(name)).length]));
+ return {rawPlayCount:rows.length,candidateEvents:events.length,
+  categoryCounts,samples:events.slice(0,16),attributedEvents:0,
+  fullGameCoverageCertified:false,dstFantasyScoreCertified:false,
+  note:'MSF PBP candidate descriptions. Possession is not scoring-defense attribution. No fantasy points calculated from unverified text.'};
+}
+
 /** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
  * Do not infer player credit or successful kicks from unsupported text. */
 export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
