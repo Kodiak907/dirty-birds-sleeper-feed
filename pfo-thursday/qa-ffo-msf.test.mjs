@@ -1293,8 +1293,8 @@ test('PBP candidates avoid awarding bonus points on opponent possession, unverif
  assert.equal(result.events[1].publishedResult,'unknown');
  assert.equal(result.events[1].matched[0].verifiedIdentity,false);
  assert.equal(result.events[1].matched[1].providerId,'22');
- assert.equal(result.identifiedCandidateEvents,1);
- assert.ok(result.unverifiedCandidateEvents>=2);
+ assert.equal(result.identifiedCandidateEvents,0); // Ambiguous QB and unknown 2PT outcome cannot be a verified scoring event.
+ assert.equal(result.unverifiedCandidateEvents,2);
  assert.equal(result.events[1].creditedFantasyPoints,null);
  assert.ok(result.events.every(e=>e.matched.every(x=>x.creditedFantasyPoints===null)));
  const noFeeds=playerScoringPlayCandidates({},players,'GB',own.scoring);
