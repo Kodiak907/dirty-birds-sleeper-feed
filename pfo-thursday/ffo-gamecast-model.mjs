@@ -1077,7 +1077,7 @@ export function gameScoreUpdate(game,boxResponse){
    const proposedCategories=twoPt?[candidate.category]:bonusCategories;
    return {category:candidate.category,player:player?.name||null,providerId:player?.id||null,
     verifiedIdentity:!!player,sourceToken:candidate.token,yards:candidate.yards,
-    weightedRules:proposedCategories.filter(key=>Number(rules?.[key])!==0),
+    weightedRules:proposedCategories.filter(key=>Object.hasOwn(rules||{},key)&&Number.isFinite(Number(rules[key]))&&Number(rules[key])!==0),
     // Do not award from PBP until stacking, corrected plays and source count
     // reconciliation are independently verified.
     creditedFantasyPoints:null};
