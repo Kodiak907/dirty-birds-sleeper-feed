@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-31T00:57:03.185196+00:00",
-  "source_snapshot_utc": "2026-10-31T00:56:54.036440+00:00",
+  "generated_at_utc": "2026-10-31T01:56:11.988897+00:00",
+  "source_snapshot_utc": "2026-10-31T01:56:03.474997+00:00",
   "source_market_as_of": "2026-10-30T15:08:13.796436+00:00",
-  "source_projection_as_of": "2026-10-30T19:23:31.728787+00:00",
+  "source_projection_as_of": "2026-10-31T01:35:47.217807+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -47,7 +47,7 @@
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.34,
-          "their_lineup_delta_ppg": 0.9,
+          "their_lineup_delta_ppg": 1.01,
           "value_paid_received_ratio": 1.047,
           "our_extra_cut": null,
           "opponent_extra_cut": "Tyler Shough",
@@ -85,8 +85,84 @@
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.34,
-          "their_lineup_delta_ppg": 0.9,
+          "their_lineup_delta_ppg": 1.01,
           "value_paid_received_ratio": 0.869,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "8131",
+              "name": "Isaiah Likely",
+              "position": "TE"
+            }
+          ],
+          "receive": [
+            {
+              "id": "5849",
+              "name": "Kyler Murray",
+              "position": "QB"
+            },
+            {
+              "id": "11604",
+              "name": "Brock Bowers",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 7,
+          "opponent": "JA’MARRTRIX",
+          "our_lineup_delta_ppg": 0.79,
+          "their_lineup_delta_ppg": 0.04,
+          "value_paid_received_ratio": 0.9,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            },
+            {
+              "id": "8131",
+              "name": "Isaiah Likely",
+              "position": "TE"
+            }
+          ],
+          "receive": [
+            {
+              "id": "11604",
+              "name": "Brock Bowers",
+              "position": "TE"
+            },
+            {
+              "id": "13346",
+              "name": "Denzel Boston",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 7,
+          "opponent": "JA’MARRTRIX",
+          "our_lineup_delta_ppg": 0.79,
+          "their_lineup_delta_ppg": 0.04,
+          "value_paid_received_ratio": 0.904,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -123,7 +199,7 @@
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.73,
-          "their_lineup_delta_ppg": 2.58,
+          "their_lineup_delta_ppg": 2.69,
           "value_paid_received_ratio": 0.999,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -148,97 +224,21 @@
           ],
           "receive": [
             {
-              "id": "4943",
-              "name": "Sam Darnold",
-              "position": "QB"
-            },
-            {
               "id": "10229",
               "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "9500",
+              "name": "Josh Downs",
               "position": "WR"
             }
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.73,
-          "their_lineup_delta_ppg": 2.58,
-          "value_paid_received_ratio": 1.029,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "8131",
-              "name": "Isaiah Likely",
-              "position": "TE"
-            }
-          ],
-          "receive": [
-            {
-              "id": "5849",
-              "name": "Kyler Murray",
-              "position": "QB"
-            },
-            {
-              "id": "11604",
-              "name": "Brock Bowers",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 7,
-          "opponent": "JA’MARRTRIX",
-          "our_lineup_delta_ppg": 0.69,
-          "their_lineup_delta_ppg": 0.05,
-          "value_paid_received_ratio": 0.9,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "8131",
-              "name": "Isaiah Likely",
-              "position": "TE"
-            }
-          ],
-          "receive": [
-            {
-              "id": "11604",
-              "name": "Brock Bowers",
-              "position": "TE"
-            },
-            {
-              "id": "13287",
-              "name": "Jeremiyah Love",
-              "position": "RB"
-            }
-          ],
-          "opponent_roster_id": 7,
-          "opponent": "JA’MARRTRIX",
-          "our_lineup_delta_ppg": 0.69,
-          "their_lineup_delta_ppg": 0.05,
-          "value_paid_received_ratio": 0.85,
+          "their_lineup_delta_ppg": 2.69,
+          "value_paid_received_ratio": 0.962,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -270,7 +270,7 @@
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 0.35,
-          "their_lineup_delta_ppg": 0.22,
+          "their_lineup_delta_ppg": 0.33,
           "value_paid_received_ratio": 1.14,
           "our_extra_cut": null,
           "opponent_extra_cut": "Blake Corum",
@@ -308,7 +308,7 @@
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 0.35,
-          "their_lineup_delta_ppg": 0.22,
+          "their_lineup_delta_ppg": 0.33,
           "value_paid_received_ratio": 0.988,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -352,8 +352,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.01,
-          "their_lineup_delta_ppg": 1.3,
+          "our_lineup_delta_ppg": 1.91,
+          "their_lineup_delta_ppg": 1.52,
           "value_paid_received_ratio": 1.035,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -378,21 +378,21 @@
           ],
           "receive": [
             {
-              "id": "4943",
-              "name": "Sam Darnold",
-              "position": "QB"
-            },
-            {
               "id": "10229",
               "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "9500",
+              "name": "Josh Downs",
               "position": "WR"
             }
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.01,
-          "their_lineup_delta_ppg": 1.3,
-          "value_paid_received_ratio": 1.066,
+          "our_lineup_delta_ppg": 1.91,
+          "their_lineup_delta_ppg": 1.52,
+          "value_paid_received_ratio": 0.997,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -428,8 +428,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.45,
-          "their_lineup_delta_ppg": 1.15,
+          "our_lineup_delta_ppg": 1.34,
+          "their_lineup_delta_ppg": 1.35,
           "value_paid_received_ratio": 0.766,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -466,8 +466,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.28,
-          "their_lineup_delta_ppg": 2.58,
+          "our_lineup_delta_ppg": 1.17,
+          "their_lineup_delta_ppg": 2.8,
           "value_paid_received_ratio": 0.801,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -504,8 +504,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.01,
-          "their_lineup_delta_ppg": 1.24,
+          "our_lineup_delta_ppg": 0.9,
+          "their_lineup_delta_ppg": 1.45,
           "value_paid_received_ratio": 1.072,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -542,8 +542,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.01,
-          "their_lineup_delta_ppg": 1.24,
+          "our_lineup_delta_ppg": 0.9,
+          "their_lineup_delta_ppg": 1.45,
           "value_paid_received_ratio": 0.855,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -580,8 +580,8 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.37,
-          "their_lineup_delta_ppg": 1.53,
+          "our_lineup_delta_ppg": 0.34,
+          "their_lineup_delta_ppg": 1.68,
           "value_paid_received_ratio": 0.915,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -618,8 +618,8 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.37,
-          "their_lineup_delta_ppg": 1.53,
+          "our_lineup_delta_ppg": 0.34,
+          "their_lineup_delta_ppg": 1.68,
           "value_paid_received_ratio": 1.03,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -630,7 +630,7 @@
           ]
         }
       ],
-      "candidate_count": 61
+      "candidate_count": 64
     },
     {
       "asset": "Patrick Mahomes",

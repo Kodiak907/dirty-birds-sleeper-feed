@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-10-31T00:57:02.010531+00:00",
+  "generated_at_utc": "2026-10-31T01:56:11.115927+00:00",
   "candidates_evaluated": 60528,
   "market_matched": 8134,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-10-30T15:08:13.796436+00:00",
-  "projection_as_of": "2026-10-30T19:23:31.728787+00:00",
+  "projection_as_of": "2026-10-31T01:35:47.217807+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -38,12 +38,12 @@
         }
       ],
       "our_gain": 3.46,
-      "their_gain": 0.86,
+      "their_gain": 0.97,
       "market_paid_received_ratio": 1.03,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.885,
+      "score": 3.951,
       "not_an_approved_offer": true
     },
     {
@@ -74,12 +74,12 @@
         }
       ],
       "our_gain": 3.46,
-      "their_gain": 0.86,
+      "their_gain": 0.97,
       "market_paid_received_ratio": 0.948,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.821,
+      "score": 3.887,
       "not_an_approved_offer": true
     },
     {
@@ -110,12 +110,12 @@
         }
       ],
       "our_gain": 1.81,
-      "their_gain": 2.05,
+      "their_gain": 2.16,
       "market_paid_received_ratio": 0.998,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.033,
+      "score": 3.099,
       "not_an_approved_offer": true
     },
     {
@@ -146,12 +146,12 @@
         }
       ],
       "our_gain": 1.81,
-      "their_gain": 2.05,
+      "their_gain": 2.16,
       "market_paid_received_ratio": 1.011,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.007,
+      "score": 3.073,
       "not_an_approved_offer": true
     },
     {
@@ -181,13 +181,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 1.65,
-      "their_gain": 1.66,
+      "our_gain": 1.67,
+      "their_gain": 1.76,
       "market_paid_received_ratio": 0.999,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.642,
+      "score": 2.722,
       "not_an_approved_offer": true
     },
     {
@@ -207,23 +207,23 @@
       ],
       "receive": [
         {
+          "id": "11583",
+          "name": "Jonathon Brooks",
+          "pos": "RB"
+        },
+        {
           "id": "9493",
           "name": "Puka Nacua",
           "pos": "WR"
-        },
-        {
-          "id": "4943",
-          "name": "Sam Darnold",
-          "pos": "QB"
         }
       ],
-      "our_gain": 1.65,
-      "their_gain": 1.66,
-      "market_paid_received_ratio": 1.019,
+      "our_gain": 1.67,
+      "their_gain": 1.76,
+      "market_paid_received_ratio": 1.026,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.588,
+      "score": 2.649,
       "not_an_approved_offer": true
     }
   ],
