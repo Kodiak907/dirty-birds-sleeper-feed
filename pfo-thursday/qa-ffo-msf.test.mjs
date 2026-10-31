@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence,dstScoreboardEvidence} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence,dstScoreboardEvidence,dstScoringPlayLedger} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -1056,4 +1056,74 @@ test('PFO D/ST scoreboard audit is requested separately per game, mobile grouped
  assert.match(core,/FFL points allowed: unverified/);
  assert.match(core,/scoreboard_reconciled/);
  assert.match(core,/report\.dstBoxWeeks\.push/);
+});
+
+test('MSF D/ST scoring ledger identifies scoring side by published cumulative totals, no invented PA',()=>{
+ const schedule={id:'G1',away:'GB',home:'TB',status:'COMPLETED',awayPoints:14,homePoints:13};
+ const box={available:true,data:{gameboxscore:{
+  game:{id:'G1',playedStatus:'COMPLETED'},scoring:{awayScoreTotal:14,homeScoreTotal:13,
+  quarters:[
+   {quarterNumber:1,scoringPlays:[{playDescription:'QB rushes for touchdown',homeScore:0,awayScore:7},
+     {playDescription:'Return of interception for touchdown',homeScore:7,awayScore:7}]},
+   {quarterNumber:2,scoringPlays:[{playDescription:'Field goal GOOD',homeScore:10,awayScore:7}]},
+   {quarterNumber:3,scoringPlays:[{playDescription:'Pass touchdown',homeScore:10,awayScore:14}]},
+   {quarterNumber:4,scoringPlays:[{playDescription:'Field goal GOOD',homeScore:13,awayScore:14}]}
+  ]}}}};
+ const ledger=dstScoringPlayLedger(box,schedule,'GB');
+ assert.equal(ledger.available,true);
+ assert.equal(ledger.scoringPlays,5);
+ assert.equal(ledger.verifiedSideEvents,5);
+ assert.equal(ledger.unverifiedSideEvents,0);
+ assert.equal(ledger.nonOffenseCandidates,1);
+ assert.equal(ledger.events[0].scoringSide,'GB');
+ assert.equal(ledger.events[1].scoringSide,'TB');
+ assert.equal(ledger.events[1].nonOffenseCandidate,true);
+ assert.equal(ledger.finalScoreMatchesLedger,true);
+ assert.equal(ledger.finalScoreVerified,true);
+ assert.equal(ledger.scoringAdjustmentPoints,null);
+ assert.equal(ledger.pointsAllowed,null);
+ assert.equal(ledger.finalDstScoreCertified,false);
+});
+test('MSF D/ST scoring ledger preserves score corrections, missing descriptions and incomplete totals as uncertain',()=>{
+ const schedule={id:'G2',home:'GB',away:'TB',status:'COMPLETED',homePoints:20,awayPoints:10};
+ const make=plays=>({available:true,data:{gameboxscore:{game:{id:'G2',playedStatus:'COMPLETED'},
+  scoring:{homeScoreTotal:20,awayScoreTotal:10,quarters:[{quarterNumber:1,scoringPlays:plays}]}}}});
+ const partial=dstScoringPlayLedger(make([
+  {playDescription:'Touchdown',homeScore:7,awayScore:0},
+  {playDescription:'More football',homeScore:14,awayScore:0}]),schedule,'GB');
+ assert.equal(partial.finalScoreMatchesLedger,false);
+ assert.equal(partial.pointsAllowed,null);
+ assert.equal(partial.scoringAdjustmentPoints,null);
+ const invalid=dstScoringPlayLedger(make([
+  {playDescription:'Touchdown',homeScore:7,awayScore:0},
+  {playDescription:'Correction',homeScore:6,awayScore:7}]),schedule,'GB');
+ assert.equal(invalid.finalScoreMatchesLedger,null);
+ assert.equal(invalid.unverifiedSideEvents,1);
+ assert.equal(invalid.finalDstScoreCertified,false);
+ const missing=dstScoringPlayLedger({available:true,data:{gameboxscore:{game:{id:'G2',playedStatus:'COMPLETED'},
+  scoring:{homeScoreTotal:20,awayScoreTotal:10}}}},schedule,'GB');
+ assert.equal(missing.available,false);
+ assert.equal(missing.pointsAllowed,null);
+ const wrong=dstScoringPlayLedger(make([{homeScore:20,awayScore:10}]),{...schedule,id:'G3'},'GB');
+ assert.equal(wrong.available,false);
+ assert.match(wrong.reason,/game ID differs/);
+});
+test('MSF scoring ledger deduplicates repeated scoring descriptions with identical snapshot and preserves defensive ambiguity',()=>{
+ const schedule={id:'G3',home:'GB',away:'TB'};
+ const entry={id:'provider-1',playDescription:'Kickoff return touchdown',homeScore:0,awayScore:7};
+ const b={data:{gameboxscore:{game:{id:'G3',playedStatus:'COMPLETED'},scoring:{
+  homeScoreTotal:0,awayScoreTotal:7,quarters:[{quarterNumber:1,scoringPlays:[entry,entry]}]}}}};
+ const v=dstScoringPlayLedger(b,schedule,'GB');
+ assert.equal(v.scoringPlays,1);
+ assert.equal(v.nonOffenseCandidates,1);
+ assert.equal(v.events[0].scoringSide,'TB');
+ assert.equal(v.events[0].adjustmentVerified,false);
+ assert.equal(v.events[0].pointsAllowedAdjustment,null);
+ assert.equal(v.finalDstScoreCertified,false);
+});
+test('PFO six-week MSF D/ST scoring event ledger renders below final score without issuing another provider request',()=>{
+ assert.match(core,/model\.dstScoringPlayLedger\(response,schedule,team\)/);
+ assert.match(core,/MSF scoring-play review · /);
+ assert.match(core,/defensive\/special-teams TD candidates/);
+ assert.match(core,/no non-offensive scoring adjustment is automatically credited or deducted/);
 });
