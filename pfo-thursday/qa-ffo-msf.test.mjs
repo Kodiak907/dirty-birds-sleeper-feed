@@ -1127,3 +1127,31 @@ test('PFO six-week MSF D/ST scoring event ledger renders below final score witho
  assert.match(core,/defensive\/special-teams TD candidates/);
  assert.match(core,/no non-offensive scoring adjustment is automatically credited or deducted/);
 });
+
+
+test('Historical MSF audit distinguishes season still checking from a completed failed season feed',()=>{
+ assert.match(core,/!report\.seasonChecked\?'Season totals · checking'/);
+ assert.match(core,/seasonChecked:false/);
+ assert.match(core,/report\.seasonChecked=true/);
+ assert.match(core,/Season reconciliation unavailable/);
+ assert.match(core,/Missing games or statistics are unknown, not zero/);
+});
+test('Historical audit retries only transient failures after six weeks without overwriting successful week data',()=>{
+ assert.match(core,/report\.weeks\.filter\(r=>r\.error&&transientStatError\(r\.error\)\)\.slice\(0,6\)/);
+ assert.match(core,/const index=report\.weeks\.findIndex\(r=>r\.week===failed\.week\)/);
+ assert.match(core,/if\(index>=0\)report\.weeks\[index\]=\{week:failed\.week,audit,teamFilterVerified:true,recovered:true,error:null\}/);
+ assert.match(core,/if\(!goodWeeks\.some\(x=>x\.week===failed\.week\)\)goodWeeks\.push\(\{week:failed\.week,payload\}\)/);
+ assert.match(core,/transientStatError\(error\)/);
+ assert.match(core,/report\.seasonAudit=audit;report\.seasonFilterVerified=true;report\.seasonError=null/);
+ assert.match(core,/report\.teamWeeks\.filter\(x=>x\.error&&transientStatError\(x\.error\)\)\.slice\(0,6\)/);
+ assert.match(core,/if\(at>=0\)report\.teamWeeks\[at\]=\{week:failed\.week,evidence:verified,recovered:true\}/);
+ assert.match(core,/Keep original transient error unknown, never zero/);
+});
+test('GameCast historical MSF success cache is bounded and never caches live updates or failed provider payloads',()=>{
+ assert.match(core,/AUDIT_REUSE_MS=300000/);
+ assert.match(core,/const permitted=\['stats','gamelogs','teamgamelogs','plays','boxscore'\]/);
+ assert.match(core,/if\(permitted&&result\?\.available!==false\)/);
+ assert.match(core,/while\(auditSuccessCache\.size>28\)/);
+ assert.match(core,/for\(let attempt=1;attempt<=2;attempt\+\+\)/);
+ assert.match(core,/Temporary gateway failure · one controlled retry/);
+});
