@@ -480,6 +480,43 @@
    boxRows+
    '<p class="muted" style="font-size:12px">Pick-sixes, fumble returns, special-teams touchdowns and other scoring adjustments must be classified before applying FFL points-allowed rules.</p>'+
    '</details>';
+  // Displays actual licensed plays, not invented or automatically awarded
+  // touchdown bonuses. Game logs are independently reconciled later.
+  const eventWeeks=report.playerEventWeeks||[];
+  const eventRows=eventWeeks.map(row=>{
+   const e=row.evidence;
+   const rows=(e?.events||[]).slice(0,15).map(play=>{
+    const identities=(play.matched||[]).map(a=>
+     (a.verifiedIdentity?safe(a.player)+' · MSF #'+safe(a.providerId):
+      (a.sourceToken?safe(a.sourceToken):'actor unverified'))+
+     (a.yards!==null?' · '+safe(a.yards)+' yd':'')+
+     (a.weightedRules?.length?' · possible '+safe(a.weightedRules.join(', ')):'')).join(' / ');
+    return '<div style="padding:6px 0;border-top:1px solid #315069;font-size:12px;overflow-wrap:anywhere">'+
+     '<b>'+safe(play.eventType.replaceAll('_',' '))+' · '+safe(play.publishedResult)+'</b>'+
+     '<div class="muted">'+safe(play.description)+'</div>'+
+     '<div class="muted">'+(play.teamPossessionVerified?'Team possession matched':'Possession unverified')+
+     (identities?' · '+identities:' · actor/bonus unverified')+'</div></div>';
+   }).join('');
+   return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
+    '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px">'+
+    '<b>Week '+safe(row.week)+'</b><span style="font-size:12px">'+
+    (e?safe(e.publishedCandidates)+' source event candidates':'Source unavailable')+'</span>'+
+    '<span style="width:100%;font-size:11px;opacity:.85">'+safe(row.game||row.error||'Game unverified')+'</span></summary>'+
+    (e?'<div class="muted" style="font-size:12px;margin:5px 0">'+
+      safe(e.identifiedCandidateEvents)+' uniquely matched player events · '+
+      safe(e.unverifiedCandidateEvents)+' unresolved · '+safe(e.twoPointAttempts)+' 2PT attempts · '+
+      safe(e.longTouchdowns)+' long-TD candidates. No final bonuses credited.</div>'+rows:
+      '<div class="muted">'+safe(row.error||'No authenticated source evidence')+'</div>')+
+    '</details>';
+  }).join('');
+  const eventCard='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<summary style="cursor:pointer;font-weight:700">Player TD bonuses & two-point evidence · Weeks 1–6</summary>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+
+    safe(eventWeeks.filter(x=>!!x.evidence).length)+'/6 licensed MSF PBP samples processed. '+
+    'Only uniquely resolved weekly MSF player identities are displayed as matched. No unverified bonus awarded.</div>'+
+   eventRows+
+   '<p class="muted" style="font-size:12px">Long-TD 40+/50+ bonus stacking, 2PT success, independent play totals and any statistical corrections remain verification gates. Provisional source observations do not modify FFL player totals.</p>'+
+   '</details>';
   const dstSamples=report.dstPlayWeeks||[];
   const dstCandidateRows=dstSamples.map(item=>{
    const sample=item.evidence,counts=sample?.categoryCounts||{};
@@ -597,7 +634,7 @@
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+kickCard+teamCard+dstCandidateSection+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+eventCard+kickCard+teamCard+dstCandidateSection+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
@@ -605,7 +642,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonChecked:false,seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[],dstBoxWeeks:[],recoveredWeekCount:0};
+  const report={team,weeks:[],seasonChecked:false,seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[],dstBoxWeeks:[],playerEventWeeks:[],recoveredWeekCount:0};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -719,6 +756,7 @@
     if(matches.length!==1){
      report.kickWeeks.push({week,error:matches.length?'Multiple matching schedule games; attribution withheld':'No scheduled MSF team game located'});
      report.dstPlayWeeks.push({week,error:'Unique MSF game unavailable'});
+     report.playerEventWeeks.push({week,error:'Unique MSF game unavailable'});
      continue;
     }
     const g=matches[0].g,game=g.away+' @ '+g.home;
@@ -734,10 +772,12 @@
      const evidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,players);
      report.kickWeeks.push({week,game,gameId:String(g.id),evidence});
      report.dstPlayWeeks.push({week,game,evidence:model.dstPlayEvidence(response.data||{})});
+     report.playerEventWeeks.push({week,game,evidence:model.playerScoringPlayCandidates(response.data||{},players,team,s.ownedRules)});
      if(!report.kickEvidence){report.kickEvidence=evidence;
       report.kickEvidence.sampleWeek=week;report.kickEvidence.sampleGame=game;}
     }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)});
-     report.dstPlayWeeks.push({week,game,error:'MSF historical play request failed'})}
+     report.dstPlayWeeks.push({week,game,error:'MSF historical play request failed'});
+     report.playerEventWeeks.push({week,game,error:'MSF historical play request failed'})}
     renderStatAudit(report);
    }
    // User-triggered audit only; does not change GameCast live polling.
