@@ -427,6 +427,32 @@
    ' · observed subtotal '+safe(w.observedSubtotal===null?'unknown':w.observedSubtotal+' pts')+
    ' · full D/ST score NOT certified</div>'+
    (w.error?'<div class="muted">'+safe(w.error)+'</div>':'')+'</div>').join('');
+  const dstBoxWeeks=report.dstBoxWeeks||[];
+  const boxRows=dstBoxWeeks.map(row=>{
+   const e=row.evidence,verified=e?.status==='scoreboard_reconciled',mismatch=e?.status==='scoreboard_mismatch';
+   const label=verified?'Final scores match':mismatch?'SCORES DIFFER':e?.sourceFinalVerified?'Final box available · schedule unverified':'Unverified';
+   return '<details '+(mismatch?'open ':'')+'style="border-bottom:1px solid #315069;padding:7px 0">'+
+    '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">'+
+    '<b>Week '+safe(row.week)+'</b><span style="font-size:12px">'+safe(label)+'</span>'+
+    '<span style="width:100%;font-size:11px;opacity:.8">'+safe(row.game||'Game unavailable')+'</span></summary>'+
+    (e?'<div class="muted" style="font-size:12px;margin-top:6px">'+
+      (e.homeScore===null?'Box score unavailable':'MSF final: '+safe(e.away)+' '+safe(e.awayScore)+' · '+safe(e.home)+' '+safe(e.homeScore))+
+      '</div>'+
+      '<div class="muted" style="font-size:12px">Opponent scoreboard points: '+
+      (e.rawOpponentPoints===null?'unverified':safe(e.rawOpponentPoints))+
+      ' · FFL points allowed: unverified · D/ST points: unverified</div>'+
+      '<div class="muted" style="font-size:12px">'+safe(e.reason||'Unverified')+'</div>':
+      '<div class="muted" style="font-size:12px">'+safe(row.error||'No authenticated box score')+'</div>')+
+    '</details>';
+  }).join('');
+  const boxCard='<details style="padding:8px 0;border-top:1px solid #315069">'+
+   '<summary style="cursor:pointer;font-weight:700">Final score cross-check · Weeks 1–6</summary>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+
+   safe(dstBoxWeeks.filter(x=>x.evidence?.status==='scoreboard_reconciled').length)+
+   '/6 MSF box scores matched independent final schedules. These are NOT D/ST points allowed.</div>'+
+   boxRows+
+   '<p class="muted" style="font-size:12px">Pick-sixes, fumble returns, special-teams touchdowns and other scoring adjustments must be classified before applying FFL points-allowed rules.</p>'+
+   '</details>';
   const dstSamples=report.dstPlayWeeks||[];
   const dstCandidateRows=dstSamples.map(item=>{
    const sample=item.evidence,counts=sample?.categoryCounts||{};
@@ -473,7 +499,7 @@
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(teamside)+'</div>'+
    (defenseLine?'<div style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">'+safe(defenseLine)+'</div>':'')+
    (missing?'<div class="muted" style="font-size:12px">Missing verified categories: '+safe(missing)+'</div>':'')+
-   '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">Points allowed, return touchdowns, blocked kicks and turnovers require independent evidence. No final D/ST fantasy score is certified.</div>'+boxCard+
    '</details>';
   const kickHistory=model.summarizeKickerWeeks(report.kickWeeks||[],report.team);
   const kickChecks=model.reconcileKickerWeeks(report.kickWeeks||[],report.teamWeeks||[],report.team);
