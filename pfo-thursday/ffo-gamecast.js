@@ -505,7 +505,7 @@
     (e?'<div class="muted" style="font-size:12px;margin:5px 0">'+
       safe(e.identifiedCandidateEvents)+' uniquely matched player events · '+
       safe(e.unverifiedCandidateEvents)+' unresolved · '+safe(e.twoPointAttempts)+' 2PT attempts · '+
-      safe(e.longTouchdowns)+' long-TD candidates. No final bonuses credited.</div>'+rows:
+      safe(e.longTouchdowns)+' long-TD candidates · '+safe(e.excludedNullifiedPlays||0)+' nullified plays excluded. No final bonuses credited.</div>'+rows:
       '<div class="muted">'+safe(row.error||'No authenticated source evidence')+'</div>')+
     '</details>';
   }).join('');
