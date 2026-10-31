@@ -801,6 +801,20 @@ export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  const groups={};
  for(const position of positions){
   const rows=samples.filter(x=>x.position===position),counts=new Map();
+  // These are diagnostic categories, not permission to compute missing zeros.
+  // Raw weekly stat mappings differ from scoring rules that need individual
+  // NFL play evidence (long TD, interception-return TD, etc.).
+  const eligibleRules=Object.entries(rules||{}).filter(([key,value])=>
+   FILTERS[position](key)&&Number.isFinite(Number(value))&&Number(value)!==0).map(([key])=>key);
+  const statMappedRules=eligibleRules.filter(key=>Object.hasOwn(PATHS,key));
+  const eventEvidenceRules=eligibleRules.filter(key=>!Object.hasOwn(PATHS,key));
+  const statMappedRows=statMappedRules.length?
+   rows.filter(row=>statMappedRules.every(key=>row.covered.includes(key))).length:0;
+  const unavailableMappedRules=statMappedRules.map(key=>({
+   category:key,publishedRows:rows.filter(row=>row.covered.includes(key)).length,
+   missingRows:rows.filter(row=>!row.covered.includes(key)).length
+  })).filter(entry=>entry.missingRows>0);
+  const observedMappedCategories=statMappedRules.filter(key=>rows.some(row=>row.covered.includes(key))).length;
   for(const row of rows)for(const c of row.covered)counts.set(c,(counts.get(c)||0)+1);
   const coveredCategories=[...counts].sort((a,b)=>b[1]-a[1]).map(([name,records])=>({name,records}));
   const best=rows.filter(r=>r.observedPoints!==null)
@@ -811,6 +825,11 @@ export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
   groups[position]={records:rows.length,withAnyStats:rows.filter(r=>r.hasKnownStats).length,
    withPartialPoints:rows.filter(r=>r.observedPoints!==null).length,
    fullyCovered:rows.filter(r=>r.complete).length,coveredCategories,
+   scoringRuleCoverage:{totalWeightedRules:eligibleRules.length,
+    statMappedRules:statMappedRules.length,observedMappedCategories,
+    statMappedRows,eventEvidenceRules,
+    unavailableMappedRules:unavailableMappedRules.slice(0,24),
+    allCategoriesCertified:false},
    observedRawFieldPaths:[...new Set(rows.flatMap(r=>r.rawFieldPaths))].sort().slice(0,55),
    missingCategories:[...new Set(rows.flatMap(r=>r.missing))].sort(),
    coreCoverage:CORE_SCORING_GROUPS[position].filter(k=>Number(rules[k]||0)!==0)
@@ -819,7 +838,7 @@ export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
  }
  return {team:wanted,weekFeeds:weeklyPayloads.length,records:samples.length,
   byPosition:groups,exactFantasyPointsCertified:false,
-  reason:'Only published component values were scored. Missing categories, long TD bonuses, K and D/ST events require independent evidence.'};
+  reason:'Stat-field mappings are distinct from play-derived bonus and turnover scoring; all missing components stay unknown. No final fantasy score certified.'};
 }
 
 /** Read-only MSF stats/schema verification. Partial FFL reconstruction never
