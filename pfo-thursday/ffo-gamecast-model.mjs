@@ -426,6 +426,69 @@ export function dstPlayEvidence(payload){
   note:'MSF PBP candidate descriptions. Possession is not scoring-defense attribution. No fantasy points calculated from unverified text.'};
 }
 
+
+/** Independent MSF final box score versus schedule. The raw opponent's
+ * scoreboard points are NOT the official D/ST points-allowed category: a
+ * pick-six, fumble-return TD and other non-offensive scores can change it.
+ * Keep all awardable points null until those scoring events are classified. */
+export function dstScoreboardEvidence(boxResponse,scheduleGame={},team='',rules={}){
+ const abbrev=v=>String(v||'').trim().toUpperCase();
+ const target=abbrev(team),home=abbrev(scheduleGame.home),away=abbrev(scheduleGame.away);
+ const id=String(scheduleGame.id??'');
+ const base={team:target,gameId:id,home,away,providerGameId:null,
+  homeScore:null,awayScore:null,rawOpponentPoints:null,rawOpponentBracket:null,
+  boxStatus:'unverified',sourceFinalVerified:false,
+  scheduleFinalVerified:gamePhase(scheduleGame.status)==='final',
+  scheduleScoreMatches:null,status:'unverified',reason:'',
+  scoringAdjustmentsVerified:false,pointsAllowed:null,pointsAllowedFantasyPoints:null,
+  dstScoreCertified:false};
+ if(!id||!target||home===away||![home,away].includes(target)){
+  return {...base,reason:'Target team, opponent, or authoritative schedule game ID not verified'};
+ }
+ if(!boxResponse||boxResponse.available===false){
+  return {...base,reason:'Authenticated MSF game box score unavailable'};
+ }
+ const payload=boxResponse?.data||boxResponse||{};
+ const body=payload.gameboxscore||payload.gameBoxscore||payload.boxscore||payload;
+ const info=body.game||body.schedule||payload.game||{};
+ const providerId=info.id??info.gameId??body.gameId;
+ if(providerId===null||providerId===undefined||providerId===''){
+  return {...base,reason:'MSF game box score has no verifiable game ID'};
+ }
+ if(String(providerId)!==id){
+  return {...base,providerGameId:String(providerId),reason:'Box score game ID mismatches schedule'};
+ }
+ // Do not permit schedule fallback values to masquerade as box score.
+ const parsed=gameScoreUpdate({id,status:'Unverified',homePoints:null,awayPoints:null},boxResponse);
+ const valid=parsed.scoreSource==='MySportsFeeds game boxscore'&&
+  parsed.homePoints!==null&&parsed.awayPoints!==null;
+ const isFinal=gamePhase(parsed.status)==='final';
+ if(!valid||!isFinal){
+  return {...base,providerGameId:id,boxStatus:parsed.status||'unverified',
+   sourceFinalVerified:isFinal,
+   reason:!valid?'Final home/away scores missing from MSF game box score':'MSF game box score is not Final'};
+ }
+ const homePoints=parsed.homePoints,awayPoints=parsed.awayPoints;
+ const homeRef=num(scheduleGame.homePoints),awayRef=num(scheduleGame.awayPoints);
+ const match=homeRef!==null&&awayRef!==null?
+  homeRef===homePoints&&awayRef===awayPoints:null;
+ const rawOpponentPoints=target===home?awayPoints:homePoints;
+ // Reference-only scoreboard bucket. Non-offensive adjustments are unresolved.
+ const band=rawOpponentPoints===0?'pts_allow_0':
+  rawOpponentPoints<=6?'pts_allow_1_6':rawOpponentPoints<=13?'pts_allow_7_13':
+  rawOpponentPoints<=20?'pts_allow_14_20':rawOpponentPoints<=27?'pts_allow_21_27':
+  rawOpponentPoints<=34?'pts_allow_28_34':'pts_allow_35p';
+ const completeScheduleMatch=match===true&&gamePhase(scheduleGame.status)==='final';
+ return {...base,providerGameId:id,homeScore:homePoints,awayScore:awayPoints,
+  boxStatus:parsed.status,sourceFinalVerified:true,scheduleScoreMatches:match,
+  rawOpponentPoints,rawOpponentBracket:band,
+  status:completeScheduleMatch?'scoreboard_reconciled':match===false?'scoreboard_mismatch':'scoreboard_partial',
+  reason:completeScheduleMatch?'Box score and final schedule agree; scoring adjustments not yet verified':
+   match===false?'MSF box score differs from MSF schedule':
+   'Independent MSF box score Final; schedule score and final status not fully cross-verified',
+  scoringAdjustmentsVerified:false,pointsAllowed:null,pointsAllowedFantasyPoints:null,dstScoreCertified:false};
+}
+
 /** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
  * Do not infer player credit or successful kicks from unsupported text. */
 export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
