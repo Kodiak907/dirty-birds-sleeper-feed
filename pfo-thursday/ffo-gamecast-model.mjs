@@ -566,6 +566,540 @@ export function dstScoreboardEvidence(boxResponse,scheduleGame={},team='',rules=
   scoringAdjustmentsVerified:false,pointsAllowed:null,pointsAllowedFantasyPoints:null,dstScoreCertified:false};
 }
 
+
+/**
+ * Read-only player scoring event evidence. One licensed MSF published play is
+ * inspected once; candidates count only if a known team+jersey+name uniquely
+ * identifies a player IN THE CORRESPONDING WEEK'S MSF GAME LOGS.
+ *
+ * We do not fill absent 2PT statistics or long-TD bonuses with zeros. The
+ * presence of a long score alone does not establish FFL 40+/50+ stacking,
+ * complete play coverage or corrected NFL scoring.
+ */
+export function playerScoringPlayCandidates(payload,weeklyPlayers=[],team='',rules={}){
+ const target=String(team||'').trim().toUpperCase();
+ const roster=Array.isArray(weeklyPlayers)?weeklyPlayers.filter(p=>
+  p&&p.id&&String(p.team||'').toUpperCase()===target&&
+  ['QB','RB','WR','TE'].includes(String(p.position||'').toUpperCase())):[];
+ const players=roster.map(p=>{
+  const words=normalizeName(p.name||'').split(' ').filter(Boolean);
+  return {...p,firstInitial:words[0]?.[0]||'',lastName:words.at(-1)||''};
+ });
+ const tokenRx='(\\d{1,2}-[A-Za-z]\\.[A-Za-z][A-Za-z\\x27-]+)';
+ const tokenPattern=new RegExp('^(\\d{1,2})-([A-Za-z])\\.([A-Za-z][A-Za-z\\x27-]+)
+ * Do not infer player credit or successful kicks from unsupported text. */
+export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
+ const events=sourcePlayRows(payload).map((x,i)=>{
+  const description=String(x?.description||x?.playDescription||x?.text||'').trim();
+  if(!description)return null;
+  const fg=/\bfield[\s-]?goal\b|\bFG (?:attempt|kick|is good|is no good)\b/i.test(description);
+  const xp=/\bextra[\s-]?point\b|\bPAT (?:attempt|kick|is good|is no good)\b/i.test(description);
+  if(!fg&&!xp)return null;
+  // PBP mentions blocked kicks or attempts in many spellings. Keep status
+  // tentative unless an unambiguous phrase actually appears in the play.
+  const made=/\b(?:is good|was good|good!|kick good|successful|made)\b/i.test(description);
+  const failed=/\b(?:no good|missed|blocked|wide (?:left|right)|unsuccessful)\b/i.test(description);
+  const distance=fg?(description.match(/\b(\d{1,2})[\s-]?yard(?:s)?\s+(?:field[\s-]?goal|FG)\b/i)||
+   description.match(/\b(?:field[\s-]?goal|FG)\s+(?:attempt\s+)?(?:of\s+|from\s+)?(\d{1,2})[\s-]?yards?\b/i))?.[1]:null;
+  const quarter=Number(x?.playStatus?.quarter??x?.quarter);
+  const status=x?.playStatus||{};
+  const possession=status.teamInPossession||{};
+  // Possession is an observation, never proof of a kicker's credited team.
+  const sourcePossessionTeam=String(possession.abbreviation||possession.abbr||'').toUpperCase();
+  return {index:i,kind:fg?'FG':'XP',quarter:Number.isInteger(quarter)?quarter:null,
+   distance:distance!==undefined&&distance!==null?Number(distance):null,
+   sourcePossessionTeam:/^[A-Z]{2,3}$/.test(sourcePossessionTeam)?sourcePossessionTeam:null,
+   publishedOutcome:made!==failed?(made?'reported_good':'reported_missed'):'unverified',
+   description:description.slice(0,220)};
+ }).filter(Boolean);
+ const source=sourcePlayRows(payload),seen=new Set();
+ const unique=events.filter(ev=>{
+  const p=source[ev.index],id=p?.id??p?.playId??null;
+  if(id==null)return true;
+  const key=[id,ev.quarter,ev.description].join('|');
+  if(seen.has(key))return false;
+  seen.add(key);return true;
+ });
+ const scored=unique.map(ev=>{
+  // Use the leading kicker in each play, never the center/holder later in text.
+  // MSF occasionally publishes the last minute as "(:02)" instead of
+  // "(0:02)". Both are actual clock prefixes; neither changes kicker identity.
+  // Require the jersey/initial/surname to follow immediately after the clock
+  // so player names in Center-/Holder- text cannot be awarded points.
+  const m=ev.description.match(/^\s*(?:\((?:\d{1,2})?:[0-5]\d\)\s*|\d{1,2}:[0-5]\d\s*)?(\d{1,2})-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$)/);
+  const kickerToken=m?m[1]+'-'+m[2].toUpperCase()+'.'+m[3]:null;
+  let component=null;
+  if(ev.publishedOutcome==='reported_missed')component=ev.kind==='FG'?'fgmiss':'xpmiss';
+  else if(ev.publishedOutcome==='reported_good'&&ev.kind==='XP')component='xpm';
+  else if(ev.publishedOutcome==='reported_good'&&ev.kind==='FG'&&Number.isInteger(ev.distance))
+   component='fgm_'+(ev.distance<20?'0_19':ev.distance<30?'20_29':ev.distance<40?'30_39':ev.distance<50?'40_49':ev.distance<60?'50_59':'60p');
+  const observedEventPoints=component&&Number.isFinite(Number(rules[component]))?Number(rules[component]):null;
+  return {...ev,kickerToken,component,observedEventPoints};
+ });
+ const actors=new Map();
+ for(const ev of scored)if(ev.kickerToken){
+  if(!actors.has(ev.kickerToken))actors.set(ev.kickerToken,[]);
+  actors.get(ev.kickerToken).push(ev);
+ }
+ const kickers=[...actors].map(([token,actorEvents])=>{
+  const m=token.match(/^(\d{1,2})-([A-Z])\.([A-Za-z][A-Za-z'-]+)$/),matched=new Map();
+  if(m)for(const p of (Array.isArray(msfPlayers)?msfPlayers:[])){
+   if(String(p.position||'').toUpperCase()!=='K'||!p.team||!p.id||
+      String(p.jersey??p.jerseyNumber??'')!==m[1])continue;
+   const name=normalizeName(p.name||'').split(' ');
+   if(name.length>=2&&name[0][0]===m[2].toLowerCase()&&name.at(-1)===normalizeName(m[3]))
+    matched.set(String(p.id),p);
+  }
+  const player=matched.size===1?[...matched.values()][0]:null;
+  const known=actorEvents.filter(x=>x.observedEventPoints!==null);
+  const counts={
+   fgAttempts:actorEvents.filter(x=>x.kind==='FG').length,
+   fgMade:actorEvents.filter(x=>x.kind==='FG'&&x.publishedOutcome==='reported_good').length,
+   xpAttempts:actorEvents.filter(x=>x.kind==='XP').length,
+   xpMade:actorEvents.filter(x=>x.kind==='XP'&&x.publishedOutcome==='reported_good').length
+  };
+  return {kickerToken:token,playerName:player?.name||null,playerTeam:player?.team||null,
+   providerId:player?.id||null,identityVerified:!!player,events:actorEvents.length,counts,
+   unknownEvents:actorEvents.length-known.length,
+   observedSubtotal:known.length?Math.round(known.reduce((sum,x)=>sum+x.observedEventPoints,0)*100)/100:null,
+   certified:false};
+ });
+ return {candidatePlays:unique.length,fgCandidates:unique.filter(x=>x.kind==='FG').length,
+  xpCandidates:unique.filter(x=>x.kind==='XP').length,
+  unattributedEvents:scored.filter(x=>!x.kickerToken).length,kickers,
+  // Include source descriptions of unassigned plays so the actual missing
+  // historical kick can be inspected, not guessed from a team count.
+  unattributedPlayDetails:scored.filter(x=>!x.kickerToken).slice(0,8).map(x=>({
+   kind:x.kind,quarter:x.quarter,description:x.description,
+   sourcePossessionTeam:x.sourcePossessionTeam,
+   outcome:x.publishedOutcome,distance:x.distance
+  })),
+  publishedEvents:scored.slice(0,18),kickingFantasyScoreCertified:false,
+  note:'PBP kicker labels and frozen FFL rule components are observed evidence only. Game completeness and corrections are not verified; no final kicker fantasy score is certified.'};
+}
+
+
+/** Six-week specialist evidence. Preserve unknowns; a missing PBP feed
+ * or absent actor identity must never become a zero kicker fantasy score.
+ * Team association requires matching MSF ID + team + jersey + name, not
+ * the PBP actor token alone. */
+export function summarizeKickerWeeks(weekly=[],team=''){
+ const wanted=String(team||'').toUpperCase();
+ const weeks=weekly.map(item=>{
+  const e=item.evidence;
+  if(!e)return {week:item.week,game:item.game||null,status:'feed_unverified',
+   knownEvents:0,unverifiedEvents:null,observedPoints:null,players:[],error:item.error||'No authenticated play feed'};
+  const actors=(e.kickers||[]).map(k=>({
+   actor:k.kickerToken,playerName:k.playerName||null,providerId:k.providerId||null,
+   team:k.playerTeam||null,identityVerified:!!(k.identityVerified&&k.playerTeam===wanted),
+   events:k.events,unknownEvents:k.unknownEvents,observedSubtotal:k.observedSubtotal
+  }));
+  const verified=actors.filter(x=>x.identityVerified);
+  const observed=verified.filter(x=>x.observedSubtotal!==null);
+  return {week:item.week,game:item.game||null,status:'pbp_published',
+   candidatePlays:e.candidatePlays??0,
+   knownEvents:verified.reduce((sum,x)=>sum+Math.max(0,x.events-x.unknownEvents),0),
+   unverifiedEvents:(e.unattributedEvents||0)+actors.filter(x=>!x.identityVerified).reduce((sum,x)=>sum+x.events,0)+
+    verified.reduce((sum,x)=>sum+x.unknownEvents,0),
+   observedPoints:observed.length?Math.round(observed.reduce((sum,x)=>sum+x.observedSubtotal,0)*100)/100:null,
+   players:verified,unmatchedActors:actors.filter(x=>!x.identityVerified).map(x=>x.actor),
+   gameCompleteCertified:false};
+ });
+ const playerTotals=new Map();
+ for(const week of weeks)if(week.status==='pbp_published'){
+  for(const p of week.players){
+   const id=String(p.providerId||'');if(!id)continue;
+   let rec=playerTotals.get(id);
+   if(!rec){rec={providerId:id,playerName:p.playerName,team:wanted,
+    weeksWithObservedEvents:0,observedSubtotal:0,unverifiedEvents:0};playerTotals.set(id,rec);}
+   if(p.observedSubtotal!==null){rec.weeksWithObservedEvents++;rec.observedSubtotal+=p.observedSubtotal;}
+   rec.unverifiedEvents+=p.unknownEvents;
+  }
+ }
+ return {team:wanted,checkedWeeks:weeks.length,
+  publishedFeeds:weeks.filter(x=>x.status==='pbp_published').length,
+  identityVerifiedWeeks:weeks.filter(x=>x.players?.length).length,
+  weeks,players:[...playerTotals.values()].map(x=>({...x,observedSubtotal:Math.round(x.observedSubtotal*100)/100})),
+  finalScoresCertified:false};
+}
+
+
+/** Match published PBP kicker actor counts to independently published team
+ * kicking counts, by week. This never certifies an FFL score. A team may have
+ * multiple kickers; avoid treating an unmatched actor as a zero. */
+export function reconcileKickerWeeks(kickWeeks=[],teamWeeks=[],team=''){
+ const wanted=String(team||'').toUpperCase();
+ const defenseByWeek=new Map(teamWeeks.map(x=>[x.week,x]));
+ const reconciliations=kickWeeks.map(row=>{
+  const teamRow=defenseByWeek.get(row.week);
+  const ref=teamRow?.evidence?.kickingReference||null;
+  const result={week:row.week,game:row.game||null,status:'unverified',reason:null,
+   pbpEvents:null,providerTotals:ref?{...ref}:null,observedCounts:null,
+   comparedCategories:0,disagreements:[],unresolvedActorTokens:[],unattributedPlays:0,
+   unresolvedPlayDetails:[],crossFeedDifferenceMayBeAttributionGap:false,fullKickerScoreCertified:false};
+  if(!row.evidence){result.reason='PBP unavailable';return result}
+  const teamAudit=teamRow?.evidence;
+  if(!teamAudit?.teamFilterVerified||!ref){
+   result.reason='Independent team kicking totals unavailable';return result;
+  }
+  if(!row.gameId||!ref.gameId){
+   result.reason='One or both independent MSF game IDs unverified';return result;
+  }
+  if(String(row.gameId)!==String(ref.gameId)){
+   result.reason='MSF PBP game ID differs from team game-log ID';return result;
+  }
+  const actors=(row.evidence.kickers||[]).filter(x=>x.identityVerified&&String(x.playerTeam||'').toUpperCase()===wanted);
+  const unknownOpposing=(row.evidence.kickers||[]).filter(x=>!x.identityVerified||String(x.playerTeam||'').toUpperCase()!==wanted);
+  result.unresolvedActorTokens=unknownOpposing.filter(x=>!x.identityVerified).map(x=>x.kickerToken).filter(Boolean).slice(0,6);
+  result.unattributedPlays=row.evidence.unattributedEvents||0;
+  const unknownTokens=new Set(result.unresolvedActorTokens);
+  result.unresolvedPlayDetails=(row.evidence.publishedEvents||[])
+   .filter(x=>!x.kickerToken||unknownTokens.has(x.kickerToken))
+   .slice(0,8).map(x=>({
+    kind:x.kind,kickerToken:x.kickerToken||null,
+    description:String(x.description||'').slice(0,220),
+    outcome:x.publishedOutcome,
+    sourcePossessionTeam:x.sourcePossessionTeam||null,
+    quarter:x.quarter,distance:x.distance
+   }));
+  result.pbpEvents=row.evidence.candidatePlays??null;
+  result.observedCounts={fgAttempts:actors.reduce((n,x)=>n+(x.counts?.fgAttempts||0),0),
+   fgMade:actors.reduce((n,x)=>n+(x.counts?.fgMade||0),0),
+   xpAttempts:actors.reduce((n,x)=>n+(x.counts?.xpAttempts||0),0),
+   xpMade:actors.reduce((n,x)=>n+(x.counts?.xpMade||0),0)};
+  if(!actors.length){result.reason='No unique team kicker actor identified';return result}
+  if(!row.evidence?.publishedEvents?.length && !row.evidence?.candidatePlays){
+   result.reason='No licensed kick events published';return result;
+  }
+  if(unknownOpposing.length===0&&row.evidence.unattributedEvents>0){
+   result.reason='Some published kicks lack an attributed actor';return result;
+  }
+  // Even after resolving the kicking side, the source must publish actual
+  // team field-goal and point-after totals. Missing fields are unknown.
+  const keys=['fgAttempts','fgMade','xpAttempts','xpMade'];
+  const fields=keys.filter(k=>ref[k]!==null&&ref[k]!==undefined&&Number.isFinite(Number(ref[k])));
+  result.comparedCategories=fields.length;
+  for(const key of fields){
+   if(Number(ref[key])!==result.observedCounts[key])
+    result.disagreements.push({category:key,teamCount:Number(ref[key]),pbpCount:result.observedCounts[key]});
+  }
+  if(!fields.length){result.reason='MSF team kicking counts not mapped';return result}
+  if(result.disagreements.length){
+   result.status='mismatch';
+   result.crossFeedDifferenceMayBeAttributionGap=result.unattributedPlays>0||result.unresolvedActorTokens.length>0;
+   result.reason=result.crossFeedDifferenceMayBeAttributionGap?
+    'Count difference with unattributed or unidentified kick plays; not proof of provider error':
+    'Published team counts disagree with identified PBP; verify feed corrections and completeness';
+   return result;
+  }
+  result.status=fields.length===keys.length?'four_counts_match':'partial_counts_match';
+  result.reason=fields.length===keys.length?'Four kicking categories reconcile; score still provisional':
+   fields.length+' of four kicking categories reconcile; other counts unknown';
+  return result;
+ });
+ return {team:wanted,weeks:reconciliations,matched:reconciliations.filter(x=>x.status==='four_counts_match').length,
+  partialMatches:reconciliations.filter(x=>x.status==='partial_counts_match').length,
+  discrepancies:reconciliations.filter(x=>x.status==='mismatch').length,
+  unverified:reconciliations.filter(x=>x.status==='unverified').length,
+  fullFantasyScoresCertified:false};
+}
+
+export function scoringEvidence(weeklyPayloads=[],rules={},team=''){
+ const wanted=String(team||'').toUpperCase(),positions=['QB','RB','WR','TE','K','DEF'],samples=[];
+ for(const [index,entry] of weeklyPayloads.entries()){
+  const payload=entry?.payload||entry,week=Number.isInteger(entry?.week)?entry.week:index+1;
+  for(const row of playerRows(payload)){
+   if(wanted&&row.team!==wanted)continue;
+   if(!positions.includes(row.position)||!row.stats)continue;
+   const stats=normalizeStats(row.stats),result=fflScore(row.stats,rules,row.position);
+   samples.push({player:row.name,id:row.id,position:row.position,week,
+    rawFieldPaths:statFieldPaths(row.stats,{limit:40}),
+    observedPoints:result.points,complete:result.complete,covered:result.covered,
+    missing:result.missing,components:result.components||[],hasKnownStats:Object.keys(stats).length>0});
+  }
+ }
+ const groups={};
+ for(const position of positions){
+  const rows=samples.filter(x=>x.position===position),counts=new Map();
+  // These are diagnostic categories, not permission to compute missing zeros.
+  // Raw weekly stat mappings differ from scoring rules that need individual
+  // NFL play evidence (long TD, interception-return TD, etc.).
+  const eligibleRules=Object.entries(rules||{}).filter(([key,value])=>
+   FILTERS[position](key)&&Number.isFinite(Number(value))&&Number(value)!==0).map(([key])=>key);
+  const statMappedRules=eligibleRules.filter(key=>Object.hasOwn(PATHS,key));
+  const eventEvidenceRules=eligibleRules.filter(key=>!Object.hasOwn(PATHS,key));
+  const statMappedRows=statMappedRules.length?
+   rows.filter(row=>statMappedRules.every(key=>row.covered.includes(key))).length:0;
+  const unavailableMappedRules=statMappedRules.map(key=>({
+   category:key,publishedRows:rows.filter(row=>row.covered.includes(key)).length,
+   missingRows:rows.filter(row=>!row.covered.includes(key)).length
+  })).filter(entry=>entry.missingRows>0);
+  const observedMappedCategories=statMappedRules.filter(key=>rows.some(row=>row.covered.includes(key))).length;
+  for(const row of rows)for(const c of row.covered)counts.set(c,(counts.get(c)||0)+1);
+  const coveredCategories=[...counts].sort((a,b)=>b[1]-a[1]).map(([name,records])=>({name,records}));
+  const best=rows.filter(r=>r.observedPoints!==null)
+   .sort((a,b)=>b.covered.length-a.covered.length||a.missing.length-b.missing.length).slice(0,2)
+   .map(r=>({player:r.player,id:r.id,week:r.week,covered:r.covered,
+    missing:r.missing.slice(0,12),components:r.components,
+    observedPoints:r.observedPoints,complete:r.complete}));
+  groups[position]={records:rows.length,withAnyStats:rows.filter(r=>r.hasKnownStats).length,
+   withPartialPoints:rows.filter(r=>r.observedPoints!==null).length,
+   fullyCovered:rows.filter(r=>r.complete).length,coveredCategories,
+   scoringRuleCoverage:{totalWeightedRules:eligibleRules.length,
+    statMappedRules:statMappedRules.length,observedMappedCategories,
+    statMappedRows,eventEvidenceRules,
+    unavailableMappedRules:unavailableMappedRules.slice(0,24),
+    allCategoriesCertified:false},
+   observedRawFieldPaths:[...new Set(rows.flatMap(r=>r.rawFieldPaths))].sort().slice(0,55),
+   missingCategories:[...new Set(rows.flatMap(r=>r.missing))].sort(),
+   coreCoverage:CORE_SCORING_GROUPS[position].filter(k=>Number(rules[k]||0)!==0)
+    .map(k=>({category:k,records:rows.filter(r=>r.covered.includes(k)).length,
+      gaps:rows.filter(r=>r.missing.includes(k)).length})),samples:best};
+ }
+ return {team:wanted,weekFeeds:weeklyPayloads.length,records:samples.length,
+  byPosition:groups,exactFantasyPointsCertified:false,
+  reason:'Stat-field mappings are distinct from play-derived bonus and turnover scoring; all missing components stay unknown. No final fantasy score certified.'};
+}
+
+/** Read-only MSF stats/schema verification. Partial FFL reconstruction never
+ * becomes an authoritative league score or projection. */
+export function auditStatFeed(payload,rules){
+ const shape=playerFeedShape(payload),rows=playerRows(payload);
+ const positions=['QB','RB','WR','TE','K','DEF'];
+ const withStats=rows.filter(r=>r.stats&&typeof r.stats==='object'&&Object.keys(normalizeStats(r.stats)).length);
+ const ids=new Set(rows.map(r=>r.id).filter(Boolean));
+ const observed={};
+ for(const pos of positions){
+  const group=rows.filter(r=>r.position===pos),scored=group.filter(r=>r.stats)
+   .map(r=>({row:r,result:fflScore(r.stats,rules,pos)}));
+  const partial=scored.filter(x=>x.result.points!==null),complete=scored.filter(x=>x.result.complete);
+  const unavailable=[...new Set(scored.flatMap(x=>x.result.missing))].sort();
+  observed[pos]={records:group.length,withNumericEvidence:scored.filter(x=>Object.keys(normalizeStats(x.row.stats)).length>0).length,
+   partialScoring:partial.length,completeScoring:complete.length,
+   example:partial.slice(0,1).map(x=>({player:x.row.name,team:x.row.team,providerId:x.row.id||null,
+     provisionalPoints:x.result.points,covered:x.result.covered.slice(0,12),missing:x.result.missing.slice(0,12)})),
+   missingCategories:unavailable.slice(0,15)};
+ }
+ const supported=shape.collection!=='unrecognized'&&rows.length>0;
+ return {supported,collection:shape.collection,rawCount:shape.rawCount,
+  parsedCount:rows.length,uniqueProviderIds:ids.size,missingProviderIds:rows.filter(r=>!r.id).length,
+  statsRecognized:withStats.length,positionCoverage:observed,
+  // A usable list is not proof of complete statistics, accurate FFL totals, or a license for all games.
+  scoringCertified:false};
+}
+/** A six-week window is only a lower bound on season-to-date counting stats,
+ * not a full season reconciliation. Compare only unambiguously matched MSF IDs,
+ * and only attributes actually published by both feeds. */
+export function auditSeasonLowerBound(weeklyFeeds=[],seasonPayload={}){
+ const season=playerRows(seasonPayload),byId=new Map();
+ for(const row of season){if(row.id&&!byId.has(row.id))byId.set(row.id,row);}
+ const weekly=new Map(),seenGame=new Set();
+ for(const feed of weeklyFeeds)for(const row of playerRows(feed)){
+  if(!row.id||!row.stats)continue;
+  const key=row.id+'|'+String(row.game?.id??row.game?.gameId??'');
+  // A missing game ID cannot safely be deduplicated across multiple weeks.
+  if(row.game?.id&&seenGame.has(key))continue;
+  if(row.game?.id)seenGame.add(key);
+  const entry=weekly.get(row.id)||[];
+  entry.push(row);weekly.set(row.id,entry);
+ }
+ const keys=['pass_yd','pass_td','pass_int','rush_yd','rush_td','rec','rec_yd','rec_td','fgm','xpm'];
+ let matchedPlayers=0,comparedCategories=0,overSeasonTotals=0;
+ const examples=[];
+ for(const [id,logs] of weekly){
+  const current=byId.get(id);if(!current?.stats)continue;
+  const base=normalizeStats(current.stats);matchedPlayers++;
+  for(const category of keys){
+   const values=logs.map(x=>normalizeStats(x.stats)[category]);
+   if(!values.length||values.some(x=>x===undefined)||base[category]===undefined)continue;
+   const sum=values.reduce((a,b)=>a+b,0);
+   comparedCategories++;
+   if(sum>base[category]+0.0001){
+    overSeasonTotals++;
+    if(examples.length<4)examples.push({player:current.name,category,weekSum:sum,seasonValue:base[category]});
+   }
+  }
+ }
+ return {seasonRecords:season.length,playersWithWeeklyLogs:weekly.size,matchedPlayers,
+  comparedCategories,overSeasonTotals,examples,
+  // Only a comparison floor: no claim that six-week logs sum to season-to-date.
+  certifiedSeasonReconciliation:false};
+}
+/**
+ * Only explicit licensed provider status can end an NFL game.
+ * A zero Q4 clock is NOT final (review, untimed down and OT are possible).
+ */
+export function gamePhase(value){
+ const v=String(value??'').trim().toLowerCase().replace(/[_-]+/g,' ');
+ if(!v)return 'unknown';
+ if(/^(final|finished|complete|completed|closed|game over|postgame|post game|ended|official final|final ot|final overtime)(?:\b|$)/.test(v))return 'final';
+ if(/^(ot|overtime|in overtime|extra period)(?:\b|$)/.test(v))return 'overtime';
+ if(/^(live|in progress|inprogress|started|playing|halftime|half time|half|q[1-4]|quarter [1-4]|1st quarter|2nd quarter|3rd quarter|4th quarter)(?:\b|$)/.test(v))return 'live';
+ if(/^(scheduled|not started|notstarted|pre game|pregame|unplayed|future|pending)(?:\b|$)/.test(v))return 'scheduled';
+ return 'unknown';
+}
+export function gameStatusLabel(value){
+ const phase=gamePhase(value);
+ return phase==='final'?'FINAL':phase==='overtime'?'OT':phase==='live'?'LIVE':phase==='scheduled'?'SCHEDULED':String(value||'STATUS UNVERIFIED').toUpperCase();
+}
+/** Never regress a verified final to an older game schedule snapshot. */
+export function mergeScheduledGame(previous,incoming){
+ if(!previous)return incoming;
+ const final=gamePhase(previous.status)==='final';
+ return {...incoming,
+  status:final?previous.status:gamePhase(incoming.status)==='unknown'?previous.status:incoming.status,
+  homePoints:final?(previous.homePoints??incoming.homePoints):(incoming.homePoints??previous.homePoints),
+  awayPoints:final?(previous.awayPoints??incoming.awayPoints):(incoming.awayPoints??previous.awayPoints),
+  scoreSource:final?(previous.scoreSource||incoming.scoreSource):
+    (incoming.homePoints!=null&&incoming.awayPoints!=null?'MySportsFeeds schedule':previous.scoreSource)};
+}
+/** Preserve last published events if MSF briefly truncates/rewrites a play feed.
+ * The provider's stable play ID is authoritative for corrections and de-duplication.
+ */
+export function mergePlayTimeline(previous=[],incoming=[]){
+ const key=p=>String(p?.id||[p?.period,p?.clock,p?.text].join('|'));
+ const canon=p=>{const {update,...body}=p;return JSON.stringify(body)};
+ const dedup=new Map(),old=new Map(previous.map(p=>[key(p),p]));
+ for(const p of previous){if(p?.text)dedup.set(key(p),p);}
+ for(const p of incoming){
+  if(!p?.text)continue;
+  const k=key(p),before=old.get(k),changed=before&&canon(before)!==canon(p);
+  dedup.set(k,{...p,update:!before?'new':changed?'corrected':'unchanged'});
+ }
+ const full=incoming.length>=previous.length&&previous.every(p=>incoming.some(n=>key(n)===key(p)));
+ const ordered=full?[...new Map(incoming.filter(p=>p?.text).map(p=>[key(p),dedup.get(key(p))])).values()]:
+  [...dedup.values()];
+ return ordered.slice(-360);
+}
+export const versionedPlays=mergePlayTimeline;
+/** Postgame verification remains at live cadence briefly, then drops to idle. */
+export function gamePollInterval({status,finalObservedAt=0,now=Date.now(),kickoff=null,failures=0}={}){
+ const phase=gamePhase(status),t=Date.parse(kickoff||'');
+ let interval=120000;
+ if(phase==='final')interval=finalObservedAt&&now-finalObservedAt<90000?5000:120000;
+ else if(phase==='live'||phase==='overtime')interval=5000;
+ else if(phase==='unknown'&&Number.isFinite(t)&&now>=t&&now<=t+6*3600000)interval=5000;
+ return interval*Math.min(4,2**Math.max(0,Math.min(3,failures)));
+}
+
+/** Verified game scoreboard from MSF game_boxscore or games response.
+ * This deliberately does not infer scores from offensive yardage/play text.
+ * Missing values stay null, not zero. */
+export function gameScoreUpdate(game,boxResponse){
+ const payload=boxResponse?.data||boxResponse||{};
+ const body=payload.gameboxscore||payload.gameBoxscore||payload.boxscore||payload;
+ const info=body.game||body.schedule||payload.game||{};
+ const score=body.scoring||body.score||body.gameScore||body.scores||
+   info.scoring||info.score||payload.scoring||payload.score||{};
+ const get=(o,paths)=>{for(const path of paths){
+  const v=path.split('.').reduce((a,k)=>a?.[k],o);
+  if(v!==null&&v!==undefined&&v!=='')return v;
+ }return null;};
+ const n=v=>v===null||v===undefined||v===''||typeof v==='object'?null:
+  Number.isFinite(Number(v))&&Number(v)>=0&&Number(v)<=300?Number(v):null;
+ const id=String(info.id??info.gameId??body.gameId??'');
+ if(id&&String(game?.id||'')&&id!==String(game.id))return {...game};
+ const home=n(get(score,['homeScoreTotal','homeScore','homeTotal','home.score','home.scoreTotal','homeTeamScore','homeTeam.score','homeTeam.scoreTotal','homeTeam.totalScore'])??
+   get(body,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score','homeTeam.scoreTotal'])??get(info,['homeScoreTotal','homeScore','homeTeamScore','homeTeam.score']));
+ const away=n(get(score,['awayScoreTotal','awayScore','awayTotal','away.score','away.scoreTotal','awayTeamScore','awayTeam.score','awayTeam.scoreTotal','awayTeam.totalScore'])??
+   get(body,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score','awayTeam.scoreTotal'])??get(info,['awayScoreTotal','awayScore','awayTeamScore','awayTeam.score']));
+ const state=get(info,['playedStatus','gameStatus','status'])??get(body,['playedStatus','gameStatus','status']);
+ return {...game,
+  homePoints:home===null?game?.homePoints??null:home,
+  awayPoints:away===null?game?.awayPoints??null:away,
+  status:state?(gamePhase(game?.status)==='final'&&gamePhase(state)!=='final'?game.status:String(state)):game?.status||'Unverified',
+  scoreSource:home!==null||away!==null?'MySportsFeeds game boxscore':game?.scoreSource||null};
+}
+,'i');
+ function identify(token,positions){
+  const m=String(token||'').match(tokenPattern);
+  if(!m)return null;
+  const name=normalizeName(m[3]),initial=m[2].toLowerCase(),jersey=m[1];
+  const matching=new Map();
+  for(const p of players){
+   if(!positions.includes(String(p.position||'').toUpperCase())||
+    String(p.jersey||'')!==jersey||p.firstInitial!==initial||p.lastName!==name)continue;
+   matching.set(String(p.id),p);
+  }
+  if(matching.size!==1)return null;
+  const p=[...matching.values()][0];
+  return {id:String(p.id),name:p.name,position:p.position,team:target};
+ }
+ const seen=new Set(),events=[],rows=sourcePlayRows(payload);
+ for(let index=0;index<rows.length;index++){
+  const play=rows[index],description=String(play?.description||play?.playDescription||play?.text||'').trim();
+  if(!description)continue;
+  const twoPt=/\b(?:two[\s-]?point|2[\s-]?point|2pt)\b/i.test(description);
+  const touchdown=/\btouchdown\b/i.test(description)&&!twoPt;
+  if(!twoPt&&!touchdown)continue;
+  const nativeId=playSourceId(play),q=Number(play?.playStatus?.quarter??play?.quarter);
+  const period=Number.isInteger(q)&&q>=1&&q<=7?q:null;
+  const clock=playClock(play).clock||null;
+  const fingerprint=[period,clock,description].join('|');
+  const key=nativeId===null?(clock?'clock:'+fingerprint:null):'native:'+nativeId+':'+fingerprint;
+  // Without a native ID or clock, repeated descriptions can be distinct
+  // plays. Preserve them instead of silently deduplicating.
+  if(key&&seen.has(key))continue;
+  if(key)seen.add(key);
+  const possession=String(play?.playStatus?.teamInPossession?.abbreviation||
+   play?.playStatus?.teamInPossession?.abbr||'').toUpperCase();
+  const teamMatch=possession===target;
+  const successful=twoPt&&/\b(?:is good|was good|good!|successful|converted|conversion is good)\b/i.test(description)&&
+   !/\b(?:no good|failed|unsuccessful|incomplete|intercepted|interception)\b/i.test(description);
+  const unsuccessful=twoPt&&/\b(?:no good|failed|unsuccessful|incomplete|intercepted|interception)\b/i.test(description);
+  const passed=/\bpass(?:es|ed)?\s+(?:short|deep|left|right|middle|to|intended)\b/i.test(description);
+  const passer=description.match(new RegExp(tokenRx+'\\s+pass(?:es|ed)?\\b','i'))?.[1]||null;
+  const catchMatch=description.match(new RegExp('\\bto\\s+'+tokenRx+'(?:\\s+for\\s+(\\d{1,3})\\s+yards?)?','i'));
+  const targetToken=catchMatch?.[1]||null;
+  const passYards=catchMatch?.[2]?Number(catchMatch[2]):null;
+  const rushMatch=!passed?description.match(new RegExp(tokenRx+
+   '\\s+(?:left|right|up|middle|scrambles|rushes|ran|keeps|kneels|end|off|for)(?:[^\\n]{0,100}?)\\bfor\\s+(\\d{1,3})\\s+yards?','i')):null;
+  const rushToken=rushMatch?.[1]||null,rushYards=rushMatch?Number(rushMatch[2]):null;
+  const candidates=[];
+  if(twoPt){
+   const kind=passed?'pass_2pt':rushToken?'rush_2pt':'two_point_ambiguous';
+   if(kind==='pass_2pt'){
+    if(passer)candidates.push({category:'pass_2pt',token:passer,positions:['QB'],yards:null});
+    if(targetToken)candidates.push({category:'rec_2pt',token:targetToken,positions:['QB','RB','WR','TE'],yards:null});
+   }else if(kind==='rush_2pt')candidates.push({category:'rush_2pt',token:rushToken,positions:['QB','RB','WR','TE'],yards:null});
+  }else if(touchdown&&passed&&passYards!==null&&passYards>=40){
+   if(passer)candidates.push({category:'pass_td',token:passer,positions:['QB'],yards:passYards});
+   if(targetToken)candidates.push({category:'rec_td',token:targetToken,positions:['QB','RB','WR','TE'],yards:passYards});
+  }else if(touchdown&&rushYards!==null&&rushYards>=40){
+   if(rushToken)candidates.push({category:'rush_td',token:rushToken,positions:['QB','RB','WR','TE'],yards:rushYards});
+  }
+  if(!candidates.length&&!twoPt)continue;
+  const matched=candidates.map(candidate=>{
+   const player=teamMatch?identify(candidate.token,candidate.positions):null;
+   const isLongTd=candidate.yards!==null&&candidate.yards>=40;
+   const bonusCategories=isLongTd?
+    [candidate.category+'_40p',...(candidate.yards>=50?[candidate.category+'_50p']:[])]:[];
+   const proposedCategories=twoPt?[candidate.category]:bonusCategories;
+   return {category:candidate.category,player:player?.name||null,providerId:player?.id||null,
+    verifiedIdentity:!!player,sourceToken:candidate.token,yards:candidate.yards,
+    weightedRules:proposedCategories.filter(key=>Number(rules?.[key])!==0),
+    // Do not award from PBP until stacking, corrected plays and source count
+    // reconciliation are independently verified.
+    creditedFantasyPoints:null};
+  });
+  events.push({index,period,clock,sourceId:nativeId,description:description.slice(0,270),
+   sourcePossessionTeam:possession||null,teamPossessionVerified:teamMatch,
+   eventType:twoPt?'two_point_attempt':'long_touchdown',
+   publishedResult:twoPt?(successful?'reported_good':unsuccessful?'reported_missed':'unknown'):'touchdown_reported',
+   matched,creditedFantasyPoints:null});
+ }
+ const matchedEvents=events.filter(e=>e.teamPossessionVerified&&e.matched.some(x=>x.verifiedIdentity)).length;
+ const unverifiedEvents=events.filter(e=>!e.teamPossessionVerified||!e.matched.length||
+  e.matched.some(x=>!x.verifiedIdentity)||e.publishedResult==='unknown').length;
+ return {team:target,rawPlayCount:rows.length,
+  publishedCandidates:events.length,identifiedCandidateEvents:matchedEvents,
+  unverifiedCandidateEvents:unverifiedEvents,
+  twoPointAttempts:events.filter(x=>x.eventType==='two_point_attempt').length,
+  longTouchdowns:events.filter(x=>x.eventType==='long_touchdown').length,
+  events:events.slice(0,30),fantasyBonusesCertified:false,
+  reason:'Team possession and unique provider player identity are verified separately; published text is only provisional. Long-TD stacking and game completeness still require source reconciliation.'};
+}
+
 /** PBP evidence for specialist *candidate* plays, not game-complete FG scoring.
  * Do not infer player credit or successful kicks from unsupported text. */
 export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
