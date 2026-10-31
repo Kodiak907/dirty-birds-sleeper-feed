@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-31T17:34:46.782927+00:00",
-  "source_snapshot_utc": "2026-10-31T17:34:42.723906+00:00",
+  "generated_at_utc": "2026-10-31T18:43:45.407463+00:00",
+  "source_snapshot_utc": "2026-10-31T18:43:38.462279+00:00",
   "candidate_count": 32,
   "news_queries_attempted": 30,
-  "news_query_failures": 30,
-  "news_status": "degraded",
+  "news_query_failures": 0,
+  "news_status": "connected",
   "limitations": [
     "Public news index displays dated headlines only; link and verify individual reporting.",
     "Sleeper injury and depth ranks are provider reports, not official NFL activations.",
@@ -19,7 +19,7 @@
       "team": "MIA",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -32,7 +32,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Malik Willis expected to play in Week 8 - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMzNDcXR0eFgtb2FLNUhvbVJpUC1GQjZPQ0lETFhDMlJyWEVjY2FkSkw5LS1pYkhETHY4cUh6ZmNmS2otU1lTSGQ3bW5aRlZZZnROU01tb0c3d1otRkE2NFppeEJBS3pud2hkZk1IVVRxRXhSNl94S3FQUUN3NENYR3kxdjNDRkU?oc=5",
+          "published": "2026-10-30",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Who Should I Start for Fantasy Football Week 8? Malik Willis, Sam Darnold, Kyler Murray, Baker Mayfield, Matthew Stafford, Drake Maye, Trevor Lawrence, Deshaun Watson, Tanner McKee - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQamNRdFBqWFIzSXVac0tjTEQ5enhEeko4V3VISjZHOXdUV2RzeGlKSWdyaUszZGpNWWQzTVhWUUdzSTE3cmFWOHJPYzN0Q202em9OVlkwZXhLSTdUVzdLdXljUXJMUjFEa1ZHZVZqeVNNYjlpU1o0dWtjU0hMb05tZUFxeWZlelhxVFY3eWNqZHc2UFhnbTJWNm5aTklEamU4WWtMN1VVY1BFeTNJa0Vsbk1FMmpMRlpBTnMwZGNmcktzUm05aEczUnhOQjNpRHVJYXoxZFVQVVRaYlNKWjVBazdHOWEzVU9ldHNvcU5scTlScDlhUExBcUk4dGVkZ01RSmptWEFUUHpEaldfSFFHTXNmTm9odS0y?oc=5",
+          "published": "2026-10-31",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Malik Willis (groin) logs full practice Wednesday - FantasyPros",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNV09UNUZ1eF9XX2ZKRERpWTFCODJWLW9Od0lKM3pmN2R1dm9CZFFmcVMtTXBpOVU3Z3cxTmtjRGItZG14UDRaTlRhX1ByTllJVWpra0RGdHV4T21fY0VEQ0Y4R3o1WFpiM2dhNml2dkpORl9QMU1kX19KOHFfLTdqSzhsSGpHZTNNNS1RZi00RlZVa00xaEJSRkN6a9IBoAFBVV95cUxPZHVyMXR0M1dfbTBpQURMT1ZoTVBUT0FoZU8wX1FKRjloUmhUcWFtcVZheV9sYkJtQndVQnNGTU9zTlFudUNWV2N4c0RjWkdyRlZJLUxUdGNjTDRvWFI4Y2VHY2p6TDB0cUlVSWtTeWVIOEFXLTJqQU1Sd2JiS0paY2Y1NHYya0t6V3JDVERVYXZzMWxiRzBJU2VLUWZNZnR2?oc=5",
+          "published": "2026-10-28",
+          "publisher": "FantasyPros",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Malik Willis Three total TDs in Week 7 win - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPemFsX2FUaVdkNkVsNnNMRWs0cnprUm9renhfc3BFVmZUcXB4TjV3TkhoS2EwWmFPYkpkOXV3Rmd2ZURYWUFkRnFjUTZHRjl2MHFEamFHUUlRaTQtcVNRMEhaSHBqQ0VqNkFIZkRROTdFRFlzUVgyaHRJd21MbF9yR3doS1RnTUNzM2Itc2UwQWJBQ2tSdFVHTA?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "4892",
@@ -40,7 +69,7 @@
       "team": "TB",
       "position": "QB",
       "snap_share_pct": 94.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -58,7 +87,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Geno Smith, Baker Mayfield, and 2 More Fantasy Football Week 8 Waiver Wire Quarterbacks - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUk1pQ19HblBrbUhmUTlHN1dBeVJNVHJabF9PaWcxdHVGeWI0SzRualRVNHpnMDh0TzUxUFcwM1pkZm00VTZNN2VrTnc3YUx5TzJYcHpHc1gzSHNkU3hzNkZLQ1Z6R0xYTTNianRaZWlmZm52amRURXpYSlU3Rkx3TWpoWmVjczluVFVVakJqMUpYSFZXckZoZmVvaWx6eUdXNUxjek1Kd1V5TkZER1drdkx5U0RRTEcwamlZM0M2SmUwcnM?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Buccaneers Get Baker Mayfield, Emeka Egbuka Updates Before Falcons Game - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTTdGaDFUUDRMTFpLcnBOdExkRHN1Yk1Oc2NtbHY3ekIxVnV0SUpDRDZ0bGtfVzBSY1hROF8xQkhMZTN5ekQ5d25YcHVGYjFFNHJzUDBNc2JiUndXWWp1NEVHUURGempkR1F5eDZBbkEtSV9NT1FOMjZjZXRKRS1Rald1ZUJRLWJVNmFvajRISUo?oc=5",
+          "published": "2026-10-30",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Falcons-Bucs injury report: Latest on Brian Robinson, Baker Mayfield - Falcons Wire",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSkE0VjlJUkY4U1QtVFU0ZE1QZURUamdXWUtOQ3JUbDVTRmhCUGZvSnlKa1B6UU9nektmUnhIV2xHNnlSdm9KMERQV3lBTXJIb1BaYW83T2VhS053Sk95SlBVSlk1cGdqbWFGVXNhX2R2ZVNvYy1YaG9CZzFWa0ctOUoyeV95WmxwMklnR3dzX1FQZWFJYlM4WW54ZzRCekFxYUY4Z0ozZ0ViQ3BRUUpyXy1Eb2xsMmtpSzhWOQ?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Falcons Wire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "NFL Week 7 Injury Report: Lamar Jackson out, Baker Mayfield in - DAZN",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdEF6dWRSQUY0U3AyX3dTTC1FSV9kSW1RVnVUVi1mX2RmS0lYeU5Pb2VHcmxRTjJYTzdYMWRONnJuWkk1bVBqYXlvQlZ1b2tWOUFsd3h5UXVmUzBWb19rcXc2OHZEWVk3aGl6d01pclZHQlgwRmlOTmo4TXVtS0NkeHFTQXVUeVNRZkVqLUFScFJPOHotX2JLRG00LUI2ekh6QXpYal81Q2YzTHRRMHhlZ3RucEp4dEtKa000ZEVoTkR0S3RNV3JLbFpHMUNWOWNmZGM4ZA?oc=5",
+          "published": "2026-10-25",
+          "publisher": "DAZN",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9230",
@@ -66,7 +124,7 @@
       "team": "PHI",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "High recent participation",
@@ -74,7 +132,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Who is Tanner McKee? Eagles QB starting with Jalen Hurts out - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbmVTbzBjQ0FKeTMwRFZkZ3NNWEJWUlE5T0xQREJMVUVoWkUyXzBwY1RHMXVJRF9PSGFtVVpsSzl6bGtBckUtNnZkcjNPWGtJVTJQSDVVWWtFQWp3LWFFUE1Bd2RPOS1vendidUREMEM2NGgwYVBFN0dZOFdvN1c0eUQwd1NiRGs?oc=5",
+          "published": "2026-10-31",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Tanner McKee’s Top Eagles Targets Start Commanders Week Off On Bad Note - Heavy.com",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdDhZbHJQRnprRnJROS1zUy12SDJsUGhUVWFRazN6SVpLMkFYRExFLVltVW5FdTA0Y0Y4ZmVhclJ6SnQtQ0w4MWJmQ0JobnNvbGV6SnBfQkdyY2RyQnU5dHQ5eENkdGJtUWdqa2ZNc0pKN002TDVjd1ZXNURQaEVydjhUV2lnaGJrVURWTGNFTFBOeWtLd0hJT0JFMVdWUTFXeUZ0YmppTzEtZw?oc=5",
+          "published": "2026-10-29",
+          "publisher": "Heavy.com",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles vs. Cowboys: Tanner McKee Starts as Eagles Try to End a Four-Game Skid on Monday Night - Northeast Times",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQM3pWNDl2dTEtd0JSVXpEOC01TVdBM2ZCQ1JWdzd0QTAwcXc1Q2tacEpDTjR2dlVKVDRHM0U3NlRLREV3N1ZVLTRDRHU3bHRxNy0tU0NjOWRoeExMdGxBNmdVRW0zeFk1NmZzTVBSX04xYllvMkh3U3FWWXZ4akJHdnJGakNDMHZ5UVgxNTRaSmMyYUNCMUFjeVVkRFROMmpIXzhCS216NHZRQzZ2Yk1mRw?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Northeast Times",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles QB Tanner McKee’s MNF pregame speech will have fans hyped - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNc0VvV0pjcVJkZ1cyTVE3M1lDNmc4cGxjT245cWJnT0h3enl1MmR0ODZXUmN5RWxhYjh6eEtmWW4zdlFXLTU3THRfVEJaVlhGbnhIOVdJQjRERC1iOE91Y1JXTnhYcmpCYzFFVHhNalNuejBQMjBsOHpUR200QlBWZg?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9511",
@@ -82,7 +169,7 @@
       "team": "LAC",
       "position": "RB",
       "snap_share_pct": 32.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -98,7 +185,7 @@
       "team": "CHI",
       "position": "WR",
       "snap_share_pct": 61.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
       "news": []
     },
@@ -108,7 +195,7 @@
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 81.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -126,7 +213,22 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Analyst Suggests AFC East Team Could Go After Chargers WR Quentin Johnston - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZml4Z2IyQnFXVjBCcGV0LUVBQUtUMWtoSkJjRVREbU5mQ2lkQlNyc0N6RE9KMi1PMmpNT3Zza1VGd2ZwbTVfRXhaYVhiMHoySm94MFF0NU9fclhCZWp4TWNickRHWUJEZzhCajAzMERQNjlmOFlRX1JULUk5VjhORjY2NlBodw?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Ex TCU Star Quentin Johnston Linked to Chargers' Rival in Trade Rumor - roundtable.io",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOa29nY094WWc1NmR0ODZRTlJXRzJPYXdxOW1GNWlVLWktaFpPSDhRX293LThETmUyMmxERzBiQjljaTFaeHFLZzlCa0lkbTUxSnR3bXYza2Y0TjN4Mk1DRlpIQU1LNVNJUUVDNlZKSEQ0ZkNOSFFxbU1LakVuRjQ2cXRYQXpNSnA4cVFuUUVCbV9VcDNuc2xMMkdoRmlmd29Yd0NkUDFMOXBfNmtiLWtrMzh5M01OcmFqZ1E?oc=5",
+          "published": "2026-10-25",
+          "publisher": "roundtable.io",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "6130",
@@ -134,7 +236,7 @@
       "team": "NYG",
       "position": "RB",
       "snap_share_pct": 31.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
       "news": []
     },
@@ -144,7 +246,7 @@
       "team": "CIN",
       "position": "RB",
       "snap_share_pct": 36.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -152,7 +254,29 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Bengals Snap Counts Show Chase Brown Reclaiming the Backfield After Samaje Perine's Big Week - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbC12TlE2VlhEYmx3aVFFSWFsMG5zT3B5bDFHR2JfNzYzRDNDdXRKQUF4VmNMMEpMMFQyZHpuUzh5YktZWDA5d3c4aUFDTXVucXRCN3hoWmRCZWg5UjU3bTFUbzBlbHV4Tl9pUWE4TE9GdWl2eDY4MlNWU3kxUUpDTG0tbDlfUQ?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "How is Samaje Perine getting better with age? - Charlie's Chalkboard",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPLTZHR1VRaWlFMklGcC1qekxUTE5iMUd2UHdROEVMZE1xRnptR0VKT205SnVIZl9sT0NzUXFBMGJjT1lnRzZzYWE4MUJqU24wS2VESkI1aXljOGdsLXpTYlVobEZ1TVNxZko4ZEtKTHVteGZiekp2ejBPTHE1eGFKTjNnaw?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Charlie's Chalkboard",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Samaje Perine - Fantasy Football Waiver Wire Pickups for Week 7 (2026) - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaVZqbmxndVd4emlrY2ZPcmkyTHNaVXhsTXNBYjZWQTQyZnhHSUtHeFFVVXc5YU9rdWdmOGV5dmJLMUlEMlVMVWhRRHJHV1UwdWFnZFpmVUFmVmZUNVlVTWMtLTNEeEo2NHVlY1NhcXJjX0NaU0lMRVdpcm5pT0tYTTJyTjJIc1BJQUlHQjY4czNxaDlIZXFlY1c2VUdmYXExRXE3VzF1bmVzbV9qTUJv?oc=5",
+          "published": "2026-10-24",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9482",
@@ -160,7 +284,7 @@
       "team": "LV",
       "position": "TE",
       "snap_share_pct": 75.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "High recent participation",
@@ -168,7 +292,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Michael Mayer: Must-Add Waiver Wire Pickup for Week 8 Fantasy Football? - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQR3NlWEd1N09iamxNVEJERTc4WjBTbl9UY0x1aWdCSElmZFlnWlZsYmRjYjBfSWo2MTJOZWhRdUdkdE1JNXh1cnlFQ0dsUHd3T09weDQ2SWdmcEJMcGVSeUY0Y0JFeDRKUEVXOHVQQ3F3LTF4THREaVQxTDA2NWdqNUYzVVphUFFXVEk5a1pMdmZHcE9MU1E2WVRGOHdCWDdIX3l3RQ?oc=5",
+          "published": "2026-10-27",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Michael Mayer Fantasy Football News, Rankings, Projections | Las Vegas Raiders - FantasyPros",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FNWw1WUkxbW5uYWlRTExRTWRxaXViZmpfQzR0TFRYNlhfYmNzNm9oSWZvWk8weGNOcm1mc0RSbmlrYW5Ba2pSdmJHVENBc1hUaUtEYTZJMFQtRlFoYUI5YjlhSktNREdFZTM1X2VQblRKWVpEYUY3Nw?oc=5",
+          "published": "2026-10-29",
+          "publisher": "FantasyPros",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Fantasy Football Start/Sit: Tyler Higbee, Michael Mayer, Pat Freiermuth - FantasyPros",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1FXWW1GcFpUSThpWFoyd3VhMGlBTVNQMEFETFFCb0otZzlVQUYwNTBtb0h6b01maGU5S1BFMWVOTUFaWWMtZGMyY0p6TjhGeGNKSXhaY2JMeTNmOG03N01TbFVBMjMxNXVibmhlSVdpOGh3Y0hiUXlWa0tMdHJ1UUxXcjdiX3VQVXFrTG5FWXFWdGZRYm9oblVpWFRheV9SRm1DRUhsTzlOclBJeXhoOXBFbUtPUTdM0gG-AUFVX3lxTFBRbVJyVXdmZzFydHE1Wi1WUk5SZ3dGdTlxS05OZk9xWk9ELWgtb2RvaUFqLUJJMEJDQlJLVW5oa3M1TE00dnZoREFSUDdjbmR5UXlhZFlISnNRLUdBazlYMWlrMmV6aGN6a3YwbkxqYy1TcWdvV0tvVVhNVE9qN1hqS2dHaTFQNmEtcFdmTVF4aUs0Qll0QkFvbGIzRVRad2Jyd0tPQ3J5QnhJMTNqWENCX0VJSmxpMkhXeDduX0E?oc=5",
+          "published": "2026-10-24",
+          "publisher": "FantasyPros",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Who Should I Start for Week 8? Pat Freiermuth, Harold Fannin Jr., Tyler Warren, Dallas Goedert, Colston Loveland, Michael Mayer, Mason Taylor, AJ Barner, Mike Gesicki - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQOE5xZzlTZmtuYkFyQ2ZPbGhZVDRvWkJMZFZfUUhTaExQLUp6STdzZkFkREIyazM0ejUzcDNzdXlSQmVWSm4tRjRtVjZwTThvb29oMzdla0NPazdIbWJtZFR1eEdIWDh1TG15TmFmRWVrZHAtUHBlUWxBaExuSTBfcGhLeTJLNWlNUnQxWUExcERPUU5FVGpjU2laVWVYdnFpaTJvZjFGWmdPZDFCY2t1SEVfWVdHZWRicko4X2N5STdOdk5fOG82cFFEckR2elJJLWZYMEFEUUJKR2tIbk52RWZKS3FiTmJrM2RyVXR5M09rSjhuY1ZtNWpYYjNyczJJOWJhWU9NMnhqVjBZYzc2SVEtR3lpamlwYjNv?oc=5",
+          "published": "2026-10-28",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "13311",
@@ -176,7 +329,7 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 67.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -184,7 +337,29 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Chris Bell Four targets in first win - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPT3RMY0VBZGtoQ1dWVjNpanNjRlVUdTNqVjl2MGIxVHNlSUN2R2NxeE16Y2xlb0JtdF9DUWttZ3UzYVhBUUstbUdpMkp4Zy1Fa0lvcFR6eGgyekRwVkU4MlctXzEybjBYRHJoQkp2RklzazRjYjBSaWsycVhERjB5YkZnZHJmRGlKbExXNU5sb2w?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Dolphins' Chris Bell: Four targets in first win - CBS Sports",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNY3EyY0pKY2k3amZmMjkxTVM1Um9WT0k2VndpczVsNVowNDBrVHB2amZQMnpQUUxIZmRtUTl0YzNJYTJzam5ocE5LSElOaWRabGc4dkVFLVptMEhGdVNIUERZLVphbFViYTFEdk8xU2dDRDJ2bmdKWTZ4UXAxUFZpQ3R5ZFpXaGpXYU9ReldjejJ6R0pHRXJuYmd3?oc=5",
+          "published": "2026-10-27",
+          "publisher": "CBS Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Chris Bell Week 7 Outlook for Fantasy Football (2026) - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPaE1pcXZlZDAtVGMxczFaODZBRDVCUkRnTHl1a18zbkhtUC1ia0lpaWxuVGVZMmEzeHdfa2JhWXoxY2NldlZKT1BBSDNfaWZkamNFSHl0SXltUXBEeUx3cDVNYjM3bGZRMndOekw3YTUxT0VjR0Z2ZHJJeG9ObXVhdmZRcHY4SWhsQ3FBNVlyOVFDekxLOWFHQUln?oc=5",
+          "published": "2026-10-24",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9508",
@@ -192,7 +367,7 @@
       "team": "TEN",
       "position": "RB",
       "snap_share_pct": 38.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -205,7 +380,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Titans rule out WR Carnell Tate, RB Tyjae Spears, P Tommy Townsend - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQXdiajBJaF83bDdXTEtOb3d0Smlpcm1zY2wyZV9Oam1SallLTnRBSG5tX0tkRXRVX05Fb0xCQ1lwRjhnMXA1Yk5aSGhrYXozVlMzVFRaWTRqdFpvRTd5N1o0QjZndkRBQVE2a0RiUE16VWxBVklsVHZrMjJGZDhLY2h3?oc=5",
+          "published": "2026-10-30",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Fantasy Football Injury Update: BIG Week for Tony Pollard & WanDale Robinson with Carnell Tate & Tyjae Spears OUT? - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZF9UZTNLZFN4YzVpcDg0MXBuczhvcHRqOEV2X0xHcnhtMV9KdkNQM3Fpb3NYQlY1OVYtV3IyWWc4aGE5Nkh2NGJoTGZHV3NMR0JaZlVvdGxnSFRzSjhTWmdYY0FyQ0t0ZmFrVmFsSXE2TjVlOGtvR1ZBbkFZV1N5bzN0R2VrMUU3dmQ2WGN6UExEa2RPNHh2aGxhdllNNWdVaWFMTjBfbzFBamZKaG1mMzhJcjlTcE04cTlUUG5TMVAwYi1YZzl6WHZoVWtvS05SSHZWR3phZ25oU1RZ?oc=5",
+          "published": "2026-10-31",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Tyjae Spears Missing practice again - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNVV8tUW10OWd3MUNXRlFyQ1dtY0ZBMDAycUFiT0xNdXJoRWpuRnFOODNwWFFJVHM1UWlRT3ZDQ01xdnBQSk5vd3FwOFNUUk9wdHJPaDRZdlEyQ2VXMzFSYWV2N3VwOHkwVVhzekhqTWtVcnpILWcyN2paNHYyY3VHTVZhUXVTcGFCUVk5TkRvbw?oc=5",
+          "published": "2026-10-30",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Tyjae Spears Injury: Remains sidelined Thursday - RotoWire",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPV2dJVmhXdGd4QzBRV1B5SlRXYzJpZWp1V0piOFU5TXhrQXE5Ul9GVlh0WFV1eG52MHR4WC1yVmFmcnI5bFNqZVVTWC1aM1pKUE0yOHlYMklyNlNKN0x1bFdvVy1ZWXR5V0FPZzRyc1B4c2FremF5eng5cDNxX3hubDMxcHJKWkp6XzlKSHZmSGtDQVdkT0hGZkN0X0xuZw?oc=5",
+          "published": "2026-10-29",
+          "publisher": "RotoWire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "13305",
@@ -213,7 +417,7 @@
       "team": "LV",
       "position": "RB",
       "snap_share_pct": 23.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -226,7 +430,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Week 8 Fantasy Football Running Back Streamers: Mike Washington Jr, Elijah Mitchell, And More - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOXy16bTV1dVl3V1IzZWFBUkNIeGlVNWdacXVGQjBxMHFPZDk2aWo0clI0RENKeHIxdTBraXY1UWFZeVB2cXZncGwtM0d0dnNIMDV4RGtzcFlaemZLRENCX2NGd2FTMkJZXzlfdWR0Rk5yMHQ1WjJ2REhsbi16WjlyLVFsOTFLM0E?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Raiders RB Mike Washington Jr. is a game-time decision vs. Rams Sunday - Raiders Wire",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSERPNzc5d1JuVnBsejl6Y1pJQ3hrSzMtcm1pU3lxQnNmXzMzcllaWHAzTndzTTdKd2NfemNoa0ZRLTUzOE1SZWY5MlR5VVE2eHh4M3JTclEzOTJRaGp5S2V6c0pmWG5OdHZuZ0FzX2J0T2xXZEZ5NVBKOUlrVS1XdVBDOFRfUl9mNjdDZkRHdFhscEVETFM5SHZScmV0WHRPMzZHTS1PNEt2ZVlaX0xuWEZXYWtZdFRYUDhQbUN6dkJvSFMwWjJveQ?oc=5",
+          "published": "2026-10-25",
+          "publisher": "Raiders Wire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Mike Washington Jr. Leads team with 27 rushing yards in loss - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRjRmRFUzaFpoaldsMjJhS180YmVPdU1ZMV9iTFNoQU5tLWpWdXRLeG1iOXJIR2Joak1UUGJ2TWJyVGdJZnItSjgxMW5MMFVCSnJQVGw3X19hMTExMG9yTkpxZTkzOUNaOHBLN05YblVHRnhMS001OVhpZzFXOTRISVNRTVZBcXJzRTRMdURNTl9nS1p6UGlXMUxQQUJjaWNIdzNoX2JxM29FZWkwN3RN?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Mike Washington Jr. Week 8 Outlook for Fantasy Football (2026) - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZG9KZldSUHc4Ty12V2RWbzBRZlNaeWFRRUxiVjQ1TlRRTlFvR1RJUVdkWmZBNUk2dUR4NXVwb01RQmYwU1AyNndUajJ1Z3dVUkNzQWc4eDJ1U3k5VW5vMFh6dEE3RU5MU285aHJWOVdBYm1wRV9odDBCY3FRZG83b1p2UlUxZWNyd2xvam50UDlrc0YySVE?oc=5",
+          "published": "2026-10-30",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "7049",
@@ -234,7 +467,7 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 73.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -242,7 +475,22 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Vols in the NFL: Jauan Jennings gets loose, two VFLs return from injury in Week 7 - 247Sports",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQVU1DRUxndnZQMkV1eHB5RDMzMjZfYkxDZGZyQzNWcjN5UTVSZmZUbmRPWWVjaHJOQkxVVlk0Nml6dmFxMTJtSXJPM3Bja0VWaEhLTlU5ZE9tejVpMmpmVVZHeWdISnZScld2dnRjR3kwa0o4SGVMU0lmazlWNGxCazhtLU8tQ0RFeWhEeDREMGlkRnVwZEU4ZDdwS2VjTm15eU1Xa0VIaW9kZlBKVW41dHlZTkpiMURfT1dNd3Z0N0NfQ2xuOGdJdU5HN3VPUUJQdk9iTlBXaXh5SW5QRWxvOWVIb1plMVBhY3A2QVdBOThHdWhK?oc=5",
+          "published": "2026-10-28",
+          "publisher": "247Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Will the Vikings Trade Jauan Jennings? His Role in Minnesota Makes Him a Deadline Candidate - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGV6ckk5dWVRTE1vbVJfcWhkQ1Y4MGJOMkNMZGpaYmNTY0cwamdheGo1dmJQU25hMGN3X1E1OS1EczFhdHBnc1NSc0hxT1pOcEdwUTBENExZQlFYblhNTWZNb2RQN29CNmRnN1NKZ1IwNmYxeWFvOUhsVF9vQVd5TkVfUlBObUsyVVE?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "8676",
@@ -250,7 +498,7 @@
       "team": "SEA",
       "position": "WR",
       "snap_share_pct": 41.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -258,7 +506,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Seahawks vs. Chiefs In-Game Injury Updates: Rashid Shaheed, Velus Jones Jr., Charles Cross Out - Seattle Seahawks",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeVRSbE1QR0VHTkVOUkpsSFg5eE5vLVpvakFsX2FhWWpiTVBrNHlaZGVxYmtQQ0RrcnNIQVBWS0FuallZNV9VMWVENHByNGZaNE5acm0zeU1oTXRMeXhPNUtkSy1lMldKWkZPTzVXRUtjUTdQdFBMbUQwZVJmOFBhVW83NWdScWdXWUdJ?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Seattle Seahawks",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Rashid Shaheed Doesn't practice Friday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNRmZsaTQ4by1WZ3EydGpBYnZELWVEdnIydnV0NUlmNm1TYzVSRjlOOXhYRExKMG9CVEhZUGVoM1ZZR1dZa2E2NkRZcm9KenF4UGRDemlZZkZRUktCNVZTbjF2RG44VFBtbzQwVDRkQTBGM0NEc192anRScThxdWZZQm81SjFKbkRwYjR3OWZKUjh0dw?oc=5",
+          "published": "2026-10-30",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Rashid Shaheed Injury Update: Seahawks WR Leaves Early In Third Quarter - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUENkNFFvakZZX21WZHNwN3YtN25GRk5UNHphSmpidTN3b1diRXhBazVCcHpoeTdlcWpDWXdrQ25SejBZUDNQR1dneXhmbVBDSnpXTnFadWRtaGpQZ1puTXZNNXZBUWx6dk82dDNJeFNsVVZmbnlrUU90eGZqUVI4WHRpSHNncjJhY1pMeVVTV0h4cjhrX0pEUXRvVDJiTjhMTWRkSVhVT3BjODZBMHl5dV8wVF9keDFkN0RWSg?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Rashid Shaheed injury update as Seahawks WR leaves game vs Chiefs - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQaHZuTndiVWZvVzUtOHB5N1QtY2tBODJZTnZNb2ROSjJmVTNTS0xEWV9odlZBUVE5T19LRUluOFN3WTE2ajhha3lnTmpidHlKdWFGdnNMMVRrRVZzU1VEbWpGTEFtOUR2OVhaNTlkMUotVk9LR21oQnh1TWEtbGh2WV82S2tJdzN0OGc?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "13293",
@@ -266,7 +543,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 54.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -274,7 +551,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Ja'Kobi Lane Week 8 Outlook for Fantasy Football (2026) - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbVlNTW9pUkRubFRtQXFNZndzUkh2SlRCOU5CVlBtWWJuNS1aSXUxd3dQVmJXV2NLd1d6SnhjUnE1NUlNOEdVb1JjN0ZLYjQ3ekpENTRqU2ZIT1hObWcyNjl1OGpQbHBzQ1E5UjNja3J1M2cydnNPcl93Rmw2MUZuc0dFMjZ0WVFNNVlQZ19ZMFpZQVBHVjFMTUFwNFB2MU9CY29xWg?oc=5",
+          "published": "2026-10-31",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Fantasy football sleepers for Week 8: Jacoby Brissett, Ja’Kobi Lane and 3 more surprise plays - The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQRWdHWGhfUnUxdGZkMzVEcHVJWFFIQXQyY3dBSHlpQ1hRMTN4NUtGUk1wdDZnTzVGdlVpV0s1RVM2bnJSY3JwS1BxZmRqTnF1a2NCUlZRRUlfSVl0NlpzaWpKaDA5dU5nSHdNZGdHd1dNZ29mUGJoUXVLT1dpcm80UFJsZTVsWmxvd19kTkFZYmplcjdtSHJ6RWtZcnE3X203?oc=5",
+          "published": "2026-10-29",
+          "publisher": "The New York Times",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Fantasy Football Sleepers Week 8: Breakout Players to Start and Stash, Ja'Kobi Lane, Chig Okonkwo - Fantasy Alarm",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcVVKci1VdVo2Yl9zckZyWVlmLUxpemV2am1NTnpsNmRCcjdkQ1lSQ2hodTEyLUJncHdJTF9wNnMzQTVaUGd2Z2xvMk5xMUQ2SkNodUFmX3hra0otTG4xQXVZc2IwR003RGJoRHZHdC1XRHlCekkxYkhxM09xbDRfT3Z3a29qTEl5X0JlYnlLZnhaekxoSlp6MnJaR2hwNmNfYjV6VTRvSU1lc2lKUFlKY0ZHOW4yR2IzYXFPclZzRy1ZLVRXTzlfdEUtNFlxV0V2NjVGZDFiVHlYa0tubGRtX3Vn?oc=5",
+          "published": "2026-10-28",
+          "publisher": "Fantasy Alarm",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Ladd McConkey or Ja'Kobi Lane - FantasySP",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5EWWR1Q293N2w4X05zbUtmNFRHeWhoS2FQYXp3dlVuR1Y5b2tTNFRHeTZSRXpZQW5MY2s2N2NrNzJJR3ZWWmgyUjhNU2pBOHg0cG5ZaVNQN0RXWER1MWpmZlJMbHlJOXduXzlKTUV2NDl1a1gxWFd5eDFESQ?oc=5",
+          "published": "2026-10-28",
+          "publisher": "FantasySP",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "7571",
@@ -282,7 +588,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 61.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -290,7 +596,15 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Rashod Bateman Two catches in loss - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOS1JIUGtMWEVZbS01UGZwWGt6LW5QSm5uZ0ZJZzk1bDkzQ25KTExKU09VdnhrbTBWOU8xb2FvZ1k4N2gxckt0dnhJYVdyVUNWSkNxM2xpanA5dVpjQ3Z2NkJxWWxxRzlLQWJRUW1qQ1NXcVphcGUwRU9rQ0VSbXg3UzUyMk50cllscTg1WENn?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "5857",
@@ -298,7 +612,7 @@
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 57.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -314,7 +628,7 @@
       "team": "PIT",
       "position": "WR",
       "snap_share_pct": 77.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -327,7 +641,15 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Michael Pittman Jr. Fantasy Football Injury Update - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNeTktMFZQQTRyRE1GNE14RlJHS2RwTnE4c3c3MXRBcDdVckUwM0dqS0RScjJJWTJyZVU4cWhZUjU0ZFRYWEs5YTBLVWVfeF8tUDB1X3lFaFNFWkNFOWhGTTJrTHpBRVRocFVhYWlPVi12d3VGWGxiQ0c2bEtVa3kyS2tPUzVSOVBvdEtLNw?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "11625",
@@ -335,7 +657,7 @@
       "team": "NYJ",
       "position": "WR",
       "snap_share_pct": 65.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -348,7 +670,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Adonai Mitchell returns in Week 7, does nothing - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOYjB6cEItZ0Z5S2p2Qm9IbFhJcXUzWHJfam1fMzAyR3ZxNVQ4ZG9iTTM4SG9YU2NwTk1RQ2hMUGNhVnlZaHZjQ1E3RnJ6QmtGRzN6YjN5bGFLLURhWXVkNFNPVW9nclBqZkk3VldUVHp1bndVMUZvdm5DLUplZ3lkRmUyb1NUcF8zM2JmbTRjVmxHZzdGVUtSM05NSmhtdWdOSkc5UDFpQWloUzZPa25LLW1B?oc=5",
+          "published": "2026-10-25",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Adonai Mitchell - Fantasy Football Fallers, Bust Candidates for Week 8 (2026)? - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaWFUMGRXTW1zS1dxaGtsamxWU2ZpVUgxVm1pZTBvQzV4dW1mSlM2cFltV3JWbkNuRVVyMTlBc1dFOElSZHFYeGx0clJzT3FJU25oVjk5ZHZ6eERUYXRCb2s2OTJFYl9HcnNsb2Y3ZnhYcUx4dFVoS3hLamJURk50OVY0VldRbmI4aml3X1ZUZWxHR1Z5UWxjRFlMMUZZTWdsU0tmLTJ4WnNDZkktakVfeEdoRW0?oc=5",
+          "published": "2026-10-29",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Adonai Mitchell Zero catches on three targets in return - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYWIwemphVzVZUDBWbjE1VHo1ZVoxRkZWcVJ2cS0zdi11aEo1Z013ZUpQdUh6YlVudUM3RjA5MldYd2xNLVNvaGxPckd2WTBmZTg5U0ZsSENtV2tZLU45bEdxckdwcktnYnByeUxOZ2x1NGgxRlNLbkZINU1TcER2UVNabW1IQ2VwUHJyVldwZFVJSkRkVVJJLXBXQ0NlY0M0MGlFeGV1Zk1wQQ?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Adonai Mitchell’s long-awaited Jets return from mystery finger injury gives offense the boost it needs - New York Post",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNLUN1S0tYUUpQOWgwS0VFalNDWmp5OENwNmpfY21aMGhMT0hVR2J0eEpkSnJrUkRUeFIzRVlhd1BCbzgtTDNPOVdDRWxsRVRpSGl2bzhMME9KSGdLX0NDZ2djSG1tMEFCVjBmNjYxLWlHVFJheVkyM0JtN3JPZXU2dzltWkNoRll0TDZvbnM1aDNCMEVrTW9FMXFUUmo0dw?oc=5",
+          "published": "2026-10-24",
+          "publisher": "New York Post",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "4177",
@@ -356,7 +707,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 62.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -377,7 +728,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -393,7 +744,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -419,7 +770,7 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 29.3,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -440,7 +791,7 @@
       "team": "CLE",
       "position": "RB",
       "snap_share_pct": 27.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
       "news": []
     },
@@ -450,9 +801,17 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 52.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
-      "news": []
+      "news": [
+        {
+          "title": "Bengals' Dohnte Meyers: Sees two targets in Week 7 win - CBS Sports",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQXzNYYm1sSm1Jck1vaWQ3TERmdS00S1BsVFpoeHZ5eFRLSFo1bTc4Qkg3U01jS1RxYTZucWdlazUtWkVwWjVNNHNVUlk5eWJIOG5BSWdDeTg2S050bWtGWTVNSVNuUFQxUlRhSElNc3Fid2F3T2JKd2tuRjZJZVVMU3ZvLWNObHZBRnRFem1HOERnYmhXYnpaRDExYm9MM2ZGaDBN?oc=5",
+          "published": "2026-10-27",
+          "publisher": "CBS Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "13413",
@@ -460,7 +819,7 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 17.7,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -468,7 +827,29 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Rookie Cyrus Allen Could Grab Bigger Role In Chiefs' Passing Game - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPU0EzSDVsRkNiWl9VVDBER3ZiR2lIR2NOcDBKMElySzZqMlk0X0U0ZnpER0VvbVE2NGYxanFqZXVzWWFRNFNUZWJMTloxdkJPbWpVMFZkRWpBam1QOVNIVDhfSWtNV2dOLXlYS2ZkQ3VfbDF0dEg3UTlEb1hJSlZYMG45cWc?oc=5",
+          "published": "2026-10-29",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Cyrus Allen Could see role expand Sunday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQb3ZudEQ4TnRNSTNwdHptVjRaY0toeTB4ZHluVi1uaFBGWU1ZMzVzWGNVdm84RUN6aU5ZblBhUmdOZ0pYRFZkRXQ1UTZkZXV2bTdqYjJ4VmM4Vlo3cmpoNGptdlZnQ3V3T0ZTeFJJbGJHTWRBQmYwZ0QxeHJDdjRDdXRyUXgtV20xOFlPY3d1cFZDRlVFMVE?oc=5",
+          "published": "2026-10-29",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "One catch for Cyrus Allen in Week 7 defeat - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNemswMmpMQVU5RnF0VWJWcnFvRGZKOU05V19QSGFsd3lrdXVKaGdFMjVycGxyaE8wNFpKQzFtMWZBVlNMQXlZbE1UYy16NlYtdHpPU2txMEk4cEluRlVpYnZ4bDd3a0dDX3JfaTUtbW0wcVV4cmY5dDlULUNuN3Y4WkhVNE1tbjVlQzRlSzNsbjVWS0YwRzVJNVcyN0NfaHpHLWs5SkxMYmlSSkhJ?oc=5",
+          "published": "2026-10-26",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "12634",
@@ -476,9 +857,31 @@
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 63.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
-      "news": []
+      "news": [
+        {
+          "title": "Jordan Watkins Fantasy Stats, News, Rankings, Projections - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1uTUhiQk5zQ2ZuQUhNaS1HR1E3eXlNaDBnang5dWYtMlRHMFlhX1o3ZWZneVM5MTllTFlUanFKaXRDWDZiRHNnRk9waktNWllzUnN1WGVkN0JIM1JMamJhUk1EMWozVVM2U0E?oc=5",
+          "published": "2026-10-27",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Jordan Watkins steps up with Mike Evans out - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVml4aHJMQlJUenFDdDU0Yzh1WW1FMTUzU2NzdXdBaGwweDNEbmNwc1pta1VBNmNsYTRxd08zVlYwOVpYb19HUUFmUVZOMElXN3luQk5UdjQ2LWdCNGk3Uy1VYjdkR05PRENHS0VfeUdIOXpEaXliVDFRMHo4LWlsSXRZOXRZeFhaaFBxdklLQlRwc3Z1NVJlM1AxNmlQdC1Db2h6bWhqOUE0TTJSMnc?oc=5",
+          "published": "2026-10-25",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Jordan Watkins or Tyler Allgeier: Who Should I Pick Up? Fantasy Football (2026) - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQTZWZWllRGtTSlhENnhVRnZabGk2V1lHZHU5TWpfUXo2U2hEM0NKUE5TZWQtQnhadm5HMUh0dGg4N0Rpd0hNZDY1M3JHaTgyc292TWd5WWdIZTZveTlKUGZ2dFpsR3BRTlZLYS0xVjNfd0tva1Q4TkhHd1d3eFJXUm1iNFVxRnVjQlJKX1R6RzNWLU1EY1NlZF9TcUNwZnRFSXc5ZV9VSi1QN2l2c0E?oc=5",
+          "published": "2026-10-25",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "11631",
@@ -486,7 +889,7 @@
       "team": "JAX",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -494,7 +897,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Jakobi Meyers' injury may reveal how Jaguars truly feel about Brian Thomas Jr. - Black and Teal",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMzZmQ0k2VDFhWDBQVW9kU2ViY004bmZ1YzRsUDhSUkVtRXV2c3V0MW12OUJVZWZMaEZoeUFzb3o1bG94UXhsVnNDbWpYZFRqOV9QeXBxLTJwZlg4Z2wxNzhVeVY3RmJZajJVdERZdGJZLWpfcC1oN3hMcllZcVFMejlFeDdRMEYwa0NBNHZ3MVA5dXpKQU0ycWRURFhpOGVKWl9lWmxTVV95Qmc?oc=5",
+          "published": "2026-10-31",
+          "publisher": "Black and Teal",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "NFL trade deadline targets: Jonathan Taylor, Brian Thomas Jr. among players who could be dealt - The Athletic - The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWU81RVRnNm1LTFd1dEpQTHQycm5GSmtyTi1VYlBFV08ySVp2dWZ5aGZQa0VXOFZ3X3RoQ3JEVmJ3b1pvSTdfbHZSdXdaZnBJTlgzeXc1NlJQOUZvNy1ZTVhSeHZzN25PSXB0QW16NG5EU2Q3T0dhRnQ2T09BWnVGNUt6R0lfdnFVcFlqQ3AzTWR6QQ?oc=5",
+          "published": "2026-10-28",
+          "publisher": "The New York Times",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "NFL rumors: Jaguars could trade Brian Thomas Jr. after benching - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNQUF0T3dWb3M5UktBWVJCR3RsZjRWdHAweUo1dFo0bFgyRUw4TUNkcEtfUGRabzZLcm81ZHJneG9QalRTMFJrSnBFaEc0dmhVZ0hXNjQ4SThaMmhBXzNnYVdhRHV5aTJiODU2RTVUa25rRjYxTHJYbjlaaGMxdTBMbG04V2JTdw?oc=5",
+          "published": "2026-10-31",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "AFC Notes: Brian Thomas Jr., Cam Ward, Jaguars, Texans, Titans - NFLTradeRumors.co",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONzBhWWhWTWk3aXV2dTRFcnB4TDBzU0VHcWNkZXlOd1gtTHVwckJqempKekk1RjZLY1RCZlVDa1RKQUJIS2dOZzFjRnhicjN0QXU3aTVCR2xiSVZJQTY3SWIxMUhVQUNrRHRQckZETFliOUFaUmJvMkY1TjhsYUFzYWR4SGNyRFRRVFBn?oc=5",
+          "published": "2026-10-31",
+          "publisher": "NFLTradeRumors.co",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "12718",
@@ -502,7 +934,7 @@
       "team": "LAR",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -510,7 +942,22 @@
           "source_url": "https://www.nfl.com/injuries/"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Konata Mumpfield Held to one catch Sunday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQX3MwaFlUTG8yc29NZVZaTVRsajBtTENKZUlWYlhpZmg5RUNpajJMQ1Bkc0xGbEdUSlFNSWlHSXZmMkVuQXVIOFFucWRCdVFuMWtTNWMyM2ptV0VBOTNvbmgzMFU3ejFlR0s4clhMaGtxNDFpbkJxd2psWmR6WGpZa3MxYjkwM3FyajJRM05aZmNtajBaZjF3?oc=5",
+          "published": "2026-10-27",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Konata Mumpfield - Fantasy Football Waiver Wire Pickups for Week 7 (2026) - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUFNlWTdMRzU3UnBEblByQ1hKRk5zMERCbFJKel9Oa3NucnNYek82Z2dzLVB3RzBDcnpLYVlGRW1ZWVdjdnhpcjc5QWM0c3gwYl9qajhZOU9HSkEzU1ZXSnNILWM5eFMtLWFmXzZ0eGFGbUY4dmdURTFHbm9yLWVLMjUxWHJZWks1c1g0YjloS2NKcV9RZ2huamdwQWwzLTVwRXJQNFJDSnZsQQ?oc=5",
+          "published": "2026-10-24",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "4950",
@@ -518,7 +965,7 @@
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 30.0,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -536,7 +983,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "49ers' Christian Kirk: Blanked in 2026 debut - CBS Sports",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQemotYXp3bmh4NTBlVUtqTlItZ09ndUpRQ3hYa2JoaFRaVWJiWjBHZmxnRFFvSWp1Z0hCaFNZUUROLTlQTTFaM0JFLUxmQW9Rb1NkREx3enZVQ0FCLXlweFJEQUJxZmdxQTBZeVMxdDZydTZwVGtQNXhscVAzcUhaQ2VMaFA2VXFIbFYtMmlEN0xRb3d0VGc?oc=5",
+          "published": "2026-10-26",
+          "publisher": "CBS Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Christian Kirk Blanked in 2026 debut - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZzE5cDRKODllUGFjN2tDS2dMNFdIamY4WGlOOW41OHRYZGU3M3N6OWFub0FtZUpGSmx1VjdBUEpmdFBsbU9Pc3BRanhqZURvTzgwQ3dvTDVUSjllbkk5dnAtV1NPRjlsSm9BVTBEemJYQXRGRGt4cklGVVdETGRJMUVwbmhpY0hmd0VUVG96Zlk?oc=5",
+          "published": "2026-10-26",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "The 49ers spotlight is on Christian Kirk with Mike Evans, Deebo Samuel out - SFGATE",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV1Jld2hIcFlpS1kyckJNMTVqd1MyWEc0eDNESDUyOWFtTndEd1NzWWJqV1p5TEZNY2ROcFhEWFphbzBjaGR0clpRbk51dkVmaC1OWnZTYjFhcXlmR25BNjZrclN4QmRsd2NlSHEyZlY2azI1ajJzbWpGTm5pa21GaFlkVV9iS25iaUdZ?oc=5",
+          "published": "2026-10-24",
+          "publisher": "SFGATE",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Puka Nacua, DeVonta Smith, Christian Kirk and more WR injury updates for Week 7 - The Big Lead",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPa2hOTjdLSlgyVUVQMVFycnJPaHlJamhsWDZ4cHFMUk9kT1ZOem1OemVGakRvcVg3dTk1TkRFMEh6Q2E5cXE2MXI3Y0xZSDVsd09LVVZQLU9YamNmMl9seXZCcVJveFpZUFk0Wlk4RlZxd3k2NWttZnUydzl2SVItS1RQaXNmVUpCdWxEMTh1V1k0MW81M3dN?oc=5",
+          "published": "2026-10-25",
+          "publisher": "The Big Lead",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "10219",
@@ -544,7 +1020,7 @@
       "team": "JAX",
       "position": "RB",
       "snap_share_pct": null,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
       "news": []
     },
@@ -554,7 +1030,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-10-31T17:34:46.782927+00:00",
+      "checked_at": "2026-10-31T18:43:45.407463+00:00",
       "signals": [],
       "news": []
     }
