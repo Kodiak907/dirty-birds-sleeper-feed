@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence,dstScoreboardEvidence} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -1000,4 +1000,60 @@ test('Mobile D/ST published-event audit reuses authenticated six-week PBP and pr
  assert.match(core,/Possession is not proof of the scoring defense/);
  assert.match(core,/source-text candidates, not points/);
  assert.match(core,/report\.dstPlayWeeks\.push\(\{week,game,error:'MSF historical play request failed'\}\)/);
+});
+
+test('MSF D/ST final box scoreboard cross-check records opponent raw points but never invents FFL allowed',()=>{
+ const schedule={id:'GB-W1',home:'MIN',away:'GB',homePoints:20,awayPoints:17,status:'COMPLETED'};
+ const box={available:true,data:{gameboxscore:{
+  game:{id:'GB-W1',playedStatus:'COMPLETED'},
+  scoring:{homeScoreTotal:20,awayScoreTotal:17}
+ }}};
+ const audit=dstScoreboardEvidence(box,schedule,'GB',own.scoring);
+ assert.equal(audit.status,'scoreboard_reconciled');
+ assert.equal(audit.scheduleScoreMatches,true);
+ assert.equal(audit.rawOpponentPoints,20);
+ assert.equal(audit.rawOpponentBracket,'pts_allow_14_20');
+ assert.equal(audit.pointsAllowed,null);
+ assert.equal(audit.pointsAllowedFantasyPoints,null);
+ assert.equal(audit.scoringAdjustmentsVerified,false);
+ assert.equal(audit.dstScoreCertified,false);
+});
+test('D/ST score check refuses stale schedule games, mismatched IDs, non-Final boxes and unverified team IDs',()=>{
+ const schedule={id:'G1',home:'GB',away:'TB',homePoints:28,awayPoints:21,status:'COMPLETED'};
+ const make=(id,status,h=28,a=21)=>({data:{gameboxscore:{game:{id,playedStatus:status},
+  scoring:{homeScoreTotal:h,awayScoreTotal:a}}}});
+ assert.equal(dstScoreboardEvidence(make('G2','COMPLETED'),schedule,'GB').status,'unverified');
+ assert.match(dstScoreboardEvidence(make('G2','COMPLETED'),schedule,'GB').reason,/mismatch/);
+ assert.equal(dstScoreboardEvidence(make('G1','LIVE'),schedule,'GB').status,'unverified');
+ assert.equal(dstScoreboardEvidence(make('G1','COMPLETED'),schedule,'CAR').rawOpponentPoints,null);
+ const differs=dstScoreboardEvidence(make('G1','COMPLETED',30,21),schedule,'GB');
+ assert.equal(differs.status,'scoreboard_mismatch');
+ assert.equal(differs.scheduleScoreMatches,false);
+ assert.equal(differs.pointsAllowedFantasyPoints,null);
+ const partial=dstScoreboardEvidence(make('G1','COMPLETED'),
+   {...schedule,homePoints:null,awayPoints:null,status:'UNPLAYED'},'GB');
+ assert.equal(partial.status,'scoreboard_partial');
+ assert.equal(partial.pointsAllowed,null);
+});
+test('MSF defensive scoreboard never treats return touchdown as automatically charged to D/ST points allowed',()=>{
+ const schedule={id:'G1',home:'GB',away:'TB',homePoints:28,awayPoints:21,status:'COMPLETED'};
+ const box={data:{gameboxscore:{game:{id:'G1',playedStatus:'COMPLETED'},
+  scoring:{homeScoreTotal:28,awayScoreTotal:21}}}};
+ const check=dstScoreboardEvidence(box,schedule,'GB',own.scoring);
+ assert.equal(check.rawOpponentPoints,21);
+ assert.equal(check.rawOpponentBracket,'pts_allow_21_27');
+ assert.equal(own.scoring.pts_allow_21_27,0);
+ assert.equal(check.pointsAllowed,null);
+ assert.equal(check.pointsAllowedFantasyPoints,null);
+ assert.equal(check.dstScoreCertified,false);
+ assert.match(check.reason,/scoring adjustments not yet verified/);
+});
+test('PFO D/ST scoreboard audit is requested separately per game, mobile grouped and not certified',()=>{
+ assert.match(core,/model\.dstScoreboardEvidence\(response,schedule,team,s\.ownedRules\)/);
+ assert.match(core,/auditedStatRequest\('boxscore',\{season:s\.season,game_id:g\.id\}/);
+ assert.match(core,/Final score cross-check · Weeks 1–6/);
+ assert.match(core,/Opponent scoreboard points:/);
+ assert.match(core,/FFL points allowed: unverified/);
+ assert.match(core,/scoreboard_reconciled/);
+ assert.match(core,/report\.dstBoxWeeks\.push/);
 });
