@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-10-31T12:47:28.554953+00:00",
+  "generated_at_utc": "2026-10-31T13:45:39.371612+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-31T07:30:22.278512+00:00",
+  "projection_as_of": "2026-10-31T13:25:22.801780+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-10-31T12:47:18.937550+00:00",
+  "snapshot_utc": "2026-10-31T13:45:29.371933+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -652,7 +652,7 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 127.13,
+      "ppg": 126.93,
       "starters": [
         {
           "id": "4046",
@@ -666,7 +666,7 @@
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 20.23
+          "ppg": 19.92
         },
         {
           "id": "8150",
@@ -680,7 +680,7 @@
           "name": "Zay Flowers",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 15.64
+          "ppg": 15.63
         },
         {
           "id": "8146",
@@ -694,7 +694,7 @@
           "name": "Chig Okonkwo",
           "opponent": "PHI",
           "position": "TE",
-          "ppg": 6.21
+          "ppg": 6.14
         },
         {
           "id": "11792",
@@ -715,14 +715,14 @@
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.34
+          "ppg": 12.23
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "MIA",
           "position": "WR",
-          "ppg": 10.62
+          "ppg": 10.92
         }
       ]
     },
