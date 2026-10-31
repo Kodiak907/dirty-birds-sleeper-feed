@@ -1194,7 +1194,7 @@ test('Missing weekly statistical categories never become zero in score-coverage 
  assert.ok(rb.scoringRuleCoverage.unavailableMappedRules.some(x=>x.category==='rec_td'&&x.missingRows===1));
  assert.ok(rb.scoringRuleCoverage.unavailableMappedRules.some(x=>x.category==='fum_lost'&&x.missingRows===1));
  assert.equal(rb.samples[0].observedPoints,8.5);
- assert.ok(rb.samples[0].missing.includes('rec_td'));
+ assert.ok(rb.missingCategories.includes('rec_td'));
 });
 test('Mobile audit shows mapped-stat category gaps apart from play-only weighted bonuses',()=>{
  assert.match(core,/Mapped stat fields:/);
