@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -956,4 +956,48 @@ test('Abbreviated MSF clock is preserved as 0:02 without conflating a holder wit
  assert.equal(p.kickers[0].identityVerified,false,'cannot award to unknown roster');
  assert.equal(p.kickers[0].providerId,null);
  assert.equal(p.kickingFantasyScoreCertified,false);
+});
+
+test('D/ST candidate extraction scans published MSF fumbles, interceptions, blocks and returns without inventing points',()=>{
+ const payload={gameplaybyplay:{plays:[
+  {id:'a',description:'Pass intercepted by defender; interception returned for touchdown.',playStatus:{quarter:1,teamInPossession:{abbreviation:'GB'}}},
+  {id:'a',description:'Pass intercepted by defender; interception returned for touchdown.',playStatus:{quarter:1,teamInPossession:{abbreviation:'GB'}}},
+  {id:'b',description:'Quarterback fumbled; defense recovered',playStatus:{quarter:2,teamInPossession:{abbreviation:'TB'}}},
+  {id:'c',description:'Punt blocked by defender; punt return touchdown!',playStatus:{quarter:3}},
+  {id:'d',description:'Quarterback sacked in end zone for a safety.',playStatus:{quarter:4}},
+  {id:'e',description:'Running back rushes for 4 yards.',playStatus:{quarter:4}}
+ ]}};
+ const audit=dstPlayEvidence(payload);
+ assert.equal(audit.rawPlayCount,6);
+ assert.equal(audit.candidateEvents,4,'identical repeated source ID and event do not double count');
+ assert.equal(audit.categoryCounts.interception,1);
+ assert.equal(audit.categoryCounts.fumble,1);
+ assert.equal(audit.categoryCounts.blocked_kick,1);
+ assert.equal(audit.categoryCounts.return_touchdown,2);
+ assert.equal(audit.categoryCounts.safety,1);
+ assert.equal(audit.attributedEvents,0);
+ assert.equal(audit.dstFantasyScoreCertified,false);
+ assert.equal(audit.fullGameCoverageCertified,false);
+ assert.equal(audit.samples[0].sourcePossessionTeam,'GB');
+ assert.equal(audit.samples[0].creditedDefense,null);
+ assert.equal(audit.samples[0].independentFantasyPoints,null);
+});
+test('Defense evidence absent or text-only never becomes a fabricated zero fantasy score',()=>{
+ const report=dstPlayEvidence({});
+ assert.equal(report.candidateEvents,0);
+ assert.equal(report.dstFantasyScoreCertified,false);
+ assert.equal(report.rawPlayCount,0);
+ const one=dstPlayEvidence({gameplaybyplay:{plays:[{
+  description:'Punt return touchdown; possession GB',playStatus:{teamInPossession:{abbreviation:'GB'}}
+ }]}});
+ assert.equal(one.candidateEvents,1);
+ assert.equal(one.samples[0].creditedDefense,null);
+});
+test('Mobile D/ST published-event audit reuses authenticated six-week PBP and preserves source uncertainty',()=>{
+ assert.match(core,/report\.dstPlayWeeks\.push\(\{week,game,evidence:model\.dstPlayEvidence\(response\.data\|\|\{\}\)\}\)/);
+ assert.match(core,/D\/ST published play candidates · Weeks 1–6/);
+ assert.match(core,/Inspect original published defensive play descriptions/);
+ assert.match(core,/Possession is not proof of the scoring defense/);
+ assert.match(core,/source-text candidates, not points/);
+ assert.match(core,/report\.dstPlayWeeks\.push\(\{week,game,error:'MSF historical play request failed'\}\)/);
 });
