@@ -1155,3 +1155,52 @@ test('GameCast historical MSF success cache is bounded and never caches live upd
  assert.match(core,/for\(let attempt=1;attempt<=2;attempt\+\+\)/);
  assert.match(core,/Temporary gateway failure · one controlled retry/);
 });
+
+test('Player scoring audit distinguishes mapped stat coverage from source-only touchdown bonuses and turn-over events',()=>{
+ const feed={gamelogs:[
+  {player:{id:901,fullName:'Audit Test QB',primaryPosition:'QB'},team:{abbreviation:'GB'},
+   stats:{passing:{passYards:246,passTD:2,passInt:1},rushing:{rushYards:9,rushTD:0},fumbles:{fumblesLost:0}}},
+  {player:{id:902,fullName:'Audit Test WR',primaryPosition:'WR'},team:{abbreviation:'GB'},
+   stats:{receiving:{receptions:5,recYards:98,recTD:1},rushing:{rushYards:0,rushTD:0},fumbles:{fumblesLost:0}}}
+ ]};
+ const audit=scoringEvidence([{week:1,payload:feed}],own.scoring,'GB');
+ const qb=audit.byPosition.QB,wr=audit.byPosition.WR;
+ assert.equal(audit.records,2);
+ assert.equal(audit.exactFantasyPointsCertified,false);
+ assert.equal(qb.records,1);
+ assert.ok(qb.withPartialPoints>0);
+ assert.equal(qb.fullyCovered,0);
+ assert.ok(qb.scoringRuleCoverage.totalWeightedRules>qb.scoringRuleCoverage.statMappedRules);
+ assert.ok(qb.scoringRuleCoverage.eventEvidenceRules.includes('pass_td_40p'));
+ assert.ok(qb.scoringRuleCoverage.eventEvidenceRules.includes('pass_td_50p'));
+ assert.ok(qb.scoringRuleCoverage.eventEvidenceRules.includes('pass_int_td'));
+ assert.ok(qb.scoringRuleCoverage.statMappedRules>0);
+ assert.equal(qb.scoringRuleCoverage.allCategoriesCertified,false);
+ assert.equal(wr.fullyCovered,0);
+ assert.ok(wr.scoringRuleCoverage.eventEvidenceRules.includes('rec_td_40p'));
+ assert.ok(wr.scoringRuleCoverage.eventEvidenceRules.includes('rec_td_50p'));
+ assert.ok(wr.scoringRuleCoverage.statMappedRows<=1);
+ assert.equal(wr.scoringRuleCoverage.allCategoriesCertified,false);
+});
+test('Missing weekly statistical categories never become zero in score-coverage reporting',()=>{
+ const feed={gamelogs:[{player:{id:903,fullName:'Audit RB',primaryPosition:'RB'},
+  team:{abbreviation:'GB'},stats:{rushing:{rushYards:85}}}]};
+ const audit=scoringEvidence([{week:5,payload:feed}],own.scoring,'GB');
+ const rb=audit.byPosition.RB;
+ assert.equal(rb.records,1);
+ assert.equal(rb.withPartialPoints,1);
+ assert.equal(rb.fullyCovered,0);
+ assert.equal(rb.scoringRuleCoverage.statMappedRows,0);
+ assert.ok(rb.scoringRuleCoverage.unavailableMappedRules.some(x=>x.category==='rec_td'&&x.missingRows===1));
+ assert.ok(rb.scoringRuleCoverage.unavailableMappedRules.some(x=>x.category==='fum_lost'&&x.missingRows===1));
+ assert.equal(rb.samples[0].observedPoints,8.5);
+ assert.ok(rb.samples[0].missing.includes('rec_td'));
+});
+test('Mobile audit shows mapped-stat category gaps apart from play-only weighted bonuses',()=>{
+ assert.match(core,/Mapped stat fields:/);
+ assert.match(core,/Incomplete stat mappings:/);
+ assert.match(core,/Play-by-play\/event verification:/);
+ assert.match(core,/scoringRuleCoverage/);
+ assert.match(core,/NOT certified FFL score/);
+ assert.doesNotMatch(core,/All categories certified from MSF gamelogs/);
+});
