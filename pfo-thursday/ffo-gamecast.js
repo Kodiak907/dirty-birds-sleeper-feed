@@ -552,7 +552,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[]};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[],dstBoxWeeks:[]};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -638,6 +638,27 @@
     }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)});
      report.dstPlayWeeks.push({week,game,error:'MSF historical play request failed'})}
     renderStatAudit(report);
+   }
+   // User-triggered audit only; does not change GameCast live polling.
+   // The box score provides final scoreboard context, not awardable D/ST PA.
+   for(let week=1;week<=6;week++){
+    const matches=candidates.filter(x=>x.week===week);
+    if(matches.length!==1){
+     report.dstBoxWeeks.push({week,error:matches.length?'Ambiguous MSF game':'No matching MSF schedule game'});
+     continue;
+    }
+    const g=matches[0].g,game=g.away+' @ '+g.home;
+    if(indicator)indicator.textContent='D/ST final box cross-check · Week '+week+' of 6…';
+    try{
+     const response=await auditedStatRequest('boxscore',{season:s.season,game_id:g.id},
+      msg=>{if(indicator)indicator.textContent='D/ST box W'+week+' · '+msg});
+     const schedule={id:g.id,home:stadium.abbrev(g.home),away:stadium.abbrev(g.away),
+      homePoints:g.homePoints,awayPoints:g.awayPoints,status:g.status};
+     report.dstBoxWeeks.push({week,game,
+      evidence:model.dstScoreboardEvidence(response,schedule,team,s.ownedRules)});
+    }catch(error){report.dstBoxWeeks.push({week,game,error:String(error.message||error).slice(0,150)})}
+    renderStatAudit(report);
+    if(week<6)await auditPause(1100);
    }
    if(!report.kickEvidence)
     report.kickEvidenceError='No team-specific historical MSF kick plays verified';
