@@ -21,7 +21,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Devin Singletary | 5.60 | +1.40 | 31.7% | Carries 4.0 | No modeled flags (not medically cleared) |
 | 3 | Samaje Perine | 5.44 | +1.24 | 36.7% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 4 | Chris Rodriguez Jr. | 5.18 | +0.99 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 5 | Tyjae Spears | 4.98 | +0.79 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
+| 5 | Tyjae Spears | 4.98 | +0.79 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Mike Washington Jr. | 4.86 | +0.66 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 7 | Tank Bigsby | 2.20 | -2.00 | 28.7% | Carries 9.0 | sleeper_injury_ir |
 | 8 | Jaleel McLaughlin | 1.49 | -2.71 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
