@@ -1204,3 +1204,36 @@ test('Mobile audit shows mapped-stat category gaps apart from play-only weighted
  assert.match(core,/NOT certified FFL score/);
  assert.doesNotMatch(core,/All categories certified from MSF gamelogs/);
 });
+
+test('2026 MSF fumbles.fumLost maps an explicitly observed loss; missing fumLost remains unknown',()=>{
+ const raw={passing:{passYards:100,passTD:1,passInt:0},fumbles:{fumLost:1}};
+ const stats=normalizeStats(raw);
+ assert.equal(stats.fum_lost,1);
+ const result=fflScore(raw,own.scoring,'QB');
+ assert.equal(result.components.find(c=>c.key==='fum_lost').stat,1);
+ assert.equal(result.components.find(c=>c.key==='fum_lost').points,-2);
+ assert.equal(result.points,6);
+ assert.ok(!result.missing.includes('fum_lost'));
+ assert.ok(result.missing.includes('pass_td_40p'));
+ const noFumble=fflScore({passing:{passYards:100}},own.scoring,'QB');
+ assert.ok(noFumble.missing.includes('fum_lost'));
+ assert.equal(noFumble.components.some(c=>c.key==='fum_lost'),false);
+ const explicitZero=fflScore({fumbles:{fumLost:0}},own.scoring,'RB');
+ assert.equal(explicitZero.components.find(c=>c.key==='fum_lost').stat,0);
+});
+test('Only published MSF two-point conversions are scored; missing fields are never filled with zero',()=>{
+ const raw={twoPointConversions:{twoPtPassMade:1,twoPtRushMade:0,twoPtPassRec:1}};
+ const n=normalizeStats(raw);
+ assert.equal(n.pass_2pt,1);
+ assert.equal(n.rush_2pt,0);
+ assert.equal(n.rec_2pt,1);
+ const r=fflScore(raw,own.scoring,'QB');
+ assert.equal(r.components.find(c=>c.key==='pass_2pt').points,2);
+ assert.equal(r.components.find(c=>c.key==='rec_2pt').points,2);
+ assert.equal(r.components.find(c=>c.key==='rush_2pt').points,0);
+ assert.equal(r.complete,false);
+ const missing=fflScore({passing:{passYards:150}},own.scoring,'QB');
+ assert.ok(missing.missing.includes('pass_2pt'));
+ assert.ok(missing.missing.includes('rec_2pt'));
+ assert.ok(missing.missing.includes('rush_2pt'));
+});
