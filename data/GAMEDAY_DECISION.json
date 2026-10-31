@@ -1,14 +1,17 @@
 {
-  "added_starters": [],
+  "added_starters": [
+    "Antonio Williams"
+  ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
       "Kaelon Black",
+      "A.J. Brown",
       "Deebo Samuel Sr.",
       "Isaiah Likely",
       "C.J. Stroud"
     ],
-    "ppg": 126.93,
+    "ppg": 126.4,
     "starters": [
       {
         "id": "4046",
@@ -26,13 +29,13 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 18.24
+        "ppg": 18.29
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 15.63
+        "ppg": 15.64
       },
       {
         "id": "8146",
@@ -44,7 +47,7 @@
         "id": "8210",
         "name": "Chig Okonkwo",
         "position": "TE",
-        "ppg": 6.14
+        "ppg": 6.19
       },
       {
         "id": "11792",
@@ -62,31 +65,32 @@
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.23
+        "ppg": 12.21
       },
       {
-        "id": "5859",
-        "name": "A.J. Brown",
-        "position": "WR",
-        "ppg": 10.92
+        "id": "13345",
+        "name": "Jonah Coleman",
+        "position": "RB",
+        "ppg": 10.3
       }
     ]
   },
-  "difference_ppg": 0.0,
+  "difference_ppg": -3.46,
   "explicit_excluded_ids": [
     "13345",
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-10-31T18:43:52.503462+00:00",
+  "generated_at_utc": "2026-10-31T19:39:16.489462+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "Kaelon Black",
+      "A.J. Brown",
       "Isaiah Likely",
       "C.J. Stroud"
     ],
-    "ppg": 126.93,
+    "ppg": 122.94,
     "starters": [
       {
         "id": "4046",
@@ -104,13 +108,13 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 18.24
+        "ppg": 18.29
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 15.63
+        "ppg": 15.64
       },
       {
         "id": "8146",
@@ -122,7 +126,7 @@
         "id": "8210",
         "name": "Chig Okonkwo",
         "position": "TE",
-        "ppg": 6.14
+        "ppg": 6.19
       },
       {
         "id": "11792",
@@ -140,13 +144,13 @@
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.23
+        "ppg": 12.21
       },
       {
-        "id": "5859",
-        "name": "A.J. Brown",
+        "id": "13301",
+        "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 10.92
+        "ppg": 6.84
       }
     ]
   },
@@ -320,11 +324,13 @@
     }
   ],
   "players_needing_review": [],
-  "removed_starters": [],
+  "removed_starters": [
+    "Jonah Coleman"
+  ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-10-31T18:43:38.462279+00:00",
-  "source_availability_generated_at_utc": "2026-10-31T18:43:51.128043+00:00",
+  "snapshot_utc": "2026-10-31T19:39:03.142837+00:00",
+  "source_availability_generated_at_utc": "2026-10-31T19:39:13.853911+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

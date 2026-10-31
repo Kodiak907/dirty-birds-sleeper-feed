@@ -18,14 +18,14 @@
     },
     "TE": {
       "name": "Chig Okonkwo",
-      "ppg": 6.083
+      "ppg": 6.088
     },
     "WR": {
       "name": "Caleb Douglas",
-      "ppg": 5.987
+      "ppg": 5.99
     }
   },
-  "generated_at_utc": "2026-10-31T18:43:45.071050+00:00",
+  "generated_at_utc": "2026-10-31T19:39:07.843278+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -200,7 +200,7 @@
           "name": "Minnesota Vikings",
           "ppg": 6.967
         },
-        "same_position_uplift_ppg": -1.51,
+        "same_position_uplift_ppg": -1.52,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -471,12 +471,12 @@
           "targets_per_game": 0.0
         },
         "name": "Tanner McKee",
-        "ppg": 11.34,
+        "ppg": 11.32,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": -2.9,
+        "same_position_uplift_ppg": -2.92,
         "screen_only": true,
         "sleeper_id": "9230",
         "team": "PHI"
@@ -545,12 +545,12 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.44,
+        "ppg": 5.45,
         "replacement_reference": {
           "name": "Kaelon Black",
           "ppg": 4.197
         },
-        "same_position_uplift_ppg": 1.24,
+        "same_position_uplift_ppg": 1.25,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -707,7 +707,7 @@
         "ppg": 5.19,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.083
+          "ppg": 6.088
         },
         "same_position_uplift_ppg": -0.9,
         "screen_only": true,
@@ -732,7 +732,7 @@
         "ppg": 4.32,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.083
+          "ppg": 6.088
         },
         "same_position_uplift_ppg": -1.76,
         "screen_only": true,
@@ -755,10 +755,10 @@
           "targets_per_game": null
         },
         "name": "Colby Parkinson",
-        "ppg": 3.69,
+        "ppg": 3.7,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.083
+          "ppg": 6.088
         },
         "same_position_uplift_ppg": -2.39,
         "screen_only": true,
@@ -782,9 +782,9 @@
         "ppg": 2.7,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.083
+          "ppg": 6.088
         },
-        "same_position_uplift_ppg": -3.38,
+        "same_position_uplift_ppg": -3.39,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -806,7 +806,7 @@
         "ppg": 5.72,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -0.27,
         "screen_only": true,
@@ -831,7 +831,7 @@
         "ppg": 5.68,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -0.31,
         "screen_only": true,
@@ -856,7 +856,7 @@
         "ppg": 5.12,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -0.87,
         "screen_only": true,
@@ -885,12 +885,37 @@
         "ppg": 4.59,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -1.4,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "week": "8"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 41.3,
+          "snap_trend_3_appearances_pp": -14.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Rashid Shaheed",
+        "ppg": 4.57,
+        "replacement_reference": {
+          "name": "Caleb Douglas",
+          "ppg": 5.99
+        },
+        "same_position_uplift_ppg": -1.42,
+        "screen_only": true,
+        "sleeper_id": "8676",
+        "team": "SEA"
       },
       {
         "audit": {
@@ -914,37 +939,12 @@
         "ppg": 4.56,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
-        "same_position_uplift_ppg": -1.42,
+        "same_position_uplift_ppg": -1.43,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.33,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
-            "week": "8"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": 41.3,
-          "snap_trend_3_appearances_pp": -14.0,
-          "targets_per_game": 5.0
-        },
-        "name": "Rashid Shaheed",
-        "ppg": 4.57,
-        "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 5.987
-        },
-        "same_position_uplift_ppg": -1.42,
-        "screen_only": true,
-        "sleeper_id": "8676",
-        "team": "SEA"
       },
       {
         "audit": {
@@ -964,7 +964,7 @@
         "ppg": 4.35,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -1.64,
         "screen_only": true,
@@ -989,7 +989,7 @@
         "ppg": 3.92,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -2.07,
         "screen_only": true,
@@ -1014,7 +1014,7 @@
         "ppg": 3.32,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -2.67,
         "screen_only": true,
@@ -1042,7 +1042,7 @@
         "ppg": 3.15,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -2.84,
         "screen_only": true,
@@ -1072,7 +1072,7 @@
         "ppg": 3.11,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -2.88,
         "screen_only": true,
@@ -1098,7 +1098,7 @@
         "ppg": 2.48,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -3.51,
         "screen_only": true,
@@ -1123,7 +1123,7 @@
         "ppg": 2.09,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -3.9,
         "screen_only": true,
@@ -1145,9 +1145,9 @@
         "ppg": 1.23,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
-        "same_position_uplift_ppg": -4.75,
+        "same_position_uplift_ppg": -4.76,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1176,7 +1176,7 @@
         "ppg": 0.92,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -5.07,
         "screen_only": true,
@@ -1201,7 +1201,7 @@
         "ppg": 0.88,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
         "same_position_uplift_ppg": -5.11,
         "screen_only": true,
@@ -1223,9 +1223,9 @@
         "ppg": 0.21,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.987
+          "ppg": 5.99
         },
-        "same_position_uplift_ppg": -5.77,
+        "same_position_uplift_ppg": -5.78,
         "screen_only": true,
         "sleeper_id": "12634",
         "team": "SF"
@@ -1233,5 +1233,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-31T18:43:38.462279+00:00"
+  "snapshot_utc": "2026-10-31T19:39:03.142837+00:00"
 }
