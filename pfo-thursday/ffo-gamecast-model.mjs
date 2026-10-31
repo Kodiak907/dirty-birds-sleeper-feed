@@ -232,7 +232,7 @@ const PATHS={
  rec_td:['receiving.recTD','receiving.recTouchdowns','recTD','rec_td'],
  targets:['receiving.targets','receiving.recTargets','targets'],
  fum:['fumbles.fumbles','fumbles.total','fumbles'],
- fum_lost:['fumbles.fumblesLost','fumbles.lost','fumblesLost','fum_lost'],
+ fum_lost:['fumbles.fumLost','fumbles.fumblesLost','fumbles.lost','fumblesLost','fum_lost'],
  fgm:['fieldGoals.fieldGoalsMade','fieldGoals.fgMade','fieldGoals.made','kicking.fieldGoalsMade','fieldGoalsMade','fgm'],
  fga:['fieldGoals.fieldGoalAttempts','fieldGoals.attempts','kicking.fieldGoalsAttempted','fieldGoalAttempts','fga'],
  fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','fieldGoalsMissed','fgmiss'],
@@ -246,9 +246,9 @@ const PATHS={
  fgm_50_59:['fieldGoals.fieldGoalsMade50To59','fieldGoals.fieldGoalsMade50to59','fgm_50_59'],
  fgm_60p:['fieldGoals.fieldGoalsMade60Plus','fieldGoals.fieldGoalsMade60p','fgm_60p'],
  fgm_50p:['fieldGoals.fieldGoalsMade50Plus','kicking.fieldGoalsMade50Plus','fgm_50p'],
- rush_2pt:['rushing.rushTwoPt','rushing.twoPointConversions','rush_2pt'],
- rec_2pt:['receiving.recTwoPt','receiving.twoPointConversions','rec_2pt'],
- pass_2pt:['passing.passTwoPt','passing.twoPointConversions','pass_2pt']
+ rush_2pt:['twoPointConversions.twoPtRushMade','twoPointConversions.twoPointRushMade','rushing.rushTwoPt','rushing.twoPointConversions','rush_2pt'],
+ rec_2pt:['twoPointConversions.twoPtPassRec','twoPointConversions.twoPointPassRec','receiving.recTwoPt','receiving.twoPointConversions','rec_2pt'],
+ pass_2pt:['twoPointConversions.twoPtPassMade','twoPointConversions.twoPointPassMade','passing.passTwoPt','passing.twoPointConversions','pass_2pt']
 };
 export function normalizeStats(source){if(!source||typeof source!=='object')return {};const out={};for(const [k,paths] of Object.entries(PATHS)){const v=first(source,paths);if(v!==null)out[k]=v;}return out;}
 /** Compute only rule weights applicable to the player's position; never substitute 0 for absent stats. */
