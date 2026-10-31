@@ -601,13 +601,19 @@ export function playerScoringPlayCandidates(payload,weeklyPlayers=[],team='',rul
   const p=[...matching.values()][0];
   return {id:String(p.id),name:p.name,position:p.position,team:target};
  }
- const seen=new Set(),events=[],rows=sourcePlayRows(payload);
+ const seen=new Set(),events=[],excluded=[],rows=sourcePlayRows(payload);
  for(let index=0;index<rows.length;index++){
   const play=rows[index],description=String(play?.description||play?.playDescription||play?.text||'').trim();
   if(!description)continue;
   const twoPt=/\b(?:two[\s-]?point|2[\s-]?point|2pt)\b/i.test(description);
   const touchdown=/\btouchdown\b/i.test(description)&&!twoPt;
   if(!twoPt&&!touchdown)continue;
+  // Explicit scoring reversals do not earn points or count as candidate TDs.
+  // A declined penalty alone is NOT a reversal; require explicit no-play text.
+  if(/\b(?:no[\s-]?play|nullified|disallowed|touchdown\s+overturned|score\s+overturned|score\s+reversed|does\s+not\s+count)\b/i.test(description)){
+   excluded.push({index,reason:'scoring_play_nullified',description:description.slice(0,270)});
+   continue;
+  }
   const nativeId=playSourceId(play),q=Number(play?.playStatus?.quarter??play?.quarter);
   const period=Number.isInteger(q)&&q>=1&&q<=7?q:null;
   const clock=playClock(play).clock||null;
@@ -620,9 +626,8 @@ export function playerScoringPlayCandidates(payload,weeklyPlayers=[],team='',rul
   const possession=String(play?.playStatus?.teamInPossession?.abbreviation||
    play?.playStatus?.teamInPossession?.abbr||'').toUpperCase();
   const teamMatch=possession===target;
-  const successful=twoPt&&/\b(?:is good|was good|good!|successful|converted|conversion is good)\b/i.test(description)&&
-   !/\b(?:no good|failed|unsuccessful|incomplete|intercepted|interception)\b/i.test(description);
-  const unsuccessful=twoPt&&/\b(?:no good|failed|unsuccessful|incomplete|intercepted|interception)\b/i.test(description);
+  const unsuccessful=twoPt&&/\b(?:no good|fails?|failed|unsuccessful|incomplete|intercepted|interception|stopped short|attempt\s+(?:fails|failed))\b/i.test(description);
+  const successful=twoPt&&!unsuccessful&&/\b(?:is good|was good|good!|successful|converted|conversion is good|succeeds|succeeded|attempt\s+succeeds|attempt\s+succeeded)\b/i.test(description);
   const passed=/\bpass(?:es|ed)?\s+(?:short|deep|left|right|middle|to|intended)\b/i.test(description);
   const passer=description.match(new RegExp(tokenRx+'\\s+pass(?:es|ed)?\\b','i'))?.[1]||null;
   const catchMatch=description.match(new RegExp('\\bto\\s+'+tokenRx+'(?:\\s+for\\s+(\\d{1,3})\\s+yards?)?','i'));
@@ -664,12 +669,13 @@ export function playerScoringPlayCandidates(payload,weeklyPlayers=[],team='',rul
    publishedResult:twoPt?(successful?'reported_good':unsuccessful?'reported_missed':'unknown'):'touchdown_reported',
    matched,creditedFantasyPoints:null});
  }
- const matchedEvents=events.filter(e=>e.teamPossessionVerified&&e.matched.some(x=>x.verifiedIdentity)).length;
- const unverifiedEvents=events.filter(e=>!e.teamPossessionVerified||!e.matched.length||
-  e.matched.some(x=>!x.verifiedIdentity)||e.publishedResult==='unknown').length;
+ const matchedEvents=events.filter(e=>e.teamPossessionVerified&&e.matched.length>0&&
+  e.matched.every(x=>x.verifiedIdentity)&&e.publishedResult!=='unknown').length;
+ const unverifiedEvents=events.length-matchedEvents;
  return {team:target,rawPlayCount:rows.length,
   publishedCandidates:events.length,identifiedCandidateEvents:matchedEvents,
-  unverifiedCandidateEvents:unverifiedEvents,
+  unverifiedCandidateEvents:unverifiedEvents,excludedNullifiedPlays:excluded.length,
+  excludedExamples:excluded.slice(0,8),
   twoPointAttempts:events.filter(x=>x.eventType==='two_point_attempt').length,
   longTouchdowns:events.filter(x=>x.eventType==='long_touchdown').length,
   events:events.slice(0,30),fantasyBonusesCertified:false,
