@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T15:08:13.915266+00:00",
+  "generated_at_utc": "2026-10-31T14:50:10.222597+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -14,7 +14,7 @@
   "priced_candidates": 0,
   "qualified_top_five": [],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-10-30T15:08:13.796436+00:00",
+  "source_as_of": "2026-10-31T14:50:10.098227+00:00",
   "unpriced_cases": 11,
   "unpriced_examples": [
     {
@@ -79,16 +79,6 @@
     },
     {
       "give": [
-        "Ollie Gordon II",
-        "Garrett Wilson"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Chuba Hubbard"
-      ]
-    },
-    {
-      "give": [
         "Kyren Williams",
         "Jonah Coleman"
       ],
@@ -104,7 +94,7 @@
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
-        "James Cook III"
+        "Chuba Hubbard"
       ]
     },
     {
@@ -115,6 +105,16 @@
       "reason": "One or more players has no matched market value",
       "receive": [
         "Ja'Marr Chase"
+      ]
+    },
+    {
+      "give": [
+        "Ollie Gordon II",
+        "Garrett Wilson"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Jonathan Taylor"
       ]
     }
   ]

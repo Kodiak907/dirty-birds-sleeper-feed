@@ -1,6 +1,6 @@
 {
-  "all_reviewed": 23,
-  "generated_at_utc": "2026-10-30T15:08:13.883350+00:00",
+  "all_reviewed": 22,
+  "generated_at_utc": "2026-10-31T14:50:10.188663+00:00",
   "limitations": [
     "Acceptance odds unavailable. Never convert score to a probability.",
     "Position depth heuristic is a rough proxy for roster needs, not manager preference.",
@@ -9,14 +9,14 @@
   ],
   "market_truth": "No independently verified ADP, expert trade chart or league negotiation behavior has been sourced. Position-relative projected PPG is NOT fair market value.",
   "screen_formula": "1.5*our line-up gain + 0.9*min(their gain,5) + 0.35*mean valid weeks 15-17 gain - 2*percentile imbalance - 2*redundant outgoing - 1 if playoff weeks incomplete",
-  "source_projections_as_of": "2026-10-30T13:36:50.272246+00:00",
-  "source_rosters_as_of": "2026-10-30T14:56:31.739788+00:00",
+  "source_projections_as_of": "2026-10-31T13:25:22.801780+00:00",
+  "source_rosters_as_of": "2026-10-31T14:37:17.044451+00:00",
   "top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 128.455,
-      "dirty_birds_before": 125.007,
-      "dirty_birds_delta_ppg": 3.45,
+      "dirty_birds_after": 128.591,
+      "dirty_birds_before": 125.129,
+      "dirty_birds_delta_ppg": 3.46,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Kyren Williams: snap coverage absent",
@@ -28,22 +28,22 @@
           "id": "8150",
           "name": "Kyren Williams",
           "pos": "RB",
-          "projected_ppg": 15.45
+          "projected_ppg": 15.44
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 9.02
+          "projected_ppg": 9.13
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.785,
-      "negotiation_rationale": "Opponent projected starters improve +0.87 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 4.429,
-      "opponent_after": 102.055,
-      "opponent_before": 101.182,
-      "opponent_delta_ppg": 0.87,
+      "mutual_benefit_screen_score": 3.887,
+      "negotiation_rationale": "Opponent projected starters improve +0.97 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 4.534,
+      "opponent_after": 102.203,
+      "opponent_before": 101.237,
+      "opponent_delta_ppg": 0.97,
       "opponent_drop_to_fit": "Woody Marks",
       "opponent_roster_id": 9,
       "playoff_week_gains_ppg": {
@@ -53,14 +53,14 @@
       },
       "position_relative_percentile_sum_received": 1.0,
       "position_relative_percentile_sum_sent": 1.491,
-      "projected_ppg_received": 18.9,
-      "projected_ppg_sent": 24.47,
+      "projected_ppg_received": 18.91,
+      "projected_ppg_sent": 24.58,
       "receive": [
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "pos": "WR",
-          "projected_ppg": 18.9
+          "projected_ppg": 18.91
         }
       ],
       "redundant_outgoing_package": true,
@@ -72,9 +72,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 127.421,
-      "dirty_birds_before": 125.007,
-      "dirty_birds_delta_ppg": 2.41,
+      "dirty_birds_after": 127.632,
+      "dirty_birds_before": 125.129,
+      "dirty_birds_delta_ppg": 2.5,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Ollie Gordon II: snap coverage absent",
@@ -87,22 +87,22 @@
           "id": "12495",
           "name": "Ollie Gordon II",
           "pos": "RB",
-          "projected_ppg": 12.35
+          "projected_ppg": 12.39
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "pos": "WR",
-          "projected_ppg": 10.4
+          "projected_ppg": 10.38
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 2.928,
-      "negotiation_rationale": "Opponent projected starters improve +0.91 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 3.259,
-      "opponent_after": 99.386,
-      "opponent_before": 98.472,
-      "opponent_delta_ppg": 0.91,
+      "mutual_benefit_screen_score": 3.015,
+      "negotiation_rationale": "Opponent projected starters improve +0.92 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 3.421,
+      "opponent_after": 98.206,
+      "opponent_before": 97.282,
+      "opponent_delta_ppg": 0.92,
       "opponent_drop_to_fit": "Emanuel Wilson",
       "opponent_roster_id": 2,
       "playoff_week_gains_ppg": {
@@ -111,9 +111,9 @@
         "17": 5.02
       },
       "position_relative_percentile_sum_received": 0.986,
-      "position_relative_percentile_sum_sent": 1.476,
+      "position_relative_percentile_sum_sent": 1.457,
       "projected_ppg_received": 16.14,
-      "projected_ppg_sent": 22.75,
+      "projected_ppg_sent": 22.77,
       "receive": [
         {
           "id": "9493",
@@ -123,7 +123,7 @@
         }
       ],
       "redundant_outgoing_package": true,
-      "surrogate_balance_gap_fraction": 0.332,
+      "surrogate_balance_gap_fraction": 0.323,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
         "Ollie Gordon II: snap coverage absent",
@@ -132,9 +132,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.874,
-      "dirty_birds_before": 125.007,
-      "dirty_birds_delta_ppg": 1.87,
+      "dirty_birds_after": 126.98,
+      "dirty_birds_before": 125.129,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Ollie Gordon II: snap coverage absent",
@@ -146,22 +146,22 @@
           "id": "12495",
           "name": "Ollie Gordon II",
           "pos": "RB",
-          "projected_ppg": 12.35
+          "projected_ppg": 12.39
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 9.02
+          "projected_ppg": 9.13
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.472,
-      "negotiation_rationale": "Opponent projected starters improve +2.03 PPG; potential shallow position(s): RB",
-      "negotiation_screen_score": 3.154,
-      "opponent_after": 94.619,
-      "opponent_before": 92.586,
-      "opponent_delta_ppg": 2.03,
+      "mutual_benefit_screen_score": 3.508,
+      "negotiation_rationale": "Opponent projected starters improve +2.12 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 3.222,
+      "opponent_after": 93.77,
+      "opponent_before": 91.651,
+      "opponent_delta_ppg": 2.12,
       "opponent_drop_to_fit": "Keon Coleman",
       "opponent_roster_id": 4,
       "playoff_week_gains_ppg": {
@@ -170,19 +170,19 @@
         "17": 5.44
       },
       "position_relative_percentile_sum_received": 0.836,
-      "position_relative_percentile_sum_sent": 1.382,
-      "projected_ppg_received": 14.22,
-      "projected_ppg_sent": 21.38,
+      "position_relative_percentile_sum_sent": 1.363,
+      "projected_ppg_received": 14.24,
+      "projected_ppg_sent": 21.52,
       "receive": [
         {
           "id": "3198",
           "name": "Derrick Henry",
           "pos": "RB",
-          "projected_ppg": 14.22
+          "projected_ppg": 14.24
         }
       ],
       "redundant_outgoing_package": true,
-      "surrogate_balance_gap_fraction": 0.395,
+      "surrogate_balance_gap_fraction": 0.387,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
         "Ollie Gordon II: snap coverage absent"
@@ -190,8 +190,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 126.816,
-      "dirty_birds_before": 125.007,
+      "dirty_birds_after": 126.938,
+      "dirty_birds_before": 125.129,
       "dirty_birds_delta_ppg": 1.81,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
@@ -209,16 +209,16 @@
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 9.02
+          "projected_ppg": 9.13
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.443,
-      "negotiation_rationale": "Opponent projected starters improve +2.09 PPG; potential shallow position(s): RB",
-      "negotiation_screen_score": 2.5,
-      "opponent_after": 94.677,
-      "opponent_before": 92.586,
-      "opponent_delta_ppg": 2.09,
+      "mutual_benefit_screen_score": 3.489,
+      "negotiation_rationale": "Opponent projected starters improve +2.16 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 2.563,
+      "opponent_after": 93.812,
+      "opponent_before": 91.651,
+      "opponent_delta_ppg": 2.16,
       "opponent_drop_to_fit": "Keon Coleman",
       "opponent_roster_id": 4,
       "playoff_week_gains_ppg": {
@@ -229,7 +229,7 @@
       "position_relative_percentile_sum_received": 0.933,
       "position_relative_percentile_sum_sent": 1.451,
       "projected_ppg_received": 11.56,
-      "projected_ppg_sent": 18.77,
+      "projected_ppg_sent": 18.88,
       "receive": [
         {
           "id": "4217",
@@ -245,9 +245,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 125.551,
-      "dirty_birds_before": 125.007,
-      "dirty_birds_delta_ppg": 0.54,
+      "dirty_birds_after": 125.638,
+      "dirty_birds_before": 125.129,
+      "dirty_birds_delta_ppg": 0.51,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Ollie Gordon II: snap coverage absent",
@@ -259,22 +259,22 @@
           "id": "12495",
           "name": "Ollie Gordon II",
           "pos": "RB",
-          "projected_ppg": 12.35
+          "projected_ppg": 12.39
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 9.02
+          "projected_ppg": 9.13
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.11,
-      "negotiation_rationale": "Opponent projected starters improve +3.78 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.317,
-      "opponent_after": 104.959,
-      "opponent_before": 101.182,
-      "opponent_delta_ppg": 3.78,
+      "mutual_benefit_screen_score": 3.169,
+      "negotiation_rationale": "Opponent projected starters improve +3.92 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.416,
+      "opponent_after": 105.156,
+      "opponent_before": 101.237,
+      "opponent_delta_ppg": 3.92,
       "opponent_drop_to_fit": "Woody Marks",
       "opponent_roster_id": 9,
       "playoff_week_gains_ppg": {
@@ -283,9 +283,9 @@
         "17": 1.69
       },
       "position_relative_percentile_sum_received": 0.849,
-      "position_relative_percentile_sum_sent": 1.382,
+      "position_relative_percentile_sum_sent": 1.363,
       "projected_ppg_received": 12.9,
-      "projected_ppg_sent": 21.38,
+      "projected_ppg_sent": 21.52,
       "receive": [
         {
           "id": "8144",
@@ -295,7 +295,7 @@
         }
       ],
       "redundant_outgoing_package": true,
-      "surrogate_balance_gap_fraction": 0.386,
+      "surrogate_balance_gap_fraction": 0.377,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
         "Ollie Gordon II: snap coverage absent"
