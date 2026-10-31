@@ -427,6 +427,37 @@
    ' · observed subtotal '+safe(w.observedSubtotal===null?'unknown':w.observedSubtotal+' pts')+
    ' · full D/ST score NOT certified</div>'+
    (w.error?'<div class="muted">'+safe(w.error)+'</div>':'')+'</div>').join('');
+  const dstSamples=report.dstPlayWeeks||[];
+  const dstCandidateRows=dstSamples.map(item=>{
+   const sample=item.evidence,counts=sample?.categoryCounts||{};
+   const categoryText=sample?Object.entries(counts).filter(([,count])=>count>0)
+    .map(([name,count])=>name.replaceAll('_',' ')+': '+count).join(' · '):'No verified play evidence';
+   const descriptionRows=(sample?.samples||[]).slice(0,8).map(x=>
+    '<div style="padding:5px 0;border-top:1px solid #315069;font-size:12px;overflow-wrap:anywhere">'+
+    '<b>'+safe(x.categories.join(', ').replaceAll('_',' '))+'</b>'+
+    (x.sourcePossessionTeam?' · possession '+safe(x.sourcePossessionTeam):' · possession unknown')+
+    '<div class="muted">'+safe(x.description)+'</div>'+
+    '</div>').join('');
+   return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
+    '<summary style="cursor:pointer;display:flex;justify-content:space-between;gap:5px;flex-wrap:wrap">'+
+    '<b>Week '+safe(item.week)+'</b><span style="font-size:12px">'+
+    (sample?safe(sample.candidateEvents)+' published candidate events':'Source unavailable')+'</span>'+
+    '<span style="width:100%;font-size:11px;opacity:.83">'+safe(item.game||item.error||'Game unverified')+'</span></summary>'+
+    '<div class="muted" style="font-size:12px;margin:7px 0;overflow-wrap:anywhere">'+
+    safe(categoryText||'No candidate events found in available feed')+'</div>'+
+    (descriptionRows?'<details><summary style="cursor:pointer;font-size:12px">Inspect original published defensive play descriptions</summary>'+
+     descriptionRows+'</details>':'')+
+    '<div class="muted" style="font-size:12px;margin-top:6px">Event candidates only — neither defense attribution nor fantasy scoring is certified.</div>'+
+    '</details>';
+  }).join('');
+  const dstCandidateSection='<details style="border-top:1px solid #315069;padding:8px 0">'+
+   '<summary style="cursor:pointer;font-weight:700">D/ST published play candidates · Weeks 1–6</summary>'+
+   '<div class="muted" style="font-size:12px;margin:7px 0">'+
+   safe(dstSamples.filter(x=>!!x.evidence).length)+'/6 existing MSF PBP samples inspected. '+
+   'Interceptions, fumbles, blocked kicks, safeties and returns are source-text candidates, not points.</div>'+
+   dstCandidateRows+
+   '<p class="muted" style="font-size:12px">Possession is not proof of the scoring defense. Points allowed and touchdowns need game/box reconciliation.</p>'+
+   '</details>';
   const teamside=t?.teamFilterVerified
    ?'MSF team log verified · '+t.records+' record'+(t.records===1?'':'s')+
      ' · '+t.numericRecords+' with numeric stats'
@@ -513,7 +544,7 @@
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+kickCard+teamCard+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+kickCard+teamCard+dstCandidateSection+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');
@@ -521,7 +552,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[]};
+  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[]};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -586,6 +617,7 @@
     const matches=candidates.filter(x=>x.week===week);
     if(matches.length!==1){
      report.kickWeeks.push({week,error:matches.length?'Multiple matching schedule games; attribution withheld':'No scheduled MSF team game located'});
+     report.dstPlayWeeks.push({week,error:'Unique MSF game unavailable'});
      continue;
     }
     const g=matches[0].g,game=g.away+' @ '+g.home;
@@ -600,9 +632,11 @@
       msg=>{if(indicator)indicator.textContent='Kicker W'+week+' · '+msg});
      const evidence=model.kickingPlayEvidence(response.data||{},s.ownedRules,players);
      report.kickWeeks.push({week,game,gameId:String(g.id),evidence});
+     report.dstPlayWeeks.push({week,game,evidence:model.dstPlayEvidence(response.data||{})});
      if(!report.kickEvidence){report.kickEvidence=evidence;
       report.kickEvidence.sampleWeek=week;report.kickEvidence.sampleGame=game;}
-    }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)})}
+    }catch(error){report.kickWeeks.push({week,game,error:String(error.message||error).slice(0,155)});
+     report.dstPlayWeeks.push({week,game,error:'MSF historical play request failed'})}
     renderStatAudit(report);
    }
    if(!report.kickEvidence)
