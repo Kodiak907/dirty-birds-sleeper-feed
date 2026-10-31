@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-10-31T22:37:06.611845+00:00
+Generated: 2026-10-31T23:36:16.388357+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **124.04**. Weeks with partial projections and injury status require manual verification.
@@ -25,6 +25,7 @@ Baseline illustrative optimal PPG: **124.04**. Weeks with partial projections an
 | 6 | Mike Washington Jr. | 4.86 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.13 | Availability status: questionable |
 | 7 | Tank Bigsby | 2.20 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.79 | Availability status: ir; Partial projection coverage |
 | 8 | Jaleel McLaughlin | 1.49 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.50 | No flagged data gap; review still required |
+| 9 | Zonovan Knight | 1.36 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.63 | No flagged data gap; review still required |
 
 ## WR
 

@@ -1,14 +1,14 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-10-31T22:37:06.342428+00:00
-Sleeper snapshot: 2026-10-31T22:37:00.121699+00:00
+Generated: 2026-10-31T23:36:16.124417+00:00
+Sleeper snapshot: 2026-10-31T23:36:12.498158+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 329 |
-| RB | 628 |
+| RB | 629 |
 | WR | 1291 |
 | TE | 613 |
 | K | 139 |
@@ -36,6 +36,7 @@ Sleeper snapshot: 2026-10-31T22:37:00.121699+00:00
 | 6 | Mike Washington Jr. | LV | 4.86 | 90% | 23.0% | Questionable |
 | 7 | Tank Bigsby | PHI | 2.20 | 80% | 28.7% | IR |
 | 8 | Jaleel McLaughlin | CLE | 1.49 | 90% | 27.7% | Not flagged |
+| 9 | Zonovan Knight | ARI | 1.36 | 90% | 35.0% | Not flagged |
 
 ### WR
 
@@ -122,7 +123,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **33**
+Candidates with independently sourced projections AND usage data: **34**
 
 ## Coverage and rules
 

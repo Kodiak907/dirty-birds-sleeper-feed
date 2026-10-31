@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-10-31T22:37:00.121699+00:00
+Updated: 2026-10-31T23:36:12.498158+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,7 +19,8 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 7: added none; dropped Zonovan Knight
+- Transaction 1422401307225907200: free_agent / complete / rosters [7] / adds None / drops {'8122': 7} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -25,6 +25,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 6 | Mike Washington Jr. | 4.86 | +0.66 | 23.0% | Carries 5.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 7 | Tank Bigsby | 2.20 | -2.00 | 28.7% | Carries 9.0 | sleeper_injury_ir |
 | 8 | Jaleel McLaughlin | 1.49 | -2.71 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 9 | Zonovan Knight | 1.36 | -2.83 | 35.0% | — | carries_missing |
 
 ## WR — reference: Caleb Douglas (5.99 PPG)
 

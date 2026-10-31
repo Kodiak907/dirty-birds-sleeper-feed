@@ -9387,5 +9387,42 @@
       "SEA"
     ],
     "roster_id": 7
+  },
+  {
+    "added": [],
+    "detected_at_utc": "2026-10-31T23:36:12.498158+00:00",
+    "dropped": [
+      "8122"
+    ],
+    "kind": "roster_change",
+    "roster_id": 7
+  },
+  {
+    "detected_at_utc": "2026-10-31T23:36:12.498158+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        7
+      ],
+      "created": 1793489407882,
+      "creator": "1399626237600624640",
+      "draft_picks": [],
+      "drops": {
+        "8122": 7
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        7
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793489407882,
+      "transaction_id": "1422401307225907200",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1422401307225907200"
   }
 ]

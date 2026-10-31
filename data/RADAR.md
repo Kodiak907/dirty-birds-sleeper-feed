@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-31T22:37:06.150987+00:00
-Sleeper snapshot: 2026-10-31T22:37:00.121699+00:00
+Generated: 2026-10-31T23:36:15.963064+00:00
+Sleeper snapshot: 2026-10-31T23:36:12.498158+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1422401307225907200` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Zonovan Knight → JA’MARRTRIX (#7)
 
 ## Recently detected activity (up to 25)
 
+- 2026-10-31T23:36:15.963064+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Zonovan Knight → JA’MARRTRIX (#7)
 - 2026-10-30T16:48:35.861359+00:00 · new_transaction · TRADE · COMPLETE · JA’MARRTRIX (#7), Cokerthestroker (#12) | Added: Harold Fannin Jr. → Cokerthestroker (#12), Jeremiyah Love → JA’MARRTRIX (#7) | Dropped: Harold Fannin Jr. → JA’MARRTRIX (#7), Jeremiyah Love → Cokerthestroker (#12)
 - 2026-10-30T13:59:42.014005+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Deebo Samuel Sr. → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1) | FAAB bid: $16
 - 2026-10-30T06:54:28.616045+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: DeMario Douglas → Cokerthestroker (#12) | Dropped: Devin Singletary → Cokerthestroker (#12) | FAAB bid: $0
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-26T00:34:26.121208+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
 - 2026-10-25T20:59:31.748139+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Darius Cooper → CREAM MACHINE  (#2) | Dropped: Jaleel McLaughlin → CREAM MACHINE  (#2)
 - 2026-10-25T15:30:52.555237+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baker Mayfield → CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
-- 2026-10-25T03:33:07.412316+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jerry Jeudy → DANGER CLOSE  (#4)
 
 ## Important limits
 

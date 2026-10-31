@@ -25,7 +25,7 @@
       "ppg": 5.99
     }
   },
-  "generated_at_utc": "2026-10-31T22:37:06.501555+00:00",
+  "generated_at_utc": "2026-10-31T23:36:16.275507+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -689,6 +689,30 @@
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [
+            "carries_missing"
+          ],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 35.0,
+          "snap_trend_3_appearances_pp": 45.0,
+          "targets_per_game": null
+        },
+        "name": "Zonovan Knight",
+        "ppg": 1.36,
+        "replacement_reference": {
+          "name": "Kaelon Black",
+          "ppg": 4.197
+        },
+        "same_position_uplift_ppg": -2.83,
+        "screen_only": true,
+        "sleeper_id": "8122",
+        "team": "ARI"
       }
     ],
     "TE": [
@@ -1233,5 +1257,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-10-31T22:37:00.121699+00:00"
+  "snapshot_utc": "2026-10-31T23:36:12.498158+00:00"
 }
