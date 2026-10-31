@@ -475,7 +475,7 @@ export function dstScoringPlayLedger(boxResponse,scheduleGame={},team=''){
    const points=singleScore?homeDelta+awayDelta:null;
    if(!hasSnapshot||homeDelta<0||awayDelta<0||(!singleScore&&homeDelta+awayDelta!==0))sequenceValid=false;
    if(hasSnapshot&&homeDelta>=0&&awayDelta>=0)previous={home:nextHome,away:nextAway};
-   const defensive=/\b(?:intercept(?:ed|ion)?|pick[\s-]?six)\b.{0,115}\b(?:return|returned|touchdown|TD)\b|\b(?:fumble|fumbl(?:ed|e))\b.{0,110}\b(?:return|returned)\b.{0,60}\b(?:touchdown|TD)\b/i.test(description);
+   const defensive=/\b(?:intercept(?:ed|ion)?|pick[\s-]?six)\b.{0,115}\b(?:return|returned|touchdown|TD)\b|\b(?:return|returned)\b.{0,45}\binterception\b.{0,80}\b(?:touchdown|TD)\b|\b(?:fumble|fumbl(?:ed|e))\b.{0,110}\b(?:return|returned)\b.{0,60}\b(?:touchdown|TD)\b|\b(?:return|returned)\b.{0,45}\bfumble\b.{0,70}\b(?:touchdown|TD)\b/i.test(description);
    const special=/\b(?:punt|kickoff|kick[\s-]?return|blocked[\s-]?kick|blocked[\s-]?punt)\b.{0,100}\b(?:return|returned|touchdown|TD)\b/i.test(description)&&
     /\b(?:touchdown|TD)\b/i.test(description);
    const scoreType=defensive?'defensive_td_candidate':special?'special_teams_td_candidate':
