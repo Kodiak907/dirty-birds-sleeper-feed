@@ -396,7 +396,13 @@
   const e=report.scoringEvidence,by=e?.byPosition||{};
   const positionRows=e?['QB','RB','WR','TE','K','DEF'].map(position=>{
    const p=by[position]||{},total=p.records||0;
-   const core=p.coreCoverage||[],observed=(p.coveredCategories||[]).slice(0,10);
+   const core=p.coreCoverage||[],observed=(p.coveredCategories||[]).slice(0,10),coverage=p.scoringRuleCoverage||{};
+   const statRules=coverage.statMappedRules||0,eventRules=coverage.eventEvidenceRules||[];
+   const mappingGaps=coverage.unavailableMappedRules||[];
+   const mappedSummary=statRules?coverage.statMappedRows+'/'+total+' records contain all '+statRules+' mapped scoring categories':
+    'No published-stat rule coverage verified';
+   const mappingGapsSummary=mappingGaps.slice(0,9).map(x=>x.category+' '+x.publishedRows+'/'+total+' records').join(' · ');
+   const eventSummary=eventRules.length?eventRules.join(', '):'No additional weighted play-only rules identified for this position';
    const coreText=core.length?core.map(c=>c.category+' '+c.records+'/'+total).join(' · '):
     'No verified scoring core categories';
    const examples=(p.samples||[]).map(x=>{
@@ -410,7 +416,10 @@
    return '<details style="border-bottom:1px solid #315069;padding:7px 0">'+
     '<summary style="cursor:pointer;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">'+
     '<strong>'+position+'</strong><span>'+total+' records · '+(p.withPartialPoints||0)+' provisional subtotals</span>'+
-    '<span style="width:100%;font-size:11px;opacity:.8">'+(p.fullyCovered||0)+' mapped-weight completions · full FFL score not certified</span></summary>'+
+    '<span style="width:100%;font-size:11px;opacity:.8">'+(p.fullyCovered||0)+' full weighted-rule completions · NOT certified FFL score</span></summary>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">Mapped stat fields: '+safe(mappedSummary)+'</div>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Incomplete stat mappings: '+safe(mappingGapsSummary||'None reported')+'</div>'+
+    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Play-by-play/event verification: '+safe(eventSummary)+'</div>'+
     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere;margin:7px 0">Core scoring coverage: '+safe(coreText)+'</div>'+
     '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">Observed category mappings: '+
      safe(observed.map(x=>x.name+' ('+x.records+')').join(', ')||'None')+'</div>'+
@@ -584,7 +593,7 @@
    '</details>';
   const scoringCard=e?'<details style="border-top:1px solid #315069;margin:8px 0;padding-top:8px">'+
    '<summary style="cursor:pointer;font-weight:700">FFL scoring components · '+safe(e.records)+' player-week records</summary>'+
-   '<p class="muted" style="font-size:12px">Every value uses MSF published stats and frozen FFL rules only. Missing components stay unknown. Long-TD bonuses, K and D/ST require separate event verification.</p>'+
+   '<p class="muted" style="font-size:12px">Independent MSF stats and frozen FFL rules only. Mapped stat coverage cannot certify long-TD bonuses, turnover events, K or D/ST. Unknown values remain unknown.</p>'+
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
