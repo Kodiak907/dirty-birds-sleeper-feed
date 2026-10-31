@@ -346,7 +346,7 @@
  const auditSuccessCache=new Map(),AUDIT_REUSE_MS=300000;
  const transientStatError=e=>/upstream_unreachable|gateway_or_server_error|provider_unreachable|provider_body_read_failed|fetch is aborted|aborterror|network|http 502|http 503|rate_limited/i.test(String(e?.message||e));
  async function auditedStatRequest(name,query,progress){
-  const permitted=['stats','gamelogs','teamgamelogs','plays'].includes(name);
+  const permitted=['stats','gamelogs','teamgamelogs','plays','boxscore'].includes(name);
   const key=name+':'+Object.entries(query||{}).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>k+'='+v).join('&');
   const prior=permitted?auditSuccessCache.get(key):null;
   if(prior&&Date.now()-prior.at<AUDIT_REUSE_MS){
@@ -373,7 +373,7 @@
   const weeks=report.weeks.map(r=>{
    const a=r.audit,ok=!!(a?.supported&&r.teamFilterVerified);
    const title=ok?a.parsedCount+' published player records':'Unavailable · no scores assumed';
-   const detail=ok?'Provider IDs '+a.uniqueProviderIds+' · numeric stats '+a.statsRecognized:
+   const detail=ok?'Provider IDs '+a.uniqueProviderIds+' · numeric stats '+a.statsRecognized+(r.recovered?' · gateway recovered':''):
     String(r.error||'Feed not independently verified').slice(0,220);
    const positions=ok?['QB','RB','WR','TE','K','DEF'].map(p=>{
     const x=a.positionCoverage?.[p]||{};
@@ -387,7 +387,8 @@
     '</div><div class="muted">All category gaps remain unknown; no final FFL scores.</div>':'')+
     '</details>';
   }).join('');
-  const season=report.seasonAudit?.supported&&report.seasonFilterVerified?
+  const season=!report.seasonChecked?'Season totals · checking':
+   report.seasonAudit?.supported&&report.seasonFilterVerified?
    'Season totals · '+report.seasonAudit.parsedCount+' player records':
    'Season totals unverified'+(report.seasonError?' · '+report.seasonError:'');
   const a=report.lowerBound,comparison=a?a.matchedPlayers+' MSF player IDs matched · '+
@@ -595,7 +596,7 @@
   if(!s.enabled){if(indicator)indicator.textContent='Authenticated MSF gateway required';return}
   button.disabled=true;statAuditRunning=true;
   const team=String($('ffo-gc-stat-audit-team')?.value||'GB').toUpperCase();
-  const report={team,weeks:[],seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[],dstBoxWeeks:[]};
+  const report={team,weeks:[],seasonChecked:false,seasonAudit:null,seasonError:null,lowerBound:null,seasonFilterVerified:false,scoringEvidence:null,teamEvidence:null,teamEvidenceError:null,teamWeeks:[],kickEvidence:null,kickEvidenceError:null,kickWeeks:[],dstPlayWeeks:[],dstBoxWeeks:[],recoveredWeekCount:0};
   let seasonPayload=null;
   const goodWeeks=[];
   try{
@@ -617,6 +618,24 @@
     renderStatAudit(report);
     if(week<6)await auditPause(1600);
    }
+   // Recover ONLY transient failures after the initial six weekly checks.
+   // Keep successful weeks; a recovered response replaces its error row.
+   for(const failed of report.weeks.filter(r=>r.error&&transientStatError(r.error)).slice(0,6)){
+    if(indicator)indicator.textContent='MSF temporary outage · recovering Week '+failed.week+'…';
+    await auditPause(2400);
+    try{
+     const response=await auditedStatRequest('gamelogs',{season:s.season,week:failed.week,team},
+      msg=>{if(indicator)indicator.textContent='Week '+failed.week+' recovery · '+msg});
+     const payload=response.data||{},audit=model.auditStatFeed(payload,s.ownedRules),rows=model.playerRows(payload);
+     if(audit.supported&&rows.length&&rows.every(r=>r.team===team)){
+      const index=report.weeks.findIndex(r=>r.week===failed.week);
+      if(index>=0)report.weeks[index]={week:failed.week,audit,teamFilterVerified:true,recovered:true,error:null};
+      if(!goodWeeks.some(x=>x.week===failed.week))goodWeeks.push({week:failed.week,payload});
+      report.recoveredWeekCount++;
+     }
+    }catch{/* Keep original transient error unknown, never zero. */}
+    renderStatAudit(report);
+   }
    if(indicator)indicator.textContent='Team '+team+' · checking season totals…';
    try{
     const res=await auditedStatRequest('stats',{season:s.season,team},
@@ -626,7 +645,22 @@
     const rows=model.playerRows(seasonPayload);
     report.seasonFilterVerified=rows.length>0&&rows.every(r=>r.team===team);
     if(!report.seasonFilterVerified)report.seasonError='Filtered MSF season players unverified';
-   }catch(error){report.seasonError=String(error.message||error).slice(0,220)}
+   }catch(error){
+    report.seasonError=String(error.message||error).slice(0,220);
+    if(transientStatError(error)){
+     if(indicator)indicator.textContent='Recovering temporary MSF season totals error…';
+     await auditPause(2400);
+     try{
+      const response=await auditedStatRequest('stats',{season:s.season,team});
+      const payload=response.data||{},audit=model.auditStatFeed(payload,s.ownedRules),rows=model.playerRows(payload);
+      if(audit.supported&&rows.length&&rows.every(r=>r.team===team)){
+       seasonPayload=payload;report.seasonAudit=audit;report.seasonFilterVerified=true;report.seasonError=null;
+      }
+     }catch{/* Preserve failed source as unverified. */}
+    }
+   }
+   report.seasonChecked=true;
+   renderStatAudit(report);
    if(indicator)indicator.textContent='Checking MSF team game logs for independent D/ST stats…';
    try{
     const source=await auditedStatRequest('teamgamelogs',{season:s.season,week:1,team},
@@ -649,6 +683,21 @@
       msg=>{if(indicator)indicator.textContent='D/ST W'+week+' · '+msg});
      report.teamWeeks.push({week,evidence:model.auditTeamGameFeed(data.data||{},team,s.ownedRules)});
     }catch(error){report.teamWeeks.push({week,error:String(error.message||error).slice(0,180)})}
+    renderStatAudit(report);
+   }
+   // Delayed and bounded recovery for transient team-defense gateway failures.
+   for(const failed of report.teamWeeks.filter(x=>x.error&&transientStatError(x.error)).slice(0,6)){
+    if(indicator)indicator.textContent='D/ST recovering MSF team Week '+failed.week+'…';
+    await auditPause(2400);
+    try{
+     const response=await auditedStatRequest('teamgamelogs',{season:s.season,week:failed.week,team});
+     const verified=model.auditTeamGameFeed(response.data||{},team,s.ownedRules);
+     if(verified.teamFilterVerified){
+      const at=report.teamWeeks.findIndex(x=>x.week===failed.week);
+      if(at>=0)report.teamWeeks[at]={week:failed.week,evidence:verified,recovered:true};
+      if(failed.week===1){report.teamEvidence=verified;report.teamEvidenceError=null}
+     }
+    }catch{/* Missing D/ST stats stay unknown. */}
     renderStatAudit(report);
    }
    // Verify historical FG/XP events against one team-specific game per week.
@@ -712,7 +761,7 @@
    renderStatAudit(report);
    const valid=report.weeks.filter(r=>r.audit?.supported&&r.teamFilterVerified).length;
    if(indicator)indicator.textContent=team+' · '+valid+'/6 weeks parsed · '+
-    (report.seasonFilterVerified?'season totals matched':'season totals not verified')+
+    (report.seasonFilterVerified?'season feed verified':'season totals not verified')+
     '. Missing stats are unknown, not zero. No final FFL score certified.';
   }catch(error){
    if(indicator)indicator.textContent='Audit interrupted · '+String(error.message||error).slice(0,140);
