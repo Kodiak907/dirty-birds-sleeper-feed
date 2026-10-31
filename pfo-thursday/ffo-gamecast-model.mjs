@@ -427,6 +427,83 @@ export function dstPlayEvidence(payload){
 }
 
 
+/**
+ * Review the MSF game box score's PUBLISHED scoring-play descriptions.
+ * Cumulative home/away score snapshots can identify which side scored; they
+ * cannot identify the offense/defense owner or prove a fantasy PA adjustment.
+ * This evidence is read-only and never yields a certified D/ST score.
+ */
+export function dstScoringPlayLedger(boxResponse,scheduleGame={},team=''){
+ const id=String(scheduleGame.id??''),target=String(team||'').toUpperCase();
+ const home=String(scheduleGame.home||'').toUpperCase(),away=String(scheduleGame.away||'').toUpperCase();
+ const base={gameId:id,team:target,available:false,scoringPlays:0,verifiedSideEvents:0,
+  unverifiedSideEvents:0,nonOffenseCandidates:0,finalScoreMatchesLedger:null,
+  finalScoreVerified:false,completeEventClassification:false,
+  events:[],scoringAdjustmentPoints:null,pointsAllowed:null,finalDstScoreCertified:false,
+  reason:'MSF scoring-play descriptions unavailable'};
+ if(!id||home===away||![home,away].includes(target)||!boxResponse||boxResponse.available===false)return base;
+ const payload=boxResponse.data||boxResponse,body=payload.gameboxscore||payload.gameBoxscore||payload.boxscore||payload;
+ const game=body.game||body.schedule||payload.game||{},providerId=game.id??game.gameId??body.gameId;
+ if(String(providerId??'')!==id)return {...base,reason:'Scoring-play game ID differs from schedule'};
+ const score=body.scoring||body.score||body.gameScore||payload.scoring||{};
+ const quarters=Array.isArray(score.quarters)?score.quarters:[];
+ const snapshot=value=>{
+  if(value===null||value===undefined||value===''||typeof value==='object')return null;
+  const n=Number(value);
+  return Number.isInteger(n)&&n>=0&&n<=300?n:null;
+ };
+ const seen=new Set(),events=[];let previous={home:0,away:0},sequenceValid=true;
+ for(const quarter of quarters){
+  const entries=Array.isArray(quarter.scoringPlays)?quarter.scoringPlays:[];
+  for(const play of entries){
+   const description=String(play?.playDescription||play?.description||play?.text||'').trim().slice(0,300);
+   const nextHome=snapshot(play?.homeScore??play?.homeScoreTotal);
+   const nextAway=snapshot(play?.awayScore??play?.awayScoreTotal);
+   if(!description&&!((nextHome!==null)&&(nextAway!==null)))continue;
+   const q=Number(quarter.quarterNumber??quarter.quarter);
+   const period=Number.isInteger(q)&&q>=1&&q<=7?q:null;
+   const sourceId=String(play?.id??play?.playId??'');
+   const fingerprint=[period,description,nextHome,nextAway].join('|');
+   const key=sourceId?'msf:'+sourceId+':'+fingerprint:'observed:'+fingerprint;
+   if(seen.has(key))continue;seen.add(key);
+   const hasSnapshot=nextHome!==null&&nextAway!==null;
+   const homeDelta=hasSnapshot?nextHome-previous.home:null;
+   const awayDelta=hasSnapshot?nextAway-previous.away:null;
+   const singleScore=hasSnapshot&&homeDelta>=0&&awayDelta>=0&&
+     ((homeDelta>0&&awayDelta===0)||(awayDelta>0&&homeDelta===0));
+   const scoringSide=singleScore?(homeDelta>0?home:away):null;
+   const points=singleScore?homeDelta+awayDelta:null;
+   if(!hasSnapshot||homeDelta<0||awayDelta<0||(!singleScore&&homeDelta+awayDelta!==0))sequenceValid=false;
+   if(hasSnapshot&&homeDelta>=0&&awayDelta>=0)previous={home:nextHome,away:nextAway};
+   const defensive=/\b(?:intercept(?:ed|ion)?|pick[\s-]?six)\b.{0,115}\b(?:return|returned|touchdown|TD)\b|\b(?:fumble|fumbl(?:ed|e))\b.{0,110}\b(?:return|returned)\b.{0,60}\b(?:touchdown|TD)\b/i.test(description);
+   const special=/\b(?:punt|kickoff|kick[\s-]?return|blocked[\s-]?kick|blocked[\s-]?punt)\b.{0,100}\b(?:return|returned|touchdown|TD)\b/i.test(description)&&
+    /\b(?:touchdown|TD)\b/i.test(description);
+   const scoreType=defensive?'defensive_td_candidate':special?'special_teams_td_candidate':
+     /\bfield[\s-]?goal\b/i.test(description)?'field_goal_description':
+     /\b(?:extra[\s-]?point|PAT)\b/i.test(description)?'extra_point_description':
+     /\b(?:touchdown|TD)\b/i.test(description)?'touchdown_type_unverified':'other_scoring_description';
+   events.push({period,description,sourceId:sourceId||null,sourceHomeScore:nextHome,sourceAwayScore:nextAway,
+    homeDelta,awayDelta,scoringSide,scoringPoints:points,scoreType,
+    nonOffenseCandidate:!!(defensive||special),adjustmentVerified:false,pointsAllowedAdjustment:null});
+  }
+ }
+ const finalHome=snapshot(score.homeScoreTotal??score.homeScore),finalAway=snapshot(score.awayScoreTotal??score.awayScore);
+ const sourceFinal=gamePhase(game.playedStatus??game.gameStatus??game.status)==='final';
+ const finalMatch=events.length&&finalHome!==null&&finalAway!==null&&sequenceValid?
+  previous.home===finalHome&&previous.away===finalAway:null;
+ return {...base,available:events.length>0,scoringPlays:events.length,
+  verifiedSideEvents:events.filter(x=>x.scoringSide!==null).length,
+  unverifiedSideEvents:events.filter(x=>x.scoringSide===null).length,
+  nonOffenseCandidates:events.filter(x=>x.nonOffenseCandidate).length,
+  finalScoreMatchesLedger:finalMatch,finalScoreVerified:sourceFinal&&finalMatch===true,
+  events:events.slice(0,80),
+  reason:!events.length?'MSF box score contains no published scoring-play entries':
+   !sourceFinal?'Game not marked Final in MSF scoring feed':
+   finalMatch===false?'Published scoring sequence does not reconcile with final score':
+   finalMatch===null?'Scoring sequence completeness not established':
+   'Score deltas reconcile; defensive and special-teams attribution still requires verification'};
+}
+
 /** Independent MSF final box score versus schedule. The raw opponent's
  * scoreboard points are NOT the official D/ST points-allowed category: a
  * pick-six, fumble-return TD and other non-offensive scores can change it.
