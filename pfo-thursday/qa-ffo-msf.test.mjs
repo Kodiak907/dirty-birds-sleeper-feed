@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence,dstScoreboardEvidence,dstScoringPlayLedger} from './ffo-gamecast-model.mjs';
+import {fflScore,normalizeStats,plays,resolvePlayer,gameScoreUpdate,gamePhase,gameStatusLabel,mergeScheduledGame,mergePlayTimeline,gamePollInterval,diagnosePlayFeed,sourcePlayRows,inspectHistoricalGame,playerRows,playerFeedShape,auditStatFeed,auditSeasonLowerBound,scoringEvidence,statFieldPaths,auditTeamGameFeed,kickingPlayEvidence,summarizeDstWeeks,summarizeKickerWeeks,reconcileKickerWeeks,dstPlayEvidence,dstScoreboardEvidence,dstScoringPlayLedger,playerScoringPlayCandidates} from './ffo-gamecast-model.mjs';
 import {fieldMarkup,eventInfo,playSubject} from './ffo-gamecast-stadium.mjs';
 
 const base=dirname(fileURLToPath(import.meta.url));
@@ -1236,4 +1236,75 @@ test('Only published MSF two-point conversions are scored; missing fields are ne
  assert.ok(missing.missing.includes('pass_2pt'));
  assert.ok(missing.missing.includes('rec_2pt'));
  assert.ok(missing.missing.includes('rush_2pt'));
+});
+
+test('MSF touchdown PBP candidates are matched by unique weekly player team, jersey and initials, not fantasy guesses',()=>{
+ const players=[
+  {id:'QL',name:'Jordan Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'WG',name:'Matthew Golden',team:'GB',position:'WR',jersey:'22'},
+  {id:'RB',name:'Chris Brooks',team:'GB',position:'RB',jersey:'30'},
+  {id:'OP',name:'Other Guy',team:'TB',position:'WR',jersey:'22'}];
+ const status=(abbreviation,quarter=2)=>({quarter,teamInPossession:{abbreviation}});
+ const payload={gameplaybyplay:{plays:[
+  {id:41,description:'(12:21) 10-J.Love pass deep right to 22-M.Golden for 53 yards, TOUCHDOWN.',playStatus:status('GB')},
+  {id:41,description:'(12:21) 10-J.Love pass deep right to 22-M.Golden for 53 yards, TOUCHDOWN.',playStatus:status('GB')},
+  {id:42,description:'(12:20) 10-J.Love pass short right to 22-M.Golden for 2 yards. 2-point conversion is GOOD.',playStatus:status('GB')},
+  {id:43,description:'(10:20) 30-C.Brooks right tackle for 2 yards. 2-point conversion is GOOD.',playStatus:status('GB')}
+ ]}};
+ const result=playerScoringPlayCandidates(payload,players,'GB',own.scoring);
+ assert.equal(result.rawPlayCount,4);
+ assert.equal(result.publishedCandidates,3);
+ assert.equal(result.twoPointAttempts,2);
+ assert.equal(result.longTouchdowns,1);
+ assert.equal(result.identifiedCandidateEvents,3);
+ assert.equal(result.unverifiedCandidateEvents,0);
+ const long=result.events[0].matched;
+ assert.equal(long.length,2);
+ assert.equal(long[0].providerId,'QL');
+ assert.equal(long[1].providerId,'WG');
+ assert.deepEqual(long[0].weightedRules,['pass_td_40p','pass_td_50p']);
+ assert.deepEqual(long[1].weightedRules,['rec_td_40p','rec_td_50p']);
+ assert.equal(long[0].creditedFantasyPoints,null);
+ const converted=result.events[1];
+ assert.equal(converted.publishedResult,'reported_good');
+ assert.deepEqual(converted.matched.map(x=>x.category),['pass_2pt','rec_2pt']);
+ assert.deepEqual(converted.matched.map(x=>x.providerId),['QL','WG']);
+ assert.equal(result.events[2].matched[0].providerId,'RB');
+ assert.equal(result.events[2].matched[0].category,'rush_2pt');
+ assert.equal(result.fantasyBonusesCertified,false);
+});
+test('PBP candidates avoid awarding bonus points on opponent possession, unverified team identity, missing distances and ambiguous 2PT result',()=>{
+ const players=[
+  {id:'10',name:'Jordan Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'11',name:'James Love',team:'GB',position:'QB',jersey:'10'},
+  {id:'22',name:'Matthew Golden',team:'GB',position:'WR',jersey:'22'}];
+ const payload={gameplaybyplay:{plays:[
+  {id:'a',description:'(12:30) 10-J.Love pass deep left to 22-M.Golden for 53 yards, TOUCHDOWN.',
+   playStatus:{quarter:1,teamInPossession:{abbreviation:'TB'}}},
+  {id:'b',description:'(11:30) 10-J.Love pass short right to 22-M.Golden. 2-point attempt.',
+   playStatus:{quarter:1,teamInPossession:{abbreviation:'GB'}}},
+  {id:'c',description:'(10:30) 10-J.Love pass right to 22-M.Golden, TOUCHDOWN.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:'GB'}}}
+ ]}};
+ const result=playerScoringPlayCandidates(payload,players,'GB',own.scoring);
+ assert.equal(result.publishedCandidates,2);
+ assert.equal(result.events[0].teamPossessionVerified,false);
+ assert.equal(result.events[0].matched[0].verifiedIdentity,false);
+ assert.equal(result.events[1].publishedResult,'unknown');
+ assert.equal(result.events[1].matched[0].verifiedIdentity,false);
+ assert.equal(result.events[1].matched[1].providerId,'22');
+ assert.equal(result.identifiedCandidateEvents,1);
+ assert.ok(result.unverifiedCandidateEvents>=2);
+ assert.equal(result.events[1].creditedFantasyPoints,null);
+ assert.ok(result.events.every(e=>e.matched.every(x=>x.creditedFantasyPoints===null)));
+ const noFeeds=playerScoringPlayCandidates({},players,'GB',own.scoring);
+ assert.equal(noFeeds.publishedCandidates,0);
+ assert.equal(noFeeds.fantasyBonusesCertified,false);
+});
+test('New PFO event audit reuses six licensed MSF play responses without separate request and holds point awards',()=>{
+ assert.match(core,/report\.playerEventWeeks\.push\(\{week,game,evidence:model\.playerScoringPlayCandidates\(response\.data\|\|\{\},players,team,s\.ownedRules\)\}\)/);
+ assert.match(core,/Player TD bonuses & two-point evidence · Weeks 1–6/);
+ assert.match(core,/Only uniquely resolved weekly MSF player identities/);
+ assert.match(core,/Provisional source observations do not modify FFL player totals/);
+ assert.match(core,/report\.playerEventWeeks\.push\(\{week,game,error:'MSF historical play request failed'\}\)/);
 });
