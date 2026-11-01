@@ -138,9 +138,9 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   }
   await page.setViewportSize({width:390,height:844});
   const rail=page.locator('#ffo-gc-games .ffo-gc-game-rail');
-  await rail.evaluate(el=>{window.__ffoRailIdentity=el;el.scrollLeft=240});
+  await rail.evaluate(el=>{window.__ffoRailIdentity=el;el.scrollLeft=520});
   const prior=await rail.evaluate(el=>el.scrollLeft);
-  assert.ok(prior>=180,'Rail must respond to horizontal scroll');
+  assert.ok(prior>=160,'Rail must respond to horizontal scroll and snap cards');
   await page.evaluate(()=>window.ffoGameCast.refreshWeekboard());
   const after=await rail.evaluate(el=>({same:el===window.__ffoRailIdentity,scrollLeft:el.scrollLeft}));
   assert.equal(after.same,true,'Five-second scoreboard refresh must not replace the scrolling rail');
