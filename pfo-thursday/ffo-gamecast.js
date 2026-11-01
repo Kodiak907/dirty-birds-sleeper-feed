@@ -135,7 +135,8 @@
     return (prior.scoreSource==='MySportsFeeds game boxscore'||prior.scoreSource==='MySportsFeeds weekly games')?
      {...merged,homePoints:prior.homePoints??merged.homePoints,
       awayPoints:prior.awayPoints??merged.awayPoints,
-      scoreSource:prior.scoreSource,scoreProviderUpdatedAt:prior.scoreProviderUpdatedAt||null,
+      status:prior.status,scoreSource:prior.scoreSource,
+      scoreProviderUpdatedAt:prior.scoreProviderUpdatedAt||null,
       scoreCheckedAt:prior.scoreCheckedAt||null}:merged;
    });
   const groups=weekNav.groupWeekGames(s.games);
