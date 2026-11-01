@@ -121,3 +121,53 @@ test('Conditional scenario module has no Sleeper runtime dependence or score mut
  const src=readFileSync(new URL('./ffo-msf-event-score-scenarios.mjs',import.meta.url),'utf8');
  assert.doesNotMatch(src,/fetch\(|sleeper\.com|writePlayerScore|updateLeagueScore|COMMISSIONER_DB/);
 });
+
+test('MSF historical plays with NO native play ID still yield clock-identified long TD scenarios',()=>{
+ const withoutIDs={gameplaybyplay:{plays:pbp.gameplaybyplay.plays.map(x=>({
+  description:x.description,playStatus:x.playStatus
+ }))}};
+ const e=playerScoringPlayCandidates(withoutIDs,identity,team,rules);
+ assert.equal(e.publishedCandidates,3);
+ assert.equal(e.events.filter(x=>x.sourceId===null).length,3);
+ const {matched,out}=scenario({evidenceInput:e});
+ assert.equal(matched.ledger.lineItems.length,6);
+ const love=out.players.find(p=>p.playerId==='18607');
+ const watson=out.players.find(p=>p.playerId==='39108');
+ const golden=out.players.find(p=>p.playerId==='166697');
+ assert.equal(love.highestOnlyCandidatePoints,5);
+ assert.equal(love.additiveCandidatePoints,6);
+ assert.equal(watson.highestOnlyCandidatePoints,3);
+ assert.equal(watson.additiveCandidatePoints,4);
+ assert.equal(golden.highestOnlyCandidatePoints,2);
+ assert.ok(matched.ledger.lineItems.filter(x=>x.category.endsWith('_td')).every(x=>x.sourceIdentityVerified));
+ assert.ok(matched.ledger.lineItems.filter(x=>x.category.endsWith('_2pt')).every(x=>!x.sourceIdentityVerified));
+ assert.equal(out.canWriteScores,false);
+});
+
+test('Without native ID or verified clock, long TD cannot produce conditional bonus points',()=>{
+ const noIdNoClock={gameplaybyplay:{plays:[
+  {description:'10-J.Love pass deep middle to 9-C.Watson for 53 yards, TOUCHDOWN.',
+   playStatus:{teamInPossession:{abbreviation:team}}}
+ ]}};
+ const e=playerScoringPlayCandidates(noIdNoClock,identity,team,rules);
+ const {out}=scenario({evidenceInput:e});
+ assert.equal(out.players.find(p=>p.playerId==='18607').highestOnlyCandidatePoints,0);
+ assert.equal(out.players.find(p=>p.playerId==='39108').highestOnlyCandidatePoints,0);
+});
+
+test('Two duplicate ID-less two-point PBP records cannot reuse one published MSF scoring play',()=>{
+ const duplicates={gameplaybyplay:{plays:[
+  {description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:team}}},
+  {description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.',
+   playStatus:{quarter:2,teamInPossession:{abbreviation:team}}}
+ ]}};
+ const e=playerScoringPlayCandidates(duplicates,identity,team,rules);
+ assert.equal(e.publishedCandidates,2);
+ const {matched,out}=scenario({evidenceInput:e});
+ assert.equal(matched.twoPointCorroboration.length,2);
+ assert.ok(matched.twoPointCorroboration.every(x=>x.sourceTier==='ambiguous_duplicate_pbp_candidates'));
+ assert.equal(out.players.find(p=>p.playerId==='18607').twoPtMissingStatSourceCandidates,0);
+ assert.equal(out.players.find(p=>p.playerId==='166697').twoPtMissingStatSourceCandidates,0);
+ assert.equal(out.finalPlayerScoresCertified,false);
+});
