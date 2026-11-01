@@ -1203,6 +1203,65 @@
   }catch(error){status('Game feed error: '+error.message)}})();
   try{return await gamePending}finally{gamePending=null}
  }
+ // One authenticated MSF weekly-games request updates every game's score.
+ async function refreshWeekboard(){
+  if(!s.enabled||!s.archiveGames.length||!s.selectedWeek)return;
+  if(weekboardPending)return weekboardPending;
+  const requestedWeek=s.selectedWeek;lastWeekboardPoll=Date.now();
+  weekboardPending=(async()=>{
+   try{
+    const res=await feed('weekboard',{season:s.season,week:requestedWeek},true);
+    if(s.selectedWeek!==requestedWeek)return;
+    if(res.notModified){lastWeekboardSuccess=Date.now();weekboardError='';weekboardFailures=0;drawGames();return}
+    if(!Array.isArray(res.data?.games))throw Error('MSF weekly scoreboard schema not verified');
+    const seen=new Set();let changed=0;
+    for(const raw of res.data.games){
+     const update=friendlyGame(raw),index=s.games.findIndex(g=>g.id===update.id);
+     if(index<0||seen.has(update.id))continue;
+     seen.add(update.id);
+     const verified=weekNav.mergeVerifiedWeekScore(s.games[index],update,{
+      providerUpdatedAt:res.provider_updated_at||null,checkedAt:res.checked_at||new Date().toISOString()});
+     if(!verified.accepted)continue;
+     s.games[index]=verified.game;changed++;
+    }
+    weekboardGameCount=seen.size;lastWeekboardSuccess=Date.now();
+    weekboardProviderUpdatedAt=res.provider_updated_at||null;
+    weekboardError='';weekboardFailures=0;drawGames();
+    if(s.game&&changed)drawField();
+   }catch(error){
+    if(s.selectedWeek!==requestedWeek)return;
+    weekboardFailures=Math.min(4,weekboardFailures+1);
+    weekboardError=String(error.message||error).slice(0,100);drawGames();
+   }
+  })();
+  try{return await weekboardPending}finally{weekboardPending=null}
+ }
+ // Rotate other LIVE game PBP requests at a slower per-game pace.
+ async function refreshOneBackgroundPlay(){
+  if(!s.enabled||backgroundPlayPending||!s.games.length)return;
+  const week=s.selectedWeek;
+  const candidates=weekNav.backgroundPlayCandidates(
+   s.games,s.game,backgroundPlayCheckedAt,Date.now(),BACKGROUND_PLAY_MIN_MS);
+  const target=candidates[0];if(!target)return;
+  backgroundPlayCheckedAt[target.id]=Date.now();
+  backgroundPlayPending=(async()=>{
+   try{
+    const res=await feed('plays',{season:s.season,game_id:target.id},true);
+    if(s.selectedWeek!==week)return;
+    const published=model.plays(res.data);
+    const last=published.length?published[published.length-1]:null;
+    backgroundPlayEvidence.set(target.id,{checkedAt:Date.now(),count:published.length,
+     message:'Other-game MSF PBP: '+published.length+' plays checked'+
+      (res.coverage==='scoring_only'?' · scoring only':'')+
+      (last?.period?' · latest Q'+last.period:'')});
+   }catch(error){
+    if(s.selectedWeek!==week)return;
+    backgroundPlayEvidence.set(target.id,{checkedAt:Date.now(),count:null,
+     message:'Other-game PBP unavailable · '+String(error.message||error).slice(0,60)});
+   }finally{if(s.selectedWeek===week)drawGames()}
+  })();
+  try{return await backgroundPlayPending}finally{backgroundPlayPending=null}
+ }
  async function refreshOverview(force=false){
   if(overviewPending)return overviewPending;
   overviewPending=(async()=>{try{
