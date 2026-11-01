@@ -205,14 +205,33 @@
      (bg.count===null?'Plays unavailable':safe(bg.count)+' plays checked')+'</small>':'')+
     '</button>';
   }).join('');
-  el.innerHTML='<div class="ffo-gc-rail-hint"><span>Week '+safe(s.selectedWeek)+
+  const html='<div class="ffo-gc-rail-hint"><span>Week '+safe(s.selectedWeek)+
    ' · '+ordered.length+' games</span><span>Swipe games ⇄</span></div>'+
    '<div class="ffo-gc-game-rail" role="region" aria-label="Week '+safe(s.selectedWeek)+
    ' NFL games, swipe horizontally" tabindex="0">'+cards+'</div>';
-  el.dataset.railWeek=String(s.selectedWeek);
-  const rail=el.querySelector('.ffo-gc-game-rail');
-  if(rail)rail.scrollLeft=priorScroll;
-  el.querySelectorAll('button[data-ffo-game]').forEach(b=>b.onclick=()=>selectGame(b.dataset.ffoGame));
+  // Five-second scoreboard updates should NOT destroy the touch carousel,
+  // steal focus, or reset a drag halfway through its swipe gesture.
+  const sameCards=sameWeek&&oldRail&&
+   [...oldRail.querySelectorAll('[data-ffo-game]')].map(b=>b.dataset.ffoGame).join('|')===
+    ordered.map(x=>String(x.g.id)).join('|');
+  if(sameCards){
+   const template=document.createElement('template');template.innerHTML=html;
+   const nextButtons=[...template.content.querySelectorAll('[data-ffo-game]')];
+   [...oldRail.querySelectorAll('[data-ffo-game]')].forEach((button,index)=>{
+    const next=nextButtons[index];
+    if(button.innerHTML!==next.innerHTML)button.innerHTML=next.innerHTML;
+    if(button.className!==next.className)button.className=next.className;
+   });
+   const oldHint=el.querySelector('.ffo-gc-rail-hint');
+   const newHint=template.content.querySelector('.ffo-gc-rail-hint');
+   if(oldHint&&newHint&&oldHint.innerHTML!==newHint.innerHTML)oldHint.innerHTML=newHint.innerHTML;
+  }else{
+   el.innerHTML=html;
+   el.dataset.railWeek=String(s.selectedWeek);
+   const rail=el.querySelector('.ffo-gc-game-rail');
+   if(rail)rail.scrollLeft=priorScroll;
+   el.querySelectorAll('button[data-ffo-game]').forEach(b=>b.onclick=()=>selectGame(b.dataset.ffoGame));
+  }
  }
  function findPlayer(){if(!s.player)return;s.playerMatch='';s.msfPlayer=null;
    const r=model.resolvePlayer(s.player,s.playerRows);s.playerMatch=r.status;s.msfPlayer=r.player;
