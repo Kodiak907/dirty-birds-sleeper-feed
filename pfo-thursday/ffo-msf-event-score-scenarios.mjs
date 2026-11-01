@@ -21,7 +21,8 @@ function validPlay(item){
   !item.blockers.some(x=>[
    'team_possession_unverified','result_unverified_or_unsuccessful','player_identity_unverified',
    'duplicate_or_colliding_event_identity','event_identity_insufficient','event_category_mismatch',
-   'long_touchdown_distance_unverified','play_count_exceeds_final_player_stat_count'
+   'long_touchdown_distance_unverified','play_count_exceeds_final_player_stat_count',
+   'result_unverified_or_unsuccessful'
   ].includes(x));
 }
 function dataByPlayer(rows){
@@ -101,7 +102,7 @@ export function eventScoreScenarios({ledger,corroboration=[],rules={}}={}){
   p.scenarioInputsMatched=problems.size===0&&p.twoPtEvidenceUnverified===0&&
    Number.isFinite(p.incrementalScenarioMin)&&Number.isFinite(p.incrementalScenarioMax);
  }
- const summary=Object.values(players).sort((a,b)=>a.player.localeCompare(b.player));
+ const summary=Object.values(players).sort((a,b)=>String(a.player||a.playerId).localeCompare(String(b.player||b.playerId)));
  return {
   status:'SOURCE_BASED_SCENARIO_ONLY',
   meaning:'Potential event-derived supplements only, never final FFL player totals',
