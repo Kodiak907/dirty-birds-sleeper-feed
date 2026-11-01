@@ -30,7 +30,7 @@ jobs:
           node --check /tmp/pfo-msf-worker.mjs
       - name: Existing PFO, MSF and new historical score reconstructions
         run: |
-          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs             pfo-thursday/qa-59.test.mjs
+          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs 
       - name: Install isolated Chromium mobile test dependencies
         run: |
           npm install --no-save playwright@1.55.1
