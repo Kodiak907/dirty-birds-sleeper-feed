@@ -21,7 +21,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   {fromWeek:1,throughWeek:7});
  const queue=()=>nextLeagueHistoryBatch(schedule(),snapshots,
   {fromWeek:1,throughWeek:7,maxGames:2,priorityTeam:'GB',
-   allowEstimatedWeekForSourceDiscovery:true});
+   allowEstimatedWeekForSourceDiscovery:true,skipPreviouslyInspected:true});
  function render(message=''){
   const target=el('ffo-gc-research-status');
   if(!target)return;
