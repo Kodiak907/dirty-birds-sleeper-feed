@@ -7,6 +7,7 @@
  const stadium=await import('/ffo-gamecast-stadium.mjs');
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
+ const weekNav=await import('/ffo-gamecast-weeks.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -24,7 +25,7 @@
 @media(max-width:430px){#radar .pfo49-radar-item{padding:9px}#radar .pfo49-radar-item .pfo49-statgrid>div{flex-basis:104px!important;min-width:104px!important}#market .scout-card{padding:9px}}
 `;document.head.append(polish);
 
- const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-regular'})(),games:[],archiveGames:[],portraitRows:[],historyResults:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
+ const s={status:'Gateway not checked',enabled:false,season:(()=>{const n=Number(window.dbNflSeason||2026);return n+'-regular'})(),games:[],archiveGames:[],selectedWeek:null,coverage:null,portraitRows:[],historyResults:[],game:null,player:null,playerId:null,msfPlayer:null,playerMatch:'',playerRows:[],weekRows:[],allWeeks:new Map(),playCache:[],lastMeta:null,liveBox:null,injuries:null,latestCheck:'',lastError:'',msfFantasy:null,ownedRules:null,rulesVersion:null,rulesError:null,playFilter:'all',activePlay:-1,followLatest:true,sourceErrors:[],lastGamesCheck:null};
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
@@ -38,7 +39,7 @@
  function cacheTtl(name){
    if(name==='health')return 60000;
     if(name==='portraits')return 3600000;
-   if(name==='schedule')return 180000;
+   if(name==='schedule')return 45000;
    if(name==='injuries')return 240000;
    if(name==='updates')return 60000;
    // Stats and historical logs are stored only as normalized rows, never duplicated here.
@@ -101,9 +102,66 @@
    awayPoints:n(score.awayScoreTotal??score.awayScore??z.awayScoreTotal??x.awayScoreTotal??x.awayScore),
    status:String(z.playedStatus||z.gameStatus||z.status||x.playedStatus||x.gameStatus||x.status||z.scheduleStatus||'Unverified game status'),start:z.startTime||z.startTimeUTC||x.startTime||null};
  }
- function drawGames(){const el=$('ffo-gc-games');if(!el)return;
-  if(!s.games.length){el.innerHTML='<p class="ffo-gc-note">No games loaded from MySportsFeeds yet. NFL season and schedule feeds must be authenticated first.</p>';return}
-  el.innerHTML=s.games.map(g=>`<button class="ffo-gc-game ${s.game===g.id?'active':''}" type="button" data-ffo-game="${safe(g.id)}"><small>${safe(g.status)}</small><strong>${safe(g.away)} ${g.awayPoints??'—'} · ${g.homePoints??'—'} ${safe(g.home)}</strong><small>${g.start?safe(g.start):'Start time not verified'}</small></button>`).join('');
+ function drawGames(){
+  const el=$('ffo-gc-games'),select=$('ffo-gc-week'),statusEl=$('ffo-gc-week-status');
+  if(!el)return;
+  const seasonYear=Number(s.season.slice(0,4));
+  const current=weekNav.currentCalendarWeek(new Date(),seasonYear)||Number(window.dbNflWeek)||1;
+  if(!Number.isInteger(s.selectedWeek)||s.selectedWeek<1||s.selectedWeek>18)s.selectedWeek=current;
+  if(select){
+   if(select.options.length!==18)select.innerHTML=Array.from({length:18},(_,i)=>
+    '<option value="'+(i+1)+'">Week '+(i+1)+(i+1===current?' · Current':'')+'</option>').join('');
+   select.value=String(s.selectedWeek);
+  }
+  if(!s.archiveGames.length){
+   el.innerHTML='<p class="ffo-gc-note">No games loaded from MySportsFeeds yet. Authenticated season schedule required; never invent scores.</p>';
+   if(statusEl)statusEl.textContent='Week '+s.selectedWeek+' · awaiting authenticated full-season MSF schedule';
+   return;
+  }
+  const previous=new Map(s.games.map(g=>[g.id,g]));
+  s.games=weekNav.scheduleForWeek(s.archiveGames,s.selectedWeek,seasonYear)
+   .map(g=>previous.has(g.id)?model.mergeScheduledGame(previous.get(g.id),g):g);
+  const groups=weekNav.groupWeekGames(s.games);
+  const coverage=weekNav.todayCoverage(s.archiveGames,new Date(),seasonYear);
+  s.coverage=coverage;
+  const live=s.games.filter(g=>['live','overtime'].includes(model.gamePhase(g.status))).length;
+  const reference=coverage.expectedGames!==null&&s.selectedWeek===current?
+   ' · Today '+coverage.uniqueMatchups+'/'+coverage.expectedGames+' source-scheduled matchups'+
+   (coverage.missing.length?' · '+coverage.missing.length+' missing: '+coverage.missing.join(', '):'')+
+   (coverage.extra.length?' · '+coverage.extra.length+' unrecognized matchups':''):'';
+  if(statusEl)statusEl.textContent='Week '+s.selectedWeek+' · '+s.games.length+
+   ' MSF games · '+live+' reported LIVE'+reference+
+   ' · Schedule/scoreboard auto-refresh every 60s; selected-game PBP polls every 5s when live. Provider delay not certified.';
+  if(!s.games.length){
+   el.innerHTML='<p class="ffo-gc-note">Week '+safe(s.selectedWeek)+
+    ' has no schedule entries in the current authenticated MSF response. Unknown, not zero games.</p>';
+   return;
+  }
+  const pacificTime=start=>{
+   const t=Date.parse(start||'');
+   return Number.isFinite(t)?new Intl.DateTimeFormat('en-US',{
+    timeZone:'America/Los_Angeles',weekday:'short',hour:'numeric',minute:'2-digit',timeZoneName:'short'
+   }).format(new Date(t)):'Start time unverified';
+  };
+  const groupMarkup=(title,items)=>items.length?'<div class="muted" style="font-size:11px;margin:8px 0 4px;font-weight:700">'+title+' · '+items.length+'</div>'+
+   '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:6px">'+
+   items.map(g=>{
+    const phase=model.gamePhase(g.status);
+    const flag=phase==='live'||phase==='overtime'?'LIVE · ':
+     phase==='final'?'FINAL · ':'';
+    return '<button class="ffo-gc-game '+(s.game===g.id?'active':'')+
+     '" type="button" data-ffo-game="'+safe(g.id)+'" style="min-width:0;max-width:100%;text-align:left">'+
+     '<small>'+safe(flag+g.status)+'</small><strong>'+safe(g.away)+' '+
+     safe(g.awayPoints===null?'—':g.awayPoints)+' · '+
+     safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home)+
+     '</strong><small>'+safe(pacificTime(g.start))+
+     (g.weekSource==='calendar_estimate'?' · Week inferred from date':'')+
+     '</small></button>';
+   }).join('')+'</div>':'';
+  el.innerHTML=groupMarkup('Today · Pacific',groups.today)+
+   groupMarkup('Earlier this week',groups.earlier)+
+   groupMarkup('Upcoming',groups.upcoming)+
+   groupMarkup('Date unverified',groups.unknown);
   el.querySelectorAll('button[data-ffo-game]').forEach(b=>b.onclick=()=>selectGame(b.dataset.ffoGame));
  }
  function findPlayer(){if(!s.player)return;s.playerMatch='';s.msfPlayer=null;
