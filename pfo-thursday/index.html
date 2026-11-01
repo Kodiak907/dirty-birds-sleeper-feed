@@ -68,8 +68,14 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
 <section class="page" id="gamecast">
  <div class="card ffo-gc-shell">
   <div class="ffo-gc-heading"><div><span class="eyebrow">FFO SPORTS INTELLIGENCE</span><h2>GameCast <small style="font-size:12px;color:var(--muted)">STAGING · VERIFY FEEDS</small></h2><p class="muted">Live NFL drives, personal stat lines, play chronology, and independent FFL scoring research.</p></div><button class="button" id="ffo-gc-refresh" type="button">Refresh feeds</button></div>
-  <div class="ffo-gc-testplan"><b>THURSDAY TEST · OCT 29</b><div>Carolina Panthers at Green Bay Packers · 5:15 PM Pacific · Week 8</div><small>Scheduled via NFL.com. No result, play or game ID assumed. All on-field graphics schematic until verified by MySportsFeeds.</small></div><div id="ffo-gc-status" class="ffo-gc-status">Connecting to private intelligence gateway…</div>
-  <div class="ffo-gc-games" id="ffo-gc-games"><p class="muted">Games appear once the licensed feed is connected.</p></div><details id="ffo-gc-history" class="card" style="padding:10px;margin:8px 0">
+  <div class="ffo-gc-testplan"><b>2026 NFL GAME CENTER · ALL TEAMS</b><div>Schedule and scoreboard sourced from authenticated MySportsFeeds; full play-by-play for the game you open.</div><small>Scores, game status, and provider delays are independently verified. Missing feed data is never presented as zero or a completed game.</small></div><div id="ffo-gc-status" class="ffo-gc-status">Connecting to private intelligence gateway…</div>
+   <div class="ffo-gc-weekbar" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0;max-width:100%">
+    <label for="ffo-gc-week" style="font-size:12px;font-weight:700">NFL week</label>
+    <select id="ffo-gc-week" aria-label="Choose NFL week" style="min-width:104px;max-width:180px;min-height:40px;border-radius:8px;background:#122239;color:#f0f6ff;border:1px solid #43627d;padding:7px"></select>
+    <button type="button" id="ffo-gc-week-today" class="button" style="min-height:36px;padding:6px 10px;font-size:12px">Current week</button>
+    <span id="ffo-gc-week-status" role="status" aria-live="polite" style="font-size:11px;flex:1 1 100%;overflow-wrap:anywhere;color:#b4c4d9">Checking the complete weekly MSF schedule…</span>
+   </div>
+   <div class="ffo-gc-games" id="ffo-gc-games"><p class="muted">Games appear once the licensed feed is connected.</p></div><details id="ffo-gc-history" class="card" style="padding:10px;margin:8px 0">
  <summary style="cursor:pointer;font-weight:700">Historical MSF play-by-play audit · Weeks 1–6</summary>
  <p class="muted" style="font-size:12px;margin:8px 0">Checks one schedule-matched 2026 NFL game per week through our authenticated MSF gateway. A successful HTTP response is not proof of complete play coverage. Select an audited game to inspect its actual published plays. No Sleeper or ESPN plays are substituted.</p>
  <button class="button" type="button" id="ffo-gc-history-check">Check Weeks 1–6</button>
