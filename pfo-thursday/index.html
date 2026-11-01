@@ -81,6 +81,15 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
  <button class="button" type="button" id="ffo-gc-history-check">Check Weeks 1–6</button>
  <div id="ffo-gc-history-status" role="status" aria-live="polite" style="font-size:12px;margin:7px 0"></div>
  <div id="ffo-gc-history-results" style="font-size:12px"></div>
+ <div class="ffo-gc-evidence" style="margin:10px 0 4px;padding:9px;border:1px solid #315069;border-radius:8px">
+  <strong>FFL score certification &amp; projection research</strong>
+  <p class="muted" style="font-size:11px;margin:5px 0">Green Bay Weeks 1–7 first, then all 32 NFL teams. MSF game evidence only. Partial scores and unverified predictions are not production inputs.</p>
+  <div id="ffo-gc-research-status" role="status" aria-live="polite" style="font-size:11px;line-height:1.5;overflow-wrap:anywhere">Load the authenticated MSF schedule to check coverage.</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 2px">
+   <button class="button" type="button" id="ffo-gc-research-next" style="min-height:38px;font-size:11px">Inspect next 2 historical games</button>
+   <button class="button" type="button" id="ffo-gc-research-backtest" style="min-height:38px;font-size:11px">Check projection backtest readiness</button>
+  </div>
+ </div>
  </details>
  <details id="ffo-gc-stat-audit" class="card" style="padding:10px;margin:8px 0">
   <summary style="cursor:pointer;font-weight:700">Independent MSF statistics &amp; FFL scoring audit · Weeks 1–6</summary>
