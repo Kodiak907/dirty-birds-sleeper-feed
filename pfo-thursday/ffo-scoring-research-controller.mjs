@@ -19,12 +19,16 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   const when=Date.parse(value.checkedAt||'');
   if(!Number.isFinite(when)||when>Date.now()+86400000||
    when<Date.now()-30*86400000)return null;
+  // Local checkpoints can restore SOURCE retrieval progress, never any
+  // certification, scoring correction or score-write authority.
   const flags=['pbpPublished','pbpChronologyVerified','finalBoxVerified',
-   'scoreMatchesSchedule','playerGameLogsVerified','playerIdentitiesVerified',
-   'requiredStatFieldsVerified','scoringEventsReconciled','statCorrectionsChecked',
-   'kickerScoreVerified','dstScoreVerified','finalPlayerScoreRecomputed'];
+   'scoreMatchesSchedule','playerGameLogsVerified'];
+  const sensitive=['playerIdentitiesVerified','requiredStatFieldsVerified',
+   'scoringEventsReconciled','statCorrectionsChecked','kickerScoreVerified',
+   'dstScoreVerified','finalPlayerScoreRecomputed'];
   const out={checkedAt:new Date(when).toISOString()};
   for(const key of flags)out[key]=value[key]===true;
+  for(const key of sensitive)out[key]=false;
   out.playCount=Number.isInteger(value.playCount)&&value.playCount>=0&&value.playCount<2000?
    value.playCount:null;
   return out;
