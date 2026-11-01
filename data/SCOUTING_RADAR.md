@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-10-31T23:36:15.999864+00:00
-Sleeper snapshot: 2026-10-31T23:36:12.498158+00:00
+Generated: 2026-11-01T01:02:22.238807+00:00
+Sleeper snapshot: 2026-11-01T01:02:15.189212+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- JA’MARRTRIX: added none; dropped Zonovan Knight
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

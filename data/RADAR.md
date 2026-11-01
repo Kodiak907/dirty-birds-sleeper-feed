@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-10-31T23:36:15.963064+00:00
-Sleeper snapshot: 2026-10-31T23:36:12.498158+00:00
+Generated: 2026-11-01T01:02:22.202477+00:00
+Sleeper snapshot: 2026-11-01T01:02:15.189212+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1422401307225907200` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Zonovan Knight → JA’MARRTRIX (#7)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
