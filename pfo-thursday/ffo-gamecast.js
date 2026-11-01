@@ -5,6 +5,7 @@
  const $=id=>document.getElementById(id),safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const model=await import('/ffo-gamecast-model.mjs');
  const stadium=await import('/ffo-gamecast-stadium.mjs');
+ const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -484,7 +485,21 @@
   // touchdown bonuses. Game logs are independently reconciled later.
   const eventWeeks=report.playerEventWeeks||[];
   const eventRows=eventWeeks.map(row=>{
-   const e=row.evidence;
+   const e=row.evidence,joined=row.sameGameReconciliation;
+   const sameGameLine=joined?'<details style="margin:6px 0;padding:5px 0;border-top:1px solid #315069">'+
+    '<summary style="cursor:pointer;font-size:12px">Same-game MSF player cross-check · '+
+    safe(joined.sameGameStatMatches)+'/'+safe(joined.matchedCandidatePlayerIds)+' matched IDs · final awards withheld</summary>'+
+    '<div class="muted" style="font-size:11px;margin:5px 0">MSF game '+safe(joined.gameId||'unknown')+
+    ' · final scoreboard '+safe(joined.finalScoreboardVerified?'verified':'unverified')+
+    ' · '+safe(joined.ledger.pendingCount)+' scoring candidates pending. '+
+    'Full-game completeness, stat corrections and 50+ stacking are not certified.</div>'+
+    joined.ledger.lineItems.slice(0,10).map(x=>
+     '<div class="muted" style="font-size:11px;padding:3px 0;border-top:1px solid #294157">'+
+     safe(x.player||x.playerId||'Unresolved player')+' · '+safe(x.category)+
+     ' · same-game MSF stat '+safe(x.statCount===null?'unknown':x.statCount)+
+     ' · '+safe(x.blockers.join(', ').replaceAll('_',' '))+'</div>').join('')+
+    (joined.missingOrAmbiguousPlayerIds.length?'<div class="muted">Unmatched MSF player IDs: '+
+     safe(joined.missingOrAmbiguousPlayerIds.join(', '))+'</div>':'')+'</details>':'';
    const rows=(e?.events||[]).slice(0,15).map(play=>{
     const identities=(play.matched||[]).map(a=>
      (a.verifiedIdentity?safe(a.player)+' · MSF #'+safe(a.providerId):
@@ -505,7 +520,7 @@
     (e?'<div class="muted" style="font-size:12px;margin:5px 0">'+
       safe(e.identifiedCandidateEvents)+' uniquely matched player events · '+
       safe(e.unverifiedCandidateEvents)+' unresolved · '+safe(e.twoPointAttempts)+' 2PT attempts · '+
-      safe(e.longTouchdowns)+' long-TD candidates · '+safe(e.excludedNullifiedPlays||0)+' nullified plays excluded. No final bonuses credited.</div>'+rows:
+      safe(e.longTouchdowns)+' long-TD candidates · '+safe(e.excludedNullifiedPlays||0)+' nullified plays excluded. No final bonuses credited.</div>'+sameGameLine+rows:
       '<div class="muted">'+safe(row.error||'No authenticated source evidence')+'</div>')+
     '</details>';
   }).join('');
@@ -801,6 +816,21 @@
     }catch(error){report.dstBoxWeeks.push({week,game,error:String(error.message||error).slice(0,150)})}
     renderStatAudit(report);
     if(week<6)await auditPause(1100);
+   }
+   // Cross-reference PBP actors to independent player game logs by MSF
+   // GAME ID and PLAYER ID, never name or Sleeper fantasy scoring.
+   for(const row of report.playerEventWeeks){
+    if(!row.evidence)continue;
+    const match=candidates.find(x=>x.week===row.week&&
+     x.g.away+' @ '+x.g.home===row.game);
+    const weekly=goodWeeks.find(x=>x.week===row.week);
+    const box=report.dstBoxWeeks.find(x=>x.week===row.week);
+    if(!match)continue;
+    row.sameGameReconciliation=sameGame.correlateWeeklyPlayerEvents({
+     gameId:match.g.id,teamAbbreviation:team,
+     players:weekly?model.playerRows(weekly.payload):[],
+     evidence:row.evidence,boxEvidence:box?.evidence||null,rules:s.ownedRules
+    });
    }
    if(!report.kickEvidence)
     report.kickEvidenceError='No team-specific historical MSF kick plays verified';
