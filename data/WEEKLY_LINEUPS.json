@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-01T01:02:27.995535+00:00",
+  "generated_at_utc": "2026-11-01T02:01:49.831969+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-10-31T19:16:39.607565+00:00",
+  "projection_as_of": "2026-11-01T01:42:37.595201+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-01T01:02:15.189212+00:00",
+  "snapshot_utc": "2026-11-01T02:01:41.603950+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -653,21 +653,21 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 126.4,
+      "ppg": 126.93,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "DEN",
           "position": "QB",
-          "ppg": 16.4
+          "ppg": 16.39
         },
         {
           "id": "9509",
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 19.92
+          "ppg": 20.22
         },
         {
           "id": "8150",
@@ -695,7 +695,7 @@
           "name": "Chig Okonkwo",
           "opponent": "PHI",
           "position": "TE",
-          "ppg": 6.19
+          "ppg": 6.2
         },
         {
           "id": "11792",
@@ -716,7 +716,7 @@
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.21
+          "ppg": 12.44
         },
         {
           "id": "13345",
