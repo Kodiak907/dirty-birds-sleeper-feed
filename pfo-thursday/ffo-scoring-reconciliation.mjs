@@ -52,7 +52,10 @@ export function reconcilePlayerScoringEvidence({
    const fingerprint=period+'|'+clock+'|'+String(e.description||'').trim();
    const key=native?'id:'+native:'clock:'+fingerprint;
    if(!native&&(!clock||!period))reasons.push('event_identity_insufficient');
-   if((eventKeys.get(key)||[]).length!==1)reasons.push('duplicate_or_colliding_event_identity');
+   // Missing identity is not proof of a duplicate. Require independent
+   // scoring-summary corroboration before using such a 2PT even in research.
+   if((native||(clock&&period))&&(eventKeys.get(key)||[]).length!==1)
+     reasons.push('duplicate_or_colliding_event_identity');
    for(const m of e.matched||[]){
      const category=String(m.category||'');
      const ruleNames=category.endsWith('_2pt')?[category]:Array.isArray(m.weightedRules)?m.weightedRules:[];
