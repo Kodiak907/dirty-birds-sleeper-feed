@@ -22,6 +22,7 @@ jobs:
         run: |
           node --check pfo-thursday/ffo-gamecast.js
           node --check pfo-thursday/ffo-gamecast-model.mjs
+          node --check pfo-thursday/ffo-gamecast-weeks.mjs
           node --check pfo-thursday/ffo-scoring-reconciliation.mjs
           node --check pfo-thursday/ffo-same-game-player-evidence.mjs
           node --check pfo-thursday/ffo-historical-matchup-tracker.mjs
@@ -31,13 +32,13 @@ jobs:
           node --check /tmp/pfo-msf-worker.mjs
       - name: Existing PFO, MSF and new historical score reconstructions
         run: |
-          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs 
+          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-gamecast-week-selector.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs 
       - name: Install isolated Chromium mobile test dependencies
         run: |
           npm install --no-save playwright@1.55.1
           npx playwright install --with-deps chromium
       - name: PFO smoke test with emulated mobile browser
-        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs
+        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
   deploy-preview:
     needs: qa
     if: github.ref == 'refs/heads/pfo-msf-week5-reconciliation-20261031'
@@ -57,6 +58,7 @@ jobs:
           test -s "$RUNNER_TEMP/pfo-preview/index.html"
           test -s "$RUNNER_TEMP/pfo-preview/_worker.js"
           test -s "$RUNNER_TEMP/pfo-preview/ffo-same-game-player-evidence.mjs"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-gamecast-weeks.mjs"
           test -s "$RUNNER_TEMP/pfo-preview/ffo-scoring-reconciliation.mjs"
           test -s "$RUNNER_TEMP/pfo-preview/ffo-msf-event-score-scenarios.mjs"
           test -s "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
