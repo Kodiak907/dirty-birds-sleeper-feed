@@ -30,7 +30,7 @@
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null,historyAuditStarted=false,statAuditRunning=false;
- let weekboardPending=null,backgroundPlayPending=null,lastWeekboardPoll=0,lastWeekboardSuccess=0;
+ let weekboardPending=null,backgroundPlayPending=null,lastWeekboardPoll=0,lastWeekboardSuccess=0,lastBackgroundDispatch=0;
  let weekboardFailures=0,weekboardError='',weekboardProviderUpdatedAt=null,weekboardGameCount=0;
  const backgroundPlayCheckedAt={},backgroundPlayEvidence=new Map();
  const SCOREBOARD_MS=5000,BACKGROUND_PLAY_MIN_MS=60000;
@@ -1243,7 +1243,7 @@
   const candidates=weekNav.backgroundPlayCandidates(
    s.games,s.game,backgroundPlayCheckedAt,Date.now(),BACKGROUND_PLAY_MIN_MS);
   const target=candidates[0];if(!target)return;
-  backgroundPlayCheckedAt[target.id]=Date.now();
+  backgroundPlayCheckedAt[target.id]=Date.now();lastBackgroundDispatch=Date.now();
   backgroundPlayPending=(async()=>{
    try{
     const res=await feed('plays',{season:s.season,game_id:target.id},true);
@@ -1310,8 +1310,11 @@
   const n=Number(week);
   if(!Number.isInteger(n)||n<1||n>18||n===s.selectedWeek)return;
   s.selectedWeek=n;s.game=null;s.playCache=[];s.liveBox=null;s.playSource=null;
-  s.activePlay=-1;s.lastGamePoll=0;s.lastBoxPoll=0;lastStadiumGameId=null;
+  s.activePlay=-1;s.lastGamePoll=0;s.lastBoxPoll=0;lastWeekboardPoll=0;
+  lastWeekboardSuccess=0;weekboardGameCount=0;weekboardError='';
+  lastStadiumGameId=null;
   drawGames();drawPlays();
+  if(gameActive()&&s.enabled)void refreshWeekboard();
  }
  $('ffo-gc-week')?.addEventListener('change',e=>setWeek(e.currentTarget.value));
  $('ffo-gc-week-today')?.addEventListener('click',()=>{
@@ -1320,12 +1323,19 @@
  });
  document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(b=>b.addEventListener('click',()=>{s.playFilter=b.dataset.ffoFilter;document.querySelectorAll('#ffo-gc-filters [data-ffo-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));drawPlays()}));
  $('ffo-gc-refresh')?.addEventListener('click',async()=>{
-   // Immediate game data first. Don't block plays behind season/health feeds.
-   if(s.enabled&&s.game){s.lastGamePoll=Date.now();s.lastBoxPoll=0;await refreshGame();}
-   else await refreshOverview(true);
-   if(s.player)await refreshPlayer(false);
+  if(s.enabled){
+   lastWeekboardPoll=0;
+   await Promise.allSettled([
+    refreshWeekboard(),
+    s.game?(s.lastGamePoll=Date.now(),s.lastBoxPoll=0,refreshGame()):refreshOverview(true)
+   ]);
+  }else await refreshOverview(true);
+  if(s.player)await refreshPlayer(false);
  });
- document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{drawGames();drawPlayer();drawPlays();refreshOverview().catch(()=>{})});
+ document.querySelector('nav button[data-page="gamecast"]')?.addEventListener('click',()=>{
+  drawGames();drawPlayer();drawPlays();
+  refreshOverview().then(()=>refreshWeekboard()).catch(()=>{});
+ });
  $('ffo-gc-history-check')?.addEventListener('click',()=>void runHistoricalAudit());
   const teamSelect=$('ffo-gc-stat-audit-team');
   if(teamSelect){
@@ -1335,7 +1345,10 @@
   $('ffo-gc-stat-audit-check')?.addEventListener('click',()=>void runStatAudit());
   void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
  drawSignals();drawGames();drawPlayer();drawPlays();drawField();
- if(gameActive())await refreshOverview();
+ if(gameActive()){
+  await refreshOverview();
+  void refreshWeekboard();
+ }
  if(typeof pfo49Selected!=='undefined'&&pfo49Selected&&sectionActive('playerhub'))setPlayer(pfo49Selected);
  function activeRefreshMs(){
     const game=s.games.find(g=>g.id===s.game);
@@ -1350,17 +1363,27 @@
     ticker.textContent=interval===LIVE_PLAY_MS?seconds+'s':seconds+'s';
     ticker.parentElement?.classList.toggle('gc6-refresh-wait',interval>LIVE_PLAY_MS);
    }
-   if(document.visibilityState!=='visible'||!gameActive()||!s.enabled||!s.game||gamePending)return;
-   const now=Date.now(),interval=activeRefreshMs();
+   if(document.visibilityState!=='visible'||!gameActive()||!s.enabled)return;
+   const now=Date.now();
+   const scoreInterval=SCOREBOARD_MS*Math.min(8,2**weekboardFailures);
+   if(!weekboardPending&&now-lastWeekboardPoll>=scoreInterval)void refreshWeekboard();
+   if(!backgroundPlayPending&&now-lastBackgroundDispatch>=SCOREBOARD_MS){
+    const candidate=weekNav.backgroundPlayCandidates(
+     s.games,s.game,backgroundPlayCheckedAt,now,BACKGROUND_PLAY_MIN_MS)[0];
+    if(candidate)void refreshOneBackgroundPlay();
+   }
+   if(!s.game||gamePending)return;
+   const interval=activeRefreshMs();
    if(now-(s.lastGamePoll||0)>=interval){s.lastGamePoll=now;void refreshGame();}
  },500);
  document.addEventListener('visibilitychange',()=>{
-   if(document.visibilityState==='visible'&&gameActive()&&s.enabled&&s.game){
-     s.lastGamePoll=Date.now();void refreshGame();
+   if(document.visibilityState==='visible'&&gameActive()&&s.enabled){
+    lastWeekboardPoll=0;void refreshWeekboard();
+    if(s.game){s.lastGamePoll=Date.now();void refreshGame()}
    }
  });
  setInterval(()=>{if(document.visibilityState==='visible'&&gameActive()&&s.enabled)refreshOverview()},60000);
- window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,setWeek,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,selectedWeek:s.selectedWeek,visibleGames:s.games.length,
+ window.ffoGameCast={selectPlayer:setPlayer,clearPlayer,refresh:refreshOverview,refreshWeekboard,setWeek,getStatus:()=>({enabled:s.enabled,season:s.season,game:s.game,player:s.player?.name||null,latestCheck:s.latestCheck,playCount:s.playCache.length,playSource:s.playSource||null,selectedWeek:s.selectedWeek,visibleGames:s.games.length,
   scheduledToday:s.coverage?.uniqueMatchups??null,expectedToday:s.coverage?.expectedGames??null,
   missingToday:s.coverage?.missing||[],dailySlateVerified:s.coverage?.slateVerified===true,
   lastSuccessfulGamePollAt:lastSuccessfulGamePollAt?new Date(lastSuccessfulGamePollAt).toISOString():null,
@@ -1370,5 +1393,9 @@
   homeScore:s.games.find(g=>g.id===s.game)?.homePoints??null,
   awayScore:s.games.find(g=>g.id===s.game)?.awayPoints??null,
   gameFeedError:s.lastError||null,gamePhase:model.gamePhase(s.games.find(g=>g.id===s.game)?.status),finalObservedAt:finalObservedAt?new Date(finalObservedAt).toISOString():null,pollIntervalMs:activeRefreshMs(),boxPollIntervalMs:LIVE_BOX_MS,
+  scoreboardPollIntervalMs:SCOREBOARD_MS,lastWeekboardPollAt:lastWeekboardPoll?new Date(lastWeekboardPoll).toISOString():null,
+  lastScoreboardSuccessAt:lastWeekboardSuccess?new Date(lastWeekboardSuccess).toISOString():null,
+  weeklyScoreboardError:weekboardError||null,weeklyBoardGameCount:weekboardGameCount,
+  backgroundGamePbpCount:backgroundPlayEvidence.size,
   consecutivePlayFailures,ffoRulesLoaded:!!s.ownedRules,ffoRulesVersion:s.rulesVersion,projection:projection()})};
 })();
