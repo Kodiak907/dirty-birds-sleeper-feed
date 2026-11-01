@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-01T12:48:44.246123+00:00",
+  "generated_at_utc": "2026-11-01T13:47:39.739617+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-01T07:36:43.418188+00:00",
+  "projection_as_of": "2026-11-01T13:26:24.397118+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-01T12:48:36.026010+00:00",
+  "snapshot_utc": "2026-11-01T13:47:29.203808+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -653,7 +653,7 @@
         "Isaiah Likely",
         "C.J. Stroud"
       ],
-      "ppg": 127.1,
+      "ppg": 126.95,
       "starters": [
         {
           "id": "4046",
@@ -667,7 +667,7 @@
           "name": "Bijan Robinson",
           "opponent": "TB",
           "position": "RB",
-          "ppg": 20.38
+          "ppg": 20.23
         },
         {
           "id": "8150",
@@ -681,14 +681,14 @@
           "name": "Zay Flowers",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 15.63
+          "ppg": 15.64
         },
         {
           "id": "8146",
           "name": "Garrett Wilson",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 13.99
+          "ppg": 14.08
         },
         {
           "id": "8210",
@@ -716,7 +716,7 @@
           "name": "Ollie Gordon II",
           "opponent": "NE",
           "position": "RB",
-          "ppg": 12.44
+          "ppg": 12.34
         },
         {
           "id": "13345",
