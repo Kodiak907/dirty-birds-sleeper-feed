@@ -486,18 +486,48 @@
   const eventWeeks=report.playerEventWeeks||[];
   const eventRows=eventWeeks.map(row=>{
    const e=row.evidence,joined=row.sameGameReconciliation;
+   const blockerLabels={
+    missing_fullPlayCoverageVerified:'Whole-game play coverage not certified',
+    missing_statCorrectionsChecked:'Final stat corrections not independently checked',
+    final_player_stat_not_verified:'Player stat not published in weekly MSF log',
+    fifty_plus_stacking_not_adjudicated:'FFL 50+ stacking rule pending',
+    play_count_exceeds_final_player_stat_count:'PBP event count exceeds published final stat',
+    missing_gameFinal:'Final game evidence not verified',
+    missing_finalPlayerBoxScoreVerified:'Final player box-score categories incomplete'
+   };
+   const categoryLabels={
+    source_event_count_equals_stat:'Identified PBP count agrees with published stat',
+    source_events_are_subset_of_stat:'PBP candidates are a subset of published total',
+    player_stat_unpublished:'PBP identified; separate weekly stat not published',
+    source_plays_exceed_stat:'Published counts disagree — needs investigation'
+   };
+   const twoPtRows=(joined?.twoPointCorroboration||[]).map(x=>
+    '<div class="muted" style="font-size:11px;padding:5px 0;border-top:1px solid #294157">'+
+    '<b>Two-point conversion · '+safe(x.publishedResult||'unknown')+'</b> · '+
+    (x.pbpVerifiedSuccessfulPass?'MSF PBP success with verified player IDs':
+     'PBP outcome or identities unverified')+
+    ' · '+safe(x.sourceTier==='two_independent_msf_feeds_agree'?
+      'Independent MSF scoring summary agrees':
+      x.sourceTier==='ambiguous_duplicate_scoring_summary'?
+      'Duplicate scoring summary — needs review':
+      'Scoring-summary corroboration not established')+
+    ' · no fantasy points credited</div>').join('');
    const sameGameLine=joined?'<details style="margin:6px 0;padding:5px 0;border-top:1px solid #315069">'+
     '<summary style="cursor:pointer;font-size:12px">Same-game MSF player cross-check · '+
     safe(joined.sameGameStatMatches)+'/'+safe(joined.matchedCandidatePlayerIds)+' matched IDs · final awards withheld</summary>'+
     '<div class="muted" style="font-size:11px;margin:5px 0">MSF game '+safe(joined.gameId||'unknown')+
     ' · final scoreboard '+safe(joined.finalScoreboardVerified?'verified':'unverified')+
     ' · '+safe(joined.ledger.pendingCount)+' scoring candidates pending. '+
-    'Full-game completeness, stat corrections and 50+ stacking are not certified.</div>'+
+    'Whole-game completeness, final stat corrections and bonus stacking remain verification gates.</div>'+
+    twoPtRows+
     joined.ledger.lineItems.slice(0,10).map(x=>
      '<div class="muted" style="font-size:11px;padding:3px 0;border-top:1px solid #294157">'+
      safe(x.player||x.playerId||'Unresolved player')+' · '+safe(x.category)+
-     ' · same-game MSF stat '+safe(x.statCount===null?'unknown':x.statCount)+
-     ' · '+safe(x.blockers.join(', ').replaceAll('_',' '))+'</div>').join('')+
+     ' · identified PBP plays '+safe(x.sourceObservedCount??'unknown')+
+     ' / same-game MSF stat '+safe(x.statCount===null?'not published':x.statCount)+
+     ' · '+safe(categoryLabels[x.sourceCategoryAgreement]||'Category comparison pending')+
+     ' · hold: '+safe(x.blockers.map(key=>blockerLabels[key]||key.replaceAll('_',' ')).join('; '))+
+     '</div>').join('')+
     (joined.missingOrAmbiguousPlayerIds.length?'<div class="muted">Unmatched MSF player IDs: '+
      safe(joined.missingOrAmbiguousPlayerIds.join(', '))+'</div>':'')+'</details>':'';
    const rows=(e?.events||[]).slice(0,15).map(play=>{
@@ -829,7 +859,8 @@
     row.sameGameReconciliation=sameGame.correlateWeeklyPlayerEvents({
      gameId:match.g.id,teamAbbreviation:team,
      players:weekly?model.playerRows(weekly.payload):[],
-     evidence:row.evidence,boxEvidence:box?.evidence||null,rules:s.ownedRules
+     evidence:row.evidence,boxEvidence:box?.evidence||null,
+     scoringSummary:box?.scoringPlays||null,rules:s.ownedRules
     });
    }
    if(!report.kickEvidence)
