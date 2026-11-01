@@ -167,25 +167,35 @@
     timeZone:'America/Los_Angeles',weekday:'short',hour:'numeric',minute:'2-digit',timeZoneName:'short'
    }).format(new Date(t)):'Start time unverified';
   };
-  const groupMarkup=(title,items)=>items.length?'<div class="muted" style="font-size:11px;margin:8px 0 4px;font-weight:700">'+title+' · '+items.length+'</div>'+
-   '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:6px">'+
+  const localScoreTime=value=>{
+   const stamp=Date.parse(value||'');
+   return Number.isFinite(stamp)?new Intl.DateTimeFormat('en-US',{
+    timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hour12:true
+   }).format(new Date(stamp))+' PT':null;
+  };
+  const groupMarkup=(title,items)=>items.length?
+   '<section class="ffo-gc-week-group" aria-label="'+safe(title)+'">'+
+   '<div class="ffo-gc-week-title"><span>'+safe(title)+'</span><span>'+items.length+' games</span></div>'+
+   '<div class="ffo-gc-week-grid">'+
    items.map(g=>{
     const phase=model.gamePhase(g.status);
-    const flag=phase==='live'||phase==='overtime'?'LIVE · ':
-     phase==='final'?'FINAL · ':'';
+    const label=phase==='live'||phase==='overtime'?'LIVE':
+     phase==='final'?'FINAL':String(g.status||'STATUS UNVERIFIED').toUpperCase();
+    const scoreLine=safe(g.away)+' '+safe(g.awayPoints===null?'—':g.awayPoints)+
+     ' · '+safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home);
+    const scoreTime=localScoreTime(g.scoreCheckedAt);
+    const bg=backgroundPlayEvidence.get(g.id);
     return '<button class="ffo-gc-game '+(s.game===g.id?'active':'')+
-     '" type="button" data-ffo-game="'+safe(g.id)+'" style="min-width:0;max-width:100%;text-align:left">'+
-     '<small>'+safe(flag+g.status)+'</small><strong>'+safe(g.away)+' '+
-     safe(g.awayPoints===null?'—':g.awayPoints)+' · '+
-     safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home)+
-     '</strong><small>'+safe(pacificTime(g.start))+
-     (g.weekSource==='calendar_estimate'?' · Week inferred from date':'')+
-     (g.scoreCheckedAt?' · score checked '+safe(g.scoreCheckedAt):'')+
-     '</small>'+
-     (backgroundPlayEvidence.has(g.id)&&g.id!==s.game?
-       '<small>'+safe(backgroundPlayEvidence.get(g.id).message)+'</small>':'')+
+     '" type="button" data-ffo-game="'+safe(g.id)+'" aria-label="'+safe(g.away+' at '+g.home+', '+label)+'">'+
+     '<small>'+safe(label)+'</small>'+
+     '<strong>'+scoreLine+'</strong>'+
+     '<small>'+safe(pacificTime(g.start))+'</small>'+
+     (scoreTime?'<small class="ffo-gc-score-meta">Score checked '+safe(scoreTime)+'</small>':'')+
+     (g.weekSource==='calendar_estimate'?'<small class="ffo-gc-score-meta">Week inferred</small>':'')+
+     (bg&&g.id!==s.game?'<small class="ffo-gc-score-meta">Other-game plays: '+
+      (bg.count===null?'unavailable':safe(bg.count)+' checked')+'</small>':'')+
      '</button>';
-   }).join('')+'</div>':'';
+   }).join('')+'</div></section>':'';
   el.innerHTML=groupMarkup('Today · Pacific',groups.today)+
    groupMarkup('Earlier this week',groups.earlier)+
    groupMarkup('Upcoming',groups.upcoming)+
