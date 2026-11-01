@@ -775,7 +775,7 @@ const FFO_SEASON=/^(latest|current|20\d{2}-(regular|preseason|playoff)|20\d{2}-2
 const FFO_GAME=/^[a-zA-Z0-9_-]{1,75}$/;
 const FFO_NFL_TEAMS=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WSH'.split(' '));
 function ffoTeamFilter(params){const raw=params.get('team');if(raw===null)return '';const team=raw.toUpperCase();if(!FFO_NFL_TEAMS.has(team))throw Error('invalid_team_filter');return '?team='+encodeURIComponent(team)}
-const FFO_ROUTE=new Set(['health','season','schedule','stats','gamelogs','teamgamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
+const FFO_ROUTE=new Set(['health','season','schedule','weekboard','stats','gamelogs','teamgamelogs','injuries','updates','plays','boxscore','lineup','espnplays','portraits']);
 function ffoReply(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}})}
 function ffoBuildPath(route,params){
  if(!FFO_ROUTE.has(route))throw Error('unsupported_feed');
@@ -784,6 +784,11 @@ function ffoBuildPath(route,params){
  if(route==='injuries')return '/injuries.json';
  if(route==='health')throw Error('health_is_local');
  if(route==='schedule')return `/${season}/games.json`;
+ if(route==='weekboard'){
+  const week=Number(params.get('week'));
+  if(!Number.isInteger(week)||week<1||week>18)throw Error('week_required_1_to_18');
+  return `/${season}/week/${week}/games.json`;
+ }
  if(route==='stats')return `/${season}/player_stats_totals.json`+ffoTeamFilter(params);
  if(route==='updates')return `/${season}/latest_updates.json`;
  if(route==='gamelogs'||route==='teamgamelogs'){
@@ -955,6 +960,18 @@ async function ffoGamecastHandle(req,env,{verifyAccess,transport=fetch,now=()=>n
    suggestion:'Use a validated team filter for large season/statistics feeds'},502);
  try{payload=JSON.parse(str)}catch{return ffoReply({...meta,error:'provider_json_invalid'},502)}
  if(!payload||typeof payload!=='object')return ffoReply({...meta,error:'provider_payload_schema_invalid'},502);
+ // MSF weekly games feed: one request serves the whole scoreboard every 5s.
+ // Never fan out to 12 game-boxscore endpoints on each tick.
+ if(route==='weekboard'){
+  const rows=payload.games||payload.gameSchedule||payload.schedule?.games;
+  if(!Array.isArray(rows))return ffoReply({...meta,error:'weekly_scoreboard_schema_unverified'},502);
+  const compact=rows.map(item=>({schedule:item.schedule||item.game||{},
+   score:item.score||item.scoring||null})).filter(g=>
+    g.schedule&&(g.schedule.id!=null||g.schedule.gameId!=null));
+  return ffoReply({...meta,available:true,coverage:'provider_weekly_games',
+   provider_updated_at:payload.lastUpdatedOn||payload.lastUpdated||null,
+   observed_games:compact.length,data:{games:compact}});
+ }
  return ffoReply({...meta,available:true,unverified_schema:true,
   provider_updated_at:payload.lastUpdatedOn||payload.gameboxscore?.lastUpdatedOn||payload.gameplaybyplay?.lastUpdatedOn||payload.gamePlayByPlay?.lastUpdatedOn||null,
   data:payload});
