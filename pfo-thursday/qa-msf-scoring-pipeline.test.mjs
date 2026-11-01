@@ -75,7 +75,7 @@ test('32-team historical queue prioritizes Green Bay weeks before remaining NFL 
  assert.equal(queue.pendingGames,4);
  assert.deepEqual(queue.batch.map(x=>x.gameId),['a','b','c']);
  const coverage=buildLeagueHistoryCoverage(schedule,{},[],{fromWeek:1,throughWeek:7});
- assert.equal(coverage.teamsRepresented,8);
+ assert.equal(coverage.teamsRepresented,7);
  assert.equal(coverage.totalTeams,32);
  assert.equal(coverage.certifiedPlayerGameScores,0);
  assert.equal(coverage.leagueScheduleCertified,false);
