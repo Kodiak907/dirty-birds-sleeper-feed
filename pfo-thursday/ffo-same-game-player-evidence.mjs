@@ -31,9 +31,9 @@ export function corroborateTwoPointSummary(evidence,summary,gameId,teamAbbreviat
   const choices=summary.events.filter(sc=>{
    const desc=String(sc.description||'');
    if(sc.scoringSide!==target||sc.scoringPoints!==2||
-    !/\\b(?:two[\\s-]?point|2[\\s-]?point|2pt)\\b/i.test(desc)||
-    !/\\b(?:succeeds?|successful|converted|is good|was good)\\b/i.test(desc)||
-    /\\b(?:no[\\s-]?play|nullified|disallowed|fails?|failed|incomplete|intercepted|unsuccessful)\\b/i.test(desc))return false;
+    !/\b(?:two[\s-]?point|2[\s-]?point|2pt)\b/i.test(desc)||
+    !/\b(?:succeeds?|successful|converted|is good|was good)\b/i.test(desc)||
+    /\b(?:no[\s-]?play|nullified|disallowed|fails?|failed|incomplete|intercepted|unsuccessful)\b/i.test(desc))return false;
    if(e.period!==null&&sc.period!==e.period)return false;
    return tokenMatch(desc,passes[0].sourceToken)&&tokenMatch(desc,receivers[0].sourceToken);
   });
