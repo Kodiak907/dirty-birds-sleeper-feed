@@ -65,7 +65,7 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
        playedStatus:g.id==='sun1'?'LIVE':g.status,startTime:g.start},
       score:g.id==='sun1'?{homeScoreTotal:7,awayScoreTotal:3}:
         g.id==='sun0'?{homeScoreTotal:10,awayScoreTotal:3}:null
-     }))}}}});
+     }))}}});
    }
    if(path==='/api/ffo/gamecast/portraits')return route.fulfill({json:{available:true,players:[]}});
    if(path==='/api/ffo/gamecast/plays')return route.fulfill({json:{available:true,coverage:'full',
