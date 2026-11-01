@@ -126,3 +126,14 @@ test('Duplicate independently published scoring summaries cause ambiguity, not d
  assert.equal(r.twoPointCorroboration[0].sourceTier,'ambiguous_duplicate_scoring_summary');
  assert.equal(r.ledger.readyCount,0);
 });
+
+test('GameCast exposes PBP/stat agreement and 2PT cross-feed status without changing scores',()=>{
+ const file=readFileSync(new URL('./ffo-gamecast.js',import.meta.url),'utf8');
+ assert.match(file,/scoringSummary:box\?\.scoringPlays\|\|null/);
+ assert.match(file,/x\.sourceObservedCount/);
+ assert.match(file,/categoryLabels\[x\.sourceCategoryAgreement\]/);
+ assert.match(file,/joined\?\.twoPointCorroboration/);
+ assert.match(file,/Two-point conversion/);
+ assert.match(file,/no fantasy points credited/);
+ assert.doesNotMatch(file,/sameGameReconciliation\.certifiedBonusPoints\s*\+\s*/);
+});
