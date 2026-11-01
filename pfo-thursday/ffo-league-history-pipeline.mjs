@@ -94,7 +94,7 @@ export function nextLeagueHistoryBatch(schedule=[],snapshots={},{
  // Such games cannot be certified until MSF independently verifies the week.
  const pending=summary.games.filter(g=>g.final&&
   (g.sourceWeekVerified||allowEstimatedWeekForSourceDiscovery)&&!g.fullFantasyScoreCertified&&
-  (!skipPreviouslyInspected||!snapshots[g.id]?.checkedAt));
+  (!skipPreviouslyInspected||!snapshots[g.id]?.checkedAt||snapshots[g.id]?.sourceFailure===true));
  const priority=canon(priorityTeam);
  const ordered=pending.sort((a,b)=>{
   const av=a.home===priority||a.away===priority?0:1;
