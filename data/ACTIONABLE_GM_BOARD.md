@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-01T14:38:34.785706+00:00
+Generated: 2026-11-01T15:36:41.047320+00:00
 
 **Realistic research, not automatic offers or claims.**
 
