@@ -120,7 +120,18 @@
   }
   const previous=new Map(s.games.map(g=>[g.id,g]));
   s.games=weekNav.scheduleForWeek(s.archiveGames,s.selectedWeek,seasonYear)
-   .map(g=>previous.has(g.id)?model.mergeScheduledGame(previous.get(g.id),g):g);
+   .map(g=>{
+    const prior=previous.get(g.id);
+    if(!prior)return g;
+    const merged=model.mergeScheduledGame(prior,g);
+    // When the MSF per-game boxscore is newer than the slower full-season
+    // schedule snapshot, NEVER roll the displayed score backwards.
+    // An incoming corrected boxscore can still update it next poll.
+    return prior.scoreSource==='MySportsFeeds game boxscore'?
+     {...merged,homePoints:prior.homePoints??merged.homePoints,
+      awayPoints:prior.awayPoints??merged.awayPoints,
+      scoreSource:prior.scoreSource}:merged;
+   });
   const groups=weekNav.groupWeekGames(s.games);
   const coverage=weekNav.todayCoverage(s.archiveGames,new Date(),seasonYear);
   s.coverage=coverage;
