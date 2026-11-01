@@ -14,21 +14,22 @@ export function corroborateTwoPointSummary(evidence,summary,gameId,teamAbbreviat
  const target=team(teamAbbreviation),game=id(gameId);
  const summaryReady=!!(game&&summary?.gameId&&id(summary.gameId)===game&&
    summary.finalScoreVerified===true&&Array.isArray(summary.events));
- const rows=Array.isArray(evidence?.events)?evidence.events.filter(e=>e.eventType==='two_point_attempt'):[];
- return rows.map((e,index)=>{
+ const rows=Array.isArray(evidence?.events)?evidence.events.map((e,index)=>({e,index}))
+  .filter(x=>x.e.eventType==='two_point_attempt'):[];
+ const matches=rows.map(({e,index})=>{
   const actors=(e.matched||[]).filter(m=>m.verifiedIdentity&&m.providerId&&m.sourceToken);
   const passes=actors.filter(m=>m.category==='pass_2pt');
   const receivers=actors.filter(m=>m.category==='rec_2pt');
   const passConfirmed=e.publishedResult==='reported_good'&&e.teamPossessionVerified===true&&
    passes.length===1&&receivers.length===1;
-  const output={eventIndex:index,sourceId:e.sourceId??null,period:e.period??null,
+  const output={eventIndex:index,sourceCandidateIndex:index,sourceId:e.sourceId??null,period:e.period??null,
    playerIds:actors.map(m=>String(m.providerId)),publishedResult:e.publishedResult,
    pbpVerifiedSuccessfulPass:passConfirmed,scoringSummaryMatchCount:0,
    sourceTier:passConfirmed?'pbp_success_player_ids_verified':'pbp_outcome_or_identity_unverified',
    finalTwoPointPointsCertified:false};
   if(!passConfirmed||!summaryReady)return output;
   const tokenMatch=(description,token)=>description.toLowerCase().includes(String(token).toLowerCase());
-  const choices=summary.events.filter(sc=>{
+  const choices=summary.events.map((sc,summaryIndex)=>({sc,summaryIndex})).filter(({sc})=>{
    const desc=String(sc.description||'');
    if(sc.scoringSide!==target||sc.scoringPoints!==2||
     !/\b(?:two[\s-]?point|2[\s-]?point|2pt)\b/i.test(desc)||
@@ -38,10 +39,26 @@ export function corroborateTwoPointSummary(evidence,summary,gameId,teamAbbreviat
    return tokenMatch(desc,passes[0].sourceToken)&&tokenMatch(desc,receivers[0].sourceToken);
   });
   output.scoringSummaryMatchCount=choices.length;
+  output.matchedScoringSummaryIndex=choices.length===1?choices[0].summaryIndex:null;
   output.sourceTier=choices.length===1?'two_independent_msf_feeds_agree':
    choices.length>1?'ambiguous_duplicate_scoring_summary':'pbp_success_summary_not_confirmed';
   return output;
  });
+ // A single boxscore scoring-play row cannot validate two separate PBP
+ // conversions. If source PBP duplicated a conversion without IDs, reject
+ // ALL candidates rather than applying the same summary twice.
+ const claims=new Map();
+ for(const x of matches){
+  if(x.sourceTier!=='two_independent_msf_feeds_agree')continue;
+  const key=String(x.matchedScoringSummaryIndex);
+  claims.set(key,(claims.get(key)||0)+1);
+ }
+ for(const x of matches){
+  if(x.sourceTier==='two_independent_msf_feeds_agree'&&
+   claims.get(String(x.matchedScoringSummaryIndex))>1)
+   x.sourceTier='ambiguous_duplicate_pbp_candidates';
+ }
+ return matches;
 }
 
 /** Join by immutable MSF game ID + MSF player ID, not name or Sleeper ID. */
