@@ -7,7 +7,7 @@ const games=[
  {id:'gb2',week:2,status:'COMPLETED',home:'MIN',away:'GB',start:'2026-09-20T17:00:00Z'},
  {id:'ny3',week:3,status:'FINAL',home:'NYJ',away:'BUF',start:'2026-09-27T17:00:00Z'}
 ];
-function setup(){
+function setup(storage=null){
  const ui={};
  const root={getElementById(id){
   if(!ui[id])ui[id]={id,innerHTML:'',textContent:'',disabled:false,handlers:{},
@@ -29,7 +29,7 @@ function setup(){
    game:{id:payload.gameId},name:'Verified Actor'}]}
  };
  return {root,requests,ui,api:installScoringResearch({
-  root,feed,model,season:'2026-regular',getSchedule:()=>games
+  root,feed,model,season:'2026-regular',getSchedule:()=>games,storage
  })};
 }
 test('PFO read-only scoring research shows MSF source coverage, not certified points',()=>{
@@ -69,4 +69,41 @@ test('Backtest cannot produce projections from mere MSF source fetches or game-s
 test('Scoring controller has no write path and no Sleeper score dependence',()=>{
  const text=readFileSync(new URL('./ffo-scoring-research-controller.mjs',import.meta.url),'utf8');
  assert.doesNotMatch(text,/fetch\(|api\.sleeper|writeScore|updateCommissioner|productionProjectionEligible:true/);
+});
+
+test('Historical MSF evidence checkpoints survive reload without storing PBP content or credentials',async()=>{
+ const values=new Map(),store={
+  getItem:k=>values.get(k)??null,
+  setItem:(k,v)=>{values.set(k,v)}
+ };
+ const first=setup(store);
+ await first.api.runNextBatch();
+ assert.equal(first.api.getInspectedGames(),2);
+ assert.equal(values.size,1);
+ const persisted=[...values.values()][0];
+ assert.match(persisted,/"schema":1/);
+ assert.doesNotMatch(persisted,/MySportsFeeds.*token|sourcePlayRows|playerStatsTotals|passYards|api_key/i);
+ const second=setup(store);
+ assert.equal(second.api.getInspectedGames(),2);
+ assert.equal(second.api.getSourceCheck('gb1')?.checkedAt!=null,true);
+ assert.equal(second.api.getProductionProjection('18607',8),null);
+ await second.api.runNextBatch();
+ assert.equal(second.api.getInspectedGames(),3);
+ assert.deepEqual(second.requests.filter(r=>r.name==='plays').map(r=>r.game_id),['ny3']);
+});
+test('Stale and malicious historical verification cache cannot certify scores',()=>{
+ const values=new Map(),store={
+  getItem:()=>JSON.stringify({schema:1,entries:{
+   '../../outside':{checkedAt:new Date().toISOString(),finalPlayerScoreRecomputed:true},
+   gb1:{checkedAt:'2020-01-01T00:00:00Z',finalPlayerScoreRecomputed:true},
+   gb2:{checkedAt:new Date().toISOString(),finalPlayerScoreRecomputed:true,credential:'secret',
+    playerGameLogsVerified:true}
+  }}),
+  setItem:(k,v)=>values.set(k,v)
+ };
+ const {api}=setup(store);
+ assert.equal(api.getInspectedGames(),1);
+ assert.equal(api.getSourceCheck('gb2').credential,undefined);
+ assert.equal(api.getReadiness().certifiedPlayerGameScores,0);
+ assert.equal(api.getCertifiedPlayerScore('18607','gb2'),null);
 });
