@@ -30,9 +30,13 @@
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null,historyAuditStarted=false,statAuditRunning=false;
+ let weekboardPending=null,backgroundPlayPending=null,lastWeekboardPoll=0,lastWeekboardSuccess=0;
+ let weekboardFailures=0,weekboardError='',weekboardProviderUpdatedAt=null,weekboardGameCount=0;
+ const backgroundPlayCheckedAt={},backgroundPlayEvidence=new Map();
+ const SCOREBOARD_MS=5000,BACKGROUND_PLAY_MIN_MS=60000;
  let lastStadiumPlayId=null,lastStadiumGameId=null,priorVerifiedBallX=null;
  let lastSuccessfulGamePollAt=0,lastNewPlayAt=0,lastPlayCount=0,lastScorePollAt=0,lastProviderUpdateAt=0,finalObservedAt=0;
- const LIVE_PLAY_MS=5000,LIVE_BOX_MS=20000,IDLE_PLAY_MS=120000;
+ const LIVE_PLAY_MS=5000,LIVE_BOX_MS=5000,IDLE_PLAY_MS=120000;
  let consecutivePlayFailures=0;
  const sectionActive=id=>!!document.querySelector('nav button[data-page="'+id+'"].active');
  const gameActive=()=>sectionActive('gamecast');
@@ -40,6 +44,7 @@
    if(name==='health')return 60000;
     if(name==='portraits')return 3600000;
    if(name==='schedule')return 45000;
+    if(name==='weekboard')return 0;
    if(name==='injuries')return 240000;
    if(name==='updates')return 60000;
    // Stats and historical logs are stored only as normalized rows, never duplicated here.
@@ -127,10 +132,11 @@
     // When the MSF per-game boxscore is newer than the slower full-season
     // schedule snapshot, NEVER roll the displayed score backwards.
     // An incoming corrected boxscore can still update it next poll.
-    return prior.scoreSource==='MySportsFeeds game boxscore'?
+    return (prior.scoreSource==='MySportsFeeds game boxscore'||prior.scoreSource==='MySportsFeeds weekly games')?
      {...merged,homePoints:prior.homePoints??merged.homePoints,
       awayPoints:prior.awayPoints??merged.awayPoints,
-      scoreSource:prior.scoreSource}:merged;
+      scoreSource:prior.scoreSource,scoreProviderUpdatedAt:prior.scoreProviderUpdatedAt||null,
+      scoreCheckedAt:prior.scoreCheckedAt||null}:merged;
    });
   const groups=weekNav.groupWeekGames(s.games);
   const coverage=weekNav.todayCoverage(s.archiveGames,new Date(),seasonYear);
@@ -140,9 +146,15 @@
    ' · Today '+coverage.uniqueMatchups+'/'+coverage.expectedGames+' source-scheduled matchups'+
    (coverage.missing.length?' · '+coverage.missing.length+' missing: '+coverage.missing.join(', '):'')+
    (coverage.extra.length?' · '+coverage.extra.length+' unrecognized matchups':''):'';
+  const age=lastWeekboardSuccess?Math.floor((Date.now()-lastWeekboardSuccess)/1000):null;
+  const scoreStatus=weekboardError?' · scoreboard error: '+weekboardError:
+   lastWeekboardSuccess?' · scoreboard checked '+age+'s ago'+
+    (weekboardProviderUpdatedAt?' · provider updated '+weekboardProviderUpdatedAt:' · provider update time unknown')+
+    (weekboardGameCount<s.games.length?' · partial scoreboard '+weekboardGameCount+'/'+s.games.length:''):
+   ' · scoreboard feed not checked';
   if(statusEl)statusEl.textContent='Week '+s.selectedWeek+' · '+s.games.length+
-   ' MSF games · '+live+' reported LIVE'+reference+
-   ' · Schedule/scoreboard auto-refresh every 60s; selected-game PBP polls every 5s when live. Provider delay not certified.';
+   ' MSF games · '+live+' reported LIVE'+reference+scoreStatus+
+   ' · Score poll 5s; selected PBP 5s; other live PBP about 60s. Actual provider freshness not guaranteed.';
   if(!s.games.length){
    el.innerHTML='<p class="ffo-gc-note">Week '+safe(s.selectedWeek)+
     ' has no schedule entries in the current authenticated MSF response. Unknown, not zero games.</p>';
@@ -167,7 +179,11 @@
      safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home)+
      '</strong><small>'+safe(pacificTime(g.start))+
      (g.weekSource==='calendar_estimate'?' · Week inferred from date':'')+
-     '</small></button>';
+     (g.scoreCheckedAt?' · score checked '+safe(g.scoreCheckedAt):'')+
+     '</small>'+
+     (backgroundPlayEvidence.has(g.id)&&g.id!==s.game?
+       '<small>'+safe(backgroundPlayEvidence.get(g.id).message)+'</small>':'')+
+     '</button>';
    }).join('')+'</div>':'';
   el.innerHTML=groupMarkup('Today · Pacific',groups.today)+
    groupMarkup('Earlier this week',groups.earlier)+
@@ -1146,6 +1162,10 @@
       const idx=s.games.findIndex(g=>g.id===s.game);
       if(idx>=0){
        const previous=s.games[idx],enriched=model.gameScoreUpdate(previous,bs.value);
+       if(enriched.scoreSource==='MySportsFeeds game boxscore'){
+        enriched.scoreProviderUpdatedAt=bs.value.provider_updated_at||null;
+        enriched.scoreCheckedAt=bs.value.checked_at||new Date().toISOString();
+       }
        s.games[idx]=enriched;
        if(model.gamePhase(enriched.status)==='final'&&!finalObservedAt)finalObservedAt=Date.now();
        if(enriched.scoreSource)lastScorePollAt=Date.now();
