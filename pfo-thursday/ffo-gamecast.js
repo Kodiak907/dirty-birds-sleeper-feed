@@ -8,6 +8,7 @@
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
  const weekNav=await import('/ffo-gamecast-weeks.mjs');
+ const researchController=await import('/ffo-scoring-research-controller.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -30,6 +31,7 @@
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null,historyAuditStarted=false,statAuditRunning=false;
+ let scoringResearch=null;
  let weekboardPending=null,backgroundPlayPending=null,lastWeekboardPoll=0,lastWeekboardSuccess=0,lastBackgroundDispatch=0;
  let weekboardFailures=0,weekboardError='',weekboardProviderUpdatedAt=null,weekboardGameCount=0;
  const backgroundPlayCheckedAt={},backgroundPlayEvidence=new Map();
@@ -1319,7 +1321,7 @@
     if(!Number.isInteger(s.selectedWeek)||s.selectedWeek<1||s.selectedWeek>18)
      s.selectedWeek=weekNav.currentCalendarWeek(new Date(),Number(s.season.slice(0,4)))||Number(window.dbNflWeek)||1;
     status('MySportsFeeds full-season schedule · '+s.latestCheck+' · scores from MSF, latency not certified.');
-    drawGames();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
+    drawGames();scoringResearch?.render();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
     if(s.game&&!s.games.some(x=>x.id===s.game)){
      s.game=null;s.playCache=[];s.liveBox=null;s.playSource=null;s.activePlay=-1;drawPlays();
     }
@@ -1386,7 +1388,11 @@
   }
   $('ffo-gc-stat-audit-check')?.addEventListener('click',()=>void runStatAudit());
   void loadFfoRules().then(()=>{drawPlayer()}).catch(err=>{s.rulesError=String(err.message||err);drawPlayer();status('FFO scoring rules unavailable: '+s.rulesError)});
- drawSignals();drawGames();drawPlayer();drawPlays();drawField();
+ scoringResearch=researchController.installScoringResearch({
+  getSchedule:()=>s.archiveGames,feed,model,season:s.season,root:document
+ });
+ window.ffoVerifiedScoringResearch=scoringResearch;
+ drawSignals();drawGames();scoringResearch.render();drawPlayer();drawPlays();drawField();
  if(gameActive()){
   await refreshOverview();
   void refreshWeekboard();
