@@ -42,7 +42,7 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
    }
    window.Date=MockDate;
   });
-  let refreshCount=0;
+  let refreshCount=0,weekboardCalls=0;
   await page.route('https://pfo.test/**',async route=>{
    const path=new URL(route.request().url()).pathname;
    if(path==='/')return route.fulfill({contentType:'text/html',body:html});
@@ -56,6 +56,16 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
    if(path==='/api/ffo/gamecast/schedule'){
     refreshCount++;
     return route.fulfill({json:{available:true,checked_at:'2026-11-01T18:00:00Z',data:{games:games.map(browserGame)}}});
+   }
+   if(path==='/api/ffo/gamecast/weekboard'){
+    weekboardCalls++;
+    return route.fulfill({json:{available:true,checked_at:'2026-11-01T18:00:05Z',
+     provider_updated_at:'2026-11-01T18:00:05Z',data:{games:games.filter(g=>g.week===8||g.id.startsWith('sun')).map(g=>({
+      schedule:{id:g.id,week:8,homeTeam:{abbreviation:g.home},awayTeam:{abbreviation:g.away},
+       playedStatus:g.id==='sun1'?'LIVE':g.status,startTime:g.start},
+      score:g.id==='sun1'?{homeScoreTotal:7,awayScoreTotal:3}:
+        g.id==='sun0'?{homeScoreTotal:10,awayScoreTotal:3}:null
+     }))}}}});
    }
    if(path==='/api/ffo/gamecast/portraits')return route.fulfill({json:{available:true,players:[]}});
    if(path==='/api/ffo/gamecast/plays')return route.fulfill({json:{available:true,coverage:'full',
@@ -78,6 +88,10 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   assert.equal(await page.locator('#ffo-gc-week').inputValue(),'8');
   const info=await page.evaluate(()=>window.ffoGameCast.getStatus());
   assert.equal(info.dailySlateVerified,true);
+  await page.evaluate(()=>window.ffoGameCast.refreshWeekboard());
+  assert.ok(weekboardCalls>=1);
+  assert.equal((await page.evaluate(()=>window.ffoGameCast.getStatus())).scoreboardPollIntervalMs,5000);
+  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/TEN 3 · 7 CIN/);
   await page.locator('#ffo-gc-week').selectOption('9');
   assert.equal(await page.locator('#ffo-gc-games button[data-ffo-game]').count(),1);
   await page.locator('#ffo-gc-week-today').click();
@@ -86,6 +100,10 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   await page.locator('[data-ffo-game="sun0"]').click();
   await page.waitForFunction(()=>window.ffoGameCast.getStatus().playCount===1);
   assert.equal((await page.evaluate(()=>window.ffoGameCast.getStatus())).game,'sun0');
+  await page.locator('nav button[data-page="gamecast"]').evaluate(e=>e.classList.add('active'));
+  await page.waitForFunction(()=>window.ffoGameCast.getStatus().backgroundGamePbpCount>=1,
+   {timeout:10000});
+  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/Other-game MSF PBP/);
   assert.equal(errors.length,0,errors.join('; '));
   assert.ok(refreshCount>=1);
   const viewport=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,width:window.innerWidth}));
