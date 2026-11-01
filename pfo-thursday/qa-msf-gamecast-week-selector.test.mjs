@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {calendarWeek,currentCalendarWeek,gameWeek,scheduleForWeek,groupWeekGames,todayCoverage,preferredGame} from './ffo-gamecast-weeks.mjs';
+import {calendarWeek,currentCalendarWeek,gameWeek,scheduleForWeek,groupWeekGames,todayCoverage,preferredGame,mergeVerifiedWeekScore,backgroundPlayCandidates} from './ffo-gamecast-weeks.mjs';
 
 const early=[
  ['BAL','BUF'],['TEN','CIN'],['ARI','DAL'],['MIN','DET'],
@@ -67,4 +67,39 @@ test('Invalid provider week falls back to calendar and never certifies that week
  assert.equal(r.week,8);
  assert.equal(r.source,'calendar_estimate');
  assert.equal(gameWeek({start:null}).week,null);
+});
+
+test('Five-second weekly scoreboard requires the exact game ID and both team identities',()=>{
+ const previous={id:'123',home:'GB',away:'CHI',homePoints:3,awayPoints:7,status:'LIVE',
+  scoreSource:'MySportsFeeds game boxscore',scoreProviderUpdatedAt:'2026-11-01T18:00:00Z'};
+ const good={...previous,homePoints:10,awayPoints:7,scoreSource:null};
+ const args={providerUpdatedAt:'2026-11-01T18:00:05Z',checkedAt:'2026-11-01T18:00:06Z'};
+ const ok=mergeVerifiedWeekScore(previous,good,args);
+ assert.equal(ok.accepted,true);
+ assert.equal(ok.game.homePoints,10);
+ assert.equal(ok.game.scoreProviderUpdatedAt,args.providerUpdatedAt);
+ assert.equal(ok.game.scoreSource,'MySportsFeeds weekly games');
+ for(const wrong of [{...good,id:'999'}, {...good,home:'DET'}, {...good,away:'GB'}])
+  assert.equal(mergeVerifiedWeekScore(previous,wrong,args).accepted,false);
+});
+test('Preserve latest provider source, allow genuine score corrections including lower totals',()=>{
+ const old={id:'123',home:'GB',away:'CHI',homePoints:14,awayPoints:9,status:'LIVE',
+  scoreProviderUpdatedAt:'2026-11-01T18:00:20Z'};
+ const incoming={...old,homePoints:7,awayPoints:9};
+ assert.equal(mergeVerifiedWeekScore(old,incoming,{providerUpdatedAt:'2026-11-01T18:00:10Z'}).reason,'older_provider_update');
+ const corrected=mergeVerifiedWeekScore(old,incoming,{providerUpdatedAt:'2026-11-01T18:00:25Z'});
+ assert.equal(corrected.accepted,true);
+ assert.equal(corrected.game.homePoints,7);
+ const missing=mergeVerifiedWeekScore(old,{...incoming,awayPoints:null},{providerUpdatedAt:'2026-11-01T18:00:30Z'});
+ assert.equal(missing.accepted,false);
+ assert.equal(missing.game.awayPoints,9);
+ assert.equal(mergeVerifiedWeekScore({...old,status:'COMPLETED'},incoming,{providerUpdatedAt:'2026-11-01T18:01:00Z'}).reason,'final_status_downgrade');
+});
+test('Other live games rotate at least 60s apart, with selected and final games excluded',()=>{
+ const games=[{id:'a',status:'LIVE'},{id:'b',status:'LIVE'}, {id:'c',status:'FINAL'},
+  {id:'d',status:'UNPLAYED'},{id:'e',status:'HALFTIME'}];
+ const now=100000;
+ const choices=backgroundPlayCandidates(games,'a',{b:now-59000,e:now-61000},now,60000);
+ assert.deepEqual(choices.map(g=>g.id),['e']);
+ assert.deepEqual(backgroundPlayCandidates(games,'a',{b:now-61000,e:now-61000},now,60000).map(g=>g.id),['b','e']);
 });
