@@ -104,7 +104,7 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   await page.locator('nav button[data-page="gamecast"]').evaluate(e=>e.classList.add('active'));
   await page.waitForFunction(()=>window.ffoGameCast.getStatus().backgroundGamePbpCount>=1,
    {timeout:10000});
-  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/Other-game plays/);
+  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/1 plays checked/);
   assert.equal(errors.length,0,errors.join('; '));
   assert.ok(refreshCount>=1);
   const viewport=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,width:window.innerWidth}));
