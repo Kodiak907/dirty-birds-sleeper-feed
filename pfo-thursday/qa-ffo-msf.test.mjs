@@ -203,7 +203,9 @@ test('Live and OT remain refresh-eligible, historical scan samples Weeks 1–6',
  assert.equal(gamePhase('OVERTIME'),'overtime');
  assert.equal(gamePhase('COMPLETED'),'final');
  assert.match(core,/for\(let week=1;week<=6;week\+\+\)/);
- assert.match(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/);
+ assert.match(core,/\$\('ffo-gc-history-check'\)\?\.addEventListener\('click',\(\)=>void runHistoricalAudit\(\)\)/);
+ assert.doesNotMatch(core,/historyAuditStarted=true;void runHistoricalAudit\(\)/,
+  'Do not launch six historical MSF audits automatically during live NFL game windows');
  assert.match(core,/full-play completeness and fantasy scoring are separate verification milestones/i);
 });
 
