@@ -173,33 +173,45 @@
     timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit',hour12:true
    }).format(new Date(stamp))+' PT':null;
   };
-  const groupMarkup=(title,items)=>items.length?
-   '<section class="ffo-gc-week-group" aria-label="'+safe(title)+'">'+
-   '<div class="ffo-gc-week-title"><span>'+safe(title)+'</span><span>'+items.length+' games</span></div>'+
-   '<div class="ffo-gc-week-grid">'+
-   items.map(g=>{
-    const phase=model.gamePhase(g.status);
-    const label=phase==='live'||phase==='overtime'?'LIVE':
-     phase==='final'?'FINAL':String(g.status||'STATUS UNVERIFIED').toUpperCase();
-    const scoreLine=safe(g.away)+' '+safe(g.awayPoints===null?'—':g.awayPoints)+
-     ' · '+safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home);
-    const scoreTime=localScoreTime(g.scoreCheckedAt);
-    const bg=backgroundPlayEvidence.get(g.id);
-    return '<button class="ffo-gc-game '+(s.game===g.id?'active':'')+
-     '" type="button" data-ffo-game="'+safe(g.id)+'" aria-label="'+safe(g.away+' at '+g.home+', '+label)+'">'+
-     '<small>'+safe(label)+'</small>'+
-     '<strong>'+scoreLine+'</strong>'+
-     '<small>'+safe(pacificTime(g.start))+'</small>'+
-     (scoreTime?'<small class="ffo-gc-score-meta">Score checked '+safe(scoreTime)+'</small>':'')+
-     (g.weekSource==='calendar_estimate'?'<small class="ffo-gc-score-meta">Week inferred</small>':'')+
-     (bg&&g.id!==s.game?'<small class="ffo-gc-score-meta">Other-game plays: '+
-      (bg.count===null?'unavailable':safe(bg.count)+' checked')+'</small>':'')+
-     '</button>';
-   }).join('')+'</div></section>':'';
-  el.innerHTML=groupMarkup('Today · Pacific',groups.today)+
-   groupMarkup('Earlier this week',groups.earlier)+
-   groupMarkup('Upcoming',groups.upcoming)+
-   groupMarkup('Date unverified',groups.unknown);
+  // Coach's compact stat-rail interaction: ONE horizontally swipable
+  // carousel for all games. Never spread day groups into flex columns.
+  // Preserve the user's swipe position during five-second score updates.
+  const oldRail=el.querySelector('.ffo-gc-game-rail');
+  const sameWeek=el.dataset.railWeek===String(s.selectedWeek);
+  const priorScroll=sameWeek&&oldRail?oldRail.scrollLeft:0;
+  const ordered=[
+   ...groups.today.map(g=>({g,day:'Today'})),
+   ...groups.earlier.map(g=>({g,day:'Earlier'})),
+   ...groups.upcoming.map(g=>({g,day:'Upcoming'})),
+   ...groups.unknown.map(g=>({g,day:'Date unknown'}))
+  ];
+  const cards=ordered.map(({g,day})=>{
+   const phase=model.gamePhase(g.status);
+   const label=phase==='live'||phase==='overtime'?'LIVE':
+    phase==='final'?'FINAL':String(g.status||'STATUS UNKNOWN').toUpperCase();
+   const scoreLine=safe(g.away)+' '+safe(g.awayPoints===null?'—':g.awayPoints)+
+    ' · '+safe(g.homePoints===null?'—':g.homePoints)+' '+safe(g.home);
+   const scoreTime=localScoreTime(g.scoreCheckedAt);
+   const bg=backgroundPlayEvidence.get(g.id);
+   return '<button class="ffo-gc-game '+(s.game===g.id?'active':'')+
+    '" type="button" data-ffo-game="'+safe(g.id)+'" aria-label="'+
+    safe(g.away+' at '+g.home+', '+label)+'">'+
+    '<span class="ffo-gc-card-head"><span class="ffo-gc-card-day">'+safe(day)+'</span>'+
+    '<span class="ffo-gc-card-state">'+safe(label)+'</span></span>'+
+    '<strong>'+scoreLine+'</strong>'+
+    '<small>'+safe(pacificTime(g.start))+'</small>'+
+    (scoreTime?'<small class="ffo-gc-score-meta">Checked '+safe(scoreTime)+'</small>':'')+
+    (bg&&g.id!==s.game?'<small class="ffo-gc-score-meta">'+
+     (bg.count===null?'Plays unavailable':safe(bg.count)+' plays checked')+'</small>':'')+
+    '</button>';
+  }).join('');
+  el.innerHTML='<div class="ffo-gc-rail-hint"><span>Week '+safe(s.selectedWeek)+
+   ' · '+ordered.length+' games</span><span>Swipe games ⇄</span></div>'+
+   '<div class="ffo-gc-game-rail" role="region" aria-label="Week '+safe(s.selectedWeek)+
+   ' NFL games, swipe horizontally" tabindex="0">'+cards+'</div>';
+  el.dataset.railWeek=String(s.selectedWeek);
+  const rail=el.querySelector('.ffo-gc-game-rail');
+  if(rail)rail.scrollLeft=priorScroll;
   el.querySelectorAll('button[data-ffo-game]').forEach(b=>b.onclick=()=>selectGame(b.dataset.ffoGame));
  }
  function findPlayer(){if(!s.player)return;s.playerMatch='';s.msfPlayer=null;
