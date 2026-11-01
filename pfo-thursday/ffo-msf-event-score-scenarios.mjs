@@ -34,7 +34,8 @@ function dataByPlayer(rows){
    fortyPlusBonus:0,fiftyPlusHighestOnly:0,fiftyPlusAdditive:0,
    twoPtMissingStatSourceCandidates:0,twoPtAlreadyPublished:0,twoPtEvidenceUnverified:0,
    incrementalScenarioMin:0,incrementalScenarioMax:0,
-   rangeSafe:false
+   highestOnlyCandidatePoints:0,additiveCandidatePoints:0,
+   scenarioInputsMatched:false,conditionalOnly:true
   };
  }
  return out;
@@ -95,7 +96,9 @@ export function eventScoreScenarios({ledger,corroboration=[],rules={}}={}){
   // Conditional possibilities ONLY; not certified player fantasy scores.
   p.incrementalScenarioMin=round(p.fiftyPlusHighestOnly+p.twoPtMissingStatSourceCandidates);
   p.incrementalScenarioMax=round(p.fiftyPlusAdditive+p.twoPtMissingStatSourceCandidates);
-  p.rangeSafe=problems.size===0&&p.twoPtEvidenceUnverified===0&&
+  p.highestOnlyCandidatePoints=p.incrementalScenarioMin;
+  p.additiveCandidatePoints=p.incrementalScenarioMax;
+  p.scenarioInputsMatched=problems.size===0&&p.twoPtEvidenceUnverified===0&&
    Number.isFinite(p.incrementalScenarioMin)&&Number.isFinite(p.incrementalScenarioMax);
  }
  const summary=Object.values(players).sort((a,b)=>a.player.localeCompare(b.player));
@@ -105,6 +108,8 @@ export function eventScoreScenarios({ledger,corroboration=[],rules={}}={}){
   baseTouchdownPointsIncluded:false,
   containsOnlyIncrementalBonuses:true,
   stackingAdjudicated:false,
+  fullPlayCoverageCertified:false,
+  statCorrectionsCertified:false,
   finalPlayerScoresCertified:false,
   canWriteScores:false,
   sourceIssues:[...problems],
