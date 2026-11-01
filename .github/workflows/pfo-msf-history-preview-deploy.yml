@@ -1,0 +1,75 @@
+name: PFO MSF historical scoring protected Preview
+on:
+  push:
+    branches:
+      - pfo-msf-week5-reconciliation-20261031
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-msf-history-protected-preview
+  cancel-in-progress: true
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate GameCast and scoring module syntax
+        run: |
+          node --check pfo-thursday/ffo-gamecast.js
+          node --check pfo-thursday/ffo-gamecast-model.mjs
+          node --check pfo-thursday/ffo-scoring-reconciliation.mjs
+          node --check pfo-thursday/ffo-same-game-player-evidence.mjs
+          node --check pfo-thursday/ffo-historical-matchup-tracker.mjs
+          node --check pfo-thursday/ffo-verified-history-projection.mjs
+          cp pfo-thursday/_worker.js /tmp/pfo-msf-worker.mjs
+          node --check /tmp/pfo-msf-worker.mjs
+      - name: Existing PFO, MSF and new historical score reconstructions
+        run: |
+          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs             pfo-thursday/qa-59.test.mjs
+      - name: Install isolated Chromium mobile test dependencies
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: PFO smoke test with emulated mobile browser
+        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs
+  deploy-preview:
+    needs: qa
+    if: github.ref == 'refs/heads/pfo-msf-week5-reconciliation-20261031'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package PFO without tests or secrets
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-preview"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) ! -name 'qa-*' -exec cp {} "$RUNNER_TEMP/pfo-preview/" \;
+          test -s "$RUNNER_TEMP/pfo-preview/index.html"
+          test -s "$RUNNER_TEMP/pfo-preview/_worker.js"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-same-game-player-evidence.mjs"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-scoring-reconciliation.mjs"
+          test -s "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
+      - name: Check existing protected Preview deploy connection
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy solely to existing protected Pages Preview branch
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO MSF same-game event reconciliation and history verification"
+          echo "Preview deployment only; production and Commissioner records untouched."
