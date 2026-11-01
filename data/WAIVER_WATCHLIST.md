@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-01T06:55:28.169317+00:00
-Sleeper snapshot: 2026-11-01T06:55:22.331550+00:00
+Generated: 2026-11-01T07:58:42.275372+00:00
+Sleeper snapshot: 2026-11-01T07:58:37.823617+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -21,7 +21,7 @@ Sleeper snapshot: 2026-11-01T06:55:22.331550+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Malik Willis | MIA | 14.66 | 100% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 13.15 | 90% | 94.7% | Questionable |
+| 2 | Baker Mayfield | TB | 13.13 | 90% | 94.7% | Questionable |
 | 3 | Tanner McKee | PHI | 11.32 | 90% | 100.0% | Not flagged |
 
 ### RB
@@ -88,7 +88,7 @@ Sleeper snapshot: 2026-11-01T06:55:22.331550+00:00
 | 8 | Cleveland Browns | CLE | 5.45 | 90% | — | Not flagged |
 | 9 | Tampa Bay Buccaneers | TB | 5.29 | 90% | — | Not flagged |
 | 10 | New Orleans Saints | NO | 5.26 | 90% | — | Not flagged |
-| 11 | New York Jets | NYJ | 4.52 | 90% | — | Not flagged |
+| 11 | New York Jets | NYJ | 4.53 | 90% | — | Not flagged |
 | 12 | Tennessee Titans | TEN | 4.42 | 90% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
@@ -100,7 +100,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
 | Malik Willis | QB | MIA | 14.66 | 100.0% |
-| Baker Mayfield | QB | TB | 13.15 | 94.7% |
+| Baker Mayfield | QB | TB | 13.13 | 94.7% |
 | Tanner McKee | QB | PHI | 11.32 | 100.0% |
 | Keaton Mitchell | RB | LAC | 6.08 | 32.0% |
 | Kalif Raymond | WR | CHI | 5.72 | 61.7% |

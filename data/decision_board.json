@@ -25,7 +25,7 @@
       "ppg": 5.976
     }
   },
-  "generated_at_utc": "2026-11-01T06:55:28.296067+00:00",
+  "generated_at_utc": "2026-11-01T07:58:42.401185+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -222,7 +222,7 @@
           "name": "Minnesota Vikings",
           "ppg": 6.967
         },
-        "same_position_uplift_ppg": -1.67,
+        "same_position_uplift_ppg": -1.68,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -261,12 +261,12 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 4.52,
+        "ppg": 4.53,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.967
         },
-        "same_position_uplift_ppg": -2.45,
+        "same_position_uplift_ppg": -2.44,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -449,12 +449,12 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 13.15,
+        "ppg": 13.13,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": -1.09,
+        "same_position_uplift_ppg": -1.11,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -973,9 +973,13 @@
       {
         "audit": {
           "carries_per_game": 0.33,
-          "flags": [],
+          "flags": [
+            "injury_report_observation_review"
+          ],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Knee",
+            "report_status": "Out",
             "week": "8"
           },
           "not_an_injury_probability": true,
@@ -1257,5 +1261,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-01T06:55:22.331550+00:00"
+  "snapshot_utc": "2026-11-01T07:58:37.823617+00:00"
 }

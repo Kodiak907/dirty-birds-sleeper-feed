@@ -1,16 +1,16 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-01T06:55:28.384442+00:00
+Generated: 2026-11-01T07:58:42.488649+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **124.09**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **124.11**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Malik Willis | 14.66 | Bench-depth scenario: Caleb Douglas | +0.00 | +8.69 | No flagged data gap; review still required |
-| 2 | Baker Mayfield | 13.15 | Bench-depth scenario: Caleb Douglas | +0.00 | +7.17 | Availability status: questionable |
+| 2 | Baker Mayfield | 13.13 | Bench-depth scenario: Caleb Douglas | +0.00 | +7.15 | Availability status: questionable |
 | 3 | Tanner McKee | 11.32 | Bench-depth scenario: Caleb Douglas | +0.00 | +5.35 | No flagged data gap; review still required |
 
 ## RB
@@ -75,9 +75,9 @@ Baseline illustrative optimal PPG: **124.09**. Weeks with partial projections an
 | 6 | Chicago Bears | 5.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.35 | No sourced usage |
 | 7 | New York Giants | 5.54 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.43 | No sourced usage |
 | 8 | Cleveland Browns | 5.45 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.53 | No sourced usage |
-| 9 | Tampa Bay Buccaneers | 5.29 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.68 | No sourced usage |
+| 9 | Tampa Bay Buccaneers | 5.29 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.69 | No sourced usage |
 | 10 | New Orleans Saints | 5.26 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.71 | No sourced usage |
-| 11 | New York Jets | 4.52 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.46 | No sourced usage |
+| 11 | New York Jets | 4.53 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.45 | No sourced usage |
 | 12 | Tennessee Titans | 4.42 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.55 | No sourced usage |
 
 ## Before making any claim

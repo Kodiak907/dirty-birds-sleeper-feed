@@ -10,7 +10,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Malik Willis | 14.66 | +0.42 | 100.0% | — | No modeled flags (not medically cleared) |
-| 2 | Baker Mayfield | 13.15 | -1.09 | 94.7% | — | sleeper_injury_questionable |
+| 2 | Baker Mayfield | 13.13 | -1.11 | 94.7% | — | sleeper_injury_questionable |
 | 3 | Tanner McKee | 11.32 | -2.92 | 100.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Kaelon Black (4.20 PPG)
@@ -37,7 +37,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 4 | Jauan Jennings | 4.59 | -1.38 | 73.3% | Tgt 1.7 | injury_report_observation_review |
 | 5 | Ja'Kobi Lane | 4.56 | -1.41 | 54.3% | Tgt 4.3 | injury_report_observation_review |
 | 6 | Rashod Bateman | 4.35 | -1.63 | 61.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 7 | Rashid Shaheed | 4.18 | -1.80 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 7 | Rashid Shaheed | 4.18 | -1.80 | 41.3% | Tgt 5.0 | injury_report_observation_review |
 | 8 | Michael Pittman Jr. | 3.92 | -2.06 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 9 | Adonai Mitchell | 3.32 | -2.66 | 65.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 10 | Brian Thomas Jr. | 3.17 | -2.81 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
@@ -75,9 +75,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 6 | Chicago Bears | 5.62 | -1.35 | — | — | No modeled flags (not medically cleared) |
 | 7 | New York Giants | 5.54 | -1.42 | — | — | No modeled flags (not medically cleared) |
 | 8 | Cleveland Browns | 5.45 | -1.52 | — | — | No modeled flags (not medically cleared) |
-| 9 | Tampa Bay Buccaneers | 5.29 | -1.67 | — | — | No modeled flags (not medically cleared) |
+| 9 | Tampa Bay Buccaneers | 5.29 | -1.68 | — | — | No modeled flags (not medically cleared) |
 | 10 | New Orleans Saints | 5.26 | -1.70 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 4.52 | -2.45 | — | — | No modeled flags (not medically cleared) |
+| 11 | New York Jets | 4.53 | -2.44 | — | — | No modeled flags (not medically cleared) |
 | 12 | Tennessee Titans | 4.42 | -2.54 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates

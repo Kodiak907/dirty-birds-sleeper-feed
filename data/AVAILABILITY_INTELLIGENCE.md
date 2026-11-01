@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-01T06:55:33.610371+00:00
-Sleeper snapshot: 2026-11-01T06:55:22.331550+00:00
-nflverse observations: 2026-11-01T06:55:27.647168+00:00; injury feed loaded: True
+Generated: 2026-11-01T07:58:47.436073+00:00
+Sleeper snapshot: 2026-11-01T07:58:37.823617+00:00
+nflverse observations: 2026-11-01T07:58:41.598187+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 4. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -24,15 +24,17 @@ nflverse observations: 2026-11-01T06:55:27.647168+00:00; injury feed loaded: Tru
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Chig Okonkwo | No tag | Week 5 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
 | Bijan Robinson | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
-| Zach Charbonnet | Out | Week 8 observation: Limited Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
+| Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Zach Charbonnet** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **Colston Loveland** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
+- **Kyle Monangai** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Thumb', 'report_secondary_injury': 'Toe', 'report_status': 'Out', 'week': '8'}
+- **Rashid Shaheed** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Knee', 'report_status': 'Out', 'week': '8'}
 
 ## Guardrails
 
