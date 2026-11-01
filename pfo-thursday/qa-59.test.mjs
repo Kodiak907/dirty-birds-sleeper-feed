@@ -76,8 +76,9 @@ test('Commissioner Log actions remain separated and protected, with video eviden
 });
 
 test('Team-specific waiver ranking uses completed FFL weekly scores, not one list for all',()=>{
- const instrument=newUI.replace(' window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory};',
-  ' window.__qa={state,needs,entryPool,waiver,trade,scheduleRender};');
+ // Preserve production export while exposing the current private QA functions.
+ const instrument=newUI.replace(' window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,',
+  ' window.__qa={state,needs,entryPool,waiver,trade,scheduleRender};\n window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,');
  assert.notEqual(instrument,newUI);
  const elements=new Map(),doc={readyState:'loading',addEventListener:()=>{},
   getElementById(id){if(!elements.has(id))elements.set(id,{innerHTML:'',querySelector:()=>null});return elements.get(id)},
