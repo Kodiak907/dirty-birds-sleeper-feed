@@ -85,22 +85,34 @@ export function reconcilePlayerScoringEvidence({
      });
    }
  }
- // Compare independently recorded per-player category totals against every
- // uniquely identified successful source play, rather than reconciling each
- // play independently against the same single box-score event.
- const matchedCounts=new Map();
+ // Count every uniquely attributed, successful source event independently
+ // of bonus stacking and whether the provider published the stat field. A
+ // held 50+ TD MUST still count toward a player's TD count reconciliation.
+ const validPlayCounts=new Map();
+ const provisionalOnly=new Set([
+   'fifty_plus_stacking_not_adjudicated','final_player_stat_not_verified',
+   'weighted_rule_missing'
+ ]);
  for(const c of allCandidates){
-   if(c.checks.length)continue;
+   if(!c.playerId||c.checks.some(reason=>!provisionalOnly.has(reason)))continue;
    const k=c.playerId+'|'+c.category;
-   matchedCounts.set(k,(matchedCounts.get(k)||0)+1);
+   validPlayCounts.set(k,(validPlayCounts.get(k)||0)+1);
  }
  const ledger=allCandidates.map(c=>{
    const key=c.playerId+'|'+c.category;
+   const sourceObservedCount=validPlayCounts.get(key)||0;
    const blockers=[...globalBlockers,...c.checks];
-   if(c.statCount!==null&&matchedCounts.has(key)&&matchedCounts.get(key)>c.statCount)
+   if(c.statCount!==null&&sourceObservedCount>c.statCount)
      blockers.push('play_count_exceeds_final_player_stat_count');
    const unique=[...new Set(blockers)],eligible=unique.length===0;
-   return {...c,status:eligible?'ready_for_scoring_integration':'pending_verification',
+   const sourceCategoryAgreement=
+     !c.playerId?'player_unresolved':
+     c.statCount===null?'player_stat_unpublished':
+     sourceObservedCount>c.statCount?'source_plays_exceed_stat':
+     sourceObservedCount===c.statCount?'source_event_count_equals_stat':
+     'source_events_are_subset_of_stat';
+   return {...c,sourceObservedCount,sourceCategoryAgreement,
+     status:eligible?'ready_for_scoring_integration':'pending_verification',
      blockers:unique,creditedFantasyPoints:null,
      proposedPoints:eligible?c.potentialPoints:null};
  });
