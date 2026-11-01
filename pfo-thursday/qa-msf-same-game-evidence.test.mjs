@@ -63,3 +63,66 @@ test('No box score or source players cannot become a certified zero',()=>{
  assert.equal(r.certifiedFantasyPlayerTotals,false);
  assert.ok(r.missingOrAmbiguousPlayerIds.length===3);
 });
+
+test('Week 5: two TD counts agree with same-game MSF stats even when bonus policy blocks release',()=>{
+ const r=check();
+ const love=r.ledger.lineItems.filter(x=>x.playerId==='18607'&&x.category==='pass_td');
+ const watson=r.ledger.lineItems.filter(x=>x.playerId==='39108'&&x.category==='rec_td');
+ for(const x of [...love,...watson]){
+  assert.equal(x.sourceObservedCount,2);
+  assert.equal(x.statCount,2);
+  assert.equal(x.sourceCategoryAgreement,'source_event_count_equals_stat');
+  assert.equal(x.creditedFantasyPoints,null);
+ }
+ const two=r.ledger.lineItems.filter(x=>x.category.endsWith('_2pt'));
+ assert.equal(two.length,2);
+ assert.ok(two.every(x=>x.sourceObservedCount===1&&x.sourceCategoryAgreement==='source_event_count_equals_stat'));
+});
+test('Week 5: successful 2PT PBP with unpublished gamelog conversion fields remains source-confirmed, NOT zero',()=>{
+ const noTwo=players.map(p=>p.id==='18607'?{...p,stats:{passing:{passTD:2}}}:
+  p.id==='166697'?{...p,stats:{receiving:{receptions:2}}}:p);
+ const r=check({players:noTwo});
+ const rows=r.ledger.lineItems.filter(x=>x.category.endsWith('_2pt'));
+ assert.equal(rows.length,2);
+ assert.ok(rows.every(x=>x.statCount===null&&x.sourceObservedCount===1));
+ assert.ok(rows.every(x=>x.sourceCategoryAgreement==='player_stat_unpublished'));
+ assert.ok(rows.every(x=>x.blockers.includes('final_player_stat_not_verified')));
+ assert.ok(rows.every(x=>x.creditedFantasyPoints===null));
+ assert.equal(r.twoPointCorroboration[0].sourceTier,'pbp_success_player_ids_verified');
+ assert.equal(r.twoPointCorroboration[0].finalTwoPointPointsCertified,false);
+});
+test('Week 5: unique independent MSF scoring summary can corroborate the PBP 2PT without awarding points',()=>{
+ const scoringSummary={gameId:'G5',finalScoreVerified:true,events:[
+  {period:2,scoringSide:'GB',scoringPoints:2,description:
+   'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.'}
+ ]};
+ const r=check({scoringSummary});
+ assert.equal(r.twoPointCorroboration.length,1);
+ assert.equal(r.twoPointCorroboration[0].sourceTier,'two_independent_msf_feeds_agree');
+ assert.equal(r.twoPointCorroboration[0].scoringSummaryMatchCount,1);
+ assert.equal(r.twoPointCorroboration[0].finalTwoPointPointsCertified,false);
+ assert.equal(r.ledger.readyCount,0);
+});
+test('Wrong MSF game, scorer, or scoring delta cannot corroborate 2PT PBP',()=>{
+ const valid={gameId:'G5',finalScoreVerified:true,events:[
+  {period:2,scoringSide:'GB',scoringPoints:2,description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.'}
+ ]};
+ for(const wrong of [
+  {...valid,gameId:'G4'},
+  {...valid,events:[{...valid.events[0],scoringSide:'CHI'}]},
+  {...valid,events:[{...valid.events[0],scoringPoints:6}]},
+  {...valid,events:[{...valid.events[0],description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 9-C.Watson is complete. ATTEMPT SUCCEEDS.'}]},
+  {...valid,finalScoreVerified:false}
+ ]){
+  const r=check({scoringSummary:wrong});
+  assert.notEqual(r.twoPointCorroboration[0].sourceTier,'two_independent_msf_feeds_agree');
+  assert.equal(r.certifiedBonusPoints,null);
+ }
+});
+test('Duplicate independently published scoring summaries cause ambiguity, not double credit',()=>{
+ const event={period:2,scoringSide:'GB',scoringPoints:2,
+  description:'TWO-POINT CONVERSION ATTEMPT. 10-J.Love pass to 0-M.Golden is complete. ATTEMPT SUCCEEDS.'};
+ const r=check({scoringSummary:{gameId:'G5',finalScoreVerified:true,events:[event,{...event}]}});
+ assert.equal(r.twoPointCorroboration[0].sourceTier,'ambiguous_duplicate_scoring_summary');
+ assert.equal(r.ledger.readyCount,0);
+});
