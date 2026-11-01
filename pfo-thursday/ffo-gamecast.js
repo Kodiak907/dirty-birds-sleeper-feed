@@ -6,6 +6,7 @@
  const model=await import('/ffo-gamecast-model.mjs');
  const stadium=await import('/ffo-gamecast-stadium.mjs');
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
+ const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -485,7 +486,24 @@
   // touchdown bonuses. Game logs are independently reconciled later.
   const eventWeeks=report.playerEventWeeks||[];
   const eventRows=eventWeeks.map(row=>{
-   const e=row.evidence,joined=row.sameGameReconciliation;
+   const e=row.evidence,joined=row.sameGameReconciliation,scenario=row.eventScenarios;
+   const scenarioRows=(scenario?.players||[]).filter(p=>p.scoringEvidenceCount>0).slice(0,7).map(p=>
+    '<div style="font-size:11px;padding:5px 0;border-top:1px solid #294157;overflow-wrap:anywhere">'+
+    '<strong>'+safe(p.player||p.playerId)+'</strong> · conditional supplemental points: '+
+    '<b>'+safe(p.highestOnlyCandidatePoints)+'</b> if highest-only / '+
+    '<b>'+safe(p.additiveCandidatePoints)+'</b> if 40+ and 50+ stack'+
+    (p.twoPtMissingStatSourceCandidates?' · includes '+safe(p.twoPtMissingStatSourceCandidates)+
+     ' corroborated 2PT points ABSENT from player game log':'')+
+    (p.twoPtAlreadyPublished?' · '+safe(p.twoPtAlreadyPublished)+
+     ' published 2PT stat already counted separately':'')+
+    '</div>').join('');
+   const scenarioCard=scenarioRows?
+    '<details style="margin:6px 0;padding:5px 0;border-top:1px solid #315069">'+
+    '<summary style="cursor:pointer;font-size:12px;font-weight:700">Conditional scoring alternatives · NOT final FFL totals</summary>'+
+    '<div class="muted" style="font-size:11px;margin:5px 0">These are potential EXTRA event-only points, not complete player fantasy scores. '+
+    'TD base points are NOT included. The exact 50+ bonus stacking rule, missing plays and final stat corrections have not been adjudicated. '+
+    'Do not use for projections, waivers, trades, or live matchup scores.</div>'+
+    scenarioRows+'</details>':'';
    const blockerLabels={
     missing_fullPlayCoverageVerified:'Whole-game play coverage not certified',
     missing_statCorrectionsChecked:'Final stat corrections not independently checked',
@@ -519,7 +537,7 @@
     ' · final scoreboard '+safe(joined.finalScoreboardVerified?'verified':'unverified')+
     ' · '+safe(joined.ledger.pendingCount)+' scoring candidates pending. '+
     'Whole-game completeness, final stat corrections and bonus stacking remain verification gates.</div>'+
-    twoPtRows+
+    twoPtRows+scenarioCard+
     joined.ledger.lineItems.slice(0,10).map(x=>
      '<div class="muted" style="font-size:11px;padding:3px 0;border-top:1px solid #294157">'+
      safe(x.player||x.playerId||'Unresolved player')+' · '+safe(x.category)+
@@ -861,6 +879,11 @@
      players:weekly?model.playerRows(weekly.payload):[],
      evidence:row.evidence,boxEvidence:box?.evidence||null,
      scoringSummary:box?.scoringPlays||null,rules:s.ownedRules
+    });
+    row.eventScenarios=eventScenarios.eventScoreScenarios({
+     ledger:row.sameGameReconciliation.ledger,
+     corroboration:row.sameGameReconciliation.twoPointCorroboration,
+     rules:s.ownedRules
     });
    }
    if(!report.kickEvidence)
