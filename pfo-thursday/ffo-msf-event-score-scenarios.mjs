@@ -15,15 +15,21 @@ const allowedTd = new Set(['pass_td','rec_td','rush_td']);
 const allowedTwo = new Set(['pass_2pt','rec_2pt','rush_2pt']);
 const num=x=>typeof x==='number'&&Number.isFinite(x)?x:null;
 const round=x=>Math.round((x+Number.EPSILON)*100)/100;
-function validPlay(item){
- return item&&item.playerId&&item.sourceId!==null&&item.sourceId!==undefined&&
-  item.sourceId!==''&&item.sourceObservedCount>=1 &&
+function validPlay(item,{independentTwoPoint=false}={}){
+ // MSF historical PBP sometimes has NO native event ID. A unique verified
+ // period+clock+description is a valid identity for a long TD.
+ // An ID-less 2PT additionally needs a UNIQUE independent boxscore scoring
+ // summary row, the same player IDs and a stable PBP candidate index.
+ const eventIdentity=item?.sourceIdentityVerified===true ||
+   (independentTwoPoint&&item?.category?.endsWith('_2pt')&&
+     Number.isInteger(item.eventIndex)&&item.eventIndex>=0);
+ return !!(item&&item.playerId&&eventIdentity&&item.sourceObservedCount>=1 &&
   !item.blockers.some(x=>[
    'team_possession_unverified','result_unverified_or_unsuccessful','player_identity_unverified',
    'duplicate_or_colliding_event_identity','event_identity_insufficient','event_category_mismatch',
    'long_touchdown_distance_unverified','play_count_exceeds_final_player_stat_count',
    'result_unverified_or_unsuccessful'
-  ].includes(x));
+  ].includes(x)));
 }
 function dataByPlayer(rows){
  const out={};
@@ -52,11 +58,16 @@ export function eventScoreScenarios({ledger,corroboration=[],rules={}}={}){
  const twoEvents=Array.isArray(corroboration)?corroboration:[];
  const twoBySource=new Map(twoEvents.filter(x=>x?.sourceId!=null)
   .map(x=>[String(x.sourceId),x]));
+ const twoByCandidateIndex=new Map(twoEvents.filter(x=>Number.isInteger(x?.sourceCandidateIndex))
+  .map(x=>[x.sourceCandidateIndex,x]));
  const seenTD=new Set(),seenTwo=new Set();
  for(const item of items){
   if(!item?.playerId||!players[item.playerId])continue;
   const p=players[item.playerId];
-  const k=[item.playerId,item.category,item.sourceId].join('|');
+  const eventKey=item.sourceIdentityKey||
+   (item.sourceId!=null&&item.sourceId!==''?'native:'+item.sourceId:
+    'candidate:'+item.eventIndex);
+  const k=[item.playerId,item.category,eventKey].join('|');
   if(allowedTd.has(item.category)){
    if(seenTD.has(k)){problems.add('duplicate_player_event');continue;}
    seenTD.add(k);
@@ -76,11 +87,13 @@ export function eventScoreScenarios({ledger,corroboration=[],rules={}}={}){
   }else if(allowedTwo.has(item.category)){
    if(seenTwo.has(k)){problems.add('duplicate_player_event');continue;}
    seenTwo.add(k);
-   if(!validPlay(item)){p.twoPtEvidenceUnverified++;continue;}
-   const independent=twoBySource.get(String(item.sourceId));
+   const independent=twoByCandidateIndex.get(item.eventIndex)||
+    twoBySource.get(String(item.sourceId));
    const independentlyAgreed=independent?.sourceTier==='two_independent_msf_feeds_agree' &&
     Array.isArray(independent.playerIds)&&independent.playerIds.includes(String(item.playerId));
-   if(!independentlyAgreed){p.twoPtEvidenceUnverified++;continue;}
+   if(!independentlyAgreed||!validPlay(item,{independentTwoPoint:true})){
+    p.twoPtEvidenceUnverified++;continue;
+   }
    // Exact published category wins; never supplement a 2PT twice.
    if(num(item.statCount)!==null){
     if(item.statCount>=item.sourceObservedCount)p.twoPtAlreadyPublished++;
