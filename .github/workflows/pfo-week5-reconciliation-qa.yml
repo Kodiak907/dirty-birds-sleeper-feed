@@ -19,5 +19,7 @@ jobs:
         run: node --test pfo-thursday/qa-msf-week5-reconciliation.test.mjs
       - name: MSF verified historical form and projections
         run: node --test pfo-thursday/qa-msf-verified-projections.test.mjs
+      - name: League-wide historical matchup coverage QA
+        run: node --test pfo-thursday/qa-msf-historical-matchups.test.mjs
       - name: Existing independent MSF scoring regressions
         run: node --test pfo-thursday/qa-ffo-msf.test.mjs
