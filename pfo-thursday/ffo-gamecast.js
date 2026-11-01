@@ -1190,6 +1190,12 @@
     drawGames();drawPlayer();if(sectionActive('radar')||sectionActive('market'))refreshEvidencePanels();
     if(s.game&&!s.games.some(x=>x.id===s.game)){
      s.game=null;s.playCache=[];s.liveBox=null;s.playSource=null;s.activePlay=-1;drawPlays();
+    }
+    // Open the FIRST provider-reported live contest only when the coach
+    // has not selected a different game. Never auto-start a past/future feed.
+    if(!s.game&&gameActive()){
+     const live=s.games.find(x=>['live','overtime'].includes(model.gamePhase(x.status)));
+     if(live)void selectGame(live.id);
     }else if(s.game)drawField();
   }catch(error){s.enabled=false;status('GameCast not connected: '+String(error.message||error));drawGames();drawPlayer()}})();
   try{return await overviewPending}finally{overviewPending=null}
