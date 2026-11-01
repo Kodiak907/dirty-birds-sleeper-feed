@@ -61,14 +61,14 @@ jobs:
       - name: Check existing protected Preview deploy connection
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
         run: |
           test -n "$CLOUDFLARE_API_TOKEN"
           test -n "$CLOUDFLARE_ACCOUNT_ID"
       - name: Deploy solely to existing protected Pages Preview branch
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
           CLOUDFLARE_SEND_METRICS: 'false'
         run: |
           npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" --project-name dirtybirdstest --branch pfo-598-msf-core-and-mobile-20261029 --commit-hash "$GITHUB_SHA" --commit-message "PFO MSF same-game event reconciliation and history verification"
