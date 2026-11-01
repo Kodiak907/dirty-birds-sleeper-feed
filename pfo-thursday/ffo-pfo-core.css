@@ -324,3 +324,33 @@ body>main,main,#nav,.page,.page>.card,#market,#radar,#pfo49-radar,#waiverlive,.m
 #championship #pfo49-playoff-plan table.pfo49-gamelog td small{font-size:9px!important;display:block;line-height:1.1;white-space:nowrap!important;overflow:hidden;text-overflow:ellipsis}
 #championship #pfo49-playoff-plan .pfo59-playerpos{font-size:8px;color:#d9ad74;font-weight:700;margin-right:2px}
 #championship #pfo49-playoff-plan .pfo52-fine{font-size:10px!important;line-height:1.35!important;margin:5px 0}
+
+/* GameCast weekly scoreboard: the former horizontal 158px flex carousel
+   cannot contain grouped full-week schedules. Force vertical week groups,
+   responsive game grid and phone-safe, finite-height cards. */
+#ffo-gc-games.ffo-gc-games{
+ display:block!important;width:100%!important;max-width:100%!important;
+ min-width:0!important;overflow-x:hidden!important;overflow-y:visible!important;
+ scroll-snap-type:none!important;overscroll-behavior-x:auto!important;
+ padding:2px 0 10px!important;box-sizing:border-box!important;
+}
+#ffo-gc-games .ffo-gc-week-group{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;margin:10px 0 14px}
+#ffo-gc-games .ffo-gc-week-title{display:flex;justify-content:space-between;align-items:center;
+ font-size:12px;font-weight:750;line-height:1.35;padding:5px 2px 7px;margin:0;color:#c9d9ed;
+ border-bottom:1px solid #34506c;white-space:normal}
+#ffo-gc-games .ffo-gc-week-grid{display:grid!important;width:100%;max-width:100%;
+ min-width:0;box-sizing:border-box;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:7px;margin:7px 0 0;align-items:stretch}
+#ffo-gc-games .ffo-gc-game{display:block!important;min-width:0!important;max-width:100%!important;
+ width:100%!important;flex:none!important;height:auto!important;min-height:0!important;
+ padding:10px 11px!important;scroll-snap-align:none!important;overflow:hidden!important;
+ overflow-wrap:break-word!important;white-space:normal!important;box-sizing:border-box!important;
+ text-align:left!important}
+#ffo-gc-games .ffo-gc-game strong{font-size:13px;line-height:1.3;margin:3px 0;font-variant-numeric:tabular-nums}
+#ffo-gc-games .ffo-gc-game small{font-size:10px;line-height:1.4;margin:3px 0;
+ overflow-wrap:normal;word-break:normal}
+#ffo-gc-games .ffo-gc-score-meta{opacity:.82;font-size:10px;line-height:1.4}
+@media(max-width:850px){#ffo-gc-games .ffo-gc-week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#ffo-gc-games .ffo-gc-week-grid{grid-template-columns:minmax(0,1fr)}
+ #ffo-gc-games .ffo-gc-game{padding:9px 11px!important}
+ #ffo-gc-games .ffo-gc-game strong{font-size:14px}}
