@@ -1,16 +1,10 @@
 {
-  "as_of": "2026-11-01T21:37:34.372913+00:00",
+  "as_of": "2026-11-01T22:10:04.095419+00:00",
   "authority": "third_party_reported_not_official_team_submission",
   "errors": [],
   "events_checked": 14,
   "explicit_inactives": {},
   "game_coverage": [
-    {
-      "event_id": "401873026",
-      "kickoff_utc": "2026-11-01T18:00Z",
-      "listing_state": "not_published_or_unavailable",
-      "reported_count": 0
-    },
     {
       "event_id": "401873031",
       "kickoff_utc": "2026-11-01T18:00Z",
@@ -19,6 +13,30 @@
     },
     {
       "event_id": "401873024",
+      "kickoff_utc": "2026-11-01T18:00Z",
+      "listing_state": "not_published_or_unavailable",
+      "reported_count": 0
+    },
+    {
+      "event_id": "401873032",
+      "kickoff_utc": "2026-11-01T21:05Z",
+      "listing_state": "not_published_or_unavailable",
+      "reported_count": 0
+    },
+    {
+      "event_id": "401873033",
+      "kickoff_utc": "2026-11-01T21:25Z",
+      "listing_state": "not_published_or_unavailable",
+      "reported_count": 0
+    },
+    {
+      "event_id": "401873034",
+      "kickoff_utc": "2026-11-01T21:25Z",
+      "listing_state": "not_published_or_unavailable",
+      "reported_count": 0
+    },
+    {
+      "event_id": "401873026",
       "kickoff_utc": "2026-11-01T18:00Z",
       "listing_state": "not_published_or_unavailable",
       "reported_count": 0
@@ -42,32 +60,14 @@
       "reported_count": 0
     },
     {
-      "event_id": "401873028",
-      "kickoff_utc": "2026-11-01T18:00Z",
-      "listing_state": "not_published_or_unavailable",
-      "reported_count": 0
-    },
-    {
       "event_id": "401873025",
       "kickoff_utc": "2026-11-01T18:00Z",
       "listing_state": "not_published_or_unavailable",
       "reported_count": 0
     },
     {
-      "event_id": "401873032",
-      "kickoff_utc": "2026-11-01T21:05Z",
-      "listing_state": "not_published_or_unavailable",
-      "reported_count": 0
-    },
-    {
-      "event_id": "401873033",
-      "kickoff_utc": "2026-11-01T21:25Z",
-      "listing_state": "not_published_or_unavailable",
-      "reported_count": 0
-    },
-    {
-      "event_id": "401873034",
-      "kickoff_utc": "2026-11-01T21:25Z",
+      "event_id": "401873028",
+      "kickoff_utc": "2026-11-01T18:00Z",
       "listing_state": "not_published_or_unavailable",
       "reported_count": 0
     },
