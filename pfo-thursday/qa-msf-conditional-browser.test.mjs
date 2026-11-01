@@ -60,7 +60,7 @@ test('Actual mobile GameCast audit renders ID-less Week 5 conditional bonus alte
     '<div id="ffo-gc-stat-audit-results"></div></body></html>'});
    if(['/ffo-gamecast-model.mjs','/ffo-gamecast-stadium.mjs',
      '/ffo-same-game-player-evidence.mjs','/ffo-scoring-reconciliation.mjs',
-     '/ffo-msf-event-score-scenarios.mjs'].includes(path))
+     '/ffo-msf-event-score-scenarios.mjs','/ffo-gamecast-weeks.mjs'].includes(path))
      return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
    if(path==='/ffo-gamecast-stadium.css')return route.fulfill({contentType:'text/css',body:file('ffo-gamecast-stadium.css')});
    return route.fulfill({status:404,contentType:'application/json',body:'{}'});
