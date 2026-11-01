@@ -24,9 +24,10 @@ function validPlay(item,{independentTwoPoint=false}={}){
    (independentTwoPoint&&item?.category?.endsWith('_2pt')&&
      Number.isInteger(item.eventIndex)&&item.eventIndex>=0);
  return !!(item&&item.playerId&&eventIdentity&&item.sourceObservedCount>=1 &&
+  (independentTwoPoint||!item.blockers.includes('event_identity_insufficient'))&&
   !item.blockers.some(x=>[
    'team_possession_unverified','result_unverified_or_unsuccessful','player_identity_unverified',
-   'duplicate_or_colliding_event_identity','event_identity_insufficient','event_category_mismatch',
+   'duplicate_or_colliding_event_identity','event_category_mismatch',
    'long_touchdown_distance_unverified','play_count_exceeds_final_player_stat_count',
    'result_unverified_or_unsuccessful'
   ].includes(x)));
