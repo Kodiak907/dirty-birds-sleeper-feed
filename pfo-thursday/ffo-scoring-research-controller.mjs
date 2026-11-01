@@ -8,8 +8,44 @@ import {buildLeagueHistoryCoverage,nextLeagueHistoryBatch}
 import {walkForwardBacktest} from './ffo-verified-history-backtest.mjs';
 import {calendarWeek} from './ffo-gamecast-weeks.mjs';
 const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function installScoringResearch({getSchedule,feed,model,season='2026-regular',root=document}={}){
+export function installScoringResearch({getSchedule,feed,model,season='2026-regular',root=document,storage=null}={}){
+ const storeKey='FFO_PFO_MSF_RESEARCH_W1_7_'+season+'_v1';
+ // Store ONLY non-personal source verification flags and game IDs.
+ // No player stats, scoring totals, credentials, PFO roster or provider payload.
+ const safeStorage=storage||root?.defaultView?.localStorage||null;
  const snapshots={},certificates=[],state={running:false,inspected:0,error:null};
+ const sanitizeSnapshot=value=>{
+  if(!value||typeof value!=='object')return null;
+  const when=Date.parse(value.checkedAt||'');
+  if(!Number.isFinite(when)||when>Date.now()+86400000||
+   when<Date.now()-30*86400000)return null;
+  const flags=['pbpPublished','pbpChronologyVerified','finalBoxVerified',
+   'scoreMatchesSchedule','playerGameLogsVerified','playerIdentitiesVerified',
+   'requiredStatFieldsVerified','scoringEventsReconciled','statCorrectionsChecked',
+   'kickerScoreVerified','dstScoreVerified','finalPlayerScoreRecomputed'];
+  const out={checkedAt:new Date(when).toISOString()};
+  for(const key of flags)out[key]=value[key]===true;
+  out.playCount=Number.isInteger(value.playCount)&&value.playCount>=0&&value.playCount<2000?
+   value.playCount:null;
+  return out;
+ };
+ try{
+  const saved=JSON.parse(safeStorage?.getItem(storeKey)||'null');
+  if(saved?.schema===1&&saved.entries&&typeof saved.entries==='object'){
+   for(const [gameId,value] of Object.entries(saved.entries).slice(0,160)){
+    if(!/^[a-zA-Z0-9_-]{1,44}$/.test(gameId))continue;
+    const clean=sanitizeSnapshot(value);
+    if(clean)snapshots[gameId]=clean;
+   }
+  }
+ }catch{/* Private browsing or storage quota is nonfatal. */}
+ const saveSnapshots=()=>{
+  try{
+   const entries=Object.fromEntries(Object.entries(snapshots).slice(0,160)
+    .map(([id,value])=>[id,sanitizeSnapshot(value)]).filter(([,value])=>!!value));
+   safeStorage?.setItem(storeKey,JSON.stringify({schema:1,entries}));
+  }catch{/* Never interrupt scoring audit or reveal data if storage unavailable. */}
+ };
  const el=id=>root.getElementById(id);
  const schedule=()=>((getSchedule?.()||[]).map(g=>({
   id:String(g.id),home:g.home,away:g.away,
@@ -28,7 +64,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   const c=status(),q=queue();
   target.innerHTML='<strong>'+c.sourceGames+' MSF schedule games · '+c.teamsRepresented+
    '/32 NFL teams · '+c.gb.sourceGames+' GB matchups · '+
-   Object.keys(snapshots).length+' games source-checked · '+
+   Object.keys(snapshots).length+' games source-checked (locally checkpointed) · '+
    c.certifiedPlayerGameScores+' complete player scores certified</strong>'+
    '<div class="muted" style="margin:4px 0">'+
    safe(message||state.error||'Final correction checks, full event attribution, field zero-coverage and 40+/50+ rule adjudication still required. No guessed points feed projections.')+
@@ -76,6 +112,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
      finalPlayerScoreRecomputed:false,playCount:inspect?.diagnostics?.describedCount??null,
      errors:ok?[]:['MSF PBP/boxscore unavailable']
     };
+    saveSnapshots();
     state.inspected++;render('Source diagnostics captured for W'+g.week+' '+g.away+
       ' @ '+g.home+'. Complete FFL scores are still withheld.');
    }
@@ -100,6 +137,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   getProductionProjection:()=>null,
   getBacktest:backtestReadiness,
   getInspectedGames:()=>Object.keys(snapshots).length,
+  getSourceCheck:(gameId)=>snapshots[String(gameId)]?{...snapshots[String(gameId)]}:null,
   render,runNextBatch
  });
  render();
