@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-01T07:58:47.436073+00:00
-Sleeper snapshot: 2026-11-01T07:58:37.823617+00:00
-nflverse observations: 2026-11-01T07:58:41.598187+00:00; injury feed loaded: True
+Generated: 2026-11-01T08:49:35.404785+00:00
+Sleeper snapshot: 2026-11-01T08:49:26.832457+00:00
+nflverse observations: 2026-11-01T08:49:29.552229+00:00; injury feed loaded: True
 
-**New observed changes:** 4. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,10 +31,8 @@ nflverse observations: 2026-11-01T07:58:41.598187+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Zach Charbonnet** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Colston Loveland** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '8'}
-- **Kyle Monangai** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Thumb', 'report_secondary_injury': 'Toe', 'report_status': 'Out', 'week': '8'}
-- **Rashid Shaheed** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Knee', 'report_status': 'Out', 'week': '8'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
