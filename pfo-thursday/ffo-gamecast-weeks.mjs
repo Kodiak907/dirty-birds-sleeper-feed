@@ -90,3 +90,49 @@ export function todayCoverage(games,now=new Date(),season=2026){
   playByPlayVerifiedForAllGames:false
  };
 }
+
+/**
+ * Resolve a weekly MSF games row without guessing scores. Require matching
+ * stable game ID and both teams from the initial season schedule, and preserve
+ * newer selected-game box scores when the weekly provider timestamp is older.
+ * A correction may legitimately REDUCE a score; never assume monotonic points.
+ */
+export function mergeVerifiedWeekScore(previous,weekly,{providerUpdatedAt=null,checkedAt=null}={}){
+ if(!previous?.id||!weekly?.id||String(previous.id)!==String(weekly.id))
+  return {accepted:false,reason:'game_id_mismatch',game:previous};
+ const normTeam=x=>({GBP:'GB',GNB:'GB',JAC:'JAX',KAN:'KC',KCC:'KC',
+  WAS:'WSH',LA:'LAR'}[String(x||'').toUpperCase()]||String(x||'').toUpperCase());
+ if(normTeam(previous.home)!==normTeam(weekly.home)||normTeam(previous.away)!==normTeam(weekly.away))
+  return {accepted:false,reason:'game_team_mismatch',game:previous};
+ const points=x=>x===null||x===undefined||x===''||typeof x==='object'?null:
+  Number.isInteger(Number(x))&&Number(x)>=0&&Number(x)<=300?Number(x):null;
+ const home=points(weekly.homePoints),away=points(weekly.awayPoints);
+ const incomingAt=Number.isFinite(Date.parse(providerUpdatedAt||''))?Date.parse(providerUpdatedAt):null;
+ const previousAt=Number.isFinite(Date.parse(previous.scoreProviderUpdatedAt||''))?
+  Date.parse(previous.scoreProviderUpdatedAt):null;
+ if(incomingAt!==null&&previousAt!==null&&incomingAt<previousAt)
+  return {accepted:false,reason:'older_provider_update',game:previous};
+ const prevFinal=/^(final|completed)$/i.test(String(previous.status||''));
+ const isFinal=/^(final|completed)$/i.test(String(weekly.status||''));
+ if(prevFinal&&!isFinal)
+  return {accepted:false,reason:'final_status_downgrade',game:previous};
+ // Missing or partial score evidence never erases a previously verified score.
+ if(home===null||away===null)
+  return {accepted:false,reason:'score_not_published',game:previous};
+ // When the box score has no comparable native provider timestamp, a
+ // weekboard snapshot lacking one is NOT proof of a more recent correction.
+ if(incomingAt===null&&previousAt!==null)
+  return {accepted:false,reason:'provider_update_time_missing',game:previous};
+ const game={...previous,
+  homePoints:home,awayPoints:away,
+  status:weekly.status&&weekly.status!=='Unverified game status'?weekly.status:previous.status,
+  scoreSource:'MySportsFeeds weekly games',scoreProviderUpdatedAt:providerUpdatedAt||previous.scoreProviderUpdatedAt||null,
+  scoreCheckedAt:checkedAt||null};
+ return {accepted:true,reason:'verified_msf_weekly_score',game};
+}
+export function backgroundPlayCandidates(games,selectedId,seen={},now=Date.now(),minimumIntervalMs=60000){
+ const eligible=(games||[]).filter(g=>g.id!==selectedId&&
+  /^(LIVE|IN_PROGRESS|INPROGRESS|INPROGRESS_OVERTIME|OVERTIME|OT|HALFTIME)$/i.test(String(g.status||''))&&
+  (!seen[g.id]||now-seen[g.id]>=minimumIntervalMs));
+ return eligible.sort((a,b)=>(seen[a.id]||0)-(seen[b.id]||0));
+}
