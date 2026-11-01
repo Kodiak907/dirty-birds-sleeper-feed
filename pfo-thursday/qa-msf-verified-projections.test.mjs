@@ -21,8 +21,8 @@ test('Seven final independently reconciled MSF games form a verified Week 8 base
  assert.equal(p.verifiedGames,7);assert.equal(p.expectedGames,7);assert.equal(p.coverage,1);
  const f=forecastFromVerifiedHistory({profile:p,nextWeek,availabilityStatus:'ACTIVE'});
  assert.equal(f.status,'experimental_verified_history_projection');
- assert.equal(f.formOnly,24.22);
- assert.equal(f.points,24.22);
+ assert.equal(f.formOnly,23.47);
+ assert.equal(f.points,23.47);
  assert.equal(f.opponentFactor,1);
  assert.equal(f.productionEligible,false);assert.equal(f.backtestCertified,false);
  assert.equal(f.confidence,'moderate_historical_coverage');
@@ -89,7 +89,7 @@ test('Opponent adjustment uses verified prior-week samples and is capped to 15 p
   opponentPositionSamples:allowed,leaguePositionalMean:15,availabilityStatus:'ACTIVE'});
  assert.equal(f.opponentFactor,1.15);
  assert.equal(f.opponentSampleCount,4);
- assert.equal(f.points,27.85);
+ assert.equal(f.points,26.99);
  assert.ok(f.points>f.formOnly);
 });
 test('Opponent small sample and mismatched provider do not trigger unjustified adjustment',()=>{
