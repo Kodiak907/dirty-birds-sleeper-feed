@@ -20,11 +20,11 @@ const games=[
 const browserGame=g=>({schedule:{id:g.id,week:g.week,homeTeam:{abbreviation:g.home},
  awayTeam:{abbreviation:g.away},startTime:g.start,playedStatus:g.status},
  score:{homeScoreTotal:g.status==='LIVE'?10:null,awayScoreTotal:g.status==='LIVE'?3:null}});
-const html='<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'+
+const html='<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/ffo-pfo-core.css"></head>'+
  '<body style="max-width:100%;margin:0"><nav><button data-page="gamecast">GameCast</button></nav>'+
  '<div id="ffo-gc-status"></div><div class="ffo-gc-weekbar" style="display:flex;max-width:100%;gap:8px;flex-wrap:wrap">'+
  '<select id="ffo-gc-week" aria-label="Choose NFL week"></select><button id="ffo-gc-week-today">Current week</button>'+
- '<div id="ffo-gc-week-status"></div></div><div id="ffo-gc-games"></div>'+
+ '<div id="ffo-gc-week-status"></div></div><div id="ffo-gc-games" class="ffo-gc-games"></div>'+
  '<div id="ffo-gc-gameview"></div><div id="ffo-gc-playfeed"></div>'+
  '<div id="ffo-gc-player-field"></div><button id="ffo-gc-refresh">Refresh</button></body></html>';
 
@@ -50,6 +50,7 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
       '/ffo-same-game-player-evidence.mjs','/ffo-scoring-reconciliation.mjs',
       '/ffo-msf-event-score-scenarios.mjs','/ffo-gamecast-weeks.mjs'].includes(path))
     return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
+   if(path==='/ffo-pfo-core.css')return route.fulfill({contentType:'text/css',body:file('ffo-pfo-core.css')});
    if(path==='/ffo-gamecast-stadium.css')return route.fulfill({contentType:'text/css',body:file('ffo-gamecast-stadium.css')});
    if(path==='/FFO_FFL_SCORING_V1.json')return route.fulfill({contentType:'application/json',body:file('FFO_FFL_SCORING_V1.json')});
    if(path==='/api/ffo/gamecast/health')return route.fulfill({json:{ready:true}});
@@ -103,10 +104,34 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   await page.locator('nav button[data-page="gamecast"]').evaluate(e=>e.classList.add('active'));
   await page.waitForFunction(()=>window.ffoGameCast.getStatus().backgroundGamePbpCount>=1,
    {timeout:10000});
-  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/Other-game MSF PBP/);
+  assert.match(await page.locator('[data-ffo-game="sun1"]').innerText(),/Other-game plays/);
   assert.equal(errors.length,0,errors.join('; '));
   assert.ok(refreshCount>=1);
   const viewport=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,width:window.innerWidth}));
   assert.ok(viewport.scrollWidth<=viewport.width+2,JSON.stringify(viewport));
+  // Regression for Coach's 10:24 iPhone screenshot: no four narrow, empty
+  // columns; groups must stack and cards fill the available mobile width.
+  for(const width of [375,390,430,600,1024]){
+   await page.setViewportSize({width,height:844});
+   const bounds=await page.evaluate(()=>{
+    const parent=document.querySelector('#ffo-gc-games').getBoundingClientRect();
+    const groups=[...document.querySelectorAll('#ffo-gc-games .ffo-gc-week-group')];
+    const first=document.querySelector('#ffo-gc-games .ffo-gc-game');
+    const firstGroup=groups[0]?.getBoundingClientRect();
+    const secondGroup=groups[1]?.getBoundingClientRect();
+    return {parentWidth:parent.width,groupCount:groups.length,
+     firstWidth:first?.getBoundingClientRect().width||0,
+     top1:firstGroup?.top??0,bottom1:firstGroup?.bottom??0,
+     top2:secondGroup?.top??0,
+     scrollWidth:document.documentElement.scrollWidth,viewportWidth:window.innerWidth,
+     text:first?.innerText||''};
+   });
+   assert.ok(bounds.groupCount>=3,'Expected Today, Earlier, Upcoming groups: '+JSON.stringify(bounds));
+   assert.ok(bounds.top2>=bounds.bottom1-2,'Group columns must stack vertically: '+JSON.stringify(bounds));
+   assert.ok(bounds.scrollWidth<=bounds.viewportWidth+2,'No page-wide scroll: '+JSON.stringify(bounds));
+   if(width<=600)assert.ok(bounds.firstWidth>=Math.min(bounds.parentWidth*.85,300),
+    'Mobile game cards must occupy near-full width: '+JSON.stringify(bounds));
+   assert.doesNotMatch(bounds.text,/2026-11-01T18:00:05Z/,'Do not show raw ISO timestamps on cards');
+  }
  }finally{await browser.close()}
 });
