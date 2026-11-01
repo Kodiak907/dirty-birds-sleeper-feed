@@ -109,29 +109,44 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
   assert.ok(refreshCount>=1);
   const viewport=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,width:window.innerWidth}));
   assert.ok(viewport.scrollWidth<=viewport.width+2,JSON.stringify(viewport));
-  // Regression for Coach's 10:24 iPhone screenshot: no four narrow, empty
-  // columns; groups must stack and cards fill the available mobile width.
+  // Coach requires a compact single horizontal stats-style swipe rail.
+  // Every NFL game remains accessible inside the rail, never through a
+  // page-wide horizontal scroll or a tall vertical 14-game list.
   for(const width of [375,390,430,600,1024]){
    await page.setViewportSize({width,height:844});
-   const bounds=await page.evaluate(()=>{
-    const parent=document.querySelector('#ffo-gc-games').getBoundingClientRect();
-    const groups=[...document.querySelectorAll('#ffo-gc-games .ffo-gc-week-group')];
-    const first=document.querySelector('#ffo-gc-games .ffo-gc-game');
-    const firstGroup=groups[0]?.getBoundingClientRect();
-    const secondGroup=groups[1]?.getBoundingClientRect();
-    return {parentWidth:parent.width,groupCount:groups.length,
-     firstWidth:first?.getBoundingClientRect().width||0,
-     top1:firstGroup?.top??0,bottom1:firstGroup?.bottom??0,
-     top2:secondGroup?.top??0,
-     scrollWidth:document.documentElement.scrollWidth,viewportWidth:window.innerWidth,
-     text:first?.innerText||''};
+   const m=await page.evaluate(()=>{
+    const root=document.querySelector('#ffo-gc-games');
+    const rail=root.querySelector('.ffo-gc-game-rail');
+    const cards=[...rail.querySelectorAll('[data-ffo-game]')];
+    const style=getComputedStyle(rail);
+    return {rootWidth:root.getBoundingClientRect().width,railWidth:rail.clientWidth,
+     railContentWidth:rail.scrollWidth,cardWidth:cards[0].getBoundingClientRect().width,
+     cardCount:cards.length,weekSections:root.querySelectorAll('.ffo-gc-week-group').length,
+     overflowX:style.overflowX,display:style.display,wrap:style.flexWrap,
+     documentWidth:document.documentElement.scrollWidth,viewportWidth:window.innerWidth,
+     firstText:cards[0].innerText};
    });
-   assert.ok(bounds.groupCount>=3,'Expected Today, Earlier, Upcoming groups: '+JSON.stringify(bounds));
-   assert.ok(bounds.top2>=bounds.bottom1-2,'Group columns must stack vertically: '+JSON.stringify(bounds));
-   assert.ok(bounds.scrollWidth<=bounds.viewportWidth+2,'No page-wide scroll: '+JSON.stringify(bounds));
-   if(width<=600)assert.ok(bounds.firstWidth>=Math.min(bounds.parentWidth*.85,300),
-    'Mobile game cards must occupy near-full width: '+JSON.stringify(bounds));
-   assert.doesNotMatch(bounds.text,/2026-11-01T18:00:05Z/,'Do not show raw ISO timestamps on cards');
+   assert.equal(m.cardCount,14,'Every week 8 game in swipe rail: '+JSON.stringify(m));
+   assert.equal(m.weekSections,0,'No vertical sections: '+JSON.stringify(m));
+   assert.equal(m.display,'flex','Swipe rail uses flex row');
+   assert.equal(m.wrap,'nowrap','Cards must form one line');
+   assert.equal(m.overflowX,'auto','Only the rail scrolls horizontally');
+   assert.ok(m.railContentWidth>m.railWidth+200,'Games must scroll inside rail: '+JSON.stringify(m));
+   assert.ok(m.cardWidth>=150&&m.cardWidth<=200,'Cards should be stat-rail sized: '+JSON.stringify(m));
+   assert.ok(m.documentWidth<=m.viewportWidth+2,'No page-wide sideways overflow: '+JSON.stringify(m));
+   assert.doesNotMatch(m.firstText,/2026-11-01T18:00:05Z/);
   }
+  await page.setViewportSize({width:390,height:844});
+  const rail=page.locator('#ffo-gc-games .ffo-gc-game-rail');
+  await rail.evaluate(el=>{window.__ffoRailIdentity=el;el.scrollLeft=240});
+  const prior=await rail.evaluate(el=>el.scrollLeft);
+  assert.ok(prior>=180,'Rail must respond to horizontal scroll');
+  await page.evaluate(()=>window.ffoGameCast.refreshWeekboard());
+  const after=await rail.evaluate(el=>({same:el===window.__ffoRailIdentity,scrollLeft:el.scrollLeft}));
+  assert.equal(after.same,true,'Five-second scoreboard refresh must not replace the scrolling rail');
+  assert.ok(Math.abs(after.scrollLeft-prior)<5,'Live refresh must not reset swipe position');
+  await page.locator('#ffo-gc-week').selectOption('9');
+  assert.equal(await rail.locator('[data-ffo-game]').count(),1);
+  assert.equal(await rail.evaluate(el=>el.scrollLeft),0,'Changing week resets to start');
  }finally{await browser.close()}
 });
