@@ -20,7 +20,7 @@ const games=[
 const browserGame=g=>({schedule:{id:g.id,week:g.week,homeTeam:{abbreviation:g.home},
  awayTeam:{abbreviation:g.away},startTime:g.start,playedStatus:g.status},
  score:{homeScoreTotal:g.status==='LIVE'?10:null,awayScoreTotal:g.status==='LIVE'?3:null}});
-const html='<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head>'+
+const html='<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'+
  '<body style="max-width:100%;margin:0"><nav><button data-page="gamecast">GameCast</button></nav>'+
  '<div id="ffo-gc-status"></div><div class="ffo-gc-weekbar" style="display:flex;max-width:100%;gap:8px;flex-wrap:wrap">'+
  '<select id="ffo-gc-week" aria-label="Choose NFL week"></select><button id="ffo-gc-week-today">Current week</button>'+
