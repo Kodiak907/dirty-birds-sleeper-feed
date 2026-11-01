@@ -21,5 +21,9 @@ jobs:
         run: node --test pfo-thursday/qa-msf-verified-projections.test.mjs
       - name: League-wide historical matchup coverage QA
         run: node --test pfo-thursday/qa-msf-historical-matchups.test.mjs
+      - name: Same-game MSF scoring-event and player-identity crosschecks
+        run: node --test pfo-thursday/qa-msf-same-game-evidence.test.mjs
+      - name: Browser-side GameCast syntax
+        run: node --check pfo-thursday/ffo-gamecast.js
       - name: Existing independent MSF scoring regressions
         run: node --test pfo-thursday/qa-ffo-msf.test.mjs
