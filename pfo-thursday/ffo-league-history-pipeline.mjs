@@ -84,13 +84,16 @@ export function buildLeagueHistoryCoverage(schedule=[],snapshots={},certificates
  * appears once even though it covers two teams; do not triple-run a batch.
  */
 export function nextLeagueHistoryBatch(schedule=[],snapshots={},{
- fromWeek=1,throughWeek=7,maxGames=4,priorityTeam='GB'
+ fromWeek=1,throughWeek=7,maxGames=4,priorityTeam='GB',allowEstimatedWeekForSourceDiscovery=false
 }={}){
  if(!Number.isInteger(maxGames)||maxGames<1||maxGames>8)throw Error('batch_size_1_to_8');
  const plan=planHistoricalMatchups((schedule||[]).map(g=>({...g,home:canon(g.home),away:canon(g.away)})),
   {fromWeek,throughWeek});
  const summary=summarizeHistoricalMatchups(plan,snapshots);
- const pending=summary.games.filter(g=>g.final&&g.sourceWeekVerified&&!g.fullFantasyScoreCertified);
+ // Estimated schedule weeks may be investigated for SOURCE DISCOVERY ONLY.
+ // Such games cannot be certified until MSF independently verifies the week.
+ const pending=summary.games.filter(g=>g.final&&
+  (g.sourceWeekVerified||allowEstimatedWeekForSourceDiscovery)&&!g.fullFantasyScoreCertified);
  const priority=canon(priorityTeam);
  const ordered=pending.sort((a,b)=>{
   const av=a.home===priority||a.away===priority?0:1;
@@ -99,6 +102,7 @@ export function nextLeagueHistoryBatch(schedule=[],snapshots={},{
  });
  return {pendingGames:ordered.length,batch:ordered.slice(0,maxGames).map(g=>({
   gameId:g.id,week:g.week,home:g.home,away:g.away,stage:g.stage,
+  weekSource:g.sourceWeekVerified?'msf_verified':'calendar_estimate_not_certifiable',
   required:!g.checks.publishedPbp||!g.checks.finalBoxScore?['plays','boxscore']:
    ['gamelogs','teamgamelogs','event_reconciliation','stat_corrections'],
   blockers:[...new Set([...g.missingBasic,...g.missingAdvanced])]
