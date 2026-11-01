@@ -86,6 +86,8 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
   <p class="muted" style="font-size:11px;margin:5px 0">Green Bay Weeks 1–7 first, then all 32 NFL teams. MSF game evidence only. Partial scores and unverified predictions are not production inputs.</p>
   <div id="ffo-gc-research-status" role="status" aria-live="polite" style="font-size:11px;line-height:1.5;overflow-wrap:anywhere">Load the authenticated MSF schedule to check coverage.</div>
   <div style="display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 2px">
+   <button class="button" type="button" id="ffo-gc-research-all" style="min-height:38px;font-size:11px">Run remaining historical checks</button>
+   <button class="button" type="button" id="ffo-gc-research-pause" style="min-height:38px;font-size:11px" disabled>Pause automated checks</button>
    <button class="button" type="button" id="ffo-gc-research-next" style="min-height:38px;font-size:11px">Inspect next 2 historical games</button>
    <button class="button" type="button" id="ffo-gc-research-backtest" style="min-height:38px;font-size:11px">Check projection backtest readiness</button>
   </div>
