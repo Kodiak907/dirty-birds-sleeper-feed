@@ -33,7 +33,7 @@ export function planHistoricalMatchups(schedule=[],{fromWeek=1,throughWeek=7}={}
   }
   if(errors.some(e=>e.id===id&&e.reason==='conflicting_provider_schedule_entries'))continue;
   byId.set(id,{id,week,home,away,status:text(g.status),
-   provider:'MSF',final:finalState(g.status),sourceWeekVerified:g.weekVerified!==false});
+   provider:'MSF',final:finalState(g.status),sourceWeekVerified:g.weekVerified===true});
  }
  const games=[...byId.values()].sort((a,b)=>a.week-b.week||a.id.localeCompare(b.id));
  const byWeek=Array.from({length:throughWeek-fromWeek+1},(_,i)=>{
