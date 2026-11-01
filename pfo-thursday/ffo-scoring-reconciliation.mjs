@@ -78,6 +78,9 @@ export function reconcilePlayerScoringEvidence({
      const potential=weights.reduce((n,[,weight])=>n+weight,0);
      allCandidates.push({
        eventIndex,sourceId:e.sourceId??null,period:e.period??null,clock:e.clock??null,
+       sourceIdentityKey:(!native&&(!clock||!period))?null:key,
+       sourceIdentityVerified:!!(native||(clock&&period))&&(eventKeys.get(key)||[]).length===1,
+       sourceIdentityBasis:native?'native_msf_play_id':clock&&period?'unique_period_clock_description':'unverified',
        playerId:pId||null,player:m.player||null,category,yards:m.yards??null,
        statCount:integerStat(line[category])?line[category]:null,
        weightedRules:bonusRules,
@@ -91,10 +94,14 @@ export function reconcilePlayerScoringEvidence({
  const validPlayCounts=new Map();
  const provisionalOnly=new Set([
    'fifty_plus_stacking_not_adjudicated','final_player_stat_not_verified',
-   'weighted_rule_missing'
+   'weighted_rule_missing','event_identity_insufficient'
  ]);
  for(const c of allCandidates){
-   if(!c.playerId||c.checks.some(reason=>!provisionalOnly.has(reason)))continue;
+   // An ID-less, clock-less 2PT can be corroborated by another MSF
+   // scoring source. Preserve its PBP count without certifying it.
+   if(!c.playerId||c.checks.some(reason=>
+      !provisionalOnly.has(reason)||
+      (reason==='event_identity_insufficient'&&!c.category.endsWith('_2pt'))))continue;
    const k=c.playerId+'|'+c.category;
    validPlayCounts.set(k,(validPlayCounts.get(k)||0)+1);
  }
