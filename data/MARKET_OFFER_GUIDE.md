@@ -2,12 +2,12 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-10-31T14:50:10.222597+00:00
+Updated: 2026-11-01T14:51:09.105974+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 0. Unpriced candidate packages: 11.
+Fully priced in-range opportunities: 0. Unpriced candidate packages: 9.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
