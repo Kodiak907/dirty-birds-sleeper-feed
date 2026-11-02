@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-02T13:05:01.164466+00:00
-Sleeper snapshot: 2026-11-02T13:04:51.857921+00:00
-nflverse observations: 2026-11-02T13:04:55.528742+00:00; injury feed loaded: True
+Generated: 2026-11-02T14:20:08.706207+00:00
+Sleeper snapshot: 2026-11-02T14:19:53.291017+00:00
+nflverse observations: 2026-11-02T14:20:00.782587+00:00; injury feed loaded: True
 
-**New observed changes:** 35. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,41 +31,8 @@ nflverse observations: 2026-11-02T13:04:55.528742+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Antonio Williams** (snap_share_change): Snap share rose 16.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Caleb Douglas** (snap_share_change): Snap share rose 18.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jonah Coleman** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Adonai Mitchell** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Ashton Jeanty** (snap_share_change): Snap share fell 32.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Brenton Strange** (snap_share_change): Snap share fell 24.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Chris Bell** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Cyrus Allen** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **DJ Moore** (snap_share_change): Snap share rose 27.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Dalton Kincaid** (snap_share_change): Snap share fell 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Dohnte Meyers** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Drake London** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Efton Chism III** (snap_share_change): Snap share rose 25.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Hunter Henry** (snap_share_change): Snap share fell 63.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jacoby Brissett** (snap_share_change): Snap share fell 42.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jake Ferguson** (snap_share_change): Snap share fell 51.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jakobi Meyers** (snap_share_change): Snap share fell 21.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jeremiyah Love** (snap_share_change): Snap share fell 30.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jordan Addison** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jordan Mason** (snap_share_change): Snap share fell 36.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Kendrick Bourne** (snap_share_change): Snap share fell 25.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Ladd McConkey** (snap_share_change): Snap share rose 78.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Lamar Jackson** (snap_share_change): Snap share fell 50.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Mike Gesicki** (snap_share_change): Snap share rose 30.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Mike Washington Jr.** (snap_share_change): Snap share rose 34.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Omarion Hampton** (snap_share_change): Snap share fell 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Rachaad White** (snap_share_change): Snap share fell 22.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Rashee Rice** (snap_share_change): Snap share rose 47.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Saquon Barkley** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Tre Tucker** (snap_share_change): Snap share fell 28.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Trevor Lawrence** (snap_share_change): Snap share fell 19.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Tyler Warren** (snap_share_change): Snap share fell 22.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Wan'Dale Robinson** (snap_share_change): Snap share rose 34.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Zachariah Branch** (snap_share_change): Snap share fell 25.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Zonovan Knight** (snap_share_change): Snap share fell 31.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
