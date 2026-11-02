@@ -17,38 +17,38 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keaton Mitchell | 6.08 | +1.88 | 32.0% | Carries 4.0 | No modeled flags (not medically cleared) |
+| 1 | Keaton Mitchell | 6.08 | +1.88 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
 | 2 | Devin Singletary | 5.62 | +1.41 | 31.7% | Carries 4.0 | No modeled flags (not medically cleared) |
-| 3 | Samaje Perine | 5.46 | +1.26 | 36.7% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 3 | Samaje Perine | 5.46 | +1.26 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 4 | Chris Rodriguez Jr. | 5.23 | +1.03 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
 | 5 | Tyjae Spears | 4.98 | +0.78 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 6 | Mike Washington Jr. | 4.87 | +0.66 | 23.0% | Carries 13.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 6 | Mike Washington Jr. | 4.87 | +0.66 | 40.3% | Carries 13.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 7 | Tank Bigsby | 2.20 | -2.01 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 8 | Jaleel McLaughlin | 1.49 | -2.72 | 27.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 9 | Zonovan Knight | 0.94 | -3.27 | 35.0% | — | carries_missing |
+| 8 | Jaleel McLaughlin | 1.49 | -2.72 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 9 | Zonovan Knight | 0.94 | -3.27 | 39.7% | — | carries_missing |
 
 ## WR — reference: Caleb Douglas (5.97 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kalif Raymond | 5.70 | -0.27 | 61.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 2 | Quentin Johnston | 5.68 | -0.29 | 81.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 3 | Chris Bell | 5.11 | -0.87 | 67.0% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 2 | Quentin Johnston | 5.68 | -0.29 | 79.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 3 | Chris Bell | 5.11 | -0.87 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 4 | Rashid Shaheed | 4.18 | -1.79 | 41.3% | Tgt 5.0 | injury_report_observation_review |
 | 5 | Michael Pittman Jr. | 3.92 | -2.06 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 6 | Ja'Kobi Lane | 3.69 | -2.29 | 54.3% | Tgt 3.7 | injury_report_observation_review |
-| 7 | Rashod Bateman | 3.58 | -2.39 | 61.0% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 8 | Adonai Mitchell | 3.37 | -2.60 | 65.0% | Tgt 8.0 | No modeled flags (not medically cleared) |
+| 6 | Ja'Kobi Lane | 3.69 | -2.29 | 62.7% | Tgt 3.7 | injury_report_observation_review |
+| 7 | Rashod Bateman | 3.58 | -2.39 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 8 | Adonai Mitchell | 3.37 | -2.60 | 62.3% | Tgt 8.0 | No modeled flags (not medically cleared) |
 | 9 | Brian Thomas Jr. | 3.15 | -2.82 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 | 10 | Mack Hollins | 3.11 | -2.87 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
-| 11 | Jauan Jennings | 2.76 | -3.21 | 73.3% | Tgt 2.0 | injury_report_observation_review |
+| 11 | Jauan Jennings | 2.76 | -3.21 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 | 12 | Konata Mumpfield | 2.48 | -3.50 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
 ## TE — reference: Chig Okonkwo (6.08 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Michael Mayer | 5.20 | -0.88 | 75.3% | Tgt 6.0 | No modeled flags (not medically cleared) |
+| 1 | Michael Mayer | 5.20 | -0.88 | 80.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
 | 2 | Noah Fant | 4.32 | -1.75 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
 | 3 | Colby Parkinson | 3.16 | -2.92 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 | 4 | David Njoku | 2.70 | -3.38 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
