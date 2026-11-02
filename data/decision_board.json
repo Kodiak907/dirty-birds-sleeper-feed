@@ -2,11 +2,11 @@
   "current_roster_reference": {
     "DEF": {
       "name": "Minnesota Vikings",
-      "ppg": 6.96
+      "ppg": 6.946
     },
     "K": {
       "name": "Will Reichard",
-      "ppg": 7.25
+      "ppg": 7.239
     },
     "QB": {
       "name": "C.J. Stroud",
@@ -14,18 +14,18 @@
     },
     "RB": {
       "name": "Kaelon Black",
-      "ppg": 4.197
+      "ppg": 4.205
     },
     "TE": {
       "name": "Chig Okonkwo",
-      "ppg": 6.074
+      "ppg": 6.077
     },
     "WR": {
       "name": "Caleb Douglas",
-      "ppg": 5.967
+      "ppg": 5.974
     }
   },
-  "generated_at_utc": "2026-11-02T01:42:59.009037+00:00",
+  "generated_at_utc": "2026-11-02T02:04:11.099359+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -41,12 +41,12 @@
           "targets_per_game": null
         },
         "name": "Kansas City Chiefs",
-        "ppg": 6.86,
+        "ppg": 6.88,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -0.1,
+        "same_position_uplift_ppg": -0.06,
         "screen_only": true,
         "sleeper_id": "KC",
         "team": "KC"
@@ -66,9 +66,9 @@
         "ppg": 6.44,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -0.52,
+        "same_position_uplift_ppg": -0.51,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -85,12 +85,12 @@
           "targets_per_game": null
         },
         "name": "Baltimore Ravens",
-        "ppg": 6.23,
+        "ppg": 6.15,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -0.73,
+        "same_position_uplift_ppg": -0.8,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -110,34 +110,12 @@
         "ppg": 6.04,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -0.92,
+        "same_position_uplift_ppg": -0.91,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Chicago Bears",
-        "ppg": 5.62,
-        "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.96
-        },
-        "same_position_uplift_ppg": -1.34,
-        "screen_only": true,
-        "sleeper_id": "CHI",
-        "team": "CHI"
       },
       {
         "audit": {
@@ -154,9 +132,9 @@
         "ppg": 5.62,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -1.34,
+        "same_position_uplift_ppg": -1.32,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -172,13 +150,35 @@
           "snap_trend_3_appearances_pp": null,
           "targets_per_game": null
         },
-        "name": "New York Giants",
-        "ppg": 5.57,
+        "name": "Chicago Bears",
+        "ppg": 5.61,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -1.39,
+        "same_position_uplift_ppg": -1.33,
+        "screen_only": true,
+        "sleeper_id": "CHI",
+        "team": "CHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New York Giants",
+        "ppg": 5.58,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 6.946
+        },
+        "same_position_uplift_ppg": -1.37,
         "screen_only": true,
         "sleeper_id": "NYG",
         "team": "NYG"
@@ -195,15 +195,37 @@
           "targets_per_game": null
         },
         "name": "Cleveland Browns",
-        "ppg": 5.48,
+        "ppg": 5.49,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -1.48,
+        "same_position_uplift_ppg": -1.46,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New Orleans Saints",
+        "ppg": 5.29,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 6.946
+        },
+        "same_position_uplift_ppg": -1.66,
+        "screen_only": true,
+        "sleeper_id": "NO",
+        "team": "NO"
       },
       {
         "audit": {
@@ -220,34 +242,12 @@
         "ppg": 5.29,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -1.67,
+        "same_position_uplift_ppg": -1.66,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "New Orleans Saints",
-        "ppg": 5.28,
-        "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.96
-        },
-        "same_position_uplift_ppg": -1.68,
-        "screen_only": true,
-        "sleeper_id": "NO",
-        "team": "NO"
       },
       {
         "audit": {
@@ -264,9 +264,9 @@
         "ppg": 4.53,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -2.43,
+        "same_position_uplift_ppg": -2.42,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -286,9 +286,9 @@
         "ppg": 4.42,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.96
+          "ppg": 6.946
         },
-        "same_position_uplift_ppg": -2.54,
+        "same_position_uplift_ppg": -2.53,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -310,9 +310,9 @@
         "ppg": 6.35,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.25
+          "ppg": 7.239
         },
-        "same_position_uplift_ppg": -0.9,
+        "same_position_uplift_ppg": -0.89,
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
@@ -329,12 +329,12 @@
           "targets_per_game": null
         },
         "name": "Cameron Dicker",
-        "ppg": 6.29,
+        "ppg": 6.3,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.25
+          "ppg": 7.239
         },
-        "same_position_uplift_ppg": -0.96,
+        "same_position_uplift_ppg": -0.94,
         "screen_only": true,
         "sleeper_id": "8259",
         "team": "LAC"
@@ -351,12 +351,12 @@
           "targets_per_game": null
         },
         "name": "Dominic Zvada",
-        "ppg": 6.11,
+        "ppg": 6.12,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.25
+          "ppg": 7.239
         },
-        "same_position_uplift_ppg": -1.14,
+        "same_position_uplift_ppg": -1.12,
         "screen_only": true,
         "sleeper_id": "13833",
         "team": "NYG"
@@ -373,10 +373,10 @@
           "targets_per_game": null
         },
         "name": "Cairo Santos",
-        "ppg": 5.57,
+        "ppg": 5.56,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.25
+          "ppg": 7.239
         },
         "same_position_uplift_ppg": -1.68,
         "screen_only": true,
@@ -398,9 +398,9 @@
         "ppg": 5.47,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.25
+          "ppg": 7.239
         },
-        "same_position_uplift_ppg": -1.78,
+        "same_position_uplift_ppg": -1.77,
         "screen_only": true,
         "sleeper_id": "1945",
         "team": "PIT"
@@ -422,12 +422,12 @@
           "targets_per_game": 0.0
         },
         "name": "Malik Willis",
-        "ppg": 14.62,
+        "ppg": 14.63,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": 0.38,
+        "same_position_uplift_ppg": 0.39,
         "screen_only": true,
         "sleeper_id": "8161",
         "team": "MIA"
@@ -449,12 +449,12 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 13.1,
+        "ppg": 13.08,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": -1.14,
+        "same_position_uplift_ppg": -1.16,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -471,12 +471,12 @@
           "targets_per_game": 0.0
         },
         "name": "Tanner McKee",
-        "ppg": 11.32,
+        "ppg": 11.35,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 14.24
         },
-        "same_position_uplift_ppg": -2.92,
+        "same_position_uplift_ppg": -2.89,
         "screen_only": true,
         "sleeper_id": "9230",
         "team": "PHI"
@@ -501,7 +501,7 @@
         "ppg": 6.08,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
         "same_position_uplift_ppg": 1.88,
         "screen_only": true,
@@ -520,10 +520,10 @@
           "targets_per_game": 1.67
         },
         "name": "Devin Singletary",
-        "ppg": 5.61,
+        "ppg": 5.62,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
         "same_position_uplift_ppg": 1.41,
         "screen_only": true,
@@ -545,12 +545,12 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.45,
+        "ppg": 5.46,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": 1.25,
+        "same_position_uplift_ppg": 1.26,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -570,12 +570,12 @@
           "targets_per_game": 1.0
         },
         "name": "Chris Rodriguez Jr.",
-        "ppg": 5.2,
+        "ppg": 5.23,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": 1.0,
+        "same_position_uplift_ppg": 1.03,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
@@ -603,9 +603,9 @@
         "ppg": 4.98,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": 0.79,
+        "same_position_uplift_ppg": 0.78,
         "screen_only": true,
         "sleeper_id": "9508",
         "team": "TEN"
@@ -631,10 +631,10 @@
           "targets_per_game": 0.67
         },
         "name": "Mike Washington Jr.",
-        "ppg": 4.86,
+        "ppg": 4.87,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
         "same_position_uplift_ppg": 0.66,
         "screen_only": true,
@@ -661,9 +661,9 @@
         "ppg": 2.2,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": -2.0,
+        "same_position_uplift_ppg": -2.01,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -683,9 +683,9 @@
         "ppg": 1.49,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": -2.71,
+        "same_position_uplift_ppg": -2.72,
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
@@ -698,18 +698,18 @@
           ],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
+          "projection_coverage": 0.8,
           "recent_snap_pct": 35.0,
           "snap_trend_3_appearances_pp": 45.0,
           "targets_per_game": null
         },
         "name": "Zonovan Knight",
-        "ppg": 1.36,
+        "ppg": 0.94,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.197
+          "ppg": 4.205
         },
-        "same_position_uplift_ppg": -2.83,
+        "same_position_uplift_ppg": -3.27,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -728,12 +728,12 @@
           "targets_per_game": 6.0
         },
         "name": "Michael Mayer",
-        "ppg": 5.19,
+        "ppg": 5.2,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.074
+          "ppg": 6.077
         },
-        "same_position_uplift_ppg": -0.89,
+        "same_position_uplift_ppg": -0.88,
         "screen_only": true,
         "sleeper_id": "9482",
         "team": "LV"
@@ -756,7 +756,7 @@
         "ppg": 4.32,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.074
+          "ppg": 6.077
         },
         "same_position_uplift_ppg": -1.75,
         "screen_only": true,
@@ -773,18 +773,18 @@
           ],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
+          "projection_coverage": 0.8,
           "recent_snap_pct": null,
           "snap_trend_3_appearances_pp": null,
           "targets_per_game": null
         },
         "name": "Colby Parkinson",
-        "ppg": 3.69,
+        "ppg": 3.16,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.074
+          "ppg": 6.077
         },
-        "same_position_uplift_ppg": -2.38,
+        "same_position_uplift_ppg": -2.92,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -806,9 +806,9 @@
         "ppg": 2.7,
         "replacement_reference": {
           "name": "Chig Okonkwo",
-          "ppg": 6.074
+          "ppg": 6.077
         },
-        "same_position_uplift_ppg": -3.37,
+        "same_position_uplift_ppg": -3.38,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -827,12 +827,12 @@
           "targets_per_game": 2.67
         },
         "name": "Kalif Raymond",
-        "ppg": 5.71,
+        "ppg": 5.7,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -0.26,
+        "same_position_uplift_ppg": -0.27,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -855,7 +855,7 @@
         "ppg": 5.68,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
         "same_position_uplift_ppg": -0.29,
         "screen_only": true,
@@ -877,69 +877,15 @@
           "targets_per_game": 3.67
         },
         "name": "Chris Bell",
-        "ppg": 5.1,
+        "ppg": 5.11,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
         "same_position_uplift_ppg": -0.87,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [
-            "injury_report_observation_review"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "report_primary_injury": "Wrist",
-            "report_status": "Questionable",
-            "week": "6"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": 54.3,
-          "snap_trend_3_appearances_pp": 29.0,
-          "targets_per_game": 3.67
-        },
-        "name": "Ja'Kobi Lane",
-        "ppg": 4.57,
-        "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 5.967
-        },
-        "same_position_uplift_ppg": -1.4,
-        "screen_only": true,
-        "sleeper_id": "13293",
-        "team": "BAL"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "7"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.9,
-          "recent_snap_pct": 61.0,
-          "snap_trend_3_appearances_pp": -7.0,
-          "targets_per_game": 2.67
-        },
-        "name": "Rashod Bateman",
-        "ppg": 4.35,
-        "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 5.967
-        },
-        "same_position_uplift_ppg": -1.61,
-        "screen_only": true,
-        "sleeper_id": "7571",
-        "team": "BAL"
       },
       {
         "audit": {
@@ -960,12 +906,12 @@
           "targets_per_game": 5.0
         },
         "name": "Rashid Shaheed",
-        "ppg": 4.17,
+        "ppg": 4.18,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -1.8,
+        "same_position_uplift_ppg": -1.79,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -988,12 +934,66 @@
         "ppg": 3.92,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -2.05,
+        "same_position_uplift_ppg": -2.06,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "report_primary_injury": "Wrist",
+            "report_status": "Questionable",
+            "week": "6"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 54.3,
+          "snap_trend_3_appearances_pp": 29.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Ja'Kobi Lane",
+        "ppg": 3.69,
+        "replacement_reference": {
+          "name": "Caleb Douglas",
+          "ppg": 5.974
+        },
+        "same_position_uplift_ppg": -2.29,
+        "screen_only": true,
+        "sleeper_id": "13293",
+        "team": "BAL"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.9,
+          "recent_snap_pct": 61.0,
+          "snap_trend_3_appearances_pp": -7.0,
+          "targets_per_game": 2.67
+        },
+        "name": "Rashod Bateman",
+        "ppg": 3.58,
+        "replacement_reference": {
+          "name": "Caleb Douglas",
+          "ppg": 5.974
+        },
+        "same_position_uplift_ppg": -2.39,
+        "screen_only": true,
+        "sleeper_id": "7571",
+        "team": "BAL"
       },
       {
         "audit": {
@@ -1013,9 +1013,9 @@
         "ppg": 3.37,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -2.59,
+        "same_position_uplift_ppg": -2.6,
         "screen_only": true,
         "sleeper_id": "11625",
         "team": "NYJ"
@@ -1038,12 +1038,12 @@
           "targets_per_game": 2.33
         },
         "name": "Brian Thomas Jr.",
-        "ppg": 3.16,
+        "ppg": 3.15,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -2.81,
+        "same_position_uplift_ppg": -2.82,
         "screen_only": true,
         "sleeper_id": "11631",
         "team": "JAX"
@@ -1071,9 +1071,9 @@
         "ppg": 3.11,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -2.86,
+        "same_position_uplift_ppg": -2.87,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1097,12 +1097,12 @@
           "targets_per_game": 2.0
         },
         "name": "Jauan Jennings",
-        "ppg": 2.77,
+        "ppg": 2.76,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -3.2,
+        "same_position_uplift_ppg": -3.21,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1126,9 +1126,9 @@
         "ppg": 2.48,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -3.49,
+        "same_position_uplift_ppg": -3.5,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1151,9 +1151,9 @@
         "ppg": 2.08,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -3.88,
+        "same_position_uplift_ppg": -3.89,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1173,7 +1173,7 @@
         "ppg": 1.28,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
         "same_position_uplift_ppg": -4.69,
         "screen_only": true,
@@ -1204,7 +1204,7 @@
         "ppg": 0.92,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
         "same_position_uplift_ppg": -5.05,
         "screen_only": true,
@@ -1226,10 +1226,10 @@
           "targets_per_game": 2.33
         },
         "name": "Cyrus Allen",
-        "ppg": 0.88,
+        "ppg": 0.89,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
         "same_position_uplift_ppg": -5.09,
         "screen_only": true,
@@ -1251,9 +1251,9 @@
         "ppg": 0.21,
         "replacement_reference": {
           "name": "Caleb Douglas",
-          "ppg": 5.967
+          "ppg": 5.974
         },
-        "same_position_uplift_ppg": -5.75,
+        "same_position_uplift_ppg": -5.76,
         "screen_only": true,
         "sleeper_id": "12634",
         "team": "SF"
@@ -1261,5 +1261,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-02T01:42:53.154041+00:00"
+  "snapshot_utc": "2026-11-02T02:04:07.468351+00:00"
 }
