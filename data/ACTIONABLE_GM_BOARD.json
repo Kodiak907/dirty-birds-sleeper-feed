@@ -1,8 +1,35 @@
 {
-  "generated_at_utc": "2026-11-02T14:20:02.048165+00:00",
-  "roster_snapshot_utc": "2026-11-02T14:19:53.291017+00:00",
+  "generated_at_utc": "2026-11-02T16:00:47.537841+00:00",
+  "roster_snapshot_utc": "2026-11-02T16:00:41.998988+00:00",
   "trade_qualified_for_negotiation_review": [],
-  "trade_rejected": [],
+  "trade_rejected": [
+    {
+      "give": [
+        "Jonah Coleman",
+        "Zach Charbonnet"
+      ],
+      "reasons": [
+        "Opponent has insufficient demonstrated benefit"
+      ],
+      "receive": [
+        "Chris Olave"
+      ]
+    },
+    {
+      "give": [
+        "Garrett Wilson",
+        "Isaiah Likely"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Brock Bowers"
+      ]
+    }
+  ],
   "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [],
   "waiver_screened_count": 0,

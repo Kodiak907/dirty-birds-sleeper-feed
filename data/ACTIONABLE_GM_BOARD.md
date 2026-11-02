@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-02T14:20:02.048165+00:00
+Generated: 2026-11-02T16:00:47.537841+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,6 +18,8 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
+- Jonah Coleman, Zach Charbonnet for Chris Olave: Opponent has insufficient demonstrated benefit
+- Garrett Wilson, Isaiah Likely for Brock Bowers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 
