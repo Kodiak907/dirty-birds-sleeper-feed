@@ -2,17 +2,17 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-01T14:51:09.105974+00:00
+Updated: 2026-11-02T15:09:03.100448+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 0. Unpriced candidate packages: 9.
+Fully priced in-range opportunities: 2. Unpriced candidate packages: 9.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-
-No fully priced, mutually beneficial packages passed the conservative market screen. Do not force a trade.
+| 1 | 9 | Jonah Coleman, Zach Charbonnet | Chris Olave | 0.95× | +3.04 | +0.35 |
+| 2 | 7 | Garrett Wilson, Isaiah Likely | Brock Bowers | 1.09× | +1.02 | +0.28 |
 
 ## Negotiation protocol
 
