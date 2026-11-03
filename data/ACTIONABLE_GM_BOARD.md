@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-03T14:13:38.553164+00:00
+Generated: 2026-11-03T15:51:50.133355+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,8 +18,9 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- Jonah Coleman, Zach Charbonnet for Chris Olave: Opponent has insufficient demonstrated benefit
-- Garrett Wilson, Isaiah Likely for Brock Bowers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- C.J. Stroud, A.J. Brown for Ashton Jeanty: Opponent has insufficient demonstrated benefit
+- C.J. Stroud, Zay Flowers for Justin Jefferson: Opponent has insufficient demonstrated benefit
+- C.J. Stroud, Chris Olave for Puka Nacua: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 
