@@ -116,80 +116,136 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   if(progressNode)progressNode.textContent=progress||
     (state.autoFailure?'Stopped: '+state.autoFailure:'');
  }
- async function runNextBatch({automatic=false}={}){
-  if(state.running||(state.autoActive&&!automatic))return {checked:0,failed:false};
-  const batch=queue().batch;
+ async function probeHistoricalGame(g){
+  const scheduleGame=(getSchedule?.()||[]).find(x=>String(x.id)===String(g.gameId))||{};
+  const good=r=>r?.status==='fulfilled'&&r.value?.available!==false&&!r.value?.error;
+  const [plays,box]=await Promise.allSettled([
+   feed('plays',{season,game_id:g.gameId},true),
+   feed('boxscore',{season,game_id:g.gameId},true)
+  ]);
+  let failure=classifyMSFScanFailure([plays,box]);
+  let inspection=null;
+  if(!failure){
+   try{inspection=model.inspectHistoricalGame(plays.value,box.value,scheduleGame)}
+   catch(error){
+    failure={kind:'unknown',retryable:false,delayMs:0,
+     description:'MSF historical play/box response not interpretable',
+     diagnostic:String(error?.message||error).slice(0,130)};
+   }
+  }
+  let logs=[],verifiedLogs=false;
+  if(!failure){
+   // Separate play/box and team-log bursts; limited MSF accounts should
+   // never receive all four game queries in one simultaneous request burst.
+   const delay=hasLiveGames()?3500:1200;
+   await sleep(delay);
+   if(!isVisible()||state.stopRequested)return {cancelled:true};
+   const teams=[g.home,g.away];
+   logs=await Promise.allSettled(teams.map(team=>
+    feed('gamelogs',{season,week:g.week,team},true)));
+   failure=classifyMSFScanFailure(logs);
+   if(!failure){
+    try{
+     const mapped=logs.map(r=>model.playerRows(r.value.data||{}));
+     verifiedLogs=logs.every((r,i)=>mapped[i].length>0&&
+      mapped[i].every(p=>String(p.game?.id||p.game?.gameId||'')===
+       String(g.gameId)&&p.team===teams[i]));
+    }catch(error){failure={kind:'unknown',retryable:false,delayMs:0,
+     description:'MSF player game-log response not interpretable',
+     diagnostic:String(error?.message||error).slice(0,130)}}
+   }
+  }
+  return {inspection,verifiedLogs,failure,cancelled:false};
+ }
+ async function runNextBatch({automatic=false,excludeGameIds=[]}={}){
+  if(state.running||(state.autoActive&&!automatic))return {checked:0,skipped:0,failed:false};
+  const batch=queue(excludeGameIds).batch;
   if(!batch.length){
-   render('No provider-scheduled final games left in the source-discovery queue.');
-   return {checked:0,failed:false};
+   render('No available MSF games in this scan batch.');
+   return {checked:0,skipped:0,failed:false};
   }
   state.running=true;state.error=null;
-  render('Checking MSF source data · scoring remains withheld.');
-  let checked=0,failed=false;
+  render('Checking historical MSF source data; scores remain withheld.');
+  let checked=0,skipped=0,failed=false,category=null,stopped=false;
   try{
    for(const g of batch){
     if(automatic&&(state.stopRequested||!isVisible()))break;
     render('Inspecting Week '+g.week+' · '+g.away+' @ '+g.home+'…');
-    const [plays,box]=await Promise.allSettled([
-     feed('plays',{season,game_id:g.gameId},true),
-     feed('boxscore',{season,game_id:g.gameId},true)
-    ]);
-    const goodResponse=r=>r.status==='fulfilled'&&
-     r.value?.available!==false&&!r.value?.error;
-    const sourceOk=goodResponse(plays)&&goodResponse(box);
-    let inspect=null;
-    try{
-     if(sourceOk)inspect=model.inspectHistoricalGame(plays.value,box.value,
-      (getSchedule?.()||[]).find(x=>String(x.id)===String(g.gameId))||{});
-    }catch{inspect=null;}
-    const teams=[g.home,g.away];
-    const logs=sourceOk?await Promise.allSettled(teams.map(team=>
-     feed('gamelogs',{season,week:g.week,team},true))):[];
-    const logsOk=logs.length===2&&logs.every(goodResponse);
-    const mapped=logs.map(r=>goodResponse(r)?model.playerRows(r.value.data||{}):[]);
-    const verifiedLogs=logsOk&&logs.every((r,i)=>mapped[i].length>0&&
-     mapped[i].every(p=>String(p.game?.id||p.game?.gameId||'')===
-      String(g.gameId)&&p.team===teams[i]));
-    // Network failures and authenticated provider errors must not be
-    // checkpointed as successfully inspected. This lets manual retry work.
-    const sourceFailure=!sourceOk||!logsOk;
+    let probe=await probeHistoricalGame(g);
+    if(probe.cancelled)break;
+    let failure=probe.failure;
+    // Bounded recovery: one retry for network/502 errors. Throttling is
+    // treated more cautiously: at most one retry after a 60s cooldown.
+    if(failure?.retryable&&automatic&&isVisible()&&!state.stopRequested){
+     const delay=failure.delayMs||6500;
+     render(failure.description+' at '+g.away+' @ '+g.home+
+      ' · waiting '+Math.ceil(delay/1000)+'s before one retry.');
+     for(let elapsed=0;elapsed<delay;elapsed+=5000){
+      await sleep(Math.min(5000,delay-elapsed));
+      if(state.stopRequested||!isVisible())break;
+     }
+     if(state.stopRequested||!isVisible())break;
+     probe=await probeHistoricalGame(g);
+     if(probe.cancelled)break;
+     failure=probe.failure;
+    }
+    const sourceFailure=!!failure;
+    const inspection=probe.inspection;
     snapshots[g.gameId]={
      checkedAt:new Date().toISOString(),
-     sourceFailure,
-     pbpPublished:inspect?.diagnostics?.hasPublishedPlays===true,
-     pbpChronologyVerified:inspect?.usablePlaySequence===true,
-     finalBoxVerified:inspect?.boxScorePublished===true&&inspect?.providerFinal===true,
-     scoreMatchesSchedule:inspect?.matchesSchedule===true,
-     playerGameLogsVerified:verifiedLogs,
+     sourceFailure,failureKind:failure?.kind||null,
+     failureReason:failure?.description||null,
+     pbpPublished:inspection?.diagnostics?.hasPublishedPlays===true,
+     pbpChronologyVerified:inspection?.usablePlaySequence===true,
+     finalBoxVerified:inspection?.boxScorePublished===true&&inspection?.providerFinal===true,
+     scoreMatchesSchedule:inspection?.matchesSchedule===true,
+     playerGameLogsVerified:probe.verifiedLogs===true,
      playerIdentitiesVerified:false,requiredStatFieldsVerified:false,
      scoringEventsReconciled:false,statCorrectionsChecked:false,
      kickerScoreVerified:false,dstScoreVerified:false,
-     finalPlayerScoreRecomputed:false,playCount:inspect?.diagnostics?.describedCount??null,
-     errors:sourceFailure?['MSF provider read unavailable; source game remains queued']:[]
+     finalPlayerScoreRecomputed:false,playCount:inspection?.diagnostics?.describedCount??null
     };
     saveSnapshots();
     if(sourceFailure){
-     failed=true;
-     state.autoFailure='MSF request failed at W'+g.week+' '+g.away+' @ '+g.home+
-      '. Scan stopped; source game can be retried.';
-     state.error=state.autoFailure;
-     render(state.autoFailure);
-     break; // Prevent 429 storms. Never hammer through a source outage.
+     skipped++;failed=true;category=failure.kind;
+     const detail='W'+g.week+' '+g.away+' @ '+g.home+' · '+
+      failure.description+' · '+failure.diagnostic;
+     state.lastFailure={gameId:g.gameId,week:g.week,kind:failure.kind,
+      description:failure.description,diagnostic:failure.diagnostic};
+     state.autoFailure=detail;
+     state.error=detail;
+     state.excludedThisRun.add(g.gameId);
+     const policy=scanFailurePolicy(failure);
+     if(policy.action==='stop'){
+      stopped=true;
+      if(failure.kind==='rate_limit')state.cooldownUntil=Date.now()+60000;
+      render('Scan stopped: '+detail+'. Successful checks preserved.');
+      break;
+     }
+     state.consecutiveUnavailable++;
+     render('Unverified game set aside for this run: '+detail+
+      '. Continuing with other games where possible.');
+     if(state.consecutiveUnavailable>=3){
+      stopped=true;state.autoFailure='Three consecutive MSF source failures; stopped to avoid provider flooding. Last: '+detail;
+      break;
+     }
+     if(!automatic)break;
+     await sleep(hasLiveGames()?7000:4000);
+     continue;
     }
-    checked++;state.inspected++;
+    checked++;state.inspected++;state.consecutiveUnavailable=0;
     if(automatic)state.autoScanned++;
-    state.lastProgress='Source diagnostics captured for W'+g.week+' '+g.away+
-     ' @ '+g.home+'. Fantasy totals remain withheld.';
+    state.lastProgress='Source requests completed for W'+g.week+' '+g.away+
+     ' @ '+g.home+'. Fantasy totals still withheld.';
     render(state.lastProgress);
+    if(automatic&&g!==batch[batch.length-1])await sleep(hasLiveGames()?5000:3000);
    }
   }catch(error){
-   failed=true;
-   state.error='MSF batch check: '+String(error?.message||error).slice(0,130);
-  }finally{
-   state.running=false;
-   render(state.error||state.lastProgress);
-  }
-  return {checked,failed};
+   failed=true;stopped=true;category='unexpected_error';
+   state.error='MSF batch error: '+String(error?.message||error).slice(0,120);
+   state.autoFailure=state.error;
+  }finally{state.running=false;render(state.error||state.lastProgress)}
+  return {checked,skipped,failed,stopped,category};
  }
  function pauseRemainingChecks(){
   if(!state.autoActive)return false;
