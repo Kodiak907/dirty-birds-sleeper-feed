@@ -1,15 +1,16 @@
 # Dirty Birds — Lineup Decision Backtesting
 
-Updated: 2026-11-03T04:54:59.545160+00:00
+Updated: 2026-11-03T05:54:52.802498+00:00
 Newly frozen future weeks: none.
-Comparable completed-week evaluations: 0.
+Comparable completed-week evaluations: 1.
 
 The model snapshot is stored **before the first NFL game of the week**.
 Retrospective result does not prove the lineup was the right choice at decision time.
 
 | Week | Status | Frozen lineup actual | Submitted lineup actual | Retrospective margin |
 |---:|---|---:|---:|---:|
+| 8 | comparable_retrospective | 75.84 | 83.74 | -7.90 |
 
-Future weeks with archives pending outcome: 8, 9
+Future weeks with archives pending outcome: 9
 
 No archived outcome is substituted with hindsight projections. No transactions performed.
