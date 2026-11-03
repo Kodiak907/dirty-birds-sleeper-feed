@@ -17,9 +17,15 @@ function setup(storage=null,options={}){
  const requests=[];
  const feed=async(name,args)=>{
   requests.push({name,...args});
-  if(options.failOnce&&name==='plays'){
+  if(name==='plays'&&options.failOnce){
    options.failOnce=false;throw Error('MSF rate limit 429');
   }
+  if(name==='plays'&&options.alwaysFail)throw Error('MSF gateway 502');
+  if(name==='plays'&&options.alwaysRateLimit)throw Error('MSF rate limit 429');
+  if(name==='plays'&&options.missingForGame===args.game_id)
+   return {available:false,error:'provider_feed_not_found'};
+  if(name==='plays'&&options.accessFail)
+   return {available:false,error:'provider_auth_or_entitlement_denied'};
   if(name==='plays')return {data:{plays:[{id:'a'}]}};
   if(name==='boxscore')return {data:{gameboxscore:{}}};
   if(name==='gamelogs')return {data:{team:args.team,gameId:'gb1'}};
@@ -127,7 +133,7 @@ test('One-tap auto-scan processes every remaining game, checkpointing and exitin
  assert.equal(api.getScanState().autoActive,false);
  assert.equal(ui['ffo-gc-research-all'].disabled,true);
  assert.equal(ui['ffo-gc-research-pause'].disabled,true);
- assert.equal(delays,1);
+ assert.ok(delays>=1);
  assert.equal(requests.filter(x=>x.name==='plays').length,3);
  const reloaded=setup(storage);
  assert.equal(reloaded.api.getInspectedGames(),3);
@@ -135,7 +141,7 @@ test('One-tap auto-scan processes every remaining game, checkpointing and exitin
 });
 test('Pause stops after current batch; pressing run remaining resumes without duplicates',async()=>{
  let api,pauses=0;
- const options={sleep:async()=>{pauses++;api.pauseRemainingChecks()}};
+ const options={sleep:async(ms)=>{pauses++;if(ms===4500)api.pauseRemainingChecks()}};
  const instance=setup(null,options);api=instance.api;
  const partial=await api.runRemainingChecks();
  assert.equal(partial.reason,'paused');
@@ -148,21 +154,62 @@ test('Pause stops after current batch; pressing run remaining resumes without du
  assert.equal(done.remaining,0);
  assert.deepEqual(instance.requests.filter(x=>x.name==='plays').map(x=>x.game_id),['gb1','gb2','ny3']);
 });
-test('MSF 429 or provider error stops scan and leaves game eligible for retry',async()=>{
- const options={failOnce:true,sleep:async()=>{}};
+test('Transient MSF rate limiting gets one paced retry then completes when restored',async()=>{
+ const waits=[],options={failOnce:true,sleep:async(ms)=>{waits.push(ms)}};
  const {api,requests}=setup(null,options);
- const first=await api.runRemainingChecks();
- assert.equal(first.reason,'provider_error');
- assert.equal(first.checked,0);
- assert.equal(first.remaining,3);
- assert.equal(api.getSourceCheck('gb1').sourceFailure,true);
- const second=await api.runRemainingChecks();
- assert.equal(second.reason,'complete');
- assert.equal(second.checked,3);
- assert.equal(second.remaining,0);
+ const scan=await api.runRemainingChecks();
+ assert.equal(scan.reason,'complete');
+ assert.equal(scan.checked,3);
+ assert.equal(scan.remaining,0);
+ assert.equal(api.getSourceCheck('gb1').sourceFailure,false);
+ assert.ok(waits.filter(ms=>ms===5000).length>=12,'60-second backoff performed in interruptible chunks');
  assert.deepEqual(requests.filter(x=>x.name==='plays').map(x=>x.game_id),
   ['gb1','gb1','gb2','ny3']);
 });
+test('Per-game missing MSF feed leaves source pending while checking other games',async()=>{
+ const {api,requests,ui}=setup(null,{missingForGame:'gb1',sleep:async()=>{}});
+ const scan=await api.runRemainingChecks();
+ assert.equal(scan.reason,'unavailable_games');
+ assert.equal(scan.checked,2);
+ assert.equal(scan.failedThisRun,1);
+ assert.equal(scan.remaining,1);
+ assert.equal(api.getInspectedGames(),3);
+ assert.equal(api.getSourceCheck('gb1').sourceFailure,true);
+ assert.equal(api.getSourceCheck('gb1').failureKind,'missing_feed');
+ assert.match(ui['ffo-gc-research-status'].innerHTML,/2 source requests completed · 3 attempted · 1 source failures/);
+ assert.deepEqual(requests.filter(x=>x.name==='plays').map(x=>x.game_id),
+  ['gb1','gb2','ny3']);
+});
+test('Repeated gateway failures hit circuit breaker after 3 games instead of flooding MSF',async()=>{
+ const {api}=setup(null,{alwaysFail:true,sleep:async()=>{}});
+ const scan=await api.runRemainingChecks();
+ assert.equal(scan.reason,'multiple_source_errors');
+ assert.equal(scan.checked,0);
+ assert.equal(scan.remaining,3);
+ assert.equal(scan.failedThisRun,3);
+ assert.equal(api.getSourceCheck('gb1').failureKind,'transient');
+});
+test('Repeated 429 stops after one cautious retry and establishes a cooldown',async()=>{
+ const {api,requests}=setup(null,{alwaysRateLimit:true,sleep:async()=>{}});
+ const first=await api.runRemainingChecks();
+ assert.equal(first.reason,'rate_limit');
+ assert.equal(first.checked,0);
+ assert.equal(first.remaining,3);
+ assert.equal(api.getSourceCheck('gb1').failureKind,'rate_limit');
+ assert.equal(requests.filter(x=>x.name==='plays').length,2);
+ const retry=await api.runRemainingChecks();
+ assert.equal(retry.started,false);
+ assert.equal(retry.reason,'cooldown');
+ assert.ok(retry.retryAfterSeconds>0);
+});
+test('Provider entitlement rejection stops without additional game requests',async()=>{
+ const {api,requests}=setup(null,{accessFail:true,sleep:async()=>{}});
+ const first=await api.runRemainingChecks();
+ assert.equal(first.reason,'provider_access');
+ assert.equal(first.remaining,3);
+ assert.deepEqual(requests.filter(x=>x.name==='plays').map(x=>x.game_id),['gb1']);
+});
+
 test('Hidden mobile tab does not start HTTP requests, then can be resumed when visible',async()=>{
  const options={visibility:'hidden',sleep:async()=>{}};
  const {api,requests}=setup(null,options);
