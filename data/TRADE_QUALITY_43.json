@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-03T12:58:58.390306+00:00",
+  "generated_at_utc": "2026-11-03T14:13:41.032170+00:00",
   "candidates_evaluated": 58578,
   "market_matched": 7737,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-03T03:52:11.852966+00:00",
-  "projection_as_of": "2026-11-03T07:48:23.692577+00:00",
+  "projection_as_of": "2026-11-03T13:44:09.316425+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -37,13 +37,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.08,
-      "their_gain": 2.82,
+      "our_gain": 2.1,
+      "their_gain": 2.8,
       "market_paid_received_ratio": 1.031,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.678,
+      "score": 3.686,
       "not_an_approved_offer": true
     },
     {
@@ -73,13 +73,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.08,
-      "their_gain": 2.7,
+      "our_gain": 2.1,
+      "their_gain": 2.68,
       "market_paid_received_ratio": 1.034,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.597,
+      "score": 3.605,
       "not_an_approved_offer": true
     },
     {
@@ -109,13 +109,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.24,
-      "their_gain": 0.73,
+      "our_gain": 2.23,
+      "their_gain": 0.74,
       "market_paid_received_ratio": 0.996,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.666,
+      "score": 2.662,
       "not_an_approved_offer": true
     },
     {
@@ -152,78 +152,6 @@
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
       "score": 2.585,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR"
-        },
-        {
-          "id": "2505",
-          "name": "Darren Waller",
-          "pos": "TE"
-        }
-      ],
-      "our_gain": 1.58,
-      "their_gain": 0.77,
-      "market_paid_received_ratio": 0.998,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.037,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "11435",
-          "name": "Emanuel Wilson",
-          "pos": "RB"
-        },
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 1.58,
-      "their_gain": 0.77,
-      "market_paid_received_ratio": 1.019,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.984,
       "not_an_approved_offer": true
     }
   ],

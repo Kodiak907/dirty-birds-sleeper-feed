@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-03T12:59:00.555759+00:00
-Sleeper snapshot: 2026-11-03T12:58:49.181991+00:00
-nflverse observations: 2026-11-03T12:58:54.799126+00:00; injury feed loaded: True
+Generated: 2026-11-03T14:13:43.446417+00:00
+Sleeper snapshot: 2026-11-03T14:13:30.317246+00:00
+nflverse observations: 2026-11-03T14:13:37.494836+00:00; injury feed loaded: True
 
-**New observed changes:** 5. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,11 +31,8 @@ nflverse observations: 2026-11-03T12:58:54.799126+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Jaxon Smith-Njigba** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **AJ Barner** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Cooper Kupp** (snap_share_change): Snap share rose 27.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Emanuel Wilson** (snap_share_change): Snap share fell 48.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
-- **Jadarian Price** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
