@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-03T02:52:16.964045+00:00
-Sleeper snapshot: 2026-11-03T02:52:12.734387+00:00
+Generated: 2026-11-03T03:52:11.064395+00:00
+Sleeper snapshot: 2026-11-03T03:52:04.727314+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1423173897599082496` · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

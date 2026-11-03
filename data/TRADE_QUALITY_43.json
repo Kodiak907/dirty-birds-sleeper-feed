@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-03T02:52:20.776276+00:00",
+  "generated_at_utc": "2026-11-03T03:52:14.422128+00:00",
   "candidates_evaluated": 58578,
-  "market_matched": 7755,
+  "market_matched": 7739,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-02T15:09:02.964675+00:00",
+  "market_as_of": "2026-11-03T03:52:11.852966+00:00",
   "projection_as_of": "2026-11-03T01:42:09.827145+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -51,14 +51,14 @@
       "opponent_name": "DANGER CLOSE ",
       "give": [
         {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
           "id": "9753",
           "name": "Zach Charbonnet",
           "pos": "RB"
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
         }
       ],
       "receive": [
@@ -73,13 +73,13 @@
           "pos": "TE"
         }
       ],
-      "our_gain": 1.76,
-      "their_gain": 1.11,
-      "market_paid_received_ratio": 0.988,
+      "our_gain": 1.89,
+      "their_gain": 0.98,
+      "market_paid_received_ratio": 1.031,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.39,
+      "score": 2.385,
       "not_an_approved_offer": true
     }
   ],

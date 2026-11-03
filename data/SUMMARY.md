@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-03T02:52:12.734387+00:00
+Updated: 2026-11-03T03:52:04.727314+00:00
 League: 1399157532559192064
 NFL week: 8
 
@@ -19,11 +19,7 @@ NFL week: 8
 - Roster 12: Cokerthestroker | 6-1 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 1: added Chris Olave, Jaxon Smith-Njigba; dropped Garrett Wilson, Bijan Robinson
-- lineup_change â roster/transaction 1
-- Roster 9: added Garrett Wilson, Bijan Robinson; dropped Chris Olave, Jaxon Smith-Njigba
-- lineup_change â roster/transaction 9
-- Transaction 1423173897599082496: trade / complete / rosters [1, 9] / adds {'8144': 1, '8146': 9, '9488': 1, '9509': 9} / drops {'8144': 9, '8146': 1, '9488': 9, '9509': 1} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
