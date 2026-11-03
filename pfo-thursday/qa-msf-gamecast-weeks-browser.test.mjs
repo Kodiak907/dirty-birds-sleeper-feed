@@ -48,7 +48,7 @@ test('Mobile GameCast renders 12 Sunday games plus TNF/MNF, switches weeks and s
    if(path==='/')return route.fulfill({contentType:'text/html',body:html});
    if(['/ffo-gamecast.js','/ffo-gamecast-model.mjs','/ffo-gamecast-stadium.mjs',
       '/ffo-same-game-player-evidence.mjs','/ffo-scoring-reconciliation.mjs',
-      '/ffo-msf-event-score-scenarios.mjs','/ffo-gamecast-weeks.mjs','/ffo-scoring-research-controller.mjs','/ffo-league-history-pipeline.mjs','/ffo-historical-matchup-tracker.mjs','/ffo-historical-score-certificate.mjs','/ffo-verified-history-backtest.mjs','/ffo-verified-history-projection.mjs'].includes(path))
+      '/ffo-msf-event-score-scenarios.mjs','/ffo-gamecast-weeks.mjs','/ffo-scoring-research-controller.mjs','/ffo-msf-scan-recovery.mjs','/ffo-league-history-pipeline.mjs','/ffo-historical-matchup-tracker.mjs','/ffo-historical-score-certificate.mjs','/ffo-verified-history-backtest.mjs','/ffo-verified-history-projection.mjs'].includes(path))
     return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
    if(path==='/ffo-pfo-core.css')return route.fulfill({contentType:'text/css',body:file('ffo-pfo-core.css')});
    if(path==='/ffo-gamecast-stadium.css')return route.fulfill({contentType:'text/css',body:file('ffo-gamecast-stadium.css')});
