@@ -95,7 +95,11 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    ' games pending · Next priority: '+safe(q.batch[0]?.away||'—')+
    ' @ '+safe(q.batch[0]?.home||'—')+
    (q.batch[0]?.weekSource==='calendar_estimate_not_certifiable'?
-    ' · calendar-estimated week, cannot certify':'')+'</div>';
+    ' · calendar-estimated week, cannot certify':'')+'</div>'+
+   (failed?'<div class="muted" style="margin:5px 0;color:#edc384">Failed source reads remain pending: '+
+    Object.entries(snapshots).filter(([,v])=>v?.sourceFailure===true).slice(0,3)
+     .map(([id,v])=>safe(id+' ('+(v.failureKind||'unknown')+': '+(v.failureReason||'source unavailable')+')')).join(' · ')+
+    (failed>3?' · +'+(failed-3)+' more':'')+'</div>':'');
   const button=el('ffo-gc-research-next');
   if(button){button.disabled=state.running||state.autoActive||q.batch.length===0;
    button.textContent=state.running?'Inspecting MSF…':'Inspect next 2 historical games';}
@@ -312,6 +316,10 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
     reason==='unexpected_error'?'Historical scan stopped after an unexpected error; source checks remain saved.':
     'Scan stopped without progress; review MSF source availability.';
    state.error=null;
+   if(state.lastFailure&&reason!=='complete'){
+    state.lastProgress+=' Last failed game: '+state.lastFailure.gameId+
+     ' · '+state.lastFailure.description+'.';
+   }
    render(state.lastProgress);
   }
   return {started:true,reason,checked:state.autoScanned,
