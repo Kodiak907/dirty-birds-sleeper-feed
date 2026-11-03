@@ -9801,5 +9801,71 @@
       "MIN"
     ],
     "roster_id": 1
+  },
+  {
+    "added": [],
+    "detected_at_utc": "2026-11-03T22:43:41.429161+00:00",
+    "dropped": [
+      "3257"
+    ],
+    "kind": "roster_change",
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-11-03T22:43:41.429161+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "4943",
+      "11576",
+      "7561",
+      "9493",
+      "10229",
+      "12518",
+      "5947",
+      "9500",
+      "7839",
+      "WAS"
+    ],
+    "old": [
+      "4943",
+      "8155",
+      "11435",
+      "9493",
+      "10229",
+      "11603",
+      "5947",
+      "9500",
+      "7839",
+      "WAS"
+    ],
+    "roster_id": 2
+  },
+  {
+    "detected_at_utc": "2026-11-03T22:43:41.429161+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        2
+      ],
+      "created": 1793743119813,
+      "creator": "1002699430413324288",
+      "draft_picks": [],
+      "drops": {
+        "3257": 2
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        2
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793743119813,
+      "transaction_id": "1423465452188790784",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1423465452188790784"
   }
 ]

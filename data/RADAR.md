@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-03T21:45:05.865190+00:00
-Sleeper snapshot: 2026-11-03T21:44:57.540329+00:00
+Generated: 2026-11-03T22:43:45.650507+00:00
+Sleeper snapshot: 2026-11-03T22:43:41.429161+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1423465452188790784` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-03T22:43:45.650507+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
 - 2026-11-03T02:52:16.964045+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
 - 2026-11-03T01:59:43.199950+00:00 · new_transaction · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Dropped: MarShawn Lloyd → Cokerthestroker (#12)
 - 2026-10-31T23:36:15.963064+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Zonovan Knight → JA’MARRTRIX (#7)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Rachaad White → CREAM MACHINE  (#2) | FAAB bid: $0
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jakobi Meyers → CREAM MACHINE  (#2) | Dropped: Jordan Watkins → CREAM MACHINE  (#2) | FAAB bid: $0
 - 2026-10-26T20:35:46.570564+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Antonio Williams → Dirty Birds (#1) | FAAB bid: $2
-- 2026-10-26T00:34:26.121208+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
 
 ## Important limits
 
