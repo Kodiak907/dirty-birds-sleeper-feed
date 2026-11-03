@@ -1,21 +1,53 @@
 {
-  "generated_at_utc": "2026-11-03T01:59:43.234821+00:00",
+  "generated_at_utc": "2026-11-03T02:52:16.986418+00:00",
   "is_initial_baseline": false,
-  "new_completed_trades": [],
-  "roster_changes": [
+  "new_completed_trades": [
     {
-      "adds": [],
-      "drops": [
-        "MarShawn Lloyd"
+      "faab_transfers": [
+        {
+          "amount": 15,
+          "receiver": 1,
+          "sender": 9
+        }
       ],
-      "roster_id": 12,
-      "team": "Cokerthestroker"
-    },
-    {
-      "kind": "reserve_change",
-      "roster_id": 12,
-      "team": "Cokerthestroker"
+      "id": "1423173897599082496",
+      "players_received": {
+        "Bijan Robinson": "To Infinity and Bijan",
+        "Chris Olave": "Dirty Birds",
+        "Garrett Wilson": "To Infinity and Bijan",
+        "Jaxon Smith-Njigba": "Dirty Birds"
+      },
+      "roster_ids": [
+        1,
+        9
+      ]
     }
   ],
-  "source_snapshot_utc": "2026-11-03T01:59:37.447258+00:00"
+  "roster_changes": [
+    {
+      "adds": [
+        "Chris Olave",
+        "Jaxon Smith-Njigba"
+      ],
+      "drops": [
+        "Garrett Wilson",
+        "Bijan Robinson"
+      ],
+      "roster_id": 1,
+      "team": "Dirty Birds"
+    },
+    {
+      "adds": [
+        "Garrett Wilson",
+        "Bijan Robinson"
+      ],
+      "drops": [
+        "Chris Olave",
+        "Jaxon Smith-Njigba"
+      ],
+      "roster_id": 9,
+      "team": "To Infinity and Bijan"
+    }
+  ],
+  "source_snapshot_utc": "2026-11-03T02:52:12.734387+00:00"
 }

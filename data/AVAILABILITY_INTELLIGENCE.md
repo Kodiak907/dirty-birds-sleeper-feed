@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-03T01:59:48.743341+00:00
-Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
-nflverse observations: 2026-11-03T01:59:42.740204+00:00; injury feed loaded: True
+Generated: 2026-11-03T02:52:22.314563+00:00
+Sleeper snapshot: 2026-11-03T02:52:12.734387+00:00
+nflverse observations: 2026-11-03T02:52:16.523072+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -20,10 +20,10 @@ nflverse observations: 2026-11-03T01:59:42.740204+00:00; injury feed loaded: Tru
 | A.J. Brown | No tag | Week 8 observation: Questionable, Did Not Participate In Practice, Ankle | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 7 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
-| Garrett Wilson | No tag | No matched report (not clearance) | 88.0% | Verify current status before kickoff |
+| Chris Olave | No tag | Week 6 observation: Questionable, Limited Participation in Practice, Illness | 75.3% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Chig Okonkwo | No tag | Week 5 observation: Full Participation in Practice | 74.7% | Verify current status before kickoff |
-| Bijan Robinson | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
+| Jaxon Smith-Njigba | No tag | Week 8 observation: Full Participation in Practice | 84.3% | Verify current status before kickoff |
 | Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |

@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-03T01:59:47.311610+00:00",
-  "source_snapshot_utc": "2026-11-03T01:59:37.447258+00:00",
+  "generated_at_utc": "2026-11-03T02:52:21.335810+00:00",
+  "source_snapshot_utc": "2026-11-03T02:52:12.734387+00:00",
   "source_market_as_of": "2026-11-02T15:09:02.964675+00:00",
   "source_projection_as_of": "2026-11-03T01:42:09.827145+00:00",
   "focus_assets": [
@@ -17,309 +17,13 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 26487,
-  "market_screened": 7709,
+  "tested": 17658,
+  "market_screened": 5072,
   "reports": [
     {
       "asset": "Garrett Wilson",
-      "owned_now": true,
-      "leads": [
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "3198",
-              "name": "Derrick Henry",
-              "position": "RB"
-            },
-            {
-              "id": "7600",
-              "name": "Pat Freiermuth",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 4,
-          "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.53,
-          "their_lineup_delta_ppg": 0.99,
-          "value_paid_received_ratio": 1.098,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "STRICT_RESEARCH_PASS",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "3198",
-              "name": "Derrick Henry",
-              "position": "RB"
-            },
-            {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 4,
-          "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.53,
-          "their_lineup_delta_ppg": 0.99,
-          "value_paid_received_ratio": 1.031,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "STRICT_RESEARCH_PASS",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "8144",
-              "name": "Chris Olave",
-              "position": "WR"
-            },
-            {
-              "id": "2449",
-              "name": "Stefon Diggs",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.43,
-          "their_lineup_delta_ppg": 1.02,
-          "value_paid_received_ratio": 0.736,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "9753",
-              "name": "Zach Charbonnet",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "8144",
-              "name": "Chris Olave",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.28,
-          "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.996,
-          "our_extra_cut": null,
-          "opponent_extra_cut": "Tyler Shough",
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "8131",
-              "name": "Isaiah Likely",
-              "position": "TE"
-            }
-          ],
-          "receive": [
-            {
-              "id": "11604",
-              "name": "Brock Bowers",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 7,
-          "opponent": "JA’MARRTRIX",
-          "our_lineup_delta_ppg": 0.96,
-          "their_lineup_delta_ppg": 0.32,
-          "value_paid_received_ratio": 1.09,
-          "our_extra_cut": null,
-          "opponent_extra_cut": "Malik Washington",
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "8131",
-              "name": "Isaiah Likely",
-              "position": "TE"
-            }
-          ],
-          "receive": [
-            {
-              "id": "5849",
-              "name": "Kyler Murray",
-              "position": "QB"
-            },
-            {
-              "id": "11604",
-              "name": "Brock Bowers",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 7,
-          "opponent": "JA’MARRTRIX",
-          "our_lineup_delta_ppg": 0.96,
-          "their_lineup_delta_ppg": 0.32,
-          "value_paid_received_ratio": 0.829,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "11563",
-              "name": "Bo Nix",
-              "position": "QB"
-            },
-            {
-              "id": "8167",
-              "name": "Christian Watson",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 8,
-          "opponent": "DeeboSix0",
-          "our_lineup_delta_ppg": 0.95,
-          "their_lineup_delta_ppg": 0.61,
-          "value_paid_received_ratio": 1.04,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "421",
-              "name": "Matthew Stafford",
-              "position": "QB"
-            },
-            {
-              "id": "8167",
-              "name": "Christian Watson",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 8,
-          "opponent": "DeeboSix0",
-          "our_lineup_delta_ppg": 0.95,
-          "their_lineup_delta_ppg": 0.61,
-          "value_paid_received_ratio": 1.067,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        }
-      ],
-      "candidate_count": 48
+      "owned_now": false,
+      "leads": []
     },
     {
       "asset": "A.J. Brown",
@@ -505,7 +209,7 @@
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.87,
-          "their_lineup_delta_ppg": 0.66,
+          "their_lineup_delta_ppg": 0.3,
           "value_paid_received_ratio": 1.127,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -535,16 +239,16 @@
               "position": "WR"
             },
             {
-              "id": "7526",
-              "name": "Jaylen Waddle",
+              "id": "7525",
+              "name": "DeVonta Smith",
               "position": "WR"
             }
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.87,
-          "their_lineup_delta_ppg": 0.66,
-          "value_paid_received_ratio": 0.946,
+          "their_lineup_delta_ppg": 0.3,
+          "value_paid_received_ratio": 0.882,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -630,7 +334,7 @@
           ]
         }
       ],
-      "candidate_count": 32
+      "candidate_count": 34
     },
     {
       "asset": "Patrick Mahomes",

@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-03T01:59:43.349573+00:00
-Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
+Generated: 2026-11-03T02:52:17.023416+00:00
+Sleeper snapshot: 2026-11-03T02:52:12.734387+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -13,12 +13,12 @@ The points below average actual fantasy scoring over completed Weeks 1–7, with
 
 | Player | Pos | Total pts | Pts per calendar week | Nonzero weeks |
 |---|---|---:|---:|---:|
-| Bijan Robinson | RB | 136.20 | 19.46 | 7/7 |
+| Jaxon Smith-Njigba | WR | 171.16 | 24.45 | 7/7 |
 | Kyren Williams | RB | 121.10 | 17.30 | 7/7 |
 | Zay Flowers | WR | 106.20 | 15.17 | 6/7 |
+| Chris Olave | WR | 100.10 | 14.30 | 7/7 |
 | Patrick Mahomes | QB | 100.06 | 14.29 | 6/7 |
 | Isaiah Likely | TE | 92.00 | 13.14 | 7/7 |
-| Garrett Wilson | WR | 80.90 | 11.56 | 7/7 |
 | C.J. Stroud | QB | 77.46 | 11.07 | 4/7 |
 | Deebo Samuel Sr. | WR | 55.40 | 7.91 | 5/7 |
 | Ollie Gordon II | RB | 48.60 | 6.94 | 3/7 |
@@ -37,14 +37,14 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
+| Dirty Birds | 5-2 | 126.92 | 10 |
 | Cokerthestroker | 6-1 | 121.87 | 3 |
-| Dirty Birds | 5-2 | 119.19 | 9 |
 | suck my dickerson | 5-2 | 118.95 | 1 |
 | JA’MARRTRIX | 1-6 | 117.00 | 4 |
-| To Infinity and Bijan | 3-4 | 112.20 | 5 |
 | DeeboSix0 | 5-2 | 107.09 | 1 |
 | BigOlBoyle | 2-5 | 106.41 | 0 |
 | Victorious Secret | 2-5 | 105.82 | 2 |
+| To Infinity and Bijan | 3-4 | 104.64 | 6 |
 | DANGER CLOSE | 3-4 | 102.47 | 1 |
 | kfsn | 5-2 | 99.88 | 2 |
 | EmanAndYoMomma | 1-6 | 94.18 | 0 |

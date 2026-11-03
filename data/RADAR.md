@@ -1,17 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-03T01:59:43.199950+00:00
-Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
+Generated: 2026-11-03T02:52:16.964045+00:00
+Sleeper snapshot: 2026-11-03T02:52:12.734387+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
 **1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1423159595399942144` · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Dropped: MarShawn Lloyd → Cokerthestroker (#12)
+- **NEW** · transaction `1423173897599082496` · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-03T02:52:16.964045+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
 - 2026-11-03T01:59:43.199950+00:00 · new_transaction · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Dropped: MarShawn Lloyd → Cokerthestroker (#12)
 - 2026-10-31T23:36:15.963064+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Zonovan Knight → JA’MARRTRIX (#7)
 - 2026-10-30T16:48:35.861359+00:00 · new_transaction · TRADE · COMPLETE · JA’MARRTRIX (#7), Cokerthestroker (#12) | Added: Harold Fannin Jr. → Cokerthestroker (#12), Jeremiyah Love → JA’MARRTRIX (#7) | Dropped: Harold Fannin Jr. → JA’MARRTRIX (#7), Jeremiyah Love → Cokerthestroker (#12)
@@ -36,7 +37,6 @@ League: 1399157532559192064
 - 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jakobi Meyers → CREAM MACHINE  (#2) | Dropped: Jordan Watkins → CREAM MACHINE  (#2) | FAAB bid: $0
 - 2026-10-26T20:35:46.570564+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Antonio Williams → Dirty Birds (#1) | FAAB bid: $2
 - 2026-10-26T00:34:26.121208+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
-- 2026-10-25T20:59:31.748139+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Darius Cooper → CREAM MACHINE  (#2) | Dropped: Jaleel McLaughlin → CREAM MACHINE  (#2)
 
 ## Important limits
 

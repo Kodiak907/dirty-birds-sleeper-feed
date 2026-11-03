@@ -1,6 +1,7 @@
 {
   "added_starters": [
-    "Antonio Williams"
+    "Antonio Williams",
+    "Caleb Douglas"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
@@ -9,9 +10,10 @@
       "A.J. Brown",
       "Deebo Samuel Sr.",
       "Isaiah Likely",
+      "Chris Olave",
       "C.J. Stroud"
     ],
-    "ppg": 128.34,
+    "ppg": 123.34,
     "starters": [
       {
         "id": "4046",
@@ -20,28 +22,28 @@
         "ppg": 17.6
       },
       {
-        "id": "9509",
-        "name": "Bijan Robinson",
-        "position": "RB",
-        "ppg": 20.15
-      },
-      {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
         "ppg": 18.57
       },
       {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.1
+      },
+      {
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "ppg": 21.61
+      },
+      {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
         "ppg": 15.64
-      },
-      {
-        "id": "8146",
-        "name": "Garrett Wilson",
-        "position": "WR",
-        "ppg": 14.01
       },
       {
         "id": "8210",
@@ -60,37 +62,38 @@
         "name": "Minnesota Vikings",
         "position": "DEF",
         "ppg": 6.27
-      },
-      {
-        "id": "12495",
-        "name": "Ollie Gordon II",
-        "position": "RB",
-        "ppg": 12.1
       },
       {
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
         "ppg": 10.53
+      },
+      {
+        "id": "9753",
+        "name": "Zach Charbonnet",
+        "position": "RB",
+        "ppg": 7.55
       }
     ]
   },
-  "difference_ppg": -3.67,
+  "difference_ppg": -5.82,
   "explicit_excluded_ids": [
     "13345",
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-03T01:59:50.621271+00:00",
+  "generated_at_utc": "2026-11-03T02:52:25.345165+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "Kaelon Black",
       "A.J. Brown",
       "Isaiah Likely",
+      "Chris Olave",
       "C.J. Stroud"
     ],
-    "ppg": 124.67,
+    "ppg": 117.52,
     "starters": [
       {
         "id": "4046",
@@ -99,28 +102,28 @@
         "ppg": 17.6
       },
       {
-        "id": "9509",
-        "name": "Bijan Robinson",
-        "position": "RB",
-        "ppg": 20.15
-      },
-      {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
         "ppg": 18.57
       },
       {
+        "id": "12495",
+        "name": "Ollie Gordon II",
+        "position": "RB",
+        "ppg": 12.1
+      },
+      {
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "ppg": 21.61
+      },
+      {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
         "ppg": 15.64
-      },
-      {
-        "id": "8146",
-        "name": "Garrett Wilson",
-        "position": "WR",
-        "ppg": 14.01
       },
       {
         "id": "8210",
@@ -141,16 +144,16 @@
         "ppg": 6.27
       },
       {
-        "id": "12495",
-        "name": "Ollie Gordon II",
-        "position": "RB",
-        "ppg": 12.1
-      },
-      {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
         "ppg": 6.86
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 5.4
       }
     ]
   },
@@ -253,9 +256,9 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "8146",
+      "id": "8144",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Garrett Wilson",
+      "name": "Chris Olave",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -280,9 +283,9 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "9509",
+      "id": "9488",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Bijan Robinson",
+      "name": "Jaxon Smith-Njigba",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -325,12 +328,13 @@
   ],
   "players_needing_review": [],
   "removed_starters": [
-    "Jonah Coleman"
+    "Jonah Coleman",
+    "Zach Charbonnet"
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-03T01:59:37.447258+00:00",
-  "source_availability_generated_at_utc": "2026-11-03T01:59:48.743341+00:00",
+  "snapshot_utc": "2026-11-03T02:52:12.734387+00:00",
+  "source_availability_generated_at_utc": "2026-11-03T02:52:22.314563+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
