@@ -7,6 +7,7 @@ import {buildLeagueHistoryCoverage,nextLeagueHistoryBatch}
  from './ffo-league-history-pipeline.mjs';
 import {walkForwardBacktest} from './ffo-verified-history-backtest.mjs';
 import {calendarWeek} from './ffo-gamecast-weeks.mjs';
+import {classifyMSFScanFailure,scanFailurePolicy} from './ffo-msf-scan-recovery.mjs';
 const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function installScoringResearch({getSchedule,feed,model,season='2026-regular',
  root=document,storage=null,sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
@@ -16,7 +17,8 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
  const safeStorage=storage||root?.defaultView?.localStorage||null;
  const snapshots={},certificates=[],state={
   running:false,inspected:0,error:null,autoActive:false,stopRequested:false,
-  autoScanned:0,autoFailure:null,lastProgress:''
+  autoScanned:0,autoFailure:null,lastProgress:'',lastFailure:null,
+  excludedThisRun:new Set(),consecutiveUnavailable:0,cooldownUntil:0
  };
  const isVisible=()=>root?.defaultView?.document?.visibilityState!=='hidden';
  const hasLiveGames=()=>((getSchedule?.()||[]).some(g=>
@@ -38,6 +40,8 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   for(const key of flags)out[key]=value[key]===true;
   for(const key of sensitive)out[key]=false;
   out.sourceFailure=value.sourceFailure===true;
+  out.failureKind=/^(rate_limit|access|bad_request|missing_feed|transient|unknown)$/.test(String(value.failureKind||''))?value.failureKind:null;
+  out.failureReason=typeof value.failureReason==='string'?value.failureReason.slice(0,140):null;
   out.playCount=Number.isInteger(value.playCount)&&value.playCount>=0&&value.playCount<2000?
    value.playCount:null;
   return out;
@@ -68,16 +72,21 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
  })).filter(g=>g.id&&g.week));
  const status=()=>buildLeagueHistoryCoverage(schedule(),snapshots,certificates,
   {fromWeek:1,throughWeek:7});
- const queue=()=>nextLeagueHistoryBatch(schedule(),snapshots,
+ const queue=(exclude=[])=>nextLeagueHistoryBatch(schedule(),snapshots,
   {fromWeek:1,throughWeek:7,maxGames:2,priorityTeam:'GB',
-   allowEstimatedWeekForSourceDiscovery:true,skipPreviouslyInspected:true});
+   allowEstimatedWeekForSourceDiscovery:true,skipPreviouslyInspected:true,
+   excludeGameIds:exclude});
  function render(message=''){
   const target=el('ffo-gc-research-status');
   if(!target)return;
   const c=status(),q=queue();
+  const attempted=Object.values(snapshots).filter(x=>x?.checkedAt).length;
+  const failed=Object.values(snapshots).filter(x=>x?.sourceFailure===true).length;
+  const completed=attempted-failed;
   target.innerHTML='<strong>'+c.sourceGames+' MSF schedule games · '+c.teamsRepresented+
    '/32 NFL teams · '+c.gb.sourceGames+' GB matchups · '+
-   Object.keys(snapshots).length+' games source-checked (locally checkpointed) · '+
+   completed+' source requests completed · '+attempted+' attempted · '+
+   failed+' source failures (locally checkpointed) · '+
    c.certifiedPlayerGameScores+' complete player scores certified</strong>'+
    '<div class="muted" style="margin:4px 0">'+
    safe(message||state.error||state.autoFailure||state.lastProgress||
@@ -101,7 +110,8 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    pause.textContent=state.stopRequested?'Pausing after current request…':'Pause automated checks';
   }
   const progress=state.autoActive?' · Automatic scan: '+state.autoScanned+
-    ' games this run; '+q.pendingGames+' remaining.':'';
+    ' games this run; '+q.pendingGames+' pending, '+state.excludedThisRun.size+
+    ' temporarily skipped.':'';
   const progressNode=el('ffo-gc-research-progress');
   if(progressNode)progressNode.textContent=progress||
     (state.autoFailure?'Stopped: '+state.autoFailure:'');
