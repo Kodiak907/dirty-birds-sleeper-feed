@@ -1,7 +1,7 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-03T00:58:41.809725+00:00
-Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
+Generated: 2026-11-03T01:59:43.234821+00:00
+Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
@@ -18,7 +18,7 @@ Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
 | To Infinity and Bijan | 3-4 | 2 / 4 / 7 / 2 | 5 | 85 |
 | EmanAndYoMomma | 1-6 | 2 / 3 / 5 / 2 | 0 | 0 |
 | suck my dickerson | 5-2 | 2 / 4 / 4 / 2 | 1 | 0 |
-| Cokerthestroker | 6-1 | 2 / 5 / 7 / 3 | 3 | 133 |
+| Cokerthestroker | 6-1 | 2 / 4 / 7 / 3 | 3 | 133 |
 
 ## Reading this board
 

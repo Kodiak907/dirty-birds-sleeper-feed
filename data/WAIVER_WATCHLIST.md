@@ -1,14 +1,14 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-03T00:58:41.887834+00:00
-Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
+Generated: 2026-11-03T01:59:43.402650+00:00
+Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 329 |
-| RB | 629 |
+| RB | 630 |
 | WR | 1291 |
 | TE | 613 |
 | K | 139 |
@@ -20,56 +20,57 @@ Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Malik Willis | MIA | 14.63 | 100% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 13.08 | 90% | 94.7% | Questionable |
+| 1 | Malik Willis | MIA | 14.69 | 100% | 100.0% | Not flagged |
+| 2 | Baker Mayfield | TB | 13.03 | 90% | 94.7% | Questionable |
 | 3 | Tanner McKee | PHI | 11.35 | 90% | 100.0% | Not flagged |
 
 ### RB
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Keaton Mitchell | LAC | 6.08 | 100% | 30.0% | Not flagged |
-| 2 | Devin Singletary | NYG | 5.62 | 90% | 31.7% | Not flagged |
-| 3 | Samaje Perine | CIN | 5.46 | 100% | 36.3% | Not flagged |
-| 4 | Chris Rodriguez Jr. | JAX | 5.23 | 100% | — | Not flagged |
-| 5 | Tyjae Spears | TEN | 4.98 | 80% | 38.0% | Questionable |
-| 6 | Mike Washington Jr. | LV | 4.87 | 90% | 40.3% | Questionable |
-| 7 | Tank Bigsby | PHI | 2.20 | 80% | 28.7% | IR |
-| 8 | Jaleel McLaughlin | CLE | 1.49 | 90% | 21.7% | Not flagged |
-| 9 | Zonovan Knight | ARI | 0.94 | 80% | 39.7% | Not flagged |
+| 1 | Keaton Mitchell | LAC | 6.07 | 100% | 30.0% | Not flagged |
+| 2 | Devin Singletary | NYG | 5.63 | 90% | 31.7% | Not flagged |
+| 3 | Samaje Perine | CIN | 5.49 | 100% | 36.3% | Not flagged |
+| 4 | Chris Rodriguez Jr. | JAX | 5.26 | 100% | — | Not flagged |
+| 5 | Mike Washington Jr. | LV | 5.22 | 90% | 40.3% | Questionable |
+| 6 | Tyjae Spears | TEN | 4.98 | 80% | 38.0% | Questionable |
+| 7 | MarShawn Lloyd | GB | 4.88 | 90% | 30.7% | Not flagged |
+| 8 | Tank Bigsby | PHI | 2.19 | 80% | 28.7% | IR |
+| 9 | Jaleel McLaughlin | CLE | 1.50 | 90% | 21.7% | Not flagged |
+| 10 | Zonovan Knight | ARI | 1.32 | 80% | 39.7% | Not flagged |
 
 ### WR
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Kalif Raymond | CHI | 5.70 | 90% | 61.7% | Not flagged |
-| 2 | Quentin Johnston | LAC | 5.68 | 100% | 79.7% | Not flagged |
-| 3 | Chris Bell | MIA | 5.11 | 100% | 62.7% | Not flagged |
-| 4 | Rashid Shaheed | SEA | 4.18 | 80% | 41.3% | Not flagged |
-| 5 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
-| 6 | Ja'Kobi Lane | BAL | 3.69 | 90% | 62.7% | Not flagged |
-| 7 | Rashod Bateman | BAL | 3.58 | 90% | 59.7% | Not flagged |
-| 8 | Adonai Mitchell | NYJ | 3.37 | 90% | 62.3% | Not flagged |
-| 9 | Brian Thomas Jr. | JAX | 3.15 | 100% | — | Not flagged |
+| 1 | Quentin Johnston | LAC | 5.66 | 100% | 79.7% | Not flagged |
+| 2 | Kalif Raymond | CHI | 5.64 | 90% | 61.7% | Not flagged |
+| 3 | Chris Bell | MIA | 5.12 | 100% | 62.7% | Not flagged |
+| 4 | Adonai Mitchell | NYJ | 4.86 | 90% | 62.3% | Not flagged |
+| 5 | Rashid Shaheed | SEA | 4.17 | 80% | 41.3% | Not flagged |
+| 6 | Michael Pittman Jr. | PIT | 3.92 | 80% | 77.7% | IR |
+| 7 | Ja'Kobi Lane | BAL | 3.72 | 90% | 62.7% | Not flagged |
+| 8 | Rashod Bateman | BAL | 3.62 | 90% | 59.7% | Not flagged |
+| 9 | Brian Thomas Jr. | JAX | 3.14 | 100% | — | Not flagged |
 | 10 | Mack Hollins | NE | 3.11 | 80% | 62.7% | IR |
 | 11 | Jauan Jennings | MIN | 2.76 | 100% | 60.0% | Not flagged |
-| 12 | Konata Mumpfield | LAR | 2.48 | 90% | — | Not flagged |
+| 12 | Konata Mumpfield | LAR | 2.47 | 90% | — | Not flagged |
 
 ### TE
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Michael Mayer | LV | 5.20 | 90% | 80.0% | Not flagged |
-| 2 | Noah Fant | NO | 4.32 | 90% | 57.0% | Not flagged |
-| 3 | Colby Parkinson | LAR | 3.16 | 80% | — | Not flagged |
+| 2 | Noah Fant | NO | 4.33 | 90% | 57.0% | Not flagged |
+| 3 | Colby Parkinson | LAR | 3.15 | 80% | — | Not flagged |
 | 4 | David Njoku | LAC | 2.70 | 90% | 35.5% | IR |
 
 ### K
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Trey Smack | GB | 6.35 | 90% | — | Not flagged |
-| 2 | Cameron Dicker | LAC | 6.30 | 100% | — | Not flagged |
+| 1 | Trey Smack | GB | 6.34 | 90% | — | Not flagged |
+| 2 | Cameron Dicker | LAC | 6.28 | 100% | — | Not flagged |
 | 3 | Dominic Zvada | NYG | 6.12 | 90% | — | Not flagged |
 | 4 | Cairo Santos | CHI | 5.56 | 90% | — | Not flagged |
 | 5 | Chris Boswell | PIT | 5.47 | 90% | — | Not flagged |
@@ -78,17 +79,17 @@ Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Kansas City Chiefs | KC | 6.88 | 100% | — | Not flagged |
+| 1 | Kansas City Chiefs | KC | 6.90 | 100% | — | Not flagged |
 | 2 | Buffalo Bills | BUF | 6.44 | 100% | — | Not flagged |
-| 3 | Baltimore Ravens | BAL | 6.15 | 90% | — | Not flagged |
-| 4 | Green Bay Packers | GB | 6.04 | 90% | — | Not flagged |
+| 3 | Baltimore Ravens | BAL | 6.13 | 90% | — | Not flagged |
+| 4 | Green Bay Packers | GB | 6.03 | 90% | — | Not flagged |
 | 5 | Indianapolis Colts | IND | 5.62 | 90% | — | Not flagged |
-| 6 | Chicago Bears | CHI | 5.61 | 90% | — | Not flagged |
-| 7 | New York Giants | NYG | 5.58 | 90% | — | Not flagged |
+| 6 | Chicago Bears | CHI | 5.60 | 90% | — | Not flagged |
+| 7 | New York Giants | NYG | 5.59 | 90% | — | Not flagged |
 | 8 | Cleveland Browns | CLE | 5.49 | 90% | — | Not flagged |
-| 9 | New Orleans Saints | NO | 5.29 | 90% | — | Not flagged |
-| 10 | Tampa Bay Buccaneers | TB | 5.29 | 90% | — | Not flagged |
-| 11 | New York Jets | NYJ | 4.53 | 90% | — | Not flagged |
+| 9 | Tampa Bay Buccaneers | TB | 5.29 | 90% | — | Not flagged |
+| 10 | New Orleans Saints | NO | 5.29 | 90% | — | Not flagged |
+| 11 | New York Jets | NYJ | 4.54 | 90% | — | Not flagged |
 | 12 | Tennessee Titans | TEN | 4.42 | 90% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
@@ -99,31 +100,31 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Malik Willis | QB | MIA | 14.63 | 100.0% |
-| Baker Mayfield | QB | TB | 13.08 | 94.7% |
+| Malik Willis | QB | MIA | 14.69 | 100.0% |
+| Baker Mayfield | QB | TB | 13.03 | 94.7% |
 | Tanner McKee | QB | PHI | 11.35 | 100.0% |
-| Keaton Mitchell | RB | LAC | 6.08 | 30.0% |
-| Kalif Raymond | WR | CHI | 5.70 | 61.7% |
-| Quentin Johnston | WR | LAC | 5.68 | 79.7% |
-| Devin Singletary | RB | NYG | 5.62 | 31.7% |
-| Samaje Perine | RB | CIN | 5.46 | 36.3% |
+| Keaton Mitchell | RB | LAC | 6.07 | 30.0% |
+| Quentin Johnston | WR | LAC | 5.66 | 79.7% |
+| Kalif Raymond | WR | CHI | 5.64 | 61.7% |
+| Devin Singletary | RB | NYG | 5.63 | 31.7% |
+| Samaje Perine | RB | CIN | 5.49 | 36.3% |
+| Mike Washington Jr. | RB | LV | 5.22 | 40.3% |
 | Michael Mayer | TE | LV | 5.20 | 80.0% |
-| Chris Bell | WR | MIA | 5.11 | 62.7% |
+| Chris Bell | WR | MIA | 5.12 | 62.7% |
 | Tyjae Spears | RB | TEN | 4.98 | 38.0% |
-| Mike Washington Jr. | RB | LV | 4.87 | 40.3% |
-| Noah Fant | TE | NO | 4.32 | 57.0% |
-| Rashid Shaheed | WR | SEA | 4.18 | 41.3% |
+| MarShawn Lloyd | RB | GB | 4.88 | 30.7% |
+| Adonai Mitchell | WR | NYJ | 4.86 | 62.3% |
+| Noah Fant | TE | NO | 4.33 | 57.0% |
+| Rashid Shaheed | WR | SEA | 4.17 | 41.3% |
 | Michael Pittman Jr. | WR | PIT | 3.92 | 77.7% |
-| Ja'Kobi Lane | WR | BAL | 3.69 | 62.7% |
-| Rashod Bateman | WR | BAL | 3.58 | 59.7% |
-| Adonai Mitchell | WR | NYJ | 3.37 | 62.3% |
+| Ja'Kobi Lane | WR | BAL | 3.72 | 62.7% |
+| Rashod Bateman | WR | BAL | 3.62 | 59.7% |
 | Mack Hollins | WR | NE | 3.11 | 62.7% |
-| Jauan Jennings | WR | MIN | 2.76 | 60.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **34**
+Candidates with independently sourced projections AND usage data: **35**
 
 ## Coverage and rules
 

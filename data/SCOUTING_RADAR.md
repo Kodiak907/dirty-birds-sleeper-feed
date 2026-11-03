@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-03T00:58:41.809725+00:00
-Sleeper snapshot: 2026-11-03T00:58:35.578768+00:00
+Generated: 2026-11-03T01:59:43.234821+00:00
+Sleeper snapshot: 2026-11-03T01:59:37.447258+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- Cokerthestroker: added none; dropped MarShawn Lloyd
+- Cokerthestroker: reserve status changed
 
 ## Limits
 

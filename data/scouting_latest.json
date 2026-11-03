@@ -1,7 +1,21 @@
 {
-  "generated_at_utc": "2026-11-03T00:58:41.809725+00:00",
+  "generated_at_utc": "2026-11-03T01:59:43.234821+00:00",
   "is_initial_baseline": false,
   "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-11-03T00:58:35.578768+00:00"
+  "roster_changes": [
+    {
+      "adds": [],
+      "drops": [
+        "MarShawn Lloyd"
+      ],
+      "roster_id": 12,
+      "team": "Cokerthestroker"
+    },
+    {
+      "kind": "reserve_change",
+      "roster_id": 12,
+      "team": "Cokerthestroker"
+    }
+  ],
+  "source_snapshot_utc": "2026-11-03T01:59:37.447258+00:00"
 }

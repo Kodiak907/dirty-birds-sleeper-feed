@@ -2,78 +2,78 @@
   "baseline_lineup": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 122.725,
+    "ppg": 122.909,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 19.025
+        "ppg": 19.093
       },
       {
         "id": "9509",
         "name": "Bijan Robinson",
         "position": "RB",
-        "ppg": 18.03
+        "ppg": 18.064
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 15.478
+        "ppg": 15.46
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 12.492
+        "ppg": 12.512
       },
       {
         "id": "8146",
         "name": "Garrett Wilson",
         "position": "WR",
-        "ppg": 11.554
+        "ppg": 11.597
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.738
+        "ppg": 9.745
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.239
+        "ppg": 7.227
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.946
+        "ppg": 6.941
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.355
+        "ppg": 12.396
       },
       {
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 9.868
+        "ppg": 9.874
       }
     ]
   },
   "by_position": {
     "DEF": [
       {
-        "bench_depth_delta_ppg": 0.909,
+        "bench_depth_delta_ppg": 0.916,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -84,8 +84,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -94,8 +94,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -104,8 +104,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -114,8 +114,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -124,8 +124,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -134,8 +134,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -144,8 +144,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -154,8 +154,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -167,18 +167,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 6.883,
+        "projection_ppg": 6.904,
         "team": "KC",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": 0.463,
+        "bench_depth_delta_ppg": 0.449,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -189,8 +189,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -199,8 +199,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -209,8 +209,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -219,8 +219,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -229,8 +229,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -239,8 +239,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -249,8 +249,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -259,8 +259,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -279,11 +279,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": 0.174,
+        "bench_depth_delta_ppg": 0.145,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -294,8 +294,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -304,8 +304,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -314,8 +314,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -324,8 +324,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -334,8 +334,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -344,8 +344,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -354,8 +354,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -364,8 +364,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -377,18 +377,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 6.148,
+        "projection_ppg": 6.133,
         "team": "BAL",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": 0.066,
+        "bench_depth_delta_ppg": 0.039,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -399,8 +399,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -409,8 +409,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -419,8 +419,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -429,8 +429,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -439,8 +439,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -449,8 +449,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -459,8 +459,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -469,8 +469,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -482,18 +482,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 6.04,
+        "projection_ppg": 6.027,
         "team": "GB",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.35,
+        "bench_depth_delta_ppg": -0.368,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -504,8 +504,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -514,8 +514,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -524,8 +524,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -534,8 +534,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -544,8 +544,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -554,8 +554,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -564,8 +564,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -574,8 +574,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -587,18 +587,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.624,
+        "projection_ppg": 5.62,
         "team": "IND",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.361,
+        "bench_depth_delta_ppg": -0.39,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -609,8 +609,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -619,8 +619,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -629,8 +629,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -639,8 +639,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -649,8 +649,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -659,8 +659,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -669,8 +669,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -679,8 +679,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -692,18 +692,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.613,
+        "projection_ppg": 5.598,
         "team": "CHI",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.394,
+        "bench_depth_delta_ppg": -0.401,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -714,8 +714,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -724,8 +724,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -734,8 +734,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -744,8 +744,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -754,8 +754,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -764,8 +764,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -774,8 +774,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -784,8 +784,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -797,18 +797,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.58,
+        "projection_ppg": 5.587,
         "team": "NYG",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.489,
+        "bench_depth_delta_ppg": -0.501,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -819,8 +819,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -829,8 +829,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -839,8 +839,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -849,8 +849,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -859,8 +859,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -869,8 +869,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -879,8 +879,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -889,8 +889,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -902,123 +902,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.485,
+        "projection_ppg": 5.487,
         "team": "CLE",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.689,
+        "bench_depth_delta_ppg": -0.697,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "New Orleans Saints",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Chig Okonkwo",
-            "drop_id": "8210",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "NO",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "DEF",
-        "projection_ppg": 5.285,
-        "team": "NO",
-        "warnings": [
-          "No sourced usage"
-        ]
-      },
-      {
-        "bench_depth_delta_ppg": -0.689,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1029,8 +924,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1039,8 +934,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1049,8 +944,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1059,8 +954,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1069,8 +964,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1079,8 +974,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1089,8 +984,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1099,8 +994,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1112,18 +1007,123 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.285,
+        "projection_ppg": 5.291,
         "team": "TB",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.445,
+        "bench_depth_delta_ppg": -0.698,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "New Orleans Saints",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "A.J. Brown",
+            "drop_id": "5859",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "NO",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.29,
+        "team": "NO",
+        "warnings": [
+          "No sourced usage"
+        ]
+      },
+      {
+        "bench_depth_delta_ppg": -1.449,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1134,8 +1134,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1144,8 +1144,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1154,8 +1154,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1164,8 +1164,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1174,8 +1174,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1184,8 +1184,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1194,8 +1194,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1204,8 +1204,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1217,18 +1217,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 4.529,
+        "projection_ppg": 4.539,
         "team": "NYJ",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.554,
+        "bench_depth_delta_ppg": -1.568,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1239,8 +1239,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1249,8 +1249,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1259,8 +1259,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1269,8 +1269,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1279,8 +1279,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1289,8 +1289,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1299,8 +1299,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1309,8 +1309,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1331,11 +1331,11 @@
     ],
     "K": [
       {
-        "bench_depth_delta_ppg": 0.373,
+        "bench_depth_delta_ppg": 0.35,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1346,8 +1346,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1356,8 +1356,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1366,8 +1366,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1376,8 +1376,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1386,8 +1386,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1396,8 +1396,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1406,8 +1406,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1416,8 +1416,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1429,18 +1429,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "K",
-        "projection_ppg": 6.347,
+        "projection_ppg": 6.338,
         "team": "GB",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": 0.324,
+        "bench_depth_delta_ppg": 0.292,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1451,8 +1451,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1461,8 +1461,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1471,8 +1471,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1481,8 +1481,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1491,8 +1491,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1501,8 +1501,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1511,8 +1511,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1521,8 +1521,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1534,18 +1534,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "K",
-        "projection_ppg": 6.298,
+        "projection_ppg": 6.28,
         "team": "LAC",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": 0.144,
+        "bench_depth_delta_ppg": 0.132,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1556,8 +1556,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1566,8 +1566,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1576,8 +1576,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1586,8 +1586,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1596,8 +1596,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1606,8 +1606,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1616,8 +1616,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1626,8 +1626,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1639,18 +1639,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "K",
-        "projection_ppg": 6.118,
+        "projection_ppg": 6.12,
         "team": "NYG",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.412,
+        "bench_depth_delta_ppg": -0.432,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1661,8 +1661,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1671,8 +1671,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1681,8 +1681,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1691,8 +1691,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1701,8 +1701,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1711,8 +1711,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1721,8 +1721,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1731,8 +1731,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1744,18 +1744,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "K",
-        "projection_ppg": 5.562,
+        "projection_ppg": 5.556,
         "team": "CHI",
         "warnings": [
           "No sourced usage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.504,
+        "bench_depth_delta_ppg": -0.518,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1766,8 +1766,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1776,8 +1776,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1786,8 +1786,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1796,8 +1796,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1806,8 +1806,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1816,8 +1816,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1826,8 +1826,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1836,8 +1836,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1858,11 +1858,11 @@
     ],
     "QB": [
       {
-        "bench_depth_delta_ppg": 8.66,
+        "bench_depth_delta_ppg": 8.697,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1873,8 +1873,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1883,8 +1883,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1893,8 +1893,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1903,8 +1903,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -1913,8 +1913,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1923,8 +1923,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -1933,8 +1933,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -1943,8 +1943,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -1956,16 +1956,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 14.634,
+        "projection_ppg": 14.685,
         "team": "MIA",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": 7.109,
+        "bench_depth_delta_ppg": 7.045,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -1976,8 +1976,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1986,8 +1986,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1996,8 +1996,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2006,8 +2006,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2016,8 +2016,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2026,8 +2026,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2036,8 +2036,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2046,8 +2046,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2059,18 +2059,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 13.083,
+        "projection_ppg": 13.033,
         "team": "TB",
         "warnings": [
           "Availability status: questionable"
         ]
       },
       {
-        "bench_depth_delta_ppg": 5.372,
+        "bench_depth_delta_ppg": 5.359,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2081,8 +2081,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2091,8 +2091,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2101,8 +2101,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2111,8 +2111,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2121,8 +2121,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2131,8 +2131,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2141,8 +2141,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2151,8 +2151,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2164,18 +2164,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 11.346,
+        "projection_ppg": 11.347,
         "team": "PHI",
         "warnings": []
       }
     ],
     "RB": [
       {
-        "bench_depth_delta_ppg": 0.108,
+        "bench_depth_delta_ppg": 0.077,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2186,8 +2186,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2196,8 +2196,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2206,8 +2206,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2216,8 +2216,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2226,8 +2226,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2236,8 +2236,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2246,8 +2246,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2256,8 +2256,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2269,16 +2269,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 6.082,
+        "projection_ppg": 6.065,
         "team": "LAC",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -0.359,
+        "bench_depth_delta_ppg": -0.361,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2289,8 +2289,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2299,8 +2299,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2309,8 +2309,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2319,8 +2319,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2329,8 +2329,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2339,8 +2339,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2349,8 +2349,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2359,8 +2359,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2372,16 +2372,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 5.615,
+        "projection_ppg": 5.627,
         "team": "NYG",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -0.511,
+        "bench_depth_delta_ppg": -0.502,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2392,8 +2392,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2402,8 +2402,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2412,8 +2412,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2422,8 +2422,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2432,8 +2432,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2442,8 +2442,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2452,8 +2452,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2462,8 +2462,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2475,16 +2475,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 5.463,
+        "projection_ppg": 5.486,
         "team": "CIN",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -0.74,
+        "bench_depth_delta_ppg": -0.73,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2495,8 +2495,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2505,8 +2505,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2515,8 +2515,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2525,8 +2525,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2535,8 +2535,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2545,8 +2545,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2555,8 +2555,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2565,8 +2565,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2578,18 +2578,123 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 5.234,
+        "projection_ppg": 5.258,
         "team": "JAX",
         "warnings": [
           "Limited snap sample"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.99,
+        "bench_depth_delta_ppg": -0.767,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Mike Washington Jr.",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "A.J. Brown",
+            "drop_id": "5859",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "13305",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 5.221,
+        "team": "LV",
+        "warnings": [
+          "Availability status: questionable"
+        ]
+      },
+      {
+        "bench_depth_delta_ppg": -1.004,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2600,8 +2705,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2610,8 +2715,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2620,8 +2725,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2630,8 +2735,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2640,8 +2745,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2650,8 +2755,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2660,8 +2765,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2670,8 +2775,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2691,23 +2796,23 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.108,
+        "bench_depth_delta_ppg": -1.111,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
           "drop_is_fantasy_reserve": false,
           "projected_lineup_gain_ppg": 0.0
         },
-        "candidate": "Mike Washington Jr.",
+        "candidate": "MarShawn Lloyd",
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2716,8 +2821,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2726,8 +2831,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2736,8 +2841,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2746,8 +2851,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2756,8 +2861,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2766,8 +2871,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2776,8 +2881,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2785,22 +2890,20 @@
             "projected_lineup_gain_ppg": 0.0
           }
         ],
-        "candidate_id": "13305",
+        "candidate_id": "11581",
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 4.866,
-        "team": "LV",
-        "warnings": [
-          "Availability status: questionable"
-        ]
+        "projection_ppg": 4.877,
+        "team": "GB",
+        "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -3.776,
+        "bench_depth_delta_ppg": -3.797,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2811,8 +2914,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2821,8 +2924,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2831,8 +2934,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2841,8 +2944,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2851,8 +2954,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2861,8 +2964,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2871,8 +2974,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2881,8 +2984,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -2894,7 +2997,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 2.198,
+        "projection_ppg": 2.191,
         "team": "PHI",
         "warnings": [
           "Availability status: ir",
@@ -2902,11 +3005,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -4.489,
+        "bench_depth_delta_ppg": -4.492,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -2917,8 +3020,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2927,8 +3030,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2937,8 +3040,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2947,8 +3050,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -2957,8 +3060,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2967,8 +3070,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -2977,8 +3080,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -2987,8 +3090,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3000,16 +3103,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 1.485,
+        "projection_ppg": 1.496,
         "team": "CLE",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -5.035,
+        "bench_depth_delta_ppg": -4.668,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3020,8 +3123,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3030,8 +3133,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3040,8 +3143,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3050,8 +3153,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3060,8 +3163,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3070,8 +3173,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3080,8 +3183,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3090,8 +3193,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3103,7 +3206,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 0.939,
+        "projection_ppg": 1.32,
         "team": "ARI",
         "warnings": [
           "Partial projection coverage"
@@ -3112,11 +3215,11 @@
     ],
     "TE": [
       {
-        "bench_depth_delta_ppg": -0.774,
+        "bench_depth_delta_ppg": -0.788,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3127,8 +3230,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3137,8 +3240,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3147,8 +3250,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3157,8 +3260,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3167,8 +3270,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3177,8 +3280,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3187,8 +3290,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3197,8 +3300,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3215,11 +3318,11 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -1.65,
+        "bench_depth_delta_ppg": -1.658,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3230,8 +3333,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3240,8 +3343,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3250,8 +3353,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3260,8 +3363,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3270,8 +3373,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3280,8 +3383,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3290,8 +3393,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3300,8 +3403,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3313,16 +3416,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 4.324,
+        "projection_ppg": 4.33,
         "team": "NO",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -2.814,
+        "bench_depth_delta_ppg": -2.833,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3333,8 +3436,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3343,8 +3446,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3353,8 +3456,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3363,8 +3466,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3373,8 +3476,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3383,8 +3486,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3393,8 +3496,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3403,8 +3506,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3416,7 +3519,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 3.16,
+        "projection_ppg": 3.155,
         "team": "LAR",
         "warnings": [
           "No sourced usage",
@@ -3425,11 +3528,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -3.274,
+        "bench_depth_delta_ppg": -3.289,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3440,8 +3543,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3450,8 +3553,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3460,8 +3563,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3470,8 +3573,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3480,8 +3583,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3490,8 +3593,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3500,8 +3603,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3510,8 +3613,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3523,7 +3626,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 2.7,
+        "projection_ppg": 2.699,
         "team": "LAC",
         "warnings": [
           "Availability status: ir"
@@ -3532,114 +3635,11 @@
     ],
     "WR": [
       {
-        "bench_depth_delta_ppg": -0.272,
+        "bench_depth_delta_ppg": -0.324,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Kalif Raymond",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Chig Okonkwo",
-            "drop_id": "8210",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "3634",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "WR",
-        "projection_ppg": 5.702,
-        "team": "CHI",
-        "warnings": []
-      },
-      {
-        "bench_depth_delta_ppg": -0.289,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3650,8 +3650,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3660,8 +3660,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3670,8 +3670,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3680,8 +3680,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3690,8 +3690,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3700,8 +3700,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3710,8 +3710,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3720,8 +3720,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3733,16 +3733,119 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 5.685,
+        "projection_ppg": 5.664,
         "team": "LAC",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -0.868,
+        "bench_depth_delta_ppg": -0.348,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Kalif Raymond",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "A.J. Brown",
+            "drop_id": "5859",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "3634",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 5.64,
+        "team": "CHI",
+        "warnings": []
+      },
+      {
+        "bench_depth_delta_ppg": -0.869,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3753,8 +3856,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3763,8 +3866,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3773,8 +3876,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3783,8 +3886,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3793,8 +3896,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3803,8 +3906,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3813,8 +3916,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3823,8 +3926,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3836,16 +3939,119 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 5.106,
+        "projection_ppg": 5.119,
         "team": "MIA",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -1.794,
+        "bench_depth_delta_ppg": -1.133,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Adonai Mitchell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "A.J. Brown",
+            "drop_id": "5859",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Chig Okonkwo",
+            "drop_id": "8210",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11625",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 4.855,
+        "team": "NYJ",
+        "warnings": []
+      },
+      {
+        "bench_depth_delta_ppg": -1.813,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3856,8 +4062,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3866,8 +4072,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3876,8 +4082,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3886,8 +4092,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -3896,8 +4102,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3906,8 +4112,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -3916,8 +4122,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -3926,8 +4132,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -3939,18 +4145,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 4.18,
+        "projection_ppg": 4.175,
         "team": "SEA",
         "warnings": [
           "Partial projection coverage"
         ]
       },
       {
-        "bench_depth_delta_ppg": -2.057,
+        "bench_depth_delta_ppg": -2.071,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -3961,8 +4167,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3971,8 +4177,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3981,8 +4187,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3991,8 +4197,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4001,8 +4207,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4011,8 +4217,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4021,8 +4227,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4031,8 +4237,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4052,11 +4258,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -2.285,
+        "bench_depth_delta_ppg": -2.264,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4067,8 +4273,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4077,8 +4283,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4087,8 +4293,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4097,8 +4303,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4107,8 +4313,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4117,8 +4323,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4127,8 +4333,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4137,8 +4343,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4150,16 +4356,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 3.689,
+        "projection_ppg": 3.724,
         "team": "BAL",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -2.394,
+        "bench_depth_delta_ppg": -2.372,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4170,8 +4376,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4180,8 +4386,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4190,8 +4396,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4200,8 +4406,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4210,8 +4416,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4220,8 +4426,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4230,8 +4436,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4240,8 +4446,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4253,119 +4459,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 3.58,
+        "projection_ppg": 3.616,
         "team": "BAL",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -2.6,
+        "bench_depth_delta_ppg": -2.848,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Adonai Mitchell",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Chig Okonkwo",
-            "drop_id": "8210",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "11625",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "WR",
-        "projection_ppg": 3.374,
-        "team": "NYJ",
-        "warnings": []
-      },
-      {
-        "bench_depth_delta_ppg": -2.823,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4376,8 +4479,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4386,8 +4489,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4396,8 +4499,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4406,8 +4509,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4416,8 +4519,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4426,8 +4529,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4436,8 +4539,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4446,8 +4549,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4459,18 +4562,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 3.151,
+        "projection_ppg": 3.14,
         "team": "JAX",
         "warnings": [
           "Limited snap sample"
         ]
       },
       {
-        "bench_depth_delta_ppg": -2.867,
+        "bench_depth_delta_ppg": -2.882,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4481,8 +4584,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4491,8 +4594,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4501,8 +4604,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4511,8 +4614,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4521,8 +4624,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4531,8 +4634,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4541,8 +4644,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4551,8 +4654,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4564,7 +4667,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 3.107,
+        "projection_ppg": 3.106,
         "team": "NE",
         "warnings": [
           "Availability status: ir",
@@ -4572,11 +4675,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -3.211,
+        "bench_depth_delta_ppg": -3.225,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4587,8 +4690,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4597,8 +4700,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4607,8 +4710,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4617,8 +4720,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4627,8 +4730,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4637,8 +4740,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4647,8 +4750,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4657,8 +4760,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4675,11 +4778,11 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -3.497,
+        "bench_depth_delta_ppg": -3.521,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4690,8 +4793,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4700,8 +4803,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4710,8 +4813,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4720,8 +4823,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4730,8 +4833,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4740,8 +4843,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4750,8 +4853,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4760,8 +4863,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4773,7 +4876,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 2.477,
+        "projection_ppg": 2.467,
         "team": "LAR",
         "warnings": [
           "No sourced usage",
@@ -4781,11 +4884,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -3.89,
+        "bench_depth_delta_ppg": -3.896,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4796,8 +4899,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4806,8 +4909,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4816,8 +4919,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4826,8 +4929,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4836,8 +4939,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4846,8 +4949,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4856,8 +4959,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4866,8 +4969,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4879,16 +4982,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 2.084,
+        "projection_ppg": 2.092,
         "team": "ATL",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -4.693,
+        "bench_depth_delta_ppg": -4.704,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -4899,8 +5002,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4909,8 +5012,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4919,8 +5022,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4929,8 +5032,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -4939,8 +5042,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4949,8 +5052,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -4959,8 +5062,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -4969,8 +5072,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -4982,16 +5085,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 1.281,
+        "projection_ppg": 1.284,
         "team": "CIN",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -5.055,
+        "bench_depth_delta_ppg": -5.067,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -5002,8 +5105,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5012,8 +5115,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5022,8 +5125,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5032,8 +5135,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -5042,8 +5145,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5052,8 +5155,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -5062,8 +5165,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -5072,8 +5175,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -5085,7 +5188,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 0.919,
+        "projection_ppg": 0.921,
         "team": "SF",
         "warnings": [
           "Availability status: ir",
@@ -5093,11 +5196,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -5.086,
+        "bench_depth_delta_ppg": -5.098,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -5108,8 +5211,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5118,8 +5221,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5128,8 +5231,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5138,8 +5241,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -5148,8 +5251,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5158,8 +5261,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -5168,8 +5271,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -5178,8 +5281,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -5191,16 +5294,16 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 0.888,
+        "projection_ppg": 0.89,
         "team": "KC",
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -5.761,
+        "bench_depth_delta_ppg": -5.775,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 122.725,
-          "before_ppg": 122.725,
+          "after_ppg": 122.909,
+          "before_ppg": 122.909,
           "displaced_starters": [],
           "drop": "Caleb Douglas",
           "drop_id": "13296",
@@ -5211,8 +5314,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5221,8 +5324,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5231,8 +5334,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5241,8 +5344,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "A.J. Brown",
             "drop_id": "5859",
@@ -5251,8 +5354,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5261,8 +5364,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Chig Okonkwo",
             "drop_id": "8210",
@@ -5271,8 +5374,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "Zach Charbonnet",
             "drop_id": "9753",
@@ -5281,8 +5384,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 122.725,
-            "before_ppg": 122.725,
+            "after_ppg": 122.909,
+            "before_ppg": 122.909,
             "displaced_starters": [],
             "drop": "C.J. Stroud",
             "drop_id": "9758",
@@ -5300,7 +5403,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-03T00:58:42.047518+00:00",
+  "generated_at_utc": "2026-11-03T01:59:43.610778+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5308,6 +5411,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-03T00:58:35.578768+00:00",
-  "source_projection_date": "2026-11-02T19:29:13.817464+00:00"
+  "sleeper_snapshot_utc": "2026-11-03T01:59:37.447258+00:00",
+  "source_projection_date": "2026-11-03T01:42:09.827145+00:00"
 }

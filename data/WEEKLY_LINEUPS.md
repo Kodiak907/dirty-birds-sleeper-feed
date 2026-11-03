@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-03T00:58:46.379110+00:00 | Forecast as of: 2026-11-02T19:29:13.817464+00:00
+Generated: 2026-11-03T01:59:48.079513+00:00 | Forecast as of: 2026-11-03T01:42:09.827145+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -23,24 +23,24 @@ Generated: 2026-11-03T00:58:46.379110+00:00 | Forecast as of: 2026-11-02T19:29:1
 
 ## Week 9
 
-**Projected optimal score:** 133.72
+**Projected optimal score:** 135.40
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Patrick Mahomes | QB | NYJ | 20.01 |
-| Bijan Robinson | RB | CIN | 22.70 |
-| Kyren Williams | RB | WAS | 17.59 |
-| A.J. Brown | WR | GB | 11.87 |
-| Garrett Wilson | WR | KC | 11.65 |
-| Isaiah Likely | TE | PHI | 10.79 |
-| Will Reichard | K | BUF | 7.37 |
-| Minnesota Vikings | DEF | BUF | 6.32 |
-| Jonah Coleman | RB | CAR | 13.00 |
-| Ollie Gordon II | RB | DET | 12.42 |
+| Patrick Mahomes | QB | NYJ | 20.69 |
+| Bijan Robinson | RB | CIN | 23.04 |
+| Kyren Williams | RB | WAS | 17.41 |
+| Garrett Wilson | WR | KC | 12.08 |
+| A.J. Brown | WR | GB | 11.85 |
+| Isaiah Likely | TE | PHI | 10.92 |
+| Will Reichard | K | BUF | 7.25 |
+| Minnesota Vikings | DEF | BUF | 6.27 |
+| Jonah Coleman | RB | CAR | 13.06 |
+| Ollie Gordon II | RB | DET | 12.83 |
 
 ## Week 10
 
-**Projected optimal score:** 131.13
+**Projected optimal score:** 131.07
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -49,7 +49,7 @@ Generated: 2026-11-03T00:58:46.379110+00:00 | Forecast as of: 2026-11-02T19:29:1
 | Kyren Williams | RB | ARI | 17.70 |
 | Zay Flowers | WR | LAC | 14.04 |
 | A.J. Brown | WR | DET | 12.92 |
-| Isaiah Likely | TE | WAS | 11.83 |
+| Isaiah Likely | TE | WAS | 11.77 |
 | Will Reichard | K | GB | 7.13 |
 | Minnesota Vikings | DEF | GB | 6.18 |
 | Ollie Gordon II | RB | IND | 12.79 |
