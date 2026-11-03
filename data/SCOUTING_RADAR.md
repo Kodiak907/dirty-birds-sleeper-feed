@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-03T22:43:45.687598+00:00
-Sleeper snapshot: 2026-11-03T22:43:41.429161+00:00
+Generated: 2026-11-03T23:40:57.214767+00:00
+Sleeper snapshot: 2026-11-03T23:40:50.975332+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- CREAM MACHINE: added none; dropped Jacoby Brissett
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
