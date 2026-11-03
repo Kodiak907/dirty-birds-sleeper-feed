@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-03T11:50:23.864494+00:00
-Sleeper snapshot: 2026-11-03T11:50:13.059972+00:00
-nflverse observations: 2026-11-03T11:50:17.894382+00:00; injury feed loaded: True
+Generated: 2026-11-03T12:59:00.555759+00:00
+Sleeper snapshot: 2026-11-03T12:58:49.181991+00:00
+nflverse observations: 2026-11-03T12:58:54.799126+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 5. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -23,16 +23,19 @@ nflverse observations: 2026-11-03T11:50:17.894382+00:00; injury feed loaded: Tru
 | Chris Olave | No tag | Week 6 observation: Questionable, Limited Participation in Practice, Illness | 75.3% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Chig Okonkwo | No tag | Week 5 observation: Full Participation in Practice | 74.7% | Verify current status before kickoff |
-| Jaxon Smith-Njigba | No tag | Week 8 observation: Full Participation in Practice | 84.3% | Verify current status before kickoff |
-| Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
+| Jaxon Smith-Njigba | No tag | Week 8 observation: Full Participation in Practice | 88.7% | Verify current status before kickoff |
+| Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | 37.0% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Jaxon Smith-Njigba** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+- **AJ Barner** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+- **Cooper Kupp** (snap_share_change): Snap share rose 27.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+- **Emanuel Wilson** (snap_share_change): Snap share fell 48.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
+- **Jadarian Price** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 8); confirm role/injury context.
 
 ## Guardrails
 

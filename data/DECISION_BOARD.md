@@ -32,7 +32,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Kalif Raymond | 5.65 | -0.40 | 61.7% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 1 | Kalif Raymond | 5.65 | -0.40 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 2 | Quentin Johnston | 5.64 | -0.41 | 79.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 3 | Chris Bell | 5.21 | -0.84 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 4 | Adonai Mitchell | 4.88 | -1.17 | 62.3% | Tgt 8.0 | No modeled flags (not medically cleared) |

@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-03T11:50:18.504273+00:00
-Sleeper snapshot: 2026-11-03T11:50:13.059972+00:00
+Generated: 2026-11-03T12:58:55.427516+00:00
+Sleeper snapshot: 2026-11-03T12:58:49.181991+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -43,7 +43,7 @@ Sleeper snapshot: 2026-11-03T11:50:13.059972+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Kalif Raymond | CHI | 5.65 | 89% | 61.7% | Not flagged |
+| 1 | Kalif Raymond | CHI | 5.65 | 89% | 62.0% | Not flagged |
 | 2 | Quentin Johnston | LAC | 5.64 | 100% | 79.7% | Not flagged |
 | 3 | Chris Bell | MIA | 5.21 | 100% | 62.7% | Not flagged |
 | 4 | Adonai Mitchell | NYJ | 4.88 | 89% | 62.3% | Not flagged |
@@ -105,7 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tanner McKee | QB | PHI | 11.15 | 100.0% |
 | Devin Singletary | RB | NYG | 6.25 | 31.7% |
 | Keaton Mitchell | RB | LAC | 6.16 | 30.0% |
-| Kalif Raymond | WR | CHI | 5.65 | 61.7% |
+| Kalif Raymond | WR | CHI | 5.65 | 62.0% |
 | Quentin Johnston | WR | LAC | 5.64 | 79.7% |
 | Tyjae Spears | RB | TEN | 5.54 | 38.0% |
 | Mike Washington Jr. | RB | LV | 5.24 | 40.3% |
