@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-11-02T15:09:03.067811+00:00
+Generated: 2026-11-03T15:04:16.210492+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 9 | Kyren Williams, Jonah Coleman | Jaxon Smith-Njigba | +2.90 | +1.75 | +1.5/+4.3/+3.9 | Kyren Williams: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 2 | 9 | Jonah Coleman, Zach Charbonnet | Chris Olave | +3.04 | +0.35 | +3.8/+3.7/+3.0 | Zach Charbonnet: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
-| 3 | 4 | Jonah Coleman, A.J. Brown | George Kittle | +1.73 | +2.43 | +2.3/+0.6/+2.0 | Unnecessary extra outgoing asset under aggregate PPG model |
-| 4 | 4 | Ollie Gordon II, Jonah Coleman | Derrick Henry | +0.61 | +3.54 | +2.1/+2.7/+5.0 | Ollie Gordon II: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 5 | 2 | Ollie Gordon II, Garrett Wilson | Puka Nacua | +1.56 | +1.42 | +3.3/+1.9/+4.6 | Ollie Gordon II: snap coverage absent; Puka Nacua: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 1 | 4 | Jonah Coleman, Deebo Samuel Sr. | Brock Purdy | +2.10 | +3.37 | +3.2/+2.4/+1.9 | Deebo Samuel Sr.: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 2 | 4 | A.J. Brown, Jonah Coleman | George Kittle | +2.61 | +2.17 | +2.3/+0.6/+2.0 | Unnecessary extra outgoing asset under aggregate PPG model |
+| 3 | 11 | C.J. Stroud, A.J. Brown | Ashton Jeanty | +2.51 | +0.46 | +3.8/+3.8/+5.3 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 4 | 10 | Patrick Mahomes, Ollie Gordon II | Josh Allen | +2.21 | +0.53 | +5.0/+2.0/+6.0 | Ollie Gordon II: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 5 | 11 | C.J. Stroud, A.J. Brown | D'Andre Swift | +1.80 | +1.17 | +2.2/+1.8/+4.1 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
 
 ## What the other manager might gain
 
-**1. Jaxon Smith-Njigba** — Opponent projected starters improve +1.75 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 35% (not a trade price).
+**1. Brock Purdy** — Opponent projected starters improve +3.37 PPG; potential shallow position(s): RB.
+Diagnostic positional-percentile imbalance: 23% (not a trade price).
 
-**2. Chris Olave** — Opponent projected starters improve +0.35 PPG; no clear shallow-position signal.
+**2. George Kittle** — Opponent projected starters improve +2.17 PPG; potential shallow position(s): RB.
 Diagnostic positional-percentile imbalance: 24% (not a trade price).
 
-**3. George Kittle** — Opponent projected starters improve +2.43 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 24% (not a trade price).
-
-**4. Derrick Henry** — Opponent projected starters improve +3.54 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 41% (not a trade price).
-
-**5. Puka Nacua** — Opponent projected starters improve +1.42 PPG; no clear shallow-position signal.
+**3. Ashton Jeanty** — Opponent projected starters improve +0.46 PPG; no clear shallow-position signal.
 Diagnostic positional-percentile imbalance: 35% (not a trade price).
+
+**4. Josh Allen** — Opponent projected starters improve +0.53 PPG; potential shallow position(s): RB.
+Diagnostic positional-percentile imbalance: 39% (not a trade price).
+
+**5. D'Andre Swift** — Opponent projected starters improve +1.17 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 39% (not a trade price).
 
 ## Verification before discussions
 
