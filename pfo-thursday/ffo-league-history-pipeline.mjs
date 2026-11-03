@@ -84,7 +84,8 @@ export function buildLeagueHistoryCoverage(schedule=[],snapshots={},certificates
  * appears once even though it covers two teams; do not triple-run a batch.
  */
 export function nextLeagueHistoryBatch(schedule=[],snapshots={},{
- fromWeek=1,throughWeek=7,maxGames=4,priorityTeam='GB',allowEstimatedWeekForSourceDiscovery=false,skipPreviouslyInspected=false
+ fromWeek=1,throughWeek=7,maxGames=4,priorityTeam='GB',
+ allowEstimatedWeekForSourceDiscovery=false,skipPreviouslyInspected=false,excludeGameIds=[]
 }={}){
  if(!Number.isInteger(maxGames)||maxGames<1||maxGames>8)throw Error('batch_size_1_to_8');
  const plan=planHistoricalMatchups((schedule||[]).map(g=>({...g,home:canon(g.home),away:canon(g.away)})),
@@ -92,7 +93,8 @@ export function nextLeagueHistoryBatch(schedule=[],snapshots={},{
  const summary=summarizeHistoricalMatchups(plan,snapshots);
  // Estimated schedule weeks may be investigated for SOURCE DISCOVERY ONLY.
  // Such games cannot be certified until MSF independently verifies the week.
- const pending=summary.games.filter(g=>g.final&&
+ const exclude=new Set(excludeGameIds||[]);
+ const pending=summary.games.filter(g=>g.final&&!exclude.has(g.id)&&
   (g.sourceWeekVerified||allowEstimatedWeekForSourceDiscovery)&&!g.fullFantasyScoreCertified&&
   (!skipPreviouslyInspected||!snapshots[g.id]?.checkedAt||snapshots[g.id]?.sourceFailure===true));
  const priority=canon(priorityTeam);
