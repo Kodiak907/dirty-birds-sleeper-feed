@@ -255,37 +255,68 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
  }
  async function runRemainingChecks(){
   if(state.autoActive||state.running||queue().pendingGames===0)return {started:false};
+  const cooldown=Math.max(0,state.cooldownUntil-Date.now());
+  if(cooldown>0){
+   render('MSF throttling cooldown active · retry after '+Math.ceil(cooldown/1000)+
+    's. Existing source checks are saved.');
+   return {started:false,reason:'cooldown',retryAfterSeconds:Math.ceil(cooldown/1000)};
+  }
   state.autoActive=true;state.stopRequested=false;state.autoScanned=0;
-  state.autoFailure=null;state.error=null;
-  let lastPending=queue().pendingGames,reason='complete';
-  render('Automated historical source discovery started. Keep this PFO tab visible.');
+  state.autoFailure=null;state.error=null;state.lastFailure=null;
+  state.excludedThisRun.clear();state.consecutiveUnavailable=0;
+  let lastEligible=queue().pendingGames,reason='complete';
+  render('Automatic historical source inspection started. Keep PFO visible.');
   try{
-   // Never loop indefinitely on malformed schedule or cached MSF errors.
    for(let batches=0;batches<160;batches++){
-    if(state.stopRequested){reason='paused';break;}
-    if(!isVisible()){reason='page_hidden';break;}
-    if(!queue().pendingGames){reason='complete';break;}
-    const result=await runNextBatch({automatic:true});
-    if(result.failed){reason='provider_error';break;}
-    const pending=queue().pendingGames;
-    if(!result.checked||pending>=lastPending){reason='no_progress';break;}
-    lastPending=pending;
-    if(!pending){reason='complete';break;}
-    // 2,500ms between batches, more during live games. Avoid competing
-    // with GameCast's five-second scores; manual pause can act during delay.
-    await sleep(hasLiveGames()?8000:2500);
+    if(state.stopRequested){reason='paused';break}
+    if(!isVisible()){reason='page_hidden';break}
+    const available=queue([...state.excludedThisRun]).pendingGames;
+    if(!available){
+     reason=queue().pendingGames?'unavailable_games':'complete';
+     break;
+    }
+    const result=await runNextBatch({automatic:true,
+     excludeGameIds:[...state.excludedThisRun]});
+    if(result.stopped){
+     reason=result.category==='rate_limit'?'rate_limit':
+      result.category==='access'||result.category==='bad_request'?'provider_access':
+      result.category==='unexpected_error'?'unexpected_error':'multiple_source_errors';
+     break;
+    }
+    const eligible=queue([...state.excludedThisRun]).pendingGames;
+    if(!result.checked&&!result.skipped||eligible>=lastEligible){
+     reason='no_progress';break;
+    }
+    lastEligible=eligible;
+    if(!eligible){
+     reason=queue().pendingGames?'unavailable_games':'complete';break;
+    }
+    await sleep(hasLiveGames()?8000:4500);
    }
+  }catch(error){
+   reason='unexpected_error';
+   state.autoFailure='Scan interrupted by a client error: '+
+    String(error?.message||error).slice(0,115);
   }finally{
    state.autoActive=false;state.stopRequested=false;
+   const remaining=queue().pendingGames,missing=state.excludedThisRun.size;
    state.lastProgress=reason==='complete'?
-    'All available historical games have received source checks. Fantasy certification remains separate.':
-    reason==='page_hidden'?'Scan paused because the page became hidden. Open PFO and press Run remaining to resume.':
-    reason==='paused'?'Scan paused. Saved source checks will be skipped on resume.':
-    reason==='provider_error'?'Scan stopped after an MSF source error to avoid rate-limit flooding.':
-    'Scan stopped without additional progress; review MSF source availability.';
+    'Available historical source checks finished; this does NOT certify fantasy scores.':
+    reason==='unavailable_games'?'Scan completed accessible games; '+missing+
+      ' unavailable source games remain pending for a later retry.':
+    reason==='page_hidden'?'Scan paused when your phone left the page. Reopen PFO and resume.':
+    reason==='paused'?'Scan paused. Successful checks remain saved locally.':
+    reason==='rate_limit'?'MSF rate limiting detected. Paused to protect live scores; retry after the 60s cooldown.':
+    reason==='provider_access'?'MSF feed access or request rejected. Check provider entitlement before retrying.':
+    reason==='multiple_source_errors'?'Multiple MSF games unavailable. Paused after three consecutive failures.':
+    reason==='unexpected_error'?'Historical scan stopped after an unexpected error; source checks remain saved.':
+    'Scan stopped without progress; review MSF source availability.';
+   state.error=null;
    render(state.lastProgress);
   }
-  return {started:true,reason,checked:state.autoScanned,remaining:queue().pendingGames};
+  return {started:true,reason,checked:state.autoScanned,
+   failedThisRun:state.excludedThisRun.size,remaining:queue().pendingGames,
+   lastFailure:state.lastFailure};
  }
  function backtestReadiness(){
   const report=walkForwardBacktest({certificates,expectedFinalGamesByPlayer:{}});
