@@ -46,7 +46,7 @@ jobs:
           npm install --no-save playwright@1.55.1
           npx playwright install --with-deps chromium
       - name: PFO smoke test with emulated mobile browser
-        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
+        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs
   deploy-preview:
     needs: qa
     if: github.ref == 'refs/heads/pfo-msf-week5-reconciliation-20261031'
