@@ -29,7 +29,8 @@ test('Original waiver views include personalized All, neutral positions, Veteran
  assert.match(market,/data-pfo597-waiver-view/);
  assert.match(market,/data-pfo597-waiver-pos/);
  assert.match(market,/VETS/);
- assert.match(market,/INJURED\[_-]\?RESERVE|INJURED/);
+ assert.match(market,/availabilityFor\(/);
+ assert.match(html,/ffo-availability-62\.js/);
  assert.match(market,/state\.waiverView==='available'&&state\.position==='ALL'/);
  assert.match(market,/pfo50Score/);
  assert.match(market,/broadenWaiverDirectory/);

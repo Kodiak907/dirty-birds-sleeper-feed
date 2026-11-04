@@ -53,5 +53,5 @@ test('New brief has no hardcoded trade block or legacy third-party scoreboard',(
  assert.doesNotMatch(text,/Garrett Wilson|ESPN scoreboard|Coleman|Charbonnet/);
  assert.match(text,/Front Office/);
  assert.match(text,/Model coverage/);
- assert.match(text,/Source dates/);
+ assert.match(text,/Data freshness & limitations/);
 });
