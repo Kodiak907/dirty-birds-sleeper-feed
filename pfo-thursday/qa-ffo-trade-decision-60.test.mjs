@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {
  tradeSlotEligibility,validateTradeSelection,lineupFromFFLResearch,evaluateFFLTrade
 } from './ffo-trade-decision-60.mjs';
@@ -104,7 +105,6 @@ test('Unknown roster cap cannot certify cuts, and unknown starter positions with
  assert.equal(none.before.ours.points,null);
 });
 test('Engine never reads Sleeper scoring endpoints, private FAAB balances or writes offers',()=>{
- const fs=await import('node:fs');
- const text=fs.readFileSync(new URL('./ffo-trade-decision-60.mjs',import.meta.url),'utf8');
+ const text=readFileSync(new URL('./ffo-trade-decision-60.mjs',import.meta.url),'utf8');
  assert.doesNotMatch(text,/fetch\s*\(|sleeper\.app|writeOffer|submitTrade|postTrade/);
 });
