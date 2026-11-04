@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-04T15:55:51.650866+00:00
-Sleeper snapshot: 2026-11-04T15:55:44.561809+00:00
+Generated: 2026-11-04T16:56:26.483202+00:00
+Sleeper snapshot: 2026-11-04T16:56:21.084317+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1423717658313924608` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
