@@ -1,25 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-04T08:56:44.093218+00:00
-Sleeper snapshot: 2026-11-04T08:56:36.017341+00:00
+Generated: 2026-11-04T10:02:29.577287+00:00
+Sleeper snapshot: 2026-11-04T10:02:24.527371+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**12 transaction changes:** 10 completed, 0 pending/processing, 2 failed.
-
-- **NEW** · transaction `1423616080600985600` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Chig Okonkwo → Dirty Birds (#1) | FAAB bid: $7
-- **NEW** · transaction `1423496826652266496` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Devin Singletary → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1423496729000480768` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Mike Washington Jr. → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1423496502541631488` · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Emmett Johnson → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1423465995753807872` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | Dropped: Washington Commanders → CREAM MACHINE  (#2) | FAAB bid: $15
-- **NEW** · transaction `1423465812966096896` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Devin Singletary → CREAM MACHINE  (#2) | Dropped: Emanuel Wilson → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1423465715062640640` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Malik Willis → CREAM MACHINE  (#2) | FAAB bid: $4
-- **NEW** · transaction `1423423457051279360` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
-- **NEW** · transaction `1423386526284312576` · WAIVER · COMPLETE · To Infinity and Bijan (#9) | Added: Mike Washington Jr. → To Infinity and Bijan (#9) | Dropped: Kendrick Bourne → To Infinity and Bijan (#9) | FAAB bid: $0
-- **NEW** · transaction `1423378939971141632` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
-- **NEW** · transaction `1423378263178219520` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
-- **NEW** · transaction `1423377943647756288` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
