@@ -114,14 +114,25 @@ export function findTradeResearch({rosters=[],names={},estimate=()=>null,ownerRo
   a.partnerId.localeCompare(b.partnerId));
  const seen=new Set(),byPartner=new Map(),out=[];
  const maximum=Math.max(1,Math.min(30,Number(maxResults)||12));
- for(const row of found){
+ const limit=selectedPartnerId?maximum:3;
+ const take=row=>{
+  if(!row||out.length>=maximum)return false;
   const k=candidateKey(row);
-  if(seen.has(k))continue;
-  const limit=selectedPartnerId?maximum:3;
-  if((byPartner.get(row.partnerId)||0)>=limit)continue;
+  if(seen.has(k)||(byPartner.get(row.partnerId)||0)>=limit)return false;
   seen.add(k);byPartner.set(row.partnerId,(byPartner.get(row.partnerId)||0)+1);
-  out.push(row);if(out.length>=maximum)break;
+  out.push(row);return true;
+ };
+ // Guarantee diverse starting points rather than returning twelve variations
+ // of one multi-player structure. One-for-one options lead, followed by both
+ // uneven package types when the current rosters genuinely support them.
+ const partnerIds=[...new Set(found.map(row=>row.partnerId))];
+ for(const format of ['1 for 1','2 for 1','1 for 2']){
+  for(const partnerId of partnerIds){
+   if(out.length>=maximum)break;
+   take(found.find(row=>row.partnerId===partnerId&&row.format===format));
+  }
  }
+ for(const row of found){if(out.length>=maximum)break;take(row);}
  return out;
 }
 /**
