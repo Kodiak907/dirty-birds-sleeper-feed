@@ -154,7 +154,8 @@
     estimate:context.estimate,ownerRosterId:context.ownerRosterId,excludedRosterIds:context.excludedRosterIds,
     starterSlots:context.slots,snapshotAt:context.snapshotAt,rulesReady:context.rulesReady,
     selectedPartnerId:s.partner==='all'?null:s.partner,objective:s.objective,
-    fairOnly:s.fairOnly,preferUneven:s.preferUneven,protectedMine:state.protectedMine,
+    fairOnly:s.fairOnly,preferUneven:s.preferUneven,availability:context.availability,
+    protectedMine:state.protectedMine,
     protectedByManager:state.protectedOthers,maxResults:10});
    s.rows=results;s.diagnostics=diagnostics;s.stamp=stamp;
   }catch(err){s.error='Screened Trade Finder unavailable; existing manual Trade Analyzer is unaffected.';

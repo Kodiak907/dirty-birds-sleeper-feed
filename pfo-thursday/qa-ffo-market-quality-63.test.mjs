@@ -69,3 +69,11 @@ test('No write endpoints, fake odds or speculative FFOI results in the new resea
  assert.doesNotMatch(js,/fetch\s*\(|submitTrade|claimWaiver|sleeper\.app|Math\.random\(/);
  assert.match(js,/acceptanceProbability:null/);
 });
+
+test('Officially blocked and unresolved injured players are excluded from automatic trade candidates',()=>{
+ const changed={...names,w1:{...names.w1,injury_status:'Out'}};
+ const report=screenTradePackages({...base(),names:changed,
+  availability:(id)=>({standardEligible:id!=='r4'})});
+ assert.ok(report.results.every(r=>
+  r.give.every(p=>p.id!=='w1')&&r.take.every(p=>p.id!=='r4')));
+});

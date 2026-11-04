@@ -25,10 +25,15 @@ const combinations=(arr,n,max=100)=>{const out=[];
   if(current.length===n){out.push(current.slice());return;}
   for(let k=i;k<arr.length;k++){current.push(arr[k]);visit(k+1,current);current.pop();if(out.length>=max)return;}
  };visit(0,[]);return out;};
-const getPlayers=(r,names,estimate,lock)=>active(r).filter(pid=>!lock.has(pid))
+const getPlayers=(r,names,estimate,lock,availability)=>active(r).filter(pid=>!lock.has(pid))
  .map(pid=>{const p=names[pid]||{},position=pos(p.position),raw=estimate(pid);
-  return {id:pid,name:p.name||pid,position,team:p.team||'',ppg:finite(raw)?raw:null};})
- .filter(p=>p.name&&gamePositions.has(p.position));
+  const status=String(p.injury_status||'').toUpperCase();
+  const assessment=typeof availability==='function'?availability(pid,{...p,id:pid}):null;
+  const excluded=assessment?.standardEligible===false||
+   (!assessment&&/^(IR|PUP|NFI|INJURED RESERVE)$/.test(status))||
+   /^(OUT|DOUBTFUL|QUESTIONABLE)$/.test(status);
+  return {id:pid,name:p.name||pid,position,team:p.team||'',ppg:finite(raw)?raw:null,excluded};})
+ .filter(p=>p.name&&gamePositions.has(p.position)&&!p.excluded);
 const near=(n,d)=>d>0?n/d:NaN;
 function rosterFits(base,remove,add,minimums,names){
  const exclude=new Set(remove.map(x=>x.id));
@@ -59,7 +64,7 @@ export function screenTradePackages({
  rosters=[],names={},estimate=()=>null,ownerRosterId='1',excludedRosterIds=['3'],
  starterSlots=[],snapshotAt=null,rulesReady=false,selectedPartnerId=null,
  maxResults=10,objective='BALANCED',fairOnly=true,preferUneven=false,
- protectedMine=[],protectedByManager={}
+ protectedMine=[],protectedByManager={},availability=null
 }={}){
  const empty={results:[],diagnostics:{priced:0,considered:0,reason:'not_checked'}};
  if(!Array.isArray(rosters)||!rosters.length||typeof estimate!=='function')return empty;
@@ -72,12 +77,12 @@ export function screenTradePackages({
  const min=minimum(starterSlots),target=targets(min),baselines=replacementBaselines(rosters,names,estimate,starterSlots);
  // Only covered player values allow a screened trade idea. Missing data cannot
  // become a bogus "fair" offer just because roster depth suggests a need.
- const ours=getPlayers(own,names,estimate,protectedIds(protectedMine));
+ const ours=getPlayers(own,names,estimate,protectedIds(protectedMine),availability);
  const allOwn=active(own),ownCounts=counts(allOwn,names),results=[];
  let priced=0,considered=0;
  for(const other of allowed){
   const theirLocks=protectedIds(protectedByManager[id(other.roster_id)]);
-  const theirs=getPlayers(other,names,estimate,theirLocks);
+  const theirs=getPlayers(other,names,estimate,theirLocks,availability);
   const theirIds=active(other),theirCounts=counts(theirIds,names);
   const useOurs=ours.filter(x=>finite(x.ppg)&&!['K','DEF'].includes(x.position));
   const useTheirs=theirs.filter(x=>finite(x.ppg)&&!['K','DEF'].includes(x.position));
@@ -159,7 +164,9 @@ export function recommendWaiverPairs({
   if(position!=='ALL'&&position!=='IR'&&role!==position&&
    !(position==='FLEX'&&['RB','WR','TE'].includes(role)))return false;
   const clearance=availability?.(pid,{...p,...info,id:pid});
-  const ir=clearance?.irTabEligible===true||/^(IR|PUP|NFI|INJURED RESERVE)$/i.test(String(info.injury_status||''));
+  const ir=clearance?.irTabEligible===true||
+   (!clearance&&/^(IR|PUP|NFI|INJURED RESERVE)$/i.test(String(info.injury_status||'')));
+  if(/^(OUT|DOUBTFUL)$/i.test(String(info.injury_status||''))&&position!=='IR')return false;
   return position==='IR'?ir:!ir;
  }).slice(0,250);
  const results=[];
