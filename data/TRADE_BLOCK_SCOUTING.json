@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-04T02:51:04.157783+00:00",
-  "source_snapshot_utc": "2026-11-04T02:50:54.361522+00:00",
-  "source_market_as_of": "2026-11-03T15:04:16.083918+00:00",
+  "generated_at_utc": "2026-11-04T03:52:57.429802+00:00",
+  "source_snapshot_utc": "2026-11-04T03:52:46.137723+00:00",
+  "source_market_as_of": "2026-11-04T03:52:54.084394+00:00",
   "source_projection_as_of": "2026-11-04T01:40:24.464244+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17658,
-  "market_screened": 5224,
+  "market_screened": 5372,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -58,7 +58,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.01,
           "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 0.777,
+          "value_paid_received_ratio": 0.844,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -96,7 +96,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.01,
           "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 1.126,
+          "value_paid_received_ratio": 1.144,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -129,7 +129,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.58,
           "their_lineup_delta_ppg": 0.45,
-          "value_paid_received_ratio": 1.029,
+          "value_paid_received_ratio": 1.074,
           "our_extra_cut": null,
           "opponent_extra_cut": "Brandin Cooks",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -167,7 +167,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.58,
           "their_lineup_delta_ppg": 0.45,
-          "value_paid_received_ratio": 0.862,
+          "value_paid_received_ratio": 0.893,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -205,7 +205,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.33,
           "their_lineup_delta_ppg": 0.13,
-          "value_paid_received_ratio": 0.844,
+          "value_paid_received_ratio": 0.82,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -243,7 +243,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.33,
           "their_lineup_delta_ppg": 0.13,
-          "value_paid_received_ratio": 1.188,
+          "value_paid_received_ratio": 1.15,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -281,7 +281,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.53,
           "their_lineup_delta_ppg": 0.35,
-          "value_paid_received_ratio": 1.032,
+          "value_paid_received_ratio": 1.005,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -319,7 +319,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.53,
           "their_lineup_delta_ppg": 0.35,
-          "value_paid_received_ratio": 0.999,
+          "value_paid_received_ratio": 0.977,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 96
+      "candidate_count": 100
     },
     {
       "asset": "Patrick Mahomes",
@@ -355,16 +355,16 @@
               "position": "QB"
             },
             {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
+              "id": "3163",
+              "name": "Jared Goff",
+              "position": "QB"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.05,
           "their_lineup_delta_ppg": 2.67,
-          "value_paid_received_ratio": 1.071,
+          "value_paid_received_ratio": 0.916,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -381,8 +381,8 @@
               "position": "QB"
             },
             {
-              "id": "13345",
-              "name": "Jonah Coleman",
+              "id": "9753",
+              "name": "Zach Charbonnet",
               "position": "RB"
             }
           ],
@@ -393,16 +393,16 @@
               "position": "QB"
             },
             {
-              "id": "5045",
-              "name": "Courtland Sutton",
+              "id": "13274",
+              "name": "Germie Bernard",
               "position": "WR"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.05,
-          "their_lineup_delta_ppg": 2.67,
-          "value_paid_received_ratio": 1.092,
+          "their_lineup_delta_ppg": 0.99,
+          "value_paid_received_ratio": 0.984,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -412,7 +412,7 @@
           ]
         }
       ],
-      "candidate_count": 15
+      "candidate_count": 12
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."
