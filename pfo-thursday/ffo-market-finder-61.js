@@ -56,7 +56,7 @@
   host.innerHTML='<div class="pfo61-head"><div><b>Trade Finder · FFO Research</b>'+
    '<small>Quick package discovery across actual league rosters</small></div>'+
    '<button type="button" data-pfo61-refresh="trade">Refresh</button></div>'+
-   selector+'<p class="pfo61-disclosure">Research ordering considers roster depth and provisional FFL estimates. It is not a fair-trade verdict, acceptance probability, or actual offer. Unbalanced deals require roster-cut review.</p>'+content;
+   selector+'<p class="pfo61-disclosure">Finder explores 1–3 player combinations on either side; candidates without independent estimates are unpriced roster-fit research, not fair-value proposals. FAAB remains adjustable in Trade Analyzer. Nothing is sent.</p>'+content;
  }
  function waiverList(){
   const host=waiverHost();if(!host)return;
@@ -70,7 +70,7 @@
      (d.starter?' · STARTER':' · bench')+'</option>').join('');
     return '<article class="pfo61-offer"><div class="pfo61-waiver-title"><b>'+esc(r.name)+'</b>'+
      '<small>'+esc(r.position)+' · '+esc(r.team||'Team unknown')+' · '+(r.ppg===null?'Model withheld':r.ppg.toFixed(1)+' model PPG')+'</small></div>'+
-     '<div class="pfo61-meta"><span>Roster depth need '+esc(r.shortage)+'</span>'+
+     '<div class="pfo61-meta"><span>'+(r.reserved?'IR research · not a normal waiver recommendation':'Roster depth need '+esc(r.shortage))+'</span>'+
      '<span>Ownership: unrostered in latest directory</span></div>'+
      (r.healthFlag?'<small class="pfo61-alert">Injury designation requires recheck</small>':'')+
      '<label class="pfo61-picker">Potential drop <select data-pfo61-drop="'+i+'">'+
@@ -82,7 +82,7 @@
    '<small>Actual unrostered players · conditional replacement impact</small></div>'+
    '<button type="button" data-pfo61-refresh="waiver">Refresh</button></div>'+
    '<label class="pfo61-picker">Position <select data-pfo61-waiver-position>'+
-   ['ALL','QB','RB','WR','TE','FLEX','K','DEF'].map(p=>'<option'+
+   ['ALL','QB','RB','WR','TE','FLEX','K','DEF','IR'].map(p=>'<option'+
    (state.waiver.position===p?' selected':'')+'>'+p+'</option>').join('')+'</select></label>'+
    '<p class="pfo61-disclosure">Potential drops are research candidates, not recommendations to execute. Eligibility, waivers, FAAB, and game-day availability require separate verification. No adds or drops are submitted.</p>'+content;
  }
@@ -111,7 +111,7 @@
    state.waiver.rows=[];waiverList();return;
   }
   const stamp=[first.snapshotAt,first.rulesReady,first.waiverRosterId,
-   state.waiver.position,first.modelVersion||''].join('|');
+   state.waiver.position,first.modelVersion||'',first.actionsVersion||''].join('|');
   if(!force&&state.waiver.stamp===stamp){if(!waiverHost()?.querySelector('.pfo61-head'))waiverList();return;}
   if(state.waiver.pending)return;
   state.waiver.pending=true;state.waiver.error='';waiverList();
@@ -121,6 +121,7 @@
    state.waiver.rows=m.findWaiverResearch({roster,names:ctx.names,
     unrostered:ctx.unrostered||[],estimate:ctx.estimate,starterSlots:ctx.slots,
     position:state.waiver.position,maxResults:8,rulesReady:ctx.rulesReady,
+    availability:ctx.availability,
     snapshotAt:ctx.snapshotAt});
    state.waiver.stamp=stamp;
   }catch(e){state.waiver.error='Waiver comparison unavailable; existing Waiver Market is unaffected.';
@@ -165,7 +166,8 @@
    const m=model;
    const result=m?.compareWaiverSwap({roster,addId:row.id,dropId:drop,
     names:ctx.names,estimate:ctx.estimate,starterSlots:ctx.slots,
-    rulesReady:ctx.rulesReady,snapshotAt:ctx.snapshotAt});
+    rulesReady:ctx.rulesReady,snapshotAt:ctx.snapshotAt,
+    availability:ctx.availability});
    const player=ctx.names?.[drop]?.name||drop;
    target.textContent=result?.status==='conditional'?
     'If '+row.name+' replaces '+player+': '+dollar(result.delta)+' modeled starter PPG. Research only; actual add/drop eligibility unverified.':

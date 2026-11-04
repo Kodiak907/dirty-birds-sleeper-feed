@@ -111,12 +111,7 @@
      typeof pfo49Mode!=='undefined'&&pfo49Mode==='postgame'?[0,1,2]:[0,2,3];
    sections.forEach((x,i)=>{if(!keep.includes(i))x.remove();});
    host.classList.add('pfo596-brief');
-   const important=stories(lineup()).filter(x=>x.priority>=3).slice(0,2);
-   if(important.length){
-    const compact=document.createElement('div');compact.className='pfo596-brief-news';
-    compact.innerHTML='<b>Priority roster updates</b>'+important.map(x=>'<p>'+esc(x.player)+': '+esc(x.title)+' · <a href="'+esc(x.link)+'" target="_blank" rel="noopener noreferrer">'+esc(x.publisher)+'</a></p>').join('');
-    const freshness=host.querySelector('.pfo51-sources');host.insertBefore(compact,freshness||null);
-   }
+
   };
  }
  // For verified schedules only: bye is neither a forecast nor zero fantasy points.

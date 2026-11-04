@@ -106,6 +106,7 @@
   }).filter(Boolean).join('')||'<span>No position-count changes</span>';
   const issues=r.issues.map(x=>'<div>• '+esc(label[x]||x.replaceAll('_',' '))+'</div>');
   const health=r.health.map(x=>'<div>• '+esc(x.name)+' — '+esc(x.status)+' (verify official report)</div>');
+  const missingPlayers=(r.coverage?.missing||[]).map(id=>ctx.names?.[id]?.name||id);
   const asset=(id,side)=>{
    const p=ctx.names?.[id]||null,reference=pool(ctx)[id];
    return '<div class="pfo60-asset"><small>'+esc(side)+'</small><b>'+esc(p?.name||reference?.name||id)+'</b>'+
@@ -130,7 +131,7 @@
     });
     return '<div>• <b>'+esc(p.name||id)+'</b>: '+esc(rows.join(' · '))+'</div>';
    }).join(''):'<div>Verified NFL fixtures or league playoff weeks unavailable.</div>';
-  return '<div class="pfo60-title"><b>FFO Trade Intelligence</b><span>Conditional · FFL-specific</span></div>'+
+  return '<div class="pfo60-title"><span>Conditional FFL model · research only</span></div>'+
    '<div class="pfo60-headline"><strong>'+esc(r.headline)+'</strong><small>'+
     'Read-only research · no verified acceptance odds or auto-offers</small></div>'+
    '<div class="pfo60-kpis">'+
@@ -162,6 +163,7 @@
    '<details class="pfo60-fold" data-pfo60-evidence><summary>Verification, injury and model limits ('+(issues.length+health.length)+')</summary>'+
     '<div class="pfo60-warnings">'+(issues.length||health.length?[...issues,...health].join(''):
     '<div>No source-rule warning was triggered by current inputs.</div>')+
+    (missingPlayers.length?'<div>• Independent estimates missing for <b>'+esc(missingPlayers.join(', '))+'</b>. Full starter impacts require complete player coverage.</div>':'')+
     '<div>• Full historical FFL score certification and walk-forward projection accuracy remain pending.</div>'+
     '<div>• League-player ownership: Sleeper read-only, checked '+esc(ctx.snapshotAt||'unknown')+'.</div>'+
     '<div>• Optimized lineup comparisons assume all selected players are available; actual snap caps and Sunday actives need verification.</div>'+

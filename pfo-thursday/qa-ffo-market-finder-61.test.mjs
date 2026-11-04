@@ -79,3 +79,25 @@ test('Finder never submits league transactions, relies on Sleeper score endpoint
  assert.doesNotMatch(source,/fetch\s*\(|sleeper\.app|submitTrade|claimWaiver|postTrade|writeRoster/);
  assert.match(source,/acceptanceProbability:null/);
 });
+
+test('Full partner research includes multi-player shapes while limiting one-for-one repetition',()=>{
+ const all=findTradeResearch({...opts(),selectedPartnerId:'5'});
+ const shapes=new Set(all.map(x=>x.format));
+ assert.ok(shapes.has('1 for 1'));
+ assert.ok(shapes.has('2 for 2'));
+ assert.ok(shapes.has('3 for 1')||shapes.has('1 for 3'));
+ assert.ok(all.filter(x=>x.format==='1 for 1').length<=3);
+ assert.ok(all.every(x=>x.give.length<=3&&x.take.length<=3));
+});
+test('Conservative reserve-only waiver gate includes IR research but not ordinary position discovery',()=>{
+ const player={id:'w5',name:'IR receiver',position:'WR',team:'GB',injury_status:'IR'};
+ const context={roster:rosters[0],names:{...names,w5:player},
+  unrostered:[player],estimate:id=>value[id]??null,starterSlots:slots,
+  snapshotAt:new Date().toISOString(),rulesReady:true,
+  availability:(id,p)=>({standardEligible:false,irTabEligible:true})};
+ assert.equal(findWaiverResearch({...context,position:'WR'}).length,0);
+ const ir=findWaiverResearch({...context,position:'IR'});
+ assert.equal(ir.length,1);
+ assert.equal(ir[0].reserved,true);
+ assert.equal(compareWaiverSwap({...context,addId:'w5',dropId:'r3'}).delta,null);
+});

@@ -2161,8 +2161,8 @@ async function pfo51LoadPlays(id){
 }
 document.addEventListener('click',event=>{const btn=event.target.closest('[data-pfo51-gameplays]');if(btn)pfo51LoadPlays(btn.dataset.pfo51Gameplays)});
 $('pfo51-refreshgames')?.addEventListener('click',pfo51FetchGames);
-setTimeout(pfo51FetchGames,5500);
-setInterval(()=>{if(!document.hidden&&document.querySelector('#overview.page.active'))pfo51FetchGames()},60000);
+// Redundant ESPN Overview scoreboard retired; GameCast remains authoritative NFL game viewer.
+// No duplicate background scoreboard polling.
 
 // 5.0 QA correction: after an NFL box-score records genuine participation in
 // the *same* game week, don't leave an old Questionable label as the headline.

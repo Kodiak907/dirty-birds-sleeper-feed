@@ -81,9 +81,13 @@ export function findTradeResearch({rosters=[],names={},estimate=()=>null,ownerRo
   if(!theirs.length)continue;
   const otherCounts=counts(activeIds(other),names);
   const append=(give,take)=>{
+   // Do not propose multipacks of skill players for a K/DST without sourced value.
+   if(give.concat(take).some(p=>['K','DEF'].includes(p.position))&&
+    (give.length!==1||take.length!==1||give[0].position!==take[0].position))return;
    const outgoing=packageSum(give),incoming=packageSum(take);
    const covered=outgoing!==null&&incoming!==null;
    const needOurs=needScore(take,ourCounts,targets),needTheirs=needScore(give,otherCounts,targets);
+   if(!covered&&(!needOurs||!needTheirs))return; // Both sides need a roster-depth rationale without model values.
    const imbalance=covered?Math.abs(incoming-outgoing):null;
    const complexity=give.length+take.length-2;
    // Only relative sorting; do not expose as probability, fairness or quantified value.
@@ -103,11 +107,24 @@ export function findTradeResearch({rosters=[],names={},estimate=()=>null,ownerRo
   };
   for(const a of ours)for(const b of theirs)append([a],[b]);
   // Add bounded 2-for-1 and 1-for-2 alternatives; leave roster cuts unresolved.
-  const multiOurs=ours.slice(0,8),multiTheirs=theirs.slice(0,8);
+  const multiOurs=ours.slice(0,6),multiTheirs=theirs.slice(0,6);
   for(let i=0;i<multiOurs.length;i++)for(let j=i+1;j<multiOurs.length;j++)
    for(const b of multiTheirs.slice(0,5))append([multiOurs[i],multiOurs[j]],[b]);
   for(let i=0;i<multiTheirs.length;i++)for(let j=i+1;j<multiTheirs.length;j++)
    for(const a of multiOurs.slice(0,5))append([a],[multiTheirs[i],multiTheirs[j]]);
+  for(let i=0;i<multiOurs.length;i++)for(let j=i+1;j<multiOurs.length;j++)
+   for(let k=0;k<multiTheirs.length;k++)for(let l=k+1;l<multiTheirs.length;l++)
+    append([multiOurs[i],multiOurs[j]],[multiTheirs[k],multiTheirs[l]]);
+  for(let i=0;i<multiOurs.length;i++)for(let j=i+1;j<multiOurs.length;j++)
+   for(let k=j+1;k<multiOurs.length;k++)for(const b of multiTheirs.slice(0,4))
+    append([multiOurs[i],multiOurs[j],multiOurs[k]],[b]);
+  for(let i=0;i<multiTheirs.length;i++)for(let j=i+1;j<multiTheirs.length;j++)
+   for(let k=j+1;k<multiTheirs.length;k++)for(const a of multiOurs.slice(0,4))
+    append([a],[multiTheirs[i],multiTheirs[j],multiTheirs[k]]);
+  for(let i=0;i<Math.min(5,multiOurs.length);i++)for(let j=i+1;j<Math.min(5,multiOurs.length);j++)
+   for(let k=j+1;k<Math.min(5,multiOurs.length);k++)
+    for(let l=0;l<Math.min(5,multiTheirs.length);l++)for(let m=l+1;m<Math.min(5,multiTheirs.length);m++)
+     append([multiOurs[i],multiOurs[j],multiOurs[k]],[multiTheirs[l],multiTheirs[m]]);
  }
  found.sort((a,b)=>b.priority-a.priority||
   (a.give.length+a.take.length)-(b.give.length+b.take.length)||
@@ -122,17 +139,32 @@ export function findTradeResearch({rosters=[],names={},estimate=()=>null,ownerRo
   seen.add(k);byPartner.set(row.partnerId,(byPartner.get(row.partnerId)||0)+1);
   out.push(row);return true;
  };
- // Guarantee diverse starting points rather than returning twelve variations
- // of one multi-player structure. One-for-one options lead, followed by both
- // uneven package types when the current rosters genuinely support them.
- const partnerIds=[...new Set(found.map(row=>row.partnerId))];
- for(const format of ['1 for 1','2 for 1','1 for 2']){
-  for(const partnerId of partnerIds){
+ // Interleave package formats, and cap easy 1-for-1 suggestions.
+ const formats=['1 for 1','2 for 1','2 for 2','1 for 2','3 for 1','1 for 3','3 for 2'];
+ const partnersToCheck=[...new Set(found.map(x=>x.partnerId))];
+ const caps={'1 for 1':Math.max(1,Math.floor(maximum/4)),
+  '2 for 1':Math.max(1,Math.ceil(maximum/4)),
+  '1 for 2':Math.max(1,Math.ceil(maximum/4))};
+ const byFormat=new Map();
+ const tryTake=r=>{
+  if(!r||(byFormat.get(r.format)||0)>=(caps[r.format]??maximum))return;
+  if(take(r))byFormat.set(r.format,(byFormat.get(r.format)||0)+1);
+ };
+ // First sweep rotates partners across distinct package shapes.
+ for(let i=0;i<formats.length&&out.length<maximum;i++){
+  const format=formats[i],preferred=partnersToCheck[i%partnersToCheck.length];
+  const candidate=found.find(x=>x.partnerId===preferred&&x.format===format)||
+   found.find(x=>x.format===format&&(byPartner.get(x.partnerId)||0)<limit);
+  tryTake(candidate);
+ }
+ // Then fill available slots without repeating identical formats or managers unnecessarily.
+ for(const partnerId of partnersToCheck){
+  for(const format of formats){
    if(out.length>=maximum)break;
-   take(found.find(row=>row.partnerId===partnerId&&row.format===format));
+   tryTake(found.find(x=>x.partnerId===partnerId&&x.format===format));
   }
  }
- for(const row of found){if(out.length>=maximum)break;take(row);}
+ for(const r of found){if(out.length>=maximum)break;tryTake(r);}
  return out;
 }
 /**
@@ -140,7 +172,7 @@ export function findTradeResearch({rosters=[],names={},estimate=()=>null,ownerRo
  * No add/drop is executed; suggestions do not imply eligibility or clearance.
  */
 export function findWaiverResearch({roster=null,names={},unrostered=[],estimate=()=>null,
- starterSlots=[],position='ALL',maxResults=8,rulesReady=false,snapshotAt=null}={}){
+ starterSlots=[],position='ALL',maxResults=8,rulesReady=false,snapshotAt=null,availability=null}={}){
  if(!roster||!Array.isArray(unrostered))return [];
  const active=activeIds(roster),owned=new Set((roster.players||[]).map(id));
  const targets=depthTargets(starterSlots),current=counts(active,names);
@@ -158,12 +190,18 @@ export function findWaiverResearch({roster=null,names={},unrostered=[],estimate=
  for(const c of unrostered){
   const pid=id(c.id??c.player_id),meta=names?.[pid]||c,p=pos(meta?.position||c.position);
   if(!pid||owned.has(pid)||seen.has(pid)||!POS.has(p)||!meta?.name)continue;
-  if(position!=='ALL'&&position!==p&&!(position==='FLEX'&&['RB','WR','TE'].includes(p)))continue;
+  const assessment=typeof availability==='function'?availability(pid,{...meta,id:pid}):null;
+  const reserve=assessment?.irTabEligible===true||
+   (!assessment&&/\bIR\b|\bPUP\b|\bNFI\b|INJURED[ _-]?RESERVE|SEASON[ _-]?ENDING/i.test(
+    String(meta.injury_status||'')+' '+String(meta.status||'')));
+  if(position==='IR'){if(!reserve)continue;}
+  else if(reserve||position!=='ALL'&&position!==p&&
+   !(position==='FLEX'&&['RB','WR','TE'].includes(p)))continue;
   const projected=valid(c.modelPPG)?c.modelPPG:estimate(pid);
   const ppg=valid(projected)?projected:null;
   if(position==='ALL'){
    const injury=String(meta.injury_status||meta.status||'').toUpperCase();
-   if(/^(OUT|IR|PUP|NFI|DOUBTFUL)$/.test(injury))continue;
+   if(/^(OUT|DOUBTFUL)$/.test(injury)&&position!=='IR')continue;
    if(['QB','K','DEF'].includes(p)&&(current[p]||0)>=(targets[p]||0)){
     const incumbent=bestAtPosition[p],requiredUpgrade=p==='QB'?3.5:2.5;
     if(!valid(ppg)||!valid(incumbent)||ppg-incumbent<requiredUpgrade)continue;
@@ -178,7 +216,7 @@ export function findWaiverResearch({roster=null,names={},unrostered=[],estimate=
   }).slice(0,3).map(d=>({...d,ppg:valid(d.ppg)?d.ppg:null}));
   const health=flag(meta);
   const priority=shortage*8+(ppg!==null?Math.min(20,ppg):0)+(options.length?2:0)-(health?4:0);
-  rows.push({id:pid,name:meta.name,position:p,team:meta.team||'',ppg:rulesReady&&recent(snapshotAt)?ppg:null,
+  rows.push({id:pid,name:meta.name,position:p,team:meta.team||'',reserved:reserve,ppg:rulesReady&&recent(snapshotAt)?ppg:null,
    availableFrom:'published unrostered directory',dropOptions:options,shortage,priority,
    healthFlag:health,researchOnly:true,faabRecommendation:null,
    warning:!rulesReady||!recent(snapshotAt)?'Model or roster freshness not verified':
@@ -188,11 +226,13 @@ export function findWaiverResearch({roster=null,names={},unrostered=[],estimate=
  return rows.slice(0,Math.max(1,Math.min(20,Number(maxResults)||8)));
 }
 export function compareWaiverSwap({roster=null,addId,dropId,names={},estimate=()=>null,
- starterSlots=[],rulesReady=false,snapshotAt=null}={}){
+ starterSlots=[],rulesReady=false,snapshotAt=null,availability=null}={}){
  const before=(roster?.players||[]).map(id),reserve=new Set((roster?.reserve||[]).map(id));
  const add=id(addId),drop=id(dropId);
  if(!roster||!add||!drop||add===drop||!before.includes(drop)||reserve.has(drop)||before.includes(add))
   return {status:'invalid',delta:null,reason:'ownership_or_reserve_not_verified'};
+ if(typeof availability==='function'&&availability(add,names?.[add]||{})?.standardEligible===false)
+  return {status:'withheld',delta:null,reason:'reserve_status_requires_verified_return_window'};
  if(!rulesReady||!recent(snapshotAt))
   return {status:'withheld',delta:null,reason:'ffl_rules_or_ownership_freshness_not_verified'};
  const active=before.filter(x=>!reserve.has(x));

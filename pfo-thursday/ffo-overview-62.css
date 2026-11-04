@@ -1,0 +1,17 @@
+/* PFO 6.2 Overview: compact, source-aware briefing rather than repeated feeds. */
+#overview .pfo49-front{border-color:#38576d}
+#overview .pfo62-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#overview .pfo62-head h2{font-size:18px;margin:0 0 4px}
+#overview .pfo62-head p{font-size:11px;margin:0;color:#adc4d2}
+#overview .pfo62-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:8px 0 12px}
+#overview .pfo62-facts>div{min-width:0;border:1px solid #3a5368;background:#1d3144;border-radius:8px;padding:8px;display:grid;gap:5px}
+#overview .pfo62-facts small{font-size:10px;color:#bbd1dd}
+#overview .pfo62-facts b{font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+#overview .pfo62-priority{border-top:1px solid #344c60;padding:10px 0}
+#overview .pfo62-priority>strong{font-size:12px;color:#e1f6ed}
+#overview .pfo62-priority p{font-size:11px;line-height:1.55;color:#c9d8e2;margin:5px 0 0}
+#overview .pfo62-priority a{color:#a8e7c9;text-decoration:underline}
+#overview .pfo62-source{border-top:1px solid #344c60;padding:9px 0;color:#acbfcf;font-size:10px}
+#overview .pfo62-source summary{cursor:pointer;font-weight:750}
+#overview .pfo62-source p{font-size:10px;line-height:1.55}
+@media(max-width:380px){#overview .pfo62-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
