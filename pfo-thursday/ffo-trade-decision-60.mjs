@@ -129,8 +129,8 @@ export function evaluateFFLTrade({
  }:null;
  const cleanDelta=(a,b)=>a?.status==='conditional'&&b?.status==='conditional'?
   round(b.points-a.points):null;
- const us=before&&after&&cuts.ours===0&&cuts.theirs===0?cleanDelta(before.ours,after.ours):null;
- const them=before&&after&&cuts.ours===0&&cuts.theirs===0?cleanDelta(before.theirs,after.theirs):null;
+ const us=before&&after&&cuts.ours===0&&cuts.theirs===0&&ruleReady&&!stale?cleanDelta(before.ours,after.ours):null;
+ const them=before&&after&&cuts.ours===0&&cuts.theirs===0&&ruleReady&&!stale?cleanDelta(before.theirs,after.theirs):null;
  const pack=ids=>ids.every(id=>finite(playerIndex[key(id)]?.ppg))?
   round(ids.reduce((sum,id)=>sum+playerIndex[key(id)].ppg,0)):null;
  const outgoing=pack(give),incoming=pack(take);
