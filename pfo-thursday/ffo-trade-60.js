@@ -116,7 +116,8 @@
   const root=$('#pfo60-trade-report'),ctx=context();if(!root||!ctx)return;
   if(!model){root.textContent='FFL Trade Intelligence model loading; existing trade selections retained.';return}
   const indexed=pool(ctx);
-  const p={ourRoster:ctx.ourRoster,theirRoster:ctx.theirRoster,give:ctx.give,take:ctx.take,
+  const p={ourRoster:ctx.ourRoster,theirRoster:ctx.theirRoster,
+   ourReserve:ctx.ourReserve||[],theirReserve:ctx.theirReserve||[],give:ctx.give,take:ctx.take,
    partnerRosterId:ctx.manager,playerIndex:indexed,starterSlots:ctx.slots,
    rosterCap:Number.isInteger(Number(ctx.rosterCap))&&Number(ctx.rosterCap)>0?Number(ctx.rosterCap):null,
    snapshotAt:ctx.snapshotAt,ruleReady:ctx.rulesReady,
