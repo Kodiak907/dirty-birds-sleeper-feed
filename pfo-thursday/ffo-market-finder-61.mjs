@@ -148,15 +148,28 @@ export function findWaiverResearch({roster=null,names={},unrostered=[],estimate=
  const drops=active.filter(x=>names?.[x]&&POS.has(pos(names[x].position)))
   .map(x=>({id:x,name:names[x].name||x,position:pos(names[x].position),
    ppg:estimate(x),starter:starters.has(x),injuryFlag:flag(names[x])}));
+ // The default board is a team-need view, not an endless QB/K/DST list.
+ // A deliberately selected position remains available for full scouting.
+ const bestAtPosition={};
+ for(const d of drops)if(valid(d.ppg))
+  bestAtPosition[d.position]=Math.max(bestAtPosition[d.position]??0,d.ppg);
  const rows=[];
  const seen=new Set();
  for(const c of unrostered){
   const pid=id(c.id??c.player_id),meta=names?.[pid]||c,p=pos(meta?.position||c.position);
   if(!pid||owned.has(pid)||seen.has(pid)||!POS.has(p)||!meta?.name)continue;
   if(position!=='ALL'&&position!==p&&!(position==='FLEX'&&['RB','WR','TE'].includes(p)))continue;
-  seen.add(pid);
   const projected=valid(c.modelPPG)?c.modelPPG:estimate(pid);
   const ppg=valid(projected)?projected:null;
+  if(position==='ALL'){
+   const injury=String(meta.injury_status||meta.status||'').toUpperCase();
+   if(/^(OUT|IR|PUP|NFI|DOUBTFUL)$/.test(injury))continue;
+   if(['QB','K','DEF'].includes(p)&&(current[p]||0)>=(targets[p]||0)){
+    const incumbent=bestAtPosition[p],requiredUpgrade=p==='QB'?3.5:2.5;
+    if(!valid(ppg)||!valid(incumbent)||ppg-incumbent<requiredUpgrade)continue;
+   }
+  }
+  seen.add(pid);
   const shortage=Math.max(0,(targets[p]||0)-(current[p]||0));
   const options=drops.slice().sort((a,b)=>{
    const sortValue=x=>(x.starter?20:0)+(x.position===p?0:5)+
