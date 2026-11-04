@@ -40,6 +40,7 @@ jobs:
           node --check pfo-thursday/ffo-overview-62.js
           node --check pfo-thursday/ffo-market-quality-63.mjs
           node --check pfo-thursday/ffo-startsit-63.js
+          node --check pfo-thursday/ffo-layout-64.js
           node --check pfo-thursday/ffo-pfo-596.js
           node --check pfo-thursday/ffo-pfo-core.js
           node --check pfo-thursday/ffo-trade-60.js
@@ -49,13 +50,13 @@ jobs:
           node --check /tmp/pfo-msf-worker.mjs
       - name: Existing PFO, MSF and new historical score reconstructions
         run: |
-          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-gamecast-week-selector.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs  pfo-thursday/qa-msf-scoring-pipeline.test.mjs pfo-thursday/qa-msf-scoring-research-controller.test.mjs pfo-thursday/qa-msf-scan-recovery.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-market-finder-61.test.mjs pfo-thursday/qa-ffo-62.test.mjs pfo-thursday/qa-ffo-market-quality-63.test.mjs
+          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-gamecast-week-selector.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs  pfo-thursday/qa-msf-scoring-pipeline.test.mjs pfo-thursday/qa-msf-scoring-research-controller.test.mjs pfo-thursday/qa-msf-scan-recovery.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-market-finder-61.test.mjs pfo-thursday/qa-ffo-62.test.mjs pfo-thursday/qa-ffo-market-quality-63.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs
       - name: Install isolated Chromium mobile test dependencies
         run: |
           npm install --no-save playwright@1.55.1
           npx playwright install --with-deps chromium
       - name: PFO smoke test with emulated mobile browser
-        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-market-finder-mobile.test.mjs
+        run: node --test pfo-thursday/qa-59-browser.test.mjs pfo-thursday/qa-598-browser.test.mjs pfo-thursday/qa-msf-conditional-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-market-finder-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs
   deploy-preview:
     needs: qa
     if: github.ref == 'refs/heads/pfo-msf-week5-reconciliation-20261031'
@@ -96,6 +97,8 @@ jobs:
           test -s "$RUNNER_TEMP/pfo-preview/ffo-market-finder-63.css"
           test -s "$RUNNER_TEMP/pfo-preview/ffo-startsit-63.js"
           test -s "$RUNNER_TEMP/pfo-preview/ffo-startsit-63.css"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-layout-64.js"
+          test -s "$RUNNER_TEMP/pfo-preview/ffo-layout-64.css"
           test -s "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
       - name: Check existing protected Preview deploy connection
         env:

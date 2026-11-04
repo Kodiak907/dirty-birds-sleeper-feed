@@ -1,0 +1,21 @@
+/* PFO 6.4 — compact mobile tabs; selectors strictly scoped by page. */
+.pfo64-tabs{display:flex;gap:7px;margin:10px 0 14px;overflow-x:auto;scrollbar-width:thin;padding:2px 0 5px}
+.pfo64-tabs [role="tab"]{flex:1 0 auto;min-width:0;padding:10px 12px;border:1px solid #496679;border-radius:9px;background:#253b50;color:#bfd3de;font-size:12px;line-height:1.3;font-weight:650;cursor:pointer;white-space:nowrap}
+.pfo64-tabs [role="tab"][aria-selected="true"]{background:#2a6554;border-color:#6eaf96;color:#f0fff7;font-weight:850}
+.pfo64-tabs [role="tab"]:focus-visible{outline:2px solid #ffbb57;outline-offset:2px}
+#matchup[data-pfo64-tab="starters"] #pfo63-startsit,
+#matchup[data-pfo64-tab="starters"] .pfo52-lab{display:none!important}
+#matchup[data-pfo64-tab="startsit"] #pfo52-matchup > :not(.pfo52-weekrow),
+#matchup[data-pfo64-tab="lab"] #pfo52-matchup > :not(.pfo52-weekrow):not(.pfo52-lab),
+#matchup[data-pfo64-tab="lab"] #pfo63-startsit{display:none!important}
+#matchup .pfo64-bench{margin-top:9px;border-top:1px solid #3c576b;padding-top:8px}
+#matchup .pfo64-bench>summary{font-size:12px;color:#b3ebd4;cursor:pointer;font-weight:750;padding:7px}
+#matchup .pfo64-bench-grid{display:grid;gap:5px;padding:5px 0}
+#matchup .pfo64-bench-player{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;font-size:10px;text-align:left;color:#d8e9f1;background:#20394a;border:1px solid #3b6070;border-radius:7px;padding:7px;cursor:pointer}
+#matchup .pfo64-bench-player>span{min-width:0;overflow-wrap:anywhere}
+#matchup .pfo64-bench-player>b{white-space:nowrap;color:#f6bf6c}
+#matchup .pfo52-duel>article{min-width:0}
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="finder"] #pfo59-trade-board,
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="lab"] #pfo61-trade-research{display:none!important}
+#market #pfo64-trade-tabs{margin-top:6px}
+@media(max-width:390px){#matchup .pfo64-tabs [role="tab"]{padding:9px 8px;font-size:11px}#market .pfo64-tabs [role="tab"]{padding:10px 12px}}

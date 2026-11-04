@@ -2366,6 +2366,26 @@ function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Oppo
  const healthHTML=past?'<p class="pfo52-fine">'+activeStatus+'</p>':(health.length?health.map(x=>'<div class="pfo52-healthrow">'+e(x.p.name)+' · '+e(x.confirmed?.status==='inactive'?'VERIFIED GAME INACTIVE':x.third?'ESPN-reported game inactive':x.isBye?'NFL BYE · W'+w:String(x.tag||'Possible status; verify'))+'</div>').join('')+'<p class="pfo52-fine">Current Sleeper tags and current-game inactive evidence, with verified schedule byes. For future weeks, an injury tag reflects the latest directory only, not a future-week designation. Missing reports do not prove active.</p>':'<p class="pfo52-fine">'+activeStatus+'</p>');
  return '<div class="pfo52-fullroster"><h3>'+e(team.name)+' · '+e(ids.length)+' recorded players</h3><p class="pfo52-fine">'+e(team.completeRoster?'Roster membership obtained for selected snapshot':'Only submitted starters were supplied; the historical bench cannot be verified')+'</p><h4>Submitted starters</h4><div class="pfo52-pills">'+list(ids.filter(p=>starters.has(String(p.id))))+'</div><h4>Bench / non-starters</h4><div class="pfo52-pills">'+(team.completeRoster?list(bench):'<span class="pfo52-dim">Bench ownership missing in source</span>')+'</div><h4>Fantasy reserve</h4><p class="pfo52-fine">'+(past?'Historical fantasy IR not supplied in weekly matchup source':reserve.size?e([...reserve].map(id=>pfo52Info(id).name).join(', ')):'None in current saved reserve snapshot')+'</p><h4>NFL availability / inactives · Week '+w+'</h4>'+healthHTML+'</div>';
 }
+function pfo64BenchMenu(team,w,past){
+ if(!team)return '';
+ const starters=new Set((team.starters||[]).map(String));
+ const reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
+ const bench=(team.members||[]).filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
+ const available=!!team.completeRoster,benchCount=available?bench.length:'?';
+ const rows=available&&bench.length?bench.map(p=>{
+  const pid=String(p.id),proj=!past?pfo52Points(pid,w):null;
+  const val=pfo52Value(team,pid,w,past);
+  const shown=proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val);
+  return '<button type="button" class="pfo64-bench-player pfo597-player-pill" data-pfo49-id="'+e(pid)+'">'+
+   '<span>'+e(pfo52Pos(p)||'?')+' · '+e(p.name)+'</span><b>'+shown+'</b></button>';
+ }).join(''):'<p class="pfo52-dim">'+(available?'No recorded bench players.':'Bench membership unavailable in this historical snapshot; no current-roster substitution.')+'</p>';
+ const reserved=reserve.size?'<p class="pfo52-fine">Fantasy reserve: '+e([...reserve].map(id=>pfo52Info(id).name).join(', '))+'. Players in reserve are not assumed eligible to start.</p>':'';
+ return '<details class="pfo64-bench"><summary>Bench ('+benchCount+')'+
+  (!past&&reserve.size?' · IR ('+reserve.size+')':'')+'</summary>'+
+  '<div class="pfo64-bench-grid">'+rows+'</div>'+reserved+
+  '<p class="pfo52-fine">'+(past?'League-recorded player points; independent FFO historical certification pending.':
+  'Model values are provisional; this is roster research, not automatic lineup advice.')+'</p></details>';
+}
 function pfo52Switch(w){pfo52Week=Math.max(1,Math.min(17,Number(w)||pfo52Cur()));pfo52Scenario=null;pfo52Scenarios=pfo52SavedRead(pfo52Week,pfo52Week<pfo52Cur());pfo52Render();pfo52GetWeek(pfo52Week).then(()=>{if(pfo52Week===w)pfo52Render();});}
 function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;const w=pfo52Week,current=pfo52Cur(),past=w<current,match=pfo52Match(w);
  let ours=past?pfo52Team(w,'ours'):pfo52FutureTeam(Number(window.dbRosterId||1));
@@ -2390,7 +2410,7 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;const w=pfo52We
  if(pfo52Scenarios.length)h+='<div class="pfo52-pills">'+pfo52Scenarios.map((x,i)=>'<button data-pfo52-loadscenario="'+i+'" type="button">'+e(x.name)+' · '+pfo52PointLabel(x.total,x.complete)+'</button>').join('')+'</div>';
  const ideal=past&&ours.completeRoster?pfo52Best(ours,w,true):null;
  if(past&&ideal)h+='<div class="pfo52-reviewline">Retrospective best legal lineup: <strong>'+pfo52PointLabel(ideal.total,ideal.complete)+'</strong> · '+(pfo52Reconciles(ours,w)&&ideal.complete?'Unused potential: '+pfo52Money(Math.max(0,ideal.total-ours.score))+' FFL pts':'Historical starters/FFL total cannot be reconciled for a complete audit')+'</div>';
- h+='</section><div class="pfo52-duel"><article>'+pfo52RosterCard(ours,w,past)+'</article><article>'+(opp?pfo52RosterCard(opp,w,past):'<p class="pfo52-dim">Future opposing roster is not yet established.</p>')+'</article></div>';
+ h+='</section>'; // Full-roster duplicate retired; compact bench menus live under the starter panels.
  h+='<p class="pfo52-fine">Source: Sleeper per-week matchups for historical ownership, starters, and final fantasy points. nflverse for FFO projection inputs, where supported. Opponent-aware adjustments require sufficient observed NFL opponent data. All projections and retrospective optimizations are private research.</p>';
  el.innerHTML=h;
 }
@@ -2684,6 +2704,9 @@ pfo52Render=function(){pfo53OriginalRenderMatch();const root=$('pfo52-matchup');
  const controls='<div class="pfo53-toggle" role="group" aria-label="Lineup comparison mode"><button type="button" data-pfo53-mode="submitted" aria-pressed="'+(mode==='submitted')+'">Submitted lineup</button><button type="button" data-pfo53-mode="optimal" aria-pressed="'+(mode==='optimal')+'">Best projected</button><small>'+(past?'Final league-scored data':mode==='submitted'?'Sleeper choices, not FFO picks':'Advisory only · never submits')+'</small></div>';
  duel.insertAdjacentHTML('beforebegin',controls);
  const label=mode==='submitted'?'Submitted':'Best projected';duel.innerHTML='<article><div class="pfo52-panhead"><h3>Dirty Birds · '+label+'</h3><small>'+e(ours.source||'Sleeper')+'</small></div>'+pfo52Table(ours,oursPlan,w,past,'none')+'</article><article><div class="pfo52-panhead"><h3>'+e(opp?.name||'Opponent TBD')+' · '+label+'</h3><small>'+(opp?e(opp.source||'Sleeper'):'No verified pairing')+'</small></div>'+(opp?pfo52Table(opp,oppPlan,w,past,'none'):'<p class="pfo52-dim">Matchup unavailable</p>')+'</article>';
+ const matchupColumns=duel.querySelectorAll(':scope > article');
+ matchupColumns[0]?.insertAdjacentHTML('beforeend',pfo64BenchMenu(ours,w,past));
+ if(opp)matchupColumns[1]?.insertAdjacentHTML('beforeend',pfo64BenchMenu(opp,w,past));
  const board=root.querySelector('.pfo52-scoreboard');if(board){const me=past?ours.score:pfo52LineupScore(ours,oursPlan.assignments,w,false).complete?pfo52LineupScore(ours,oursPlan.assignments,w,false).total:null;
  const opScore=opp&&oppPlan?pfo52LineupScore(opp,oppPlan.assignments,w,false):null;
  const other=past?opp?.score:(opScore?.complete?opScore.total:null);
