@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-04T14:18:14.166943+00:00
-Sleeper snapshot: 2026-11-04T14:18:02.491310+00:00
-nflverse observations: 2026-11-04T14:18:08.220193+00:00; injury feed loaded: True
+Generated: 2026-11-04T15:55:57.096412+00:00
+Sleeper snapshot: 2026-11-04T15:55:44.561809+00:00
+nflverse observations: 2026-11-04T15:55:51.063980+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -16,10 +16,10 @@ nflverse observations: 2026-11-04T14:18:08.220193+00:00; injury feed loaded: Tru
 | Antonio Williams | No tag | No matched report (not clearance) | 72.7% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
-| Seth McGowan | No tag | No matched report (not clearance) | 27.0% | Verify current status before kickoff |
 | Patrick Mahomes | No tag | Week 8 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 8 observation: Questionable, Did Not Participate In Practice, Ankle | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 7 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
+| Brandon Aiyuk | DNR | No matched report (not clearance) | — | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
 | Chris Olave | No tag | Week 6 observation: Questionable, Limited Participation in Practice, Illness | 75.3% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |

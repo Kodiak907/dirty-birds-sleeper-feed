@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-04T14:18:08.766636+00:00
-Sleeper snapshot: 2026-11-04T14:18:02.491310+00:00
+Generated: 2026-11-04T15:55:51.650866+00:00
+Sleeper snapshot: 2026-11-04T15:55:44.561809+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1423717658313924608` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-04T15:55:51.650866+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
-- 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
 
 ## Important limits
 

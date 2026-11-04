@@ -12,19 +12,20 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Baker Mayfield | 12.93 | -2.90 | 94.7% | — | sleeper_injury_questionable |
 | 2 | Tanner McKee | 11.14 | -4.70 | 100.0% | — | No modeled flags (not medically cleared) |
 
-## RB — reference: Seth McGowan (4.11 PPG)
+## RB — reference: Kaelon Black (4.69 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keaton Mitchell | 6.01 | +1.91 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
-| 2 | Tyjae Spears | 5.54 | +1.43 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 3 | Chris Rodriguez Jr. | 5.19 | +1.08 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 4 | Samaje Perine | 5.19 | +1.08 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
-| 5 | MarShawn Lloyd | 4.62 | +0.51 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
-| 6 | Tank Bigsby | 2.10 | -2.00 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
-| 7 | Jaleel McLaughlin | 1.53 | -2.58 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 8 | Zonovan Knight | 1.41 | -2.69 | 39.7% | — | carries_missing |
-| 9 | Emanuel Wilson | 1.34 | -2.77 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
+| 1 | Keaton Mitchell | 6.01 | +1.33 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
+| 2 | Tyjae Spears | 5.54 | +0.85 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 3 | Chris Rodriguez Jr. | 5.19 | +0.50 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
+| 4 | Samaje Perine | 5.19 | +0.50 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 5 | MarShawn Lloyd | 4.62 | -0.07 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
+| 6 | Seth McGowan | 4.11 | -0.58 | 27.0% | Carries 6.7 | No modeled flags (not medically cleared) |
+| 7 | Tank Bigsby | 2.10 | -2.58 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
+| 8 | Jaleel McLaughlin | 1.53 | -3.16 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 9 | Zonovan Knight | 1.41 | -3.27 | 39.7% | — | carries_missing |
+| 10 | Emanuel Wilson | 1.34 | -3.35 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Caleb Douglas (6.11 PPG)
 

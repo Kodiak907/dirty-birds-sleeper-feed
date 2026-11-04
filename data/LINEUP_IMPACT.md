@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-04T14:18:09.250580+00:00
+Generated: 2026-11-04T15:55:52.404655+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections and injury status require manual verification.
@@ -21,10 +21,11 @@ Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections an
 | 3 | Chris Rodriguez Jr. | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.92 | Limited snap sample |
 | 4 | Samaje Perine | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.92 | No flagged data gap; review still required |
 | 5 | MarShawn Lloyd | 4.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.49 | Partial projection coverage |
-| 6 | Tank Bigsby | 2.10 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.00 | Availability status: ir; Partial projection coverage |
-| 7 | Jaleel McLaughlin | 1.53 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.58 | Partial projection coverage |
-| 8 | Zonovan Knight | 1.41 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.70 | Partial projection coverage |
-| 9 | Emanuel Wilson | 1.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.77 | Partial projection coverage |
+| 6 | Seth McGowan | 4.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.00 | Partial projection coverage |
+| 7 | Tank Bigsby | 2.10 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.00 | Availability status: ir; Partial projection coverage |
+| 8 | Jaleel McLaughlin | 1.53 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.58 | Partial projection coverage |
+| 9 | Zonovan Knight | 1.41 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.70 | Partial projection coverage |
+| 10 | Emanuel Wilson | 1.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.77 | Partial projection coverage |
 
 ## WR
 

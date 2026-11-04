@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-04T14:18:09.341956+00:00
+Generated: 2026-11-04T15:55:52.475837+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,9 +18,10 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
+- C.J. Stroud, A.J. Brown for D'Andre Swift: Opponent has insufficient demonstrated benefit
 - C.J. Stroud, A.J. Brown for Ashton Jeanty: Opponent has insufficient demonstrated benefit
-- C.J. Stroud, Zay Flowers for Justin Jefferson: Opponent has insufficient demonstrated benefit
-- C.J. Stroud, Chris Olave for Puka Nacua: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Patrick Mahomes, A.J. Brown for Jonathan Taylor: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- C.J. Stroud, Zay Flowers for Malik Nabers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 

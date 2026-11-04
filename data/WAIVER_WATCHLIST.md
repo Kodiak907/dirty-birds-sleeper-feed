@@ -1,15 +1,15 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-04T14:18:08.973156+00:00
-Sleeper snapshot: 2026-11-04T14:18:02.491310+00:00
+Generated: 2026-11-04T15:55:52.176214+00:00
+Sleeper snapshot: 2026-11-04T15:55:44.561809+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 329 |
-| RB | 627 |
-| WR | 1293 |
+| RB | 628 |
+| WR | 1292 |
 | TE | 614 |
 | K | 139 |
 | DEF | 14 |
@@ -32,10 +32,11 @@ Sleeper snapshot: 2026-11-04T14:18:02.491310+00:00
 | 3 | Chris Rodriguez Jr. | JAX | 5.19 | 100% | — | Not flagged |
 | 4 | Samaje Perine | CIN | 5.19 | 100% | 36.3% | Not flagged |
 | 5 | MarShawn Lloyd | GB | 4.62 | 89% | 30.7% | Not flagged |
-| 6 | Tank Bigsby | PHI | 2.10 | 78% | 28.7% | IR |
-| 7 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
-| 8 | Zonovan Knight | ARI | 1.41 | 89% | 39.7% | Not flagged |
-| 9 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
+| 6 | Seth McGowan | IND | 4.11 | 89% | 27.0% | Not flagged |
+| 7 | Tank Bigsby | PHI | 2.10 | 78% | 28.7% | IR |
+| 8 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
+| 9 | Zonovan Knight | ARI | 1.41 | 89% | 39.7% | Not flagged |
+| 10 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
 
 ### WR
 
@@ -114,16 +115,16 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Rashid Shaheed | WR | SEA | 4.53 | 41.3% |
 | Dontayvion Wicks | WR | PHI | 4.36 | 79.3% |
 | Michael Pittman Jr. | WR | PIT | 4.35 | 77.7% |
+| Seth McGowan | RB | IND | 4.11 | 27.0% |
 | Ja'Kobi Lane | WR | BAL | 3.60 | 62.7% |
 | Rashod Bateman | WR | BAL | 3.49 | 59.7% |
 | Mack Hollins | WR | NE | 3.10 | 62.7% |
 | David Njoku | TE | LAC | 2.91 | 35.5% |
-| Jauan Jennings | WR | MIN | 2.75 | 60.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **37**
+Candidates with independently sourced projections AND usage data: **38**
 
 ## Coverage and rules
 

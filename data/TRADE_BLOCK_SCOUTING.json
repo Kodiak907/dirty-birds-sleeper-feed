@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-04T14:18:12.803977+00:00",
-  "source_snapshot_utc": "2026-11-04T14:18:02.491310+00:00",
-  "source_market_as_of": "2026-11-04T03:52:54.084394+00:00",
+  "generated_at_utc": "2026-11-04T15:55:55.786563+00:00",
+  "source_snapshot_utc": "2026-11-04T15:55:44.561809+00:00",
+  "source_market_as_of": "2026-11-04T15:05:07.031182+00:00",
   "source_projection_as_of": "2026-11-04T13:44:46.533150+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17460,
-  "market_screened": 5267,
+  "market_screened": 5238,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -58,7 +58,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.01,
           "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 0.844,
+          "value_paid_received_ratio": 0.846,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -96,7 +96,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.01,
           "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 1.144,
+          "value_paid_received_ratio": 1.14,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -205,7 +205,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.35,
           "their_lineup_delta_ppg": 0.11,
-          "value_paid_received_ratio": 0.82,
+          "value_paid_received_ratio": 0.838,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -243,7 +243,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.35,
           "their_lineup_delta_ppg": 0.11,
-          "value_paid_received_ratio": 1.15,
+          "value_paid_received_ratio": 1.175,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -281,7 +281,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.53,
           "their_lineup_delta_ppg": 0.35,
-          "value_paid_received_ratio": 1.005,
+          "value_paid_received_ratio": 1.027,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -319,7 +319,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.53,
           "their_lineup_delta_ppg": 0.35,
-          "value_paid_received_ratio": 0.977,
+          "value_paid_received_ratio": 0.999,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 88
+      "candidate_count": 84
     },
     {
       "asset": "Patrick Mahomes",
@@ -364,7 +364,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.04,
           "their_lineup_delta_ppg": 2.67,
-          "value_paid_received_ratio": 0.916,
+          "value_paid_received_ratio": 0.935,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",

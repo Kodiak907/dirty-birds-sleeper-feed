@@ -4,7 +4,9 @@
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
-    "missing_projection": [],
+    "missing_projection": [
+      "Brandon Aiyuk"
+    ],
     "ppg": 131.4,
     "starters": [
       {
@@ -75,10 +77,12 @@
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-04T14:18:20.326933+00:00",
+  "generated_at_utc": "2026-11-04T15:55:59.071113+00:00",
   "hard_status_excluded": {
     "complete": true,
-    "missing_projection": [],
+    "missing_projection": [
+      "Brandon Aiyuk"
+    ],
     "ppg": 129.71,
     "starters": [
       {
@@ -206,15 +210,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "13424",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Seth McGowan",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "4046",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Patrick Mahomes",
@@ -237,6 +232,15 @@
       "model_handling": "exclude_explicit_unavailable_tag",
       "name": "Deebo Samuel Sr.",
       "sleeper_injury_status": "Out",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "6803",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Brandon Aiyuk",
+      "sleeper_injury_status": "DNR",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -318,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-04T14:18:02.491310+00:00",
-  "source_availability_generated_at_utc": "2026-11-04T14:18:14.166943+00:00",
+  "snapshot_utc": "2026-11-04T15:55:44.561809+00:00",
+  "source_availability_generated_at_utc": "2026-11-04T15:55:57.096412+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
