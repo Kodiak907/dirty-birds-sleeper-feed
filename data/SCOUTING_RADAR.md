@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-04T19:57:47.454724+00:00
-Sleeper snapshot: 2026-11-04T19:57:39.393854+00:00
+Generated: 2026-11-04T20:53:34.553156+00:00
+Sleeper snapshot: 2026-11-04T20:53:30.313754+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- CREAM MACHINE: added Drew Lock; dropped Elijah Mitchell
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
