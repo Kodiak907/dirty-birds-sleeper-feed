@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-04T01:00:03.423629+00:00",
-  "source_snapshot_utc": "2026-11-04T00:59:52.153089+00:00",
+  "generated_at_utc": "2026-11-04T01:58:58.811956+00:00",
+  "source_snapshot_utc": "2026-11-04T01:58:46.063439+00:00",
   "source_market_as_of": "2026-11-03T15:04:16.083918+00:00",
-  "source_projection_as_of": "2026-11-03T19:30:17.395172+00:00",
+  "source_projection_as_of": "2026-11-04T01:40:24.464244+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -49,16 +49,16 @@
               "position": "QB"
             },
             {
-              "id": "4217",
-              "name": "George Kittle",
-              "position": "TE"
+              "id": "3198",
+              "name": "Derrick Henry",
+              "position": "RB"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.67,
-          "their_lineup_delta_ppg": 2.04,
-          "value_paid_received_ratio": 0.863,
+          "our_lineup_delta_ppg": 3.01,
+          "their_lineup_delta_ppg": 0.06,
+          "value_paid_received_ratio": 0.777,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -82,21 +82,21 @@
           ],
           "receive": [
             {
-              "id": "4217",
-              "name": "George Kittle",
-              "position": "TE"
+              "id": "3198",
+              "name": "Derrick Henry",
+              "position": "RB"
             },
             {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
+              "id": "7600",
+              "name": "Pat Freiermuth",
+              "position": "TE"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.67,
-          "their_lineup_delta_ppg": 2.04,
-          "value_paid_received_ratio": 1.198,
+          "our_lineup_delta_ppg": 3.01,
+          "their_lineup_delta_ppg": 0.06,
+          "value_paid_received_ratio": 1.126,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -128,7 +128,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.58,
-          "their_lineup_delta_ppg": 0.41,
+          "their_lineup_delta_ppg": 0.45,
           "value_paid_received_ratio": 1.029,
           "our_extra_cut": null,
           "opponent_extra_cut": "Brandin Cooks",
@@ -166,7 +166,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.58,
-          "their_lineup_delta_ppg": 0.41,
+          "their_lineup_delta_ppg": 0.45,
           "value_paid_received_ratio": 0.862,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -203,7 +203,7 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.34,
+          "our_lineup_delta_ppg": 2.33,
           "their_lineup_delta_ppg": 0.13,
           "value_paid_received_ratio": 0.844,
           "our_extra_cut": null,
@@ -241,7 +241,7 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.34,
+          "our_lineup_delta_ppg": 2.33,
           "their_lineup_delta_ppg": 0.13,
           "value_paid_received_ratio": 1.188,
           "our_extra_cut": null,
@@ -279,8 +279,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.5,
-          "their_lineup_delta_ppg": 0.36,
+          "our_lineup_delta_ppg": 1.53,
+          "their_lineup_delta_ppg": 0.35,
           "value_paid_received_ratio": 1.032,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -317,8 +317,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.5,
-          "their_lineup_delta_ppg": 0.36,
+          "our_lineup_delta_ppg": 1.53,
+          "their_lineup_delta_ppg": 0.35,
           "value_paid_received_ratio": 0.999,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 92
+      "candidate_count": 96
     },
     {
       "asset": "Patrick Mahomes",
@@ -362,8 +362,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.0,
-          "their_lineup_delta_ppg": 2.71,
+          "our_lineup_delta_ppg": 2.05,
+          "their_lineup_delta_ppg": 2.67,
           "value_paid_received_ratio": 1.071,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -400,8 +400,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.0,
-          "their_lineup_delta_ppg": 2.71,
+          "our_lineup_delta_ppg": 2.05,
+          "their_lineup_delta_ppg": 2.67,
           "value_paid_received_ratio": 1.092,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
