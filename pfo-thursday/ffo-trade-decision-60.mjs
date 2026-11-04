@@ -89,7 +89,7 @@ function swap(base,remove,add){
 }
 function badHealth(p){return /^(IR|OUT|PUP|NFI|DOUBTFUL|QUESTIONABLE)$/i.test(String(p?.injury||''))}
 export function evaluateFFLTrade({
- ourRoster=[],theirRoster=[],give=[],take=[],partnerRosterId,playerIndex={},
+ ourRoster=[],theirRoster=[],ourReserve=[],theirReserve=[],give=[],take=[],partnerRosterId,playerIndex={},
  starterSlots=[],rosterCap=null,snapshotAt=null,ruleReady=false,
  ourFAAB=0,theirFAAB=0,confirmedOurSpendable=null,confirmedTheirSpendable=null
 }={}){
@@ -114,18 +114,25 @@ export function evaluateFFLTrade({
  if(theirCash>0&&Number.isInteger(confirmedTheirSpendable)&&theirCash>confirmedTheirSpendable)
   issues.push('opponent_faab_exceeds_spendable');
  const ourAfter=swap(ourRoster,give,take),theirAfter=swap(theirRoster,take,give);
+ const ourReserved=new Set(ourReserve.map(key)),theirReserved=new Set(theirReserve.map(key));
+ const ourEligibleBefore=ourRoster.filter(id=>!ourReserved.has(key(id)));
+ const theirEligibleBefore=theirRoster.filter(id=>!theirReserved.has(key(id)));
+ const ourEligibleAfter=ourAfter.filter(id=>!ourReserved.has(key(id)));
+ const theirEligibleAfter=theirAfter.filter(id=>!theirReserved.has(key(id)));
  const cap=Number.isInteger(rosterCap)&&rosterCap>0?rosterCap:null;
- const cuts={ours:cap?Math.max(0,ourAfter.length-cap):null,
-  theirs:cap?Math.max(0,theirAfter.length-cap):null};
+ // Sleeper players[] includes reserved/IR players. Active roster capacity
+ // is roster_positions.length, NOT players.length with reserve slots counted.
+ const cuts={ours:cap?Math.max(0,ourEligibleAfter.length-cap):null,
+  theirs:cap?Math.max(0,theirEligibleAfter.length-cap):null};
  if((cuts.ours||0)+(cuts.theirs||0)>0)issues.push('hypothetical_roster_cuts_required');
  const before=issues.includes('outgoing_ownership_unverified')||issues.includes('incoming_ownership_unverified')?
   null:{
-   ours:lineupFromFFLResearch(ourRoster,starterSlots,playerIndex),
-   theirs:lineupFromFFLResearch(theirRoster,starterSlots,playerIndex)
+   ours:lineupFromFFLResearch(ourEligibleBefore,starterSlots,playerIndex),
+   theirs:lineupFromFFLResearch(theirEligibleBefore,starterSlots,playerIndex)
   };
  const after=before?{
-  ours:lineupFromFFLResearch(ourAfter,starterSlots,playerIndex),
-  theirs:lineupFromFFLResearch(theirAfter,starterSlots,playerIndex)
+  ours:lineupFromFFLResearch(ourEligibleAfter,starterSlots,playerIndex),
+  theirs:lineupFromFFLResearch(theirEligibleAfter,starterSlots,playerIndex)
  }:null;
  const cleanDelta=(a,b)=>a?.status==='conditional'&&b?.status==='conditional'?
   round(b.points-a.points):null;
@@ -162,6 +169,8 @@ export function evaluateFFLTrade({
    productionScoringCertified:false,rosterAgeVerified:!stale,
    metricTrust,managerAcceptanceProbability:null},
   verdict:'Research only; manager interest, health, opponent adjustments and future-game forecasts are not independently validated.',
-  rosterChange:{ours:ourAfter.length-ourRoster.length,theirs:theirAfter.length-theirRoster.length}
+  rosterChange:{ours:ourEligibleAfter.length-ourEligibleBefore.length,
+   theirs:theirEligibleAfter.length-theirEligibleBefore.length},
+  reserveExcludedFromStarting:{ours:[...ourReserved],theirs:[...theirReserved]}
  };
 }
