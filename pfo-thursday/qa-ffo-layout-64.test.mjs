@@ -7,8 +7,8 @@ const core=read('./ffo-pfo-core.js'),html=read('./index.html'),layout=read('./ff
 test('PFO 6.4 modules parse and bind to the existing Matchup and Market views',()=>{
  assert.doesNotThrow(()=>new Script(layout));
  assert.doesNotThrow(()=>new Script(core));
- assert.match(html,/ffo-layout-64\.js\?v=640/);
- assert.match(html,/ffo-layout-64\.css\?v=640/);
+ assert.match(html,/ffo-layout-64\.js\?v=\d+/);
+ assert.match(html,/ffo-layout-64\.css\?v=\d+/);
 });
 test('Bench details are in each starter panel, full roster duplicate removed',()=>{
  assert.match(core,/function pfo64BenchMenu\(/);
