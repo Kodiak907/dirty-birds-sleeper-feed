@@ -603,7 +603,8 @@
     return Number.isFinite(x?.project)?x.project:null;
    },
    rulesReady:window.ffoPfo597?.hasFrozenRules?.()===true,
-   rosterCap:Array.isArray(state.snap?.league?.roster_positions)?state.snap.league.roster_positions.length:null
+   rosterCap:Array.isArray(state.snap?.league?.roster_positions)?state.snap.league.roster_positions.length:null,
+   playoffStart:state.snap?.league?.settings?.playoff_week_start??null
   }),
   refreshCurrent:(rulesChanged=false)=>{
    if(rulesChanged){tradeEstimateCache.clear();state.scoredCache=null;state.scoredRef=null;}
