@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-11-04T03:52:54.084394+00:00",
+  "as_of": "2026-11-04T15:05:07.031182+00:00",
   "attribution": "Values by TheTradeCalc \u2014 https://thetradecalc.com",
-  "count": 250,
+  "count": 253,
   "matching": "Exact normalized unique Sleeper name; ambiguous/missing players excluded",
   "players": {
     "10213": {
@@ -42,7 +42,7 @@
     "11439": {
       "name": "Jaleel McLaughlin",
       "position": "RB",
-      "value": 152.0
+      "value": 161.0
     },
     "11533": {
       "name": "Brandon Aubrey",
@@ -132,7 +132,7 @@
     "11625": {
       "name": "Adonai Mitchell",
       "position": "WR",
-      "value": 1173.0
+      "value": 1017.0
     },
     "11628": {
       "name": "Marvin Harrison Jr.",
@@ -147,7 +147,7 @@
     "11631": {
       "name": "Brian Thomas Jr.",
       "position": "WR",
-      "value": 722.0
+      "value": 775.0
     },
     "11632": {
       "name": "Malik Nabers",
@@ -162,7 +162,7 @@
     "11637": {
       "name": "Keon Coleman",
       "position": "WR",
-      "value": 947.0
+      "value": 722.0
     },
     "11646": {
       "name": "Jalen Coker",
@@ -207,7 +207,7 @@
     "12481": {
       "name": "Cam Skattebo",
       "position": "RB",
-      "value": 4557.0
+      "value": 4366.0
     },
     "12487": {
       "name": "Terrance Ferguson",
@@ -222,7 +222,7 @@
     "12490": {
       "name": "Bhayshul Tuten",
       "position": "RB",
-      "value": 6799.0
+      "value": 6607.0
     },
     "12501": {
       "name": "Matthew Golden",
@@ -377,12 +377,17 @@
     "13330": {
       "name": "Kenyon Sadiq",
       "position": "TE",
-      "value": 329.0
+      "value": 311.0
+    },
+    "13337": {
+      "name": "Emmett Johnson",
+      "position": "RB",
+      "value": 712.0
     },
     "13345": {
       "name": "Jonah Coleman",
       "position": "RB",
-      "value": 4366.0
+      "value": 4557.0
     },
     "13346": {
       "name": "Denzel Boston",
@@ -404,10 +409,15 @@
       "position": "WR",
       "value": 701.0
     },
+    "13424": {
+      "name": "Seth McGowan",
+      "position": "RB",
+      "value": 566.0
+    },
     "13545": {
       "name": "Trey Smack",
       "position": "K",
-      "value": 734.0
+      "value": 786.0
     },
     "1373": {
       "name": "Geno Smith",
@@ -437,7 +447,7 @@
     "2020": {
       "name": "Cairo Santos",
       "position": "K",
-      "value": 786.0
+      "value": 734.0
     },
     "2133": {
       "name": "Davante Adams",
@@ -452,7 +462,7 @@
     "2216": {
       "name": "Mike Evans",
       "position": "WR",
-      "value": 6330.0
+      "value": 6703.0
     },
     "2449": {
       "name": "Stefon Diggs",
@@ -477,7 +487,7 @@
     "3198": {
       "name": "Derrick Henry",
       "position": "RB",
-      "value": 6607.0
+      "value": 6799.0
     },
     "3214": {
       "name": "Hunter Henry",
@@ -532,7 +542,7 @@
     "4035": {
       "name": "Alvin Kamara",
       "position": "RB",
-      "value": 743.0
+      "value": 753.0
     },
     "4039": {
       "name": "Cooper Kupp",
@@ -622,7 +632,7 @@
     "5012": {
       "name": "Mark Andrews",
       "position": "TE",
-      "value": 920.0
+      "value": 882.0
     },
     "5022": {
       "name": "Dallas Goedert",
@@ -662,7 +672,7 @@
     "5857": {
       "name": "Noah Fant",
       "position": "TE",
-      "value": 311.0
+      "value": 293.0
     },
     "5859": {
       "name": "A.J. Brown",
@@ -768,6 +778,11 @@
       "name": "Rico Dowdle",
       "position": "RB",
       "value": 2804.0
+    },
+    "7042": {
+      "name": "Tyler Bass",
+      "position": "K",
+      "value": 1304.0
     },
     "7049": {
       "name": "Jauan Jennings",
@@ -977,7 +992,7 @@
     "8676": {
       "name": "Rashid Shaheed",
       "position": "WR",
-      "value": 1207.0
+      "value": 1173.0
     },
     "9221": {
       "name": "Jahmyr Gibbs",
@@ -1032,7 +1047,7 @@
     "9487": {
       "name": "Parker Washington",
       "position": "WR",
-      "value": 6703.0
+      "value": 6330.0
     },
     "9488": {
       "name": "Jaxon Smith-Njigba",
@@ -1052,7 +1067,7 @@
     "9501": {
       "name": "DeMario Douglas",
       "position": "WR",
-      "value": 775.0
+      "value": 947.0
     },
     "9502": {
       "name": "Tank Dell",
@@ -1097,7 +1112,7 @@
     "9757": {
       "name": "Kendre Miller",
       "position": "RB",
-      "value": 644.0
+      "value": 535.0
     },
     "9758": {
       "name": "C.J. Stroud",
@@ -1112,12 +1127,12 @@
     "BAL": {
       "name": "Baltimore Ravens",
       "position": "DEF",
-      "value": 1306.0
+      "value": 1368.0
     },
     "BUF": {
       "name": "Buffalo Bills",
       "position": "DEF",
-      "value": 1081.0
+      "value": 908.0
     },
     "CAR": {
       "name": "Carolina Panthers",
@@ -1172,7 +1187,7 @@
     "JAX": {
       "name": "Jacksonville Jaguars",
       "position": "DEF",
-      "value": 1368.0
+      "value": 1306.0
     },
     "KC": {
       "name": "Kansas City Chiefs",
@@ -1202,7 +1217,7 @@
     "NE": {
       "name": "New England Patriots",
       "position": "DEF",
-      "value": 908.0
+      "value": 1081.0
     },
     "NO": {
       "name": "New Orleans Saints",
@@ -1217,7 +1232,7 @@
     "NYJ": {
       "name": "New York Jets",
       "position": "DEF",
-      "value": 189.0
+      "value": 143.0
     },
     "PHI": {
       "name": "Philadelphia Eagles",
@@ -1247,7 +1262,7 @@
     "TEN": {
       "name": "Tennessee Titans",
       "position": "DEF",
-      "value": 181.0
+      "value": 189.0
     },
     "WAS": {
       "name": "Washington Commanders",
