@@ -6,7 +6,7 @@
  const $=q=>document.querySelector(q);
  const number=x=>x===null||!Number.isFinite(x)?'—':(x>0?'+':'')+x.toFixed(1);
  const facts={give:{search:'',position:'ALL'},take:{search:'',position:'ALL'}};
- let model=null,last=null,lastContext=null;
+ let model=null,last=null;
  const cash={weSend:0,theySend:0,ourVerifiedBalance:'',theirVerifiedBalance:''};
  const label={'ownership_snapshot_stale_or_undated':'Sleeper ownership refresh overdue',
  'ffl_rule_feed_not_ready':'FFL scoring rules not yet verified',
@@ -68,7 +68,7 @@
   const issues=r.issues.map(x=>'<div>• '+esc(label[x]||x.replaceAll('_',' '))+'</div>');
   const health=r.health.map(x=>'<div>• '+esc(x.name)+' — '+esc(x.status)+' (verify official report)</div>');
   const asset=(id,side)=>{
-   const p=r.source?lastContext?.names?.[id]:null,reference=pool(ctx)[id];
+   const p=ctx.names?.[id]||null,reference=pool(ctx)[id];
    return '<div class="pfo60-asset"><small>'+esc(side)+'</small><b>'+esc(p?.name||reference?.name||id)+'</b>'+
     '<span>'+esc(reference?.position||'—')+' · '+esc(reference?.team||'—')+
     ' · '+(reference?.ppg===null||reference?.ppg===undefined?'PPG unverified':reference.ppg.toFixed(1)+' modeled PPG')+'</span></div>';
@@ -76,6 +76,21 @@
   const cut=(n)=>n===null?'unverified':String(n);
   const flags=r.coverage.present+'/'+r.coverage.total+' selected player forecasts';
   const clearNow=r.status!=='invalid'&&r.starterDelta.ours!==null&&r.starterDelta.theirs!==null;
+  const schedule=window.ffoPfo597?.verifiedSchedule?.();
+  const playoffStart=Number(ctx.playoffStart);
+  const lateWeeks=Number.isInteger(playoffStart)&&playoffStart>=10&&playoffStart<=18?
+   [playoffStart,playoffStart+1,playoffStart+2].filter(w=>w<=18):[];
+  const scheduleNotes=(lateWeeks.length&&schedule?.teams)?
+   [...new Set([...ctx.give,...ctx.take])].map(id=>{
+    const p=ctx.names?.[id]||{},team=String(p.team||'').toUpperCase();
+    const rows=lateWeeks.map(w=>{
+     const entry=schedule.teams?.[team]?.weeks?.[String(w)];
+     if(!entry)return 'W'+w+' unverified';
+     if(entry.bye===true)return 'W'+w+' BYE';
+     return entry.opponent?'W'+w+' opponent '+entry.opponent:'W'+w+' unverified';
+    });
+    return '<div>• <b>'+esc(p.name||id)+'</b>: '+esc(rows.join(' · '))+'</div>';
+   }).join(''):'<div>Verified NFL fixtures or league playoff weeks unavailable.</div>';
   return '<div class="pfo60-title"><b>FFO Trade Intelligence</b><span>Conditional · FFL-specific</span></div>'+
    '<div class="pfo60-headline"><strong>'+esc(r.headline)+'</strong><small>'+
     'Read-only research · no verified acceptance odds or auto-offers</small></div>'+
@@ -94,6 +109,9 @@
     delta(r.depthBefore.theirs,r.depthAfter.theirs)+'</div><small>Net slots '+
     (r.rosterChange.theirs>0?'+':'')+r.rosterChange.theirs+' · possible cuts '+
     cut(r.rosterCuts.theirs)+'</small></div></div>'+
+   '<details class="pfo60-fold" data-pfo60-schedule><summary>Late-season fixtures · '+(lateWeeks.length?'W'+lateWeeks[0]+'–'+lateWeeks[lateWeeks.length-1]:'weeks unverified')+'</summary>'+
+   '<div class="pfo60-warnings">'+scheduleNotes+
+   '<div>• Future opponent strength is NOT inferred from the schedule alone.</div></div></details>'+
    '<details class="pfo60-fold" data-pfo60-faab><summary>FAAB negotiation · we send $'+cash.weSend+
     ' / receive $'+cash.theySend+'</summary>'+
     '<div class="pfo60-cash">'+
