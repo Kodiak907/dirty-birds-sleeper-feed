@@ -165,6 +165,7 @@ test('PFO 5.9.6 local mobile trade partner and pick interaction stress uses publ
  try{
   const {page,context}=await getPage(true);ctx=context;
   await clickTab(page,'market');
+  await page.locator('[data-pfo64-switch="trade"][data-pfo64-value="lab"]').click();
   const partners=page.locator('#pfo59-trade-board [data-pfo59-partner]');
   await partners.first().waitFor({state:'visible',timeout:15000});
   const count=await partners.count();assert.ok(count>=2,'More than one eligible partner available for trade research');
