@@ -334,6 +334,7 @@
   if(state.market==='trade')trade();
   else if(state.market==='waiver')waiver();
   else if(state.market==='transactions')teamTxnRender();
+  window.ffoMarketFinder61?.notify?.(state.market);
  }
   function managerOptions(){
   for(const id of ['pfo59-waiver-manager','pfo59-trade-manager']){
@@ -452,7 +453,7 @@
   });
   nav.addEventListener('change',ev=>{
    if(ev.target.id==='pfo59-position'){state.position=ev.target.value;waiver()}
-   if(ev.target.id==='pfo59-waiver-manager'){state.waiverManager=ev.target.value;managerOptions();waiver()}
+   if(ev.target.id==='pfo59-waiver-manager'){state.waiverManager=ev.target.value;managerOptions();waiver();window.ffoMarketFinder61?.notify?.('waiver')}
    if(ev.target.id==='pfo59-trade-manager'){const id=ev.target.value;if(id!=='3'){state.manager=id;state.tradeGive=[];state.tradeTake=[];managerOptions();trade();window.ffoTrade60?.reset?.()}}
   });
   let searchTimer=0;
@@ -586,6 +587,38 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,
+  // Provider-neutral, read-only research boundary. Sleeper is a temporary roster bridge;
+  // no scoring, trade writes, waivers, league permissions or secrets exposed.
+  marketResearchContext:({includeWaivers=false}={})=>({
+   rosters:state.snap?.rosters||[],names:state.names||{},
+   ownerRosterId:'1',waiverRosterId:state.waiverManager,excludedRosterIds:['3'],
+   snapshotAt:state.snap?.fetched_at_utc||null,
+   modelVersion:String(typeof pfo50Indexed!=='undefined'&&pfo50Indexed?.source_date||'unknown'),
+   slots:state.snap?.league?.roster_positions||[],
+   rulesReady:window.ffoPfo597?.hasFrozenRules?.()===true,
+   partners:(state.snap?.rosters||[]).filter(r=>String(r.roster_id)!=='1'&&
+    String(r.roster_id)!=='3').map(r=>({id:String(r.roster_id),name:teamName(r.roster_id)})),
+   unrostered:includeWaivers?scoredPool():[],
+   estimate:id=>{
+    const p=state.names?.[String(id)];if(!p)return null;
+    const result=scoreInfo({id:String(id),name:p.name,team:p.team});
+    return Number.isFinite(result?.project)?result.project:null;
+   }
+  }),
+  // This selects a hypothetical comparison only. It never submits a trade.
+  applyResearchTrade:({partnerId,give=[],take=[]}={})=>{
+   const ours=state.snap?.rosters?.find(r=>String(r.roster_id)==='1');
+   const peer=state.snap?.rosters?.find(r=>String(r.roster_id)===String(partnerId));
+   if(!ours||!peer||['1','3'].includes(String(partnerId))||
+    !give.length||!take.length||give.length>3||take.length>3||
+    new Set(give.map(String)).size!==give.length||
+    new Set(take.map(String)).size!==take.length)return false;
+   const ourIds=new Set((ours.players||[]).map(String)),theirIds=new Set((peer.players||[]).map(String));
+   if(!give.every(id=>ourIds.has(String(id)))||!take.every(id=>theirIds.has(String(id))))return false;
+   state.manager=String(partnerId);state.tradeGive=give.map(String);state.tradeTake=take.map(String);
+   managerOptions();trade();window.ffoTrade60?.reset?.();
+   return true;
+  },
   tradeContext:()=>({
    manager:state.manager,managerName:teamName(state.manager),
    give:[...state.tradeGive],take:[...state.tradeTake],
@@ -611,5 +644,6 @@
    if(!document.querySelector('#market.page.active'))return;
    if(state.market==='trade')trade();
    else if(state.market==='waiver')waiver();
+   window.ffoMarketFinder61?.notify?.(state.market);
   }};
 })();

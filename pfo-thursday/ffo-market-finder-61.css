@@ -1,0 +1,26 @@
+/* PFO 6.1 read-only personalized market finder; compact and mobile-first. */
+.pfo61-research{margin:7px 0 12px;padding:9px;border:1px solid #3a5f69;border-radius:10px;background:#102b3a;min-width:0;max-width:100%;box-sizing:border-box;overflow:hidden;color:#e6f6f5}
+.pfo61-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.pfo61-head>div{display:grid;gap:2px}
+.pfo61-head b{font-size:13px}
+.pfo61-head small,.pfo61-disclosure{font-size:10px;line-height:1.4;color:#b4ccd6}
+.pfo61-head button,.pfo61-offer>button{border:1px solid #589d89;border-radius:7px;background:#1c574b;color:#e9fff7;padding:7px 10px;font-weight:750;font-size:11px;cursor:pointer}
+.pfo61-picker{display:grid;gap:4px;margin:6px 0;font-size:10px;color:#bdd6df}
+.pfo61-picker select{box-sizing:border-box;min-width:0;width:100%;max-width:100%;border:1px solid #426b75;border-radius:7px;background:#18394b;color:#edf9ff;padding:9px 7px;font-size:12px}
+.pfo61-disclosure{margin:5px 0 9px}
+.pfo61-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+.pfo61-offer{display:grid;gap:7px;min-width:0;padding:8px;border:1px solid #365967;border-radius:8px;background:#162f42}
+.pfo61-offer-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
+.pfo61-offer-top b,.pfo61-waiver-title b{font-size:11px}
+.pfo61-offer-top small,.pfo61-waiver-title small{font-size:9px;color:#acc9d9}
+.pfo61-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.pfo61-two>div{border-radius:6px;background:#203949;padding:6px;min-width:0;display:grid;gap:4px;align-content:start}
+.pfo61-two small{font-size:8px;color:#8bcab8}
+.pfo61-two strong{font-size:10px;overflow-wrap:anywhere;line-height:1.4}
+.pfo61-meta{display:flex;gap:4px 10px;flex-wrap:wrap;color:#b3ccd7;font-size:9px}
+.pfo61-alert{font-size:9px;color:#efd19b}
+.pfo61-note,.pfo61-comparison{font-size:10px;line-height:1.45;color:#bfd5df}
+.pfo61-comparison:not(:empty){padding:6px;border-left:2px solid #80bca8}
+.pfo61-waiver-title{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.pfo61-offer>button:disabled{opacity:.5}
+@media(max-width:350px){.pfo61-research{padding:6px}.pfo61-offer{padding:6px}.pfo61-two{gap:4px}}
