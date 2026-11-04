@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-04T13:02:00.840026+00:00
-Sleeper snapshot: 2026-11-04T13:01:54.149679+00:00
+Generated: 2026-11-04T14:18:08.973156+00:00
+Sleeper snapshot: 2026-11-04T14:18:02.491310+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -43,7 +43,7 @@ Sleeper snapshot: 2026-11-04T13:01:54.149679+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Quentin Johnston | LAC | 5.69 | 100% | 79.7% | Not flagged |
 | 2 | Kalif Raymond | CHI | 5.68 | 89% | 62.0% | Not flagged |
-| 3 | Chris Bell | MIA | 5.21 | 100% | 62.7% | Not flagged |
+| 3 | Chris Bell | MIA | 5.22 | 100% | 62.7% | Not flagged |
 | 4 | Rashid Shaheed | SEA | 4.53 | 89% | 41.3% | Not flagged |
 | 5 | Dontayvion Wicks | PHI | 4.36 | 89% | 79.3% | Questionable |
 | 6 | Michael Pittman Jr. | PIT | 4.35 | 89% | 77.7% | IR |
@@ -106,9 +106,9 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Quentin Johnston | WR | LAC | 5.69 | 79.7% |
 | Kalif Raymond | WR | CHI | 5.68 | 62.0% |
 | Tyjae Spears | RB | TEN | 5.54 | 38.0% |
-| Chris Bell | WR | MIA | 5.21 | 62.7% |
-| Samaje Perine | RB | CIN | 5.19 | 36.3% |
+| Chris Bell | WR | MIA | 5.22 | 62.7% |
 | Michael Mayer | TE | LV | 5.19 | 80.0% |
+| Samaje Perine | RB | CIN | 5.19 | 36.3% |
 | Noah Fant | TE | NO | 4.79 | 57.0% |
 | MarShawn Lloyd | RB | GB | 4.62 | 30.7% |
 | Rashid Shaheed | WR | SEA | 4.53 | 41.3% |
