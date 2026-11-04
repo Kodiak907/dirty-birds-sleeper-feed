@@ -74,7 +74,7 @@ test('Trade Finder and Waiver Decision Desk open and run fast on mobile without 
    window.ffoMarketFinder61.notify('waiver');
   });
   await page.locator('#pfo61-waiver-research .pfo61-head').waitFor();
-  await page.locator('.pfo63-empty, [data-pfo61-waiver-compare]').first().waitFor();
+  await page.locator('#pfo61-waiver-research .pfo63-empty, #pfo61-waiver-research [data-pfo61-waiver-compare]').first().waitFor();
   assert.match(await page.locator('#pfo61-waiver-research').innerText(),/Waiver Decision Desk/);
   if(await page.locator('[data-pfo61-waiver-compare]').count()){
    assert.equal(await page.locator('[data-pfo61-drop]').count(),0,'Drop must be automatic');
