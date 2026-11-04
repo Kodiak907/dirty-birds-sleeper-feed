@@ -441,7 +441,9 @@
     window.ffoTrade60?.analyze?.();
     try{
      const x=tb48State();x.opponent=state.manager;x.give=[...state.tradeGive];x.take=[...state.tradeTake];tb45Save();
-     const fold=$('trade-fold');if(fold){fold.open=true;fold.scrollIntoView({behavior:'instant',block:'start'});}
+     const fold=$('trade-fold');if(fold)fold.open=true;
+     const focus=$('pfo60-trade-lab')||fold;
+     if(focus)focus.scrollIntoView({behavior:'instant',block:'start'});
      $('pfo59-compare-notice')?.remove();
     }catch(err){console.warn('Trade valuation engine unavailable',err);alert('The existing comparison engine is still syncing. Your selections remain on screen.');}
     return;
