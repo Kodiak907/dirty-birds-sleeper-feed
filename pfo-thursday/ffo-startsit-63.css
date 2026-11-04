@@ -1,0 +1,17 @@
+/* PFO 6.3 matchup start/sit research */
+.pfo63-compare{border:1px solid #406273;background:#162a3c;border-radius:11px;padding:11px;margin-bottom:13px;min-width:0;color:#e2f0f1}
+.pfo63-compare-head h3{font-size:14px;margin:0 0 3px}
+.pfo63-compare-head small,.pfo63-compare-foot{font-size:10px;color:#adcad4;line-height:1.5}
+.pfo63-compare-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0}
+.pfo63-compare-choices label{font-size:10px;display:grid;gap:5px;min-width:0}
+.pfo63-compare-choices select{width:100%;min-width:0;padding:8px 6px;background:#21384b;border:1px solid #4a6a79;color:#e4eff5;border-radius:6px;font-size:12px}
+.pfo63-horizon{display:flex;gap:6px;overflow-x:auto;margin:7px 0 10px}
+.pfo63-horizon button{flex:1;border:1px solid #4a6879;border-radius:8px;background:#22374b;color:#cde0e7;font-size:10px;padding:9px 6px}
+.pfo63-horizon button[aria-pressed="true"]{background:#366c59;border-color:#80bfa2;color:#fff;font-weight:800}
+.pfo63-compare-players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.pfo63-compare-players>div{display:grid;gap:6px;align-content:start;border:1px solid #416171;background:#1d3446;padding:9px;border-radius:8px;min-width:0}
+.pfo63-compare-players b{font-size:12px;overflow-wrap:anywhere}
+.pfo63-compare-players small{font-size:9px;color:#aac5d2}
+.pfo63-compare-players div div{font-size:10px;line-height:1.5;overflow-wrap:anywhere}
+.pfo63-compare-conclusion{border-left:2px solid #77b59a;padding:8px;margin:10px 0;background:#254038;font-size:11px;line-height:1.55}
+@media(max-width:340px){.pfo63-compare-choices,.pfo63-compare-players{grid-template-columns:1fr}}

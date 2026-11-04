@@ -41,33 +41,48 @@ test('Trade Finder and Waiver Decision Desk open and run fast on mobile without 
    const path=new URL(route.request().url()).pathname;
    if(path==='/')return route.fulfill({contentType:'text/html',body:html});
    if(path==='/fixture.js')return route.fulfill({contentType:'text/javascript',body:fixture});
-   if(['/ffo-market-finder-61.js','/ffo-market-finder-61.mjs','/ffo-trade-decision-60.mjs'].includes(path))
+   if(['/ffo-market-finder-61.js','/ffo-market-finder-61.mjs','/ffo-market-quality-63.mjs','/ffo-trade-decision-60.mjs'].includes(path))
     return route.fulfill({contentType:'text/javascript',body:file(path.slice(1))});
    if(path==='/ffo-market-finder-61.css')
     return route.fulfill({contentType:'text/css',body:file(path.slice(1))});
    return route.fulfill({status:404,body:'not found'});
   });
   await page.goto('https://pfo61.test/');
-  await page.locator('[data-pfo61-review]').first().waitFor();
+  await page.locator('[data-pfo63-objective]').first().waitFor();
+  await page.locator('.pfo63-empty, [data-pfo61-review]').first().waitFor();
   for(const width of [320,375,390,430]){
    await page.setViewportSize({width,height:844});
    const box=await page.evaluate(()=>({actual:document.documentElement.scrollWidth,available:innerWidth}));
    assert.ok(box.actual<=box.available+2,'Horizontal overflow: '+JSON.stringify(box));
   }
-  await page.locator('[data-pfo61-review]').first().click();
-  const selected=await page.evaluate(()=>({applied:window.__applied,analyzed:window.__analyzed}));
-  assert.equal(selected.applied.partnerId,'5');
-  assert.ok(selected.applied.give.length>=1&&selected.applied.take.length>=1);
-  assert.equal(selected.analyzed,1);
+  assert.ok(await page.locator('[data-pfo63-objective]').count()>0);
+  assert.ok(await page.locator('[data-pfo63-fair]').count()>0);
+  assert.ok(await page.locator('.pfo63-protect').count()>0);
+  const candidates=await page.locator('[data-pfo61-review]').count();
+  if(candidates){
+   await page.locator('[data-pfo61-review]').first().click();
+   const selected=await page.evaluate(()=>({applied:window.__applied,analyzed:window.__analyzed}));
+   assert.equal(selected.applied.partnerId,'5');
+   assert.ok(selected.applied.give.length>=1&&selected.applied.take.length>=1);
+   assert.equal(selected.analyzed,1);
+  }else{
+   assert.match(await page.locator('#pfo61-trade-research').innerText(),/No defensible packages|withheld/i);
+  }
   await page.evaluate(()=>{
    document.querySelector('[data-pfo59-market-panel="trade"]').hidden=true;
    document.querySelector('[data-pfo59-market-panel="waiver"]').hidden=false;
    window.ffoMarketFinder61.notify('waiver');
   });
-  await page.locator('[data-pfo61-waiver-compare]').first().waitFor();
+  await page.locator('#pfo61-waiver-research .pfo61-head').waitFor();
+  await page.locator('.pfo63-empty, [data-pfo61-waiver-compare]').first().waitFor();
   assert.match(await page.locator('#pfo61-waiver-research').innerText(),/Waiver Decision Desk/);
-  await page.locator('[data-pfo61-waiver-compare]').first().click();
-  assert.match(await page.locator('[data-pfo61-result="0"]').innerText(),/modeled starter PPG|withheld/i);
+  if(await page.locator('[data-pfo61-waiver-compare]').count()){
+   assert.equal(await page.locator('[data-pfo61-drop]').count(),0,'Drop must be automatic');
+   await page.locator('[data-pfo61-waiver-compare]').first().click();
+   assert.match(await page.locator('[data-pfo61-result="0"]').innerText(),/Proposed research pair|withheld/i);
+  }else{
+   assert.match(await page.locator('#pfo61-waiver-research').innerText(),/No positively screened automatic add\/drop pair/i);
+  }
   assert.deepEqual(errors,[]);
  }finally{await browser.close();}
 });

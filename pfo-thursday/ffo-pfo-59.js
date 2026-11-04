@@ -606,6 +606,7 @@
   // Provider-neutral, read-only research boundary. Sleeper is a temporary roster bridge;
   // no scoring, trade writes, waivers, league permissions or secrets exposed.
   marketResearchContext:({includeWaivers=false}={})=>({
+   leagueId:state.snap?.league?.league_id||state.snap?.league_id||'FFL',
    rosters:state.snap?.rosters||[],names:state.names||{},
    ownerRosterId:'1',waiverRosterId:state.waiverManager,excludedRosterIds:['3'],
    snapshotAt:state.snap?.fetched_at_utc||null,

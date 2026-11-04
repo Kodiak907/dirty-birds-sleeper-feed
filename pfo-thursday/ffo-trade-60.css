@@ -59,3 +59,9 @@
 #pfo60-trade-lab .pfo60-lineup-row>b{font-size:10px;font-weight:650;line-height:1.25;overflow-wrap:anywhere}
 #pfo60-trade-lab .pfo60-lineup-row>small{grid-column:2;font-size:8px;color:#b3e7c9;line-height:1.25}
 #pfo60-trade-lab .pfo60-lineup-change{border-color:#4b7666;background:#17382f}
+
+/* PFO 6.3 explicit, source-limited time horizons in the existing trade analyzer */
+.pfo63-horizons{display:flex;gap:6px;margin:8px 0;overflow-x:auto}
+.pfo63-horizons button{flex:1;border:1px solid #486678;background:#23384b;color:#d3e1e9;border-radius:8px;padding:8px 6px;font-size:11px;white-space:nowrap}
+.pfo63-horizons button[aria-pressed="true"]{background:#326b55;border-color:#84b99b;color:#fff;font-weight:800}
+.pfo63-horizon-text{font-size:11px;line-height:1.5;border-left:3px solid #7dad93;padding:9px 10px;background:#213d3b;border-radius:0 6px 6px 0;margin-bottom:12px}

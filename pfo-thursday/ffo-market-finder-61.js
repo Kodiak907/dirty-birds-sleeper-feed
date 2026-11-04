@@ -1,185 +1,238 @@
-/* PFO 6.1 Market Research — additive, read-only and provider-neutral. */
+/* PFO 6.3: provider-neutral screened Trade Finder and automatic Waiver Pairs.
+ * Read-only, no league mutations or unsourced acceptance probabilities.
+ */
 (()=>{'use strict';
  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const dollar=x=>typeof x==='number'&&Number.isFinite(x)?(x>0?'+':'')+x.toFixed(1):'—';
- const state={trade:{partner:'all',rows:[],stamp:'',pending:false,error:''},
-  waiver:{position:'ALL',rows:[],stamp:'',pending:false,error:''}};
- let model=null,promise=null;
- function getContext(includeWaivers=false){
-  return window.ffoPfo59?.marketResearchContext?.({includeWaivers})||null;
+ const fmt=x=>typeof x==='number'&&Number.isFinite(x)?(x>0?'+':'')+x.toFixed(1):'—';
+ const state={trade:{partner:'all',objective:'BALANCED',fairOnly:true,preferUneven:true,rows:[],diagnostics:null,
+  stamp:'',pending:false,error:''},
+  waiver:{position:'ALL',rows:[],reason:'',stamp:'',pending:false,error:''},
+  protectedMine:[],protectedOthers:{},loadedKey:null};
+ let engine=null,loading=null;
+ const ctx=includeWaivers=>window.ffoPfo59?.marketResearchContext?.({includeWaivers})||null;
+ const host=t=>document.getElementById('pfo61-'+t+'-research');
+ const storageKey=context=>'pfo63:market-controls:'+String(context?.leagueId||'ffl-pending')+':'+String(context?.ownerRosterId||'1');
+ function loadPrefs(context){
+  const key=storageKey(context);if(state.loadedKey===key)return;
+  state.loadedKey=key;
+  try{
+   const data=JSON.parse(localStorage.getItem(key)||'null');
+   if(data&&typeof data==='object'){
+    state.protectedMine=Array.isArray(data.mine)?data.mine.map(String).slice(0,35):[];
+    state.protectedOthers=data.others&&typeof data.others==='object'?data.others:{};
+    if(['BALANCED','QB','RB','WR','TE'].includes(data.objective))state.trade.objective=data.objective;
+    if(typeof data.fairOnly==='boolean')state.trade.fairOnly=data.fairOnly;
+    if(typeof data.preferUneven==='boolean')state.trade.preferUneven=data.preferUneven;
+   }
+  }catch(error){console.warn('FFO local trade preferences unavailable',error);}
  }
- function loadModel(){
-  if(model)return Promise.resolve(model);
-  if(!promise)promise=import('/ffo-market-finder-61.mjs').then(x=>(model=x)).catch(e=>{
-   promise=null;throw e;
-  });
-  return promise;
+ function savePrefs(){
+  try{localStorage.setItem(state.loadedKey,JSON.stringify({mine:state.protectedMine,
+    others:state.protectedOthers,objective:state.trade.objective,
+    fairOnly:state.trade.fairOnly,preferUneven:state.trade.preferUneven}));}catch{}
+ }
+ function getEngine(){
+  if(engine)return Promise.resolve(engine);
+  if(!loading)loading=import('/ffo-market-quality-63.mjs').then(m=>(engine=m)).catch(error=>{
+   loading=null;throw error;});
+  return loading;
  }
  function mount(){
-  const pairs=[['trade','pfo59-trade-board'],['waiver','pfo59-waiver-board']];
-  for(const [type,anchorId] of pairs){
-   const anchor=document.getElementById(anchorId);
-   if(!anchor||document.getElementById('pfo61-'+type+'-research'))continue;
-   const box=document.createElement('section');
-   box.id='pfo61-'+type+'-research';box.className='pfo61-research';
-   box.setAttribute('aria-label',type==='trade'?'Trade Finder research':'Waiver add/drop research');
-   anchor.before(box);
+  for(const [type,anchor] of [['trade','pfo59-trade-board'],['waiver','pfo59-waiver-board']]){
+   const reference=document.getElementById(anchor);
+   if(reference&&!host(type)){
+    const section=document.createElement('section');section.id='pfo61-'+type+'-research';
+    section.className='pfo61-research';
+    section.setAttribute('aria-label',type==='trade'?'Screened trade ideas':'Automatic waiver add and drop research');
+    reference.before(section);
+   }
   }
  }
- const tradeHost=()=>document.getElementById('pfo61-trade-research');
- const waiverHost=()=>document.getElementById('pfo61-waiver-research');
- function offerList(){
-  const host=tradeHost();if(!host)return;
-  const ctx=getContext(),owners=ctx?.partners||[];
-  const selector='<label class="pfo61-picker">Manager <select data-pfo61-trade-partner>'+
-   '<option value="all">All eligible managers</option>'+owners.map(p=>'<option value="'+esc(p.id)+'"'+
-   (state.trade.partner===p.id?' selected':'')+'>'+esc(p.name)+'</option>').join('')+'</select></label>';
-  const rows=state.trade.rows;
-  const content=state.trade.pending?'<p class="pfo61-note">Preparing source-limited packages…</p>':
-   state.trade.error?'<p class="pfo61-note">'+esc(state.trade.error)+'</p>':
-   !ctx?.rosters?.length?'<p class="pfo61-note">Waiting for published league rosters. No trade candidates inferred.</p>':
-   !rows.length?'<p class="pfo61-note">No eligible packages found in the current published rosters.</p>':
-   '<div class="pfo61-stack">'+rows.map((r,i)=>{
-    const manager=owners.find(p=>p.id===r.partnerId)?.name||'Roster '+r.partnerId;
-    const players=a=>a.map(p=>esc(p.name)).join(' + ');
-    const complete=r.outgoingPPG!==null&&r.incomingPPG!==null;
-    return '<article class="pfo61-offer"><div class="pfo61-offer-top"><b>'+esc(manager)+'</b><small>'+
-     esc(r.format)+' · research only</small></div>'+
-     '<div class="pfo61-two"><div><small>WE GIVE</small><strong>'+players(r.give)+'</strong></div>'+
-     '<div><small>WE RECEIVE</small><strong>'+players(r.take)+'</strong></div></div>'+
-     '<div class="pfo61-meta"><span>Model coverage '+esc(r.completeness)+'</span>'+
-     '<span>Depth-fit signals · us '+esc(r.needs.ours)+' / them '+esc(r.needs.theirs)+'</span>'+
-     '<span>Package model '+(complete?dollar(r.incomingPPG-r.outgoingPPG)+' PPG':'withheld')+'</span></div>'+
-     (r.healthFlag?'<small class="pfo61-alert">Injury designation: check current source</small>':'')+
-     '<button type="button" data-pfo61-review="'+i+'">Open in Trade Analyzer</button></article>';
+ function owners(context){return context?.partners||[];}
+ function protectedPlayers(context,side){
+  const rid=side==='mine'?String(context?.ownerRosterId||'1'):state.trade.partner;
+  const r=context?.rosters?.find(x=>String(x.roster_id)===rid);
+  const checks=side==='mine'?state.protectedMine:state.protectedOthers[rid]||[];
+  if(!r)return '<small>Choose a trade partner to mark known off-limits players.</small>';
+  return '<div class="pfo63-lock-list">'+(r.players||[]).filter(pid=>context.names?.[String(pid)]?.name)
+   .map(pid=>{
+    const key=String(pid),p=context.names[key];
+    return '<label><input type="checkbox" data-pfo63-lock="'+side+'" value="'+esc(key)+'"'+
+     (checks.includes(key)?' checked':'')+'><span>'+esc(p.name)+'</span><small>'+esc(p.position||'')+'</small></label>';
    }).join('')+'</div>';
-  host.innerHTML='<div class="pfo61-head"><div><b>Trade Finder · FFO Research</b>'+
-   '<small>Quick package discovery across actual league rosters</small></div>'+
-   '<button type="button" data-pfo61-refresh="trade">Refresh</button></div>'+
-   selector+'<p class="pfo61-disclosure">Finder explores 1–3 player combinations on either side; candidates without independent estimates are unpriced roster-fit research, not fair-value proposals. FAAB remains adjustable in Trade Analyzer. Nothing is sent.</p>'+content;
  }
- function waiverList(){
-  const host=waiverHost();if(!host)return;
-  const ctx=getContext(false),rows=state.waiver.rows;
-  const content=state.waiver.pending?'<p class="pfo61-note">Ranking add/drop research…</p>':
-   state.waiver.error?'<p class="pfo61-note">'+esc(state.waiver.error)+'</p>':
-   !ctx?.rosters?.length?'<p class="pfo61-note">Waiting for published ownership before ranking waivers.</p>':
-   !rows.length?'<p class="pfo61-note">No ownership-filtered candidates available for this view.</p>':
-   '<div class="pfo61-stack">'+rows.map((r,i)=>{
-    const drops=r.dropOptions.map(d=>'<option value="'+esc(d.id)+'">'+esc(d.name)+
-     (d.starter?' · STARTER':' · bench')+'</option>').join('');
-    return '<article class="pfo61-offer"><div class="pfo61-waiver-title"><b>'+esc(r.name)+'</b>'+
-     '<small>'+esc(r.position)+' · '+esc(r.team||'Team unknown')+' · '+(r.ppg===null?'Model withheld':r.ppg.toFixed(1)+' model PPG')+'</small></div>'+
-     '<div class="pfo61-meta"><span>'+(r.reserved?'IR research · not a normal waiver recommendation':'Roster depth need '+esc(r.shortage))+'</span>'+
-     '<span>Ownership: unrostered in latest directory</span></div>'+
-     (r.healthFlag?'<small class="pfo61-alert">Injury designation requires recheck</small>':'')+
-     '<label class="pfo61-picker">Potential drop <select data-pfo61-drop="'+i+'">'+
-     (drops||'<option value="">No evaluated drops</option>')+'</select></label>'+
-     '<button type="button" data-pfo61-waiver-compare="'+i+'"'+(!r.dropOptions.length?' disabled':'')+
-     '>Compare add / drop</button><div class="pfo61-comparison" data-pfo61-result="'+i+'"></div></article>';
-   }).join('')+'</div>';
-  host.innerHTML='<div class="pfo61-head"><div><b>Waiver Decision Desk</b>'+
-   '<small>Actual unrostered players · conditional replacement impact</small></div>'+
-   '<button type="button" data-pfo61-refresh="waiver">Refresh</button></div>'+
-   '<label class="pfo61-picker">Position <select data-pfo61-waiver-position>'+
-   ['ALL','QB','RB','WR','TE','FLEX','K','DEF','IR'].map(p=>'<option'+
-   (state.waiver.position===p?' selected':'')+'>'+p+'</option>').join('')+'</select></label>'+
-   '<p class="pfo61-disclosure">Potential drops are research candidates, not recommendations to execute. Eligibility, waivers, FAAB, and game-day availability require separate verification. No adds or drops are submitted.</p>'+content;
+ function tradeRender(){
+  const box=host('trade');if(!box)return;
+  const context=ctx(),list=owners(context),s=state.trade;
+  const chosen=list.some(x=>String(x.id)===s.partner)?s.partner:'all';
+  let html='<div class="pfo61-head"><div><b>FFO Trade Finder · Screened Deals</b>'+
+   '<small>Balanced needs and replacement value · no automatic offers</small></div>'+
+   '<button type="button" data-pfo61-refresh="trade">Refresh</button></div>';
+  html+='<div class="pfo63-controls"><label class="pfo61-picker">Trade partner<select data-pfo61-trade-partner>'+
+   '<option value="all">All eligible teams</option>'+list.map(x=>'<option value="'+esc(x.id)+'"'+
+   (chosen===String(x.id)?' selected':'')+'>'+esc(x.name)+'</option>').join('')+'</select></label>'+
+   '<label class="pfo61-picker">Trade objective<select data-pfo63-objective>'+
+   [['BALANCED','Best overall roster fit'],['QB','Upgrade QB'],['RB','Upgrade RB'],
+    ['WR','Upgrade WR'],['TE','Upgrade TE']].map(([value,label])=>
+    '<option value="'+value+'"'+(s.objective===value?' selected':'')+'>'+label+'</option>').join('')+
+   '</select></label></div>';
+  html+='<div class="pfo63-checks"><label><input type="checkbox" data-pfo63-fair'+(s.fairOnly?' checked':'')+
+   '> Only balanced replacement-value packages</label>'+
+   '<label><input type="checkbox" data-pfo63-uneven'+(s.preferUneven?' checked':'')+
+   '> Prefer multi-player / uneven deals</label></div>';
+  html+='<details class="pfo63-protect"><summary>Off-limits players · my team / known rival exclusions</summary>'+
+   '<p class="pfo61-disclosure">These are private research exclusions, not verified manager declarations. They never update a league roster.</p>'+
+   '<strong>Do not trade from my roster</strong>'+protectedPlayers(context,'mine')+
+   '<strong>Exclude known untouchables on selected opponent</strong>'+protectedPlayers(context,'other')+
+   '</details>';
+  const diag=s.diagnostics||{};
+  const status=s.pending?'Evaluating coverage, positional constraints and roster balance…':
+   s.error||(!context?.rosters?.length?'Waiting for ownership snapshot.':
+   !s.rows.length?(diag.reason==='independent_model_or_roster_snapshot_not_ready'?
+    'Screened deals withheld: frozen FFL rules, a current roster snapshot, and independent player values are required.':
+    'No defensible packages met the current requirements. Rather than inventing fair offers, broaden your filters or revisit after independent projections are available.'):'');
+  if(status)html+='<p class="pfo63-empty">'+esc(status)+'</p>';
+  if(s.rows.length)html+='<div class="pfo61-stack">'+s.rows.map((r,i)=>{
+   const name=list.find(x=>String(x.id)===r.partnerId)?.name||'Roster '+r.partnerId;
+   const players=rows=>rows.map(x=>esc(x.name)).join(' + ');
+   return '<article class="pfo61-offer"><div class="pfo61-offer-top"><b>'+esc(name)+'</b>'+
+    '<small>'+esc(r.format)+' · '+(r.balanced?'Screened balance':'Exploratory')+'</small></div>'+
+    '<div class="pfo61-two"><div><small>WE GIVE</small><strong>'+players(r.give)+'</strong></div>'+
+    '<div><small>WE GET</small><strong>'+players(r.take)+'</strong></div></div>'+
+    '<div class="pfo61-meta"><span>Independent model '+esc(r.completeness)+' covered</span>'+
+    '<span>Replacement-value gap '+fmt(r.replacementValueGap)+' model PPG</span></div>'+
+    '<p class="pfo63-reason">'+esc(r.rationale)+'</p>'+
+    '<button type="button" data-pfo61-review="'+i+'">Inspect in Trade Analyzer</button></article>';
+  }).join('')+'</div>';
+  html+='<p class="pfo61-disclosure">Model values are provisional. A balanced package is not an acceptance prediction, verified fair-market price, or win-probability gain. The full Trade Analyzer retains FAAB negotiation and identifies missing starting-lineup evidence.</p>';
+  box.innerHTML=html;
+ }
+ function waiverRender(){
+  const box=host('waiver');if(!box)return;
+  const context=ctx(),s=state.waiver;
+  let content='<div class="pfo61-head"><div><b>Waiver Decision Desk · Suggested Add + Drop</b>'+
+   '<small>We identify the suggested drop automatically; no claim is sent</small></div>'+
+   '<button type="button" data-pfo61-refresh="waiver">Refresh</button></div>';
+  content+='<label class="pfo61-picker">Position<select data-pfo61-waiver-position>'+
+   ['ALL','QB','RB','WR','TE','FLEX','K','DEF','IR'].map(p=>
+    '<option'+(s.position===p?' selected':'')+'>'+p+'</option>').join('')+'</select></label>';
+  const reason=s.pending?'Evaluating roster depth and covered player replacements…':
+   s.error||(!context?.rosters?.length?'Waiting for current ownership.':
+   !s.rows.length?'No positively screened automatic add/drop pair is supported by the current data. '+(
+    s.reason==='no_supported_positive_add_drop_pairs'?'This may reflect missing independent estimates or inadequate benefit.':
+    'Refresh when more source evidence is available.'):'');
+  if(reason)content+='<p class="pfo63-empty">'+esc(reason)+'</p>';
+  if(s.rows.length)content+='<div class="pfo61-stack">'+s.rows.map((r,i)=>{
+   const d=r.selectedDrop;
+   return '<article class="pfo61-offer"><div class="pfo63-waiver-pair">'+
+    '<div><small>ADD</small><b>'+esc(r.name)+'</b><span>'+esc(r.position)+' · '+esc(r.team||'Team unverified')+'</span></div>'+
+    '<div><small>DROP CANDIDATE</small><b>'+esc(d.name)+'</b><span>'+esc(d.position)+' · bench</span></div></div>'+
+    '<div class="pfo61-meta"><span>Model pair gap '+fmt(r.modelGap)+' PPG</span>'+
+    '<span>Starter impact '+fmt(r.starterDelta)+' PPG'+(r.starterDelta===null?' · withheld':'')+'</span></div>'+
+    '<p class="pfo63-reason">'+esc(r.rationale)+'</p>'+
+    '<details class="pfo63-alternatives"><summary>Other evaluated bench drops ('+
+    Math.max(0,r.dropOptions.length-1)+')</summary>'+
+    r.dropOptions.filter(x=>x.id!==d.id).map(x=>'<div>'+esc(x.name)+' · '+fmt(x.modelGap)+' model PPG pair gap</div>').join('')+
+    '</details>'+
+    '<button type="button" data-pfo61-waiver-compare="'+i+'">Review recommended add / drop</button>'+
+    '<div class="pfo61-comparison" data-pfo61-result="'+i+'"></div></article>';
+  }).join('')+'</div>';
+  content+='<p class="pfo61-disclosure">These are covered-data suggestions, not guaranteed upgrades. Roster ownership, waiver claim eligibility, injury availability, FAAB and the final roster decision require your verification. IR stays a separate research view.</p>';
+  box.innerHTML=content;
  }
  async function refreshTrade(force=false){
-  mount();const ctx=getContext();
-  if(!ctx?.rosters?.length||!ctx?.names||!ctx?.estimate){state.trade.rows=[];offerList();return;}
-  const stamp=[ctx.snapshotAt,ctx.rulesReady,state.trade.partner,ctx.modelVersion||''].join('|');
-  if(!force&&state.trade.stamp===stamp){if(!tradeHost()?.querySelector('.pfo61-head'))offerList();return;}
-  if(state.trade.pending)return;
-  state.trade.pending=true;state.trade.error='';offerList();
+  mount();let context=ctx();if(!context)return;
+  loadPrefs(context);
+  const s=state.trade,stamp=[context.snapshotAt,context.modelVersion,context.rulesReady,s.partner,s.objective,
+   s.fairOnly,s.preferUneven,state.protectedMine.join(','),JSON.stringify(state.protectedOthers)].join('|');
+  if(!force&&s.stamp===stamp){if(!host('trade')?.querySelector('.pfo61-head'))tradeRender();return;}
+  if(s.pending)return;
+  s.pending=true;s.error='';tradeRender();
   try{
-   const m=await loadModel(),latest=getContext();
-   if(!latest?.rosters?.length)return;
-   state.trade.rows=m.findTradeResearch({rosters:latest.rosters,names:latest.names,
-    estimate:latest.estimate,ownerRosterId:latest.ownerRosterId||'1',
-    excludedRosterIds:latest.excludedRosterIds||['3'],starterSlots:latest.slots,
-    snapshotAt:latest.snapshotAt,rulesReady:latest.rulesReady,
-    selectedPartnerId:state.trade.partner==='all'?null:state.trade.partner,maxResults:12});
-   state.trade.stamp=stamp;
-  }catch(e){state.trade.error='Trade Finder unavailable; existing Trade Analyzer is unaffected.';
-   console.warn('PFO Trade Finder research error',e);
-  }finally{state.trade.pending=false;offerList();}
+   const model=await getEngine();context=ctx();
+   const {results,diagnostics}=model.screenTradePackages({rosters:context.rosters,names:context.names,
+    estimate:context.estimate,ownerRosterId:context.ownerRosterId,excludedRosterIds:context.excludedRosterIds,
+    starterSlots:context.slots,snapshotAt:context.snapshotAt,rulesReady:context.rulesReady,
+    selectedPartnerId:s.partner==='all'?null:s.partner,objective:s.objective,
+    fairOnly:s.fairOnly,preferUneven:s.preferUneven,protectedMine:state.protectedMine,
+    protectedByManager:state.protectedOthers,maxResults:10});
+   s.rows=results;s.diagnostics=diagnostics;s.stamp=stamp;
+  }catch(err){s.error='Screened Trade Finder unavailable; existing manual Trade Analyzer is unaffected.';
+   console.warn('FFO screened finder',err);
+  }finally{s.pending=false;tradeRender();}
  }
  async function refreshWaiver(force=false){
-  mount();const first=getContext();if(!first?.rosters?.length||!first?.names){
-   state.waiver.rows=[];waiverList();return;
-  }
-  const stamp=[first.snapshotAt,first.rulesReady,first.waiverRosterId,
-   state.waiver.position,first.modelVersion||'',first.actionsVersion||''].join('|');
-  if(!force&&state.waiver.stamp===stamp){if(!waiverHost()?.querySelector('.pfo61-head'))waiverList();return;}
-  if(state.waiver.pending)return;
-  state.waiver.pending=true;state.waiver.error='';waiverList();
+  mount();let context=ctx();if(!context)return;
+  loadPrefs(context);
+  const s=state.waiver,stamp=[context.snapshotAt,context.modelVersion,context.rulesReady,
+   context.waiverRosterId,context.actionsVersion,s.position,state.protectedMine.join(',')].join('|');
+  if(!force&&s.stamp===stamp){if(!host('waiver')?.querySelector('.pfo61-head'))waiverRender();return;}
+  if(s.pending)return;
+  s.pending=true;s.error='';waiverRender();
   try{
-   const m=await loadModel(),ctx=getContext(true);
-   const roster=ctx?.rosters?.find(r=>String(r.roster_id)===String(ctx.waiverRosterId));
-   state.waiver.rows=m.findWaiverResearch({roster,names:ctx.names,
-    unrostered:ctx.unrostered||[],estimate:ctx.estimate,starterSlots:ctx.slots,
-    position:state.waiver.position,maxResults:8,rulesReady:ctx.rulesReady,
-    availability:ctx.availability,
-    snapshotAt:ctx.snapshotAt});
-   state.waiver.stamp=stamp;
-  }catch(e){state.waiver.error='Waiver comparison unavailable; existing Waiver Market is unaffected.';
-   console.warn('PFO Waiver Decision research error',e);
-  }finally{state.waiver.pending=false;waiverList();}
+   const model=await getEngine();context=ctx(true);
+   const roster=context.rosters.find(r=>String(r.roster_id)===String(context.waiverRosterId));
+   const {results,reason}=model.recommendWaiverPairs({roster,names:context.names,unrostered:context.unrostered,
+    estimate:context.estimate,starterSlots:context.slots,snapshotAt:context.snapshotAt,
+    rulesReady:context.rulesReady,availability:context.availability,position:s.position,
+    protectedMine:state.protectedMine,maxResults:8});
+   s.rows=results;s.reason=reason;s.stamp=stamp;
+  }catch(err){s.error='Automatic add/drop research unavailable; manual Waiver Market remains available.';
+   console.warn('FFO Waiver Pair research',err);
+  }finally{s.pending=false;waiverRender();}
  }
  function notify(view){
   mount();
-  const active=document.querySelector('#market.page.active [data-pfo59-market-panel="'+view+'"]:not([hidden])');
-  if(!active)return;
-  if(view==='trade')void refreshTrade();
-  if(view==='waiver')void refreshWaiver();
+  if(!document.querySelector('#market.page.active [data-pfo59-market-panel="'+view+'"]:not([hidden])'))return;
+  if(view==='trade')void refreshTrade();else if(view==='waiver')void refreshWaiver();
  }
- document.addEventListener('click',ev=>{
-  const refresh=ev.target.closest('[data-pfo61-refresh]');
-  if(refresh){const type=refresh.dataset.pfo61Refresh;
-   if(type==='trade')void refreshTrade(true);else if(type==='waiver')void refreshWaiver(true);
-   return;
-  }
-  const open=ev.target.closest('[data-pfo61-review]');
-  if(open){
-   const row=state.trade.rows[Number(open.dataset.pfo61Review)];
-   if(!row)return;
-   const applied=window.ffoPfo59?.applyResearchTrade?.({
-    partnerId:row.partnerId,give:row.give.map(p=>p.id),take:row.take.map(p=>p.id)});
-   if(applied){
-    window.ffoTrade60?.analyze?.();
-    document.getElementById('pfo60-trade-lab')?.scrollIntoView({behavior:'instant',block:'start'});
-   }else{
-    const host=tradeHost();if(host)host.insertAdjacentHTML('afterbegin',
-     '<p class="pfo61-alert">Ownership changed; refresh the league snapshot before analysis.</p>');
+ document.addEventListener('change',event=>{
+  const t=event.target;
+  if(t.matches('[data-pfo61-trade-partner]')){state.trade.partner=t.value;state.trade.stamp='';void refreshTrade(true);}
+  if(t.matches('[data-pfo63-objective]')){state.trade.objective=t.value;savePrefs();void refreshTrade(true);}
+  if(t.matches('[data-pfo63-fair]')){state.trade.fairOnly=t.checked;savePrefs();void refreshTrade(true);}
+  if(t.matches('[data-pfo63-uneven]')){state.trade.preferUneven=t.checked;savePrefs();void refreshTrade(true);}
+  if(t.matches('[data-pfo63-lock]')){
+   const checked=t.checked,id=t.value,scope=t.dataset.pfo63Lock;
+   if(scope==='mine'){
+    state.protectedMine=checked?[...new Set([...state.protectedMine,id])]:
+     state.protectedMine.filter(x=>x!==id);
+   }else if(state.trade.partner!=='all'){
+    const key=state.trade.partner,list=state.protectedOthers[key]||[];
+    state.protectedOthers[key]=checked?[...new Set([...list,id])]:list.filter(x=>x!==id);
    }
-   return;
+   savePrefs();void refreshTrade(true);
   }
-  const btn=ev.target.closest('[data-pfo61-waiver-compare]');
-  if(btn){
-   const i=Number(btn.dataset.pfo61WaiverCompare),row=state.waiver.rows[i];
-   const host=waiverHost(),target=host?.querySelector('[data-pfo61-result="'+i+'"]');
-   const drop=host?.querySelector('[data-pfo61-drop="'+i+'"]')?.value;
-   if(!row||!drop||!target)return;
-   const ctx=getContext(true),roster=ctx?.rosters?.find(r=>String(r.roster_id)===String(ctx.waiverRosterId));
-   const m=model;
-   const result=m?.compareWaiverSwap({roster,addId:row.id,dropId:drop,
-    names:ctx.names,estimate:ctx.estimate,starterSlots:ctx.slots,
-    rulesReady:ctx.rulesReady,snapshotAt:ctx.snapshotAt,
-    availability:ctx.availability});
-   const player=ctx.names?.[drop]?.name||drop;
-   target.textContent=result?.status==='conditional'?
-    'If '+row.name+' replaces '+player+': '+dollar(result.delta)+' modeled starter PPG. Research only; actual add/drop eligibility unverified.':
-    'Starter impact withheld: '+String(result?.reason||'insufficient evidence').replaceAll('_',' ')+'. No missing data treated as zero.';
-   return;
-  }
+  if(t.matches('[data-pfo61-waiver-position]')){state.waiver.position=t.value;void refreshWaiver(true);}
  });
- document.addEventListener('change',ev=>{
-  const p=ev.target.closest('[data-pfo61-trade-partner]');
-  if(p){state.trade.partner=p.value;state.trade.stamp='';void refreshTrade(true);return;}
-  const w=ev.target.closest('[data-pfo61-waiver-position]');
-  if(w){state.waiver.position=w.value;state.waiver.stamp='';void refreshWaiver(true);}
+ document.addEventListener('click',event=>{
+  const button=event.target.closest('[data-pfo61-refresh],[data-pfo61-review],[data-pfo61-waiver-compare]');
+  if(!button)return;
+  if(button.dataset.pfo61Refresh){
+   if(button.dataset.pfo61Refresh==='trade')void refreshTrade(true);
+   else void refreshWaiver(true);
+   return;
+  }
+  if(button.dataset.pfo61Review!==undefined){
+   const row=state.trade.rows[Number(button.dataset.pfo61Review)];if(!row)return;
+   const applied=window.ffoPfo59?.applyResearchTrade?.({partnerId:row.partnerId,
+    give:row.give.map(p=>p.id),take:row.take.map(p=>p.id)});
+   if(applied){window.ffoTrade60?.analyze?.();
+    document.getElementById('pfo60-trade-lab')?.scrollIntoView({behavior:'instant',block:'start'});}
+   else{const target=host('trade');if(target)target.insertAdjacentHTML('afterbegin',
+    '<p class="pfo61-alert">Ownership has changed. Refresh before evaluation.</p>');}
+   return;
+  }
+  if(button.dataset.pfo61WaiverCompare!==undefined){
+   const i=Number(button.dataset.pfo61WaiverCompare),row=state.waiver.rows[i];
+   const target=host('waiver')?.querySelector('[data-pfo61-result="'+i+'"]');
+   if(!row||!target)return;
+   target.textContent='Proposed research pair: add '+row.name+'; consider dropping '+row.selectedDrop.name+
+    '. Independent player model gap '+fmt(row.modelGap)+' PPG. '+
+    (row.starterDelta===null?'Complete starter-lineup impact is withheld.':
+     'Conditional starting-lineup model difference '+fmt(row.starterDelta)+' PPG.')+
+    ' No transaction submitted; verify claims and FAAB first.';
+  }
  });
  function start(){mount();notify('trade');}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();

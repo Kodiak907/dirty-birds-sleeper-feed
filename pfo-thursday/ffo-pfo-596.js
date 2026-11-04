@@ -5,7 +5,7 @@
  const $=id=>document.getElementById(id);
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
  const normalize=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
- const state={articles:[],actions:[],schedule:null,loadedAt:0,pending:null,err:'',rosterCache:null};
+ const state={articles:[],actions:[],schedule:null,loadedAt:0,pending:null,err:'',rosterCache:null,filter:'ALL'};
  function lineup(){
   if(typeof liveRosterSnapshot!=='undefined'&&liveRosterSnapshot?.players?.length)return liveRosterSnapshot.players.map(p=>({...p,id:String(p.player_id||p.id)}));
   if(typeof gm47Snapshot!=='undefined'){
@@ -81,15 +81,50 @@
  function render(host){
   if(!host||!document.contains(host))return;
   const roster=lineup();
-  if(!roster.length){host.innerHTML='<h3>Dirty Birds · News & Intel</h3><p>Current team roster not available. News matching is withheld until ownership syncs; no unrelated headlines will be shown.</p>';return;}
-  const items=stories(roster),fetched=typeof liveRosterSnapshot!=='undefined'?liveRosterSnapshot?.checked_at:typeof gm47Snapshot!=='undefined'?gm47Snapshot?.fetched_at_utc:'';
-  host.innerHTML='<div class="pfo596-news-head"><h3>Dirty Birds · News & Intel</h3><small>'+esc(roster.length)+' rostered players · roster '+esc(date(fetched))+'</small></div>'+
-   '<p class="pfo596-news-source">Most relevant roster-specific articles, confirmed team actions, injuries, and upcoming byes. Source dates shown; stale events are historical, and an absent report does not certify clearance.</p>'+
-   (items.length?'<div class="pfo596-news-list">'+items.slice(0,18).map(x=>'<article class="pfo596-news-row"><div><small>'+esc(x.kind)+' · '+esc(x.player)+' · '+esc(date(x.date))+'</small><b>'+esc(x.title)+'</b><p>'+esc(x.summary||'Read the full report at the original source.')+'</p><a href="'+esc(x.link)+'" target="_blank" rel="noopener noreferrer">Read source · '+esc(x.publisher)+'</a></div></article>').join('')+'</div>':
-   '<p class="pfo596-news-empty">No current roster-matched dated article or report was returned. This is not an all-clear. Check official team news and published injury reports as they become available.</p>')+
+  if(!roster.length){
+   host.innerHTML='<h3>Dirty Birds · News & Intel</h3><p>Current team roster not available. Player-specific news is withheld until ownership syncs.</p>';return;
+  }
+  const all=stories(roster);
+  const mode=x=>{
+   if(x.kind==='Bye week')return 'SCHEDULE';
+   if(x.kind==='Availability')return 'INJURY';
+   if(x.kind==='Team action')return 'MOVES';
+   return 'ANALYSIS';
+  };
+  const counts=Object.fromEntries(['ALL','INJURY','MOVES','ANALYSIS','SCHEDULE'].map(name=>
+   [name,name==='ALL'?all.length:all.filter(x=>mode(x)===name).length]));
+  const visible=all.filter(x=>state.filter==='ALL'||mode(x)===state.filter).slice(0,24);
+  const fetched=typeof liveRosterSnapshot!=='undefined'?liveRosterSnapshot?.checked_at:
+   typeof gm47Snapshot!=='undefined'?gm47Snapshot?.fetched_at_utc:'';
+  const controls=[['ALL','All'],['INJURY','Injuries'],['MOVES','Moves'],
+   ['ANALYSIS','Reports'],['SCHEDULE','Schedule']];
+  host.innerHTML='<div class="pfo596-news-head"><h3>Dirty Birds · News & Intel</h3>'+
+   '<small>'+esc(roster.length)+' rostered players · ownership '+esc(date(fetched))+'</small></div>'+
+   '<p class="pfo596-news-source">Player-specific reports grouped by source type, with publication dates and original links. FFOI will extend this with verified beat writers, expert analysis and role-impact evidence when ready.</p>'+
+   '<div class="pfo63-news-filters">'+controls.map(([key,label])=>
+    '<button type="button" data-pfo63-news="'+key+'" aria-pressed="'+(state.filter===key)+'">'+
+    esc(label)+' <small>'+esc(counts[key])+'</small></button>').join('')+'</div>'+
+   (visible.length?'<div class="pfo596-news-list">'+visible.map(x=>{
+    const published=Date.parse(x.date||''),days=Number.isFinite(published)?
+     Math.max(0,(Date.now()-published)/86400000):null;
+    const freshness=days===null?'Source date unverified':days>7?'Archived · dated report':days>1?'Recent · dated':'New · dated';
+    const group=mode(x);
+    const detail=group==='INJURY'?'Check current game-day availability and workload restrictions.':
+     group==='MOVES'?'Roster action; role and active status need separate confirmation.':
+     group==='SCHEDULE'?'Verified NFL schedule context; no injury status implied.':
+     'Editorial report; assess actual target, snap and opportunity evidence before changing projections.';
+    return '<article class="pfo596-news-row pfo63-news-story">'+
+     '<div class="pfo63-news-top"><b>'+esc(x.player)+'</b><small>'+esc(group)+' · '+esc(freshness)+'</small></div>'+
+     '<div><small>'+esc(x.kind)+' · '+esc(date(x.date))+' · '+esc(x.publisher)+'</small>'+
+     '<b>'+esc(x.title)+'</b>'+
+     '<p>'+esc(x.summary||detail)+'</p>'+
+     '<small class="pfo63-news-impact">Research note: '+esc(detail)+'</small>'+
+     '<a href="'+esc(x.link)+'" target="_blank" rel="noopener noreferrer">Read source · '+esc(x.publisher)+'</a></div></article>';
+   }).join('')+'</div>':
+   '<p class="pfo596-news-empty">No roster-matched dated reports in this category from the connected sources. That does not certify that no news exists.</p>')+
    (state.err?'<p class="pfo596-news-source">'+esc(state.err)+'</p>':'');
-
  }
+
  async function ensure(host){await fetchNew();if(host&&document.contains(host)&&!host.closest('[hidden]'))render(host);if(document.querySelector('#overview.page.active'))renderBriefing();}
  function refresh(){
   const host=$('pfo59-team-news');
@@ -97,6 +132,9 @@
  }
  // Only the active News tab performs a news network refresh.
  window.ffoPfoNews596={render(host){render(host);if(!state.loadedAt||Date.now()-state.loadedAt>12*60000)void ensure(host);},refresh,stories:()=>stories(lineup())};
+ document.addEventListener('click',event=>{const b=event.target.closest?.('[data-pfo63-news]');if(!b)return;
+  state.filter=b.dataset.pfo63News;const host=$('pfo59-team-news');if(host)render(host);
+ });
  // Existing briefing already understands morning/pregame/postgame, score history, and
  // official inactives. Keep that data, remove duplicative navigation and truncate to
  // the operationally important sections rather than computing a parallel scoreboard.

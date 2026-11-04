@@ -1,85 +1,138 @@
-/* PFO 6.2 Overview: one concise decision briefing. Keeps the original
- * three mode controls, records and standings; no duplicate news or scoreboard. */
+/* PFO 6.3 Overview — source-first, manager-specific operations briefing. */
 (()=>{'use strict';
- const html=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const f=n=>typeof n==='number'&&Number.isFinite(n)?n.toFixed(1):'—';
- const link=(p,text)=>'<a href="#'+p+'" data-pfo62-go="'+p+'">'+text+'</a>';
+ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const num=x=>typeof x==='number'&&Number.isFinite(x)?x.toFixed(1):'—';
+ const link=(page,label)=>'<a href="#'+page+'" data-pfo62-go="'+page+'">'+label+'</a>';
+ const panel=(name,body)=>'<section class="pfo62-priority"><strong>'+name+'</strong><p>'+body+'</p></section>';
+ const pName=pid=>{try{return pfo49Info(String(pid))?.name||String(pid);}catch{return String(pid)}};
+ const status=p=>String(p.sleeper_injury_status||'').toUpperCase();
  function brief(){
   const host=document.getElementById('briefing');if(!host)return;
-  // No hardcoded player, roster, opponent, trade block or score values.
-  const seasonWeek=typeof pfo51Week==='function'?pfo51Week():'—';
-  const source=typeof pfo51RosterForBrief==='function'?pfo51RosterForBrief():null;
-  const roster=source?.players||[],starters=source?.starters||[];
-  const own=typeof gm47Snapshot!=='undefined'?gm47Snapshot?.rosters?.find(x=>Number(x.roster_id)===1):null;
-  const record=own?.settings?String(own.settings.wins)+'–'+String(own.settings.losses):'—';
-  const other=typeof pfo51CurrentOpponent==='function'?pfo51CurrentOpponent():null;
+  const week=typeof pfo51Week==='function'?pfo51Week():'—';
+  const snapshot=typeof pfo51RosterForBrief==='function'?pfo51RosterForBrief():null;
+  const roster=snapshot?.players||[],starters=snapshot?.starters||[];
+  const mine=typeof gm47Snapshot!=='undefined'?gm47Snapshot?.rosters?.find(x=>Number(x.roster_id)===1):null;
+  const settings=mine?.settings||null;
+  const opponent=typeof pfo51CurrentOpponent==='function'?pfo51CurrentOpponent():null;
   const mode=typeof pfo49Mode!=='undefined'?pfo49Mode:'morning';
-  const health=roster.filter(p=>/^(OUT|IR|PUP|QUESTIONABLE|DOUBTFUL)$/i.test(String(p.sleeper_injury_status||'')));
-  const estimates=starters.map(id=>typeof pfo50Estimate==='function'?pfo50Estimate(id):null);
-  const available=estimates.filter(x=>typeof x==='number'&&Number.isFinite(x));
-  const complete=estimates.length>0&&estimates.length===available.length;
-  const starterTotal=complete?available.reduce((sum,x)=>sum+x,0):null;
-  const heading=mode==='pregame'?'Pregame preparation':mode==='postgame'?'Previous-week review':'What matters today';
-  const panel=(title,description)=>'<section class="pfo62-priority"><strong>'+title+'</strong><p>'+description+'</p></section>';
+  const index=window.ffoPfo59?.marketResearchContext?.()||null;
+  const estimate=id=>{
+   const a=typeof pfo50Estimate==='function'?pfo50Estimate(id):null;
+   if(typeof a==='number'&&Number.isFinite(a))return a;
+   const b=index?.estimate?.(String(id));
+   return typeof b==='number'&&Number.isFinite(b)?b:null;
+  };
+  const values=starters.map(estimate),measured=values.filter(x=>x!==null);
+  const covered=values.length>0&&measured.length===values.length;
+  const projected=covered?measured.reduce((s,v)=>s+v,0):null;
+  const reserve=new Set((mine?.reserve||[]).map(String));
+  const eligible=roster.filter(p=>!reserve.has(String(p.player_id)));
+  const counts={QB:0,RB:0,WR:0,TE:0,K:0,DEF:0};
+  for(const p of eligible){const pos=String(p.position||'').toUpperCase().replace('D/ST','DEF');if(pos in counts)counts[pos]++;}
+  const slots=(index?.slots||[]).map(x=>String(x).toUpperCase());
+  const depthTarget={QB:Math.max(1,slots.filter(x=>x==='QB').length)+1,
+   RB:Math.max(1,slots.filter(x=>x==='RB').length)+2,
+   WR:Math.max(1,slots.filter(x=>x==='WR').length)+2,
+   TE:Math.max(1,slots.filter(x=>x==='TE').length)+1};
+  const shortages=Object.keys(depthTarget).filter(p=>counts[p]<depthTarget[p])
+   .map(p=>p+' '+counts[p]+'/'+depthTarget[p]);
+  const uncertain=roster.filter(p=>/^(OUT|QUESTIONABLE|DOUBTFUL|IR|PUP|NFI)$/.test(status(p)));
+  const selected=new Set(starters.map(String));
+  const affected=uncertain.filter(p=>selected.has(String(p.player_id)));
+  const leagueBudget=Number(typeof gm47Snapshot!=='undefined'?gm47Snapshot?.league?.settings?.waiver_budget:NaN);
+  const spent=Number(settings?.waiver_budget_used);
+  const remaining=Number.isFinite(leagueBudget)&&leagueBudget>0&&Number.isFinite(spent)?
+   Math.max(0,leagueBudget-spent):null;
+  const previous=Math.max(1,Number(week)-1),played=typeof gm47HistorySnapshot!=='undefined'?
+   gm47HistorySnapshot?.matchups_by_week?.[String(previous)]||[]:[];
+  const result=played.find(x=>Number(x.roster_id)===1);
+  const rival=result&&played.find(x=>Number(x.roster_id)!==1&&x.matchup_id===result.matchup_id);
+  const outcome=result?.points!=null&&rival?.points!=null?
+   (result.points>rival.points?'Win':result.points<rival.points?'Loss':'Tie'):null;
+  const margin=outcome?Math.abs(Number(result.points)-Number(rival.points)).toFixed(2):null;
+  const heading=mode==='pregame'?'Game-week preparation':mode==='postgame'?'Previous-week review':'Current team priorities';
   let body='<div class="pfo62-head"><div><h2>Dirty Birds · Front Office</h2>'+
-   '<p>Week '+html(seasonWeek)+' · '+html(heading)+'</p></div>'+
-   '<div class="pfo51-record"><b>'+html(record)+'</b><small>League record</small></div></div>';
+   '<p>Week '+esc(week)+' · '+esc(heading)+'</p></div><div class="pfo51-record"><b>'+
+   esc(settings?String(settings.wins)+'–'+String(settings.losses):'Pending')+
+   '</b><small>League record</small></div></div>';
   body+='<div class="pfo49-filters">'+[['morning','Today'],['pregame','Pregame'],['postgame','Review']]
-   .map(([m,label])=>'<button type="button" data-pfo49-mode="'+m+'" class="'+(m===mode?'on':'')+'">'+label+'</button>').join('')+'</div>';
+   .map(([value,label])=>'<button type="button" data-pfo49-mode="'+value+
+   '" class="'+(mode===value?'on':'')+'">'+label+'</button>').join('')+'</div>';
   body+='<div class="pfo62-facts">'+[
-   ['Submitted starters',roster.length?starters.length:'Pending'],
-   ['Model coverage',estimates.length?available.length+'/'+estimates.length:'Pending'],
-   ['Week opponent',other?.name||'Not confirmed']
-  ].map(([title,value])=>'<div><small>'+title+'</small><b>'+html(value)+'</b></div>').join('')+'</div>';
+   ['Starting slots',roster.length?starters.length:'Not synced'],
+   ['Model coverage',values.length?measured.length+'/'+values.length:'Pending'],
+   ['Next opponent',opponent?.name||'Unconfirmed']
+  ].map(([label,value])=>'<div><small>'+label+'</small><b>'+esc(value)+'</b></div>').join('')+'</div>';
   if(mode==='morning'){
-   body+=panel('Roster & availability',roster.length?
-    html(roster.length)+' players synced · '+html(health.length)+
-    ' current roster injury tag(s). These tags are not proof of gameday inactives. '+
-    link('availability','Review Injury Watch'):
-    'Current roster information has not loaded. This is a source problem, not a roster clearance.');
-   body+=panel('Independent FFL scoring',complete?
-    'Starter baseline: <b>'+f(starterTotal)+' modeled FFL points</b>. Not a certified weekly prediction.':
-    html(available.length)+' of '+html(estimates.length)+' submitted starters have estimates. Full model total withheld; missing data is never scored as zero.');
-   body+=panel('Useful decisions',link('market','Explore trade and waiver options')+
-    ' based on current ownership. Player research and source dates are available in '+link('roster','Team News & Intel')+'.');
+   body+=panel('Roster watch',roster.length?
+    (affected.length?'<b>'+affected.length+' submitted starter(s) require availability review:</b> '+
+      affected.slice(0,4).map(p=>esc(p.name)+' ('+esc(status(p))+')').join(' · ')+'. ':
+      (uncertain.length?uncertain.length+' rostered players have injury/IR tags, none confirmed as starting alerts. ':
+        'No current roster injury tags observed; this does not establish NFL clearance. '))+
+     link('availability','Injury Watch'):
+     'Ownership data not yet synced. Current team availability is unknown.');
+   body+=panel('Positional depth',shortages.length?
+    'Against a simple bench-depth target: <b>'+esc(shortages.join(' · '))+
+    '</b>. These are roster counts, not verified talent or performance deficits. '+link('market','Research waivers'):
+    'No basic QB/RB/WR/TE depth-count gaps in the active roster. '+link('market','Explore value upgrades')+'.');
+   body+=panel('Scoring & decision readiness',covered?
+    'Provisional submitted-starter baseline: <b>'+num(projected)+
+    ' FFL points</b>. It is not a validated opponent-adjusted forecast.':
+    'Independent starter estimates available for <b>'+measured.length+'/'+values.length+
+    '</b>. Full weekly total withheld; compare players in the Market while historical score certification continues.');
+   body+=panel('Market pulse',remaining!==null?
+    'Published budget arithmetic suggests $'+esc(remaining)+' remaining FAAB, pending live transaction verification. '+
+      link('market','Review trade and waiver pairs')+'.':
+    link('market','Review screened trade packages and waiver pairs')+
+      '. Financial balances cannot be inferred without current league settings.');
   }else if(mode==='pregame'){
-   const startersSet=new Set(starters.map(String));
-   const flagged=health.filter(p=>startersSet.has(String(p.player_id)));
-   body+=panel('Check submitted starters',html(starters.length)+' submitted IDs; '+
-    html(flagged.length)+' have injury tags requiring a current official check. '+
-    link('availability','Verify game-day availability')+'.');
-   body+=panel('Opponent preparation',other?
-    '<b>'+html(other.name)+'</b> · '+html(other.starters?.length??0)+
-    ' published opposing starters. '+link('matchup','Open weekly matchup')+'.':
-    'Opposing team is not yet confirmed in the latest league snapshot.');
-   body+=panel('Kickoff research','GameCast handles the NFL scoreboard and play-by-play. Weekly Matchup handles team scoring. No lineup decisions are made for you.');
+   body+=panel('Starter availability',affected.length?
+    '<b>'+affected.length+' potentially affected starters:</b> '+affected.slice(0,6).map(p=>esc(p.name)+
+    ' ('+esc(status(p))+')').join(' · ')+'. '+link('availability','Verify current reports')+'.':
+    esc(starters.length)+' starter IDs submitted; no starter injury tag in the current roster metadata. '+
+    link('availability','Verify current-week inactives and questionable players')+'.');
+   body+=panel('Opponent scouting',opponent?
+    '<b>'+esc(opponent.name)+'</b> · '+esc(opponent.starters?.length||0)+
+    ' published opposing starters. '+link('matchup','Review opposing roster and lineup')+'.':
+    'No independently verified opponent starting group available.');
+   body+=panel('Flex and bench options',shortages.length?
+    'Current backup depth-watch positions: '+esc(shortages.join(' · '))+
+    '. '+link('roster','Review roster usage and substitutions')+'.':
+    'There are no obvious roster-count gaps. '+link('roster','Compare bench roles and player usage')+'.');
+   body+=panel('Kickoff research','GameCast handles NFL scores and drives. '+link('matchup','Weekly Matchup')+
+    ' handles submitted starters. Availability and workload are separate source checks, not guaranteed projections.');
   }else{
-   const previous=Math.max(1,Number(seasonWeek)-1);
-   const rows=typeof gm47HistorySnapshot!=='undefined'?gm47HistorySnapshot?.matchups_by_week?.[String(previous)]||[]:[];
-   const mine=rows.find(x=>Number(x.roster_id)===1);
-   const opponent=mine&&rows.find(x=>Number(x.roster_id)!==1&&x.matchup_id===mine.matchup_id);
-   body+=panel('Last matchup',mine?.points!=null?'Week '+previous+' · '+html(mine.points)+
-    ' league-recorded points'+(opponent?.points!=null?' vs '+html(opponent.points):' · opponent points unavailable')+
-    '. This is not an independently certified historical FFL score.':
-    'Last completed matchup is not yet verified in the current source snapshot.');
-   body+=panel('What to study',link('playerhub','Review player usage')+', '+
-    link('market','explore roster options')+', and use Matchup for the next opponent. No historical projection accuracy is claimed without certified scoring.');
+   body+=panel('Last matchup result',outcome?
+    '<b>'+outcome+' by '+margin+' points</b> · Week '+previous+' league-recorded '+
+     esc(result.points)+' vs '+esc(rival.points)+'. This is league history, not certified independent FFO scoring.':
+    result?.points!=null?'Week '+previous+': '+esc(result.points)+
+     ' league-recorded points. The opponent result is unavailable.':
+    'Previous-week matchup score was not found in the current source snapshot.');
+   const top=result?.players_points&&typeof result.players_points==='object'?
+    Object.entries(result.players_points).filter(([pid])=>(result.starters||[]).map(String).includes(String(pid)))
+     .filter(([,points])=>typeof Number(points)==='number'&&Number.isFinite(Number(points)))
+     .sort((a,b)=>Number(b[1])-Number(a[1])).slice(0,3):[];
+   body+=panel('Top recorded starter contributions',top.length?
+    top.map(([id,points])=>esc(pName(id))+' · '+Number(points).toFixed(2)+' pts').join(' · ')+
+    '. League-recorded scoring, pending independent reconciliation.':
+    'Player-specific final contribution data has not been certified or published.');
+   body+=panel('Next-week opportunities',shortages.length?'Depth areas worth scouting: '+
+    esc(shortages.join(' · '))+'. '+link('market','Explore replacement options')+'.':
+    link('market','Research upgrades and waiver replacements')+
+    '. Use Player Intel to compare usage trends before changing starters.');
   }
-  const rosterTime=source?.checked_at||own?.checked_at||null;
   body+='<details class="pfo62-source"><summary>Data freshness & limitations</summary>'+
-   '<p>Roster: '+html(rosterTime||'timestamp unavailable')+
-   ' · Independent model coverage: '+available.length+'/'+estimates.length+
-   '. Status and score sources can lag; no missing evidence is interpreted as a healthy player or zero points.</p></details>';
+   '<p>Roster snapshot: '+esc(snapshot?.checked_at||index?.snapshotAt||'unverified')+
+   '. Independent estimates: '+measured.length+'/'+values.length+
+   '. Fantasy tags are not official game-day inactive reports. Historical score certification is still incomplete.</p></details>';
   host.innerHTML=body;
-  host.querySelectorAll('[data-pfo62-go]').forEach(x=>x.addEventListener('click',event=>{
+  host.querySelectorAll('[data-pfo62-go]').forEach(anchor=>anchor.addEventListener('click',event=>{
    event.preventDefault();
-   const page=x.dataset.pfo62Go;
+   const page=anchor.dataset.pfo62Go;
    document.querySelector('nav button[data-page="'+page+'"]')?.click();
    if(page==='roster')document.querySelector('[data-pfo59-team-tab="news"]')?.click();
   }));
  }
- function init(){
-  if(typeof renderBriefing==='function'){renderBriefing=brief;brief();}
- }
+ function init(){if(typeof renderBriefing==='function'){renderBriefing=brief;brief();}}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

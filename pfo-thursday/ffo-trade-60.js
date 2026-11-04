@@ -8,6 +8,7 @@
  const facts={give:{search:'',position:'ALL'},take:{search:'',position:'ALL'}};
  let model=null,last=null;
  const cash={weSend:0,theySend:0,ourVerifiedBalance:'',theirVerifiedBalance:''};
+ let horizon='WEEK';
  const label={'ownership_snapshot_stale_or_undated':'Sleeper ownership refresh overdue',
  'ffl_rule_feed_not_ready':'FFL scoring rules not yet verified',
  'selected_player_projections_incomplete':'One or more selected players lack an independent FFL model estimate',
@@ -131,14 +132,25 @@
     });
     return '<div>• <b>'+esc(p.name||id)+'</b>: '+esc(rows.join(' · '))+'</div>';
    }).join(''):'<div>Verified NFL fixtures or league playoff weeks unavailable.</div>';
+  const horizonTabs='<div class="pfo63-horizons">'+[['WEEK','This week'],['ROS','Rest of season'],['PLAYOFFS','Playoffs']].map(([key,label])=>
+   '<button type="button" data-pfo60-horizon="'+key+'" aria-pressed="'+(horizon===key)+'">'+label+'</button>').join('')+'</div>';
+  const horizonText=horizon==='WEEK'?
+   (r.starterDelta.ours!==null&&r.starterDelta.theirs!==null?
+    'Conditional lineup comparison · our starters '+number(r.starterDelta.ours)+' PPG · their starters '+number(r.starterDelta.theirs)+' PPG.':
+    'Current-week starter differential withheld until complete eligible-player estimates and roster cuts are verified.'):
+   horizon==='ROS'?
+    'Rest-of-season differential withheld. Repeated baseline PPG is not an opponent-specific forecast. Verified weekly projections and backtesting are pending.':
+    'Fantasy-playoff differential withheld. Verified Weeks 15–17 fixtures below are schedule context, not certified performance projections.';
   return '<div class="pfo60-title"><span>Conditional FFL model · research only</span></div>'+
    '<div class="pfo60-headline"><strong>'+esc(r.headline)+'</strong><small>'+
     'Read-only research · no verified acceptance odds or auto-offers</small></div>'+
    '<div class="pfo60-kpis">'+
-    tile('Package net PPG',number(r.packageNetPPG),'Not starter gain')+
+    tile('Asset package PPG gap',number(r.packageNetPPG),'NOT lineup impact')+
     tile('Our starter impact',number(r.starterDelta.ours),clearNow?'Lineup-aware research':'Withheld until complete')+
     tile('Their starter impact',number(r.starterDelta.theirs),clearNow?'Lineup-aware research':'Withheld until complete')+
     tile('Input coverage',flags,'Forecast ≠ certified score')+'</div>'+
+   '<div class="pfo60-section-head"><b>Time horizon</b><small>Only sourced period-specific differences are displayed</small></div>'+
+   horizonTabs+'<div class="pfo63-horizon-text">'+esc(horizonText)+'</div>'+
    '<div class="pfo60-section-head"><b>Trade package</b><small>Current Sleeper ownership</small></div>'+
    '<div class="pfo60-assets"><section><strong>Dirty Birds give</strong>'+ctx.give.map(id=>asset(id,'SEND')).join('')+
     '</section><section><strong>Dirty Birds receive</strong>'+ctx.take.map(id=>asset(id,'GET')).join('')+'</section></div>'+
@@ -273,6 +285,8 @@
     btn=>btn.setAttribute('aria-pressed',String(btn===pos)));
    filter(side);return;
   }
+  const choice=ev.target.closest('[data-pfo60-horizon]');
+  if(choice){horizon=choice.dataset.pfo60Horizon;evaluate();return;}
   if(ev.target.closest('[data-pfo60-recalculate]')){evaluate();return}
   if(ev.target.closest('[data-pfo60-copy]')){
    const txt=draft();if(!txt)return;

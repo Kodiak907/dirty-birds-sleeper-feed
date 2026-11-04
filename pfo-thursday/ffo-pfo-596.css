@@ -23,3 +23,14 @@
 #briefing .pfo596-brief-news a{color:var(--accent,#75c3ff)}
 #matchup .pfo52-playerrow b{white-space:nowrap}
 @media(max-width:540px){#roster .pfo596-news-row{padding:11px}#briefing.pfo596-brief .pfo51-heading{gap:6px}}
+
+/* PFO 6.3 concise grouped player news */
+.pfo63-news-filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding:7px 0 12px}
+.pfo63-news-filters button{flex:none;border:1px solid #435d70;background:#1d3144;color:#d5e4ec;border-radius:18px;padding:7px 9px;font-size:10px;cursor:pointer}
+.pfo63-news-filters button[aria-pressed="true"]{background:#315e50;color:#e6fff1;border-color:#74ab93;font-weight:800}
+.pfo63-news-filters small{font-size:9px;opacity:.75}
+.pfo63-news-story{display:grid;gap:6px}
+.pfo63-news-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pfo63-news-top>b{font-size:12px}
+.pfo63-news-top>small{font-size:10px;color:#8cccae}
+.pfo63-news-impact{display:block;border-left:2px solid #5f9e86;padding-left:8px;color:#bfd6ce;font-size:10px;line-height:1.5;margin:6px 0}

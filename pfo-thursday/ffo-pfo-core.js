@@ -713,8 +713,48 @@ function renderGamedayInactives(){
  if(verified.length)html+='<div class="gameday-subhead"><strong>Confirmed official gameday inactives</strong></div>'+rows(verified);
  if(ruledOut.length)html+='<div class="gameday-subhead"><strong>Ruled OUT before kickoff · Official NFL injury report</strong></div>'+rows(ruledOut);
  if(thirdParty.length)html+='<div class="gameday-subhead"><strong>ESPN-reported gameday inactives (not officially verified)</strong></div>'+rows(thirdParty);
+ // Overview 6.3: planning watch, distinct from verified game-day inactive/OUT counts.
+ // Show Questionable/Doubtful/Out tags and freshly placed IR only. Historical IR
+ // players remain in Injury Watch and never inflate today's inactive numbers.
+ const officialCurrentRows=currentNflSource?officialRows:[];
+ const watch=[],watchIds=new Set(used);
+ for(const p of roster){
+  const pid=String(p.player_id),same=officialCurrentRows.filter(x=>normPlayer(x.name)===normPlayer(p.name)&&
+   String(x.position||'').toUpperCase()===String(p.position||'').toUpperCase());
+  const official=same.length===1?same[0]:null;
+  const designation=String(official?.game_status||'').toUpperCase();
+  if(/^(QUESTIONABLE|DOUBTFUL)$/.test(designation)&&!watchIds.has(pid)){
+   watch.push({id:pid,p,entry:{source_url:official.source_url||'https://www.nfl.com/injuries/'},
+    label:designation+' · reported NFL injury designation (not inactive)'});
+   watchIds.add(pid);continue;
+  }
+  const fantasy=String(p.sleeper_injury_status||'').toUpperCase();
+  if(/^(QUESTIONABLE|DOUBTFUL|OUT)$/.test(fantasy)&&!watchIds.has(pid)){
+   watch.push({id:pid,p,entry:{source_url:'https://www.nfl.com/injuries/'},
+    label:fantasy+' · fantasy roster status only; current NFL report not verified'});
+   watchIds.add(pid);
+  }
+ }
+ const now=new Date(),start=new Date(now);
+ start.setHours(0,0,0,0);start.setDate(start.getDate()-((start.getDay()+5)%7));
+ const recentIR=(Array.isArray(rosterActions)?rosterActions:[]).filter(action=>
+  /PLACED[_ -]ON[_ -]IR|PLACED[_ -]ON[_ -]INJURED[_ -]RESERVE/i.test(String(action.action_code||''))&&
+  Date.parse(action.date||'')>=start.getTime()&&Date.parse(action.date||'')<=now.getTime()&&
+  /^https:\/\//i.test(String(action.source_url||'')));
+ for(const action of recentIR){
+  const matches=roster.filter(p=>normPlayer(p.name)===normPlayer(action.name));
+  if(matches.length!==1)continue;
+  const p=matches[0],pid=String(p.player_id);
+  if(watchIds.has(pid))continue;
+  watch.push({id:pid,p,entry:{source_url:action.source_url},
+   label:'NEW IR placement · dated club action '+String(action.date)});
+  watchIds.add(pid);
+ }
+ if(watch.length)html+='<div class="gameday-subhead"><strong>Planning watch · Questionable, Out and new IR</strong></div>'+
+  rows(watch)+'<p class="gameday-soft">Questionable/Doubtful are not inactive decisions. OUT roster tags without official game-week confirmation are labeled unverified; IR entries appear only when a dated placement occurred in this NFL week. See Injury Watch for complete history.</p>';
+
  if(!verified.length&&!thirdParty.length&&!ruledOut.length)html+='<div class="gameday-warning">No roster player has a confirmed inactive or explicitly verified OUT designation in the currently available reports. <b>This does NOT certify the roster as active.</b></div>';
- html+='<p class="gameday-soft"><b>Strict rule:</b> Questionable, Doubtful, Sleeper injury labels, IR tags and being in your starting lineup never count as inactive. Those belong in Injury Watch. A confirmed inactive who is also starting is flagged for action.</p>';
+ html+='<p class="gameday-soft"><b>Inactive rule:</b> Only official game-week inactive lists and verified OUT designations count as confirmed. Questionable/Doubtful, fantasy status tags and older IR placements are planning context only. A confirmed inactive who is starting is flagged for action.</p>';
  let timing=[];
  timing.push(officialCurrent?'Official submissions: '+reportAgeTime(officialInactiveEvidence.generated_at_utc):'Official submissions: pending');
  timing.push(espnCurrent?'ESPN event report: '+reportAgeTime(espnGamedayEvidence.as_of):'ESPN event report: pending');
