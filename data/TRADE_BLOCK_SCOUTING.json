@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-04T07:11:30.091819+00:00",
-  "source_snapshot_utc": "2026-11-04T07:11:19.957278+00:00",
+  "generated_at_utc": "2026-11-04T08:56:48.368254+00:00",
+  "source_snapshot_utc": "2026-11-04T08:56:36.017341+00:00",
   "source_market_as_of": "2026-11-04T03:52:54.084394+00:00",
-  "source_projection_as_of": "2026-11-04T01:40:24.464244+00:00",
+  "source_projection_as_of": "2026-11-04T07:51:29.224969+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 17658,
-  "market_screened": 5372,
+  "tested": 15822,
+  "market_screened": 4752,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -131,7 +131,7 @@
           "their_lineup_delta_ppg": 0.45,
           "value_paid_received_ratio": 1.074,
           "our_extra_cut": null,
-          "opponent_extra_cut": "Brandin Cooks",
+          "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -203,8 +203,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.33,
-          "their_lineup_delta_ppg": 0.13,
+          "our_lineup_delta_ppg": 2.35,
+          "their_lineup_delta_ppg": 0.11,
           "value_paid_received_ratio": 0.82,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -241,8 +241,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.33,
-          "their_lineup_delta_ppg": 0.13,
+          "our_lineup_delta_ppg": 2.35,
+          "their_lineup_delta_ppg": 0.11,
           "value_paid_received_ratio": 1.15,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 100
+      "candidate_count": 88
     },
     {
       "asset": "Patrick Mahomes",
@@ -362,8 +362,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.05,
-          "their_lineup_delta_ppg": 2.67,
+          "our_lineup_delta_ppg": 2.03,
+          "their_lineup_delta_ppg": 2.69,
           "value_paid_received_ratio": 0.916,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -400,8 +400,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.05,
-          "their_lineup_delta_ppg": 0.99,
+          "our_lineup_delta_ppg": 2.03,
+          "their_lineup_delta_ppg": 1.01,
           "value_paid_received_ratio": 0.984,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -410,9 +410,85 @@
             "Full-PPR external values are not FFL half-PPR prices",
             "Injuries, playoff matchups and manager intent remain unverified"
           ]
+        },
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "9997",
+              "name": "Zay Flowers",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4984",
+              "name": "Josh Allen",
+              "position": "QB"
+            },
+            {
+              "id": "6804",
+              "name": "Jordan Love",
+              "position": "QB"
+            }
+          ],
+          "opponent_roster_id": 10,
+          "opponent": "EmanAndYoMomma",
+          "our_lineup_delta_ppg": 2.54,
+          "their_lineup_delta_ppg": 0.02,
+          "value_paid_received_ratio": 0.929,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "9997",
+              "name": "Zay Flowers",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4984",
+              "name": "Josh Allen",
+              "position": "QB"
+            },
+            {
+              "id": "8134",
+              "name": "Khalil Shakir",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 10,
+          "opponent": "EmanAndYoMomma",
+          "our_lineup_delta_ppg": 2.54,
+          "their_lineup_delta_ppg": 0.02,
+          "value_paid_received_ratio": 1.072,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
         }
       ],
-      "candidate_count": 12
+      "candidate_count": 17
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."

@@ -1,15 +1,40 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-04T07:11:25.806864+00:00
-Sleeper snapshot: 2026-11-04T07:11:19.957278+00:00
+Generated: 2026-11-04T08:56:44.093218+00:00
+Sleeper snapshot: 2026-11-04T08:56:36.017341+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**12 transaction changes:** 10 completed, 0 pending/processing, 2 failed.
+
+- **NEW** · transaction `1423616080600985600` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Chig Okonkwo → Dirty Birds (#1) | FAAB bid: $7
+- **NEW** · transaction `1423496826652266496` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Devin Singletary → JA’MARRTRIX (#7) | FAAB bid: $0
+- **NEW** · transaction `1423496729000480768` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Mike Washington Jr. → JA’MARRTRIX (#7) | FAAB bid: $0
+- **NEW** · transaction `1423496502541631488` · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Emmett Johnson → JA’MARRTRIX (#7) | FAAB bid: $0
+- **NEW** · transaction `1423465995753807872` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | Dropped: Washington Commanders → CREAM MACHINE  (#2) | FAAB bid: $15
+- **NEW** · transaction `1423465812966096896` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Devin Singletary → CREAM MACHINE  (#2) | Dropped: Emanuel Wilson → CREAM MACHINE  (#2) | FAAB bid: $0
+- **NEW** · transaction `1423465715062640640` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Malik Willis → CREAM MACHINE  (#2) | FAAB bid: $4
+- **NEW** · transaction `1423423457051279360` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
+- **NEW** · transaction `1423386526284312576` · WAIVER · COMPLETE · To Infinity and Bijan (#9) | Added: Mike Washington Jr. → To Infinity and Bijan (#9) | Dropped: Kendrick Bourne → To Infinity and Bijan (#9) | FAAB bid: $0
+- **NEW** · transaction `1423378939971141632` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
+- **NEW** · transaction `1423378263178219520` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
+- **NEW** · transaction `1423377943647756288` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · To Infinity and Bijan (#9) | Added: Mike Washington Jr. → To Infinity and Bijan (#9) | Dropped: Kendrick Bourne → To Infinity and Bijan (#9) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Malik Willis → CREAM MACHINE  (#2) | FAAB bid: $4
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Devin Singletary → CREAM MACHINE  (#2) | Dropped: Emanuel Wilson → CREAM MACHINE  (#2) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | Dropped: Washington Commanders → CREAM MACHINE  (#2) | FAAB bid: $15
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Emmett Johnson → JA’MARRTRIX (#7) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Mike Washington Jr. → JA’MARRTRIX (#7) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Devin Singletary → JA’MARRTRIX (#7) | FAAB bid: $0
+- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Chig Okonkwo → Dirty Birds (#1) | FAAB bid: $7
 - 2026-11-03T22:43:45.650507+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
 - 2026-11-03T02:52:16.964045+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
 - 2026-11-03T01:59:43.199950+00:00 · new_transaction · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Dropped: MarShawn Lloyd → Cokerthestroker (#12)
@@ -23,18 +48,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
 - 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | Dropped: Konata Mumpfield → JA’MARRTRIX (#7)
-- 2026-10-28T17:45:46.892245+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Jacksonville Jaguars →     Victorious Secret (#5) | Dropped: Cleveland Browns →     Victorious Secret (#5)
-- 2026-10-28T14:55:09.670380+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Cam Little → suck my dickerson (#11) | Dropped: Deebo Samuel Sr. → suck my dickerson (#11)
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Caleb Douglas → Dirty Birds (#1) | Dropped: DeMario Douglas → Dirty Birds (#1) | FAAB bid: $26
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Devin Singletary → Cokerthestroker (#12) | Dropped: Kalif Raymond → Cokerthestroker (#12) | FAAB bid: $8
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Cincinnati Bengals → DeeboSix0 (#8) | Dropped: New York Jets → DeeboSix0 (#8) | FAAB bid: $10
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Rachaad White → DeeboSix0 (#8) | FAAB bid: $5
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Rachaad White → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jacoby Brissett → CREAM MACHINE  (#2) | Dropped: Baker Mayfield → CREAM MACHINE  (#2) | FAAB bid: $0
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Cincinnati Bengals → CREAM MACHINE  (#2) | FAAB bid: $0
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Rachaad White → CREAM MACHINE  (#2) | FAAB bid: $0
-- 2026-10-28T07:58:25.550828+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Jakobi Meyers → CREAM MACHINE  (#2) | Dropped: Jordan Watkins → CREAM MACHINE  (#2) | FAAB bid: $0
-- 2026-10-26T20:35:46.570564+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Antonio Williams → Dirty Birds (#1) | FAAB bid: $2
 
 ## Important limits
 

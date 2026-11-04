@@ -4,20 +4,22 @@
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
-    "missing_projection": [],
-    "ppg": 131.47,
+    "missing_projection": [
+      "Seth McGowan"
+    ],
+    "ppg": 131.56,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 20.89
+        "ppg": 21.1
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.26
+        "ppg": 17.25
       },
       {
         "id": "13345",
@@ -29,7 +31,7 @@
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 21.24
+        "ppg": 21.14
       },
       {
         "id": "8144",
@@ -59,7 +61,7 @@
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.2
+        "ppg": 12.19
       },
       {
         "id": "9997",
@@ -75,35 +77,37 @@
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-04T07:11:33.043293+00:00",
+  "generated_at_utc": "2026-11-04T08:56:52.627504+00:00",
   "hard_status_excluded": {
     "complete": true,
-    "missing_projection": [],
-    "ppg": 129.78,
+    "missing_projection": [
+      "Seth McGowan"
+    ],
+    "ppg": 129.87,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 20.89
+        "ppg": 21.1
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.26
+        "ppg": 17.25
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.2
+        "ppg": 12.19
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 21.24
+        "ppg": 21.14
       },
       {
         "id": "8144",
@@ -206,6 +210,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "13424",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Seth McGowan",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "4046",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Patrick Mahomes",
@@ -254,15 +267,6 @@
       "id": "8150",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Kyren Williams",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "8210",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Chig Okonkwo",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -318,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-04T07:11:19.957278+00:00",
-  "source_availability_generated_at_utc": "2026-11-04T07:11:31.099405+00:00",
+  "snapshot_utc": "2026-11-04T08:56:36.017341+00:00",
+  "source_availability_generated_at_utc": "2026-11-04T08:56:49.946223+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

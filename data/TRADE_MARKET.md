@@ -1,23 +1,23 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-04T07:11:25.830100+00:00
-Sleeper snapshot: 2026-11-04T07:11:19.957278+00:00
+Generated: 2026-11-04T08:56:44.130848+00:00
+Sleeper snapshot: 2026-11-04T08:56:36.017341+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
 | Team | Record | QB / RB / WR / TE | Completed trades | FAAB used |
 |---|---|---|---:|---:|
-| Dirty Birds | 5-3 | 2 / 5 / 7 / 2 | 10 | 171 |
-| CREAM MACHINE | 4-4 | 1 / 6 / 7 / 4 | 0 | 33 |
+| Dirty Birds | 5-3 | 2 / 6 / 7 / 1 | 10 | 178 |
+| CREAM MACHINE | 4-4 | 2 / 6 / 7 / 4 | 0 | 52 |
 | BigOlBoyle | 2-6 | 3 / 6 / 4 / 1 | 0 | 0 |
 | DANGER CLOSE | 3-5 | 2 / 2 / 8 / 3 | 1 | 85 |
 | Victorious Secret | 3-5 | 2 / 4 / 6 / 4 | 2 | 25 |
 | kfsn | 6-2 | 2 / 5 / 5 / 3 | 2 | 25 |
-| JA’MARRTRIX | 2-6 | 2 / 5 / 7 / 2 | 4 | 170 |
+| JA’MARRTRIX | 2-6 | 2 / 6 / 7 / 2 | 4 | 170 |
 | DeeboSix0 | 6-2 | 3 / 5 / 8 / 2 | 1 | 45 |
-| To Infinity and Bijan | 3-5 | 2 / 5 / 6 / 2 | 6 | 100 |
+| To Infinity and Bijan | 3-5 | 2 / 6 / 5 / 2 | 6 | 100 |
 | EmanAndYoMomma | 2-6 | 2 / 3 / 5 / 2 | 0 | 0 |
-| suck my dickerson | 6-2 | 2 / 4 / 4 / 2 | 1 | 0 |
+| suck my dickerson | 6-2 | 2 / 4 / 3 / 2 | 1 | 0 |
 | Cokerthestroker | 6-2 | 2 / 4 / 7 / 3 | 3 | 133 |
 
 ## Reading this board

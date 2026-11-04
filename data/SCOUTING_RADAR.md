@@ -1,9 +1,16 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-04T07:11:25.830100+00:00
-Sleeper snapshot: 2026-11-04T07:11:19.957278+00:00
+Generated: 2026-11-04T08:56:44.130848+00:00
+Sleeper snapshot: 2026-11-04T08:56:36.017341+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 6. New completed trade entries: 0.
+
+- Dirty Birds: added Seth McGowan; dropped Chig Okonkwo
+- CREAM MACHINE: added Devin Singletary, Malik Willis, Kansas City Chiefs; dropped Emanuel Wilson, Washington Commanders
+- JA’MARRTRIX: added Emmett Johnson; dropped none
+- To Infinity and Bijan: added Mike Washington Jr.; dropped Kendrick Bourne
+- suck my dickerson: added Adonai Mitchell, Gardner Minshew II, Chicago Bears; dropped Brandin Cooks, Lamar Jackson, Dontayvion Wicks
+- Cokerthestroker: added Tyler Bass; dropped Tyler Loop
 
 ## Limits
 

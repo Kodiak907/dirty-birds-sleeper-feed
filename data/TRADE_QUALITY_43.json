@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-04T07:11:29.490784+00:00",
-  "candidates_evaluated": 58578,
-  "market_matched": 7897,
+  "generated_at_utc": "2026-11-04T08:56:47.475843+00:00",
+  "candidates_evaluated": 45276,
+  "market_matched": 6083,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-04T03:52:54.084394+00:00",
-  "projection_as_of": "2026-11-04T01:40:24.464244+00:00",
+  "projection_as_of": "2026-11-04T07:51:29.224969+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -37,13 +37,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.05,
+      "our_gain": 2.03,
       "their_gain": 2.91,
       "market_paid_received_ratio": 0.95,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.646,
+      "score": 3.626,
       "not_an_approved_offer": true
     },
     {
@@ -73,13 +73,44 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.05,
+      "our_gain": 2.03,
       "their_gain": 2.91,
       "market_paid_received_ratio": 1.052,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.639,
+      "score": 3.619,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "6794",
+          "name": "Justin Jefferson",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 2.35,
+      "their_gain": 0.68,
+      "market_paid_received_ratio": 1.04,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": "Adonai Mitchell",
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.637,
       "not_an_approved_offer": true
     },
     {
@@ -104,126 +135,18 @@
           "pos": "WR"
         },
         {
-          "id": "9486",
-          "name": "Dontayvion Wicks",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 2.35,
-      "their_gain": 0.68,
-      "market_paid_received_ratio": 0.986,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.716,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "6794",
-          "name": "Justin Jefferson",
-          "pos": "WR"
-        },
-        {
-          "id": "2197",
-          "name": "Brandin Cooks",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 2.35,
-      "their_gain": 0.68,
-      "market_paid_received_ratio": 1.023,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.69,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "11583",
-          "name": "Jonathon Brooks",
-          "pos": "RB"
-        },
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 1.64,
-      "their_gain": 0.81,
-      "market_paid_received_ratio": 0.989,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.092,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR"
-        },
-        {
-          "id": "2505",
-          "name": "Darren Waller",
+          "id": "3271",
+          "name": "Tyler Higbee",
           "pos": "TE"
         }
       ],
-      "our_gain": 1.64,
-      "their_gain": 0.81,
-      "market_paid_received_ratio": 1.017,
+      "our_gain": 2.35,
+      "their_gain": 0.68,
+      "market_paid_received_ratio": 0.954,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.075,
+      "score": 2.619,
       "not_an_approved_offer": true
     }
   ],

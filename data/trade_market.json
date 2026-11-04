@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-04T07:11:25.830100+00:00",
+  "generated_at_utc": "2026-11-04T08:56:44.130848+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 171,
+      "faab_used": 178,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 911.1,
@@ -23,10 +23,10 @@
           "Kaelon Black",
           "Kyren Williams",
           "Ollie Gordon II",
+          "Seth McGowan",
           "Zach Charbonnet"
         ],
         "TE": [
-          "Chig Okonkwo",
           "Isaiah Likely"
         ],
         "WR": [
@@ -114,6 +114,10 @@
           "player": "Caleb Douglas"
         },
         {
+          "bid": 7,
+          "player": "Seth McGowan"
+        },
+        {
           "bid": 16,
           "player": "Deebo Samuel Sr."
         }
@@ -123,26 +127,27 @@
       "trades_completed": 10
     },
     {
-      "faab_used": 33,
+      "faab_used": 52,
       "id": 2,
       "manager": "vglizzy",
       "points_for": 796.46,
       "positions": {
         "DEF": [
-          "Washington Commanders"
+          "Kansas City Chiefs"
         ],
         "K": [
           "Evan McPherson"
         ],
         "QB": [
+          "Malik Willis",
           "Sam Darnold"
         ],
         "RB": [
           "Braelon Allen",
           "Breece Hall",
           "De'Von Achane",
+          "Devin Singletary",
           "Elijah Mitchell",
-          "Emanuel Wilson",
           "Jonathon Brooks"
         ],
         "TE": [
@@ -166,6 +171,14 @@
         {
           "bid": 33,
           "player": "Sam Darnold"
+        },
+        {
+          "bid": 15,
+          "player": "Kansas City Chiefs"
+        },
+        {
+          "bid": 4,
+          "player": "Malik Willis"
         }
       ],
       "team": "CREAM MACHINE",
@@ -374,6 +387,7 @@
         "RB": [
           "Cam Skattebo",
           "Christian McCaffrey",
+          "Emmett Johnson",
           "Jeremiyah Love",
           "Kenneth Walker III",
           "Kyle Monangai"
@@ -506,6 +520,7 @@
           "Alvin Kamara",
           "Bijan Robinson",
           "Brian Robinson Jr.",
+          "Mike Washington Jr.",
           "Rico Dowdle",
           "Woody Marks"
         ],
@@ -517,7 +532,6 @@
           "DeVonta Smith",
           "Garrett Wilson",
           "Jaylen Waddle",
-          "Kendrick Bourne",
           "Stefon Diggs",
           "Tetairoa McMillan"
         ]
@@ -584,6 +598,7 @@
       "points_for": 1040.76,
       "positions": {
         "DEF": [
+          "Chicago Bears",
           "Pittsburgh Steelers"
         ],
         "K": [
@@ -592,7 +607,7 @@
         ],
         "QB": [
           "Aaron Rodgers",
-          "Lamar Jackson"
+          "Gardner Minshew II"
         ],
         "RB": [
           "Ashton Jeanty",
@@ -605,8 +620,7 @@
           "Tyler Higbee"
         ],
         "WR": [
-          "Brandin Cooks",
-          "Dontayvion Wicks",
+          "Adonai Mitchell",
           "Justin Jefferson",
           "Parker Washington"
         ]
@@ -627,7 +641,7 @@
           "Denver Broncos"
         ],
         "K": [
-          "Tyler Loop"
+          "Tyler Bass"
         ],
         "QB": [
           "Bryce Young",
@@ -686,5 +700,5 @@
       "trades_completed": 3
     }
   ],
-  "source_snapshot_utc": "2026-11-04T07:11:19.957278+00:00"
+  "source_snapshot_utc": "2026-11-04T08:56:36.017341+00:00"
 }

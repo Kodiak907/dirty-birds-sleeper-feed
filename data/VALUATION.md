@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-04T07:11:25.885511+00:00
-Sleeper snapshot: 2026-11-04T07:11:19.957278+00:00
+Generated: 2026-11-04T08:56:44.192868+00:00
+Sleeper snapshot: 2026-11-04T08:56:36.017341+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -30,17 +30,17 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
 | Zach Charbonnet | RB | 4.40 | 0.55 | 1/8 |
-| Chig Okonkwo | TE | 2.20 | 0.28 | 1/8 |
+| Seth McGowan | RB | 0.00 | 0.00 | 0/8 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Cokerthestroker | 6-2 | 120.96 | 3 |
 | Dirty Birds | 5-3 | 120.65 | 10 |
-| suck my dickerson | 6-2 | 119.37 | 1 |
 | JA’MARRTRIX | 2-6 | 116.55 | 4 |
+| suck my dickerson | 6-2 | 116.48 | 1 |
+| Cokerthestroker | 6-2 | 115.08 | 3 |
 | Victorious Secret | 3-5 | 108.29 | 2 |
 | DeeboSix0 | 6-2 | 106.90 | 1 |
 | BigOlBoyle | 2-6 | 105.33 | 0 |
@@ -48,7 +48,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | To Infinity and Bijan | 3-5 | 100.89 | 6 |
 | DANGER CLOSE | 3-5 | 94.79 | 1 |
 | EmanAndYoMomma | 2-6 | 94.37 | 0 |
-| CREAM MACHINE | 4-4 | 81.56 | 0 |
+| CREAM MACHINE | 4-4 | 78.83 | 0 |
 
 ## Trade evaluation gate
 
