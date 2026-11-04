@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-03T23:40:57.214767+00:00
-Sleeper snapshot: 2026-11-03T23:40:50.975332+00:00
+Generated: 2026-11-04T00:59:55.928888+00:00
+Sleeper snapshot: 2026-11-04T00:59:52.153089+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- JA’MARRTRIX: reserve status changed
 
 ## Limits
 
