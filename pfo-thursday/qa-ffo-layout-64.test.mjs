@@ -29,3 +29,14 @@ test('Matchup tabs preserve three distinct tools and Trade Finder opens existing
  assert.match(layout,/setTrade\('lab'\)/);
  assert.doesNotMatch(layout,/fetch\(|localStorage\.setItem|Sleeper|submitTrade/);
 });
+
+test('Waiver tabs preserve existing researched pickups and manual player discovery independently',()=>{
+ const ui=read('./ffo-layout-64.js'),css=read('./ffo-layout-64.css');
+ assert.match(ui,/Suggested Pickups/);
+ assert.match(ui,/Find Your Own/);
+ assert.match(ui,/function setWaiver/);
+ assert.match(css,/data-pfo65-waiver="manual"/);
+ assert.match(css,/data-pfo65-waiver="suggested"/);
+ assert.match(css,/pfo59-waiver-board/);
+ assert.match(css,/pfo61-waiver-research/);
+});

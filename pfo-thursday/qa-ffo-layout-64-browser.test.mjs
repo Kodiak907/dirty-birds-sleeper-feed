@@ -16,7 +16,12 @@ const fixture='<!doctype html><html><head><meta name="viewport" content="width=d
  '<section id="market"><section data-pfo59-market-panel="trade"><div id="pfo61-trade-research">'+
  '<button data-pfo61-review="0">Inspect deal</button></div>'+
  '<div id="pfo59-trade-board">Existing Trade Analyzer<div id="pfo60-trade-lab">FAAB negotiation</div></div>'+
- '</section></section><script>window.ffoStartSit63={refresh:()=>{}};window.ffoMarketFinder61={notify:()=>{}};</script>'+
+ '</section><section data-pfo59-market-panel="waiver"><div class="pfo59-subhead">Waiver Command</div>'+
+ '<div id="pfo61-waiver-research"><button data-pfo61-waiver-compare="0">Suggested add/drop</button></div>'+
+ '<div class="pfo59-filters"><input id="pfo59-find" placeholder="Search names"></div>'+
+ '<div id="pfo59-waiver-board">Manual waiver board</div>'+
+ '<details class="pfo59-legacy"><summary>Waiver legacy research</summary></details></section></section>'+
+ '<script>window.ffoStartSit63={refresh:()=>{}};window.ffoMarketFinder61={notify:()=>{}};</script>'+
  '<script src="/ffo-layout-64.js"></script></body></html>';
 test('iPhone Matchup and Trade sub-tabs isolate tools and preserve bench disclosure and FAAB', {timeout:60000},async()=>{
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
@@ -33,6 +38,15 @@ test('iPhone Matchup and Trade sub-tabs isolate tools and preserve bench disclos
   await page.goto('https://pfo64.test/');
   assert.equal(await page.locator('[data-pfo64-switch="matchup"]').count(),3);
   assert.equal(await page.locator('[data-pfo64-switch="trade"]').count(),2);
+  assert.equal(await page.locator('[data-pfo64-switch="waiver"]').count(),2);
+  assert.equal(await page.locator('#pfo61-waiver-research').isVisible(),true);
+  assert.equal(await page.locator('#pfo59-waiver-board').isVisible(),false);
+  await page.locator('[data-pfo64-switch="waiver"][data-pfo64-value="manual"]').click();
+  assert.equal(await page.locator('#pfo59-waiver-board').isVisible(),true);
+  assert.equal(await page.locator('#pfo61-waiver-research').isVisible(),false);
+  assert.equal(await page.locator('#pfo59-find').isVisible(),true);
+  await page.locator('[data-pfo64-switch="waiver"][data-pfo64-value="suggested"]').click();
+  assert.equal(await page.locator('#pfo61-waiver-research').isVisible(),true);
   assert.equal(await page.locator('.pfo52-duel').isVisible(),true);
   assert.equal(await page.locator('.pfo52-lab').isVisible(),false);
   assert.equal(await page.locator('#pfo63-startsit').isVisible(),false);

@@ -77,3 +77,20 @@ test('Officially blocked and unresolved injured players are excluded from automa
  assert.ok(report.results.every(r=>
   r.give.every(p=>p.id!=='w1')&&r.take.every(p=>p.id!=='r4')));
 });
+
+test('Independent trade screens expose fair, favorable ask, and multi-player selection modes',()=>{
+ const fair=screenTradePackages({...base(),mode:'FAIR'});
+ assert.ok(fair.diagnostics.considered>0);
+ assert.ok(fair.results.every(x=>x.balanced&&x.mode==='FAIR'));
+ const fleece=screenTradePackages({...base(),mode:'FLEECE'});
+ assert.ok(fleece.results.every(x=>x.favorableToUs&&x.needs.theirs>0&&x.mode==='FLEECE'));
+ const multi=screenTradePackages({...base(),mode:'MULTI',shapeFilter:'2 for 2'});
+ assert.ok(multi.results.every(x=>x.format==='2 for 2'&&x.give.length+x.take.length>=3));
+ const incompatible=screenTradePackages({...base(),mode:'MULTI',shapeFilter:'1 for 1'});
+ assert.equal(incompatible.diagnostics.considered,0);
+ assert.equal(incompatible.results.length,0);
+});
+test('Favorable research asks make no claims about acceptance or executable transactions',()=>{
+ const report=screenTradePackages({...base(),mode:'FLEECE',preferUneven:true});
+ assert.ok(report.results.every(x=>x.acceptanceProbability===null&&x.fairnessConfidence===null&&x.researchOnly));
+});

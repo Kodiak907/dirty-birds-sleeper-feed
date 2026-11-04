@@ -4,7 +4,7 @@
 (()=>{'use strict';
  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=x=>typeof x==='number'&&Number.isFinite(x)?(x>0?'+':'')+x.toFixed(1):'—';
- const state={trade:{partner:'all',objective:'BALANCED',fairOnly:true,preferUneven:true,rows:[],diagnostics:null,
+ const state={trade:{partner:'all',objective:'BALANCED',mode:'FAIR',shape:'ANY',fairOnly:true,preferUneven:true,rows:[],diagnostics:null,
   stamp:'',pending:false,error:''},
   waiver:{position:'ALL',rows:[],reason:'',stamp:'',pending:false,error:''},
   protectedMine:[],protectedOthers:{},loadedKey:null};
@@ -21,6 +21,8 @@
     state.protectedMine=Array.isArray(data.mine)?data.mine.map(String).slice(0,35):[];
     state.protectedOthers=data.others&&typeof data.others==='object'?data.others:{};
     if(['BALANCED','QB','RB','WR','TE'].includes(data.objective))state.trade.objective=data.objective;
+    if(['FAIR','FLEECE','MULTI'].includes(data.mode))state.trade.mode=data.mode;
+    if(['ANY','1 for 1','2 for 1','1 for 2','2 for 2','3 for 1','1 for 3','3 for 2','2 for 3'].includes(data.shape))state.trade.shape=data.shape;
     if(typeof data.fairOnly==='boolean')state.trade.fairOnly=data.fairOnly;
     if(typeof data.preferUneven==='boolean')state.trade.preferUneven=data.preferUneven;
    }
@@ -29,7 +31,7 @@
  function savePrefs(){
   try{localStorage.setItem(state.loadedKey,JSON.stringify({mine:state.protectedMine,
     others:state.protectedOthers,objective:state.trade.objective,
-    fairOnly:state.trade.fairOnly,preferUneven:state.trade.preferUneven}));}catch{}
+    mode:state.trade.mode,shape:state.trade.shape,fairOnly:state.trade.fairOnly,preferUneven:state.trade.preferUneven}));}catch{}
  }
  function getEngine(){
   if(engine)return Promise.resolve(engine);
@@ -68,6 +70,15 @@
   let html='<div class="pfo61-head"><div><b>FFO Trade Finder · Screened Deals</b>'+
    '<small>Balanced needs and replacement value · no automatic offers</small></div>'+
    '<button type="button" data-pfo61-refresh="trade">Refresh</button></div>';
+  const modes=[['FAIR','Fair Offers'],['FLEECE','Fleeces'],['MULTI','Multi-Player Deals']];
+  html+='<div class="pfo65-trade-modes" role="group" aria-label="Trade Finder deal modes">'+
+   modes.map(([key,label])=>'<button type="button" data-pfo65-trade-mode="'+key+
+    '" aria-pressed="'+(s.mode===key)+'">'+label+'</button>').join('')+'</div>'+
+   '<p class="pfo65-mode-note">'+esc(s.mode==='FAIR'?
+    'Look for comparable replacement value on both sides. Balanced does not guarantee acceptance.':
+    s.mode==='FLEECE'?
+    'Explore favorable-value asks that still meet an opponent need. Ambitious does not mean likely to be accepted.':
+    'Explore 2-for-1, 1-for-2, 2-for-2 and larger packages, with roster needs screened.')+'</p>';
   html+='<div class="pfo63-controls"><label class="pfo61-picker">Trade partner<select data-pfo61-trade-partner>'+
    '<option value="all">All eligible teams</option>'+list.map(x=>'<option value="'+esc(x.id)+'"'+
    (chosen===String(x.id)?' selected':'')+'>'+esc(x.name)+'</option>').join('')+'</select></label>'+
@@ -76,10 +87,14 @@
     ['WR','Upgrade WR'],['TE','Upgrade TE']].map(([value,label])=>
     '<option value="'+value+'"'+(s.objective===value?' selected':'')+'>'+label+'</option>').join('')+
    '</select></label></div>';
-  html+='<div class="pfo63-checks"><label><input type="checkbox" data-pfo63-fair'+(s.fairOnly?' checked':'')+
-   '> Only balanced replacement-value packages</label>'+
-   '<label><input type="checkbox" data-pfo63-uneven'+(s.preferUneven?' checked':'')+
-   '> Prefer multi-player / uneven deals</label></div>';
+  const formats=[['ANY','Any package size'],['1 for 1','1 for 1'],['2 for 1','2 for 1'],
+   ['1 for 2','1 for 2'],['2 for 2','2 for 2'],['3 for 1','3 for 1'],['1 for 3','1 for 3'],
+   ['3 for 2','3 for 2'],['2 for 3','2 for 3']];
+  html+='<div class="pfo65-shape-row"><label class="pfo61-picker">Package shape<select data-pfo65-trade-shape>'+
+   formats.filter(([key])=>s.mode!=='MULTI'||key!=='1 for 1').map(([key,label])=>
+   '<option value="'+key+'"'+(s.shape===key?' selected':'')+'>'+label+'</option>').join('')+
+   '</select></label><label class="pfo65-uneven"><input type="checkbox" data-pfo63-uneven'+
+   (s.preferUneven?' checked':'')+'> Prioritize uneven 2-for-1 / 3-for-2 packages</label></div>';
   html+='<details class="pfo63-protect"><summary>Off-limits players · my team / known rival exclusions</summary>'+
    '<p class="pfo61-disclosure">These are private research exclusions, not verified manager declarations. They never update a league roster.</p>'+
    '<strong>Do not trade from my roster</strong>'+protectedPlayers(context,'mine')+
@@ -96,7 +111,7 @@
    const name=list.find(x=>String(x.id)===r.partnerId)?.name||'Roster '+r.partnerId;
    const players=rows=>rows.map(x=>esc(x.name)).join(' + ');
    return '<article class="pfo61-offer"><div class="pfo61-offer-top"><b>'+esc(name)+'</b>'+
-    '<small>'+esc(r.format)+' · '+(r.balanced?'Screened balance':'Exploratory')+'</small></div>'+
+    '<small>'+esc(r.format)+' · '+(s.mode==='FLEECE'?'Favorable-value research':r.balanced?'Screened balance':'Conditional research')+'</small></div>'+
     '<div class="pfo61-two"><div><small>WE GIVE</small><strong>'+players(r.give)+'</strong></div>'+
     '<div><small>WE GET</small><strong>'+players(r.take)+'</strong></div></div>'+
     '<div class="pfo61-meta"><span>Independent model '+esc(r.completeness)+' covered</span>'+
@@ -144,7 +159,7 @@
   mount();let context=ctx();if(!context)return;
   loadPrefs(context);
   const s=state.trade,stamp=[context.snapshotAt,context.modelVersion,context.rulesReady,s.partner,s.objective,
-   s.fairOnly,s.preferUneven,state.protectedMine.join(','),JSON.stringify(state.protectedOthers)].join('|');
+   s.mode,s.shape,s.fairOnly,s.preferUneven,state.protectedMine.join(','),JSON.stringify(state.protectedOthers)].join('|');
   if(!force&&s.stamp===stamp){if(!host('trade')?.querySelector('.pfo61-head'))tradeRender();return;}
   if(s.pending)return;
   s.pending=true;s.error='';tradeRender();
@@ -154,9 +169,9 @@
     estimate:context.estimate,ownerRosterId:context.ownerRosterId,excludedRosterIds:context.excludedRosterIds,
     starterSlots:context.slots,snapshotAt:context.snapshotAt,rulesReady:context.rulesReady,
     selectedPartnerId:s.partner==='all'?null:s.partner,objective:s.objective,
-    fairOnly:s.fairOnly,preferUneven:s.preferUneven,availability:context.availability,
+    mode:s.mode,shapeFilter:s.shape,fairOnly:s.fairOnly,preferUneven:s.preferUneven,availability:context.availability,
     protectedMine:state.protectedMine,
-    protectedByManager:state.protectedOthers,maxResults:10});
+    protectedByManager:state.protectedOthers,maxResults:12});
    s.rows=results;s.diagnostics=diagnostics;s.stamp=stamp;
   }catch(err){s.error='Screened Trade Finder unavailable; existing manual Trade Analyzer is unaffected.';
    console.warn('FFO screened finder',err);
@@ -191,6 +206,7 @@
   const t=event.target;
   if(t.matches('[data-pfo61-trade-partner]')){state.trade.partner=t.value;state.trade.stamp='';void refreshTrade(true);}
   if(t.matches('[data-pfo63-objective]')){state.trade.objective=t.value;savePrefs();void refreshTrade(true);}
+  if(t.matches('[data-pfo65-trade-shape]')){state.trade.shape=t.value;savePrefs();void refreshTrade(true);}
   if(t.matches('[data-pfo63-fair]')){state.trade.fairOnly=t.checked;savePrefs();void refreshTrade(true);}
   if(t.matches('[data-pfo63-uneven]')){state.trade.preferUneven=t.checked;savePrefs();void refreshTrade(true);}
   if(t.matches('[data-pfo63-lock]')){
@@ -207,6 +223,16 @@
   if(t.matches('[data-pfo61-waiver-position]')){state.waiver.position=t.value;void refreshWaiver(true);}
  });
  document.addEventListener('click',event=>{
+  const modeButton=event.target.closest('[data-pfo65-trade-mode]');
+  if(modeButton){
+   const next=modeButton.dataset.pfo65TradeMode;
+   if(['FAIR','FLEECE','MULTI'].includes(next)){
+    state.trade.mode=next;
+    if(next==='MULTI'&&state.trade.shape==='1 for 1')state.trade.shape='ANY';
+    savePrefs();void refreshTrade(true);
+   }
+   return;
+  }
   const button=event.target.closest('[data-pfo61-refresh],[data-pfo61-review],[data-pfo61-waiver-compare]');
   if(!button)return;
   if(button.dataset.pfo61Refresh){

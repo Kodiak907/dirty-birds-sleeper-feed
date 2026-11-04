@@ -56,7 +56,13 @@ test('Trade Finder and Waiver Decision Desk open and run fast on mobile without 
    assert.ok(box.actual<=box.available+2,'Horizontal overflow: '+JSON.stringify(box));
   }
   assert.ok(await page.locator('[data-pfo63-objective]').count()>0);
-  assert.ok(await page.locator('[data-pfo63-fair]').count()>0);
+  assert.equal(await page.locator('[data-pfo65-trade-mode]').count(),3);
+  assert.ok(await page.locator('[data-pfo65-trade-shape]').count()>0);
+  await page.locator('[data-pfo65-trade-mode="FLEECE"]').click();
+  await page.waitForFunction(()=>document.querySelector('[data-pfo65-trade-mode="FLEECE"]')?.getAttribute('aria-pressed')==='true');
+  await page.locator('[data-pfo65-trade-mode="MULTI"]').click();
+  await page.waitForFunction(()=>document.querySelector('[data-pfo65-trade-mode="MULTI"]')?.getAttribute('aria-pressed')==='true');
+  await page.locator('[data-pfo65-trade-mode="FAIR"]').click();
   assert.ok(await page.locator('.pfo63-protect').count()>0);
   const candidates=await page.locator('[data-pfo61-review]').count();
   if(candidates){

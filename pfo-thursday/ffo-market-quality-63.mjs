@@ -63,7 +63,7 @@ function replacementBaselines(rosters,names,estimate,slots){
 export function screenTradePackages({
  rosters=[],names={},estimate=()=>null,ownerRosterId='1',excludedRosterIds=['3'],
  starterSlots=[],snapshotAt=null,rulesReady=false,selectedPartnerId=null,
- maxResults=10,objective='BALANCED',fairOnly=true,preferUneven=false,
+ maxResults=10,objective='BALANCED',fairOnly=true,preferUneven=false,mode=null,shapeFilter='ANY',
  protectedMine=[],protectedByManager={},availability=null
 }={}){
  const empty={results:[],diagnostics:{priced:0,considered:0,reason:'not_checked'}};
@@ -72,6 +72,9 @@ export function screenTradePackages({
  const trusted=rulesReady===true&&fresh(snapshotAt);
  if(!trusted)return {...empty,diagnostics:{priced:0,considered:0,reason:'independent_model_or_roster_snapshot_not_ready'}};
  const objectivePos=['QB','RB','WR','TE'].includes(objective)?objective:null;
+ const selectedMode=['FAIR','FLEECE','MULTI'].includes(mode)?mode:null;
+ const allowedShapes=new Set(['1 for 1','2 for 1','1 for 2','2 for 2','3 for 1','1 for 3','3 for 2','2 for 3']);
+ const requestedShape=allowedShapes.has(shapeFilter)?shapeFilter:'ANY';
  const exclude=new Set([id(ownerRosterId),...excludedRosterIds.map(id)]);
  const allowed=rosters.filter(r=>!exclude.has(id(r.roster_id))&&(!selectedPartnerId||id(r.roster_id)===id(selectedPartnerId)));
  const min=minimum(starterSlots),target=targets(min),baselines=replacementBaselines(rosters,names,estimate,starterSlots);
@@ -88,6 +91,8 @@ export function screenTradePackages({
   const useTheirs=theirs.filter(x=>finite(x.ppg)&&!['K','DEF'].includes(x.position));
   const shapes=[[1,1],[2,1],[1,2],[2,2],[3,1],[1,3],[3,2],[2,3]];
   for(const [a,b] of shapes){
+   if(requestedShape!=='ANY'&&requestedShape!==a+' for '+b)continue;
+   if(selectedMode==='MULTI'&&a+b<3)continue;
    const gs=combinations(useOurs.slice(0,10),a,a===1?10:40);
    const ts=combinations(useTheirs.slice(0,10),b,b===1?10:40);
    for(const give of gs)for(const take of ts){
@@ -113,19 +118,33 @@ export function screenTradePackages({
     // Replacements can be below zero, so compare absolute VOR differences too.
     const gap=Math.abs(value.in-value.out),scale=Math.max(3,Math.abs(value.in),Math.abs(value.out));
     const balanced=gap/scale<=0.26&&(!Number.isFinite(ratio)||ratio>=0.65&&ratio<=1.45);
-    if(fairOnly&&!balanced)continue;
-    // Every result must have a concrete trade rationale, never a fabricated win %.
-    const score=needUs*8+needThem*8+(balanced?8:0)+(objectivePos&&upgrade?6:0)-
-      Math.min(25,gap)*2-Math.max(0,a+b-2)*1.5+(preferUneven&&a!==b?4:0);
+    // Fleeces are favorable-value research asks, not acceptance odds.
+    // Their deficit remains bounded and must address an actual depth need.
+    const favorable=value.in-value.out;
+    const fleece=favorable>=Math.max(1.5,scale*0.12)&&
+      favorable<=Math.max(5,scale*0.42)&&needThem>0&&needUs>=0&&
+      (a+b<=4||needUs>0);
+    if(selectedMode==='FAIR'&&!balanced)continue;
+    if(selectedMode==='FLEECE'&&!fleece)continue;
+    if(selectedMode==='MULTI'&&!balanced&&!(favorable>0&&favorable<=Math.max(3,scale*.24)&&needThem>0))continue;
+    if(!selectedMode&&fairOnly&&!balanced)continue;
+    const modeBonus=selectedMode==='FLEECE'?Math.min(12,favorable*2):
+      selectedMode==='MULTI'&&a+b>=3?5:0;
+    // Separate score from acceptance claims; pure depth/PPG value is provisional.
+    const score=needUs*8+needThem*8+(balanced?8:0)+(objectivePos&&upgrade?6:0)+modeBonus-
+      Math.min(25,gap)*(selectedMode==='FLEECE' ? 0.65 : 2)-Math.max(0,a+b-2)*1.5+
+      (preferUneven&&a!==b?4:0);
     if(score<0)continue;
     results.push({partnerId:id(other.roster_id),give,take,format:a+' for '+b,
      outgoingPPG:round(give.reduce((s,x)=>s+x.ppg,0)),
      incomingPPG:round(take.reduce((s,x)=>s+x.ppg,0)),
      completeness:(a+b)+'/'+(a+b),needs:{ours:needUs,theirs:needThem},
-     rationale:(needUs>0?'Fills our depth need':'Position-upgrade research')+'; '+
-       (needThem>0?'addresses their shortage':'does not add their depth'),
+     rationale:(selectedMode==='FLEECE'?'Favorable replacement-value ask; their interest is not known. ':
+       selectedMode==='MULTI'?'Multi-player deal with several roster consequences. ':'')+
+       (needUs>0?'Improves our depth; ':'Our position upgrade or package fit; ')+
+       (needThem>0?'addresses their shortage.':'their benefit depends on lineup valuation.'),
      replacementValueGap:round(value.in-value.out),
-     priority:score,balanced,healthFlag:false,researchOnly:true,
+     priority:score,balanced,favorableToUs:favorable>0,mode:selectedMode||'LEGACY',healthFlag:false,researchOnly:true,
      acceptanceProbability:null,fairnessConfidence:null,
      warning:'Conditional replacement-value screening; starting impact requires complete lineup coverage'});
    }

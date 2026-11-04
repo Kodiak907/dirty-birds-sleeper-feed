@@ -43,8 +43,8 @@ test('Overview removes duplicate tracker and news cards and retains standings, r
  assert.match(page,/id="league-standings"/);
  assert.match(html,/id="gamecast"/);
  assert.match(html,/id="availability"/);
- assert.match(read('./ffo-pfo-59.js'),/Club &amp; Role Updates/);
- assert.match(read('./ffo-pfo-59.js'),/id="pfo51-changes"/);
+ assert.doesNotMatch(read('./ffo-pfo-59.js'),/Club &amp; Role Updates|pfo51-changes-card|id="pfo50-gameday-watch"/);
+ assert.match(read('./ffo-pfo-59.js'),/id="pfo59-team-news"/);
  assert.match(html,/ffo-availability-62\.js/);
  assert.match(html,/ffo-overview-62\.js/);
 });

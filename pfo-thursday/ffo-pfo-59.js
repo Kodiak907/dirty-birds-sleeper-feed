@@ -556,7 +556,7 @@
   for(const b of h.querySelectorAll('[data-pfo59-team-tab]'))b.setAttribute('aria-selected',String(b.dataset.pfo59TeamTab===tab));
   for(const p of h.querySelectorAll('[data-pfo59-team-panel]'))p.hidden=p.dataset.pfo59TeamPanel!==tab;
   if(tab==='schedule')void loadSchedule();
-  if(tab==='news'){teamNewsRender();if(typeof pfo51RenderChanges==='function')pfo51RenderChanges();if(typeof pfo50RenderGameday==='function')pfo50RenderGameday();}
+  if(tab==='news')teamNewsRender();
  }
  function mountRoster(){
   const root=$('roster');if(!root||$('pfo59-team-hub'))return;
@@ -571,11 +571,9 @@
    '<section data-pfo59-team-panel="roster"></section>'+
    '<section data-pfo59-team-panel="schedule" hidden><div class="card pfo59-schedule" id="pfo59-schedule"><h2>Team HQ · FFL Schedule</h2><p>Loading published matchups…</p></div></section>'+
 
-   '<section data-pfo59-team-panel="news" hidden><div class="card" id="pfo59-team-news"></div>'+'<div class="card pfo51-changes-card" id="pfo51-changes"><p class="muted">Checking sourced changes…</p></div>'+'<div class="card pfo50-gameday"><div class="pfo49-row"><div><h2>Club &amp; Role Updates</h2><p class="pfo49-small">Dated team announcements and measured player usage</p></div><button class="pfo49-pin" type="button" id="pfo50-gameday-refresh">Refresh Intel</button></div><div id="pfo50-gameday-watch" aria-live="polite"></div></div></section>';
+   '<section data-pfo59-team-panel="news" hidden><div class="card" id="pfo59-team-news"></div></section>';
   root.prepend(hub);
   for(const n of rosterNodes)hub.querySelector('[data-pfo59-team-panel="roster"]').appendChild(n);
-  const intelRefresh=$('pfo50-gameday-refresh');
-  intelRefresh?.addEventListener('click',()=>{if(typeof pfo50LoadGameday==='function')void pfo50LoadGameday(true)});
   hub.addEventListener('click',ev=>{
    const tab=ev.target.closest('[data-pfo59-team-tab]');if(tab){teamTab(tab.dataset.pfo59TeamTab);return;}
    const go=ev.target.closest('[data-pfo59-team-page]');if(go){document.querySelector('nav button[data-page="'+go.dataset.pfo59TeamPage+'"]')?.click();return;}
