@@ -3130,6 +3130,111 @@
         "warnings": [
           "Partial projection coverage"
         ]
+      },
+      {
+        "bench_depth_delta_ppg": -5.015,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.774,
+          "before_ppg": 126.774,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Elijah Mitchell",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Brandon Aiyuk",
+            "drop_id": "6803",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.774,
+            "before_ppg": 126.774,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "7561",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "RB",
+        "projection_ppg": 1.092,
+        "team": "PHI",
+        "warnings": [
+          "Partial projection coverage"
+        ]
       }
     ],
     "TE": [
@@ -5543,7 +5648,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-04T18:56:25.441363+00:00",
+  "generated_at_utc": "2026-11-04T19:57:47.773826+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5551,6 +5656,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-04T18:56:19.127199+00:00",
+  "sleeper_snapshot_utc": "2026-11-04T19:57:39.393854+00:00",
   "source_projection_date": "2026-11-04T13:44:46.533150+00:00"
 }

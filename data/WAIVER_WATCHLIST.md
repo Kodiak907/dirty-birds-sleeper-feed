@@ -1,14 +1,14 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-04T18:56:25.193636+00:00
-Sleeper snapshot: 2026-11-04T18:56:19.127199+00:00
+Generated: 2026-11-04T19:57:47.558003+00:00
+Sleeper snapshot: 2026-11-04T19:57:39.393854+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
-| QB | 329 |
-| RB | 628 |
+| QB | 328 |
+| RB | 629 |
 | WR | 1292 |
 | TE | 614 |
 | K | 139 |
@@ -37,6 +37,7 @@ Sleeper snapshot: 2026-11-04T18:56:19.127199+00:00
 | 8 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
 | 9 | Zonovan Knight | ARI | 1.41 | 89% | 39.7% | Not flagged |
 | 10 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
+| 11 | Elijah Mitchell | PHI | 1.09 | 89% | 39.0% | Not flagged |
 
 ### WR
 
@@ -124,7 +125,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **38**
+Candidates with independently sourced projections AND usage data: **39**
 
 ## Coverage and rules
 

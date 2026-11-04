@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-04T18:56:24.965174+00:00
-Sleeper snapshot: 2026-11-04T18:56:19.127199+00:00
+Generated: 2026-11-04T19:57:47.424051+00:00
+Sleeper snapshot: 2026-11-04T19:57:39.393854+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1423783609818460160` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Drew Lock → CREAM MACHINE  (#2) | Dropped: Elijah Mitchell → CREAM MACHINE  (#2)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-04T19:57:47.424051+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Drew Lock → CREAM MACHINE  (#2) | Dropped: Elijah Mitchell → CREAM MACHINE  (#2)
 - 2026-11-04T15:55:51.650866+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: AJ Barner → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Washington Commanders → CREAM MACHINE  (#2) | Dropped: Tennessee Titans → CREAM MACHINE  (#2)
 - 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Elijah Mitchell → CREAM MACHINE  (#2) | Dropped: Dameon Pierce → CREAM MACHINE  (#2)
-- 2026-10-28T21:41:29.412255+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Jake Ferguson → CREAM MACHINE  (#2) | Dropped: Rashid Shaheed → CREAM MACHINE  (#2)
 
 ## Important limits
 

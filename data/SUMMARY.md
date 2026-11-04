@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-04T18:56:19.127199+00:00
+Updated: 2026-11-04T19:57:39.393854+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,8 +19,10 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- lineup_change â roster/transaction 1
-- lineup_change â roster/transaction 7
+- Roster 2: added Drew Lock; dropped Elijah Mitchell
+- lineup_change â roster/transaction 2
+- lineup_change â roster/transaction 10
+- Transaction 1423783609818460160: free_agent / complete / rosters [2] / adds {'5854': 2} / drops {'7561': 2} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

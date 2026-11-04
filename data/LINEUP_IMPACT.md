@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-04T18:56:25.441363+00:00
+Generated: 2026-11-04T19:57:47.773826+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections and injury status require manual verification.
@@ -26,6 +26,7 @@ Baseline illustrative optimal PPG: **126.77**. Weeks with partial projections an
 | 8 | Jaleel McLaughlin | 1.53 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.58 | Partial projection coverage |
 | 9 | Zonovan Knight | 1.41 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.70 | Partial projection coverage |
 | 10 | Emanuel Wilson | 1.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.77 | Partial projection coverage |
+| 11 | Elijah Mitchell | 1.09 | Bench-depth scenario: Caleb Douglas | +0.00 | -5.01 | Partial projection coverage |
 
 ## WR
 

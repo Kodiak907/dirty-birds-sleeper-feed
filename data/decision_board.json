@@ -25,7 +25,7 @@
       "ppg": 6.107
     }
   },
-  "generated_at_utc": "2026-11-04T18:56:25.353232+00:00",
+  "generated_at_utc": "2026-11-04T19:57:47.684775+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -710,6 +710,28 @@
         "screen_only": true,
         "sleeper_id": "11435",
         "team": "SEA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 7.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 39.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 5.0
+        },
+        "name": "Elijah Mitchell",
+        "ppg": 1.09,
+        "replacement_reference": {
+          "name": "Kaelon Black",
+          "ppg": 4.686
+        },
+        "same_position_uplift_ppg": -3.59,
+        "screen_only": true,
+        "sleeper_id": "7561",
+        "team": "PHI"
       }
     ],
     "TE": [
@@ -1313,5 +1335,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-04T18:56:19.127199+00:00"
+  "snapshot_utc": "2026-11-04T19:57:39.393854+00:00"
 }

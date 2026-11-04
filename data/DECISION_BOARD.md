@@ -26,6 +26,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 8 | Jaleel McLaughlin | 1.53 | -3.16 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
 | 9 | Zonovan Knight | 1.41 | -3.27 | 39.7% | — | carries_missing |
 | 10 | Emanuel Wilson | 1.34 | -3.35 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
+| 11 | Elijah Mitchell | 1.09 | -3.59 | 39.0% | Carries 7.0 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Caleb Douglas (6.11 PPG)
 

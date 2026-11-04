@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-04T18:56:25.138636+00:00",
+  "generated_at_utc": "2026-11-04T19:57:47.504639+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -1068,6 +1068,26 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "5854",
+          "n_weeks": 8,
+          "name": "Drew Lock",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "QB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 38.5,
           "actual_points_weekly_avg": 4.81,
           "id": "5927",
@@ -1125,26 +1145,6 @@
             0.0,
             0.0,
             0.0
-          ]
-        },
-        {
-          "actual_points_total": 5.7,
-          "actual_points_weekly_avg": 0.71,
-          "id": "7561",
-          "n_weeks": 8,
-          "name": "Elijah Mitchell",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            5.7
           ]
         },
         {
@@ -1393,6 +1393,26 @@
               0.0,
               0.0
             ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "5854",
+            "n_weeks": 8,
+            "name": "Drew Lock",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "QB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "RB": [
@@ -1474,26 +1494,6 @@
               0.0,
               0.0,
               0.0
-            ]
-          },
-          {
-            "actual_points_total": 5.7,
-            "actual_points_weekly_avg": 0.71,
-            "id": "7561",
-            "n_weeks": 8,
-            "name": "Elijah Mitchell",
-            "nonzero_weeks": 1,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              5.7
             ]
           },
           {
@@ -9627,6 +9627,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-04T18:56:19.127199+00:00",
+  "snapshot_utc": "2026-11-04T19:57:39.393854+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-8"
 }
