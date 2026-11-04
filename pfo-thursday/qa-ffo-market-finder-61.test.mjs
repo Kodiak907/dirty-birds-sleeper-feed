@@ -48,15 +48,18 @@ test('Waiver board only proposes ownership-filtered players and non-automatic re
  {id:'w1',name:'Rostered player',position:'WR',modelPPG:30},
  {id:'q5',name:'Unneeded QB',position:'QB',team:'GB',modelPPG:21},
  {id:'w6',name:'IR wideout',position:'WR',team:'GB',injury_status:'IR',modelPPG:18}];
- const a=findWaiverResearch({roster:rosters[0],names,unrostered:available,
-  estimate:id=>value[id]??null,starterSlots:slots,
+ const stockedRoster={...rosters[0],players:[...rosters[0].players,'q6']};
+ const stockedNames={...names,q6:{name:'Existing backup QB',position:'QB',team:'GB'}};
+ const model=id=>id==='q6'?19:value[id]??null;
+ const a=findWaiverResearch({roster:stockedRoster,names:stockedNames,unrostered:available,
+  estimate:model,starterSlots:slots,
   snapshotAt:new Date().toISOString(),rulesReady:true});
  assert.equal(a.length,1);
  assert.equal(a[0].id,'w5');
  assert.ok(a[0].dropOptions.some(x=>x.id==='r3'));
  assert.equal(a[0].faabRecommendation,null);
- const explicitQBs=findWaiverResearch({roster:rosters[0],names,unrostered:available,
-  estimate:id=>value[id]??null,starterSlots:slots,position:'QB',
+ const explicitQBs=findWaiverResearch({roster:stockedRoster,names:stockedNames,unrostered:available,
+  estimate:model,starterSlots:slots,position:'QB',
   snapshotAt:new Date().toISOString(),rulesReady:true});
  assert.ok(explicitQBs.some(x=>x.id==='q5'),'Explicit QB research remains available');
 });
