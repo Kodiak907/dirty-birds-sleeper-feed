@@ -44,3 +44,18 @@
 #pfo60-trade-lab .pfo60-actions{display:flex;gap:7px;flex-wrap:wrap;padding-top:8px}
 #pfo60-trade-lab .pfo60-actions button{flex:1;min-width:130px;border-radius:8px;border:1px solid #4b796f;background:#195043;color:#f0fff9;font-size:11px;font-weight:750;padding:10px 7px;cursor:pointer}
 @media (max-width:360px){#pfo60-trade-lab{padding:7px}#pfo60-trade-lab .pfo60-kpi b{font-size:15px}#pfo60-trade-lab .pfo60-assets>section{padding:5px}}
+
+/* Conditional before-and-after starter movement; compact two-column iPhone layout. */
+#pfo60-trade-lab .pfo60-lineup-sections{display:grid;gap:8px;margin:8px 0}
+#pfo60-trade-lab .pfo60-lineup-sections>section{min-width:0;border:1px solid #355369;border-radius:8px;padding:7px}
+#pfo60-trade-lab .pfo60-lineup-heading{display:flex;justify-content:space-between;align-items:baseline;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+#pfo60-trade-lab .pfo60-lineup-heading b{font-size:11px}
+#pfo60-trade-lab .pfo60-lineup-heading small{font-size:9px;color:#c4dbd1}
+#pfo60-trade-lab .pfo60-lineup-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+#pfo60-trade-lab .pfo60-lineup-side{min-width:0;display:grid;align-content:start;gap:3px}
+#pfo60-trade-lab .pfo60-lineup-side>small{font-size:9px;font-weight:800;color:#a9c3d2}
+#pfo60-trade-lab .pfo60-lineup-row{min-width:0;border:1px solid #293f50;border-radius:5px;padding:4px 5px;display:grid;grid-template-columns:25px minmax(0,1fr);column-gap:3px;align-content:start}
+#pfo60-trade-lab .pfo60-lineup-row>span{font-size:8px;font-weight:800;color:#9cb8c9;padding-top:1px}
+#pfo60-trade-lab .pfo60-lineup-row>b{font-size:10px;font-weight:650;line-height:1.25;overflow-wrap:anywhere}
+#pfo60-trade-lab .pfo60-lineup-row>small{grid-column:2;font-size:8px;color:#b3e7c9;line-height:1.25}
+#pfo60-trade-lab .pfo60-lineup-change{border-color:#4b7666;background:#17382f}

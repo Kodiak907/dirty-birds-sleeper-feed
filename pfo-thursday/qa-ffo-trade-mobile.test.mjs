@@ -69,6 +69,12 @@ test('Mobile Trade Intelligence is compact, searchable, FFL-specific and source-
   const result=await page.evaluate(()=>window.ffoTrade60.getLastResult());
   assert.equal(result.starterDelta.ours,1);
   assert.equal(result.starterDelta.theirs,-1);
+  await page.locator('[data-pfo60-lineups] summary').click();
+  const movement=await page.locator('[data-pfo60-lineups]').innerText();
+  assert.match(movement,/Before.*after starters/i);
+  assert.match(movement,/Acquired starter/);
+  assert.match(movement,/Traded away/);
+  assert.equal(await page.locator('.pfo60-lineup-sections>section').count(),2);
   await page.locator('[data-pfo60-faab] summary').click();
   await page.locator('[data-pfo60-cash="weSend"]').fill('15');
   await page.locator('[data-pfo60-cash="weSend"]').dispatchEvent('change');
@@ -76,8 +82,11 @@ test('Mobile Trade Intelligence is compact, searchable, FFL-specific and source-
   assert.equal(cash.faab.weSend,15);
   assert.equal(cash.packageNetPPG,1);
   assert.ok(cash.issues.includes('our_faab_balance_unconfirmed'));
+  await page.locator('[data-pfo60-search="give"]').fill('Sample q1');
   await page.evaluate(()=>window.ffoTrade60.clear());
   assert.equal(await page.evaluate(()=>window.ffoTrade60.getLastResult()),null);
+  assert.equal(await page.locator('[data-pfo60-search="give"]').inputValue(),'');
+  assert.equal(await page.locator('[data-pfo60-position="ALL"][data-pfo60-side="take"]').getAttribute('aria-pressed'),'true');
   assert.deepEqual(errors,[]);
  }finally{await browser.close()}
 });

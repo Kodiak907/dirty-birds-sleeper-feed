@@ -58,6 +58,45 @@
   }
   const counter=wrapper.querySelector('.pfo60-count');if(counter)counter.textContent=visible+' / '+rows.length+' players';
  }
+
+ function starterMovement(ctx,r){
+  const ready=Number.isFinite(r.starterDelta?.ours)&&Number.isFinite(r.starterDelta?.theirs)&&
+   ['ours','theirs'].every(side=>r.before?.[side]?.status==='conditional'&&
+    r.after?.[side]?.status==='conditional'&&Array.isArray(r.before[side].starters)&&
+    Array.isArray(r.after[side].starters));
+  if(!ready)return '<details class="pfo60-fold" data-pfo60-lineups><summary>Before/after starters · withheld</summary>'+
+   '<div class="pfo60-warnings">Lineup changes require complete eligible-player estimates, current Sleeper ownership, verified FFL rules and resolved roster cuts. Missing evidence is not zero.</div></details>';
+  const roster=(side,title)=>{
+   const prior=r.before[side].starters,next=r.after[side].starters;
+   const beforeIds=new Set(prior.map(p=>String(p.id))),afterIds=new Set(next.map(p=>String(p.id)));
+   const received=new Set((side==='ours'?ctx.take:ctx.give).map(String));
+   const sent=new Set((side==='ours'?ctx.give:ctx.take).map(String));
+   const slotOrder=(ctx.slots||[]).map(x=>String(x).toUpperCase().replace('D/ST','DEF'));
+   const lineup=(items,isAfter)=>{
+    const sorted=[...items].sort((a,b)=>{
+     const ai=slotOrder.indexOf(a.slot),bi=slotOrder.indexOf(b.slot);
+     return (ai<0?99:ai)-(bi<0?99:bi)||String(a.slot).localeCompare(String(b.slot))||
+      String(a.id).localeCompare(String(b.id));
+    });
+    return '<div class="pfo60-lineup-side"><small>'+(isAfter?'AFTER':'BEFORE')+'</small>'+
+     sorted.map(p=>{
+      const id=String(p.id),changed=isAfter?!beforeIds.has(id):!afterIds.has(id);
+      const changeLabel=!changed?'':isAfter?(received.has(id)?'Acquired starter':'Promoted from bench'):
+       (sent.has(id)?'Traded away':'Moves to bench');
+      return '<div class="pfo60-lineup-row'+(changed?' pfo60-lineup-change':'')+'">'+
+       '<span>'+esc(p.slot)+'</span><b>'+esc(ctx.names?.[id]?.name||id)+'</b>'+
+       (changeLabel?'<small>'+esc(changeLabel)+'</small>':'')+'</div>';
+     }).join('')+'</div>';
+   };
+   return '<section><div class="pfo60-lineup-heading"><b>'+esc(title)+'</b>'+
+    '<small>'+number(r.starterDelta[side])+' modeled starter PPG</small></div>'+
+    '<div class="pfo60-lineup-cols">'+lineup(prior,false)+lineup(next,true)+'</div></section>';
+  };
+  return '<details class="pfo60-fold" data-pfo60-lineups><summary>Before → after starters · conditional</summary>'+
+   '<div class="pfo60-lineup-sections">'+roster('ours','Dirty Birds')+
+   roster('theirs',ctx.managerName||'Trade partner')+'</div>'+
+   '<small>Lineup optimization is conditional research, not a submitted lineup or a certified future prediction. Trade and bench movements are distinguished by Sleeper roster ownership.</small></details>';
+ }
  function makeReport(ctx,r){
   const tile=(label,value,desc)=>'<div class="pfo60-kpi"><span>'+esc(label)+'</span>'+
    '<b>'+esc(value)+'</b><small>'+esc(desc)+'</small></div>';
@@ -108,7 +147,7 @@
     '<div><b>'+esc(ctx.managerName)+'</b><div class="pfo60-chips">'+
     delta(r.depthBefore.theirs,r.depthAfter.theirs)+'</div><small>Net slots '+
     (r.rosterChange.theirs>0?'+':'')+r.rosterChange.theirs+' · possible cuts '+
-    cut(r.rosterCuts.theirs)+'</small></div></div>'+
+    cut(r.rosterCuts.theirs)+'</small></div></div>'+starterMovement(ctx,r)+
    '<details class="pfo60-fold" data-pfo60-schedule><summary>Late-season fixtures · '+(lateWeeks.length?'W'+lateWeeks[0]+'–'+lateWeeks[lateWeeks.length-1]:'weeks unverified')+'</summary>'+
    '<div class="pfo60-warnings">'+scheduleNotes+
    '<div>• Future opponent strength is NOT inferred from the schedule alone.</div></div></details>'+
@@ -189,6 +228,13 @@
   last=null;Object.assign(cash,{weSend:0,theySend:0,ourVerifiedBalance:'',theirVerifiedBalance:''});
   facts.give={search:'',position:'ALL'};facts.take={search:'',position:'ALL'};
   reset();
+  for(const side of ['give','take']){
+   const root=$('[data-pfo60-side="'+side+'"].pfo60-compact-filter');
+   const search=root?.querySelector('[data-pfo60-search]');if(search)search.value='';
+   root?.querySelectorAll('[data-pfo60-position]').forEach(button=>
+    button.setAttribute('aria-pressed',String(button.dataset.pfo60Position==='ALL')));
+   filter(side);
+  }
  }
  function draft(){
   if(!last)return '';
