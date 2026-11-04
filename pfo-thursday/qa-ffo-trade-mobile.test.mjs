@@ -60,7 +60,9 @@ test('Mobile Trade Intelligence is compact, searchable, FFL-specific and source-
   assert.equal(await page.locator('[data-pfo59-side="give"]:visible').count(),1);
   await page.locator('[data-pfo60-search="give"]').fill('');
   await page.locator('[data-pfo60-position="RB"][data-pfo60-side="take"]').click();
-  assert.equal(await page.locator('[data-pfo59-side="take"]:visible').count(),3);
+  // Selected assets stay visible even when filtered to another position.
+  assert.equal(await page.locator('[data-pfo59-side="take"]:visible').count(),4);
+  assert.equal(await page.locator('[data-pfo59-pick="w3"]:visible').count(),1);
   await page.evaluate(()=>window.ffoTrade60.analyze());
   assert.match(await page.locator('#pfo60-trade-report').innerText(),/Our starter impact/);
   assert.match(await page.locator('#pfo60-trade-report').innerText(),/Their starter impact/);
