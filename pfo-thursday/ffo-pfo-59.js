@@ -592,6 +592,8 @@
    snapshotAt:state.snap?.fetched_at_utc||null,
    ourRoster:(state.snap?.rosters?.find(r=>String(r.roster_id)==='1')?.players||[]).map(String),
    theirRoster:(state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager)?.players||[]).map(String),
+   ourReserve:(state.snap?.rosters?.find(r=>String(r.roster_id)==='1')?.reserve||[]).map(String),
+   theirReserve:(state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager)?.reserve||[]).map(String),
    names:state.names||{},slots:state.snap?.league?.roster_positions||[],
    // Source-limited, pre-certification model values; NOT validated forecasts.
    estimate:id=>{
@@ -601,7 +603,7 @@
     return Number.isFinite(x?.project)?x.project:null;
    },
    rulesReady:window.ffoPfo597?.hasFrozenRules?.()===true,
-   rosterCap:state.snap?.league?.settings?.max_roster_size??null
+   rosterCap:Array.isArray(state.snap?.league?.roster_positions)?state.snap.league.roster_positions.length:null
   }),
   refreshCurrent:(rulesChanged=false)=>{
    if(rulesChanged){tradeEstimateCache.clear();state.scoredCache=null;state.scoredRef=null;}
