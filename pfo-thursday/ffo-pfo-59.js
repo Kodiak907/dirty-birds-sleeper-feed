@@ -296,6 +296,7 @@
       (ideas.length?ideas.slice(0,12).map(x=>'<div class="pfo59-scenario"><b>Give '+safe((x.give||[]).map(p=>p.name).join(' + '))+'</b><span>Receive '+safe((x.receive||[]).map(p=>p.name).join(' + '))+'</span><small>Dirty Birds '+safe(Number(x.dirty_birds_delta_ppg||0).toFixed(1))+' PPG · other side '+safe(Number(x.opponent_delta_ppg||0).toFixed(1))+' PPG</small></div>').join(''):'<p>No validated scenarios in this published report.</p>')+
     '</details>'
     :'<p class="pfo59-foot">Choose any trade-eligible FFL manager above. BigOlBoyle remains visible for scouting intelligence but cannot be used for proposed trades.</p>');
+  window.ffoTrade60?.render?.();
  }
  async function loadHistoricalScores(){
   if(state.history)return state.history;
@@ -387,7 +388,7 @@
    const p=ev.target.closest('[data-pfo59-player]');if(p){window.ffoQuickView?.open?.(p.dataset.pfo59Player);return;}
    const partner=ev.target.closest('[data-pfo59-partner]');if(partner){
     const id=partner.dataset.pfo59Partner;if(id==='3')return;
-    state.manager=id;state.tradeTake=[];state.tradeGive=[];managerOptions();trade();
+    state.manager=id;state.tradeTake=[];state.tradeGive=[];managerOptions();trade();window.ffoTrade60?.reset?.();
     // Do not synchronously rebuild the old Trade Laboratory when a partner is tapped.
     // Selected players are synchronized only when Coach requests Analyze.
     return;
@@ -397,6 +398,7 @@
     const side=pick.dataset.pfo59Side,id=pick.dataset.pfo59Pick,arr=side==='give'?state.tradeGive:state.tradeTake;
     if(!['give','take'].includes(side))return;
     if(arr.includes(id))arr.splice(arr.indexOf(id),1);else if(arr.length<3)arr.push(id);
+    window.ffoTrade60?.reset?.();
     // Update only selected rows and the analysis bar; rebuilding both roster trees
     // on every tap was blocking mobile input during data refreshes.
     nav.querySelectorAll('[data-pfo59-pick]').forEach(node=>{
@@ -411,7 +413,7 @@
    }
    if(ev.target.closest('[data-pfo59-clear]')){
     // Clear resets the entire trade comparison, including the opponent.
-    state.tradeGive=[];state.tradeTake=[];state.manager='1';
+    state.tradeGive=[];state.tradeTake=[];state.manager='1';window.ffoTrade60?.clear?.();
     window.ffoPfo597?.clearEvaluation?.();
     // Clear any previously saved hypothetical package WITHOUT invoking heavy legacy redraw.
     try{
@@ -436,6 +438,7 @@
    }
    if(ev.target.closest('[data-pfo59-compare]')){
     if(!state.tradeGive.length||!state.tradeTake.length||state.manager==='3')return;
+    window.ffoTrade60?.analyze?.();
     try{
      const x=tb48State();x.opponent=state.manager;x.give=[...state.tradeGive];x.take=[...state.tradeTake];tb45Save();
      const fold=$('trade-fold');if(fold){fold.open=true;fold.scrollIntoView({behavior:'instant',block:'start'});}
@@ -448,7 +451,7 @@
   nav.addEventListener('change',ev=>{
    if(ev.target.id==='pfo59-position'){state.position=ev.target.value;waiver()}
    if(ev.target.id==='pfo59-waiver-manager'){state.waiverManager=ev.target.value;managerOptions();waiver()}
-   if(ev.target.id==='pfo59-trade-manager'){const id=ev.target.value;if(id!=='3'){state.manager=id;state.tradeGive=[];state.tradeTake=[];managerOptions();trade()}}
+   if(ev.target.id==='pfo59-trade-manager'){const id=ev.target.value;if(id!=='3'){state.manager=id;state.tradeGive=[];state.tradeTake=[];managerOptions();trade();window.ffoTrade60?.reset?.()}}
   });
   let searchTimer=0;
   nav.addEventListener('input',ev=>{if(ev.target.id==='pfo59-find'){
@@ -581,6 +584,23 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  window.ffoPfo59={openMarket:marketView,refreshAdvisory:loadAdvisory,
+  tradeContext:()=>({
+   manager:state.manager,managerName:teamName(state.manager),
+   give:[...state.tradeGive],take:[...state.tradeTake],
+   snapshotAt:state.snap?.fetched_at_utc||null,
+   ourRoster:(state.snap?.rosters?.find(r=>String(r.roster_id)==='1')?.players||[]).map(String),
+   theirRoster:(state.snap?.rosters?.find(r=>String(r.roster_id)===state.manager)?.players||[]).map(String),
+   names:state.names||{},slots:state.snap?.league?.roster_positions||[],
+   // Source-limited, pre-certification model values; NOT validated forecasts.
+   estimate:id=>{
+    const p=state.names?.[String(id)];
+    if(!p)return null;
+    const x=scoreInfo({id:String(id),name:p.name,team:p.team});
+    return Number.isFinite(x?.project)?x.project:null;
+   },
+   rulesReady:window.ffoPfo597?.hasFrozenRules?.()===true,
+   rosterCap:state.snap?.league?.settings?.max_roster_size??null
+  }),
   refreshCurrent:(rulesChanged=false)=>{
    if(rulesChanged){tradeEstimateCache.clear();state.scoredCache=null;state.scoredRef=null;}
    if(!document.querySelector('#market.page.active'))return;
