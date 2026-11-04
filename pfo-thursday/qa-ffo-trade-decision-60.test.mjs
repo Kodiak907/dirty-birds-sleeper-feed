@@ -95,6 +95,16 @@ test('A flagged injury is shown for review, not treated as an actual verified in
  assert.equal(result.health[0].status,'QUESTIONABLE');
  assert.equal(result.outgoingPPG,10);
 });
+test('IR/reserve roster players do not occupy active starter slots or create fictitious roster cuts',()=>{
+ const p=base();
+ p.ourRoster=[...ours,'rIR'];p.ourReserve=['rIR'];
+ p.playerIndex={...playerIndex,rIR:{name:'Reserved RB',position:'RB',team:'GB',ppg:45,injury:'IR'}};
+ const result=evaluateFFLTrade(p);
+ assert.equal(result.starterDelta.ours,1);
+ assert.equal(result.rosterCuts.ours,0);
+ assert.ok(result.reserveExcludedFromStarting.ours.includes('rIR'));
+ assert.equal(result.before.ours.points,78);
+});
 test('Unknown roster cap cannot certify cuts, and unknown starter positions withhold lineup totals',()=>{
  const p=base();p.rosterCap=null;
  const uncertain=evaluateFFLTrade(p);
