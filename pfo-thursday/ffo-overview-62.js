@@ -72,7 +72,10 @@
    '. Status and score sources can lag; no missing evidence is interpreted as a healthy player or zero points.</p></details>';
   host.innerHTML=body;
   host.querySelectorAll('[data-pfo62-go]').forEach(x=>x.addEventListener('click',event=>{
-   event.preventDefault();document.querySelector('nav button[data-page="'+x.dataset.pfo62Go+'"]')?.click();
+   event.preventDefault();
+   const page=x.dataset.pfo62Go;
+   document.querySelector('nav button[data-page="'+page+'"]')?.click();
+   if(page==='roster')document.querySelector('[data-pfo59-team-tab="news"]')?.click();
   }));
  }
  function init(){

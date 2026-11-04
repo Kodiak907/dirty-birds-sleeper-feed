@@ -48,7 +48,7 @@
      '<div class="pfo61-two"><div><small>WE GIVE</small><strong>'+players(r.give)+'</strong></div>'+
      '<div><small>WE RECEIVE</small><strong>'+players(r.take)+'</strong></div></div>'+
      '<div class="pfo61-meta"><span>Model coverage '+esc(r.completeness)+'</span>'+
-     '<span>Both team needs '+esc(r.needs.ours)+' / '+esc(r.needs.theirs)+'</span>'+
+     '<span>Depth-fit signals · us '+esc(r.needs.ours)+' / them '+esc(r.needs.theirs)+'</span>'+
      '<span>Package model '+(complete?dollar(r.incomingPPG-r.outgoingPPG)+' PPG':'withheld')+'</span></div>'+
      (r.healthFlag?'<small class="pfo61-alert">Injury designation: check current source</small>':'')+
      '<button type="button" data-pfo61-review="'+i+'">Open in Trade Analyzer</button></article>';
