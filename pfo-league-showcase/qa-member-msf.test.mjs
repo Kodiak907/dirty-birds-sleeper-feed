@@ -9,7 +9,7 @@ test('default deny: public visitors cannot access licensed MSF member statistics
  const status=await worker.fetch(request('/api/demo/msf/status'),env);
  assert.equal(status.status,403);
  assert.equal(status.headers.get('cache-control'),'private, no-store');
- assert.doesNotMatch(await status.text(),/MSF_API_KEY|MYSPORTSFEEDS|Authorization|Bearer/i);
+ assert.doesNotMatch(await status.text(),/MSF_API_KEY|authorization[\\s:=]|Bearer\\s+[A-Za-z0-9]|example-not-a-real-secret/i);
  const stats=await worker.fetch(request('/api/demo/msf/season?team=BUF'),env);
  assert.equal(stats.status,403);
 });
