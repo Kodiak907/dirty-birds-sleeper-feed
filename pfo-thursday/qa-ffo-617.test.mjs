@@ -22,7 +22,7 @@ test('licensed player game logs gateway is decoded while denial remains unavaila
  assert.throws(()=>unwrap({data:null},'PLAYER_GAMELOGS'),/SCHEMA_UNRECOGNIZED/);
 });
 test('protected defense and game log routes both unwrap licensed gateway payloads',()=>{
- assert.match(worker,/ffo617UnwrapProvider\(await response\.json\(\),'TEAM_DEFENSE'\)/);
+ assert.match(worker,/ffo617UnwrapProvider\(JSON\.parse\(raw\),'TEAM_DEFENSE'\)/);
  assert.match(worker,/ffo617UnwrapProvider\(await response\.json\(\),'PLAYER_GAMELOGS'\)/);
  assert.match(worker,/comIdentity\(req,env\)/);
 });
