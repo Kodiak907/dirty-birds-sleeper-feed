@@ -238,7 +238,10 @@ function matchup(){
    stat(usageA.usage??'—',usageA.label)+stat(usageB.usage??'—',usageB.label)+'</div>'+
    '<div class="pfo-demo-insight"><b>Scouting verdict</b><p>'+esc(aPts===bPts?'Both players carry the same demonstration projection.':(aPts>bPts?a.name:b.name)+' has the higher example projection by '+money(Math.abs(delta))+' points.')+
    ' Verify health and matchup context before making real decisions.</p></div>'+
-   '<button type="button" class="button primary" data-startsit-lab>Compare both in Lineup Lab</button>'+labeledDemoNote();
+   '<div class="pfo-demo-market-controls"><button type="button" class="button primary" data-demo-decision="a">Log start: Player A</button>'+
+ '<button type="button" class="button" data-demo-decision="b">Log start: Player B</button></div>'+
+ (state.coachNotice?'<div class="pfo-demo-context">'+esc(state.coachNotice)+'</div>':'')+
+ '<button type="button" class="button primary" data-startsit-lab>Compare both in Lineup Lab</button>'+labeledDemoNote();
  }else{
   const selected=state.labSlots,labTotal=lineupScore(selected),legal=selected.every((id,i)=>id&&eligible(slots[i],position(id)))&&new Set(selected).size===slots.length;
   content='<div class="pfo-demo-premium-head"><h3>Interactive Lineup Lab</h3><small>Test your own starter combinations · never submits</small></div>'+
@@ -412,6 +415,19 @@ document.addEventListener('click',event=>{
  if(event.target.closest('[data-lab-best]')){const opt=optimizedLineup();if(opt.ids){state.labSlots=opt.ids.slice();state.labError='';}else state.labError='Best lineup unavailable: '+opt.reason;matchup();return}
  if(event.target.closest('[data-lab-reset]')){state.labSlots=own.starters.slice();state.labError='';matchup();return}
  if(event.target.closest('[data-startsit-lab]')){state.labSlots=own.starters.slice();state.labError='';state.matchmode='lab';matchup();return}
+
+ const decision=event.target.closest('[data-demo-decision]');
+ if(decision){
+  const chosen=decision.dataset.demoDecision==='a'?state.startSitA:state.startSitB;
+  const other=chosen===state.startSitA?state.startSitB:state.startSitA;
+  const actual=projection(chosen),alternative=projection(other);
+  state.coachLog.push({week:state.week,started:identity(chosen).name,sat:identity(other).name,
+   startedPoints:actual,satPoints:alternative,modelAligned:actual>=alternative});
+  state.coachNotice='Sample decision saved to Coaching Review · '+(actual>=alternative?'model agreed':'higher-risk model disagreement');
+  matchup();return;
+ }
+ if(event.target.closest('[data-coach-go]')){state.matchmode='startsit';view('matchup');return}
+ if(event.target.closest('[data-clear-coach]')){state.coachLog=[];state.coachNotice='';coaching();return}
  const marketMode=event.target.closest('[data-marketmode]');if(marketMode){state.market=marketMode.dataset.marketmode;market();return}
  const radarFilter=event.target.closest('[data-radar]');if(radarFilter){state.radarPos=radarFilter.dataset.radar;radar();return}
  const watch=event.target.closest('[data-watch]');if(watch){const id=watch.dataset.watch;state.watch.has(id)?state.watch.delete(id):state.watch.add(id);market();return}
@@ -425,7 +441,7 @@ document.addEventListener('click',event=>{
  if(event.target.id==='demo-ask'){state.question=$('demo-question').value.trim();ask();return}
  if(event.target.id==='demo-player-clear'){state.search='';state.selected='';playerhub();return}
  if(event.target.id==='demo-reset'){
-  state.week=9;state.market='trade';state.matchmode='starters';state.give=[];state.take=[];state.sendFaab=0;state.recvFaab=0;state.add='';state.drop='';state.claims=[];state.watch.clear();state.selected=own.starters[0];state.search='';
+  state.week=9;state.market='trade';state.matchmode='starters';state.give=[];state.take=[];state.sendFaab=0;state.recvFaab=0;state.add='';state.drop='';state.claims=[];state.watch.clear();state.selected=own.starters[0];state.search='';state.coachLog=[];state.coachNotice='';state.simResult=null;state.simBoost=0;state.simVolatility=16;state.labSlots=own.starters.slice();state.teamView='submitted';state.matchView='submitted';
   $('demo-week').value='9';render();return;
  }
 });
@@ -439,6 +455,8 @@ document.addEventListener('change',event=>{
   else{state.labSlots[i]=chosen;state.labError='';}
   matchup();return;
  }
+ if(t.id==='demo-sim-vol'){state.simVolatility=Number(t.value);state.simResult=null;championship();return}
+ if(t.id==='demo-sim-strength'){state.simBoost=Number(t.value);state.simResult=null;championship();return}
  if(t.id==='demo-start-a'){state.startSitA=t.value;matchup();return}
  if(t.id==='demo-start-b'){state.startSitB=t.value;matchup();return}
  if(t.id==='demo-scout-pos'){state.scoutPos=t.value;scouting();return}
