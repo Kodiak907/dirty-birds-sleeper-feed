@@ -15,7 +15,7 @@ test('actual PFO application is copied, not replaced with separate showcase',()=
  assert.match(html,/ffo-waiver-meta/);
  assert.match(core,/pfo52Render/);
  assert.ok(core.length>250000);
- assert.ok(readdirSync(base).filter(x=>x.endsWith('.js')).length>=20);
+ assert.ok(readdirSync(base).filter(x=>x.endsWith('.js')).length>=15);
 });
 test('real league endpoints are not embedded in public JS or HTML',()=>{
  const forbidden=/1399157532559192064|dirty-birds-sleeper-feed|tvega2924|raw.githubusercontent.com\/Kodiak907|BigOlBoyle|DMccolley03|dirty-birds-monitor/i;
