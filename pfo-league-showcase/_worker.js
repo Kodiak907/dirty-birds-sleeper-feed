@@ -9,7 +9,7 @@ const LIMIT=5000000, cache=new Map();
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{
  'content-type':'application/json; charset=utf-8','cache-control':'private, no-store',
  'x-content-type-options':'nosniff','referrer-policy':'no-referrer',
- 'x-frame-options':'DENY','access-control-allow-origin':'null'}});
+ 'x-frame-options':'DENY'}});
 const base64url=txt=>{const value=String(txt).replace(/-/g,'+').replace(/_/g,'/');
  return Uint8Array.from(atob(value.padEnd(Math.ceil(value.length/4)*4,'=')),c=>c.charCodeAt(0));};
 const parse64=txt=>JSON.parse(new TextDecoder().decode(base64url(txt)));
