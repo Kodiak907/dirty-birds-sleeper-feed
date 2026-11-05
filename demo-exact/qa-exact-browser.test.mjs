@@ -82,3 +82,43 @@ test('weekly matchup and market are original navigable PFO workspaces',async()=>
  await page.evaluate(()=>document.querySelector('#nav button[data-page=commissioner]')?.click());
  assert.match(await page.locator('#commissioner').innerText(),/COMMISSIONER SYSTEM LOCKED/);
 });
+
+test('original PFO best-projected lineup is an operating switch, not a dead demo label',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav [data-page="matchup"]')?.click());
+ await page.locator('[data-pfo53-mode="optimal"]').first().waitFor({timeout:22000});
+ await page.locator('[data-pfo53-mode="optimal"]').first().click();
+ await page.waitForTimeout(150);
+ assert.equal(await page.locator('[data-pfo53-mode="optimal"]').first().getAttribute('aria-pressed'),'true');
+ assert.match(await page.locator('#matchup').innerText(),/Best projected/i);
+ await page.locator('[data-pfo53-mode="submitted"]').first().click();
+ assert.equal(await page.locator('[data-pfo53-mode="submitted"]').first().getAttribute('aria-pressed'),'true');
+});
+test('original PFO Start/Sit compares two real NFL names from sample team',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav [data-page="matchup"]')?.click());
+ await page.locator('[data-pfo64-switch="matchup"][data-pfo64-value="startsit"]').click();
+ await page.locator('#pfo63-startsit [data-pfo63-compare="first"]').waitFor({timeout:16000});
+ assert.equal(await page.locator('#pfo63-startsit select[data-pfo63-compare]').count(),2);
+ await page.locator('#pfo63-startsit #pfo66-compare-output .pfo63-compare-players').waitFor({timeout:12000});
+ const first=await page.locator('#pfo66-compare-output').innerText();
+ assert.match(first,/Josh Allen|Jahmyr Gibbs|Puka Nacua|Lamar Jackson/);
+ const selector=page.locator('#pfo63-startsit [data-pfo63-compare="second"]');
+ await selector.selectOption({index:2});
+ await page.locator('#pfo63-startsit #pfo66-compare-output .pfo63-compare-players').waitFor({timeout:12000});
+ assert.match(await page.locator('#pfo66-compare-output').innerText(),/FFL baseline/i);
+});
+test('original PFO Trade Command opens a DIFFERENT demo manager roster',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav [data-page="market"]')?.click());
+ await page.locator('[data-pfo59-market="trade"]').first().click();
+ await page.locator('#pfo59-trade-board [data-pfo59-partner="2"]').waitFor({timeout:20000});
+ await page.locator('#pfo59-trade-board [data-pfo59-partner="2"]').click();
+ const give=page.locator('#pfo59-trade-board [data-pfo59-side="give"]');
+ const take=page.locator('#pfo59-trade-board [data-pfo59-side="take"]');
+ assert.ok(await give.count()>=10);
+ assert.ok(await take.count()>=10);
+ await give.first().click();
+ await take.first().click();
+ const btn=page.locator('#pfo59-trade-board [data-pfo59-compare]');
+ assert.equal(await btn.isDisabled(),false);
+ await btn.click();
+ assert.match(await page.locator('#pfo59-trade-board').innerText(),/FFO|model|projected|analysis/i);
+});
