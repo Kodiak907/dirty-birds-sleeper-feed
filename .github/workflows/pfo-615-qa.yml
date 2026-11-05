@@ -1,0 +1,28 @@
+name: PFO 6.15 isolated operations repair QA
+on:
+  push:
+    branches:
+      - pfo-615-operational-repairs-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax and PFO 6.15 new regression contracts
+        run: |
+          node --test pfo-thursday/qa-ffo-615.test.mjs
+      - name: Existing MSF, market, historical, projection, trade, and interface regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-614-video.test.mjs pfo-thursday/qa-ffo-613-video.test.mjs pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs
+      - name: Responsive mobile behavior and route tests
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
