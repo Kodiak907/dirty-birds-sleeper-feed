@@ -59,6 +59,60 @@ write('AVAILABILITY_INTELLIGENCE.json',{source:'PFO DEMO',dirty_birds_watch:[],g
 write('GAMEDAY_DECISION.json',{source:'PFO DEMO',third_party_inactive_source_status:'Demo data only',generated_at_utc:stamp});
 write('ACTIONABLE_GM_BOARD.json',{source:'PFO DEMO',recommendations:[],generated_at_utc:stamp});
 write('DECISION_BACKTEST.json',{source:'PFO DEMO',decisions:[],generated_at_utc:stamp});
+
+/* These are the ancillary JSON feeds consumed by the UNCHANGED PFO research
+ * panels. No privately generated trade research, injury notes or manager
+ * decisions from the real league are copied. */
+const demoOwned=new Set(rosters.flatMap(r=>r.players.map(String)));
+const sampleWaivers=sample.waivers.map(idOf).filter(id=>names[id]&&!demoOwned.has(id)).slice(0,35);
+const demoPerson=id=>({id:String(id),name:names[id].name,pos:names[id].position,team:names[id].team,
+ projected_ppg:points(id,WEEK)});
+write('TRADE_IDEAS.json',{source:'PFO DEMO',generated_at_utc:stamp,suggestions:[],
+ model:'Original PFO trade evaluator uses fictional 12-team rosters; no offers sent.',
+ warnings:['No real FFL trade proposals included']});
+write('trade_market.json',{source:'PFO DEMO',generated_at_utc:stamp,
+ note:'Fictional profiles for demo trade research; no actual manager intelligence.',
+ profiles:rosters.map((r,i)=>({id:r.roster_id,manager:teamsList[i],
+  record:r.settings.wins+'-'+r.settings.losses,faab_used:r.settings.waiver_budget_used,
+  points_for:r.settings.fpts+r.settings.fpts_decimal/100,
+  positions:Object.fromEntries(['QB','RB','WR','TE','K','DEF'].map(pos=>[pos,
+   r.players.filter(id=>names[id]?.position===pos).map(id=>names[id].name)])),
+  successful_paid_waivers:[]}))});
+write('WAIVER_CATALYSTS.json',{schema_version:1,source:'PFO DEMO',last_curated_at_utc:stamp,catalysts:[],
+ method:'No fabricated injury news or coach quotes in public demonstration'});
+write('MARKET_OFFER_GUIDE.json',{source:'PFO DEMO',generated_at_utc:stamp,
+ source_as_of:stamp,market_baseline:'Synthetic illustration, not paid market quotes',
+ qualified_top_five:[],priced_candidates:0,no_automatic_trade_offers:true});
+write('AUTOMATED_WAIVER_SCOUTING.json',{source:'PFO DEMO',generated_at_utc:stamp,
+ candidate_count:sampleWaivers.length,news_status:'not_connected',
+ candidates:sampleWaivers.map(id=>({...demoPerson(id),position:names[id].position,
+  id,source_player_id:id,snap_share_pct:null,news:[],signals:[]})),
+ limitations:['Sample ownership; no verified role, depth chart or injury updates']});
+write('TRADE_QUALITY_43.json',{source:'PFO DEMO',generated_at_utc:stamp,
+ candidates_evaluated:0,qualified:[],market_matched:0,
+ limitations:['No actual external market price or manager acceptance probabilities']});
+write('TRADE_BLOCK_SCOUTING.json',{source:'PFO DEMO',generated_at_utc:stamp,tested:0,
+ market_screened:0,focus_assets:['Josh Allen','CeeDee Lamb','Breece Hall'].map(name=>{
+  const id=rosters[0].players.find(id=>names[id]?.name===name);
+  return {id,name};}),reports:[]});
+write('NFL_ROSTER_ACTIONS.json',{schema_version:1,source:'PFO DEMO',reviewed_at_utc:stamp,
+ records:[],warning:'No official current NFL player-status claims are bundled with demo fantasy ownership.'});
+write('external_metrics.json',{source:'PFO DEMO',as_of:stamp,
+ data_status:{player_stats:'synthetic_only',advanced_receiving:'not_verified',advanced_rushing:'not_verified',injuries:'not_verified'},
+ players:Object.fromEntries(Object.entries(names).filter(([id,p])=>p.team&&p.position).map(([id,p])=>[id,{
+  name:p.name,team:p.team,position:p.position,nfl_team:p.team,
+  targets_per_game:['WR','TE'].includes(p.position)?Math.round(points(id,WEEK)*.56*100)/100:null,
+  receptions_per_game:['WR','TE'].includes(p.position)?Math.round(points(id,WEEK)*.32*100)/100:null,
+  carries_per_game:p.position==='RB'?Math.round(points(id,WEEK)*.8*100)/100:null,
+  snap_share_pct:['QB','RB','WR','TE'].includes(p.position)?68+(id.length*3%25):null
+ }]))});
+write('market_values.json',{source:'PFO DEMO',as_of:stamp,attribution:'illustrative example valuations; not third-party pricing',
+ players:Object.fromEntries(Object.entries(names).filter(([id,p])=>p.team&&p.position)
+  .map(([id,p])=>[id,{name:p.name,position:p.position,value:Math.round(points(id,WEEK)*3*100)/100}]))});
+write('CHAMPIONSHIP_SIMULATION.json',{source:'PFO DEMO',generated_at_utc:stamp,
+ limitations:['Illustrative fantasy league with fictional standings'],teams:[]});
+write('AVAILABILITY_STATE.json',{source:'PFO DEMO',generated_at_utc:stamp,players:[],warnings:['No real injury determination']});
+
 writeFileSync(join(dataDir,'WAIVER_WATCHLIST.md'),'# PFO DEMO\n\nSample league only. No private transactions or data.\n');
 function model(id,p){
  const v=points(id,WEEK),pos=p.position;
