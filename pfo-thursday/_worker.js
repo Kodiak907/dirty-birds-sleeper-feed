@@ -610,18 +610,25 @@ function ffo598NormalizeSeason(payload,checkedAt){
   projection_method:'MSF-reported season totals divided by sourced games played (no last-three trends)',
   players_count:players.length,players};
 }
-let ffo598SeasonCache=null,ffo598SeasonPending=null;
+const ffo598SeasonCache=new Map(),ffo598SeasonPending=new Map();
+const ffo598NFLTeams=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WAS'.split(' '));
 async function ffo598SeasonRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
  try{await comIdentity(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
- const now=Date.now();
- if(ffo598SeasonCache&&now-ffo598SeasonCache.at<90000)return ffoReply(ffo598SeasonCache.data);
- if(ffo598SeasonPending)return ffoReply(await ffo598SeasonPending);
- ffo598SeasonPending=(async()=>{
+ const team=new URL(req.url).searchParams.get('team')?.toUpperCase()||null;
+ if(team&&!ffo598NFLTeams.has(team))return ffoReply({error:'invalid_nfl_team'},400);
+ const key=team||'ALL',now=Date.now(),cached=ffo598SeasonCache.get(key);
+ if(cached&&now-cached.at<90000)return ffoReply(cached.data);
+ if(ffo598SeasonPending.has(key))return ffoReply(await ffo598SeasonPending.get(key));
+ const load=(async()=>{
   // Season statistics must be available independently of the GameCast enable
   // switch; this remains protected by the same verified Cloudflare Access identity.
   if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,error:'licensed_provider_not_configured',checked_at:new Date().toISOString()};
-  const endpoint=MSF_ROOT+'/2026-regular/player_stats_totals.json';
+  // Team-scoped requests are a bounded fallback when the league-wide season
+  // payload is too large. Filtering occurs again after parsing, never trusting
+  // a provider query filter alone.
+  const endpoint=MSF_ROOT+'/2026-regular/player_stats_totals.json'+
+   (team?'?team='+encodeURIComponent(team):'');
   let upstream;
   try{
    // Prefer direct licensed MSF credentials when configured; do not route
@@ -648,12 +655,19 @@ async function ffo598SeasonRoute(req,env){
    const payload=Array.isArray(json?.playerStatsTotals)?json:json?.data;
    if(!Array.isArray(payload?.playerStatsTotals))throw Error('MSF_SEASON_SCHEMA_UNRECOGNIZED');
    const data=ffo598NormalizeSeason(payload,checked_at);
+   if(team){
+    data.players=data.players.filter(p=>String(p.team).toUpperCase()===team);
+    data.players_count=data.players.length;
+    if(!data.players.length)throw Error('MSF_TEAM_PLAYER_STATS_NOT_FOUND');
+   }
+   data.scope=team?'team':'league';data.team=team;
    data.provider_http_status=Number.isInteger(json?.provider_http_status)?json.provider_http_status:upstream.status;
    data.cross_reference_status='not_yet_checked';
-   ffo598SeasonCache={data,at:Date.now()};return data;
+   ffo598SeasonCache.set(key,{data,at:Date.now()});return data;
   }catch(err){return {source:'MySportsFeeds',available:false,error:String(err.message||err),provider_http_status:upstream.status,checked_at}}
  })();
- try{return ffoReply(await ffo598SeasonPending)}finally{ffo598SeasonPending=null}
+ ffo598SeasonPending.set(key,load);
+ try{return ffoReply(await load)}finally{ffo598SeasonPending.delete(key)}
 }
 
 export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname==='/api/ffo/stats/season')return ffo598SeasonRoute(request,env);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{

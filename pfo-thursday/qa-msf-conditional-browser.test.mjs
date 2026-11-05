@@ -75,7 +75,8 @@ test('Actual mobile GameCast audit renders ID-less Week 5 conditional bonus alte
   await page.evaluate(r=>window.__ffoQaRenderStatAudit(r),report);
   const root=page.locator('#ffo-gc-stat-audit-results');
   await root.locator('summary').filter({hasText:'Player TD bonuses & two-point evidence'}).click();
-  await root.locator('summary').filter({hasText:'Week 5'}).first().click();
+  await root.locator('summary').filter({hasText:'Player TD bonuses & two-point evidence'})
+    .locator('xpath=..').locator('summary').filter({hasText:'Week 5'}).first().click();
   await root.locator('summary').filter({hasText:'Same-game MSF player cross-check'}).click();
   const summary=root.locator('summary').filter({hasText:'Conditional scoring alternatives'});
   assert.equal(await summary.count(),1,'Conditional scoring alternatives must actually render');

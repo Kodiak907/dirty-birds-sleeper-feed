@@ -121,16 +121,23 @@
     // Earlier 5.9.6 withholding was correct before the schedule loaded; once
     // the sourced schedule verifies a playing week, it cannot continue to hide the model.
     const v=sourceForecast(id);
-    if(v)return {...v,bye:false,adjustment:null,opponent:row.opponent};
-    return {points:null,bye:false,source:'FFO projection pending: NFL player-stat model has no supported sample',modelPending:true,opponent:row.opponent,adjustment:null};
+    if(v)return {...v,bye:false,adjustment:null,opponent:row.opponent,
+      modelStatus:'provisional',week,certified:false};
+    return {points:null,bye:false,source:'FFO independent MSF player statistics or identity unavailable for Week '+week,
+      modelPending:true,opponent:row.opponent,adjustment:null};
    }
-   return basePoints(id,week,past);
+   // Never silently substitute Sleeper's previously scored player results for
+   // future independent FFL projections (including kicker or D/ST).
+   return {points:null,source:'Verified NFL schedule or independent MSF model unavailable for Week '+week,
+     modelPending:true,adjustment:null};
   };
  }
  function redraw(){
   try{if(document.querySelector('#matchup.page.active')&&typeof pfo52Render==='function')pfo52Render();}catch(e){console.warn('FFO matchup redraw',e)}
   try{if(document.querySelector('#championship.page.active')&&typeof pfo52Championship==='function')pfo52Championship();else if(document.querySelector('#championship.page.active')&&typeof pfo49RenderPlanner==='function')pfo49RenderPlanner();}catch(e){console.warn('FFO championship redraw',e)}
-  try{if(document.querySelector('#roster.page.active')&&typeof pfo50RenderProjectedLineup==='function')pfo50RenderProjectedLineup();}catch(e){console.warn('FFO team model redraw',e)}
+  try{if(document.querySelector('#roster.page.active')&&typeof pfo52RosterPoints==='function')pfo52RosterPoints();}catch(e){console.warn('FFO team player forecast redraw',e)}
+  try{if(document.querySelector('#overview.page.active')&&typeof renderBriefing==='function')renderBriefing();}catch(e){console.warn('FFO overview forecast redraw',e)}
+  try{if(document.querySelector('#playerhub.page.active')&&typeof pfo49RenderPlayer==='function')pfo49RenderPlayer();}catch(e){console.warn('FFO player intelligence redraw',e)}
   try{if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])')&&window.ffoPfo59?.openMarket)window.ffoPfo59.openMarket('waiver');}catch(e){console.warn('FFO waiver leaderboard redraw',e)}
  }
  async function loadSchedule(){

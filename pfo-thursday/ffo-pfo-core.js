@@ -1420,6 +1420,36 @@ $('gm47-open-from-roster')?.addEventListener('click',()=>{document.querySelector
 /* FFO 5.9.8 · Licensed MySportsFeeds statistical evidence. Sleeper remains ONLY the
    authority for league settings, ownership, recorded FFL scores and transactions. */
 let pfo50Independent=null,pfo50Indexed=new Map(),pfo50IndependentError='',pfo50IndependentPromise=null,pfo50IndependentAt=0,pfo50ScheduleError='';
+let pfo69StatCoverage={scope:'pending',teams:[],loaded:0,failed:[],checked_at:null};
+const pfo69TeamCodes=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WAS'.split(' '));
+function pfo69RelevantTeams(){
+ const codes=new Set(),add=t=>{const code=gm47CanonicalTeam(t||'');if(pfo69TeamCodes.has(code))codes.add(code);};
+ // Prioritize owned players and the current matchup; avoid 32-team request storms.
+ for(const p of liveRosterSnapshot?.players||[])add(p.team);
+ const me=gm47Snapshot?.rosters?.find(x=>Number(x.roster_id)===Number(window.dbRosterId||1));
+ for(const id of me?.players||[])add(pfo49Info(id)?.team);
+ const w=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
+ const teams=typeof pfo52Match==='function'?pfo52Match(w):null;
+ const rival=teams?.theirs&&gm47Snapshot?.rosters?.find(x=>String(x.roster_id)===String(teams.theirs.roster_id));
+ for(const id of rival?.starters||[])add(pfo49Info(id)?.team);
+ return [...codes].slice(0,16);
+}
+function pfo69SourceStatus(){return {...pfo69StatCoverage,failed:[...pfo69StatCoverage.failed],teams:[...pfo69StatCoverage.teams]};}
+function pfo69ShowSourceHealth(){
+ const el=document.getElementById('ffo69-stats-status');if(!el)return;
+ const x=pfo69SourceStatus();
+ if(x.scope==='unavailable'){
+  el.textContent='MSF season stats unavailable · '+String(pfo50IndependentError||'source connection pending').slice(0,110)+
+   '. Individual predictions and missing fields remain withheld.';return;
+ }
+ if(x.scope==='pending'){
+  el.textContent='Independent MSF statistics checking · no player projections verified yet.';return;
+ }
+ el.textContent='MSF season evidence: '+x.loaded+' uniquely matched player records · '+
+  (x.scope==='selected_teams'?x.teams.length+' relevant NFL teams ('+x.teams.join(', ')+')':'league-level sample')+
+  (x.failed.length?' · '+x.failed.length+' selected teams unavailable':'')+
+  '. Season averages are provisional; unavailable categories remain unknown.';
+}
 function pfo50Key(name,team){return normPlayer(name)+'|'+gm47CanonicalTeam(team||'');}
 function pfo50StatsFor(id){const p=pfo49Info(id),key=pfo50Key(p.name,p.team),exact=pfo50Indexed.get(key);if(exact)return exact;
  // Sleeper can retain roman-numeral/Jr suffixes that nflverse omits. Match only
@@ -1465,18 +1495,57 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
    }catch(err){lastError=err;console.warn('FFO independent stat source failed',endpoint,String(err?.message||err));}
    finally{clearTimeout(tm);}
   }
-  if(!j)throw lastError||Error('No independently verified 2026 NFL stats');
+  if(!j){
+   // Team-scoped MSF fallback when the league-wide season response is unavailable.
+   // Limited to currently relevant teams; errors remain visible, never converted to zeros.
+   const teams=pfo69RelevantTeams(),combined=[],okTeams=[],failed=[];
+   for(let offset=0;offset<teams.length;offset+=2){
+    const pair=teams.slice(offset,offset+2);
+    const responses=await Promise.allSettled(pair.map(async team=>{
+     const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12000);
+     try{
+      const r=await fetch('/api/ffo/stats/season?team='+encodeURIComponent(team),
+       {cache:'no-store',signal:ctl.signal});
+      if(!r.ok)throw Error('HTTP '+r.status);
+      const part=await r.json();
+      if(part?.available===false||part?.source!=='MySportsFeeds'||
+         !Array.isArray(part.players)||!part.players.length||part.team!==team)
+       throw Error(String(part.error||'team_source_unavailable'));
+      return part;
+     }finally{clearTimeout(timer);}
+    }));
+    for(let k=0;k<pair.length;k++){
+     if(responses[k].status==='fulfilled'){
+      const part=responses[k].value;combined.push(...part.players);okTeams.push(pair[k]);
+     }else failed.push(pair[k]);
+    }
+   }
+   if(combined.length){
+    j={schema:'FFO_MSF_SEASON_V1',source:'MySportsFeeds',
+     source_type:'licensed_primary',checked_at:new Date().toISOString(),
+     players:combined,players_count:combined.length,scope:'selected_teams',
+     teams_loaded:okTeams,teams_failed:failed,
+     history_available:false,projection_method:'MSF season totals per game; partial categories'};
+   }else throw lastError||Error('No independently verified 2026 NFL stats');
+  }
   // Duplicate identities are ambiguous. Withhold these players until MSF identity is resolved.
   const matched=new Map(),ambiguous=new Set();
   for(const item of j.players){const key=pfo50Key(item.name,item.team);if(matched.has(key))ambiguous.add(key);else matched.set(key,item);}
   for(const key of ambiguous)matched.delete(key);
   pfo50Independent=j;pfo50Indexed=matched;pfo50IndependentError='';pfo50IndependentAt=Date.now();
+  pfo69StatCoverage={scope:j.scope||'league',teams:j.teams_loaded||[],
+   loaded:matched.size,failed:j.teams_failed||[],checked_at:j.checked_at};
+  pfo69ShowSourceHealth();
   if(tb45Data?.snap){tb45Data.ros=pfo50TradeRos();tb45CacheKey='';if(document.querySelector('#market.page.active [data-pfo59-market-panel="trade"]:not([hidden])'))renderTradeScouting();}
   // PFO 5.9.5: data updates are global, DOM updates only for the visible workspace.
   // Previously this single refresh rebuilt every large hidden panel on iPhone.
   if(document.querySelector('#radar.page.active'))pfo49RenderRadar();
   if(document.querySelector('#overview.page.active')){pfo50RenderHomeKPIs();pfo49OverviewHealth();renderBriefing();}
-  if(document.querySelector('#matchup.page.active'))pfo50RenderProjectedLineup();
+  if(document.querySelector('#matchup.page.active')){
+   pfo50RenderProjectedLineup();
+   if(typeof pfo52Render==='function')pfo52Render();
+  }
+  if(document.querySelector('#roster.page.active'))pfo52RosterPoints();
   if(document.querySelector('#market.page.active'))renderWaiverScouting();
   if(document.querySelector('#playerhub.page.active'))pfo49RenderPlayer();
   window.ffoQuickView?.refresh?.();
@@ -1489,6 +1558,10 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   return j;
  }catch(err){
   pfo50IndependentError=String(err.message||err);
+  pfo69StatCoverage={scope:'unavailable',teams:[],loaded:0,failed:[],checked_at:null};
+  pfo69ShowSourceHealth();
+  if(document.querySelector('#roster.page.active'))pfo52RosterPoints();
+  if(document.querySelector('#matchup.page.active')&&typeof pfo52Render==='function')pfo52Render();
   if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
   return null;
  }finally{pfo50IndependentPromise=null;}})();
@@ -1757,7 +1830,10 @@ document.addEventListener('click',evt=>{const b=evt.target.closest('[data-pfo49-
 });
 $('pfo49-search')?.addEventListener('input',pfo49SearchChange);
 $('pfo49-refresh')?.addEventListener('click',()=>{pfo49LoadSources(true);refreshLive();refreshInjuryOnly();refreshGamedayInactives();});
-document.addEventListener('click',event=>{if(event.target.closest('#pfo57-retry-stats'))pfo50LoadIndependent(true).then(()=>{if(pfo49Selected)pfo49RenderPlayer()})});
+document.addEventListener('click',event=>{
+ if(event.target.closest('#pfo57-retry-stats,#ffo69-retry-stats'))
+  pfo50LoadIndependent(true).then(()=>{if(pfo49Selected)pfo49RenderPlayer();pfo69ShowSourceHealth()});
+});
 const pfo49OldCompareHook=()=>{};
 function pfo49BindPlayerButtons(){document.querySelectorAll('#actual-lineup tr,#actual-bench tr,#actual-reserve tr').forEach(tr=>{
  const cell=tr.children?.[1]||tr.children?.[0];if(!cell||cell.querySelector('button'))return;
@@ -2367,6 +2443,11 @@ function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set(
 function pfo52Actual(team,w){const slots=pfo52Slots(),started=team?.starters||[];
  return {assignments:slots.map((slot,i)=>({slot,id:started[i]&&started[i]!=='0'?started[i]:null})),total:team?.score??null};
 }
+// Submitted starters are always the default presentation, not an optimized lineup.
+function pfo69Submitted(team,w){
+ const assignments=pfo52Actual(team,w).assignments;
+ return {assignments,...pfo52LineupScore(team,assignments,w,false)};
+}
 function pfo52Reconciles(team,w){if(!team||team.score==null)return false;const v=pfo52LineupScore(team,pfo52Actual(team,w).assignments,w,true);return v.complete&&Math.abs(v.total-team.score)<.05;}
 function pfo52LineupScore(team,assignments,w,past){let total=0,count=0;for(const x of assignments){const v=x.id?pfo52Value(team,x.id,w,past):null;if(v!=null){total+=v;count++;}}
  return {total:count?total:null,complete:count===assignments.length,known:count};
@@ -2436,15 +2517,15 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;
  const header='<div class="pfo52-weekrow"><button data-pfo52-step="-1" type="button" '+(w===1?'disabled':'')+'>← Previous</button><label>FFL week <select id="pfo52-week">'+Array.from({length:17},(_,i)=>'<option value="'+(i+1)+'" '+(w===i+1?'selected':'')+'>Week '+(i+1)+(i+1>=15?' · playoffs':'')+'</option>').join('')+'</select></label><button data-pfo52-step="1" type="button" '+(w===17?'disabled':'')+'>Next →</button></div>';
  let h=header+'<p class="pfo52-fine">'+(past?'Historical final recorded FFL scores · using Week '+w+' roster only · corrections may revise prior totals':w===current?'Current-week submitted roster and model estimates · independent predictions are not final scores':'Future preview from current rosters · future trades, availability and playoff opponents are unknown')+'</p>';
  if(!ours){el.innerHTML=h+'<div class="note">No verified historical weekly matchup entry for Dirty Birds. Fetching Sleeper week '+w+' if possible. We will not substitute today\'s roster for past ownership.</div>';return;}
- const baseline=past?pfo52Actual(ours,w):pfo52Best(ours,w,false);
- const counterpart=past?(opp?pfo52Actual(opp,w):null):(opp?pfo52Best(opp,w,false):null);
+ const baseline=past?pfo52Actual(ours,w):pfo69Submitted(ours,w);
+ const counterpart=past?(opp?pfo52Actual(opp,w):null):(opp?pfo69Submitted(opp,w):null);
  if(!pfo52Scenario||pfo52Scenario.week!==w||pfo52Scenario.past!==past){pfo52Scenario={week:w,past,assignments:baseline.assignments.map(x=>({...x}))};pfo52Scenarios=pfo52SavedRead(w,past);}
  const simulated=pfo52LineupScore(ours,pfo52Scenario.assignments,w,past),original=past?{total:ours.score,complete:ours.score!=null}:pfo52LineupScore(ours,baseline.assignments,w,false);
  const comparable=!past||pfo52Reconciles(ours,w),delta=comparable&&original.total!=null&&simulated.complete?(simulated.total-original.total):null;
  const oppScore=past?opp?.score:counterpart?.total;
  h+='<div class="pfo52-scoreboard"><div><small>DIRTY BIRDS · '+(past?'FINAL':'MODEL')+'</small><strong>'+pfo52PointLabel(past?ours.score:original.total,original.complete)+'</strong></div><div class="pfo52-versus">VS</div><div><small>'+e(opp?.name||'Opponent TBD')+' · '+(past?'FINAL':'MODEL')+'</small><strong>'+pfo52PointLabel(oppScore,past?oppScore!=null:!!counterpart?.complete)+'</strong></div></div>';
  if(!opp)h+='<p class="note">'+(past?'Historical opponent pairing unavailable in matched Sleeper records.':'Opponent not established for Week '+w+'. Playoff pairings remain TBD until FFL seeds are known.')+'</p>';
- h+='<div class="pfo52-duel"><article><div class="pfo52-panhead"><h3>Dirty Birds '+(past?'submitted lineup':'best model lineup')+'</h3><small>'+(past?'Actual starters &amp; final player points':'Optimal legal lineup under supported FFO baselines')+'</small></div>'+pfo52Table(ours,baseline,w,past,'none')+'</article><article><div class="pfo52-panhead"><h3>'+e(opp?.name||'Opposing manager')+' '+(past?'submitted lineup':'best model lineup')+'</h3><small>'+(past?'Original weekly starters':'Projected best eligible starters; not their actual submitted lineup')+'</small></div>'+(opp?pfo52Table(opp,counterpart,w,past,'none'):'<p class="pfo52-dim">Future opposing roster unconfirmed</p>')+'</article></div>';
+ h+='<div class="pfo52-duel"><article><div class="pfo52-panhead"><h3>Dirty Birds '+'submitted lineup'+'</h3><small>'+(past?'Actual starters &amp; final player points':'Actual submitted starters · independent FFL estimates')+'</small></div>'+pfo52Table(ours,baseline,w,past,'none')+'</article><article><div class="pfo52-panhead"><h3>'+e(opp?.name||'Opposing manager')+' '+'submitted lineup'+'</h3><small>'+(past?'Original weekly starters':'Currently submitted starters · independent estimates, not an optimizer')+'</small></div>'+(opp?pfo52Table(opp,counterpart,w,past,'none'):'<p class="pfo52-dim">Future opposing roster unconfirmed</p>')+'</article></div>';
  h+='<section class="pfo52-lab"><div class="pfo52-panhead"><h3>Interactive Lineup Lab</h3><small>'+(past?'HINDSIGHT: final player points':'SCENARIO: experimental FFO projections')+' · Never changes Sleeper</small></div>';
  h+='<div class="pfo52-scorecards"><div><small>Original</small><b>'+pfo52PointLabel(original.total,original.complete)+'</b></div><div><small>Simulated</small><b>'+pfo52PointLabel(simulated.total,simulated.complete)+'</b></div><div><small>Difference</small><b>'+(delta==null?'—':(delta>=0?'+':'')+pfo52Money(delta))+'</b></div></div>';
  if(past&&!comparable)h+='<p class="note">Final team score and individual starter points do not reconcile in the loaded weekly record. Hindsight score differences are withheld until a complete league-scored audit can be performed.</p>';
