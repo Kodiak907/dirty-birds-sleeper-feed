@@ -16,11 +16,11 @@
   const opponent=typeof pfo51CurrentOpponent==='function'?pfo51CurrentOpponent():null;
   const mode=typeof pfo49Mode!=='undefined'?pfo49Mode:'morning';
   const index=window.ffoPfo59?.marketResearchContext?.()||null;
+  // Same week-specific independent FFO model used by Matchup and Trade.
+  // A season-wide market value must not substitute for a missing week result.
   const estimate=id=>{
-   const a=typeof pfo50Estimate==='function'?pfo50Estimate(id):null;
-   if(typeof a==='number'&&Number.isFinite(a))return a;
-   const b=index?.estimate?.(String(id));
-   return typeof b==='number'&&Number.isFinite(b)?b:null;
+   const result=typeof pfo52Points==='function'?pfo52Points(String(id),Number(week)):null;
+   return typeof result?.points==='number'&&Number.isFinite(result.points)?result.points:null;
   };
   const values=starters.map(estimate),measured=values.filter(x=>x!==null);
   const covered=values.length>0&&measured.length===values.length;
@@ -121,6 +121,50 @@
     link('market','Research upgrades and waiver replacements')+
     '. Use Player Intel to compare usage trends before changing starters.');
   }
+  const submitted=starters.filter(id=>id&&id!=='0').map(id=>{
+   const player=typeof pfo52Info==='function'?pfo52Info(String(id)):roster.find(x=>String(x.player_id)===String(id));
+   const score=estimate(id),provider=typeof pfo52Points==='function'?pfo52Points(String(id),Number(week)):null;
+   return {id:String(id),name:player?.name||pName(id),position:player?.position||'?',
+    score,status:String(player?.sleeper_injury_status||''),source:provider?.source||'Independent model pending'};
+  });
+  const known=submitted.filter(x=>x.score!==null).sort((a,b)=>b.score-a.score);
+  const missing=submitted.filter(x=>x.score===null);
+  const lines=known.slice(0,5).map(x=>'<span class="pfo615-brief-player"><b>'+esc(x.position)+' · '+esc(x.name)+'</b><strong>'+num(x.score)+' FFL</strong></span>').join('');
+  const miss=missing.slice(0,6).map(x=>'<span class="pfo615-brief-missing">'+esc(x.name)+' · '+esc(x.source)+'</span>').join('');
+  body+=panel('Submitted lineup · individual model coverage',
+   '<div class="pfo615-brief-stats">'+(lines||'<span>No independent starter projections verified yet.</span>')+'</div>'+
+   (missing.length?'<p class="pfo615-brief-warning"><b>'+missing.length+' missing individual model estimates:</b></p>'+
+     '<div class="pfo615-brief-missing-list">'+miss+'</div>':
+     '<p class="pfo615-brief-good">All submitted starter positions have an independent model output; validation is still provisional.</p>')+
+   '<small>Showing the highest available model estimates, NOT ranking your starting decisions. '+link('matchup','Inspect every submitted starter')+'.</small>');
+  const selectedIds=new Set(starters.map(String));
+  const available=eligible.filter(p=>!selectedIds.has(String(p.player_id)));
+  const ranked=available.map(p=>({name:p.name,position:p.position,score:estimate(p.player_id)}))
+    .filter(x=>x.score!==null).sort((a,b)=>b.score-a.score).slice(0,4);
+  body+=panel('Bench research · flexibility and coverage',
+   '<p>'+available.length+' eligible non-starter(s) in the current Sleeper roster. '+
+   (ranked.length?'Sourced research baselines:</p><div class="pfo615-brief-stats">'+ranked.map(x=>
+    '<span class="pfo615-brief-player"><b>'+esc(x.position)+' · '+esc(x.name)+'</b><strong>'+num(x.score)+' FFL</strong></span>').join('')+'</div>':
+    'No independently modeled bench forecasts currently available.</p>')+
+   '<small>These are descriptive estimates, not proposed starter changes. '+link('matchup','Compare in Start/Sit')+'.</small>');
+  const oppStarters=(opponent?.starters||[]).map(x=>typeof x==='object'?(x.player_id||x.id):x).filter(Boolean);
+  const oppNames=oppStarters.slice(0,3).map(id=>esc(pName(id)));
+  body+=panel('Opponent intelligence · verified matchup context',
+   '<p><b>'+esc(opponent?.name||'FFL pairing not yet confirmed')+'</b> · '+
+   esc(oppStarters.length)+' identified starter(s) in the latest paired record. '+
+   (oppNames.length?'Published players: '+oppNames.join(' · ')+'. ':'')+
+   'Source: Sleeper FFL matchup; the opposing manager can change submissions.</p>'+
+   link('matchup','Review opposing starters and week-specific estimates')+'.');
+  const newsEntries=roster.slice(0,25).flatMap(p=>{
+   const articles=typeof pfo49PublishedNews==='function'?pfo49PublishedNews(p.player_id):[];
+   const first=articles?.[0];return first?.title&&/^https:\/\//.test(first.url||'')?[{player:p.name||'Player',...first}]:[];
+  }).slice(0,3);
+  body+=panel('Player news · source-linked developments',
+   newsEntries.length?'<div class="pfo615-brief-news">'+newsEntries.map(n=>
+    '<a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer"><b>'+esc(n.player)+'</b> · '+
+    esc(n.title)+' <small>'+esc(n.published_at||n.published||'Publication time not verified')+'</small></a>').join('')+'</div>'+
+     '<small>Headlines are attributed reports, not official injury clearance.</small>':
+     '<p>No dated, directly linked player reporting was returned by the connected feed. '+link('playerhub','Open Player Intel')+'.</p>');
   body+='<details class="pfo62-source"><summary>Data freshness & limitations</summary>'+
    '<p>Roster snapshot: '+esc(snapshot?.checked_at||index?.snapshotAt||'unverified')+
    '. Independent estimates: '+measured.length+'/'+values.length+
