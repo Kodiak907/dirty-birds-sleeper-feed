@@ -767,6 +767,20 @@ function ffo617UnwrapProvider(payload,expected){
   throw Error('MSF_'+expected+'_SCHEMA_UNRECOGNIZED');
  return result;
 }
+/* PFO 6.19: MSF query examples use canonical hyphenated teams and player
+ * identities. A 400 on an abbreviated team query is not evidence of no stats.
+ */
+const ffo619TeamSlug=Object.freeze({
+ ARI:'arizona-cardinals',ATL:'atlanta-falcons',BAL:'baltimore-ravens',BUF:'buffalo-bills',
+ CAR:'carolina-panthers',CHI:'chicago-bears',CIN:'cincinnati-bengals',CLE:'cleveland-browns',
+ DAL:'dallas-cowboys',DEN:'denver-broncos',DET:'detroit-lions',GB:'green-bay-packers',
+ HOU:'houston-texans',IND:'indianapolis-colts',JAX:'jacksonville-jaguars',KC:'kansas-city-chiefs',
+ LAC:'los-angeles-chargers',LAR:'los-angeles-rams',LV:'las-vegas-raiders',MIA:'miami-dolphins',
+ MIN:'minnesota-vikings',NE:'new-england-patriots',NO:'new-orleans-saints',
+ NYG:'new-york-giants',NYJ:'new-york-jets',PHI:'philadelphia-eagles',PIT:'pittsburgh-steelers',
+ SEA:'seattle-seahawks',SF:'san-francisco-49ers',TB:'tampa-bay-buccaneers',
+ TEN:'tennessee-titans',WAS:'washington-commanders'
+});
 const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
 async function ffo616DefenseRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
@@ -779,15 +793,19 @@ async function ffo616DefenseRoute(req,env){
  const load=(async()=>{
   const checked_at=new Date().toISOString();
   if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,team,error:'licensed_provider_not_configured',checked_at};
+  const teamFilter=ffo619TeamSlug[team];
   const endpoints=[
-   {kind:'gamelogs',url:MSF_ROOT+'/2026-regular/team_gamelogs.json?team='+encodeURIComponent(team)},
-   {kind:'totals',url:MSF_ROOT+'/2026-regular/team_stats_totals.json?team='+encodeURIComponent(team)}
+   {kind:'gamelogs',url:MSF_ROOT+'/2026-regular/team_gamelogs.json?team='+encodeURIComponent(teamFilter)},
+   {kind:'totals',url:MSF_ROOT+'/2026-regular/team_stats_totals.json?team='+encodeURIComponent(teamFilter)},
+   // Stats totals are a compact team feed. An unfiltered fallback may be
+   // filtered strictly server-side if the provider rejects all team filters.
+   {kind:'totals_all',url:MSF_ROOT+'/2026-regular/team_stats_totals.json'}
   ];
   const errors=[];
   let completedFixtures=null;
   const fixtures=async()=>{
    if(completedFixtures)return completedFixtures;
-   const target=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
+   const target=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(teamFilter);
    let response;
    try{
     response=env.MSF_API_KEY
@@ -808,9 +826,17 @@ async function ffo616DefenseRoute(req,env){
      ?await fetch(attempt.url,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
      :await env.GAMECAST_INTERNAL.fetch(new Request(attempt.url,{method:'GET'}));
    }catch(err){errors.push(attempt.kind+'_unreachable');continue}
-   if(!response.ok){errors.push(attempt.kind+'_http_'+response.status);continue}
+   if(!response.ok){
+    errors.push(attempt.kind+'_http_'+response.status);
+    if([401,403].includes(response.status))break;
+    continue;
+   }
    try{
-    const json=ffo617UnwrapProvider(await response.json(),'TEAM_DEFENSE');
+    const length=Number(response.headers.get('content-length')||0);
+    if(length>2500000)throw Error('MSF_TEAM_RESPONSE_TOO_LARGE');
+    const raw=await response.text();
+    if(raw.length>2500000)throw Error('MSF_TEAM_RESPONSE_TOO_LARGE');
+    const json=ffo617UnwrapProvider(JSON.parse(raw),'TEAM_DEFENSE');
     let parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
      ffo616NormalizeTeamSeason(json,team,checked_at);
     const needsFixtures=attempt.kind==='totals'||parsed.available===false;
