@@ -863,6 +863,7 @@ async function ffo616DefenseRoute(req,env){
    {kind:'totals_all',url:MSF_ROOT+'/2026-regular/team_stats_totals.json'}
   ];
   const errors=[];
+  let schema_audit='';
   let completedFixtures=null;
   const fixtures=async()=>{
    if(completedFixtures)return completedFixtures;
@@ -888,8 +889,9 @@ async function ffo616DefenseRoute(req,env){
      :await env.GAMECAST_INTERNAL.fetch(new Request(attempt.url,{method:'GET'}));
    }catch(err){errors.push(attempt.kind+'_unreachable');continue}
    if(!response.ok){
-    errors.push(attempt.kind+'_http_'+response.status);
-    if([401,403].includes(response.status))break;
+    const detail=await ffo620ProviderRejection(response);
+    errors.push(attempt.kind+'_http_'+response.status+'_'+detail);
+    if([401,403,429].includes(response.status))break;
     continue;
    }
    try{
@@ -900,6 +902,9 @@ async function ffo616DefenseRoute(req,env){
     const json=ffo617UnwrapProvider(JSON.parse(raw),'TEAM_DEFENSE');
     let parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
      ffo616NormalizeTeamSeason(json,team,checked_at);
+    if(attempt.kind!=='gamelogs'&&parsed.available===false){
+     schema_audit=ffo620TeamSchemaAudit(json,team);
+    }
     const needsFixtures=attempt.kind==='totals'||parsed.available===false;
     if(needsFixtures){
      try{
@@ -915,7 +920,9 @@ async function ffo616DefenseRoute(req,env){
     ffo616DefenseCache.set(team,{data:parsed,at:Date.now()});return parsed;
    }catch(err){errors.push(String(err.message||err))}
   }
-  return {source:'MySportsFeeds',available:false,team,error:errors.join('; ').slice(0,500)||'no_team_defense_evidence',checked_at};
+  return {source:'MySportsFeeds',available:false,team,
+   error:errors.join('; ').slice(0,500)||'no_team_defense_evidence',
+   schema_audit:schema_audit.slice(0,230),checked_at};
  })();
  ffo616DefensePending.set(team,load);
  try{return ffoReply(await load)}finally{ffo616DefensePending.delete(team)}
@@ -1005,10 +1012,13 @@ async function ffo616PlayerGameRoute(req,env){
     :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
    }catch{errors.push('player_filter_unreachable');continue}
    if(!response.ok){
-    errors.push('player_filter_'+(identifier===playerId?'id':'name')+'_http_'+response.status);
-    // A denied subscription or missing entitlement is not fixed by guessing
-    // more URLs. Only retry an alternate documented identity on HTTP 400.
-    if(response.status!==400)break;
+    const detail=await ffo620ProviderRejection(response);
+    errors.push('player_filter_'+(identifier===playerId?'id':'name')+
+     '_http_'+response.status+'_'+detail);
+    // Stop after denied access/rate-limit, and do not retry another identity
+    // for an unsupported season/feed (another ID cannot correct it).
+    if(response.status!==400||['feed_not_supported','season_not_supported',
+     'access_restricted','provider_throttled','required_parameter_missing'].includes(detail))break;
     continue;
    }
    try{
