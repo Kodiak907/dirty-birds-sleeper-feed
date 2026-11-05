@@ -39,7 +39,7 @@
    else if(info?.scope==='selected_teams'&&team&&!sourceTeams.has(team))reason='MSF did not load '+team+' team statistics';
    else if(!row)reason=pos==='DEF'?'licensed NFL team defense evidence not yet available':
     'MSF player identity/statistics not uniquely matched';
-   else if(!row.games_observed&&!row.games_played)reason='MSF player appearances not verified; game-log check pending';
+   else if(!row.games_observed&&!row.games_played)reason='MSF games-played denominator missing; individual appearances unverified, game-log check pending';
    else if(!row.forecast)reason=pos==='K'?'MSF exact FG-distance/XP categories unavailable':'MSF scoring categories missing';
    else reason=String(score?.source||'model validation or availability pending');
    missing.push({name,team,pos,reason,fields:Object.keys(row?.season_totals||{}).filter(k=>k!=='games_played').length});
