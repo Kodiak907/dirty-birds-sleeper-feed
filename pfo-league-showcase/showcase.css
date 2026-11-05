@@ -86,3 +86,12 @@
  .pfo-demo-matchrow{font-size:10px}
 }
 @media(max-width:380px){.pfo-demo-statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.pfo-demo-scoreboard strong{font-size:20px}.pfo-demo-matchrow .pfo-demo-pos{display:none}}
+
+/* Preserve PFO 6.x mobile All Tools launcher without leaking desktop-only tabs. */
+#demo-tools-drawer[hidden]{display:none!important}
+#demo-tools-drawer{position:fixed;z-index:119;bottom:calc(75px + env(safe-area-inset-bottom));left:10px;right:10px;max-width:600px;margin:auto;border:1px solid #4e7686;background:linear-gradient(#162e43,#0d2135);border-radius:14px;box-shadow:0 -10px 34px #020914c7;padding:12px}
+.pfo-demo-drawer-title{display:flex;align-items:center;justify-content:space-between;font-size:12px;letter-spacing:.08em;color:#a9d5c8;font-weight:850;padding:2px 3px 10px}
+.pfo-demo-drawer-title button{border:0;background:#263e55;border-radius:8px;color:#f5c57f;min-width:34px;min-height:34px;cursor:pointer;font-size:15px}
+.pfo-demo-drawer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.pfo-demo-drawer-grid button{padding:12px 7px;border:1px solid #476274;background:#20394d;border-radius:8px;color:#edf9fb;font-size:12px;min-height:44px;cursor:pointer;font-weight:700}
+.pfo-demo-drawer-grid button:focus-visible{outline:2px solid #ffd28b}
