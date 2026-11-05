@@ -566,12 +566,12 @@ function ffo598NormalizeSeason(payload,checkedAt){
  rush_2pt:['rushing.rushTwoPt','rushing.twoPointConversions'],
  rec_2pt:['receiving.recTwoPt','receiving.twoPointConversions'],
  pass_2pt:['passing.passTwoPt','passing.twoPointConversions'],
- fgm_0_19:['fieldGoals.fieldGoalsMade0To19','kicking.fieldGoalsMade0To19','fieldGoals.fgMade0To19','kicking.fgMade0To19'],
- fgm_20_29:['fieldGoals.fieldGoalsMade20To29','kicking.fieldGoalsMade20To29','fieldGoals.fgMade20To29','kicking.fgMade20To29'],
- fgm_30_39:['fieldGoals.fieldGoalsMade30To39','kicking.fieldGoalsMade30To39','fieldGoals.fgMade30To39','kicking.fgMade30To39'],
- fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fgMade40To49','kicking.fgMade40To49'],
- fgm_50_59:['fieldGoals.fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fgMade50To59','kicking.fgMade50To59'],
- fgm_60p:['fieldGoals.fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fgMade60Plus','kicking.fgMade60Plus'],
+ fgm_0_19:['fieldGoals.fieldGoalsMade0To19','kicking.fieldGoalsMade0To19','fieldGoals.fgMade0To19','kicking.fgMade0To19','fieldGoalsMade0To19','kicking.fieldGoalsMade0To19','fieldGoals.fieldGoalsMade0to19','],
+ fgm_20_29:['fieldGoals.fieldGoalsMade20To29','kicking.fieldGoalsMade20To29','fieldGoals.fgMade20To29','kicking.fgMade20To29','fieldGoalsMade20To29','kicking.fieldGoalsMade20To29','fieldGoals.fieldGoalsMade20to29','],
+ fgm_30_39:['fieldGoals.fieldGoalsMade30To39','kicking.fieldGoalsMade30To39','fieldGoals.fgMade30To39','kicking.fgMade30To39','fieldGoalsMade30To39','kicking.fieldGoalsMade30To39','fieldGoals.fieldGoalsMade30to39','],
+ fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fgMade40To49','kicking.fgMade40To49','fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fieldGoalsMade40to49','],
+ fgm_50_59:['fieldGoals.fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fgMade50To59','kicking.fgMade50To59','fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fieldGoalsMade50to59','],
+ fgm_60p:['fieldGoals.fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fgMade60Plus','kicking.fgMade60Plus','fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fieldGoalsMade60Plus','],
  xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade','kicking.xpMade'],
  xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','kicking.extraPointsMissed','kicking.xpMissed'],
  fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','kicking.fieldGoalsMissed','kicking.fgMissed'],
@@ -590,7 +590,7 @@ function ffo598NormalizeSeason(payload,checkedAt){
   const team=item?.team?.abbreviation||item?.teamInfo?.abbreviation||p?.currentTeam?.abbreviation||item?.teamAbbreviation||'';
   const name=String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||item.name||'').trim();
   if(!name||!team)continue;
-  const gp=number(raw.gamesPlayed??raw.gamesPlayedTotal??raw.games??item.gamesPlayed??item.gamesPlayedTotal);
+  const gp=number(raw.gamesPlayed??raw.gamesPlayedTotal??raw.games??item.gamesPlayed??item.gamesPlayedTotal??p.gamesPlayed??p.gamesPlayedTotal??item?.stats?.games?.played);
   const games=gp!==null&&Number.isInteger(gp)&&gp>=0&&gp<=18?gp:null;
   const totals={};
   for(const [key,aliases] of Object.entries(fields)){
@@ -610,6 +610,94 @@ function ffo598NormalizeSeason(payload,checkedAt){
   projection_method:'MSF-reported season totals divided by sourced games played (no last-three trends)',
   players_count:players.length,players};
 }
+/* PFO 6.16 · protected source-normalized team defense, distinct from player totals.
+ * No fantasy platform scoring, no speculative game scores and no credentials on client.
+ */
+function ffo616NormalizeDefense(payload,team,checkedAt){
+ const rows=payload?.teamGamelogs||payload?.teamGameLogs||payload?.gamelogs||payload?.gameLogs||[];
+ if(!Array.isArray(rows))throw Error('MSF_TEAM_GAMELOG_SCHEMA_UNRECOGNIZED');
+ const get=(o,path)=>path.split('.').reduce((x,k)=>x?.[k],o);
+ const num=x=>x===null||x===undefined||x===''||typeof x==='object'||!Number.isFinite(Number(x))?null:Number(x);
+ const aliases={
+  sack:['defense.sacks','defense.sacksMade','defense.sacksTotal','defensive.sacks','defensive.sacksMade'],
+  int:['defense.interceptions','defense.interceptionsMade','defensive.interceptions'],
+  ff:['defense.forcedFumbles','defensive.forcedFumbles'],
+  fum_rec:['defense.fumbleRecoveries','defense.fumblesRecovered','defensive.fumbleRecoveries'],
+  safe:['defense.safeties','defensive.safeties'],
+  blk_kick:['defense.blockedKicks','defensive.blockedKicks'],
+  def_td:['defense.touchdowns','defense.defensiveTouchdowns','defensive.touchdowns']
+ };
+ const games=[],seen=new Set();
+ for(const item of rows){
+  const rowTeam=String(item?.team?.abbreviation||item?.teamInfo?.abbreviation||item?.teamAbbreviation||'').toUpperCase();
+  if(rowTeam!==team)continue;
+  const game=item.game||item.gameInfo||{},stats=item.stats||item.teamStats||{};
+  const id=String(game.id??game.gameId??game.schedule?.id??game.startTime??item.date??'');
+  if(!id||seen.has(id))continue;
+  const home=String(game.homeTeam?.abbreviation||game.homeTeamAbbreviation||game.schedule?.homeTeam?.abbreviation||'').toUpperCase();
+  const away=String(game.awayTeam?.abbreviation||game.awayTeamAbbreviation||game.schedule?.awayTeam?.abbreviation||'').toUpperCase();
+  const homeScore=num(game.homeScoreTotal??game.homeScore??game.score?.homeScoreTotal??game.score?.homeScore);
+  const awayScore=num(game.awayScoreTotal??game.awayScore??game.score?.awayScoreTotal??game.score?.awayScore);
+  const accepted=game.playedStatus==='COMPLETED'||game.playedStatus==='FINAL'||game.status==='COMPLETED'||game.status==='FINAL'||
+   (homeScore!==null&&awayScore!==null&&game.playedStatus!=='NOT_PLAYED'&&game.status!=='SCHEDULED');
+  if(!accepted)continue;
+  const pts=num(get(stats,'defense.pointsAllowed')??get(stats,'defensive.pointsAllowed')??get(stats,'standings.pointsAgainst'));
+  const pointsAllowed=pts??(team===home?awayScore:team===away?homeScore:null);
+  const sample={};for(const [key,paths] of Object.entries(aliases))for(const p of paths){
+   const n=num(get(stats,p));if(n!==null){sample[key]=n;break}
+  }
+  if(pointsAllowed!==null&&Number.isInteger(pointsAllowed)&&pointsAllowed>=0&&pointsAllowed<=100){
+   const band=pointsAllowed===0?'pts_allow_0':pointsAllowed<=6?'pts_allow_1_6':pointsAllowed<=13?'pts_allow_7_13':
+    pointsAllowed<=20?'pts_allow_14_20':pointsAllowed<=27?'pts_allow_21_27':
+    pointsAllowed<=34?'pts_allow_28_34':'pts_allow_35p';
+   sample[band]=1;
+  }
+  if(!Object.keys(sample).length)continue;
+  seen.add(id);games.push({id,points_allowed:pointsAllowed,stats:sample});
+ }
+ if(!games.length)return {source:'MySportsFeeds',available:false,team,error:'no_verifiable_team_defense_gamelogs',checked_at:checkedAt,
+  games_observed:0,forecast:null};
+ const totals={};for(const g of games)for(const [k,n] of Object.entries(g.stats))totals[k]=(totals[k]||0)+n;
+ const forecast=Object.fromEntries(Object.entries(totals).map(([k,n])=>[k,n/games.length]));
+ return {schema:'FFO_MSF_DEFENSE_GAMELOG_V1',source:'MySportsFeeds',source_type:'licensed_primary',
+  team,checked_at:checkedAt,games_observed:games.length,forecast,season_totals:totals,
+  coverage:{points_allowed_games:games.filter(x=>x.points_allowed!==null).length,
+   defensive_stat_games:games.filter(x=>Object.keys(x.stats).some(k=>!k.startsWith('pts_allow_'))).length},
+  // All per-game components are independent evidence, but a partial provider
+  // season is not a certified full FFL D/ST projection.
+  projection_method:'MSF game-level team defensive stats and final points-allowed bands, each averaged over verified games',
+  certified:false};
+}
+const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
+async function ffo616DefenseRoute(req,env){
+ if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
+ try{await comIdentity(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
+ const url=new URL(req.url),team=String(url.searchParams.get('team')||'').toUpperCase();
+ if(!ffo598NFLTeams.has(team))return ffoReply({error:'invalid_nfl_team'},400);
+ const cached=ffo616DefenseCache.get(team),now=Date.now();
+ if(cached&&now-cached.at<120000)return ffoReply(cached.data);
+ if(ffo616DefensePending.has(team))return ffoReply(await ffo616DefensePending.get(team));
+ const load=(async()=>{
+  const checked_at=new Date().toISOString();
+  if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,team,error:'licensed_provider_not_configured',checked_at};
+  const endpoint=MSF_ROOT+'/2026-regular/team_gamelogs.json?team='+encodeURIComponent(team);
+  let response;
+  try{
+   response=env.MSF_API_KEY
+    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
+    :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
+  }catch{return {source:'MySportsFeeds',available:false,team,error:'licensed_team_feed_unreachable',checked_at}}
+  if(!response.ok)return {source:'MySportsFeeds',available:false,team,error:'provider_http_'+response.status,checked_at};
+  try{
+   const parsed=ffo616NormalizeDefense(await response.json(),team,checked_at);
+   if(parsed.available!==false)ffo616DefenseCache.set(team,{data:parsed,at:Date.now()});
+   return parsed;
+  }catch(err){return {source:'MySportsFeeds',available:false,team,error:String(err.message||err),checked_at}}
+ })();
+ ffo616DefensePending.set(team,load);
+ try{return ffoReply(await load)}finally{ffo616DefensePending.delete(team)}
+}
+
 const ffo598SeasonCache=new Map(),ffo598SeasonPending=new Map();
 const ffo598NFLTeams=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WAS'.split(' '));
 async function ffo598SeasonRoute(req,env){
@@ -670,7 +758,7 @@ async function ffo598SeasonRoute(req,env){
  try{return ffoReply(await load)}finally{ffo598SeasonPending.delete(key)}
 }
 
-export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname==='/api/ffo/stats/season')return ffo598SeasonRoute(request,env);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
+export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname==='/api/ffo/stats/season')return ffo598SeasonRoute(request,env);if(url.pathname==='/api/ffo/stats/defense')return ffo616DefenseRoute(request,env);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
  if(url.pathname==='/api/gameday-news'){
   // ESPN news metadata are leads, not proof that a headline is true or a coach quote was verified.
   const names=(url.searchParams.get('names')||'').split(',').map(x=>x.trim()).filter(x=>/^[a-z .'-]{3,65}$/i.test(x)).slice(0,35);
