@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-05T14:57:53.359899+00:00
+Generated: 2026-11-05T15:59:54.946131+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **126.70**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -20,11 +20,11 @@ Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections an
 | 2 | Tyjae Spears | 5.54 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.56 | Availability status: questionable; Partial projection coverage |
 | 3 | Samaje Perine | 5.19 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.91 | No flagged data gap; review still required |
 | 4 | Chris Rodriguez Jr. | 5.18 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.92 | Limited snap sample |
-| 5 | MarShawn Lloyd | 4.62 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.48 | Partial projection coverage |
+| 5 | MarShawn Lloyd | 4.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.49 | Partial projection coverage |
 | 6 | Seth McGowan | 4.11 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.99 | Partial projection coverage |
-| 7 | Tank Bigsby | 2.10 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.99 | Availability status: ir; Partial projection coverage |
+| 7 | Tank Bigsby | 2.10 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.00 | Availability status: ir; Partial projection coverage |
 | 8 | Jaleel McLaughlin | 1.53 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.57 | Partial projection coverage |
-| 9 | Zonovan Knight | 1.43 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.67 | Partial projection coverage |
+| 9 | Zonovan Knight | 1.44 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.66 | Partial projection coverage |
 | 10 | Emanuel Wilson | 1.34 | Bench-depth scenario: Caleb Douglas | +0.00 | -4.76 | Partial projection coverage |
 | 11 | Elijah Mitchell | 1.10 | Bench-depth scenario: Caleb Douglas | +0.00 | -5.00 | Partial projection coverage |
 
@@ -41,8 +41,8 @@ Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections an
 | 7 | Ja'Kobi Lane | 3.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.49 | Partial projection coverage |
 | 8 | Rashod Bateman | 3.50 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.60 | Partial projection coverage |
 | 9 | Mack Hollins | 3.44 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.66 | Availability status: ir; Partial projection coverage |
-| 10 | Brian Thomas Jr. | 3.16 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.94 | Limited snap sample |
-| 11 | Jauan Jennings | 2.75 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.34 | No flagged data gap; review still required |
+| 10 | Brian Thomas Jr. | 3.15 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.94 | Limited snap sample |
+| 11 | Jauan Jennings | 2.75 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.35 | No flagged data gap; review still required |
 | 12 | Konata Mumpfield | 2.32 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.78 | No sourced usage; Partial projection coverage; Limited snap sample |
 
 ## TE
@@ -76,11 +76,11 @@ Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections an
 | 3 | Green Bay Packers | 6.00 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.10 | No sourced usage; Partial projection coverage |
 | 4 | Cincinnati Bengals | 5.90 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.20 | No sourced usage |
 | 5 | New Orleans Saints | 5.87 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.23 | No sourced usage |
-| 6 | Indianapolis Colts | 5.71 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.38 | No sourced usage; Partial projection coverage |
+| 6 | Indianapolis Colts | 5.71 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.39 | No sourced usage; Partial projection coverage |
 | 7 | Washington Commanders | 5.43 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.67 | No sourced usage |
-| 8 | Cleveland Browns | 5.42 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.67 | No sourced usage; Partial projection coverage |
+| 8 | Cleveland Browns | 5.42 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.68 | No sourced usage; Partial projection coverage |
 | 9 | Tampa Bay Buccaneers | 5.15 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.95 | No sourced usage; Partial projection coverage |
-| 10 | Tennessee Titans | 4.46 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.63 | No sourced usage; Partial projection coverage |
+| 10 | Tennessee Titans | 4.46 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.64 | No sourced usage; Partial projection coverage |
 | 11 | New York Jets | 4.35 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.75 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim

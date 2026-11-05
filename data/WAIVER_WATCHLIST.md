@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T14:57:53.029858+00:00
-Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
+Generated: 2026-11-05T15:59:54.783155+00:00
+Sleeper snapshot: 2026-11-05T15:59:48.966269+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -31,11 +31,11 @@ Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
 | 2 | Tyjae Spears | TEN | 5.54 | 89% | 38.0% | Questionable |
 | 3 | Samaje Perine | CIN | 5.19 | 100% | 36.3% | Not flagged |
 | 4 | Chris Rodriguez Jr. | JAX | 5.18 | 100% | — | Not flagged |
-| 5 | MarShawn Lloyd | GB | 4.62 | 89% | 30.7% | Not flagged |
+| 5 | MarShawn Lloyd | GB | 4.61 | 89% | 30.7% | Not flagged |
 | 6 | Seth McGowan | IND | 4.11 | 89% | 27.0% | Not flagged |
 | 7 | Tank Bigsby | PHI | 2.10 | 78% | 28.7% | IR |
 | 8 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
-| 9 | Zonovan Knight | ARI | 1.43 | 89% | 39.7% | Not flagged |
+| 9 | Zonovan Knight | ARI | 1.44 | 89% | 39.7% | Not flagged |
 | 10 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
 | 11 | Elijah Mitchell | PHI | 1.10 | 89% | 39.0% | Not flagged |
 
@@ -52,7 +52,7 @@ Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
 | 7 | Ja'Kobi Lane | BAL | 3.61 | 89% | 62.7% | Not flagged |
 | 8 | Rashod Bateman | BAL | 3.50 | 89% | 59.7% | Not flagged |
 | 9 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
-| 10 | Brian Thomas Jr. | JAX | 3.16 | 100% | — | Not flagged |
+| 10 | Brian Thomas Jr. | JAX | 3.15 | 100% | — | Not flagged |
 | 11 | Jauan Jennings | MIN | 2.75 | 100% | 60.0% | Not flagged |
 | 12 | Konata Mumpfield | LAR | 2.32 | 89% | — | Not flagged |
 
@@ -110,10 +110,10 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Kalif Raymond | WR | CHI | 5.68 | 62.0% |
 | Tyjae Spears | RB | TEN | 5.54 | 38.0% |
 | Chris Bell | WR | MIA | 5.21 | 62.7% |
-| Michael Mayer | TE | LV | 5.19 | 80.0% |
 | Samaje Perine | RB | CIN | 5.19 | 36.3% |
+| Michael Mayer | TE | LV | 5.19 | 80.0% |
 | Noah Fant | TE | NO | 4.79 | 57.0% |
-| MarShawn Lloyd | RB | GB | 4.62 | 30.7% |
+| MarShawn Lloyd | RB | GB | 4.61 | 30.7% |
 | Rashid Shaheed | WR | SEA | 4.52 | 41.3% |
 | Dontayvion Wicks | WR | PHI | 4.38 | 79.3% |
 | Michael Pittman Jr. | WR | PIT | 4.35 | 77.7% |

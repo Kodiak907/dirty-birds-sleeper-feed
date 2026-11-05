@@ -1,15 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-05T14:57:52.761970+00:00
-Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
+Generated: 2026-11-05T15:59:54.673688+00:00
+Sleeper snapshot: 2026-11-05T15:59:48.966269+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1424076145711702016` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: New York Giants → DeeboSix0 (#8) | Dropped: Cincinnati Bengals → DeeboSix0 (#8)
-- **NEW** · transaction `1424075772494151680` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Drew Stevens → DeeboSix0 (#8) | Dropped: Matt Gay → DeeboSix0 (#8)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

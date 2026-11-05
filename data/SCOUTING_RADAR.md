@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-05T14:57:52.810931+00:00
-Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
+Generated: 2026-11-05T15:59:54.697630+00:00
+Sleeper snapshot: 2026-11-05T15:59:48.966269+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- DeeboSix0: added Drew Stevens, New York Giants; dropped Matt Gay, Cincinnati Bengals
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

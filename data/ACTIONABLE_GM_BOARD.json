@@ -1,7 +1,60 @@
 {
-  "generated_at_utc": "2026-11-05T14:57:53.461394+00:00",
-  "roster_snapshot_utc": "2026-11-05T14:57:45.250701+00:00",
-  "trade_qualified_for_negotiation_review": [],
+  "generated_at_utc": "2026-11-05T15:59:55.000917+00:00",
+  "roster_snapshot_utc": "2026-11-05T15:59:48.966269+00:00",
+  "trade_qualified_for_negotiation_review": [
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 129.413,
+      "dirty_birds_before": 126.697,
+      "dirty_birds_delta_ppg": 2.72,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR",
+          "projected_ppg": 10.24
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB",
+          "projected_ppg": 9.81
+        }
+      ],
+      "market_quote": {
+        "paid": 8610,
+        "paid_to_received_ratio": 1.082,
+        "received": 7956,
+        "relative_value_difference_pct": 8.2
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 4.257,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 98.653,
+      "opponent_before": 96.614,
+      "opponent_delta_ppg": 2.04,
+      "opponent_drop_to_fit": "Keon Coleman",
+      "opponent_roster_id": 4,
+      "projected_ppg_received": 12.96,
+      "projected_ppg_sent": 20.05,
+      "receive": [
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE",
+          "projected_ppg": 12.96
+        }
+      ],
+      "starter_benefit": {
+        "them": 2.04,
+        "us": 2.72
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    }
+  ],
   "trade_rejected": [
     {
       "give": [
@@ -18,13 +71,13 @@
     {
       "give": [
         "C.J. Stroud",
-        "A.J. Brown"
+        "Zay Flowers"
       ],
       "reasons": [
         "Opponent has insufficient demonstrated benefit"
       ],
       "receive": [
-        "Ashton Jeanty"
+        "Justin Jefferson"
       ]
     },
     {
@@ -33,7 +86,6 @@
         "A.J. Brown"
       ],
       "reasons": [
-        "Too little projected starter benefit for roster disruption",
         "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
@@ -48,7 +100,6 @@
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
@@ -56,7 +107,7 @@
       ]
     }
   ],
-  "trade_status": "No defensible opening offers",
+  "trade_status": "Ideas require Coach review",
   "waiver_research_shortlist": [],
   "waiver_screened_count": 0,
   "warnings": [

@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-05T14:57:56.979056+00:00",
+  "generated_at_utc": "2026-11-05T15:59:57.495907+00:00",
   "candidates_evaluated": 49632,
-  "market_matched": 6763,
+  "market_matched": 6940,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-05T03:55:22.859563+00:00",
+  "market_as_of": "2026-11-05T15:13:09.640408+00:00",
   "projection_as_of": "2026-11-05T14:57:54.548072+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -20,30 +20,30 @@
           "pos": "RB"
         },
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB"
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
         }
       ],
       "receive": [
         {
-          "id": "7567",
-          "name": "Kenny Gainwell",
-          "pos": "RB"
+          "id": "5045",
+          "name": "Courtland Sutton",
+          "pos": "WR"
         },
         {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB"
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
         }
       ],
-      "our_gain": 2.02,
-      "their_gain": 2.9,
-      "market_paid_received_ratio": 1.035,
+      "our_gain": 2.29,
+      "their_gain": 2.46,
+      "market_paid_received_ratio": 0.973,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.656,
+      "score": 3.686,
       "not_an_approved_offer": true
     },
     {
@@ -56,30 +56,66 @@
           "pos": "RB"
         },
         {
-          "id": "4046",
-          "name": "Patrick Mahomes",
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        }
+      ],
+      "receive": [
+        {
+          "id": "13274",
+          "name": "Germie Bernard",
+          "pos": "WR"
+        },
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 2.29,
+      "their_gain": 2.46,
+      "market_paid_received_ratio": 0.966,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.663,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
           "pos": "QB"
         }
       ],
       "receive": [
         {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB"
+          "id": "6794",
+          "name": "Justin Jefferson",
+          "pos": "WR"
         },
         {
-          "id": "3163",
-          "name": "Jared Goff",
-          "pos": "QB"
+          "id": "3271",
+          "name": "Tyler Higbee",
+          "pos": "TE"
         }
       ],
-      "our_gain": 2.02,
-      "their_gain": 2.73,
-      "market_paid_received_ratio": 1.006,
+      "our_gain": 2.35,
+      "their_gain": 0.86,
+      "market_paid_received_ratio": 1.007,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.639,
+      "score": 2.844,
       "not_an_approved_offer": true
     },
     {
@@ -111,47 +147,11 @@
       ],
       "our_gain": 2.35,
       "their_gain": 0.86,
-      "market_paid_received_ratio": 1.028,
+      "market_paid_received_ratio": 0.938,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.781,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "6794",
-          "name": "Justin Jefferson",
-          "pos": "WR"
-        },
-        {
-          "id": "11625",
-          "name": "Adonai Mitchell",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 2.35,
-      "their_gain": 0.86,
-      "market_paid_received_ratio": 1.035,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.762,
+      "score": 2.68,
       "not_an_approved_offer": true
     },
     {
@@ -183,11 +183,11 @@
       ],
       "our_gain": 1.66,
       "their_gain": 0.84,
-      "market_paid_received_ratio": 0.872,
+      "market_paid_received_ratio": 0.905,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.779,
+      "score": 1.88,
       "not_an_approved_offer": true
     }
   ],

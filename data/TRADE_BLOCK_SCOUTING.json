@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-05T14:57:57.931913+00:00",
-  "source_snapshot_utc": "2026-11-05T14:57:45.250701+00:00",
-  "source_market_as_of": "2026-11-05T03:55:22.859563+00:00",
+  "generated_at_utc": "2026-11-05T15:59:58.023291+00:00",
+  "source_snapshot_utc": "2026-11-05T15:59:48.966269+00:00",
+  "source_market_as_of": "2026-11-05T15:13:09.640408+00:00",
   "source_projection_as_of": "2026-11-05T14:57:54.548072+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17460,
-  "market_screened": 5123,
+  "market_screened": 5156,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -58,7 +58,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.99,
           "their_lineup_delta_ppg": 0.12,
-          "value_paid_received_ratio": 0.77,
+          "value_paid_received_ratio": 0.739,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -96,42 +96,9 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.99,
           "their_lineup_delta_ppg": 0.12,
-          "value_paid_received_ratio": 1.048,
+          "value_paid_received_ratio": 1.071,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "12527",
-              "name": "Ashton Jeanty",
-              "position": "RB"
-            }
-          ],
-          "opponent_roster_id": 11,
-          "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 2.6,
-          "their_lineup_delta_ppg": 0.61,
-          "value_paid_received_ratio": 1.122,
-          "our_extra_cut": null,
-          "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -167,7 +134,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.6,
           "their_lineup_delta_ppg": 0.61,
-          "value_paid_received_ratio": 0.934,
+          "value_paid_received_ratio": 0.997,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -184,28 +151,28 @@
               "position": "WR"
             },
             {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
             }
           ],
           "receive": [
             {
-              "id": "10229",
-              "name": "Rashee Rice",
-              "position": "WR"
+              "id": "12527",
+              "name": "Ashton Jeanty",
+              "position": "RB"
             },
             {
-              "id": "4943",
-              "name": "Sam Darnold",
-              "position": "QB"
+              "id": "3271",
+              "name": "Tyler Higbee",
+              "position": "TE"
             }
           ],
-          "opponent_roster_id": 2,
-          "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.35,
-          "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 1.163,
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 2.6,
+          "their_lineup_delta_ppg": 0.61,
+          "value_paid_received_ratio": 1.096,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -243,7 +210,45 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.35,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.782,
+          "value_paid_received_ratio": 0.837,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "10229",
+              "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "9500",
+              "name": "Josh Downs",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 2.35,
+          "their_lineup_delta_ppg": 0.14,
+          "value_paid_received_ratio": 1.121,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -281,7 +286,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.55,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.922,
+          "value_paid_received_ratio": 0.914,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -319,7 +324,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.55,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.903,
+          "value_paid_received_ratio": 0.909,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -329,7 +334,7 @@
           ]
         }
       ],
-      "candidate_count": 106
+      "candidate_count": 116
     },
     {
       "asset": "Patrick Mahomes",
@@ -364,7 +369,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.02,
           "their_lineup_delta_ppg": 2.73,
-          "value_paid_received_ratio": 1.006,
+          "value_paid_received_ratio": 0.963,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -393,16 +398,16 @@
               "position": "QB"
             },
             {
-              "id": "7567",
-              "name": "Kenny Gainwell",
-              "position": "RB"
+              "id": "13274",
+              "name": "Germie Bernard",
+              "position": "WR"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.02,
           "their_lineup_delta_ppg": 0.96,
-          "value_paid_received_ratio": 1.099,
+          "value_paid_received_ratio": 1.092,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -440,7 +445,7 @@
           "opponent": "EmanAndYoMomma",
           "our_lineup_delta_ppg": 2.57,
           "their_lineup_delta_ppg": 0.03,
-          "value_paid_received_ratio": 0.98,
+          "value_paid_received_ratio": 0.955,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -478,7 +483,7 @@
           "opponent": "EmanAndYoMomma",
           "our_lineup_delta_ppg": 2.57,
           "their_lineup_delta_ppg": 0.03,
-          "value_paid_received_ratio": 1.041,
+          "value_paid_received_ratio": 1.015,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -511,7 +516,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.45,
           "their_lineup_delta_ppg": 0.66,
-          "value_paid_received_ratio": 1.128,
+          "value_paid_received_ratio": 1.099,
           "our_extra_cut": null,
           "opponent_extra_cut": "Jonathon Brooks",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -549,7 +554,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.45,
           "their_lineup_delta_ppg": 0.66,
-          "value_paid_received_ratio": 0.976,
+          "value_paid_received_ratio": 0.951,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
