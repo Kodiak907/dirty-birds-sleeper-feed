@@ -219,3 +219,12 @@ main{max-width:1120px}
 .pfo-demo-msf-card p{font-size:10px;color:#b8d2cb;line-height:1.55;margin:9px 0}
 .pfo-demo-msf-card .pfo-demo-stat{background:#1a4648;border-color:#386b66}
 .pfo-demo-msf-card .pfo-demo-stat b{color:#b6f5d5}
+
+/* Actual interactive showcase forecasting and review, rather than empty tabs. */
+.pfo-demo-odds-item{margin:12px 0 16px;padding:13px 15px;background:linear-gradient(145deg,#1e374c,#13273d);border:1px solid #3b5f71;border-radius:13px}
+.pfo-demo-odds-item>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;font-weight:750;color:#c4dce2}
+.pfo-demo-odds-item strong{font-size:25px;color:#ffd18a;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.pfo-demo-odds-track{height:9px;border-radius:12px;overflow:hidden;background:#314151;margin-top:10px}
+.pfo-demo-odds-track>span{display:block;height:100%;border-radius:12px;background:linear-gradient(90deg,#348d77,#90e5ba);box-shadow:0 0 12px #55dba566;transition:width .2s ease}
+#demo-coaching .pfo-demo-cardlist article{background:#1b3448;border-color:#406376}
+#demo-championship>.pfo-demo-compare-select{margin:18px 0 16px}
