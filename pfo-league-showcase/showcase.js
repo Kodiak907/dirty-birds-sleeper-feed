@@ -11,7 +11,7 @@ const fmt=n=>Number(n)>=0?'+'+money(n):money(n);
 const slots=['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];
 const data=await fetch('./sample-rosters.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Bundled demo roster not available');return r.json()});
 const players=data.players, own=data.rosters[0], rival=data.rosters[1];
-const state={week:9,page:'overview',market:'trade',matchmode:'starters',give:[],take:[],sendFaab:0,recvFaab:0,add:'',drop:'',claims:[],watch:new Set(),selected:own.starters[0],scoutPos:'ALL',scout:own.starters[0],search:'',radarPos:'ALL',game:0,play:0,scenarios:[],question:'',teamView:'submitted',matchView:'submitted',labSlots:own.starters.slice(),labError:'',startSitA:own.starters[0],startSitB:own.players.find(id=>!own.starters.includes(id)),scoutCompare:'',simVolatility:16,simBoost:0,simResult:null};
+const state={week:9,page:'overview',market:'trade',matchmode:'starters',give:[],take:[],sendFaab:0,recvFaab:0,add:'',drop:'',claims:[],watch:new Set(),selected:own.starters[0],scoutPos:'ALL',scout:own.starters[0],search:'',radarPos:'ALL',game:0,play:0,scenarios:[],question:'',teamView:'submitted',matchView:'submitted',labSlots:own.starters.slice(),labError:'',startSitA:own.starters[0],startSitB:own.players.find(id=>!own.starters.includes(id)),scoutCompare:'',simVolatility:16,simBoost:0,simResult:null,coachLog:[],coachNotice:''};
 
 /* Licensed member-only statistics are OPTIONAL and never change FFO demo forecast
  * scores until position coverage and the calculation have been verified.
@@ -300,8 +300,17 @@ function market(){
 function radar(){
  $('demo-radar').innerHTML='<div class="pfo-demo-market-controls">'+['ALL','QB','RB','WR','TE','K','DEF'].map(pos=>'<button class="button '+(state.radarPos===pos?'primary':'')+'" data-radar="'+pos+'">'+pos+'</button>').join('')+'</div>'+
  '<div class="pfo-demo-cardlist">'+available().filter(id=>state.radarPos==='ALL'||position(id)===state.radarPos)
-   .sort((a,b)=>projection(b)-projection(a)).map((id,i)=>'<article><header><strong>'+badge('#'+(i+1))+' '+pButton(id)+'</strong>'+badge(position(id))+'</header>'+
-   '<div class="pfo-demo-statgrid">'+stat(money(projection(id)),'FFO demonstration pts')+stat('—','Verified touches / targets')+stat('—','Verified snaps')+'</div><small>Real NFL player name. Source-backed 2026 usage unavailable in this isolated public demo. No unverified role change presented as fact.</small></article>').join('')+'</div>';
+ .sort((a,b)=>projection(b)-projection(a)).map((id,i)=>{
+  const trend=simulatedTrend(id),real=msfHub.rows.get(String(id))?.per_game||{};
+  const volume=position(id)==='RB'?real.rush_att:position(id)==='WR'||position(id)==='TE'?real.targets:position(id)==='QB'?real.pass_att:null;
+  const verified=Number.isFinite(volume);
+  return '<article><header><strong>'+badge('#'+(i+1))+' '+pButton(id)+'</strong>'+badge(position(id))+'</header>'+
+  '<div class="pfo-demo-statgrid">'+stat(money(projection(id)),'Illustrative FFO pts')+
+  stat(verified?Number(volume).toFixed(1):trend.usage??'—',verified?'MSF observed usage / game':'Sample opportunities / game')+
+  stat(trend.snaps??'—',trend.snaps==null?'Snaps unavailable':'Sample snap share %')+'</div>'+
+  '<small>'+esc(verified?'Observed usage supplied by member-only MySportsFeeds; snap share and projected points remain examples.':
+   'Demonstration usage numbers and rankings only. Actual coaching changes, snap tracking and role verification remain unconfirmed.')+'</small></article>';
+ }).join('')+'</div>';
 }
 function ask(){
  const q=state.question.toLowerCase(),pos=/\b(rb|running back)/.test(q)?'RB':/\b(wr|receiver)/.test(q)?'WR':/\b(qb|quarterback)/.test(q)?'QB':/\b(te|tight end)/.test(q)?'TE':null;
