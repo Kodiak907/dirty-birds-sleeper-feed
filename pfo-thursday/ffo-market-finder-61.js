@@ -121,7 +121,7 @@
     '<p class="pfo63-reason">'+esc(r.rationale)+'</p>'+
     '<button type="button" data-pfo61-review="'+i+'">Inspect in Trade Analyzer</button></article>';
   }).join('')+'</div>';
-  html+='<p class="pfo61-disclosure">Fair and Fleece filters now account for both managers' conditional skill-starter impact. Missing projection coverage withholds classifications. K/DST impact is excluded if not traded. Neither acceptance odds nor market confidence are claimed. The Trade Analyzer retains FAAB negotiation.</p>';
+  html+='<p class="pfo61-disclosure">Fair and Fleece filters now account for conditional skill-starter impact on both teams. Missing projection coverage withholds classifications. K/DST impact is excluded if not traded. Neither acceptance odds nor market confidence are claimed. The Trade Analyzer retains FAAB negotiation.</p>';
   box.innerHTML=html;
  }
  function waiverRender(){
