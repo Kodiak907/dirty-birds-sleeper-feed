@@ -546,7 +546,9 @@ function updateInjuryView(){
  const starterIds=new Set((liveRosterSnapshot?.starters||[]).map(String));
  const rows=roster.map(p=>{const o=official.find(x=>normPlayer(x.name)===normPlayer(p.name)),a=alt.find(x=>normPlayer(x.name)===normPlayer(p.name));const tag=p.sleeper_injury_status||'';
   const game=String(o?.game_status||'').trim(),checkedOfficial=recent&&matchingWeek;
-  const label=o&&game?(game+' · NFL'):o?'On NFL report':a?(String(a.status||'Injury reported')+' · ESPN'):tag?(tag+' · fantasy'):checkedOfficial?'Not listed · NFL':'Source pending';
+  const label=o&&game?(game+' · NFL'):o?'On NFL report':
+   a?('ESPN reported '+String(a.status||'injury')+' · not NFL-confirmed'):
+   tag?(tag+' · fantasy'):checkedOfficial?'Not listed · NFL':'Source pending';
   const checked=o||checkedOfficial?'<a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL</a>':(a?'<a href="https://www.espn.com/nfl/injuries" target="_blank" rel="noopener noreferrer">ESPN</a>':'');
   // Global header contains source limitations; don't paste the same three-line
   // missing-clearance warning into every row and drown out real injuries.
@@ -1714,14 +1716,19 @@ function pfo49GameTable(id){
   const done=w<week,league=observed[w],game=ind?.games?.find(g=>g.week===w),fromRaw=game?pfo49ScoreFromStats(game.stats):null;
   const opponent=pfo49ScheduleWeek(info,w);const opp=opponent?.opponent||(pfo49Schedule?.complete&&pfo49Schedule.teams?.[gm47CanonicalTeam(info.team)]?'BYE':'Not verified');
   let points=null,kind='',why='';
-  if(league){points=league.points;kind=done?'Final league score':'Live league score';why='Sleeper league scoring';}
-  else if(game&&fromRaw){points=fromRaw.points;kind='FFL reconstruction*';why='nflverse raw game stats';}
-  else if(!done&&opponent){points=pfo49ProjectedWeek(id,w);kind=points==null?'No forecast':'FFO model*';why=points==null?'Insufficient sample':'Independent stats · NOT expert projection';}
+  if(league){
+   // A pre-kickoff Sleeper points=0 placeholder is not a final result.
+   // Completed weeks can genuinely score zero and stay preserved.
+   if(!done&&league.points===0&&!game){points=null;kind='Pregame / provisional';why='Sleeper zero placeholder · game result not certified';}
+   else{points=league.points;kind=done?'Final league score':'Live league score · provisional';why='Sleeper league scoring';}
+  }
+  else if(game&&fromRaw){points=fromRaw.points;kind='FFL reconstruction*';why='MSF independently sourced NFL statistics';}
+  else if(!done&&opponent){points=pfo49ProjectedWeek(id,w);kind=points==null?'No forecast':'FFO model*';why=points==null?'Independent model data unavailable':'MSF season-based model · NOT a certified game score';}
   else if(opp==='BYE'){kind='BYE';why='Confirmed on full-season NFL schedule';}
   else {kind=done?'No scoring record':'No verified matchup';why='Source coverage incomplete';}
   h+='<tr><td>W'+w+'</td><td>'+e(opp)+'</td><td><b>'+pfo49Num(points,2)+'</b></td><td>'+e(kind)+'</td><td>'+e(why)+'</td></tr>';
  }
- return h+'</tbody></table></div><p class="pfo49-small">*League-scored points are authoritative. FFL reconstructions use nflverse NFL statistics converted to FFL scoring; custom big-play bonuses and D/ST categories may be missing. FFO projections are an experimental recent-form statistical baseline (65% last three observed games + 35% season average) applied to FFL rules, not an outside expert prediction or opponent-adjusted forecast. No missing schedule automatically becomes BYE.</p>';
+ return h+'</tbody></table></div><p class="pfo49-small">*Final FFL scores come from recorded Sleeper league matchups. Independent FFO estimates use sourced NFL statistics and frozen FFL rules; custom bonuses and D/ST tiers can be incomplete. A season baseline is not a game log; current-week zeros may be pregame placeholders, and missing schedules are not automatically treated as byes.</p>';
 }
 function pfo49ComparePanel(id){const p=pfo49Info(id),roster=(liveRosterSnapshot?.players||[]).filter(x=>['QB','RB','WR','TE','K'].includes(x.position)&&String(x.player_id)!==String(id));
  const selected=pfo49Comparator||'';const opt=roster.map(x=>'<option value="'+e(x.player_id)+'" '+(selected===String(x.player_id)?'selected':'')+'>'+e(x.name)+'</option>').join('');
