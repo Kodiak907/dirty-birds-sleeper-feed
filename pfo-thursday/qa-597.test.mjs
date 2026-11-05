@@ -9,7 +9,7 @@ test('5.9.7 assets parse, load after previous model and preserve Commissioner bo
  for(const [name,src] of Object.entries({js,market,core,mobile,meta}))assert.doesNotThrow(()=>new Script(src,{filename:name}),name);
  assert.match(html,/5\.9\.7 COACH REVIEW/);
  assert.match(html,/ffo-waiver-meta-597\.js\?v=597/);
- assert.match(html,/ffo-pfo-597\.js\?v=(?:690|616)/);
+ assert.match(html,/ffo-pfo-597\.js\?v=(?:690|616|622)/);
  assert.match(html,/ffo-pfo-597\.css\?v=597/);
  assert.doesNotMatch(js,/\/api\/commissioner\/.*POST/);
  assert.match(css,/#pfo59-waiver-board/);
