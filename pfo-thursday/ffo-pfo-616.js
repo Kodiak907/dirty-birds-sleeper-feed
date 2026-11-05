@@ -56,7 +56,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.22 · Rams schedule alias and accelerated player recovery'];
+  const lines=['PFO 6.23 · verified kicker boxscore recovery'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -132,6 +132,7 @@
     const msfId=row?.msf_id!=null&&/^[0-9]{1,12}$/.test(String(row.msf_id))?String(row.msf_id):'';
     try{response=await fetch('/api/ffo/stats/player-coverage?team='+encodeURIComponent(team)+
      '&name='+encodeURIComponent(p.name)+(msfId?'&msf_id='+encodeURIComponent(msfId):'')+
+     '&position='+encodeURIComponent(pos(p))+
      '&week='+encodeURIComponent(typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)),
      {cache:'no-store',signal:ctl.signal});}
     finally{clearTimeout(timer)}
