@@ -44,3 +44,15 @@
 #matchup .pfo64-reserve>summary{font-size:12px;color:#efbf7a;cursor:pointer;font-weight:750;padding:7px}
 #matchup .pfo64-reserve .pfo64-bench-grid{display:grid;gap:5px;padding:5px 0}
 #matchup .pfo66-trade-impact{font-weight:700;color:#c6e9da}
+
+/* 6.15: the full Trade Laboratory belongs to Trade Analyzer, never Finder. */
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="finder"] #pfo59-trade-existing,
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="finder"] #trade-fold{display:none!important}
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="lab"] #pfo59-trade-existing{display:block!important}
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="lab"] #trade-fold{max-width:100%}
+#market [data-pfo59-market-panel="trade"][data-pfo64-trade="lab"] #pfo59-trade-board{display:block}
+#matchup .pfo615-swapped{border:1px solid #6daf93;background:#193f38;border-radius:8px;box-shadow:inset 3px 0 #8bd5b2}
+#matchup .pfo615-change-note{display:block;font-size:10px;color:#f7d99c;font-weight:750;line-height:1.5;margin-top:4px}
+#matchup .pfo615-swap-summary{margin:10px 0;padding:11px;border:1px solid #4e837c;background:#1d3c42;border-radius:9px;line-height:1.55;font-size:11px}
+#matchup .pfo615-swap-summary b{color:#e4fff1}
+#matchup .pfo615-swap-summary ul{padding-left:17px;margin:7px 0 2px}
