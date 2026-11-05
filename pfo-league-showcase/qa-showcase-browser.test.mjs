@@ -114,8 +114,8 @@ test('Championship lab calculates 100,000 illustrative draws and responds to con
  await page.locator('#demo-tools-drawer [data-go=championship]').click();
  assert.match(await page.locator('#demo-championship').innerText(),/100,000 simulated scenarios/);
  assert.equal(await page.locator('#demo-championship .pfo-demo-odds-item').count(),3);
- const before=await page.locator('#demo-championship .pfo-demo-odds-item').innerText();
+ const before=(await page.locator('#demo-championship .pfo-demo-odds-item').allInnerTexts()).join('|');
  await page.locator('#demo-sim-strength').selectOption('20');
- const after=await page.locator('#demo-championship .pfo-demo-odds-item').innerText();
+ const after=(await page.locator('#demo-championship .pfo-demo-odds-item').allInnerTexts()).join('|');
  assert.notEqual(before,after,'changing opponent strength should modify chances');
 });
