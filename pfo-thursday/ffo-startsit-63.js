@@ -1,101 +1,108 @@
-/* PFO 6.3 — read-only Start/Sit Compare inside existing Weekly Matchup.
- * Comparative evidence, not an automated lineup instruction.
- */
+/* PFO 6.6 — instant Start/Sit roster controls, no Market hydration. */
 (()=>{'use strict';
- const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const fmt=x=>typeof x==='number'&&Number.isFinite(x)?x.toFixed(1):'—';
- const state={first:'',second:'',horizon:'WEEK'};
- const norm=x=>String(x||'').toUpperCase().replace('D/ST','DEF');
- const home=()=>document.getElementById('pfo63-startsit');
- const source=()=>{
-  const market=window.ffoPfo59?.marketResearchContext?.();
-  const roster=market?.rosters?.find(r=>String(r.roster_id)===String(market.ownerRosterId||1));
-  const players=(roster?.players||[]).map(String).filter(pid=>market.names?.[pid]?.name);
-  return {market,players};
- };
- function model(id,context){
-  const p=context.market?.names?.[id]||{},estimate=context.market?.estimate?.(id);
-  const ppg=typeof estimate==='number'&&Number.isFinite(estimate)?estimate:null;
-  const info=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
-  const latest=info?.latest||{},role=norm(p.position),week=Number(window.dbNflWeek||9);
-  const schedule=window.ffoPfo597?.verifiedSchedule?.();
-  const game=schedule?.teams?.[String(p.team||'').toUpperCase()]?.weeks?.[String(week)]||null;
-  const opponent=game?.bye===true?'BYE':game?.opponent||'Unverified matchup';
-  const usage=role==='QB'?['Pass attempts',latest.pass_att]:role==='RB'?
-   ['Rush attempts',latest.rush_att]:['Targets',latest.targets];
-  const statWeek=Number(latest.week);
-  return {p,ppg,role,week,opponent,usage,
-   usageWeek:Number.isInteger(statWeek)&&statWeek>=1?statWeek:null,
-   injury:p.injury_status||p.status||null,
-   freshness:context.market?.snapshotAt||null};
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=x=>Number.isFinite(x)?Number(x).toFixed(1):'—';
+const state={first:'',second:'',horizon:'WEEK',nonce:0};
+const home=()=>document.getElementById('pfo63-startsit');
+const nowWeek=()=>typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||9);
+function source(){
+ const snap=typeof gm47Snapshot!=='undefined'?gm47Snapshot:null;
+ const live=typeof liveRosterSnapshot!=='undefined'?liveRosterSnapshot:null;
+ const rid=String(window.dbRosterId||live?.roster_id||1);
+ const team=snap?.rosters?.find(x=>String(x.roster_id)===rid)||null;
+ const ids=(live?.roster_player_ids||team?.players||[]).map(String);
+ const reserved=new Set((live?.reserve||team?.reserve||[]).map(String));
+ const started=new Set((live?.starters||team?.starters||[]).map(String));
+ const liveNames=new Map((live?.players||[]).map(x=>[String(x.player_id),x]));
+ const all=ids.map(id=>{
+  const p=liveNames.get(id)||(typeof pfo52Info==='function'?pfo52Info(id):null)||{};
+  return {id,name:p.name||'',team:p.team||'',position:String(p.position||'').toUpperCase().replace('D/ST','DEF'),
+   injury:String(p.sleeper_injury_status||p.injury_status||'').toUpperCase(),starter:started.has(id),reserved:reserved.has(id)};
+ }).filter(x=>x.name&&!x.name.startsWith('Unknown player'));
+ return {players:all.filter(x=>!x.reserved),ir:all.filter(x=>x.reserved),source:live?'Live roster':team?'League roster snapshot':'Awaiting roster'};
+}
+function value(p,week){
+ let points=null,usage=null,opponent='Not verified',bye=false;
+ try{const n=typeof pfo50Estimate==='function'?pfo50Estimate(p.id):null;if(typeof n==='number'&&Number.isFinite(n))points=n;}catch{}
+ try{
+  const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(p.id):null;
+  const g=(row?.last_three||[]).filter(x=>Number(x.week)<week).sort((a,b)=>b.week-a.week)[0]||null;
+  const st=g?.stats||row?.latest?.stats||row?.latest||{};
+  const key=p.position==='QB'?'pass_att':p.position==='RB'?'rush_att':['WR','TE'].includes(p.position)?'targets':null;
+  if(key&&st[key]!=null&&Number.isFinite(Number(st[key])))usage=key.replace('_',' ')+' '+st[key]+(g?.week?' (W'+g.week+')':'');
+ }catch{}
+ try{
+  const calendar=window.ffoPfo597?.verifiedSchedule?.(),g=calendar?.teams?.[p.team.toUpperCase()]?.weeks?.[String(week)];
+  if(g){opponent=g.opponent||'Not verified';bye=g.bye===true;}
+ }catch{}
+ return {points,usage,opponent,bye};
+}
+function card(p,v){return '<div><b>'+esc(p.name)+'</b><small>'+esc(p.position)+' · '+esc(p.team)+
+ (p.starter?' · Submitted starter':' · Bench')+'</small>'+
+ '<div>FFL baseline <strong>'+fmt(v.points)+' PPG</strong></div>'+
+ '<div>Opponent: '+esc(v.bye?'BYE':v.opponent)+'</div>'+
+ '<div>'+esc(v.usage||'No verified workload sample')+'</div>'+
+ '<div>Status: '+esc(p.injury||'Not tagged · health not certified')+'</div></div>';}
+function details(token,players,week){
+ if(token!==state.nonce)return;
+ const box=home()?.querySelector('#pfo66-compare-output');if(!box)return;
+ const a=players.find(x=>x.id===state.first),b=players.find(x=>x.id===state.second);
+ if(!a||!b){box.textContent='Select two different players.';return;}
+ const av=value(a,week),bv=value(b,week);if(token!==state.nonce)return;
+ let note='';
+ if(state.horizon==='WEEK'){
+  note=av.points!=null&&bv.points!=null&&!av.bye&&!bv.bye?
+   'Baseline difference <b>'+fmt(Math.abs(av.points-bv.points))+' model PPG</b> ('+
+   esc(av.points>=bv.points?a.name:b.name)+' higher). Not a validated matchup-adjusted prediction.':
+   'Comparison withheld: independent baseline or game-week eligibility is missing.';
+ }else note=state.horizon==='ROS'?
+  'Rest-of-season differential withheld pending validated week-specific forecasts.':
+  'Fantasy-playoff differential withheld pending verified Weeks 15–17 forecasts.';
+ box.innerHTML='<div class="pfo63-compare-players">'+card(a,av)+card(b,bv)+'</div>'+
+  '<p class="pfo63-compare-conclusion">'+note+'</p>'+
+  '<small class="pfo63-compare-foot">No automatic lineup changes. Verify official injury status.</small>';
+}
+function render(){
+ const host=home();if(!host)return;
+ const data=source(),players=data.players,week=nowWeek(),token=++state.nonce;
+ if(!players.length){
+  host.innerHTML='<h3>Start / Sit · Player Comparison</h3><p>Roster unavailable. This tool does not wait for Market; player names and values remain unknown until the roster loads.</p>';
+  return;
  }
- function render(){
-  const host=home();if(!host)return;
-  const c=source();
-  if(!c.market?.rosters?.length){
-   host.innerHTML='<h3>Start / Sit · Player Comparison</h3><p>Waiting for a current roster and independent player directory. No unsupported lineup recommendation is shown.</p>';
-   return;
-  }
-  if(!c.players.includes(state.first))state.first=c.players[0]||'';
-  if(!c.players.includes(state.second)||state.first===state.second)
-   state.second=c.players.find(id=>id!==state.first)||'';
-  const options=selected=>c.players.map(pid=>'<option value="'+esc(pid)+'"'+
-   (selected===pid?' selected':'')+'>'+esc(c.market.names[pid].name)+' · '+
-   esc(c.market.names[pid].position||'')+'</option>').join('');
-  const a=model(state.first,c),b=model(state.second,c);
-  const rows=[a,b];
-  let html='<div class="pfo63-compare-head"><div><h3>Start / Sit · Player Comparison</h3>'+
-   '<small>Coach decides the lineup · independent research only</small></div></div>';
-  html+='<div class="pfo63-compare-choices"><label>Compare player A<select data-pfo63-compare="first">'+options(state.first)+'</select></label>'+
-   '<label>Compare player B<select data-pfo63-compare="second">'+options(state.second)+'</select></label></div>';
-  html+='<div class="pfo63-horizon">'+[['WEEK','This week'],['ROS','Rest of season'],['PLAYOFFS','Playoffs']]
-   .map(([value,label])=>'<button type="button" data-pfo63-horizon="'+value+'" aria-pressed="'+
-    (state.horizon===value)+'">'+label+'</button>').join('')+'</div>';
-  html+='<div class="pfo63-compare-players">'+rows.map(x=>{
-   const usage=x.usageWeek!==null&&x.usage[1]!=null?
-    esc(x.usage[0])+' '+esc(x.usage[1])+' (source W'+esc(x.usageWeek)+')':'No verified recent workload sample';
-   return '<div><b>'+esc(x.p.name||'Unknown')+'</b><small>'+esc(x.role)+' · '+
-    esc(x.p.team||'NFL team unverified')+'</small>'+
-    '<div>Independent FFL model baseline <strong>'+fmt(x.ppg)+' PPG</strong></div>'+
-    '<div>Upcoming opponent: '+esc(x.opponent)+'</div>'+
-    '<div>'+usage+'</div>'+
-    '<div>Injury metadata: '+esc(x.injury||'No injury tag; health not certified')+'</div></div>';
-  }).join('')+'</div>';
-  if(state.horizon==='WEEK'){
-   const enough=a.ppg!==null&&b.ppg!==null&&a.opponent!=='BYE'&&b.opponent!=='BYE';
-   html+='<p class="pfo63-compare-conclusion">'+(enough?
-    'Independent baseline difference: <b>'+fmt(Math.abs(a.ppg-b.ppg))+' model PPG</b> ('+
-     esc(a.ppg>=b.ppg?a.p.name:b.p.name)+' has the higher baseline). This is not a validated opponent-adjusted weekly forecast or a start instruction.':
-    'A numeric comparison is withheld until both independent estimates and playing-week eligibility can be checked. Missing data is never treated as zero.')+'</p>';
-  }else{
-   html+='<p class="pfo63-compare-conclusion">'+(state.horizon==='ROS'?
-    'Rest-of-season player differentials require week-by-week verified projections and health/workload adjustments.':
-    'Playoff-specific differentials require independently modeled Weeks 15–17 and opponent-specific evidence.')+
-    ' Those forecasts are not certified yet, so no invented points or percentages are displayed.</p>';
-  }
-  html+='<small class="pfo63-compare-foot">Usage snapshots and NFL schedules are separate from forecasts. Verify official game-week injury statuses before locking a lineup. This tool neither chooses a starter nor modifies submissions.</small>';
-  host.innerHTML=html;
- }
- function mount(){
-  const anchor=document.getElementById('pfo52-matchup');
-  if(!anchor||home())return;
-  const section=document.createElement('section');section.id='pfo63-startsit';
-  section.className='pfo63-compare';
-  anchor.before(section);
- }
- document.addEventListener('change',event=>{
-  const control=event.target.closest('[data-pfo63-compare]');if(!control)return;
-  state[control.dataset.pfo63Compare]=control.value;render();
+ if(!players.some(p=>p.id===state.first))state.first=players.find(p=>p.starter)?.id||players[0].id;
+ if(!players.some(p=>p.id===state.second)||state.second===state.first)
+  state.second=players.find(p=>p.id!==state.first)?.id||'';
+ const options=selected=>players.map(p=>'<option value="'+esc(p.id)+'"'+(p.id===selected?' selected':'')+'>'+
+  esc(p.name)+' · '+esc(p.position)+(p.starter?' · Starter':'')+'</option>').join('');
+ host.innerHTML='<div class="pfo63-compare-head"><h3>Start / Sit · Player Comparison</h3><small>'+
+  esc(data.source)+' · Week '+week+' · Coach decides</small></div>'+
+  '<div class="pfo63-compare-choices"><label>Compare player A<select data-pfo63-compare="first">'+options(state.first)+'</select></label>'+
+  '<label>Compare player B<select data-pfo63-compare="second">'+options(state.second)+'</select></label></div>'+
+  '<div class="pfo63-horizon">'+[['WEEK','This week'],['ROS','Rest of season'],['PLAYOFFS','Playoffs']].map(([v,label])=>
+   '<button type="button" data-pfo63-horizon="'+v+'" aria-pressed="'+(state.horizon===v)+'">'+label+'</button>').join('')+'</div>'+
+  '<div id="pfo66-compare-output" aria-live="polite"><p class="pfo63-compare-foot">Player choices ready · loading two research snapshots.</p></div>'+
+  (data.ir.length?'<p class="pfo63-compare-foot">'+data.ir.length+' fantasy-reserve player(s) excluded from start/sit choices.</p>':'');
+ const work=()=>setTimeout(()=>details(token,players,week),0);
+ if(typeof requestAnimationFrame==='function')requestAnimationFrame(work);else work();
+}
+function mount(){
+ const anchor=document.getElementById('pfo52-matchup');if(!anchor||home())return;
+ const section=document.createElement('section');section.id='pfo63-startsit';section.className='pfo63-compare';anchor.before(section);
+}
+document.addEventListener('change',event=>{
+ const input=event.target.closest?.('[data-pfo63-compare]');if(!input)return;
+ state[input.dataset.pfo63Compare]=input.value;render();
+});
+document.addEventListener('click',event=>{
+ const b=event.target.closest?.('[data-pfo63-horizon]');if(!b)return;
+ state.horizon=b.dataset.pfo63Horizon;render();
+});
+function init(){
+ mount();document.querySelector('nav button[data-page="matchup"]')?.addEventListener('click',()=>{
+  mount();if(document.querySelector('#matchup[data-pfo64-tab="startsit"]'))render();
  });
- document.addEventListener('click',event=>{
-  const button=event.target.closest('[data-pfo63-horizon]');if(button){
-   state.horizon=button.dataset.pfo63Horizon;render();
-  }
- });
- function init(){mount();
-  document.querySelector('nav button[data-page="matchup"]')?.addEventListener('click',()=>{mount();render();});
-  if(document.querySelector('#matchup.page.active'))render();
- }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
- window.ffoStartSit63={refresh:render};
+ if(document.querySelector('#matchup.page.active'))render();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+window.ffoStartSit63={refresh:render};
 })();

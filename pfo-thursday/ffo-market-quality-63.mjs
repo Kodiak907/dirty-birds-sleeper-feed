@@ -60,6 +60,43 @@ function replacementBaselines(rosters,names,estimate,slots){
   return [p,values[Math.min(ix,values.length-1)]??null];
  }));
 }
+/* Conditional optimized starter totals; NEVER certified weekly projections.
+ * Fill positional minimums first, then FLEX/SUPERFLEX. Missing starters
+ * return null instead of adding zero or treating bench PPG as lineup impact.
+ */
+export function modeledStarterTotal(ids,names,estimate,starterSlots){
+ const roles=['QB','RB','WR','TE','K','DEF'];
+ const grouped=Object.fromEntries(roles.map(x=>[x,[]]));
+ for(const pid of ids||[]){
+  const p=pos(names[String(pid)]?.position),v=estimate(String(pid));
+  if(p in grouped&&finite(v))grouped[p].push({id:String(pid),ppg:v});
+ }
+ for(const p of roles)grouped[p].sort((a,b)=>b.ppg-a.ppg);
+ // K/DST are not involved in these packages; their missing projections must not
+ // block calculating the skill-player change that actually differs after a trade.
+ const slots=(starterSlots||[]).map(pos).filter(x=>!['BN','IR','TAXI','RESERVE','K','DEF'].includes(x));
+ if(!slots.length)return null;
+ let total=0;
+ const flex=slots.filter(x=>!roles.includes(x));
+ for(const p of roles){
+  const amount=slots.filter(x=>x===p).length;
+  if(grouped[p].length<amount)return null;
+  total+=grouped[p].splice(0,amount).reduce((acc,x)=>acc+x.ppg,0);
+ }
+ const eligible={WRRB_FLEX:['WR','RB'],REC_FLEX:['WR','TE'],FLEX:['RB','WR','TE'],
+  SUPER_FLEX:['QB','RB','WR','TE'],SUPERFLEX:['QB','RB','WR','TE']};
+ flex.sort((a,b)=>(eligible[a]?.length||100)-(eligible[b]?.length||100));
+ for(const type of flex){
+  const choices=eligible[type];
+  if(!choices)return null;
+  const p=choices.map(role=>({role,top:grouped[role][0]})).filter(x=>x.top)
+   .sort((a,b)=>b.top.ppg-a.top.ppg)[0];
+  if(!p)return null;
+  total+=grouped[p.role].shift().ppg;
+ }
+ return round(total);
+}
+
 export function screenTradePackages({
  rosters=[],names={},estimate=()=>null,ownerRosterId='1',excludedRosterIds=['3'],
  starterSlots=[],snapshotAt=null,rulesReady=false,selectedPartnerId=null,
@@ -77,16 +114,25 @@ export function screenTradePackages({
  const requestedShape=allowedShapes.has(shapeFilter)?shapeFilter:'ANY';
  const exclude=new Set([id(ownerRosterId),...excludedRosterIds.map(id)]);
  const allowed=rosters.filter(r=>!exclude.has(id(r.roster_id))&&(!selectedPartnerId||id(r.roster_id)===id(selectedPartnerId)));
- const min=minimum(starterSlots),target=targets(min),baselines=replacementBaselines(rosters,names,estimate,starterSlots);
+ const min=minimum(starterSlots),target=targets(min);
+ const valueCache=new Map();
+ const estimated=pid=>{const key=id(pid);if(!valueCache.has(key))valueCache.set(key,estimate(key));return valueCache.get(key);};
+ const baselines=replacementBaselines(rosters,names,estimated,starterSlots);
+ const lineups=new Map();
+ const starterTotal=ids=>{
+  const key=ids.map(id).sort().join('|');
+  if(!lineups.has(key))lineups.set(key,modeledStarterTotal(ids,names,estimated,starterSlots));
+  return lineups.get(key);
+ };
  // Only covered player values allow a screened trade idea. Missing data cannot
  // become a bogus "fair" offer just because roster depth suggests a need.
- const ours=getPlayers(own,names,estimate,protectedIds(protectedMine),availability);
- const allOwn=active(own),ownCounts=counts(allOwn,names),results=[];
+ const ours=getPlayers(own,names,estimated,protectedIds(protectedMine),availability);
+ const allOwn=active(own),ownCounts=counts(allOwn,names),ourBefore=starterTotal(allOwn),results=[];
  let priced=0,considered=0;
  for(const other of allowed){
   const theirLocks=protectedIds(protectedByManager[id(other.roster_id)]);
-  const theirs=getPlayers(other,names,estimate,theirLocks,availability);
-  const theirIds=active(other),theirCounts=counts(theirIds,names);
+  const theirs=getPlayers(other,names,estimated,theirLocks,availability);
+  const theirIds=active(other),theirCounts=counts(theirIds,names),theirBefore=starterTotal(theirIds);
   const useOurs=ours.filter(x=>finite(x.ppg)&&!['K','DEF'].includes(x.position));
   const useTheirs=theirs.filter(x=>finite(x.ppg)&&!['K','DEF'].includes(x.position));
   const shapes=[[1,1],[2,1],[1,2],[2,2],[3,1],[1,3],[3,2],[2,3]];
@@ -95,7 +141,10 @@ export function screenTradePackages({
    if(selectedMode==='MULTI'&&a+b<3)continue;
    const gs=combinations(useOurs.slice(0,10),a,a===1?10:40);
    const ts=combinations(useTheirs.slice(0,10),b,b===1?10:40);
-   for(const give of gs)for(const take of ts){
+   let checkedThisShape=0;
+   shapeCandidates: for(const give of gs)for(const take of ts){
+    // Bound combinatorial work on mobile; retain all package shapes and managers.
+    if(checkedThisShape++>=320)break shapeCandidates;
     considered++;
     if(!rosterFits(allOwn,give,take,min,names)||!rosterFits(theirIds,take,give,min,names))continue;
     // Avoid 2 QBs or 3 WRs bundled with little football utility.
@@ -117,33 +166,46 @@ export function screenTradePackages({
     // Conservative replacement-value guard: no cross-position raw PPG swaps.
     // Replacements can be below zero, so compare absolute VOR differences too.
     const gap=Math.abs(value.in-value.out),scale=Math.max(3,Math.abs(value.in),Math.abs(value.out));
-    const balanced=gap/scale<=0.26&&(!Number.isFinite(ratio)||ratio>=0.65&&ratio<=1.45);
-    // Fleeces are favorable-value research asks, not acceptance odds.
-    // Their deficit remains bounded and must address an actual depth need.
     const favorable=value.in-value.out;
-    const fleece=favorable>=Math.max(1.5,scale*0.12)&&
-      favorable<=Math.max(5,scale*0.42)&&needThem>0&&needUs>=0&&
-      (a+b<=4||needUs>0);
+    // Cheap rejection before conditional lineup simulation.
+    if(selectedMode==='FAIR'&&gap/scale>.20)continue;
+    if(selectedMode==='FLEECE'&&(favorable<1.5||favorable>Math.max(5,scale*.33)||needThem<=0))continue;
+    if(!selectedMode&&fairOnly&&gap/scale>.20)continue;
+    if(ourBefore===null||theirBefore===null)continue;
+    const usIds=allOwn.filter(pid=>!give.some(x=>x.id===pid)).concat(take.map(x=>x.id));
+    const themIds=theirIds.filter(pid=>!take.some(x=>x.id===pid)).concat(give.map(x=>x.id));
+    const ourAfterLineup=starterTotal(usIds),theirAfterLineup=starterTotal(themIds);
+    if(ourAfterLineup===null||theirAfterLineup===null)continue;
+    const ourImpact=round(ourAfterLineup-ourBefore);
+    const theirImpact=round(theirAfterLineup-theirBefore);
+    const balanced=gap/scale<=.20&&(!Number.isFinite(ratio)||ratio>=.7&&ratio<=1.35)&&
+      ourImpact>=-1.25&&theirImpact>=-1.25&&Math.abs(ourImpact-theirImpact)<=3;
+    // Fleece means a bounded asymmetry supported by *lineup* effects, not merely
+    // summing bench players against a starter. Opposing manager interest is unknown.
+    const fleece=favorable>=Math.max(1.5,scale*.12)&&favorable<=Math.max(5,scale*.33)&&
+      ourImpact>=1&&theirImpact>=-3&&ourImpact-theirImpact>=2&&needThem>0;
+    const multiViable=ourImpact>=-1.5&&theirImpact>=-1.5&&
+      (balanced||(gap/scale<=.25&&Math.abs(ourImpact-theirImpact)<=3));
     if(selectedMode==='FAIR'&&!balanced)continue;
     if(selectedMode==='FLEECE'&&!fleece)continue;
-    if(selectedMode==='MULTI'&&!balanced&&!(favorable>0&&favorable<=Math.max(3,scale*.24)&&needThem>0))continue;
+    if(selectedMode==='MULTI'&&!multiViable)continue;
     if(!selectedMode&&fairOnly&&!balanced)continue;
-    const modeBonus=selectedMode==='FLEECE'?Math.min(12,favorable*2):
+    const modeBonus=selectedMode==='FLEECE'?Math.min(9,Math.max(0,ourImpact-theirImpact)*2):
       selectedMode==='MULTI'&&a+b>=3?5:0;
-    // Separate score from acceptance claims; pure depth/PPG value is provisional.
-    const score=needUs*8+needThem*8+(balanced?8:0)+(objectivePos&&upgrade?6:0)+modeBonus-
+    const score=needUs*6+needThem*6+(balanced?9:0)+(objectivePos&&upgrade?5:0)+modeBonus+
+      Math.min(6,ourImpact*1.8)+Math.min(6,theirImpact*1.8)-
       Math.min(25,gap)*(selectedMode==='FLEECE' ? 0.65 : 2)-Math.max(0,a+b-2)*1.5+
-      (preferUneven&&a!==b?4:0);
+      (preferUneven&&a!==b?3:0);
     if(score<0)continue;
     results.push({partnerId:id(other.roster_id),give,take,format:a+' for '+b,
      outgoingPPG:round(give.reduce((s,x)=>s+x.ppg,0)),
      incomingPPG:round(take.reduce((s,x)=>s+x.ppg,0)),
      completeness:(a+b)+'/'+(a+b),needs:{ours:needUs,theirs:needThem},
-     rationale:(selectedMode==='FLEECE'?'Favorable replacement-value ask; their interest is not known. ':
+     rationale:(selectedMode==='FLEECE'?'Conditional favorable-value ask; their interest is unknown. ':
        selectedMode==='MULTI'?'Multi-player deal with several roster consequences. ':'')+
        (needUs>0?'Improves our depth; ':'Our position upgrade or package fit; ')+
        (needThem>0?'addresses their shortage.':'their benefit depends on lineup valuation.'),
-     replacementValueGap:round(value.in-value.out),
+     replacementValueGap:round(value.in-value.out),starterImpact:{ours:ourImpact,theirs:theirImpact},
      priority:score,balanced,favorableToUs:favorable>0,mode:selectedMode||'LEGACY',healthFlag:false,researchOnly:true,
      acceptanceProbability:null,fairnessConfidence:null,
      warning:'Conditional replacement-value screening; starting impact requires complete lineup coverage'});

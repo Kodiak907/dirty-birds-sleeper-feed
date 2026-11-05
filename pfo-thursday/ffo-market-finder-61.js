@@ -35,7 +35,7 @@
  }
  function getEngine(){
   if(engine)return Promise.resolve(engine);
-  if(!loading)loading=import('/ffo-market-quality-63.mjs').then(m=>(engine=m)).catch(error=>{
+  if(!loading)loading=import('/ffo-market-quality-63.mjs?v=660').then(m=>(engine=m)).catch(error=>{
    loading=null;throw error;});
   return loading;
  }
@@ -116,10 +116,12 @@
     '<div><small>WE GET</small><strong>'+players(r.take)+'</strong></div></div>'+
     '<div class="pfo61-meta"><span>Independent model '+esc(r.completeness)+' covered</span>'+
     '<span>Replacement-value gap '+fmt(r.replacementValueGap)+' model PPG</span></div>'+
+    (r.starterImpact?'<div class="pfo61-meta pfo66-trade-impact"><span>Our skill starters '+fmt(r.starterImpact.ours)+' provisional PPG</span>'+
+     '<span>Their skill starters '+fmt(r.starterImpact.theirs)+' provisional PPG</span></div>':'')+
     '<p class="pfo63-reason">'+esc(r.rationale)+'</p>'+
     '<button type="button" data-pfo61-review="'+i+'">Inspect in Trade Analyzer</button></article>';
   }).join('')+'</div>';
-  html+='<p class="pfo61-disclosure">Model values are provisional. A balanced package is not an acceptance prediction, verified fair-market price, or win-probability gain. The full Trade Analyzer retains FAAB negotiation and identifies missing starting-lineup evidence.</p>';
+  html+='<p class="pfo61-disclosure">Fair and Fleece filters now account for both managers' conditional skill-starter impact. Missing projection coverage withholds classifications. K/DST impact is excluded if not traded. Neither acceptance odds nor market confidence are claimed. The Trade Analyzer retains FAAB negotiation.</p>';
   box.innerHTML=html;
  }
  function waiverRender(){

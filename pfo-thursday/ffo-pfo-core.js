@@ -508,9 +508,12 @@ function renderRosterComparison(){
  if(!live){status.textContent='Actual lineup unavailable — '+(liveRosterError||'waiting for current Sleeper data')+'. The model below is NOT the submitted lineup.';actual.innerHTML='<tr><td colspan="3">No verified live starters. Do not use projected names as actual.</td></tr>';$('actual-bench').textContent='Live roster unavailable';$('actual-reserve').textContent='Live roster unavailable';$('bench-count').textContent='';$('reserve-count').textContent='';$('lineupdiff').textContent='Comparison unavailable until Sleeper connects.';return;}
  const started=(live.starters||[]).map(String),slots=live.starting_slots||[];
  const reserves=new Set((live.reserve||[]).map(String));const starterIds=new Set(started.filter(id=>id&&id!=='0'));
- const bench=players.filter(p=>!starterIds.has(String(p.player_id))&&!reserves.has(String(p.player_id)));
- const reservePlayers=players.filter(p=>reserves.has(String(p.player_id)));
- const cell=(p)=>((p.player_id&&String(p.player_id)!=='0')?pfo49Link(p.player_id):e(p.name))+(p.sleeper_injury_status?'<div class="tag-note">Sleeper: '+e(p.sleeper_injury_status)+'</div>':'');
+ // Directory IR/PUP tags are placed in a separate review group, even when
+ // the manager has not assigned the player to a fantasy reserve slot.
+ const irTag=p=>/^(IR|PUP|NFI|INJURED RESERVE)$/i.test(String(p.sleeper_injury_status||p.injury_status||''));
+ const bench=players.filter(p=>!starterIds.has(String(p.player_id))&&!reserves.has(String(p.player_id))&&!irTag(p));
+ const reservePlayers=players.filter(p=>reserves.has(String(p.player_id))||(!starterIds.has(String(p.player_id))&&irTag(p)));
+ const cell=(p)=>((p.player_id&&String(p.player_id)!=='0')?pfo49Link(p.player_id):e(p.name))+(p.sleeper_injury_status?'<div class="tag-note">Sleeper: '+e(p.sleeper_injury_status)+'</div>':'')+(!reserves.has(String(p.player_id))&&irTag(p)?'<div class="tag-note">IR tag only · not confirmed fantasy-reserve placement</div>':'');
  actual.innerHTML=started.length?started.map((id,i)=>{const p=id==='0'?{name:'Empty slot',team:'—'}:rosterPerson(id,byId);return '<tr><td>'+e(slots[i]||'START')+'</td><td>'+cell(p)+'</td><td>'+e(p.team||'—')+'</td></tr>';}).join(''):'<tr><td colspan="3">Sleeper returned no submitted starter slots.</td></tr>';
  const list=(items)=>items.length?'<table><thead><tr><th>Pos.</th><th>Player</th><th>Team</th></tr></thead><tbody>'+items.map(p=>'<tr><td>'+e(p.position||'—')+'</td><td>'+cell(p)+'</td><td>'+e(p.team||'—')+'</td></tr>').join('')+'</tbody></table>':'<div class="muted" style="margin-top:12px">None currently listed.</div>';
  $('actual-bench').innerHTML=list(bench);$('actual-reserve').innerHTML=list(reservePlayers);
@@ -2243,8 +2246,31 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
 /* FFO 5.2 — Historical Matchups, Lineup Lab, Coaching Review and source-safe QA.
    READ ONLY. Never submits lineups or transactions. */
 const PFO52_WEEK_CACHE=new Map(),PFO52_PENDING=new Map();
-let pfo52Week=Number(window.dbNflWeek||8),pfo52Scenario=null,pfo52Scenarios=[],pfo52LoadState='',pfo52ReviewBusy=false,pfo52ReviewEntries=[];
-function pfo52Cur(){return Math.max(1,Math.min(18,Number(window.dbNflWeek||gm47Snapshot?.nfl_state?.week||8)));}
+/* PFO 6.6 weekly transition: every Tuesday 08:30 America/Los_Angeles.
+ * The 2026 inaugural season anchor is Sep 8 at 08:30 Pacific. If another
+ * season's opening Tuesday has not been verified, retain provider week.
+ * Calendar date components avoid the DST one-hour rollover bug.
+ */
+function pfo66WeekAt(now,season,providerWeek){
+ const fallback=Math.max(1,Math.min(18,Number(providerWeek)||1));
+ if(Number(season)!==2026)return fallback;
+ const date=now instanceof Date?now:new Date(now);
+ if(!Number.isFinite(date.getTime()))return fallback;
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',
+  year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',
+  hourCycle:'h23'}).formatToParts(date);
+ const val=key=>Number(parts.find(p=>p.type===key)?.value);
+ const year=val('year'),month=val('month'),day=val('day'),hour=val('hour'),minute=val('minute');
+ if(![year,month,day,hour,minute].every(Number.isFinite))return fallback;
+ const dayDiff=Math.floor((Date.UTC(year,month-1,day)-Date.UTC(2026,8,8))/86400000);
+ if(dayDiff<0)return fallback;
+ let week=Math.floor(dayDiff/7)+1;
+ if(dayDiff%7===0&&(hour*60+minute)<510)week--;
+ // Week 18 is the last regular-season fantasy research week selector bound.
+ return Math.max(1,Math.min(18,week));
+}
+let pfo52Week=Number(window.dbNflWeek||8),pfo52ManualWeek=false,pfo52Scenario=null,pfo52Scenarios=[],pfo52LoadState='',pfo52ReviewBusy=false,pfo52ReviewEntries=[];
+function pfo52Cur(){return pfo66WeekAt(new Date(),Number(window.dbNflSeason||gm47Snapshot?.nfl_state?.season||2026),Number(window.dbNflWeek||gm47Snapshot?.nfl_state?.week||8));}
 function pfo52Slots(){const positions=gm47Snapshot?.league?.roster_positions;
  const s=Array.isArray(positions)?positions.filter(x=>!['BN','IR','TAXI','RESERVE'].includes(String(x).toUpperCase())):[];
  return s.length?s:['QB','RB','RB','WR','WR','TE','FLEX','K','DEF'];}
@@ -2282,13 +2308,13 @@ function pfo52Team(w,side){const match=pfo52Match(w),m=match?.[side];if(!m)retur
  const completeRoster=Array.isArray(m.players)&&m.players.length>0;
  const players=[...new Set([...ids,...started.filter(id=>id!=='0')])];
  const score=m.points!=null&&Number.isFinite(Number(m.points))?Number(m.points):null;
- return {id:Number(m.roster_id),name:side==='ours'?'Dirty Birds':pfo52Owner(m.roster_id),members:players.map(id=>pfo52Info(id)),ids:players,starters:started,players_points:m.players_points||{},completeRoster,record:m,score,source:isPast?'Sleeper weekly matchup · recorded player ownership':'Sleeper weekly matchup',week:w};
+ return {id:Number(m.roster_id),name:side==='ours'?'Dirty Birds':pfo52Owner(m.roster_id),members:players.map(id=>pfo52Info(id)),ids:players,starters:started,reserve:Array.isArray(m.reserve)?m.reserve.map(String):null,players_points:m.players_points||{},completeRoster,record:m,score,source:isPast?'Sleeper weekly matchup · recorded player ownership':'Sleeper weekly matchup',week:w};
 }
 function pfo52FutureTeam(rid){const r=gm47Snapshot?.rosters?.find(x=>Number(x.roster_id)===Number(rid));if(!r)return null;
  const live=Number(rid)===Number(window.dbRosterId||1)?liveRosterSnapshot:null;
  const ids=(live?.roster_player_ids||r.players||[]).map(String);
  const starters=(live?.starters||r.starters||[]).map(String);
- return {id:rid,name:Number(rid)===Number(window.dbRosterId||1)?'Dirty Birds':pfo52Owner(rid),members:ids.map(id=>pfo52Info(id)),ids,starters,players_points:{},completeRoster:true,score:null,record:r,source:live?'Sleeper live roster':'Latest Sleeper league roster · not a historical snapshot'};
+ return {id:rid,name:Number(rid)===Number(window.dbRosterId||1)?'Dirty Birds':pfo52Owner(rid),members:ids.map(id=>pfo52Info(id)),ids,starters,reserve:(live?.reserve||r.reserve||[]).map(String),players_points:{},completeRoster:true,score:null,record:r,source:live?'Sleeper live roster':'Latest Sleeper league roster · not a historical snapshot'};
 }
 function pfo52Points(id,w,past=false){if(past)return null;
  const p=pfo52Info(id);
@@ -2323,7 +2349,7 @@ function pfo52DefenseAdjustment(pos,opponent){if(!opponent||!pfo50Independent?.p
  return Math.max(.85,Math.min(1.15,1+(.25*(mine.mean/baseline-1)))); // shrink noisy allowance observations by 75%.
 }
 function pfo52Value(team,id,w,past){if(past){const raw=team?.players_points?.[String(id)];return raw==null||!Number.isFinite(Number(raw))?null:Number(raw);}return pfo52Points(id,w)?.points??null;}
-function pfo52Best(team,w,past=false){const slots=pfo52Slots(),eligible=(team?.members||[]).filter(p=>!(!past&&pfo52Pos(p)==='NA')).map(p=>({id:String(p.id||p.player_id),p,val:pfo52Value(team,String(p.id||p.player_id),w,past)}));
+function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set((team?.reserve||team?.record?.reserve||[]).map(String)),eligible=(team?.members||[]).filter(p=>!reserved.has(String(p.id||p.player_id))&&!(!past&&pfo52Pos(p)==='NA')).map(p=>({id:String(p.id||p.player_id),p,val:pfo52Value(team,String(p.id||p.player_id),w,past)}));
  // Dynamic maximum-weight bipartite matching using successive augmenting paths.
  // Unknown values cannot be silently treated as zero or as an optimal recommendation.
  const n=eligible.length,L=slots.length,N=2+n+L,src=N-2,snk=N-1,graph=Array.from({length:N},()=>[]);
@@ -2347,7 +2373,8 @@ function pfo52LineupScore(team,assignments,w,past){let total=0,count=0;for(const
 }
 function pfo52PointLabel(val,complete=true){return val==null?'—':pfo52Money(val,2)+(complete?'':' †');}
 function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
- const reserve=(t?.members||[]).filter(y=>pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
+ const reserved=new Set((t?.reserve||t?.record?.reserve||[]).map(String));
+ const reserve=(t?.members||[]).filter(y=>!reserved.has(String(y.id||y.player_id))&&pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
  const selector=mode==='ours'?'<select class="pfo52-swap" data-pfo52-swap="'+i+'" aria-label="Change '+e(x.slot)+' player"><option value="'+e(x.id||'')+'">'+e(p?.name||'Open slot')+'</option>'+reserve.map(y=>'<option value="'+e(y.id||y.player_id)+'">'+e(y.name)+'</option>').join('')+'</select>':'';
  const proj=!past&&x.id?pfo52Points(x.id,w):null;
  return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+(x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+'<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b></div>';
@@ -2369,25 +2396,41 @@ function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Oppo
 function pfo64BenchMenu(team,w,past){
  if(!team)return '';
  const starters=new Set((team.starters||[]).map(String));
- const reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
- const bench=(team.members||[]).filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
- const available=!!team.completeRoster,benchCount=available?bench.length:'?';
- const rows=available&&bench.length?bench.map(p=>{
-  const pid=String(p.id),proj=!past?pfo52Points(pid,w):null;
-  const val=pfo52Value(team,pid,w,past);
-  const shown=proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val);
+ // Historical Sleeper matchup records may omit reserve membership entirely.
+ // Only known reserve IDs can be classified as IR—never infer historical IR
+ // from a player's CURRENT health designation.
+ const knownReserve=Array.isArray(team.reserve)||Array.isArray(team.record?.reserve);
+ const reserve=new Set((team.reserve||team.record?.reserve||[]).map(String));
+ const members=team.members||[];
+ const tagged=new Set(past?[]:members.filter(p=>/^(IR|PUP|NFI|INJURED RESERVE)$/i.test(String(p.sleeper_injury_status||p.injury_status||p.status||''))).map(p=>String(p.id)));
+ const irIds=new Set([...reserve,...tagged]);
+ const bench=members.filter(p=>!starters.has(String(p.id))&&!irIds.has(String(p.id)));
+ const ir=members.filter(p=>irIds.has(String(p.id))&&!starters.has(String(p.id)));
+ const available=!!team.completeRoster;
+ const playerRows=(items,withPoints)=>items.map(p=>{
+  const pid=String(p.id),proj=!past&&withPoints?pfo52Points(pid,w):null;
+  const val=withPoints?pfo52Value(team,pid,w,past):null;
+  const shown=withPoints?(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val)):'RESERVE';
   return '<button type="button" class="pfo64-bench-player pfo597-player-pill" data-pfo49-id="'+e(pid)+'">'+
    '<span>'+e(pfo52Pos(p)||'?')+' · '+e(p.name)+'</span><b>'+shown+'</b></button>';
- }).join(''):'<p class="pfo52-dim">'+(available?'No recorded bench players.':'Bench membership unavailable in this historical snapshot; no current-roster substitution.')+'</p>';
- const reserved=reserve.size?'<p class="pfo52-fine">Fantasy reserve: '+e([...reserve].map(id=>pfo52Info(id).name).join(', '))+'. Players in reserve are not assumed eligible to start.</p>':'';
- return '<details class="pfo64-bench"><summary>Bench ('+benchCount+')'+
-  (!past&&reserve.size?' · IR ('+reserve.size+')':'')+'</summary>'+
-  '<div class="pfo64-bench-grid">'+rows+'</div>'+reserved+
-  '<p class="pfo52-fine">'+(past?'League-recorded player points; independent FFO historical certification pending.':
-  'Model values are provisional; this is roster research, not automatic lineup advice.')+'</p></details>';
+ }).join('');
+ const benchRows=available?(bench.length?playerRows(bench,true):'<p class="pfo52-dim">No recorded bench players.</p>'):
+   '<p class="pfo52-dim">Historical bench ownership not supplied.</p>';
+ const reserveRows=(knownReserve||tagged.size)?(ir.length?playerRows(ir,false):'<p class="pfo52-dim">No current reserve or IR-tag players.</p>'):
+   '<p class="pfo52-dim">Reserve membership not recorded for this week. Historical non-starters cannot be certified as bench-eligible.</p>';
+ return '<div class="pfo66-roster-groups">'+
+  '<details class="pfo64-bench"><summary>Bench ('+(available?bench.length:'?')+')</summary>'+
+  '<div class="pfo64-bench-grid">'+benchRows+'</div>'+
+  (past&&!knownReserve?'<p class="pfo52-fine">Historical IR membership unverified; use caution with non-starter labels.</p>':'')+
+  '</details><details class="pfo64-reserve"><summary>IR / Reserve ('+(knownReserve||tagged.size?ir.length:'?')+')</summary>'+
+  '<div class="pfo64-bench-grid">'+reserveRows+'</div>'+
+  '<p class="pfo52-fine">Fantasy reserve placement and a directory IR tag differ. A tag may be stale; verify return status in Injury Watch.</p>'+
+  '</details></div>';
 }
-function pfo52Switch(w){pfo52Week=Math.max(1,Math.min(17,Number(w)||pfo52Cur()));pfo52Scenario=null;pfo52Scenarios=pfo52SavedRead(pfo52Week,pfo52Week<pfo52Cur());pfo52Render();pfo52GetWeek(pfo52Week).then(()=>{if(pfo52Week===w)pfo52Render();});}
-function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;const w=pfo52Week,current=pfo52Cur(),past=w<current,match=pfo52Match(w);
+function pfo52Switch(w){pfo52ManualWeek=true;pfo52Week=Math.max(1,Math.min(17,Number(w)||pfo52Cur()));pfo52Scenario=null;pfo52Scenarios=pfo52SavedRead(pfo52Week,pfo52Week<pfo52Cur());pfo52Render();pfo52GetWeek(pfo52Week).then(()=>{if(pfo52Week===w)pfo52Render();});}
+function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;
+ if(!pfo52ManualWeek&&pfo52Week!==pfo52Cur()){pfo52Week=pfo52Cur();pfo52Scenario=null;pfo52Scenarios=[];}
+ const w=pfo52Week,current=pfo52Cur(),past=w<current,match=pfo52Match(w);
  let ours=past?pfo52Team(w,'ours'):pfo52FutureTeam(Number(window.dbRosterId||1));
  let opp=past?pfo52Team(w,'theirs'):(match?.theirs?pfo52FutureTeam(Number(match.theirs.roster_id)):null);
  const header='<div class="pfo52-weekrow"><button data-pfo52-step="-1" type="button" '+(w===1?'disabled':'')+'>← Previous</button><label>FFL week <select id="pfo52-week">'+Array.from({length:17},(_,i)=>'<option value="'+(i+1)+'" '+(w===i+1?'selected':'')+'>Week '+(i+1)+(i+1>=15?' · playoffs':'')+'</option>').join('')+'</select></label><button data-pfo52-step="1" type="button" '+(w===17?'disabled':'')+'>Next →</button></div>';
@@ -2417,7 +2460,7 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;const w=pfo52We
 function pfo52SaveKey(w,past){return 'ffo52_saved_scenarios_v1_'+Number(window.dbNflSeason||2026)+'_'+w+'_'+(past?'hindsight':'forecast');}
 function pfo52SavedRead(w,past){try{const v=JSON.parse(localStorage.getItem(pfo52SaveKey(w,past))||'[]');return Array.isArray(v)?v.slice(0,5):[];}catch{return [];}}
 function pfo52SaveCurrent(){try{localStorage.setItem(pfo52SaveKey(pfo52Week,pfo52Week<pfo52Cur()),JSON.stringify(pfo52Scenarios.slice(-5)));}catch{}}
-function pfo52Swap(i,id){const m=pfo52Week<pfo52Cur()?pfo52Team(pfo52Week,'ours'):pfo52FutureTeam(Number(window.dbRosterId||1));const item=m?.members.find(p=>String(p.id)===String(id)),slot=pfo52Scenario?.assignments[i]?.slot;
+function pfo52Swap(i,id){const m=pfo52Week<pfo52Cur()?pfo52Team(pfo52Week,'ours'):pfo52FutureTeam(Number(window.dbRosterId||1));const reserved=new Set((m?.reserve||m?.record?.reserve||[]).map(String)),item=m?.members.find(p=>String(p.id)===String(id)&&!reserved.has(String(id))),slot=pfo52Scenario?.assignments[i]?.slot;
  if(!item||!pfo52Legal(slot,item))return;
  const other=pfo52Scenario.assignments.findIndex((x,j)=>j!==i&&x.id===String(id));if(other>=0)return; // reject duplicate assignment
  pfo52Scenario.assignments[i].id=String(id);pfo52Render();
@@ -2606,9 +2649,11 @@ async function pfo52FetchHealth(){const ids=new Set();for(const x of [...(waiver
   pfo52HealthCatalog=new Map(Object.entries(j.players));pfo52HealthCheckedAt=j.checked_at;renderWaiverScouting();pfo49RenderRadar();
  }catch(err){console.warn('Player health catalog not verified',String(err));}}
 setTimeout(pfo52FetchHealth,13000);
-function pfo52OpenPage(page){if(page==='matchup'){pfo52Week=pfo52Week||pfo52Cur();pfo52Render();pfo52GetWeek(pfo52Week).then(()=>pfo52Render());}
+function pfo52OpenPage(page){if(page==='matchup'){pfo52ManualWeek=false;pfo52Week=pfo52Cur();pfo52Render();pfo52GetWeek(pfo52Week).then(()=>pfo52Render());}
  if(page==='coaching')pfo52Review();}
 document.querySelectorAll('nav button[data-page="matchup"],nav button[data-page="coaching"]').forEach(b=>b.addEventListener('click',()=>pfo52OpenPage(b.dataset.page)));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&document.querySelector('#matchup.page.active')&&!pfo52ManualWeek)pfo52OpenPage('matchup');});
+setInterval(()=>{if(!document.hidden&&document.querySelector('#matchup.page.active')&&!pfo52ManualWeek&&pfo52Cur()!==pfo52Week)pfo52OpenPage('matchup');},60000);
 // Full weekly matchup download is deferred until Matchup/Coaching is opened.
 
 // Strict position-aware universal player statistics. No QB catches, irrelevant receiving placeholders,

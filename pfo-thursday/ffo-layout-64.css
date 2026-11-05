@@ -37,3 +37,10 @@
 .pfo65-uneven{display:flex;align-items:center;gap:7px;min-width:0;color:#d3e9e1;font-size:11px;line-height:1.5}
 .pfo65-uneven input{flex:none;accent-color:#7cc1a7}
 @media(max-width:360px){.pfo65-trade-modes{gap:4px}.pfo65-trade-modes button{font-size:10px;padding:8px 4px}.pfo65-shape-row{grid-template-columns:1fr}}
+
+/* PFO 6.6: keep Matchup's bench and IR explicitly separate. */
+#matchup .pfo66-roster-groups{display:grid;gap:4px;margin-top:8px}
+#matchup .pfo64-reserve{border-top:1px solid #3c576b;padding-top:8px}
+#matchup .pfo64-reserve>summary{font-size:12px;color:#efbf7a;cursor:pointer;font-weight:750;padding:7px}
+#matchup .pfo64-reserve .pfo64-bench-grid{display:grid;gap:5px;padding:5px 0}
+#matchup .pfo66-trade-impact{font-weight:700;color:#c6e9da}
