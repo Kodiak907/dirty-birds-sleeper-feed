@@ -43,6 +43,9 @@ const snapshot={source:'SYNTHETIC DEMONSTRATION',league_id:LEAGUE,league,rosters
 const fast={schema_version:'PFO_DEMO',source:'SYNTHETIC DEMONSTRATION',league_id:LEAGUE,league,rosters,users,nfl_state,transactions_by_week,
  transactions_scope:'fictional',fetched_at_utc:stamp};
 const write=(file,obj)=>writeFileSync(join(dataDir,file),JSON.stringify(obj,null,2)+'\n');
+const safeScoring={...rules,league:LEAGUE,league_name:'PFO Demonstration League',authority:'Sample league scoring configuration',source_mirror_saved_at:stamp};
+write('FFO_FFL_SCORING_V1.json',safeScoring);
+writeFileSync(join(out,'FFO_FFL_SCORING_V1.json'),JSON.stringify(safeScoring,null,2)+'\n');
 write('latest.json',snapshot);write('fast_latest.json',fast);write('player_names.json',names);write('demo-fixture.json',snapshot);
 const first=rosters[0].starters;
 const lineups=Object.fromEntries(Array.from({length:18},(_,i)=>[String(i+1),{
@@ -77,7 +80,7 @@ for(const file of readdirSync(src)){
  const ext=extname(file);
  if(!['.html','.css','.js','.mjs','.json'].includes(ext)||file.startsWith('qa-')||
  file==='commissioner-pin-setup.html'||file==='_worker.js'||file==='wrangler.jsonc'||
- (ext==='.json'&&file!=='FFO_FFL_SCORING_V1.json'))continue;
+ ext==='.json')continue;
  let s=readFileSync(join(src,file),'utf8');
  if(['.js','.mjs','.html'].includes(ext)){
   s=s.replaceAll('https://raw.githubusercontent.com/Kodiak907/dirty-birds-sleeper-feed/main/data/','/demo-data/');
@@ -106,4 +109,9 @@ for(const file of readdirSync(src)){
 }
 const overlay="(function(){document.title='PFO League Demo · The Front Office Collective';window.ffoExactDemo=true;document.addEventListener('DOMContentLoaded',function(){const pane=document.getElementById('commissioner');if(pane){const n=document.createElement('div');n.className='note';n.textContent='COMMISSIONER SYSTEM LOCKED: public demonstration only; no private case records or administrative actions.';pane.prepend(n)}})})();\n";
 writeFileSync(join(out,'demo-exact-overlay.js'),overlay);
+const originalWorker=readFileSync(join(src,'_worker.js'),'utf8');
+if(!originalWorker.includes('export default {async fetch'))throw Error('Original PFO worker export boundary missing');
+const mergedWorker=originalWorker.replace('export default {async fetch','const realWorker={async fetch')+
+ '\n'+readFileSync(join(root,'demo-exact/worker-gateway.js'),'utf8')+'\n';
+writeFileSync(join(out,'_worker.js'),mergedWorker);
 console.log('Exact PFO frontend files: '+count+'; fictional teams: '+rosters.length+'; synthetic modeled players: '+models.length);
