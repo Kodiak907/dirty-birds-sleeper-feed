@@ -4,7 +4,7 @@ import {join,extname} from 'node:path';
 const root=process.cwd(),src=join(root,'pfo-thursday'),out=join(root,'demo-exact-dist'),dataDir=join(out,'demo-data');
 mkdirSync(dataDir,{recursive:true});
 const read=p=>JSON.parse(readFileSync(join(root,p),'utf8'));
-const sample=read('pfo-league-showcase/sample-rosters.json'),names=read('data/player_names.json'),rules=read('pfo-thursday/FFO_FFL_SCORING_V1.json');
+const sample=read('demo-exact/sample-rosters.json'),names=read('data/player_names.json'),rules=read('pfo-thursday/FFO_FFL_SCORING_V1.json');
 const LEAGUE='2222222222222222222',YEAR=2026,WEEK=9,stamp='2026-11-04T23:00:00.000Z';
 const slots=['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];
 const teamsList=['The Front Office Collective','Fourth Down Empire','Sunday Syndicate','Goal Line Architects','Gridiron Dynasty','Fourth Quarter Kings','Pocket Pressure','Red Zone Raiders','Sunday Chaos','Two Minute Mafia','The Audible Club','End Zone Collective'];
