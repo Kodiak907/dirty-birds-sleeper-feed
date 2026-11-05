@@ -319,9 +319,66 @@ function ask(){
  (listed.map(id=>'<div class="pfo-demo-bench-row">'+pButton(id)+'<b>'+money(projection(id))+' pts</b></div>').join('')||'<p class="pfo-demo-fine">No matching sample players.</p>')+'</div>':
  '<div class="note">Try “available receivers” or “running back depth” to see how PFO answers roster-focused questions without recommending Dirty Birds players.</div>';
 }
-function coaching(){$('demo-coaching').innerHTML='<p class="pfo-demo-fine">PFO tracks season coaching decisions through confirmed weekly starters and final scores. Public demo ownership is fictional, so the historical coaching approval percentage is deliberately withheld.</p>'+
- '<div class="pfo-demo-statgrid">'+stat('—','Verified weeks audited')+stat('—','Actual coaching approval')+stat('10','Example starting slots')+'</div><div class="note">No invented historic grade or manager record is presented as actual.</div>'}
-function championship(){$('demo-championship').innerHTML='<div class="pfo-demo-statgrid">'+stat('—','Verified make-playoffs %')+stat('—','Reach final %')+stat('—','Win championship %')+'</div><p class="pfo-demo-fine">PFO championship probability calculations require real FFL standings, future schedule and a validated forecast distribution. This isolated sample does not falsify 100,000 simulations.</p><div class="pfo-demo-tiles"><div class="pfo-demo-tile"><small>Current Week '+state.week+' team model</small><strong>'+money(teamTotal(own))+'</strong></div><div class="pfo-demo-tile"><small>Fantasy playoff weeks</small><strong>15–17</strong></div></div>'}
+
+function simulationOdds(){
+ const key=state.week+'|'+state.simVolatility+'|'+state.simBoost+'|'+Math.round(teamTotal(own)*100);
+ if(state.simResult?.key===key)return state.simResult;
+ const ourMean=teamTotal(own),rivalMean=teamTotal(rival);
+ const means=[ourMean,rivalMean,ourMean+11,ourMean+5,ourMean+2,ourMean-4,ourMean-8,
+  ourMean-11,ourMean+14,ourMean-2,ourMean+7,ourMean-13];
+ let seed=(15437891+state.week*9973+state.simVolatility*47+state.simBoost*119)>>>0;
+ const rnd=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296};
+ let playoffs=0,finals=0,titles=0;
+ const count=100000,vol=state.simVolatility;
+ const vs=opp=>ourMean+(rnd()-.5)*vol*2>(means[opp]+state.simBoost)+(rnd()-.5)*vol*2;
+ for(let trial=0;trial<count;trial++){
+  const league=means.map((mean,i)=>({id:i,
+   strength:(i===0?mean:mean+state.simBoost)+(rnd()-.5)*vol*2.6}));
+  league.sort((x,y)=>y.strength-x.strength);
+  const at=league.findIndex(x=>x.id===0);
+  if(at>=6)continue;
+  playoffs++;
+  const opponents=league.filter(x=>x.id!==0).slice(0,5).map(x=>x.id);
+  if(at>=2&&!vs(opponents[Math.floor(rnd()*opponents.length)]))continue;
+  if(!vs(opponents[Math.floor(rnd()*Math.min(3,opponents.length))]))continue;
+  finals++;
+  if(vs(opponents[Math.floor(rnd()*Math.min(2,opponents.length))]))titles++;
+ }
+ state.simResult={key,count,playoffs:playoffs/count*100,finals:finals/count*100,titles:titles/count*100};
+ return state.simResult;
+}
+function oddsCard(label,value){
+ return '<div class="pfo-demo-odds-item"><div><span>'+esc(label)+'</span><strong>'+Number(value).toFixed(1)+'%</strong></div>'+
+ '<div class="pfo-demo-odds-track"><span style="width:'+Math.max(0,Math.min(100,value))+'%"></span></div></div>';
+}
+function coaching(){
+ const choices=state.coachLog,agree=choices.filter(c=>c.modelAligned).length;
+ $('demo-coaching').innerHTML='<div class="pfo-demo-premium-head"><h3>Coaching Decision Review</h3><small>Sample decisions made in this browser session</small></div>'+
+ '<div class="pfo-demo-statgrid">'+stat(choices.length,'Demo start/sit calls')+
+ stat(choices.length?(agree/choices.length*100).toFixed(0)+'%':'—','Agreement with example FFO model')+
+ stat(choices.length-agree,'Risk-taking decisions')+'</div>'+
+ '<div class="pfo-demo-insight"><b>Interactive coaching desk</b><p>Open Weekly Matchup → Start / Sit, compare two players and log a hypothetical call. Your choices appear here with the example-model recommendation. Nothing is recorded to the real league.</p></div>'+
+ '<div class="pfo-demo-market-controls"><button type="button" class="button primary" data-coach-go>Open Start / Sit</button>'+
+ (choices.length?'<button type="button" class="button" data-clear-coach>Clear demo decisions</button>':'')+'</div>'+
+ (choices.length?'<div class="pfo-demo-cardlist">'+choices.slice().reverse().map(c=>'<article><header><strong>Week '+c.week+' · '+esc(c.started)+'</strong>'+badge(c.modelAligned?'MODEL AGREED':'MODEL DISAGREED')+'</header>'+
+ '<small>Compared with '+esc(c.sat)+' · '+money(c.startedPoints)+' versus '+money(c.satPoints)+
+ ' · '+(c.modelAligned?'Higher example projection was selected':'User chose the riskier modeled option')+'</small></article>').join('')+'</div>':
+ '<p class="pfo-demo-empty">No decisions logged. Try the Start / Sit desk above.</p>')+
+ '<div class="note">This is a live demonstration audit of your simulated choices, not actual historical accuracy or personal coaching records.</div>';
+}
+function championship(){
+ const o=simulationOdds(),vol=state.simVolatility,strength=state.simBoost;
+ $('demo-championship').innerHTML='<div class="pfo-demo-premium-head"><h3>PFO Championship Forecast Lab</h3><small>'+o.count.toLocaleString()+' simulated scenarios</small></div>'+
+ '<p class="pfo-demo-fine">PFO-style scenario engine using the demonstration franchise plus an entirely fictional 12-team competitive field. These are not real FFL playoff odds or independently validated 2026 forecasts.</p>'+
+ oddsCard('Make Playoffs',o.playoffs)+oddsCard('Reach Final',o.finals)+oddsCard('Win Championship',o.titles)+
+ '<div class="pfo-demo-compare-select"><label>Uncertainty<select id="demo-sim-vol">'+
+ [8,12,16,22,28,36].map(n=>'<option value="'+n+'"'+(n===vol?' selected':'')+'>'+n+' pts · '+(n<=12?'Low':n<=22?'Medium':'High')+'</option>').join('')+'</select></label>'+
+ '<label>Opponent strength<select id="demo-sim-strength">'+
+ [[-10,'Easier field'],[0,'Balanced field'],[10,'Tougher field'],[20,'Elite field']].map(([v,l])=>'<option value="'+v+'"'+(v===strength?' selected':'')+'>'+l+'</option>').join('')+'</select></label></div>'+
+ '<div class="pfo-demo-statgrid">'+stat(money(teamTotal(own)),'Demo roster team forecast')+
+ stat(o.count.toLocaleString(),'Model draws')+stat('15–17','Example playoff weeks')+'</div>'+
+ '<div class="pfo-demo-insight"><b>What this demonstrates</b><p>Changing opponent difficulty or forecast volatility recalculates the outcome distribution. The real PFO would replace every fictional input with verified league standings, rosters and calibrated player-week projections.</p></div>';
+}
 function availability(){$('demo-injuries').innerHTML='<div class="note">Real injury clearance, official inactives and practice reports are not attached to public sample rosters. No player is automatically classified active or cleared.</div>'+
  '<table class="pfo-demo-table"><tr><th>Sample player</th><th>Verified status</th></tr>'+
  own.starters.slice(0,8).map(id=>'<tr><td>'+pButton(id)+'</td><td class="pfo-demo-warning">Not checked in demo</td></tr>').join('')+'</table>'}
