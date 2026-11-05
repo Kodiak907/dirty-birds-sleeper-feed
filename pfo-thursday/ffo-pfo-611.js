@@ -18,6 +18,9 @@
   const known=[],missing=[],partial=[],rulesReady=window.ffoPfo597?.hasFrozenRules?.()===true;
   const info=typeof pfo69SourceStatus==='function'?pfo69SourceStatus():null;
   const sourceTeams=new Set(info?.teams||[]);
+  const diag=window.ffoPfo616?.diagnostics?.()||{};
+  const playerErrors=new Map(diag.player_failures||[]),defenseErrors=new Map(diag.failures||[]);
+  const playerPending=new Set(diag.players_pending||[]),defensePending=new Set(diag.pending||[]);
   for(const id of ids){
    const p=typeof pfo52Info==='function'?pfo52Info(id):null;
    const score=typeof pfo52Points==='function'?pfo52Points(id,wk):null;
@@ -29,12 +32,16 @@
    if(score?.bye)reason='verified NFL bye; no point forecast';
    else if(!rulesReady)reason='FFO scoring rules not ready';
    else if(score?.schedulePending)reason='verified NFL week schedule missing';
+   else if(pos==='DEF'&&defensePending.has(team))reason='loading licensed MSF team defense and completed-game results';
+   else if(pos==='DEF'&&defenseErrors.has(team))reason='MSF D/ST evidence: '+defenseErrors.get(team);
+   else if(pos!=='DEF'&&playerPending.has(id))reason='loading licensed individual game logs';
+   else if(pos!=='DEF'&&playerErrors.has(id))reason='MSF game logs: '+playerErrors.get(id);
    else if(info?.scope==='selected_teams'&&team&&!sourceTeams.has(team))reason='MSF did not load '+team+' team statistics';
-   else if(!row)reason=pos==='DEF'?'NFL team defense stats not mapped to FFL D/ST':
+   else if(!row)reason=pos==='DEF'?'licensed NFL team defense evidence not yet available':
     'MSF player identity/statistics not uniquely matched';
-   else if(!row.games_observed&&!row.games_played)reason='MSF games-played denominator missing';
-   else if(!row.forecast)reason=pos==='K'?'MSF FG-distance/XP categories unavailable':'MSF scoring categories missing';
-   else reason='model validation or availability pending';
+   else if(!row.games_observed&&!row.games_played)reason='MSF player appearances not verified; game-log check pending';
+   else if(!row.forecast)reason=pos==='K'?'MSF exact FG-distance/XP categories unavailable':'MSF scoring categories missing';
+   else reason=String(score?.source||'model validation or availability pending');
    missing.push({name,team,pos,reason,fields:Object.keys(row?.season_totals||{}).filter(k=>k!=='games_played').length});
   }
   let sub=document.getElementById('pfo611-coverage-report');
