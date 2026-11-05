@@ -157,3 +157,13 @@ test('original Trade Finder and Waiver Market load the demo league, not old FFL 
  assert.ok(await page.locator('#pfo59-waiver-manager option').count()>3);
  assert.match(await page.locator('#market').innerText(),/Waiver Command|Waiver Market/i);
 });
+
+test('original PFO GameCast demonstrates sample plays, never fake live NFL provider claims',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav [data-page="gamecast"]')?.click());
+ assert.match(await page.locator('#gamecast').innerText(),/GAMECAST DEMO/);
+ await page.locator('#ffo-gc-games [data-ffo-game]').first().waitFor({timeout:18000});
+ assert.ok(await page.locator('#ffo-gc-games [data-ffo-game]').count()>=3);
+ await page.locator('#ffo-gc-games [data-ffo-game]').first().click();
+ await page.getByText(/DEMO: touchdown pass/i).first().waitFor({timeout:18000});
+ assert.match(await page.locator('#ffo-gc-playfeed').innerText(),/DEMO:/);
+});
