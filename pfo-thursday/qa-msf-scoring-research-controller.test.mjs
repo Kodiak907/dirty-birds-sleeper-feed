@@ -228,3 +228,52 @@ test('Automated historical mode never enables final score or projection writes',
  assert.equal(api.getProductionProjection('18607',8),null);
  assert.equal(api.getBacktest().status,'insufficient_certified_data');
 });
+
+
+test('Single-game recovery rechecks only one existing failed ID, keeping old checkpoints intact',async()=>{
+ const map=new Map(),storage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v)};
+ const options={missingForGame:'gb1',sleep:async()=>{}};
+ const {api,requests,ui}=setup(storage,options);
+ await api.runNextBatch();
+ assert.equal(api.getSourceCheck('gb1').sourceFailure,true);
+ assert.match(api.getSourceCheck('gb1').failureDiagnostic,/plays \/ provider_feed_not_found/);
+ assert.match(ui['ffo-gc-research-single'].textContent,/Diagnose failed game gb1/);
+ assert.equal(requests.filter(r=>r.name==='plays').length,1);
+ options.missingForGame=null;
+ const result=await api.retryFailedGame('gb1');
+ assert.equal(result.gameId,'gb1');
+ assert.equal(result.checked,1);
+ assert.equal(result.skipped,0);
+ assert.equal(api.getSourceCheck('gb1').sourceFailure,false);
+ assert.equal(api.getSourceCheck('gb1').failureDiagnostic,null);
+ assert.equal(requests.filter(r=>r.name==='plays').length,2);
+ assert.equal(requests.filter(r=>r.name==='boxscore').length,2);
+ assert.equal(requests.filter(r=>r.name==='gamelogs').length,2);
+ assert.equal(api.getSourceCheck('gb2'),null);
+ assert.equal(api.getReadiness().certifiedPlayerGameScores,0);
+ assert.equal(api.getProductionProjection(),null);
+ const stored=[...map.values()][0];
+ assert.doesNotMatch(stored,/playerStatsTotals|sourcePlayRows|authorization|api_key|token/i);
+ const again=setup(storage);
+ assert.equal(again.api.getSourceCheck('gb1').sourceFailure,false);
+});
+test('Single-game diagnosis never probes a successful or unsaved game',async()=>{
+ const {api,requests}=setup();
+ const result=await api.retryFailedGame('gb1');
+ assert.equal(result.reason,'not_failed');
+ assert.equal(requests.length,0);
+ const arbitrary=await api.retryFailedGame('../../out');
+ assert.equal(arbitrary.reason,'not_failed');
+ assert.equal(requests.length,0);
+});
+test('Single-game diagnosis obeys the existing rate-limit circuit breaker',async()=>{
+ const opts={alwaysRateLimit:true,sleep:async()=>{}};
+ const {api,requests}=setup(null,opts);
+ const result=await api.runRemainingChecks();
+ assert.equal(result.reason,'rate_limit');
+ const before=requests.length;
+ const retry=await api.retryFailedGame('gb1');
+ assert.equal(retry.reason,'cooldown');
+ assert.equal(requests.length,before);
+ assert.equal(api.getSourceCheck('gb1').failureKind,'rate_limit');
+});

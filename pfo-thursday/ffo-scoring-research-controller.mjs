@@ -7,7 +7,7 @@ import {buildLeagueHistoryCoverage,nextLeagueHistoryBatch}
  from './ffo-league-history-pipeline.mjs';
 import {walkForwardBacktest} from './ffo-verified-history-backtest.mjs';
 import {calendarWeek} from './ffo-gamecast-weeks.mjs';
-import {classifyMSFScanFailure,scanFailurePolicy} from './ffo-msf-scan-recovery.mjs';
+import {classifyMSFScanFailure,scanFailurePolicy} from './ffo-msf-scan-recovery.mjs?v=670';
 const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function installScoringResearch({getSchedule,feed,model,season='2026-regular',
  root=document,storage=null,sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms))}={}){
@@ -40,8 +40,11 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   for(const key of flags)out[key]=value[key]===true;
   for(const key of sensitive)out[key]=false;
   out.sourceFailure=value.sourceFailure===true;
-  out.failureKind=/^(rate_limit|access|bad_request|missing_feed|transient|unknown)$/.test(String(value.failureKind||''))?value.failureKind:null;
+  out.failureKind=/^(rate_limit|access|bad_request|payload_limit|invalid_payload|missing_feed|transient|unknown)$/.test(String(value.failureKind||''))?value.failureKind:null;
   out.failureReason=typeof value.failureReason==='string'?value.failureReason.slice(0,140):null;
+  // Only code/status summaries are allowed; no provider body or credentials.
+  out.failureDiagnostic=typeof value.failureDiagnostic==='string'?
+   value.failureDiagnostic.replace(/[^a-zA-Z0-9 _./:|+=-]/g,'').slice(0,170):null;
   out.playCount=Number.isInteger(value.playCount)&&value.playCount>=0&&value.playCount<2000?
    value.playCount:null;
   return out;
@@ -98,11 +101,20 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
     ' · calendar-estimated week, cannot certify':'')+'</div>'+
    (failed?'<div class="muted" style="margin:5px 0;color:#edc384">Failed source reads remain pending: '+
     Object.entries(snapshots).filter(([,v])=>v?.sourceFailure===true).slice(0,3)
-     .map(([id,v])=>safe(id+' ('+(v.failureKind||'unknown')+': '+(v.failureReason||'source unavailable')+')')).join(' · ')+
+     .map(([id,v])=>safe(id+' ('+(v.failureKind||'unknown')+': '+
+      (v.failureDiagnostic||v.failureReason||'source unavailable')+')')).join(' · ')+
     (failed>3?' · +'+(failed-3)+' more':'')+'</div>':'');
   const button=el('ffo-gc-research-next');
   if(button){button.disabled=state.running||state.autoActive||q.batch.length===0;
    button.textContent=state.running?'Inspecting MSF…':'Inspect next 2 historical games';}
+  const single=el('ffo-gc-research-single');
+  if(single){
+   const id=preferredFailedGameId();
+   const cooldown=Math.max(0,state.cooldownUntil-Date.now());
+   single.disabled=state.running||state.autoActive||!id||cooldown>0;
+   single.textContent=cooldown>0?'MSF cooldown · '+Math.ceil(cooldown/1000)+'s':
+    id?'Diagnose failed game '+id+' · one game':'No saved failed games to retry';
+  }
   const auto=el('ffo-gc-research-all'),pause=el('ffo-gc-research-pause');
   if(auto){
    auto.disabled=state.running||state.autoActive||q.pendingGames===0;
@@ -120,21 +132,28 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   if(progressNode)progressNode.textContent=progress||
     (state.autoFailure?'Stopped: '+state.autoFailure:'');
  }
+ function preferredFailedGameId(){
+  const ids=Object.keys(snapshots).filter(id=>snapshots[id]?.sourceFailure===true);
+  const scheduled=new Set(schedule().filter(g=>g.week>=1&&g.week<=7).map(g=>String(g.id)));
+  if(ids.includes('163584')&&scheduled.has('163584'))return '163584';
+  return ids.find(id=>scheduled.has(id))||null;
+ }
  async function probeHistoricalGame(g){
   const scheduleGame=(getSchedule?.()||[]).find(x=>String(x.id)===String(g.gameId))||{};
-  const good=r=>r?.status==='fulfilled'&&r.value?.available!==false&&!r.value?.error;
   const [plays,box]=await Promise.allSettled([
    feed('plays',{season,game_id:g.gameId},true),
    feed('boxscore',{season,game_id:g.gameId},true)
   ]);
-  let failure=classifyMSFScanFailure([plays,box]);
+  let failure=classifyMSFScanFailure([
+   {feed:'plays',result:plays},{feed:'boxscore',result:box}
+  ]);
   let inspection=null;
   if(!failure){
    try{inspection=model.inspectHistoricalGame(plays.value,box.value,scheduleGame)}
    catch(error){
     failure={kind:'unknown',retryable:false,delayMs:0,
      description:'MSF historical play/box response not interpretable',
-     diagnostic:String(error?.message||error).slice(0,130)};
+     diagnostic:'model_inspection_error'};
    }
   }
   let logs=[],verifiedLogs=false;
@@ -147,7 +166,9 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    const teams=[g.home,g.away];
    logs=await Promise.allSettled(teams.map(team=>
     feed('gamelogs',{season,week:g.week,team},true)));
-   failure=classifyMSFScanFailure(logs);
+   failure=classifyMSFScanFailure(logs.map((result,i)=>({
+    feed:i===0?'gamelogs_home':'gamelogs_away',result
+   })));
    if(!failure){
     try{
      const mapped=logs.map(r=>model.playerRows(r.value.data||{}));
@@ -156,14 +177,25 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
        String(g.gameId)&&p.team===teams[i]));
     }catch(error){failure={kind:'unknown',retryable:false,delayMs:0,
      description:'MSF player game-log response not interpretable',
-     diagnostic:String(error?.message||error).slice(0,130)}}
+     diagnostic:'player_game_log_mapping_error'}}
    }
   }
   return {inspection,verifiedLogs,failure,cancelled:false};
  }
- async function runNextBatch({automatic=false,excludeGameIds=[]}={}){
+ async function runNextBatch({automatic=false,excludeGameIds=[],specificGameId=null}={}){
   if(state.running||(state.autoActive&&!automatic))return {checked:0,skipped:0,failed:false};
-  const batch=queue(excludeGameIds).batch;
+  if(state.cooldownUntil>Date.now()){
+   render('MSF rate-limit cooldown active; source checks preserved.');
+   return {checked:0,skipped:0,failed:false,stopped:true,category:'rate_limit',reason:'cooldown'};
+  }
+  let batch=queue(excludeGameIds).batch;
+  if(specificGameId!==null){
+   const key=String(specificGameId);
+   const game=schedule().find(g=>g.id===key&&g.week>=1&&g.week<=7);
+   if(!game||snapshots[key]?.sourceFailure!==true)
+    return {checked:0,skipped:0,failed:false,reason:'not_failed'};
+   batch=[{gameId:game.id,week:game.week,home:game.home,away:game.away}];
+  }
   if(!batch.length){
    render('No available MSF games in this scan batch.');
    return {checked:0,skipped:0,failed:false};
@@ -199,6 +231,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
      checkedAt:new Date().toISOString(),
      sourceFailure,failureKind:failure?.kind||null,
      failureReason:failure?.description||null,
+     failureDiagnostic:failure?.diagnostic||null,
      pbpPublished:inspection?.diagnostics?.hasPublishedPlays===true,
      pbpChronologyVerified:inspection?.usablePlaySequence===true,
      finalBoxVerified:inspection?.boxScorePublished===true&&inspection?.providerFinal===true,
@@ -250,6 +283,22 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    state.autoFailure=state.error;
   }finally{state.running=false;render(state.error||state.lastProgress)}
   return {checked,skipped,failed,stopped,category};
+ }
+ async function retryFailedGame(gameId=null){
+  if(state.running||state.autoActive)return {started:false,reason:'busy'};
+  if(!isVisible())return {started:false,reason:'page_hidden'};
+  const cooldown=Math.max(0,state.cooldownUntil-Date.now());
+  if(cooldown>0){
+   render('MSF throttling cooldown; no retry sent.');
+   return {started:false,reason:'cooldown',retryAfterSeconds:Math.ceil(cooldown/1000)};
+  }
+  const id=gameId===null?preferredFailedGameId():String(gameId);
+  if(!id||snapshots[id]?.sourceFailure!==true){
+   render('Select a game with a saved failed source check. No new request sent.');
+   return {started:false,reason:'not_failed'};
+  }
+  const result=await runNextBatch({specificGameId:id});
+  return {...result,gameId:id};
  }
  function pauseRemainingChecks(){
   if(!state.autoActive)return false;
@@ -335,6 +384,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   return report;
  }
  el('ffo-gc-research-next')?.addEventListener('click',()=>void runNextBatch());
+ el('ffo-gc-research-single')?.addEventListener('click',()=>void retryFailedGame());
  el('ffo-gc-research-all')?.addEventListener('click',()=>void runRemainingChecks());
  el('ffo-gc-research-pause')?.addEventListener('click',pauseRemainingChecks);
  el('ffo-gc-research-backtest')?.addEventListener('click',backtestReadiness);
@@ -347,7 +397,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
   getBacktest:backtestReadiness,
   getInspectedGames:()=>Object.keys(snapshots).length,
   getSourceCheck:(gameId)=>snapshots[String(gameId)]?{...snapshots[String(gameId)]}:null,
-  render,runNextBatch,runRemainingChecks,pauseRemainingChecks,
+  render,runNextBatch,runRemainingChecks,retryFailedGame,pauseRemainingChecks,
   getScanState:()=>({autoActive:state.autoActive,running:state.running,
    stopRequested:state.stopRequested,autoScanned:state.autoScanned,
    remaining:queue().pendingGames,error:state.autoFailure||state.error||null})

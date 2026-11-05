@@ -8,7 +8,7 @@
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
  const weekNav=await import('/ffo-gamecast-weeks.mjs?v=660');
- const researchController=await import('/ffo-scoring-research-controller.mjs');
+ const researchController=await import('/ffo-scoring-research-controller.mjs?v=670');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -63,7 +63,11 @@
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),name==='plays'||name==='boxscore'?9000:name==='stats'||name==='gamelogs'?26000:12500);
    try{
     const response=await fetch(url,{cache:'no-store',credentials:'same-origin',signal:controller.signal,headers:{accept:'application/json'}});
-    let body;try{body=await response.json()}catch{throw Error('Invalid gateway response')}
+    let body;try{body=await response.json()}catch{
+     const err=Error('Invalid gateway response');
+     err.gatewayCode='invalid_gateway_response';err.gatewayHttpStatus=response.status;
+     throw err;
+    }
     if(!response.ok){
       // Cloudflare binding status is not proof of an MSF HTTP status.
       const details=[];
@@ -74,11 +78,28 @@
       if(Number.isInteger(body.provider_http_status)&&body.provider_status_direct===true)details.push('MSF HTTP '+body.provider_http_status);
       if(typeof body.inner_gateway_error==='string'&&/^[a-z0-9_-]{1,80}$/i.test(body.inner_gateway_error))details.push('inner error '+body.inner_gateway_error);
       const err=Error((body.error||'HTTP '+response.status)+(details.length?' · '+details.join(' · '):''));
-      err.status=response.status;err.diagnostics=details;throw err;
+      err.status=response.status;err.diagnostics=details;
+      // Structured diagnostic metadata only; never forward response bodies.
+      err.gatewayCode=String(body.error||'provider_upstream_error').slice(0,80);
+      err.gatewayHttpStatus=response.status;err.transport=body.transport;
+      err.bindingHttpStatus=body.binding_http_status;
+      err.providerHttpStatusDirect=body.provider_status_direct===true?body.provider_http_status:null;
+      err.msfStatusViaBinding=body.msf_http_status_via_binding;
+      err.innerGatewayError=body.inner_gateway_error;
+      err.reportedSizeBytes=body.reported_content_length_bytes??body.received_characters;
+      err.responseLimitBytes=body.limit_bytes;
+      throw err;
      }
     // A licensed not-modified feed is normal, not a lost connection.
     if(body.available===false&&body.reason==='provider_not_modified')return {...body,notModified:true};
-    if(body.available===false)throw Error(body.reason||'Feed not ready');
+    if(body.available===false){
+     const err=Error(body.reason||'Feed not ready');
+     err.gatewayCode=String(body.reason||body.error||'feed_not_ready').slice(0,80);
+     err.gatewayHttpStatus=response.status;err.transport=body.transport;
+     err.providerHttpStatusDirect=body.provider_status_direct===true?body.provider_http_status:null;
+     err.msfStatusViaBinding=body.msf_http_status_via_binding;
+     throw err;
+    }
     if(ttl>0){
       feedCache.delete(key);feedCache.set(key,{at:Date.now(),body});
       while(feedCache.size>8)feedCache.delete(feedCache.keys().next().value);

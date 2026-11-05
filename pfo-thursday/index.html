@@ -83,11 +83,13 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
   <p class="muted" style="font-size:11px;margin:5px 0">Green Bay Weeks 1–7 first, then all 32 NFL teams. MSF game evidence only. Partial scores and unverified predictions are not production inputs.</p>
   <div id="ffo-gc-research-status" role="status" aria-live="polite" style="font-size:11px;line-height:1.5;overflow-wrap:anywhere">Load the authenticated MSF schedule to check coverage.</div>
   <div style="display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 2px">
+   <button class="button" type="button" id="ffo-gc-research-single" style="min-height:38px;font-size:11px" disabled>Diagnose one saved failed game</button>
    <button class="button" type="button" id="ffo-gc-research-all" style="min-height:38px;font-size:11px">Run remaining historical checks</button>
    <button class="button" type="button" id="ffo-gc-research-pause" style="min-height:38px;font-size:11px" disabled>Pause automated checks</button>
    <button class="button" type="button" id="ffo-gc-research-next" style="min-height:38px;font-size:11px">Inspect next 2 historical games</button>
    <button class="button" type="button" id="ffo-gc-research-backtest" style="min-height:38px;font-size:11px">Check projection backtest readiness</button>
   </div>
+  <p class="muted" style="font-size:10px;margin:7px 0 0">Controlled diagnosis retries only one previously failed game. It does not certify scores, clear other checkpoints, or start the automatic nine-game scan.</p>
  </div>
  </details>
  <details id="ffo-gc-stat-audit" class="card" style="padding:10px;margin:8px 0">
@@ -141,7 +143,7 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
 <script src="/ffo-pfo-core.js?v=660" defer></script><script>
 /* Load the separate GameCast application only when a related section is opened. */
 (function(){let inflight=null;const load=()=>{if(inflight)return inflight;
- inflight=new Promise((ok,bad)=>{const script=document.createElement('script');script.src='/ffo-gamecast.js?v=660';script.async=true;
+ inflight=new Promise((ok,bad)=>{const script=document.createElement('script');script.src='/ffo-gamecast.js?v=670';script.async=true;
  script.onload=()=>ok(true);script.onerror=()=>{inflight=null;const label=document.getElementById('ffo-gc-status');if(label)label.textContent='GameCast could not load. Reopen to retry.';bad(Error('gamecast_script_unavailable'))};
  document.body.append(script)});return inflight;};
  window.ffoLoadGameCast=load;
