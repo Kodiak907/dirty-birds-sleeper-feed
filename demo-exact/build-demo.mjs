@@ -124,7 +124,7 @@ for(const file of readdirSync(src)){
  if(forbidden.test(s))throw Error('Private identifier retained in '+file);
  writeFileSync(join(out,file),s);count++;
 }
-const overlay="(function(){document.title='PFO League Demo · The Front Office Collective';window.ffoExactDemo=true;document.addEventListener('DOMContentLoaded',function(){const pane=document.getElementById('commissioner');if(pane){const n=document.createElement('div');n.className='note';n.textContent='COMMISSIONER SYSTEM LOCKED: public demonstration only; no private case records or administrative actions.';pane.prepend(n)}})})();\n";
+const overlay="(function(){document.title='PFO League Demo · The Front Office Collective';window.ffoExactDemo=true;document.addEventListener('DOMContentLoaded',function(){const pane=document.getElementById('commissioner');if(pane){const n=document.createElement('div');n.className='note';n.textContent='COMMISSIONER SYSTEM LOCKED: public demonstration only; no private case records or administrative actions.';pane.prepend(n)}const game=document.getElementById('gamecast');if(game){const note=document.createElement('div');note.className='note';note.style.cssText='border-left:3px solid #e8bd75;margin-bottom:12px;font-weight:700';note.textContent='GAMECAST DEMO · All matchups, scores, field positions and plays shown here are fictional. This open site is NOT connected to paid MySportsFeeds or real-time NFL games.';game.prepend(note)}})})();\n";
 writeFileSync(join(out,'demo-exact-overlay.js'),overlay);
 const originalWorker=readFileSync(join(src,'_worker.js'),'utf8');
 if(!originalWorker.includes('export default {async fetch'))throw Error('Original PFO worker export boundary missing');
