@@ -701,6 +701,15 @@ function ffo616NormalizeTeamSeason(payload,team,checkedAt){
   partial:true,certified:false};
 }
 
+/* PFO 6.17: verify licensed MSF gateway envelopes before consuming stats. */
+function ffo617UnwrapProvider(payload,expected){
+ if(payload?.available===false||payload?.error)
+  throw Error('MSF_GATEWAY_'+String(payload.error||payload.reason||'UNAVAILABLE').slice(0,80));
+ const result=payload?.data??payload?.payload??payload;
+ if(!result||typeof result!=='object'||Array.isArray(result))
+  throw Error('MSF_'+expected+'_SCHEMA_UNRECOGNIZED');
+ return result;
+}
 const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
 async function ffo616DefenseRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
@@ -727,7 +736,7 @@ async function ffo616DefenseRoute(req,env){
    }catch(err){errors.push(attempt.kind+'_unreachable');continue}
    if(!response.ok){errors.push(attempt.kind+'_http_'+response.status);continue}
    try{
-    const json=await response.json();
+    const json=ffo617UnwrapProvider(await response.json(),'TEAM_DEFENSE');
     const parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
      ffo616NormalizeTeamSeason(json,team,checked_at);
     if(parsed.available===false){errors.push(String(parsed.error));continue}
@@ -805,7 +814,7 @@ async function ffo616PlayerGameRoute(req,env){
   }catch{return {source:'MySportsFeeds',available:false,team,name,error:'licensed_game_logs_unreachable',checked_at}}
   if(!response.ok)return {source:'MySportsFeeds',available:false,team,name,error:'provider_http_'+response.status,checked_at};
   try{
-   const data=ffo616NormalizePlayerGames(await response.json(),team,name,checked_at);
+   const data=ffo616NormalizePlayerGames(ffo617UnwrapProvider(await response.json(),'PLAYER_GAMELOGS'),team,name,checked_at);
    if(data.available!==false)ffo616PlayerGameCache.set(key,{data,at:Date.now()});
    return data;
   }catch(err){return {source:'MySportsFeeds',available:false,team,name,error:String(err.message||err),checked_at}}
