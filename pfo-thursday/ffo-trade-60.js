@@ -115,6 +115,17 @@
     ' · '+(reference?.ppg===null||reference?.ppg===undefined?'PPG unverified':reference.ppg.toFixed(1)+' modeled PPG')+'</span></div>';
   };
   const cut=(n)=>n===null?'unverified':String(n);
+  const us=r.starterDelta.ours,them=r.starterDelta.theirs;
+  const proven=us!==null&&them!==null&&Number.isFinite(us)&&Number.isFinite(them)&&
+   r.status!=='invalid'&&r.rosterCuts.ours===0&&r.rosterCuts.theirs===0;
+  const signal=!proven?'Two-team starter impact unverified':
+   us>0&&them>0?'Conditional two-team starter improvement':
+   us>0&&them<=0?'Dirty Birds benefit; partner starter impact is not positive':
+   us<=0&&them>0?'Partner benefits; Dirty Birds starter impact is not positive':
+   'Neither side shows a positive modeled starter delta';
+  const nextMove=!proven?'Resolve missing inputs, eligibility and roster cuts before interpreting this trade.':
+   us>0&&them>0?'Both modeled starting groups improve; verify health, FAAB and manager priorities before proposing.':
+   'Uneven model benefits: inspect depth, FAAB and possible counteroffer terms. No acceptance implied.';
   const flags=r.coverage.present+'/'+r.coverage.total+' selected player forecasts';
   const clearNow=r.status!=='invalid'&&r.starterDelta.ours!==null&&r.starterDelta.theirs!==null;
   const schedule=window.ffoPfo597?.verifiedSchedule?.();
@@ -154,6 +165,8 @@
    '<div class="pfo60-section-head"><b>Trade package</b><small>Current Sleeper ownership</small></div>'+
    '<div class="pfo60-assets"><section><strong>Dirty Birds give</strong>'+ctx.give.map(id=>asset(id,'SEND')).join('')+
     '</section><section><strong>Dirty Birds receive</strong>'+ctx.take.map(id=>asset(id,'GET')).join('')+'</section></div>'+
+   '<div class="pfo612-trade-brief"><b>'+esc(signal)+'</b><p>'+esc(nextMove)+'</p>'+
+   '<small>FFL starter deltas are research estimates, not market prices or acceptance probabilities. Bench replacement and roster cuts matter.</small></div>'+
    '<div class="pfo60-two-sided"><div><b>Dirty Birds roster</b><div class="pfo60-chips">'+
     delta(r.depthBefore.ours,r.depthAfter.ours)+'</div><small>Net slots '+(r.rosterChange.ours>0?'+':'')+r.rosterChange.ours+
     ' · possible cuts '+cut(r.rosterCuts.ours)+'</small></div>'+
