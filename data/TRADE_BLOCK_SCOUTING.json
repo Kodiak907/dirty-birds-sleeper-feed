@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-05T02:11:20.010504+00:00",
-  "source_snapshot_utc": "2026-11-05T02:11:09.554662+00:00",
-  "source_market_as_of": "2026-11-04T15:05:07.031182+00:00",
+  "generated_at_utc": "2026-11-05T03:55:26.428522+00:00",
+  "source_snapshot_utc": "2026-11-05T03:55:18.486973+00:00",
+  "source_market_as_of": "2026-11-05T03:55:22.859563+00:00",
   "source_projection_as_of": "2026-11-05T02:11:16.868250+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17460,
-  "market_screened": 5238,
+  "market_screened": 5123,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -58,7 +58,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.0,
           "their_lineup_delta_ppg": 0.12,
-          "value_paid_received_ratio": 0.846,
+          "value_paid_received_ratio": 0.77,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -96,7 +96,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.0,
           "their_lineup_delta_ppg": 0.12,
-          "value_paid_received_ratio": 1.14,
+          "value_paid_received_ratio": 1.048,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -129,7 +129,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.61,
           "their_lineup_delta_ppg": 0.6,
-          "value_paid_received_ratio": 1.074,
+          "value_paid_received_ratio": 1.122,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -167,7 +167,45 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 2.61,
           "their_lineup_delta_ppg": 0.6,
-          "value_paid_received_ratio": 0.893,
+          "value_paid_received_ratio": 0.934,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "10229",
+              "name": "Rashee Rice",
+              "position": "WR"
+            },
+            {
+              "id": "4943",
+              "name": "Sam Darnold",
+              "position": "QB"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 2.37,
+          "their_lineup_delta_ppg": 0.14,
+          "value_paid_received_ratio": 1.163,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -205,45 +243,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.37,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.838,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "10229",
-              "name": "Rashee Rice",
-              "position": "WR"
-            },
-            {
-              "id": "9500",
-              "name": "Josh Downs",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 2,
-          "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.37,
-          "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 1.175,
+          "value_paid_received_ratio": 0.782,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -281,7 +281,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.56,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 1.027,
+          "value_paid_received_ratio": 0.922,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -319,7 +319,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.56,
           "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.999,
+          "value_paid_received_ratio": 0.903,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 96
+      "candidate_count": 108
     },
     {
       "asset": "Patrick Mahomes",
@@ -364,7 +364,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.02,
           "their_lineup_delta_ppg": 2.74,
-          "value_paid_received_ratio": 0.935,
+          "value_paid_received_ratio": 1.006,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -393,16 +393,16 @@
               "position": "QB"
             },
             {
-              "id": "13274",
-              "name": "Germie Bernard",
-              "position": "WR"
+              "id": "7567",
+              "name": "Kenny Gainwell",
+              "position": "RB"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.02,
           "their_lineup_delta_ppg": 0.95,
-          "value_paid_received_ratio": 0.984,
+          "value_paid_received_ratio": 1.099,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "STRICT_RESEARCH_PASS",
@@ -440,7 +440,7 @@
           "opponent": "EmanAndYoMomma",
           "our_lineup_delta_ppg": 2.56,
           "their_lineup_delta_ppg": 0.05,
-          "value_paid_received_ratio": 0.929,
+          "value_paid_received_ratio": 0.98,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -478,7 +478,7 @@
           "opponent": "EmanAndYoMomma",
           "our_lineup_delta_ppg": 2.56,
           "their_lineup_delta_ppg": 0.05,
-          "value_paid_received_ratio": 1.072,
+          "value_paid_received_ratio": 1.041,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -549,7 +549,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.44,
           "their_lineup_delta_ppg": 0.68,
-          "value_paid_received_ratio": 0.96,
+          "value_paid_received_ratio": 0.976,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -559,7 +559,7 @@
           ]
         }
       ],
-      "candidate_count": 25
+      "candidate_count": 19
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."
