@@ -15,7 +15,7 @@
   const el=document.getElementById('ffo69-stats-status'),r=getRoster();if(!el||!r?.players?.length)return;
   const wk=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
   const ids=(r.starters||[]).map(String).filter(id=>id&&id!=='0');
-  const known=[],missing=[],rulesReady=window.ffoPfo597?.hasFrozenRules?.()===true;
+  const known=[],missing=[],partial=[],rulesReady=window.ffoPfo597?.hasFrozenRules?.()===true;
   const info=typeof pfo69SourceStatus==='function'?pfo69SourceStatus():null;
   const sourceTeams=new Set(info?.teams||[]);
   for(const id of ids){
@@ -24,7 +24,7 @@
    const pos=typeof pfo52Pos==='function'?pfo52Pos(p):p?.position;
    const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
    const name=p?.name||id,team=typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(p?.team):p?.team;
-   if(score?.points!=null&&Number.isFinite(Number(score.points))){known.push(name);continue}
+   if(score?.points!=null&&Number.isFinite(Number(score.points))){known.push(name);if(score.partial)partial.push(name);continue}
    let reason;
    if(score?.bye)reason='verified NFL bye; no point forecast';
    else if(!rulesReady)reason='FFO scoring rules not ready';
@@ -42,8 +42,8 @@
    sub.style.cssText='font-size:11px;line-height:1.5;margin-top:8px';
    el.insertAdjacentElement('afterend',sub);}
   sub.textContent='W'+wk+' independently modeled starters: '+known.length+'/'+ids.length+
-   '. '+(missing.length?'Missing: '+missing.map(x=>x.name+' ('+x.reason+')').join(' · '):
-    'All submitted starters have provisional FFO estimates.')+
+   '. '+(partial.length?'Partial D/ST estimates: '+partial.join(', ')+'. ':'')+(missing.length?'Missing: '+missing.map(x=>x.name+' ('+x.reason+')').join(' · '):
+    'All submitted starters have model estimates (check partial classifications).')+
    ' Missing categories are not zero predictions.';
   let detail=document.getElementById('pfo615-coverage-details');
   if(!detail){detail=document.createElement('div');detail.id='pfo615-coverage-details';sub.after(detail);}
