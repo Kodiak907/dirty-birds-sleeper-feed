@@ -5,6 +5,7 @@
 (()=>{'use strict';
  const defense=new Map(),pending=new Map(),failures=new Map(),seen=new Map();
  const playerPending=new Map(),playerFailures=new Map(),playerSeen=new Map(),playerRecovered=new Set();
+ const recoveryStatus=new Map();
  const canonical=x=>typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(x):String(x||'').toUpperCase();
  const pos=p=>typeof pfo52Pos==='function'?pfo52Pos(p):String(p?.position||'').toUpperCase().replace(/^D\/?ST$/,'DEF');
  const info=id=>typeof pfo52Info==='function'?pfo52Info(id):null;
@@ -33,7 +34,30 @@
    ' · FFO frozen D/ST scoring · partial model',
    partial:true,certified:false,coverage:row.coverage,model:'PFO_616_MSF_TEAM_DEFENSE_V1'};
  };
+ function renderDiagnostics(){
+  const host=document.getElementById('pfo612-data-health');
+  if(!host)return;
+  let panel=document.getElementById('pfo617-recovery-health');
+  if(!panel){
+   panel=document.createElement('div');panel.id='pfo617-recovery-health';
+   panel.style.cssText='font-size:12px;line-height:1.6;margin-top:12px;overflow-wrap:anywhere;white-space:pre-line';
+   host.append(panel);
+  }
+  const ids=(roster()?.starters||[]).map(String).filter(id=>id&&id!=='0');
+  const lines=['PFO 6.17 · Projection recovery audit (verified NFL stats only)'];
+  if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
+  for(const id of ids){
+   const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
+   const projected=typeof pfo52Points==='function'?pfo52Points(id,typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)):null;
+   if(projected?.points!=null){lines.push(name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
+   let reason=position==='DEF'?(pending.has(team)?'fetching_team_defense':failures.get(team)||(!defense.has(team)?'awaiting_team_defense':'no_verified_scoring_categories_or_week_schedule')):
+    (playerPending.has(id)?'fetching_player_logs':playerFailures.get(id)||recoveryStatus.get(id)||'awaiting_verified_stats');
+   lines.push(name+': unavailable · '+reason);
+  }
+  panel.textContent=lines.join('\n');
+ }
  function redraw(){
+  try{renderDiagnostics()}catch{}
   try{window.ffoPfo611?.coverage?.()}catch{}
   try{if(document.querySelector('#roster.page.active'))pfo52RosterPoints?.()}catch{}
   try{if(document.querySelector('#matchup.page.active'))pfo52Render?.()}catch{}
@@ -76,8 +100,8 @@
  async function recoverPlayer(id){
   id=String(id);
   if(playerPending.has(id))return playerPending.get(id);
-  const source=typeof pfo50Independent!=='undefined'?pfo50Independent:null;
-  if(!source?.players?.length||window.ffoPfo597?.hasFrozenRules?.()!==true)return null;
+  // A missing season feed must not prevent separately verified player-log recovery.
+  if(window.ffoPfo597?.hasFrozenRules?.()!==true)return null;
   if(playerRecovered.has(id))return null;
   if(Date.now()-(playerSeen.get(id)||0)<90000)return null;
   const p=info(id),team=canonical(p?.team);
@@ -85,7 +109,7 @@
   const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
   const scored=window.ffoPfo597?.scoreFrozen?.(row?.forecast);
   if(scored?.points!=null&&Number.isFinite(Number(scored.points)))return null;
-  playerSeen.set(id,Date.now());
+  playerSeen.set(id,Date.now());recoveryStatus.set(id,'checking_licensed_player_gamelogs');
   const job=(async()=>{
    try{
     const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),14000);
@@ -109,8 +133,11 @@
     copy.set(key,{...data,name:p.name,team,source_type:'licensed_primary',
      coverage:'verified_player_game_logs_partial'});
     pfo50Indexed=copy; // bust 5.9.7 forecast cache by reference
-    playerRecovered.add(id);playerFailures.delete(id);redraw();return data;
-   }catch(error){playerFailures.set(id,String(error?.message||error));return null}
+    playerRecovered.add(id);playerFailures.delete(id);recoveryStatus.set(id,'recovered_from_verified_game_logs');redraw();return data;
+   }catch(error){
+    const reason=String(error?.message||error);
+    playerFailures.set(id,reason);recoveryStatus.set(id,reason);redraw();return null;
+   }
    finally{playerPending.delete(id)}
   })();
   playerPending.set(id,job);return job;
@@ -136,7 +163,7 @@
   for(const id of defenseIds()){const p=info(id),team=canonical(p?.team||id);
    if(team)void load(team);
   }
-  recoverUnmodeled();
+  recoverUnmodeled();renderDiagnostics();
  }
  const base=typeof pfo52Points==='function'?pfo52Points:null;
  if(base){
@@ -177,17 +204,18 @@
   // Roster often arrives after DOMContentLoaded; retry only a few times.
   let retries=0;refreshTimer=setInterval(()=>{
    retries++;refresh();
-   if(retries>=15){clearInterval(refreshTimer);refreshTimer=null}
+   if(retries>=90){clearInterval(refreshTimer);refreshTimer=null}
   },1600);
   document.querySelectorAll('nav button[data-page]').forEach(btn=>btn.addEventListener('click',()=>{
    if(['roster','matchup','overview','market','championship'].includes(btn.dataset.page))
     setTimeout(refresh,80);
   }));
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});
+  document.getElementById('ffo69-retry-stats')?.addEventListener('click',()=>setTimeout(refresh,200));
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
  window.ffoPfo616={refresh,load,status:team=>defense.get(canonical(team))||null,
-  diagnostics:()=>({teams:[...defense.keys()],pending:[...pending.keys()],failures:[...failures],
+  diagnostics:()=>({teams:[...defense.keys()],pending:[...pending.keys()],failures:[...failures],recovery_status:[...recoveryStatus],
    players_recovered:[...playerRecovered],players_pending:[...playerPending.keys()],player_failures:[...playerFailures],
    source:'licensed MSF, never Sleeper projections'})};
 })();
