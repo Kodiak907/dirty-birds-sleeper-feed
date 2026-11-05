@@ -1,0 +1,83 @@
+name: PFO 6.18 all-starter evidence QA and protected Preview
+on:
+  push:
+    branches:
+      - pfo-618-all-starter-evidence-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax and protected worker compilation
+        run: |
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          node --check pfo-thursday/ffo-pfo-616.js
+          node --check pfo-thursday/ffo-startsit-63.js
+          node --check pfo-thursday/ffo-pfo-611.js
+          cp pfo-thursday/_worker.js /tmp/pfo616-worker.mjs
+          node --check /tmp/pfo616-worker.mjs
+      - name: 6.18 D/ST completed-game, kicker, and player recovery regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-618.test.mjs pfo-thursday/qa-ffo-617.test.mjs pfo-thursday/qa-ffo-616.test.mjs
+      - name: Existing model, market, history, waiver and video regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-615.test.mjs pfo-thursday/qa-ffo-614-video.test.mjs pfo-thursday/qa-ffo-613-video.test.mjs pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs
+      - name: Responsive mobile route and interaction checks
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
+
+  deploy-private-preview:
+    needs: verify
+    if: github.ref == 'refs/heads/pfo-618-all-starter-evidence-20261105' && github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package only PFO site assets (exclude QA, secrets and development artifacts)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-preview"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) ! -name 'qa-*' -exec cp {} "$RUNNER_TEMP/pfo-preview/" \;
+          for name in index.html _worker.js FFO_FFL_SCORING_V1.json ffo-pfo-616.js ffo-pfo-597.js ffo-pfo-core.js; do
+            test -s "$RUNNER_TEMP/pfo-preview/$name"
+          done
+          grep -q 'ffo-pfo-616.js?v=618' "$RUNNER_TEMP/pfo-preview/index.html"
+      - name: Check private preview Cloudflare deploy credential
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+        shell: bash
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo '::error::Missing preview deploy token; no deploy performed'; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy validated build to private PFO preview ONLY (never production)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" \
+            --project-name dirtybirdstest \
+            --branch pfo-598-msf-core-and-mobile-20261029 \
+            --commit-hash "$GITHUB_SHA" \
+            --commit-message "PFO 6.18 verified D/ST and kicker recovery; PRIVATE PREVIEW ONLY"
+          echo 'Private preview only; public demo, production branch and Commissioner records untouched.'
