@@ -14,7 +14,7 @@ const fixture='<!doctype html><html><head><meta name="viewport" content="width=d
  '{player_id:"r2",name:"IR Example",team:"SF",position:"RB"}]};'+
  'function pfo52Cur(){return 9;}function pfo52Info(id){return liveRosterSnapshot.players.find(p=>p.player_id===id);};'+
  'function pfo50Estimate(id){const st=Date.now();while(Date.now()-st<70){};return id==="q1"?20:11;}'+
- 'function pfo50StatsFor(){return null;}'+
+ 'function pfo52Points(id){return {points:id==="q1"?20:9,source:"Independent FFL mock"};}function pfo50StatsFor(){return null;}'+
  '</script><script src="/ffo-startsit-63.js" defer></script></body></html>';
 test('Start/Sit renders selectable current-roster players before slow optional analytics and never waits for Market', {timeout:60000},async()=>{
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
