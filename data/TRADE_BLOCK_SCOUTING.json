@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-05T21:48:15.364340+00:00",
-  "source_snapshot_utc": "2026-11-05T21:48:07.005325+00:00",
+  "generated_at_utc": "2026-11-05T22:48:59.349265+00:00",
+  "source_snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
   "source_market_as_of": "2026-11-05T15:13:09.640408+00:00",
   "source_projection_as_of": "2026-11-05T19:30:05.171738+00:00",
   "focus_assets": [
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 17460,
-  "market_screened": 5156,
+  "tested": 17712,
+  "market_screened": 5196,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 109
+      "candidate_count": 115
     },
     {
       "asset": "Patrick Mahomes",
@@ -559,7 +559,7 @@
           ]
         }
       ],
-      "candidate_count": 19
+      "candidate_count": 20
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."

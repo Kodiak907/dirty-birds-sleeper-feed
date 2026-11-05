@@ -69,115 +69,6 @@
   "by_position": {
     "DEF": [
       {
-        "bench_depth_delta_ppg": 0.398,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 126.685,
-          "before_ppg": 126.685,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Buffalo Bills",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Jonah Coleman",
-            "drop_id": "13345",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
-            "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
-          }
-        ],
-        "candidate_id": "BUF",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "DEF",
-        "projection_ppg": 6.497,
-        "team": "BUF",
-        "warnings": [
-          "No sourced usage"
-        ]
-      },
-      {
         "bench_depth_delta_ppg": 0.119,
         "best_candidate_drop": {
           "added_starters": [],
@@ -262,18 +153,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "BAL",
@@ -372,18 +259,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "GB",
@@ -392,6 +275,112 @@
         "position": "DEF",
         "projection_ppg": 6.0,
         "team": "GB",
+        "warnings": [
+          "No sourced usage",
+          "Partial projection coverage"
+        ]
+      },
+      {
+        "bench_depth_delta_ppg": -0.182,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.685,
+          "before_ppg": 126.685,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "New England Patriots",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "NE",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 5.917,
+        "team": "NE",
         "warnings": [
           "No sourced usage",
           "Partial projection coverage"
@@ -482,18 +471,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "CIN",
@@ -591,18 +576,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "NO",
@@ -700,18 +681,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "IND",
@@ -810,18 +787,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "WAS",
@@ -919,18 +892,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "CLE",
@@ -1029,18 +998,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "TB",
@@ -1139,18 +1104,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "TEN",
@@ -1249,18 +1210,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "NYJ",
@@ -1361,18 +1318,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Matt Gay"
-            ],
-            "after_ppg": 126.328,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "Will Reichard"
-            ],
-            "drop": "Will Reichard",
-            "drop_id": "11792",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.357
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "6083",
@@ -1471,18 +1424,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Dominic Zvada"
-            ],
-            "after_ppg": 126.275,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "Will Reichard"
-            ],
-            "drop": "Will Reichard",
-            "drop_id": "11792",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.41
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13833",
@@ -1580,18 +1529,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "8259",
@@ -1689,18 +1634,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13545",
@@ -1799,18 +1740,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "2020",
@@ -1909,18 +1846,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "1945",
@@ -2019,18 +1952,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "12711",
@@ -2131,18 +2060,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "4892",
@@ -2241,18 +2166,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9230",
@@ -2352,18 +2273,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9511",
@@ -2459,18 +2376,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9508",
@@ -2569,18 +2482,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "4147",
@@ -2676,18 +2585,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "10219",
@@ -2785,18 +2690,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "11581",
@@ -2894,18 +2795,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13424",
@@ -3003,18 +2900,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9225",
@@ -3113,18 +3006,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "11439",
@@ -3222,18 +3111,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "8122",
@@ -3331,18 +3216,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "11435",
@@ -3440,18 +3321,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "7561",
@@ -3466,6 +3343,109 @@
       }
     ],
     "TE": [
+      {
+        "bench_depth_delta_ppg": 0.079,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.685,
+          "before_ppg": 126.685,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Darren Waller",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "2505",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 6.178,
+        "team": "CAR",
+        "warnings": []
+      },
       {
         "bench_depth_delta_ppg": 0.039,
         "best_candidate_drop": {
@@ -3551,18 +3531,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "8210",
@@ -3658,18 +3634,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9482",
@@ -3767,18 +3739,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "5857",
@@ -3874,18 +3842,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "6865",
@@ -3985,18 +3949,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "4033",
@@ -4011,6 +3971,109 @@
       }
     ],
     "WR": [
+      {
+        "bench_depth_delta_ppg": 0.134,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.685,
+          "before_ppg": 126.685,
+          "displaced_starters": [],
+          "drop": "Caleb Douglas",
+          "drop_id": "13296",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Keon Coleman",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Jonah Coleman",
+            "drop_id": "13345",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Zach Charbonnet",
+            "drop_id": "9753",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "C.J. Stroud",
+            "drop_id": "9758",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.685,
+            "before_ppg": 126.685,
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "11637",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "WR",
+        "projection_ppg": 6.233,
+        "team": "BUF",
+        "warnings": []
+      },
       {
         "bench_depth_delta_ppg": -0.375,
         "best_candidate_drop": {
@@ -4096,18 +4159,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9754",
@@ -4203,18 +4262,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "3634",
@@ -4312,18 +4367,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13311",
@@ -4419,18 +4470,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "8676",
@@ -4528,18 +4575,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "9486",
@@ -4638,18 +4681,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "6819",
@@ -4748,18 +4787,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13293",
@@ -4857,18 +4892,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "7571",
@@ -4966,18 +4997,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "4177",
@@ -4989,115 +5016,6 @@
         "warnings": [
           "Availability status: ir",
           "Partial projection coverage"
-        ]
-      },
-      {
-        "bench_depth_delta_ppg": -2.946,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 126.685,
-          "before_ppg": 126.685,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Brian Thomas Jr.",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Jonah Coleman",
-            "drop_id": "13345",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
-            "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
-          }
-        ],
-        "candidate_id": "11631",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "WR",
-        "projection_ppg": 3.153,
-        "team": "JAX",
-        "warnings": [
-          "Limited snap sample"
         ]
       },
       {
@@ -5185,18 +5103,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "7049",
@@ -5292,18 +5206,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "12718",
@@ -5403,18 +5313,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13320",
@@ -5512,18 +5418,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "4950",
@@ -5622,18 +5524,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13264",
@@ -5729,18 +5627,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "2197",
@@ -5836,18 +5730,14 @@
             "projected_lineup_gain_ppg": 0.0
           },
           {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
+            "added_starters": [],
+            "after_ppg": 126.685,
             "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
+            "displaced_starters": [],
+            "drop": "Buffalo Bills",
+            "drop_id": "BUF",
             "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
+            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13413",
@@ -5857,117 +5747,10 @@
         "projection_ppg": 0.862,
         "team": "KC",
         "warnings": []
-      },
-      {
-        "bench_depth_delta_ppg": -5.246,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 126.685,
-          "before_ppg": 126.685,
-          "displaced_starters": [],
-          "drop": "Caleb Douglas",
-          "drop_id": "13296",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Jordan Watkins",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Jonah Coleman",
-            "drop_id": "13345",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "Zach Charbonnet",
-            "drop_id": "9753",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.685,
-            "before_ppg": 126.685,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [
-              "Jonah Coleman"
-            ],
-            "after_ppg": 126.253,
-            "before_ppg": 126.685,
-            "displaced_starters": [
-              "A.J. Brown"
-            ],
-            "drop": "A.J. Brown",
-            "drop_id": "5859",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": -0.432
-          }
-        ],
-        "candidate_id": "12634",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "WR",
-        "projection_ppg": 0.853,
-        "team": "SF",
-        "warnings": []
       }
     ]
   },
-  "generated_at_utc": "2026-11-05T21:48:12.085240+00:00",
+  "generated_at_utc": "2026-11-05T22:48:56.539606+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5975,6 +5758,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-05T21:48:07.005325+00:00",
+  "sleeper_snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
   "source_projection_date": "2026-11-05T19:30:05.171738+00:00"
 }

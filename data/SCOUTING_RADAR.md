@@ -1,9 +1,14 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-05T21:48:11.699023+00:00
-Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
+Generated: 2026-11-05T22:48:56.224746+00:00
+Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 4. New completed trade entries: 0.
+
+- Dirty Birds: added Buffalo Bills; dropped none
+- CREAM MACHINE: added Dylan Sampson; dropped Darren Waller
+- DANGER CLOSE: added Brian Thomas Jr., Jordan Watkins, Jahan Dotson; dropped Keon Coleman, New England Patriots
+- DANGER CLOSE: reserve status changed
 
 ## Limits
 

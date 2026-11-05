@@ -1,16 +1,16 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T21:48:11.822562+00:00
-Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
+Generated: 2026-11-05T22:48:56.326709+00:00
+Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 629 |
-| WR | 1293 |
-| TE | 614 |
+| RB | 628 |
+| WR | 1291 |
+| TE | 615 |
 | K | 139 |
 | DEF | 14 |
 
@@ -43,16 +43,16 @@ Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Quentin Johnston | LAC | 5.72 | 100% | 79.7% | Not flagged |
-| 2 | Kalif Raymond | CHI | 5.68 | 89% | 62.0% | Not flagged |
-| 3 | Chris Bell | MIA | 5.21 | 100% | 62.7% | Not flagged |
-| 4 | Rashid Shaheed | SEA | 4.52 | 89% | 41.3% | Not flagged |
-| 5 | Dontayvion Wicks | PHI | 4.38 | 89% | 79.3% | Questionable |
-| 6 | Michael Pittman Jr. | PIT | 4.35 | 89% | 77.7% | IR |
-| 7 | Ja'Kobi Lane | BAL | 3.61 | 89% | 62.7% | Not flagged |
-| 8 | Rashod Bateman | BAL | 3.50 | 89% | 59.7% | Not flagged |
-| 9 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
-| 10 | Brian Thomas Jr. | JAX | 3.15 | 100% | — | Not flagged |
+| 1 | Keon Coleman | BUF | 6.23 | 100% | 77.3% | Not flagged |
+| 2 | Quentin Johnston | LAC | 5.72 | 100% | 79.7% | Not flagged |
+| 3 | Kalif Raymond | CHI | 5.68 | 89% | 62.0% | Not flagged |
+| 4 | Chris Bell | MIA | 5.21 | 100% | 62.7% | Not flagged |
+| 5 | Rashid Shaheed | SEA | 4.52 | 89% | 41.3% | Not flagged |
+| 6 | Dontayvion Wicks | PHI | 4.38 | 89% | 79.3% | Questionable |
+| 7 | Michael Pittman Jr. | PIT | 4.35 | 89% | 77.7% | IR |
+| 8 | Ja'Kobi Lane | BAL | 3.61 | 89% | 62.7% | Not flagged |
+| 9 | Rashod Bateman | BAL | 3.50 | 89% | 59.7% | Not flagged |
+| 10 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
 | 11 | Jauan Jennings | MIN | 2.75 | 100% | 60.0% | Not flagged |
 | 12 | Konata Mumpfield | LAR | 2.33 | 89% | — | Not flagged |
 
@@ -60,11 +60,12 @@ Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Chig Okonkwo | WAS | 6.14 | 100% | 74.7% | Not flagged |
-| 2 | Michael Mayer | LV | 5.19 | 89% | 80.0% | Not flagged |
-| 3 | Noah Fant | NO | 4.79 | 100% | 57.0% | Not flagged |
-| 4 | Colby Parkinson | LAR | 3.50 | 89% | — | Not flagged |
-| 5 | David Njoku | LAC | 3.05 | 100% | 35.5% | IR |
+| 1 | Darren Waller | CAR | 6.18 | 100% | 51.0% | Not flagged |
+| 2 | Chig Okonkwo | WAS | 6.14 | 100% | 74.7% | Not flagged |
+| 3 | Michael Mayer | LV | 5.19 | 89% | 80.0% | Not flagged |
+| 4 | Noah Fant | NO | 4.79 | 100% | 57.0% | Not flagged |
+| 5 | Colby Parkinson | LAR | 3.50 | 89% | — | Not flagged |
+| 6 | David Njoku | LAC | 3.05 | 100% | 35.5% | IR |
 
 ### K
 
@@ -82,9 +83,9 @@ Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Buffalo Bills | BUF | 6.50 | 100% | — | Not flagged |
-| 2 | Baltimore Ravens | BAL | 6.22 | 89% | — | Not flagged |
-| 3 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
+| 1 | Baltimore Ravens | BAL | 6.22 | 89% | — | Not flagged |
+| 2 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
+| 3 | New England Patriots | NE | 5.92 | 89% | — | Not flagged |
 | 4 | Cincinnati Bengals | CIN | 5.90 | 100% | — | Not flagged |
 | 5 | New Orleans Saints | NO | 5.87 | 100% | — | Not flagged |
 | 6 | Indianapolis Colts | IND | 5.71 | 89% | — | Not flagged |
@@ -104,6 +105,8 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 |---|---|---|---:|---:|
 | Baker Mayfield | QB | TB | 12.93 | 94.7% |
 | Tanner McKee | QB | PHI | 9.86 | 100.0% |
+| Keon Coleman | WR | BUF | 6.23 | 77.3% |
+| Darren Waller | TE | CAR | 6.18 | 51.0% |
 | Chig Okonkwo | TE | WAS | 6.14 | 74.7% |
 | Keaton Mitchell | RB | LAC | 6.01 | 30.0% |
 | Quentin Johnston | WR | LAC | 5.72 | 79.7% |
@@ -120,8 +123,6 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Seth McGowan | RB | IND | 4.11 | 27.0% |
 | Ja'Kobi Lane | WR | BAL | 3.61 | 62.7% |
 | Rashod Bateman | WR | BAL | 3.50 | 59.7% |
-| Mack Hollins | WR | NE | 3.44 | 62.7% |
-| David Njoku | TE | LAC | 3.05 | 35.5% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 

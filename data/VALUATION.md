@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-05T21:48:11.758284+00:00
-Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
+Generated: 2026-11-05T22:48:56.274329+00:00
+Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -29,6 +29,7 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | A.J. Brown | WR | 14.60 | 1.82 | 3/8 |
 | Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
+| Buffalo Bills | DEF | 5.00 | 0.62 | 1/8 |
 | Zach Charbonnet | RB | 4.40 | 0.55 | 1/8 |
 
 ## Opponent historical lineup signal
@@ -45,9 +46,9 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | kfsn | 6-2 | 104.83 | 2 |
 | To Infinity and Bijan | 3-5 | 100.89 | 6 |
 | DeeboSix0 | 6-2 | 95.28 | 1 |
-| DANGER CLOSE | 3-5 | 94.79 | 1 |
 | EmanAndYoMomma | 2-6 | 94.37 | 0 |
-| CREAM MACHINE | 4-4 | 78.83 | 0 |
+| DANGER CLOSE | 3-5 | 91.86 | 1 |
+| CREAM MACHINE | 4-4 | 78.45 | 0 |
 
 ## Trade evaluation gate
 

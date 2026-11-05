@@ -1,12 +1,12 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-05T21:48:16.005032+00:00 | Forecast as of: 2026-11-05T19:30:05.171738+00:00
+Generated: 2026-11-05T22:48:59.834354+00:00 | Forecast as of: 2026-11-05T19:30:05.171738+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 131.00
+**Projected optimal score:** 131.24
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -17,13 +17,13 @@ Generated: 2026-11-05T21:48:16.005032+00:00 | Forecast as of: 2026-11-05T19:30:0
 | Chris Olave | WR | CLE | 12.61 |
 | Isaiah Likely | TE | PHI | 9.43 |
 | Will Reichard | K | BUF | 7.22 |
-| Minnesota Vikings | DEF | BUF | 6.21 |
+| Buffalo Bills | DEF | MIN | 6.45 |
 | Ollie Gordon II | RB | DET | 12.19 |
 | Zay Flowers | WR | JAX | 11.31 |
 
 ## Week 10
 
-**Projected optimal score:** 134.94
+**Projected optimal score:** 135.63
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -34,7 +34,7 @@ Generated: 2026-11-05T21:48:16.005032+00:00 | Forecast as of: 2026-11-05T19:30:0
 | Zay Flowers | WR | LAC | 14.04 |
 | Isaiah Likely | TE | WAS | 11.77 |
 | Will Reichard | K | GB | 7.13 |
-| Minnesota Vikings | DEF | GB | 6.18 |
+| Buffalo Bills | DEF | NYJ | 6.87 |
 | Chris Olave | WR | CAR | 13.35 |
 | A.J. Brown | WR | DET | 12.92 |
 

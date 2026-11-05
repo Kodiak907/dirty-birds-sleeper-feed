@@ -7,7 +7,7 @@
     "missing_projection": [
       "Deebo Samuel Sr."
     ],
-    "ppg": 131.0,
+    "ppg": 131.24,
     "starters": [
       {
         "id": "4046",
@@ -52,10 +52,10 @@
         "ppg": 7.22
       },
       {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
+        "id": "BUF",
+        "name": "Buffalo Bills",
         "position": "DEF",
-        "ppg": 6.21
+        "ppg": 6.45
       },
       {
         "id": "12495",
@@ -77,11 +77,11 @@
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-05T21:48:19.026704+00:00",
+  "generated_at_utc": "2026-11-05T22:49:02.032365+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 128.89,
+    "ppg": 129.13,
     "starters": [
       {
         "id": "4046",
@@ -126,10 +126,10 @@
         "ppg": 7.22
       },
       {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
+        "id": "BUF",
+        "name": "Buffalo Bills",
         "position": "DEF",
-        "ppg": 6.21
+        "ppg": 6.45
       },
       {
         "id": "9997",
@@ -298,6 +298,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "BUF",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Buffalo Bills",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "MIN",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Minnesota Vikings",
@@ -311,8 +320,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-05T21:48:07.005325+00:00",
-  "source_availability_generated_at_utc": "2026-11-05T21:48:16.562144+00:00",
+  "snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
+  "source_availability_generated_at_utc": "2026-11-05T22:49:00.598903+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

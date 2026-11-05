@@ -628,5 +628,49 @@
       }
     ],
     "source_snapshot_utc": "2026-11-05T17:13:38.063314+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-05T22:48:56.224746+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [
+          "Buffalo Bills"
+        ],
+        "drops": [],
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      },
+      {
+        "adds": [
+          "Dylan Sampson"
+        ],
+        "drops": [
+          "Darren Waller"
+        ],
+        "roster_id": 2,
+        "team": "CREAM MACHINE"
+      },
+      {
+        "adds": [
+          "Brian Thomas Jr.",
+          "Jordan Watkins",
+          "Jahan Dotson"
+        ],
+        "drops": [
+          "Keon Coleman",
+          "New England Patriots"
+        ],
+        "roster_id": 4,
+        "team": "DANGER CLOSE"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 4,
+        "team": "DANGER CLOSE"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-05T22:48:50.025594+00:00"
   }
 ]

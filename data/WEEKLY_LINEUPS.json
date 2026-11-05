@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-05T21:48:16.005032+00:00",
+  "generated_at_utc": "2026-11-05T22:48:59.834354+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-05T19:30:05.171738+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-05T21:48:07.005325+00:00",
+  "snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,7 +23,7 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 134.94,
+      "ppg": 135.63,
       "starters": [
         {
           "id": "4046",
@@ -75,11 +75,11 @@
           "ppg": 7.13
         },
         {
-          "id": "MIN",
-          "name": "Minnesota Vikings",
-          "opponent": "GB",
+          "id": "BUF",
+          "name": "Buffalo Bills",
+          "opponent": "NYJ",
           "position": "DEF",
-          "ppg": 6.18
+          "ppg": 6.87
         },
         {
           "id": "8144",
@@ -648,7 +648,7 @@
       "missing_projection": [
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.0,
+      "ppg": 131.24,
       "starters": [
         {
           "id": "4046",
@@ -700,11 +700,11 @@
           "ppg": 7.22
         },
         {
-          "id": "MIN",
-          "name": "Minnesota Vikings",
-          "opponent": "BUF",
+          "id": "BUF",
+          "name": "Buffalo Bills",
+          "opponent": "MIN",
           "position": "DEF",
-          "ppg": 6.21
+          "ppg": 6.45
         },
         {
           "id": "12495",

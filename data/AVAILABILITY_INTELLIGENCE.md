@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-05T21:48:16.562144+00:00
-Sleeper snapshot: 2026-11-05T21:48:07.005325+00:00
-nflverse observations: 2026-11-05T21:48:11.204606+00:00; injury feed loaded: True
+Generated: 2026-11-05T22:49:00.598903+00:00
+Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
+nflverse observations: 2026-11-05T22:48:55.824409+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -26,6 +26,7 @@ nflverse observations: 2026-11-05T21:48:11.204606+00:00; injury feed loaded: Tru
 | Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | 37.0% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |
+| Buffalo Bills | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
