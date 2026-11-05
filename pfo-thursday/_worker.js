@@ -621,11 +621,11 @@ function ffo616NormalizeDefense(payload,team,checkedAt){
  const aliases={
   sack:['defense.sacks','defense.sacksMade','defense.sacksTotal','defensive.sacks','defensive.sacksMade'],
   int:['defense.interceptions','defense.interceptionsMade','defensive.interceptions'],
-  ff:['defense.forcedFumbles','defensive.forcedFumbles'],
-  fum_rec:['defense.fumbleRecoveries','defense.fumblesRecovered','defensive.fumbleRecoveries'],
+  def_st_ff:['defense.forcedFumbles','defensive.forcedFumbles'],
+  def_st_fum_rec:['defense.fumbleRecoveries','defense.fumblesRecovered','defensive.fumbleRecoveries'],
   safe:['defense.safeties','defensive.safeties'],
   blk_kick:['defense.blockedKicks','defensive.blockedKicks'],
-  def_td:['defense.touchdowns','defense.defensiveTouchdowns','defensive.touchdowns']
+  def_st_td:['defense.touchdowns','defense.defensiveTouchdowns','defensive.touchdowns']
  };
  const games=[],seen=new Set();
  for(const item of rows){
