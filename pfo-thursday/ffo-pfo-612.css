@@ -1,0 +1,12 @@
+/* PFO 6.12 trade clarity + compact Data Health. Retains existing dark PFO styling. */
+.pfo612-trade-brief{border:1px solid #608b84;background:#1e3944;border-radius:10px;padding:12px;margin:11px 0;min-width:0;color:#e4f2ee}
+.pfo612-trade-brief>b{display:block;font-size:13px;line-height:1.4}
+.pfo612-trade-brief p{font-size:12px;line-height:1.6;margin:7px 0}
+.pfo612-trade-brief small{display:block;font-size:10px;line-height:1.55;color:#b1cad0}
+.pfo612-data-health{border:1px solid #426578;border-radius:9px;background:#1b3445;padding:0;margin:8px 0 11px}
+.pfo612-data-health>summary{font-size:12px;font-weight:750;color:#c8e6df;cursor:pointer;padding:10px 12px}
+.pfo612-data-health .note{font-size:11px!important;line-height:1.5!important;margin:8px!important;padding:9px!important;background:#233b49!important;color:#d4e5eb!important;border-color:#4b6e7e!important}
+.pfo612-data-health button{margin:6px 10px 12px}
+.pfo612-data-health #pfo611-coverage-report{background:#233b49!important;color:#d4e5eb!important}
+nav [data-page="scouting"]{display:none!important}
+#scouting.page{display:none!important}
