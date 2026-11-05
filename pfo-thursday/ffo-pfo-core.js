@@ -2226,16 +2226,22 @@ function pfo51RenderChanges(){const el=$('pfo51-changes');if(!el)return;
 }
 function pfo51FindPlayers(q){const p=pfo49Players.length?pfo49Players:pfo49Dir();let pos=(q.match(/\b(QBS?|RBS?|WRS?|TES?)\b/i)||[])[1]?.toUpperCase().replace(/S$/,'')||null;
  if(!pos){if(/receiver|wideout/i.test(q))pos='WR';else if(/running back/i.test(q))pos='RB';else if(/quarterback/i.test(q))pos='QB';else if(/tight end/i.test(q))pos='TE';}
- const wantAvailable=/available|free agent|unrostered|waiver|pickups?/i.test(q),wantOurs=/my roster|our roster|our players|dirty birds/i.test(q),trend=/rising|increas|grow|breakout|opportun|last 3|targets|snaps/i.test(q);
- const checked=!!leagueOwnedIds;const stale=checked&&(!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000);if(wantAvailable&&(!checked||stale))return {error:stale?'Ownership data is more than five minutes old. Refresh Sleeper before treating anyone as unrostered.':'Current FFL ownership has not loaded. Cannot certify free agents.'};
+ const wantAvailable=/available|free agent|unrostered|waiver|pickups?/i.test(q),wantOurs=/my roster|our roster|our players|dirty birds/i.test(q);
+ // Mentioning targets or snaps asks for a METRIC, not an upward trend.
+ // Only explicit growth language authorizes chronological trend filtering.
+ const trend=/rising|increas|grow|breakout|trending up|more (?:targets|snaps|carries)/i.test(q);
+ const checked=!!leagueOwnedIds,stale=!checked||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000;
+ // An old ownership snapshot cannot certify a free agent, but may still help
+ // exclude definitely rostered players from a research-only watchlist.
  // MSF can have valid season totals with no per-game log. Those players still
  // belong in player discovery; only trend-specific claims need weekly evidence.
  const ownedIds=new Set((liveRosterSnapshot?.players||[]).map(y=>String(y.player_id)));
  let pool=p.filter(x=>['QB','RB','WR','TE'].includes(x.position)&&(!pos||x.position===pos)&&
-  (!wantOurs||ownedIds.has(String(x.id)))&&(!wantAvailable||!waiverIsRostered(x.name,x.id)));
+  (!wantOurs||ownedIds.has(String(x.id)))&&(!wantAvailable||!checked||!waiverIsRostered(x.name,x.id)));
  let entries=pool.map(x=>{const stat=pfo51PlayerSummary(x.id),sig=pfo49Signal(x.id);
   return {id:x.id,stat,sig};
  }).filter(x=>x.stat.row&&(x.stat.week||x.stat.row?.season_totals||x.stat.forecast!=null));
+ const baselineCandidates=entries;
  if(trend)entries=entries.filter(x=>x.sig&&(x.sig.volumeChange>0||x.sig.difference>10));
  const lastThree=/last\s+(?:three|3)\s+(?:games|weeks)/i.test(q),mentionsSnaps=/\bsnap(?:s|%| share)?\b/i.test(q);
  if(trend&&lastThree)entries=entries.filter(x=>{
@@ -2245,12 +2251,17 @@ function pfo51FindPlayers(q){const p=pfo49Players.length?pfo49Players:pfo49Dir()
    const v=games.map(g=>g.stats?.[field]);
    return v.every(n=>n!=null&&Number.isFinite(Number(n)))&&Number(v[0])<Number(v[1])&&Number(v[1])<Number(v[2]);
  });
+ // A genuine rising-trend query without 3 weekly observations must NOT
+ // fabricate growth. Show relevant season-based research separately instead.
+ const trendUnverified=trend&&!entries.length&&baselineCandidates.length>0;
+ if(trendUnverified)entries=baselineCandidates.slice();
  entries.sort((a,b)=>{
-  const av=trend?((a.sig?.volumeChange||0)*2+Math.max(0,a.sig?.difference||0)):(a.stat.forecast??-9999);
-  const bv=trend?((b.sig?.volumeChange||0)*2+Math.max(0,b.sig?.difference||0)):(b.stat.forecast??-9999);
+  const av=trend&&!trendUnverified?((a.sig?.volumeChange||0)*2+Math.max(0,a.sig?.difference||0)):(a.stat.forecast??-9999);
+  const bv=trend&&!trendUnverified?((b.sig?.volumeChange||0)*2+Math.max(0,b.sig?.difference||0)):(b.stat.forecast??-9999);
   return bv-av;
  });
- return {entries:entries.slice(0,12),total:entries.length,pos,trend,lastThree,wantAvailable,checked,snapTrendUnsupported:mentionsSnaps&&trend};
+ return {entries:entries.slice(0,12),total:entries.length,pos,trend,lastThree,wantAvailable,checked,
+  trendUnverified,availabilityUnverified:wantAvailable&&stale,snapTrendUnsupported:mentionsSnaps&&trend};
 }
 function pfo51Ask(q){const area=$('pfo51-answer');if(!area)return;let query=String(q||'').trim().slice(0,300);if(!query){area.innerHTML='<p>Please enter a scouting question.</p>';return;}
  const detail='<p class="pfo51-fine">This is a deterministic search of connected data, not a general-purpose language model. It cannot read arbitrary articles, invent coach statements, or verify unpublished transactions.</p>';
@@ -2268,8 +2279,10 @@ function pfo51Ask(q){const area=$('pfo51-answer');if(!area)return;let query=Stri
  if(/coach quote|coach said|press conference|live play|full play.by.play|contract|league setting|draft board/i.test(query)){area.innerHTML='<p>That question requires a verified coach transcript, licensed live-play feed, or a separate league-management source. No such evidence is available in the current structured search, so I will not invent an answer.</p>'+detail;return;}
  const r=pfo51FindPlayers(query);
  if(r.error){area.innerHTML='<p>'+e(r.error)+'</p>';return;}
- area.innerHTML='<h3>Source-backed player search</h3><p>'+e(r.entries.length)+' of '+e(r.total)+' matching published-stat players'+(r.pos?' · '+e(r.pos):'')+(r.trend?' · measured increases only':'')+(r.wantAvailable?' · checked unrostered':'')+'</p>'+
- (r.ownershipUnverified?'<p class="pfo51-fine"><b>FFL ownership is not freshly checked.</b> These are research profiles, not available-player confirmations. Refresh Sleeper before waiver actions.</p>':'')+
+ area.innerHTML='<h3>Source-backed player search</h3><p>'+e(r.entries.length)+' of '+e(r.total)+' matching published-stat players'+(r.pos?' · '+e(r.pos):'')+(r.trend?(r.trendUnverified?' · rising trend NOT VERIFIED':' · measured increases only'):'')+
+ (r.wantAvailable?(r.availabilityUnverified?' · availability NOT VERIFIED':' · checked unrostered'):'')+'</p>'+
+ (r.ownershipUnverified||r.availabilityUnverified?'<p class="pfo51-fine"><b>FFL ownership is not freshly checked.</b> These are research profiles, NOT available-player confirmations. Refresh Sleeper before any waiver action.</p>':'')+
+ (r.trendUnverified?'<p class="pfo51-fine"><b>Upward workload trend not verified.</b> Listed players have season-level evidence, but the requested week-over-week increase could not be confirmed. No rising-trend claim is made.</p>':'')+
  (r.entries.length?r.entries.map(x=>'<div class="pfo51-query-result"><b>'+pfo51Link(x.id)+'</b> · '+e(x.stat.p.position)+' '+e(x.stat.p.team)+
  '<div>'+(x.stat.week?'W'+e(x.stat.week)+' FFL: '+e(pfo51Fmt(x.stat.finalPts,1))+'* · ':'Weekly game log unavailable · ')+
  'Season PPG: '+e(pfo51Fmt(x.stat.avg,1))+' · Independent baseline: '+e(pfo51Fmt(x.stat.forecast,1))+'</div><small>'+
@@ -2725,11 +2738,13 @@ const pfo52OldFind=pfo51FindPlayers;
 pfo51FindPlayers=function(q){if(/\btrade\b|\btrade ideas?\b|\bacquire\b/i.test(q))return {tradeIntent:true};
  const res=pfo52OldFind(q);if(res.error)return res;
  const fresh=!!leagueOwnedIds&&!!ownershipCheckedMs&&Date.now()-ownershipCheckedMs<300000;
- if(!fresh&&/available|free agent|unrostered|waiver|pickups?/i.test(q))
-  return {error:'Sleeper ownership is not current. Research is available, but free-agent availability cannot be verified until Sleeper refreshes.'};
+ // Preserve the research results if Sleeper is stale; mark all pickup
+ // eligibility as unverified instead of returning an empty search.
  const mine=new Set((liveRosterSnapshot?.players||[]).map(x=>String(x.player_id)));
- res.entries=res.entries.filter(x=>mine.has(String(x.id))||(!!leagueOwnedIds&&!waiverIsRostered(pfo52Info(x.id).name,x.id)));
- res.total=res.entries.length;res.ownershipUnverified=!fresh;return res;
+ res.entries=res.entries.filter(x=>mine.has(String(x.id))||!leagueOwnedIds||!waiverIsRostered(pfo52Info(x.id).name,x.id));
+ res.total=res.entries.length;res.ownershipUnverified=!fresh;
+ if(res.wantAvailable&&!fresh)res.availabilityUnverified=true;
+ return res;
 };
 const pfo52OldAsk=pfo51Ask;
 pfo51Ask=function(q){const area=$('pfo51-answer');if(!area)return;
