@@ -17,7 +17,8 @@ test('TE search includes independently sourced season rows even with no weekly g
  assert.equal(found.pos,'TE');
  assert.equal(found.total,2);
  const missing=ctx.search('find me tight ends whose targets rose in last 3 weeks');
- assert.equal(missing.total,0,'no trend inferred from season totals');
+ assert.equal(missing.total,2,'season-backed leads remain research-only');
+ assert.equal(missing.trendUnverified,true,'no rising-week trend is inferred');
 });
 test('market and matchup use the same independently calculated week points or both withhold',()=>{
  const a=market.indexOf('function scoreInfo(p)'),b=market.indexOf('function playerRow(p',a);
