@@ -505,10 +505,11 @@
   // Show the calendar immediately; only the per-week Sleeper records can
   // establish real FFL opponents. Playoff seeds remain unknown until set.
   scheduleRender();
-  const current=Number(state.snap?.nfl_state?.week||window.dbNflWeek||1);
-  const start=Number.isInteger(current)?Math.max(1,Math.min(14,current)):1;
+  // Automatically fill all 14 regular-season matchups, including any past
+  // week missing from a partial archived snapshot. Playoff weeks 15–17 remain
+  // bracket-dependent and are never invented.
   const missingWeeks=()=>Array.from({length:14},(_,i)=>i+1)
-   .filter(w=>(full||w>=start)&&!(state.schedule.get(w)||[]).length);
+   .filter(w=>!(state.schedule.get(w)||[]).length);
   if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000&&!missingWeeks().length)return;
   state.loadingSchedule=true;
   try{
