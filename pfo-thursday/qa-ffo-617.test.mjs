@@ -31,7 +31,7 @@ test('missing player projection recovery does not depend on full-season feed',()
  assert.match(lib,/hasFrozenRules\?\.\(\)!==true/);
  assert.match(lib,/recoveryStatus\.set\(id,'checking_licensed_player_gamelogs'\)/);
  assert.match(lib,/playerFailures\.set\(id,reason\)/);
- assert.match(lib,/if\(retries>=90\)/);
+ assert.match(lib,/if\(retries>=20\)/);
 });
 test('Team data health reports missing starter causes without touching Trade Lab',()=>{
  assert.match(lib,/id='pfo617-recovery-health'/);
