@@ -122,3 +122,37 @@ test('original PFO Trade Command opens a DIFFERENT demo manager roster',async()=
  await btn.click();
  assert.match(await page.locator('#pfo59-trade-board').innerText(),/FFO|model|projected|analysis/i);
 });
+
+test('best projected mode is interactive on the ACTUAL PFO weekly matchup',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav button[data-page=matchup]')?.click());
+ await page.locator('#matchup [data-pfo53-mode=optimal]').first().waitFor({timeout:16000});
+ await page.evaluate(()=>document.querySelector('#matchup [data-pfo53-mode=optimal]').click());
+ assert.equal(await page.locator('#matchup [data-pfo53-mode=optimal]').getAttribute('aria-pressed'),'true');
+ assert.match(await page.locator('#matchup').innerText(),/Best projected/i);
+ await page.evaluate(()=>document.querySelector('#matchup [data-pfo53-mode=submitted]').click());
+ assert.equal(await page.locator('#matchup [data-pfo53-mode=submitted]').getAttribute('aria-pressed'),'true');
+});
+test('actual Start / Sit research renders real NFL players and changes comparison',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav button[data-page=matchup]')?.click());
+ await page.locator('[data-pfo64-switch=matchup][data-pfo64-value=startsit]').first().waitFor({timeout:12000});
+ await page.evaluate(()=>document.querySelector('[data-pfo64-switch=matchup][data-pfo64-value=startsit]').click());
+ await page.locator('#pfo63-startsit [data-pfo63-compare=first]').first().waitFor({timeout:15000});
+ const select=page.locator('#pfo63-startsit [data-pfo63-compare=second]');
+ assert.ok(await select.locator('option').count()>2,'Sample roster should provide choices');
+ const before=await select.inputValue();
+ await select.selectOption({index:2});
+ const after=await select.inputValue();
+ assert.notEqual(after,before,'Player selection must update');
+ assert.match(await page.locator('#pfo63-startsit').innerText(),/Compare player A|Start \/ Sit/);
+ await page.evaluate(()=>document.querySelector('[data-pfo64-switch=matchup][data-pfo64-value=lab]').click());
+ assert.equal(await page.locator('#matchup').getAttribute('data-pfo64-tab'),'lab');
+});
+test('original Trade Finder and Waiver Market load the demo league, not old FFL roster',async()=>{
+ await page.evaluate(()=>document.querySelector('#nav button[data-page=market]')?.click());
+ await page.locator('#pfo59-trade-manager option').first().waitFor({timeout:16000});
+ assert.ok(await page.locator('#pfo59-trade-manager option').count()>3,'Demo trade partner list should populate');
+ await page.evaluate(()=>document.querySelector('#market [data-pfo59-market=waiver]').click());
+ await page.locator('#pfo59-waiver-manager option').first().waitFor({timeout:14000});
+ assert.ok(await page.locator('#pfo59-waiver-manager option').count()>3);
+ assert.match(await page.locator('#market').innerText(),/Waiver Command|Waiver Market/i);
+});
