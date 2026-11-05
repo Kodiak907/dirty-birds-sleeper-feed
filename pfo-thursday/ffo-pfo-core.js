@@ -2265,6 +2265,7 @@ function pfo51Ask(q){const area=$('pfo51-answer');if(!area)return;let query=Stri
  const r=pfo51FindPlayers(query);
  if(r.error){area.innerHTML='<p>'+e(r.error)+'</p>';return;}
  area.innerHTML='<h3>Source-backed player search</h3><p>'+e(r.entries.length)+' of '+e(r.total)+' matching published-stat players'+(r.pos?' · '+e(r.pos):'')+(r.trend?' · measured increases only':'')+(r.wantAvailable?' · checked unrostered':'')+'</p>'+
+ (r.ownershipUnverified?'<p class="pfo51-fine"><b>FFL ownership is not freshly checked.</b> These are research profiles, not available-player confirmations. Refresh Sleeper before waiver actions.</p>':'')+
  (r.entries.length?r.entries.map(x=>'<div class="pfo51-query-result"><b>'+pfo51Link(x.id)+'</b> · '+e(x.stat.p.position)+' '+e(x.stat.p.team)+
  '<div>'+(x.stat.week?'W'+e(x.stat.week)+' FFL: '+e(pfo51Fmt(x.stat.finalPts,1))+'* · ':'Weekly game log unavailable · ')+
  'Season PPG: '+e(pfo51Fmt(x.stat.avg,1))+' · Independent baseline: '+e(pfo51Fmt(x.stat.forecast,1))+'</div><small>'+
@@ -2705,9 +2706,12 @@ renderWaiverScouting=function(){pfo52WaiverOriginal();const el=$('waiverlive');i
 const pfo52OldFind=pfo51FindPlayers;
 pfo51FindPlayers=function(q){if(/\btrade\b|\btrade ideas?\b|\bacquire\b/i.test(q))return {tradeIntent:true};
  const res=pfo52OldFind(q);if(res.error)return res;
- if(!leagueOwnedIds||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>300000)return {error:'Cannot safely distinguish other managers’ players until current league ownership is verified. Refresh Sleeper source.'};
+ const fresh=!!leagueOwnedIds&&!!ownershipCheckedMs&&Date.now()-ownershipCheckedMs<300000;
+ if(!fresh&&/available|free agent|unrostered|waiver|pickups?/i.test(q))
+  return {error:'Sleeper ownership is not current. Research is available, but free-agent availability cannot be verified until Sleeper refreshes.'};
  const mine=new Set((liveRosterSnapshot?.players||[]).map(x=>String(x.player_id)));
- res.entries=res.entries.filter(x=>mine.has(String(x.id))||!waiverIsRostered(pfo52Info(x.id).name,x.id));res.total=res.entries.length;return res;
+ res.entries=res.entries.filter(x=>mine.has(String(x.id))||!leagueOwnedIds||!waiverIsRostered(pfo52Info(x.id).name,x.id));
+ res.total=res.entries.length;res.ownershipUnverified=!fresh;return res;
 };
 const pfo52OldAsk=pfo51Ask;
 pfo51Ask=function(q){const area=$('pfo51-answer');if(!area)return;
@@ -2724,8 +2728,8 @@ pfo51Ask=function(q){const area=$('pfo51-answer');if(!area)return;
  const mine=new Set((liveRosterSnapshot?.players||[]).map(x=>String(x.player_id)));
  const matches=pfo49Players.filter(x=>x.name.length>=5&&normPlayer(query).includes(normPlayer(x.name)));
  if(matches.length){
-  if(!leagueOwnedIds||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>300000){area.textContent='League ownership verification unavailable or stale. Refresh Sleeper before named-player scouting.';return;}
-  const opposed=matches.filter(x=>!mine.has(String(x.id))&&waiverIsRostered(x.name,x.id));
+  // A stale roster check restricts waiver certification, not independent player research.
+  const opposed=matches.filter(x=>!!leagueOwnedIds&&!mine.has(String(x.id))&&waiverIsRostered(x.name,x.id));
   if(opposed.length){area.innerHTML='<p>Some named players belong to other FFL managers and are excluded from general scouting. Use an explicit trade question to open a trade-target pathway.</p>';return;}
  }
  pfo52OldAsk(query);
@@ -2746,15 +2750,19 @@ pfo49RenderPlanner=function(){const el=$('pfo49-playoff-plan');if(!el)return;
  const wks=[15,16,17],team=pfo52FutureTeam(Number(window.dbRosterId||1));
  if(!team){el.innerHTML='<h2>Dirty Birds Playoff Intelligence</h2><p>Current verified roster unavailable. No playoff forecasts can be displayed yet.</p>';return;}
  let h='<div class="pfo52-panhead"><h2>Dirty Birds · Championship Weeks 15–17</h2><p class="pfo52-fine">Player-by-player points, NFL opponent, and legal starting-lineup totals—not a bracket predicting other league managers. Weekly estimates are opponent-adjusted only when sufficient independently observed defensive data exists; otherwise labeled unchanged recent-form baselines.</p></div>';
- h+='<div class="pfo52-champgrid">'+wks.map(w=>{const best=pfo52Best(team,w,false);return '<div class="pfo52-champbox"><b>W'+w+' ideal*</b><strong>'+pfo52PointLabel(best.total,best.complete)+'</strong><small>'+best.known+'/'+best.required+' legal slots</small></div>';}).join('')+'</div>';
+ h+='<div class="pfo52-champgrid">'+wks.map(w=>{const best=pfo52Best(team,w,false);return '<div class="pfo52-champbox"><b>W'+w+' baseline*</b><strong>'+pfo52PointLabel(best.total,best.complete)+'</strong><small>'+best.known+'/'+best.required+' legal slots · not matchup-certified</small></div>';}).join('')+'</div>';
  h+='<div class="pfo49-table-wrap"><table class="pfo49-gamelog"><thead><tr><th>Dirty Birds player</th>'+wks.map(w=>'<th>Week '+w+'</th>').join('')+'</tr></thead><tbody>';
  const members=team.members.filter(p=>['QB','RB','WR','TE','K','DEF'].includes(pfo52Pos(p)))
    .sort((a,b)=>['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(a))-['QB','RB','WR','TE','K','DEF'].indexOf(pfo52Pos(b))||String(a.name).localeCompare(String(b.name)));
  // Playoff starters cannot be inferred from today's lineup. Show everyone together.
- const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+(x?.bye?'BYE':x?.modelPending||x?.schedulePending?'PENDING':pfo52PointLabel(x?.points))+'</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+'</small></td>';}).join('')+'</tr>';
+ const statrow=p=>'<tr><td><small class="pfo59-playerpos">'+e(pfo52Pos(p))+'</small> '+pfo49Link(p.id)+'</td>'+wks.map(w=>{const opp=pfo49ScheduleWeek(p,w)?.opponent||(pfo49Schedule?.complete?'BYE':'NFL opponent unverified');const x=pfo52Points(p.id,w);const adjusted=x?.adjustment!=null&&Number.isFinite(Number(x.adjustment));
+ return '<td title="'+e((x?.source||'Model unavailable')+' · Opponent: '+opp)+'"><b>'+
+ (x?.bye?'BYE':x?.modelPending||x?.schedulePending?'PENDING':pfo52PointLabel(x?.points))+
+ '</b><small class="pfo52-dim">'+e(x?.bye?'OFF':opp==='NFL opponent unverified'?'OPP ?':opp)+
+ '</small><small class="pfo52-dim">'+(x?.points==null?'UNVERIFIED':adjusted?'OPP-ADJUSTED':'SEASON BASELINE')+'</small></td>';}).join('')+'</tr>';
  h+=members.map(statrow).join('');
  h+='</tbody></table></div><p class="pfo52-fine">All currently rostered players appear together. Current starters and bench do not predict playoff lineup assignments.</p>';
- h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. D/ST and kicker estimates, if available, use past recorded FFL point averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
+ h+='<p class="pfo52-fine">Unverified opponents do not receive invented matchup adjustments. Model projection is not an expert or market forecast. Kicker and D/ST forecast estimates require independently sourced position-specific evidence; missing inputs are not replaced with historical Sleeper score averages. Opponents and NFL bye information require completed source schedule. † Partial lineup projections omit missing-score positions; never treat those estimates as a complete roster total.</p>';
  el.innerHTML=h;
 };
 // Scouting K/DST: visibly render actual historical league scoring, even when NFL kicking stat feed lacks FG distances.
