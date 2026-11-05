@@ -681,7 +681,11 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
   if(ownState&& !['COMPLETED','FINAL','FINAL_OVERTIME'].includes(ownState))continue;
   if(!accepted)continue;
   const pts=num(get(stats,'defense.pointsAllowed')??get(stats,'defensive.pointsAllowed')??get(stats,'standings.pointsAgainst'));
-  const pointsAllowed=pts??(team===home?awayScore:team===away?homeScore:null);
+  // Opponent scoreboard totals can include return scores that do NOT count
+  // against a fantasy defense. Only source-specific defense.pointsAllowed
+  // may populate exact FFL PA tiers. Schedule scores establish completion,
+  // never fantasy points allowed.
+  const pointsAllowed=pts;
   const sample={};for(const [key,paths] of Object.entries(aliases))for(const p of paths){
    const n=num(get(stats,p));if(n!==null){sample[key]=n;break}
   }
@@ -692,7 +696,8 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
    sample[band]=1;
   }
   if(!Object.keys(sample).length)continue;
-  seen.add(id);games.push({id,points_allowed:pointsAllowed,stats:sample});
+  seen.add(id);games.push({id,points_allowed:pointsAllowed,
+   raw_opponent_score:team===home?awayScore:team===away?homeScore:null,stats:sample});
  }
  if(!games.length)return {source:'MySportsFeeds',available:false,team,error:'no_verifiable_team_defense_gamelogs',checked_at:checkedAt,
   games_observed:0,forecast:null};
@@ -704,7 +709,7 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
    defensive_stat_games:games.filter(x=>Object.keys(x.stats).some(k=>!k.startsWith('pts_allow_'))).length},
   // All per-game components are independent evidence, but a partial provider
   // season is not a certified full FFL D/ST projection.
-  projection_method:'MSF game-level team defensive stats and final points-allowed bands, each averaged over verified games',
+  projection_method:'MSF game-level defensive stats; exact FFL PA only when a verified defense.pointsAllowed value is published',
   certified:false};
 }
 function ffo616NormalizeTeamSeason(payload,team,checkedAt,fixtures=new Map()){
@@ -735,28 +740,16 @@ function ffo616NormalizeTeamSeason(payload,team,checkedAt,fixtures=new Map()){
  for(const [key,paths] of Object.entries(fields))for(const path of paths){
   const n=number(get(raw,path));if(n!==null){totals[key]=n;break}
  }
- // Only completed schedule games with authoritative final scores contribute
- // to exact FFL points-allowed bands. Missing bands remain unknown.
- const pa={};
- for(const g of fixtureGames){
-  const allowed=g.home===team?g.awayScore:g.homeScore;
-  if(!Number.isInteger(allowed)||allowed<0||allowed>100)continue;
-  const band=allowed===0?'pts_allow_0':allowed<=6?'pts_allow_1_6':allowed<=13?'pts_allow_7_13':
-   allowed<=20?'pts_allow_14_20':allowed<=27?'pts_allow_21_27':allowed<=34?'pts_allow_28_34':'pts_allow_35p';
-  pa[band]=(pa[band]||0)+1;
- }
- if(!Object.keys(totals).length&&!Object.keys(pa).length)
+ if(!Object.keys(totals).length)
   return {source:'MySportsFeeds',available:false,team,error:'team_defense_scoring_stats_unavailable',checked_at:checkedAt};
- const paGames=Object.values(pa).reduce((a,b)=>a+b,0);
- const forecast={...Object.fromEntries(Object.entries(totals).map(([key,n])=>[key,n/games])),
-  ...Object.fromEntries(Object.entries(pa).map(([key,n])=>[key,n/paGames]))};
+ const forecast=Object.fromEntries(Object.entries(totals).map(([key,n])=>[key,n/games]));
  return {schema:'FFO_MSF_DEFENSE_SEASON_V1',source:'MySportsFeeds',source_type:'licensed_primary',
-  team,checked_at:checkedAt,games_observed:games,season_totals:{...totals,...pa},
-  forecast,
-  coverage:{points_allowed_games:paGames,defensive_stat_games:Object.keys(totals).length?games:0,
+  team,checked_at:checkedAt,games_observed:games,season_totals:totals,forecast,
+  coverage:{points_allowed_games:0,defensive_stat_games:games,
+   completed_scoreboard_games:fixtureGames.length,
    denominator_source:listed!=null?'provider_games_played':'verified_finished_nfl_schedule',
    scoring_categories:Object.keys(forecast)},
-  projection_method:'MSF team defensive totals and independently verified completed-game points allowed; missing buckets excluded',
+  projection_method:'MSF team defensive totals divided by documented team games; raw opponent scores never imply FFL points allowed',
   partial:true,certified:false};
 }
 
@@ -820,8 +813,7 @@ async function ffo616DefenseRoute(req,env){
     const json=ffo617UnwrapProvider(await response.json(),'TEAM_DEFENSE');
     let parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
      ffo616NormalizeTeamSeason(json,team,checked_at);
-    const needsFixtures=attempt.kind==='totals'||parsed.available===false||
-     (parsed.coverage?.points_allowed_games||0)===0;
+    const needsFixtures=attempt.kind==='totals'||parsed.available===false;
     if(needsFixtures){
      try{
       const verified=await fixtures();
