@@ -2024,9 +2024,11 @@ function pfo51PlayerSummary(id){
   Number(row.season_totals[metric]):
   Array.isArray(row?.games)&&row.games.some(g=>g.stats?.[metric]!=null)?
    row.games.reduce((v,g)=>v+(Number.isFinite(Number(g.stats?.[metric]))?Number(g.stats[metric]):0),0):null;
- if(key==='QB')metrics.push(['Season pass yds',total('pass_yd')]);
- else if(key==='RB')metrics.push(['Season rush yds',total('rush_yd')],['Season rec yds',total('rec_yd')]);
- else if(key==='WR'||key==='TE')metrics.push(['Season rec yds',total('rec_yd')],['Season catches',total('rec')]);
+ if(key==='QB')metrics.push(['Season pass yds',total('pass_yd')],['Season pass att',total('pass_att')]);
+ else if(key==='RB')metrics.push(['Season rush att',total('rush_att')],['Season rush yds',total('rush_yd')],
+  ['Season targets',total('targets')],['Season rec yds',total('rec_yd')]);
+ else if(key==='WR'||key==='TE')metrics.push(['Season targets',total('targets')],['Season rec yds',total('rec_yd')],
+  ['Season catches',total('rec')]);
  const snaps=pfo49Metric(id)?.snap_share_pct;
  if(snaps!=null&&['RB','WR','TE','QB'].includes(key))metrics.push(['Snap %',pfo51Fmt(snaps,0)+'%']);
  return {id,p,row,latest,week,finalPts,label,avg,avgLabel,forecast:pfo50Estimate(id),metrics};
