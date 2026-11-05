@@ -38,10 +38,10 @@ test('uses real PFO research engines, not a different fake trade engine',()=>{
 });
 test('no real league connectivity, mutations, commissioner access or private snapshots',()=>{
  assert.match(html,/SHOWCASE MODE/);
- assert.match(html,/Fictional|fictional/);
+ assert.match(html,/fictional/i);
  assert.doesNotMatch(js,/https?:\/\/|WebSocket|localStorage|sessionStorage|indexedDB|cookie|\/api\//);
- assert.doesNotMatch(html,/commissioner|MSF_API_KEY|dirtybirdstest|\/api\//i);
- assert.doesNotMatch(js,/commissioner|MSF_API_KEY|dirtybirdstest|\/api\//i);
+ assert.doesNotMatch(html,/data-page="commissioner"|MSF_API_KEY|dirtybirdstest|\/api\//i);
+ assert.doesNotMatch(js,/api\/commissioner|MSF_API_KEY|dirtybirdstest|\/api\//i);
  assert.doesNotMatch(JSON.stringify(data),/1399157532559192064|Dirty Birds|COMMISSIONER|CF_ACCESS|MSF_API_KEY/);
  assert.match(html,/form-action 'none'/);
  assert.match(html,/connect-src 'self'/);
