@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   qa:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -63,7 +63,7 @@ jobs:
   deploy-preview:
     needs: qa
     if: github.ref == 'refs/heads/pfo-msf-week5-reconciliation-20261031'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment: pfo-preview
     steps:
