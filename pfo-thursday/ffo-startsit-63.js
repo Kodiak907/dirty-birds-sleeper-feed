@@ -135,8 +135,10 @@
    '<div class="pfo63-horizon">'+[['WEEK','This week'],['ROS','Rest of season'],['PLAYOFFS','Playoffs']].map(([id,label])=>
     '<button type="button" data-pfo63-horizon="'+id+'" aria-pressed="'+(id===state.horizon)+'">'+label+'</button>').join('')+'</div>'+
    '<div id="pfo66-compare-output" aria-live="polite"><p class="pfo63-compare-foot">Loading independent comparison details…</p></div>'+
-   (data.reserve.length?'<p class="pfo63-compare-foot">'+data.reserve.length+' reserve player(s) excluded from start/sit selection.</p>':'');
-  details(token,players,w);
+   (data.reserve.length?'<p class="pfo63-compare-foot">'+data.reserve.length+' fantasy-reserve player(s) excluded from start/sit selection.</p>':'');
+  // Paint controls before research processing to keep iPhone tap response immediate.
+  const work=()=>setTimeout(()=>details(token,players,w),0);
+  if(typeof requestAnimationFrame==='function')requestAnimationFrame(work);else work();
  }
  function mount(){
   const anchor=document.getElementById('pfo52-matchup');
