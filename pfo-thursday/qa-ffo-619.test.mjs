@@ -38,7 +38,7 @@ test('player game-log recovery uses documented player identity filter; 400 on ID
    new Response('{"error":"bad filter"}',{status:400}):
    new Response(JSON.stringify(logs),{status:200});
  });
- const data=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const data=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'fake-key'});
  const body=await data.json();
  assert.notEqual(body.available,false);
  assert.equal(body.source,'MySportsFeeds');
@@ -52,7 +52,7 @@ test('player game-log recovery uses documented player identity filter; 400 on ID
 });
 test('provider player id mismatch withholds projections despite matching name',async()=>{
  const ctx=build(async()=>new Response(JSON.stringify(logs),{status:200}));
- const response=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=123'),{MSF_API_KEY:'fake-key'});
+ const response=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=123&week=9'),{MSF_API_KEY:'fake-key'});
  const data=await response.json();
  assert.equal(data.available,false);
  assert.match(data.error,/insufficient_verified_player_game_logs/);
@@ -60,7 +60,7 @@ test('provider player id mismatch withholds projections despite matching name',a
 test('provider HTTP 403 is not repeatedly retried and credentials never enter error response',async()=>{
  let count=0;
  const ctx=build(async()=>{count++;return new Response('{}',{status:403});});
- const response=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const response=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'fake-key'});
  const data=await response.json();
  assert.equal(data.available,false);
  assert.equal(count,1);
@@ -83,7 +83,7 @@ test('client supplies uniquely mapped licensed MSF identifier and does not copy 
  assert.match(client,/row\?\.msf_id/);
  assert.match(client,/&msf_id=/);
  assert.match(client,/player_game_logs_do_not_cover_FFL_scoring_fields/);
- assert.match(html,/ffo-pfo-616\.js\?v=620/);
+ assert.match(html,/ffo-pfo-616\.js\?v=621/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
 
@@ -94,11 +94,11 @@ test('MSF player logs without per-row team are accepted only with sourced ID and
   stats:{extraPoints:{xpMade:2}}
  }))};
  const ctx=build(async()=>new Response(JSON.stringify(source),{status:200}));
- const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'fake-key'});
  const data=await r.json();
  assert.equal(data.games_observed,2);
  assert.equal(data.forecast.xpm,2);
- const noId=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard'),{MSF_API_KEY:'fake-key'});
+ const noId=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&week=9'),{MSF_API_KEY:'fake-key'});
  const noIdData=await noId.json();
  assert.equal(noIdData.available,false);
 });
@@ -109,7 +109,7 @@ test('no-team MSF gamelog from an unrelated game is never attributed to the sele
   stats:{extraPoints:{xpMade:2}}
  }))};
  const ctx=build(async()=>new Response(JSON.stringify(source),{status:200}));
- const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'fake-key'});
  const data=await r.json();
  assert.equal(data.available,false);
  assert.match(data.error,/insufficient_verified_player_game_logs/);
