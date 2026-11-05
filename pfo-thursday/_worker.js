@@ -989,17 +989,52 @@ function ffo616NormalizePlayerGames(payload,team,name,checkedAt,expectedId=null)
   forecast:Object.fromEntries(fields.map(k=>[k,totals[k]/games.length])),
   coverage:'verified_player_gamelogs_partial',projection_method:'MSF observed player games / actual games with player stats'};
 }
+/* PFO 6.21: NFL weekly player gamelog feed is separately documented by
+ * MSF. Query completed prior weeks only when the season-level player feed
+ * returns HTTP400. Week responses are shared for missing starters and cached
+ * briefly on success to prevent repeated provider traffic.
+ */
+const ffo621PlayerWeekCache=new Map(),ffo621PlayerWeekPending=new Map();
+async function ffo621PlayerWeekLogs(week,env){
+ if(!Number.isInteger(week)||week<1||week>18)throw Error('invalid_nfl_week');
+ const cached=ffo621PlayerWeekCache.get(week);
+ if(cached&&Date.now()-cached.at<10*60*1000)return cached.rows;
+ if(ffo621PlayerWeekPending.has(week))return ffo621PlayerWeekPending.get(week);
+ const job=(async()=>{
+  const endpoint=MSF_ROOT+'/2026-regular/week/'+week+'/player_gamelogs.json';
+  let response;
+  try{
+   response=env.MSF_API_KEY
+    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(15000)})
+    :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
+  }catch{throw Error('weekly_player_feed_unreachable')}
+  if(!response.ok)throw Error('weekly_player_http_'+response.status+'_'+await ffo620ProviderRejection(response));
+  const size=Number(response.headers.get('content-length')||0);
+  if(size>2800000)throw Error('weekly_player_response_too_large');
+  const raw=await response.text();
+  if(raw.length>2800000)throw Error('weekly_player_response_too_large');
+  const payload=ffo617UnwrapProvider(JSON.parse(raw),'PLAYER_GAMELOGS');
+  const rows=payload.playerGamelogs||payload.playerGameLogs||payload.gamelogs||payload.gameLogs;
+  if(!Array.isArray(rows))throw Error('weekly_player_schema_unrecognized');
+  ffo621PlayerWeekCache.set(week,{rows,at:Date.now()});
+  return rows;
+ })();
+ ffo621PlayerWeekPending.set(week,job);
+ try{return await job}finally{ffo621PlayerWeekPending.delete(week)}
+}
 const ffo616PlayerGameCache=new Map(),ffo616PlayerGamePending=new Map();
 async function ffo616PlayerGameRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
  try{await comIdentity(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
  const u=new URL(req.url),team=String(u.searchParams.get('team')||'').toUpperCase(),
   name=String(u.searchParams.get('name')||'').trim().slice(0,70),
-  playerId=String(u.searchParams.get('msf_id')||'').trim();
+  playerId=String(u.searchParams.get('msf_id')||'').trim(),
+  targetWeek=Number(u.searchParams.get('week')||0);
  if(!ffo598NFLTeams.has(team)||!/^[a-z .'-]{3,70}$/i.test(name)||
-    (playerId&&!/^[0-9]{1,12}$/.test(playerId)))
-  return ffoReply({error:'invalid_team_name_or_player_id'},400);
- const key=team+'|'+name.toLowerCase()+'|'+playerId,now=Date.now(),cached=ffo616PlayerGameCache.get(key);
+    (playerId&&!/^[0-9]{1,12}$/.test(playerId))||
+    !Number.isInteger(targetWeek)||targetWeek<2||targetWeek>18)
+  return ffoReply({error:'invalid_team_name_id_or_nfl_week'},400);
+ const key=team+'|'+name.toLowerCase()+'|'+playerId+'|'+targetWeek,now=Date.now(),cached=ffo616PlayerGameCache.get(key);
  if(cached&&now-cached.at<180000)return ffoReply(cached.data);
  if(ffo616PlayerGamePending.has(key))return ffoReply(await ffo616PlayerGamePending.get(key));
  const load=(async()=>{
@@ -1038,8 +1073,38 @@ async function ffo616PlayerGameRoute(req,env){
     ffo616PlayerGameCache.set(key,{data,at:Date.now()});return data;
    }catch(err){errors.push(String(err.message||err))}
   }
+  // Account's season-wide gamelog query can reject with HTTP400.
+  // Try at most the last six COMPLETED prior NFL weeks using MSF's
+  // documented /week/N/player_gamelogs.json feed, never future/live weeks.
+  // We never invent appearances from the team's schedule.
+  if(errors.some(e=>e.includes('http_400'))){
+   const rows=[];
+   const end=targetWeek-1,start=Math.max(1,end-5);
+   let successWeeks=0;
+   for(let week=end;week>=start;week--){
+    try{const weekRows=await ffo621PlayerWeekLogs(week,env);
+     successWeeks++;rows.push(...weekRows);
+    }catch(err){
+     errors.push(String(err?.message||'weekly_player_feed_failed').slice(0,100));
+     // An unsupported weekly endpoint or subscription rejection will not be
+     // corrected by hammering it with more different weeks.
+     const reason=String(err?.message||'');
+     if(/http_(400|401|403|429)/.test(reason))break;
+    }
+   }
+   if(rows.length){
+    try{
+     const data=ffo616NormalizePlayerGames({gamelogs:rows},team,name,checked_at,playerId||null);
+     if(data.available!==false){
+      data.projection_method+=' · week-scoped MSF source (max six prior weeks)';
+      ffo616PlayerGameCache.set(key,{data,at:Date.now()});return data;
+     }
+     errors.push('weekly_'+String(data.error||'unsupported_player_rows'));
+    }catch(err){errors.push('weekly_'+String(err?.message||err).slice(0,80))}
+   }else if(successWeeks)errors.push('weekly_no_verified_player_rows');
+  }
   return {source:'MySportsFeeds',available:false,team,name,
-   error:errors.join('; ').slice(0,240)||'player_logs_unavailable',checked_at};
+   error:errors.join('; ').slice(0,400)||'player_logs_unavailable',checked_at};
  })();
  ffo616PlayerGamePending.set(key,load);
  try{return ffoReply(await load)}finally{ffo616PlayerGamePending.delete(key)}
