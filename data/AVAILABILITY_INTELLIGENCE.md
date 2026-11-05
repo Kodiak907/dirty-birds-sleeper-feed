@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-05T15:59:59.068012+00:00
-Sleeper snapshot: 2026-11-05T15:59:48.966269+00:00
-nflverse observations: 2026-11-05T15:59:53.990381+00:00; injury feed loaded: True
+Generated: 2026-11-05T17:13:49.393387+00:00
+Sleeper snapshot: 2026-11-05T17:13:38.063314+00:00
+nflverse observations: 2026-11-05T17:13:43.832860+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -19,7 +19,6 @@ nflverse observations: 2026-11-05T15:59:53.990381+00:00; injury feed loaded: Tru
 | Patrick Mahomes | No tag | Week 9 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 9 observation: Did Not Participate In Practice | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 9 observation: Did Not Participate In Practice | — | Verify official NFL roster and game status before lineup decisions |
-| Brandon Aiyuk | DNR | No matched report (not clearance) | — | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
 | Chris Olave | No tag | Week 6 observation: Questionable, Limited Participation in Practice, Illness | 75.3% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |

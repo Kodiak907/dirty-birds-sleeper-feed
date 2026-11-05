@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-05T15:59:48.966269+00:00
+Updated: 2026-11-05T17:13:38.063314+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,7 +19,9 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- lineup_change â roster/transaction 1
+- Roster 1: added none; dropped Brandon Aiyuk
+- lineup_change â roster/transaction 9
+- Transaction 1424108207516741632: free_agent / complete / rosters [1] / adds None / drops {'6803': 1} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

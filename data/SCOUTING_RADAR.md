@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-05T15:59:54.697630+00:00
-Sleeper snapshot: 2026-11-05T15:59:48.966269+00:00
+Generated: 2026-11-05T17:13:44.349911+00:00
+Sleeper snapshot: 2026-11-05T17:13:38.063314+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- Dirty Birds: added none; dropped Brandon Aiyuk
 
 ## Limits
 

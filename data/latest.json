@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-05T15:59:48.966269+00:00",
+  "fetched_at_utc": "2026-11-05T17:13:38.063314+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": null,
-    "last_author_display_name": "sys",
-    "last_author_id": "166666666666666666",
-    "last_author_is_bot": true,
+    "last_author_avatar": "06a7a98b6f1801cd134db689a08ddb92",
+    "last_author_display_name": "Kodiak907",
+    "last_author_id": "1399093464662073344",
+    "last_author_is_bot": false,
     "last_message_attachment": null,
-    "last_message_id": "1424076145862668288",
+    "last_message_id": "1424111387646459904",
     "last_message_text_map": null,
-    "last_message_time": 1793888720530,
+    "last_message_time": 1793897122827,
     "last_pinned_message_id": "1423964959808790528",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -11495,7 +11495,6 @@
           "4046",
           "5859",
           "5872",
-          "6803",
           "8131",
           "8144",
           "8150",
@@ -11515,7 +11514,6 @@
           "4046": 0.0,
           "5859": 0.0,
           "5872": 0.0,
-          "6803": 0.0,
           "8131": 0.0,
           "8144": 0.0,
           "8150": 0.0,
@@ -12105,7 +12103,7 @@
           "3294",
           "9509",
           "12474",
-          "0",
+          "7525",
           "7526",
           "7553",
           "2449",
@@ -12359,7 +12357,6 @@
         "4046",
         "5859",
         "5872",
-        "6803",
         "8131",
         "8144",
         "8150",
@@ -12889,7 +12886,7 @@
         "3294",
         "9509",
         "12474",
-        "0",
+        "7525",
         "7526",
         "7553",
         "2449",
@@ -20496,6 +20493,29 @@
       }
     ],
     "9": [
+      {
+        "adds": null,
+        "consenter_ids": [
+          1
+        ],
+        "created": 1793896364625,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": {
+          "6803": 1
+        },
+        "leg": 9,
+        "metadata": null,
+        "roster_ids": [
+          1
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1793896364625,
+        "transaction_id": "1424108207516741632",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "NYG": 8

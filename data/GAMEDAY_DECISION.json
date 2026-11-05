@@ -4,9 +4,7 @@
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
-    "missing_projection": [
-      "Brandon Aiyuk"
-    ],
+    "missing_projection": [],
     "ppg": 131.11,
     "starters": [
       {
@@ -77,12 +75,10 @@
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-05T16:00:02.138511+00:00",
+  "generated_at_utc": "2026-11-05T17:13:51.586293+00:00",
   "hard_status_excluded": {
     "complete": true,
-    "missing_projection": [
-      "Brandon Aiyuk"
-    ],
+    "missing_projection": [],
     "ppg": 129.0,
     "starters": [
       {
@@ -237,15 +233,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "6803",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Brandon Aiyuk",
-      "sleeper_injury_status": "DNR",
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "8131",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Isaiah Likely",
@@ -322,8 +309,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-05T15:59:48.966269+00:00",
-  "source_availability_generated_at_utc": "2026-11-05T15:59:59.068012+00:00",
+  "snapshot_utc": "2026-11-05T17:13:38.063314+00:00",
+  "source_availability_generated_at_utc": "2026-11-05T17:13:49.393387+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
