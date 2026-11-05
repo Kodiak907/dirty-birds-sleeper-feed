@@ -26,7 +26,7 @@ jobs:
           node --check pfo-league-showcase/_worker.js
           node --check pfo-thursday/ffo-trade-decision-60.mjs
           node --check pfo-thursday/ffo-market-finder-61.mjs
-          node --test pfo-league-showcase/qa-showcase.test.mjs pfo-league-showcase/qa-member-msf.test.mjs
+          node --test pfo-league-showcase/qa-showcase.test.mjs pfo-league-showcase/qa-member-msf.test.mjs pfo-league-showcase/qa-member-msf-authorized.test.mjs
       - name: Install isolated mobile browser test dependencies
         run: |
           npm install --no-save playwright@1.55.1
