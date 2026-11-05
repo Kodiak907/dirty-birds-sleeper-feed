@@ -83,7 +83,7 @@ test('client supplies uniquely mapped licensed MSF identifier and does not copy 
  assert.match(client,/row\?\.msf_id/);
  assert.match(client,/&msf_id=/);
  assert.match(client,/player_game_logs_do_not_cover_FFL_scoring_fields/);
- assert.match(html,/ffo-pfo-616\.js\?v=622/);
+ assert.match(html,/ffo-pfo-616\.js\?v=623/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
 
