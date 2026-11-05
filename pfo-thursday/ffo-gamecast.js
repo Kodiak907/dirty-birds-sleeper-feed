@@ -293,12 +293,21 @@
    const seasonEvidence=Object.keys(stats).length?stats:backupSeason;
    const hasProviderSeason=Object.keys(stats).length>0;
    const latestIndependent=independent?.latest||{};
-  const fields=[['Pass YD','pass_yd'],['Pass TD','pass_td'],['Rush YD','rush_yd'],['Rush TD','rush_td'],['Rec','rec'],['Rec YD','rec_yd'],['Rec TD','rec_td'],['Targets','targets'],['FUM Lost','fum_lost']];
+  const position=String(p.position||'').toUpperCase().replace(/^(?:D\/ST|DST)$/,'DEF');
+  const fields=position==='QB'?[['Pass YD','pass_yd'],['Pass TD','pass_td'],['Pass ATT','pass_att'],['Rush YD','rush_yd'],['Rush TD','rush_td'],['INT','pass_int'],['FUM Lost','fum_lost']]:
+   position==='RB'?[['Rush ATT','rush_att'],['Rush YD','rush_yd'],['Rush TD','rush_td'],['Targets','targets'],['Rec','rec'],['Rec YD','rec_yd'],['FUM Lost','fum_lost']]:
+   ['WR','TE'].includes(position)?[['Targets','targets'],['Rec','rec'],['Rec YD','rec_yd'],['Rec TD','rec_td'],['Rush YD','rush_yd'],['FUM Lost','fum_lost']]:
+   position==='K'?[['FG 0–19','fgm_0_19'],['FG 20–29','fgm_20_29'],['FG 30–39','fgm_30_39'],['FG 40–49','fgm_40_49'],['FG 50–59','fgm_50_59'],['FG 60+','fgm_60p'],['XP','xpm']]:
+   position==='DEF'?[['Sacks','sack'],['INT','int'],['FF','ff'],['Fum Rec','fum_rec'],['Safety','safe'],['Blocked Kick','blk_kick']]:
+   [['Targets','targets'],['Rec','rec'],['Rec YD','rec_yd']];
   const seasonTags=fields.filter(([n,k])=>Object.hasOwn(seasonEvidence,k)).map(([n,k])=>`<div><b>${fmt(seasonEvidence[k])}</b><span>${safe(n)} · Season</span></div>`);
    const latestTags=fields.filter(([n,k])=>Object.hasOwn(latestIndependent,k)).map(([n,k])=>`<div><b>${fmt(latestIndependent[k])}</b><span>${safe(n)} · Week ${safe(latestIndependent.week||'—')}</span></div>`);
   const liveTags=fields.filter(([n,k])=>Object.hasOwn(liveStats,k)).map(([n,k])=>`<div><b>${fmt(liveStats[k])}</b><span>${safe(n)} · Game</span></div>`);
   const livePoints=scoring?.points!=null?fmt(scoring.points)+'*':'—',projPoints=proj?.points!=null?fmt(proj.points)+'*':'—';
-  const matchNote=hasProviderSeason?'MySportsFeeds uniquely matched seasonal NFL statistics, pending stable provider ID mapping.':seasonTags.length?'Season totals from independently published nflverse 2026 player data, matched to the selected name and team; not a MySportsFeeds match.':s.playerRows.length?'No unambiguous player match; season totals withheld until a verified source loads.':'Season totals not yet available. Verify source status or refresh Intel.';
+  const matchNote=hasProviderSeason?'MySportsFeeds seasonal NFL statistics; verified game-level splits may be missing.':
+ seasonTags.length?'Licensed MSF season totals matched to the selected player and NFL team; season-level figures are not weekly game logs.':
+ s.playerRows.length?'No unambiguous player match; totals withheld until the source verifies identity.':
+ 'Season totals unavailable. Check the provider connection.';
   const official=inj?.official?.official?String(inj.official.official.game_status||'Official designation present'):'No verified current official designation linked. Absence of report is not clearance.';
   const html=`<div class="ffo-gc-intro"><div><span class="ffo-gc-pill">GAMECAST · ${s.enabled?'PROVIDER CONNECTED':'NOT LIVE VERIFIED'}</span><h3>${safe(p.name)}</h3><p>${safe(p.position||'')} · ${safe(p.team||'Team unverified')}</p></div><button type="button" class="button" data-ffo-player-refresh="1">↻</button></div>
   <div class="ffo-gc-statgrid"><div><b>${livePoints}</b><span>FFO MSF score*</span></div><div><b>${projPoints}</b><span>FFO forecast research</span></div>${seasonTags.slice(0,4).join('')||'<div><b>—</b><span>Season stats pending</span></div>'}</div>
