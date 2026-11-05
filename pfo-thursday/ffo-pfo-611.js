@@ -12,31 +12,48 @@
    String(r.roster_id||'')+'|'+r.players.map(p=>[p.player_id,p.team,p.position].join(':')).sort().join('|'):'';
  };
  const showGaps=()=>{
-  const el=document.getElementById('ffo69-stats-status');
-  const r=getRoster();if(!el||!r?.players?.length)return;
+  const el=document.getElementById('ffo69-stats-status'),r=getRoster();if(!el||!r?.players?.length)return;
   const wk=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
   const ids=(r.starters||[]).map(String).filter(id=>id&&id!=='0');
-  const missing=[],good=[];
+  const known=[],missing=[],rulesReady=window.ffoPfo597?.hasFrozenRules?.()===true;
+  const info=typeof pfo69SourceStatus==='function'?pfo69SourceStatus():null;
+  const sourceTeams=new Set(info?.teams||[]);
   for(const id of ids){
    const p=typeof pfo52Info==='function'?pfo52Info(id):null;
-   const pts=typeof pfo52Points==='function'?pfo52Points(id,wk):null;
-   if(pts?.points!=null&&Number.isFinite(Number(pts.points)))good.push(id);
-   else if(pts?.bye)missing.push((p?.name||id)+' (verified bye)');
-   else{
-    const pos=typeof pfo52Pos==='function'?pfo52Pos(p):p?.position;
-    const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
-    const why=['K','DEF'].includes(pos)?'specialist/defense evidence incomplete':
-      row?'FFL statistical fields incomplete':'MSF identity/statistics not matched';
-    missing.push((p?.name||id)+' ('+why+')');
-   }
+   const score=typeof pfo52Points==='function'?pfo52Points(id,wk):null;
+   const pos=typeof pfo52Pos==='function'?pfo52Pos(p):p?.position;
+   const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
+   const name=p?.name||id,team=typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(p?.team):p?.team;
+   if(score?.points!=null&&Number.isFinite(Number(score.points))){known.push(name);continue}
+   let reason;
+   if(score?.bye)reason='verified NFL bye; no point forecast';
+   else if(!rulesReady)reason='FFO scoring rules not ready';
+   else if(score?.schedulePending)reason='verified NFL week schedule missing';
+   else if(info?.scope==='selected_teams'&&team&&!sourceTeams.has(team))reason='MSF did not load '+team+' team statistics';
+   else if(!row)reason=pos==='DEF'?'NFL team defense stats not mapped to FFL D/ST':
+    'MSF player identity/statistics not uniquely matched';
+   else if(!row.games_observed&&!row.games_played)reason='MSF games-played denominator missing';
+   else if(!row.forecast)reason=pos==='K'?'MSF FG-distance/XP categories unavailable':'MSF scoring categories missing';
+   else reason='model validation or availability pending';
+   missing.push({name,team,pos,reason,fields:Object.keys(row?.season_totals||{}).filter(k=>k!=='games_played').length});
   }
   let sub=document.getElementById('pfo611-coverage-report');
-  if(!sub){sub=document.createElement('div');sub.id='pfo611-coverage-report';
-   sub.className='note';sub.style.cssText='font-size:11px;line-height:1.5;margin-top:8px';
+  if(!sub){sub=document.createElement('div');sub.id='pfo611-coverage-report';sub.className='note';
+   sub.style.cssText='font-size:11px;line-height:1.5;margin-top:8px';
    el.insertAdjacentElement('afterend',sub);}
-  sub.textContent='W'+wk+' independently modeled starters: '+good.length+'/'+ids.length+
-    (missing.length?' · Missing: '+missing.join('; '):' · All submitted starters have FFO estimates')+
-    '. Source gaps are not zero-point predictions.';
+  sub.textContent='W'+wk+' independently modeled starters: '+known.length+'/'+ids.length+
+   '. '+(missing.length?'Missing: '+missing.map(x=>x.name+' ('+x.reason+')').join(' · '):
+    'All submitted starters have provisional FFO estimates.')+
+   ' Missing categories are not zero predictions.';
+  let detail=document.getElementById('pfo615-coverage-details');
+  if(!detail){detail=document.createElement('div');detail.id='pfo615-coverage-details';sub.after(detail);}
+  const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  detail.innerHTML='<p class="pfo615-health-summary">MSF evidence: '+safe(info?.scope||'source pending')+
+   ' · '+safe(info?.loaded??0)+' indexed player records · '+safe(info?.failed?.length||0)+' team failures</p>'+
+   (missing.length?'<div class="pfo615-coverage-items">'+missing.map(x=>
+    '<div><b>'+safe(x.name)+'</b><span>'+safe(x.pos)+' · '+safe(x.team)+' · '+x.fields+
+    ' season stat categories · '+safe(x.reason)+'</span></div>').join('')+'</div>':
+    '<p class="pfo615-health-summary">All starters modeled; completeness of custom scoring bonuses still requires verification.</p>');
  };
  const paint=()=>{
   if(!active())return;
