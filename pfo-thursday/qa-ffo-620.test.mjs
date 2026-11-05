@@ -46,7 +46,7 @@ test('team audit returns only field names and group keys, never proprietary numb
 test('player bad-season 400 stops alternate filter attempts and carries classified reason only',async()=>{
  let calls=0;
  const api=harness(async()=>{calls++;return new Response(JSON.stringify({message:'Invalid season 2026-regular. API KEY SECRET_XYZ'}),{status:400,headers:{'content-type':'application/json'}})});
- const result=await api.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'SECRET_XYZ'});
+ const result=await api.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'SECRET_XYZ'});
  const json=await result.json();
  assert.equal(json.available,false);
  assert.equal(calls,1);
@@ -56,12 +56,12 @@ test('player bad-season 400 stops alternate filter attempts and carries classifi
 test('player unsupported filter 400 is classified without fabricating a projection',async()=>{
  let calls=0;
  const api=harness(async()=>{calls++;return new Response(JSON.stringify({error:'Invalid player filter'}),{status:400})});
- const result=await api.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'test-key'});
+ const result=await api.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'test-key'});
  const json=await result.json();
  assert.equal(json.available,false);
  assert.match(json.error,/filter_not_supported/);
  assert.equal(json.forecast,undefined);
- assert.equal(calls,2);
+ assert.equal(calls,3);
 });
 test('client health page surfaces bounded schema, retains team-identity validation and does not touch trades',()=>{
  assert.match(client,/supported_team_feed_shape/);
@@ -69,6 +69,6 @@ test('client health page surfaces bounded schema, retains team-identity validati
  assert.match(worker,/ffo620ProviderRejection\(response\)/);
  assert.match(worker,/ffo620TeamSchemaAudit\(json,team\)/);
  assert.match(worker,/comIdentity\(req,env\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=620/);
+ assert.match(html,/ffo-pfo-616\.js\?v=621/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
