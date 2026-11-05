@@ -1005,7 +1005,7 @@ async function ffo621PlayerWeekLogs(week,env){
   let response;
   try{
    response=env.MSF_API_KEY
-    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(15000)})
+    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
     :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
   }catch{throw Error('weekly_player_feed_unreachable')}
   if(!response.ok)throw Error('weekly_player_http_'+response.status+'_'+await ffo620ProviderRejection(response));
@@ -1081,28 +1081,41 @@ async function ffo616PlayerGameRoute(req,env){
    !errors.some(e=>/season_not_supported|feed_not_supported|access_restricted|required_parameter_missing/.test(e))){
    const rows=[];
    const end=targetWeek-1,start=Math.max(1,end-5);
-   let successWeeks=0;
-   for(let week=end;week>=start;week--){
-    try{const weekRows=await ffo621PlayerWeekLogs(week,env);
-     successWeeks++;rows.push(...weekRows);
-    }catch(err){
-     errors.push(String(err?.message||'weekly_player_feed_failed').slice(0,100));
-     // An unsupported weekly endpoint or subscription rejection will not be
-     // corrected by hammering it with more different weeks.
-     const reason=String(err?.message||'');
-     if(/http_(400|401|403|429)/.test(reason))break;
-    }
-   }
-   if(rows.length){
-    try{
-     const data=ffo616NormalizePlayerGames({gamelogs:rows},team,name,checked_at,playerId||null);
-     if(data.available!==false){
-      data.projection_method+=' · week-scoped MSF source (max six prior weeks)';
-      ffo616PlayerGameCache.set(key,{data,at:Date.now()});return data;
+   let successWeeks=0,lastData=null;
+   // Request only three completed weeks concurrently. If two or more
+   // independently identified games suffice, do not fetch the older weeks.
+   // Pending/cached weeks are shared between players, limiting MSF traffic.
+   for(let first=end;first>=start;first-=3){
+    const weeks=Array.from({length:Math.min(3,first-start+1)},(_,i)=>first-i);
+    const results=await Promise.allSettled(weeks.map(w=>ffo621PlayerWeekLogs(w,env)));
+    let stop=false;
+    for(let i=0;i<results.length;i++){
+     const result=results[i];
+     if(result.status==='fulfilled'){
+      successWeeks++;rows.push(...result.value);continue;
      }
-     errors.push('weekly_'+String(data.error||'unsupported_player_rows'));
-    }catch(err){errors.push('weekly_'+String(err?.message||err).slice(0,80))}
-   }else if(successWeeks)errors.push('weekly_no_verified_player_rows');
+     const reason=String(result.reason?.message||'weekly_player_feed_failed');
+     errors.push(reason.slice(0,100));
+     // A subscription denial or unsupported weekly feed cannot be repaired
+     // by probing additional weeks. Do not repeat the failed batch.
+     if(/http_(400|401|403|429)/.test(reason))stop=true;
+    }
+    if(rows.length){
+     try{
+      const data=ffo616NormalizePlayerGames({gamelogs:rows},team,name,checked_at,playerId||null);
+      if(data.available!==false){
+       data.projection_method+=' · up to six completed prior MSF weeks, batched';
+       ffo616PlayerGameCache.set(key,{data,at:Date.now()});
+       return data;
+      }
+      lastData=data;
+      if(data.error==='ambiguous_provider_player_ids')stop=true;
+     }catch(err){errors.push('weekly_'+String(err?.message||err).slice(0,80));stop=true}
+    }
+    if(stop)break;
+   }
+   if(lastData)errors.push('weekly_'+String(lastData.error||'unsupported_player_rows'));
+   else if(successWeeks)errors.push('weekly_no_verified_player_rows');
   }
   return {source:'MySportsFeeds',available:false,team,name,
    error:errors.join('; ').slice(0,400)||'player_logs_unavailable',checked_at};
