@@ -11,7 +11,7 @@ const end=worker.indexOf('const ffo598SeasonCache=',start);
 assert.ok(start>=0&&end>start);
 const build=(fetchFn)=>{
  const ctx=createContext({
-  fetch:fetchFn,Response,Request,AbortSignal,btoa,
+  fetch:fetchFn,Response,Request,AbortSignal,btoa,URL,
   MSF_ROOT:'https://api.mysportsfeeds.com/v2.1/pull/nfl',
   comIdentity:async()=>true,
   ffoReply:(data,status=200)=>new Response(JSON.stringify(data),{status}),
