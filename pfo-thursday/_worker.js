@@ -668,6 +668,39 @@ function ffo616NormalizeDefense(payload,team,checkedAt){
   projection_method:'MSF game-level team defensive stats and final points-allowed bands, each averaged over verified games',
   certified:false};
 }
+function ffo616NormalizeTeamSeason(payload,team,checkedAt){
+ const rows=payload?.teamStatsTotals||payload?.teamStatTotals||[];
+ if(!Array.isArray(rows))throw Error('MSF_TEAM_SEASON_SCHEMA_UNRECOGNIZED');
+ const get=(o,path)=>path.split('.').reduce((v,k)=>v?.[k],o);
+ const number=x=>x===null||x===undefined||x===''||typeof x==='object'||!Number.isFinite(Number(x))?null:Number(x);
+ const fields={
+  sack:['defense.sacks','defense.sacksMade','defense.sacksTotal'],
+  int:['defense.interceptions','defense.interceptionsMade'],
+  def_st_ff:['defense.forcedFumbles'],
+  def_st_fum_rec:['defense.fumbleRecoveries','defense.fumblesRecovered'],
+  safe:['defense.safeties'],
+  blk_kick:['defense.blockedKicks'],
+  def_st_td:['defense.touchdowns','defense.defensiveTouchdowns']
+ };
+ const matches=rows.filter(item=>
+  String(item?.team?.abbreviation||item?.teamInfo?.abbreviation||item?.teamAbbreviation||'').toUpperCase()===team);
+ if(matches.length!==1)return {source:'MySportsFeeds',available:false,team,error:'team_not_uniquely_identified',checked_at:checkedAt};
+ const raw=matches[0].stats||matches[0].teamStats||{};
+ const games=number(raw.gamesPlayed??raw.gamesPlayedTotal??matches[0].gamesPlayed);
+ if(!Number.isInteger(games)||games<2||games>18)return {source:'MySportsFeeds',available:false,team,error:'team_games_played_unverified',checked_at:checkedAt};
+ const totals={};
+ for(const [key,paths] of Object.entries(fields))for(const path of paths){
+  const n=number(get(raw,path));if(n!==null){totals[key]=n;break}
+ }
+ if(!Object.keys(totals).length)return {source:'MySportsFeeds',available:false,team,error:'team_defense_scoring_stats_unavailable',checked_at:checkedAt};
+ return {schema:'FFO_MSF_DEFENSE_SEASON_V1',source:'MySportsFeeds',source_type:'licensed_primary',
+  team,checked_at:checkedAt,games_observed:games,season_totals:totals,
+  forecast:Object.fromEntries(Object.entries(totals).map(([key,n])=>[key,n/games])),
+  coverage:{points_allowed_games:0,defensive_stat_games:games},
+  projection_method:'MSF team defensive season totals / reported games played; points-allowed tiers not supplied',
+  partial:true,certified:false};
+}
+
 const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
 async function ffo616DefenseRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
@@ -680,19 +713,28 @@ async function ffo616DefenseRoute(req,env){
  const load=(async()=>{
   const checked_at=new Date().toISOString();
   if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)return {source:'MySportsFeeds',available:false,team,error:'licensed_provider_not_configured',checked_at};
-  const endpoint=MSF_ROOT+'/2026-regular/team_gamelogs.json?team='+encodeURIComponent(team);
-  let response;
-  try{
-   response=env.MSF_API_KEY
-    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
-    :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
-  }catch{return {source:'MySportsFeeds',available:false,team,error:'licensed_team_feed_unreachable',checked_at}}
-  if(!response.ok)return {source:'MySportsFeeds',available:false,team,error:'provider_http_'+response.status,checked_at};
-  try{
-   const parsed=ffo616NormalizeDefense(await response.json(),team,checked_at);
-   if(parsed.available!==false)ffo616DefenseCache.set(team,{data:parsed,at:Date.now()});
-   return parsed;
-  }catch(err){return {source:'MySportsFeeds',available:false,team,error:String(err.message||err),checked_at}}
+  const endpoints=[
+   {kind:'gamelogs',url:MSF_ROOT+'/2026-regular/team_gamelogs.json?team='+encodeURIComponent(team)},
+   {kind:'totals',url:MSF_ROOT+'/2026-regular/team_stats_totals.json?team='+encodeURIComponent(team)}
+  ];
+  const errors=[];
+  for(const attempt of endpoints){
+   let response;
+   try{
+    response=env.MSF_API_KEY
+     ?await fetch(attempt.url,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
+     :await env.GAMECAST_INTERNAL.fetch(new Request(attempt.url,{method:'GET'}));
+   }catch(err){errors.push(attempt.kind+'_unreachable');continue}
+   if(!response.ok){errors.push(attempt.kind+'_http_'+response.status);continue}
+   try{
+    const json=await response.json();
+    const parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
+     ffo616NormalizeTeamSeason(json,team,checked_at);
+    if(parsed.available===false){errors.push(String(parsed.error));continue}
+    ffo616DefenseCache.set(team,{data:parsed,at:Date.now()});return parsed;
+   }catch(err){errors.push(String(err.message||err))}
+  }
+  return {source:'MySportsFeeds',available:false,team,error:errors.join('; ').slice(0,500)||'no_team_defense_evidence',checked_at};
  })();
  ffo616DefensePending.set(team,load);
  try{return ffoReply(await load)}finally{ffo616DefensePending.delete(team)}
