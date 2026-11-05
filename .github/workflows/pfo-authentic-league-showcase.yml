@@ -23,9 +23,10 @@ jobs:
       - name: Validate actual PFO research engine and showcase JS
         run: |
           node --check pfo-league-showcase/showcase.js
+          node --check pfo-league-showcase/_worker.js
           node --check pfo-thursday/ffo-trade-decision-60.mjs
           node --check pfo-thursday/ffo-market-finder-61.mjs
-          node --test pfo-league-showcase/qa-showcase.test.mjs
+          node --test pfo-league-showcase/qa-showcase.test.mjs pfo-league-showcase/qa-member-msf.test.mjs
       - name: Install isolated mobile browser test dependencies
         run: |
           npm install --no-save playwright@1.55.1
@@ -53,18 +54,19 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/pfo-league-showcase"
-          cp pfo-league-showcase/index.html pfo-league-showcase/showcase.js pfo-league-showcase/showcase.css pfo-league-showcase/sample-rosters.json "$RUNNER_TEMP/pfo-league-showcase/"
+          cp pfo-league-showcase/index.html pfo-league-showcase/showcase.js pfo-league-showcase/showcase.css pfo-league-showcase/sample-rosters.json pfo-league-showcase/_worker.js "$RUNNER_TEMP/pfo-league-showcase/"
           cp pfo-thursday/ffo-pfo-core.css pfo-thursday/ffo-pfo-59.css pfo-thursday/ffo-mobile-594.css pfo-thursday/ffo-pfo-596.css pfo-thursday/ffo-pfo-597.css pfo-thursday/ffo-layout-64.css "$RUNNER_TEMP/pfo-league-showcase/"
           cp pfo-thursday/ffo-trade-decision-60.mjs pfo-thursday/ffo-market-finder-61.mjs "$RUNNER_TEMP/pfo-league-showcase/"
-          test "$(find "$RUNNER_TEMP/pfo-league-showcase" -maxdepth 1 -type f | wc -l)" -eq 12
-          ! find "$RUNNER_TEMP/pfo-league-showcase" -maxdepth 1 -type f -name '_worker.js' | grep .
-          ! grep -E '1399157532559192064|/api/commissioner|MSF_API_KEY|dirtybirdstest' "$RUNNER_TEMP/pfo-league-showcase/"*.js "$RUNNER_TEMP/pfo-league-showcase/"*.json "$RUNNER_TEMP/pfo-league-showcase/"*.html
-          echo "Original PFO CSS and PFO pure decision engines packaged. No real roster or private Worker."
-      - name: Replace the incorrect public fantasy simulator with the actual PFO league showcase
+          test "$(find "$RUNNER_TEMP/pfo-league-showcase" -maxdepth 1 -type f | wc -l)" -eq 13
+          test -f "$RUNNER_TEMP/pfo-league-showcase/_worker.js"
+          ! grep -E '1399157532559192064|/api/commissioner|MSF_API_KEY|dirtybirdstest' "$RUNNER_TEMP/pfo-league-showcase/showcase.js" "$RUNNER_TEMP/pfo-league-showcase/sample-rosters.json" "$RUNNER_TEMP/pfo-league-showcase/index.html"
+          ! grep -E '/api/commissioner|COMMISSIONER_DB|dirtybirdstest' "$RUNNER_TEMP/pfo-league-showcase/_worker.js"
+          echo "Original PFO CSS and decision engines plus a separate DEFAULT-DENY member MSF Worker. No private roster, keys, or Commissioner tools."
+      - name: Publish polished PFO league showcase with default-deny licensed member MSF bridge
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
           CLOUDFLARE_SEND_METRICS: 'false'
         run: |
-          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-league-showcase" --project-name ffo-league-demo --branch pfo-league-demo-20261104 --commit-hash "$GITHUB_SHA" --commit-message "Actual PFO UI with real-NFL demo franchise and read-only FFO engines"
-          echo "Separate public demo only. Private PFO Preview, production and Commissioner records unchanged."
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-league-showcase" --project-name ffo-league-demo --branch pfo-league-demo-20261104 --commit-hash "$GITHUB_SHA" --commit-message "Polished PFO UI with verified optimizer, real NFL portraits, and gated MSF member bridge"
+          echo "Member statistics remain DISABLED until dedicated Access policy, MSF secret, invite allowlist and sharing approval are configured. PFO production untouched."
