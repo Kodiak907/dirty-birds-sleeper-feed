@@ -22,6 +22,14 @@ test('2026 NFL week calendar derives Week 8 on November 1 and Week 9 Nov 5',()=>
  assert.equal(calendarWeek('2026-11-06T01:15:00Z'),9);
  assert.equal(currentCalendarWeek(new Date('2026-11-01T17:20:00Z')),8);
 });
+test('GameCast uses Tuesday 08:30 Pacific when provider week is absent; no UTC midnight split',()=>{
+ assert.equal(calendarWeek('2026-11-03T16:29:00Z'),8);
+ assert.equal(calendarWeek('2026-11-03T16:30:00Z'),9);
+ assert.equal(calendarWeek('2026-11-04T23:30:00Z'),9);
+ assert.equal(calendarWeek('2026-11-05T00:30:00Z'),9);
+ assert.equal(gameWeek({week:8,start:'2026-11-05T00:30:00Z'}).week,8,'Explicit provider week remains authoritative');
+});
+
 test('Week 8 includes all twelve Sunday games plus Thursday and Monday',()=>{
  const g=scheduleForWeek(season,8);
  assert.equal(g.length,14);

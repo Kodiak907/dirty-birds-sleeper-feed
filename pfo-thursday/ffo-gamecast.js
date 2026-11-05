@@ -7,7 +7,7 @@
  const stadium=await import('/ffo-gamecast-stadium.mjs');
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
- const weekNav=await import('/ffo-gamecast-weeks.mjs');
+ const weekNav=await import('/ffo-gamecast-weeks.mjs?v=660');
  const researchController=await import('/ffo-scoring-research-controller.mjs');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`

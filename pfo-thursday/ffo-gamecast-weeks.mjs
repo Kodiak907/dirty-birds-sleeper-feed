@@ -9,14 +9,22 @@ const MS=86400000;
 const validWeek=w=>Number.isInteger(w)&&w>=1&&w<=18;
 const validDate=x=>Number.isFinite(Date.parse(String(x||'')));
 export function calendarWeek(date,season=2026){
- const kickoff=Date.parse(String(date||''));
- if(!Number.isFinite(kickoff)||!Number.isInteger(season))return null;
- // 2026 NFL regular season starts Thursday, September 10. A calendar week
- // labels fixtures for navigation ONLY, not source-confirmed game identity.
- if(season!==2026)return null;
- const start=Date.parse('2026-09-10T00:00:00Z');
- const w=Math.floor((kickoff-start)/ (7*MS))+1;
- return validWeek(w)?w:null;
+ const time=Date.parse(String(date||''));
+ if(!Number.isFinite(time)||!Number.isInteger(season)||season!==2026)return null;
+ // Calendar fallback ONLY: Tuesday 08:30 Pacific, matching the FFL matchup
+ // rollover. Native authenticated MSF week labels still take precedence.
+ // Pacific civil-date arithmetic keeps week changes correct across DST.
+ const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',
+  year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',
+  hourCycle:'h23'}).formatToParts(new Date(time));
+ const at=key=>Number(p.find(x=>x.type===key)?.value);
+ const y=at('year'),m=at('month'),d=at('day'),hour=at('hour'),minute=at('minute');
+ if(![y,m,d,hour,minute].every(Number.isFinite))return null;
+ const delta=Math.floor((Date.UTC(y,m-1,d)-Date.UTC(2026,8,8))/MS);
+ if(delta<0)return null;
+ let w=Math.floor(delta/7)+1;
+ if(delta%7===0&&hour*60+minute<510)w--;
+ return validWeek(Math.max(1,w))?Math.max(1,w):null;
 }
 export function gameWeek(g,season=2026){
  const w=Number(g?.week);
