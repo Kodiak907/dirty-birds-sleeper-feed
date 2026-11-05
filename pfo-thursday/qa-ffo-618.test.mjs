@@ -27,7 +27,7 @@ test('K: recognize exact MSF extraPoints.xpMade and distance case variants witho
  assert.equal(row.forecast.fgm_20_29,undefined);
 });
 
-test('completed MSF game schedules link defense logs by immutable game id to verified points-allowed tiers',()=>{
+test('completed MSF schedules link logged games by immutable game id while requiring independently published points allowed',()=>{
  const fixtures=normalize.fixtures({games:[
   {schedule:{id:12,playedStatus:'COMPLETED',homeTeam:{abbreviation:'MIN'},awayTeam:{abbreviation:'BUF'}},score:{homeScoreTotal:20,awayScoreTotal:10}},
   {schedule:{id:14,playedStatus:'FINAL',homeTeam:{abbreviation:'GB'},awayTeam:{abbreviation:'MIN'}},score:{homeScoreTotal:27,awayScoreTotal:21}},
@@ -36,8 +36,8 @@ test('completed MSF game schedules link defense logs by immutable game id to ver
  ]});
  assert.equal(fixtures.size,2);
  const data={teamGamelogs:[
-  {team:{abbreviation:'MIN'},game:{id:12},stats:{defense:{sacks:4,interceptions:2}}},
-  {team:{abbreviation:'MIN'},game:{id:14},stats:{defense:{sacks:2,interceptions:1}}},
+  {team:{abbreviation:'MIN'},game:{id:12},stats:{defense:{sacks:4,interceptions:2,pointsAllowed:10}}},
+  {team:{abbreviation:'MIN'},game:{id:14},stats:{defense:{sacks:2,interceptions:1,pointsAllowed:27}}},
   {team:{abbreviation:'MIN'},game:{id:19,playedStatus:'IN_PROGRESS'},stats:{defense:{sacks:5}}}
  ]};
  const out=normalize.def(data,'MIN','2026-11-05',fixtures);
@@ -68,8 +68,8 @@ test('team D/ST season totals use verified finished team games for denominator i
  assert.equal(row.games_observed,2);
  assert.equal(row.forecast.sack,4);
  assert.equal(row.forecast.int,2);
- assert.equal(row.forecast.pts_allow_7_13,0.5);
- assert.equal(row.forecast.pts_allow_28_34,0.5);
+ assert.ok(!Object.keys(row.forecast).some(k=>k.startsWith('pts_allow_')),'raw final scoreboard is never FFL PA');
+ assert.equal(row.coverage.points_allowed_games,0);
  assert.equal(row.coverage.denominator_source,'verified_finished_nfl_schedule');
  assert.equal(row.partial,true);
 });
@@ -91,4 +91,19 @@ test('recover league opponent starters and defenses, disclose source errors befo
  assert.match(worker,/ffo618VerifiedFixtures\(raw\?\.data\?\?raw\)/);
  assert.match(html,/ffo-pfo-616\.js\?v=618/);
  assert.doesNotMatch(lib,/trade-fold|trade-intel|pfo59-trade-existing/);
+});
+
+test('raw opposing scoreboard never becomes a fantasy defense points-allowed tier without supported provider accounting',()=>{
+ const fixtures=normalize.fixtures({games:[{
+  schedule:{id:12,playedStatus:'COMPLETED',homeTeam:{abbreviation:'MIN'},awayTeam:{abbreviation:'BUF'}},
+  score:{homeScoreTotal:20,awayScoreTotal:10}
+ }]});
+ const row=normalize.def({teamGamelogs:[{
+  team:{abbreviation:'MIN'},game:{id:12},stats:{defense:{sacks:3,interceptions:1}}
+ }]},'MIN','2026-11-05',fixtures);
+ assert.equal(row.games_observed,1);
+ assert.equal(row.forecast.sack,3);
+ assert.equal(row.coverage.points_allowed_games,0);
+ assert.ok(!Object.keys(row.forecast).some(k=>k.startsWith('pts_allow_')));
+ assert.equal(row.certified,false);
 });
