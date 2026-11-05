@@ -11,7 +11,7 @@ const fmt=n=>Number(n)>=0?'+'+money(n):money(n);
 const slots=['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];
 const data=await fetch('./sample-rosters.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Bundled demo roster not available');return r.json()});
 const players=data.players, own=data.rosters[0], rival=data.rosters[1];
-const state={week:9,page:'overview',market:'trade',matchmode:'starters',give:[],take:[],sendFaab:0,recvFaab:0,add:'',drop:'',claims:[],watch:new Set(),selected:own.starters[0],scoutPos:'ALL',scout:own.starters[0],search:'',radarPos:'ALL',game:0,play:0,scenarios:[],question:''};
+const state={week:9,page:'overview',market:'trade',matchmode:'starters',give:[],take:[],sendFaab:0,recvFaab:0,add:'',drop:'',claims:[],watch:new Set(),selected:own.starters[0],scoutPos:'ALL',scout:own.starters[0],search:'',radarPos:'ALL',game:0,play:0,scenarios:[],question:'',teamView:'submitted',matchView:'submitted',labSlots:own.starters.slice(),labError:'',startSitA:own.starters[0],startSitB:own.players.find(id=>!own.starters.includes(id)),scoutCompare:'',simVolatility:16,simBoost:0,simResult:null};
 const teamOf=id=>players[id]?.team||'—';
 const identity=id=>players[id]||{name:'Unverified player',position:'?',team:'—'};
 const pool=()=>Array.from(new Set([...own.players,...rival.players,...data.waivers,...state.claims]));
@@ -30,6 +30,49 @@ function projection(id,w=state.week){
 const teamTotal=(roster=own)=>roster.starters.reduce((a,id)=>a+(projection(id)||0),0);
 const eligible=(slot,pos)=>slot===pos||slot==='FLEX'&&['RB','WR','TE'].includes(pos);
 function bestLineup(ids){const index={};for(const id of ids)index[id]={position:position(id),ppg:projection(id),name:identity(id).name};return lineupFromFFLResearch(ids,slots,index)}
+
+/** Reuse the genuine PFO optimizer. Translate its unordered slot assignments
+ * into fixed slot positions without assuming the used array is slot-ordered. */
+function optimizedLineup(ids=ours()){
+ const result=bestLineup(ids);
+ if(result?.status!=='conditional'||!Array.isArray(result.starters))return {ids:null,total:null,reason:result?.reason||'insufficient_model_coverage'};
+ const output=Array(slots.length).fill(null),used=Array(slots.length).fill(false);
+ for(const assigned of result.starters){
+  const at=slots.findIndex((slot,i)=>!used[i]&&slot===assigned.slot);
+  if(at<0)return {ids:null,total:null,reason:'invalid_optimized_slot'};
+  output[at]=assigned.id;used[at]=true;
+ }
+ if(output.some(id=>!id)||new Set(output).size!==slots.length)return {ids:null,total:null,reason:'incomplete_optimized_lineup'};
+ return {ids:output,total:output.reduce((sum,id)=>sum+projection(id),0),reason:null};
+}
+function lineupScore(ids){return ids?.length===slots.length&&ids.every(Boolean)&&new Set(ids).size===slots.length?ids.reduce((n,id)=>n+projection(id),0):null}
+function sameLine(a,b){return a?.length===b?.length&&a.every((x,i)=>x===b[i])}
+function maxShift(a,b){return a!=null&&b!=null?b-a:null}
+function modeSwitch(mode,context){
+ const submitted=mode==='submitted',prefix=context==='team'?'team':'match';
+ return '<div class="pfo-demo-segment" role="group" aria-label="Projection lineup mode">'+
+ '<button type="button" data-'+prefix+'view="submitted" aria-pressed="'+submitted+'">Submitted lineup</button>'+
+ '<button type="button" data-'+prefix+'view="best" aria-pressed="'+!submitted+'">Best projected</button>'+
+ '</div>';
+}
+function positionSelector(index,selected,allIds=ours(),attr='data-lab-slot'){
+ const options=allIds.filter(id=>eligible(slots[index],position(id)));
+ return '<select '+attr+'="'+index+'" aria-label="Select '+esc(slots[index])+' player">'+
+ options.map(id=>'<option value="'+esc(id)+'"'+(id===selected?' selected':'')+'>'+esc(identity(id).name)+' · '+position(id)+' · '+money(projection(id))+'</option>').join('')+'</select>';
+}
+function simulatedTrend(id){
+ const p=identity(id),pos=p.position,n=[...String(id)].reduce((a,c)=>a+c.charCodeAt(0),0),v=projection(id);
+ const snaps=pos==='K'||pos==='DEF'?null:Math.min(96,55+(n%38));
+ const usage=pos==='QB'?Math.round(24+n%11):pos==='RB'?Math.round(11+n%11):pos==='WR'?Math.round(5+n%8):pos==='TE'?Math.round(4+n%6):null;
+ const prior=Math.max(0,Math.round((v-((n%7)-2)*.65)*100)/100);
+ return {snaps,usage,prior,change:Math.round((v-prior)*100)/100,
+  label:pos==='RB'?'Illustrative touches':pos==='WR'||pos==='TE'?'Illustrative targets':pos==='QB'?'Illustrative attempts':'Position example'};
+}
+function labeledDemoNote(){return '<div class="pfo-demo-context"><span class="pfo-demo-context-dot"></span> <b>SHOWCASE DATA</b> · Real NFL players · Example rosters and projected scores · No live FFL actions</div>'}
+function compactLineup(ids,side){
+ return ids.map((id,i)=>'<div class="pfo-demo-compact-player"><span class="pfo-demo-compact-pos">'+slots[i]+'</span><span class="pfo-demo-compact-ident"><b>'+pButton(id)+'</b><small>'+identity(id).team+' · '+position(id)+'</small></span><strong>'+money(projection(id))+'</strong></div>').join('');
+}
+
 function pButton(id){return '<button type="button" class="pfo-demo-person" data-player="'+esc(id)+'">'+esc(identity(id).name)+'</button>'}
 function badge(text){return '<span class="pfo-demo-pill">'+esc(text)+'</span>'}
 function stat(value,label,klass=''){return '<div class="pfo-demo-stat"><b class="'+klass+'">'+esc(value)+'</b><small>'+esc(label)+'</small></div>'}
@@ -57,15 +100,26 @@ function overview(){
  $('demo-source-summary').innerHTML='<p class="pfo-demo-fine">NFL player names and positions: FFO-published Sleeper directory.</p><p class="pfo-demo-fine">PFO interface styling: original application CSS. Trade and waiver: original PFO 6.x read-only research engines.</p><p class="pfo-demo-warning">Player points, health, schedule and GameCast examples: simulated. Private MSF, FFL transactions and Commissioner records unavailable by design.</p>';
 }
 function roster(){
- const total=teamTotal(own),best=bestLineup(ours());
- $('demo-roster-status').textContent=own.name+' · '+ours().length+' demonstration roster players · sample submitted 10 starters · read-only preview';
- $('demo-team-total').innerHTML='<div class="pfo-demo-tiles"><div class="pfo-demo-tile"><small>Week '+state.week+' FFO model</small><strong>'+money(total)+'</strong><small>Submitted starters: 10/10</small></div><div class="pfo-demo-tile"><small>Optimal illustrative lineup</small><strong>'+money(best.points)+'</strong><small>'+esc(best.status==='conditional'?'Legal slot model':'Coverage incomplete')+'</small></div></div><p class="pfo-demo-fine">'+esc(weekNote())+'</p>';
- $('demo-starters').innerHTML=own.starters.map((id,i)=>field(id,slots[i])).join('');
- const bn=ours().filter(id=>!own.starters.includes(id));$('demo-bench-count').textContent='('+bn.length+')';
+ const optimized=optimizedLineup(),bestIds=optimized.ids||own.starters,shown=state.teamView==='best'?bestIds:own.starters;
+ const chosenTotal=lineupScore(shown),originalTotal=lineupScore(own.starters),bestTotal=lineupScore(bestIds);
+ $('demo-roster-status').innerHTML='<b>THE FRONT OFFICE COLLECTIVE</b> · '+ours().length+' players · Week '+state.week+' · Independent illustrative FFO forecasts';
+ $('demo-team-total').innerHTML=modeSwitch(state.teamView,'team')+
+ '<div class="pfo-demo-tiles"><div class="pfo-demo-tile"><small>'+esc(state.teamView==='best'?'Optimized lineup':'Submitted lineup')+' · Week '+state.week+'</small><strong>'+money(chosenTotal)+'</strong><small>'+shown.length+'/10 modeled starters</small></div>'+
+ '<div class="pfo-demo-tile"><small>Best projected · PFO algorithm</small><strong>'+money(bestTotal)+'</strong><small>'+(!sameLine(own.starters,bestIds)?'+'+money(maxShift(originalTotal,bestTotal))+' over submitted':'Same as submitted')+'</small></div></div>'+
+ '<p class="pfo-demo-fine">'+esc(weekNote())+'</p>';
+ $('demo-starters').innerHTML=shown.map((id,i)=>field(id,slots[i])).join('');
+ const bn=ours().filter(id=>!shown.includes(id));$('demo-bench-count').textContent='('+bn.length+')';
  $('demo-bench').innerHTML=benchList(own,bn);
- $('demo-roster-intel').innerHTML='<div class="pfo-demo-statgrid">'+stat(ours().filter(id=>position(id)==='QB').length,'QBs')+stat(ours().filter(id=>position(id)==='RB').length,'RBs')+stat(ours().filter(id=>position(id)==='WR').length,'WRs')+'</div>'+
-   '<p class="pfo-demo-warning">Player names and NFL club affiliation come from our imported directory, not a live transaction report. All fantasy ownership in this demo is fictional.</p>'+
-   '<details class="pfo49-disclose" open><summary>Roster construction &amp; scoring evidence</summary><p class="pfo-demo-fine">Ten starters: 1 QB, 2 RB, 2 WR, 1 TE, 2 FLEX, 1 K, 1 D/ST. Independent FFL-style illustrative estimates use the same scoring categories by position; production data is withheld from this public build.</p></details>';
+ $('demo-roster-intel').innerHTML='<h3>Roster construction</h3><div class="pfo-demo-statgrid">'+
+ stat(ours().filter(id=>position(id)==='QB').length,'Quarterbacks')+
+ stat(ours().filter(id=>position(id)==='RB').length,'Running backs')+
+ stat(ours().filter(id=>position(id)==='WR').length,'Wide receivers')+'</div>'+
+ '<div class="pfo-demo-cardline">'+
+ stat(money(originalTotal),'Submitted team points')+
+ stat(money(bestTotal),'Optimal legal lineup')+'</div>'+
+ '<div class="pfo-demo-guide"><b>How PFO chooses the best lineup</b><p>Each player is tested against your eligible FFL starter slots, including both FLEX positions. The engine maximizes the sum without using a player twice.</p></div>'+
+ (!optimized.ids?'<div class="note">Optimizer status: '+esc(optimized.reason)+'</div>':'')+
+ labeledDemoNote();
 }
 function projectionProfile(id){
  const p=identity(id),val=projection(id),pos=p.position;
@@ -94,14 +148,51 @@ function playerhub(){
  $('demo-player-profile').innerHTML=state.selected?projectionProfile(state.selected):'<p class="pfo-demo-empty">Select a player to inspect the PFO-style profile.</p>';
 }
 function matchup(){
- const score=teamTotal(own),rScore=teamTotal(rival);
+ const optimized=optimizedLineup(),best=optimized.ids||own.starters,ourIds=state.matchView==='best'?best:own.starters;
+ const ourScore=lineupScore(ourIds),rivalScore=teamTotal(rival),bestScore=lineupScore(best),submittedScore=teamTotal(own);
  document.querySelectorAll('[data-matchmode]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.matchmode===state.matchmode)));
- const header='<div class="pfo-demo-scoreboard"><div><small>'+esc(own.name)+' · MODEL</small><strong>'+money(score)+'</strong><small>10/10 demo estimates</small></div><div class="vs">VS</div><div><small>'+esc(rival.name)+' · MODEL</small><strong>'+money(rScore)+'</strong><small>10/10 demo estimates</small></div></div>';
- const teamsHTML='<div class="pfo-demo-matchgrid"><article><h3>'+esc(own.name)+'</h3>'+own.starters.map((id,i)=>field(id,slots[i],true)).join('')+'<details><summary>Bench ('+(ours().length-own.starters.length)+')</summary>'+benchList(own,ours().filter(id=>!own.starters.includes(id)))+'</details></article><article><h3>'+esc(rival.name)+'</h3>'+rival.starters.map((id,i)=>field(id,slots[i],true)).join('')+'<details><summary>Bench ('+(rival.players.length-rival.starters.length)+')</summary>'+benchList(rival)+'</details></article></div>';
- let content=header+teamsHTML;
- if(state.matchmode==='startsit'){const best=bestLineup(ours());content=header+'<div class="card"><h3>Start / Sit research</h3>'+stat(money(best.points),'Best supported legal lineup, example')+'<p class="pfo-demo-warning">The comparison is a demonstration of PFO’s lineup-selection logic. Actual availability and game forecasts are not verified here.</p></div>'+teamsHTML;}
- if(state.matchmode==='lab'){const best=bestLineup(ours());content=header+'<div class="pfo-demo-statgrid">'+stat(money(score),'Submitted sample lineup')+stat(money(best.points),'Optimal legal projection')+stat(best.points!=null?money(best.points-score):'—','Illustrative unused upside')+'</div>'+teamsHTML;}
- $('demo-matchup').innerHTML=content+'<p class="pfo-demo-fine">'+esc(weekNote())+'</p>';
+ const board='<div class="pfo-demo-scoreboard"><div><small>THE FRONT OFFICE COLLECTIVE · '+(state.matchView==='best'?'OPTIMAL':'SUBMITTED')+'</small><strong>'+money(ourScore)+'</strong><small>10/10 sample projections</small></div>'+
+ '<div class="vs"><span>W'+state.week+'</span><b>VS</b><span>FFL</span></div>'+
+ '<div><small>FOURTH DOWN EMPIRE · SUBMITTED</small><strong>'+money(rivalScore)+'</strong><small>10/10 sample projections</small></div></div>';
+ const compared='<div class="pfo-demo-matchgrid"><article><h3>The Front Office Collective</h3>'+compactLineup(ourIds,'ours')+
+ '<details class="pfo64-bench"><summary>Bench ('+(ours().length-ourIds.length)+')</summary>'+benchList(own,ours().filter(id=>!ourIds.includes(id)))+'</details></article>'+
+ '<article><h3>Fourth Down Empire</h3>'+compactLineup(rival.starters,'theirs')+
+ '<details class="pfo64-bench"><summary>Bench ('+(rival.players.length-rival.starters.length)+')</summary>'+benchList(rival)+'</details></article></div>';
+ let content='';
+ if(state.matchmode==='starters'){
+  content=modeSwitch(state.matchView,'match')+board+compared+
+   '<div class="pfo-demo-insight"><b>FFO research takeaway</b><p>Submitted: '+money(submittedScore)+' · Best projected: '+money(bestScore)+
+   ' · Opponent: '+money(rivalScore)+'. Switching to Best Projected compares lineups without touching a real account.</p></div>';
+ }else if(state.matchmode==='startsit'){
+  const a=identity(state.startSitA),b=identity(state.startSitB),aPts=projection(state.startSitA),bPts=projection(state.startSitB);
+  const names=ours();
+  const options=(choice)=>names.map(id=>'<option value="'+esc(id)+'"'+(id===choice?' selected':'')+'>'+esc(identity(id).name)+' ('+position(id)+')</option>').join('');
+  const delta=aPts-bPts;
+  const usageA=simulatedTrend(state.startSitA),usageB=simulatedTrend(state.startSitB);
+  content=board+'<div class="pfo-demo-premium-head"><h3>Start / Sit Decision Desk</h3><small>Full weekly research comparison · read-only</small></div>'+
+   '<div class="pfo-demo-compare-select"><label>Player A<select id="demo-start-a">'+options(state.startSitA)+'</select></label>'+
+   '<label>Player B<select id="demo-start-b">'+options(state.startSitB)+'</select></label></div>'+
+   '<div class="pfo-demo-versus"><div><span class="pfo-demo-position">'+esc(a.position)+'</span><b>'+esc(a.name)+'</b><strong>'+money(aPts)+'</strong><small>Example FFL pts</small></div>'+
+   '<div class="pfo-demo-versus-mark">VS</div>'+
+   '<div><span class="pfo-demo-position">'+esc(b.position)+'</span><b>'+esc(b.name)+'</b><strong>'+money(bPts)+'</strong><small>Example FFL pts</small></div></div>'+
+   '<div class="pfo-demo-statgrid">'+stat(delta===0?'TIE':money(Math.abs(delta)),'Projected point gap')+
+   stat(usageA.usage??'—',usageA.label)+stat(usageB.usage??'—',usageB.label)+'</div>'+
+   '<div class="pfo-demo-insight"><b>Scouting verdict</b><p>'+esc(aPts===bPts?'Both players carry the same demonstration projection.':(aPts>bPts?a.name:b.name)+' has the higher example projection by '+money(Math.abs(delta))+' points.')+
+   ' Verify health and matchup context before making real decisions.</p></div>'+
+   '<button type="button" class="button primary" data-startsit-lab>Compare both in Lineup Lab</button>'+labeledDemoNote();
+ }else{
+  const selected=state.labSlots,labTotal=lineupScore(selected),legal=selected.every((id,i)=>id&&eligible(slots[i],position(id)))&&new Set(selected).size===slots.length;
+  content='<div class="pfo-demo-premium-head"><h3>Interactive Lineup Lab</h3><small>Test your own starter combinations · never submits</small></div>'+
+   '<div class="pfo-demo-statgrid">'+stat(legal?money(labTotal):'—','Your custom lineup')+
+   stat(money(submittedScore),'Submitted roster')+stat(money(bestScore),'Best legal projection')+'</div>'+
+   (state.labError?'<div class="note">'+esc(state.labError)+'</div>':'')+
+   '<div class="pfo-demo-lab-grid">'+slots.map((slot,i)=>'<label><span>'+esc(slot)+'</span>'+positionSelector(i,selected[i])+'</label>').join('')+'</div>'+
+   '<div class="pfo-demo-market-controls"><button type="button" class="button primary" data-lab-best>Use Best Projected</button><button type="button" class="button" data-lab-reset>Reset to Submitted</button></div>'+
+   '<div class="pfo-demo-insight"><b>Live model check</b><p>'+esc(legal?'All ten starter slots are valid and no player is used twice. This is a hypothetical FFO lineup, not a real Sleeper submission.':'An invalid or duplicate slot is selected. Check the marked player and try a different legal candidate.')+'</p></div>'+
+   '<details class="pfo64-bench"><summary>Available bench depth ('+(ours().length-slots.length)+')</summary>'+benchList(own,ours().filter(id=>!selected.includes(id)))+'</details>'+
+   '<h3 style="font-size:13px;margin:14px 0 9px">Example opponent</h3>'+compactLineup(rival.starters,'theirs')+labeledDemoNote();
+ }
+ $('demo-matchup').innerHTML=content;
 }
 function tradeOptions(ids,selected){return '<option value="">Select player</option>'+ids.map(id=>'<option value="'+esc(id)+'"'+(selected===id?' selected':'')+'>'+esc(identity(id).name)+' · '+position(id)+'</option>').join('')}
 function trade(){
@@ -190,7 +281,12 @@ document.addEventListener('click',event=>{
  const go=event.target.closest('[data-go]');if(go){view(go.dataset.go);return}
  const page=event.target.closest('#nav [data-page]');if(page){view(page.dataset.page);return}
  const id=event.target.closest('[data-player]')?.dataset.player;if(id){state.selected=id;state.scout=id;view('playerhub');return}
+ const tv=event.target.closest('[data-teamview]');if(tv){state.teamView=tv.dataset.teamview;roster();return}
+ const mv=event.target.closest('[data-matchview]');if(mv){state.matchView=mv.dataset.matchview;matchup();return}
  const m=event.target.closest('[data-matchmode]');if(m){state.matchmode=m.dataset.matchmode;matchup();return}
+ if(event.target.closest('[data-lab-best]')){const opt=optimizedLineup();if(opt.ids){state.labSlots=opt.ids.slice();state.labError='';}else state.labError='Best lineup unavailable: '+opt.reason;matchup();return}
+ if(event.target.closest('[data-lab-reset]')){state.labSlots=own.starters.slice();state.labError='';matchup();return}
+ if(event.target.closest('[data-startsit-lab]')){state.labSlots=own.starters.slice();state.labError='';state.matchmode='lab';matchup();return}
  const marketMode=event.target.closest('[data-marketmode]');if(marketMode){state.market=marketMode.dataset.marketmode;market();return}
  const radarFilter=event.target.closest('[data-radar]');if(radarFilter){state.radarPos=radarFilter.dataset.radar;radar();return}
  const watch=event.target.closest('[data-watch]');if(watch){const id=watch.dataset.watch;state.watch.has(id)?state.watch.delete(id):state.watch.add(id);market();return}
@@ -211,6 +307,15 @@ document.addEventListener('click',event=>{
 document.addEventListener('change',event=>{
  const t=event.target;
  if(t.id==='demo-week'){state.week=Number(t.value);render();return}
+ if(t.dataset.labSlot!==undefined){
+  const i=Number(t.dataset.labSlot),chosen=t.value;
+  if(state.labSlots.some((id,index)=>index!==i&&id===chosen))state.labError='Duplicate starter: '+identity(chosen).name+' is already selected in another slot.';
+  else if(!eligible(slots[i],position(chosen)))state.labError='That position cannot be used in '+slots[i]+'.';
+  else{state.labSlots[i]=chosen;state.labError='';}
+  matchup();return;
+ }
+ if(t.id==='demo-start-a'){state.startSitA=t.value;matchup();return}
+ if(t.id==='demo-start-b'){state.startSitB=t.value;matchup();return}
  if(t.id==='demo-scout-pos'){state.scoutPos=t.value;scouting();return}
  if(t.id==='demo-scout-player'){state.scout=t.value;scouting();return}
  if(t.dataset.trade){
