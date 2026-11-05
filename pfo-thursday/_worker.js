@@ -1199,6 +1199,22 @@ async function ffo616PlayerGameRoute(req,env){
    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   const identifiers=[...new Set([...(playerId?[playerId]:[]),slug].filter(Boolean))].slice(0,2);
   const errors=[];
+  if(position==='K'&&/^[0-9]{1,12}$/.test(playerId)){
+   // Published season/weekly gamelog queries are returning 400/502 for
+   // kickers. Go directly to the narrower verified game boxscore evidence.
+   try{
+    const recovered=await ffo623RecoverKicker(team,name,playerId,targetWeek,env,checked_at);
+    if(recovered?.forecast&&recovered?.games_observed>=2){
+     ffo616PlayerGameCache.set(key,{data:recovered,at:Date.now()});
+     return recovered;
+    }
+    errors.push('kicker_boxscore_'+String(recovered?.error||'incomplete').slice(0,80));
+   }catch{errors.push('kicker_boxscore_recovery_unavailable')}
+   // Do not repeatedly invoke known failing bulk gamelog routes for a
+   // verified kicker; an incomplete boxscore is an explicit source gap.
+   return {source:'MySportsFeeds',available:false,team,name,
+    error:errors.join('; ').slice(0,180),checked_at};
+  }
   for(const identifier of identifiers){
    const endpoint=MSF_ROOT+'/2026-regular/player_gamelogs.json?player='+encodeURIComponent(identifier);
    let response;
@@ -1266,18 +1282,6 @@ async function ffo616PlayerGameRoute(req,env){
    }
    if(lastData)errors.push('weekly_'+String(lastData.error||'unsupported_player_rows'));
    else if(successWeeks)errors.push('weekly_no_verified_player_rows');
-  }
-  if(position==='K'&&/^[0-9]{1,12}$/.test(playerId)){
-   // Provider weekly logs can fail 502 even when completed-game boxscores
-   // remain licensed. Avoid repeated bulk requests, recover only this kicker.
-   try{
-    const recovered=await ffo623RecoverKicker(team,name,playerId,targetWeek,env,checked_at);
-    if(recovered?.forecast&&recovered?.games_observed>=2){
-     ffo616PlayerGameCache.set(key,{data:recovered,at:Date.now()});
-     return recovered;
-    }
-    errors.push('kicker_boxscore_'+String(recovered?.error||'insufficient').slice(0,80));
-   }catch{errors.push('kicker_boxscore_recovery_unavailable')}
   }
   return {source:'MySportsFeeds',available:false,team,name,
    error:[...new Set(errors)].join('; ').slice(0,300)||'player_logs_unavailable',checked_at};
