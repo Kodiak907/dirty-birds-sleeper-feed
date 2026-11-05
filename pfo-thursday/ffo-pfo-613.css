@@ -1,0 +1,6 @@
+/* PFO 6.13 video review: compact optional legacy evidence, not duplicated default report */
+.pfo613-legacy-trade{max-width:100%;min-width:0;margin:10px 0;border:1px solid #3f6076;border-radius:10px;background:#172e3e}
+.pfo613-legacy-trade>summary{padding:12px;cursor:pointer;color:#d1e3e9;font-size:12px;font-weight:700;line-height:1.5}
+.pfo613-legacy-trade>summary:focus-visible{outline:2px solid #f4bc6d;outline-offset:2px}
+.pfo613-legacy-trade #trade-intel{padding:9px;max-width:100%;overflow-wrap:anywhere}
+#market .pfo613-legacy-trade [data-tb48-copy]{max-width:100%}
