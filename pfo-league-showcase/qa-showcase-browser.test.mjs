@@ -41,14 +41,28 @@ test('Team HQ renders 10 starters, real players, 7 bench forecasts',async()=>{
  assert.match(await page.locator('#demo-starters').innerText(),/Josh Allen/);
  assert.match(await page.locator('#demo-starters').innerText(),/Puka Nacua/);
  assert.match(await page.locator('#demo-bench').innerText(),/Lamar Jackson/);
- assert.match(await page.locator('#demo-team-total').innerText(),/FFO model/);
+ assert.match(await page.locator('#demo-team-total').innerText(),/Best projected/);
+ const before=await page.locator('#demo-starters').innerText();
+ await page.locator('[data-teamview=best]').click();
+ assert.notEqual(await page.locator('#demo-starters').innerText(),before,'Best Projected must change actual selected starters');
+ assert.equal(await page.locator('#demo-starters tr').count(),10);
 });
 test('Weekly Matchup has both 10-man lineups and bench cards',async()=>{
  await page.locator('#demo-mobile-nav [data-go=matchup]').click();
  assert.equal(await page.locator('.pfo-demo-matchgrid article').count(),2);
- assert.equal(await page.locator('.pfo-demo-matchrow').count(),20);
+ assert.equal(await page.locator('.pfo-demo-compact-player').count(),20);
+ await page.locator('[data-matchview=best]').click();
+ assert.match(await page.locator('#demo-matchup').innerText(),/OPTIMAL/);
+ await page.locator('[data-matchmode=startsit]').click();
+ assert.match(await page.locator('#demo-matchup').innerText(),/Start \/ Sit Decision Desk/);
+ const b=await page.locator('.pfo-demo-versus').innerText();
+ await page.locator('#demo-start-a').selectOption({index:2});
+ assert.notEqual(await page.locator('.pfo-demo-versus').innerText(),b);
+
  await page.locator('[data-matchmode=lab]').click();
- assert.match(await page.locator('#demo-matchup').innerText(),/Optimal legal projection/);
+ assert.match(await page.locator('#demo-matchup').innerText(),/Interactive Lineup Lab/);
+ await page.locator('[data-lab-best]').click();
+ assert.match(await page.locator('#demo-matchup').innerText(),/Best legal projection/);
 });
 test('real PFO trade model compares hypothetical two-sided trade',async()=>{
  await page.locator('#demo-mobile-nav [data-go=market]').click();
