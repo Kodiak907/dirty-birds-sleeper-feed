@@ -781,6 +781,23 @@ async function ffo616DefenseRoute(req,env){
    {kind:'totals',url:MSF_ROOT+'/2026-regular/team_stats_totals.json?team='+encodeURIComponent(team)}
   ];
   const errors=[];
+  let completedFixtures=null;
+  const fixtures=async()=>{
+   if(completedFixtures)return completedFixtures;
+   const target=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
+   let response;
+   try{
+    response=env.MSF_API_KEY
+     ?await fetch(target,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
+     :await env.GAMECAST_INTERNAL.fetch(new Request(target,{method:'GET'}));
+   }catch{throw Error('verified_schedule_unreachable')}
+   if(!response.ok)throw Error('verified_schedule_http_'+response.status);
+   const raw=await response.json();
+   if(raw?.available===false||raw?.error)throw Error('verified_schedule_gateway_unavailable');
+   completedFixtures=ffo618VerifiedFixtures(raw?.data??raw);
+   if(completedFixtures.size<2)throw Error('verified_finished_games_unavailable');
+   return completedFixtures;
+  };
   for(const attempt of endpoints){
    let response;
    try{
@@ -791,8 +808,20 @@ async function ffo616DefenseRoute(req,env){
    if(!response.ok){errors.push(attempt.kind+'_http_'+response.status);continue}
    try{
     const json=ffo617UnwrapProvider(await response.json(),'TEAM_DEFENSE');
-    const parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
+    let parsed=attempt.kind==='gamelogs'?ffo616NormalizeDefense(json,team,checked_at):
      ffo616NormalizeTeamSeason(json,team,checked_at);
+    const needsFixtures=attempt.kind==='totals'||parsed.available===false||
+     (parsed.coverage?.points_allowed_games||0)===0;
+    if(needsFixtures){
+     try{
+      const verified=await fixtures();
+      const enriched=attempt.kind==='gamelogs'
+       ?ffo616NormalizeDefense(json,team,checked_at,verified)
+       :ffo616NormalizeTeamSeason(json,team,checked_at,verified);
+      if(enriched.available!==false)parsed=enriched;
+      else errors.push('schedule_join_'+String(enriched.error||'incomplete'));
+     }catch(err){errors.push(String(err.message||err))}
+    }
     if(parsed.available===false){errors.push(String(parsed.error));continue}
     ffo616DefenseCache.set(team,{data:parsed,at:Date.now()});return parsed;
    }catch(err){errors.push(String(err.message||err))}
