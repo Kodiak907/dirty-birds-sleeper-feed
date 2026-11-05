@@ -1,17 +1,37 @@
-/* PFO 6.3 matchup start/sit research */
-.pfo63-compare{border:1px solid #406273;background:#162a3c;border-radius:11px;padding:11px;margin-bottom:13px;min-width:0;color:#e2f0f1}
-.pfo63-compare-head h3{font-size:14px;margin:0 0 3px}
-.pfo63-compare-head small,.pfo63-compare-foot{font-size:10px;color:#adcad4;line-height:1.5}
-.pfo63-compare-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0}
-.pfo63-compare-choices label{font-size:10px;display:grid;gap:5px;min-width:0}
-.pfo63-compare-choices select{width:100%;min-width:0;padding:8px 6px;background:#21384b;border:1px solid #4a6a79;color:#e4eff5;border-radius:6px;font-size:12px}
-.pfo63-horizon{display:flex;gap:6px;overflow-x:auto;margin:7px 0 10px}
-.pfo63-horizon button{flex:1;border:1px solid #4a6879;border-radius:8px;background:#22374b;color:#cde0e7;font-size:10px;padding:9px 6px}
-.pfo63-horizon button[aria-pressed="true"]{background:#366c59;border-color:#80bfa2;color:#fff;font-weight:800}
-.pfo63-compare-players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-.pfo63-compare-players>div{display:grid;gap:6px;align-content:start;border:1px solid #416171;background:#1d3446;padding:9px;border-radius:8px;min-width:0}
-.pfo63-compare-players b{font-size:12px;overflow-wrap:anywhere}
-.pfo63-compare-players small{font-size:9px;color:#aac5d2}
-.pfo63-compare-players div div{font-size:10px;line-height:1.5;overflow-wrap:anywhere}
-.pfo63-compare-conclusion{border-left:2px solid #77b59a;padding:8px;margin:10px 0;background:#254038;font-size:11px;line-height:1.55}
-@media(max-width:340px){.pfo63-compare-choices,.pfo63-compare-players{grid-template-columns:1fr}}
+/* PFO 6.12: compact mobile-first source-backed player comparison. */
+.pfo63-compare{border:1px solid #416474;background:#162a3c;border-radius:12px;padding:12px;margin:0 0 14px;min-width:0;color:#e4f1f2}
+.pfo63-compare-head h3{font-size:15px;margin:0 0 4px}
+.pfo63-compare-head small,.pfo63-compare-foot,.pfo612-foot{font-size:11px;color:#afcbd6;line-height:1.55}
+.pfo63-compare-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:13px 0}
+.pfo63-compare-choices label{display:grid;gap:6px;font-size:11px;min-width:0}
+.pfo63-compare-choices select{width:100%;min-width:0;background:#21384b;color:#eaf7f8;border:1px solid #527585;border-radius:8px;font-size:12px;padding:10px 7px}
+.pfo63-horizon{display:flex;gap:7px;margin-bottom:12px;overflow-x:auto}
+.pfo63-horizon button{flex:1;min-width:0;padding:10px 6px;font-size:11px;line-height:1.3;color:#d0e5e8;background:#253e50;border:1px solid #4a6b7c;border-radius:8px}
+.pfo63-horizon button[aria-pressed=true]{background:#336d58;border-color:#81c2a2;color:#fff;font-weight:800}
+.pfo63-compare-players,.pfo612-detail-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pfo612-compare-card,.pfo612-detail-cols>section{padding:10px;min-width:0;border:1px solid #416373;background:#1d3446;border-radius:10px}
+.pfo612-player-name{display:grid;gap:4px;overflow-wrap:anywhere}
+.pfo612-player-name b{font-size:12px}
+.pfo612-player-name small,.pfo612-context{font-size:10px;color:#bed2dc;line-height:1.5}
+.pfo612-projected{font-weight:800;color:#efbe73;font-size:16px;margin:10px 0 6px;overflow-wrap:anywhere}
+.pfo63-compare-conclusion{border-left:3px solid #76b8a1;padding:10px;background:#254138;font-size:12px;line-height:1.55;margin:12px 0}
+.pfo612-fold{margin:9px 0;border:1px solid #426275;border-radius:9px;background:#1b3345;min-width:0}
+.pfo612-fold>summary{cursor:pointer;padding:12px;font-size:12px;font-weight:750;color:#e0f1ef}
+.pfo612-fold>.pfo612-detail-cols{padding:0 9px 9px}
+.pfo612-detail-cols>section h4{font-size:12px;margin:0 0 8px;overflow-wrap:anywhere}
+.pfo612-detail-cols>section p{font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.pfo612-detail-cols a{overflow-wrap:anywhere;color:#eebc73}
+.pfo612-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.pfo612-stat{display:grid;gap:3px;background:#294358;border-radius:7px;padding:8px;min-width:0}
+.pfo612-stat small{font-size:9px;color:#abc8d3}.pfo612-stat b{font-size:13px;overflow-wrap:anywhere}
+.pfo612-game-grid{display:grid;gap:5px;margin-top:9px}
+.pfo612-game-grid>div{display:grid;gap:3px;padding:7px;background:#254153;border-radius:7px}
+.pfo612-game-grid small{font-size:9px;line-height:1.5}
+#scouting.page{display:none!important}
+nav button[data-page="scouting"]{display:none!important}
+.pfo612-data-health{border:1px solid #456779;border-radius:9px;background:#1c3445;margin:8px 0}
+.pfo612-data-health>summary{cursor:pointer;padding:11px 12px;color:#d3e8ed;font-weight:700;font-size:12px}
+.pfo612-data-health .note{margin:5px 9px!important;padding:9px!important;font-size:11px!important;line-height:1.5!important}
+.pfo612-data-health #pfo611-coverage-report{font-size:11px!important;line-height:1.5!important}
+@media(max-width:360px){.pfo63-compare-choices select{font-size:11px;padding:9px 5px}.pfo612-compare-card{padding:8px}.pfo612-projected{font-size:14px}}
+@media(min-width:640px){.pfo612-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
