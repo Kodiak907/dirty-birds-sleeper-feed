@@ -7,8 +7,9 @@
  const stadium=await import('/ffo-gamecast-stadium.mjs');
  const sameGame=await import('/ffo-same-game-player-evidence.mjs');
  const eventScenarios=await import('/ffo-msf-event-score-scenarios.mjs');
+ const auditWorklist=await import('/ffo-historical-audit-worklist.mjs?v=680');
  const weekNav=await import('/ffo-gamecast-weeks.mjs?v=660');
- const researchController=await import('/ffo-scoring-research-controller.mjs?v=670');
+ const researchController=await import('/ffo-scoring-research-controller.mjs?v=680');
  const gc6Style=document.createElement('link');gc6Style.rel='stylesheet';gc6Style.href='/ffo-gamecast-stadium.css';document.head.append(gc6Style);
  const polish=document.createElement('style');polish.textContent=`
 #radar,#market,#availability,#playerhub{width:100%;max-width:100%;min-width:0}
@@ -520,6 +521,24 @@
    }
   }
  }
+ function renderAuditWorklist(report){
+  const w=auditWorklist.buildHistoricalAuditWorklist(report);
+  const rows=w.games.map(g=>{
+   const sources=g.playerLogParsed?'MSF player logs parsed':'Player source incomplete';
+   const preview=g.tasks.slice(0,3).map(t=>'<li>'+safe(t.label)+'</li>').join('');
+   return '<details style="border-top:1px solid #315069;padding:6px 0">'+
+    '<summary style="cursor:pointer;font-size:12px"><strong>Week '+g.week+'</strong> · '+
+    safe(sources)+' · '+g.tasks.length+' remaining gates</summary>'+
+    '<ul style="padding-left:18px;margin:5px 0;font-size:11px">'+preview+'</ul>'+
+    (g.tasks.length>3?'<div class="muted" style="font-size:10px">'+(g.tasks.length-3)+
+     ' other evidence gates; inspect detailed sections below.</div>':'')+'</details>';
+  }).join('');
+  return '<details style="border:1px solid #47715b;border-radius:9px;margin:10px 0;padding:9px">'+
+   '<summary style="cursor:pointer;font-weight:750">Certification worklist · '+w.sourceParsed+'/'+w.sourceWeeks+
+   ' weekly player feeds parsed · '+w.scoreCertifiedCount+' certified</summary>'+
+   '<p class="muted" style="font-size:11px">Automatic triage of existing MSF audit results. Evidence gaps do not become zero points. No certification or projection output is released.</p>'+
+   rows+'</details>';
+ }
  function renderStatAudit(report){
   const el=$('ffo-gc-stat-audit-results');if(!el)return;
   const weeks=report.weeks.map(r=>{
@@ -847,7 +866,7 @@
    positionRows+'</details>':'';
   el.innerHTML='<div style="padding:7px 0;overflow-wrap:anywhere"><strong>Team '+safe(report.team)+'</strong> · '+safe(season)+'</div>'+
    '<div class="muted" style="font-size:12px;overflow-wrap:anywhere">'+safe(comparison)+'</div>'+
-   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+scoringCard+eventCard+kickCard+teamCard+dstCandidateSection+weeks;
+   '<p class="muted" style="font-size:12px">Missing games or statistics are unknown, not zero. Bonuses, K and D/ST are not certified.</p>'+renderAuditWorklist(report)+scoringCard+eventCard+kickCard+teamCard+dstCandidateSection+weeks;
  }
  async function runStatAudit(){
   const button=$('ffo-gc-stat-audit-check'),indicator=$('ffo-gc-stat-audit-status');

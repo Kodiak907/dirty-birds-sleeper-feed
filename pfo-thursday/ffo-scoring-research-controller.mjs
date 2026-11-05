@@ -7,6 +7,7 @@ import {buildLeagueHistoryCoverage,nextLeagueHistoryBatch}
  from './ffo-league-history-pipeline.mjs';
 import {walkForwardBacktest} from './ffo-verified-history-backtest.mjs';
 import {calendarWeek} from './ffo-gamecast-weeks.mjs';
+import {buildCertificationWorklistFromCheckpoints} from './ffo-historical-audit-worklist.mjs?v=680';
 import {classifyMSFScanFailure,scanFailurePolicy} from './ffo-msf-scan-recovery.mjs?v=670';
 const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function installScoringResearch({getSchedule,feed,model,season='2026-regular',
@@ -75,6 +76,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
  })).filter(g=>g.id&&g.week));
  const status=()=>buildLeagueHistoryCoverage(schedule(),snapshots,certificates,
   {fromWeek:1,throughWeek:7});
+ const certificationQueue=()=>buildCertificationWorklistFromCheckpoints(schedule(),snapshots,{fromWeek:1,throughWeek:7,priorityTeam:'GB'});
  const queue=(exclude=[])=>nextLeagueHistoryBatch(schedule(),snapshots,
   {fromWeek:1,throughWeek:7,maxGames:2,priorityTeam:'GB',
    allowEstimatedWeekForSourceDiscovery:true,skipPreviouslyInspected:true,
@@ -82,7 +84,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
  function render(message=''){
   const target=el('ffo-gc-research-status');
   if(!target)return;
-  const c=status(),q=queue();
+  const c=status(),q=queue(),cert=certificationQueue();
   const attempted=Object.values(snapshots).filter(x=>x?.checkedAt).length;
   const failed=Object.values(snapshots).filter(x=>x?.sourceFailure===true).length;
   const completed=attempted-failed;
@@ -99,6 +101,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    ' @ '+safe(q.batch[0]?.home||'—')+
    (q.batch[0]?.weekSource==='calendar_estimate_not_certifiable'?
     ' · calendar-estimated week, cannot certify':'')+'</div>'+
+   (!q.pendingGames&&cert.sourceGames?'<div class="muted" style="margin:6px 0;color:#b3ddc9">Source discovery complete. Next: controlled certification evidence review · '+cert.worklist.filter(g=>g.sourceChecked).length+' prioritized games shown; no automatic score credit.</div>':'')+
    (failed?'<div class="muted" style="margin:5px 0;color:#edc384">Failed source reads remain pending: '+
     Object.entries(snapshots).filter(([,v])=>v?.sourceFailure===true).slice(0,3)
      .map(([id,v])=>safe(id+' ('+(v.failureKind||'unknown')+': '+
@@ -395,6 +398,7 @@ export function installScoringResearch({getSchedule,feed,model,season='2026-regu
    String(c.playerId)===String(playerId)&&String(c.gameId)===String(gameId))?.points??null,
   getProductionProjection:()=>null,
   getBacktest:backtestReadiness,
+  getCertificationWorklist:()=>certificationQueue(),
   getInspectedGames:()=>Object.keys(snapshots).length,
   getSourceCheck:(gameId)=>snapshots[String(gameId)]?{...snapshots[String(gameId)]}:null,
   render,runNextBatch,runRemainingChecks,retryFailedGame,pauseRemainingChecks,

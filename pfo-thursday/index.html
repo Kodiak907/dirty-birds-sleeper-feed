@@ -143,7 +143,7 @@ document.querySelectorAll('#nav button[data-page]').forEach(b=>{
 <script src="/ffo-pfo-core.js?v=660" defer></script><script>
 /* Load the separate GameCast application only when a related section is opened. */
 (function(){let inflight=null;const load=()=>{if(inflight)return inflight;
- inflight=new Promise((ok,bad)=>{const script=document.createElement('script');script.src='/ffo-gamecast.js?v=670';script.async=true;
+ inflight=new Promise((ok,bad)=>{const script=document.createElement('script');script.src='/ffo-gamecast.js?v=680';script.async=true;
  script.onload=()=>ok(true);script.onerror=()=>{inflight=null;const label=document.getElementById('ffo-gc-status');if(label)label.textContent='GameCast could not load. Reopen to retry.';bad(Error('gamecast_script_unavailable'))};
  document.body.append(script)});return inflight;};
  window.ffoLoadGameCast=load;
