@@ -28,7 +28,9 @@
   const result=window.ffoPfo597?.scoreFrozen?.(row.forecast);
   if(typeof result?.points!=='number'||!Number.isFinite(result.points))return null;
   return {points:Math.round(result.points*100)/100,source:
-   'MySportsFeeds observed team gamelogs · '+row.games_observed+' completed games · FFO frozen D/ST scoring · partial model',
+   'MySportsFeeds '+(row.schema==='FFO_MSF_DEFENSE_SEASON_V1'?'team season totals':'verified team gamelogs')+
+   ' · '+row.games_observed+' observed games · '+(pointsAllowed?'PA scoring bands included':'PA tiers unavailable')+
+   ' · FFO frozen D/ST scoring · partial model',
    partial:true,certified:false,coverage:row.coverage,model:'PFO_616_MSF_TEAM_DEFENSE_V1'};
  };
  function redraw(){
