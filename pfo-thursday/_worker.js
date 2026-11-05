@@ -708,6 +708,11 @@ function ffo617UnwrapProvider(payload,expected){
  const result=payload?.data??payload?.payload??payload;
  if(!result||typeof result!=='object'||Array.isArray(result))
   throw Error('MSF_'+expected+'_SCHEMA_UNRECOGNIZED');
+ const names=expected==='TEAM_DEFENSE'
+  ?['teamGamelogs','teamGameLogs','gamelogs','gameLogs','teamStatsTotals','teamStatTotals']
+  :['playerGamelogs','playerGameLogs','gamelogs','gameLogs'];
+ if(!names.some(key=>Array.isArray(result[key])))
+  throw Error('MSF_'+expected+'_SCHEMA_UNRECOGNIZED');
  return result;
 }
 const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
