@@ -572,8 +572,8 @@ function ffo598NormalizeSeason(payload,checkedAt){
  fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fgMade40To49','kicking.fgMade40To49','fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fieldGoalsMade40to49'],
  fgm_50_59:['fieldGoals.fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fgMade50To59','kicking.fgMade50To59','fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fieldGoalsMade50to59'],
  fgm_60p:['fieldGoals.fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fgMade60Plus','kicking.fgMade60Plus','fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fieldGoalsMade60Plus'],
- xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade','kicking.xpMade'],
- xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','kicking.extraPointsMissed','kicking.xpMissed'],
+ xpm:['extraPoints.extraPointsMade','extraPoints.xpMade','extraPoints.made','kicking.extraPointsMade','kicking.xpMade','xpMade'],
+ xpmiss:['extraPoints.extraPointsMissed','extraPoints.xpMissed','extraPoints.missed','kicking.extraPointsMissed','kicking.xpMissed','xpMissed'],
  fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','kicking.fieldGoalsMissed','kicking.fgMissed'],
  sack:['defense.sacks','defensive.sacks','defense.sacksMade'],
  int:['defense.interceptions','defensive.interceptions'],
@@ -582,7 +582,15 @@ function ffo598NormalizeSeason(payload,checkedAt){
  safe:['defense.safeties','defensive.safeties'],
  blk_kick:['defense.blockedKicks','defensive.blockedKicks']
  };
- const get=(o,path)=>path.split('.').reduce((x,k)=>x?.[k],o);
+ // Upstream sometimes varies the "To/to" capitalization in FG distance
+ // buckets. Match exact first, then a case-insensitive key; never guess
+ // missing FG distances from generic field goals made.
+ const get=(o,path)=>path.split('.').reduce((x,k)=>{
+  if(!x||typeof x!=='object')return undefined;
+  if(Object.hasOwn(x,k))return x[k];
+  const match=Object.keys(x).find(v=>v.toLowerCase()===k.toLowerCase());
+  return match?x[match]:undefined;
+ },o);
  const number=x=>x===null||x===undefined||x===''||typeof x==='object'?null:Number.isFinite(Number(x))?Number(x):null;
  const players=[];
  for(const item of rows){
@@ -590,7 +598,9 @@ function ffo598NormalizeSeason(payload,checkedAt){
   const team=item?.team?.abbreviation||item?.teamInfo?.abbreviation||p?.currentTeam?.abbreviation||item?.teamAbbreviation||'';
   const name=String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||item.name||'').trim();
   if(!name||!team)continue;
-  const gp=number(raw.gamesPlayed??raw.gamesPlayedTotal??raw.games??item.gamesPlayed??item.gamesPlayedTotal??p.gamesPlayed??p.gamesPlayedTotal??item?.stats?.games?.played);
+  const gp=number(raw.gamesPlayed??raw.gamesPlayedTotal??(typeof raw.games==='number'?raw.games:null)??
+   raw.games?.played??raw.games?.gamesPlayed??item.gamesPlayed??item.gamesPlayedTotal??
+   p.gamesPlayed??p.gamesPlayedTotal);
   const games=gp!==null&&Number.isInteger(gp)&&gp>=0&&gp<=18?gp:null;
   const totals={};
   for(const [key,aliases] of Object.entries(fields)){
