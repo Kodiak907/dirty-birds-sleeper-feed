@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-05T01:00:43.145061+00:00",
-  "source_snapshot_utc": "2026-11-05T01:00:35.888901+00:00",
+  "generated_at_utc": "2026-11-05T02:11:20.010504+00:00",
+  "source_snapshot_utc": "2026-11-05T02:11:09.554662+00:00",
   "source_market_as_of": "2026-11-04T15:05:07.031182+00:00",
-  "source_projection_as_of": "2026-11-04T13:44:46.533150+00:00",
+  "source_projection_as_of": "2026-11-05T02:11:16.868250+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -56,8 +56,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 3.01,
-          "their_lineup_delta_ppg": 0.06,
+          "our_lineup_delta_ppg": 3.0,
+          "their_lineup_delta_ppg": 0.12,
           "value_paid_received_ratio": 0.846,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -94,8 +94,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 3.01,
-          "their_lineup_delta_ppg": 0.06,
+          "our_lineup_delta_ppg": 3.0,
+          "their_lineup_delta_ppg": 0.12,
           "value_paid_received_ratio": 1.14,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -127,8 +127,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 2.58,
-          "their_lineup_delta_ppg": 0.45,
+          "our_lineup_delta_ppg": 2.61,
+          "their_lineup_delta_ppg": 0.6,
           "value_paid_received_ratio": 1.074,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
@@ -165,8 +165,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 2.58,
-          "their_lineup_delta_ppg": 0.45,
+          "our_lineup_delta_ppg": 2.61,
+          "their_lineup_delta_ppg": 0.6,
           "value_paid_received_ratio": 0.893,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -203,8 +203,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.35,
-          "their_lineup_delta_ppg": 0.11,
+          "our_lineup_delta_ppg": 2.37,
+          "their_lineup_delta_ppg": 0.14,
           "value_paid_received_ratio": 0.838,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -241,8 +241,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.35,
-          "their_lineup_delta_ppg": 0.11,
+          "our_lineup_delta_ppg": 2.37,
+          "their_lineup_delta_ppg": 0.14,
           "value_paid_received_ratio": 1.175,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -279,8 +279,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.53,
-          "their_lineup_delta_ppg": 0.35,
+          "our_lineup_delta_ppg": 1.56,
+          "their_lineup_delta_ppg": 0.14,
           "value_paid_received_ratio": 1.027,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -317,8 +317,8 @@
           ],
           "opponent_roster_id": 9,
           "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.53,
-          "their_lineup_delta_ppg": 0.35,
+          "our_lineup_delta_ppg": 1.56,
+          "their_lineup_delta_ppg": 0.14,
           "value_paid_received_ratio": 0.999,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 84
+      "candidate_count": 96
     },
     {
       "asset": "Patrick Mahomes",
@@ -362,8 +362,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.04,
-          "their_lineup_delta_ppg": 2.67,
+          "our_lineup_delta_ppg": 2.02,
+          "their_lineup_delta_ppg": 2.74,
           "value_paid_received_ratio": 0.935,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -400,8 +400,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.04,
-          "their_lineup_delta_ppg": 0.99,
+          "our_lineup_delta_ppg": 2.02,
+          "their_lineup_delta_ppg": 0.95,
           "value_paid_received_ratio": 0.984,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -438,8 +438,8 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 2.54,
-          "their_lineup_delta_ppg": 0.02,
+          "our_lineup_delta_ppg": 2.56,
+          "their_lineup_delta_ppg": 0.05,
           "value_paid_received_ratio": 0.929,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -476,9 +476,80 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 2.54,
-          "their_lineup_delta_ppg": 0.02,
+          "our_lineup_delta_ppg": 2.56,
+          "their_lineup_delta_ppg": 0.05,
           "value_paid_received_ratio": 1.072,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "9997",
+              "name": "Zay Flowers",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "9493",
+              "name": "Puka Nacua",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 0.44,
+          "their_lineup_delta_ppg": 0.68,
+          "value_paid_received_ratio": 1.128,
+          "our_extra_cut": null,
+          "opponent_extra_cut": "Jonathon Brooks",
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "9997",
+              "name": "Zay Flowers",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "9493",
+              "name": "Puka Nacua",
+              "position": "WR"
+            },
+            {
+              "id": "8161",
+              "name": "Malik Willis",
+              "position": "QB"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 0.44,
+          "their_lineup_delta_ppg": 0.68,
+          "value_paid_received_ratio": 0.96,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -488,7 +559,7 @@
           ]
         }
       ],
-      "candidate_count": 17
+      "candidate_count": 25
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."
