@@ -75,7 +75,7 @@
   id=String(id);
   if(playerPending.has(id))return playerPending.get(id);
   const source=typeof pfo50Independent!=='undefined'?pfo50Independent:null;
-  if(!source?.players?.length)return null;
+  if(!source?.players?.length||window.ffoPfo597?.hasFrozenRules?.()!==true)return null;
   if(playerRecovered.has(id))return null;
   if(Date.now()-(playerSeen.get(id)||0)<90000)return null;
   const p=info(id),team=canonical(p?.team);
@@ -114,7 +114,7 @@
   playerPending.set(id,job);return job;
  }
  function recoverUnmodeled(){
-  const r=roster();if(!r?.starters?.length)return;
+  const r=roster();if(!r?.starters?.length||window.ffoPfo597?.hasFrozenRules?.()!==true)return;
   const ids=r.starters.map(String).filter(id=>id&&id!=='0'&&pos(info(id))!=='DEF');
   // Bound requests: only submitted starters, and only demonstrably unsupported
   // scoring rows (up to four at any one visit).
@@ -122,6 +122,7 @@
   for(const id of ids){
    if(requested>=4)break;
    const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
+   if(playerRecovered.has(id)&&row?.coverage!=='verified_player_game_logs_partial')playerRecovered.delete(id);
    if(row?.forecast&&window.ffoPfo597?.scoreFrozen?.(row.forecast)?.points!=null)continue;
    if(playerPending.has(id)||playerRecovered.has(id)||Date.now()-(playerSeen.get(id)||0)<90000)continue;
    requested++;void recoverPlayer(id);
@@ -162,6 +163,15 @@
  }
  function init(){
   if(boot)return;boot=true;refresh();
+  if(typeof pfo50LoadIndependent==='function'){
+   const previous=pfo50LoadIndependent;
+   pfo50LoadIndependent=function(){
+    const output=previous.apply(this,arguments);
+    Promise.resolve(output).then(()=>setTimeout(refresh,120)).catch(()=>{});
+    return output;
+   };
+  }
+  void window.ffoPfo597?.loadFFLRules?.().then(()=>setTimeout(refresh,100)).catch(()=>{});
   // Roster often arrives after DOMContentLoaded; retry only a few times.
   let retries=0;refreshTimer=setInterval(()=>{
    retries++;refresh();
