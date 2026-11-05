@@ -140,6 +140,14 @@
   try{if(document.querySelector('#playerhub.page.active')&&typeof pfo49RenderPlayer==='function')pfo49RenderPlayer();}catch(e){console.warn('FFO player intelligence redraw',e)}
   try{if(document.querySelector('#market.page.active [data-pfo59-market-panel="waiver"]:not([hidden])')&&window.ffoPfo59?.openMarket)window.ffoPfo59.openMarket('waiver');}catch(e){console.warn('FFO waiver leaderboard redraw',e)}
  }
+ // Normalize only known provider/team aliases. Do not synthesize
+ // opponent rows, game IDs or non-bye games from anything other than source.
+ const ffo622NormalizeSchedule=d=>{
+  const teams={...d.teams};
+  if(teams.LA&&!teams.LAR)teams.LAR=teams.LA;
+  if(teams.LAR&&!teams.LA)teams.LA=teams.LAR;
+  return {...d,teams};
+ };
  async function loadSchedule(){
   if(verifiedSchedule||loadPending)return loadPending;
   if(typeof fetchReport!=='function')return null;
@@ -149,10 +157,7 @@
    // 2026 nflverse uses LA for the Rams, whereas the roster and MSF models
    // use LAR. Preserve the immutable sourced record and expose its equivalent
    // canonical roster key; do not invent opponents, games or bye weeks.
-   const teams={...d.teams};
-   if(teams.LA&&!teams.LAR)teams.LAR=teams.LA;
-   if(teams.LAR&&!teams.LA)teams.LA=teams.LAR;
-   verifiedSchedule={...d,teams};redraw();return verifiedSchedule;
+   verifiedSchedule=ffo622NormalizeSchedule(d);redraw();return verifiedSchedule;
   }catch(e){console.warn('FFO schedule unavailable; forecasts withheld for unverified byes',e);return null;}
   finally{loadPending=null;}})();
   return loadPending;
