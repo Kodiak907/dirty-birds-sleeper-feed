@@ -13,7 +13,7 @@ test('duplicate GM navigation retired but legacy source evidence retained for St
  assert.match(start,/data-pfo612-deep/);
  assert.match(start,/pfo52Points/);
  assert.match(start,/pfo50StatsFor/);
- assert.doesNotMatch(start,/sleeper.*projections/i);
+ assert.doesNotMatch(start,/players_points\s*\[/i);
 });
 test('data-health diagnostics collapsed but status IDs preserved',()=>{
  assert.match(html,/<details class="pfo612-data-health"[^>]*>/);
