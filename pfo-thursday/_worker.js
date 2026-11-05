@@ -613,7 +613,31 @@ function ffo598NormalizeSeason(payload,checkedAt){
 /* PFO 6.16 · protected source-normalized team defense, distinct from player totals.
  * No fantasy platform scoring, no speculative game scores and no credentials on client.
  */
-function ffo616NormalizeDefense(payload,team,checkedAt){
+/* PFO 6.18: join authenticated MSF team game logs with completed NFL
+ * schedule results by exact game id. No projected, scheduled or in-progress score
+ * may contribute to historical points-allowed distributions.
+ */
+function ffo618VerifiedFixtures(payload){
+ const src=payload?.games||payload?.gameScores||[];
+ if(!Array.isArray(src))throw Error('MSF_COMPLETED_GAMES_SCHEMA_UNRECOGNIZED');
+ const out=new Map();
+ const num=x=>x==null||x===''||typeof x==='object'||!Number.isFinite(Number(x))?null:Number(x);
+ for(const item of src){
+  const g=item.schedule||item.game||item,sc=item.score||item.gameScore||{};
+  const id=String(g.id??g.gameId??'');
+  const status=String(g.playedStatus||g.status||item.playedStatus||item.status||'').toUpperCase();
+  const home=String(g.homeTeam?.abbreviation||g.homeTeamAbbreviation||'').toUpperCase();
+  const away=String(g.awayTeam?.abbreviation||g.awayTeamAbbreviation||'').toUpperCase();
+  const hs=num(sc.homeScoreTotal??sc.homeScore??g.homeScoreTotal??g.homeScore);
+  const as=num(sc.awayScoreTotal??sc.awayScore??g.awayScoreTotal??g.awayScore);
+  if(!id||!['COMPLETED','FINAL','FINAL_OVERTIME'].includes(status)||!home||!away||
+    !Number.isInteger(hs)||!Number.isInteger(as)||hs<0||as<0)continue;
+  if(out.has(id))continue;
+  out.set(id,{status,home,away,homeScore:hs,awayScore:as});
+ }
+ return out;
+}
+function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
  const rows=payload?.teamGamelogs||payload?.teamGameLogs||payload?.gamelogs||payload?.gameLogs||[];
  if(!Array.isArray(rows))throw Error('MSF_TEAM_GAMELOG_SCHEMA_UNRECOGNIZED');
  const get=(o,path)=>path.split('.').reduce((x,k)=>x?.[k],o);
@@ -633,13 +657,18 @@ function ffo616NormalizeDefense(payload,team,checkedAt){
   if(rowTeam!==team)continue;
   const game=item.game||item.gameInfo||{},stats=item.stats||item.teamStats||{};
   const id=String(game.id??game.gameId??game.schedule?.id??game.startTime??item.date??'');
+  const verified=fixtures.get(id)||null;
   if(!id||seen.has(id))continue;
-  const home=String(game.homeTeam?.abbreviation||game.homeTeamAbbreviation||game.schedule?.homeTeam?.abbreviation||'').toUpperCase();
-  const away=String(game.awayTeam?.abbreviation||game.awayTeamAbbreviation||game.schedule?.awayTeam?.abbreviation||'').toUpperCase();
-  const homeScore=num(game.homeScoreTotal??game.homeScore??game.score?.homeScoreTotal??game.score?.homeScore);
-  const awayScore=num(game.awayScoreTotal??game.awayScore??game.score?.awayScoreTotal??game.score?.awayScore);
-  const accepted=game.playedStatus==='COMPLETED'||game.playedStatus==='FINAL'||game.status==='COMPLETED'||game.status==='FINAL'||
-   (homeScore!==null&&awayScore!==null&&game.playedStatus!=='NOT_PLAYED'&&game.status!=='SCHEDULED');
+  const home=String(game.homeTeam?.abbreviation||game.homeTeamAbbreviation||game.schedule?.homeTeam?.abbreviation||verified?.home||'').toUpperCase();
+  const away=String(game.awayTeam?.abbreviation||game.awayTeamAbbreviation||game.schedule?.awayTeam?.abbreviation||verified?.away||'').toUpperCase();
+  const homeScore=num(game.homeScoreTotal??game.homeScore??game.score?.homeScoreTotal??game.score?.homeScore??verified?.homeScore);
+  const awayScore=num(game.awayScoreTotal??game.awayScore??game.score?.awayScoreTotal??game.score?.awayScore??verified?.awayScore);
+  const state=String(game.playedStatus||game.status||game.schedule?.playedStatus||verified?.status||'').toUpperCase();
+  const accepted=['COMPLETED','FINAL','FINAL_OVERTIME'].includes(state);
+  // An explicit nonfinal game-log status overrides any score inherited from
+  // another feed; never turn pregame/live events into finished-game evidence.
+  const ownState=String(game.playedStatus||game.status||game.schedule?.playedStatus||'').toUpperCase();
+  if(ownState&& !['COMPLETED','FINAL','FINAL_OVERTIME'].includes(ownState))continue;
   if(!accepted)continue;
   const pts=num(get(stats,'defense.pointsAllowed')??get(stats,'defensive.pointsAllowed')??get(stats,'standings.pointsAgainst'));
   const pointsAllowed=pts??(team===home?awayScore:team===away?homeScore:null);
@@ -668,7 +697,7 @@ function ffo616NormalizeDefense(payload,team,checkedAt){
   projection_method:'MSF game-level team defensive stats and final points-allowed bands, each averaged over verified games',
   certified:false};
 }
-function ffo616NormalizeTeamSeason(payload,team,checkedAt){
+function ffo616NormalizeTeamSeason(payload,team,checkedAt,fixtures=new Map()){
  const rows=payload?.teamStatsTotals||payload?.teamStatTotals||[];
  if(!Array.isArray(rows))throw Error('MSF_TEAM_SEASON_SCHEMA_UNRECOGNIZED');
  const get=(o,path)=>path.split('.').reduce((v,k)=>v?.[k],o);
@@ -686,18 +715,38 @@ function ffo616NormalizeTeamSeason(payload,team,checkedAt){
   String(item?.team?.abbreviation||item?.teamInfo?.abbreviation||item?.teamAbbreviation||'').toUpperCase()===team);
  if(matches.length!==1)return {source:'MySportsFeeds',available:false,team,error:'team_not_uniquely_identified',checked_at:checkedAt};
  const raw=matches[0].stats||matches[0].teamStats||{};
- const games=number(raw.gamesPlayed??raw.gamesPlayedTotal??matches[0].gamesPlayed);
+ const fixtureGames=[...fixtures.values()].filter(g=>g.home===team||g.away===team);
+ const listed=number(raw.gamesPlayed??raw.gamesPlayedTotal??matches[0].gamesPlayed);
+ // Finished team games form a checked denominator when MSF omits gamesPlayed.
+ // It is NOT valid for individual players, whose appearances must be observed.
+ const games=listed??(fixtureGames.length>=2?fixtureGames.length:null);
  if(!Number.isInteger(games)||games<2||games>18)return {source:'MySportsFeeds',available:false,team,error:'team_games_played_unverified',checked_at:checkedAt};
  const totals={};
  for(const [key,paths] of Object.entries(fields))for(const path of paths){
   const n=number(get(raw,path));if(n!==null){totals[key]=n;break}
  }
- if(!Object.keys(totals).length)return {source:'MySportsFeeds',available:false,team,error:'team_defense_scoring_stats_unavailable',checked_at:checkedAt};
+ // Only completed schedule games with authoritative final scores contribute
+ // to exact FFL points-allowed bands. Missing bands remain unknown.
+ const pa={};
+ for(const g of fixtureGames){
+  const allowed=g.home===team?g.awayScore:g.homeScore;
+  if(!Number.isInteger(allowed)||allowed<0||allowed>100)continue;
+  const band=allowed===0?'pts_allow_0':allowed<=6?'pts_allow_1_6':allowed<=13?'pts_allow_7_13':
+   allowed<=20?'pts_allow_14_20':allowed<=27?'pts_allow_21_27':allowed<=34?'pts_allow_28_34':'pts_allow_35p';
+  pa[band]=(pa[band]||0)+1;
+ }
+ if(!Object.keys(totals).length&&!Object.keys(pa).length)
+  return {source:'MySportsFeeds',available:false,team,error:'team_defense_scoring_stats_unavailable',checked_at:checkedAt};
+ const paGames=Object.values(pa).reduce((a,b)=>a+b,0);
+ const forecast={...Object.fromEntries(Object.entries(totals).map(([key,n])=>[key,n/games])),
+  ...Object.fromEntries(Object.entries(pa).map(([key,n])=>[key,n/paGames]))};
  return {schema:'FFO_MSF_DEFENSE_SEASON_V1',source:'MySportsFeeds',source_type:'licensed_primary',
-  team,checked_at:checkedAt,games_observed:games,season_totals:totals,
-  forecast:Object.fromEntries(Object.entries(totals).map(([key,n])=>[key,n/games])),
-  coverage:{points_allowed_games:0,defensive_stat_games:games},
-  projection_method:'MSF team defensive season totals / reported games played; points-allowed tiers not supplied',
+  team,checked_at:checkedAt,games_observed:games,season_totals:{...totals,...pa},
+  forecast,
+  coverage:{points_allowed_games:paGames,defensive_stat_games:Object.keys(totals).length?games:0,
+   denominator_source:listed!=null?'provider_games_played':'verified_finished_nfl_schedule',
+   scoring_categories:Object.keys(forecast)},
+  projection_method:'MSF team defensive totals and independently verified completed-game points allowed; missing buckets excluded',
   partial:true,certified:false};
 }
 
