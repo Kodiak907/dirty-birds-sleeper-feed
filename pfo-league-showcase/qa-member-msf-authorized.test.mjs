@@ -53,7 +53,7 @@ test('valid Access-signed invited member receives ONLY matching sample-player MS
   assert.ok(!JSON.stringify(json).includes('dummy-unit-test-key'));
   assert.equal(detail.headers.get('access-control-allow-origin'),null);
   const denial=await worker.fetch(new Request(base+'/api/demo/msf/status',
-   {headers:{'Cf-Access-Jwt-Assertion':jwt.replace(/.$/,'x')}}),env);
+   {headers:{'Cf-Access-Jwt-Assertion':(jwt.split('.').slice(0,2).join('.')+'.'+(jwt.split('.')[2][0]==='A'?'B':'A')+jwt.split('.')[2].slice(1))}}),env);
   assert.equal(denial.status,403);
  }finally{
   globalThis.fetch=originalFetch;
