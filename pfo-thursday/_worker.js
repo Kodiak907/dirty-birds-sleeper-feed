@@ -837,7 +837,7 @@ async function ffo616DefenseRoute(req,env){
 /* PFO 6.16: fill missing starter denominators from licensed game logs, NOT
  * Sleeper scores or assumed participation. Name+NFL team must match uniquely.
  */
-function ffo616NormalizePlayerGames(payload,team,name,checkedAt){
+function ffo616NormalizePlayerGames(payload,team,name,checkedAt,expectedId=null){
  const rows=payload?.playerGamelogs||payload?.playerGameLogs||payload?.gamelogs||payload?.gameLogs||[];
  if(!Array.isArray(rows))throw Error('MSF_PLAYER_GAMELOG_SCHEMA_UNRECOGNIZED');
  const stem=x=>String(x||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
@@ -847,6 +847,7 @@ function ffo616NormalizePlayerGames(payload,team,name,checkedAt){
   const p=item.player||item.playerInfo||{},t=String(item.team?.abbreviation||item.teamInfo?.abbreviation||item.teamAbbreviation||'').toUpperCase();
   const fullname=String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||item.name||'');
   if(t!==team||!wanted||stem(fullname)!==wanted)continue;
+  if(expectedId!==null&&String(p.id??item.playerId??'')!==String(expectedId))continue;
   const id=p.id??item.playerId??null;
   if(id!==null)ids.add(String(id));
   const g=item.game||item.gameInfo||{},gameId=String(g.id??g.gameId??g.schedule?.id??g.startTime??item.date??'');
@@ -881,33 +882,53 @@ async function ffo616PlayerGameRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
  try{await comIdentity(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
  const u=new URL(req.url),team=String(u.searchParams.get('team')||'').toUpperCase(),
-  name=String(u.searchParams.get('name')||'').trim().slice(0,70);
- if(!ffo598NFLTeams.has(team)||!/^[a-z .'-]{3,70}$/i.test(name))
-  return ffoReply({error:'invalid_team_or_name'},400);
- const key=team+'|'+name.toLowerCase(),now=Date.now(),cached=ffo616PlayerGameCache.get(key);
+  name=String(u.searchParams.get('name')||'').trim().slice(0,70),
+  playerId=String(u.searchParams.get('msf_id')||'').trim();
+ if(!ffo598NFLTeams.has(team)||!/^[a-z .'-]{3,70}$/i.test(name)||
+    (playerId&&!/^[0-9]{1,12}$/.test(playerId)))
+  return ffoReply({error:'invalid_team_name_or_player_id'},400);
+ const key=team+'|'+name.toLowerCase()+'|'+playerId,now=Date.now(),cached=ffo616PlayerGameCache.get(key);
  if(cached&&now-cached.at<180000)return ffoReply(cached.data);
  if(ffo616PlayerGamePending.has(key))return ffoReply(await ffo616PlayerGamePending.get(key));
  const load=(async()=>{
   const checked_at=new Date().toISOString();
   if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)
    return {source:'MySportsFeeds',available:false,team,name,error:'licensed_provider_not_configured',checked_at};
-  const endpoint=MSF_ROOT+'/2026-regular/player_gamelogs.json?team='+encodeURIComponent(team);
-  let response;
-  try{response=env.MSF_API_KEY
-   ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
-   :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
-  }catch{return {source:'MySportsFeeds',available:false,team,name,error:'licensed_game_logs_unreachable',checked_at}}
-  if(!response.ok)return {source:'MySportsFeeds',available:false,team,name,error:'provider_http_'+response.status,checked_at};
-  try{
-   const data=ffo616NormalizePlayerGames(ffo617UnwrapProvider(await response.json(),'PLAYER_GAMELOGS'),team,name,checked_at);
-   if(data.available!==false)ffo616PlayerGameCache.set(key,{data,at:Date.now()});
-   return data;
-  }catch(err){return {source:'MySportsFeeds',available:false,team,name,error:String(err.message||err),checked_at}}
+  // MySportsFeeds v2 documents the singular "player" query. The former
+  // team-filtered player_gamelogs request was repeatedly rejected HTTP 400.
+  // Scope to exactly one player; validate each returned game by team, name,
+  // unique provider ID and observed game identity before building forecasts.
+  const slug=name.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+   .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const identifiers=[...new Set([...(playerId?[playerId]:[]),slug].filter(Boolean))].slice(0,2);
+  const errors=[];
+  for(const identifier of identifiers){
+   const endpoint=MSF_ROOT+'/2026-regular/player_gamelogs.json?player='+encodeURIComponent(identifier);
+   let response;
+   try{response=env.MSF_API_KEY
+    ?await fetch(endpoint,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(12000)})
+    :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
+   }catch{errors.push('player_filter_unreachable');continue}
+   if(!response.ok){
+    errors.push('player_filter_'+(identifier===playerId?'id':'name')+'_http_'+response.status);
+    // A denied subscription or missing entitlement is not fixed by guessing
+    // more URLs. Only retry an alternate documented identity on HTTP 400.
+    if(response.status!==400)break;
+    continue;
+   }
+   try{
+    const json=ffo617UnwrapProvider(await response.json(),'PLAYER_GAMELOGS');
+    const data=ffo616NormalizePlayerGames(json,team,name,checked_at,playerId||null);
+    if(data.available===false){errors.push(String(data.error));continue}
+    ffo616PlayerGameCache.set(key,{data,at:Date.now()});return data;
+   }catch(err){errors.push(String(err.message||err))}
+  }
+  return {source:'MySportsFeeds',available:false,team,name,
+   error:errors.join('; ').slice(0,240)||'player_logs_unavailable',checked_at};
  })();
  ffo616PlayerGamePending.set(key,load);
  try{return ffoReply(await load)}finally{ffo616PlayerGamePending.delete(key)}
 }
-
 const ffo598SeasonCache=new Map(),ffo598SeasonPending=new Map();
 const ffo598NFLTeams=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WAS'.split(' '));
 async function ffo598SeasonRoute(req,env){
