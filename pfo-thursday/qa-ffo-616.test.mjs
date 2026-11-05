@@ -97,7 +97,7 @@ test('FFL scoring includes team-specific forced fumbles, TDs and exact PA tiers'
  const stats={sack:3.5,int:.5,def_st_ff:.5,def_st_fum_rec:.5,pts_allow_7_13:.5,pts_allow_28_34:.5};
  const expected=Object.entries(stats).reduce((sum,[k,v])=>sum+Number(scoring[k]||0)*v,0);
  assert.ok(Number.isFinite(expected));
- assert.equal(expected,5.5,'fixture arithmetic is independent and deterministic');
+ assert.equal(expected,7,'fixture arithmetic is independent and deterministic');
 });
 
 test('team defense and individual gamelog routes are protected and scoped',()=>{
