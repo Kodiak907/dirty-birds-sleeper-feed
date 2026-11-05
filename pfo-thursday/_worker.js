@@ -805,7 +805,7 @@ async function ffo616DefenseRoute(req,env){
   let completedFixtures=null;
   const fixtures=async()=>{
    if(completedFixtures)return completedFixtures;
-   const target=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(teamFilter);
+   const target=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
    let response;
    try{
     response=env.MSF_API_KEY
