@@ -210,3 +210,12 @@ main{max-width:1120px}
  .pfo-demo-compact-player{grid-template-columns:20px minmax(0,1fr) auto}
  .pfo-demo-compact-ident small{display:none}
 }
+
+/* Licensed evidence cards appear only to authorized demo participants. */
+.pfo-demo-msf-card{border:1px solid #48836c;background:linear-gradient(140deg,#173e3a,#122d36);border-radius:13px;padding:14px;margin:12px 0;box-shadow:inset 0 1px #ffffff0a}
+.pfo-demo-msf-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.pfo-demo-msf-head strong{font-size:11px;color:#bcf1d6;letter-spacing:.04em}
+.pfo-demo-msf-head span{border:1px solid #438978;background:#225346;color:#b9f6de;padding:5px 7px;border-radius:99px;font-size:8px;font-weight:800}
+.pfo-demo-msf-card p{font-size:10px;color:#b8d2cb;line-height:1.55;margin:9px 0}
+.pfo-demo-msf-card .pfo-demo-stat{background:#1a4648;border-color:#386b66}
+.pfo-demo-msf-card .pfo-demo-stat b{color:#b6f5d5}
