@@ -1997,7 +1997,10 @@ function pfo51PlayerSummary(id){
  if(key==='QB')metrics.push(['Pass',stats.pass_cmp!=null&&stats.pass_att!=null?stats.pass_cmp+'/'+stats.pass_att:'—'],['Incmp',stats.pass_inc],['Pass yds',stats.pass_yd],['Rush yds',stats.rush_yd],['Pass TD',stats.pass_td]);
  else if(key==='RB')metrics.push(['Rush att',stats.rush_att],['Rush yds',stats.rush_yd],['Targets',stats.targets],['Catches',stats.rec],['Rec yds',stats.rec_yd]);
  else if(key==='WR'||key==='TE')metrics.push(['Targets',stats.targets],['Catches',stats.rec],['Rec yds',stats.rec_yd],['Target share',stats.target_share_pct==null?null:stats.target_share_pct+'%'],['Rush yds',stats.rush_yd]);
- const total=(metric)=>Array.isArray(row?.games)&&row.games.some(g=>g.stats?.[metric]!=null)?row.games.reduce((v,g)=>v+Number(g.stats?.[metric]||0),0):null;
+ const total=(metric)=>row?.season_totals?.[metric]!=null&&Number.isFinite(Number(row.season_totals[metric]))?
+  Number(row.season_totals[metric]):
+  Array.isArray(row?.games)&&row.games.some(g=>g.stats?.[metric]!=null)?
+   row.games.reduce((v,g)=>v+(Number.isFinite(Number(g.stats?.[metric]))?Number(g.stats[metric]):0),0):null;
  if(key==='QB')metrics.push(['Season pass yds',total('pass_yd')]);
  else if(key==='RB')metrics.push(['Season rush yds',total('rush_yd')],['Season rec yds',total('rec_yd')]);
  else if(key==='WR'||key==='TE')metrics.push(['Season rec yds',total('rec_yd')],['Season catches',total('rec')]);
@@ -2008,7 +2011,10 @@ function pfo51PlayerSummary(id){
 function pfo51MetricStat(label,value){return '<div class="pfo51-stat"><span>'+pfo51Escape(label)+'</span><b>'+pfo51Escape(value==null?'—':value)+'</b></div>';}
 function pfo51SnapshotHTML(id,compact=false){
  const s=pfo51PlayerSummary(id),all=[[s.week?'Week '+s.week+' FFL pts':'Latest FFL pts',pfo51Fmt(s.finalPts,1)],['Season PPG*',pfo51Fmt(s.avg,1)],['Next FFO baseline*',pfo51Fmt(s.forecast,1)],...s.metrics.map(([k,v])=>[k,v])];
- return '<div class="pfo51-universal '+(compact?'compact':'')+'"><div class="pfo51-universal-grid">'+all.map(([label,v])=>pfo51MetricStat(label,v)).join('')+'</div><small>'+pfo51Escape(s.row?'Latest NFL stat week '+s.week+' · '+s.label+' · '+s.avgLabel+'.':'Independent weekly data unavailable.')+' *Independent reconstructed points/season averages are estimates where no recorded FFL score exists. Forecast is recent-form baseline, not opponent-adjusted.</small></div>';
+ return '<div class="pfo51-universal '+(compact?'compact':'')+'"><div class="pfo51-universal-grid">'+all.map(([label,v])=>pfo51MetricStat(label,v)).join('')+'</div><small>'+
+  pfo51Escape(s.row?(s.week?'Latest sourced NFL game W'+s.week+' · '+s.label+' · '+s.avgLabel+'.':
+  'MSF season-level totals available; game-by-game statistics not provided.'):'Independent NFL statistics unavailable.')+
+  ' Forecast is a provisional FFO baseline, not a verified weekly game result.</small></div>';
 }
 // Keep one consistent stat treatment in existing waiver/trade/profile contexts.
 pfo50StatsStrip=function(id){return pfo51SnapshotHTML(id,false);};
@@ -2193,8 +2199,14 @@ function pfo51FindPlayers(q){const p=pfo49Players.length?pfo49Players:pfo49Dir()
  if(!pos){if(/receiver|wideout/i.test(q))pos='WR';else if(/running back/i.test(q))pos='RB';else if(/quarterback/i.test(q))pos='QB';else if(/tight end/i.test(q))pos='TE';}
  const wantAvailable=/available|free agent|unrostered|waiver|pickups?/i.test(q),wantOurs=/my roster|our roster|our players|dirty birds/i.test(q),trend=/rising|increas|grow|breakout|opportun|last 3|targets|snaps/i.test(q);
  const checked=!!leagueOwnedIds;const stale=checked&&(!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000);if(wantAvailable&&(!checked||stale))return {error:stale?'Ownership data is more than five minutes old. Refresh Sleeper before treating anyone as unrostered.':'Current FFL ownership has not loaded. Cannot certify free agents.'};
- let pool=p.filter(x=>pfo50Indexed.has(pfo50Key(x.name,x.team))&&['QB','RB','WR','TE'].includes(x.position)&&(!pos||x.position===pos)&&(!wantOurs||(liveRosterSnapshot?.players||[]).some(y=>String(y.player_id)===x.id))&&(!wantAvailable||!waiverIsRostered(x.name,x.id)));
- let entries=pool.map(x=>{const stat=pfo51PlayerSummary(x.id),sig=pfo49Signal(x.id);return {id:x.id,stat,sig};}).filter(x=>x.stat.row&&x.stat.week);
+ // MSF can have valid season totals with no per-game log. Those players still
+ // belong in player discovery; only trend-specific claims need weekly evidence.
+ const ownedIds=new Set((liveRosterSnapshot?.players||[]).map(y=>String(y.player_id)));
+ let pool=p.filter(x=>['QB','RB','WR','TE'].includes(x.position)&&(!pos||x.position===pos)&&
+  (!wantOurs||ownedIds.has(String(x.id)))&&(!wantAvailable||!waiverIsRostered(x.name,x.id)));
+ let entries=pool.map(x=>{const stat=pfo51PlayerSummary(x.id),sig=pfo49Signal(x.id);
+  return {id:x.id,stat,sig};
+ }).filter(x=>x.stat.row&&(x.stat.week||x.stat.row?.season_totals||x.stat.forecast!=null));
  if(trend)entries=entries.filter(x=>x.sig&&(x.sig.volumeChange>0||x.sig.difference>10));
  const lastThree=/last\s+(?:three|3)\s+(?:games|weeks)/i.test(q),mentionsSnaps=/\bsnap(?:s|%| share)?\b/i.test(q);
  if(trend&&lastThree)entries=entries.filter(x=>{
@@ -2228,9 +2240,15 @@ function pfo51Ask(q){const area=$('pfo51-answer');if(!area)return;let query=Stri
  const r=pfo51FindPlayers(query);
  if(r.error){area.innerHTML='<p>'+e(r.error)+'</p>';return;}
  area.innerHTML='<h3>Source-backed player search</h3><p>'+e(r.entries.length)+' of '+e(r.total)+' matching published-stat players'+(r.pos?' · '+e(r.pos):'')+(r.trend?' · measured increases only':'')+(r.wantAvailable?' · checked unrostered':'')+'</p>'+
- (r.entries.length?r.entries.map(x=>'<div class="pfo51-query-result"><b>'+pfo51Link(x.id)+'</b> · '+e(x.stat.p.position)+' '+e(x.stat.p.team)+'<div>Week '+e(x.stat.week)+': '+e(pfo51Fmt(x.stat.finalPts,1))+' FFL pts* · Season avg '+e(pfo51Fmt(x.stat.avg,1))+'* · Next baseline '+e(pfo51Fmt(x.stat.forecast,1))+'*</div><small>'+(x.sig?.volumeChange!=null?'Recent '+e(x.sig.volumeMetric.replaceAll('_',' '))+' change: '+e(x.sig.volumeChange):'No verifiable recent game-to-game workload change')+' · '+e(x.stat.label)+'</small></div>').join(''):'<p>No players meet the requested filter with supported data. Try a position or remove the trend condition.</p>')+
+ (r.entries.length?r.entries.map(x=>'<div class="pfo51-query-result"><b>'+pfo51Link(x.id)+'</b> · '+e(x.stat.p.position)+' '+e(x.stat.p.team)+
+ '<div>'+(x.stat.week?'W'+e(x.stat.week)+' FFL: '+e(pfo51Fmt(x.stat.finalPts,1))+'* · ':'Weekly game log unavailable · ')+
+ 'Season PPG: '+e(pfo51Fmt(x.stat.avg,1))+' · Independent baseline: '+e(pfo51Fmt(x.stat.forecast,1))+'</div><small>'+
+ (x.sig?.volumeChange!=null?'Observed '+e(x.sig.volumeMetric.replaceAll('_',' '))+' change: '+e(x.sig.volumeChange):
+ 'No verified weekly workload trend')+' · '+e(x.stat.week?x.stat.label:'MSF season-level evidence; not a verified recent-game trend')+
+ '</small></div>').join(''):'<p>No eligible players have verified data for these filters. The source may have season totals but no game-by-game evidence; try removing trend filters.</p>')+
  (r.snapTrendUnsupported?'<p class="pfo51-fine"><b>Important:</b> These results use independently recorded targets/carries/attempts and available playing-time samples. Chronological snap growth is NOT independently verified by this search; a rising-snap request is not fully satisfied.</p>':'')+
- '<p class="pfo51-fine">Underlying statistics: nflverse weekly game feed, checked '+e(pfo51ShortDate(pfo50Independent?.checked_at))+' · FFL rules: Sleeper league settings. *Non-league reconstructed scoring and projections are estimates and can omit custom bonuses.</p>'+detail;
+ '<p class="pfo51-fine">NFL statistics: licensed MSF season totals, checked '+e(pfo51ShortDate(pfo50Independent?.checked_at))+
+ ' · FFL scoring: frozen FFO rules. Season-level estimates do not prove recent improvement. No roster actions submitted.</p>'+detail;
 }
 $('pfo51-ask-form')?.addEventListener('submit',event=>{event.preventDefault();pfo51Ask($('pfo51-question').value);});
 document.addEventListener('click',event=>{const btn=event.target.closest('[data-pfo51-prompt],[data-pfo51-viewchanges]');if(!btn)return;
