@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T18:54:35.615452+00:00
-Sleeper snapshot: 2026-11-05T18:54:30.248904+00:00
+Generated: 2026-11-05T19:54:04.701102+00:00
+Sleeper snapshot: 2026-11-05T19:54:00.812746+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -43,7 +43,7 @@ Sleeper snapshot: 2026-11-05T18:54:30.248904+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Quentin Johnston | LAC | 5.69 | 100% | 79.7% | Not flagged |
+| 1 | Quentin Johnston | LAC | 5.72 | 100% | 79.7% | Not flagged |
 | 2 | Kalif Raymond | CHI | 5.68 | 89% | 62.0% | Not flagged |
 | 3 | Chris Bell | MIA | 5.21 | 100% | 62.7% | Not flagged |
 | 4 | Rashid Shaheed | SEA | 4.52 | 89% | 41.3% | Not flagged |
@@ -54,7 +54,7 @@ Sleeper snapshot: 2026-11-05T18:54:30.248904+00:00
 | 9 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
 | 10 | Brian Thomas Jr. | JAX | 3.15 | 100% | — | Not flagged |
 | 11 | Jauan Jennings | MIN | 2.75 | 100% | 60.0% | Not flagged |
-| 12 | Konata Mumpfield | LAR | 2.32 | 89% | — | Not flagged |
+| 12 | Konata Mumpfield | LAR | 2.33 | 89% | — | Not flagged |
 
 ### TE
 
@@ -64,13 +64,13 @@ Sleeper snapshot: 2026-11-05T18:54:30.248904+00:00
 | 2 | Michael Mayer | LV | 5.19 | 89% | 80.0% | Not flagged |
 | 3 | Noah Fant | NO | 4.79 | 100% | 57.0% | Not flagged |
 | 4 | Colby Parkinson | LAR | 3.50 | 89% | — | Not flagged |
-| 5 | David Njoku | LAC | 2.91 | 89% | 35.5% | IR |
+| 5 | David Njoku | LAC | 3.05 | 100% | 35.5% | IR |
 
 ### K
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Matt Gay | LV | 6.87 | 89% | — | Not flagged |
+| 1 | Matt Gay | LV | 6.86 | 89% | — | Not flagged |
 | 2 | Dominic Zvada | NYG | 6.81 | 100% | — | Not flagged |
 | 3 | Cameron Dicker | LAC | 6.27 | 100% | — | Not flagged |
 | 4 | Trey Smack | GB | 6.17 | 89% | — | Not flagged |
@@ -88,7 +88,7 @@ Sleeper snapshot: 2026-11-05T18:54:30.248904+00:00
 | 4 | Cincinnati Bengals | CIN | 5.90 | 100% | — | Not flagged |
 | 5 | New Orleans Saints | NO | 5.87 | 100% | — | Not flagged |
 | 6 | Indianapolis Colts | IND | 5.71 | 89% | — | Not flagged |
-| 7 | Washington Commanders | WAS | 5.43 | 100% | — | Not flagged |
+| 7 | Washington Commanders | WAS | 5.44 | 100% | — | Not flagged |
 | 8 | Cleveland Browns | CLE | 5.42 | 89% | — | Not flagged |
 | 9 | Tampa Bay Buccaneers | TB | 5.15 | 89% | — | Not flagged |
 | 10 | Tennessee Titans | TEN | 4.46 | 89% | — | Not flagged |
@@ -106,12 +106,12 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tanner McKee | QB | PHI | 9.86 | 100.0% |
 | Chig Okonkwo | TE | WAS | 6.14 | 74.7% |
 | Keaton Mitchell | RB | LAC | 6.01 | 30.0% |
-| Quentin Johnston | WR | LAC | 5.69 | 79.7% |
+| Quentin Johnston | WR | LAC | 5.72 | 79.7% |
 | Kalif Raymond | WR | CHI | 5.68 | 62.0% |
 | Tyjae Spears | RB | TEN | 5.54 | 38.0% |
 | Chris Bell | WR | MIA | 5.21 | 62.7% |
-| Samaje Perine | RB | CIN | 5.19 | 36.3% |
 | Michael Mayer | TE | LV | 5.19 | 80.0% |
+| Samaje Perine | RB | CIN | 5.19 | 36.3% |
 | Noah Fant | TE | NO | 4.79 | 57.0% |
 | MarShawn Lloyd | RB | GB | 4.61 | 30.7% |
 | Rashid Shaheed | WR | SEA | 4.52 | 41.3% |
@@ -121,7 +121,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Ja'Kobi Lane | WR | BAL | 3.61 | 62.7% |
 | Rashod Bateman | WR | BAL | 3.50 | 59.7% |
 | Mack Hollins | WR | NE | 3.44 | 62.7% |
-| David Njoku | TE | LAC | 2.91 | 35.5% |
+| David Njoku | TE | LAC | 3.05 | 35.5% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 

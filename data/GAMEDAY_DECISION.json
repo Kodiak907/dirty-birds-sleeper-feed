@@ -4,8 +4,10 @@
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
-    "missing_projection": [],
-    "ppg": 131.11,
+    "missing_projection": [
+      "Deebo Samuel Sr."
+    ],
+    "ppg": 131.0,
     "starters": [
       {
         "id": "4046",
@@ -17,7 +19,7 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.16
+        "ppg": 17.15
       },
       {
         "id": "13345",
@@ -47,25 +49,25 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.24
+        "ppg": 7.22
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.24
+        "ppg": 6.21
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.2
+        "ppg": 12.19
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.35
+        "ppg": 11.31
       }
     ]
   },
@@ -75,11 +77,11 @@
     "5872",
     "9753"
   ],
-  "generated_at_utc": "2026-11-05T18:54:43.074957+00:00",
+  "generated_at_utc": "2026-11-05T19:54:11.574974+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 129.0,
+    "ppg": 128.89,
     "starters": [
       {
         "id": "4046",
@@ -91,13 +93,13 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.16
+        "ppg": 17.15
       },
       {
         "id": "12495",
         "name": "Ollie Gordon II",
         "position": "RB",
-        "ppg": 12.2
+        "ppg": 12.19
       },
       {
         "id": "9488",
@@ -121,19 +123,19 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.24
+        "ppg": 7.22
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.24
+        "ppg": 6.21
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.35
+        "ppg": 11.31
       },
       {
         "id": "5859",
@@ -309,8 +311,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-05T18:54:30.248904+00:00",
-  "source_availability_generated_at_utc": "2026-11-05T18:54:40.211648+00:00",
+  "snapshot_utc": "2026-11-05T19:54:00.812746+00:00",
+  "source_availability_generated_at_utc": "2026-11-05T19:54:09.485474+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

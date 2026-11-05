@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-05T18:54:36.028117+00:00",
-  "source_snapshot_utc": "2026-11-05T18:54:30.248904+00:00",
+  "generated_at_utc": "2026-11-05T19:54:05.235118+00:00",
+  "source_snapshot_utc": "2026-11-05T19:54:00.812746+00:00",
   "candidate_count": 36,
   "news_queries_attempted": 30,
   "news_query_failures": 0,
@@ -19,7 +19,7 @@
       "team": "TB",
       "position": "QB",
       "snap_share_pct": 94.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -60,7 +60,7 @@
       "team": "PHI",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -96,7 +96,7 @@
       "team": "WAS",
       "position": "TE",
       "snap_share_pct": 74.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Recent reception volume",
@@ -146,7 +146,7 @@
       "team": "LAC",
       "position": "RB",
       "snap_share_pct": 30.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -170,7 +170,7 @@
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 79.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -211,7 +211,7 @@
       "team": "CHI",
       "position": "WR",
       "snap_share_pct": 62.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     },
@@ -221,7 +221,7 @@
       "team": "TEN",
       "position": "RB",
       "snap_share_pct": 38.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -271,7 +271,7 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 62.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -290,36 +290,12 @@
       ]
     },
     {
-      "id": "4147",
-      "name": "Samaje Perine",
-      "team": "CIN",
-      "position": "RB",
-      "snap_share_pct": 36.3,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
-      "signals": [
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 2, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": [
-        {
-          "title": "Fantasy Football Week 8 Deep-Sleepers: Samaje Perine, Mason Taylor, and 4 Others - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOcTliYUZiZW9wMEIzd1IwTGxJZGdodUFNdW82aHE2NUVxQjVjYnY3SUZtLW81QV9LZE96Y0ZNNVlQT0k3dTdwRE9vY2s2Vk9GS1JLNlF6TGN5b3FMdHFxaEN5WHYySTRJZ1hONjg4VWxiZHVIRzVuTnFHUXhuQm5ldlhuUEtOR0Nmc0k0Um04cDZsR052T0NncXhjSFlZSjlHRVc5djcwOGR3bU5Q?oc=5",
-          "published": "2026-10-31",
-          "publisher": "Sports Illustrated",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
-    },
-    {
       "id": "9482",
       "name": "Michael Mayer",
       "team": "LV",
       "position": "TE",
       "snap_share_pct": 80.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -355,12 +331,36 @@
       ]
     },
     {
+      "id": "4147",
+      "name": "Samaje Perine",
+      "team": "CIN",
+      "position": "RB",
+      "snap_share_pct": 36.3,
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 2, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": [
+        {
+          "title": "Fantasy Football Week 8 Deep-Sleepers: Samaje Perine, Mason Taylor, and 4 Others - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOcTliYUZiZW9wMEIzd1IwTGxJZGdodUFNdW82aHE2NUVxQjVjYnY3SUZtLW81QV9LZE96Y0ZNNVlQT0k3dTdwRE9vY2s2Vk9GS1JLNlF6TGN5b3FMdHFxaEN5WHYySTRJZ1hONjg4VWxiZHVIRzVuTnFHUXhuQm5ldlhuUEtOR0Nmc0k0Um04cDZsR052T0NncXhjSFlZSjlHRVc5djcwOGR3bU5Q?oc=5",
+          "published": "2026-10-31",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
+    },
+    {
       "id": "5857",
       "name": "Noah Fant",
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 57.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -376,7 +376,7 @@
       "team": "GB",
       "position": "RB",
       "snap_share_pct": 30.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": [
         {
@@ -408,7 +408,7 @@
       "team": "SEA",
       "position": "WR",
       "snap_share_pct": 41.3,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -453,7 +453,7 @@
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 79.3,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -513,7 +513,7 @@
       "team": "PIT",
       "position": "WR",
       "snap_share_pct": 77.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -563,7 +563,7 @@
       "team": "IND",
       "position": "RB",
       "snap_share_pct": 27.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": [
         {
@@ -602,7 +602,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 62.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -640,7 +640,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 59.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -664,7 +664,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 62.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -693,17 +693,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Patriots WR Mack Hollins is expected to practice on Wednesday - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcm1UQVduSTY1Qlg4OVFFNVNlMGFzY1VxTTgtRXpESTM5ajVrVXJRUjZHVUJLdjNld2VKX2s4blpXZUk5Z2NwU2doYjNfQTFKaVJnZ2NFMmpHb0h0ZEI4UGloNi0tRURfUzVFR1BoTVE2LWFFTUNueFduSUo5Vm1aclRLd3hVN0d4QzllVURBeUxnd19CS1lXbGxHTVN1cUVBVDNtWTRaUFZJc1dubkJ6dG9vQXgyU1RoU2RXMWtOMm4?oc=5",
-          "published": "2026-11-04",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Mack Hollins Injury Update, Latest Rumors on Patriots WR's Return Timeline Ahead of Packers Game - Bleacher Report",
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOaXlWa0lBUVNfYlo0NXVlOGxOSGl0Wm1BWExZajBjam00M3UyclVvRHZiYnA1NzRnYjc2b3dWMGZkOEt2QzlDU19vdHR1YnZWQkdaYlRkNzFLeDBZVjkteUxabGoxcUhlbjFleENScmg3OGNzcG1BQUk0elpDZnlxSVZCNXByMkVON19SRHZjNG91TkxiZWN5UXUwd05vODkyd3pFY1NEQ01naFNGdnF2TUE0cTM5YzV4cU13ZEJvNkdmQ1V2b3o0NWNKQlA3Zw?oc=5",
           "published": "2026-11-05",
           "publisher": "Bleacher Report",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Patriots WR Mack Hollins is expected to practice on Wednesday - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcm1UQVduSTY1Qlg4OVFFNVNlMGFzY1VxTTgtRXpESTM5ajVrVXJRUjZHVUJLdjNld2VKX2s4blpXZUk5Z2NwU2doYjNfQTFKaVJnZ2NFMmpHb0h0ZEI4UGloNi0tRURfUzVFR1BoTVE2LWFFTUNueFduSUo5Vm1aclRLd3hVN0d4QzllVURBeUxnd19CS1lXbGxHTVN1cUVBVDNtWTRaUFZJc1dubkJ6dG9vQXgyU1RoU2RXMWtOMm4?oc=5",
+          "published": "2026-11-04",
+          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -714,7 +714,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -764,7 +764,7 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -809,7 +809,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -835,7 +835,7 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 26.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -885,7 +885,7 @@
       "team": "CLE",
       "position": "RB",
       "snap_share_pct": 21.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     },
@@ -895,7 +895,7 @@
       "team": "ARI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     },
@@ -905,7 +905,7 @@
       "team": "SEA",
       "position": "RB",
       "snap_share_pct": 26.7,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Recent carry workload",
@@ -955,7 +955,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 39.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": [
         {
@@ -994,7 +994,17 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 42.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
+      "signals": [],
+      "news": []
+    },
+    {
+      "id": "2197",
+      "name": "Brandin Cooks",
+      "team": "SF",
+      "position": "WR",
+      "snap_share_pct": 53.3,
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     },
@@ -1004,7 +1014,7 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 30.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1015,22 +1025,12 @@
       "news": []
     },
     {
-      "id": "2197",
-      "name": "Brandin Cooks",
-      "team": "SF",
-      "position": "WR",
-      "snap_share_pct": 53.3,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
-      "signals": [],
-      "news": []
-    },
-    {
       "id": "12634",
       "name": "Jordan Watkins",
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 63.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     },
@@ -1040,7 +1040,7 @@
       "team": "JAX",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1056,7 +1056,7 @@
       "team": "LAR",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -1072,7 +1072,7 @@
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 30.0,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -1098,7 +1098,7 @@
       "team": "JAX",
       "position": "RB",
       "snap_share_pct": null,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1114,7 +1114,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-11-05T18:54:36.028117+00:00",
+      "checked_at": "2026-11-05T19:54:05.235118+00:00",
       "signals": [],
       "news": []
     }

@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-05T18:54:39.013550+00:00",
-  "source_snapshot_utc": "2026-11-05T18:54:30.248904+00:00",
+  "generated_at_utc": "2026-11-05T19:54:08.383840+00:00",
+  "source_snapshot_utc": "2026-11-05T19:54:00.812746+00:00",
   "source_market_as_of": "2026-11-05T15:13:09.640408+00:00",
-  "source_projection_as_of": "2026-11-05T14:57:54.548072+00:00",
+  "source_projection_as_of": "2026-11-05T19:30:05.171738+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -56,8 +56,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.99,
-          "their_lineup_delta_ppg": 0.12,
+          "our_lineup_delta_ppg": 3.0,
+          "their_lineup_delta_ppg": 0.11,
           "value_paid_received_ratio": 0.739,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -94,8 +94,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.99,
-          "their_lineup_delta_ppg": 0.12,
+          "our_lineup_delta_ppg": 3.0,
+          "their_lineup_delta_ppg": 0.11,
           "value_paid_received_ratio": 1.071,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -132,8 +132,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 2.6,
-          "their_lineup_delta_ppg": 0.61,
+          "our_lineup_delta_ppg": 2.59,
+          "their_lineup_delta_ppg": 0.49,
           "value_paid_received_ratio": 0.997,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -170,8 +170,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 2.6,
-          "their_lineup_delta_ppg": 0.61,
+          "our_lineup_delta_ppg": 2.59,
+          "their_lineup_delta_ppg": 0.49,
           "value_paid_received_ratio": 1.096,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -265,30 +265,25 @@
               "position": "WR"
             },
             {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
             }
           ],
           "receive": [
             {
-              "id": "3294",
-              "name": "Dak Prescott",
-              "position": "QB"
-            },
-            {
-              "id": "12526",
-              "name": "Tetairoa McMillan",
-              "position": "WR"
+              "id": "8228",
+              "name": "Jaylen Warren",
+              "position": "RB"
             }
           ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.55,
-          "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.914,
+          "opponent_roster_id": 3,
+          "opponent": "BigOlBoyle",
+          "our_lineup_delta_ppg": 1.49,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 1.132,
           "our_extra_cut": null,
-          "opponent_extra_cut": null,
+          "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -303,28 +298,28 @@
               "position": "WR"
             },
             {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
             }
           ],
           "receive": [
             {
-              "id": "12526",
-              "name": "Tetairoa McMillan",
-              "position": "WR"
+              "id": "6797",
+              "name": "Justin Herbert",
+              "position": "QB"
             },
             {
-              "id": "7525",
-              "name": "DeVonta Smith",
-              "position": "WR"
+              "id": "8228",
+              "name": "Jaylen Warren",
+              "position": "RB"
             }
           ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.55,
-          "their_lineup_delta_ppg": 0.14,
-          "value_paid_received_ratio": 0.909,
+          "opponent_roster_id": 3,
+          "opponent": "BigOlBoyle",
+          "our_lineup_delta_ppg": 1.49,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 0.935,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -334,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 116
+      "candidate_count": 109
     },
     {
       "asset": "Patrick Mahomes",
@@ -367,8 +362,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.02,
-          "their_lineup_delta_ppg": 2.73,
+          "our_lineup_delta_ppg": 2.09,
+          "their_lineup_delta_ppg": 2.67,
           "value_paid_received_ratio": 0.963,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -405,8 +400,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.02,
-          "their_lineup_delta_ppg": 0.96,
+          "our_lineup_delta_ppg": 2.09,
+          "their_lineup_delta_ppg": 0.9,
           "value_paid_received_ratio": 1.092,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -443,8 +438,8 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 2.57,
-          "their_lineup_delta_ppg": 0.03,
+          "our_lineup_delta_ppg": 2.56,
+          "their_lineup_delta_ppg": 0.05,
           "value_paid_received_ratio": 0.955,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -481,8 +476,8 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 2.57,
-          "their_lineup_delta_ppg": 0.03,
+          "our_lineup_delta_ppg": 2.56,
+          "their_lineup_delta_ppg": 0.05,
           "value_paid_received_ratio": 1.015,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -514,8 +509,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.45,
-          "their_lineup_delta_ppg": 0.66,
+          "our_lineup_delta_ppg": 0.35,
+          "their_lineup_delta_ppg": 0.64,
           "value_paid_received_ratio": 1.099,
           "our_extra_cut": null,
           "opponent_extra_cut": "Jonathon Brooks",
@@ -552,8 +547,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 0.45,
-          "their_lineup_delta_ppg": 0.66,
+          "our_lineup_delta_ppg": 0.35,
+          "their_lineup_delta_ppg": 0.64,
           "value_paid_received_ratio": 0.951,
           "our_extra_cut": null,
           "opponent_extra_cut": null,

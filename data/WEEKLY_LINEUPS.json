@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-05T18:54:39.446660+00:00",
+  "generated_at_utc": "2026-11-05T19:54:09.025566+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-05T14:57:54.548072+00:00",
+  "projection_as_of": "2026-11-05T19:30:05.171738+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-05T18:54:30.248904+00:00",
+  "snapshot_utc": "2026-11-05T19:54:00.812746+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -645,8 +645,10 @@
     },
     "9": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 131.11,
+      "missing_projection": [
+        "Deebo Samuel Sr."
+      ],
+      "ppg": 131.0,
       "starters": [
         {
           "id": "4046",
@@ -660,7 +662,7 @@
           "name": "Kyren Williams",
           "opponent": "WAS",
           "position": "RB",
-          "ppg": 17.16
+          "ppg": 17.15
         },
         {
           "id": "13345",
@@ -695,28 +697,28 @@
           "name": "Will Reichard",
           "opponent": "BUF",
           "position": "K",
-          "ppg": 7.24
+          "ppg": 7.22
         },
         {
           "id": "MIN",
           "name": "Minnesota Vikings",
           "opponent": "BUF",
           "position": "DEF",
-          "ppg": 6.24
+          "ppg": 6.21
         },
         {
           "id": "12495",
           "name": "Ollie Gordon II",
           "opponent": "DET",
           "position": "RB",
-          "ppg": 12.2
+          "ppg": 12.19
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "JAX",
           "position": "WR",
-          "ppg": 11.35
+          "ppg": 11.31
         }
       ]
     }
