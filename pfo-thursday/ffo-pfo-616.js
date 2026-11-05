@@ -204,7 +204,7 @@
   // Roster often arrives after DOMContentLoaded; retry only a few times.
   let retries=0;refreshTimer=setInterval(()=>{
    retries++;refresh();
-   if(retries>=90){clearInterval(refreshTimer);refreshTimer=null}
+   if(retries>=20){clearInterval(refreshTimer);refreshTimer=null}
   },1600);
   document.querySelectorAll('nav button[data-page]').forEach(btn=>btn.addEventListener('click',()=>{
    if(['roster','matchup','overview','market','championship'].includes(btn.dataset.page))
