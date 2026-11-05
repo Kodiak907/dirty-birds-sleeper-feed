@@ -45,6 +45,8 @@ test('GameCast player card shows position relevant statistics instead of QB zero
  assert.match(gamecast,/position==='DEF'/);
  assert.match(gamecast,/seasonTags=fields\.filter/);
  assert.match(gamecast,/MySportsFeeds seasonal NFL statistics/);
+ assert.match(gamecast,/weeklyModel=typeof pfo52Points/);
+ assert.match(gamecast,/forecastScore=typeof pfo52Points/);
 });
 test('injury status distinguishes unconfirmed ESPN report from NFL designation',()=>{
  assert.match(core,/ESPN reported /);
