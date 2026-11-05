@@ -105,7 +105,7 @@ for(const file of readdirSync(src)){
     s=s.slice(0,from)+'const CURATED_WAIVER_CONTEXT=[]'+s.slice(end);}
    const actionStart=s.indexOf('const CURATED_ACTIONS=');
    if(actionStart>=0){
-    const actionEnd=s.indexOf(';\\n',actionStart);
+    const actionEnd=s.indexOf(';\n',actionStart);
     if(actionEnd<actionStart||actionEnd-actionStart>25000)throw Error('Original manager action notes could not be isolated');
     s=s.slice(0,actionStart)+'const CURATED_ACTIONS=[]'+s.slice(actionEnd);
    }
