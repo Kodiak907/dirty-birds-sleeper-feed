@@ -10,9 +10,19 @@
  const pos=p=>typeof pfo52Pos==='function'?pfo52Pos(p):String(p?.position||'').toUpperCase().replace(/^D\/?ST$/,'DEF');
  const info=id=>typeof pfo52Info==='function'?pfo52Info(id):null;
  const roster=()=>typeof liveRosterSnapshot!=='undefined'?liveRosterSnapshot:null;
+ const relevantStarters=()=>{
+  const own=(roster()?.starters||[]).map(String).filter(id=>id&&id!=='0');
+  let opponent=[];
+  if(typeof pfo52Match==='function'&&typeof pfo52Cur==='function'&&typeof gm47Snapshot!=='undefined'){
+   const m=pfo52Match(pfo52Cur()),rid=m?.theirs?.roster_id;
+   const row=gm47Snapshot?.rosters?.find(x=>String(x.roster_id)===String(rid));
+   if(row?.starters)opponent=row.starters.map(String).filter(id=>id&&id!=='0');
+  }
+  return {own,opponent,all:[...new Set([...own,...opponent])]};
+ };
  const defenseIds=()=>{
   const r=roster(),ids=new Set((r?.players||[]).filter(p=>pos(p)==='DEF').map(p=>String(p.player_id)));
-  for(const id of r?.starters||[])if(pos(info(id))==='DEF')ids.add(String(id));
+  for(const id of relevantStarters().all)if(pos(info(id))==='DEF')ids.add(String(id));
   if(typeof gm47Snapshot!=='undefined'){
    const my=gm47Snapshot?.rosters?.find(x=>String(x.roster_id)===String(window.dbRosterId||1));
    for(const id of my?.players||[])if(pos(info(id))==='DEF')ids.add(String(id));
@@ -41,18 +51,21 @@
   if(!panel){
    panel=document.createElement('div');panel.id='pfo617-recovery-health';
    panel.style.cssText='font-size:12px;line-height:1.6;margin-top:12px;overflow-wrap:anywhere;white-space:pre-line';
-   host.append(panel);
+   const button=host.querySelector('#ffo69-retry-stats');
+   if(button)button.before(panel);else host.append(panel);
   }
-  const ids=(roster()?.starters||[]).map(String).filter(id=>id&&id!=='0');
-  const lines=['PFO 6.17 · Projection recovery audit (verified NFL stats only)'];
+  const {own,opponent}=relevantStarters();
+  const ids=[...own,...opponent.filter(id=>!own.includes(id))];
+  const lines=['PFO 6.18 · Verified projection recovery audit'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
    const projected=typeof pfo52Points==='function'?pfo52Points(id,typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)):null;
-   if(projected?.points!=null){lines.push(name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
+   const side=own.includes(id)?'Our team':'Opponent';
+   if(projected?.points!=null){lines.push(side+' · '+name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
    let reason=position==='DEF'?(pending.has(team)?'fetching_team_defense':failures.get(team)||(!defense.has(team)?'awaiting_team_defense':'no_verified_scoring_categories_or_week_schedule')):
     (playerPending.has(id)?'fetching_player_logs':playerFailures.get(id)||recoveryStatus.get(id)||projected?.source||'awaiting_verified_stats');
-   lines.push(name+': unavailable · '+reason);
+   lines.push(side+' · '+name+': unavailable · '+reason);
   }
   panel.textContent=lines.join('\n');
  }
@@ -143,10 +156,10 @@
   playerPending.set(id,job);return job;
  }
  function recoverUnmodeled(){
-  const r=roster();if(!r?.starters?.length||window.ffoPfo597?.hasFrozenRules?.()!==true)return;
-  const ids=r.starters.map(String).filter(id=>id&&id!=='0'&&pos(info(id))!=='DEF');
-  // Bound requests: only submitted starters, and only demonstrably unsupported
-  // scoring rows (up to four at any one visit).
+  const ids=relevantStarters().all.filter(id=>pos(info(id))!=='DEF');
+  if(!ids.length||window.ffoPfo597?.hasFrozenRules?.()!==true)return;
+  // Bound requests: only both submitted matchup lineups, prioritizing our side.
+  // Up to four new targeted lookups per refresh; no league-wide scraping.
   let requested=0;
   for(const id of ids){
    if(requested>=4)break;
