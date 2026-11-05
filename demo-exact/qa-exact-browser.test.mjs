@@ -55,7 +55,7 @@ test('real original Roster page binds the synthetic Josh Allen sample team',asyn
  await page.locator('#actual-lineup').getByText('Josh Allen').first().waitFor({timeout:18000});
  assert.match(await page.locator('#roster').innerText(),/The Front Office Collective/);
  assert.match(await page.locator('#actual-lineup').innerText(),/Josh Allen/);
- assert.match(await page.locator('#actual-bench').innerText(),/Lamar Jackson/);
+ assert.match(await page.locator('#actual-bench').textContent(),/Lamar Jackson/);
 });
 test('public APIs never expose real league/commissioner data',async()=>{
  const result=await page.evaluate(async()=>{
