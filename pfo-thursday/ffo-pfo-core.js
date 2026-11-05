@@ -1641,24 +1641,40 @@ function pfo49CoachData(id){const p=pfo49Info(id),c=waiverCatalysts?.get(normPla
 function pfo49Owner(id){const roster=gm47Snapshot?.rosters?.find(r=>(r.players||[]).map(String).includes(String(id)));if(!roster)return 'Unrostered in checked FFL snapshot';const u=gm47Snapshot?.users?.find(u=>String(u.user_id)===String(roster.owner_id));return 'FFL roster '+roster.roster_id+' · '+e(u?.metadata?.team_name||u?.display_name||'Manager');}
 function pfo49SourceStamp(){return 'NFL stats checked '+pfo49Today(pfo50Independent?.checked_at||pfo49Metrics?.as_of)+' · League scores '+pfo49Today(gm47Snapshot?.fetched_at_utc)+' · FFO projections use independent NFL stats';}
 function pfo49Link(id,opts={}){const p=pfo49Info(id);return '<button type="button" class="pfo49-player-link" data-pfo49-id="'+e(id)+'" title="Open complete player profile">'+e(p.name)+'</button>';}
-function pfo49Signal(id){const m=pfo49Metric(id)||pfo50StatsFor(id),p=pfo49Info(id);if(!m)return null;
+function pfo49Signal(id){
+ const row=pfo50StatsFor(id),m=pfo49Metric(id)||row,p=pfo49Info(id);if(!m)return null;
+ const gamesObserved=Number(row?.games_observed??row?.games_played??0);
+ const avg=k=>gamesObserved>0&&row?.season_totals?.[k]!=null&&Number.isFinite(Number(row.season_totals[k]))?
+  Number(row.season_totals[k])/gamesObserved:null;
  const snaps=Array.isArray(m.recent_three_snap_pct)?m.recent_three_snap_pct.filter(v=>v!=null&&Number.isFinite(Number(v))).map(Number):[];
  const snap=m.snap_share_pct!=null?Number(m.snap_share_pct):null;
- const targets=m.targets_per_game!=null?Number(m.targets_per_game):null;
- const catches=m.receptions_per_game!=null?Number(m.receptions_per_game):null;
+ const targets=m.targets_per_game!=null?Number(m.targets_per_game):avg('targets');
+ const catches=m.receptions_per_game!=null?Number(m.receptions_per_game):avg('rec');
+ const passes=m.pass_att_per_game!=null?Number(m.pass_att_per_game):avg('pass_att');
+ const carries=avg('rush_att');
  const season=m.season_avg_snap_share_pct!=null?Number(m.season_avg_snap_share_pct):null;
- const isSkill=['WR','RB','TE','QB'].includes(p.position);if(!isSkill||snap==null&&targets==null&&m.pass_att_per_game==null)return null;
+ if(!['WR','RB','TE','QB'].includes(p.position)||snap==null&&targets==null&&passes==null&&carries==null)return null;
  const difference=snap!=null&&season!=null?snap-season:null;
- // Descriptive research sorting only; never a probability of breaking out.
- const points=(p.position==='QB'?(m.pass_att_per_game||0)*.3:(targets||m.targets_per_game||0)*3)+Math.max(0,snap||0)*.22+(difference!=null?Math.max(-15,Math.min(35,difference))*.65:0)+(catches||0)*.7;
- const newestWeek=m.latest_snap_week||m.latest?.week||null;
- const games=(pfo50StatsFor(id)?.last_three||[]).sort((a,b)=>a.week-b.week),latest=games.at(-1),prev=games.at(-2);
- const k=p.position==='QB'?'pass_att':p.position==='RB'?'rush_att':'targets';
- const volumeChange=latest?.stats?.[k]!=null&&prev?.stats?.[k]!=null?latest.stats[k]-prev.stats[k]:null;
+ // Season-level workload is useful research; it is NOT a growth trend.
+ const points=(p.position==='QB'?(passes||0)*.3:(targets||0)*3+(carries||0)*.2)+
+  Math.max(0,snap||0)*.22+(difference!=null?Math.max(-15,Math.min(35,difference))*.65:0)+(catches||0)*.7;
+ const newestWeek=m.latest_snap_week||m.latest?.week||row?.latest?.week||null;
+ const games=(row?.last_three||row?.games||[]).filter(g=>g?.week).sort((a,b)=>Number(a.week)-Number(b.week)).slice(-3);
+ const latest=games.at(-1),prev=games.at(-2),k=p.position==='QB'?'pass_att':p.position==='RB'?'rush_att':'targets';
+ const volumeChange=latest?.stats?.[k]!=null&&prev?.stats?.[k]!=null?Number(latest.stats[k])-Number(prev.stats[k]):null;
  const trendBonus=volumeChange!=null?Math.max(-15,Math.min(25,volumeChange*2)):0;
- return {id,p,m,snap,targets,catches,season,difference,snaps,points:points+trendBonus,newestWeek,volumeChange,volumeMetric:k,popularity:pfo49Trend.get(String(id))};
+ return {id,p,m,snap,targets,catches,passes,carries,season,difference,snaps,
+  points:points+trendBonus,newestWeek,coverage:newestWeek?'game':'season',gamesObserved,
+  volumeChange,volumeMetric:k,popularity:pfo49Trend.get(String(id))};
 }
-function pfo49RadarPool(){if(!leagueOwnedIds||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000)return [];const all=(pfo49Players.length?pfo49Players:pfo49Dir()).filter(x=>pfo49Metrics?.players?.[x.id]||pfo50Indexed.has(pfo50Key(x.name,x.team)));return all.filter(x=>!waiverIsRostered(x.name,x.id)).map(x=>pfo49Signal(x.id)).filter(x=>x&&x.newestWeek&&x.newestWeek>=Number(window.dbNflWeek||7)-2);}
+function pfo49RadarPool(){
+ // Expired Sleeper ownership must not blank out independently sourced NFL research.
+ const all=(pfo49Players.length?pfo49Players:pfo49Dir()).filter(x=>
+  pfo49Metrics?.players?.[x.id]||pfo50Indexed.has(pfo50Key(x.name,x.team)));
+ return all.filter(x=>!leagueOwnedIds||!waiverIsRostered(x.name,x.id))
+  .map(x=>pfo49Signal(x.id))
+  .filter(x=>x&&(x.coverage==='season'||x.newestWeek>=Number(window.dbNflWeek||7)-2));
+}
 function pfo49SignalHTML(x){const m=x.m,delta=x.difference;
  let reason=[];if(delta!=null&&delta>=12)reason.push('Recent snap share '+pfo49Num(delta,0)+' points above season average');
  if(x.p.position==='QB'&&m.pass_att_per_game>=20)reason.push(pfo49Num(m.pass_att_per_game,1)+' passes per recorded game');
@@ -1678,8 +1694,8 @@ function pfo49RenderRadar(){const el=$('pfo49-radar');if(!el)return;
  const rest=order.filter(x=>!featured.some(y=>y.id===x.id)).slice(0,18);
  let h='<div class="pfo49-row"><div><h2>Opportunity Radar</h2><p class="muted">Spot growing workloads before they become obvious. Scans the broader published 2026 player-stat pool—not just waiver headlines.</p></div><span class="buildtag">EVIDENCE FIRST</span></div>';
  h+='<div class="pfo49-filters">'+['ALL','QB','RB','WR','TE'].map(f=>'<button type="button" data-pfo49-filter="'+f+'" class="'+(pfo49RadarFilter===f?'on':'')+'">'+(f==='ALL'?'All roles':f)+'</button>').join('')+'</div>';
- if(!pfo49Metrics)h+='<div class="note">Waiting for the published 2026 statistics. No breakout claims until the source arrives.</div>';
- if(!leagueOwnedIds||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000)h+='<div class="note">Current FFL ownership verification is pending or older than five minutes. Candidate cards are withheld until current ownership is confirmed; refresh the league source.</div>';
+ if(!pfo49Metrics&&!pfo50Indexed?.size)h+='<div class="note">Awaiting independent 2026 statistics. No growth claims without source observations.</div>';
+ if(!leagueOwnedIds||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000)h+='<div class="note">NFL research remains visible, but Sleeper ownership is NOT freshly verified. No candidate is certified available; refresh ownership before waiver actions.</div>';
  h+='<p class="pfo49-small">'+e(pfo49SourceStamp())+' · *Snap percentages are source aggregates and may lag NFL games. Targets/game is based on observed player-stat weeks, not target share. No made-up target-share percentages.</p>';
  if(featured.length)h+='<h3>Players we specifically want on the radar</h3><div class="pfo49-radar-grid">'+featured.map(pfo49SignalHTML).join('')+'</div>';
  h+='<h3>Other emerging opportunities ('+e(rest.length)+' shown)</h3><div class="pfo49-radar-grid">'+(rest.length?rest.map(pfo49SignalHTML).join(''):'<div class="note">No qualifying, supported candidates for this filter.</div>')+'</div>';
@@ -2034,8 +2050,10 @@ pfo49SignalHTML=function(x){const s=pfo51PlayerSummary(x.id),m=x.m||{},p=x.p;
  const reason=[];
  if(change!=null&&change>0)reason.push(mainLabel+' rose '+change+' from prior observed game');
  if(delta!=null&&delta>=10)reason.push('snap share '+pfo51Fmt(delta,0)+' percentage points above season average');
- if(!reason.length)reason.push('published playing-time sample; more evidence required to establish a breakout');
- let html='<article class="pfo49-radar-item pfo51-radar-card"><div class="pfo49-row"><div><strong>'+pfo51Link(x.id)+'</strong><div class="muted">'+e(p.position)+' · '+e(p.team)+' · '+(leagueOwnedIds?'Checked unrostered':'Ownership unverified')+'</div></div><button type="button" class="pfo49-pin" data-pfo49-pin="'+e(x.id)+'">'+(pfo49Pins.has(x.id)?'★ Watching':'☆ Watch')+'</button></div>';
+ if(!reason.length)reason.push(x.coverage==='season'?
+  'season-level production only; game-by-game growth NOT verified':
+  'published participation sample; more evidence required to establish a breakout');
+ let html='<article class="pfo49-radar-item pfo51-radar-card"><div class="pfo49-row"><div><strong>'+pfo51Link(x.id)+'</strong><div class="muted">'+e(p.position)+' · '+e(p.team)+' · '+(leagueOwnedIds&&ownershipCheckedMs&&Date.now()-ownershipCheckedMs<300000?'Ownership checked · unrostered':'Availability UNVERIFIED · research only')+'</div></div><button type="button" class="pfo49-pin" data-pfo49-pin="'+e(x.id)+'">'+(pfo49Pins.has(x.id)?'★ Watching':'☆ Watch')+'</button></div>';
  html+=pfo51SnapshotHTML(x.id,false);
  html+='<p class="pfo51-reason"><b>Why watch:</b> '+e(reason.join('; '))+'.</p>';
  if(clubContext)html+='<div class="pfo51-sourced">Club-sourced context ('+e(sourceContext.event_at||'date unavailable')+'): '+e(sourceContext.event||'Roster development')+' '+pfo50GamedayLink(clubContext,'Official team source')+'<small>Potential effect: '+e(sourceContext.impact||'Unverified')+'</small></div>';
