@@ -94,3 +94,28 @@ test('player intelligence, opportunity radar and GameCast can be explored',async
  assert.match(await page.locator('#demo-gamecast').innerText(),/Play 2/);
  assert.deepEqual(offsite,[]);
 });
+
+test('Coaching Review logs real interactive example decisions and can clear them',async()=>{
+ await page.locator('#demo-all-tools').click();
+ await page.locator('#demo-tools-drawer [data-go=coaching]').click();
+ assert.match(await page.locator('#demo-coaching').innerText(),/No decisions logged/);
+ await page.locator('[data-coach-go]').click();
+ await page.locator('[data-demo-decision=a]').click();
+ assert.match(await page.locator('#demo-matchup').innerText(),/Sample decision saved/);
+ await page.locator('#demo-all-tools').click();
+ await page.locator('#demo-tools-drawer [data-go=coaching]').click();
+ assert.match(await page.locator('#demo-coaching').innerText(),/Demo start\/sit calls/);
+ assert.equal(await page.locator('#demo-coaching .pfo-demo-cardlist article').count(),1);
+ await page.locator('[data-clear-coach]').click();
+ assert.equal(await page.locator('#demo-coaching .pfo-demo-cardlist article').count(),0);
+});
+test('Championship lab calculates 100,000 illustrative draws and responds to controls',async()=>{
+ await page.locator('#demo-all-tools').click();
+ await page.locator('#demo-tools-drawer [data-go=championship]').click();
+ assert.match(await page.locator('#demo-championship').innerText(),/100,000 simulated scenarios/);
+ assert.equal(await page.locator('#demo-championship .pfo-demo-odds-item').count(),3);
+ const before=await page.locator('#demo-championship .pfo-demo-odds-item').innerText();
+ await page.locator('#demo-sim-strength').selectOption('20');
+ const after=await page.locator('#demo-championship .pfo-demo-odds-item').innerText();
+ assert.notEqual(before,after,'changing opponent strength should modify chances');
+});
