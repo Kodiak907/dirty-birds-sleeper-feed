@@ -1177,12 +1177,14 @@ async function ffo616PlayerGameRoute(req,env){
  const u=new URL(req.url),team=String(u.searchParams.get('team')||'').toUpperCase(),
   name=String(u.searchParams.get('name')||'').trim().slice(0,70),
   playerId=String(u.searchParams.get('msf_id')||'').trim(),
+  position=String(u.searchParams.get('position')||'').toUpperCase(),
   targetWeek=Number(u.searchParams.get('week')||0);
  if(!ffo598NFLTeams.has(team)||!/^[a-z .'-]{3,70}$/i.test(name)||
     (playerId&&!/^[0-9]{1,12}$/.test(playerId))||
+    (position&&!['QB','RB','WR','TE','K'].includes(position))||
     !Number.isInteger(targetWeek)||targetWeek<2||targetWeek>18)
   return ffoReply({error:'invalid_team_name_id_or_nfl_week'},400);
- const key=team+'|'+name.toLowerCase()+'|'+playerId+'|'+targetWeek,now=Date.now(),cached=ffo616PlayerGameCache.get(key);
+ const key=team+'|'+name.toLowerCase()+'|'+playerId+'|'+position+'|'+targetWeek,now=Date.now(),cached=ffo616PlayerGameCache.get(key);
  if(cached&&now-cached.at<180000)return ffoReply(cached.data);
  if(ffo616PlayerGamePending.has(key))return ffoReply(await ffo616PlayerGamePending.get(key));
  const load=(async()=>{
@@ -1246,7 +1248,7 @@ async function ffo616PlayerGameRoute(req,env){
      errors.push(reason.slice(0,100));
      // A subscription denial or unsupported weekly feed cannot be repaired
      // by probing additional weeks. Do not repeat the failed batch.
-     if(/http_(400|401|403|429)/.test(reason))stop=true;
+     if(/http_(400|401|403|429|502|503|504)/.test(reason))stop=true;
     }
     if(rows.length){
      try{
@@ -1265,8 +1267,20 @@ async function ffo616PlayerGameRoute(req,env){
    if(lastData)errors.push('weekly_'+String(lastData.error||'unsupported_player_rows'));
    else if(successWeeks)errors.push('weekly_no_verified_player_rows');
   }
+  if(position==='K'&&/^[0-9]{1,12}$/.test(playerId)){
+   // Provider weekly logs can fail 502 even when completed-game boxscores
+   // remain licensed. Avoid repeated bulk requests, recover only this kicker.
+   try{
+    const recovered=await ffo623RecoverKicker(team,name,playerId,targetWeek,env,checked_at);
+    if(recovered?.forecast&&recovered?.games_observed>=2){
+     ffo616PlayerGameCache.set(key,{data:recovered,at:Date.now()});
+     return recovered;
+    }
+    errors.push('kicker_boxscore_'+String(recovered?.error||'insufficient').slice(0,80));
+   }catch{errors.push('kicker_boxscore_recovery_unavailable')}
+  }
   return {source:'MySportsFeeds',available:false,team,name,
-   error:errors.join('; ').slice(0,400)||'player_logs_unavailable',checked_at};
+   error:[...new Set(errors)].join('; ').slice(0,300)||'player_logs_unavailable',checked_at};
  })();
  ffo616PlayerGamePending.set(key,load);
  try{return ffoReply(await load)}finally{ffo616PlayerGamePending.delete(key)}
