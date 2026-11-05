@@ -2714,7 +2714,7 @@ pfo51FindPlayers=function(q){if(/\btrade\b|\btrade ideas?\b|\bacquire\b/i.test(q
  if(!fresh&&/available|free agent|unrostered|waiver|pickups?/i.test(q))
   return {error:'Sleeper ownership is not current. Research is available, but free-agent availability cannot be verified until Sleeper refreshes.'};
  const mine=new Set((liveRosterSnapshot?.players||[]).map(x=>String(x.player_id)));
- res.entries=res.entries.filter(x=>mine.has(String(x.id))||!leagueOwnedIds||!waiverIsRostered(pfo52Info(x.id).name,x.id));
+ res.entries=res.entries.filter(x=>mine.has(String(x.id))||(!!leagueOwnedIds&&!waiverIsRostered(pfo52Info(x.id).name,x.id)));
  res.total=res.entries.length;res.ownershipUnverified=!fresh;return res;
 };
 const pfo52OldAsk=pfo51Ask;
