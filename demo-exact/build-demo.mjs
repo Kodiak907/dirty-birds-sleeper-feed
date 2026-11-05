@@ -76,7 +76,8 @@ let count=0;
 for(const file of readdirSync(src)){
  const ext=extname(file);
  if(!['.html','.css','.js','.mjs','.json'].includes(ext)||file.startsWith('qa-')||
- file==='commissioner-pin-setup.html'||file==='_worker.js'||file==='wrangler.jsonc')continue;
+ file==='commissioner-pin-setup.html'||file==='_worker.js'||file==='wrangler.jsonc'||
+ (ext==='.json'&&file!=='FFO_FFL_SCORING_V1.json'))continue;
  let s=readFileSync(join(src,file),'utf8');
  if(['.js','.mjs','.html'].includes(ext)){
   s=s.replaceAll('https://raw.githubusercontent.com/Kodiak907/dirty-birds-sleeper-feed/main/data/','/demo-data/');
