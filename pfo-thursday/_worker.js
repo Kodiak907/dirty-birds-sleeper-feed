@@ -836,7 +836,8 @@ function ffo620TeamSchemaAudit(json,team){
  const entry=match.length===1?match[0]:rows[0];
  const stats=entry?.stats||entry?.teamStats||{};
  const keys=o=>o&&typeof o==='object'&&!Array.isArray(o)?Object.keys(o)
-  .filter(k=>/^[a-z][a-z0-9]{0,35}$/i.test(k)).slice(0,12):[];
+  .filter(k=>/^[a-z][a-z0-9]{0,35}$/i.test(k)&&
+   !/(secret|token|password|credential|authorization|api.?key)/i.test(k)).slice(0,12):[];
  const top=keys(stats),groups=top.filter(k=>stats[k]&&typeof stats[k]==='object');
  const nested=groups.slice(0,4).map(k=>k+'('+keys(stats[k]).slice(0,9).join(',')+')');
  return 'rows_'+rows.length+'_matched_'+match.length+
