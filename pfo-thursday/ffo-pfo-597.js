@@ -146,7 +146,13 @@
   loadPending=(async()=>{try{
    const d=await fetchReport('nfl_schedule.json');
    if(!d?.teams||Object.keys(d.teams).length<30)throw Error('NFL schedule evidence incomplete');
-   verifiedSchedule=d;redraw();return d;
+   // 2026 nflverse uses LA for the Rams, whereas the roster and MSF models
+   // use LAR. Preserve the immutable sourced record and expose its equivalent
+   // canonical roster key; do not invent opponents, games or bye weeks.
+   const teams={...d.teams};
+   if(teams.LA&&!teams.LAR)teams.LAR=teams.LA;
+   if(teams.LAR&&!teams.LA)teams.LA=teams.LAR;
+   verifiedSchedule={...d,teams};redraw();return verifiedSchedule;
   }catch(e){console.warn('FFO schedule unavailable; forecasts withheld for unverified byes',e);return null;}
   finally{loadPending=null;}})();
   return loadPending;
