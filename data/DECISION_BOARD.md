@@ -39,11 +39,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Rashid Shaheed | 4.52 | -1.58 | 41.3% | Tgt 5.0 | injury_report_observation_review |
 | 6 | Dontayvion Wicks | 4.38 | -1.72 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
 | 7 | Michael Pittman Jr. | 4.35 | -1.75 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 8 | Ja'Kobi Lane | 3.61 | -2.49 | 62.7% | Tgt 3.7 | injury_report_observation_review |
-| 9 | Rashod Bateman | 3.50 | -2.60 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 10 | Mack Hollins | 3.44 | -2.66 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
-| 11 | Jauan Jennings | 2.75 | -3.35 | 60.0% | Tgt 2.0 | injury_report_observation_review |
-| 12 | Konata Mumpfield | 2.33 | -3.77 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
+| 8 | Makai Lemon | 3.82 | -2.28 | 88.7% | Tgt 7.7 | No modeled flags (not medically cleared) |
+| 9 | Ja'Kobi Lane | 3.61 | -2.49 | 62.7% | Tgt 3.7 | injury_report_observation_review |
+| 10 | Rashod Bateman | 3.50 | -2.60 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 11 | Mack Hollins | 3.44 | -2.66 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
+| 12 | Jauan Jennings | 2.75 | -3.35 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 
 ## TE — reference: Isaiah Likely (10.66 PPG)
 

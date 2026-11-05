@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-05T22:49:00.598903+00:00
-Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
-nflverse observations: 2026-11-05T22:48:55.824409+00:00; injury feed loaded: True
+Generated: 2026-11-05T23:45:08.266268+00:00
+Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
+nflverse observations: 2026-11-05T23:45:03.711868+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -11,19 +11,17 @@ nflverse observations: 2026-11-05T22:48:55.824409+00:00; injury feed loaded: Tru
 | Player | Sleeper injury tag | Official report observation | Snap % (last 3 appearances) | Notes |
 |---|---|---|---:|---|
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Ollie Gordon II | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Caleb Douglas | No tag | Week 7 observation: Full Participation in Practice | 80.0% | Verify current status before kickoff |
 | Antonio Williams | No tag | No matched report (not clearance) | 72.7% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
+| Christian McCaffrey | No tag | Week 9 observation: Did Not Participate In Practice | 73.0% | Verify current status before kickoff |
 | Patrick Mahomes | No tag | Week 9 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 9 observation: Did Not Participate In Practice | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 9 observation: Did Not Participate In Practice | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
-| Chris Olave | No tag | Week 6 observation: Questionable, Limited Participation in Practice, Illness | 75.3% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 8 observation: Full Participation in Practice | 88.7% | Verify current status before kickoff |
-| Zach Charbonnet | Out | Week 8 observation: Full Participation in Practice | 37.0% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |
 | Buffalo Bills | No tag | No matched report (not clearance) | — | Verify current status before kickoff |

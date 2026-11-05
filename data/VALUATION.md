@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-05T22:48:56.274329+00:00
-Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
+Generated: 2026-11-05T23:45:04.162508+00:00
+Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -16,11 +16,10 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | Jaxon Smith-Njigba | WR | 192.96 | 24.12 | 8/8 |
 | Kyren Williams | RB | 133.50 | 16.69 | 8/8 |
 | Patrick Mahomes | QB | 128.50 | 16.06 | 7/8 |
+| Christian McCaffrey | RB | 127.00 | 15.88 | 7/8 |
 | Zay Flowers | WR | 106.20 | 13.28 | 6/8 |
-| Chris Olave | WR | 100.10 | 12.51 | 7/8 |
 | Isaiah Likely | TE | 92.00 | 11.50 | 7/8 |
 | C.J. Stroud | QB | 77.46 | 9.68 | 4/8 |
-| Ollie Gordon II | RB | 55.50 | 6.94 | 4/8 |
 | Deebo Samuel Sr. | WR | 55.40 | 6.92 | 5/8 |
 | Minnesota Vikings | DEF | 54.00 | 6.75 | 5/8 |
 | Will Reichard | K | 47.00 | 5.88 | 3/8 |
@@ -30,17 +29,16 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
 | Buffalo Bills | DEF | 5.00 | 0.62 | 1/8 |
-| Zach Charbonnet | RB | 4.40 | 0.55 | 1/8 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 5-3 | 120.65 | 10 |
-| JA’MARRTRIX | 2-6 | 116.55 | 4 |
+| Dirty Birds | 5-3 | 122.03 | 11 |
 | suck my dickerson | 6-2 | 116.48 | 1 |
 | Cokerthestroker | 6-2 | 115.08 | 3 |
+| JA’MARRTRIX | 2-6 | 113.18 | 5 |
 | Victorious Secret | 3-5 | 108.29 | 2 |
 | BigOlBoyle | 2-6 | 105.33 | 0 |
 | kfsn | 6-2 | 104.83 | 2 |

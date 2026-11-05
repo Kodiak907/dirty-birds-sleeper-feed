@@ -1,13 +1,13 @@
 {
   "added_starters": [
-    "A.J. Brown"
+    "Caleb Douglas"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
       "Deebo Samuel Sr."
     ],
-    "ppg": 131.24,
+    "ppg": 138.55,
     "starters": [
       {
         "id": "4046",
@@ -16,10 +16,46 @@
         "ppg": 21.14
       },
       {
+        "id": "4034",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "ppg": 21.1
+      },
+      {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
         "ppg": 17.15
+      },
+      {
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "ppg": 20.62
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 11.31
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 9.43
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.22
+      },
+      {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "position": "DEF",
+        "ppg": 6.45
       },
       {
         "id": "13345",
@@ -28,60 +64,23 @@
         "ppg": 13.12
       },
       {
-        "id": "9488",
-        "name": "Jaxon Smith-Njigba",
+        "id": "5859",
+        "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 20.62
-      },
-      {
-        "id": "8144",
-        "name": "Chris Olave",
-        "position": "WR",
-        "ppg": 12.61
-      },
-      {
-        "id": "8131",
-        "name": "Isaiah Likely",
-        "position": "TE",
-        "ppg": 9.43
-      },
-      {
-        "id": "11792",
-        "name": "Will Reichard",
-        "position": "K",
-        "ppg": 7.22
-      },
-      {
-        "id": "BUF",
-        "name": "Buffalo Bills",
-        "position": "DEF",
-        "ppg": 6.45
-      },
-      {
-        "id": "12495",
-        "name": "Ollie Gordon II",
-        "position": "RB",
-        "ppg": 12.19
-      },
-      {
-        "id": "9997",
-        "name": "Zay Flowers",
-        "position": "WR",
-        "ppg": 11.31
+        "ppg": 11.01
       }
     ]
   },
-  "difference_ppg": -2.11,
+  "difference_ppg": -6.08,
   "explicit_excluded_ids": [
     "13345",
-    "5872",
-    "9753"
+    "5872"
   ],
-  "generated_at_utc": "2026-11-05T22:49:02.032365+00:00",
+  "generated_at_utc": "2026-11-05T23:45:10.695399+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 129.13,
+    "ppg": 132.47,
     "starters": [
       {
         "id": "4046",
@@ -90,16 +89,16 @@
         "ppg": 21.14
       },
       {
+        "id": "4034",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "ppg": 21.1
+      },
+      {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
         "ppg": 17.15
-      },
-      {
-        "id": "12495",
-        "name": "Ollie Gordon II",
-        "position": "RB",
-        "ppg": 12.19
       },
       {
         "id": "9488",
@@ -108,10 +107,10 @@
         "ppg": 20.62
       },
       {
-        "id": "8144",
-        "name": "Chris Olave",
+        "id": "9997",
+        "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 12.61
+        "ppg": 11.31
       },
       {
         "id": "8131",
@@ -132,16 +131,16 @@
         "ppg": 6.45
       },
       {
-        "id": "9997",
-        "name": "Zay Flowers",
-        "position": "WR",
-        "ppg": 11.31
-      },
-      {
         "id": "5859",
         "name": "A.J. Brown",
         "position": "WR",
         "ppg": 11.01
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 7.04
       }
     ]
   },
@@ -157,15 +156,6 @@
       "id": "11792",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Will Reichard",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "12495",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Ollie Gordon II",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -208,6 +198,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "4034",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Christian McCaffrey",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "4046",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Patrick Mahomes",
@@ -244,15 +243,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "8144",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Chris Olave",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "8150",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Kyren Williams",
@@ -266,15 +256,6 @@
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Jaxon Smith-Njigba",
       "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "9753",
-      "model_handling": "exclude_explicit_unavailable_tag",
-      "name": "Zach Charbonnet",
-      "sleeper_injury_status": "Out",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -320,8 +301,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
-  "source_availability_generated_at_utc": "2026-11-05T22:49:00.598903+00:00",
+  "snapshot_utc": "2026-11-05T23:44:58.539134+00:00",
+  "source_availability_generated_at_utc": "2026-11-05T23:45:08.266268+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

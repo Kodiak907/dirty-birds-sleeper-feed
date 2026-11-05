@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-05T22:48:59.834354+00:00",
+  "generated_at_utc": "2026-11-05T23:45:07.835581+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-05T19:30:05.171738+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
+  "snapshot_utc": "2026-11-05T23:44:58.539134+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,7 +23,7 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 135.63,
+      "ppg": 139.66,
       "starters": [
         {
           "id": "4046",
@@ -33,18 +33,18 @@
           "ppg": 17.47
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "DAL",
+          "position": "RB",
+          "ppg": 20.42
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "ARI",
           "position": "RB",
           "ppg": 17.7
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "IND",
-          "position": "RB",
-          "ppg": 12.79
         },
         {
           "id": "9488",
@@ -82,18 +82,18 @@
           "ppg": 6.87
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "CAR",
-          "position": "WR",
-          "ppg": 13.35
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "DET",
           "position": "WR",
           "ppg": 12.92
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "DAL",
+          "position": "WR",
+          "ppg": 9.75
         }
       ]
     },
@@ -102,10 +102,9 @@
       "missing_projection": [
         "A.J. Brown",
         "Kyren Williams",
-        "Jaxon Smith-Njigba",
-        "Zach Charbonnet"
+        "Jaxon Smith-Njigba"
       ],
-      "ppg": 114.97,
+      "ppg": 111.28,
       "starters": [
         {
           "id": "4046",
@@ -115,6 +114,13 @@
           "ppg": 23.05
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "MIN",
+          "position": "RB",
+          "ppg": 17.36
+        },
+        {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "LV",
@@ -122,25 +128,18 @@
           "ppg": 12.47
         },
         {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "BUF",
-          "position": "RB",
-          "ppg": 11.94
-        },
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "CHI",
-          "position": "WR",
-          "ppg": 14.94
-        },
-        {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "CAR",
           "position": "WR",
           "ppg": 13.15
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "MIN",
+          "position": "WR",
+          "ppg": 8.09
         },
         {
           "id": "8131",
@@ -164,25 +163,25 @@
           "ppg": 7.19
         },
         {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "MIN",
-          "position": "WR",
-          "ppg": 8.09
-        },
-        {
           "id": "13301",
           "name": "Antonio Williams",
           "opponent": "CIN",
           "position": "WR",
           "ppg": 6.42
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "opponent": "BUF",
+          "position": "WR",
+          "ppg": 5.83
         }
       ]
     },
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.99,
+      "ppg": 136.73,
       "starters": [
         {
           "id": "4046",
@@ -199,11 +198,11 @@
           "ppg": 17.85
         },
         {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "NYJ",
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "SEA",
           "position": "RB",
-          "ppg": 12.03
+          "ppg": 17.47
         },
         {
           "id": "9488",
@@ -213,11 +212,11 @@
           "ppg": 20.19
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "CIN",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "HOU",
           "position": "WR",
-          "ppg": 14.96
+          "ppg": 14.01
         },
         {
           "id": "8131",
@@ -241,18 +240,18 @@
           "ppg": 7.19
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "HOU",
-          "position": "WR",
-          "ppg": 14.01
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "LAC",
           "position": "WR",
           "ppg": 12.09
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "PIT",
+          "position": "RB",
+          "ppg": 10.26
         }
       ]
     },
@@ -261,7 +260,7 @@
       "missing_projection": [
         "Zay Flowers"
       ],
-      "ppg": 129.12,
+      "ppg": 132.03,
       "starters": [
         {
           "id": "4046",
@@ -271,18 +270,18 @@
           "ppg": 17.02
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "NYG",
+          "position": "RB",
+          "ppg": 20.29
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "KC",
           "position": "RB",
           "ppg": 16.43
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "DEN",
-          "position": "RB",
-          "ppg": 12.03
         },
         {
           "id": "9488",
@@ -292,11 +291,11 @@
           "ppg": 22.49
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "GB",
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "BUF",
           "position": "WR",
-          "ppg": 14.39
+          "ppg": 11.49
         },
         {
           "id": "8131",
@@ -320,25 +319,25 @@
           "ppg": 7.19
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "BUF",
-          "position": "WR",
-          "ppg": 11.49
-        },
-        {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "MIA",
           "position": "RB",
           "ppg": 10.95
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "NYG",
+          "position": "WR",
+          "ppg": 9.04
         }
       ]
     },
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.8,
+      "ppg": 134.01,
       "starters": [
         {
           "id": "4046",
@@ -348,18 +347,18 @@
           "ppg": 19.5
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "LA",
+          "position": "RB",
+          "ppg": 17.94
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "SF",
           "position": "RB",
           "ppg": 16.09
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "CHI",
-          "position": "RB",
-          "ppg": 13.43
         },
         {
           "id": "9488",
@@ -397,25 +396,25 @@
           "ppg": 7.19
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "CAR",
-          "position": "WR",
-          "ppg": 13.38
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "MIN",
           "position": "WR",
           "ppg": 10.76
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "NYJ",
+          "position": "RB",
+          "ppg": 10.08
         }
       ]
     },
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 134.51,
+      "ppg": 137.48,
       "starters": [
         {
           "id": "4046",
@@ -425,18 +424,18 @@
           "ppg": 18.55
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "LAC",
+          "position": "RB",
+          "ppg": 19.29
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "DAL",
           "position": "RB",
           "ppg": 18.76
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "GB",
-          "position": "RB",
-          "ppg": 12.35
         },
         {
           "id": "9488",
@@ -446,11 +445,11 @@
           "ppg": 20.22
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "TB",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "PIT",
           "position": "WR",
-          "ppg": 14.87
+          "ppg": 14.26
         },
         {
           "id": "8131",
@@ -474,25 +473,25 @@
           "ppg": 6.66
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "PIT",
-          "position": "WR",
-          "ppg": 14.26
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "KC",
           "position": "WR",
           "ppg": 11.09
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "LV",
+          "position": "RB",
+          "ppg": 10.9
         }
       ]
     },
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 134.03,
+      "ppg": 134.17,
       "starters": [
         {
           "id": "4046",
@@ -502,18 +501,18 @@
           "ppg": 18.35
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "KC",
+          "position": "RB",
+          "ppg": 17.94
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "SEA",
           "position": "RB",
           "ppg": 15.55
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "LAC",
-          "position": "RB",
-          "ppg": 12.38
         },
         {
           "id": "9488",
@@ -523,11 +522,11 @@
           "ppg": 19.85
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "ARI",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CLE",
           "position": "WR",
-          "ppg": 15.69
+          "ppg": 13.34
         },
         {
           "id": "8131",
@@ -551,25 +550,25 @@
           "ppg": 7.5
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CLE",
-          "position": "WR",
-          "ppg": 13.34
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "NYJ",
           "position": "WR",
           "ppg": 12.01
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "BUF",
+          "position": "RB",
+          "ppg": 10.27
         }
       ]
     },
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.84,
+      "ppg": 135.12,
       "starters": [
         {
           "id": "4046",
@@ -579,18 +578,18 @@
           "ppg": 18.95
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "PHI",
+          "position": "RB",
+          "ppg": 17.91
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "TB",
           "position": "RB",
           "ppg": 16.24
-        },
-        {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "BUF",
-          "position": "RB",
-          "ppg": 12.08
         },
         {
           "id": "9488",
@@ -628,18 +627,18 @@
           "ppg": 7.77
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "ATL",
-          "position": "WR",
-          "ppg": 13.77
-        },
-        {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "DEN",
           "position": "WR",
           "ppg": 10.79
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "NE",
+          "position": "RB",
+          "ppg": 10.22
         }
       ]
     },
@@ -648,7 +647,7 @@
       "missing_projection": [
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.24,
+      "ppg": 138.55,
       "starters": [
         {
           "id": "4046",
@@ -658,18 +657,18 @@
           "ppg": 21.14
         },
         {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "LV",
+          "position": "RB",
+          "ppg": 21.1
+        },
+        {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "WAS",
           "position": "RB",
           "ppg": 17.15
-        },
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "opponent": "CAR",
-          "position": "RB",
-          "ppg": 13.12
         },
         {
           "id": "9488",
@@ -679,11 +678,11 @@
           "ppg": 20.62
         },
         {
-          "id": "8144",
-          "name": "Chris Olave",
-          "opponent": "CLE",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "JAX",
           "position": "WR",
-          "ppg": 12.61
+          "ppg": 11.31
         },
         {
           "id": "8131",
@@ -707,18 +706,18 @@
           "ppg": 6.45
         },
         {
-          "id": "12495",
-          "name": "Ollie Gordon II",
-          "opponent": "DET",
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "CAR",
           "position": "RB",
-          "ppg": 12.19
+          "ppg": 13.12
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "JAX",
+          "id": "5859",
+          "name": "A.J. Brown",
+          "opponent": "GB",
           "position": "WR",
-          "ppg": 11.31
+          "ppg": 11.01
         }
       ]
     }

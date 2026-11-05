@@ -1,8 +1,8 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-05T22:48:58.629387+00:00",
+  "generated_at_utc": "2026-11-05T23:45:06.755972+00:00",
   "candidates_evaluated": 49632,
-  "market_matched": 6935,
+  "market_matched": 6522,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-05T15:13:09.640408+00:00",
@@ -10,78 +10,6 @@
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
-    {
-      "opponent_roster_id": 4,
-      "opponent_name": "DANGER CLOSE ",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "8131",
-          "name": "Isaiah Likely",
-          "pos": "TE"
-        }
-      ],
-      "receive": [
-        {
-          "id": "5045",
-          "name": "Courtland Sutton",
-          "pos": "WR"
-        },
-        {
-          "id": "4217",
-          "name": "George Kittle",
-          "pos": "TE"
-        }
-      ],
-      "our_gain": 2.32,
-      "their_gain": 2.43,
-      "market_paid_received_ratio": 0.973,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.698,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 4,
-      "opponent_name": "DANGER CLOSE ",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "8131",
-          "name": "Isaiah Likely",
-          "pos": "TE"
-        }
-      ],
-      "receive": [
-        {
-          "id": "13274",
-          "name": "Germie Bernard",
-          "pos": "WR"
-        },
-        {
-          "id": "4217",
-          "name": "George Kittle",
-          "pos": "TE"
-        }
-      ],
-      "our_gain": 2.32,
-      "their_gain": 2.43,
-      "market_paid_received_ratio": 0.966,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.675,
-      "not_an_approved_offer": true
-    },
     {
       "opponent_roster_id": 11,
       "opponent_name": "suck my dickerson",
@@ -152,42 +80,6 @@
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
       "score": 2.604,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "8144",
-          "name": "Chris Olave",
-          "pos": "WR"
-        }
-      ],
-      "receive": [
-        {
-          "id": "8155",
-          "name": "Breece Hall",
-          "pos": "RB"
-        },
-        {
-          "id": "9493",
-          "name": "Puka Nacua",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 1.67,
-      "their_gain": 0.83,
-      "market_paid_received_ratio": 0.905,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.884,
       "not_an_approved_offer": true
     }
   ],

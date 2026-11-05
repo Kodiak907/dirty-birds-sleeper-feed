@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-05T22:48:56.539606+00:00
+Generated: 2026-11-05T23:45:04.423951+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **126.69**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **128.78**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -39,11 +39,11 @@ Baseline illustrative optimal PPG: **126.69**. Weeks with partial projections an
 | 5 | Rashid Shaheed | 4.52 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.58 | Partial projection coverage |
 | 6 | Dontayvion Wicks | 4.38 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.72 | Availability status: questionable; Partial projection coverage |
 | 7 | Michael Pittman Jr. | 4.35 | Bench-depth scenario: Caleb Douglas | +0.00 | -1.75 | Availability status: ir; Partial projection coverage |
-| 8 | Ja'Kobi Lane | 3.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.49 | Partial projection coverage |
-| 9 | Rashod Bateman | 3.50 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.60 | Partial projection coverage |
-| 10 | Mack Hollins | 3.44 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.66 | Availability status: ir; Partial projection coverage |
-| 11 | Jauan Jennings | 2.75 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.35 | No flagged data gap; review still required |
-| 12 | Konata Mumpfield | 2.33 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.77 | No sourced usage; Partial projection coverage; Limited snap sample |
+| 8 | Makai Lemon | 3.82 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.28 | Partial projection coverage |
+| 9 | Ja'Kobi Lane | 3.61 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.49 | Partial projection coverage |
+| 10 | Rashod Bateman | 3.50 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.60 | Partial projection coverage |
+| 11 | Mack Hollins | 3.44 | Bench-depth scenario: Caleb Douglas | +0.00 | -2.66 | Availability status: ir; Partial projection coverage |
+| 12 | Jauan Jennings | 2.75 | Bench-depth scenario: Caleb Douglas | +0.00 | -3.35 | No flagged data gap; review still required |
 
 ## TE
 

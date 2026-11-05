@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T22:48:56.326709+00:00
-Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
+Generated: 2026-11-05T23:45:04.215478+00:00
+Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,7 +9,7 @@ Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
 |---|---:|
 | QB | 328 |
 | RB | 628 |
-| WR | 1291 |
+| WR | 1292 |
 | TE | 615 |
 | K | 139 |
 | DEF | 14 |
@@ -50,11 +50,11 @@ Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
 | 5 | Rashid Shaheed | SEA | 4.52 | 89% | 41.3% | Not flagged |
 | 6 | Dontayvion Wicks | PHI | 4.38 | 89% | 79.3% | Questionable |
 | 7 | Michael Pittman Jr. | PIT | 4.35 | 89% | 77.7% | IR |
-| 8 | Ja'Kobi Lane | BAL | 3.61 | 89% | 62.7% | Not flagged |
-| 9 | Rashod Bateman | BAL | 3.50 | 89% | 59.7% | Not flagged |
-| 10 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
-| 11 | Jauan Jennings | MIN | 2.75 | 100% | 60.0% | Not flagged |
-| 12 | Konata Mumpfield | LAR | 2.33 | 89% | — | Not flagged |
+| 8 | Makai Lemon | PHI | 3.82 | 89% | 88.7% | Not flagged |
+| 9 | Ja'Kobi Lane | BAL | 3.61 | 89% | 62.7% | Not flagged |
+| 10 | Rashod Bateman | BAL | 3.50 | 89% | 59.7% | Not flagged |
+| 11 | Mack Hollins | NE | 3.44 | 89% | 62.7% | IR |
+| 12 | Jauan Jennings | MIN | 2.75 | 100% | 60.0% | Not flagged |
 
 ### TE
 
@@ -121,13 +121,13 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Dontayvion Wicks | WR | PHI | 4.38 | 79.3% |
 | Michael Pittman Jr. | WR | PIT | 4.35 | 77.7% |
 | Seth McGowan | RB | IND | 4.11 | 27.0% |
+| Makai Lemon | WR | PHI | 3.82 | 88.7% |
 | Ja'Kobi Lane | WR | BAL | 3.61 | 62.7% |
-| Rashod Bateman | WR | BAL | 3.50 | 59.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **39**
+Candidates with independently sourced projections AND usage data: **40**
 
 ## Coverage and rules
 

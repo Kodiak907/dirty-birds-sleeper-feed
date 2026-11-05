@@ -1,22 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-05T22:48:56.194282+00:00
-Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
+Generated: 2026-11-05T23:45:04.083279+00:00
+Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**6 transaction changes:** 6 completed, 0 pending/processing, 0 failed.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1424199291899015168` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Buffalo Bills → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
-- **NEW** · transaction `1424199014705848320` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Dylan Sampson → CREAM MACHINE  (#2) | Dropped: Darren Waller → CREAM MACHINE  (#2)
-- **NEW** · transaction `1424198631568748544` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jahan Dotson → DANGER CLOSE  (#4)
-- **NEW** · transaction `1424196712137871360` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
-- **NEW** · transaction `1424190101302329344` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Brian Thomas Jr. → DANGER CLOSE  (#4) | Dropped: New England Patriots → DANGER CLOSE  (#4)
-- **NEW** · transaction `1424189759210754048` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jordan Watkins → DANGER CLOSE  (#4) | Dropped: Keon Coleman → DANGER CLOSE  (#4)
+- **NEW** · transaction `1424215054194126848` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
+- **NEW** · transaction `1424214542132523008` · TRADE · COMPLETE · Dirty Birds (#1), JA’MARRTRIX (#7) | Added: Ollie Gordon II → JA’MARRTRIX (#7), Christian McCaffrey → Dirty Birds (#1), Chris Olave → JA’MARRTRIX (#7), Zach Charbonnet → JA’MARRTRIX (#7) | Dropped: Ollie Gordon II → Dirty Birds (#1), Christian McCaffrey → JA’MARRTRIX (#7), Chris Olave → Dirty Birds (#1), Zach Charbonnet → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-05T23:45:04.083279+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), JA’MARRTRIX (#7) | Added: Ollie Gordon II → JA’MARRTRIX (#7), Christian McCaffrey → Dirty Birds (#1), Chris Olave → JA’MARRTRIX (#7), Zach Charbonnet → JA’MARRTRIX (#7) | Dropped: Ollie Gordon II → Dirty Birds (#1), Christian McCaffrey → JA’MARRTRIX (#7), Chris Olave → Dirty Birds (#1), Zach Charbonnet → Dirty Birds (#1)
+- 2026-11-05T23:45:04.083279+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jordan Watkins → DANGER CLOSE  (#4) | Dropped: Keon Coleman → DANGER CLOSE  (#4)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Brian Thomas Jr. → DANGER CLOSE  (#4) | Dropped: New England Patriots → DANGER CLOSE  (#4)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
@@ -40,8 +38,6 @@ League: 1399157532559192064
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Mike Washington Jr. → JA’MARRTRIX (#7) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Devin Singletary → JA’MARRTRIX (#7) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Chig Okonkwo → Dirty Birds (#1) | FAAB bid: $7
-- 2026-11-03T22:43:45.650507+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Jacoby Brissett → CREAM MACHINE  (#2)
-- 2026-11-03T02:52:16.964045+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), To Infinity and Bijan (#9) | Added: Chris Olave → Dirty Birds (#1), Garrett Wilson → To Infinity and Bijan (#9), Jaxon Smith-Njigba → Dirty Birds (#1), Bijan Robinson → To Infinity and Bijan (#9) | Dropped: Chris Olave → To Infinity and Bijan (#9), Garrett Wilson → Dirty Birds (#1), Jaxon Smith-Njigba → To Infinity and Bijan (#9), Bijan Robinson → Dirty Birds (#1)
 
 ## Important limits
 

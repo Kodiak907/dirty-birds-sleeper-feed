@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-05T22:48:56.274329+00:00",
+  "generated_at_utc": "2026-11-05T23:45:04.162508+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -35,9 +35,9 @@
   },
   "profiles": [
     {
-      "completed_trade_count": 10,
+      "completed_trade_count": 11,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 120.65,
+      "observed_optimal_average": 122.03,
       "observed_optimal_lineup": [
         {
           "avg": 16.06,
@@ -50,8 +50,8 @@
           "position": "RB"
         },
         {
-          "avg": 6.94,
-          "name": "Ollie Gordon II",
+          "avg": 15.88,
+          "name": "Christian McCaffrey",
           "position": "RB"
         },
         {
@@ -80,14 +80,14 @@
           "position": "DEF"
         },
         {
-          "avg": 12.51,
-          "name": "Chris Olave",
-          "position": "WR"
-        },
-        {
           "avg": 6.92,
           "name": "Deebo Samuel Sr.",
           "position": "WR"
+        },
+        {
+          "avg": 4.95,
+          "name": "Jonah Coleman",
+          "position": "RB"
         }
       ],
       "players": [
@@ -109,26 +109,6 @@
             0.0,
             12.0,
             0.0
-          ]
-        },
-        {
-          "actual_points_total": 55.5,
-          "actual_points_weekly_avg": 6.94,
-          "id": "12495",
-          "n_weeks": 8,
-          "name": "Ollie Gordon II",
-          "nonzero_weeks": 4,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            17.0,
-            14.8,
-            0.0,
-            16.8,
-            6.9
           ]
         },
         {
@@ -208,6 +188,26 @@
             1.6,
             4.2,
             10.4,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 127.0,
+          "actual_points_weekly_avg": 15.88,
+          "id": "4034",
+          "n_weeks": 8,
+          "name": "Christian McCaffrey",
+          "nonzero_weeks": 7,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            11.3,
+            20.6,
+            19.6,
+            14.5,
+            15.8,
+            26.2,
+            19.0,
             0.0
           ]
         },
@@ -292,26 +292,6 @@
           ]
         },
         {
-          "actual_points_total": 100.1,
-          "actual_points_weekly_avg": 12.51,
-          "id": "8144",
-          "n_weeks": 8,
-          "name": "Chris Olave",
-          "nonzero_weeks": 7,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            23.2,
-            18.6,
-            15.2,
-            15.6,
-            6.6,
-            12.3,
-            8.6,
-            0.0
-          ]
-        },
-        {
           "actual_points_total": 133.5,
           "actual_points_weekly_avg": 16.69,
           "id": "8150",
@@ -349,26 +329,6 @@
             19.4,
             26.8,
             21.8
-          ]
-        },
-        {
-          "actual_points_total": 4.4,
-          "actual_points_weekly_avg": 0.55,
-          "id": "9753",
-          "n_weeks": 8,
-          "name": "Zach Charbonnet",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            4.4
           ]
         },
         {
@@ -581,23 +541,23 @@
             ]
           },
           {
-            "actual_points_total": 55.5,
-            "actual_points_weekly_avg": 6.94,
-            "id": "12495",
+            "actual_points_total": 127.0,
+            "actual_points_weekly_avg": 15.88,
+            "id": "4034",
             "n_weeks": 8,
-            "name": "Ollie Gordon II",
-            "nonzero_weeks": 4,
+            "name": "Christian McCaffrey",
+            "nonzero_weeks": 7,
             "on_fantasy_reserve": false,
             "position": "RB",
             "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              17.0,
-              14.8,
-              0.0,
-              16.8,
-              6.9
+              11.3,
+              20.6,
+              19.6,
+              14.5,
+              15.8,
+              26.2,
+              19.0,
+              0.0
             ]
           },
           {
@@ -638,26 +598,6 @@
               4.2,
               10.4,
               0.0
-            ]
-          },
-          {
-            "actual_points_total": 4.4,
-            "actual_points_weekly_avg": 0.55,
-            "id": "9753",
-            "n_weeks": 8,
-            "name": "Zach Charbonnet",
-            "nonzero_weeks": 1,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              4.4
             ]
           }
         ],
@@ -721,26 +661,6 @@
               10.6,
               9.7,
               24.7,
-              0.0
-            ]
-          },
-          {
-            "actual_points_total": 100.1,
-            "actual_points_weekly_avg": 12.51,
-            "id": "8144",
-            "n_weeks": 8,
-            "name": "Chris Olave",
-            "nonzero_weeks": 7,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              23.2,
-              18.6,
-              15.2,
-              15.6,
-              6.6,
-              12.3,
-              8.6,
               0.0
             ]
           },
@@ -4971,9 +4891,9 @@
       "team": "kfsn"
     },
     {
-      "completed_trade_count": 4,
+      "completed_trade_count": 5,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 116.55,
+      "observed_optimal_average": 113.18,
       "observed_optimal_lineup": [
         {
           "avg": 12.58,
@@ -4986,8 +4906,8 @@
           "position": "RB"
         },
         {
-          "avg": 15.88,
-          "name": "Christian McCaffrey",
+          "avg": 8.11,
+          "name": "Cam Skattebo",
           "position": "RB"
         },
         {
@@ -4996,8 +4916,8 @@
           "position": "WR"
         },
         {
-          "avg": 10.77,
-          "name": "Michael Wilson",
+          "avg": 12.51,
+          "name": "Chris Olave",
           "position": "WR"
         },
         {
@@ -5016,9 +4936,9 @@
           "position": "DEF"
         },
         {
-          "avg": 8.11,
-          "name": "Cam Skattebo",
-          "position": "RB"
+          "avg": 10.77,
+          "name": "Michael Wilson",
+          "position": "WR"
         },
         {
           "avg": 7.47,
@@ -5168,6 +5088,26 @@
           ]
         },
         {
+          "actual_points_total": 55.5,
+          "actual_points_weekly_avg": 6.94,
+          "id": "12495",
+          "n_weeks": 8,
+          "name": "Ollie Gordon II",
+          "nonzero_weeks": 4,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            17.0,
+            14.8,
+            0.0,
+            16.8,
+            6.9
+          ]
+        },
+        {
           "actual_points_total": 59.8,
           "actual_points_weekly_avg": 7.47,
           "id": "12534",
@@ -5228,26 +5168,6 @@
           ]
         },
         {
-          "actual_points_total": 29.9,
-          "actual_points_weekly_avg": 3.74,
-          "id": "13294",
-          "n_weeks": 8,
-          "name": "Makai Lemon",
-          "nonzero_weeks": 7,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            1.0,
-            1.4,
-            4.4,
-            4.2,
-            6.8,
-            3.4,
-            0.0,
-            8.7
-          ]
-        },
-        {
           "actual_points_total": 0.0,
           "actual_points_weekly_avg": 0.0,
           "id": "13337",
@@ -5285,26 +5205,6 @@
             2.0,
             4.2,
             6.7
-          ]
-        },
-        {
-          "actual_points_total": 127.0,
-          "actual_points_weekly_avg": 15.88,
-          "id": "4034",
-          "n_weeks": 8,
-          "name": "Christian McCaffrey",
-          "nonzero_weeks": 7,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            11.3,
-            20.6,
-            19.6,
-            14.5,
-            15.8,
-            26.2,
-            19.0,
-            0.0
           ]
         },
         {
@@ -5348,6 +5248,26 @@
           ]
         },
         {
+          "actual_points_total": 100.1,
+          "actual_points_weekly_avg": 12.51,
+          "id": "8144",
+          "n_weeks": 8,
+          "name": "Chris Olave",
+          "nonzero_weeks": 7,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            23.2,
+            18.6,
+            15.2,
+            15.6,
+            6.6,
+            12.3,
+            8.6,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 152.1,
           "actual_points_weekly_avg": 19.01,
           "id": "8151",
@@ -5385,6 +5305,26 @@
             0.0,
             5.0,
             0.0
+          ]
+        },
+        {
+          "actual_points_total": 4.4,
+          "actual_points_weekly_avg": 0.55,
+          "id": "9753",
+          "n_weeks": 8,
+          "name": "Zach Charbonnet",
+          "nonzero_weeks": 1,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.4
           ]
         },
         {
@@ -5557,26 +5497,6 @@
             ]
           },
           {
-            "actual_points_total": 127.0,
-            "actual_points_weekly_avg": 15.88,
-            "id": "4034",
-            "n_weeks": 8,
-            "name": "Christian McCaffrey",
-            "nonzero_weeks": 7,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              11.3,
-              20.6,
-              19.6,
-              14.5,
-              15.8,
-              26.2,
-              19.0,
-              0.0
-            ]
-          },
-          {
             "actual_points_total": 64.9,
             "actual_points_weekly_avg": 8.11,
             "id": "12481",
@@ -5617,6 +5537,26 @@
             ]
           },
           {
+            "actual_points_total": 55.5,
+            "actual_points_weekly_avg": 6.94,
+            "id": "12495",
+            "n_weeks": 8,
+            "name": "Ollie Gordon II",
+            "nonzero_weeks": 4,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              17.0,
+              14.8,
+              0.0,
+              16.8,
+              6.9
+            ]
+          },
+          {
             "actual_points_total": 47.9,
             "actual_points_weekly_avg": 5.99,
             "id": "13287",
@@ -5634,6 +5574,26 @@
               0.0,
               0.0,
               2.3
+            ]
+          },
+          {
+            "actual_points_total": 4.4,
+            "actual_points_weekly_avg": 0.55,
+            "id": "9753",
+            "n_weeks": 8,
+            "name": "Zach Charbonnet",
+            "nonzero_weeks": 1,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              4.4
             ]
           },
           {
@@ -5721,6 +5681,26 @@
             ]
           },
           {
+            "actual_points_total": 100.1,
+            "actual_points_weekly_avg": 12.51,
+            "id": "8144",
+            "n_weeks": 8,
+            "name": "Chris Olave",
+            "nonzero_weeks": 7,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              23.2,
+              18.6,
+              15.2,
+              15.6,
+              6.6,
+              12.3,
+              8.6,
+              0.0
+            ]
+          },
+          {
             "actual_points_total": 86.18,
             "actual_points_weekly_avg": 10.77,
             "id": "10232",
@@ -5758,26 +5738,6 @@
               2.0,
               4.2,
               6.7
-            ]
-          },
-          {
-            "actual_points_total": 29.9,
-            "actual_points_weekly_avg": 3.74,
-            "id": "13294",
-            "n_weeks": 8,
-            "name": "Makai Lemon",
-            "nonzero_weeks": 7,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              1.0,
-              1.4,
-              4.4,
-              4.2,
-              6.8,
-              3.4,
-              0.0,
-              8.7
             ]
           },
           {
@@ -9667,6 +9627,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-05T22:48:50.025594+00:00",
+  "snapshot_utc": "2026-11-05T23:44:58.539134+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-8"
 }

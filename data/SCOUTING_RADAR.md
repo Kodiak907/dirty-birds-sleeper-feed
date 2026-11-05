@@ -1,14 +1,13 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-05T22:48:56.224746+00:00
-Sleeper snapshot: 2026-11-05T22:48:50.025594+00:00
+Generated: 2026-11-05T23:45:04.113173+00:00
+Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 
-Roster change entries: 4. New completed trade entries: 0.
+Roster change entries: 2. New completed trade entries: 1.
 
-- Dirty Birds: added Buffalo Bills; dropped none
-- CREAM MACHINE: added Dylan Sampson; dropped Darren Waller
-- DANGER CLOSE: added Brian Thomas Jr., Jordan Watkins, Jahan Dotson; dropped Keon Coleman, New England Patriots
-- DANGER CLOSE: reserve status changed
+- Dirty Birds: added Christian McCaffrey; dropped Ollie Gordon II, Chris Olave, Zach Charbonnet
+- JA’MARRTRIX: added Ollie Gordon II, Chris Olave, Zach Charbonnet; dropped Makai Lemon, Christian McCaffrey
+- Completed trade 1424214542132523008: {'Ollie Gordon II': 'JA’MARRTRIX', 'Christian McCaffrey': 'Dirty Birds', 'Chris Olave': 'JA’MARRTRIX', 'Zach Charbonnet': 'JA’MARRTRIX'}; FAAB transfers [{'amount': 25, 'receiver': 1, 'sender': 7}]
 
 ## Limits
 
