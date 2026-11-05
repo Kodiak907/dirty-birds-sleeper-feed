@@ -2502,12 +2502,18 @@ function pfo52LineupScore(team,assignments,w,past){let total=0,count=0;for(const
  return {total:count?total:null,complete:count===assignments.length,known:count};
 }
 function pfo52PointLabel(val,complete=true){return val==null?'—':pfo52Money(val,2)+(complete?'':' †');}
-function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
+function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[],original=mode==='ours'?pfo52Actual(t,w).assignments:[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
+ const previous=original[i]?.id||null,changed=mode==='ours'&&String(previous||'')!==String(x.id||'');
+ const priorName=previous?pfo52Info(previous)?.name||'Previous player':'Open slot';
  const reserved=new Set((t?.reserve||t?.record?.reserve||[]).map(String));
  const reserve=(t?.members||[]).filter(y=>!reserved.has(String(y.id||y.player_id))&&pfo52Legal(x.slot,y)&&String(y.id||y.player_id)!==String(x.id)&&!rows.some((z,j)=>j!==i&&String(z.id)===String(y.id||y.player_id)));
  const selector=mode==='ours'?'<select class="pfo52-swap" data-pfo52-swap="'+i+'" aria-label="Change '+e(x.slot)+' player"><option value="'+e(x.id||'')+'">'+e(p?.name||'Open slot')+'</option>'+reserve.map(y=>'<option value="'+e(y.id||y.player_id)+'">'+e(y.name)+'</option>').join('')+'</select>':'';
  const proj=!past&&x.id?pfo52Points(x.id,w):null;
- return '<div class="pfo52-playerrow"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+(x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+'<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b></div>';
+ return '<div class="pfo52-playerrow'+(changed?' pfo615-swapped':'')+'"><span class="pfo52-slot">'+e(x.slot)+'</span><div>'+
+ (x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+
+ '<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+
+ (changed?'<span class="pfo615-change-note">↗ IN: '+e(p?.name||'Empty slot')+' · ↙ OUT: '+e(priorName)+'</span>':'')+
+ selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b></div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
@@ -2578,7 +2584,15 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;
  h+='<section class="pfo52-lab"><div class="pfo52-panhead"><h3>Interactive Lineup Lab</h3><small>'+(past?'HINDSIGHT: final player points':'SCENARIO: experimental FFO projections')+' · Never changes Sleeper</small></div>';
  h+='<div class="pfo52-scorecards"><div><small>Original</small><b>'+pfo52PointLabel(original.total,original.complete)+'</b></div><div><small>Simulated</small><b>'+pfo52PointLabel(simulated.total,simulated.complete)+'</b></div><div><small>Difference</small><b>'+(delta==null?'—':(delta>=0?'+':'')+pfo52Money(delta))+'</b></div></div>';
  if(past&&!comparable)h+='<p class="note">Final team score and individual starter points do not reconcile in the loaded weekly record. Hindsight score differences are withheld until a complete league-scored audit can be performed.</p>';
- h+='<p class="pfo52-fine">Swap any legal starter for a rostered bench player. Changes are isolated to this preview. † A partial total means at least one player lacks a supported scoring estimate—missing does not equal zero.</p>'+pfo52Table(ours,pfo52Scenario,w,past,'ours');
+ const changes=pfo52Scenario.assignments.map((next,i)=>({slot:next.slot,before:baseline.assignments[i]?.id||null,after:next.id||null}))
+  .filter(x=>String(x.before||'')!==String(x.after||''));
+ const swapSummary=changes.length?
+  '<div class="pfo615-swap-summary"><b>'+changes.length+' change'+(changes.length!==1?'s':'')+' compared with submitted lineup</b><ul>'+
+   changes.map(x=>'<li>'+e(x.slot)+' · <b>IN '+e(x.after?pfo52Info(x.after).name:'Open slot')+'</b> · OUT '+e(x.before?pfo52Info(x.before).name:'Empty slot')+'</li>').join('')+
+  '</ul><small>Green highlight identifies changes in the research lineup; Sleeper has not been modified.</small></div>':
+  '<div class="pfo615-swap-summary"><b>0 changes</b> · This scenario currently matches the submitted lineup.</div>';
+ h+=swapSummary;
+ h+='<p class="pfo52-fine">Swap any legal starter for a rostered bench player. Green rows show the changes from your Sleeper submission. Missing estimates are unknown, never zero. No automatic lineup updates.</p>'+pfo52Table(ours,pfo52Scenario,w,past,'ours');
  h+='<div class="pfo52-actions"><button data-pfo52-action="reset" type="button">Reset lineup</button><button data-pfo52-action="save" type="button">Save scenario locally</button></div>';
  if(pfo52Scenarios.length)h+='<div class="pfo52-pills">'+pfo52Scenarios.map((x,i)=>'<button data-pfo52-loadscenario="'+i+'" type="button">'+e(x.name)+' · '+pfo52PointLabel(x.total,x.complete)+'</button>').join('')+'</div>';
  const ideal=past&&ours.completeRoster?pfo52Best(ours,w,true):null;
