@@ -12,6 +12,54 @@ const slots=['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];
 const data=await fetch('./sample-rosters.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Bundled demo roster not available');return r.json()});
 const players=data.players, own=data.rosters[0], rival=data.rosters[1];
 const state={week:9,page:'overview',market:'trade',matchmode:'starters',give:[],take:[],sendFaab:0,recvFaab:0,add:'',drop:'',claims:[],watch:new Set(),selected:own.starters[0],scoutPos:'ALL',scout:own.starters[0],search:'',radarPos:'ALL',game:0,play:0,scenarios:[],question:'',teamView:'submitted',matchView:'submitted',labSlots:own.starters.slice(),labError:'',startSitA:own.starters[0],startSitB:own.players.find(id=>!own.starters.includes(id)),scoutCompare:'',simVolatility:16,simBoost:0,simResult:null};
+
+/* Licensed member-only statistics are OPTIONAL and never change FFO demo forecast
+ * scores until position coverage and the calculation have been verified.
+ * The server verifies Access JWT and returns ONLY sample-player aggregates. */
+const msfHub={status:'checking_membership',rows:new Map(),checkedAt:null,error:null};
+const msfStatusText=()=>msfHub.status==='ready'?
+ 'MYSPORTSFEEDS VERIFIED · '+msfHub.rows.size+' demo players with season statistics':
+ msfHub.status==='loading'?'MSF member feed: retrieving observed season totals…':
+ msfHub.status==='members_only'?'MSF season statistics: available only to authorized invited members':
+ 'MSF statistics connection: '+(msfHub.error||'not enabled for this viewer');
+function msfFields(id){
+ const row=msfHub.rows.get(String(id)),fields=row?.per_game||{};
+ if(!row||!row.games_observed)return null;
+ const positions={QB:['pass_yd','pass_td','pass_int','rush_yd','rush_td'],RB:['rush_att','rush_yd','rush_td','rec','rec_yd','targets'],
+  WR:['targets','rec','rec_yd','rec_td'],TE:['targets','rec','rec_yd','rec_td'],
+  K:['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','xpm'],
+  DEF:['sack','int','ff']};
+ const labels={pass_yd:'Pass yards/game',pass_td:'Pass TD/game',pass_int:'Interceptions/game',rush_att:'Rush attempts/game',
+  rush_yd:'Rush yards/game',rush_td:'Rush TD/game',rec:'Receptions/game',rec_yd:'Rec yards/game',rec_td:'Rec TD/game',
+  targets:'Targets/game',fgm_0_19:'FG 0–19/game',fgm_20_29:'FG 20–29/game',fgm_30_39:'FG 30–39/game',
+  fgm_40_49:'FG 40–49/game',fgm_50_59:'FG 50–59/game',fgm_60p:'FG 60+/game',xpm:'Extra pts/game',
+  sack:'Sacks/game',int:'Interceptions/game',ff:'Forced fumbles/game'};
+ const arr=(positions[position(id)]||[]).filter(k=>Number.isFinite(fields[k]));
+ if(!arr.length)return null;
+ return {count:row.games_observed,stats:arr.map(k=>[labels[k],fields[k]])};
+}
+async function msfAutoHydrate(){
+ try{
+  const res=await fetch('/api/demo/msf/status',{credentials:'same-origin',cache:'no-store'});
+  if(!res.ok){msfHub.status='members_only';return}
+  const check=await res.json();
+  if(check.available!==true){msfHub.status='members_only';return}
+  msfHub.status='loading';
+  const selected=[...new Set([...own.starters,...rival.starters].map(id=>teamOf(id)))].filter(code=>/^[A-Z]{2,3}$/.test(code));
+  for(let offset=0;offset<selected.length;offset+=3){
+   const batch=selected.slice(offset,offset+3);
+   const fetched=await Promise.allSettled(batch.map(team=>fetch('/api/demo/msf/season?team='+encodeURIComponent(team),
+    {credentials:'same-origin',cache:'no-store'}).then(async res=>res.ok?res.json():null)));
+   for(const item of fetched)if(item.status==='fulfilled'&&Array.isArray(item.value?.players)){
+    msfHub.checkedAt=item.value.checked_at;
+    for(const row of item.value.players)if(row.id)msfHub.rows.set(String(row.id),row);
+   }
+  }
+  msfHub.status='ready';
+ }catch(e){msfHub.status='members_only';msfHub.error='member feed currently inaccessible'}
+ finally{render()}
+}
+
 const teamOf=id=>players[id]?.team||'—';
 const identity=id=>players[id]||{name:'Unverified player',position:'?',team:'—'};
 const pool=()=>Array.from(new Set([...own.players,...rival.players,...data.waivers,...state.claims]));
@@ -135,9 +183,14 @@ function projectionProfile(id){
  pos==='TE'?[['Targets',6.8],['Receptions',4.3],['Rec Yds',52]]:
  pos==='K'?[['FG made',1.9],['Extra points',2.4],['40+ FG',0.9]]:
  [['Sacks',2.5],['Takeaways',1.4],['Points allowed',20]];
- return '<div class="pfo49-profile-head"><h3>'+pButton(id)+' <small class="pfo-demo-pos">'+esc(pos)+' · '+esc(p.team)+'</small></h3></div>'+
+ const observed=msfFields(id);
+ const observedHTML=observed?'<div class="pfo-demo-msf-card"><div class="pfo-demo-msf-head"><strong>MYSPORTSFEEDS · OBSERVED 2026 SEASON</strong><span>RESTRICTED VERIFIED STATS</span></div>'+
+ '<p>'+esc(observed.count)+' source-observed games · sourced per-game means, NOT independent forecast scores</p><div class="pfo-demo-statgrid">'+
+ observed.stats.map(([label,val])=>stat(Number(val).toFixed(2),label,'pfo-demo-highlight')).join('')+'</div></div>':
+ '<div class="pfo-demo-context"><span class="pfo-demo-context-dot"></span>'+esc(msfStatusText())+'</div>';
+  return '<div class="pfo49-profile-head"><h3>'+pButton(id)+' <small class="pfo-demo-pos">'+esc(pos)+' · '+esc(p.team)+'</small></h3></div>'+
  '<div class="pfo-demo-statgrid">'+stat(money(val),'W'+state.week+' FFO-style demo forecast','pfo-demo-highlight')+stat('DEMO','Data confidence')+stat('—','Verified latest game')+'</div>'+
- '<h3>Position-specific statistical inputs</h3><div class="pfo-demo-statgrid">'+sample.map(([k,v])=>stat(v,k)).join('')+'</div>'+
+ observedHTML+'<h3>Example research-input fields (illustrative)</h3><div class="pfo-demo-statgrid">'+sample.map(([k,v])=>stat(v,k)).join('')+'</div>'+
  '<div class="note">Real NFL player identity · illustrative workload and statistical fields. These example numbers are not sourced MSF game logs and cannot be used as genuine predictions.</div>';
 }
 function scouting(){
@@ -338,3 +391,4 @@ document.addEventListener('input',event=>{
 });
 $('demo-week').value=String(state.week);
 view('overview');
+setTimeout(()=>{void msfAutoHydrate()},800);
