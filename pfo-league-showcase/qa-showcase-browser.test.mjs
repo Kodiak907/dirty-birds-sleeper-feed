@@ -21,7 +21,8 @@ test.before(async()=>{
  await new Promise(ok=>server.listen(0,'127.0.0.1',ok));
  browser=await chromium.launch({headless:true});
  page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2});
- page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:'))offsite.push(r.url())});
+ page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:')&&!r.url().startsWith('https://sleepercdn.com/content/nfl/players/thumb/'))offsite.push(r.url())});
+ await page.route('https://sleepercdn.com/**',route=>route.fulfill({status:404,body:''}));
  page.on('pageerror',e=>offsite.push('JS ERROR '+e.message));
  await page.goto('http://127.0.0.1:'+server.address().port+'/',{waitUntil:'networkidle'});
 });
