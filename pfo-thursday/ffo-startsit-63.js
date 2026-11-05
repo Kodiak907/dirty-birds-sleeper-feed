@@ -57,9 +57,11 @@
  function card(p,v){
   return '<section class="pfo612-compare-card"><div class="pfo612-player-name"><b>'+esc(p.name)+'</b><small>'+
    esc(p.position)+' · '+esc(p.team)+' · '+(p.starter?'Submitted starter':'Bench')+'</small></div>'+
-   '<div class="pfo612-projected">'+(v.points==null?'Not modeled':fmt(v.points,2)+' FFL pts')+'</div>'+
+   '<div class="pfo612-projected">'+(state.horizon!=='WEEK'?'Period forecast not certified':
+   v.bye?'Verified BYE':v.points==null?'Weekly model pending':fmt(v.points,2)+' FFL pts')+'</div>'+
    '<small class="pfo612-context">'+esc(v.bye?'Confirmed BYE':v.fixture?.opponent?'Opponent '+v.fixture.opponent:'Opponent not verified')+
-   ' · '+esc(p.injury?'Sleeper tag '+p.injury+' · Not official clearance':'Official availability unverified')+'</small></section>';
+   ' · '+esc(p.injury?'Sleeper tag '+p.injury+' · Not official clearance':'Official availability unverified')+
+   '<span class="pfo614-pending-reason">'+esc(v.points==null&&!v.bye?v.source:'')+'</span></small></section>';
  }
  function moreStats(p,v){
   let h='<div class="pfo612-stat-grid">'+
@@ -75,9 +77,21 @@
  }
  function scouting(p){
   if(typeof gm47Analysis!=='function'||typeof gm47Card!=='function')return '<p class="pfo612-foot">Advanced source-backed assessment unavailable until source hydration completes.</p>';
-  try{return gm47Card(gm47Analysis({player_id:p.id,name:p.name,team:p.team,position:p.position,
-   sleeper_injury_status:p.injury}),true)}
-  catch(err){console.warn('PFO 6.12 embedded GM evidence unavailable',String(err));
+  try{
+   const report=gm47Analysis({player_id:p.id,name:p.name,team:p.team,position:p.position,
+    sleeper_injury_status:p.injury});
+   // Lead with a compact evidence digest. The original full GM report remains
+   // accessible but is not duplicated as two giant expanded player cards.
+   const gaps=Array.isArray(report?.gaps)?report.gaps.length:0;
+   const notes=Array.isArray(report?.contrary)?report.contrary.length:0;
+   const opp=report?.opponent?.name||'Opponent unverified';
+   const snap=report?.usage?.snap_share_pct;
+   return '<div class="pfo614-gm-digest"><h4>'+esc(p.name)+'</h4><p>Opponent: '+esc(opp)+
+    '</p><p>Published snap share: '+(snap==null?'unavailable':esc(fmt(Number(snap),1))+'%')+
+    '</p><p>Missing evidence categories: '+gaps+' · Contrary signals: '+notes+
+    '</p></div><details class="pfo612-fold"><summary>Full original GM research · source details</summary>'+
+    gm47Card(report,true)+'</details>';
+  }catch(err){console.warn('PFO 6.14 embedded GM research unavailable',String(err));
    return '<p class="pfo612-foot">Deep scouting source is not ready. No decision inferred.</p>'}
  }
  function details(token,players,w){
