@@ -870,14 +870,22 @@ function ffo616NormalizePlayerGames(payload,team,name,checkedAt,expectedId=null)
   .replace(/\b(jr|sr|ii|iii|iv)\b\.?/gi,'').replace(/[^a-z]/g,'');
  const wanted=stem(name),unique=new Map(),ids=new Set();
  for(const item of rows){
-  const p=item.player||item.playerInfo||{},t=String(item.team?.abbreviation||item.teamInfo?.abbreviation||item.teamAbbreviation||'').toUpperCase();
+  const p=item.player||item.playerInfo||{},
+   t=String(item.team?.abbreviation||item.teamInfo?.abbreviation||item.teamAbbreviation||p.currentTeam?.abbreviation||'').toUpperCase();
   const fullname=String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||item.name||'');
-  if(t!==team||!wanted||stem(fullname)!==wanted)continue;
-  if(expectedId!==null&&String(p.id??item.playerId??'')!==String(expectedId))continue;
+  if(!wanted||stem(fullname)!==wanted)continue;
   const id=p.id??item.playerId??null;
-  if(id!==null)ids.add(String(id));
+  if(expectedId!==null&&String(id??'')!==String(expectedId))continue;
   const g=item.game||item.gameInfo||{},gameId=String(g.id??g.gameId??g.schedule?.id??g.startTime??item.date??'');
   if(!gameId||unique.has(gameId))continue;
+  const home=String(g.homeTeam?.abbreviation||g.homeTeamAbbreviation||g.schedule?.homeTeam?.abbreviation||'').toUpperCase();
+  const away=String(g.awayTeam?.abbreviation||g.awayTeamAbbreviation||g.schedule?.awayTeam?.abbreviation||'').toUpperCase();
+  if(t&&t!==team)continue;
+  // MSF player_gamelogs commonly carries game/player/stats without a team
+  // property. Accept the absent team ONLY with a season-sourced numeric player
+  // ID and a sourced game explicitly involving the requested roster NFL team.
+  if(!t&&(expectedId===null||!home||!away||(home!==team&&away!==team)))continue;
+  if(id!==null)ids.add(String(id));
   // Normalize a single documented game as one observed appearance. We do not
   // infer games from team schedule or provider data without a game identity.
   const wrapped={playerStatsTotals:[{player:p,team:item.team||item.teamInfo||{abbreviation:team},
