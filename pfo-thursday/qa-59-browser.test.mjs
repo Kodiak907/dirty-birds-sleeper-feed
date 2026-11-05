@@ -76,12 +76,12 @@ test('PFO 5.9 local Chromium mobile UI smoke: all new workspaces and protected t
   await page.waitForTimeout(900);
   assert.equal(await page.locator('#overview').count(),1);
   assert.equal(await page.locator('#ffo594-dock .ffo594-dock-btn').count(),6,'FFO six-item dock mounted');
-  assert.equal(await page.locator('#nav button[data-page]').count(),14,'Original 14 destination controls retained');
+  assert.equal(await page.locator('#nav button[data-page]').count(),13,'13 active destinations after GM Scouting consolidation');
   assert.equal(await page.locator('#ffo594-dock [data-ffo594-page="overview"]').getAttribute('aria-current'),'page','Overview active in mobile dock');
   await page.locator('#ffo594-more').click();
   assert.equal(await page.locator('#nav').isVisible(),true,'All Tools opens mobile drawer');
   assert.equal(await page.locator('#nav .ffo594-search').count(),0,'All Tools has no unnecessary search');
-  assert.equal(await page.locator('#nav button[data-page]:visible').count(),9,'Only secondary tools appear; dock destinations are not duplicated');
+  assert.equal(await page.locator('#nav button[data-page]:visible').count(),8,'Only secondary tools appear; retired GM Scouting tab removed');
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#nav').isVisible(),false,'Escape dismisses mobile drawer');
   await clickTab(page,'roster');
