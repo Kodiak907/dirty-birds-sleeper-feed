@@ -21,13 +21,13 @@ const rename={
 };
 function general(content){
  let text=content;
- for(const [from,to] of Object.entries(rename))text=text.split(from).join(to);
  text=text.replaceAll('https://raw.githubusercontent.com/Kodiak907/dirty-birds-sleeper-feed/main/data/','/demo-data/')
   .replaceAll('https://github.com/Kodiak907/dirty-birds-sleeper-feed/blob/main/data/','/demo-data/')
   .replaceAll('https://api.sleeper.app/v1','/api/demo-sleeper')
   .replaceAll('https://dirty-birds-monitor-git.tvega2924.workers.dev','/api/demo-monitor')
   .replaceAll('Kodiak907/dirty-birds-sleeper-feed','ffo-league-demo-sample')
   .replaceAll("Coach's","Manager's").replaceAll('Coach’s','Manager’s');
+ for(const [from,to] of Object.entries(rename))text=text.split(from).join(to);
  return text;
 }
 let coreCount=0;
