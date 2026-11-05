@@ -303,7 +303,14 @@
   const seasonTags=fields.filter(([n,k])=>Object.hasOwn(seasonEvidence,k)).map(([n,k])=>`<div><b>${fmt(seasonEvidence[k])}</b><span>${safe(n)} · Season</span></div>`);
    const latestTags=fields.filter(([n,k])=>Object.hasOwn(latestIndependent,k)).map(([n,k])=>`<div><b>${fmt(latestIndependent[k])}</b><span>${safe(n)} · Week ${safe(latestIndependent.week||'—')}</span></div>`);
   const liveTags=fields.filter(([n,k])=>Object.hasOwn(liveStats,k)).map(([n,k])=>`<div><b>${fmt(liveStats[k])}</b><span>${safe(n)} · Game</span></div>`);
-  const livePoints=scoring?.points!=null?fmt(scoring.points)+'*':'—',projPoints=proj?.points!=null?fmt(proj.points)+'*':'—';
+  // Match the same current-week forecast used by Team HQ and Trades.
+  // Do not substitute a separate GameCast research forecast when the main
+  // weekly model cannot independently certify the selected player's value.
+  const week=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
+  const weeklyModel=typeof pfo52Points==='function'&&week>0?pfo52Points(pfoPlayerId(),week):null;
+  const forecastScore=typeof pfo52Points==='function'?weeklyModel?.points:proj?.points;
+  const livePoints=scoring?.points!=null?fmt(scoring.points)+'*':'—',
+   projPoints=typeof forecastScore==='number'&&Number.isFinite(forecastScore)?fmt(forecastScore)+'*':'—';
   const matchNote=hasProviderSeason?'MySportsFeeds seasonal NFL statistics; verified game-level splits may be missing.':
  seasonTags.length?'Licensed MSF season totals matched to the selected player and NFL team; season-level figures are not weekly game logs.':
  s.playerRows.length?'No unambiguous player match; totals withheld until the source verifies identity.':
