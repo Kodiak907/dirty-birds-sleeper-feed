@@ -30,12 +30,13 @@ test('loads original PFO interface and real-player sample team without private c
  assert.match(await page.title(),/PFO/);
  assert.match(await page.locator('#demo-briefing').innerText(),/The Front Office Collective/);
  assert.equal((await page.locator('#nav button').count()),13);
+ assert.ok(await page.locator('#demo-all-tools').isVisible());
  assert.deepEqual(offsite,[]);
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
  assert.ok(overflow<=3,'horizontal overflow '+overflow);
 });
 test('Team HQ renders 10 starters, real players, 7 bench forecasts',async()=>{
- await page.locator('#nav button[data-page=roster]').click();
+ await page.locator('#demo-mobile-nav [data-go=roster]').click();
  assert.equal(await page.locator('#demo-starters tr').count(),10);
  assert.match(await page.locator('#demo-starters').innerText(),/Josh Allen/);
  assert.match(await page.locator('#demo-starters').innerText(),/Puka Nacua/);
@@ -43,14 +44,14 @@ test('Team HQ renders 10 starters, real players, 7 bench forecasts',async()=>{
  assert.match(await page.locator('#demo-team-total').innerText(),/FFO model/);
 });
 test('Weekly Matchup has both 10-man lineups and bench cards',async()=>{
- await page.locator('#nav button[data-page=matchup]').click();
+ await page.locator('#demo-mobile-nav [data-go=matchup]').click();
  assert.equal(await page.locator('.pfo-demo-matchgrid article').count(),2);
  assert.equal(await page.locator('.pfo-demo-matchrow').count(),20);
  await page.locator('[data-matchmode=lab]').click();
  assert.match(await page.locator('#demo-matchup').innerText(),/Optimal legal projection/);
 });
 test('real PFO trade model compares hypothetical two-sided trade',async()=>{
- await page.locator('#nav button[data-page=market]').click();
+ await page.locator('#demo-mobile-nav [data-go=market]').click();
  await page.locator('[data-trade=give][data-index="0"]').selectOption({index:1});
  await page.locator('[data-trade=take][data-index="0"]').selectOption({index:1});
  assert.match(await page.locator('#demo-market').innerText(),/FFO 6.0 Trade Intelligence/);
@@ -62,16 +63,18 @@ test('PFO waiver lab calls real comparison logic with sample player',async()=>{
  await page.locator('#demo-waiver-drop').selectOption({index:1});
  assert.match(await page.locator('#demo-market').innerText(),/FFO modeled lineup impact/);
  await page.locator('[data-demo-claim]').click();
- await page.locator('#nav button[data-page=roster]').click();
+ await page.locator('#demo-mobile-nav [data-go=roster]').click();
  assert.match(await page.locator('#demo-bench').innerText(),/Patrick Mahomes/);
 });
 test('player intelligence, opportunity radar and GameCast can be explored',async()=>{
- await page.locator('#nav button[data-page=playerhub]').click();
+ await page.locator('#demo-all-tools').click();
+ await page.locator('#demo-tools-drawer [data-go=playerhub]').click();
  await page.locator('#demo-player-search').fill('CeeDee');
  assert.match(await page.locator('#demo-player-results').innerText(),/CeeDee Lamb/);
- await page.locator('#nav button[data-page=radar]').click();
+ await page.locator('#demo-all-tools').click();
+ await page.locator('#demo-tools-drawer [data-go=radar]').click();
  assert.ok(await page.locator('#demo-radar article').count()>2);
- await page.locator('#nav button[data-page=gamecast]').click();
+ await page.locator('#demo-mobile-nav [data-go=gamecast]').click();
  await page.locator('[data-next-play]').click();
  assert.match(await page.locator('#demo-gamecast').innerText(),/Play 2/);
  assert.deepEqual(offsite,[]);
