@@ -1443,7 +1443,7 @@
   lastWeekboardSuccess=0;weekboardGameCount=0;weekboardError='';
   lastStadiumGameId=null;
   drawGames();restoreWeekboard(n);drawPlays();
-  if(gameActive()&&s.enabled)void refreshWeekboard().then(()=>{
+  if(gameActive()&&s.enabled)void Promise.resolve(refreshWeekboard()).then(()=>{
    // If an older week request was in-flight when the user switched weeks,
    // fetch the new target immediately after the old request completes.
    if(s.selectedWeek===n&&!weekboardHistory.has(n))return refreshWeekboard();
