@@ -56,7 +56,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.20 · MSF rejection and schema audit'];
+  const lines=['PFO 6.21 · MSF defense mapping and weekly player recovery'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -131,7 +131,8 @@
     let response;
     const msfId=row?.msf_id!=null&&/^[0-9]{1,12}$/.test(String(row.msf_id))?String(row.msf_id):'';
     try{response=await fetch('/api/ffo/stats/player-coverage?team='+encodeURIComponent(team)+
-     '&name='+encodeURIComponent(p.name)+(msfId?'&msf_id='+encodeURIComponent(msfId):''),
+     '&name='+encodeURIComponent(p.name)+(msfId?'&msf_id='+encodeURIComponent(msfId):'')+
+     '&week='+encodeURIComponent(typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)),
      {cache:'no-store',signal:ctl.signal});}
     finally{clearTimeout(timer)}
     if(!response.ok)throw Error('MSF player game coverage HTTP '+response.status);
