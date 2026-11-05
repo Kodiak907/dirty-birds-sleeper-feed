@@ -43,6 +43,7 @@
   if(document.querySelector('#roster.page.active')&&typeof pfo52RosterPoints==='function')pfo52RosterPoints();
   if(document.querySelector('#matchup.page.active')&&typeof pfo52Render==='function')pfo52Render();
   showGaps();
+  window.ffoStartSit63?.refresh?.();
  };
  const run=async(reason)=>{
   if(pending)return pending;
