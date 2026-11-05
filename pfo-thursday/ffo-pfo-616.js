@@ -56,7 +56,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.19 · MSF provider query recovery audit'];
+  const lines=['PFO 6.20 · MSF rejection and schema audit'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -94,7 +94,9 @@
     if(!response.ok)throw Error('Protected team defense HTTP '+response.status);
     const data=await response.json();
     if(data.source!=='MySportsFeeds'||data.team!==team||data.available===false||!data.forecast){
-     throw Error(String(data.error||'independent_team_defense_unavailable'));
+     const shape=String(data.schema_audit||'').replace(/[^A-Za-z0-9_,()]/g,'').slice(0,230);
+     throw Error(String(data.error||'independent_team_defense_unavailable')+
+      (shape?' · supported_team_feed_shape: '+shape:''));
     }
     if(!Number.isInteger(data.games_observed)||data.games_observed<2)
      throw Error('insufficient_finished_team_games');
