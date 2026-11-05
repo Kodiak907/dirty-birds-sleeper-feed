@@ -65,7 +65,7 @@ test('player unsupported filter 400 is classified without fabricating a projecti
 });
 test('client health page surfaces bounded schema, retains team-identity validation and does not touch trades',()=>{
  assert.match(client,/supported_team_feed_shape/);
- assert.match(client,/PFO 6\.20 · MSF rejection and schema audit/);
+ assert.match(client,/PFO 6\.21 · MSF defense mapping and weekly player recovery/);
  assert.match(worker,/ffo620ProviderRejection\(response\)/);
  assert.match(worker,/ffo620TeamSchemaAudit\(json,team\)/);
  assert.match(worker,/comIdentity\(req,env\)/);
