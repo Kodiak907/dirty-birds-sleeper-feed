@@ -1,0 +1,35 @@
+name: PFO 6.12 isolated private UI and independent model QA
+on:
+  push:
+    branches:
+      - pfo-612-startsit-trade-evidence-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax checks
+        run: |
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-611.js
+          node --check pfo-thursday/ffo-startsit-63.js
+          node --check pfo-thursday/ffo-trade-60.js
+          cp pfo-thursday/_worker.js /tmp/pfo612-worker.mjs
+          node --check /tmp/pfo612-worker.mjs
+      - name: New 6.12 regression suite
+        run: node --test pfo-thursday/qa-ffo-612.test.mjs
+      - name: Existing scoring, trade, routing and automatic MSF regression
+        run: |
+          node --test pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs
+      - name: Mobile browser static and interaction smoke
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs
