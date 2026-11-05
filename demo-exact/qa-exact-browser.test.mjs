@@ -109,6 +109,7 @@ test('original PFO Start/Sit compares two real NFL names from sample team',async
 test('original PFO Trade Command opens a DIFFERENT demo manager roster',async()=>{
  await page.evaluate(()=>document.querySelector('#nav [data-page="market"]')?.click());
  await page.locator('[data-pfo59-market="trade"]').first().click();
+ await page.locator('[data-pfo64-switch="trade"][data-pfo64-value="lab"]').first().click();
  await page.locator('#pfo59-trade-board [data-pfo59-partner="2"]').waitFor({timeout:20000});
  await page.locator('#pfo59-trade-board [data-pfo59-partner="2"]').click();
  const give=page.locator('#pfo59-trade-board [data-pfo59-side="give"]');
