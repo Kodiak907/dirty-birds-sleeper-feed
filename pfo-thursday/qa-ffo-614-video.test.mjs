@@ -31,7 +31,7 @@ test('radar does not empty merely because a cached Sleeper ownership snapshot be
  new Script(core.slice(a,b)+'\nthis.radar=pfo49RadarPool;').runInContext(ctx);
  assert.equal(ctx.radar().length,1);
  ctx.leagueOwnedIds=null;
- assert.equal(ctx.radar().length,0,'without any ownership source, no availability-oriented Radar results');
+ assert.equal(ctx.radar().length,1,'without ownership, retain NFL research but never certify as unrostered');
 });
 
 test('general NFL research remains available through stale ownership, but certified waivers do not',()=>{
@@ -45,7 +45,9 @@ test('general NFL research remains available through stale ownership, but certif
  const general=ctx.find('tight ends with season volume');
  assert.equal(general.total,1);
  assert.equal(general.ownershipUnverified,true);
- assert.match(ctx.find('available tight ends').error,/ownership|Sleeper/i);
+ const unknown=ctx.find('available tight ends');
+ assert.equal(unknown.total,1);
+ assert.equal(unknown.availabilityUnverified,true,'unverified research must never be certified as free-agent inventory');
 });
 
 test('Player Intel uses sourced season averages if weekly splits are absent and does not call current zero final',()=>{
