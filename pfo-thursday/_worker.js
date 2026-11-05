@@ -1077,7 +1077,8 @@ async function ffo616PlayerGameRoute(req,env){
   // Try at most the last six COMPLETED prior NFL weeks using MSF's
   // documented /week/N/player_gamelogs.json feed, never future/live weeks.
   // We never invent appearances from the team's schedule.
-  if(errors.some(e=>e.includes('http_400'))){
+  if(errors.some(e=>e.includes('http_400'))&&
+   !errors.some(e=>/season_not_supported|feed_not_supported|access_restricted|required_parameter_missing/.test(e))){
    const rows=[];
    const end=targetWeek-1,start=Math.max(1,end-5);
    let successWeeks=0;
