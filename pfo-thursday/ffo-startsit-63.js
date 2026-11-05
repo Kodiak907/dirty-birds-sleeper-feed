@@ -109,7 +109,24 @@
   let h='<div class="pfo63-compare-players">'+card(a,{...av,points:showForecast?av.points:null})+
    card(b,{...bv,points:showForecast?bv.points:null})+'</div>'+
    '<p class="pfo63-compare-conclusion">'+esc(caution)+'</p>';
-  h+='<details class="pfo612-fold" open><summary>Production and usage · sourced statistics</summary><div class="pfo612-detail-cols">'+
+  // First paint: one scan-friendly comparison, not two long separate stat grids.
+  const keys=[...new Set([...av.labels.map(x=>x[0]),...bv.labels.map(x=>x[0])])];
+  const metric=(v,name)=>v.labels.find(x=>x[0]===name)?.[1]??null;
+  const rows=keys.map(name=>{
+   const x=metric(av,name),y=metric(bv,name);
+   const stateA=x==null?'—':fmt(x,1),stateB=y==null?'—':fmt(y,1);
+   const differs=x!=null&&y!=null&&Math.abs(x-y)>.05;
+   const neutral=differs?'Comparison only · not adjusted for opponents':'Source missing or nearly equal';
+   return '<tr><th scope="row">'+esc(name)+'</th><td>'+esc(stateA)+'</td><td>'+esc(stateB)+'</td></tr>';
+  }).join('');
+  h+='<div class="pfo615-matrix"><h4>At a glance · independent comparison</h4>'+
+   '<p class="pfo615-matrix-note">FFL scoring is separate from workload: more targets or carries do not guarantee more points. Missing is shown as —, not zero.</p>'+
+   '<div class="pfo615-matrix-scroll"><table><thead><tr><th>Metric</th><th>'+esc(a.name.split(' ')[0])+'</th><th>'+esc(b.name.split(' ')[0])+'</th></tr></thead>'+
+   '<tbody><tr><th scope="row">W'+w+' FFL projection</th><td>'+esc(state.horizon==='WEEK'?fmt(av.points,2):'—')+'</td><td>'+
+   esc(state.horizon==='WEEK'?fmt(bv.points,2):'—')+'</td></tr>'+
+   '<tr><th scope="row">MSF observed games</th><td>'+esc(av.played??'—')+'</td><td>'+esc(bv.played??'—')+'</td></tr>'+
+   rows+'</tbody></table></div><p class="pfo615-matrix-note">Game-level form and opponent-specific adjustments appear only when the licensed evidence supports them.</p></div>';
+  h+='<details class="pfo612-fold"><summary>Expanded individual production and game logs</summary><div class="pfo612-detail-cols">'+
    '<section><h4>'+esc(a.name)+'</h4>'+moreStats(a,av)+'</section>'+
    '<section><h4>'+esc(b.name)+'</h4>'+moreStats(b,bv)+'</section></div></details>';
   h+='<details class="pfo612-fold"><summary>Matchup, workload uncertainty and forecast evidence</summary><div class="pfo612-detail-cols">'+
