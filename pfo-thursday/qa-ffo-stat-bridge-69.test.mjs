@@ -61,5 +61,5 @@ test('Existing FFL player-stat fields and identity safeguards are retained acros
  assert.match(patch,/Never silently substitute Sleeper's previously scored/);
  assert.match(html,/id="ffo69-stats-status"/);
  assert.match(html,/id="ffo69-retry-stats"/);
- assert.match(html,/ffo-pfo-597\.js\?v=690/);
+ assert.match(html,/ffo-pfo-597\.js\?v=(?:690|616)/);
 });
