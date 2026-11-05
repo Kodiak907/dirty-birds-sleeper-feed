@@ -7,7 +7,7 @@ const core=read('ffo-pfo-core.js'),market=read('ffo-pfo-59.js'),intro=read('ffo-
  compare=read('ffo-startsit-63.js'),gc=read('ffo-gamecast.js'),html=read('index.html'),
  layoutCss=read('ffo-layout-64.css'),health=read('ffo-pfo-611.js');
 
-test('automatic Team HQ schedule fetches every remaining regular-season week without manual button or cached-history dependency',async()=>{
+test('automatic Team HQ schedule fetches all regular-season weeks without manual button or cached-history dependency',async()=>{
  const a=market.indexOf('async function loadSchedule(full=false)'),b=market.indexOf('function teamTxnRender()',a);
  assert.ok(a>0&&b>a);
  const schedule=new Map(),visited=[],scope=createContext({console,Date,Promise,Map,
@@ -18,8 +18,8 @@ test('automatic Team HQ schedule fetches every remaining regular-season week wit
   $:()=>null});
  new Script(market.slice(a,b)+'\nthis.schedule=loadSchedule;').runInContext(scope);
  await scope.schedule();
- assert.deepEqual(visited.sort((a,b)=>a-b),[9,10,11,12,13,14]);
- assert.equal(schedule.size,6);
+ assert.deepEqual(visited.sort((a,b)=>a-b),Array.from({length:14},(_,i)=>i+1));
+ assert.equal(schedule.size,14);
  assert.ok(scope.state.scheduleAt>0);
 });
 test('MSF fallback prioritizes submitted starters before any 16-team truncation',()=>{
