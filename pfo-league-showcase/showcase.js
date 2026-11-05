@@ -151,7 +151,7 @@ function overview(){
  $('demo-kpis').innerHTML=['<div class="card">'+stat(ours().length,'Demo roster players')+'</div>','<div class="card">'+stat(data.waivers.length-state.claims.length,'Sample available players')+'</div>',
    '<div class="card">'+stat(own.faab,'Illustrative FAAB balance')+'</div>','<div class="card">'+stat(state.week,'Analysis week')+'</div>'].join('');
  $('demo-standings').innerHTML='<table class="pfo-demo-table"><tr><th>Sample team</th><th>Model</th></tr><tr><td>'+esc(own.name)+'</td><td class="pfo-demo-projection">'+money(my)+'</td></tr><tr><td>'+esc(rival.name)+'</td><td class="pfo-demo-projection">'+money(other)+'</td></tr></table><p class="pfo-demo-fine">This is a demonstration pairing, not the real league standings.</p>';
- $('demo-source-summary').innerHTML='<p class="pfo-demo-fine">NFL player names and positions: FFO-published Sleeper directory.</p><p class="pfo-demo-fine">PFO interface styling: original application CSS. Trade and waiver: original PFO 6.x read-only research engines.</p><p class="pfo-demo-warning">Player points, health, schedule and GameCast examples: simulated. Private MSF, FFL transactions and Commissioner records unavailable by design.</p>';
+ $('demo-source-summary').innerHTML='<p class="pfo-demo-fine">NFL player names and positions: FFO-published Sleeper directory.</p><p class="pfo-demo-fine">PFO interface styling: original application CSS. Trade and waiver: original PFO 6.x read-only research engines.</p><p class="pfo-demo-context"><span class="pfo-demo-context-dot"></span>'+esc(msfStatusText())+'</p><p class="pfo-demo-warning">Member-only observed MSF statistics are separate from illustrative demo score forecasts. Injury and GameCast examples are not live feeds.</p>';
 }
 function roster(){
  const optimized=optimizedLineup(),bestIds=optimized.ids||own.starters,shown=state.teamView==='best'?bestIds:own.starters;
@@ -329,10 +329,10 @@ function gamecast(){
  '<div>'+g.plays.slice(0,state.play+1).map((p,i)=>'<div class="pfo-demo-play"><b>Play '+(i+1)+'</b> · '+esc(p)+'</div>').join('')+'</div>'+
  '<p class="pfo-demo-fine">The real PFO GameCast uses licensed MSF data. This site demonstrates its field, game selection and play rail, not a live NFL game.</p>';
 }
-function privacy(){$('demo-sources').innerHTML='<div class="pfo-demo-statgrid">'+stat('PFO','Original interface styles')+stat('6.0 / 6.1','Trade & waiver engine')+stat('0','Private data API calls')+'</div>'+
+function privacy(){$('demo-sources').innerHTML='<div class="pfo-demo-statgrid">'+stat('PFO','Original interface styles')+stat('6.0 / 6.1','Trade & waiver engine')+stat('GATED','Protected MSF member bridge')+'</div>'+
  '<p class="pfo-demo-fine"><b>NFL identities:</b> Player names, positions and club labels are copied from the organization’s existing published player directory and may not reflect subsequent changes.</p>'+
  '<p class="pfo-demo-fine"><b>Demonstration estimates:</b> Fabricated purely to show how an FFL-style research workflow operates. Not actual MSF predictions.</p>'+
- '<p class="pfo-demo-fine"><b>Isolation:</b> Public site includes no Cloudflare worker, Access identity, MSF credential, Commissioner endpoint, private Dirty Birds roster, sensitive league records, or Sleeper write permission. There are no storage or account connections.</p>'+
+ '<p class="pfo-demo-fine"><b>Isolation:</b> No Commissioner system, real league roster or Sleeper write permission. Member MSF requests run only through a separate default-deny Cloudflare Access-verified bridge. Its credential is never delivered to a browser.</p>'+
  '<p class="pfo-demo-fine"><b>Important:</b> An authentic multi-manager connected PFO product would require separate user login, roster-scoped authorization and licensed data distribution approval. This showcase is only a safe demonstration.</p>'}
 document.addEventListener('click',event=>{
  if(event.target.closest('[data-open-tools]')){const panel=$('demo-tools-drawer');panel.hidden=!panel.hidden;return}
