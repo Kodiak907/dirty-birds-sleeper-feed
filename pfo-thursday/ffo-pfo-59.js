@@ -175,15 +175,19 @@
  }
  function scoreInfo(p){
   let season=null,project=null;
-  try {
-   const row=pfo50Indexed?.get(pfo50Key(p.name,p.team));
+  try{
+   const id=String(p.id||p.player_id||'');
+   const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
    if(row?.season_totals)season=row.season_totals;
-   if(row?.forecast)project=pfo50Score(row.forecast);
-  }catch{}
+   // Matchup and Market must read the same independent week model.
+   const week=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
+   const result=typeof pfo52Points==='function'&&week>0?pfo52Points(id,week):null;
+   if(typeof result?.points==='number'&&Number.isFinite(result.points))project=result.points;
+  }catch(err){console.warn('FFO trade forecast data pending',String(err));}
   return {season,project};
  }
  function playerRow(p,priority,historical){
-  const x=p.modelPPG!==undefined?{season:p.seasonTotals,project:p.modelPPG}:scoreInfo(p),season=x.season||{},signal=p.scout?.signals?.[0],metric=p.position==='QB'?['PASS YDS',season.pass_yd]:p.position==='RB'?['RUSH YDS',season.rush_yd]:['REC YDS',season.rec_yd];
+  const x=scoreInfo(p),season=x.season||{},signal=p.scout?.signals?.[0],metric=p.position==='QB'?['PASS YDS',season.pass_yd]:p.position==='RB'?['RUSH YDS',season.rush_yd]:p.position==='K'?['FG 40–49',season.fgm_40_49]:['REC YDS',season.rec_yd];
   const seasonal=metric[1]!=null?metric[0]+' '+Number(metric[1]).toLocaleString():'Season stat N/A';
   const forecast=x.project!=null&&Number.isFinite(x.project)?x.project.toFixed(1):'—';
   return '<button type="button" class="pfo59-compact-row" data-pfo59-player="'+safe(p.id)+'" aria-label="Open '+safe(p.name)+' player intelligence">'+
