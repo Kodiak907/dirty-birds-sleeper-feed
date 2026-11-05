@@ -566,15 +566,15 @@ function ffo598NormalizeSeason(payload,checkedAt){
  rush_2pt:['rushing.rushTwoPt','rushing.twoPointConversions'],
  rec_2pt:['receiving.recTwoPt','receiving.twoPointConversions'],
  pass_2pt:['passing.passTwoPt','passing.twoPointConversions'],
- fgm_0_19:['fieldGoals.fieldGoalsMade0To19','kicking.fieldGoalsMade0To19'],
- fgm_20_29:['fieldGoals.fieldGoalsMade20To29','kicking.fieldGoalsMade20To29'],
- fgm_30_39:['fieldGoals.fieldGoalsMade30To39','kicking.fieldGoalsMade30To39'],
- fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40To49'],
- fgm_50_59:['fieldGoals.fieldGoalsMade50To59','kicking.fieldGoalsMade50To59'],
- fgm_60p:['fieldGoals.fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus'],
- xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade'],
- xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','kicking.extraPointsMissed'],
- fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','kicking.fieldGoalsMissed'],
+ fgm_0_19:['fieldGoals.fieldGoalsMade0To19','kicking.fieldGoalsMade0To19','fieldGoals.fgMade0To19','kicking.fgMade0To19'],
+ fgm_20_29:['fieldGoals.fieldGoalsMade20To29','kicking.fieldGoalsMade20To29','fieldGoals.fgMade20To29','kicking.fgMade20To29'],
+ fgm_30_39:['fieldGoals.fieldGoalsMade30To39','kicking.fieldGoalsMade30To39','fieldGoals.fgMade30To39','kicking.fgMade30To39'],
+ fgm_40_49:['fieldGoals.fieldGoalsMade40To49','kicking.fieldGoalsMade40To49','fieldGoals.fgMade40To49','kicking.fgMade40To49'],
+ fgm_50_59:['fieldGoals.fieldGoalsMade50To59','kicking.fieldGoalsMade50To59','fieldGoals.fgMade50To59','kicking.fgMade50To59'],
+ fgm_60p:['fieldGoals.fieldGoalsMade60Plus','kicking.fieldGoalsMade60Plus','fieldGoals.fgMade60Plus','kicking.fgMade60Plus'],
+ xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade','kicking.xpMade'],
+ xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','kicking.extraPointsMissed','kicking.xpMissed'],
+ fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','kicking.fieldGoalsMissed','kicking.fgMissed'],
  sack:['defense.sacks','defensive.sacks','defense.sacksMade'],
  int:['defense.interceptions','defensive.interceptions'],
  ff:['defense.forcedFumbles','defensive.forcedFumbles'],
@@ -590,7 +590,7 @@ function ffo598NormalizeSeason(payload,checkedAt){
   const team=item?.team?.abbreviation||item?.teamInfo?.abbreviation||p?.currentTeam?.abbreviation||item?.teamAbbreviation||'';
   const name=String(p.fullName||p.displayName||[p.firstName,p.lastName].filter(Boolean).join(' ')||item.name||'').trim();
   if(!name||!team)continue;
-  const gp=number(raw.gamesPlayed??item.gamesPlayed??raw.games);
+  const gp=number(raw.gamesPlayed??raw.gamesPlayedTotal??raw.games??item.gamesPlayed??item.gamesPlayedTotal);
   const games=gp!==null&&Number.isInteger(gp)&&gp>=0&&gp<=18?gp:null;
   const totals={};
   for(const [key,aliases] of Object.entries(fields)){
@@ -600,7 +600,7 @@ function ffo598NormalizeSeason(payload,checkedAt){
   const hasStats=Object.keys(totals).some(k=>k!=='games_played');
   const forecast=games>0&&hasStats?Object.fromEntries(Object.entries(totals).filter(([k])=>k!=='games_played').map(([k,v])=>[k,v/games])):null;
   players.push({msf_id:p.id??item.playerId??null,name,team:String(team).toUpperCase(),
-   position:String(p.primaryPosition||p.position||item.position||'').toUpperCase(),
+   position:String(p.primaryPosition?.abbreviation||p.primaryPosition?.name||p.primaryPosition||p.position?.abbreviation||p.position||item.position||'').toUpperCase(),
    season_totals:totals,games_observed:games,games_played:games,latest:null,games:[],forecast,
    coverage:forecast?'season_per_game_partial':'season_or_games_played_unavailable'});
  }
