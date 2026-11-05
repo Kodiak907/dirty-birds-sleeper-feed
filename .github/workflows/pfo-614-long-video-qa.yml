@@ -1,0 +1,31 @@
+name: PFO 6.14 long video audit isolated QA
+on:
+  push:
+    branches:
+      - pfo-614-long-video-evidence-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source integrity and new long-video regressions
+        run: |
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-quickview.js
+          node --check pfo-thursday/ffo-startsit-63.js
+          node --test pfo-thursday/qa-ffo-614-video.test.mjs
+      - name: PFO historical, model, market, Matchup and previous video regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-613-video.test.mjs pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs
+      - name: Browser smoke tests
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs
