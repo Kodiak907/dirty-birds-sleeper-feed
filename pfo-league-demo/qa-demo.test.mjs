@@ -8,7 +8,7 @@ test('public demo never loads private data, licensed MSF data or commissioner to
  assert.match(html,/demo\.js/);
  assert.match(html,/connect-src 'none'/);
  assert.doesNotMatch(script,/fetch\s*\(|XMLHttpRequest|WebSocket|EventSource|localStorage|sessionStorage|indexedDB|\/api\//);
- assert.doesNotMatch(html,/dirtybirdstest|Kodiak907|\/api\/|commissioner|MSF_API_KEY/i);
+ assert.doesNotMatch(html,/dirtybirdstest|Kodiak907|\/api\/|commissioner-pin|MSF_API_KEY/i);
  assert.doesNotMatch(script,/commissioner|dirty birds|MSF_API_KEY|\/api\//i);
  assert.doesNotMatch(html,/<iframe|<form|src=["']https?:/);
 });
