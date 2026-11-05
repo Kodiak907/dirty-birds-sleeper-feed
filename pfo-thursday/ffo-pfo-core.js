@@ -2531,12 +2531,12 @@ function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[],origina
  (x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+
  '<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+
  (changed?'<span class="pfo615-change-note">↗ IN: '+e(p?.name||'Empty slot')+' · ↙ OUT: '+e(priorName)+'</span>':'')+
- selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b></div>';
+ selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b>'+(proj?.partial?'<small class="pfo616-partial">Partial MSF D/ST estimate · not certified</small>':'')+'</div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
  const starters=new Set(team.starters),ids=team.members,reserve=new Set((past?[]:team.record?.reserve||[]).map(String));
- const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<button type="button" class="pfo52-pill pfo597-player-pill" data-pfo49-id="'+e(p.id)+'">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':v?.modelPending||v?.schedulePending?'PENDING':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+'</button>';}).join(''):'<span class="pfo52-dim">None verified</span>';
+ const list=items=>items.length?items.map(p=>{const v=!past?pfo52Points(String(p.id),w):null;return '<button type="button" class="pfo52-pill pfo597-player-pill" data-pfo49-id="'+e(p.id)+'">'+e(pfo52Pos(p)||'?')+' '+e(p.name)+' · '+(v?.bye?'BYE':v?.modelPending||v?.schedulePending?'PENDING':pfo52PointLabel(pfo52Value(team,String(p.id),w,past)))+(v?.partial?' · PARTIAL':'')+'</button>';}).join(''):'<span class="pfo52-dim">None verified</span>';
  const bench=ids.filter(p=>!starters.has(String(p.id))&&!reserve.has(String(p.id)));
  const health=ids.filter(p=>pfo52Pos(p)!=='DEF').map(p=>{const raw=pfo52HealthCatalog.get(String(p.id))||(liveRosterSnapshot?.players||[]).find(x=>String(x.player_id)===String(p.id))||{};const tag=raw.injury_status||raw.sleeper_injury_status||null;
   const confirmed=w===pfo52Cur()&&reportMatchesCurrentWeek(officialInactiveEvidence)?officialInactiveEvidence?.confirmed_official_inactives?.[String(p.id)]:null;
