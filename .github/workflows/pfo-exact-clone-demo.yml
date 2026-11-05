@@ -1,0 +1,81 @@
+name: PFO EXACT CLONE Demo - original app isolated data
+on:
+  push:
+    branches: [pfo-exact-clone-demo-20261104]
+    paths:
+      - 'demo-exact/**'
+      - 'pfo-thursday/**'
+      - 'pfo-league-showcase/sample-rosters.json'
+      - '.github/workflows/pfo-exact-clone-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-exact-clone-demo
+  cancel-in-progress: true
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact PFO 6.11 from original application assets
+        run: |
+          node --check demo-exact/build-demo.mjs
+          node demo-exact/build-demo.mjs
+          node --check demo-exact-dist/ffo-pfo-core.js
+          node --check demo-exact-dist/_worker.js
+          node --check demo-exact-dist/ffo-gamecast.js
+          node --check demo-exact-dist/ffo-commissioner-57.js
+      - name: Verify original UI, fake 12-team data, real players and blocked private APIs
+        run: node --test demo-exact/qa-exact-clone.test.mjs
+      - name: Browser regression prerequisites
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Run mobile UI smoke and security tests on actual copied PFO code
+        run: node --test demo-exact/qa-exact-browser.test.mjs
+  deploy:
+    needs: qa
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild independently with exact checked source
+        run: |
+          node demo-exact/build-demo.mjs
+          test -f demo-exact-dist/index.html
+          test -f demo-exact-dist/_worker.js
+          test -f demo-exact-dist/ffo-pfo-core.js
+          test -f demo-exact-dist/demo-data/demo-fixture.json
+      - name: Create a completely separate Cloudflare Pages project (no email Access policy)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          set -euo pipefail
+          test -n "$CLOUDFLARE_API_TOKEN"
+          npx --yes wrangler@4.47.0 pages project create ffo-pfo-exact-demo --production-branch pfo-exact-clone-demo-20261104 || {
+            npx --yes wrangler@4.47.0 pages project list | grep -F 'ffo-pfo-exact-demo'
+          }
+      - name: Deploy original PFO interface plus isolated demo-only Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          set -euo pipefail
+          ! grep -R -E '1399157532559192064|dirty-birds-sleeper-feed|tvega2924|BigOlBoyle' demo-exact-dist --include='*.html' --include='*.js' --exclude='_worker.js' --include='*.mjs' --include='*.json'
+          npx --yes wrangler@4.47.0 pages deploy demo-exact-dist \
+            --project-name ffo-pfo-exact-demo --branch pfo-exact-clone-demo-20261104 \
+            --commit-hash "$GITHUB_SHA" --commit-message "Exact PFO app with synthetic league, safe public demo APIs"
+          echo "Public exact PFO clone URL: https://ffo-pfo-exact-demo.pages.dev/"
+          echo "Production PFO and Commissioner database untouched; demo Worker has no secrets or private bindings."
