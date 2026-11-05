@@ -58,7 +58,7 @@
   return '<section class="pfo612-compare-card"><div class="pfo612-player-name"><b>'+esc(p.name)+'</b><small>'+
    esc(p.position)+' · '+esc(p.team)+' · '+(p.starter?'Submitted starter':'Bench')+'</small></div>'+
    '<div class="pfo612-projected">'+(state.horizon!=='WEEK'?'Period forecast not certified':
-   v.bye?'Verified BYE':v.points==null?'Weekly model pending':fmt(v.points,2)+' FFL pts')+'</div>'+
+   v.bye?'Verified BYE':v.points==null?'Weekly model pending':fmt(v.points,2)+' FFL pts'+(String(v.source).includes('partial model')?' · partial':'') )+'</div>'+
    '<small class="pfo612-context">'+esc(v.bye?'Confirmed BYE':v.fixture?.opponent?'Opponent '+v.fixture.opponent:'Opponent not verified')+
    ' · '+esc(p.injury?'Sleeper tag '+p.injury+' · Not official clearance':'Official availability unverified')+
    '<span class="pfo614-pending-reason">'+esc(v.points==null&&!v.bye?v.source:'')+'</span></small></section>';
