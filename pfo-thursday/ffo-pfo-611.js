@@ -81,6 +81,15 @@
  function init(){
   if(booted)return;booted=true;
   setTimeout(()=>queue('initial-visible-workspace'),1100);
+  // Initial Sleeper snapshot may arrive after first paint. Retry startup
+  // checks with bounded cadence rather than waiting for the 5-minute timer.
+  let bootPolls=0;
+  const bootTimer=setInterval(()=>{
+   bootPolls++;
+   if(signature()){clearInterval(bootTimer);queue('roster-ready');}
+   else if(bootPolls>=24)clearInterval(bootTimer);
+   else if(active()&&window.dbLeagueId)void loadLiveRoster();
+  },2000);
   document.querySelectorAll('nav button[data-page]').forEach(btn=>
    btn.addEventListener('click',()=>{
     if(['roster','matchup','overview','scouting','market','playerhub'].includes(btn.dataset.page))
