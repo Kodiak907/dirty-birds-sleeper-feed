@@ -64,18 +64,32 @@
    h+='<small class="ffo57-evidence">MySportsFeeds NFL data where licensed. Historical game logs may be unavailable; missing categories shown as —.</small>';
   }else h+='<p class="ffo57-muted">NFL weekly records not available in this source. No missing scores imputed.</p>';
   h+='<h3 class="ffo57-section">Official Sleeper FFL scores</h3><p class="ffo57-evidence">Recorded fantasy points are separate from the NFL statistical table.</p>';
-  h+=obs.length?obs.slice(0,18).map(([w,v])=>line('Week '+w,Number(w)<d.week?'Sleeper recorded points':'Sleeper in-progress / provisional',fmt(v.points,2))).join(''):'<p class="ffo57-muted">No official FFL score history available in the current league snapshot.</p>';
+  h+=obs.length?obs.slice(0,18).map(([w,v])=>{
+   const current=Number(w)>=d.week,zero=Number(v.points)===0,hasGame=published.some(g=>Number(g.week)===Number(w));
+   // Sleeper may initialize an unplayed current week to zero. Do not call it verified.
+   if(current&&zero&&!hasGame)return line('Week '+w,'Pregame / current-week result unverified','—');
+   return line('Week '+w,current?'Sleeper in-progress / provisional':'Sleeper recorded points',fmt(v.points,2));
+  }).join(''):'<p class="ffo57-muted">No official FFL score history available in the current league snapshot.</p>';
   return h;
  };
- const usage=d=>{const pos=String(d.p.position||'').toUpperCase(),last=d.ind?.latest||{},m=d.m||{};
-  const values=pos==='QB'?[['Pass attempts',last.pass_att],['Completions',last.pass_cmp],['Passing yards',last.pass_yd],['Rush attempts',last.rush_att]]:
-  pos==='RB'?[['Carries',last.rush_att],['Rush yards',last.rush_yd],['Targets',last.targets],['Receptions',last.rec]]:
-  pos==='WR'||pos==='TE'?[['Targets',last.targets],['Receptions',last.rec],['Receiving yards',last.rec_yd],['Receiving TDs',last.rec_td]]:
-  pos==='K'?[['Made FG 40–49',last.fgm_40_49],['Made FG 50–59',last.fgm_50_59],['Extra points',last.xpm]]:
-  pos==='DEF'?[['Sacks',last.sack],['INT',last.int],['Fumble recoveries',last.fum_rec]]:
-  [['Latest NFL week',last.week],['Recorded NFL games',d.ind?.games_observed]];
-  let h='<div class="ffo57-note">Usage = published NFL participation, not guaranteed next-week workload.</div>';
-  h+=values.map(([k,v])=>line(k,'Latest published game',fmt(v,Number.isInteger(Number(v))?0:1))).join('');
+ const usage=d=>{
+  const pos=String(d.p.position||'').toUpperCase(),last=d.ind?.latest||{},m=d.m||{},season=d.ind?.season_totals||{};
+  const observed=Number(d.ind?.games_observed??d.ind?.games_played??0);
+  const hasGame=Object.keys(last).some(k=>k!=='week'&&last[k]!=null);
+  const per=key=>observed>0&&season[key]!=null&&Number.isFinite(Number(season[key]))?Number(season[key])/observed:null;
+  const val=key=>hasGame?last[key]:per(key);
+  const values=pos==='QB'?[['Pass attempts',val('pass_att')],['Completions',val('pass_cmp')],['Passing yards',val('pass_yd')],['Rush attempts',val('rush_att')]]:
+  pos==='RB'?[['Carries',val('rush_att')],['Rush yards',val('rush_yd')],['Targets',val('targets')],['Receptions',val('rec')]]:
+  pos==='WR'||pos==='TE'?[['Targets',val('targets')],['Receptions',val('rec')],['Receiving yards',val('rec_yd')],['Receiving TDs',val('rec_td')]]:
+  pos==='K'?[['Made FG 40–49',val('fgm_40_49')],['Made FG 50–59',val('fgm_50_59')],['Extra points',val('xpm')]]:
+  pos==='DEF'?[['Sacks',val('sack')],['INT',val('int')],['Fumble recoveries',val('fum_rec')]]:
+  [['Recorded NFL games',observed>0?observed:null]];
+  const label=hasGame?'Latest published game'+(last.week?' · W'+last.week:''):
+   observed>0?'2026 season average / '+observed+' games':'Game-level data not verified';
+  let h='<div class="ffo57-note">'+E(hasGame?'Published latest-game data; not guaranteed next-week workload.':
+   observed>0?'MSF season totals divided by published games. These are averages, NOT the last game or an upward usage trend.':
+   'Source has no usable weekly or per-game usage evidence. No missing numbers are filled.')+'</div>';
+  h+=values.map(([k,v])=>line(k,label,fmt(v,hasGame&&Number.isInteger(Number(v))?0:1))).join('');
   if(m.snap_share_pct!=null)h+=line('Snap share','Published participation sample',fmt(m.snap_share_pct,1)+'%');
   if(m.targets_per_game!=null)h+=line('Targets per game','Published sample average',fmt(m.targets_per_game,2));
   if(!d.ind&&!d.m)h+='<div class="ffo57-note ffo57-warning">NFL usage source missing or unmatched. No stat values are filled by guessing.</div>';
