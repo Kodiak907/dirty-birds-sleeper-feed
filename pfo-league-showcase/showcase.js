@@ -43,7 +43,7 @@ function benchList(roster=own,ids=null){
  return members.map(id=>'<div class="pfo-demo-bench-row"><span>'+badge(position(id))+' '+pButton(id)+' <small class="pfo-demo-pos">'+esc(teamOf(id))+'</small></span><b class="pfo-demo-projection">'+money(projection(id))+'</b></div>').join('')||'<p class="pfo-demo-empty">No bench players found.</p>';
 }
 function weekNote(){return 'All projections are illustrative FFL-style model inputs, NOT live licensed statistics, certified forecasts, or real Week '+state.week+' NFL scores.'}
-function view(page){state.page=page;document.querySelectorAll('#nav [data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('active',s.id===page));document.querySelectorAll('#demo-mobile-nav [data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===page));render();window.scrollTo(0,0)}
+function view(page){const drawer=$('demo-tools-drawer');if(drawer)drawer.hidden=true;state.page=page;document.querySelectorAll('#nav [data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('active',s.id===page));document.querySelectorAll('#demo-mobile-nav [data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===page));render();window.scrollTo(0,0)}
 function render(){const routes={overview,roster,scouting,playerhub,gamecast,radar,ask,matchup,coaching,championship,availability,market,privacy};routes[state.page]?.()}
 function overview(){
  const my=teamTotal(own),other=teamTotal(rival),best=bestLineup(ours()),full=best.status==='conditional'?best.points:null;
@@ -185,6 +185,8 @@ function privacy(){$('demo-sources').innerHTML='<div class="pfo-demo-statgrid">'
  '<p class="pfo-demo-fine"><b>Isolation:</b> Public site includes no Cloudflare worker, Access identity, MSF credential, Commissioner endpoint, private Dirty Birds roster, sensitive league records, or Sleeper write permission. There are no storage or account connections.</p>'+
  '<p class="pfo-demo-fine"><b>Important:</b> An authentic multi-manager connected PFO product would require separate user login, roster-scoped authorization and licensed data distribution approval. This showcase is only a safe demonstration.</p>'}
 document.addEventListener('click',event=>{
+ if(event.target.closest('[data-open-tools]')){const panel=$('demo-tools-drawer');panel.hidden=!panel.hidden;return}
+ if(event.target.closest('#demo-tools-close')){$('demo-tools-drawer').hidden=true;return}
  const go=event.target.closest('[data-go]');if(go){view(go.dataset.go);return}
  const page=event.target.closest('#nav [data-page]');if(page){view(page.dataset.page);return}
  const id=event.target.closest('[data-player]')?.dataset.player;if(id){state.selected=id;state.scout=id;view('playerhub');return}
