@@ -90,10 +90,27 @@ for(const file of readdirSync(src)){
   s=s.replaceAll(/https:\/\/github\.com\/Kodiak907\/dirty-birds-sleeper-feed/g,'/demo-data/');
   s=s.replaceAll('Dirty Birds','The Front Office Collective').replaceAll('BigOlBoyle','Excluded Demo Manager').replaceAll('@DMccolley03','Demo Manager');
   s=s.replaceAll('const TRADE_VIEW_ONLY_ROSTER_ID=3;','const TRADE_VIEW_ONLY_ROSTER_ID=-1;').replaceAll('/boyle/i','/no-demo-manager-exclusions/i');
+  s=s.replaceAll('Coach’s Trade Block','Demo Trade Research').replaceAll('Coach priorities','Demo team priorities')
+   .replaceAll('Coach’s','Manager’s').replaceAll("Coach's","Manager's");
+  s=s.replaceAll('Garrett Wilson · A.J. Brown · Patrick Mahomes','Josh Allen · CeeDee Lamb · Breece Hall');
+  if(file==='ffo-pfo-59.js'){
+   s=s.replaceAll("Number(r.roster_id)===3?", "Number(r.roster_id)===-1?")
+    .replaceAll("state.manager!=='3'", "state.manager!=='-1'")
+    .replaceAll("String(x.opponent_roster_id)!=='3'", "String(x.opponent_roster_id)!=='-1'");
+  }
+
   if(file==='ffo-pfo-core.js'){
    const from=s.indexOf('const CURATED_WAIVER_CONTEXT='),end=s.indexOf(';\n',from);
    if(from>=0){if(end<from||end-from>60000)throw Error('Private curated context boundary unmatched');
     s=s.slice(0,from)+'const CURATED_WAIVER_CONTEXT=[]'+s.slice(end);}
+   const actionStart=s.indexOf('const CURATED_ACTIONS=');
+   if(actionStart>=0){
+    const actionEnd=s.indexOf(';\\n',actionStart);
+    if(actionEnd<actionStart||actionEnd-actionStart>25000)throw Error('Original manager action notes could not be isolated');
+    s=s.slice(0,actionStart)+'const CURATED_ACTIONS=[]'+s.slice(actionEnd);
+   }
+   s=s.replace("const focus=[{name:'Garrett Wilson',id:'8146'},{name:'A.J. Brown',id:'5859'},{name:'Patrick Mahomes',id:'4046'}];",
+      "const focus=[{name:'Josh Allen',id:'4984'},{name:'CeeDee Lamb',id:'6786'},{name:'Breece Hall',id:'8155'}];");
    s=s.replaceAll("data.source!=='MySportsFeeds'","!['MySportsFeeds','PFO DEMO'].includes(data.source)");
    s=s.replaceAll("part?.source!=='MySportsFeeds'","!['MySportsFeeds','PFO DEMO'].includes(part?.source)");
   }
