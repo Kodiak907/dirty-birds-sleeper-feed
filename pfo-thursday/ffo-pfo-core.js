@@ -1451,11 +1451,16 @@ function pfo69ShowSourceHealth(){
   '. Season averages are provisional; unavailable categories remain unknown.';
 }
 function pfo50Key(name,team){return normPlayer(name)+'|'+gm47CanonicalTeam(team||'');}
-function pfo50StatsFor(id){const p=pfo49Info(id),key=pfo50Key(p.name,p.team),exact=pfo50Indexed.get(key);if(exact)return exact;
- // Sleeper can retain roman-numeral/Jr suffixes that nflverse omits. Match only
- // a unique, SAME-TEAM first+last base name; never silently map another player.
- const stem=String(p.name||'').replace(/\s+(?:jr\.?|sr\.?|ii|iii|iv)$/i,'').trim();
- const matches=[...pfo50Indexed.values()].filter(x=>gm47CanonicalTeam(x.team)===gm47CanonicalTeam(p.team)&&String(x.name||'').replace(/\s+(?:jr\.?|sr\.?|ii|iii|iv)$/i,'').trim().toLowerCase()===stem.toLowerCase());
+function pfo50StatsFor(id){
+ const p=pfo49Info(id),key=pfo50Key(p.name,p.team),exact=pfo50Indexed.get(key);
+ if(exact)return exact;
+ // Provider name variants may differ; only a unique same-team and same-position match is safe.
+ const stem=x=>String(x||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/\b(jr|sr|ii|iii|iv)\b\.?/gi,'').replace(/[^a-z]/g,'');
+ const base=stem(p.name),team=gm47CanonicalTeam(p.team),position=String(p.position||'').toUpperCase().replace(/D\/ST|DST/,'DEF');
+ if(!base||!team)return null;
+ const matches=[...pfo50Indexed.values()].filter(x=>gm47CanonicalTeam(x.team)===team&&stem(x.name)===base&&
+  (!position||!x.position||String(x.position).toUpperCase()===position));
  return matches.length===1?matches[0]:null;
 }
 function pfo50Score(stats){const s=pfo49ScoreFromStats(stats);return s&&Number.isFinite(s.points)?s.points:null;}
@@ -1552,6 +1557,7 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   if(document.querySelector('#championship.page.active'))pfo49RenderPlanner();
   if(document.querySelector('#availability.page.active'))updateInjuryView();
   if(document.querySelector('#scouting.page.active'))gm47Render();
+  window.ffoStartSit63?.refresh?.();
   // Trade + Waiver are independent workspaces; refresh the visible one after
   // MSF resolves so previously empty projections no longer remain on screen.
   if(document.querySelector('#market.page.active'))window.ffoPfo59?.refreshCurrent?.();
@@ -2395,13 +2401,8 @@ function pfo52FutureTeam(rid){const r=gm47Snapshot?.rosters?.find(x=>Number(x.ro
 function pfo52Points(id,w,past=false){if(past)return null;
  const p=pfo52Info(id);
  if(pfo49Schedule?.complete&&pfo52Pos(p)!=='DEF'&&!pfo49ScheduleWeek(p,w))return null;
- let baseline=pfo50Estimate(id),source='Independent nflverse FFO recent-form projection';
- if(baseline==null){ // Actual previous league-scored points are permitted as a transparent baseline for K/DST.
-  const history=[];for(let wk=Math.min(w-1,pfo52Cur()-1);wk>=1&&history.length<4;wk--){const all=pfo52Hist(wk)||[];
-   for(const m of all){if(m.players_points?.[String(id)]!=null){const n=Number(m.players_points[String(id)]);if(Number.isFinite(n))history.push(n);break;}}
-  }
-  if(history.length>=2){baseline=history.slice(0,3).reduce((a,b)=>a+b,0)/Math.min(3,history.length);source='Sleeper previous scored weeks · historical average';}
- }
+ let baseline=pfo50Estimate(id),source='Independent MSF FFO season-form model';
+ // Never use Sleeper fantasy results as a fallback for independent future forecasts.
  if(baseline==null)return {points:null,source:'No supported FFO baseline for this position/player',adjustment:null};
  // Adjustment requires observed opponent-specific defense data (no invented matchup factors).
  const opponent=pfo49ScheduleWeek(p,w)?.opponent;
