@@ -61,14 +61,14 @@ test('player unsupported filter 400 is classified without fabricating a projecti
  assert.equal(json.available,false);
  assert.match(json.error,/filter_not_supported/);
  assert.equal(json.forecast,undefined);
- assert.equal(calls,3);
+ assert.equal(calls,5);
 });
 test('client health page surfaces bounded schema, retains team-identity validation and does not touch trades',()=>{
  assert.match(client,/supported_team_feed_shape/);
- assert.match(client,/PFO 6\.21 · MSF defense mapping and weekly player recovery/);
+ assert.match(client,/PFO 6\.22 · Rams schedule alias and accelerated player recovery/);
  assert.match(worker,/ffo620ProviderRejection\(response\)/);
  assert.match(worker,/ffo620TeamSchemaAudit\(json,team\)/);
  assert.match(worker,/comIdentity\(req,env\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=621/);
+ assert.match(html,/ffo-pfo-616\.js\?v=622/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
