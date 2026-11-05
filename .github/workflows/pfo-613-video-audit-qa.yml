@@ -1,0 +1,32 @@
+name: PFO 6.13 video audit isolated QA
+on:
+  push:
+    branches:
+      - pfo-613-video-audit-repairs-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and new video audit regressions
+        run: |
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-59.js
+          node --check pfo-thursday/ffo-gamecast.js
+          node --check pfo-thursday/ffo-pfo-613.js
+          node --test pfo-thursday/qa-ffo-613-video.test.mjs
+      - name: Existing projection, matchup and trade regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs
+      - name: Browser tests for Start/Sit and Trade
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs
