@@ -73,7 +73,13 @@ function compactLineup(ids,side){
  return ids.map((id,i)=>'<div class="pfo-demo-compact-player"><span class="pfo-demo-compact-pos">'+slots[i]+'</span><span class="pfo-demo-compact-ident"><b>'+pButton(id)+'</b><small>'+identity(id).team+' · '+position(id)+'</small></span><strong>'+money(projection(id))+'</strong></div>').join('');
 }
 
-function pButton(id){return '<button type="button" class="pfo-demo-person" data-player="'+esc(id)+'">'+esc(identity(id).name)+'</button>'}
+function pButton(id){
+ const p=identity(id),numeric=/^\d{2,10}$/.test(String(id));
+ const avatar='<span class="pfo-demo-avatar" aria-hidden="true">'+(numeric?
+ '<img loading="lazy" decoding="async" width="38" height="42" src="https://sleepercdn.com/content/nfl/players/thumb/'+esc(id)+'.jpg" alt="">':
+ '<span>'+esc(p.team||'DEF')+'</span>')+'</span>';
+ return '<button type="button" class="pfo-demo-person" data-player="'+esc(id)+'">'+avatar+'<span class="pfo-demo-person-label">'+esc(p.name)+'</span></button>';
+}
 function badge(text){return '<span class="pfo-demo-pill">'+esc(text)+'</span>'}
 function stat(value,label,klass=''){return '<div class="pfo-demo-stat"><b class="'+klass+'">'+esc(value)+'</b><small>'+esc(label)+'</small></div>'}
 function field(id,slot='',compact=false){
