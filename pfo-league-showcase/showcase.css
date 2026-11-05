@@ -228,3 +228,8 @@ main{max-width:1120px}
 .pfo-demo-odds-track>span{display:block;height:100%;border-radius:12px;background:linear-gradient(90deg,#348d77,#90e5ba);box-shadow:0 0 12px #55dba566;transition:width .2s ease}
 #demo-coaching .pfo-demo-cardlist article{background:#1b3448;border-color:#406376}
 #demo-championship>.pfo-demo-compare-select{margin:18px 0 16px}
+
+/* The private PFO hides legacy Championship cards; the demo reuses the page
+ * ID but its own interactive card must remain visible. */
+#pfo-demo-app #championship>.card{display:block!important}
+#pfo-demo-app #championship #demo-championship{display:block!important}
