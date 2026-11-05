@@ -1022,6 +1022,154 @@ async function ffo621PlayerWeekLogs(week,env){
  ffo621PlayerWeekPending.set(week,job);
  try{return await job}finally{ffo621PlayerWeekPending.delete(week)}
 }
+/* PFO 6.23: bounded MSF kicker recovery from completed NFL game boxscores.
+ * These are independent, licensed game-level rows, not projected scores or
+ * Sleeper fantasy points. Only one uniquely identified provider kicker from
+ * the requested team can contribute per completed game.
+ */
+const ffo623BoxCache=new Map(),ffo623BoxPending=new Map();
+function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
+ const box=payload?.gameboxscore??payload?.data?.gameboxscore??payload;
+ const game=box?.game||{};
+ const normalized=x=>String(x||'').toUpperCase()==='LA'?'LAR':String(x||'').toUpperCase();
+ const id=String(game.id??game.gameId??'');
+ const home=normalized(game.homeTeam?.abbreviation||game.homeTeamAbbreviation||'');
+ const away=normalized(game.awayTeam?.abbreviation||game.awayTeamAbbreviation||'');
+ if(!id||id!==String(fixture.id)||home!==normalized(fixture.home)||away!==normalized(fixture.away))
+  return {available:false,error:'boxscore_game_identity_conflict'};
+ if(!/^[0-9]{1,12}$/.test(String(playerId||'')))
+  return {available:false,error:'sourced_kicker_id_required'};
+ const side=home===normalized(team)?'home':away===normalized(team)?'away':null;
+ if(!side)return {available:false,error:'boxscore_team_identity_conflict'};
+ const legacy=side==='home'?box.homeTeam?.homePlayers?.playerEntry:box.awayTeam?.awayPlayers?.playerEntry;
+ const rows=box.stats?.[side]?.players??legacy??[];
+ if(!Array.isArray(rows))return {available:false,error:'boxscore_player_collection_not_array'};
+ const stem=x=>String(x||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/\b(jr|sr|ii|iii|iv)\b\.?/gi,'').replace(/[^a-z]/g,'');
+ const wanted=stem(name);
+ const idRows=rows.filter(item=>String(item?.player?.id??item?.player?.ID??item?.playerId??'')===String(playerId));
+ if(idRows.length!==1)return {available:false,error:idRows.length?'boxscore_player_identity_ambiguous':'kicker_not_in_boxscore'};
+ const item=idRows[0],p=item.player||{};
+ const full=String(p.fullName||p.displayName||[p.firstName??p.FirstName,p.lastName??p.LastName].filter(Boolean).join(' ')||'');
+ const position=String(p.primaryPosition?.abbreviation||p.primaryPosition?.name||p.primaryPosition||
+  p.position?.abbreviation||p.position||'').toUpperCase();
+ if(stem(full)!==wanted||position!=='K')return {available:false,error:'boxscore_kicker_identity_conflict'};
+ const blocks=Array.isArray(item.playerStats)?item.playerStats:[item.stats||item.playerStats||item];
+ const mapped=[];
+ for(const raw of blocks){
+  const stats=raw?.stats||raw;
+  if(!stats||typeof stats!=='object'||Array.isArray(stats))continue;
+  const record=ffo598NormalizeSeason({playerStatsTotals:[{
+   player:{id:playerId,firstName:p.firstName||p.FirstName,lastName:p.lastName||p.LastName,
+    primaryPosition:{abbreviation:'K'}},team:{abbreviation:team},
+   stats:{...stats,gamesPlayed:1}
+  }]},checkedAt).players[0];
+  const entry={...record?.season_totals};
+  delete entry.games_played;
+  if(Object.keys(entry).length)mapped.push(entry);
+ }
+ if(!mapped.length)return {available:false,error:'kicker_boxscore_scoring_categories_missing'};
+ const combined={};
+ for(const stats of mapped)for(const [key,n] of Object.entries(stats)){
+  if(!Number.isFinite(n)||n<0)return {available:false,error:'invalid_kicker_boxscore_stat'};
+  if(Object.hasOwn(combined,key)&&combined[key]!==n)
+   return {available:false,error:'conflicting_kicker_boxscore_categories'};
+  combined[key]=n;
+ }
+ // FFL kicker scoring requires exact FG distances or independently observed
+ // extra points. Generic field goals alone are insufficient.
+ const allowed=new Set(['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59',
+  'fgm_60p','xpm','xpmiss','fgmiss']);
+ if(!Object.keys(combined).some(k=>allowed.has(k)))
+  return {available:false,error:'no_supported_ffl_kicker_scoring_fields'};
+ return {available:true,game_id:id,player_id:String(playerId),stats:combined};
+}
+async function ffo623KickerBoxscore(fixture,env){
+ const id=String(fixture.id),cached=ffo623BoxCache.get(id);
+ if(cached&&Date.now()-cached.at<10*60*1000)return cached.payload;
+ if(ffo623BoxPending.has(id))return ffo623BoxPending.get(id);
+ const task=(async()=>{
+  const endpoint=MSF_ROOT+'/2026-regular/games/'+encodeURIComponent(id)+'/boxscore.json';
+  let response;
+  try{response=env.MSF_API_KEY
+   ?await fetch(endpoint,{headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),
+    accept:'application/json'},signal:AbortSignal.timeout(8500)})
+   :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
+  }catch{throw Error('kicker_boxscore_fetch_unreachable')}
+  if(!response.ok)throw Error('kicker_boxscore_http_'+response.status);
+  const size=Number(response.headers.get('content-length')||0);
+  if(size>1500000)throw Error('kicker_boxscore_response_too_large');
+  const raw=await response.text();
+  if(raw.length>1500000)throw Error('kicker_boxscore_response_too_large');
+  const json=JSON.parse(raw);
+  if(json?.available===false||json?.error)throw Error('kicker_boxscore_gateway_rejected');
+  const payload=json?.data??json;
+  ffo623BoxCache.set(id,{payload,at:Date.now()});
+  return payload;
+ })();
+ ffo623BoxPending.set(id,task);
+ try{return await task}finally{ffo623BoxPending.delete(id)}
+}
+async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
+ if(!/^[0-9]{1,12}$/.test(String(playerId||'')))
+  return {available:false,error:'sourced_kicker_id_required'};
+ let response;
+ try{
+  const endpoint=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
+  response=env.MSF_API_KEY
+   ?await fetch(endpoint,{headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),
+    accept:'application/json'},signal:AbortSignal.timeout(9000)})
+   :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
+ }catch{return {available:false,error:'completed_game_schedule_unreachable'}}
+ if(!response.ok)return {available:false,error:'completed_game_schedule_http_'+response.status};
+ const json=await response.json();
+ if(json?.available===false||json?.error)return {available:false,error:'game_schedule_gateway_unavailable'};
+ const games=(json?.data??json)?.games;
+ if(!Array.isArray(games))return {available:false,error:'completed_games_schema_missing'};
+ const norm=x=>String(x||'').toUpperCase()==='LA'?'LAR':String(x||'').toUpperCase();
+ const fixtures=games.map(item=>{
+  const g=item.schedule||item.game||{},week=Number(g.week??g.weekNumber??0);
+  const home=norm(g.homeTeam?.abbreviation||g.homeTeamAbbreviation);
+  const away=norm(g.awayTeam?.abbreviation||g.awayTeamAbbreviation);
+  const status=String(g.playedStatus||g.status||'').toUpperCase();
+  const id=String(g.id??g.gameId??'');
+  return {id,week,home,away,status};
+ }).filter(g=>g.id&&/^[0-9]{1,12}$/.test(g.id)&&Number.isInteger(g.week)&&g.week>0&&
+  g.week<targetWeek&&['COMPLETED','FINAL','FINAL_OVERTIME'].includes(g.status)&&
+  (g.home===norm(team)||g.away===norm(team)))
+ .sort((a,b)=>b.week-a.week).slice(0,5);
+ if(fixtures.length<2)return {available:false,error:'insufficient_completed_team_games'};
+ const seen=new Set(),rows=[],errors=[];
+ for(let start=0;start<fixtures.length&&rows.length<2;start+=2){
+  const batch=fixtures.slice(start,start+2);
+  const found=await Promise.allSettled(batch.map(g=>ffo623KickerBoxscore(g,env)));
+  let stopped=false;
+  for(let i=0;i<found.length;i++){
+   if(found[i].status!=='fulfilled'){
+    const reason=String(found[i].reason?.message||'kicker_boxscore_unavailable');
+    errors.push(reason.slice(0,75));
+    if(/http_(400|401|403|429|502|503)/.test(reason))stopped=true;
+    continue;
+   }
+   const out=ffo623KickerBoxRow(found[i].value,batch[i],team,name,playerId,checkedAt);
+   if(out.available===false){errors.push(String(out.error));continue}
+   if(!seen.has(out.game_id)){seen.add(out.game_id);rows.push(out)}
+  }
+  if(stopped)break;
+ }
+ if(rows.length<2)return {available:false,error:errors[0]||'insufficient_verified_kicker_boxscores',
+  games_observed:rows.length};
+ const totals={};
+ for(const g of rows)for(const [k,v] of Object.entries(g.stats))totals[k]=(totals[k]||0)+v;
+ const gamesObserved=rows.length;
+ return {schema:'FFO_MSF_KICKER_BOX_V1',source:'MySportsFeeds',
+  source_type:'licensed_primary',checked_at:checkedAt,team,name,msf_id:playerId,position:'K',
+  games_observed:gamesObserved,games_played:gamesObserved,season_totals:{...totals,games_played:gamesObserved},
+  forecast:Object.fromEntries(Object.entries(totals).map(([k,v])=>[k,v/gamesObserved])),
+  coverage:'verified_kicker_completed_boxscore_partial',
+  projection_method:'MSF completed-game kicker boxscores / verified appearances · missing FG categories unknown',
+  partial:true,certified:false};
+}
 const ffo616PlayerGameCache=new Map(),ffo616PlayerGamePending=new Map();
 async function ffo616PlayerGameRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
