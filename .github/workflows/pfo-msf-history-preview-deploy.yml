@@ -45,6 +45,7 @@ jobs:
           node --check pfo-thursday/ffo-layout-64.js
           node --check pfo-thursday/ffo-pfo-596.js
           node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-611.js
           node --check pfo-thursday/ffo-trade-60.js
           node --check pfo-thursday/ffo-pfo-59.js
           node --check pfo-thursday/ffo-msf-event-score-scenarios.mjs
@@ -52,7 +53,7 @@ jobs:
           node --check /tmp/pfo-msf-worker.mjs
       - name: Existing PFO, MSF and new historical score reconstructions
         run: |
-          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-gamecast-week-selector.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs  pfo-thursday/qa-msf-scoring-pipeline.test.mjs pfo-thursday/qa-msf-scoring-research-controller.test.mjs pfo-thursday/qa-msf-scan-recovery.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-market-finder-61.test.mjs pfo-thursday/qa-ffo-62.test.mjs pfo-thursday/qa-ffo-market-quality-63.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-certification-worklist-68.test.mjs pfo-thursday/qa-ffo-stat-bridge-69.test.mjs
+          node --test pfo-thursday/qa-ffo-msf.test.mjs             pfo-thursday/qa-msf-week5-reconciliation.test.mjs             pfo-thursday/qa-msf-same-game-evidence.test.mjs             pfo-thursday/qa-msf-event-score-scenarios.test.mjs             pfo-thursday/qa-msf-gamecast-week-selector.test.mjs             pfo-thursday/qa-msf-historical-matchups.test.mjs             pfo-thursday/qa-msf-verified-projections.test.mjs             pfo-thursday/qa-598.test.mjs             pfo-thursday/qa-597.test.mjs             pfo-thursday/qa-596.test.mjs  pfo-thursday/qa-msf-scoring-pipeline.test.mjs pfo-thursday/qa-msf-scoring-research-controller.test.mjs pfo-thursday/qa-msf-scan-recovery.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-market-finder-61.test.mjs pfo-thursday/qa-ffo-62.test.mjs pfo-thursday/qa-ffo-market-quality-63.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-certification-worklist-68.test.mjs pfo-thursday/qa-ffo-stat-bridge-69.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs
       - name: Install isolated Chromium mobile test dependencies
         run: |
           npm install --no-save playwright@1.55.1
