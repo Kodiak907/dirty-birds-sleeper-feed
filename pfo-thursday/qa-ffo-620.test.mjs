@@ -40,7 +40,8 @@ test('team audit returns only field names and group keys, never proprietary numb
  assert.match(output,/rows_1_matched_1/);
  assert.match(output,/defense/);
  assert.match(output,/sacks/);
- assert.doesNotMatch(output,/25|101|SECRET/);
+ assert.doesNotMatch(output,/25|101|SECRET/i);
+ assert.doesNotMatch(output,/secretToken/i);
 });
 test('player bad-season 400 stops alternate filter attempts and carries classified reason only',async()=>{
  let calls=0;
