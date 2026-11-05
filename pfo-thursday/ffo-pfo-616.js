@@ -51,7 +51,7 @@
    const projected=typeof pfo52Points==='function'?pfo52Points(id,typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)):null;
    if(projected?.points!=null){lines.push(name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
    let reason=position==='DEF'?(pending.has(team)?'fetching_team_defense':failures.get(team)||(!defense.has(team)?'awaiting_team_defense':'no_verified_scoring_categories_or_week_schedule')):
-    (playerPending.has(id)?'fetching_player_logs':playerFailures.get(id)||recoveryStatus.get(id)||'awaiting_verified_stats');
+    (playerPending.has(id)?'fetching_player_logs':playerFailures.get(id)||recoveryStatus.get(id)||projected?.source||'awaiting_verified_stats');
    lines.push(name+': unavailable · '+reason);
   }
   panel.textContent=lines.join('\n');
