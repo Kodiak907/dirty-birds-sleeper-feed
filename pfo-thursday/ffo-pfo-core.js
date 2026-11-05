@@ -1668,10 +1668,12 @@ function pfo49Signal(id){
   volumeChange,volumeMetric:k,popularity:pfo49Trend.get(String(id))};
 }
 function pfo49RadarPool(){
- // Expired Sleeper ownership must not blank out independently sourced NFL research.
+ // With a cached ownership catalog, keep research visible after its freshness
+ // window expires, but never promote an unverified player as available.
+ if(!leagueOwnedIds)return [];
  const all=(pfo49Players.length?pfo49Players:pfo49Dir()).filter(x=>
   pfo49Metrics?.players?.[x.id]||pfo50Indexed.has(pfo50Key(x.name,x.team)));
- return all.filter(x=>!leagueOwnedIds||!waiverIsRostered(x.name,x.id))
+ return all.filter(x=>!waiverIsRostered(x.name,x.id))
   .map(x=>pfo49Signal(x.id))
   .filter(x=>x&&(x.coverage==='season'||x.newestWeek>=Number(window.dbNflWeek||7)-2));
 }
