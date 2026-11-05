@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-05T11:58:19.766804+00:00",
+  "generated_at_utc": "2026-11-05T14:57:58.586225+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-05T02:11:16.868250+00:00",
+  "projection_as_of": "2026-11-05T14:57:54.548072+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-05T11:58:09.504028+00:00",
+  "snapshot_utc": "2026-11-05T14:57:45.250701+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -661,14 +661,14 @@
       "missing_projection": [
         "Brandon Aiyuk"
       ],
-      "ppg": 131.45,
+      "ppg": 131.11,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "NYJ",
           "position": "QB",
-          "ppg": 21.28
+          "ppg": 21.14
         },
         {
           "id": "8150",
@@ -682,14 +682,14 @@
           "name": "Jonah Coleman",
           "opponent": "CAR",
           "position": "RB",
-          "ppg": 13.18
+          "ppg": 13.12
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.74
+          "ppg": 20.62
         },
         {
           "id": "8144",
@@ -731,7 +731,7 @@
           "name": "Zay Flowers",
           "opponent": "JAX",
           "position": "WR",
-          "ppg": 11.37
+          "ppg": 11.35
         }
       ]
     }

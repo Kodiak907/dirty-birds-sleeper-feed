@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T11:58:16.226748+00:00
-Sleeper snapshot: 2026-11-05T11:58:09.504028+00:00
+Generated: 2026-11-05T14:57:53.029858+00:00
+Sleeper snapshot: 2026-11-05T14:57:45.250701+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -70,12 +70,13 @@ Sleeper snapshot: 2026-11-05T11:58:09.504028+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Dominic Zvada | NYG | 6.81 | 100% | — | Not flagged |
-| 2 | Cameron Dicker | LAC | 6.27 | 100% | — | Not flagged |
-| 3 | Trey Smack | GB | 6.17 | 89% | — | Not flagged |
-| 4 | Cairo Santos | CHI | 5.51 | 89% | — | Not flagged |
-| 5 | Chris Boswell | PIT | 5.41 | 89% | — | Not flagged |
-| 6 | Tyler Loop | BAL | 5.24 | 78% | — | Not flagged |
+| 1 | Matt Gay | LV | 6.87 | 89% | — | Not flagged |
+| 2 | Dominic Zvada | NYG | 6.81 | 100% | — | Not flagged |
+| 3 | Cameron Dicker | LAC | 6.27 | 100% | — | Not flagged |
+| 4 | Trey Smack | GB | 6.17 | 89% | — | Not flagged |
+| 5 | Cairo Santos | CHI | 5.51 | 89% | — | Not flagged |
+| 6 | Chris Boswell | PIT | 5.41 | 89% | — | Not flagged |
+| 7 | Tyler Loop | BAL | 5.24 | 78% | — | Not flagged |
 
 ### DEF
 
@@ -83,8 +84,8 @@ Sleeper snapshot: 2026-11-05T11:58:09.504028+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Buffalo Bills | BUF | 6.50 | 100% | — | Not flagged |
 | 2 | Baltimore Ravens | BAL | 6.22 | 89% | — | Not flagged |
-| 3 | New York Giants | NYG | 6.19 | 100% | — | Not flagged |
-| 4 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
+| 3 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
+| 4 | Cincinnati Bengals | CIN | 5.90 | 100% | — | Not flagged |
 | 5 | New Orleans Saints | NO | 5.87 | 100% | — | Not flagged |
 | 6 | Indianapolis Colts | IND | 5.71 | 89% | — | Not flagged |
 | 7 | Washington Commanders | WAS | 5.43 | 100% | — | Not flagged |

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-05T11:58:16.441891+00:00
+Generated: 2026-11-05T14:57:53.359899+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections and injury status require manual verification.
@@ -59,12 +59,13 @@ Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Dominic Zvada | 6.81 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.71 | No sourced usage |
-| 2 | Cameron Dicker | 6.27 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.17 | No sourced usage |
-| 3 | Trey Smack | 6.17 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.07 | No sourced usage; Partial projection coverage |
-| 4 | Cairo Santos | 5.51 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.59 | No sourced usage; Partial projection coverage |
-| 5 | Chris Boswell | 5.41 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.69 | No sourced usage; Partial projection coverage |
-| 6 | Tyler Loop | 5.24 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.86 | No sourced usage; Partial projection coverage |
+| 1 | Matt Gay | 6.87 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.77 | No sourced usage; Partial projection coverage |
+| 2 | Dominic Zvada | 6.81 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.71 | No sourced usage |
+| 3 | Cameron Dicker | 6.27 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.17 | No sourced usage |
+| 4 | Trey Smack | 6.17 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.07 | No sourced usage; Partial projection coverage |
+| 5 | Cairo Santos | 5.51 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.59 | No sourced usage; Partial projection coverage |
+| 6 | Chris Boswell | 5.41 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.69 | No sourced usage; Partial projection coverage |
+| 7 | Tyler Loop | 5.24 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.86 | No sourced usage; Partial projection coverage |
 
 ## DEF
 
@@ -72,8 +73,8 @@ Baseline illustrative optimal PPG: **126.72**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Buffalo Bills | 6.50 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.40 | No sourced usage |
 | 2 | Baltimore Ravens | 6.22 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.12 | No sourced usage; Partial projection coverage |
-| 3 | New York Giants | 6.19 | Bench-depth scenario: Caleb Douglas | +0.00 | +0.09 | No sourced usage |
-| 4 | Green Bay Packers | 6.00 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.10 | No sourced usage; Partial projection coverage |
+| 3 | Green Bay Packers | 6.00 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.10 | No sourced usage; Partial projection coverage |
+| 4 | Cincinnati Bengals | 5.90 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.20 | No sourced usage |
 | 5 | New Orleans Saints | 5.87 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.23 | No sourced usage |
 | 6 | Indianapolis Colts | 5.71 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.38 | No sourced usage; Partial projection coverage |
 | 7 | Washington Commanders | 5.43 | Bench-depth scenario: Caleb Douglas | +0.00 | -0.67 | No sourced usage |

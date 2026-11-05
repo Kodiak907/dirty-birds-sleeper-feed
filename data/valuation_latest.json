@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-05T11:58:16.173717+00:00",
+  "generated_at_utc": "2026-11-05T14:57:52.953521+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -5809,7 +5809,7 @@
     {
       "completed_trade_count": 1,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 106.9,
+      "observed_optimal_average": 95.28,
       "observed_optimal_lineup": [
         {
           "avg": 16.2,
@@ -5842,13 +5842,13 @@
           "position": "TE"
         },
         {
-          "avg": 10.12,
-          "name": "Matt Gay",
+          "avg": 0.0,
+          "name": "Drew Stevens",
           "position": "K"
         },
         {
-          "avg": 2.5,
-          "name": "Cincinnati Bengals",
+          "avg": 1.0,
+          "name": "New York Giants",
           "position": "DEF"
         },
         {
@@ -6044,6 +6044,26 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "13968",
+          "n_weeks": 8,
+          "name": "Drew Stevens",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "K",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 59.1,
           "actual_points_weekly_avg": 7.39,
           "id": "3214",
@@ -6081,26 +6101,6 @@
             16.88,
             17.5,
             8.28
-          ]
-        },
-        {
-          "actual_points_total": 81.0,
-          "actual_points_weekly_avg": 10.12,
-          "id": "6083",
-          "n_weeks": 8,
-          "name": "Matt Gay",
-          "nonzero_weeks": 8,
-          "on_fantasy_reserve": false,
-          "position": "K",
-          "weekly_points": [
-            10.0,
-            8.0,
-            12.0,
-            16.0,
-            5.0,
-            12.0,
-            8.0,
-            10.0
           ]
         },
         {
@@ -6244,68 +6244,68 @@
           ]
         },
         {
-          "actual_points_total": 20.0,
-          "actual_points_weekly_avg": 2.5,
-          "id": "CIN",
+          "actual_points_total": 8.0,
+          "actual_points_weekly_avg": 1.0,
+          "id": "NYG",
           "n_weeks": 8,
-          "name": "Cincinnati Bengals",
-          "nonzero_weeks": 3,
+          "name": "New York Giants",
+          "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
             0.0,
             0.0,
-            3.0,
-            0.0,
-            10.0,
+            8.0,
             0.0,
             0.0,
-            7.0
+            0.0,
+            0.0,
+            0.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 20.0,
-            "actual_points_weekly_avg": 2.5,
-            "id": "CIN",
+            "actual_points_total": 8.0,
+            "actual_points_weekly_avg": 1.0,
+            "id": "NYG",
             "n_weeks": 8,
-            "name": "Cincinnati Bengals",
-            "nonzero_weeks": 3,
+            "name": "New York Giants",
+            "nonzero_weeks": 1,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
               0.0,
               0.0,
-              3.0,
-              0.0,
-              10.0,
+              8.0,
               0.0,
               0.0,
-              7.0
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
         "K": [
           {
-            "actual_points_total": 81.0,
-            "actual_points_weekly_avg": 10.12,
-            "id": "6083",
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "13968",
             "n_weeks": 8,
-            "name": "Matt Gay",
-            "nonzero_weeks": 8,
+            "name": "Drew Stevens",
+            "nonzero_weeks": 0,
             "on_fantasy_reserve": false,
             "position": "K",
             "weekly_points": [
-              10.0,
-              8.0,
-              12.0,
-              16.0,
-              5.0,
-              12.0,
-              8.0,
-              10.0
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -9627,6 +9627,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-05T11:58:09.504028+00:00",
+  "snapshot_utc": "2026-11-05T14:57:45.250701+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-8"
 }

@@ -59,12 +59,13 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Dominic Zvada | 6.81 | -0.41 | — | — | No modeled flags (not medically cleared) |
-| 2 | Cameron Dicker | 6.27 | -0.96 | — | — | No modeled flags (not medically cleared) |
-| 3 | Trey Smack | 6.17 | -1.06 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cairo Santos | 5.51 | -1.71 | — | — | No modeled flags (not medically cleared) |
-| 5 | Chris Boswell | 5.41 | -1.82 | — | — | No modeled flags (not medically cleared) |
-| 6 | Tyler Loop | 5.24 | -1.98 | — | — | projection_weeks_partial |
+| 1 | Matt Gay | 6.87 | -0.35 | — | — | No modeled flags (not medically cleared) |
+| 2 | Dominic Zvada | 6.81 | -0.41 | — | — | No modeled flags (not medically cleared) |
+| 3 | Cameron Dicker | 6.27 | -0.96 | — | — | No modeled flags (not medically cleared) |
+| 4 | Trey Smack | 6.17 | -1.06 | — | — | No modeled flags (not medically cleared) |
+| 5 | Cairo Santos | 5.51 | -1.71 | — | — | No modeled flags (not medically cleared) |
+| 6 | Chris Boswell | 5.41 | -1.82 | — | — | No modeled flags (not medically cleared) |
+| 7 | Tyler Loop | 5.24 | -1.98 | — | — | projection_weeks_partial |
 
 ## DEF — reference: Minnesota Vikings (7.01 PPG)
 
@@ -72,8 +73,8 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Buffalo Bills | 6.50 | -0.51 | — | — | No modeled flags (not medically cleared) |
 | 2 | Baltimore Ravens | 6.22 | -0.79 | — | — | No modeled flags (not medically cleared) |
-| 3 | New York Giants | 6.19 | -0.82 | — | — | No modeled flags (not medically cleared) |
-| 4 | Green Bay Packers | 6.00 | -1.01 | — | — | No modeled flags (not medically cleared) |
+| 3 | Green Bay Packers | 6.00 | -1.01 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cincinnati Bengals | 5.90 | -1.11 | — | — | No modeled flags (not medically cleared) |
 | 5 | New Orleans Saints | 5.87 | -1.14 | — | — | No modeled flags (not medically cleared) |
 | 6 | Indianapolis Colts | 5.71 | -1.30 | — | — | No modeled flags (not medically cleared) |
 | 7 | Washington Commanders | 5.43 | -1.58 | — | — | No modeled flags (not medically cleared) |

@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-05T11:58:09.504028+00:00
+Updated: 2026-11-05T14:57:45.250701+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,7 +19,11 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- lineup_change â roster/transaction 1
+- Roster 8: added Drew Stevens, New York Giants; dropped Matt Gay, Cincinnati Bengals
+- lineup_change â roster/transaction 8
+- Transaction 1424076145711702016: free_agent / complete / rosters [8] / adds {'NYG': 8} / drops {'CIN': 8} / FAAB bid None
+- Transaction 1424075772494151680: free_agent / complete / rosters [8] / adds {'13968': 8} / drops {'6083': 8} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

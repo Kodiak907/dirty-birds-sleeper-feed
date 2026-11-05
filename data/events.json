@@ -10794,5 +10794,136 @@
       "MIN"
     ],
     "roster_id": 1
+  },
+  {
+    "detected_at_utc": "2026-11-05T14:57:45.250701+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "4046",
+      "8150",
+      "13345",
+      "9488",
+      "8144",
+      "8131",
+      "13301",
+      "9997",
+      "11792",
+      "MIN"
+    ],
+    "old": [
+      "4046",
+      "8150",
+      "13345",
+      "9488",
+      "8144",
+      "8131",
+      "13301",
+      "13296",
+      "11792",
+      "MIN"
+    ],
+    "roster_id": 1
+  },
+  {
+    "added": [
+      "13968",
+      "NYG"
+    ],
+    "detected_at_utc": "2026-11-05T14:57:45.250701+00:00",
+    "dropped": [
+      "6083",
+      "CIN"
+    ],
+    "kind": "roster_change",
+    "roster_id": 8
+  },
+  {
+    "detected_at_utc": "2026-11-05T14:57:45.250701+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "11560",
+      "8138",
+      "7594",
+      "8137",
+      "11635",
+      "3214",
+      "8167",
+      "11783",
+      "13968",
+      "NYG"
+    ],
+    "old": [
+      "11560",
+      "8138",
+      "7594",
+      "8137",
+      "13298",
+      "3214",
+      "8167",
+      "11783",
+      "6083",
+      "CIN"
+    ],
+    "roster_id": 8
+  },
+  {
+    "detected_at_utc": "2026-11-05T14:57:45.250701+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "NYG": 8
+      },
+      "consenter_ids": [
+        8
+      ],
+      "created": 1793888720494,
+      "creator": "1399634346477883392",
+      "draft_picks": [],
+      "drops": {
+        "CIN": 8
+      },
+      "leg": 9,
+      "metadata": null,
+      "roster_ids": [
+        8
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793888720494,
+      "transaction_id": "1424076145711702016",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1424076145711702016"
+  },
+  {
+    "detected_at_utc": "2026-11-05T14:57:45.250701+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "13968": 8
+      },
+      "consenter_ids": [
+        8
+      ],
+      "created": 1793888631512,
+      "creator": "1399634346477883392",
+      "draft_picks": [],
+      "drops": {
+        "6083": 8
+      },
+      "leg": 9,
+      "metadata": null,
+      "roster_ids": [
+        8
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1793888631512,
+      "transaction_id": "1424075772494151680",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1424075772494151680"
   }
 ]

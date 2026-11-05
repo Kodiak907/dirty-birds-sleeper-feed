@@ -1,25 +1,25 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-05T11:58:19.766804+00:00 | Forecast as of: 2026-11-05T02:11:16.868250+00:00
+Generated: 2026-11-05T14:57:58.586225+00:00 | Forecast as of: 2026-11-05T14:57:54.548072+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 131.45
+**Projected optimal score:** 131.11
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Patrick Mahomes | QB | NYJ | 21.28 |
+| Patrick Mahomes | QB | NYJ | 21.14 |
 | Kyren Williams | RB | WAS | 17.16 |
-| Jonah Coleman | RB | CAR | 13.18 |
-| Jaxon Smith-Njigba | WR | ARI | 20.74 |
+| Jonah Coleman | RB | CAR | 13.12 |
+| Jaxon Smith-Njigba | WR | ARI | 20.62 |
 | Chris Olave | WR | CLE | 12.61 |
 | Isaiah Likely | TE | PHI | 9.43 |
 | Will Reichard | K | BUF | 7.24 |
 | Minnesota Vikings | DEF | BUF | 6.24 |
 | Ollie Gordon II | RB | DET | 12.20 |
-| Zay Flowers | WR | JAX | 11.37 |
+| Zay Flowers | WR | JAX | 11.35 |
 
 ## Week 10
 
