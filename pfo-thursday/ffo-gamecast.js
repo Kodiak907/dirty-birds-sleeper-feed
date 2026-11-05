@@ -31,6 +31,9 @@
  const route='/api/ffo/gamecast/';
  function status(msg){s.status=msg;if($('ffo-gc-status'))$('ffo-gc-status').textContent=msg;}
  const feedCache=new Map(),feedPending=new Map();
+ // Authenticated MSF scoreboard snapshots for previously visited weeks.
+ // Display provider-sourced data immediately; revalidate without inventing plays.
+ const weekboardHistory=new Map();
  let playerFeedPending=null,gamePending=null,overviewPending=null,historyAuditStarted=false,statAuditRunning=false;
  let scoringResearch=null;
  let weekboardPending=null,backgroundPlayPending=null,lastWeekboardPoll=0,lastWeekboardSuccess=0,lastBackgroundDispatch=0;
@@ -1304,16 +1307,38 @@
   try{return await gamePending}finally{gamePending=null}
  }
  // One authenticated MSF weekly-games request updates every game's score.
+ function restoreWeekboard(week){
+  const data=weekboardHistory.get(Number(week));
+  if(!data||!Array.isArray(data.games))return false;
+  let count=0;
+  for(const raw of data.games){
+   const update=friendlyGame(raw),index=s.games.findIndex(g=>g.id===update.id);
+   if(index<0)continue;
+   const merged=weekNav.mergeVerifiedWeekScore(s.games[index],update,{
+    providerUpdatedAt:data.providerUpdatedAt||null,checkedAt:data.checkedAt||null});
+   if(merged.accepted){s.games[index]=merged.game;count++}
+  }
+  if(count){lastWeekboardSuccess=data.at;weekboardGameCount=count;drawGames()}
+  return !!count;
+ }
  async function refreshWeekboard(){
   if(!s.enabled||!s.archiveGames.length||!s.selectedWeek)return;
   if(weekboardPending)return weekboardPending;
-  const requestedWeek=s.selectedWeek;lastWeekboardPoll=Date.now();
+  const requestedWeek=s.selectedWeek;
+  const cached=weekboardHistory.get(requestedWeek),current=
+   weekNav.currentCalendarWeek(new Date(),Number(s.season.slice(0,4)))||Number(window.dbNflWeek||0);
+  // Finalized past weeks do not need a fresh provider HTTP request every 5s.
+  if(requestedWeek<current&&cached&&Date.now()-cached.at<10*60*1000)return;
+  lastWeekboardPoll=Date.now();
   weekboardPending=(async()=>{
    try{
     const res=await feed('weekboard',{season:s.season,week:requestedWeek},true);
     if(s.selectedWeek!==requestedWeek)return;
     if(res.notModified){lastWeekboardSuccess=Date.now();weekboardError='';weekboardFailures=0;drawGames();return}
     if(!Array.isArray(res.data?.games))throw Error('MSF weekly scoreboard schema not verified');
+    weekboardHistory.set(requestedWeek,{at:Date.now(),games:res.data.games,
+     providerUpdatedAt:res.provider_updated_at||null,
+     checkedAt:res.checked_at||new Date().toISOString()});
     const seen=new Set();let changed=0;
     for(const raw of res.data.games){
      const update=friendlyGame(raw),index=s.games.findIndex(g=>g.id===update.id);
@@ -1363,6 +1388,10 @@
   try{return await backgroundPlayPending}finally{backgroundPlayPending=null}
  }
  async function refreshOverview(force=false){
+  const calendar=weekNav.currentCalendarWeek(new Date(),Number(s.season.slice(0,4)))||Number(window.dbNflWeek||0);
+  if(!force&&s.enabled&&s.archiveGames.length&&s.selectedWeek<calendar){
+   drawGames();restoreWeekboard(s.selectedWeek);return;
+  }
   if(overviewPending)return overviewPending;
   overviewPending=(async()=>{try{
     const health=await feed('health',{},force);s.enabled=!!health.ready;
@@ -1413,8 +1442,12 @@
   s.activePlay=-1;s.lastGamePoll=0;s.lastBoxPoll=0;lastWeekboardPoll=0;
   lastWeekboardSuccess=0;weekboardGameCount=0;weekboardError='';
   lastStadiumGameId=null;
-  drawGames();drawPlays();
-  if(gameActive()&&s.enabled)void refreshWeekboard();
+  drawGames();restoreWeekboard(n);drawPlays();
+  if(gameActive()&&s.enabled)void refreshWeekboard().then(()=>{
+   // If an older week request was in-flight when the user switched weeks,
+   // fetch the new target immediately after the old request completes.
+   if(s.selectedWeek===n&&!weekboardHistory.has(n))return refreshWeekboard();
+  });
  }
  $('ffo-gc-week')?.addEventListener('change',e=>setWeek(e.currentTarget.value));
  $('ffo-gc-week-today')?.addEventListener('click',()=>{
