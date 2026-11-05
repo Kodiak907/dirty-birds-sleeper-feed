@@ -1,0 +1,37 @@
+name: PFO 6.16 isolated MSF source and projection recovery QA
+on:
+  push:
+    branches:
+      - pfo-616-source-and-projection-integrity-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax and protected worker compilation
+        run: |
+          node --check pfo-thursday/ffo-pfo-core.js
+          node --check pfo-thursday/ffo-pfo-597.js
+          node --check pfo-thursday/ffo-pfo-616.js
+          node --check pfo-thursday/ffo-startsit-63.js
+          node --check pfo-thursday/ffo-pfo-611.js
+          cp pfo-thursday/_worker.js /tmp/pfo616-worker.mjs
+          node --check /tmp/pfo616-worker.mjs
+      - name: 6.16 position-specific source recovery and scoring regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-616.test.mjs
+      - name: Existing model, market, history, waiver and video regressions
+        run: |
+          node --test pfo-thursday/qa-ffo-615.test.mjs pfo-thursday/qa-ffo-614-video.test.mjs pfo-thursday/qa-ffo-613-video.test.mjs pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs
+      - name: Responsive mobile route and interaction checks
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
