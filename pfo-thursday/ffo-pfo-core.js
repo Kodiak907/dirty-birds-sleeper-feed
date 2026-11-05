@@ -2234,7 +2234,7 @@ function pfo51FindPlayers(q){const p=pfo49Players.length?pfo49Players:pfo49Dir()
  const wantAvailable=/available|free agent|unrostered|waiver|pickups?/i.test(q),wantOurs=/my roster|our roster|our players|dirty birds/i.test(q);
  // Mentioning targets or snaps asks for a METRIC, not an upward trend.
  // Only explicit growth language authorizes chronological trend filtering.
- const trend=/rising|increas|grow|breakout|trending up|more (?:targets|snaps|carries)/i.test(q);
+ const trend=/rising|\brose\b|increas|grow|breakout|trending up|went up|higher|more (?:targets|snaps|carries)/i.test(q);
  const checked=!!leagueOwnedIds,stale=!checked||!ownershipCheckedMs||Date.now()-ownershipCheckedMs>5*60*1000;
  // An old ownership snapshot cannot certify a free agent, but may still help
  // exclude definitely rostered players from a research-only watchlist.
