@@ -28,9 +28,9 @@ test('MSF field-goal distance aliases and observed game denominators survive pro
 test('team defensive game logs derive only independently supported component averages and PA tiers',()=>{
  const out=team({teamGamelogs:[
  {team:{abbreviation:'MIN'},game:{id:1,playedStatus:'FINAL',homeTeamAbbreviation:'MIN',
-   awayTeamAbbreviation:'BUF',homeScoreTotal:27,awayScoreTotal:13},stats:{defense:{sacks:4,interceptions:1,forcedFumbles:1,fumbleRecoveries:1}}},
+   awayTeamAbbreviation:'BUF',homeScoreTotal:27,awayScoreTotal:13},stats:{defense:{sacks:4,interceptions:1,forcedFumbles:1,fumbleRecoveries:1,pointsAllowed:13}}},
  {team:{abbreviation:'MIN'},game:{id:2,playedStatus:'FINAL',homeTeamAbbreviation:'GB',
-   awayTeamAbbreviation:'MIN',homeScoreTotal:30,awayScoreTotal:22},stats:{defense:{sacks:3,interceptions:0}}}
+   awayTeamAbbreviation:'MIN',homeScoreTotal:30,awayScoreTotal:22},stats:{defense:{sacks:3,interceptions:0,pointsAllowed:30}}}
  ]},'MIN','2026-11-05');
  assert.equal(out.team,'MIN');
  assert.equal(out.games_observed,2);
