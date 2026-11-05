@@ -2748,7 +2748,7 @@ pfo51FindPlayers=function(q){if(/\btrade\b|\btrade ideas?\b|\bacquire\b/i.test(q
  const mine=new Set((liveRosterSnapshot?.players||[]).map(x=>String(x.player_id)));
  res.entries=res.entries.filter(x=>mine.has(String(x.id))||!leagueOwnedIds||!waiverIsRostered(pfo52Info(x.id).name,x.id));
  res.total=res.entries.length;res.ownershipUnverified=!fresh;
- if(res.wantAvailable&&!fresh)res.availabilityUnverified=true;
+ if(!fresh&&(/available|free agent|unrostered|waiver|pickups?/i.test(q)||res.wantAvailable))res.availabilityUnverified=true;
  return res;
 };
 const pfo52OldAsk=pfo51Ask;
