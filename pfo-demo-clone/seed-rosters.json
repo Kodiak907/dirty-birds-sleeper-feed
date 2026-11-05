@@ -1,0 +1,403 @@
+{
+  "schema": "PFO_LEAGUE_SHOWCASE_V1",
+  "note": "All NFL player names originate from existing PFO public player directory. Cross-team rosters and scoring estimates are fictitious sample scenarios. No actual FFL roster, commissioner data, or paid MSF material.",
+  "team_name": "The Front Office Collective",
+  "season": 2026,
+  "week": 9,
+  "roster_slots": [
+    "QB",
+    "RB",
+    "RB",
+    "WR",
+    "WR",
+    "TE",
+    "FLEX",
+    "FLEX",
+    "K",
+    "DEF"
+  ],
+  "players": {
+    "1466": {
+      "name": "Travis Kelce",
+      "position": "TE",
+      "team": "KC",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "2747": {
+      "name": "Jason Myers",
+      "position": "K",
+      "team": "SEA",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "3198": {
+      "name": "Derrick Henry",
+      "position": "RB",
+      "team": "BAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4034": {
+      "name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4046": {
+      "name": "Patrick Mahomes",
+      "position": "QB",
+      "team": "KC",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4217": {
+      "name": "George Kittle",
+      "position": "TE",
+      "team": "SF",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4866": {
+      "name": "Saquon Barkley",
+      "position": "RB",
+      "team": "PHI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4881": {
+      "name": "Lamar Jackson",
+      "position": "QB",
+      "team": "BAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4892": {
+      "name": "Baker Mayfield",
+      "position": "QB",
+      "team": "TB",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "4984": {
+      "name": "Josh Allen",
+      "position": "QB",
+      "team": "BUF",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "5045": {
+      "name": "Courtland Sutton",
+      "position": "WR",
+      "team": "DEN",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "5859": {
+      "name": "A.J. Brown",
+      "position": "WR",
+      "team": "NE",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "5892": {
+      "name": "David Montgomery",
+      "position": "RB",
+      "team": "HOU",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "6786": {
+      "name": "CeeDee Lamb",
+      "position": "WR",
+      "team": "DAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "6794": {
+      "name": "Justin Jefferson",
+      "position": "WR",
+      "team": "MIN",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "6813": {
+      "name": "Jonathan Taylor",
+      "position": "RB",
+      "team": "IND",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "6904": {
+      "name": "Jalen Hurts",
+      "position": "QB",
+      "team": "PHI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "7525": {
+      "name": "DeVonta Smith",
+      "position": "WR",
+      "team": "PHI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "7547": {
+      "name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "DET",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "7564": {
+      "name": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "CIN",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "7569": {
+      "name": "Nico Collins",
+      "position": "WR",
+      "team": "HOU",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8110": {
+      "name": "Jake Ferguson",
+      "position": "TE",
+      "team": "DAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8112": {
+      "name": "Drake London",
+      "position": "WR",
+      "team": "ATL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8130": {
+      "name": "Trey McBride",
+      "position": "TE",
+      "team": "ARI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8134": {
+      "name": "Khalil Shakir",
+      "position": "WR",
+      "team": "BUF",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8146": {
+      "name": "Garrett Wilson",
+      "position": "WR",
+      "team": "NYJ",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8150": {
+      "name": "Kyren Williams",
+      "position": "RB",
+      "team": "LAR",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "8155": {
+      "name": "Breece Hall",
+      "position": "RB",
+      "team": "NYJ",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "9221": {
+      "name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "DET",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "9488": {
+      "name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "SEA",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "9493": {
+      "name": "Puka Nacua",
+      "position": "WR",
+      "team": "LAR",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "9509": {
+      "name": "Bijan Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "9997": {
+      "name": "Zay Flowers",
+      "position": "WR",
+      "team": "BAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "10229": {
+      "name": "Rashee Rice",
+      "position": "WR",
+      "team": "KC",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "10236": {
+      "name": "Dalton Kincaid",
+      "position": "TE",
+      "team": "BUF",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11533": {
+      "name": "Brandon Aubrey",
+      "position": "K",
+      "team": "DAL",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11560": {
+      "name": "Caleb Williams",
+      "position": "QB",
+      "team": "CHI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11566": {
+      "name": "Jayden Daniels",
+      "position": "QB",
+      "team": "WAS",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11584": {
+      "name": "Bucky Irving",
+      "position": "RB",
+      "team": "TB",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11604": {
+      "name": "Brock Bowers",
+      "position": "TE",
+      "team": "LV",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11620": {
+      "name": "Rome Odunze",
+      "position": "WR",
+      "team": "CHI",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11628": {
+      "name": "Marvin Harrison Jr.",
+      "position": "WR",
+      "team": "HOU",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11631": {
+      "name": "Brian Thomas Jr.",
+      "position": "WR",
+      "team": "JAX",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "11792": {
+      "name": "Will Reichard",
+      "position": "K",
+      "team": "MIN",
+      "source": "FFO published Sleeper NFL player directory"
+    },
+    "DST_PIT": {
+      "name": "Pittsburgh Steelers D/ST",
+      "position": "DEF",
+      "team": "PIT",
+      "source": "NFL team D/ST demonstration"
+    },
+    "DST_GB": {
+      "name": "Green Bay Packers D/ST",
+      "position": "DEF",
+      "team": "GB",
+      "source": "NFL team D/ST demonstration"
+    },
+    "DST_BAL": {
+      "name": "Baltimore Ravens D/ST",
+      "position": "DEF",
+      "team": "BAL",
+      "source": "NFL team D/ST demonstration"
+    },
+    "DST_MIN": {
+      "name": "Minnesota Vikings D/ST",
+      "position": "DEF",
+      "team": "MIN",
+      "source": "NFL team D/ST demonstration"
+    }
+  },
+  "rosters": [
+    {
+      "roster_id": "101",
+      "name": "The Front Office Collective",
+      "label": "Your PFO demo franchise",
+      "players": [
+        "4984",
+        "9221",
+        "8155",
+        "9493",
+        "6786",
+        "4217",
+        "7569",
+        "7525",
+        "11533",
+        "DST_PIT",
+        "4881",
+        "6813",
+        "8112",
+        "7547",
+        "11604",
+        "11584",
+        "DST_BAL"
+      ],
+      "starters": [
+        "4984",
+        "9221",
+        "8155",
+        "9493",
+        "6786",
+        "4217",
+        "7569",
+        "7525",
+        "11533",
+        "DST_PIT"
+      ],
+      "faab": 100
+    },
+    {
+      "roster_id": "102",
+      "name": "Fourth Down Empire",
+      "label": "Sample opposing franchise",
+      "players": [
+        "11566",
+        "4866",
+        "3198",
+        "6794",
+        "7564",
+        "1466",
+        "11631",
+        "11620",
+        "2747",
+        "DST_GB",
+        "4892",
+        "4034",
+        "8130",
+        "10229",
+        "5045",
+        "DST_MIN"
+      ],
+      "starters": [
+        "11566",
+        "4866",
+        "3198",
+        "6794",
+        "7564",
+        "1466",
+        "11631",
+        "11620",
+        "2747",
+        "DST_GB"
+      ],
+      "faab": 85
+    }
+  ],
+  "waivers": [
+    "4046",
+    "9488",
+    "9509",
+    "8150",
+    "5859",
+    "11628",
+    "6904",
+    "8146",
+    "9997",
+    "11560",
+    "8134",
+    "5892",
+    "10236",
+    "8110",
+    "11792"
+  ],
+  "updated_at": "2026-11-04",
+  "source": "Public PFO player directory"
+}
