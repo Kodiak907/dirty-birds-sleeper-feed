@@ -715,16 +715,25 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
 function ffo616NormalizeTeamSeason(payload,team,checkedAt,fixtures=new Map()){
  const rows=payload?.teamStatsTotals||payload?.teamStatTotals||[];
  if(!Array.isArray(rows))throw Error('MSF_TEAM_SEASON_SCHEMA_UNRECOGNIZED');
- const get=(o,path)=>path.split('.').reduce((v,k)=>v?.[k],o);
+ const get=(o,path)=>path.split('.').reduce((v,k)=>{
+  if(!v||typeof v!=='object')return undefined;
+  if(Object.hasOwn(v,k))return v[k];
+  const found=Object.keys(v).find(key=>key.toLowerCase()===k.toLowerCase());
+  return found?v[found]:undefined;
+ },o);
  const number=x=>x===null||x===undefined||x===''||typeof x==='object'||!Number.isFinite(Number(x))?null:Number(x);
+ // MSF NFL teamStatsTotals exposes defensive counting groups under
+ // tackles/interceptions/fumbles, not a synthetic "defense" envelope.
+ // These are deliberately explicit; we DO NOT map passing.passInt or
+ // generic offensive fumbles to D/ST turnovers.
  const fields={
-  sack:['defense.sacks','defense.sacksMade','defense.sacksTotal'],
-  int:['defense.interceptions','defense.interceptionsMade'],
-  def_st_ff:['defense.forcedFumbles'],
-  def_st_fum_rec:['defense.fumbleRecoveries','defense.fumblesRecovered'],
-  safe:['defense.safeties'],
-  blk_kick:['defense.blockedKicks'],
-  def_st_td:['defense.touchdowns','defense.defensiveTouchdowns']
+  sack:['tackles.sacks','tackles.sacksMade','tackles.sacksTotal','defense.sacks','defense.sacksMade','defense.sacksTotal'],
+  int:['interceptions.interceptions','interceptions.intMade','interceptions.interceptionsMade','defense.interceptions','defense.interceptionsMade'],
+  def_st_ff:['fumbles.fumForced','fumbles.forcedFumbles','defense.forcedFumbles'],
+  def_st_fum_rec:['fumbles.fumOppRec','fumbles.opponentFumbleRecoveries','defense.fumbleRecoveries','defense.fumblesRecovered'],
+  safe:['interceptions.safeties','interceptions.safes','defense.safeties'],
+  blk_kick:['interceptions.kb','interceptions.kickBlocks','defense.blockedKicks'],
+  def_st_td:['interceptions.intTD','interceptions.interceptionTD','defense.defensiveTouchdowns']
  };
  const matches=rows.filter(item=>
   String(item?.team?.abbreviation||item?.teamInfo?.abbreviation||item?.teamAbbreviation||'').toUpperCase()===team);
