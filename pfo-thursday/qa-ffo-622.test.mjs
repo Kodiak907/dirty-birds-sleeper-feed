@@ -40,6 +40,8 @@ test('published NFLverse schedule LA alias resolves LAR Week 9 and Week 11 bye w
  assert.equal(adapted.teams.LAR.weeks['11'].bye,true);
  assert.equal(adapted.teams.LAR,adapted.teams.LA,'no invented games or altered schedule');
  assert.equal(adapted.teams.MIN.weeks['9'].opponent,'BUF');
+ for(const [franchise,record] of Object.entries(stored.teams))
+  assert.strictEqual(adapted.teams[franchise],record,'never mutate the NFLverse schedule record for '+franchise);
  assert.equal(stored.teams.LAR,undefined,'source object remains immutable');
  assert.match(scheduleLib,/verifiedSchedule=ffo622NormalizeSchedule\(d\)/);
 });
