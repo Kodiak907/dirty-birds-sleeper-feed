@@ -65,11 +65,11 @@ test('HTTP400 season gamelogs fall back to bounded weekly NFL provider paths and
  const result=await api.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765&week=9'),{MSF_API_KEY:'placeholder'});
  const data=await result.json();
  assert.notEqual(data.available,false);
- assert.equal(data.games_observed,6);
+ assert.equal(data.games_observed,3);
  assert.equal(data.forecast.xpm,2);
- assert.equal(seen.length,8);
+ assert.equal(seen.length,5);
  assert.ok(seen.slice(2).every(u=>!u.searchParams.has('player')&&!u.searchParams.has('team')));
- assert.ok(seen.slice(2).every(u=>/\/week\/[3-8]\//.test(u.pathname)));
+ assert.ok(seen.slice(2).every(u=>/\/week\/[6-8]\//.test(u.pathname)));
 });
 test('weekly fallback never treats unverified team or guessed player id as a scored appearance',async()=>{
  const api=harness(async url=>{
@@ -90,10 +90,10 @@ test('weekly fallback never treats unverified team or guessed player id as a sco
 });
 test('client supplies target week and retains partial independent scoring boundaries',()=>{
  assert.match(client,/&week=/);
- assert.match(client,/PFO 6\.21 · MSF defense mapping and weekly player recovery/);
+ assert.match(client,/PFO 6\.22 · Rams schedule alias and accelerated player recovery/);
  assert.match(worker,/week\/'\+week\+'\/player_gamelogs\.json/);
  assert.match(worker,/ffo621PlayerWeekCache/);
  assert.match(worker,/comIdentity\(req,env\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=621/);
+ assert.match(html,/ffo-pfo-616\.js\?v=622/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
