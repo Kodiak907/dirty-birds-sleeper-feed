@@ -113,7 +113,7 @@ test('team defense and individual gamelog routes are protected and scoped',()=>{
  assert.match(worker,/url\.pathname==='\/api\/ffo\/stats\/defense'/);
  assert.match(worker,/url\.pathname==='\/api\/ffo\/stats\/player-coverage'/);
  assert.match(worker,/team_gamelogs\.json\?team=/);
- assert.match(worker,/player_gamelogs\.json\?team=/);
+ assert.match(worker,/player_gamelogs\.json\?player=/);
  assert.doesNotMatch(lib,/players_points|Sleeper previous scored weeks/);
 });
 
