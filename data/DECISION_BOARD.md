@@ -36,11 +36,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Kalif Raymond | 5.68 | -0.42 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 3 | Chris Bell | 5.21 | -0.89 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 4 | Rashid Shaheed | 4.52 | -1.58 | 41.3% | Tgt 5.0 | injury_report_observation_review |
-| 5 | Dontayvion Wicks | 4.38 | -1.72 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 5 | Dontayvion Wicks | 4.38 | -1.72 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
 | 6 | Michael Pittman Jr. | 4.35 | -1.75 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 7 | Ja'Kobi Lane | 3.61 | -2.49 | 62.7% | Tgt 3.7 | injury_report_observation_review |
 | 8 | Rashod Bateman | 3.50 | -2.60 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 9 | Mack Hollins | 3.44 | -2.66 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
+| 9 | Mack Hollins | 3.44 | -2.66 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
 | 10 | Brian Thomas Jr. | 3.16 | -2.94 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
 | 11 | Jauan Jennings | 2.75 | -3.34 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 | 12 | Konata Mumpfield | 2.32 | -3.78 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
