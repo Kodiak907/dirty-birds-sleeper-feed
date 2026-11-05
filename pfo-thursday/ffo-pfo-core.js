@@ -1426,15 +1426,20 @@ let pfo69StatCoverage={scope:'pending',teams:[],loaded:0,failed:[],checked_at:nu
 const pfo69TeamCodes=new Set('ARI ATL BAL BUF CAR CHI CIN CLE DAL DEN DET GB HOU IND JAX KC LAC LAR LV MIA MIN NE NO NYG NYJ PHI PIT SEA SF TB TEN WAS'.split(' '));
 function pfo69RelevantTeams(){
  const codes=new Set(),add=t=>{const code=gm47CanonicalTeam(t||'');if(pfo69TeamCodes.has(code))codes.add(code);};
- // Prioritize owned players and the current matchup; avoid 32-team request storms.
- for(const p of liveRosterSnapshot?.players||[])add(p.team);
  const me=gm47Snapshot?.rosters?.find(x=>Number(x.roster_id)===Number(window.dbRosterId||1));
+ const owned=new Map((liveRosterSnapshot?.players||[]).map(p=>[String(p.player_id),p]));
+ const starterIds=(liveRosterSnapshot?.starters||me?.starters||[]).map(String);
+ // Critical priority: every submitted starter BEFORE any bench or market
+ // player. Previously first-16-team truncation could omit kicker/DST or RB.
+ for(const id of starterIds)add(owned.get(id)?.team||pfo49Info(id)?.team);
+ for(const p of liveRosterSnapshot?.players||[])add(p.team);
  for(const id of me?.players||[])add(pfo49Info(id)?.team);
  const w=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
- const teams=typeof pfo52Match==='function'?pfo52Match(w):null;
- const rival=teams?.theirs&&gm47Snapshot?.rosters?.find(x=>String(x.roster_id)===String(teams.theirs.roster_id));
+ const match=typeof pfo52Match==='function'?pfo52Match(w):null;
+ const rival=match?.theirs&&gm47Snapshot?.rosters?.find(x=>String(x.roster_id)===String(match.theirs.roster_id));
  for(const id of rival?.starters||[])add(pfo49Info(id)?.team);
- return [...codes].slice(0,16);
+ // Bounded provider fallback; preserve complete own roster and opponent.
+ return [...codes].slice(0,24);
 }
 function pfo69SourceStatus(){return {...pfo69StatCoverage,failed:[...pfo69StatCoverage.failed],teams:[...pfo69StatCoverage.teams]};}
 function pfo69ShowSourceHealth(){
@@ -1492,7 +1497,7 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
   const sources=['/api/ffo/stats/season'];
   let j=null,lastError=null;
   for(const endpoint of sources){
-   const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),endpoint.startsWith('/api/')?16000:12000);
+   const controller=new AbortController(),tm=setTimeout(()=>controller.abort(),endpoint.startsWith('/api/')?9000:12000);
    try{
     const r=await fetch(endpoint,{cache:endpoint.startsWith('/api/')?'no-store':'default',signal:controller.signal});
     if(!r.ok)throw Error(endpoint+' HTTP '+r.status);
@@ -1506,8 +1511,8 @@ async function pfo50LoadIndependent(force=false){const season=Number(window.dbNf
    // Team-scoped MSF fallback when the league-wide season response is unavailable.
    // Limited to currently relevant teams; errors remain visible, never converted to zeros.
    const teams=pfo69RelevantTeams(),combined=[],okTeams=[],failed=[];
-   for(let offset=0;offset<teams.length;offset+=2){
-    const pair=teams.slice(offset,offset+2);
+   for(let offset=0;offset<teams.length;offset+=4){
+    const pair=teams.slice(offset,offset+4);
     const responses=await Promise.allSettled(pair.map(async team=>{
      const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12000);
      try{
