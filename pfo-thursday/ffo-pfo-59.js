@@ -502,41 +502,51 @@
  }
  async function loadSchedule(full=false){
   if(state.loadingSchedule)return;
-  // Render the 17-week skeleton instantly, even when Sleeper or GitHub is offline.
+  // Show the calendar immediately; only the per-week Sleeper records can
+  // establish real FFL opponents. Playoff seeds remain unknown until set.
   scheduleRender();
-  if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000)return;
+  const current=Number(state.snap?.nfl_state?.week||window.dbNflWeek||1);
+  const start=Number.isInteger(current)?Math.max(1,Math.min(14,current)):1;
+  const missingWeeks=()=>Array.from({length:14},(_,i)=>i+1)
+   .filter(w=>(full||w>=start)&&!(state.schedule.get(w)||[]).length);
+  if(!full&&state.scheduleAt&&Date.now()-state.scheduleAt<5*60*1000&&!missingWeeks().length)return;
   state.loadingSchedule=true;
   try{
-   const snap=state.history||await fetchReport('latest.json');if(!state.snap)state.snap=snap;
-   if(snap.matchups_by_week)state.history=snap;
-   state.scheduleAt=Date.now();
-   for(const [k,v] of Object.entries(snap.matchups_by_week||{}))if(Array.isArray(v))state.schedule.set(Number(k),v);
+   // Archived multiweek history is an accelerator, never a dependency:
+   // a failed latest.json must not block direct league schedule retrieval.
+   try{
+    const snap=state.history||await fetchReport('latest.json');
+    if(!state.snap&&snap?.rosters)state.snap=snap;
+    if(snap?.matchups_by_week){
+     state.history=snap;
+     for(const [key,rows] of Object.entries(snap.matchups_by_week))
+      if(Array.isArray(rows)&&rows.length>=2)state.schedule.set(Number(key),rows);
+    }
+   }catch(error){console.warn('FFL archived schedule unavailable; checking live Sleeper weeks',String(error))}
    scheduleRender();
-   // Opening Schedule should show the verified future regular-season fixtures automatically.
-   // Only load unretrieved regular-season weeks (max 4 at a time) so other tabs remain responsive.
    if(typeof pfo52GetWeek==='function'){
-    const missing=Array.from({length:14},(_,i)=>i+1).filter(w=>(full||w>=current)&&!state.schedule.has(w));
+    // Fetch missing weeks in four-request batches, painting between batches.
+    // The in-memory Sleeper week cache deduplicates other PFO fetches.
+    const missing=missingWeeks();
     for(let i=0;i<missing.length;i+=4){
      const batch=missing.slice(i,i+4);
-     const results=await Promise.allSettled(batch.map(w=>pfo52GetWeek(w)));
-     results.forEach((result,j)=>{
-      if(result.status==='fulfilled'&&Array.isArray(result.value)&&result.value.length===12)
-       state.schedule.set(batch[j],result.value);
+     const results=await Promise.allSettled(batch.map(w=>pfo52GetWeek(w,full)));
+     results.forEach((result,index)=>{
+      if(result.status==='fulfilled'&&Array.isArray(result.value)&&result.value.length>=2)
+       state.schedule.set(batch[index],result.value);
      });
      scheduleRender();
     }
    }
-  }catch(err){
-   // Never erase the schedule table when an upstream source is slow or unavailable.
+   // Incomplete seasons are refreshable on the next visit.
+   state.scheduleAt=missingWeeks().length?0:Date.now();
+  }catch(error){
+   console.warn('FFL schedule auto population failed',String(error));
    scheduleRender();
    const host=$('pfo59-schedule');
-   if(host){const msg=document.createElement('p');msg.className='pfo59-foot';
-    msg.textContent='FFL schedule sync unavailable: '+String(err.message||err)+'. Unknown matchups remain unverified.';
-    host.prepend(msg);}
-  }
-  finally{state.loadingSchedule=false}
+   if(host)host.insertAdjacentHTML('afterbegin','<p class="pfo59-foot">Some Sleeper weeks are not verified yet. Missing matchups remain unknown; Refresh schedule retries.</p>');
+  }finally{state.loadingSchedule=false;}
  }
-
  function teamTxnRender(){
   const host=$('pfo59-team-transactions');if(!host)return;
   const snap=state.snap;
