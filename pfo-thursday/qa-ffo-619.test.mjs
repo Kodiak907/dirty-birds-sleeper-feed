@@ -86,3 +86,31 @@ test('client supplies uniquely mapped licensed MSF identifier and does not copy 
  assert.match(html,/ffo-pfo-616\.js\?v=619/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
+
+test('MSF player logs without per-row team are accepted only with sourced ID and a verified game involving the NFL team',async()=>{
+ const source={gamelogs:[1,2].map(id=>({
+  player:{id:765,firstName:'Will',lastName:'Reichard',position:'K'},
+  game:{id,homeTeamAbbreviation:'MIN',awayTeamAbbreviation:'BUF'},
+  stats:{extraPoints:{xpMade:2}}
+ }))};
+ const ctx=build(async()=>new Response(JSON.stringify(source),{status:200}));
+ const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const data=await r.json();
+ assert.equal(data.games_observed,2);
+ assert.equal(data.forecast.xpm,2);
+ const noId=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard'),{MSF_API_KEY:'fake-key'});
+ const noIdData=await noId.json();
+ assert.equal(noIdData.available,false);
+});
+test('no-team MSF gamelog from an unrelated game is never attributed to the selected roster team',async()=>{
+ const source={gamelogs:[1,2].map(id=>({
+  player:{id:765,firstName:'Will',lastName:'Reichard',position:'K'},
+  game:{id,homeTeamAbbreviation:'NE',awayTeamAbbreviation:'BUF'},
+  stats:{extraPoints:{xpMade:2}}
+ }))};
+ const ctx=build(async()=>new Response(JSON.stringify(source),{status:200}));
+ const r=await ctx.routes.player(new Request('https://private.example/api/ffo/stats/player-coverage?team=MIN&name=Will%20Reichard&msf_id=765'),{MSF_API_KEY:'fake-key'});
+ const data=await r.json();
+ assert.equal(data.available,false);
+ assert.match(data.error,/insufficient_verified_player_game_logs/);
+});
