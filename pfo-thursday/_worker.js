@@ -781,6 +781,67 @@ const ffo619TeamSlug=Object.freeze({
  SEA:'seattle-seahawks',SF:'san-francisco-49ers',TB:'tampa-bay-buccaneers',
  TEN:'tennessee-titans',WAS:'washington-commanders'
 });
+
+/* PFO 6.20: account-authenticated provider diagnostics. Provider response
+ * bodies, URLs, request headers, API keys and licensed rows never reach clients.
+ * Only fixed, allowlisted error classifications and public JSON field NAMES.
+ */
+async function ffo620ProviderRejection(response){
+ const status=Number(response?.status)||0;
+ if(status===401)return 'authentication_denied';
+ if(status===403)return 'authorization_or_subscription_denied';
+ if(status===429)return 'rate_limited';
+ if(status!==400)return 'http_'+status;
+ let raw='';
+ try{
+  const len=Number(response.headers?.get?.('content-length')||0);
+  if(len>8192)return 'bad_request_body_too_large';
+  raw=String(await response.clone().text()).slice(0,8192);
+ }catch{return 'bad_request_body_unreadable'}
+ let message=raw;
+ try{
+  const j=JSON.parse(raw);
+  const candidates=[j?.message,j?.error?.message,j?.error?.description,j?.errorMessage,
+   j?.error_description,j?.detail,j?.reason,j?.errors?.[0]?.message,j?.errors?.[0]?.detail,
+   typeof j?.error==='string'?j.error:null];
+  message=candidates.find(x=>typeof x==='string'&&x.length)||'';
+ }catch{}
+ const m=String(message).toLowerCase();
+ // Never return raw response content; match fixed safe categories.
+ if(/unsupported|not supported|invalid feed|unknown feed|feed.*not.*found|no such feed/.test(m))
+  return 'feed_not_supported';
+ if(/invalid season|unknown season|season.*invalid|season.*not.*found/.test(m))
+  return 'season_not_supported';
+ if(/invalid.*(?:filter|param)|unknown.*(?:filter|param)|(?:filter|param).*not.*support/.test(m))
+  return 'filter_not_supported';
+ if(/missing.*(?:filter|param|required)|required.*(?:filter|param)/.test(m))
+  return 'required_parameter_missing';
+ if(/invalid player|unknown player|player.*not.*found/.test(m))
+  return 'player_identity_rejected';
+ if(/invalid team|unknown team|team.*not.*found/.test(m))
+  return 'team_identity_rejected';
+ if(/subscription|entitlement|forbidden|not authorized|not permitted/.test(m))
+  return 'access_restricted';
+ if(/too many|quota|rate limit|throttl/.test(m))
+  return 'provider_throttled';
+ if(/invalid date|date.*invalid|unknown week|invalid week/.test(m))
+  return 'date_or_week_rejected';
+ return 'bad_request_reason_unclassified';
+}
+function ffo620TeamSchemaAudit(json,team){
+ const rows=json?.teamStatsTotals||json?.teamStatTotals||[];
+ if(!Array.isArray(rows))return 'team_stats_collection_not_array';
+ const match=rows.filter(row=>String(row?.team?.abbreviation||row?.teamInfo?.abbreviation||
+  row?.teamAbbreviation||'').toUpperCase()===team);
+ const entry=match.length===1?match[0]:rows[0];
+ const stats=entry?.stats||entry?.teamStats||{};
+ const keys=o=>o&&typeof o==='object'&&!Array.isArray(o)?Object.keys(o)
+  .filter(k=>/^[a-z][a-z0-9]{0,35}$/i.test(k)).slice(0,12):[];
+ const top=keys(stats),groups=top.filter(k=>stats[k]&&typeof stats[k]==='object');
+ const nested=groups.slice(0,4).map(k=>k+'('+keys(stats[k]).slice(0,9).join(',')+')');
+ return 'rows_'+rows.length+'_matched_'+match.length+
+  '_fields_'+top.join(',')+'_groups_'+nested.join(',');
+}
 const ffo616DefenseCache=new Map(),ffo616DefensePending=new Map();
 async function ffo616DefenseRoute(req,env){
  if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
