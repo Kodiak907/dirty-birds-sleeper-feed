@@ -1,0 +1,75 @@
+name: PFO League Demo public static sandbox
+on:
+  push:
+    branches: [pfo-league-demo-20261104]
+    paths:
+      - 'pfo-league-demo/**'
+      - '.github/workflows/pfo-league-demo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-league-demo-public
+  cancel-in-progress: true
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Public-only isolation and source verification
+        run: |
+          node --check pfo-league-demo/demo.js
+          node --test pfo-league-demo/qa-demo.test.mjs
+      - name: Mobile Chromium regression dependencies
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Test real interactive public demonstration on phone viewport
+        run: node --test pfo-league-demo/qa-demo-browser.test.mjs
+  deploy:
+    needs: qa
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check Cloudflare Pages deploy-only credential
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Create separate public demo Pages project if needed
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.47.0 pages project create ffo-league-demo --production-branch pfo-league-demo-20261104 || {
+            echo "Create was declined or project exists: verifying exact existing public demo project"
+            npx --yes wrangler@4.47.0 pages project list | grep -F 'ffo-league-demo'
+          }
+      - name: Publish only self-contained sample site (NO PFO core, worker, secrets or data)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-public-demo"
+          cp pfo-league-demo/index.html pfo-league-demo/demo.js pfo-league-demo/demo.css "$RUNNER_TEMP/pfo-public-demo/"
+          test "$(find "$RUNNER_TEMP/pfo-public-demo" -type f | wc -l)" -eq 3
+          ! grep -E '\/api\/|MSF_API_KEY|commissioner|dirtybirdstest' "$RUNNER_TEMP/pfo-public-demo/"*
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-public-demo" \
+            --project-name ffo-league-demo --branch pfo-league-demo-20261104 \
+            --commit-hash "$GITHUB_SHA" --commit-message "FFO safe public fictional league demo"
+          echo "Separate fictional sandbox only. PFO Preview, production, and commissioner data unaffected."
