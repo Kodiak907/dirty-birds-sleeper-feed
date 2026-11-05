@@ -1,0 +1,28 @@
+/* PFO 6.15 · compact evidence-rich briefings and readable FFL comparisons. */
+#briefing .pfo615-brief-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:9px 0}
+#briefing .pfo615-brief-player{display:grid;gap:4px;min-width:0;background:#233d50;border:1px solid #446575;border-radius:8px;padding:9px}
+#briefing .pfo615-brief-player b{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+#briefing .pfo615-brief-player strong{font-size:14px;color:#f0cd87}
+#briefing .pfo615-brief-warning{font-size:11px;margin:8px 0 5px;color:#f7c98a}
+#briefing .pfo615-brief-missing-list{display:grid;gap:4px}
+#briefing .pfo615-brief-missing{font-size:10px;color:#e0d1bb;background:#3b342e;border:1px solid #625440;border-radius:6px;padding:7px;line-height:1.5;overflow-wrap:anywhere}
+#briefing .pfo615-brief-good{color:#a9e0c6;font-size:11px}
+#briefing .pfo615-brief-news{display:grid;gap:6px;margin:6px 0}
+#briefing .pfo615-brief-news a{display:block;padding:9px;border:1px solid #406777;border-radius:7px;color:#cdece7;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+#briefing .pfo615-brief-news small{display:block;font-size:10px;color:#a8c3cd}
+#briefing .pfo62-priority>p{font-size:11px;line-height:1.65}
+#briefing .pfo62-priority>p>small{display:block;margin-top:5px;color:#afc9d1}
+#matchup .pfo615-matrix{margin:11px 0;padding:11px;border:1px solid #4d7481;border-radius:9px;background:#203849}
+#matchup .pfo615-matrix h4{font-size:12px;margin:0 0 7px;color:#e9f5f0}
+#matchup .pfo615-matrix-note{font-size:10px;color:#b6d5d8;line-height:1.55;margin:5px 0 9px}
+#matchup .pfo615-matrix-scroll{overflow-x:auto;max-width:100%;scrollbar-width:thin}
+#matchup .pfo615-matrix table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:11px;min-width:260px}
+#matchup .pfo615-matrix th,#matchup .pfo615-matrix td{padding:9px 7px;border-bottom:1px solid #3d6073;text-align:center;vertical-align:middle}
+#matchup .pfo615-matrix th:first-child{text-align:left;max-width:140px;overflow-wrap:anywhere}
+#matchup .pfo615-matrix td{font-weight:750;color:#e4f2ec}
+#matchup .pfo615-matrix thead th{color:#a6d7c7;font-size:10px;word-break:break-word}
+.pfo615-coverage-items{display:grid;gap:5px;margin:7px 9px}
+.pfo615-coverage-items>div{display:grid;gap:4px;padding:8px;background:#233b4b;border:1px solid #416277;border-radius:6px}
+.pfo615-coverage-items b{font-size:11px}
+.pfo615-coverage-items span,.pfo615-health-summary{font-size:10px;color:#bcd4df;line-height:1.55;margin:7px 9px;overflow-wrap:anywhere}
+@media(max-width:365px){#briefing .pfo615-brief-stats{grid-template-columns:1fr}#matchup .pfo615-matrix th,#matchup .pfo615-matrix td{padding:8px 4px}}
