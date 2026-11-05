@@ -43,7 +43,7 @@ test('no real league connectivity, mutations, commissioner access or private sna
  assert.match(js,/https:\/\/sleepercdn\.com\/content\/nfl\/players\/thumb\//);
  assert.match(js,/\/api\/demo\/msf\/status/);
  assert.doesNotMatch(html,/data-page="commissioner"|MSF_API_KEY|dirtybirdstest|\/api\//i);
- assert.doesNotMatch(js,/api\/commissioner|MSF_API_KEY|dirtybirdstest|\/api\//i);
+ assert.doesNotMatch(js,/api\/commissioner|MSF_API_KEY|dirtybirdstest|\/api\/(?!demo\/msf\/)/i);
  assert.doesNotMatch(JSON.stringify(data),/1399157532559192064|Dirty Birds|COMMISSIONER|CF_ACCESS|MSF_API_KEY/);
  assert.match(html,/form-action 'none'/);
  assert.match(html,/connect-src 'self'/);
