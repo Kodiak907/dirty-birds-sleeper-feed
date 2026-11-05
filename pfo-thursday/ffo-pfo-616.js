@@ -127,8 +127,10 @@
    try{
     const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),14000);
     let response;
+    const msfId=row?.msf_id!=null&&/^[0-9]{1,12}$/.test(String(row.msf_id))?String(row.msf_id):'';
     try{response=await fetch('/api/ffo/stats/player-coverage?team='+encodeURIComponent(team)+
-     '&name='+encodeURIComponent(p.name),{cache:'no-store',signal:ctl.signal});}
+     '&name='+encodeURIComponent(p.name)+(msfId?'&msf_id='+encodeURIComponent(msfId):''),
+     {cache:'no-store',signal:ctl.signal});}
     finally{clearTimeout(timer)}
     if(!response.ok)throw Error('MSF player game coverage HTTP '+response.status);
     const data=await response.json();
