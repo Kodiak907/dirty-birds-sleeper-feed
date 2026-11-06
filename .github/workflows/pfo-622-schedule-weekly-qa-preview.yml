@@ -1,8 +1,8 @@
-name: PFO 6.26 Commissioner FFL scoring and MSF kicker QA
+name: PFO 6.26 Preview version badge integrity QA
 on:
   push:
     branches:
-      - pfo-626-commissioner-scoring-kicker-20261105
+      - pfo-626-build-banner-fix-20261105
   workflow_dispatch:
 permissions:
   contents: read
@@ -38,7 +38,7 @@ jobs:
 
   deploy-private-preview:
     needs: verify
-    if: github.ref == 'refs/heads/pfo-626-commissioner-scoring-kicker-20261105' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/pfo-626-build-banner-fix-20261105' && github.event_name == 'push'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment: pfo-preview
@@ -61,6 +61,8 @@ jobs:
           grep -q 'ffo-pfo-616.js?v=626' "$RUNNER_TEMP/pfo-preview/index.html"
           grep -q 'ffo-pfo-597.js?v=626' "$RUNNER_TEMP/pfo-preview/index.html"
           grep -q '2026-11-05-commissioner-approved-rules-v2' "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
+          grep -q 'PFO 6.26 · PRIVATE PREVIEW' "$RUNNER_TEMP/pfo-preview/index.html"
+          ! grep -q '5.9.7 COACH REVIEW' "$RUNNER_TEMP/pfo-preview/index.html"
       - name: Check private preview Cloudflare deploy credential
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -81,5 +83,5 @@ jobs:
             --project-name dirtybirdstest \
             --branch pfo-598-msf-core-and-mobile-20261029 \
             --commit-hash "$GITHUB_SHA" \
-            --commit-message "PFO 6.26 Commissioner FFL scoring and licensed kicker mapping; PRIVATE PREVIEW ONLY"
+            --commit-message "PFO 6.26 corrected Overview version badge; PRIVATE PREVIEW ONLY"
           echo 'Private preview only; public demo, production branch and Commissioner records untouched.'
