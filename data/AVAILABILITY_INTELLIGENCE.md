@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-06T11:53:10.681928+00:00
-Sleeper snapshot: 2026-11-06T11:53:02.134751+00:00
-nflverse observations: 2026-11-06T11:53:05.542571+00:00; injury feed loaded: True
+Generated: 2026-11-06T13:00:39.612525+00:00
+Sleeper snapshot: 2026-11-06T13:00:30.431515+00:00
+nflverse observations: 2026-11-06T13:00:34.575151+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 3. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -26,14 +26,15 @@ nflverse observations: 2026-11-06T11:53:05.542571+00:00; injury feed loaded: Tru
 | Michael Mayer | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 9 observation: Limited Participation in Practice | 88.7% | Verify current status before kickoff |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
-| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 85.0% | Verify current status before kickoff |
+| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
 | Buffalo Bills | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Zay Flowers** (snap_share_change): Snap share fell 16.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
+- **Brenton Strange** (snap_share_change): Snap share rose 27.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
+- **Trevor Lawrence** (snap_share_change): Snap share rose 19.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
 
 ## Guardrails
 

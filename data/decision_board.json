@@ -25,7 +25,7 @@
       "ppg": 1.237
     }
   },
-  "generated_at_utc": "2026-11-06T11:53:06.124845+00:00",
+  "generated_at_utc": "2026-11-06T13:00:35.336617+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -1082,8 +1082,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
-          "recent_snap_pct": 62.7,
-          "snap_trend_3_appearances_pp": 11.0,
+          "recent_snap_pct": 63.7,
+          "snap_trend_3_appearances_pp": -12.0,
           "targets_per_game": 2.0
         },
         "name": "Ja'Kobi Lane",
@@ -1134,8 +1134,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
-          "recent_snap_pct": 59.7,
-          "snap_trend_3_appearances_pp": 46.0,
+          "recent_snap_pct": 70.3,
+          "snap_trend_3_appearances_pp": -11.0,
           "targets_per_game": 3.0
         },
         "name": "Rashod Bateman",
@@ -1299,5 +1299,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-06T11:53:02.134751+00:00"
+  "snapshot_utc": "2026-11-06T13:00:30.431515+00:00"
 }

@@ -40,9 +40,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 6 | Michael Pittman Jr. | 4.48 | +3.25 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 7 | Makai Lemon | 4.31 | +3.08 | 88.7% | Tgt 7.7 | No modeled flags (not medically cleared) |
 | 8 | Dontayvion Wicks | 4.26 | +3.02 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, projection_weeks_partial |
-| 9 | Ja'Kobi Lane | 3.84 | +2.60 | 62.7% | Tgt 2.0 | injury_report_observation_review |
+| 9 | Ja'Kobi Lane | 3.84 | +2.60 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 10 | Mack Hollins | 3.80 | +2.56 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
-| 11 | Rashod Bateman | 3.66 | +2.42 | 59.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 11 | Rashod Bateman | 3.66 | +2.42 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 12 | Dohnte Meyers | 3.45 | +2.22 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Michael Mayer (5.48 PPG)

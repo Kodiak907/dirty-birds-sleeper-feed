@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-06T11:53:05.978449+00:00
-Sleeper snapshot: 2026-11-06T11:53:02.134751+00:00
+Generated: 2026-11-06T13:00:35.139338+00:00
+Sleeper snapshot: 2026-11-06T13:00:30.431515+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -51,9 +51,9 @@ Sleeper snapshot: 2026-11-06T11:53:02.134751+00:00
 | 6 | Michael Pittman Jr. | PIT | 4.48 | 89% | 77.7% | IR |
 | 7 | Makai Lemon | PHI | 4.31 | 89% | 88.7% | Not flagged |
 | 8 | Dontayvion Wicks | PHI | 4.26 | 78% | 79.3% | Questionable |
-| 9 | Ja'Kobi Lane | BAL | 3.84 | 89% | 62.7% | Not flagged |
+| 9 | Ja'Kobi Lane | BAL | 3.84 | 89% | 63.7% | Not flagged |
 | 10 | Mack Hollins | NE | 3.80 | 89% | 62.7% | IR |
-| 11 | Rashod Bateman | BAL | 3.66 | 89% | 59.7% | Not flagged |
+| 11 | Rashod Bateman | BAL | 3.66 | 89% | 70.3% | Not flagged |
 | 12 | Dohnte Meyers | CIN | 3.45 | 100% | 42.0% | Not flagged |
 
 ### TE
@@ -119,7 +119,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Dontayvion Wicks | WR | PHI | 4.26 | 79.3% |
 | Seth McGowan | RB | IND | 4.12 | 27.0% |
 | MarShawn Lloyd | RB | GB | 3.85 | 30.7% |
-| Ja'Kobi Lane | WR | BAL | 3.84 | 62.7% |
+| Ja'Kobi Lane | WR | BAL | 3.84 | 63.7% |
 | Mack Hollins | WR | NE | 3.80 | 62.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
