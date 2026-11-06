@@ -1,8 +1,8 @@
-name: PFO 6.26 Preview version badge integrity QA
+name: PFO 6.27 licensed kicker scoring and coverage QA
 on:
   push:
     branches:
-      - pfo-626-build-banner-fix-20261105
+      - pfo-627-verified-kicker-scoring-20261105
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,9 +24,9 @@ jobs:
           node --check pfo-thursday/ffo-pfo-611.js
           cp pfo-thursday/_worker.js /tmp/pfo616-worker.mjs
           node --check /tmp/pfo616-worker.mjs
-      - name: 6.26 Commissioner scoring, MSF kicker stats, schema and gateway regression checks
+      - name: 6.27 kicker scoring evidence, fractional FG rates and Commissioner scoring regressions
         run: |
-          node --test pfo-thursday/qa-ffo-626.test.mjs pfo-thursday/qa-ffo-625.test.mjs pfo-thursday/qa-ffo-624.test.mjs pfo-thursday/qa-ffo-623.test.mjs pfo-thursday/qa-ffo-622.test.mjs pfo-thursday/qa-ffo-621.test.mjs pfo-thursday/qa-ffo-620.test.mjs pfo-thursday/qa-ffo-619.test.mjs pfo-thursday/qa-ffo-618.test.mjs pfo-thursday/qa-ffo-617.test.mjs pfo-thursday/qa-ffo-616.test.mjs
+          node --test pfo-thursday/qa-ffo-627.test.mjs pfo-thursday/qa-ffo-626.test.mjs pfo-thursday/qa-ffo-625.test.mjs pfo-thursday/qa-ffo-624.test.mjs pfo-thursday/qa-ffo-623.test.mjs pfo-thursday/qa-ffo-622.test.mjs pfo-thursday/qa-ffo-621.test.mjs pfo-thursday/qa-ffo-620.test.mjs pfo-thursday/qa-ffo-619.test.mjs pfo-thursday/qa-ffo-618.test.mjs pfo-thursday/qa-ffo-617.test.mjs pfo-thursday/qa-ffo-616.test.mjs
       - name: Existing model, market, history, waiver and video regressions
         run: |
           node --test pfo-thursday/qa-ffo-615.test.mjs pfo-thursday/qa-ffo-614-video.test.mjs pfo-thursday/qa-ffo-613-video.test.mjs pfo-thursday/qa-ffo-612.test.mjs pfo-thursday/qa-ffo-auto-stats-611.test.mjs pfo-thursday/qa-ffo-trade-decision-60.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-msf.test.mjs pfo-thursday/qa-597.test.mjs pfo-thursday/qa-ffo-layout-64.test.mjs
@@ -38,7 +38,7 @@ jobs:
 
   deploy-private-preview:
     needs: verify
-    if: github.ref == 'refs/heads/pfo-626-build-banner-fix-20261105' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/pfo-627-verified-kicker-scoring-20261105' && github.event_name == 'push'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     environment: pfo-preview
@@ -58,10 +58,11 @@ jobs:
           for name in index.html _worker.js FFO_FFL_SCORING_V1.json ffo-pfo-616.js ffo-pfo-597.js ffo-pfo-core.js; do
             test -s "$RUNNER_TEMP/pfo-preview/$name"
           done
-          grep -q 'ffo-pfo-616.js?v=626' "$RUNNER_TEMP/pfo-preview/index.html"
-          grep -q 'ffo-pfo-597.js?v=626' "$RUNNER_TEMP/pfo-preview/index.html"
+          grep -q 'ffo-pfo-616.js?v=627' "$RUNNER_TEMP/pfo-preview/index.html"
+          grep -q 'ffo-pfo-597.js?v=627' "$RUNNER_TEMP/pfo-preview/index.html"
+          grep -q 'ffo-pfo-611.js?v=627' "$RUNNER_TEMP/pfo-preview/index.html"
           grep -q '2026-11-05-commissioner-approved-rules-v2' "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
-          grep -q 'PFO 6.26 · PRIVATE PREVIEW' "$RUNNER_TEMP/pfo-preview/index.html"
+          grep -q 'PFO · PRIVATE PREVIEW' "$RUNNER_TEMP/pfo-preview/index.html"
           ! grep -q '5.9.7 COACH REVIEW' "$RUNNER_TEMP/pfo-preview/index.html"
       - name: Check private preview Cloudflare deploy credential
         env:
@@ -83,5 +84,5 @@ jobs:
             --project-name dirtybirdstest \
             --branch pfo-598-msf-core-and-mobile-20261029 \
             --commit-hash "$GITHUB_SHA" \
-            --commit-message "PFO 6.26 corrected Overview version badge; PRIVATE PREVIEW ONLY"
+            --commit-message "PFO 6.27 independently verified kicker scoring and partial coverage; PRIVATE PREVIEW ONLY"
           echo 'Private preview only; public demo, production branch and Commissioner records untouched.'
