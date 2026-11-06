@@ -129,8 +129,8 @@ test('model loads own updated scoring file without Sleeper point totals, protect
  assert.match(source,/rec_30_39/);
  assert.match(source,/pass_cmp_40p/);
  assert.match(source,/def_3_and_out/);
- assert.match(html,/ffo-pfo-597\.js\?v=635/);
- assert.match(html,/ffo-pfo-616\.js\?v=627/);
+ assert.match(html,/ffo-pfo-597\.js\?v=636/);
+ assert.match(html,/ffo-pfo-616\.js\?v=636/);
  assert.doesNotMatch(source,/sleeperGet\(/);
 });
 
