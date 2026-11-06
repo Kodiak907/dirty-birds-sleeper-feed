@@ -9,8 +9,8 @@ const end=worker.indexOf('const ffo616DefenseCache=',start);
 assert.ok(start>=0&&end>start,'find protected MSF normalizers');
 
 const ctx=createContext({});
-new Script(worker.slice(start,end)+';this.audit={fixtures:ffo618VerifiedFixtures,defense:ffo616NormalizeDefense};').runInContext(ctx);
-const {fixtures,defense}=ctx.audit;
+new Script(worker.slice(start,end)+';this.audit={fixtures:ffo618VerifiedFixtures,defense:ffo616NormalizeDefense,team:ffo616NormalizeTeamSeason};').runInContext(ctx);
+const {fixtures,defense,team}=ctx.audit;
 const games=fixtures({games:[
  {schedule:{id:11,playedStatus:'COMPLETED',homeTeam:{abbreviation:'MIN'},awayTeam:{abbreviation:'BUF'}},score:{homeScoreTotal:27,awayScoreTotal:17}},
  {schedule:{id:12,playedStatus:'COMPLETED',homeTeam:{abbreviation:'MIN'},awayTeam:{abbreviation:'GB'}},score:{homeScoreTotal:28,awayScoreTotal:3}}
@@ -58,4 +58,18 @@ test('scoreboard is completion proof but never synthetic points allowed',()=>{
  assert.equal(out.coverage.points_allowed_games,0);
  assert.ok(!Object.keys(out.forecast).some(x=>x.startsWith('pts_allow_')));
  assert.equal(out.certified,false);
+});
+
+test('season D/ST source and Data Health both disclose partial coverage',()=>{
+ const out=team({teamStatsTotals:[{team:{abbreviation:'MIN'},stats:{
+  gamesPlayed:8,tackles:{sacks:24},interceptions:{interceptions:10}
+ }}]},'MIN','2026-11-05',games);
+ assert.ok(Array.from(out.coverage.scoring_categories).includes('sack'));
+ assert.equal(out.coverage.three_and_out_games,0);
+ assert.deepEqual(Array.from(out.coverage.unresolved_scoring_categories),['pts_allow','def_3_and_out']);
+ const ui=readFileSync(new URL('./ffo-pfo-616.js',import.meta.url),'utf8');
+ assert.match(ui,/D\/ST observed fields:/);
+ assert.match(ui,/D\/ST evidence:/);
+ assert.match(ui,/unresolved_scoring_categories/);
+ assert.match(ui,/partial\/uncertified/);
 });
