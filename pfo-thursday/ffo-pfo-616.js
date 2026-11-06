@@ -98,7 +98,7 @@
    tools.dataset.teams=teams.join(',');
    if(teams.length){
     const label=document.createElement('div');
-    label.textContent='PFO 6.29 · licensed MSF D/ST source audit (read-only; no score changes)';
+    label.textContent='PFO 6.30 · MSF D/ST possession and source audit (read-only; no score changes)';
     tools.appendChild(label);
    }
    for(const team of teams){
