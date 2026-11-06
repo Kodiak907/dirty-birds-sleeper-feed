@@ -20,10 +20,13 @@
   // buckets but omit generic fgm; in that case their sum is a confirmed lower
   // bound on total FG makes. Do not synthesize a count from percentage fields.
   const fgTiers=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
+  // Verified historical totals are integers, but their expected per-game
+  // counts are often fractional. Never discard a valid modeled FG rate.
+  // Validate exact integer counts in the MSF input normalizer instead.
   const buckets=fgTiers.map(k=>stats[k]).filter(x=>x!==null&&x!==undefined&&
-    x!==''&&Number.isInteger(Number(x))&&Number(x)>=0);
+    x!==''&&Number.isFinite(Number(x))&&Number(x)>=0);
   const hasFG=stats.fgm!==undefined&&stats.fgm!==null&&stats.fgm!==''&&
-    Number.isInteger(Number(stats.fgm))&&Number(stats.fgm)>=0;
+    Number.isFinite(Number(stats.fgm))&&Number(stats.fgm)>=0;
   const impliedFG=hasFG?Number(stats.fgm):buckets.length?
     buckets.reduce((sum,n)=>sum+Number(n),0):null;
   for(const stat of FFL_SUPPORTED_STATS){
