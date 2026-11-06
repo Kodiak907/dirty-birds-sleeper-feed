@@ -50,7 +50,7 @@
    sub.style.cssText='font-size:11px;line-height:1.5;margin-top:8px';
    el.insertAdjacentElement('afterend',sub);}
   sub.textContent='W'+wk+' independently modeled starters: '+known.length+'/'+ids.length+
-   '. '+(partial.length?'Partial D/ST estimates: '+partial.join(', ')+'. ':'')+(missing.length?'Missing: '+missing.map(x=>x.name+' ('+x.reason+')').join(' · '):
+   '. '+(partial.length?'Partial scoring-category estimates: '+partial.join(', ')+'. ':'')+(missing.length?'Missing: '+missing.map(x=>x.name+' ('+x.reason+')').join(' · '):
     'All submitted starters have model estimates (check partial classifications).')+
    ' Missing categories are not zero predictions.';
   let detail=document.getElementById('pfo615-coverage-details');
