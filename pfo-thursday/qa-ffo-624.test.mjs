@@ -72,6 +72,6 @@ test('kicker gateway recovery retains hard budgets and explicitly reports source
  assert.match(client,/PFO 6\.25 · verified kicker field schema audit/);
  assert.match(health,/checking licensed completed-game kicker boxscores/);
  assert.match(html,/ffo-pfo-616\.js\?v=625/);
- assert.match(html,/ffo-pfo-611\.js\?v=625/);
+ assert.match(html,/ffo-pfo-611\.js\?v=624/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
