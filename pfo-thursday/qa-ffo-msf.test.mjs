@@ -17,10 +17,10 @@ test('FFO-owned 2026 rules, independent source and no ESPN scoring board',()=>{
  assert.equal(own.season,2026);
  assert.ok(Object.keys(own.scoring).length>=130);
  assert.equal(own.scoring.rec,.5);
- assert.equal(own.scoring.pass_td,4);
+ assert.equal(own.scoring.pass_td,6);
  assert.equal(own.scoring.rush_td,6);
  assert.equal(own.scoring.pass_yd,.04);
- assert.equal(own.scoring.fgm_60p,6);
+ assert.equal(own.scoring.fgm_60p,5);
  assert.match(core,/\/FFO_FFL_SCORING_V1\.json/);
  assert.doesNotMatch(core,/gm47Snapshot\?\.league\?\.scoring_settings/);
  assert.match(core,/\/api\/ffo\/gamecast\//);
@@ -39,7 +39,7 @@ test('FFO computes half-PPR receiver independently from MSF stat categories',()=
 test('FFO independently computes QB core stats from MSF fields',()=>{
  const stats={passing:{passYards:300,passTD:2,passInt:1},rushing:{rushYards:20,rushTD:0},fumbles:{fumblesLost:0}};
  const out=fflScore(stats,own.scoring,'QB');
- assert.equal(out.points,20);
+ assert.equal(out.points,24);
  assert.equal(out.complete,false,'unverified bonuses and event categories withheld');
 });
 test('Missing MySportsFeeds stats are unknown, not zero points',()=>{
@@ -498,8 +498,8 @@ test('MSF historical stat audit paces weekly requests, retries transient gateway
 test('FFL out-of-position passing touchdown is not lost when a WR throws the ball',()=>{
  const stats={passing:{passYards:40,passTD:1},receiving:{receptions:2,recYards:20},rushing:{rushYards:0,rushTD:0},fumbles:{fumblesLost:0}};
  const r=fflScore(stats,own.scoring,'WR');
- assert.equal(r.points,8.6);
- assert.ok(r.components.some(x=>x.key==='pass_td'&&x.points===4));
+ assert.equal(r.points,10.6);
+ assert.ok(r.components.some(x=>x.key==='pass_td'&&x.points===6));
  assert.ok(r.components.some(x=>x.key==='pass_yd'&&x.points===1.6));
  assert.equal(r.complete,false,'unverified event-only scoring still blocks certification');
 });
@@ -510,12 +510,12 @@ test('Kicker scoring uses FFO 40-49 and 50-59 distance bands, not a made-FG shor
  assert.equal(norm.fgm_40_49,1);
  assert.equal(norm.fgm_50_59,1);
  const r=fflScore(stats,own.scoring,'K');
- assert.equal(r.points,11);
+ assert.equal(r.points,15);
  assert.equal(r.complete,false);
  assert.ok(r.missing.includes('fgm_60p'));
- assert.ok(r.components.some(x=>x.key==='fgm_50_59'&&x.points===5));
+ assert.ok(r.components.some(x=>x.key==='fgm_50_59'&&x.points===4));
  const generic=fflScore({fieldGoals:{fieldGoalsMade:2},extraPoints:{extraPointsMade:2}},own.scoring,'K');
- assert.equal(generic.points,2,'2 XP are evidenced, made FG distances not invented');
+ assert.equal(generic.points,8,'2 verified FGs earn base 3 each plus 2 PATs; missing distances are not invented');
  assert.ok(generic.missing.includes('fgm_40_49'));
  assert.ok(generic.missing.includes('fgm_50_59'));
 });
@@ -535,7 +535,7 @@ test('Per-position FFL evidence exposes component weights and category coverage 
  assert.ok(w.components.some(x=>x.key==='rec'&&x.points===2));
  assert.ok(w.components.some(x=>x.key==='rec_yd'&&x.points===6));
  assert.ok(w.missing.length);
- assert.equal(a.byPosition.K.samples[0].observedPoints,6);
+ assert.equal(a.byPosition.K.samples[0].observedPoints,8);
 });
 test('MSF scoring audit displays component breakdown and lower-bound comparison accurately',()=>{
  assert.match(core,/model\.scoringEvidence\(goodWeeks,s\.ownedRules,team\)/);
@@ -644,8 +644,8 @@ test('PBP kicker events compute independent FFL kick-point subtotals without cer
   {id:'msf-b',name:'Will Reichard',team:'MIN',jersey:'16',position:'K'}
  ]);
  assert.equal(a.candidatePlays,10);
- assert.equal(a.kickers.find(x=>x.kickerToken==='28-T.Smack').observedSubtotal,12);
- assert.equal(a.kickers.find(x=>x.kickerToken==='16-W.Reichard').observedSubtotal,7);
+ assert.equal(a.kickers.find(x=>x.kickerToken==='28-T.Smack').observedSubtotal,17);
+ assert.equal(a.kickers.find(x=>x.kickerToken==='16-W.Reichard').observedSubtotal,9);
  assert.equal(a.kickers.find(x=>x.kickerToken==='28-T.Smack').providerId,'msf-a');
  assert.equal(a.kickingFantasyScoreCertified,false);
  assert.ok(a.publishedEvents.every(x=>x.observedEventPoints!==null));
@@ -661,7 +661,7 @@ test('Kicker audit deduplicates native IDs and withholds unknown actor/distance 
  const a=kickingPlayEvidence(payload,own.scoring);
  assert.equal(a.candidatePlays,4);
  assert.equal(a.unattributedEvents,1);
- assert.equal(a.kickers[0].observedSubtotal,5);
+ assert.equal(a.kickers[0].observedSubtotal,7);
  assert.equal(a.kickers[0].unknownEvents,1);
  assert.equal(a.kickers[0].providerId,null);
  assert.equal(a.kickingFantasyScoreCertified,false);
