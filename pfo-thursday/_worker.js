@@ -1107,6 +1107,53 @@ function ffo630InspectPossessionSequence(rows,fixture){
     'Short punt sequence candidates are NOT verified three-and-outs',
     'Full-game play coverage remains uncertified']};
 }
+/* PFO 6.32: source field EXISTENCE is not source value AVAILABILITY.
+ * Classify drive counters from the authenticated MSF response in bounded
+ * aggregates. Never expose raw provider values, descriptions or credentials.
+ * Zero is intentionally not promoted to a legitimate drive identifier until
+ * its meaning is validated against independent completed-game evidence.
+ */
+function ffo632AuditDriveRawValues(rows){
+ const fields=['overallDriveNum','teamDriveNum'];
+ const classify=(field)=>{
+  const counts={records:rows.length,present:0,missing:0,null:0,undefined:0,
+   blank:0,zero:0,positive_integer:0,negative_integer:0,fractional:0,
+   above_supported_range:0,non_numeric:0,boolean:0,object:0,numeric_string:0};
+  const distinct=new Set();
+  for(const p of rows){
+   const status=p?.playStatus;
+   if(!status||typeof status!=='object'||!Object.prototype.hasOwnProperty.call(status,field)){
+    counts.missing++;continue;
+   }
+   counts.present++;
+   const value=status[field];
+   if(value===null){counts.null++;continue}
+   if(value===undefined){counts.undefined++;continue}
+   if(typeof value==='boolean'){counts.boolean++;continue}
+   if(typeof value==='object'){counts.object++;continue}
+   if(typeof value!=='string'&&typeof value!=='number'){counts.non_numeric++;continue}
+   if(typeof value==='string'&&value.trim()===''){counts.blank++;continue}
+   const number=Number(value);
+   if(!Number.isFinite(number)){counts.non_numeric++;continue}
+   if(!Number.isInteger(number)){counts.fractional++;continue}
+   if(number<0){counts.negative_integer++;continue}
+   if(number>200){counts.above_supported_range++;continue}
+   if(typeof value==='string')counts.numeric_string++;
+   if(number===0){counts.zero++;distinct.add(0);continue}
+   counts.positive_integer++;distinct.add(number);
+  }
+  return {...counts,distinct_supported_values:distinct.size,
+   zero_only:counts.zero>0&&counts.positive_integer===0,
+   all_present_values_null:counts.present>0&&counts.null===counts.present,
+   usable_positive_coverage:counts.positive_integer,
+   zero_semantics_verified:false};
+ };
+ return {schema:'FFO_MSF_DRIVE_COUNTER_VALUE_AUDIT_V1',
+  overallDriveNum:classify('overallDriveNum'),
+  teamDriveNum:classify('teamDriveNum'),
+  read_only:true,eligible_for_scoring:false,
+  interpretation:'Field presence and integer value availability are distinct; zero is diagnostic only.'};
+}
 function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
  const data=payload?.data??payload;
  const rows=data?.gameplaybyplay?.plays??data?.gamePlayByPlay?.plays??data?.plays;
@@ -1173,6 +1220,7 @@ function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
   checked_at:checkedAt,completed_fixture_verified:true,
   observed_fields:{...counts,distinct_drive_ids:drives.size},
   sequence_diagnostics:ffo630InspectPossessionSequence(rows,fixture),
+  drive_value_diagnostics:ffo632AuditDriveRawValues(rows),
   missing_evidence:missing,full_game_certified:false,
   three_and_out_scoring_ready:false,points_allowed_scoring_ready:false,
   dst_points_certified:false,read_only:true,
