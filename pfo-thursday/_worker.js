@@ -1031,7 +1031,7 @@ async function ffo621PlayerWeekLogs(week,env){
  * short deadline for both direct MSF and internal gateway requests; a
  * detached late response cannot turn a source failure into a forecast.
  */
-async function ffo624KickerBoundedFetch(endpoint,env,ms){
+async function ffo624KickerBoundedJSON(endpoint,env,ms,maxBytes){
  const signal=AbortSignal.timeout(ms);
  let rejectDeadline;
  const deadline=new Promise((_,reject)=>{
@@ -1039,11 +1039,19 @@ async function ffo624KickerBoundedFetch(endpoint,env,ms){
   signal.addEventListener('abort',rejectDeadline,{once:true});
  });
  try{
-  const task=env.MSF_API_KEY
-   ?fetch(endpoint,{method:'GET',headers:{
-     authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'
-    },signal})
-   :env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET',signal}));
+  const task=(async()=>{
+   const response=await (env.MSF_API_KEY
+    ?fetch(endpoint,{method:'GET',headers:{
+      authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'
+     },signal})
+    :env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET',signal})));
+   if(!response.ok)return {status:response.status,body:null};
+   const size=Number(response.headers.get('content-length')||0);
+   if(size>maxBytes)throw Error('kicker_provider_response_too_large');
+   const raw=await response.text();
+   if(raw.length>maxBytes)throw Error('kicker_provider_response_too_large');
+   return {status:response.status,body:JSON.parse(raw)};
+  })();
   return await Promise.race([task,deadline]);
  }finally{
   signal.removeEventListener('abort',rejectDeadline);
@@ -1112,16 +1120,14 @@ async function ffo623KickerBoxscore(fixture,env){
  if(ffo623BoxPending.has(id))return ffo623BoxPending.get(id);
  const task=(async()=>{
   const endpoint=MSF_ROOT+'/2026-regular/games/'+encodeURIComponent(id)+'/boxscore.json';
-  let response;
-  try{response=await ffo624KickerBoundedFetch(endpoint,env,6500)}
+  let result;
+  try{result=await ffo624KickerBoundedJSON(endpoint,env,6500,1500000)}
   catch(err){throw Error(err?.message==='kicker_provider_deadline_exceeded'
-   ?'kicker_boxscore_provider_timeout':'kicker_boxscore_fetch_unreachable')}
-  if(!response.ok)throw Error('kicker_boxscore_http_'+response.status);
-  const size=Number(response.headers.get('content-length')||0);
-  if(size>1500000)throw Error('kicker_boxscore_response_too_large');
-  const raw=await response.text();
-  if(raw.length>1500000)throw Error('kicker_boxscore_response_too_large');
-  const json=JSON.parse(raw);
+   ?'kicker_boxscore_provider_timeout':
+    err?.message==='kicker_provider_response_too_large'
+    ?'kicker_boxscore_response_too_large':'kicker_boxscore_fetch_unreachable')}
+  if(result.status!==200)throw Error('kicker_boxscore_http_'+result.status);
+  const json=result.body;
   if(json?.available===false||json?.error)throw Error('kicker_boxscore_gateway_rejected');
   const payload=json?.data??json;
   ffo623BoxCache.set(id,{payload,at:Date.now()});
@@ -1133,14 +1139,16 @@ async function ffo623KickerBoxscore(fixture,env){
 async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  if(!/^[0-9]{1,12}$/.test(String(playerId||'')))
   return {available:false,error:'sourced_kicker_id_required'};
- let response;
+ let result;
  try{
   const endpoint=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
-  response=await ffo624KickerBoundedFetch(endpoint,env,6500);
+  result=await ffo624KickerBoundedJSON(endpoint,env,6500,2800000);
  }catch(err){return {available:false,error:err?.message==='kicker_provider_deadline_exceeded'
-  ?'completed_game_schedule_provider_timeout':'completed_game_schedule_unreachable'}}
- if(!response.ok)return {available:false,error:'completed_game_schedule_http_'+response.status};
- const json=await response.json();
+  ?'completed_game_schedule_provider_timeout':
+   err?.message==='kicker_provider_response_too_large'?'completed_game_schedule_too_large':
+   'completed_game_schedule_unreachable'}}
+ if(result.status!==200)return {available:false,error:'completed_game_schedule_http_'+result.status};
+ const json=result.body;
  if(json?.available===false||json?.error)return {available:false,error:'game_schedule_gateway_unavailable'};
  const games=(json?.data??json)?.games;
  if(!Array.isArray(games))return {available:false,error:'completed_games_schema_missing'};
