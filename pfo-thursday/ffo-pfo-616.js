@@ -98,7 +98,7 @@
    tools.dataset.teams=teams.join(',');
    if(teams.length){
     const label=document.createElement('div');
-    label.textContent='PFO 6.32 · MSF drive-value diagnostics (read-only; no score changes)';
+    label.textContent='PFO 6.33 · three-and-out evidence review (read-only; no score changes)';
     tools.appendChild(label);
    }
    for(const team of teams){
@@ -122,6 +122,8 @@
        const c=data.observed_fields||{},missing=Array.isArray(data.missing_evidence)?data.missing_evidence:[];
        const diag=data.sequence_diagnostics||{};
        const rawDrives=data.drive_value_diagnostics||{};
+       const three=data.three_and_out_evidence||{};
+       const observedThree=three.observed_fields||{};
        const valueSummary=(name)=>{
         const v=rawDrives[name]||{};
         return name+' present '+Number(v.present||0)+'/'+Number(v.records||0)+
@@ -149,6 +151,11 @@
         ' (NOT verified three-and-outs)\n'+
         'Potential short punt sequences '+asCount(diag.short_punt_sequence_candidates)+
         ' (review only; NOT verified three-and-outs)\n'+
+        'Three-snap + punt REVIEW candidates '+asCount(three.strict_three_snap_punt_review_candidates)+
+        ' · punt segments '+asCount(three.punt_ending_segments_for_review)+'\n'+
+        'MSF classified offensive snaps '+asCount(observedThree.classified_offensive_snap)+
+        ' · punts '+asCount(observedThree.classified_punt)+
+        ' · down-and-distance '+asCount(observedThree.with_yards_remaining)+'\n'+
         'D/ST points NOT certified · no score changes';
        const detail=document.createElement('details');
        detail.style.cssText='margin-top:7px;padding:6px 0;border-top:1px solid currentColor';
@@ -172,6 +179,13 @@
         ', teamDriveNum '+asCount(c.team_drive_num)+
         '\nNative play IDs: '+asCount(c.provider_id)+
         ' · per-play score snapshots: '+asCount(c.score_snapshots)+
+        '\nThree-and-out review exclusions: '+Object.entries(three.excluded_punt_segment_reasons||{}).map(([key,n])=>key+' '+asCount(n)).join('; ')+
+        '\nObserved play-type fields: pass '+asCount(observedThree.with_structured_pass)+
+        ', rush '+asCount(observedThree.with_structured_rush)+
+        ', sack '+asCount(observedThree.with_structured_sack)+
+        ', punt '+asCount(observedThree.with_structured_punt)+
+        ', penalty '+asCount(observedThree.with_structured_penalty)+
+        '\nVerified three-and-outs: unavailable (NOT zero)'+
         '\nSequence candidates are read-only, never credited as fantasy scoring.';
        detail.appendChild(info);
        result.appendChild(detail);
