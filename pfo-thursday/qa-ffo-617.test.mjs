@@ -29,7 +29,7 @@ test('protected defense and game log routes both unwrap licensed gateway payload
 test('missing player projection recovery does not depend on full-season feed',()=>{
  assert.doesNotMatch(lib,/if\(!source\?\.players\?\.length\|\|/);
  assert.match(lib,/hasFrozenRules\?\.\(\)!==true/);
- assert.match(lib,/recoveryStatus\.set\(id,'checking_licensed_player_gamelogs'\)/);
+ assert.match(lib,/recoveryStatus\.set\(id,pos\(p\)==='K'\?'checking_verified_kicker_boxscores':'checking_licensed_player_gamelogs'\)/);
  assert.match(lib,/playerFailures\.set\(id,reason\)/);
  assert.match(lib,/if\(retries>=20\)/);
 });
