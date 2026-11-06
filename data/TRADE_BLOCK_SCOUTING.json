@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-06T14:16:22.803986+00:00",
-  "source_snapshot_utc": "2026-11-06T14:16:13.593885+00:00",
-  "source_market_as_of": "2026-11-06T03:53:34.318121+00:00",
+  "generated_at_utc": "2026-11-06T15:51:02.075366+00:00",
+  "source_snapshot_utc": "2026-11-06T15:50:52.815615+00:00",
+  "source_market_as_of": "2026-11-06T15:00:22.761469+00:00",
   "source_projection_as_of": "2026-11-06T13:45:26.306900+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17712,
-  "market_screened": 4947,
+  "market_screened": 4818,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -58,7 +58,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
           "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.032,
+          "value_paid_received_ratio": 1.014,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -96,7 +96,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
           "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.155,
+          "value_paid_received_ratio": 1.108,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -106,7 +106,7 @@
           ]
         }
       ],
-      "candidate_count": 3
+      "candidate_count": 4
     },
     {
       "asset": "Patrick Mahomes",
@@ -120,9 +120,9 @@
               "position": "QB"
             },
             {
-              "id": "13414",
-              "name": "Kaelon Black",
-              "position": "RB"
+              "id": "9482",
+              "name": "Michael Mayer",
+              "position": "TE"
             }
           ],
           "receive": [
@@ -136,7 +136,7 @@
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 1.27,
           "their_lineup_delta_ppg": 0.19,
-          "value_paid_received_ratio": 0.742,
+          "value_paid_received_ratio": 0.721,
           "our_extra_cut": null,
           "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -153,8 +153,8 @@
               "position": "QB"
             },
             {
-              "id": "13296",
-              "name": "Caleb Douglas",
+              "id": "13301",
+              "name": "Antonio Williams",
               "position": "WR"
             }
           ],
@@ -174,7 +174,7 @@
           "opponent": "BigOlBoyle",
           "our_lineup_delta_ppg": 1.27,
           "their_lineup_delta_ppg": 0.19,
-          "value_paid_received_ratio": 0.73,
+          "value_paid_received_ratio": 0.722,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -207,7 +207,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 0.48,
           "their_lineup_delta_ppg": 0.52,
-          "value_paid_received_ratio": 1.028,
+          "value_paid_received_ratio": 1.091,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -245,7 +245,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 0.48,
           "their_lineup_delta_ppg": 0.52,
-          "value_paid_received_ratio": 0.853,
+          "value_paid_received_ratio": 0.91,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -255,7 +255,7 @@
           ]
         }
       ],
-      "candidate_count": 28
+      "candidate_count": 26
     }
   ],
   "warning": "Read-only, no trade submitted. Research leads are not acceptance predictions, offers, or certified fair trades. Player must remain rostered to propose."

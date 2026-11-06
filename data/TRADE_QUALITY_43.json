@@ -1,51 +1,15 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-06T14:16:21.925542+00:00",
+  "generated_at_utc": "2026-11-06T15:51:01.443129+00:00",
   "candidates_evaluated": 58656,
-  "market_matched": 7527,
+  "market_matched": 7634,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-06T03:53:34.318121+00:00",
+  "market_as_of": "2026-11-06T15:00:22.761469+00:00",
   "projection_as_of": "2026-11-06T13:45:26.306900+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
-    {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "6790",
-          "name": "D'Andre Swift",
-          "pos": "RB"
-        },
-        {
-          "id": "11625",
-          "name": "Adonai Mitchell",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 1.86,
-      "their_gain": 1.12,
-      "market_paid_received_ratio": 1.025,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.456,
-      "not_an_approved_offer": true
-    },
     {
       "opponent_roster_id": 11,
       "opponent_name": "suck my dickerson",
@@ -75,11 +39,47 @@
       ],
       "our_gain": 1.86,
       "their_gain": 1.12,
-      "market_paid_received_ratio": 1.034,
+      "market_paid_received_ratio": 1.013,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.429,
+      "score": 2.494,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "6790",
+          "name": "D'Andre Swift",
+          "pos": "RB"
+        },
+        {
+          "id": "11625",
+          "name": "Adonai Mitchell",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 1.86,
+      "their_gain": 1.12,
+      "market_paid_received_ratio": 0.972,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.449,
       "not_an_approved_offer": true
     }
   ],

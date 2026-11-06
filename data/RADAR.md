@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-06T14:16:19.479799+00:00
-Sleeper snapshot: 2026-11-06T14:16:13.593885+00:00
+Generated: 2026-11-06T15:50:58.660400+00:00
+Sleeper snapshot: 2026-11-06T15:50:52.815615+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 0 completed, 0 pending/processing, 1 failed.
-
-- **NEW** · transaction `1424216517901291520` · WAIVER · FAILED · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | FAAB bid: $7
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
