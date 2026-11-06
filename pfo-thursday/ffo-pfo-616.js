@@ -56,7 +56,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.23 · verified kicker boxscore recovery'];
+  const lines=['PFO 6.24 · bounded kicker provider recovery'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -64,7 +64,7 @@
    const side=own.includes(id)?'Our team':'Opponent';
    if(projected?.points!=null){lines.push(side+' · '+name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
    let reason=position==='DEF'?(pending.has(team)?'fetching_team_defense':failures.get(team)||(!defense.has(team)?'awaiting_team_defense':'no_verified_scoring_categories_or_week_schedule')):
-    (playerPending.has(id)?'fetching_player_logs':playerFailures.get(id)||recoveryStatus.get(id)||projected?.source||'awaiting_verified_stats');
+    (playerPending.has(id)?(position==='K'?'checking_kicker_boxscores':'fetching_player_logs'):playerFailures.get(id)||recoveryStatus.get(id)||projected?.source||'awaiting_verified_stats');
    lines.push(side+' · '+name+': unavailable · '+reason);
   }
   panel.textContent=lines.join('\n');
@@ -124,7 +124,7 @@
   const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):null;
   const scored=window.ffoPfo597?.scoreFrozen?.(row?.forecast);
   if(scored?.points!=null&&Number.isFinite(Number(scored.points)))return null;
-  playerSeen.set(id,Date.now());recoveryStatus.set(id,'checking_licensed_player_gamelogs');
+  playerSeen.set(id,Date.now());recoveryStatus.set(id,pos(p)==='K'?'checking_verified_kicker_boxscores':'checking_licensed_player_gamelogs');
   const job=(async()=>{
    try{
     const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),32000);
