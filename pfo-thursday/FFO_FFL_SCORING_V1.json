@@ -53,8 +53,8 @@
     "bonus_rush_yd_200": 0,
     "bonus_sack_2p": 0,
     "bonus_tkl_10p": 0,
-    "def_2pt": 0,
-    "def_3_and_out": 0,
+    "def_2pt": 2,
+    "def_3_and_out": 0.5,
     "def_4_and_stop": 0,
     "def_forced_punts": 0,
     "def_kr_yd": 0,
@@ -173,6 +173,8 @@
     "field_goal_stacking": "FG made = +3 base for each made field goal PLUS the matching distance tier (+0.5,+1,+2,+3,+4,+5). Do not replace base with tier. Only use verified counts; percentages cannot stand in for attempts or makes.",
     "receptions": "Distance reception bonus +0.5 for 30-39 yard catches and +1 for 40+ yard catches, in addition to standard half-PPR.",
     "long_touchdowns": "Record 40+ and 50+ touchdown bonuses independently only when source evidence establishes each; a 50+ TD also qualifies for a 40+ threshold if Sleeper applies both configured bonuses.",
-    "missing_evidence": "Never treat unknown per-category values as zero; team scores and kicker projections are marked partial where required categories are missing."
+    "missing_evidence": "Never treat unknown per-category values as zero; team scores and kicker projections are marked partial where required categories are missing.",
+    "three_and_out": "D/ST earns +0.5 per verified opponent three-and-out, separate from other defensive scoring. Source must count the full drive; not inferred from punts alone.",
+    "two_point_return": "D/ST earns +2 per verified defensive 2-point conversion return."
   }
 }
