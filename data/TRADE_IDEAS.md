@@ -1,37 +1,27 @@
 # Dirty Birds — Mutually Beneficial Trade Ideas
 
-Generated: 2026-11-05T15:13:09.322396+00:00
+Generated: 2026-11-06T15:00:22.508600+00:00
 
 **These are statistical conversation starters, NOT predicted acceptances or recommended offers.**
 Only projected starting-lineup gains (not medical-adjusted values) are tested. Ranking deliberately requires both teams to gain.
 
 | # | Opponent roster | We give | We receive | Our gain | Their gain | Extra cut |
 |---:|---:|---|---|---:|---:|---|
-| 1 | 4 | Jonah Coleman, Deebo Samuel Sr. | Brock Purdy | +2.02 | +3.54 |  Them: Keon Coleman |
-| 2 | 4 | A.J. Brown, Jonah Coleman | George Kittle | +2.72 | +2.04 |  Them: Keon Coleman |
-| 3 | 4 | Isaiah Likely, Jonah Coleman | George Kittle | +2.29 | +2.46 |  Them: Keon Coleman |
-| 4 | 4 | Jonah Coleman, Zach Charbonnet | Brock Purdy | +2.02 | +2.90 |  Them: Keon Coleman |
-| 5 | 11 | C.J. Stroud, Zay Flowers | Parker Washington | +2.03 | +1.17 |  Them: Adonai Mitchell |
-| 6 | 11 | C.J. Stroud, A.J. Brown | D'Andre Swift | +2.30 | +0.91 |  Them: Adonai Mitchell |
-| 7 | 11 | C.J. Stroud, Zay Flowers | Justin Jefferson | +2.35 | +0.86 |  Them: Adonai Mitchell |
-| 8 | 11 | C.J. Stroud, A.J. Brown | Ashton Jeanty | +2.60 | +0.61 |  Them: Adonai Mitchell |
-| 9 | 10 | Patrick Mahomes, Ollie Gordon II | Josh Allen | +2.32 | +0.27 |  Them: Keenan Allen |
-| 10 | 10 | Patrick Mahomes, Zay Flowers | Josh Allen | +2.57 | +0.03 |  Them: Keenan Allen |
-| 11 | 2 | Ollie Gordon II, Zay Flowers | Puka Nacua | +1.21 | +1.29 |  Them: Jonathon Brooks |
-| 12 | 2 | Chris Olave, Jonah Coleman | Puka Nacua | +1.66 | +0.84 |  Them: Jonathon Brooks |
-| 13 | 2 | A.J. Brown, Jonah Coleman | Rashee Rice | +2.35 | +0.14 |  Them: Jonathon Brooks |
-| 14 | 8 | Chris Olave, Jonah Coleman | Chuba Hubbard | +1.23 | +1.05 |  Them: Roschon Johnson |
-| 15 | 8 | Ollie Gordon II, Zay Flowers | James Cook III | +1.42 | +0.87 |  Them: Roschon Johnson |
-| 16 | 8 | Chris Olave, Jonah Coleman | James Cook III | +1.87 | +0.42 |  Them: Roschon Johnson |
-| 17 | 8 | Kyren Williams, Jonah Coleman | James Cook III | +1.00 | +1.29 |  Them: Roschon Johnson |
-| 18 | 9 | A.J. Brown, Jonah Coleman | Garrett Wilson | +1.04 | +0.65 |  Them: Woody Marks |
-| 19 | 3 | C.J. Stroud, Chris Olave | Jonathan Taylor | +0.92 | +0.72 |  Them: Blake Corum |
-| 20 | 9 | A.J. Brown, Jonah Coleman | Tetairoa McMillan | +1.55 | +0.14 |  Them: Woody Marks |
-| 21 | 7 | Jaxon Smith-Njigba, A.J. Brown | Kenneth Walker III | +0.97 | +0.65 |  Them: Malik Washington |
-| 22 | 7 | Chris Olave, Jonah Coleman | Ja'Marr Chase | +1.10 | +0.53 |  Them: Malik Washington |
-| 23 | 7 | Kyren Williams, Ollie Gordon II | Christian McCaffrey | +1.20 | +0.42 |  Them: Malik Washington |
-| 24 | 3 | C.J. Stroud, A.J. Brown | Jaylen Warren | +1.49 | +0.15 |  Them: Blake Corum |
-| 25 | 7 | Jaxon Smith-Njigba, Jonah Coleman | Kenneth Walker III | +1.41 | +0.22 |  Them: Malik Washington |
+| 1 | 11 | Patrick Mahomes, A.J. Brown | Parker Washington | +1.55 | +1.43 |  Them: Adonai Mitchell |
+| 2 | 11 | C.J. Stroud, A.J. Brown | Tony Pollard | +1.59 | +1.38 |  Them: Adonai Mitchell |
+| 3 | 11 | C.J. Stroud, Zay Flowers | D'Andre Swift | +1.86 | +1.12 |  Them: Adonai Mitchell |
+| 4 | 11 | Patrick Mahomes, A.J. Brown | D'Andre Swift | +2.12 | +0.85 |  Them: Adonai Mitchell |
+| 5 | 4 | Jonah Coleman, A.J. Brown | George Kittle | +2.00 | +0.92 |  Them: Brian Thomas Jr. |
+| 6 | 4 | Jonah Coleman, Deebo Samuel Sr. | George Kittle | +2.91 | +0.00 |  Them: Brian Thomas Jr. |
+| 7 | 4 | Isaiah Likely, Jonah Coleman | George Kittle | +0.80 | +2.11 |  Them: Brian Thomas Jr. |
+| 8 | 3 | Patrick Mahomes, Minnesota Vikings | Malik Nabers | +1.44 | +1.13 |  Them: Blake Corum |
+| 9 | 3 | Patrick Mahomes, Minnesota Vikings | Tee Higgins | +1.00 | +1.57 |  Them: Blake Corum |
+| 10 | 3 | C.J. Stroud, Zay Flowers | Tee Higgins | +1.01 | +0.72 |  Them: Blake Corum |
+| 11 | 3 | C.J. Stroud, Kyren Williams | Jonathan Taylor | +1.06 | +0.66 |  Them: Blake Corum |
+| 12 | 9 | C.J. Stroud, Jonah Coleman | Stefon Diggs | +0.60 | +0.21 |  Them: Woody Marks |
+| 13 | 9 | Jonah Coleman | Stefon Diggs | +0.60 | +0.02 | None |
+| 14 | 9 | Jonah Coleman, Deebo Samuel Sr. | Stefon Diggs | +0.60 | +0.02 |  Them: Woody Marks |
+| 15 | 9 | Jonah Coleman | Dak Prescott, Stefon Diggs | +0.60 | +0.02 | Us: Pat Bryant |
 
 ## Due diligence before negotiating
 

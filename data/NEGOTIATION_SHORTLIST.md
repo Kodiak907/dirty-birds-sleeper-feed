@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-11-05T15:13:09.739757+00:00
+Generated: 2026-11-06T15:00:22.913667+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 4 | Jonah Coleman, Deebo Samuel Sr. | Brock Purdy | +2.02 | +3.54 | +3.2/+2.4/+1.9 | Deebo Samuel Sr.: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
-| 2 | 4 | A.J. Brown, Jonah Coleman | George Kittle | +2.72 | +2.04 | +2.3/+0.6/+2.0 | Unnecessary extra outgoing asset under aggregate PPG model |
-| 3 | 11 | C.J. Stroud, A.J. Brown | Ashton Jeanty | +2.60 | +0.61 | +3.8/+3.8/+5.3 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 4 | 10 | Patrick Mahomes, Ollie Gordon II | Josh Allen | +2.32 | +0.27 | +5.0/+2.0/+6.0 | Ollie Gordon II: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 5 | 11 | C.J. Stroud, A.J. Brown | D'Andre Swift | +2.30 | +0.91 | +2.2/+1.8/+4.1 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 1 | 4 | Jonah Coleman, Deebo Samuel Sr. | George Kittle | +2.91 | +0.00 | +2.0/+2.5/+2.4 | Deebo Samuel Sr.: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 2 | 11 | Patrick Mahomes, A.J. Brown | D'Andre Swift | +2.12 | +0.85 | -0.4/+0.8/+3.2 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 3 | 11 | C.J. Stroud, A.J. Brown | Tony Pollard | +1.59 | +1.38 | +1.8/+1.0/-0.1 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 4 | 9 | Jonah Coleman | Stefon Diggs | +0.60 | +0.02 | -1.2/-0.7/+0.1 | Negative playoff-week modeled effect |
+| 5 | 3 | C.J. Stroud, Kyren Williams | Jonathan Taylor | +1.06 | +0.66 | -0.1/+4.5/+1.6 | Kyren Williams: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
 
 ## What the other manager might gain
 
-**1. Brock Purdy** — Opponent projected starters improve +3.54 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 23% (not a trade price).
+**1. George Kittle** — Opponent projected starters improve +0.00 PPG; potential shallow position(s): RB.
+Diagnostic positional-percentile imbalance: 14% (not a trade price).
 
-**2. George Kittle** — Opponent projected starters improve +2.04 PPG; potential shallow position(s): RB.
-Diagnostic positional-percentile imbalance: 29% (not a trade price).
+**2. D'Andre Swift** — Opponent projected starters improve +0.85 PPG; potential shallow position(s): WR.
+Diagnostic positional-percentile imbalance: 37% (not a trade price).
 
-**3. Ashton Jeanty** — Opponent projected starters improve +0.61 PPG; potential shallow position(s): WR.
-Diagnostic positional-percentile imbalance: 39% (not a trade price).
+**3. Tony Pollard** — Opponent projected starters improve +1.38 PPG; potential shallow position(s): WR.
+Diagnostic positional-percentile imbalance: 44% (not a trade price).
 
-**4. Josh Allen** — Opponent projected starters improve +0.27 PPG; potential shallow position(s): RB.
+**4. Stefon Diggs** — Opponent projected starters improve +0.02 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 5% (not a trade price).
+
+**5. Jonathan Taylor** — Opponent projected starters improve +0.66 PPG; no clear shallow-position signal.
 Diagnostic positional-percentile imbalance: 38% (not a trade price).
-
-**5. D'Andre Swift** — Opponent projected starters improve +0.91 PPG; potential shallow position(s): WR.
-Diagnostic positional-percentile imbalance: 41% (not a trade price).
 
 ## Verification before discussions
 
