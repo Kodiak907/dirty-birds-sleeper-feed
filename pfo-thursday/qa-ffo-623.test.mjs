@@ -107,7 +107,7 @@ test('kicker projection recovery is source-isolated and no season, trade or Comm
  assert.match(worker,/source_type:'licensed_primary'/);
  assert.match(worker,/ffo623BoxCache/);
  assert.match(client,/&position=/);
- assert.match(client,/PFO 6\.25 · verified kicker field schema audit/);
- assert.match(html,/ffo-pfo-616\.js\?v=625/);
+ assert.match(client,/PFO 6\.26 · updated FFL scoring and verified kicker recovery/);
+ assert.match(html,/ffo-pfo-616\.js\?v=626/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
