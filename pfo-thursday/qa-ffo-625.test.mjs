@@ -75,7 +75,7 @@ test('kicker audit stays bounded, stat-value-free, scoring-independent and only 
  assert.doesNotMatch(output,/2345/);
  assert.ok(output.length<=240);
  assert.match(client,/verified_kicker_field_paths/);
- assert.match(client,/PFO 6\.26 · updated FFL scoring and verified kicker recovery/);
- assert.match(html,/ffo-pfo-616\.js\?v=626/);
+ assert.match(client,/PFO 6\.27 · kicker scoring-play and data-quality audit/);
+ assert.match(html,/ffo-pfo-616\.js\?v=627/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
