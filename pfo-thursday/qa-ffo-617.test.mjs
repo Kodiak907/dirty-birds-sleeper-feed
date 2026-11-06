@@ -38,6 +38,6 @@ test('Team data health reports missing starter causes without touching Trade Lab
  assert.match(lib,/playerFailures\.get\(id\)/);
  assert.match(lib,/failures\.get\(team\)/);
  assert.match(lib,/partial MSF evidence/);
- assert.match(html,/ffo-pfo-616\.js\?v=626/);
+ assert.match(html,/ffo-pfo-616\.js\?v=627/);
  assert.doesNotMatch(lib,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
