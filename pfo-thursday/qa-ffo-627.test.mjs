@@ -103,7 +103,7 @@ test('fractional per-game made FG forecasts use distance-tier points without an 
  assert.equal(ctx.score({fgm_50_59:0.25,xpm:1}).points,2.25);
 });
 test('kicker projections remain partial even with 10/10 positional estimates',()=>{
- assert.match(proj,/partial:pos==='K'\|\|v\.partial===true/);
+ assert.match(proj,/partial:true/);
  assert.match(client,/PFO 6\.27 · kicker scoring-play and data-quality audit/);
  assert.match(worker,/ffo627VerifiedKickerFieldGoals/);
  assert.match(html,/ffo-pfo-616\.js\?v=636/);
