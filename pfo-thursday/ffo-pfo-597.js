@@ -75,15 +75,79 @@
   const t=canonical(team),key=String(week);
   return rows?.[t]?.weeks?.[key]||rows?.[t]?.weeks?.[Number(week)]||null;
  };
+ // PFO 6.36: scoring-evidence quality is separate from numeric forecast coverage.
+ // This is a conservative read-only classification; unknown categories stay
+ // UNKNOWN, never synthetic 0 or point estimates from another provider.
+ const ffo636RulesVersion='2026-11-05-ffl-screen-recording-verified-v4';
+ const ffo636AuditStatCoverage=(stats,position)=>{
+  const p=String(position||'').toUpperCase().replace(/^D\/?ST$/,'DEF');
+  const observed=stats&&typeof stats==='object'?stats:{};
+  const has=k=>observed[k]!==null&&observed[k]!==undefined&&
+    observed[k]!==''&&Number.isFinite(Number(observed[k]));
+  const missing=[];
+  const base={QB:['pass_yd','pass_td','pass_int','fum_lost'],
+   RB:['rush_yd','rush_td','rec','rec_yd','fum_lost'],
+   WR:['rec','rec_yd','rec_td','fum_lost'],
+   TE:['rec','rec_yd','rec_td','fum_lost'],
+   K:['xpm','xpmiss','fgmiss'],
+   DEF:['sack','int','fum_rec','def_td']};
+  for(const key of base[p]||[]){
+   if(Number(frozenFFLRules?.[key]||0)!==0&&!has(key))missing.push(key);
+  }
+  const longTds={QB:['pass_td','pass_td_40p','pass_td_50p'],
+   RB:['rush_td','rush_td_40p','rush_td_50p'],
+   WR:['rec_td','rec_td_40p','rec_td_50p'],
+   TE:['rec_td','rec_td_40p','rec_td_50p']};
+  const td=longTds[p];
+  if(td&&has(td[0])&&Number(observed[td[0]])>0&&(!has(td[1])||!has(td[2])))
+   missing.push('long_touchdown_distance_evidence');
+  if(p==='K'){
+   const bands=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
+   const represented=bands.reduce((n,key)=>n+(has(key)?Number(observed[key]):0),0);
+   if(!has('fgm'))missing.push('made_field_goal_count_unverified');
+   else if(Number(observed.fgm)>represented+1e-6)missing.push('field_goal_distance_buckets_incomplete');
+   else if(represented>Number(observed.fgm)+1e-6)missing.push('field_goal_bucket_total_conflict');
+   if(!bands.every(has))missing.push('full_field_goal_distance_distribution_unverified');
+  }
+  if(p==='DEF'){
+   const bands=['pts_allow_0','pts_allow_1_6','pts_allow_7_13',
+    'pts_allow_14_20','pts_allow_21_27','pts_allow_28_34','pts_allow_35p'];
+   if(!bands.some(has))missing.push('defense_points_allowed_tier_unverified');
+  }
+  if(!Object.keys(observed).length)missing.push('independent_stat_forecast_missing');
+  return {rulesVersion:ffo636RulesVersion,partial:true,certified:false,
+   scoringEvidenceComplete:false,missingEvidence:[...new Set(missing)],
+   sourceCategoriesObserved:Object.keys(observed).filter(has).length};
+ };
+ const ffo636AuditLineup=(entries,requiredSlots)=>{
+  const rows=Array.isArray(entries)?entries:[];
+  const required=Number.isInteger(requiredSlots)&&requiredSlots>=0?requiredSlots:rows.length;
+  let covered=0,subtotal=0,partial=0;
+  const seen=new Set(),issues=[];
+  for(const entry of rows){
+   const id=String(entry?.id??'');
+   if(!id||id==='0')continue;
+   if(seen.has(id)){issues.push('duplicate_starter_identity');continue}
+   seen.add(id);
+   const model=entry?.projection;
+   if(model?.points===null||model?.points===undefined||
+     !Number.isFinite(Number(model.points)))continue;
+   covered++;subtotal+=Number(model.points);
+   if(model.partial!==false||model.certified!==true)partial++;
+  }
+  if(rows.length!==required)issues.push('lineup_slot_count_disagrees');
+  if(covered!==required)issues.push('some_starter_projections_missing');
+  if(partial)issues.push('one_or_more_scoring_profiles_uncertified');
+  return {rulesVersion:ffo636RulesVersion,covered,required,
+   subtotal:covered?Math.round((subtotal+Number.EPSILON)*100)/100:null,
+   missing:Math.max(0,required-covered),partial,certified:issues.length===0,issues};
+ };
  const sourceForecast=id=>{
   const index=typeof pfo50Indexed==='undefined'?null:pfo50Indexed;
   if(index!==estimateIndexRef){estimateIndexRef=index;estimateCache.clear();}
   const key=String(id);
   if(estimateCache.has(key))return estimateCache.get(key);
   const evaluate=()=>{
-  if(originalEstimate){
-   const a=originalEstimate(id);if(a!=null&&Number.isFinite(a))return {points:a,source:'FFO independent NFL-stat forecast under FFL scoring'};
-  }
   if(typeof pfo50Indexed==='undefined'||!pfo50Indexed?.size||typeof pfo50Score!=='function')return null;
   const p=typeof pfo52Info==='function'?pfo52Info(id):null;
   if(!p?.name||!p?.team)return null;
@@ -91,9 +155,20 @@
   // Do NOT scan every MSF player on each market card or tap on iPhone.
   const row=typeof pfo50StatsFor==='function'?pfo50StatsFor(id):pfo50Indexed.get(typeof pfo50Key==='function'?pfo50Key(p.name,p.team):norm(p.name)+'|'+canonical(p.team));
   if(!row)return null;
+  const quality=(stats,points,source)=>({
+   points,source,...ffo636AuditStatCoverage(stats,p?.position)
+  });
+  // The original estimate uses the same independently scored MSF forecast.
+  // Preserve its numeric behavior while retaining explicit evidence gaps.
+  if(originalEstimate){
+   const a=originalEstimate(id);
+   if(a!=null&&Number.isFinite(a))
+    return quality(row.forecast||row.season_totals||null,a,
+     'FFO independent NFL-stat forecast under restored FFL scoring · provisional');
+  }
   if(row.forecast){
    const pts=pfo50Score(row.forecast);
-   if(pts!=null&&Number.isFinite(pts))return {points:pts,source:'FFO NFL-stat model · verified same-team player mapping'};
+   if(pts!=null&&Number.isFinite(pts))return quality(row.forecast,pts,'FFO NFL-stat model · verified same-team player mapping');
   }
   const games=(row.games||[]).filter(x=>Number.isFinite(Number(x.week))).sort((a,b)=>Number(a.week)-Number(b.week));
   const scores=games.map(g=>pfo50Score(g.stats||g)).filter(v=>v!=null&&Number.isFinite(v));
@@ -103,9 +178,9 @@
   if(seasonMean==null)return null;
   if(scores.length>=2){
    const recent=scores.slice(-3),last=recent.reduce((a,b)=>a+b,0)/recent.length;
-   return {points:0.65*last+0.35*seasonMean,source:'FFO independently reconstructed FFL points · 65% last 3 / 35% season · no unsupported injury adjustment'};
+   return quality(row.forecast||row.season_totals||null,0.65*last+0.35*seasonMean,'FFO independently reconstructed FFL points · 65% last 3 / 35% season · no unsupported injury adjustment');
   }
-  if(played>=2)return {points:seasonMean,source:'FFO independent NFL-season stats / verified games played · low-confidence average'};
+  if(played>=2)return quality(row.forecast||row.season_totals||null,seasonMean,'FFO independent NFL-season stats / verified games played · low-confidence average');
   return null;
   };
   const computed=evaluate();estimateCache.set(key,computed);return computed;
@@ -139,7 +214,7 @@
     if(v)return {...v,bye:false,adjustment:null,opponent:row.opponent,
       // Even after a kicker has a numeric FFL projection, absent distance
       // categories and incomplete historical kicks remain a source gap.
-      partial:pos==='K'||v.partial===true,
+      partial:true,
       source:pos==='K'?'FFO partial MSF kicker estimate · verified FG distances only · missing categories unknown':v.source,
       modelStatus:'provisional',week,certified:false};
     return {points:null,bye:false,source:'FFO independent MSF player statistics or identity unavailable for Week '+week,
@@ -298,5 +373,5 @@
    if(typeof refreshInjuryOnly==='function'&&typeof injuryBusy!=='undefined'&&!injuryBusy)void refreshInjuryOnly();
   }
  });
- window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,hasFrozenRules:()=>!!frozenFFLRules,clearEvaluation:()=>{lastTrade=null;}};
+ window.ffoPfo597={verifiedSchedule:()=>verifiedSchedule,forecast:sourceForecast,loadSchedule,loadFFLRules,scoreFrozen:frozenScore,auditStatCoverage:ffo636AuditStatCoverage,auditLineup:ffo636AuditLineup,hasFrozenRules:()=>!!frozenFFLRules,clearEvaluation:()=>{lastTrade=null;}};
 })();
