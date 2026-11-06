@@ -618,6 +618,11 @@ function ffo598NormalizeSeason(payload,checkedAt){
   // fields (fg1_19Pct etc.) are NEVER treated as made kicks.
   const fgPoints=number(get(raw,'extraPointAttempts.fgAndXpPts'));
   const xpMade=number(get(raw,'extraPointAttempts.xpMade'));
+  const fgAttempts=number(get(raw,'fieldGoals.fgAtt')??get(raw,'fieldGoals.fgAttempts'));
+  if(totals.fgm!=null&&(!Number.isInteger(totals.fgm)||totals.fgm<0||
+      (fgAttempts!==null&&(!Number.isInteger(fgAttempts)||totals.fgm>fgAttempts)))){
+   delete totals.fgm; // refuse inconsistent counts rather than scoring them
+  }
   const xpAttempts=number(get(raw,'extraPointAttempts.xpAtt'));
   // MSF confirms xpAtt/xpMade as attempts and makes. Blocked kicks count as
   // misses in the recorded FFL settings, so att - made includes those blocks.
@@ -629,8 +634,7 @@ function ffo598NormalizeSeason(payload,checkedAt){
      fgPoints>=xpMade&&xpMade>=0&&
      (fgPoints-xpMade)%3===0){
     const made=(fgPoints-xpMade)/3;
-    const attempts=number(get(raw,'fieldGoals.fgAtt')??get(raw,'fieldGoals.fgAttempts'));
-    if(attempts===null||(Number.isInteger(attempts)&&attempts>=made)){
+    if(fgAttempts===null||(Number.isInteger(fgAttempts)&&fgAttempts>=made)){
      totals.fgm=made;
     }
   }
