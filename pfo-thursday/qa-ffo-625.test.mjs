@@ -57,7 +57,7 @@ test('live protected kicker coverage route includes a redacted schema audit, wit
   const m=u.pathname.match(/\/games\/(\d+)\/boxscore\.json$/);
   assert.ok(m);
   return send(box(Number(m[1])-7000,[{category:'Field Goals',
-   stats:{fgMade:3,fgAtt:4,secretToken:'NOT_VISIBLE'}}]));
+   stats:{fgMadePct:75,fgAtt:4,secretToken:'NOT_VISIBLE'}}]));
  });
  const result=await api.route(new Request(route),{MSF_API_KEY:'fake-secret'});
  const data=await result.json();
