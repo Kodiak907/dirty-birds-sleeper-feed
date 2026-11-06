@@ -56,7 +56,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.24 · bounded kicker provider recovery'];
+  const lines=['PFO 6.25 · verified kicker field schema audit'];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -140,7 +140,9 @@
     const data=await response.json();
     if(data.source!=='MySportsFeeds'||data.available===false||canonical(data.team)!==team||
      !samePlayer(p.name,data.name)||!data.forecast||data.games_observed<2)
-     throw Error(String(data.error||'verified_player_gamelogs_unavailable'));
+     throw Error(String(data.error||'verified_player_gamelogs_unavailable')+
+      (pos(p)==='K'&&data.schema_audit?
+       ' · verified_kicker_field_paths: '+String(data.schema_audit).replace(/[^A-Za-z0-9_,.]/g,'').slice(0,240):''));
     if(data.position&&pos(p)!==String(data.position).toUpperCase().replace(/^D\/?ST$/,'DEF'))
      throw Error('provider_position_conflict');
     // Guard against partial game logs that contain no scorable FFL fields.
