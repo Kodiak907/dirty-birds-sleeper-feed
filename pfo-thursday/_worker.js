@@ -1235,6 +1235,116 @@ function ffo633ReviewThreeAndOutSequences(rows,fixture){
     'Down value semantics and full historical play coverage need independent corroboration',
     'No candidate receives FFL three-and-out points without verified drive accounting']};
 }
+/* PFO 6.34 · source-based team attribution for D/ST REVIEW, never scores.
+ * A whole MSF possession segment is only an observed sequence, not a
+ * certified drive. Attribute a possible defensive stop only when every
+ * observed play in a complete-looking segment shares an explicit offense.
+ * No player-level licensed data or source descriptions leave this route.
+ */
+function ffo634ReviewDefensiveAttribution(rows,fixture){
+ const teams=[fixture.home,fixture.away];
+ const validTeams=new Set(teams);
+ const counts={observed_plays:rows.length,source_possession_plays:0,
+  source_down_plays:0,structured_offense_plays:0,structured_punts:0,
+  down_distance_plays:0,plays_missing_clock:0};
+ const n=(v,min,max)=>v!==null&&v!==undefined&&v!==''&&
+  Number.isInteger(Number(v))&&Number(v)>=min&&Number(v)<=max?Number(v):null;
+ const present=x=>x!==null&&x!==undefined&&x!==false&&
+  !(typeof x==='string'&&!x.trim())&&
+  !(typeof x==='object'&&!Object.keys(x||{}).length);
+ const plays=rows.map(raw=>{
+  const st=raw?.playStatus||{};
+  const team=String(st.teamInPossession?.abbreviation||
+    st.teamInPossession?.abbr||raw?.teamInPossession?.abbreviation||'').toUpperCase();
+  const offense=validTeams.has(team)?team:null;
+  const quarter=n(st.quarter??raw?.quarter,1,7),seconds=n(st.secondsElapsed,0,900);
+  const time=quarter!==null&&seconds!==null?quarter*1000+seconds:null;
+  const down=n(st.currentDown??st.down??raw?.down,1,4);
+  const remaining=n(st.yardsRemaining,0,100);
+  if(offense)counts.source_possession_plays++;
+  if(down!==null)counts.source_down_plays++;
+  if(remaining!==null)counts.down_distance_plays++;
+  if(time===null)counts.plays_missing_clock++;
+  const structuredOffense=present(raw?.pass)||present(raw?.rush)||present(raw?.sack);
+  const structuredPunt=present(raw?.punt);
+  if(structuredOffense)counts.structured_offense_plays++;
+  if(structuredPunt)counts.structured_punts++;
+  const text=String(raw?.description||raw?.playDescription||raw?.text||'').slice(0,600);
+  const disqualify=present(raw?.penalty)||present(raw?.kick)||present(raw?.fieldGoalAttempt)||
+    present(raw?.extraPointAttempt)||
+    /\b(?:penalty|holding|offside|false start|no[- ]play|replay down|flagged|offsetting|declined|fake punt|blocked punt|muffed punt|intercepted|interception|turnover|fumble|touchdown|kickoff|field goal)\b/i.test(text);
+  const incompatible=structuredOffense&&structuredPunt;
+  return {offense,time,down,remaining,structuredOffense,structuredPunt,
+    disqualify,incompatible};
+ });
+ let increasing=0,decreasing=0;
+ for(let i=1;i<plays.length;i++){
+  const a=plays[i-1].time,b=plays[i].time;
+  if(a===null||b===null||a===b)continue;
+  if(b>a)increasing++;else decreasing++;
+ }
+ const order=increasing&&!decreasing?'forward':decreasing&&!increasing?'reverse':
+  increasing||decreasing?'mixed':'unknown';
+ const ordered=order==='reverse'?[...plays].reverse():plays;
+ const pieces=[];let active=null;
+ if(order==='forward'||order==='reverse'){
+  for(const p of ordered){
+   if(!p.offense){if(active)active.incomplete=true;continue}
+   if(!active||active.offense!==p.offense){
+    if(active)pieces.push(active);
+    active={offense:p.offense,items:[],incomplete:false};
+   }
+   active.items.push(p);
+  }
+  if(active)pieces.push(active);
+ }
+ const stats={observed_punt_segments:0,excluded_edge:0,excluded_incomplete:0,
+  excluded_non_four_plays:0,excluded_missing_structured_type:0,
+  excluded_penalty_or_turnover:0,excluded_down_or_distance:0,
+  excluded_nonsequential_down:0,candidate_attribution_only:0};
+ const byDefense=Object.fromEntries(teams.map(t=>[t,{
+  review_candidates:0,verified_three_and_outs:null,awarded_ffl_points:0
+ }]));
+ for(let i=0;i<pieces.length;i++){
+  const seg=pieces[i],arr=seg.items;
+  if(!arr.some(p=>p.structuredPunt))continue;
+  stats.observed_punt_segments++;
+  if(i===0||i===pieces.length-1){stats.excluded_edge++;continue}
+  if(seg.incomplete){stats.excluded_incomplete++;continue}
+  if(arr.some(p=>p.disqualify||p.incompatible)){
+   stats.excluded_penalty_or_turnover++;continue
+  }
+  if(arr.length!==4){stats.excluded_non_four_plays++;continue}
+  if(!arr.slice(0,3).every(p=>p.structuredOffense&&!p.structuredPunt)||
+    !arr[3].structuredPunt||arr[3].structuredOffense){
+   stats.excluded_missing_structured_type++;continue
+  }
+  if(arr.some(p=>p.down===null||p.time===null)||
+    !arr.slice(0,3).every(p=>p.remaining!==null)){
+   stats.excluded_down_or_distance++;continue
+  }
+  if(arr.map(p=>p.down).join(',')!=='1,2,3,4'){
+   stats.excluded_nonsequential_down++;continue
+  }
+  const defense=teams.find(t=>t!==seg.offense);
+  if(!defense)continue;
+  byDefense[defense].review_candidates++;
+  stats.candidate_attribution_only++;
+ }
+ return {schema:'FFO_MSF_DST_DEFENSE_ATTRIBUTION_REVIEW_V1',
+  source:'MySportsFeeds',read_only:true,eligible_for_scoring:false,
+  chronological_order:order,coverage:counts,
+  observed_possession_segments:order==='mixed'||order==='unknown'?null:pieces.length,
+  breakdown:stats,defense_review_by_team:byDefense,
+  verified_three_and_outs:null,awarded_ffl_points:0,
+  team_attribution_certified:false,
+  source_data_not_republished:true,
+  limits:['Candidate opponent derived from source possession and fixture only',
+   'Native MSF drive numbers absent in inspected completed game',
+   'Current down and punt possession may be post-play state',
+   'Possession changes and incomplete play coverage are not official drive boundaries',
+   'No PFO fantasy scoring or projections changed']};
+}
 function ffo632AuditDriveRawValues(rows){
  const fields=['overallDriveNum','teamDriveNum'];
  const classify=(field)=>{
@@ -1344,6 +1454,7 @@ function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
   sequence_diagnostics:ffo630InspectPossessionSequence(rows,fixture),
   drive_value_diagnostics:ffo632AuditDriveRawValues(rows),
   three_and_out_evidence:ffo633ReviewThreeAndOutSequences(rows,fixture),
+  defense_candidate_attribution:ffo634ReviewDefensiveAttribution(rows,fixture),
   missing_evidence:missing,full_game_certified:false,
   three_and_out_scoring_ready:false,points_allowed_scoring_ready:false,
   dst_points_certified:false,read_only:true,
