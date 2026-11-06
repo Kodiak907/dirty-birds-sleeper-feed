@@ -2,13 +2,13 @@
   "baseline_lineup": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 126.274,
+    "ppg": 126.239,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 19.621
+        "ppg": 19.604
       },
       {
         "id": "4034",
@@ -20,7 +20,7 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 13.868
+        "ppg": 13.857
       },
       {
         "id": "9488",
@@ -38,19 +38,19 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.793
+        "ppg": 9.789
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.169
+        "ppg": 7.168
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.879
+        "ppg": 6.877
       },
       {
         "id": "13345",
@@ -69,11 +69,11 @@
   "by_position": {
     "DEF": [
       {
-        "bench_depth_delta_ppg": 0.073,
+        "bench_depth_delta_ppg": 0.069,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -84,8 +84,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -94,8 +94,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -104,8 +104,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -114,8 +114,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -124,8 +124,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -134,8 +134,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -144,8 +144,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -154,8 +154,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -167,7 +167,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 6.611,
+        "projection_ppg": 6.607,
         "team": "BUF",
         "warnings": [
           "No sourced usage",
@@ -178,8 +178,8 @@
         "bench_depth_delta_ppg": -0.52,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -190,8 +190,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -200,8 +200,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -210,8 +210,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -220,8 +220,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -230,8 +230,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -240,8 +240,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -250,8 +250,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -260,8 +260,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -285,8 +285,8 @@
         "bench_depth_delta_ppg": -0.54,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -297,8 +297,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -307,8 +307,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -317,8 +317,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -327,8 +327,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -337,8 +337,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -347,8 +347,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -357,8 +357,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -367,8 +367,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -392,8 +392,8 @@
         "bench_depth_delta_ppg": -0.625,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -404,8 +404,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -414,8 +414,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -424,8 +424,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -434,8 +434,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -444,8 +444,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -454,8 +454,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -464,8 +464,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -474,8 +474,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -498,8 +498,8 @@
         "bench_depth_delta_ppg": -0.649,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -510,8 +510,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -520,8 +520,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -530,8 +530,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -540,8 +540,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -550,8 +550,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -560,8 +560,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -570,8 +570,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -580,8 +580,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -605,8 +605,8 @@
         "bench_depth_delta_ppg": -0.666,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -617,8 +617,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -627,8 +627,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -637,8 +637,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -647,8 +647,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -657,8 +657,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -667,8 +667,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -677,8 +677,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -687,8 +687,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -711,8 +711,8 @@
         "bench_depth_delta_ppg": -0.8,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -723,8 +723,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -733,8 +733,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -743,8 +743,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -753,8 +753,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -763,8 +763,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -773,8 +773,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -783,8 +783,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -793,8 +793,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -815,11 +815,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.107,
+        "bench_depth_delta_ppg": -1.119,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -830,8 +830,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -840,8 +840,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -850,8 +850,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -860,8 +860,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -870,8 +870,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -880,8 +880,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -890,8 +890,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -900,8 +900,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -913,7 +913,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 5.431,
+        "projection_ppg": 5.419,
         "team": "WAS",
         "warnings": [
           "No sourced usage",
@@ -924,8 +924,8 @@
         "bench_depth_delta_ppg": -1.175,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -936,8 +936,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -946,8 +946,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -956,8 +956,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -966,8 +966,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -976,8 +976,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -986,8 +986,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -996,8 +996,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1006,8 +1006,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1031,8 +1031,8 @@
         "bench_depth_delta_ppg": -1.387,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1043,8 +1043,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1053,8 +1053,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1063,8 +1063,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1073,8 +1073,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1083,8 +1083,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1093,8 +1093,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1103,8 +1103,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1113,8 +1113,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1138,8 +1138,8 @@
         "bench_depth_delta_ppg": -2.12,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1150,8 +1150,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1160,8 +1160,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1170,8 +1170,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1180,8 +1180,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1190,8 +1190,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1200,8 +1200,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1210,8 +1210,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1220,8 +1220,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1242,11 +1242,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -2.194,
+        "bench_depth_delta_ppg": -2.192,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1257,8 +1257,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1267,8 +1267,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1277,8 +1277,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1287,8 +1287,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1297,8 +1297,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1307,8 +1307,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1317,8 +1317,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1327,8 +1327,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1340,7 +1340,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "DEF",
-        "projection_ppg": 4.344,
+        "projection_ppg": 4.346,
         "team": "NYJ",
         "warnings": [
           "No sourced usage",
@@ -1354,8 +1354,8 @@
         "bench_depth_delta_ppg": 0.405,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1366,8 +1366,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1376,8 +1376,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1386,8 +1386,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1396,8 +1396,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1406,8 +1406,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1416,8 +1416,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1426,8 +1426,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1436,8 +1436,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1460,8 +1460,8 @@
         "bench_depth_delta_ppg": 0.278,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1472,8 +1472,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1482,8 +1482,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1492,8 +1492,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1502,8 +1502,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1512,8 +1512,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1522,8 +1522,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1532,8 +1532,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1542,8 +1542,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1567,8 +1567,8 @@
         "bench_depth_delta_ppg": -0.398,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1579,8 +1579,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1589,8 +1589,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1599,8 +1599,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1609,8 +1609,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1619,8 +1619,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1629,8 +1629,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1639,8 +1639,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1649,8 +1649,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1674,8 +1674,8 @@
         "bench_depth_delta_ppg": -0.624,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1686,8 +1686,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1696,8 +1696,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1706,8 +1706,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1716,8 +1716,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1726,8 +1726,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1736,8 +1736,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1746,8 +1746,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1756,8 +1756,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1780,8 +1780,8 @@
         "bench_depth_delta_ppg": -1.029,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1792,8 +1792,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1802,8 +1802,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1812,8 +1812,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1822,8 +1822,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1832,8 +1832,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1842,8 +1842,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1852,8 +1852,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1862,8 +1862,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1887,8 +1887,8 @@
         "bench_depth_delta_ppg": -1.119,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -1899,8 +1899,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -1909,8 +1909,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -1919,8 +1919,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -1929,8 +1929,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -1939,8 +1939,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -1949,8 +1949,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -1959,8 +1959,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -1969,8 +1969,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -1993,11 +1993,11 @@
     ],
     "QB": [
       {
-        "bench_depth_delta_ppg": 5.974,
+        "bench_depth_delta_ppg": 5.966,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2008,8 +2008,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2018,8 +2018,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2028,8 +2028,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2038,8 +2038,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2048,8 +2048,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2058,8 +2058,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2068,8 +2068,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2078,8 +2078,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2091,7 +2091,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "QB",
-        "projection_ppg": 12.512,
+        "projection_ppg": 12.504,
         "team": "TB",
         "warnings": [
           "Availability status: questionable",
@@ -2102,11 +2102,11 @@
     ],
     "RB": [
       {
-        "bench_depth_delta_ppg": -0.459,
+        "bench_depth_delta_ppg": -0.457,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2117,8 +2117,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2127,8 +2127,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2137,8 +2137,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2147,8 +2147,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2157,8 +2157,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2167,8 +2167,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2177,8 +2177,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2187,8 +2187,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2200,7 +2200,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 6.079,
+        "projection_ppg": 6.081,
         "team": "CHI",
         "warnings": [
           "Availability status: out",
@@ -2212,8 +2212,8 @@
         "bench_depth_delta_ppg": -0.977,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2224,8 +2224,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2234,8 +2234,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2244,8 +2244,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2254,8 +2254,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2264,8 +2264,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2274,8 +2274,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2284,8 +2284,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2294,8 +2294,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2315,11 +2315,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.225,
+        "bench_depth_delta_ppg": -1.216,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2330,8 +2330,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2340,8 +2340,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2350,8 +2350,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2360,8 +2360,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2370,8 +2370,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2380,8 +2380,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2390,8 +2390,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2400,8 +2400,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2413,7 +2413,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 5.313,
+        "projection_ppg": 5.322,
         "team": "CIN",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
@@ -2423,8 +2423,8 @@
         "bench_depth_delta_ppg": -1.471,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2435,8 +2435,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2445,8 +2445,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2455,8 +2455,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2465,8 +2465,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2475,8 +2475,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2485,8 +2485,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2495,8 +2495,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2505,8 +2505,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2527,11 +2527,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.849,
+        "bench_depth_delta_ppg": -1.85,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2542,8 +2542,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2552,8 +2552,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2562,8 +2562,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2572,8 +2572,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2582,8 +2582,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2592,8 +2592,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2602,8 +2602,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2612,8 +2612,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2625,7 +2625,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 4.689,
+        "projection_ppg": 4.688,
         "team": "LAC",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
@@ -2635,8 +2635,8 @@
         "bench_depth_delta_ppg": -2.687,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2647,8 +2647,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2657,8 +2657,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2667,8 +2667,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2677,8 +2677,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2687,8 +2687,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2697,8 +2697,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2707,8 +2707,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2717,8 +2717,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2738,11 +2738,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -3.282,
+        "bench_depth_delta_ppg": -3.779,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2753,8 +2753,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2763,8 +2763,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2773,8 +2773,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2783,8 +2783,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2793,8 +2793,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2803,8 +2803,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2813,8 +2813,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2823,8 +2823,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2836,7 +2836,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 3.256,
+        "projection_ppg": 2.759,
         "team": "ARI",
         "warnings": [
           "Partial projection coverage",
@@ -2847,8 +2847,8 @@
         "bench_depth_delta_ppg": -4.576,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2859,8 +2859,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2869,8 +2869,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2879,8 +2879,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2889,8 +2889,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -2899,8 +2899,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -2909,8 +2909,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -2919,8 +2919,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -2929,8 +2929,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -2954,8 +2954,8 @@
         "bench_depth_delta_ppg": -5.481,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -2966,8 +2966,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -2976,8 +2976,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -2986,8 +2986,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -2996,8 +2996,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3006,8 +3006,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3016,8 +3016,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3026,8 +3026,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3036,8 +3036,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3060,8 +3060,8 @@
         "bench_depth_delta_ppg": -5.674,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3072,8 +3072,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3082,8 +3082,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3092,8 +3092,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3102,8 +3102,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3112,8 +3112,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3122,8 +3122,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3132,8 +3132,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3142,8 +3142,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3166,8 +3166,8 @@
         "bench_depth_delta_ppg": -5.715,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3178,8 +3178,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3188,8 +3188,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3198,8 +3198,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3208,8 +3208,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3218,8 +3218,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3228,8 +3228,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3238,8 +3238,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3248,8 +3248,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3271,11 +3271,11 @@
     ],
     "TE": [
       {
-        "bench_depth_delta_ppg": 0.393,
+        "bench_depth_delta_ppg": 0.383,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3286,8 +3286,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3296,8 +3296,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3306,8 +3306,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3316,8 +3316,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3326,8 +3326,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3336,8 +3336,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3346,8 +3346,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3356,8 +3356,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3369,7 +3369,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 6.931,
+        "projection_ppg": 6.921,
         "team": "WAS",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
@@ -3379,8 +3379,8 @@
         "bench_depth_delta_ppg": -0.009,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3391,8 +3391,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3401,8 +3401,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3411,8 +3411,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3421,8 +3421,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3431,8 +3431,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3441,8 +3441,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3451,8 +3451,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3461,8 +3461,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3481,11 +3481,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -1.699,
+        "bench_depth_delta_ppg": -1.692,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3496,8 +3496,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3506,8 +3506,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3516,8 +3516,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3526,8 +3526,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3536,8 +3536,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3546,8 +3546,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3556,8 +3556,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3566,8 +3566,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3579,18 +3579,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 4.839,
+        "projection_ppg": 4.846,
         "team": "NO",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
         ]
       },
       {
-        "bench_depth_delta_ppg": -3.07,
+        "bench_depth_delta_ppg": -3.071,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3601,8 +3601,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3611,8 +3611,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3621,8 +3621,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3631,8 +3631,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3641,8 +3641,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3651,8 +3651,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3661,8 +3661,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3671,8 +3671,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3684,7 +3684,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "TE",
-        "projection_ppg": 3.468,
+        "projection_ppg": 3.467,
         "team": "LAR",
         "warnings": [
           "No sourced usage",
@@ -3697,8 +3697,8 @@
         "bench_depth_delta_ppg": -3.337,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3709,8 +3709,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3719,8 +3719,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3729,8 +3729,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3739,8 +3739,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3749,8 +3749,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3759,8 +3759,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3769,8 +3769,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3779,8 +3779,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3802,11 +3802,11 @@
     ],
     "WR": [
       {
-        "bench_depth_delta_ppg": -0.039,
+        "bench_depth_delta_ppg": -0.047,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3817,8 +3817,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3827,8 +3827,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3837,8 +3837,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3847,8 +3847,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3857,8 +3857,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3867,8 +3867,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3877,8 +3877,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3887,8 +3887,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -3900,18 +3900,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 6.499,
+        "projection_ppg": 6.491,
         "team": "BUF",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.502,
+        "bench_depth_delta_ppg": -0.504,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -3922,8 +3922,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -3932,8 +3932,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -3942,8 +3942,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -3952,8 +3952,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -3962,8 +3962,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -3972,8 +3972,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -3982,8 +3982,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -3992,8 +3992,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4005,18 +4005,18 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 6.036,
+        "projection_ppg": 6.034,
         "team": "LAC",
         "warnings": [
           "Proposed cut is on fantasy reserve; roster rules require review"
         ]
       },
       {
-        "bench_depth_delta_ppg": -0.954,
+        "bench_depth_delta_ppg": -0.956,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4027,8 +4027,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4037,8 +4037,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4047,8 +4047,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4057,8 +4057,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4067,8 +4067,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4077,8 +4077,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4087,8 +4087,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4097,8 +4097,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4110,7 +4110,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 5.584,
+        "projection_ppg": 5.582,
         "team": "CHI",
         "warnings": [
           "Partial projection coverage",
@@ -4121,8 +4121,8 @@
         "bench_depth_delta_ppg": -1.22,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4133,8 +4133,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4143,8 +4143,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4153,8 +4153,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4163,8 +4163,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4173,8 +4173,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4183,8 +4183,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4193,8 +4193,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4203,8 +4203,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4226,8 +4226,8 @@
         "bench_depth_delta_ppg": -1.977,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4238,8 +4238,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4248,8 +4248,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4258,8 +4258,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4268,8 +4268,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4278,8 +4278,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4288,8 +4288,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4298,8 +4298,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4308,8 +4308,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4332,8 +4332,8 @@
         "bench_depth_delta_ppg": -2.056,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4344,8 +4344,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4354,8 +4354,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4364,8 +4364,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4374,8 +4374,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4384,8 +4384,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4394,8 +4394,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4404,8 +4404,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4414,8 +4414,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4439,8 +4439,8 @@
         "bench_depth_delta_ppg": -2.226,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4451,8 +4451,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4461,8 +4461,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4471,8 +4471,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4481,8 +4481,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4491,8 +4491,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4501,8 +4501,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4511,8 +4511,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4521,8 +4521,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4545,8 +4545,8 @@
         "bench_depth_delta_ppg": -2.28,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4557,8 +4557,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4567,8 +4567,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4577,8 +4577,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4587,8 +4587,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4597,8 +4597,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4607,8 +4607,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4617,8 +4617,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4627,8 +4627,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4652,8 +4652,8 @@
         "bench_depth_delta_ppg": -2.701,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4664,8 +4664,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4674,8 +4674,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4684,8 +4684,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4694,8 +4694,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4704,8 +4704,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4714,8 +4714,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4724,8 +4724,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4734,8 +4734,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4758,8 +4758,8 @@
         "bench_depth_delta_ppg": -2.738,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4770,8 +4770,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4780,8 +4780,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4790,8 +4790,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4800,8 +4800,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4810,8 +4810,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4820,8 +4820,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4830,8 +4830,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4840,8 +4840,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4865,8 +4865,8 @@
         "bench_depth_delta_ppg": -2.879,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4877,8 +4877,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4887,8 +4887,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -4897,8 +4897,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -4907,8 +4907,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -4917,8 +4917,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -4927,8 +4927,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -4937,8 +4937,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -4947,8 +4947,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -4971,8 +4971,8 @@
         "bench_depth_delta_ppg": -3.084,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -4983,8 +4983,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -4993,8 +4993,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5003,8 +5003,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5013,8 +5013,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5023,8 +5023,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5033,8 +5033,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5043,8 +5043,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5053,8 +5053,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5076,8 +5076,8 @@
         "bench_depth_delta_ppg": -3.832,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -5088,8 +5088,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -5098,8 +5098,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5108,8 +5108,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5118,8 +5118,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5128,8 +5128,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5138,8 +5138,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5148,8 +5148,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5158,8 +5158,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5178,11 +5178,11 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -4.197,
+        "bench_depth_delta_ppg": -4.206,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -5193,8 +5193,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -5203,8 +5203,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5213,8 +5213,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5223,8 +5223,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5233,8 +5233,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5243,8 +5243,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5253,8 +5253,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5263,8 +5263,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5276,7 +5276,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 2.341,
+        "projection_ppg": 2.332,
         "team": "LAR",
         "warnings": [
           "No sourced usage",
@@ -5289,8 +5289,8 @@
         "bench_depth_delta_ppg": -4.65,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -5301,8 +5301,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -5311,8 +5311,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5321,8 +5321,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5331,8 +5331,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5341,8 +5341,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5351,8 +5351,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5361,8 +5361,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5371,8 +5371,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5395,8 +5395,8 @@
         "bench_depth_delta_ppg": -5.58,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -5407,8 +5407,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -5417,8 +5417,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5427,8 +5427,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5437,8 +5437,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5447,8 +5447,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5457,8 +5457,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5467,8 +5467,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5477,8 +5477,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5500,8 +5500,8 @@
         "bench_depth_delta_ppg": -5.647,
         "best_candidate_drop": {
           "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
+          "after_ppg": 126.239,
+          "before_ppg": 126.239,
           "displaced_starters": [],
           "drop": "Pat Bryant",
           "drop_id": "12492",
@@ -5512,8 +5512,8 @@
         "candidate_drop_options": [
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Pat Bryant",
             "drop_id": "12492",
@@ -5522,8 +5522,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Caleb Douglas",
             "drop_id": "13296",
@@ -5532,8 +5532,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Antonio Williams",
             "drop_id": "13301",
@@ -5542,8 +5542,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Kaelon Black",
             "drop_id": "13414",
@@ -5552,8 +5552,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Seth McGowan",
             "drop_id": "13424",
@@ -5562,8 +5562,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
@@ -5572,8 +5572,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Deebo Samuel Sr.",
             "drop_id": "5872",
@@ -5582,8 +5582,8 @@
           },
           {
             "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
+            "after_ppg": 126.239,
+            "before_ppg": 126.239,
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
@@ -5603,7 +5603,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-06T18:52:12.369439+00:00",
+  "generated_at_utc": "2026-11-06T19:52:54.654591+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5611,6 +5611,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-06T18:52:07.365192+00:00",
-  "source_projection_date": "2026-11-06T13:45:26.306900+00:00"
+  "sleeper_snapshot_utc": "2026-11-06T19:52:49.142040+00:00",
+  "source_projection_date": "2026-11-06T19:30:15.517596+00:00"
 }

@@ -2,11 +2,11 @@
   "current_roster_reference": {
     "DEF": {
       "name": "Minnesota Vikings",
-      "ppg": 6.879
+      "ppg": 6.877
     },
     "K": {
       "name": "Will Reichard",
-      "ppg": 7.169
+      "ppg": 7.168
     },
     "QB": {
       "name": "C.J. Stroud",
@@ -25,7 +25,7 @@
       "ppg": 1.237
     }
   },
-  "generated_at_utc": "2026-11-06T18:52:12.272898+00:00",
+  "generated_at_utc": "2026-11-06T19:52:54.552529+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -44,7 +44,7 @@
         "ppg": 6.61,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -0.27,
         "screen_only": true,
@@ -66,7 +66,7 @@
         "ppg": 6.02,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -0.86,
         "screen_only": true,
@@ -88,7 +88,7 @@
         "ppg": 6.0,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -0.88,
         "screen_only": true,
@@ -110,9 +110,9 @@
         "ppg": 5.91,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
-        "same_position_uplift_ppg": -0.97,
+        "same_position_uplift_ppg": -0.96,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -132,7 +132,7 @@
         "ppg": 5.89,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -0.99,
         "screen_only": true,
@@ -154,9 +154,9 @@
         "ppg": 5.87,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.01,
+        "same_position_uplift_ppg": -1.0,
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
@@ -176,7 +176,7 @@
         "ppg": 5.74,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -1.14,
         "screen_only": true,
@@ -195,12 +195,12 @@
           "targets_per_game": null
         },
         "name": "Washington Commanders",
-        "ppg": 5.43,
+        "ppg": 5.42,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.45,
+        "same_position_uplift_ppg": -1.46,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -220,9 +220,9 @@
         "ppg": 5.36,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.52,
+        "same_position_uplift_ppg": -1.51,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -242,7 +242,7 @@
         "ppg": 5.15,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -1.73,
         "screen_only": true,
@@ -264,7 +264,7 @@
         "ppg": 4.42,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -2.46,
         "screen_only": true,
@@ -283,10 +283,10 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 4.34,
+        "ppg": 4.35,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 6.879
+          "ppg": 6.877
         },
         "same_position_uplift_ppg": -2.53,
         "screen_only": true,
@@ -310,7 +310,7 @@
         "ppg": 6.94,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -0.23,
         "screen_only": true,
@@ -332,7 +332,7 @@
         "ppg": 6.82,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -0.35,
         "screen_only": true,
@@ -354,7 +354,7 @@
         "ppg": 6.14,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -1.03,
         "screen_only": true,
@@ -376,7 +376,7 @@
         "ppg": 5.91,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -1.25,
         "screen_only": true,
@@ -398,7 +398,7 @@
         "ppg": 5.51,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -1.66,
         "screen_only": true,
@@ -420,7 +420,7 @@
         "ppg": 5.42,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.169
+          "ppg": 7.168
         },
         "same_position_uplift_ppg": -1.75,
         "screen_only": true,
@@ -446,7 +446,7 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 12.51,
+        "ppg": 12.5,
         "replacement_reference": {
           "name": "C.J. Stroud",
           "ppg": 16.268
@@ -528,12 +528,12 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.31,
+        "ppg": 5.32,
         "replacement_reference": {
           "name": "Seth McGowan",
           "ppg": 4.124
         },
-        "same_position_uplift_ppg": 1.19,
+        "same_position_uplift_ppg": 1.2,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -588,7 +588,7 @@
           "name": "Seth McGowan",
           "ppg": 4.124
         },
-        "same_position_uplift_ppg": 0.57,
+        "same_position_uplift_ppg": 0.56,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
@@ -622,22 +622,23 @@
         "audit": {
           "carries_per_game": null,
           "flags": [
+            "projection_weeks_partial",
             "carries_missing"
           ],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
+          "projection_coverage": 0.778,
           "recent_snap_pct": 39.7,
           "snap_trend_3_appearances_pp": -22.0,
           "targets_per_game": null
         },
         "name": "Zonovan Knight",
-        "ppg": 3.26,
+        "ppg": 2.76,
         "replacement_reference": {
           "name": "Seth McGowan",
           "ppg": 4.124
         },
-        "same_position_uplift_ppg": -0.87,
+        "same_position_uplift_ppg": -1.36,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -756,12 +757,12 @@
           "targets_per_game": 5.67
         },
         "name": "Chig Okonkwo",
-        "ppg": 6.93,
+        "ppg": 6.92,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.48
         },
-        "same_position_uplift_ppg": 1.45,
+        "same_position_uplift_ppg": 1.44,
         "screen_only": true,
         "sleeper_id": "8210",
         "team": "WAS"
@@ -806,12 +807,12 @@
           "targets_per_game": 1.33
         },
         "name": "Noah Fant",
-        "ppg": 4.84,
+        "ppg": 4.85,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.48
         },
-        "same_position_uplift_ppg": -0.64,
+        "same_position_uplift_ppg": -0.63,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -886,12 +887,12 @@
           "targets_per_game": 3.67
         },
         "name": "Keon Coleman",
-        "ppg": 6.5,
+        "ppg": 6.49,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 1.237
         },
-        "same_position_uplift_ppg": 5.26,
+        "same_position_uplift_ppg": 5.25,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -911,7 +912,7 @@
           "targets_per_game": 3.0
         },
         "name": "Quentin Johnston",
-        "ppg": 6.04,
+        "ppg": 6.03,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 1.237
@@ -938,7 +939,7 @@
           "name": "Christian Kirk",
           "ppg": 1.237
         },
-        "same_position_uplift_ppg": 4.35,
+        "same_position_uplift_ppg": 4.34,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -1212,12 +1213,12 @@
           "targets_per_game": null
         },
         "name": "Konata Mumpfield",
-        "ppg": 2.34,
+        "ppg": 2.33,
         "replacement_reference": {
           "name": "Christian Kirk",
           "ppg": 1.237
         },
-        "same_position_uplift_ppg": 1.1,
+        "same_position_uplift_ppg": 1.09,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1299,5 +1300,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-06T18:52:07.365192+00:00"
+  "snapshot_utc": "2026-11-06T19:52:49.142040+00:00"
 }

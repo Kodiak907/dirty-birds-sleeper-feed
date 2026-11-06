@@ -1,6 +1,6 @@
 {
   "added_starters": [
-    "Kaelon Black"
+    "Caleb Douglas"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
@@ -8,13 +8,13 @@
       "A.J. Brown",
       "Deebo Samuel Sr."
     ],
-    "ppg": 134.34,
+    "ppg": 134.89,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 21.15
+        "ppg": 21.0
       },
       {
         "id": "4034",
@@ -26,7 +26,7 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.15
+        "ppg": 17.05
       },
       {
         "id": "9488",
@@ -44,19 +44,19 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.43
+        "ppg": 9.39
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.22
+        "ppg": 7.21
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.21
+        "ppg": 6.19
       },
       {
         "id": "13345",
@@ -65,33 +65,33 @@
         "ppg": 13.19
       },
       {
-        "id": "13296",
-        "name": "Caleb Douglas",
+        "id": "13301",
+        "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 7.04
+        "ppg": 7.91
       }
     ]
   },
-  "difference_ppg": -6.95,
+  "difference_ppg": -6.15,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "4950",
     "5872"
   ],
-  "generated_at_utc": "2026-11-06T18:52:19.241337+00:00",
+  "generated_at_utc": "2026-11-06T19:53:02.357510+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown"
     ],
-    "ppg": 127.39,
+    "ppg": 128.74,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 21.15
+        "ppg": 21.0
       },
       {
         "id": "4034",
@@ -103,7 +103,7 @@
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.15
+        "ppg": 17.05
       },
       {
         "id": "9488",
@@ -121,31 +121,31 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.43
+        "ppg": 9.39
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.22
+        "ppg": 7.21
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.21
+        "ppg": 6.19
+      },
+      {
+        "id": "13301",
+        "name": "Antonio Williams",
+        "position": "WR",
+        "ppg": 7.91
       },
       {
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
         "ppg": 7.04
-      },
-      {
-        "id": "13414",
-        "name": "Kaelon Black",
-        "position": "RB",
-        "ppg": 6.24
       }
     ]
   },
@@ -333,8 +333,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-06T18:52:07.365192+00:00",
-  "source_availability_generated_at_utc": "2026-11-06T18:52:16.900505+00:00",
+  "snapshot_utc": "2026-11-06T19:52:49.142040+00:00",
+  "source_availability_generated_at_utc": "2026-11-06T19:52:59.506828+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
