@@ -1027,6 +1027,28 @@ async function ffo621PlayerWeekLogs(week,env){
  * Sleeper fantasy points. Only one uniquely identified provider kicker from
  * the requested team can contribute per completed game.
  */
+/* PFO 6.24: service bindings can ignore a fetch signal. Enforce a hard
+ * short deadline for both direct MSF and internal gateway requests; a
+ * detached late response cannot turn a source failure into a forecast.
+ */
+async function ffo624KickerBoundedFetch(endpoint,env,ms){
+ const signal=AbortSignal.timeout(ms);
+ let rejectDeadline;
+ const deadline=new Promise((_,reject)=>{
+  rejectDeadline=()=>reject(Error('kicker_provider_deadline_exceeded'));
+  signal.addEventListener('abort',rejectDeadline,{once:true});
+ });
+ try{
+  const task=env.MSF_API_KEY
+   ?fetch(endpoint,{method:'GET',headers:{
+     authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'
+    },signal})
+   :env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET',signal}));
+  return await Promise.race([task,deadline]);
+ }finally{
+  signal.removeEventListener('abort',rejectDeadline);
+ }
+}
 const ffo623BoxCache=new Map(),ffo623BoxPending=new Map();
 function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
  const box=payload?.gameboxscore??payload?.data?.gameboxscore??payload;
@@ -1091,11 +1113,9 @@ async function ffo623KickerBoxscore(fixture,env){
  const task=(async()=>{
   const endpoint=MSF_ROOT+'/2026-regular/games/'+encodeURIComponent(id)+'/boxscore.json';
   let response;
-  try{response=env.MSF_API_KEY
-   ?await fetch(endpoint,{headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),
-    accept:'application/json'},signal:AbortSignal.timeout(8500)})
-   :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
-  }catch{throw Error('kicker_boxscore_fetch_unreachable')}
+  try{response=await ffo624KickerBoundedFetch(endpoint,env,6500)}
+  catch(err){throw Error(err?.message==='kicker_provider_deadline_exceeded'
+   ?'kicker_boxscore_provider_timeout':'kicker_boxscore_fetch_unreachable')}
   if(!response.ok)throw Error('kicker_boxscore_http_'+response.status);
   const size=Number(response.headers.get('content-length')||0);
   if(size>1500000)throw Error('kicker_boxscore_response_too_large');
@@ -1116,11 +1136,9 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  let response;
  try{
   const endpoint=MSF_ROOT+'/2026-regular/games.json?team='+encodeURIComponent(team);
-  response=env.MSF_API_KEY
-   ?await fetch(endpoint,{headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),
-    accept:'application/json'},signal:AbortSignal.timeout(9000)})
-   :await env.GAMECAST_INTERNAL.fetch(new Request(endpoint,{method:'GET'}));
- }catch{return {available:false,error:'completed_game_schedule_unreachable'}}
+  response=await ffo624KickerBoundedFetch(endpoint,env,6500);
+ }catch(err){return {available:false,error:err?.message==='kicker_provider_deadline_exceeded'
+  ?'completed_game_schedule_provider_timeout':'completed_game_schedule_unreachable'}}
  if(!response.ok)return {available:false,error:'completed_game_schedule_http_'+response.status};
  const json=await response.json();
  if(json?.available===false||json?.error)return {available:false,error:'game_schedule_gateway_unavailable'};
@@ -1137,7 +1155,7 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  }).filter(g=>g.id&&/^[0-9]{1,12}$/.test(g.id)&&Number.isInteger(g.week)&&g.week>0&&
   g.week<targetWeek&&['COMPLETED','FINAL','FINAL_OVERTIME'].includes(g.status)&&
   (g.home===norm(team)||g.away===norm(team)))
- .sort((a,b)=>b.week-a.week).slice(0,5);
+ .sort((a,b)=>b.week-a.week).slice(0,4);
  if(fixtures.length<2)return {available:false,error:'insufficient_completed_team_games'};
  const seen=new Set(),rows=[],errors=[];
  for(let start=0;start<fixtures.length&&rows.length<2;start+=2){
@@ -1148,7 +1166,7 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
    if(found[i].status!=='fulfilled'){
     const reason=String(found[i].reason?.message||'kicker_boxscore_unavailable');
     errors.push(reason.slice(0,75));
-    if(/http_(400|401|403|429|502|503)/.test(reason))stopped=true;
+    if(/http_(400|401|403|429|502|503|504)|provider_timeout/.test(reason))stopped=true;
     continue;
    }
    const out=ffo623KickerBoxRow(found[i].value,batch[i],team,name,playerId,checkedAt);
