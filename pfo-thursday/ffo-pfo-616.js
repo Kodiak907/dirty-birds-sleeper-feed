@@ -63,7 +63,19 @@
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
    const projected=typeof pfo52Points==='function'?pfo52Points(id,typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)):null;
    const side=own.includes(id)?'Our team':'Opponent';
-   if(projected?.points!=null){lines.push(side+' · '+name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));continue}
+   if(projected?.points!=null){
+   lines.push(side+' · '+name+': '+Number(projected.points).toFixed(2)+' FFL points'+(projected.partial?' · partial MSF evidence':''));
+   if(position==='DEF'){
+    const c=defense.get(team)?.coverage||null;
+    if(c){
+     const observed=Array.isArray(c.scoring_categories)?c.scoring_categories:[];
+     const unresolved=Array.isArray(c.unresolved_scoring_categories)?c.unresolved_scoring_categories:[];
+     lines.push('  D/ST observed fields: '+(observed.length?observed.join(', '):'none')+' · known gaps: '+(unresolved.length?unresolved.join(', '):'none'));
+     lines.push('  D/ST evidence: '+Number(c.points_allowed_games||0)+' PA games; '+Number(c.three_and_out_games||0)+' three-and-out games; partial/uncertified');
+    }
+   }
+   continue;
+  }
    let reason=position==='DEF'?(pending.has(team)?'fetching_team_defense':failures.get(team)||(!defense.has(team)?'awaiting_team_defense':'no_verified_scoring_categories_or_week_schedule')):
     (playerPending.has(id)?(position==='K'?'checking_kicker_boxscores':'fetching_player_logs'):playerFailures.get(id)||recoveryStatus.get(id)||projected?.source||'awaiting_verified_stats');
    lines.push(side+' · '+name+': unavailable · '+reason);
