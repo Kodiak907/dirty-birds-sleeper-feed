@@ -45,10 +45,32 @@ export function validateAndCertifyMSF({game,player,rules,componentProof,
 }
 export async function persistVerifiedMSFFinal(db,{game,certificate,serverNow=new Date()}={}){
  if(!db?.prepare)return {status:'blocked',reason:'separate_accuracy_database_not_configured'};
- if(!certificate?.certified||certificate.provider!=='MSF'||
-  certificate.rulesVersion!==FFL_RULES_VERSION||
-  certificate.fantasyScoreFromSleeper!==false||
-  !Number.isFinite(certificate.points)||!trustedFixture({
+ const gameComplete=game?.providerGameIdVerified===true&&
+  game?.scheduleWeekVerified===true&&game?.finalScoreVerified===true&&
+  game?.fullPlayCoverageVerified===true&&game?.finalBoxScoreVerified===true&&
+  game?.playerGameLogsVerified===true&&game?.allScoringEventsReconciled===true&&
+  game?.statCorrectionsChecked===true&&game?.scheduleGamesComplete===true;
+ const certificateComplete=certificate?.certified===true&&
+  certificate.provider==='MSF'&&certificate.rulesVersion===FFL_RULES_VERSION&&
+  certificate.fantasyScoreFromSleeper===false&&
+  Number.isFinite(certificate.points)&&
+  certificate.playerIdentityVerified===true&&
+  certificate.finalBoxScoreVerified===true&&
+  certificate.statCategoriesComplete===true&&
+  certificate.eventBonusesReconciled===true&&
+  certificate.statCorrectionsChecked===true&&
+  certificate.finalPlayerScoreRecomputed===true&&
+  certificate.gameId===game?.id&&certificate.week===game?.week&&
+  ['QB','RB','WR','TE','K','DEF'].includes(certificate.position)&&
+  typeof certificate.playerId==='string'&&/^[A-Za-z0-9_-]{1,45}$/.test(certificate.playerId)&&
+  Array.isArray(certificate.components)&&
+  certificate.components.length>0&&
+  certificate.requiredCategoryCount===certificate.verifiedCategoryCount&&
+  certificate.verifiedCategoryCount===certificate.components.length&&
+  certificate.components.every(c=>c&&typeof c.category==='string'&&
+   typeof c.points==='number'&&Number.isFinite(c.points)&&
+   ['msf_final_player_log','msf_reconciled_pbp','msf_final_stat','msf_verified_team_log'].includes(c.source));
+ if(!certificateComplete||!gameComplete||!trustedFixture({
     game,rules:{league:'FFL',season:2026,version:FFL_RULES_VERSION}
   }))return {status:'withheld',reason:'source_certification_missing_or_mismatched'};
  const time=serverNow instanceof Date&&Number.isFinite(serverNow.getTime())?
