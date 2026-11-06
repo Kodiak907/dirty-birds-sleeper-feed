@@ -110,3 +110,10 @@ test('kicker projections remain partial even with 10/10 positional estimates',()
  assert.match(html,/ffo-pfo-597\.js\?v=627/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
+
+test('Overview badge derives the same build revision as Data Health instead of carrying an obsolete hardcoded version',()=>{
+ assert.match(client,/const auditTitle='PFO 6\.27 · kicker scoring-play and data-quality audit'/);
+ assert.match(client,/badge\.textContent=auditTitle\.split\(' · '\)\[0\]\+' · PRIVATE PREVIEW'/);
+ assert.match(html,/PFO · PRIVATE PREVIEW/);
+ assert.doesNotMatch(html,/5\.9\.7 COACH REVIEW|PFO 6\.26 · PRIVATE PREVIEW/);
+});
