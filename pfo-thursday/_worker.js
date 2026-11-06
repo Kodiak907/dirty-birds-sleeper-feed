@@ -618,6 +618,12 @@ function ffo598NormalizeSeason(payload,checkedAt){
   // fields (fg1_19Pct etc.) are NEVER treated as made kicks.
   const fgPoints=number(get(raw,'extraPointAttempts.fgAndXpPts'));
   const xpMade=number(get(raw,'extraPointAttempts.xpMade'));
+  const xpAttempts=number(get(raw,'extraPointAttempts.xpAtt'));
+  // MSF confirms xpAtt/xpMade as attempts and makes. Blocked kicks count as
+  // misses in the recorded FFL settings, so att - made includes those blocks.
+  if(totals.xpmiss==null&&xpMade!==null&&xpAttempts!==null&&
+     Number.isInteger(xpAttempts)&&Number.isInteger(xpMade)&&
+     xpAttempts>=xpMade&&xpMade>=0)totals.xpmiss=xpAttempts-xpMade;
   if(totals.fgm==null&&fgPoints!==null&&xpMade!==null&&
      Number.isInteger(fgPoints)&&Number.isInteger(xpMade)&&
      fgPoints>=xpMade&&xpMade>=0&&
@@ -1165,7 +1171,7 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
  }
  // FFL kicker scoring requires exact FG distances or independently observed
  // extra points. Generic field goals alone are insufficient.
- const allowed=new Set(['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59',
+ const allowed=new Set(['fgm','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59',
   'fgm_60p','xpm','xpmiss','fgmiss']);
  if(!Object.keys(combined).some(k=>allowed.has(k)))
   return {available:false,error:'no_supported_ffl_kicker_scoring_fields',
