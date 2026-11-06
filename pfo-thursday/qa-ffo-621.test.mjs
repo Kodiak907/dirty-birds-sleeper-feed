@@ -90,10 +90,10 @@ test('weekly fallback never treats unverified team or guessed player id as a sco
 });
 test('client supplies target week and retains partial independent scoring boundaries',()=>{
  assert.match(client,/&week=/);
- assert.match(client,/PFO 6\.26 · updated FFL scoring and verified kicker recovery/);
+ assert.match(client,/PFO 6\.27 · kicker scoring-play and data-quality audit/);
  assert.match(worker,/week\/'\+week\+'\/player_gamelogs\.json/);
  assert.match(worker,/ffo621PlayerWeekCache/);
  assert.match(worker,/comIdentity\(req,env\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=626/);
+ assert.match(html,/ffo-pfo-616\.js\?v=627/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
