@@ -11773,5 +11773,38 @@
       "HOU"
     ],
     "roster_id": 7
+  },
+  {
+    "detected_at_utc": "2026-11-06T14:16:13.593885+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "13424": 1
+      },
+      "consenter_ids": [
+        1
+      ],
+      "created": 1793922187833,
+      "creator": "1399093464662073344",
+      "draft_picks": [],
+      "drops": null,
+      "leg": 9,
+      "metadata": {
+        "notes": "Unfortunately, your roster will have too many players after this transaction."
+      },
+      "roster_ids": [
+        1
+      ],
+      "settings": {
+        "seq": 0,
+        "waiver_bid": 7
+      },
+      "status": "failed",
+      "status_updated": 1793972804334,
+      "transaction_id": "1424216517901291520",
+      "type": "waiver",
+      "waiver_budget": []
+    },
+    "transaction_id": "1424216517901291520"
   }
 ]

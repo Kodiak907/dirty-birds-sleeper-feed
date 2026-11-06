@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-06T13:00:30.431515+00:00",
+  "fetched_at_utc": "2026-11-06T14:16:13.593885+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -20635,6 +20635,34 @@
         "status_updated": 1793922328107,
         "transaction_id": "1424217106257399808",
         "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "13424": 1
+        },
+        "consenter_ids": [
+          1
+        ],
+        "created": 1793922187833,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 9,
+        "metadata": {
+          "notes": "Unfortunately, your roster will have too many players after this transaction."
+        },
+        "roster_ids": [
+          1
+        ],
+        "settings": {
+          "seq": 0,
+          "waiver_bid": 7
+        },
+        "status": "failed",
+        "status_updated": 1793972804334,
+        "transaction_id": "1424216517901291520",
+        "type": "waiver",
         "waiver_budget": []
       },
       {

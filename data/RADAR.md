@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-06T13:00:34.983990+00:00
-Sleeper snapshot: 2026-11-06T13:00:30.431515+00:00
+Generated: 2026-11-06T14:16:19.479799+00:00
+Sleeper snapshot: 2026-11-06T14:16:13.593885+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 0 completed, 0 pending/processing, 1 failed.
+
+- **NEW** · transaction `1424216517901291520` · WAIVER · FAILED · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | FAAB bid: $7
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-06T14:16:19.479799+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | FAAB bid: $7
 - 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
 - 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Chris Rodriguez Jr. → JA’MARRTRIX (#7) | Dropped: Kyle Monangai → JA’MARRTRIX (#7)
 - 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Chris Rodriguez Jr. → JA’MARRTRIX (#7)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · To Infinity and Bijan (#9) | Added: Mike Washington Jr. → To Infinity and Bijan (#9) | Dropped: Kendrick Bourne → To Infinity and Bijan (#9) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Malik Willis → CREAM MACHINE  (#2) | FAAB bid: $4
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Devin Singletary → CREAM MACHINE  (#2) | Dropped: Emanuel Wilson → CREAM MACHINE  (#2) | FAAB bid: $0
 
 ## Important limits
 
