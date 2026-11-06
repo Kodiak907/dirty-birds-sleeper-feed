@@ -125,7 +125,7 @@ test('same week independent FFL score model gets licensed team defense with expl
  assert.match(lib,/pfo50Indexed=copy/);
  assert.match(lib,/scoreFrozen/);
  assert.match(lib,/coverage:/);
- assert.match(health,/Partial D\/ST estimates/);
+ assert.match(health,/Partial scoring-category estimates/);
  assert.match(html,/ffo-pfo-616\.js\?v=627/);
 });
 
