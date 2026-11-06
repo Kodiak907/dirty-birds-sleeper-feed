@@ -2,9 +2,9 @@
   "schema": "FFO_SCORING_RULES_V1",
   "league": "FFL",
   "season": 2026,
-  "version": "2026-11-05-commissioner-approved-rules-v2",
+  "version": "2026-11-05-ffl-restored-bonuses-v3",
   "league_name": "Fantasy Fuckery League",
-  "authority": "FFL Commissioner official Sleeper league Scoring Settings recorded Nov 5, 2026; mirrored to independent PFO scoring engine. No runtime Sleeper projection/scoring values.",
+  "authority": "FFL scoring restored following the Nov 5, 2026 league constitutional challenge. Commissioner clarification confirms fourth-down stop and non-TD 40+ rush bonus remain 0; 40+ receiving and rushing TD bonuses restored to +1.5. No runtime Sleeper projection/scoring values.",
   "source_mirror_saved_at": "2026-11-05",
   "roster_positions": [
     "QB",
@@ -128,7 +128,7 @@
     "rec_5_9": 0,
     "rec_fd": 0,
     "rec_td": 6,
-    "rec_td_40p": 1,
+    "rec_td_40p": 1.5,
     "rec_td_50p": 2,
     "rec_yd": 0.1,
     "rush_2pt": 2,
@@ -136,7 +136,7 @@
     "rush_att": 0,
     "rush_fd": 0,
     "rush_td": 6,
-    "rush_td_40p": 1,
+    "rush_td_40p": 1.5,
     "rush_td_50p": 2,
     "rush_yd": 0.1,
     "sack": 1,
@@ -175,6 +175,8 @@
     "long_touchdowns": "Record 40+ and 50+ touchdown bonuses independently only when source evidence establishes each; a 50+ TD also qualifies for a 40+ threshold if Sleeper applies both configured bonuses.",
     "missing_evidence": "Never treat unknown per-category values as zero; team scores and kicker projections are marked partial where required categories are missing.",
     "three_and_out": "D/ST earns +0.5 per verified opponent three-and-out, separate from other defensive scoring. Source must count the full drive; not inferred from punts alone.",
+    "fourth_down_stop": "Zero FFL points for a fourth-down stop, independently confirmed by the Commissioner.",
+    "long_non_touchdown_rush": "No separate 40+ rushing-play bonus without a touchdown; ordinary rushing yards still score. A verified 40+ rushing TD separately earns its restored +1.5 long-TD bonus.",
     "two_point_return": "D/ST earns +2 per verified defensive 2-point conversion return."
   }
 }
