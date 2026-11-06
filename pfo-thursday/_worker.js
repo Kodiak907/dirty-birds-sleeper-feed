@@ -1058,6 +1058,39 @@ async function ffo624KickerBoundedJSON(endpoint,env,ms,maxBytes){
  }
 }
 const ffo623BoxCache=new Map(),ffo623BoxPending=new Map();
+/* PFO 6.25: restrict schema diagnostics to field NAMES from the verified
+ * kicker entry. No raw player stats, private data, credentials, URLs, or
+ * numerical counts from provider responses are sent to the client.
+ */
+function ffo625KickerFieldAudit(blocks){
+ const okay=k=>/^[A-Za-z][A-Za-z0-9_]{0,29}$/.test(k)&&
+  !/(secret|token|password|credential|authorization|api.?key|email|address|phone|session|cookie)/i.test(k);
+ const found=new Set();
+ const visit=(obj,prefix='',depth=0)=>{
+  if(!obj||typeof obj!=='object'||depth>2||found.size>=24)return;
+  const keys=Object.keys(obj).filter(okay).sort();
+  for(const key of keys.slice(0,12)){
+   if(found.size>=24)break;
+   const value=obj[key],path=(prefix?prefix+'.':'')+key;
+   if(value&&typeof value==='object'){
+    if(!Array.isArray(value)){visit(value,path,depth+1)}
+    else if(depth<2&&value[0]&&typeof value[0]==='object')visit(value[0],path,depth+1);
+   }else found.add(path);
+  }
+ };
+ for(const b of blocks.slice(0,4))visit(b);
+ return [...found].slice(0,24).join(',').slice(0,240);
+}
+function ffo625KickerStatObject(raw){
+ const stats=raw?.stats||raw;
+ if(!stats||typeof stats!=='object'||Array.isArray(stats))return null;
+ const category=String(raw?.category||raw?.statCategory||raw?.group||'')
+  .toLowerCase().replace(/[^a-z]/g,'');
+ if(category==='fieldgoal'||category==='fieldgoals')return {fieldGoals:stats};
+ if(category==='extrapoint'||category==='extrapoints')return {extraPoints:stats};
+ if(category==='kicking'||category==='kicker')return {kicking:stats};
+ return stats;
+}
 function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
  const box=payload?.gameboxscore??payload?.data?.gameboxscore??payload;
  const game=box?.game||{};
@@ -1085,10 +1118,11 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
   p.position?.abbreviation||p.position||'').toUpperCase();
  if(stem(full)!==wanted||position!=='K')return {available:false,error:'boxscore_kicker_identity_conflict'};
  const blocks=Array.isArray(item.playerStats)?item.playerStats:[item.stats||item.playerStats||item];
+ const audit=ffo625KickerFieldAudit(blocks);
  const mapped=[];
  for(const raw of blocks){
-  const stats=raw?.stats||raw;
-  if(!stats||typeof stats!=='object'||Array.isArray(stats))continue;
+  const stats=ffo625KickerStatObject(raw);
+  if(!stats)continue;
   const record=ffo598NormalizeSeason({playerStatsTotals:[{
    player:{id:playerId,firstName:p.firstName||p.FirstName,lastName:p.lastName||p.LastName,
     primaryPosition:{abbreviation:'K'}},team:{abbreviation:team},
@@ -1098,7 +1132,8 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
   delete entry.games_played;
   if(Object.keys(entry).length)mapped.push(entry);
  }
- if(!mapped.length)return {available:false,error:'kicker_boxscore_scoring_categories_missing'};
+ if(!mapped.length)return {available:false,error:'kicker_boxscore_scoring_categories_missing',
+  schema_audit:audit};
  const combined={};
  for(const stats of mapped)for(const [key,n] of Object.entries(stats)){
   if(!Number.isFinite(n)||n<0)return {available:false,error:'invalid_kicker_boxscore_stat'};
@@ -1111,7 +1146,8 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
  const allowed=new Set(['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59',
   'fgm_60p','xpm','xpmiss','fgmiss']);
  if(!Object.keys(combined).some(k=>allowed.has(k)))
-  return {available:false,error:'no_supported_ffl_kicker_scoring_fields'};
+  return {available:false,error:'no_supported_ffl_kicker_scoring_fields',
+   schema_audit:audit};
  return {available:true,game_id:id,player_id:String(playerId),stats:combined};
 }
 async function ffo623KickerBoxscore(fixture,env){
@@ -1166,6 +1202,7 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  .sort((a,b)=>b.week-a.week).slice(0,4);
  if(fixtures.length<2)return {available:false,error:'insufficient_completed_team_games'};
  const seen=new Set(),rows=[],errors=[];
+ let schemaAudit='';
  for(let start=0;start<fixtures.length&&rows.length<2;start+=2){
   const batch=fixtures.slice(start,start+2);
   const found=await Promise.allSettled(batch.map(g=>ffo623KickerBoxscore(g,env)));
@@ -1178,13 +1215,17 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
     continue;
    }
    const out=ffo623KickerBoxRow(found[i].value,batch[i],team,name,playerId,checkedAt);
-   if(out.available===false){errors.push(String(out.error));continue}
+   if(out.available===false){
+    errors.push(String(out.error));
+    if(out.schema_audit&&!schemaAudit)schemaAudit=String(out.schema_audit).slice(0,240);
+    continue
+   }
    if(!seen.has(out.game_id)){seen.add(out.game_id);rows.push(out)}
   }
   if(stopped)break;
  }
  if(rows.length<2)return {available:false,error:errors[0]||'insufficient_verified_kicker_boxscores',
-  games_observed:rows.length};
+  schema_audit:schemaAudit,games_observed:rows.length};
  const totals={};
  for(const g of rows)for(const [k,v] of Object.entries(g.stats))totals[k]=(totals[k]||0)+v;
  const gamesObserved=rows.length;
@@ -1239,7 +1280,8 @@ async function ffo616PlayerGameRoute(req,env){
    // Do not repeatedly invoke known failing bulk gamelog routes for a
    // verified kicker; an incomplete boxscore is an explicit source gap.
    return {source:'MySportsFeeds',available:false,team,name,
-    error:errors.join('; ').slice(0,180),checked_at};
+    error:errors.join('; ').slice(0,180),
+    schema_audit:String(recovered?.schema_audit||'').slice(0,240),checked_at};
   }
   for(const identifier of identifiers){
    const endpoint=MSF_ROOT+'/2026-regular/player_gamelogs.json?player='+encodeURIComponent(identifier);
