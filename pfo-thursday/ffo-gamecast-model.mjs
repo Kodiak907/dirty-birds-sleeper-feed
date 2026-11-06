@@ -236,8 +236,8 @@ const PATHS={
  fgm:['fieldGoals.fieldGoalsMade','fieldGoals.fgMade','fieldGoals.made','kicking.fieldGoalsMade','fieldGoalsMade','fgm'],
  fga:['fieldGoals.fieldGoalAttempts','fieldGoals.attempts','kicking.fieldGoalsAttempted','fieldGoalAttempts','fga'],
  fgmiss:['fieldGoals.fieldGoalsMissed','fieldGoals.missed','fieldGoalsMissed','fgmiss'],
- xpm:['extraPoints.extraPointsMade','extraPoints.made','kicking.extraPointsMade','extraPointsMade','xpm'],
- xpmiss:['extraPoints.extraPointsMissed','extraPoints.missed','extraPointsMissed','xpmiss'],
+ xpm:['extraPoints.extraPointsMade','extraPoints.xpMade','extraPointAttempts.xpMade','extraPoints.made','kicking.extraPointsMade','extraPointsMade','xpm'],
+ xpmiss:['extraPoints.extraPointsMissed','extraPoints.xpMissed','extraPointAttempts.xpMissed','extraPoints.missed','extraPointsMissed','xpmiss'],
  // Only explicit MSF distance band fields qualify; do not infer 50–59 from 50+.
  fgm_0_19:['fieldGoals.fieldGoalsMade0To19','fieldGoals.fieldGoalsMade1To19','fgm_0_19'],
  fgm_20_29:['fieldGoals.fieldGoalsMade20To29','fieldGoals.fieldGoalsMade20to29','fgm_20_29'],
@@ -250,7 +250,31 @@ const PATHS={
  rec_2pt:['twoPointConversions.twoPtPassRec','twoPointConversions.twoPointPassRec','receiving.recTwoPt','receiving.twoPointConversions','rec_2pt'],
  pass_2pt:['twoPointConversions.twoPtPassMade','twoPointConversions.twoPointPassMade','passing.passTwoPt','passing.twoPointConversions','pass_2pt']
 };
-export function normalizeStats(source){if(!source||typeof source!=='object')return {};const out={};for(const [k,paths] of Object.entries(PATHS)){const v=first(source,paths);if(v!==null)out[k]=v;}return out;}
+export function normalizeStats(source){
+ if(!source||typeof source!=='object')return {};
+ const out={};
+ for(const [k,paths] of Object.entries(PATHS)){
+  const v=first(source,paths);if(v!==null)out[k]=v;
+ }
+ // Actual NFL kick points are 3 per FG + 1 per PAT. Use independent
+ // measurements to derive GENERIC FG makes only; percentages never become
+ // distance-specific made kicks, and impossible totals are rejected.
+ const xp=num(source?.extraPointAttempts?.xpMade),pts=num(source?.extraPointAttempts?.fgAndXpPts);
+ const att=num(source?.fieldGoals?.fgAtt??source?.fieldGoals?.fgAttempts);
+ if(out.fgm!=null&&(!Number.isInteger(out.fgm)||out.fgm<0||
+    (att!==null&&(!Number.isInteger(att)||out.fgm>att))))delete out.fgm;
+ if(out.xpmiss==null){
+  const xpAtt=num(source?.extraPointAttempts?.xpAtt);
+  if(xp!==null&&xpAtt!==null&&Number.isInteger(xp)&&Number.isInteger(xpAtt)&&xpAtt>=xp)
+   out.xpmiss=xpAtt-xp;
+ }
+ if(out.fgm==null&&xp!==null&&pts!==null&&Number.isInteger(xp)&&Number.isInteger(pts)&&
+   xp>=0&&pts>=xp&&(pts-xp)%3===0){
+  const makes=(pts-xp)/3;
+  if(att===null||(Number.isInteger(att)&&att>=makes))out.fgm=makes;
+ }
+ return out;
+}
 /** Compute only rule weights applicable to the player's position; never substitute 0 for absent stats. */
 const FILTERS={
  QB:k=>/^(pass_|rush_|rec|rec_|fum_|bonus_pass|bonus_rush|bonus_rec)/.test(k),
@@ -265,7 +289,7 @@ const CORE_SCORING_GROUPS={
  RB:['rush_yd','rush_td','rec','rec_yd','rec_td','fum_lost'],
  WR:['rec','rec_yd','rec_td','rush_yd','rush_td','fum_lost'],
  TE:['rec','rec_yd','rec_td','fum_lost'],
- K:['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss'],
+ K:['fgm','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss'],
  DEF:['pts_allow_0','pts_allow_1_6','pts_allow_7_13','pts_allow_14_20','pts_allow_21_27','pts_allow_28_34','pts_allow_35p','sack','int','def_td','fum_rec','safe','blk_kick']
 };
 /**
@@ -275,6 +299,11 @@ const CORE_SCORING_GROUPS={
 export function fflScore(raw,settings,position=''){
  if(!raw||!settings||typeof settings!=='object')return {points:null,complete:false,missing:['scoring_rules_or_stats_missing'],covered:[],source:'FFL Scoring Model'};
  const stats=normalizeStats(raw),pos=String(position||'').toUpperCase(),filter=FILTERS[pos]||(()=>true);
+ const tiers=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
+ if(pos==='K'&&stats.fgm==null){
+  const known=tiers.map(k=>stats[k]).filter(x=>x!=null&&Number.isInteger(x)&&x>=0);
+  if(known.length)stats.fgm=known.reduce((a,b)=>a+b,0);
+ }
  const selected=Object.entries(settings).filter(([key,val])=>filter(key)&&Number.isFinite(Number(val))&&Number(val)!==0);
  if(!selected.length)return {points:null,complete:false,missing:['no_applicable_scoring_categories'],covered:[],source:'FFL Scoring Model'};
  let subtotal=0;const covered=[],missing=[],components=[];
@@ -729,7 +758,9 @@ export function kickingPlayEvidence(payload,rules={},msfPlayers=[]){
   else if(ev.publishedOutcome==='reported_good'&&ev.kind==='XP')component='xpm';
   else if(ev.publishedOutcome==='reported_good'&&ev.kind==='FG'&&Number.isInteger(ev.distance))
    component='fgm_'+(ev.distance<20?'0_19':ev.distance<30?'20_29':ev.distance<40?'30_39':ev.distance<50?'40_49':ev.distance<60?'50_59':'60p');
-  const observedEventPoints=component&&Number.isFinite(Number(rules[component]))?Number(rules[component]):null;
+  const observedEventPoints=component&&Number.isFinite(Number(rules[component]))?
+   Number(rules[component])+(ev.kind==='FG'&&ev.publishedOutcome==='reported_good'&&
+    Number.isInteger(ev.distance)&&Number.isFinite(Number(rules.fgm))?Number(rules.fgm):0):null;
   return {...ev,kickerToken,component,observedEventPoints};
  });
  const actors=new Map();
