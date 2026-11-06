@@ -1154,11 +1154,11 @@ function ffo627VerifiedKickerFieldGoals(box,fixture,team,name){
   previousHome=h;previousAway=a;
   if(!/\bfield[\s-]?goal\b|\bFG\b/i.test(desc))continue;
   const scoringSide=dh===3&&da===0?home:da===3&&dh===0?away:null;
-  const athlete=(desc.match(/(?:^|[\s(])\d{1,2}-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$|[,.])/i)||[]);
-  const named=athlete.length===3&&athlete[1].toLowerCase()===initial&&clean(athlete[2])===last;
-  // Full-name credit must appear in the scoring actor portion, before
-  // the "field goal" event, not in trailing Center/Holder descriptions.
+  // Kicker identity must occur before the field-goal event, not in
+  // a trailing holder or long-snapper credit.
   const actorText=desc.split(/\bfield[\s-]?goal\b|\bFG\b/i)[0]||'';
+  const athlete=(actorText.match(/(?:^|[\s(])\d{1,2}-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$|[,.])/i)||[]);
+  const named=athlete.length===3&&athlete[1].toLowerCase()===initial&&clean(athlete[2])===last;
   const literal=clean(actorText).includes(fullName);
   if(scoringSide!==target||!(named||literal)||/\b(?:no good|missed|blocked|wide left|wide right)\b/i.test(desc))continue;
   const distanceText=(desc.match(/\b(\d{1,2})[\s-]?yard(?:s)?\s+(?:field[\s-]?goal|FG)\b/i)||
