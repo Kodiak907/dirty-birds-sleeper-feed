@@ -98,7 +98,7 @@
    tools.dataset.teams=teams.join(',');
    if(teams.length){
     const label=document.createElement('div');
-    label.textContent='PFO 6.30 · MSF D/ST possession and source audit (read-only; no score changes)';
+    label.textContent='PFO 6.31 · MSF native drive-number audit (read-only; no score changes)';
     tools.appendChild(label);
    }
    for(const team of teams){
@@ -124,10 +124,17 @@
        const asCount=n=>Number.isFinite(Number(n))&&n!==null?String(Number(n)):'unverified';
        result.textContent=team+' · completed game '+String(data.game_id||'unverified')+'\n'+
         'MSF plays '+asCount(c.plays)+' · possession '+asCount(c.possession_team)+
-        ' · downs '+asCount(c.down)+' · native drives '+asCount(c.drive_id)+'\n'+
+        ' · downs '+asCount(c.down)+' · drive-labeled plays '+asCount(c.drive_id)+'\n'+
         'Play order '+String(diag.time_order||'unverified')+
         ' · timestamped '+asCount(diag.timestamped_plays)+' · possession switches '+
         asCount(diag.observed_possession_transitions)+'\n'+
+        'Native overall drive nums '+asCount(c.overall_drive_num)+
+        ' · team drive nums '+asCount(c.team_drive_num)+'\n'+
+        'Numbered drive groups '+asCount(diag.native_numbered_drive_groups)+
+        ' · coherent '+asCount(diag.native_numbered_drive_groups_coherent)+
+        ' · conflicts '+asCount(diag.native_drive_group_conflicts)+'\n'+
+        'Native punt-drive review candidates '+asCount(diag.native_punt_drive_review_candidates)+
+        ' (NOT verified three-and-outs)\n'+
         'Potential short punt sequences '+asCount(diag.short_punt_sequence_candidates)+
         ' (review only; NOT verified three-and-outs)\n'+
         'D/ST points NOT certified · no score changes';
@@ -143,6 +150,9 @@
        info.textContent='Play fields: '+(top.length?top.join(', '):'none verified')+
         '\nPlay-status fields: '+(fields.length?fields.join(', '):'none verified')+
         '\nMissing evidence: '+(missing.length?missing.join(', '):'none reported')+
+        '\nDistinct numbered drives: '+asCount(c.distinct_drive_ids)+
+        '\nNative drive coverage: overallDriveNum '+asCount(c.overall_drive_num)+
+        ', teamDriveNum '+asCount(c.team_drive_num)+
         '\nNative play IDs: '+asCount(c.provider_id)+
         ' · per-play score snapshots: '+asCount(c.score_snapshots)+
         '\nSequence candidates are read-only, never credited as fantasy scoring.';
