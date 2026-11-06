@@ -126,7 +126,7 @@ test('same week independent FFL score model gets licensed team defense with expl
  assert.match(lib,/scoreFrozen/);
  assert.match(lib,/coverage:/);
  assert.match(health,/Partial D\/ST estimates/);
- assert.match(html,/ffo-pfo-616\.js\?v=626/);
+ assert.match(html,/ffo-pfo-616\.js\?v=627/);
 });
 
 test('never mutate the Trade Laboratory workspace in this release',()=>{
