@@ -98,7 +98,7 @@
    tools.dataset.teams=teams.join(',');
    if(teams.length){
     const label=document.createElement('div');
-    label.textContent='PFO 6.33 · three-and-out evidence review (read-only; no score changes)';
+    label.textContent='PFO 6.34 · D/ST candidate attribution review (read-only; no score changes)';
     tools.appendChild(label);
    }
    for(const team of teams){
@@ -124,6 +124,10 @@
        const rawDrives=data.drive_value_diagnostics||{};
        const three=data.three_and_out_evidence||{};
        const observedThree=three.observed_fields||{};
+       const attribution=data.defense_candidate_attribution||{};
+       const byDefense=attribution.defense_review_by_team||{};
+       const teamCandidateLines=Object.entries(byDefense).filter(([id])=>/^[A-Z]{2,3}$/.test(id))
+        .map(([id,row])=>id+' defense '+Number(row?.review_candidates||0)+' candidates (unverified)');
        const valueSummary=(name)=>{
         const v=rawDrives[name]||{};
         return name+' present '+Number(v.present||0)+'/'+Number(v.records||0)+
@@ -156,6 +160,7 @@
         'MSF classified offensive snaps '+asCount(observedThree.classified_offensive_snap)+
         ' · punts '+asCount(observedThree.classified_punt)+
         ' · down-and-distance '+asCount(observedThree.with_yards_remaining)+'\n'+
+        'Provisional defensive attribution: '+(teamCandidateLines.join('; ')||'unavailable')+'\n'+
         'D/ST points NOT certified · no score changes';
        const detail=document.createElement('details');
        detail.style.cssText='margin-top:7px;padding:6px 0;border-top:1px solid currentColor';
@@ -185,6 +190,8 @@
         ', sack '+asCount(observedThree.with_structured_sack)+
         ', punt '+asCount(observedThree.with_structured_punt)+
         ', penalty '+asCount(observedThree.with_structured_penalty)+
+        '\nCandidate attribution exclusions: '+Object.entries(attribution.breakdown||{}).map(([key,n])=>key+' '+asCount(n)).join('; ')+
+        '\nTeam attribution remains uncertified; no fantasy points were awarded.'+
         '\nVerified three-and-outs: unavailable (NOT zero)'+
         '\nSequence candidates are read-only, never credited as fantasy scoring.';
        detail.appendChild(info);
