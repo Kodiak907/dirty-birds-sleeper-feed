@@ -1,0 +1,65 @@
+name: PFO 6.37 restored-rule projection accuracy research QA
+on:
+  push:
+    branches:
+      - pfo-637-scoring-version-backtest-gate-20261106
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-accuracy-audit:
+    name: Read-only MSF certification, scoring-version and archived-forecast exclusion QA
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source-only audit syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check pfo-thursday/ffo-projection-accuracy-audit-637.mjs
+          node --check pfo-thursday/ffo-projection-accuracy-report-637.mjs
+          node --check pfo-thursday/ffo-verified-history-backtest.mjs
+          node --check pfo-thursday/qa-ffo-637.test.mjs
+          node --check pfo-thursday/qa-msf-scoring-pipeline.test.mjs
+      - name: Test actual archive exclusions, independent historical certificates and FFL score accuracy gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test \
+            pfo-thursday/qa-ffo-637.test.mjs \
+            pfo-thursday/qa-msf-scoring-pipeline.test.mjs \
+            pfo-thursday/qa-msf-verified-projections.test.mjs \
+            pfo-thursday/qa-ffo-635.test.mjs \
+            pfo-thursday/qa-msf-historical-matchups.test.mjs
+      - name: Produce deterministic actual-archive audit report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo637-accuracy-audit"
+          node pfo-thursday/ffo-projection-accuracy-report-637.mjs > "$RUNNER_TEMP/pfo637-accuracy-audit/report.json"
+          node --input-type=module - "$RUNNER_TEMP/pfo637-accuracy-audit/report.json" <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync} from 'node:fs';
+          const report=JSON.parse(readFileSync(process.argv[2],'utf8'));
+          assert.equal(report.authoritativeScoringRules,'2026-11-05-ffl-screen-recording-verified-v4');
+          assert.equal(report.archivedPredictionEvidence.legacyForecastRecords,452);
+          assert.equal(report.archivedPredictionEvidence.legacyCalibrationSamples,14);
+          assert.equal(report.restoredRuleCurrentModelAccuracy.measuredPlayerGames,0);
+          assert.equal(report.benchmarkStatus,'NOT_MEASURABLE_YET');
+          assert.equal(report.readOnly,true);
+          assert.equal(report.productionEligible,false);
+          process.stdout.write('Legacy archive audit consistent; no unsupported PFO 6.36 accuracy claim.\n');
+          NODE
+          cat "$RUNNER_TEMP/pfo637-accuracy-audit/report.json"
+      - name: Retain source-only accuracy readiness report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pfo-637-accuracy-readiness-report
+          path: ${{ runner.temp }}/pfo637-accuracy-audit/report.json
+          retention-days: 21
+      - name: Confirm no deployment and no fantasy-point writes
+        run: echo "PFO 6.37 analysis complete: read-only, unmodified preview, no production or Commissioner write."
