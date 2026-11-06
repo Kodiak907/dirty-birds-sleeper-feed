@@ -1,12 +1,12 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-06T16:52:42.855525+00:00 | Forecast as of: 2026-11-06T13:45:26.306900+00:00
+Generated: 2026-11-06T17:50:07.463942+00:00 | Forecast as of: 2026-11-06T13:45:26.306900+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 134.54
+**Projected optimal score:** 134.34
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -17,13 +17,13 @@ Generated: 2026-11-06T16:52:42.855525+00:00 | Forecast as of: 2026-11-06T13:45:2
 | Zay Flowers | WR | JAX | 11.23 |
 | Isaiah Likely | TE | PHI | 9.43 |
 | Will Reichard | K | BUF | 7.22 |
-| Buffalo Bills | DEF | MIN | 6.41 |
+| Minnesota Vikings | DEF | BUF | 6.21 |
 | Jonah Coleman | RB | CAR | 13.19 |
 | Caleb Douglas | WR | DET | 7.04 |
 
 ## Week 10
 
-**Projected optimal score:** 135.36
+**Projected optimal score:** 134.13
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -34,13 +34,13 @@ Generated: 2026-11-06T16:52:42.855525+00:00 | Forecast as of: 2026-11-06T13:45:2
 | Zay Flowers | WR | LAC | 13.18 |
 | Isaiah Likely | TE | WAS | 11.17 |
 | Will Reichard | K | GB | 6.66 |
-| Buffalo Bills | DEF | NYJ | 7.33 |
+| Minnesota Vikings | DEF | GB | 6.10 |
 | A.J. Brown | WR | DET | 12.31 |
 | Deebo Samuel Sr. | WR | DAL | 9.48 |
 
 ## Week 11
 
-**Projected optimal score:** 113.42
+**Projected optimal score:** 112.65
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -51,7 +51,7 @@ Generated: 2026-11-06T16:52:42.855525+00:00 | Forecast as of: 2026-11-06T13:45:2
 | Deebo Samuel Sr. | WR | MIN | 8.13 |
 | Isaiah Likely | TE | JAX | 9.62 |
 | Will Reichard | K | SF | 7.13 |
-| Buffalo Bills | DEF | MIA | 6.87 |
+| Minnesota Vikings | DEF | SF | 6.10 |
 | Antonio Williams | WR | CIN | 6.76 |
 | Caleb Douglas | WR | BUF | 6.38 |
 

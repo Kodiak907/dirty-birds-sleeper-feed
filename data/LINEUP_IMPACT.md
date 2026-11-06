@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-06T16:52:38.806411+00:00
+Generated: 2026-11-06T17:50:03.840396+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.27**. Weeks with partial projections and injury status require manual verification.
@@ -20,13 +20,12 @@ Baseline illustrative optimal PPG: **126.27**. Weeks with partial projections an
 | 3 | Samaje Perine | 5.31 | Bench-depth scenario: Pat Bryant | +0.00 | -1.23 | Proposed cut is on fantasy reserve; roster rules require review |
 | 4 | Tyjae Spears | 5.07 | Bench-depth scenario: Pat Bryant | +0.00 | -1.47 | Availability status: questionable; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
 | 5 | Keaton Mitchell | 4.69 | Bench-depth scenario: Pat Bryant | +0.00 | -1.85 | Proposed cut is on fantasy reserve; roster rules require review |
-| 6 | Seth McGowan | 4.12 | Bench-depth scenario: Pat Bryant | +0.00 | -2.41 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 7 | MarShawn Lloyd | 3.85 | Bench-depth scenario: Pat Bryant | +0.00 | -2.69 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 8 | Zonovan Knight | 3.26 | Bench-depth scenario: Pat Bryant | +0.00 | -3.28 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 9 | Tank Bigsby | 1.96 | Bench-depth scenario: Pat Bryant | +0.00 | -4.58 | Availability status: ir; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 10 | Elijah Mitchell | 1.06 | Bench-depth scenario: Pat Bryant | +0.00 | -5.48 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 11 | Jaleel McLaughlin | 0.86 | Bench-depth scenario: Pat Bryant | +0.00 | -5.67 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 12 | Emanuel Wilson | 0.82 | Bench-depth scenario: Pat Bryant | +0.00 | -5.71 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 6 | MarShawn Lloyd | 3.85 | Bench-depth scenario: Pat Bryant | +0.00 | -2.69 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 7 | Zonovan Knight | 3.26 | Bench-depth scenario: Pat Bryant | +0.00 | -3.28 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 8 | Tank Bigsby | 1.96 | Bench-depth scenario: Pat Bryant | +0.00 | -4.58 | Availability status: ir; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 9 | Elijah Mitchell | 1.06 | Bench-depth scenario: Pat Bryant | +0.00 | -5.48 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 10 | Jaleel McLaughlin | 0.86 | Bench-depth scenario: Pat Bryant | +0.00 | -5.67 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 11 | Emanuel Wilson | 0.82 | Bench-depth scenario: Pat Bryant | +0.00 | -5.71 | Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
 
 ## WR
 
@@ -70,17 +69,18 @@ Baseline illustrative optimal PPG: **126.27**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Baltimore Ravens | 6.02 | Bench-depth scenario: Pat Bryant | +0.00 | -0.52 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 2 | Green Bay Packers | 6.00 | Bench-depth scenario: Pat Bryant | +0.00 | -0.54 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 3 | Cincinnati Bengals | 5.91 | Bench-depth scenario: Pat Bryant | +0.00 | -0.62 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
-| 4 | New England Patriots | 5.89 | Bench-depth scenario: Pat Bryant | +0.00 | -0.65 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 5 | New Orleans Saints | 5.87 | Bench-depth scenario: Pat Bryant | +0.00 | -0.67 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
-| 6 | Indianapolis Colts | 5.74 | Bench-depth scenario: Pat Bryant | +0.00 | -0.80 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 7 | Washington Commanders | 5.43 | Bench-depth scenario: Pat Bryant | +0.00 | -1.11 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
-| 8 | Cleveland Browns | 5.36 | Bench-depth scenario: Pat Bryant | +0.00 | -1.18 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 9 | Tampa Bay Buccaneers | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -1.39 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 10 | Tennessee Titans | 4.42 | Bench-depth scenario: Pat Bryant | +0.00 | -2.12 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
-| 11 | New York Jets | 4.34 | Bench-depth scenario: Pat Bryant | +0.00 | -2.19 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 1 | Buffalo Bills | 6.61 | Bench-depth scenario: Pat Bryant | +0.00 | +0.07 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
+| 2 | Baltimore Ravens | 6.02 | Bench-depth scenario: Pat Bryant | +0.00 | -0.52 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 3 | Green Bay Packers | 6.00 | Bench-depth scenario: Pat Bryant | +0.00 | -0.54 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 4 | Cincinnati Bengals | 5.91 | Bench-depth scenario: Pat Bryant | +0.00 | -0.62 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
+| 5 | New England Patriots | 5.89 | Bench-depth scenario: Pat Bryant | +0.00 | -0.65 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 6 | New Orleans Saints | 5.87 | Bench-depth scenario: Pat Bryant | +0.00 | -0.67 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
+| 7 | Indianapolis Colts | 5.74 | Bench-depth scenario: Pat Bryant | +0.00 | -0.80 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 8 | Washington Commanders | 5.43 | Bench-depth scenario: Pat Bryant | +0.00 | -1.11 | No sourced usage; Proposed cut is on fantasy reserve; roster rules require review |
+| 9 | Cleveland Browns | 5.36 | Bench-depth scenario: Pat Bryant | +0.00 | -1.18 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 10 | Tampa Bay Buccaneers | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -1.39 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 11 | Tennessee Titans | 4.42 | Bench-depth scenario: Pat Bryant | +0.00 | -2.12 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
+| 12 | New York Jets | 4.34 | Bench-depth scenario: Pat Bryant | +0.00 | -2.19 | No sourced usage; Partial projection coverage; Proposed cut is on fantasy reserve; roster rules require review |
 
 ## Before making any claim
 

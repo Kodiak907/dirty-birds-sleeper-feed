@@ -7,12 +7,12 @@
   "excluded_fantasy_reserve_player_ids": [
     "12492"
   ],
-  "generated_at_utc": "2026-11-06T16:52:42.855525+00:00",
+  "generated_at_utc": "2026-11-06T17:50:07.463942+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-06T13:45:26.306900+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-06T16:52:29.457957+00:00",
+  "snapshot_utc": "2026-11-06T17:49:58.787897+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -25,7 +25,7 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 135.36,
+      "ppg": 134.13,
       "starters": [
         {
           "id": "4046",
@@ -77,11 +77,11 @@
           "ppg": 6.66
         },
         {
-          "id": "BUF",
-          "name": "Buffalo Bills",
-          "opponent": "NYJ",
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "GB",
           "position": "DEF",
-          "ppg": 7.33
+          "ppg": 6.1
         },
         {
           "id": "5859",
@@ -106,7 +106,7 @@
         "Kyren Williams",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 113.42,
+      "ppg": 112.65,
       "starters": [
         {
           "id": "4046",
@@ -158,11 +158,11 @@
           "ppg": 7.13
         },
         {
-          "id": "BUF",
-          "name": "Buffalo Bills",
-          "opponent": "MIA",
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "SF",
           "position": "DEF",
-          "ppg": 6.87
+          "ppg": 6.1
         },
         {
           "id": "13301",
@@ -260,6 +260,7 @@
     "13": {
       "complete": true,
       "missing_projection": [
+        "Seth McGowan",
         "Michael Mayer",
         "Zay Flowers"
       ],
@@ -651,7 +652,7 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 134.54,
+      "ppg": 134.34,
       "starters": [
         {
           "id": "4046",
@@ -703,11 +704,11 @@
           "ppg": 7.22
         },
         {
-          "id": "BUF",
-          "name": "Buffalo Bills",
-          "opponent": "MIN",
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "opponent": "BUF",
           "position": "DEF",
-          "ppg": 6.41
+          "ppg": 6.21
         },
         {
           "id": "13345",

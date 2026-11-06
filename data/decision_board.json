@@ -1,8 +1,8 @@
 {
   "current_roster_reference": {
     "DEF": {
-      "name": "Buffalo Bills",
-      "ppg": 6.611
+      "name": "Minnesota Vikings",
+      "ppg": 6.879
     },
     "K": {
       "name": "Will Reichard",
@@ -13,8 +13,8 @@
       "ppg": 16.268
     },
     "RB": {
-      "name": "Kaelon Black",
-      "ppg": 4.832
+      "name": "Seth McGowan",
+      "ppg": 4.124
     },
     "TE": {
       "name": "Michael Mayer",
@@ -25,10 +25,32 @@
       "ppg": 1.237
     }
   },
-  "generated_at_utc": "2026-11-06T16:52:38.688660+00:00",
+  "generated_at_utc": "2026-11-06T17:50:03.775624+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Buffalo Bills",
+        "ppg": 6.61,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
+        },
+        "same_position_uplift_ppg": -0.27,
+        "screen_only": true,
+        "sleeper_id": "BUF",
+        "team": "BUF"
+      },
       {
         "audit": {
           "carries_per_game": null,
@@ -43,10 +65,10 @@
         "name": "Baltimore Ravens",
         "ppg": 6.02,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.59,
+        "same_position_uplift_ppg": -0.86,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -65,10 +87,10 @@
         "name": "Green Bay Packers",
         "ppg": 6.0,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.61,
+        "same_position_uplift_ppg": -0.88,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -87,10 +109,10 @@
         "name": "Cincinnati Bengals",
         "ppg": 5.91,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.7,
+        "same_position_uplift_ppg": -0.97,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -109,10 +131,10 @@
         "name": "New England Patriots",
         "ppg": 5.89,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.72,
+        "same_position_uplift_ppg": -0.99,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -131,10 +153,10 @@
         "name": "New Orleans Saints",
         "ppg": 5.87,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.74,
+        "same_position_uplift_ppg": -1.01,
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
@@ -153,10 +175,10 @@
         "name": "Indianapolis Colts",
         "ppg": 5.74,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -0.87,
+        "same_position_uplift_ppg": -1.14,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -175,10 +197,10 @@
         "name": "Washington Commanders",
         "ppg": 5.43,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -1.18,
+        "same_position_uplift_ppg": -1.45,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -197,10 +219,10 @@
         "name": "Cleveland Browns",
         "ppg": 5.36,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -1.25,
+        "same_position_uplift_ppg": -1.52,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -219,10 +241,10 @@
         "name": "Tampa Bay Buccaneers",
         "ppg": 5.15,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -1.46,
+        "same_position_uplift_ppg": -1.73,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -241,10 +263,10 @@
         "name": "Tennessee Titans",
         "ppg": 4.42,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -2.19,
+        "same_position_uplift_ppg": -2.46,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -263,10 +285,10 @@
         "name": "New York Jets",
         "ppg": 4.34,
         "replacement_reference": {
-          "name": "Buffalo Bills",
-          "ppg": 6.611
+          "name": "Minnesota Vikings",
+          "ppg": 6.879
         },
-        "same_position_uplift_ppg": -2.27,
+        "same_position_uplift_ppg": -2.53,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -455,10 +477,10 @@
         "name": "Kyle Monangai",
         "ppg": 6.08,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": 1.25,
+        "same_position_uplift_ppg": 1.96,
         "screen_only": true,
         "sleeper_id": "12534",
         "team": "CHI"
@@ -483,10 +505,10 @@
         "name": "Chris Rodriguez Jr.",
         "ppg": 5.56,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": 0.73,
+        "same_position_uplift_ppg": 1.44,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
@@ -508,10 +530,10 @@
         "name": "Samaje Perine",
         "ppg": 5.31,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": 0.48,
+        "same_position_uplift_ppg": 1.19,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -538,10 +560,10 @@
         "name": "Tyjae Spears",
         "ppg": 5.07,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": 0.24,
+        "same_position_uplift_ppg": 0.94,
         "screen_only": true,
         "sleeper_id": "9508",
         "team": "TEN"
@@ -563,35 +585,13 @@
         "name": "Keaton Mitchell",
         "ppg": 4.69,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -0.14,
+        "same_position_uplift_ppg": 0.57,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
-      },
-      {
-        "audit": {
-          "carries_per_game": 6.67,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 27.0,
-          "snap_trend_3_appearances_pp": 2.0,
-          "targets_per_game": 0.33
-        },
-        "name": "Seth McGowan",
-        "ppg": 4.12,
-        "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
-        },
-        "same_position_uplift_ppg": -0.71,
-        "screen_only": true,
-        "sleeper_id": "13424",
-        "team": "IND"
       },
       {
         "audit": {
@@ -610,10 +610,10 @@
         "name": "MarShawn Lloyd",
         "ppg": 3.85,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -0.98,
+        "same_position_uplift_ppg": -0.27,
         "screen_only": true,
         "sleeper_id": "11581",
         "team": "GB"
@@ -634,10 +634,10 @@
         "name": "Zonovan Knight",
         "ppg": 3.26,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -1.58,
+        "same_position_uplift_ppg": -0.87,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -662,10 +662,10 @@
         "name": "Tank Bigsby",
         "ppg": 1.96,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -2.87,
+        "same_position_uplift_ppg": -2.16,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -684,10 +684,10 @@
         "name": "Elijah Mitchell",
         "ppg": 1.06,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -3.77,
+        "same_position_uplift_ppg": -3.07,
         "screen_only": true,
         "sleeper_id": "7561",
         "team": "PHI"
@@ -706,10 +706,10 @@
         "name": "Jaleel McLaughlin",
         "ppg": 0.86,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -3.97,
+        "same_position_uplift_ppg": -3.26,
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
@@ -731,10 +731,10 @@
         "name": "Emanuel Wilson",
         "ppg": 0.82,
         "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.832
+          "name": "Seth McGowan",
+          "ppg": 4.124
         },
-        "same_position_uplift_ppg": -4.01,
+        "same_position_uplift_ppg": -3.3,
         "screen_only": true,
         "sleeper_id": "11435",
         "team": "SEA"
@@ -1299,5 +1299,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-06T16:52:29.457957+00:00"
+  "snapshot_utc": "2026-11-06T17:49:58.787897+00:00"
 }

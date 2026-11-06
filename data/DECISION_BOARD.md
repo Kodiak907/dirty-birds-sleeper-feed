@@ -11,22 +11,21 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Baker Mayfield | 12.51 | -3.76 | 94.7% | — | sleeper_injury_questionable |
 
-## RB — reference: Kaelon Black (4.83 PPG)
+## RB — reference: Seth McGowan (4.12 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Kyle Monangai | 6.08 | +1.25 | 39.7% | Carries 16.7 | sleeper_injury_out |
-| 2 | Chris Rodriguez Jr. | 5.56 | +0.73 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
-| 3 | Samaje Perine | 5.31 | +0.48 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
-| 4 | Tyjae Spears | 5.07 | +0.24 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 5 | Keaton Mitchell | 4.69 | -0.14 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
-| 6 | Seth McGowan | 4.12 | -0.71 | 27.0% | Carries 6.7 | No modeled flags (not medically cleared) |
-| 7 | MarShawn Lloyd | 3.85 | -0.98 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
-| 8 | Zonovan Knight | 3.26 | -1.58 | 39.7% | — | carries_missing |
-| 9 | Tank Bigsby | 1.96 | -2.87 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
-| 10 | Elijah Mitchell | 1.06 | -3.77 | 39.0% | Carries 7.0 | No modeled flags (not medically cleared) |
-| 11 | Jaleel McLaughlin | 0.86 | -3.97 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 12 | Emanuel Wilson | 0.82 | -4.01 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
+| 1 | Kyle Monangai | 6.08 | +1.96 | 39.7% | Carries 16.7 | sleeper_injury_out |
+| 2 | Chris Rodriguez Jr. | 5.56 | +1.44 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
+| 3 | Samaje Perine | 5.31 | +1.19 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 4 | Tyjae Spears | 5.07 | +0.94 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 5 | Keaton Mitchell | 4.69 | +0.57 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
+| 6 | MarShawn Lloyd | 3.85 | -0.27 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
+| 7 | Zonovan Knight | 3.26 | -0.87 | 39.7% | — | carries_missing |
+| 8 | Tank Bigsby | 1.96 | -2.16 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
+| 9 | Elijah Mitchell | 1.06 | -3.07 | 39.0% | Carries 7.0 | No modeled flags (not medically cleared) |
+| 10 | Jaleel McLaughlin | 0.86 | -3.26 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 11 | Emanuel Wilson | 0.82 | -3.30 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Christian Kirk (1.24 PPG)
 
@@ -66,21 +65,22 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Cairo Santos | 5.51 | -1.66 | — | — | No modeled flags (not medically cleared) |
 | 6 | Chris Boswell | 5.42 | -1.75 | — | — | No modeled flags (not medically cleared) |
 
-## DEF — reference: Buffalo Bills (6.61 PPG)
+## DEF — reference: Minnesota Vikings (6.88 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Baltimore Ravens | 6.02 | -0.59 | — | — | No modeled flags (not medically cleared) |
-| 2 | Green Bay Packers | 6.00 | -0.61 | — | — | No modeled flags (not medically cleared) |
-| 3 | Cincinnati Bengals | 5.91 | -0.70 | — | — | No modeled flags (not medically cleared) |
-| 4 | New England Patriots | 5.89 | -0.72 | — | — | No modeled flags (not medically cleared) |
-| 5 | New Orleans Saints | 5.87 | -0.74 | — | — | No modeled flags (not medically cleared) |
-| 6 | Indianapolis Colts | 5.74 | -0.87 | — | — | No modeled flags (not medically cleared) |
-| 7 | Washington Commanders | 5.43 | -1.18 | — | — | No modeled flags (not medically cleared) |
-| 8 | Cleveland Browns | 5.36 | -1.25 | — | — | No modeled flags (not medically cleared) |
-| 9 | Tampa Bay Buccaneers | 5.15 | -1.46 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tennessee Titans | 4.42 | -2.19 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 4.34 | -2.27 | — | — | No modeled flags (not medically cleared) |
+| 1 | Buffalo Bills | 6.61 | -0.27 | — | — | No modeled flags (not medically cleared) |
+| 2 | Baltimore Ravens | 6.02 | -0.86 | — | — | No modeled flags (not medically cleared) |
+| 3 | Green Bay Packers | 6.00 | -0.88 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cincinnati Bengals | 5.91 | -0.97 | — | — | No modeled flags (not medically cleared) |
+| 5 | New England Patriots | 5.89 | -0.99 | — | — | No modeled flags (not medically cleared) |
+| 6 | New Orleans Saints | 5.87 | -1.01 | — | — | No modeled flags (not medically cleared) |
+| 7 | Indianapolis Colts | 5.74 | -1.14 | — | — | No modeled flags (not medically cleared) |
+| 8 | Washington Commanders | 5.43 | -1.45 | — | — | No modeled flags (not medically cleared) |
+| 9 | Cleveland Browns | 5.36 | -1.52 | — | — | No modeled flags (not medically cleared) |
+| 10 | Tampa Bay Buccaneers | 5.15 | -1.73 | — | — | No modeled flags (not medically cleared) |
+| 11 | Tennessee Titans | 4.42 | -2.46 | — | — | No modeled flags (not medically cleared) |
+| 12 | New York Jets | 4.34 | -2.53 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

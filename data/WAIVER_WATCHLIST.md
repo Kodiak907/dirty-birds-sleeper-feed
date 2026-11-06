@@ -1,18 +1,18 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-06T16:52:38.489428+00:00
-Sleeper snapshot: 2026-11-06T16:52:29.457957+00:00
+Generated: 2026-11-06T17:50:03.683169+00:00
+Sleeper snapshot: 2026-11-06T17:49:58.787897+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 629 |
+| RB | 628 |
 | WR | 1290 |
 | TE | 614 |
 | K | 139 |
-| DEF | 14 |
+| DEF | 15 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -31,13 +31,12 @@ Sleeper snapshot: 2026-11-06T16:52:29.457957+00:00
 | 3 | Samaje Perine | CIN | 5.31 | 100% | 36.3% | Not flagged |
 | 4 | Tyjae Spears | TEN | 5.07 | 89% | 38.0% | Questionable |
 | 5 | Keaton Mitchell | LAC | 4.69 | 100% | 30.0% | Not flagged |
-| 6 | Seth McGowan | IND | 4.12 | 89% | 27.0% | Not flagged |
-| 7 | MarShawn Lloyd | GB | 3.85 | 89% | 30.7% | Not flagged |
-| 8 | Zonovan Knight | ARI | 3.26 | 89% | 39.7% | Not flagged |
-| 9 | Tank Bigsby | PHI | 1.96 | 78% | 28.7% | IR |
-| 10 | Elijah Mitchell | PHI | 1.06 | 89% | 39.0% | Not flagged |
-| 11 | Jaleel McLaughlin | CLE | 0.86 | 89% | 21.7% | Not flagged |
-| 12 | Emanuel Wilson | SEA | 0.82 | 89% | 26.7% | Not flagged |
+| 6 | MarShawn Lloyd | GB | 3.85 | 89% | 30.7% | Not flagged |
+| 7 | Zonovan Knight | ARI | 3.26 | 89% | 39.7% | Not flagged |
+| 8 | Tank Bigsby | PHI | 1.96 | 78% | 28.7% | IR |
+| 9 | Elijah Mitchell | PHI | 1.06 | 89% | 39.0% | Not flagged |
+| 10 | Jaleel McLaughlin | CLE | 0.86 | 89% | 21.7% | Not flagged |
+| 11 | Emanuel Wilson | SEA | 0.82 | 89% | 26.7% | Not flagged |
 
 ### WR
 
@@ -81,17 +80,18 @@ Sleeper snapshot: 2026-11-06T16:52:29.457957+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Baltimore Ravens | BAL | 6.02 | 89% | — | Not flagged |
-| 2 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
-| 3 | Cincinnati Bengals | CIN | 5.91 | 100% | — | Not flagged |
-| 4 | New England Patriots | NE | 5.89 | 89% | — | Not flagged |
-| 5 | New Orleans Saints | NO | 5.87 | 100% | — | Not flagged |
-| 6 | Indianapolis Colts | IND | 5.74 | 89% | — | Not flagged |
-| 7 | Washington Commanders | WAS | 5.43 | 100% | — | Not flagged |
-| 8 | Cleveland Browns | CLE | 5.36 | 89% | — | Not flagged |
-| 9 | Tampa Bay Buccaneers | TB | 5.15 | 89% | — | Not flagged |
-| 10 | Tennessee Titans | TEN | 4.42 | 89% | — | Not flagged |
-| 11 | New York Jets | NYJ | 4.34 | 89% | — | Not flagged |
+| 1 | Buffalo Bills | BUF | 6.61 | 100% | — | Not flagged |
+| 2 | Baltimore Ravens | BAL | 6.02 | 89% | — | Not flagged |
+| 3 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
+| 4 | Cincinnati Bengals | CIN | 5.91 | 100% | — | Not flagged |
+| 5 | New England Patriots | NE | 5.89 | 89% | — | Not flagged |
+| 6 | New Orleans Saints | NO | 5.87 | 100% | — | Not flagged |
+| 7 | Indianapolis Colts | IND | 5.74 | 89% | — | Not flagged |
+| 8 | Washington Commanders | WAS | 5.43 | 100% | — | Not flagged |
+| 9 | Cleveland Browns | CLE | 5.36 | 89% | — | Not flagged |
+| 10 | Tampa Bay Buccaneers | TB | 5.15 | 89% | — | Not flagged |
+| 11 | Tennessee Titans | TEN | 4.42 | 89% | — | Not flagged |
+| 12 | New York Jets | NYJ | 4.34 | 89% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -117,15 +117,15 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Michael Pittman Jr. | WR | PIT | 4.48 | 77.7% |
 | Makai Lemon | WR | PHI | 4.31 | 88.7% |
 | Dontayvion Wicks | WR | PHI | 4.26 | 79.3% |
-| Seth McGowan | RB | IND | 4.12 | 27.0% |
 | MarShawn Lloyd | RB | GB | 3.85 | 30.7% |
 | Ja'Kobi Lane | WR | BAL | 3.84 | 63.7% |
 | Mack Hollins | WR | NE | 3.80 | 62.7% |
+| Rashod Bateman | WR | BAL | 3.66 | 70.3% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **38**
+Candidates with independently sourced projections AND usage data: **37**
 
 ## Coverage and rules
 

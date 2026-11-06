@@ -69,6 +69,112 @@
   "by_position": {
     "DEF": [
       {
+        "bench_depth_delta_ppg": 0.073,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 126.274,
+          "before_ppg": 126.274,
+          "displaced_starters": [],
+          "drop": "Pat Bryant",
+          "drop_id": "12492",
+          "drop_is_fantasy_reserve": true,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Buffalo Bills",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Pat Bryant",
+            "drop_id": "12492",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Caleb Douglas",
+            "drop_id": "13296",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Christian Kirk",
+            "drop_id": "4950",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Deebo Samuel Sr.",
+            "drop_id": "5872",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
+            "drop": "Michael Mayer",
+            "drop_id": "9482",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "BUF",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "DEF",
+        "projection_ppg": 6.611,
+        "team": "BUF",
+        "warnings": [
+          "No sourced usage",
+          "Proposed cut is on fantasy reserve; roster rules require review"
+        ]
+      },
+      {
         "bench_depth_delta_ppg": -0.52,
         "best_candidate_drop": {
           "added_starters": [],
@@ -127,6 +233,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -149,16 +265,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -234,6 +340,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -256,16 +372,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -341,6 +447,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -363,16 +479,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -447,6 +553,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -469,16 +585,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -554,6 +660,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -576,16 +692,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -660,6 +766,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -682,16 +798,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -767,6 +873,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -789,16 +905,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -873,6 +979,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -895,16 +1011,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -980,6 +1086,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1002,16 +1118,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1087,6 +1193,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1109,16 +1225,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1194,6 +1300,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1216,16 +1332,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1303,6 +1409,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1325,16 +1441,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1409,6 +1515,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1431,16 +1547,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1516,6 +1622,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1538,16 +1654,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1623,6 +1729,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1645,16 +1761,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1729,6 +1835,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1751,16 +1867,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1836,6 +1942,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1858,16 +1974,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -1945,6 +2051,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -1967,16 +2083,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2054,6 +2160,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2076,16 +2192,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2161,6 +2267,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2183,16 +2299,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2267,6 +2373,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2289,16 +2405,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2372,6 +2478,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2394,16 +2510,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2479,6 +2585,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2501,16 +2617,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2522,112 +2628,6 @@
         "projection_ppg": 4.689,
         "team": "LAC",
         "warnings": [
-          "Proposed cut is on fantasy reserve; roster rules require review"
-        ]
-      },
-      {
-        "bench_depth_delta_ppg": -2.414,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 126.274,
-          "before_ppg": 126.274,
-          "displaced_starters": [],
-          "drop": "Pat Bryant",
-          "drop_id": "12492",
-          "drop_is_fantasy_reserve": true,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Seth McGowan",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Pat Bryant",
-            "drop_id": "12492",
-            "drop_is_fantasy_reserve": true,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Caleb Douglas",
-            "drop_id": "13296",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Christian Kirk",
-            "drop_id": "4950",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Deebo Samuel Sr.",
-            "drop_id": "5872",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "Michael Mayer",
-            "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "13424",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "RB",
-        "projection_ppg": 4.124,
-        "team": "IND",
-        "warnings": [
-          "Partial projection coverage",
           "Proposed cut is on fantasy reserve; roster rules require review"
         ]
       },
@@ -2690,6 +2690,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2712,16 +2722,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2796,6 +2796,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2818,16 +2828,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -2902,6 +2902,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -2924,16 +2934,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3009,6 +3009,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3031,16 +3041,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3115,6 +3115,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3137,16 +3147,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3221,6 +3221,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3243,16 +3253,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3329,6 +3329,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3351,16 +3361,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3434,6 +3434,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3456,16 +3466,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3539,6 +3539,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3561,16 +3571,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3644,6 +3644,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3666,16 +3676,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3752,6 +3752,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3774,16 +3784,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3860,6 +3860,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3882,16 +3892,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -3965,6 +3965,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -3987,16 +3997,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4070,6 +4070,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4092,16 +4102,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4176,6 +4176,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4198,16 +4208,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4281,6 +4281,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4303,16 +4313,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4387,6 +4387,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4409,16 +4419,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4494,6 +4494,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4516,16 +4526,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4600,6 +4600,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4622,16 +4632,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4707,6 +4707,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4729,16 +4739,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4813,6 +4813,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4835,16 +4845,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -4920,6 +4920,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -4942,16 +4952,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5026,6 +5026,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5048,16 +5058,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5131,6 +5131,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5153,16 +5163,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5236,6 +5236,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5258,16 +5268,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5344,6 +5344,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5366,16 +5376,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5450,6 +5450,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5472,16 +5482,6 @@
             "displaced_starters": [],
             "drop": "Michael Mayer",
             "drop_id": "9482",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
           }
@@ -5555,6 +5555,16 @@
             "after_ppg": 126.274,
             "before_ppg": 126.274,
             "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 126.274,
+            "before_ppg": 126.274,
+            "displaced_starters": [],
             "drop": "Christian Kirk",
             "drop_id": "4950",
             "drop_is_fantasy_reserve": false,
@@ -5579,16 +5589,6 @@
             "drop_id": "9482",
             "drop_is_fantasy_reserve": false,
             "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 126.274,
-            "before_ppg": 126.274,
-            "displaced_starters": [],
-            "drop": "C.J. Stroud",
-            "drop_id": "9758",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
           }
         ],
         "candidate_id": "13413",
@@ -5603,7 +5603,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-06T16:52:38.806411+00:00",
+  "generated_at_utc": "2026-11-06T17:50:03.840396+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5611,6 +5611,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-06T16:52:29.457957+00:00",
+  "sleeper_snapshot_utc": "2026-11-06T17:49:58.787897+00:00",
   "source_projection_date": "2026-11-06T13:45:26.306900+00:00"
 }

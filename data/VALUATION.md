@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-06T16:52:38.424770+00:00
-Sleeper snapshot: 2026-11-06T16:52:29.457957+00:00
+Generated: 2026-11-06T17:50:03.635884+00:00
+Sleeper snapshot: 2026-11-06T17:49:58.787897+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -29,8 +29,8 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | A.J. Brown | WR | 14.60 | 1.82 | 3/8 |
 | Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
-| Buffalo Bills | DEF | 5.00 | 0.62 | 1/8 |
 | Pat Bryant | WR | 0.00 | 0.00 | 0/8 |
+| Seth McGowan | RB | 0.00 | 0.00 | 0/8 |
 | Christian Kirk | WR | 0.00 | 0.00 | 0/8 |
 
 ## Opponent historical lineup signal

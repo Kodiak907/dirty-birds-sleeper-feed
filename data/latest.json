@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-06T16:52:29.457957+00:00",
+  "fetched_at_utc": "2026-11-06T17:49:58.787897+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": "06a7a98b6f1801cd134db689a08ddb92",
-    "last_author_display_name": "Kodiak907",
-    "last_author_id": "1399093464662073344",
-    "last_author_is_bot": false,
+    "last_author_avatar": null,
+    "last_author_display_name": "sys",
+    "last_author_id": "166666666666666666",
+    "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1424295455528878080",
+    "last_message_id": "1424480770902302720",
     "last_message_text_map": null,
-    "last_message_time": 1793941008030,
+    "last_message_time": 1793985190657,
     "last_pinned_message_id": "1423964959808790528",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -11507,6 +11507,7 @@
           "13301",
           "13345",
           "13414",
+          "13424",
           "4034",
           "4046",
           "4950",
@@ -11518,7 +11519,6 @@
           "9488",
           "9758",
           "9997",
-          "BUF",
           "MIN"
         ],
         "players_points": {
@@ -11528,6 +11528,7 @@
           "13301": 0.0,
           "13345": 0.0,
           "13414": 0.0,
+          "13424": 0.0,
           "4034": 0.0,
           "4046": 0.0,
           "4950": 0.0,
@@ -11539,7 +11540,6 @@
           "9488": 0.0,
           "9758": 0.0,
           "9997": 3.8,
-          "BUF": 0.0,
           "MIN": 0.0
         },
         "points": 3.8,
@@ -11554,7 +11554,7 @@
           "13296",
           "13345",
           "11792",
-          "BUF"
+          "MIN"
         ],
         "starters_points": [
           0.0,
@@ -12375,6 +12375,7 @@
         "13301",
         "13345",
         "13414",
+        "13424",
         "4034",
         "4046",
         "4950",
@@ -12386,7 +12387,6 @@
         "9488",
         "9758",
         "9997",
-        "BUF",
         "MIN"
       ],
       "reserve": [
@@ -12417,7 +12417,7 @@
         "13296",
         "13345",
         "11792",
-        "BUF"
+        "MIN"
       ],
       "taxi": null
     },
@@ -20520,6 +20520,31 @@
       }
     ],
     "9": [
+      {
+        "adds": {
+          "13424": 1
+        },
+        "consenter_ids": [
+          1
+        ],
+        "created": 1793985190618,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": {
+          "BUF": 1
+        },
+        "leg": 9,
+        "metadata": null,
+        "roster_ids": [
+          1
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1793985190618,
+        "transaction_id": "1424480770734448640",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "9482": 1

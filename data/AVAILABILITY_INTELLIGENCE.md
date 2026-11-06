@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-06T16:52:43.793105+00:00
-Sleeper snapshot: 2026-11-06T16:52:29.457957+00:00
-nflverse observations: 2026-11-06T16:52:37.624572+00:00; injury feed loaded: True
+Generated: 2026-11-06T17:50:08.158005+00:00
+Sleeper snapshot: 2026-11-06T17:49:58.787897+00:00
+nflverse observations: 2026-11-06T17:50:03.160113+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -16,6 +16,7 @@ nflverse observations: 2026-11-06T16:52:37.624572+00:00; injury feed loaded: Tru
 | Antonio Williams | No tag | No matched report (not clearance) | 72.7% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
+| Seth McGowan | No tag | No matched report (not clearance) | 27.0% | Verify current status before kickoff |
 | Christian McCaffrey | No tag | Week 9 observation: Limited Participation in Practice | 73.0% | Verify current status before kickoff |
 | Patrick Mahomes | No tag | Week 9 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | Christian Kirk | IR | Week 9 observation: Did Not Participate In Practice | 30.0% | Verify official NFL roster and game status before lineup decisions |
@@ -27,7 +28,6 @@ nflverse observations: 2026-11-06T16:52:37.624572+00:00; injury feed loaded: Tru
 | Jaxon Smith-Njigba | No tag | Week 9 observation: Limited Participation in Practice | 88.7% | Verify current status before kickoff |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
-| Buffalo Bills | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
