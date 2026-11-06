@@ -1269,8 +1269,9 @@ async function ffo616PlayerGameRoute(req,env){
   if(position==='K'&&/^[0-9]{1,12}$/.test(playerId)){
    // Published season/weekly gamelog queries are returning 400/502 for
    // kickers. Go directly to the narrower verified game boxscore evidence.
+   let recovered=null;
    try{
-    const recovered=await ffo623RecoverKicker(team,name,playerId,targetWeek,env,checked_at);
+    recovered=await ffo623RecoverKicker(team,name,playerId,targetWeek,env,checked_at);
     if(recovered?.forecast&&recovered?.games_observed>=2){
      ffo616PlayerGameCache.set(key,{data:recovered,at:Date.now()});
      return recovered;
