@@ -34,7 +34,8 @@ jobs:
           import sqlite3
           path=Path('pfo-thursday/accuracy-migrations/0001_accuracy_ledger.sql')
           ddl=path.read_text()
-          assert 'commissioner_' not in ddl.lower(), 'Accuracy schema must not touch Commissioner tables'
+          executable='\n'.join(line for line in ddl.splitlines() if not line.lstrip().startswith('--'))
+          assert 'commissioner_' not in executable.lower(), 'Accuracy SQL must not touch Commissioner tables'
           db=sqlite3.connect(':memory:')
           db.executescript(ddl)
           tables={r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
