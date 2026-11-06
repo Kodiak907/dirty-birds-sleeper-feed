@@ -16,7 +16,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kyle Monangai | 6.08 | +1.25 | 39.7% | Carries 16.7 | sleeper_injury_out, injury_report_observation_review |
-| 2 | Chris Rodriguez Jr. | 5.56 | +0.73 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
+| 2 | Chris Rodriguez Jr. | 5.56 | +0.73 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
 | 3 | Samaje Perine | 5.31 | +0.48 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 4 | Tyjae Spears | 5.07 | +0.24 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 5 | Keaton Mitchell | 4.69 | -0.14 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
@@ -40,9 +40,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 6 | Michael Pittman Jr. | 4.48 | +3.25 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 7 | Makai Lemon | 4.31 | +3.08 | 88.7% | Tgt 7.7 | No modeled flags (not medically cleared) |
 | 8 | Dontayvion Wicks | 4.26 | +3.02 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, projection_weeks_partial |
-| 9 | Ja'Kobi Lane | 3.84 | +2.60 | 62.7% | Tgt 3.7 | injury_report_observation_review |
+| 9 | Ja'Kobi Lane | 3.84 | +2.60 | 62.7% | Tgt 2.0 | injury_report_observation_review |
 | 10 | Mack Hollins | 3.80 | +2.56 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
-| 11 | Rashod Bateman | 3.66 | +2.42 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 11 | Rashod Bateman | 3.66 | +2.42 | 59.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 12 | Dohnte Meyers | 3.45 | +2.22 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Michael Mayer (5.48 PPG)
