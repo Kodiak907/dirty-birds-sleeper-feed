@@ -976,6 +976,129 @@ async function ffo616DefenseRoute(req,env){
  try{return ffoReply(await load)}finally{ffo616DefensePending.delete(team)}
 }
 
+/* PFO 6.29: protected, read-only MSF D/ST evidence inspection.
+ * This NEVER supplies D/ST points. Play descriptions, provider payloads,
+ * access credentials and exact scoring events are not returned to the client.
+ * A published PBP record does not certify the entire game's play coverage.
+ */
+function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
+ const data=payload?.data??payload;
+ const rows=data?.gameplaybyplay?.plays??data?.gamePlayByPlay?.plays??data?.plays;
+ if(!Array.isArray(rows))return {source:'MySportsFeeds',available:false,team,game_id:fixture.id,
+  checked_at:checkedAt,error:'msf_play_by_play_schema_unrecognized',
+  full_game_certified:false,dst_points_certified:false};
+ if(rows.length>1500)return {source:'MySportsFeeds',available:false,team,game_id:fixture.id,
+  checked_at:checkedAt,error:'msf_play_by_play_exceeds_audit_limit',
+  full_game_certified:false,dst_points_certified:false};
+ const seen=new Set(),drives=new Set();
+ const counts={plays:rows.length,provider_id:0,unique_provider_id:0,duplicate_provider_id:0,
+  quarter:0,down:0,possession_team:0,drive_id:0,clock:0,score_snapshots:0,descriptions:0};
+ const knownTeams=new Set([fixture.home,fixture.away]);
+ const validId=x=>x!==null&&x!==undefined&&/^[A-Za-z0-9_-]{1,90}$/.test(String(x));
+ const integer=x=>x!==null&&x!==undefined&&x!==''&&Number.isInteger(Number(x));
+ for(const p of rows){
+  if(!p||typeof p!=='object'||Array.isArray(p))continue;
+  const st=p.playStatus||{};
+  const id=p.id??p.playId??p.eventId;
+  if(validId(id)){
+   counts.provider_id++;
+   const value=String(id);
+   if(seen.has(value))counts.duplicate_provider_id++;
+   else{seen.add(value);counts.unique_provider_id++}
+  }
+  const q=st.quarter??p.quarter??p.period;
+  if(integer(q)&&Number(q)>=1&&Number(q)<=7)counts.quarter++;
+  const down=st.down??st.currentDown??p.down;
+  if(integer(down)&&Number(down)>=1&&Number(down)<=4)counts.down++;
+  const poss=String(st.teamInPossession?.abbreviation||st.teamInPossession?.abbr||p.teamInPossession?.abbreviation||'').toUpperCase();
+  if(knownTeams.has(poss))counts.possession_team++;
+  const drive=p.driveId??p.drive?.id??st.driveId??st.possessionId;
+  if(validId(drive)){counts.drive_id++;drives.add(String(drive))}
+  const sec=st.secondsElapsed;
+  const clock=String(p.time||p.gameClock||p.clock||'');
+  if((integer(sec)&&Number(sec)>=0&&Number(sec)<=900)||/^\\d{1,2}:[0-5]\\d$/.test(clock))counts.clock++;
+  const home=p.homeScore??st.homeScore,away=p.awayScore??st.awayScore;
+  if(integer(home)&&integer(away)&&Number(home)>=0&&Number(away)>=0)counts.score_snapshots++;
+  if(typeof(p.description??p.playDescription??p.text)==='string'&&
+     String(p.description??p.playDescription??p.text).trim())counts.descriptions++;
+ }
+ const missing=[];
+ if(!rows.length)missing.push('no_published_play_records');
+ if(!counts.provider_id||counts.duplicate_provider_id)missing.push('unique_native_play_ids_not_established');
+ if(!counts.possession_team)missing.push('provider_possession_identity_unavailable');
+ if(!counts.down)missing.push('explicit_down_field_unavailable');
+ if(!counts.drive_id)missing.push('provider_drive_identifiers_unavailable');
+ if(!counts.score_snapshots)missing.push('per_play_score_snapshots_unavailable');
+ missing.push('complete_drive_boundaries_not_certified','offensive_vs_return_score_attribution_not_certified',
+  'whole_game_play_coverage_not_certified');
+ return {schema:'FFO_MSF_DST_SOURCE_AUDIT_V1',source:'MySportsFeeds',
+  source_type:'licensed_primary',available:rows.length>0,team,game_id:fixture.id,
+  checked_at:checkedAt,completed_fixture_verified:true,
+  observed_fields:{...counts,distinct_drive_ids:drives.size},
+  missing_evidence:missing,full_game_certified:false,
+  three_and_out_scoring_ready:false,points_allowed_scoring_ready:false,
+  dst_points_certified:false,read_only:true,
+  interpretation:'Source field inventory only. No inferred three-and-outs, no scoreboard-derived PA, and no fantasy score changes.'};
+}
+async function ffo629DefenseSourceAuditRoute(req,env){
+ if(req.method!=='GET')return ffoReply({error:'method_not_allowed'},405);
+ try{await comIdentity(req,env)}catch{return ffoReply({error:'access_required_or_forbidden'},403)}
+ const u=new URL(req.url),team=String(u.searchParams.get('team')||'').toUpperCase();
+ if(!ffo598NFLTeams.has(team))return ffoReply({error:'invalid_nfl_team'},400);
+ const requested=String(u.searchParams.get('game_id')||'');
+ if(requested&&!/^[A-Za-z0-9_-]{1,75}$/.test(requested))return ffoReply({error:'invalid_game_id'},400);
+ const checkedAt=new Date().toISOString();
+ if(!env.MSF_API_KEY&&!env.GAMECAST_INTERNAL)
+  return ffoReply({source:'MySportsFeeds',available:false,error:'licensed_provider_not_configured',team,checked_at:checkedAt});
+ const get=async path=>{
+  const url=MSF_ROOT+path;
+  let res;
+  try{
+   res=env.MSF_API_KEY
+    ?await fetch(url,{method:'GET',headers:{authorization:'Basic '+btoa(env.MSF_API_KEY+':MYSPORTSFEEDS'),accept:'application/json'},signal:AbortSignal.timeout(11000)})
+    :await env.GAMECAST_INTERNAL.fetch(new Request(url,{method:'GET'}));
+  }catch{return {ok:false,error:'provider_unreachable'}}
+  if(!res.ok)return {ok:false,error:res.status===401?'provider_auth_denied':
+   res.status===403?'provider_entitlement_denied':
+   res.status===404?'provider_feed_unavailable':
+   res.status===429?'provider_rate_limited':'provider_http_error',status:res.status};
+  const len=Number(res.headers?.get?.('content-length')||0);
+  if(len>3000000)return {ok:false,error:'provider_response_exceeds_limit'};
+  try{
+   const raw=await res.text();
+   if(raw.length>3000000)return {ok:false,error:'provider_response_exceeds_limit'};
+   const data=JSON.parse(raw);
+   if(!data||typeof data!=='object')return {ok:false,error:'provider_payload_unrecognized'};
+   return {ok:true,data:data?.data??data};
+  }catch{return {ok:false,error:'provider_response_unreadable'}}
+ };
+ const schedule=await get('/2026-regular/games.json?team='+encodeURIComponent(team));
+ if(!schedule.ok)return ffoReply({source:'MySportsFeeds',available:false,
+  error:'schedule_'+schedule.error,team,checked_at:checkedAt});
+ let fixtures;
+ try{fixtures=ffo618VerifiedFixtures(schedule.data)}catch{
+  return ffoReply({source:'MySportsFeeds',available:false,error:'completed_schedule_schema_unverified',team,checked_at:checkedAt});
+ }
+ const entries=Array.isArray(schedule.data?.games)?schedule.data.games:[];
+ const valid=entries.map(item=>{
+  const g=item.schedule||item.game||item,id=String(g.id??g.gameId??'');
+  const fx=fixtures.get(id),week=Number(g.week??g.weekNumber);
+  if(!fx||![fx.home,fx.away].includes(team))return null;
+  return {...fx,id,week:Number.isInteger(week)&&week>=1&&week<=18?week:0};
+ }).filter(Boolean).sort((a,b)=>b.week-a.week||b.id.localeCompare(a.id));
+ const selected=requested?valid.find(x=>x.id===requested):valid[0];
+ if(!selected)return ffoReply({source:'MySportsFeeds',available:false,
+  error:requested?'requested_completed_team_game_not_verified':'no_completed_team_game_verified',
+  team,checked_at:checkedAt});
+ const pbp=await get('/2026-regular/games/'+encodeURIComponent(selected.id)+'/playbyplay.json');
+ if(!pbp.ok)return ffoReply({schema:'FFO_MSF_DST_SOURCE_AUDIT_V1',
+  source:'MySportsFeeds',available:false,team,game_id:selected.id,checked_at:checkedAt,
+  completed_fixture_verified:true,full_game_certified:false,three_and_out_scoring_ready:false,
+  points_allowed_scoring_ready:false,dst_points_certified:false,read_only:true,
+  error:'play_by_play_'+pbp.error,scoring_only_boxscore_not_equivalent:true});
+ return ffoReply(ffo629InspectDefensePlayFields(pbp.data,selected,team,checkedAt));
+}
+
 /* PFO 6.16: fill missing starter denominators from licensed game logs, NOT
  * Sleeper scores or assumed participation. Name+NFL team must match uniquely.
  */
@@ -1526,7 +1649,7 @@ async function ffo598SeasonRoute(req,env){
  try{return ffoReply(await load)}finally{ffo598SeasonPending.delete(key)}
 }
 
-export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname==='/api/ffo/stats/season')return ffo598SeasonRoute(request,env);if(url.pathname==='/api/ffo/stats/defense')return ffo616DefenseRoute(request,env);if(url.pathname==='/api/ffo/stats/player-coverage')return ffo616PlayerGameRoute(request,env);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
+export default {async fetch(request,env){const url=new URL(request.url);if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);if(url.pathname==='/api/ffo/stats/season')return ffo598SeasonRoute(request,env);if(url.pathname==='/api/ffo/stats/defense')return ffo616DefenseRoute(request,env);if(url.pathname==='/api/ffo/stats/defense-source-audit')return ffo629DefenseSourceAuditRoute(request,env);if(url.pathname==='/api/ffo/stats/player-coverage')return ffo616PlayerGameRoute(request,env);if(url.pathname.startsWith('/api/ffo/gamecast/'))return ffoGamecastHandle(request,env,{verifyAccess:comIdentity,transport:env.GAMECAST_INTERNAL ? (upstream,options)=>env.GAMECAST_INTERNAL.fetch(new Request(upstream,{method:'GET'})) : fetch});if(url.pathname.startsWith('/api/commissioner/')){try{return await commissionerApi(request,env)}catch(err){return comJson({error:'COMMISSIONER_SERVICE_ERROR',message:'Private case system unavailable; no operation confirmed.'},503)}}if(request.method!=='GET')return result({error:'method not allowed'},405);try{
  if(url.pathname==='/api/gameday-news'){
   // ESPN news metadata are leads, not proof that a headline is true or a coach quote was verified.
   const names=(url.searchParams.get('names')||'').split(',').map(x=>x.trim()).filter(x=>/^[a-z .'-]{3,65}$/i.test(x)).slice(0,35);
