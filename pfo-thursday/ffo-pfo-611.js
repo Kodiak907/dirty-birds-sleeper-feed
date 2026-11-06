@@ -34,6 +34,7 @@
    else if(score?.schedulePending)reason='verified NFL week schedule missing';
    else if(pos==='DEF'&&defensePending.has(team))reason='loading licensed MSF team defense and completed-game results';
    else if(pos==='DEF'&&defenseErrors.has(team))reason='MSF D/ST evidence: '+defenseErrors.get(team);
+   else if(pos==='K'&&playerPending.has(id))reason='checking licensed completed-game kicker boxscores';
    else if(pos!=='DEF'&&playerPending.has(id))reason='loading licensed individual game logs';
    else if(pos!=='DEF'&&playerErrors.has(id))reason='MSF game logs: '+playerErrors.get(id);
    else if(info?.scope==='selected_teams'&&team&&!sourceTeams.has(team))reason='MSF did not load '+team+' team statistics';
