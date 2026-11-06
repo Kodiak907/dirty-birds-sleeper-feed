@@ -62,4 +62,5 @@ jobs:
           path: ${{ runner.temp }}/pfo637-accuracy-audit/report.json
           retention-days: 21
       - name: Confirm no deployment and no fantasy-point writes
-        run: echo "PFO 6.37 analysis complete: read-only, unmodified preview, no production or Commissioner write."
+        run: |
+          echo "PFO 6.37 analysis complete: read-only, unmodified preview, no production or Commissioner write."
