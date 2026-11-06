@@ -2531,7 +2531,7 @@ function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[],origina
  (x.id?'<button class="pfo597-player-link" type="button" data-pfo49-id="'+e(x.id)+'">'+e(p?.name||'Unknown player')+'</button>':'<strong>No verified option</strong>')+
  '<small>'+e(p?.position||'')+(p?.team?' · '+e(p.team):'')+'</small>'+
  (changed?'<span class="pfo615-change-note">↗ IN: '+e(p?.name||'Empty slot')+' · ↙ OUT: '+e(priorName)+'</span>':'')+
- selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b>'+(proj?.partial?'<small class="pfo616-partial">Partial MSF D/ST estimate · not certified</small>':'')+'</div>';
+ selector+'</div><b>'+(proj?.bye?'BYE':proj?.modelPending||proj?.schedulePending?'PENDING':pfo52PointLabel(val))+'</b>'+(proj?.partial?'<small class="pfo616-partial">Partial MSF scoring evidence · not certified</small>':'')+'</div>';
  }).join('')+'</div>';
 }
 function pfo52RosterCard(team,w,past){if(!team)return '<p class="pfo52-dim">Opponent not established for this selected week.</p>';
@@ -3112,7 +3112,7 @@ pfo52RosterPoints=function(){pfo54OldRoster();const host=$('actual-lineup'),w=pf
  for(const [i,tr] of [...host.querySelectorAll('tr')].entries()){
   const id=starters[i];if(!id||id==='0'||!tr.cells?.[1])continue;
   tr.cells[1].querySelectorAll('.pfo54-proj,.pfo53-k-model').forEach(x=>x.remove());
-  const f=pfo52Points(id,w),div=document.createElement('span');div.className='pfo54-proj';div.textContent=f?.points!=null?'Week '+w+' projected '+pfo52Money(f.points)+' FFL pts · '+(f.source?.startsWith('Recorded')?'historical baseline':'FFO estimate'):(f?.bye?'BYE · no NFL game':'Week '+w+' projection unavailable');tr.cells[1].append(div);
+  const f=pfo52Points(id,w),div=document.createElement('span');div.className='pfo54-proj';div.textContent=f?.points!=null?'Week '+w+' projected '+pfo52Money(f.points)+' FFL pts · '+(f.partial?'PARTIAL scoring evidence · ':'')+(f.source?.startsWith('Recorded')?'historical baseline':'FFO estimate'):(f?.bye?'BYE · no NFL game':'Week '+w+' projection unavailable');tr.cells[1].append(div);
  }
  // PFO 6.10: show independent FFO weekly forecasts for bench players and
  // the submitted-team subtotal. A missing estimate is unknown, never zero.
@@ -3126,18 +3126,23 @@ pfo52RosterPoints=function(){pfo54OldRoster();const host=$('actual-lineup'),w=pf
   const mark=document.createElement('div');mark.className='pfo54-proj pfo610-bench-proj';
   mark.textContent=result?.bye?'Week '+w+' · VERIFIED BYE (no game)':
    value!=null&&Number.isFinite(Number(value))?
-    'Week '+w+' FFO estimate '+pfo52Money(value)+' FFL pts':
+    'Week '+w+' FFO estimate '+pfo52Money(value)+' FFL pts'+(result.partial?' · PARTIAL scoring evidence':''):
     'Week '+w+' FFO projection unavailable · independent statistics or schedule incomplete';
   cell.append(mark);
  }
  const totalRows=(liveRosterSnapshot?.starters||[]).map(String);
  const required=totalRows.length||pfo52Slots().length;
- let covered=0,subtotal=0;
- for(const id of totalRows){
-  if(!id||id==='0')continue;
-  const result=pfo52Points(id,w),value=result?.points;
-  if(value!=null&&Number.isFinite(Number(value))){covered++;subtotal+=Number(value);}
- }
+ const lineupModels=totalRows.map(id=>({id,
+  projection:id&&id!=='0'?pfo52Points(id,w):null
+ }));
+ const audit=window.ffoPfo597?.auditLineup?.(lineupModels,required)||null;
+ // A PFO numeric forecast is provisional even when all starter positions
+ // have estimates. Never call 10/10 coverage fully scored/certified.
+ const covered=audit?.covered??lineupModels.filter(x=>x.projection?.points!=null&&
+  Number.isFinite(Number(x.projection.points))).length;
+ const subtotal=audit?.subtotal??lineupModels.reduce((n,x)=>
+  n+(Number.isFinite(Number(x.projection?.points))&&x.projection?.points!=null?
+   Number(x.projection.points):0),0);
  const status=$('actualstatus');
  let sumNode=$('pfo610-roster-total');
  if(status&&!sumNode){
@@ -3146,11 +3151,15 @@ pfo52RosterPoints=function(){pfo54OldRoster();const host=$('actual-lineup'),w=pf
   status.insertAdjacentElement('afterend',sumNode);
  }
  if(sumNode){
-  const number=covered?subtotal.toFixed(2)+' FFL pts':'not available';
+  const number=covered&&subtotal!=null?Number(subtotal).toFixed(2)+' FFL pts':'not available';
+  const partialCount=audit?.partial??lineupModels.filter(x=>x.projection?.points!=null&&
+   (x.projection.partial!==false||x.projection.certified!==true)).length;
   sumNode.textContent='Week '+w+' FFO submitted-team forecast: '+number+
-   ' · '+covered+'/'+required+' starter estimates'+
-   (covered===required?' · complete independent model coverage':
-   ' · PARTIAL subtotal only; missing projections are unknown, NOT zero');
+   ' · '+covered+'/'+required+' numeric starter estimates'+
+   (covered!==required?' · PARTIAL subtotal; missing projections are UNKNOWN, NOT zero':' · all starter estimates present')+
+   ' · '+partialCount+' scoring-evidence profiles provisional'+
+   ' · restored FFL video rules · model-only, NOT a certified final team score'+
+   (audit?.issues?.includes('duplicate_starter_identity')?' · duplicate starter identity detected':'');
  }
 
 };
