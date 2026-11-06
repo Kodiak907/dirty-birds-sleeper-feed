@@ -7,7 +7,9 @@ const read=n=>readFileSync(new URL(n,import.meta.url),'utf8');
 const js=read('./ffo-pfo-597.js'),market=read('./ffo-pfo-59.js'),core=read('./ffo-pfo-core.js'),mobile=read('./ffo-mobile-594.js'),html=read('./index.html'),css=read('./ffo-pfo-597.css'),meta=read('./ffo-waiver-meta-597.js');
 test('5.9.7 assets parse, load after previous model and preserve Commissioner boundaries',()=>{
  for(const [name,src] of Object.entries({js,market,core,mobile,meta}))assert.doesNotThrow(()=>new Script(src,{filename:name}),name);
- assert.match(html,/5\.9\.7 COACH REVIEW/);
+ assert.match(html,/PFO 6\.26 · PRIVATE PREVIEW/);
+ assert.doesNotMatch(html,/5\.9\.7 COACH REVIEW/);
+ assert.match(html,/ffo-pfo-616\.js\?v=626/);
  assert.match(html,/ffo-waiver-meta-597\.js\?v=597/);
  assert.match(html,/ffo-pfo-597\.js\?v=(?:690|616|622|626)/);
  assert.match(html,/ffo-pfo-597\.css\?v=597/);
