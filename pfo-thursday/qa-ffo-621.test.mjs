@@ -94,6 +94,6 @@ test('client supplies target week and retains partial independent scoring bounda
  assert.match(worker,/week\/'\+week\+'\/player_gamelogs\.json/);
  assert.match(worker,/ffo621PlayerWeekCache/);
  assert.match(worker,/comIdentity\(req,env\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=627/);
+ assert.match(html,/ffo-pfo-616\.js\?v=636/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
