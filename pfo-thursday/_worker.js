@@ -1156,7 +1156,10 @@ function ffo627VerifiedKickerFieldGoals(box,fixture,team,name){
   const scoringSide=dh===3&&da===0?home:da===3&&dh===0?away:null;
   const athlete=(desc.match(/(?:^|[\s(])\d{1,2}-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$|[,.])/i)||[]);
   const named=athlete.length===3&&athlete[1].toLowerCase()===initial&&clean(athlete[2])===last;
-  const literal=clean(desc).includes(fullName);
+  // Full-name credit must appear in the scoring actor portion, before
+  // the "field goal" event, not in trailing Center/Holder descriptions.
+  const actorText=desc.split(/\bfield[\s-]?goal\b|\bFG\b/i)[0]||'';
+  const literal=clean(actorText).includes(fullName);
   if(scoringSide!==target||!(named||literal)||/\b(?:no good|missed|blocked|wide left|wide right)\b/i.test(desc))continue;
   const distanceText=(desc.match(/\b(\d{1,2})[\s-]?yard(?:s)?\s+(?:field[\s-]?goal|FG)\b/i)||
    desc.match(/\b(?:field[\s-]?goal|FG)(?:\s+attempt)?\s+(?:of\s+|from\s+)?(\d{1,2})[\s-]?yards?\b/i));
@@ -1214,7 +1217,7 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
   delete entry.games_played;
   if(Object.keys(entry).length)mapped.push(entry);
  }
- if(!mapped.length)return {available:false,error:'kicker_boxscore_scoring_categories_missing',
+ if(!mapped.length&&!verifiedFG.count)return {available:false,error:'kicker_boxscore_scoring_categories_missing',
   schema_audit:audit};
  const combined={};
  for(const stats of mapped)for(const [key,n] of Object.entries(stats)){
