@@ -7,12 +7,12 @@
   "excluded_fantasy_reserve_player_ids": [
     "12492"
   ],
-  "generated_at_utc": "2026-11-06T07:14:24.606788+00:00",
+  "generated_at_utc": "2026-11-06T08:57:15.256902+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-06T01:47:29.353708+00:00",
+  "projection_as_of": "2026-11-06T07:49:19.719277+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-06T07:14:11.999596+00:00",
+  "snapshot_utc": "2026-11-06T08:57:05.131037+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -25,14 +25,14 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 136.74,
+      "ppg": 135.36,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "ATL",
           "position": "QB",
-          "ppg": 20.56
+          "ppg": 17.62
         },
         {
           "id": "4034",
@@ -74,7 +74,7 @@
           "name": "Will Reichard",
           "opponent": "GB",
           "position": "K",
-          "ppg": 5.1
+          "ppg": 6.66
         },
         {
           "id": "BUF",
@@ -106,14 +106,14 @@
         "Kyren Williams",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 116.28,
+      "ppg": 113.42,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "ARI",
           "position": "QB",
-          "ppg": 27.9
+          "ppg": 23.36
         },
         {
           "id": "4034",
@@ -155,7 +155,7 @@
           "name": "Will Reichard",
           "opponent": "SF",
           "position": "K",
-          "ppg": 5.45
+          "ppg": 7.13
         },
         {
           "id": "BUF",
@@ -183,14 +183,14 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 137.0,
+      "ppg": 134.98,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "BUF",
           "position": "QB",
-          "ppg": 23.45
+          "ppg": 19.75
         },
         {
           "id": "4034",
@@ -232,7 +232,7 @@
           "name": "Will Reichard",
           "opponent": "ATL",
           "position": "K",
-          "ppg": 5.45
+          "ppg": 7.13
         },
         {
           "id": "MIN",
@@ -263,14 +263,14 @@
         "Michael Mayer",
         "Zay Flowers"
       ],
-      "ppg": 130.99,
+      "ppg": 129.85,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "LA",
           "position": "QB",
-          "ppg": 19.86
+          "ppg": 17.04
         },
         {
           "id": "4034",
@@ -312,7 +312,7 @@
           "name": "Will Reichard",
           "opponent": "CAR",
           "position": "K",
-          "ppg": 5.45
+          "ppg": 7.13
         },
         {
           "id": "MIN",
@@ -340,14 +340,14 @@
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 133.81,
+      "ppg": 131.95,
       "starters": [
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "opponent": "WAS",
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "opponent": "CIN",
           "position": "QB",
-          "ppg": 23.34
+          "ppg": 19.8
         },
         {
           "id": "4034",
@@ -389,7 +389,7 @@
           "name": "Will Reichard",
           "opponent": "NE",
           "position": "K",
-          "ppg": 5.45
+          "ppg": 7.13
         },
         {
           "id": "MIN",
@@ -417,14 +417,14 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 139.58,
+      "ppg": 138.18,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "NE",
           "position": "QB",
-          "ppg": 22.76
+          "ppg": 19.56
         },
         {
           "id": "4034",
@@ -466,7 +466,7 @@
           "name": "Will Reichard",
           "opponent": "DET",
           "position": "K",
-          "ppg": 5.84
+          "ppg": 7.64
         },
         {
           "id": "MIN",
@@ -494,14 +494,14 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 133.96,
+      "ppg": 132.72,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "SF",
           "position": "QB",
-          "ppg": 21.81
+          "ppg": 18.77
         },
         {
           "id": "4034",
@@ -543,7 +543,7 @@
           "name": "Will Reichard",
           "opponent": "WAS",
           "position": "K",
-          "ppg": 5.87
+          "ppg": 7.67
         },
         {
           "id": "MIN",
@@ -571,14 +571,14 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.29,
+      "ppg": 134.45,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "LAC",
           "position": "QB",
-          "ppg": 22.98
+          "ppg": 19.54
         },
         {
           "id": "4034",
@@ -620,7 +620,7 @@
           "name": "Will Reichard",
           "opponent": "NYJ",
           "position": "K",
-          "ppg": 5.21
+          "ppg": 6.81
         },
         {
           "id": "MIN",
@@ -651,14 +651,14 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 136.79,
+      "ppg": 134.54,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "NYJ",
           "position": "QB",
-          "ppg": 25.21
+          "ppg": 21.15
         },
         {
           "id": "4034",
@@ -700,7 +700,7 @@
           "name": "Will Reichard",
           "opponent": "BUF",
           "position": "K",
-          "ppg": 5.52
+          "ppg": 7.22
         },
         {
           "id": "BUF",
@@ -714,7 +714,7 @@
           "name": "Jonah Coleman",
           "opponent": "CAR",
           "position": "RB",
-          "ppg": 13.08
+          "ppg": 13.19
         },
         {
           "id": "13296",

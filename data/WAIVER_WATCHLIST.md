@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-06T07:14:20.321487+00:00
-Sleeper snapshot: 2026-11-06T07:14:11.999596+00:00
+Generated: 2026-11-06T08:57:11.205113+00:00
+Sleeper snapshot: 2026-11-06T08:57:05.131037+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,7 +20,7 @@ Sleeper snapshot: 2026-11-06T07:14:11.999596+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Baker Mayfield | TB | 14.30 | 89% | 94.7% | Questionable |
+| 1 | Baker Mayfield | TB | 12.51 | 89% | 94.7% | Questionable |
 
 ### RB
 
@@ -70,12 +70,12 @@ Sleeper snapshot: 2026-11-06T07:14:11.999596+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Dominic Zvada | NYG | 5.18 | 100% | — | Not flagged |
-| 2 | Matt Gay | LV | 5.05 | 89% | — | Not flagged |
-| 3 | Trey Smack | GB | 4.60 | 89% | — | Not flagged |
-| 4 | Cameron Dicker | LAC | 4.38 | 100% | — | Not flagged |
-| 5 | Cairo Santos | CHI | 4.21 | 89% | — | Not flagged |
-| 6 | Chris Boswell | PIT | 4.12 | 89% | — | Not flagged |
+| 1 | Dominic Zvada | NYG | 6.94 | 100% | — | Not flagged |
+| 2 | Matt Gay | LV | 6.82 | 89% | — | Not flagged |
+| 3 | Trey Smack | GB | 6.14 | 89% | — | Not flagged |
+| 4 | Cameron Dicker | LAC | 5.91 | 100% | — | Not flagged |
+| 5 | Cairo Santos | CHI | 5.51 | 89% | — | Not flagged |
+| 6 | Chris Boswell | PIT | 5.42 | 89% | — | Not flagged |
 
 ### DEF
 
@@ -101,7 +101,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Baker Mayfield | QB | TB | 14.30 | 94.7% |
+| Baker Mayfield | QB | TB | 12.51 | 94.7% |
 | Chig Okonkwo | TE | WAS | 6.93 | 74.7% |
 | Darren Waller | TE | CAR | 6.53 | 51.0% |
 | Keon Coleman | WR | BUF | 6.50 | 77.3% |

@@ -6,11 +6,11 @@
     },
     "K": {
       "name": "Will Reichard",
-      "ppg": 5.482
+      "ppg": 7.169
     },
     "QB": {
       "name": "C.J. Stroud",
-      "ppg": 18.97
+      "ppg": 16.268
     },
     "RB": {
       "name": "Kaelon Black",
@@ -25,7 +25,7 @@
       "ppg": 1.237
     }
   },
-  "generated_at_utc": "2026-11-06T07:14:20.467585+00:00",
+  "generated_at_utc": "2026-11-06T08:57:11.335365+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -285,12 +285,12 @@
           "targets_per_game": null
         },
         "name": "Dominic Zvada",
-        "ppg": 5.18,
+        "ppg": 6.94,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -0.3,
+        "same_position_uplift_ppg": -0.23,
         "screen_only": true,
         "sleeper_id": "13833",
         "team": "NYG"
@@ -307,12 +307,12 @@
           "targets_per_game": null
         },
         "name": "Matt Gay",
-        "ppg": 5.05,
+        "ppg": 6.82,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -0.43,
+        "same_position_uplift_ppg": -0.35,
         "screen_only": true,
         "sleeper_id": "6083",
         "team": "LV"
@@ -329,12 +329,12 @@
           "targets_per_game": null
         },
         "name": "Trey Smack",
-        "ppg": 4.6,
+        "ppg": 6.14,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -0.88,
+        "same_position_uplift_ppg": -1.03,
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
@@ -351,12 +351,12 @@
           "targets_per_game": null
         },
         "name": "Cameron Dicker",
-        "ppg": 4.38,
+        "ppg": 5.91,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -1.1,
+        "same_position_uplift_ppg": -1.25,
         "screen_only": true,
         "sleeper_id": "8259",
         "team": "LAC"
@@ -373,12 +373,12 @@
           "targets_per_game": null
         },
         "name": "Cairo Santos",
-        "ppg": 4.21,
+        "ppg": 5.51,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -1.27,
+        "same_position_uplift_ppg": -1.66,
         "screen_only": true,
         "sleeper_id": "2020",
         "team": "CHI"
@@ -395,12 +395,12 @@
           "targets_per_game": null
         },
         "name": "Chris Boswell",
-        "ppg": 4.12,
+        "ppg": 5.42,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 5.482
+          "ppg": 7.169
         },
-        "same_position_uplift_ppg": -1.36,
+        "same_position_uplift_ppg": -1.75,
         "screen_only": true,
         "sleeper_id": "1945",
         "team": "PIT"
@@ -424,12 +424,12 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 14.3,
+        "ppg": 12.51,
         "replacement_reference": {
           "name": "C.J. Stroud",
-          "ppg": 18.97
+          "ppg": 16.268
         },
-        "same_position_uplift_ppg": -4.67,
+        "same_position_uplift_ppg": -3.76,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -440,15 +440,11 @@
         "audit": {
           "carries_per_game": 16.67,
           "flags": [
-            "sleeper_injury_out",
-            "injury_report_observation_review"
+            "sleeper_injury_out"
           ],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Thumb",
-            "report_secondary_injury": "Toe",
-            "report_status": "Out",
-            "week": "8"
+            "week": "9"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
@@ -601,7 +597,10 @@
         "audit": {
           "carries_per_game": 5.67,
           "flags": [],
-          "injury_report_observation": null,
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "week": "9"
+          },
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
           "recent_snap_pct": 30.7,
@@ -877,8 +876,8 @@
           "carries_per_game": 0.0,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "6"
+            "practice_status": "Limited Participation in Practice",
+            "week": "9"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -972,14 +971,10 @@
       {
         "audit": {
           "carries_per_game": 0.33,
-          "flags": [
-            "injury_report_observation_review"
-          ],
+          "flags": [],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Knee",
-            "report_status": "Out",
-            "week": "8"
+            "week": "9"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
@@ -1179,14 +1174,10 @@
       {
         "audit": {
           "carries_per_game": 0.0,
-          "flags": [
-            "injury_report_observation_review"
-          ],
+          "flags": [],
           "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Not injury related - personal matter",
-            "report_status": "Out",
-            "week": "2"
+            "practice_status": "Limited Participation in Practice",
+            "week": "9"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -1308,5 +1299,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-06T07:14:11.999596+00:00"
+  "snapshot_utc": "2026-11-06T08:57:05.131037+00:00"
 }

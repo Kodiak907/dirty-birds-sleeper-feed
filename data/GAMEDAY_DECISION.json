@@ -8,13 +8,13 @@
       "A.J. Brown",
       "Deebo Samuel Sr."
     ],
-    "ppg": 136.79,
+    "ppg": 134.54,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 25.21
+        "ppg": 21.15
       },
       {
         "id": "4034",
@@ -50,7 +50,7 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 5.52
+        "ppg": 7.22
       },
       {
         "id": "BUF",
@@ -62,7 +62,7 @@
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 13.08
+        "ppg": 13.19
       },
       {
         "id": "13296",
@@ -72,26 +72,26 @@
       }
     ]
   },
-  "difference_ppg": -6.84,
+  "difference_ppg": -6.95,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "4950",
     "5872"
   ],
-  "generated_at_utc": "2026-11-06T07:14:28.707667+00:00",
+  "generated_at_utc": "2026-11-06T08:57:18.286117+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown"
     ],
-    "ppg": 129.95,
+    "ppg": 127.59,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 25.21
+        "ppg": 21.15
       },
       {
         "id": "4034",
@@ -127,7 +127,7 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 5.52
+        "ppg": 7.22
       },
       {
         "id": "BUF",
@@ -333,8 +333,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-06T07:14:11.999596+00:00",
-  "source_availability_generated_at_utc": "2026-11-06T07:14:25.532745+00:00",
+  "snapshot_utc": "2026-11-06T08:57:05.131037+00:00",
+  "source_availability_generated_at_utc": "2026-11-06T08:57:15.761033+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

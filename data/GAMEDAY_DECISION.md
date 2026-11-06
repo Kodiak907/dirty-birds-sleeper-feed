@@ -1,15 +1,15 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 9 | Snapshot: 2026-11-06T07:14:11.999596+00:00
+Week 9 | Snapshot: 2026-11-06T08:57:05.131037+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
 Manually verified official-release submissions: 0; no_verified_official_submissions.
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
-Baseline projected lineup: 136.79.
-Hard-tag exclusion projected lineup: 129.95.
-Conditional projected difference: -6.84.
+Baseline projected lineup: 134.54.
+Hard-tag exclusion projected lineup: 127.59.
+Conditional projected difference: -6.95.
 
 ## Hard-tag excluded from provisional lineup
 
