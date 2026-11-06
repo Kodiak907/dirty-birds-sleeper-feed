@@ -1123,6 +1123,55 @@ function ffo625KickerStatObject(raw){
  if(category==='kicking'||category==='kicker')return {kicking:stats};
  return stats;
 }
+/* PFO 6.27: use MSF completed-game scoring-play descriptions ONLY when
+ * player identity, scoring side, exact +3 score change and FG distance all
+ * agree. Returns a verified FLOOR of scored FG distance categories; missing
+ * or ambiguous events never become inferred attempts or zero.
+ */
+function ffo627VerifiedKickerFieldGoals(box,fixture,team,name){
+ const scoring=box?.scoring||{},quarters=Array.isArray(scoring.quarters)?scoring.quarters:[];
+ const norm=x=>String(x||'').toUpperCase()==='LA'?'LAR':String(x||'').toUpperCase();
+ const home=norm(fixture.home),away=norm(fixture.away),target=norm(team);
+ const expected=String(name||'').trim().split(/\s+/);
+ if(expected.length<2||![home,away].includes(target))
+  return {count:0,distances:{},status:'identity_unverified'};
+ const initial=expected[0][0]?.toLowerCase(),last=expected.at(-1)?.toLowerCase().replace(/[^a-z]/g,'');
+ if(!initial||!last)return {count:0,distances:{},status:'identity_unverified'};
+ const fullName=expected.map(x=>x.toLowerCase().replace(/[^a-z]/g,'')).join('');
+ const clean=x=>String(x||'').toLowerCase().replace(/[^a-z]/g,'');
+ const values=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
+ const byDistance=n=>values[n<20?0:n<30?1:n<40?2:n<50?3:n<60?4:5];
+ let previousHome=0,previousAway=0,verified=0,unresolved=0;
+ const distances={},seen=new Set();
+ for(const q of quarters)for(const play of (Array.isArray(q.scoringPlays)?q.scoringPlays:[])){
+  const desc=String(play.playDescription||play.description||play.text||'').slice(0,300);
+  const h=Number(play.homeScore??play.homeScoreTotal),a=Number(play.awayScore??play.awayScoreTotal);
+  if(!Number.isInteger(h)||!Number.isInteger(a)||h<0||a<0||h>300||a>300){
+   unresolved++;continue;
+  }
+  const dh=h-previousHome,da=a-previousAway;
+  if(dh<0||da<0){unresolved++;continue}
+  previousHome=h;previousAway=a;
+  if(!/\bfield[\s-]?goal\b|\bFG\b/i.test(desc))continue;
+  const scoringSide=dh===3&&da===0?home:da===3&&dh===0?away:null;
+  const athlete=(desc.match(/(?:^|[\s(])\d{1,2}-([A-Za-z])\.([A-Za-z][A-Za-z'-]+)(?=\s|$|[,.])/i)||[]);
+  const named=athlete.length===3&&athlete[1].toLowerCase()===initial&&clean(athlete[2])===last;
+  const literal=clean(desc).includes(fullName);
+  if(scoringSide!==target||!(named||literal)||/\b(?:no good|missed|blocked|wide left|wide right)\b/i.test(desc))continue;
+  const distanceText=(desc.match(/\b(\d{1,2})[\s-]?yard(?:s)?\s+(?:field[\s-]?goal|FG)\b/i)||
+   desc.match(/\b(?:field[\s-]?goal|FG)(?:\s+attempt)?\s+(?:of\s+|from\s+)?(\d{1,2})[\s-]?yards?\b/i));
+  const distance=distanceText?Number(distanceText[1]):null;
+  if(!Number.isInteger(distance)||distance<1||distance>75){unresolved++;continue}
+  const source=String(play.id??play.playId??'');
+  const key=[source,desc,h,a].join('|');
+  if(seen.has(key))continue;seen.add(key);
+  const field=byDistance(distance);
+  distances[field]=(distances[field]||0)+1;
+  verified++;
+ }
+ return {count:verified,distances,status:verified?'verified_scoring_side_player_and_distance':'no_verified_kicker_distance',
+  unresolved:unresolved,scoring_play_rows:quarters.reduce((n,q)=>n+(q.scoringPlays?.length||0),0)};
+}
 function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
  const box=payload?.gameboxscore??payload?.data?.gameboxscore??payload;
  const game=box?.game||{};
@@ -1150,6 +1199,7 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
   p.position?.abbreviation||p.position||'').toUpperCase();
  if(stem(full)!==wanted||position!=='K')return {available:false,error:'boxscore_kicker_identity_conflict'};
  const blocks=Array.isArray(item.playerStats)?item.playerStats:[item.stats||item.playerStats||item];
+ const verifiedFG=ffo627VerifiedKickerFieldGoals(box,fixture,team,name);
  const audit=ffo625KickerFieldAudit(blocks);
  const mapped=[];
  for(const raw of blocks){
@@ -1173,14 +1223,29 @@ function ffo623KickerBoxRow(payload,fixture,team,name,playerId,checkedAt){
    return {available:false,error:'conflicting_kicker_boxscore_categories'};
   combined[key]=n;
  }
- // FFL kicker scoring requires exact FG distances or independently observed
- // extra points. Generic field goals alone are insufficient.
+ // Only add distance-specific makes from independently identified scoring
+ // plays with matching 3-point game-score movement. Reconcile against any
+ // generic made-FG count; never award an unsupported distance multiplier.
+ if(verifiedFG.count){
+  if(combined.fgm!==undefined&&combined.fgm<verifiedFG.count)
+   return {available:false,error:'kicker_scoring_play_count_conflicts_with_msf_stats'};
+  if(combined.fgm===undefined)combined.fgm=verifiedFG.count;
+  for(const [field,n] of Object.entries(verifiedFG.distances)){
+   if(combined[field]!==undefined&&combined[field]<n)
+    return {available:false,error:'kicker_distance_bucket_count_conflict'};
+   if(combined[field]===undefined)combined[field]=n;
+  }
+ }
+ // FFL kicker scoring requires sourced made FG or extra points; missing
+ // distances remain unknown. Generic FG makes earn only the 3-point base.
  const allowed=new Set(['fgm','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59',
   'fgm_60p','xpm','xpmiss','fgmiss']);
  if(!Object.keys(combined).some(k=>allowed.has(k)))
   return {available:false,error:'no_supported_ffl_kicker_scoring_fields',
    schema_audit:audit};
- return {available:true,game_id:id,player_id:String(playerId),stats:combined};
+ return {available:true,game_id:id,player_id:String(playerId),stats:combined,
+  verified_fg_scoring_plays:verifiedFG.count,
+  evidence:'licensed_msf_boxscore_scoring_play_and_player_stat_partial'};
 }
 async function ffo623KickerBoxscore(fixture,env){
  const id=String(fixture.id),cached=ffo623BoxCache.get(id);
@@ -1235,7 +1300,7 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  if(fixtures.length<2)return {available:false,error:'insufficient_completed_team_games'};
  const seen=new Set(),rows=[],errors=[];
  let schemaAudit='';
- for(let start=0;start<fixtures.length&&rows.length<2;start+=2){
+ for(let start=0;start<fixtures.length;start+=2){
   const batch=fixtures.slice(start,start+2);
   const found=await Promise.allSettled(batch.map(g=>ffo623KickerBoxscore(g,env)));
   let stopped=false;
@@ -1261,12 +1326,14 @@ async function ffo623RecoverKicker(team,name,playerId,targetWeek,env,checkedAt){
  const totals={};
  for(const g of rows)for(const [k,v] of Object.entries(g.stats))totals[k]=(totals[k]||0)+v;
  const gamesObserved=rows.length;
+ const scoredFGs=rows.reduce((n,g)=>n+Number(g.verified_fg_scoring_plays||0),0);
  return {schema:'FFO_MSF_KICKER_BOX_V1',source:'MySportsFeeds',
   source_type:'licensed_primary',checked_at:checkedAt,team,name,msf_id:playerId,position:'K',
   games_observed:gamesObserved,games_played:gamesObserved,season_totals:{...totals,games_played:gamesObserved},
   forecast:Object.fromEntries(Object.entries(totals).map(([k,v])=>[k,v/gamesObserved])),
   coverage:'verified_kicker_completed_boxscore_partial',
-  projection_method:'MSF completed-game kicker boxscores / verified appearances · missing FG categories unknown',
+  verified_fg_scoring_plays:scoredFGs,
+  projection_method:'MSF recent completed-game kicker boxscores · verified FG scoring plays '+scoredFGs+' · missing distances and categories remain unknown',
   partial:true,certified:false};
 }
 const ffo616PlayerGameCache=new Map(),ffo616PlayerGamePending=new Map();
