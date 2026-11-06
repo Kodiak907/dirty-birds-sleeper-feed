@@ -93,5 +93,5 @@ test('Frozen FFL league rules, not Sleeper market pricing, determine player poin
  const expectation=6*official.scoring.rec+80*official.scoring.rec_yd+official.scoring.rec_td;
  assert.equal(row.points,expectation);
  assert.equal(ctx.pfo49ScoreFromStats({made_up_stat:7}),null);
- assert.equal(row.source.includes('FFO_FFL_SCORING_V1.json'),true);
+ assert.equal(row.source.includes('Commissioner scoring'),true);
 });
