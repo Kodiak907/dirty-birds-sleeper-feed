@@ -712,16 +712,17 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
   const ownState=String(game.playedStatus||game.status||game.schedule?.playedStatus||'').toUpperCase();
   if(ownState&& !['COMPLETED','FINAL','FINAL_OVERTIME'].includes(ownState))continue;
   if(!accepted)continue;
-  const pts=num(get(stats,'defense.pointsAllowed')??get(stats,'defensive.pointsAllowed')??get(stats,'standings.pointsAgainst'));
+  const pts=num(get(stats,'defense.pointsAllowed')??get(stats,'defensive.pointsAllowed'));
   // Opponent scoreboard totals can include return scores that do NOT count
-  // against a fantasy defense. Only source-specific defense.pointsAllowed
+  // against a fantasy defense. Never use standings.pointsAgainst;
+  // only source-specific defense.pointsAllowed
   // may populate exact FFL PA tiers. Schedule scores establish completion,
   // never fantasy points allowed.
-  const pointsAllowed=pts;
+  const pointsAllowed=Number.isInteger(pts)&&pts>=0&&pts<=100?pts:null;
   const sample={};for(const [key,paths] of Object.entries(aliases))for(const p of paths){
    const n=num(get(stats,p));if(n!==null){sample[key]=n;break}
   }
-  if(pointsAllowed!==null&&Number.isInteger(pointsAllowed)&&pointsAllowed>=0&&pointsAllowed<=100){
+  if(pointsAllowed!==null){
    const band=pointsAllowed===0?'pts_allow_0':pointsAllowed<=6?'pts_allow_1_6':pointsAllowed<=13?'pts_allow_7_13':
     pointsAllowed<=20?'pts_allow_14_20':pointsAllowed<=27?'pts_allow_21_27':
     pointsAllowed<=34?'pts_allow_28_34':'pts_allow_35p';
@@ -738,7 +739,10 @@ function ffo616NormalizeDefense(payload,team,checkedAt,fixtures=new Map()){
  return {schema:'FFO_MSF_DEFENSE_GAMELOG_V1',source:'MySportsFeeds',source_type:'licensed_primary',
   team,checked_at:checkedAt,games_observed:games.length,forecast,season_totals:totals,
   coverage:{points_allowed_games:games.filter(x=>x.points_allowed!==null).length,
-   defensive_stat_games:games.filter(x=>Object.keys(x.stats).some(k=>!k.startsWith('pts_allow_'))).length},
+   defensive_stat_games:games.filter(x=>Object.keys(x.stats).some(k=>!k.startsWith('pts_allow_'))).length,
+   three_and_out_games:0,
+   scoring_categories:Object.keys(forecast),
+   unresolved_scoring_categories:[...(games.some(x=>x.points_allowed!==null)?[]:['pts_allow']), 'def_3_and_out']},
   // All per-game components are independent evidence, but a partial provider
   // season is not a certified full FFL D/ST projection.
   projection_method:'MSF game-level defensive stats; exact FFL PA only when a verified defense.pointsAllowed value is published',
