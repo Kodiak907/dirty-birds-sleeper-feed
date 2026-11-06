@@ -90,6 +90,18 @@ test('recent historical kicker source gathers up to four unique completed games,
  assert.equal(v.partial,true);
  assert.equal(seen.length,5);
 });
+test('verified fractional per-game FG forecast retains +3 FG base and distance bonus instead of dropping fractional FG counts',()=>{
+ const rule=JSON.parse(read('FFO_FFL_SCORING_V1.json')).scoring;
+ const start=proj.indexOf(' const FFL_SUPPORTED_STATS=');
+ const stop=proj.indexOf(" if(typeof pfo49ScoreFromStats",start);
+ assert.ok(start>=0&&stop>start);
+ const ctx=createContext({rules:rule});
+ new Script("const frozenFFLRules=rules;\n"+proj.slice(start,stop)+"\nthis.score=frozenScore;").runInContext(ctx);
+ assert.equal(ctx.score({fgm:0.5,xpm:1}).points,2.5);
+ assert.equal(ctx.score({fgm_40_49:0.5,xpm:1}).points,4);
+ assert.equal(ctx.score({fgm:0.75,xpm:1.25}).points,3.5);
+ assert.equal(ctx.score({fgm_50_59:0.25,xpm:1}).points,2.75);
+});
 test('kicker projections remain partial even with 10/10 positional estimates',()=>{
  assert.match(proj,/partial:pos==='K'\|\|v\.partial===true/);
  assert.match(client,/PFO 6\.27 · kicker scoring-play and data-quality audit/);
