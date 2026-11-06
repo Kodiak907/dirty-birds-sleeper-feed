@@ -101,13 +101,17 @@ test('Walk-forward projection backtest holds out current game and computes MAE, 
  const certificates=vals.map((points,i)=>({
   certified:true,playerId:'18607',gameId:'w'+(i+1),week:i+1,
   provider:'MSF',gameStatus:'FINAL',position:'QB',team:'GB',
-  opponent:'CHI',points,fantasyScoreFromSleeper:false
+  opponent:'CHI',points,fantasyScoreFromSleeper:false,
+  rulesVersion:rules.version,finalPlayerScoreRecomputed:true,
+  playerIdentityVerified:true,finalBoxScoreVerified:true,
+  statCategoriesComplete:true,eventBonusesReconciled:true,
+  statCorrectionsChecked:true
  }));
  const expectedFinalGamesByPlayer={18607:certificates.map(x=>({
   gameId:x.gameId,week:x.week,status:'FINAL',playerId:x.playerId
  }))};
  const t=walkForwardBacktest({certificates,expectedFinalGamesByPlayer,
-  minWeek:4,maxWeek:7});
+  rulesVersion:rules.version,minWeek:4,maxWeek:7});
  assert.equal(t.status,'research_backtest_only');
  assert.equal(t.projections,4);
  assert.ok(t.global.mae!==null);
@@ -119,12 +123,37 @@ test('Walk-forward projection backtest holds out current game and computes MAE, 
 });
 test('Withheld/unverified games cannot leak into future projection or backtest truth',()=>{
  const source=[{certified:false,points:80,playerId:'18607',gameId:'a',week:1,provider:'MSF',gameStatus:'FINAL'},
-  {certified:true,points:8,playerId:'18607',gameId:'b',week:2,provider:'MSF',gameStatus:'FINAL'}];
- const t=walkForwardBacktest({certificates:source,
+  {certified:true,points:8,playerId:'18607',gameId:'b',week:2,provider:'MSF',gameStatus:'FINAL',
+   rulesVersion:rules.version,finalPlayerScoreRecomputed:true,fantasyScoreFromSleeper:false,
+   playerIdentityVerified:true,finalBoxScoreVerified:true,
+   statCategoriesComplete:true,eventBonusesReconciled:true,statCorrectionsChecked:true}];
+ const t=walkForwardBacktest({certificates:source,rulesVersion:rules.version,
   expectedFinalGamesByPlayer:{18607:[{gameId:'a',week:1,status:'FINAL'},{gameId:'b',week:2,status:'FINAL'}]}});
  assert.equal(t.projections,0);
  assert.equal(t.eligibleCertifiedRows,1);
  assert.equal(t.status,'insufficient_certified_data');
+});
+test('Walk-forward historical model never mixes scoring versions or claims real saved-pregame accuracy',()=>{
+ const sample={certified:true,playerId:'18607',gameId:'week1',week:1,
+  provider:'MSF',gameStatus:'FINAL',position:'QB',team:'GB',
+  opponent:'CHI',points:15,fantasyScoreFromSleeper:false,
+  rulesVersion:rules.version,finalPlayerScoreRecomputed:true,
+  playerIdentityVerified:true,finalBoxScoreVerified:true,
+  statCategoriesComplete:true,eventBonusesReconciled:true,statCorrectionsChecked:true};
+ const schedule={18607:[{gameId:'week1',week:1,status:'FINAL'}]};
+ const missingVersion=walkForwardBacktest({certificates:[sample],
+  expectedFinalGamesByPlayer:schedule});
+ assert.equal(missingVersion.eligibleCertifiedRows,0);
+ assert.equal(missingVersion.certificationVersionMissing,true);
+ const wrong=walkForwardBacktest({certificates:[{...sample,rulesVersion:'stale'}],
+  rulesVersion:rules.version,expectedFinalGamesByPlayer:schedule});
+ assert.equal(wrong.eligibleCertifiedRows,0);
+ assert.equal(wrong.rejectedUnversionedOrIncompleteCertificates,1);
+ const correct=walkForwardBacktest({certificates:[sample],
+  rulesVersion:rules.version,expectedFinalGamesByPlayer:schedule});
+ assert.equal(correct.eligibleCertifiedRows,1);
+ assert.equal(correct.realPregamePredictionAccuracyMeasured,false);
+ assert.equal(correct.productionEligible,false);
 });
 test('Pipeline contains no Sleeper points, write APIs, or automatic production projections',()=>{
  for(const file of ['ffo-historical-score-certificate.mjs','ffo-league-history-pipeline.mjs','ffo-verified-history-backtest.mjs']){
