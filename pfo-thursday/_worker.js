@@ -1005,12 +1005,16 @@ function ffo630InspectPossessionSequence(rows,fixture){
   const sec=st.secondsElapsed;
   const isQuarter=q!==null&&q!==undefined&&q!==''&&Number.isInteger(Number(q))&&Number(q)>=1&&Number(q)<=7;
   const isSecond=sec!==null&&sec!==undefined&&sec!==''&&Number.isFinite(Number(sec))&&Number(sec)>=0&&Number(sec)<=900;
-  const down=st.down??st.currentDown??p?.down;
+  const down=st.currentDown??st.down??p?.down;
+  const driveNum=st.overallDriveNum,teamDriveNum=st.teamDriveNum;
+  const validDrive=x=>x!==null&&x!==undefined&&x!==''&&Number.isInteger(Number(x))&&Number(x)>=1&&Number(x)<=200;
   const isDown=down!==null&&down!==undefined&&down!==''&&Number.isInteger(Number(down))&&Number(down)>=1&&Number(down)<=4;
   const text=String(p?.description||p?.playDescription||p?.text||'').slice(0,550);
   return {team:[fixture.home,fixture.away].includes(team)?team:null,
    t:isQuarter&&isSecond?(Number(q)*1000+Number(sec)):null,
    down:isDown?Number(down):null,
+   overallDriveNum:validDrive(driveNum)?Number(driveNum):null,
+   teamDriveNum:validDrive(teamDriveNum)?Number(teamDriveNum):null,
    punt:/\bpunt(?:s|ed|ing)?\b/i.test(text),
    canceled:/\b(?:no play|no-play|penalty|flag|replay down|declined|offsetting|overturned|nullified)\b/i.test(text),
    kickoff:/\bkickoff\b|\bkicks off\b/i.test(text)
@@ -1048,6 +1052,36 @@ function ffo630InspectPossessionSequence(rows,fixture){
   s.punts===1&&s.count===4&&s.downs.length===4&&
   s.downs.join(',')==='1,2,3,4').length;
  const availableClock=plays.filter(p=>p.t!==null).length;
+ // Native MSF status fields observed in licensed PBP: overallDriveNum and
+ // teamDriveNum. They identify provider-numbered drives, not necessarily
+ // complete event coverage or fantasy-certified three-and-outs.
+ const driveGroups=[];let activeDrive=null,driveConflicts=0;
+ const seenDriveNums=new Set();
+ if(order==='forward'||order==='reverse'){
+  for(const p of chronological){
+   if(p.overallDriveNum===null){if(activeDrive)activeDrive.interrupted=true;continue}
+   if(!activeDrive||activeDrive.number!==p.overallDriveNum){
+    if(activeDrive)driveGroups.push(activeDrive);
+    activeDrive={number:p.overallDriveNum,team:p.team,teamDriveNum:p.teamDriveNum,
+     count:0,interrupted:false,conflicts:0,punts:0,canceled:false,kickoff:false};
+    if(seenDriveNums.has(p.overallDriveNum)){activeDrive.conflicts++;driveConflicts++}
+    seenDriveNums.add(p.overallDriveNum);
+   }
+   activeDrive.count++;
+   if(p.team&&activeDrive.team&&p.team!==activeDrive.team){activeDrive.conflicts++;driveConflicts++}
+   if(p.teamDriveNum!==null&&activeDrive.teamDriveNum!==null&&p.teamDriveNum!==activeDrive.teamDriveNum){activeDrive.conflicts++;driveConflicts++}
+   if(!activeDrive.team&&p.team)activeDrive.team=p.team;
+   if(activeDrive.teamDriveNum===null&&p.teamDriveNum!==null)activeDrive.teamDriveNum=p.teamDriveNum;
+   if(p.punt)activeDrive.punts++;
+   if(p.canceled)activeDrive.canceled=true;
+   if(p.kickoff)activeDrive.kickoff=true;
+  }
+  if(activeDrive)driveGroups.push(activeDrive);
+ }
+ const coherentDriveGroups=driveGroups.filter(g=>g.team&&g.teamDriveNum!==null&&
+  !g.conflicts&&!g.interrupted).length;
+ const candidateNativePuntDrives=driveGroups.filter((g,i)=>i>0&&i<driveGroups.length-1&&
+  g.team&&!g.conflicts&&!g.interrupted&&!g.canceled&&!g.kickoff&&g.punts===1).length;
  const availablePossession=plays.filter(p=>p.team!==null).length;
  const trustworthyOrder=order==='forward'||order==='reverse';
  return {schema:'FFO_MSF_DST_SEQUENCE_DIAGNOSTIC_V1',
@@ -1059,9 +1093,15 @@ function ffo630InspectPossessionSequence(rows,fixture){
   observed_possession_transitions:trustworthyOrder?transitionCount:null,
   candidate_possession_segments:trustworthyOrder?segments.length:null,
   short_punt_sequence_candidates:trustworthyOrder?candidates:null,
+  native_numbered_drive_groups:trustworthyOrder?driveGroups.length:null,
+  native_numbered_drive_groups_coherent:trustworthyOrder?coherentDriveGroups:null,
+  native_drive_group_conflicts:trustworthyOrder?driveConflicts:null,
+  native_punt_drive_review_candidates:trustworthyOrder?candidateNativePuntDrives:null,
+  native_drive_field_coverage:{overallDriveNum:plays.filter(p=>p.overallDriveNum!==null).length,
+   teamDriveNum:plays.filter(p=>p.teamDriveNum!==null).length},
   candidate_three_and_out_points:0,
   inference_only:true,eligible_for_scoring:false,
-  limitations:['Native drives not available in verified source fields',
+  limitations:['MSF drive counters observed, but complete drive starts and endings remain unverified',
     'Chronology and possession boundaries may omit drives, penalties and corrections',
     'Down state may describe the post-play state rather than the play down',
     'Short punt sequence candidates are NOT verified three-and-outs',
@@ -1078,7 +1118,8 @@ function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
   full_game_certified:false,dst_points_certified:false};
  const seen=new Set(),drives=new Set();
  const counts={plays:rows.length,provider_id:0,unique_provider_id:0,duplicate_provider_id:0,
-  quarter:0,down:0,possession_team:0,drive_id:0,clock:0,score_snapshots:0,descriptions:0};
+  quarter:0,down:0,possession_team:0,drive_id:0,overall_drive_num:0,team_drive_num:0,
+  clock:0,score_snapshots:0,descriptions:0};
  const knownTeams=new Set([fixture.home,fixture.away]);
  const validId=x=>x!==null&&x!==undefined&&/^[A-Za-z0-9_-]{1,90}$/.test(String(x));
  const integer=x=>x!==null&&x!==undefined&&x!==''&&Number.isInteger(Number(x));
@@ -1094,12 +1135,22 @@ function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
   }
   const q=st.quarter??p.quarter??p.period;
   if(integer(q)&&Number(q)>=1&&Number(q)<=7)counts.quarter++;
-  const down=st.down??st.currentDown??p.down;
+  const down=st.currentDown??st.down??p.down;
   if(integer(down)&&Number(down)>=1&&Number(down)<=4)counts.down++;
   const poss=String(st.teamInPossession?.abbreviation||st.teamInPossession?.abbr||p.teamInPossession?.abbreviation||'').toUpperCase();
   if(knownTeams.has(poss))counts.possession_team++;
+  const nativeOverall=st.overallDriveNum,nativeTeam=st.teamDriveNum;
+  const validDrive=x=>integer(x)&&Number(x)>=1&&Number(x)<=200;
+  if(validDrive(nativeOverall))counts.overall_drive_num++;
+  if(validDrive(nativeTeam))counts.team_drive_num++;
   const drive=p.driveId??p.drive?.id??st.driveId??st.possessionId;
-  if(validId(drive)){counts.drive_id++;drives.add(String(drive))}
+  if(validDrive(nativeOverall)){
+   counts.drive_id++;drives.add('overall:'+String(Number(nativeOverall)));
+  }else if(validId(drive)){
+   counts.drive_id++;drives.add('legacy:'+String(drive));
+  }else if(validDrive(nativeTeam)&&knownTeams.has(poss)){
+   counts.drive_id++;drives.add('team:'+poss+':'+String(Number(nativeTeam)));
+  }
   const sec=st.secondsElapsed;
   const clock=String(p.time||p.gameClock||p.clock||'');
   if((integer(sec)&&Number(sec)>=0&&Number(sec)<=900)||/^\\d{1,2}:[0-5]\\d$/.test(clock))counts.clock++;
