@@ -311,6 +311,14 @@ export function fflScore(raw,settings,position=''){
   if(!Object.prototype.hasOwnProperty.call(stats,key)) {missing.push(key);continue;}
   covered.push(key);const contribution=stats[key]*Number(weight);subtotal+=contribution;components.push({key,stat:stats[key],weight:Number(weight),points:Math.round(contribution*100)/100});
  }
+ // Exact total made FGs cannot determine a fantasy score when the matching
+ // distance buckets are absent or inconsistent. Retain any verified tier
+ // components, but prevent a false "complete" kicker score.
+ if(pos==='K'&&stats.fgm!=null&&Number(stats.fgm)>0){
+  const tierSum=tiers.reduce((sum,key)=>sum+(Number(stats[key])||0),0);
+  if(Math.abs(tierSum-Number(stats.fgm))>0.000001)
+   missing.push('unverified_field_goal_distance_counts');
+ }
  // Never equate an incomplete reconstruction to recorded Sleeper points.
  return {points:covered.length?Math.round(subtotal*100)/100:null,complete:covered.length>0&&missing.length===0,missing,covered,components,source:'FFO provisional unless complete · MySportsFeeds stats × frozen FFO FFL rules',raw_stat_categories:Object.keys(stats),position:pos};
 }
