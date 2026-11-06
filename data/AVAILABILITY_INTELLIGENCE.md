@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-06T08:57:15.761033+00:00
-Sleeper snapshot: 2026-11-06T08:57:05.131037+00:00
-nflverse observations: 2026-11-06T08:57:10.468108+00:00; injury feed loaded: True
+Generated: 2026-11-06T10:02:10.139656+00:00
+Sleeper snapshot: 2026-11-06T10:01:59.974826+00:00
+nflverse observations: 2026-11-06T10:02:05.054202+00:00; injury feed loaded: True
 
-**New observed changes:** 27. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,33 +32,8 @@ nflverse observations: 2026-11-06T08:57:10.468108+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Christian Kirk** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Jaxon Smith-Njigba** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Alvin Kamara** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Breece Hall** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Bucky Irving** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Chris Godwin Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Courtland Sutton** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **DJ Moore** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Dalton Kincaid** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Drew Lock** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Emeka Egbuka** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Harold Fannin Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Jauan Jennings** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Jonathan Taylor** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Keenan Allen** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Kenny Gainwell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Keon Coleman** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Kyle Monangai** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Kyler Murray** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Malik Nabers** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **MarShawn Lloyd** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Rashee Rice** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
-- **Rashid Shaheed** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Sam Darnold** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '9'}
-- **Saquon Barkley** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '9'}
-- **Travis Kelce** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
