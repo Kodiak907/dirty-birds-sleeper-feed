@@ -1,18 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-06T01:04:12.378701+00:00
-Sleeper snapshot: 2026-11-06T01:04:07.945954+00:00
+Generated: 2026-11-06T02:14:43.981109+00:00
+Sleeper snapshot: 2026-11-06T02:14:39.563439+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**5 transaction changes:** 5 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1424222709990113280` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Mayer → Dirty Birds (#1)
-- **NEW** · transaction `1424220076629893120` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Pat Bryant → Dirty Birds (#1)
-- **NEW** · transaction `1424218695214874624` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Chris Rodriguez Jr. → JA’MARRTRIX (#7)
-- **NEW** · transaction `1424217843771113472` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Chris Rodriguez Jr. → JA’MARRTRIX (#7) | Dropped: Kyle Monangai → JA’MARRTRIX (#7)
-- **NEW** · transaction `1424217106257399808` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

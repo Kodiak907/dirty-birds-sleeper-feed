@@ -1,15 +1,15 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 9 | Snapshot: 2026-11-06T01:04:07.945954+00:00
+Week 9 | Snapshot: 2026-11-06T02:14:39.563439+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
 Manually verified official-release submissions: 0; no_verified_official_submissions.
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
-Baseline projected lineup: 138.55.
-Hard-tag exclusion projected lineup: 132.47.
-Conditional projected difference: -6.08.
+Baseline projected lineup: 136.79.
+Hard-tag exclusion projected lineup: 129.95.
+Conditional projected difference: -6.84.
 
 ## Hard-tag excluded from provisional lineup
 
@@ -28,7 +28,7 @@ None in Sleeper tags; absence of flags is NOT active confirmation.
 
 ## Proposed conditional substitutions
 
-Potentially added: Caleb Douglas
+Potentially added: Kaelon Black
 Potentially removed: Jonah Coleman
 
 ## Mandatory verification

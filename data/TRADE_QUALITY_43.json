@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-06T01:04:15.081043+00:00",
+  "generated_at_utc": "2026-11-06T02:14:46.786046+00:00",
   "candidates_evaluated": 58656,
-  "market_matched": 7572,
+  "market_matched": 7540,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-05T15:13:09.640408+00:00",
-  "projection_as_of": "2026-11-05T19:30:05.171738+00:00",
+  "projection_as_of": "2026-11-06T01:47:29.353708+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -27,23 +27,23 @@
       ],
       "receive": [
         {
-          "id": "6794",
-          "name": "Justin Jefferson",
-          "pos": "WR"
+          "id": "6790",
+          "name": "D'Andre Swift",
+          "pos": "RB"
         },
         {
-          "id": "3271",
-          "name": "Tyler Higbee",
-          "pos": "TE"
+          "id": "11625",
+          "name": "Adonai Mitchell",
+          "pos": "WR"
         }
       ],
-      "our_gain": 2.34,
-      "their_gain": 0.75,
-      "market_paid_received_ratio": 1.007,
+      "our_gain": 1.86,
+      "their_gain": 1.14,
+      "market_paid_received_ratio": 1.014,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.768,
+      "score": 2.503,
       "not_an_approved_offer": true
     },
     {
@@ -63,9 +63,9 @@
       ],
       "receive": [
         {
-          "id": "6794",
-          "name": "Justin Jefferson",
-          "pos": "WR"
+          "id": "6790",
+          "name": "D'Andre Swift",
+          "pos": "RB"
         },
         {
           "id": "96",
@@ -73,13 +73,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.34,
-      "their_gain": 0.75,
-      "market_paid_received_ratio": 0.938,
+      "our_gain": 1.86,
+      "their_gain": 1.14,
+      "market_paid_received_ratio": 1.034,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.604,
+      "score": 2.441,
       "not_an_approved_offer": true
     }
   ],

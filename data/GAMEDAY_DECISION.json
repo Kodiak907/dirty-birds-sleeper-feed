@@ -1,25 +1,26 @@
 {
   "added_starters": [
-    "Caleb Douglas"
+    "Kaelon Black"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
+      "A.J. Brown",
       "Deebo Samuel Sr."
     ],
-    "ppg": 138.55,
+    "ppg": 136.79,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 21.14
+        "ppg": 25.21
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 21.1
+        "ppg": 21.06
       },
       {
         "id": "8150",
@@ -31,13 +32,13 @@
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.62
+        "ppg": 20.66
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.31
+        "ppg": 11.23
       },
       {
         "id": "8131",
@@ -49,100 +50,102 @@
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.22
+        "ppg": 5.52
       },
       {
         "id": "BUF",
         "name": "Buffalo Bills",
         "position": "DEF",
-        "ppg": 6.45
+        "ppg": 6.41
       },
       {
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 13.12
-      },
-      {
-        "id": "5859",
-        "name": "A.J. Brown",
-        "position": "WR",
-        "ppg": 11.01
-      }
-    ]
-  },
-  "difference_ppg": -6.08,
-  "explicit_excluded_ids": [
-    "12492",
-    "13345",
-    "4950",
-    "5872"
-  ],
-  "generated_at_utc": "2026-11-06T01:04:19.354028+00:00",
-  "hard_status_excluded": {
-    "complete": true,
-    "missing_projection": [],
-    "ppg": 132.47,
-    "starters": [
-      {
-        "id": "4046",
-        "name": "Patrick Mahomes",
-        "position": "QB",
-        "ppg": 21.14
-      },
-      {
-        "id": "4034",
-        "name": "Christian McCaffrey",
-        "position": "RB",
-        "ppg": 21.1
-      },
-      {
-        "id": "8150",
-        "name": "Kyren Williams",
-        "position": "RB",
-        "ppg": 17.15
-      },
-      {
-        "id": "9488",
-        "name": "Jaxon Smith-Njigba",
-        "position": "WR",
-        "ppg": 20.62
-      },
-      {
-        "id": "9997",
-        "name": "Zay Flowers",
-        "position": "WR",
-        "ppg": 11.31
-      },
-      {
-        "id": "8131",
-        "name": "Isaiah Likely",
-        "position": "TE",
-        "ppg": 9.43
-      },
-      {
-        "id": "11792",
-        "name": "Will Reichard",
-        "position": "K",
-        "ppg": 7.22
-      },
-      {
-        "id": "BUF",
-        "name": "Buffalo Bills",
-        "position": "DEF",
-        "ppg": 6.45
-      },
-      {
-        "id": "5859",
-        "name": "A.J. Brown",
-        "position": "WR",
-        "ppg": 11.01
+        "ppg": 13.08
       },
       {
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
         "ppg": 7.04
+      }
+    ]
+  },
+  "difference_ppg": -6.84,
+  "explicit_excluded_ids": [
+    "12492",
+    "13345",
+    "4950",
+    "5872"
+  ],
+  "generated_at_utc": "2026-11-06T02:14:52.386154+00:00",
+  "hard_status_excluded": {
+    "complete": true,
+    "missing_projection": [
+      "A.J. Brown"
+    ],
+    "ppg": 129.95,
+    "starters": [
+      {
+        "id": "4046",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "ppg": 25.21
+      },
+      {
+        "id": "4034",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "ppg": 21.06
+      },
+      {
+        "id": "8150",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "ppg": 17.15
+      },
+      {
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "ppg": 20.66
+      },
+      {
+        "id": "9997",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "ppg": 11.23
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 9.43
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 5.52
+      },
+      {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "position": "DEF",
+        "ppg": 6.41
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 7.04
+      },
+      {
+        "id": "13414",
+        "name": "Kaelon Black",
+        "position": "RB",
+        "ppg": 6.24
       }
     ]
   },
@@ -330,8 +333,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-06T01:04:07.945954+00:00",
-  "source_availability_generated_at_utc": "2026-11-06T01:04:17.414698+00:00",
+  "snapshot_utc": "2026-11-06T02:14:39.563439+00:00",
+  "source_availability_generated_at_utc": "2026-11-06T02:14:48.625164+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
