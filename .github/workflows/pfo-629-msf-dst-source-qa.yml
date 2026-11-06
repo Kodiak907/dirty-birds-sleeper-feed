@@ -1,0 +1,29 @@
+name: PFO 6.29 authenticated MSF D/ST source audit QA
+on:
+  push:
+    branches:
+      - pfo-629-msf-dst-source-audit-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Protected source audit and existing scoring regressions (NO DEPLOY)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check isolated worker and UI syntax
+        run: |
+          cp pfo-thursday/_worker.js /tmp/pfo629-worker.mjs
+          node --check /tmp/pfo629-worker.mjs
+          node --check pfo-thursday/ffo-pfo-616.js
+          node --check pfo-thursday/qa-ffo-629.test.mjs
+      - name: Validate guarded source audit and D/ST scoring independence
+        run: |
+          node --test pfo-thursday/qa-ffo-629.test.mjs pfo-thursday/qa-ffo-628.test.mjs pfo-thursday/qa-ffo-627.test.mjs pfo-thursday/qa-ffo-626.test.mjs pfo-thursday/qa-ffo-625.test.mjs pfo-thursday/qa-ffo-621.test.mjs pfo-thursday/qa-ffo-618.test.mjs
+      - name: Verify no implicit deployment
+        run: echo "6.29 source audit only; no Cloudflare deployment, production or Commissioner modifications."
