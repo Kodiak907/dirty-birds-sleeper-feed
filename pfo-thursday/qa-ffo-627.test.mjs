@@ -106,8 +106,8 @@ test('kicker projections remain partial even with 10/10 positional estimates',()
  assert.match(proj,/partial:pos==='K'\|\|v\.partial===true/);
  assert.match(client,/PFO 6\.27 · kicker scoring-play and data-quality audit/);
  assert.match(worker,/ffo627VerifiedKickerFieldGoals/);
- assert.match(html,/ffo-pfo-616\.js\?v=627/);
- assert.match(html,/ffo-pfo-597\.js\?v=635/);
+ assert.match(html,/ffo-pfo-616\.js\?v=636/);
+ assert.match(html,/ffo-pfo-597\.js\?v=636/);
  assert.doesNotMatch(client,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
 
