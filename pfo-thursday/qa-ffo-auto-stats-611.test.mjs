@@ -6,7 +6,7 @@ const source=readFileSync(new URL('./ffo-pfo-611.js',import.meta.url),'utf8');
 const html=readFileSync(new URL('./index.html',import.meta.url),'utf8');
 test('automatic independent MSF loader is included after core hydration',()=>{
  assert.match(html,/ffo-pfo-core\.js\?v=(?:690|614|615)/);
- assert.match(html,/ffo-pfo-611\.js\?v=(?:611|615|618)/);
+ assert.match(html,/ffo-pfo-611\.js\?v=(?:611|615|618|624)/);
  assert.ok(html.indexOf('ffo-pfo-611.js')>html.indexOf('ffo-pfo-core.js'));
  assert.match(source,/loadLiveRoster=function/);
  assert.match(source,/pfo50LoadIndependent\(changed\)/);
