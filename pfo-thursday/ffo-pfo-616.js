@@ -98,7 +98,7 @@
    tools.dataset.teams=teams.join(',');
    if(teams.length){
     const label=document.createElement('div');
-    label.textContent='PFO 6.31 · MSF native drive-number audit (read-only; no score changes)';
+    label.textContent='PFO 6.32 · MSF drive-value diagnostics (read-only; no score changes)';
     tools.appendChild(label);
    }
    for(const team of teams){
@@ -121,6 +121,16 @@
       }else{
        const c=data.observed_fields||{},missing=Array.isArray(data.missing_evidence)?data.missing_evidence:[];
        const diag=data.sequence_diagnostics||{};
+       const rawDrives=data.drive_value_diagnostics||{};
+       const valueSummary=(name)=>{
+        const v=rawDrives[name]||{};
+        return name+' present '+Number(v.present||0)+'/'+Number(v.records||0)+
+         ', null '+Number(v.null||0)+', zero '+Number(v.zero||0)+
+         ', positive '+Number(v.positive_integer||0)+
+         ', blank '+Number(v.blank||0)+', invalid '+
+         (Number(v.non_numeric||0)+Number(v.object||0)+Number(v.boolean||0)+
+          Number(v.fractional||0)+Number(v.negative_integer||0)+Number(v.above_supported_range||0));
+       };
        const asCount=n=>Number.isFinite(Number(n))&&n!==null?String(Number(n)):'unverified';
        result.textContent=team+' · completed game '+String(data.game_id||'unverified')+'\n'+
         'MSF plays '+asCount(c.plays)+' · possession '+asCount(c.possession_team)+
@@ -130,6 +140,8 @@
         asCount(diag.observed_possession_transitions)+'\n'+
         'Native overall drive nums '+asCount(c.overall_drive_num)+
         ' · team drive nums '+asCount(c.team_drive_num)+'\n'+
+        'Drive values: '+valueSummary('overallDriveNum')+'\n'+
+        '             '+valueSummary('teamDriveNum')+'\n'+ 
         'Numbered drive groups '+asCount(diag.native_numbered_drive_groups)+
         ' · coherent '+asCount(diag.native_numbered_drive_groups_coherent)+
         ' · conflicts '+asCount(diag.native_drive_group_conflicts)+'\n'+
@@ -151,6 +163,11 @@
         '\nPlay-status fields: '+(fields.length?fields.join(', '):'none verified')+
         '\nMissing evidence: '+(missing.length?missing.join(', '):'none reported')+
         '\nDistinct numbered drives: '+asCount(c.distinct_drive_ids)+
+        '\nDrive value classifications: '+valueSummary('overallDriveNum')+
+        '\n'+valueSummary('teamDriveNum')+
+        '\nDistinct supported counter values: overall '+asCount(rawDrives.overallDriveNum?.distinct_supported_values)+
+        ', team '+asCount(rawDrives.teamDriveNum?.distinct_supported_values)+
+        '\nZero counter values are NOT certified as drive identifiers.'+
         '\nNative drive coverage: overallDriveNum '+asCount(c.overall_drive_num)+
         ', teamDriveNum '+asCount(c.team_drive_num)+
         '\nNative play IDs: '+asCount(c.provider_id)+
