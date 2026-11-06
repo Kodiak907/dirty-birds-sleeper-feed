@@ -3,6 +3,7 @@
  * Missing independent defensive components remain partial/uncertified.
  */
 (()=>{'use strict';
+ const auditTitle='PFO 6.27 · kicker scoring-play and data-quality audit';
  const defense=new Map(),pending=new Map(),failures=new Map(),seen=new Map();
  const playerPending=new Map(),playerFailures=new Map(),playerSeen=new Map(),playerRecovered=new Set();
  const recoveryStatus=new Map();
@@ -56,7 +57,7 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=['PFO 6.27 · kicker scoring-play and data-quality audit'];
+  const lines=[auditTitle];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
@@ -212,7 +213,10 @@
   };
  }
  function init(){
-  if(boot)return;boot=true;refresh();
+  if(boot)return;boot=true;
+  const badge=document.querySelector('.buildtag');
+  if(badge)badge.textContent=auditTitle.split(' · ')[0]+' · PRIVATE PREVIEW';
+  refresh();
   if(typeof pfo50LoadIndependent==='function'){
    const previous=pfo50LoadIndependent;
    pfo50LoadIndependent=function(){
