@@ -35,42 +35,42 @@ function box(id){
     fieldGoals:{fg1_19Pct:100,fg40_49Pct:100,fg50PlusPct:100}}]
   }]},away:{players:[]}}}};
 }
-test('recorded Nov 5 Commissioner FFL scoring supersedes stale Oct 28 rules',()=>{
+test('Nov 5 full Sleeper video scoring supersedes interim commissioner scoring changes',()=>{
  const s=cfg.scoring;
- assert.equal(cfg.version,'2026-11-05-commissioner-approved-rules-v2');
- assert.equal(s.pass_td,6);
- assert.equal(s.pass_cmp_40p,1);
- assert.equal(s.pass_td_40p,1.5);
+ assert.equal(cfg.version,'2026-11-05-ffl-screen-recording-verified-v4');
+ assert.equal(s.pass_td,4);
+ assert.equal(s.pass_cmp_40p,0);
+ assert.equal(s.pass_td_40p,1);
  assert.equal(s.pass_td_50p,2);
- assert.equal(s.rec_30_39,0.5);
- assert.equal(s.rec_40p,1);
- assert.equal(s.def_2pt,2);
- assert.equal(s.def_3_and_out,0.5);
+ assert.equal(s.rec_30_39,0);
+ assert.equal(s.rec_40p,0);
+ assert.equal(s.def_2pt,0);
+ assert.equal(s.def_3_and_out,0);
  assert.equal(s.rec,0.5);
  assert.equal(s.pass_yd,0.04);
  assert.equal(s.xpm,1);
  assert.equal(s.xpmiss,-1);
  assert.equal(s.fgmiss,-1);
- assert.equal(s.fgm,3);
+ assert.equal(s.fgm,0);
  assert.deepEqual([s.fgm_0_19,s.fgm_20_29,s.fgm_30_39,s.fgm_40_49,s.fgm_50_59,s.fgm_60p],
-  [0.5,1,2,3,4,5]);
+  [3,3,3,4,5,6]);
 });
-test('FG made three-point BASE stacks with separately verified distance tier and PATs',()=>{
+test('FG has no generic base: exact distance tier only, plus PATs',()=>{
  const score=scorer();
- assert.equal(score({fgm:1,fgm_40_49:1,xpm:2}).points,8);
- assert.equal(score({fgm_40_49:1,xpm:2}).points,8,'known FG bucket supplies generic base if generic missing');
- assert.equal(score({fgm:1,xpm:2}).points,5,'without FG distance, no fictitious 40+ bonus');
- assert.equal(score({fgm:1,fgm_0_19:1,xpm:2}).points,5.5);
- assert.equal(score({fgm:1,fgm_60p:1}).points,8);
- assert.equal(score({fgm:1,fgm_50_59:1}).points,7);
- assert.equal(score({fgm:1,fgm_40_49:1,fgmiss:1,xpmiss:1}).points,4);
+ assert.equal(score({fgm:1,fgm_40_49:1,xpm:2}).points,6);
+ assert.equal(score({fgm_40_49:1,xpm:2}).points,6,'distance bucket scores without generic FG');
+ assert.equal(score({fgm:1,xpm:2}).points,2,'unknown made-FG distance scores no fantasy points, only verified PATs');
+ assert.equal(score({fgm:1,fgm_0_19:1,xpm:2}).points,5);
+ assert.equal(score({fgm:1,fgm_60p:1}).points,6);
+ assert.equal(score({fgm:1,fgm_50_59:1}).points,5);
+ assert.equal(score({fgm:1,fgm_40_49:1,fgmiss:1,xpmiss:1}).points,2);
 });
 test('independent passing, receiving, and defensive bonuses are included and stack only with verified thresholds',()=>{
  const score=scorer();
- assert.equal(score({pass_yd:250,pass_td:1}).points,16);
- assert.equal(score({pass_td:1,pass_cmp_40p:1,pass_td_40p:1,pass_td_50p:1}).points,10.5);
- assert.equal(score({rec:3,rec_yd:100,rec_30_39:1,rec_40p:1}).points,13);
- assert.equal(score({def_2pt:1,def_3_and_out:2,sack:1}).points,4);
+ assert.equal(score({pass_yd:250,pass_td:1}).points,14);
+ assert.equal(score({pass_td:1,pass_cmp_40p:1,pass_td_40p:1,pass_td_50p:1}).points,7);
+ assert.equal(score({rec:3,rec_yd:100,rec_30_39:1,rec_40p:1}).points,11.5);
+ assert.equal(score({def_2pt:1,def_3_and_out:2,sack:1}).points,1);
  assert.equal(score({rec:2,rec_30_39:1}).partial,true);
 });
 test('MSF xpMade and xpAtt are exact counts; consistent kick points recover only generic FG makes',()=>{
@@ -87,7 +87,7 @@ test('MSF xpMade and xpAtt are exact counts; consistent kick points recover only
  assert.equal(row.season_totals.fgm,3);
  assert.equal(row.season_totals.fgm_40_49,undefined);
  assert.equal(row.season_totals.fgm_60p,undefined);
- assert.equal(scorer()(row.forecast).points,11);
+ assert.equal(scorer()(row.forecast).points,2);
 });
 test('provider percentages cannot become makes; inconsistent FG kick-point arithmetic is rejected as FG evidence',()=>{
  const api=harness(async()=>new Response('{}'));
@@ -120,26 +120,26 @@ test('authenticated MSF boxscore kicker recovers at least two unique prior games
  assert.equal(data.forecast.fgm,3);
  assert.equal(data.forecast.fgm_40_49,undefined);
  assert.equal(data.partial,true);
- assert.equal(scorer()(data.forecast).points,11);
+ assert.equal(scorer()(data.forecast).points,2);
  assert.equal(calls.length,3);
 });
 test('model loads own updated scoring file without Sleeper point totals, protecting source isolation',()=>{
- assert.match(source,/FFO_FFL_SCORING_V1\.json\?v=626/);
+ assert.match(source,/FFO_FFL_SCORING_V1\.json\?v=635/);
  assert.match(source,/cache:'no-store'/);
  assert.match(source,/rec_30_39/);
  assert.match(source,/pass_cmp_40p/);
  assert.match(source,/def_3_and_out/);
- assert.match(html,/ffo-pfo-597\.js\?v=627/);
+ assert.match(html,/ffo-pfo-597\.js\?v=635/);
  assert.match(html,/ffo-pfo-616\.js\?v=627/);
  assert.doesNotMatch(source,/sleeperGet\(/);
 });
 
 test('GameCast and Team HQ share the same updated FFL scoring contract without changing historical Sleeper records',()=>{
  const g=read('ffo-gamecast-model.mjs');
- assert.ok(g.includes("Number(rules.fgm):0)"),'PBP kicker audit includes base FG points with sourced distance bonus');
+ assert.ok(g.includes("Number(rules.fgm):0)"),'PBP kicker audit reads generic FG multiplier, which is now zero');
  assert.ok(g.includes("const xp=num(source?.extraPointAttempts?.xpMade)"),'GameCast maps verified XP counts');
- assert.ok(source.includes("fgTiers=['fgm_0_19'"),'Team HQ FFL scorer stacks base and distance');
- assert.equal(cfg.scoring.def_3_and_out,0.5);
- assert.equal(cfg.scoring.pass_td,6);
+ assert.ok(source.includes("fgTiers=['fgm_0_19'"),'Team HQ FFL scorer uses exact distance tiers without a generic made-FG bonus');
+ assert.equal(cfg.scoring.def_3_and_out,0);
+ assert.equal(cfg.scoring.pass_td,4);
  assert.doesNotMatch(g,/Sleeper fantasy score as primary projection/);
 });
