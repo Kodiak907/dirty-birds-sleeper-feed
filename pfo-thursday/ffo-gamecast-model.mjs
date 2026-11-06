@@ -248,7 +248,23 @@ const PATHS={
  fgm_50p:['fieldGoals.fieldGoalsMade50Plus','kicking.fieldGoalsMade50Plus','fgm_50p'],
  rush_2pt:['twoPointConversions.twoPtRushMade','twoPointConversions.twoPointRushMade','rushing.rushTwoPt','rushing.twoPointConversions','rush_2pt'],
  rec_2pt:['twoPointConversions.twoPtPassRec','twoPointConversions.twoPointPassRec','receiving.recTwoPt','receiving.twoPointConversions','rec_2pt'],
- pass_2pt:['twoPointConversions.twoPtPassMade','twoPointConversions.twoPointPassMade','passing.passTwoPt','passing.twoPointConversions','pass_2pt']
+ pass_2pt:['twoPointConversions.twoPtPassMade','twoPointConversions.twoPointPassMade','passing.passTwoPt','passing.twoPointConversions','pass_2pt'],
+ // Bonus and D/ST points require explicitly provided, independently verified
+ // event-category counts. Never infer 40+ TDs from total yards or derive a
+ // defense's points-allowed bucket from an unadjusted NFL scoreboard.
+ pass_td_40p:['pass_td_40p'],pass_td_50p:['pass_td_50p'],
+ pass_cmp_40p:['pass_cmp_40p'],
+ rush_40p:['rush_40p'],rush_td_40p:['rush_td_40p'],rush_td_50p:['rush_td_50p'],
+ rec_30_39:['rec_30_39'],rec_40p:['rec_40p'],
+ rec_td_40p:['rec_td_40p'],rec_td_50p:['rec_td_50p'],
+ sack:['sack','defense.sacks'],int:['int','defense.interceptions'],
+ safe:['safe','defense.safeties'],blk_kick:['blk_kick'],
+ def_td:['def_td'],def_st_td:['def_st_td'],def_st_ff:['def_st_ff'],
+ def_st_fum_rec:['def_st_fum_rec'],fum_rec:['fum_rec'],
+ pts_allow_0:['pts_allow_0'],pts_allow_1_6:['pts_allow_1_6'],
+ pts_allow_7_13:['pts_allow_7_13'],pts_allow_14_20:['pts_allow_14_20'],
+ pts_allow_21_27:['pts_allow_21_27'],pts_allow_28_34:['pts_allow_28_34'],
+ pts_allow_35p:['pts_allow_35p']
 };
 export function normalizeStats(source){
  if(!source||typeof source!=='object')return {};
