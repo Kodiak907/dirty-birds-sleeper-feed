@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-06T17:50:03.525956+00:00
-Sleeper snapshot: 2026-11-06T17:49:58.787897+00:00
+Generated: 2026-11-06T18:52:12.003232+00:00
+Sleeper snapshot: 2026-11-06T18:52:07.365192+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Dirty Birds: added Seth McGowan; dropped Buffalo Bills
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
