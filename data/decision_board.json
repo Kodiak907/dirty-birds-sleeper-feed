@@ -17,15 +17,15 @@
       "ppg": 4.7
     },
     "TE": {
-      "name": "Isaiah Likely",
-      "ppg": 10.662
+      "name": "Michael Mayer",
+      "ppg": 5.192
     },
     "WR": {
-      "name": "Caleb Douglas",
-      "ppg": 6.099
+      "name": "Christian Kirk",
+      "ppg": 1.244
     }
   },
-  "generated_at_utc": "2026-11-05T23:45:04.339420+00:00",
+  "generated_at_utc": "2026-11-06T01:04:12.686690+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -489,6 +489,37 @@
     "RB": [
       {
         "audit": {
+          "carries_per_game": 16.67,
+          "flags": [
+            "sleeper_injury_out",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Thumb",
+            "report_secondary_injury": "Toe",
+            "report_status": "Out",
+            "week": "8"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 39.7,
+          "snap_trend_3_appearances_pp": 20.0,
+          "targets_per_game": 1.0
+        },
+        "name": "Kyle Monangai",
+        "ppg": 6.59,
+        "replacement_reference": {
+          "name": "Kaelon Black",
+          "ppg": 4.7
+        },
+        "same_position_uplift_ppg": 1.89,
+        "screen_only": true,
+        "sleeper_id": "12534",
+        "team": "CHI"
+      },
+      {
+        "audit": {
           "carries_per_game": 4.0,
           "flags": [],
           "injury_report_observation": {
@@ -779,10 +810,10 @@
         "name": "Darren Waller",
         "ppg": 6.18,
         "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
+          "name": "Michael Mayer",
+          "ppg": 5.192
         },
-        "same_position_uplift_ppg": -4.48,
+        "same_position_uplift_ppg": 0.99,
         "screen_only": true,
         "sleeper_id": "2505",
         "team": "CAR"
@@ -804,35 +835,13 @@
         "name": "Chig Okonkwo",
         "ppg": 6.14,
         "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
+          "name": "Michael Mayer",
+          "ppg": 5.192
         },
-        "same_position_uplift_ppg": -4.52,
+        "same_position_uplift_ppg": 0.95,
         "screen_only": true,
         "sleeper_id": "8210",
         "team": "WAS"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 80.0,
-          "snap_trend_3_appearances_pp": 0.0,
-          "targets_per_game": 6.0
-        },
-        "name": "Michael Mayer",
-        "ppg": 5.19,
-        "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
-        },
-        "same_position_uplift_ppg": -5.47,
-        "screen_only": true,
-        "sleeper_id": "9482",
-        "team": "LV"
       },
       {
         "audit": {
@@ -851,10 +860,10 @@
         "name": "Noah Fant",
         "ppg": 4.79,
         "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
+          "name": "Michael Mayer",
+          "ppg": 5.192
         },
-        "same_position_uplift_ppg": -5.88,
+        "same_position_uplift_ppg": -0.41,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -877,10 +886,10 @@
         "name": "Colby Parkinson",
         "ppg": 3.5,
         "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
+          "name": "Michael Mayer",
+          "ppg": 5.192
         },
-        "same_position_uplift_ppg": -7.16,
+        "same_position_uplift_ppg": -1.69,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -904,10 +913,10 @@
         "name": "David Njoku",
         "ppg": 3.05,
         "replacement_reference": {
-          "name": "Isaiah Likely",
-          "ppg": 10.662
+          "name": "Michael Mayer",
+          "ppg": 5.192
         },
-        "same_position_uplift_ppg": -7.61,
+        "same_position_uplift_ppg": -2.14,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -931,10 +940,10 @@
         "name": "Keon Coleman",
         "ppg": 6.23,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": 0.13,
+        "same_position_uplift_ppg": 4.99,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -956,10 +965,10 @@
         "name": "Quentin Johnston",
         "ppg": 5.72,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -0.38,
+        "same_position_uplift_ppg": 4.48,
         "screen_only": true,
         "sleeper_id": "9754",
         "team": "LAC"
@@ -978,10 +987,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.68,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -0.42,
+        "same_position_uplift_ppg": 4.44,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -1003,10 +1012,10 @@
         "name": "Chris Bell",
         "ppg": 5.21,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -0.89,
+        "same_position_uplift_ppg": 3.97,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -1032,10 +1041,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.52,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -1.58,
+        "same_position_uplift_ppg": 3.27,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1059,10 +1068,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.38,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -1.72,
+        "same_position_uplift_ppg": 3.14,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1084,10 +1093,10 @@
         "name": "Michael Pittman Jr.",
         "ppg": 4.35,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -1.75,
+        "same_position_uplift_ppg": 3.11,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
@@ -1106,10 +1115,10 @@
         "name": "Makai Lemon",
         "ppg": 3.82,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -2.28,
+        "same_position_uplift_ppg": 2.58,
         "screen_only": true,
         "sleeper_id": "13294",
         "team": "PHI"
@@ -1135,10 +1144,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 3.61,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -2.49,
+        "same_position_uplift_ppg": 2.36,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1160,10 +1169,10 @@
         "name": "Rashod Bateman",
         "ppg": 3.5,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -2.6,
+        "same_position_uplift_ppg": 2.26,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1187,10 +1196,10 @@
         "name": "Mack Hollins",
         "ppg": 3.44,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -2.66,
+        "same_position_uplift_ppg": 2.2,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1216,10 +1225,10 @@
         "name": "Jauan Jennings",
         "ppg": 2.75,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -3.35,
+        "same_position_uplift_ppg": 1.51,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1242,10 +1251,10 @@
         "name": "Konata Mumpfield",
         "ppg": 2.33,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -3.77,
+        "same_position_uplift_ppg": 1.09,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1269,41 +1278,13 @@
         "name": "Zachariah Branch",
         "ppg": 1.77,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -4.33,
+        "same_position_uplift_ppg": 0.53,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [
-            "sleeper_injury_ir",
-            "targets_missing"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 30.0,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Christian Kirk",
-        "ppg": 1.24,
-        "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
-        },
-        "same_position_uplift_ppg": -4.86,
-        "screen_only": true,
-        "sleeper_id": "4950",
-        "team": "SF"
       },
       {
         "audit": {
@@ -1319,10 +1300,10 @@
         "name": "Dohnte Meyers",
         "ppg": 0.99,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -5.11,
+        "same_position_uplift_ppg": -0.25,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1341,10 +1322,10 @@
         "name": "Brandin Cooks",
         "ppg": 0.98,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -5.12,
+        "same_position_uplift_ppg": -0.27,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1366,10 +1347,10 @@
         "name": "Cyrus Allen",
         "ppg": 0.86,
         "replacement_reference": {
-          "name": "Caleb Douglas",
-          "ppg": 6.099
+          "name": "Christian Kirk",
+          "ppg": 1.244
         },
-        "same_position_uplift_ppg": -5.24,
+        "same_position_uplift_ppg": -0.38,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1377,5 +1358,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-05T23:44:58.539134+00:00"
+  "snapshot_utc": "2026-11-06T01:04:07.945954+00:00"
 }

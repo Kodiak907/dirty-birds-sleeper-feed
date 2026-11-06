@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-05T23:44:58.539134+00:00
+Updated: 2026-11-06T01:04:07.945954+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,12 +19,16 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 1: added Christian McCaffrey; dropped Ollie Gordon II, Chris Olave, Zach Charbonnet
-- lineup_change â roster/transaction 1
-- Roster 7: added Ollie Gordon II, Chris Olave, Zach Charbonnet; dropped Makai Lemon, Christian McCaffrey
+- Roster 1: added Pat Bryant, Christian Kirk, Michael Mayer; dropped none
+- reserve_change â roster/transaction 1
+- Roster 7: added none; dropped Kyle Monangai
 - lineup_change â roster/transaction 7
-- Transaction 1424215054194126848: free_agent / complete / rosters [7] / adds None / drops {'13294': 7} / FAAB bid None
-- Transaction 1424214542132523008: trade / complete / rosters [1, 7] / adds {'12495': 7, '4034': 1, '8144': 7, '9753': 7} / drops {'12495': 1, '4034': 7, '8144': 1, '9753': 1} / FAAB bid None
+- lineup_change â roster/transaction 9
+- Transaction 1424222709990113280: free_agent / complete / rosters [1] / adds {'9482': 1} / drops None / FAAB bid None
+- Transaction 1424220076629893120: free_agent / complete / rosters [1] / adds {'12492': 1} / drops None / FAAB bid None
+- Transaction 1424218695214874624: free_agent / complete / rosters [7] / adds None / drops {'10219': 7} / FAAB bid None
+- Transaction 1424217843771113472: free_agent / complete / rosters [7] / adds {'10219': 7} / drops {'12534': 7} / FAAB bid None
+- Transaction 1424217106257399808: free_agent / complete / rosters [1] / adds {'4950': 1} / drops None / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

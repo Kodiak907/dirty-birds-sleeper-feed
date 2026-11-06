@@ -1,6 +1,6 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 9 | Snapshot: 2026-11-05T23:44:58.539134+00:00
+Week 9 | Snapshot: 2026-11-06T01:04:07.945954+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
@@ -13,7 +13,9 @@ Conditional projected difference: -6.08.
 
 ## Hard-tag excluded from provisional lineup
 
+- Pat Bryant — fantasy reserve: True; Sleeper injury: IR
 - Jonah Coleman — fantasy reserve: False; Sleeper injury: IR
+- Christian Kirk — fantasy reserve: False; Sleeper injury: IR
 - Deebo Samuel Sr. — fantasy reserve: False; Sleeper injury: Out
 
 ## ESPN / Sleeper discrepancies

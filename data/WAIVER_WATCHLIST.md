@@ -1,16 +1,16 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-05T23:45:04.215478+00:00
-Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
+Generated: 2026-11-06T01:04:12.537446+00:00
+Sleeper snapshot: 2026-11-06T01:04:07.945954+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 628 |
-| WR | 1292 |
-| TE | 615 |
+| RB | 629 |
+| WR | 1290 |
+| TE | 614 |
 | K | 139 |
 | DEF | 14 |
 
@@ -27,17 +27,18 @@ Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Keaton Mitchell | LAC | 6.01 | 100% | 30.0% | Not flagged |
-| 2 | Tyjae Spears | TEN | 5.54 | 89% | 38.0% | Questionable |
-| 3 | Samaje Perine | CIN | 5.19 | 100% | 36.3% | Not flagged |
-| 4 | Chris Rodriguez Jr. | JAX | 5.18 | 100% | — | Not flagged |
-| 5 | MarShawn Lloyd | GB | 4.61 | 89% | 30.7% | Not flagged |
-| 6 | Seth McGowan | IND | 4.11 | 89% | 27.0% | Not flagged |
-| 7 | Tank Bigsby | PHI | 2.10 | 78% | 28.7% | IR |
-| 8 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
-| 9 | Zonovan Knight | ARI | 1.44 | 89% | 39.7% | Not flagged |
-| 10 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
-| 11 | Elijah Mitchell | PHI | 1.10 | 89% | 39.0% | Not flagged |
+| 1 | Kyle Monangai | CHI | 6.59 | 89% | 39.7% | Out |
+| 2 | Keaton Mitchell | LAC | 6.01 | 100% | 30.0% | Not flagged |
+| 3 | Tyjae Spears | TEN | 5.54 | 89% | 38.0% | Questionable |
+| 4 | Samaje Perine | CIN | 5.19 | 100% | 36.3% | Not flagged |
+| 5 | Chris Rodriguez Jr. | JAX | 5.18 | 100% | — | Not flagged |
+| 6 | MarShawn Lloyd | GB | 4.61 | 89% | 30.7% | Not flagged |
+| 7 | Seth McGowan | IND | 4.11 | 89% | 27.0% | Not flagged |
+| 8 | Tank Bigsby | PHI | 2.10 | 78% | 28.7% | IR |
+| 9 | Jaleel McLaughlin | CLE | 1.53 | 89% | 21.7% | Not flagged |
+| 10 | Zonovan Knight | ARI | 1.44 | 89% | 39.7% | Not flagged |
+| 11 | Emanuel Wilson | SEA | 1.34 | 89% | 26.7% | Not flagged |
+| 12 | Elijah Mitchell | PHI | 1.10 | 89% | 39.0% | Not flagged |
 
 ### WR
 
@@ -62,10 +63,9 @@ Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Darren Waller | CAR | 6.18 | 100% | 51.0% | Not flagged |
 | 2 | Chig Okonkwo | WAS | 6.14 | 100% | 74.7% | Not flagged |
-| 3 | Michael Mayer | LV | 5.19 | 89% | 80.0% | Not flagged |
-| 4 | Noah Fant | NO | 4.79 | 100% | 57.0% | Not flagged |
-| 5 | Colby Parkinson | LAR | 3.50 | 89% | — | Not flagged |
-| 6 | David Njoku | LAC | 3.05 | 100% | 35.5% | IR |
+| 3 | Noah Fant | NO | 4.79 | 100% | 57.0% | Not flagged |
+| 4 | Colby Parkinson | LAR | 3.50 | 89% | — | Not flagged |
+| 5 | David Njoku | LAC | 3.05 | 100% | 35.5% | IR |
 
 ### K
 
@@ -105,6 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 |---|---|---|---:|---:|
 | Baker Mayfield | QB | TB | 12.93 | 94.7% |
 | Tanner McKee | QB | PHI | 9.86 | 100.0% |
+| Kyle Monangai | RB | CHI | 6.59 | 39.7% |
 | Keon Coleman | WR | BUF | 6.23 | 77.3% |
 | Darren Waller | TE | CAR | 6.18 | 51.0% |
 | Chig Okonkwo | TE | WAS | 6.14 | 74.7% |
@@ -113,7 +114,6 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Kalif Raymond | WR | CHI | 5.68 | 62.0% |
 | Tyjae Spears | RB | TEN | 5.54 | 38.0% |
 | Chris Bell | WR | MIA | 5.21 | 62.7% |
-| Michael Mayer | TE | LV | 5.19 | 80.0% |
 | Samaje Perine | RB | CIN | 5.19 | 36.3% |
 | Noah Fant | TE | NO | 4.79 | 57.0% |
 | MarShawn Lloyd | RB | GB | 4.61 | 30.7% |
@@ -127,7 +127,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **40**
+Candidates with independently sourced projections AND usage data: **39**
 
 ## Coverage and rules
 

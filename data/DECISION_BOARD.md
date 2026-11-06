@@ -16,45 +16,45 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keaton Mitchell | 6.01 | +1.31 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
-| 2 | Tyjae Spears | 5.54 | +0.84 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 3 | Samaje Perine | 5.19 | +0.49 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
-| 4 | Chris Rodriguez Jr. | 5.18 | +0.48 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
-| 5 | MarShawn Lloyd | 4.61 | -0.09 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
-| 6 | Seth McGowan | 4.11 | -0.59 | 27.0% | Carries 6.7 | No modeled flags (not medically cleared) |
-| 7 | Tank Bigsby | 2.10 | -2.60 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
-| 8 | Jaleel McLaughlin | 1.53 | -3.17 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 9 | Zonovan Knight | 1.44 | -3.26 | 39.7% | — | carries_missing |
-| 10 | Emanuel Wilson | 1.34 | -3.36 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
-| 11 | Elijah Mitchell | 1.10 | -3.60 | 39.0% | Carries 7.0 | No modeled flags (not medically cleared) |
+| 1 | Kyle Monangai | 6.59 | +1.89 | 39.7% | Carries 16.7 | sleeper_injury_out, injury_report_observation_review |
+| 2 | Keaton Mitchell | 6.01 | +1.31 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
+| 3 | Tyjae Spears | 5.54 | +0.84 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 4 | Samaje Perine | 5.19 | +0.49 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 5 | Chris Rodriguez Jr. | 5.18 | +0.48 | — | Carries 6.3 | snap_data_missing, usage_sample_missing |
+| 6 | MarShawn Lloyd | 4.61 | -0.09 | 30.7% | Carries 5.7 | No modeled flags (not medically cleared) |
+| 7 | Seth McGowan | 4.11 | -0.59 | 27.0% | Carries 6.7 | No modeled flags (not medically cleared) |
+| 8 | Tank Bigsby | 2.10 | -2.60 | 28.7% | Carries 9.0 | sleeper_injury_ir, projection_weeks_partial |
+| 9 | Jaleel McLaughlin | 1.53 | -3.17 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 10 | Zonovan Knight | 1.44 | -3.26 | 39.7% | — | carries_missing |
+| 11 | Emanuel Wilson | 1.34 | -3.36 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
+| 12 | Elijah Mitchell | 1.10 | -3.60 | 39.0% | Carries 7.0 | No modeled flags (not medically cleared) |
 
-## WR — reference: Caleb Douglas (6.10 PPG)
-
-| # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
-|---:|---|---:|---:|---:|---|---|
-| 1 | Keon Coleman | 6.23 | +0.13 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 2 | Quentin Johnston | 5.72 | -0.38 | 79.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 3 | Kalif Raymond | 5.68 | -0.42 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
-| 4 | Chris Bell | 5.21 | -0.89 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 5 | Rashid Shaheed | 4.52 | -1.58 | 41.3% | Tgt 5.0 | injury_report_observation_review |
-| 6 | Dontayvion Wicks | 4.38 | -1.72 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
-| 7 | Michael Pittman Jr. | 4.35 | -1.75 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 8 | Makai Lemon | 3.82 | -2.28 | 88.7% | Tgt 7.7 | No modeled flags (not medically cleared) |
-| 9 | Ja'Kobi Lane | 3.61 | -2.49 | 62.7% | Tgt 3.7 | injury_report_observation_review |
-| 10 | Rashod Bateman | 3.50 | -2.60 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 11 | Mack Hollins | 3.44 | -2.66 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
-| 12 | Jauan Jennings | 2.75 | -3.35 | 60.0% | Tgt 2.0 | injury_report_observation_review |
-
-## TE — reference: Isaiah Likely (10.66 PPG)
+## WR — reference: Christian Kirk (1.24 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Darren Waller | 6.18 | -4.48 | 51.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
-| 2 | Chig Okonkwo | 6.14 | -4.52 | 74.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
-| 3 | Michael Mayer | 5.19 | -5.47 | 80.0% | Tgt 6.0 | No modeled flags (not medically cleared) |
-| 4 | Noah Fant | 4.79 | -5.88 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
-| 5 | Colby Parkinson | 3.50 | -7.16 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 6 | David Njoku | 3.05 | -7.61 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
+| 1 | Keon Coleman | 6.23 | +4.99 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 2 | Quentin Johnston | 5.72 | +4.48 | 79.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 3 | Kalif Raymond | 5.68 | +4.44 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.21 | +3.97 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 5 | Rashid Shaheed | 4.52 | +3.27 | 41.3% | Tgt 5.0 | injury_report_observation_review |
+| 6 | Dontayvion Wicks | 4.38 | +3.14 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
+| 7 | Michael Pittman Jr. | 4.35 | +3.11 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 8 | Makai Lemon | 3.82 | +2.58 | 88.7% | Tgt 7.7 | No modeled flags (not medically cleared) |
+| 9 | Ja'Kobi Lane | 3.61 | +2.36 | 62.7% | Tgt 3.7 | injury_report_observation_review |
+| 10 | Rashod Bateman | 3.50 | +2.26 | 59.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 11 | Mack Hollins | 3.44 | +2.20 | 62.7% | Tgt 5.0 | sleeper_injury_ir |
+| 12 | Jauan Jennings | 2.75 | +1.51 | 60.0% | Tgt 2.0 | injury_report_observation_review |
+
+## TE — reference: Michael Mayer (5.19 PPG)
+
+| # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
+|---:|---|---:|---:|---:|---|---|
+| 1 | Darren Waller | 6.18 | +0.99 | 51.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
+| 2 | Chig Okonkwo | 6.14 | +0.95 | 74.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
+| 3 | Noah Fant | 4.79 | -0.41 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
+| 4 | Colby Parkinson | 3.50 | -1.69 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
+| 5 | David Njoku | 3.05 | -2.14 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
 
 ## K — reference: Will Reichard (7.22 PPG)
 

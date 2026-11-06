@@ -1,13 +1,13 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-05T23:45:04.113173+00:00
-Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
+Generated: 2026-11-06T01:04:12.415263+00:00
+Sleeper snapshot: 2026-11-06T01:04:07.945954+00:00
 
-Roster change entries: 2. New completed trade entries: 1.
+Roster change entries: 3. New completed trade entries: 0.
 
-- Dirty Birds: added Christian McCaffrey; dropped Ollie Gordon II, Chris Olave, Zach Charbonnet
-- JA’MARRTRIX: added Ollie Gordon II, Chris Olave, Zach Charbonnet; dropped Makai Lemon, Christian McCaffrey
-- Completed trade 1424214542132523008: {'Ollie Gordon II': 'JA’MARRTRIX', 'Christian McCaffrey': 'Dirty Birds', 'Chris Olave': 'JA’MARRTRIX', 'Zach Charbonnet': 'JA’MARRTRIX'}; FAAB transfers [{'amount': 25, 'receiver': 1, 'sender': 7}]
+- Dirty Birds: added Pat Bryant, Christian Kirk, Michael Mayer; dropped none
+- Dirty Birds: reserve status changed
+- JA’MARRTRIX: added none; dropped Kyle Monangai
 
 ## Limits
 

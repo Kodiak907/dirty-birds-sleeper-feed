@@ -1,18 +1,26 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-05T23:45:04.083279+00:00
-Sleeper snapshot: 2026-11-05T23:44:58.539134+00:00
+Generated: 2026-11-06T01:04:12.378701+00:00
+Sleeper snapshot: 2026-11-06T01:04:07.945954+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+**5 transaction changes:** 5 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1424215054194126848` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
-- **NEW** · transaction `1424214542132523008` · TRADE · COMPLETE · Dirty Birds (#1), JA’MARRTRIX (#7) | Added: Ollie Gordon II → JA’MARRTRIX (#7), Christian McCaffrey → Dirty Birds (#1), Chris Olave → JA’MARRTRIX (#7), Zach Charbonnet → JA’MARRTRIX (#7) | Dropped: Ollie Gordon II → Dirty Birds (#1), Christian McCaffrey → JA’MARRTRIX (#7), Chris Olave → Dirty Birds (#1), Zach Charbonnet → Dirty Birds (#1)
+- **NEW** · transaction `1424222709990113280` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Mayer → Dirty Birds (#1)
+- **NEW** · transaction `1424220076629893120` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Pat Bryant → Dirty Birds (#1)
+- **NEW** · transaction `1424218695214874624` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Chris Rodriguez Jr. → JA’MARRTRIX (#7)
+- **NEW** · transaction `1424217843771113472` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Chris Rodriguez Jr. → JA’MARRTRIX (#7) | Dropped: Kyle Monangai → JA’MARRTRIX (#7)
+- **NEW** · transaction `1424217106257399808` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
+- 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: Chris Rodriguez Jr. → JA’MARRTRIX (#7) | Dropped: Kyle Monangai → JA’MARRTRIX (#7)
+- 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Chris Rodriguez Jr. → JA’MARRTRIX (#7)
+- 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Pat Bryant → Dirty Birds (#1)
+- 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Mayer → Dirty Birds (#1)
 - 2026-11-05T23:45:04.083279+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), JA’MARRTRIX (#7) | Added: Ollie Gordon II → JA’MARRTRIX (#7), Christian McCaffrey → Dirty Birds (#1), Chris Olave → JA’MARRTRIX (#7), Zach Charbonnet → JA’MARRTRIX (#7) | Dropped: Ollie Gordon II → Dirty Birds (#1), Christian McCaffrey → JA’MARRTRIX (#7), Chris Olave → Dirty Birds (#1), Zach Charbonnet → Dirty Birds (#1)
 - 2026-11-05T23:45:04.083279+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jordan Watkins → DANGER CLOSE  (#4) | Dropped: Keon Coleman → DANGER CLOSE  (#4)
@@ -33,11 +41,6 @@ League: 1399157532559192064
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Malik Willis → CREAM MACHINE  (#2) | FAAB bid: $4
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Devin Singletary → CREAM MACHINE  (#2) | Dropped: Emanuel Wilson → CREAM MACHINE  (#2) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | Dropped: Washington Commanders → CREAM MACHINE  (#2) | FAAB bid: $15
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Emmett Johnson → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Mike Washington Jr. → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Devin Singletary → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Chig Okonkwo → Dirty Birds (#1) | FAAB bid: $7
 
 ## Important limits
 
