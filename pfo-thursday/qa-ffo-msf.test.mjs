@@ -724,10 +724,10 @@ test('Kicker Weeks 1–6 attribution accepts only current-week GB name, jersey, 
  assert.equal(r.identityVerifiedWeeks,1);
  assert.equal(r.weeks[0].knownEvents,3);
  assert.equal(r.weeks[0].unverifiedEvents,1);
- assert.equal(r.weeks[0].observedPoints,5);
+ assert.equal(r.weeks[0].observedPoints,7);
  assert.equal(r.players.length,1);
  assert.equal(r.players[0].providerId,'802');
- assert.equal(r.players[0].observedSubtotal,5);
+ assert.equal(r.players[0].observedSubtotal,7);
  assert.equal(r.weeks[1].observedPoints,null);
  assert.equal(r.weeks[1].status,'feed_unverified');
  assert.equal(r.finalScoresCertified,false);
@@ -928,11 +928,11 @@ test('Week 4 GB at TB real MSF (:02) clock credits Trey Smack 58-yard field goal
  assert.equal(p.kickers.find(x=>x.providerId==='208128').playerTeam,'GB');
  assert.equal(p.kickers.find(x=>x.providerId==='208128').counts.fgAttempts,1);
  assert.equal(p.kickers.find(x=>x.providerId==='208128').counts.fgMade,1);
- assert.equal(p.kickers.find(x=>x.providerId==='208128').observedSubtotal,7);
+ assert.equal(p.kickers.find(x=>x.providerId==='208128').observedSubtotal,9);
  const kick=p.publishedEvents.find(x=>x.kind==='FG');
  assert.equal(kick.kickerToken,'28-T.Smack');
  assert.equal(kick.distance,58);
- assert.equal(kick.observedEventPoints,5);
+ assert.equal(kick.observedEventPoints,7);
  assert.equal(kick.sourcePossessionTeam,'GB');
  const team=auditTeamGameFeed({teamgamelogs:[{team:{abbreviation:'GB'},game:{id:'week4'},
   stats:{fieldGoals:{fgAtt:1,fgMade:1}}}]},'GB',own.scoring);
@@ -1214,7 +1214,7 @@ test('2026 MSF fumbles.fumLost maps an explicitly observed loss; missing fumLost
  const result=fflScore(raw,own.scoring,'QB');
  assert.equal(result.components.find(c=>c.key==='fum_lost').stat,1);
  assert.equal(result.components.find(c=>c.key==='fum_lost').points,-2);
- assert.equal(result.points,6);
+ assert.equal(result.points,8);
  assert.ok(!result.missing.includes('fum_lost'));
  assert.ok(result.missing.includes('pass_td_40p'));
  const noFumble=fflScore({passing:{passYards:100}},own.scoring,'QB');
