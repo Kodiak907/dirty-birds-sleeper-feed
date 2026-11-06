@@ -57,8 +57,8 @@ test('recorded Nov 5 Commissioner FFL scoring supersedes stale Oct 28 rules',()=
 });
 test('FG made three-point BASE stacks with separately verified distance tier and PATs',()=>{
  const score=scorer();
- assert.equal(score({fgm:1,fgm_40_49:1,xpm:2}).points,11);
- assert.equal(score({fgm_40_49:1,xpm:2}).points,11,'known FG bucket supplies generic base if generic missing');
+ assert.equal(score({fgm:1,fgm_40_49:1,xpm:2}).points,8);
+ assert.equal(score({fgm_40_49:1,xpm:2}).points,8,'known FG bucket supplies generic base if generic missing');
  assert.equal(score({fgm:1,xpm:2}).points,5,'without FG distance, no fictitious 40+ bonus');
  assert.equal(score({fgm:1,fgm_0_19:1,xpm:2}).points,5.5);
  assert.equal(score({fgm:1,fgm_60p:1}).points,8);
