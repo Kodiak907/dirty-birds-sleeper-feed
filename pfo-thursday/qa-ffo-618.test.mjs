@@ -89,7 +89,7 @@ test('recover league opponent starters and defenses, disclose source errors befo
  assert.match(health,/defenseErrors\.get\(team\)/);
  assert.match(worker,/2026-regular\/games\.json\?team=/);
  assert.match(worker,/ffo618VerifiedFixtures\(raw\?\.data\?\?raw\)/);
- assert.match(html,/ffo-pfo-616\.js\?v=626/);
+ assert.match(html,/ffo-pfo-616\.js\?v=627/);
  assert.doesNotMatch(lib,/trade-fold|trade-intel|pfo59-trade-existing/);
 });
 
