@@ -120,14 +120,34 @@
         ' · scoring remains partial';
       }else{
        const c=data.observed_fields||{},missing=Array.isArray(data.missing_evidence)?data.missing_evidence:[];
-       result.textContent=team+' · '+String(data.game_id||'game unverified')+
-        ' · published plays '+Number(c.plays||0)+
-        ' · possession fields '+Number(c.possession_team||0)+
-        ' · down fields '+Number(c.down||0)+
-        ' · drive IDs '+Number(c.drive_id||0)+
-        ' · score snapshots '+Number(c.score_snapshots||0)+
-        ' · unresolved: '+(missing.length?missing.join(', '):'none reported')+
-        ' · D/ST points NOT certified';
+       const diag=data.sequence_diagnostics||{};
+       const asCount=n=>Number.isFinite(Number(n))&&n!==null?String(Number(n)):'unverified';
+       result.textContent=team+' · completed game '+String(data.game_id||'unverified')+'\n'+
+        'MSF plays '+asCount(c.plays)+' · possession '+asCount(c.possession_team)+
+        ' · downs '+asCount(c.down)+' · native drives '+asCount(c.drive_id)+'\n'+
+        'Play order '+String(diag.time_order||'unverified')+
+        ' · timestamped '+asCount(diag.timestamped_plays)+' · possession switches '+
+        asCount(diag.observed_possession_transitions)+'\n'+
+        'Potential short punt sequences '+asCount(diag.short_punt_sequence_candidates)+
+        ' (review only; NOT verified three-and-outs)\n'+
+        'D/ST points NOT certified · no score changes';
+       const detail=document.createElement('details');
+       detail.style.cssText='margin-top:7px;padding:6px 0;border-top:1px solid currentColor';
+       const summary=document.createElement('summary');
+       summary.textContent='Source fields and unresolved evidence';
+       detail.appendChild(summary);
+       const fields=Array.isArray(diag.play_status_fields)?diag.play_status_fields:[];
+       const top=Array.isArray(diag.play_fields)?diag.play_fields:[];
+       const info=document.createElement('div');
+       info.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;padding:5px 0';
+       info.textContent='Play fields: '+(top.length?top.join(', '):'none verified')+
+        '\nPlay-status fields: '+(fields.length?fields.join(', '):'none verified')+
+        '\nMissing evidence: '+(missing.length?missing.join(', '):'none reported')+
+        '\nNative play IDs: '+asCount(c.provider_id)+
+        ' · per-play score snapshots: '+asCount(c.score_snapshots)+
+        '\nSequence candidates are read-only, never credited as fantasy scoring.';
+       detail.appendChild(info);
+       result.appendChild(detail);
       }
      }catch{result.textContent=team+' · protected MSF source check unavailable; D/ST remains partial'}
      finally{clearTimeout(timer);button.disabled=false}
