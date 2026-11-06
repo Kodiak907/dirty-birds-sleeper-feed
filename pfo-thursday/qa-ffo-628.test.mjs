@@ -69,7 +69,7 @@ test('season D/ST source and Data Health both disclose partial coverage',()=>{
  assert.deepEqual(Array.from(out.coverage.unresolved_scoring_categories),['pts_allow','def_3_and_out']);
  const ui=readFileSync(new URL('./ffo-pfo-616.js',import.meta.url),'utf8');
  assert.match(ui,/D\/ST observed fields:/);
- assert.match(ui,/D\/ST evidence:/);
+ assert.match(ui,/D\/ST scoring evidence:/);
  assert.match(ui,/unresolved_scoring_categories/);
  assert.match(ui,/partial\/uncertified/);
 });
