@@ -68,7 +68,7 @@ test('4th down stops, three-and-outs and defensive 2-point returns are not fanta
 test('all UIs must load restored contract, not stale interim scoring rules',()=>{
  assert.match(ui,/FFO_FFL_SCORING_V1\.json\?v=635/);
  assert.match(ui,/2026-11-05-ffl-screen-recording-verified-v4/);
- assert.match(html,/ffo-pfo-597\.js\?v=635/);
+ assert.match(html,/ffo-pfo-597\.js\?v=636/);
  assert.doesNotMatch(ui,/FG made = \+3 base/);
  assert.equal(config.scoring.fgm,0);
 });
