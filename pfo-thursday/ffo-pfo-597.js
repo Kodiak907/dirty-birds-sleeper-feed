@@ -11,19 +11,31 @@
  const canonical=t=>typeof gm47CanonicalTeam==='function'?gm47CanonicalTeam(t):String(t||'').toUpperCase();
  // Official FFO scoring file is the model's authority; Sleeper remains roster/history only.
  let frozenFFLRules=null,rulesPending=null;
- const FFL_SUPPORTED_STATS=['pass_yd','pass_td','pass_int','pass_int_td','rush_yd','rush_td','rush_att','rush_40p','rush_td_40p','rush_td_50p','rec','rec_yd','rec_td','rec_td_40p','rec_td_50p','pass_td_40p','pass_td_50p','fum_lost','fum','rush_2pt','rec_2pt','pass_2pt','pass_cmp','pass_att','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss','sack','int','def_td','ff','fum_rec','safe','blk_kick','def_st_ff','def_st_fum_rec','def_st_td','st_ff','st_fum_rec','st_td','pts_allow_0','pts_allow_1_6','pts_allow_7_13','pts_allow_14_20','pts_allow_21_27','pts_allow_28_34','pts_allow_35p'];
+ const FFL_SUPPORTED_STATS=['pass_yd','pass_td','pass_int','pass_int_td','rush_yd','rush_td','rush_att','rush_40p','rush_td_40p','rush_td_50p','rec','rec_yd','rec_td','rec_td_40p','rec_td_50p','pass_td_40p','pass_td_50p','pass_cmp_40p','rec_30_39','rec_40p','fum_lost','fum','rush_2pt','rec_2pt','pass_2pt','pass_cmp','pass_att','fgm','fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p','fgmiss','xpm','xpmiss','sack','int','def_td','ff','fum_rec','safe','blk_kick','def_st_ff','def_st_fum_rec','def_st_td','def_2pt','def_3_and_out','st_ff','st_fum_rec','st_td','pts_allow_0','pts_allow_1_6','pts_allow_7_13','pts_allow_14_20','pts_allow_21_27','pts_allow_28_34','pts_allow_35p'];
  const frozenScore=(stats)=>{
   if(!stats||!frozenFFLRules)return null;
   let points=0,observed=0;
+  // FFL now stacks three base points for every verified FG make with the
+  // additional distance-tier bonus. A provider may expose exact made-distance
+  // buckets but omit generic fgm; in that case their sum is a confirmed lower
+  // bound on total FG makes. Do not synthesize a count from percentage fields.
+  const fgTiers=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
+  const buckets=fgTiers.map(k=>stats[k]).filter(x=>x!==null&&x!==undefined&&
+    x!==''&&Number.isInteger(Number(x))&&Number(x)>=0);
+  const hasFG=stats.fgm!==undefined&&stats.fgm!==null&&stats.fgm!==''&&
+    Number.isInteger(Number(stats.fgm))&&Number(stats.fgm)>=0;
+  const impliedFG=hasFG?Number(stats.fgm):buckets.length?
+    buckets.reduce((sum,n)=>sum+Number(n),0):null;
   for(const stat of FFL_SUPPORTED_STATS){
    const multiplier=Number(frozenFFLRules[stat]||0);
    if(!Number.isFinite(multiplier)||multiplier===0)continue;
-   if(stats[stat]===null||stats[stat]===undefined||stats[stat]==='')continue;
-   const count=Number(stats[stat]);
+   const raw=stat==='fgm'?impliedFG:stats[stat];
+   if(raw===null||raw===undefined||raw==='')continue;
+   const count=Number(raw);
    if(!Number.isFinite(count))continue;
    points+=multiplier*count;observed++;
   }
-  return observed?{points,partial:true,source:'FFO_FFL_SCORING_V1.json × NFL statistical categories · unverified bonuses/tiers are excluded'}:null;
+  return observed?{points,partial:true,source:'FFO 2026-11-05 Commissioner scoring × independently sourced NFL stats · missing bonus/tier evidence stays partial'}:null;
  };
  if(typeof pfo49ScoreFromStats==='function')pfo49ScoreFromStats=frozenScore;
  const loadFFLRules=()=>{
@@ -32,7 +44,7 @@
   if(typeof fetch!=='function')return Promise.resolve(null);
   rulesPending=(async()=>{
    try{
-    const response=await fetch('/FFO_FFL_SCORING_V1.json',{cache:'force-cache'});
+    const response=await fetch('/FFO_FFL_SCORING_V1.json?v=626',{cache:'no-store'});
     if(!response.ok)throw Error('FFO scoring file HTTP '+response.status);
     const payload=await response.json();
     if(payload?.schema!=='FFO_SCORING_RULES_V1'||!payload.scoring||Object.keys(payload.scoring).length<100)throw Error('FFL scoring schema incomplete');
