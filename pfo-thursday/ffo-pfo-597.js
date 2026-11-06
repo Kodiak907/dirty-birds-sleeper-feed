@@ -15,10 +15,10 @@
  const frozenScore=(stats)=>{
   if(!stats||!frozenFFLRules)return null;
   let points=0,observed=0;
-  // FFL now stacks three base points for every verified FG make with the
-  // additional distance-tier bonus. A provider may expose exact made-distance
-  // buckets but omit generic fgm; in that case their sum is a confirmed lower
-  // bound on total FG makes. Do not synthesize a count from percentage fields.
+  // The authoritative FFL recording awards NO generic made-FG base.
+  // Only verified distance buckets score (3/3/3/4/5/6). We still retain
+  // generic made-FG counts as audit evidence, never as an invented tier.
+  // Missing distances leave the kicker projection explicitly partial.
   const fgTiers=['fgm_0_19','fgm_20_29','fgm_30_39','fgm_40_49','fgm_50_59','fgm_60p'];
   // Verified historical totals are integers, but their expected per-game
   // counts are often fractional. Never discard a valid modeled FG rate.
@@ -38,7 +38,7 @@
    if(!Number.isFinite(count))continue;
    points+=multiplier*count;observed++;
   }
-  return observed?{points,partial:true,source:'FFO 2026-11-05 Commissioner scoring × independently sourced NFL stats · missing bonus/tier evidence stays partial'}:null;
+  return observed?{points,partial:true,source:'FFL 2026-11-05 full-video restored scoring × independent MSF stats · missing FG distance or bonus evidence stays partial'}:null;
  };
  if(typeof pfo49ScoreFromStats==='function')pfo49ScoreFromStats=frozenScore;
  const loadFFLRules=()=>{
@@ -47,10 +47,10 @@
   if(typeof fetch!=='function')return Promise.resolve(null);
   rulesPending=(async()=>{
    try{
-    const response=await fetch('/FFO_FFL_SCORING_V1.json?v=626',{cache:'no-store'});
+    const response=await fetch('/FFO_FFL_SCORING_V1.json?v=635',{cache:'no-store'});
     if(!response.ok)throw Error('FFO scoring file HTTP '+response.status);
     const payload=await response.json();
-    if(payload?.schema!=='FFO_SCORING_RULES_V1'||!payload.scoring||Object.keys(payload.scoring).length<100)throw Error('FFL scoring schema incomplete');
+    if(payload?.schema!=='FFO_SCORING_RULES_V1'||payload?.version!=='2026-11-05-ffl-screen-recording-verified-v4'||!payload.scoring||Object.keys(payload.scoring).length<100)throw Error('FFL scoring schema missing or not the restored video version');
     frozenFFLRules=payload.scoring;
     estimateCache.clear();
     try{
