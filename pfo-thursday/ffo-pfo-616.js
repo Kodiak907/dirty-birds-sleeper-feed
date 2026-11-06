@@ -57,8 +57,15 @@
   }
   const {own,opponent}=relevantStarters();
   const ids=[...own,...opponent.filter(id=>!own.includes(id))];
-  const lines=[auditTitle];
+  const lines=['PFO 6.36 · restored-video FFL scoring · projection evidence audit',auditTitle];
   if(!ids.length){panel.textContent=lines.concat('Waiting for submitted lineup...').join('\n');return}
+  const wk=typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0);
+  const ownModels=own.map(id=>({id,projection:typeof pfo52Points==='function'?pfo52Points(id,wk):null}));
+  const audit=window.ffoPfo597?.auditLineup?.(ownModels,own.length);
+  if(audit)lines.push('Our submitted starters: '+audit.covered+'/'+audit.required+
+   ' numeric projections · '+(audit.subtotal==null?'subtotal unavailable':audit.subtotal.toFixed(2)+' FFL points')+
+   ' · '+audit.partial+' provisional scoring profiles · '+audit.rulesVersion+
+   ' · NOT certified final scoring');
   for(const id of ids){
    const p=info(id),team=canonical(p?.team||id),name=p?.name||id,position=pos(p);
    const projected=typeof pfo52Points==='function'?pfo52Points(id,typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||0)):null;
@@ -71,7 +78,7 @@
      const observed=Array.isArray(c.scoring_categories)?c.scoring_categories:[];
      const unresolved=Array.isArray(c.unresolved_scoring_categories)?c.unresolved_scoring_categories:[];
      lines.push('  D/ST observed fields: '+(observed.length?observed.join(', '):'none')+' · known gaps: '+(unresolved.length?unresolved.join(', '):'none'));
-     lines.push('  D/ST evidence: '+Number(c.points_allowed_games||0)+' PA games; '+Number(c.three_and_out_games||0)+' three-and-out games; partial/uncertified');
+     lines.push('  D/ST scoring evidence: '+Number(c.points_allowed_games||0)+' points-allowed games · PA tier otherwise unknown · partial/uncertified (three-and-outs award 0 FFL points)');
     }
    }
    continue;
