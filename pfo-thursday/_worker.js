@@ -981,6 +981,92 @@ async function ffo616DefenseRoute(req,env){
  * access credentials and exact scoring events are not returned to the client.
  * A published PBP record does not certify the entire game's play coverage.
  */
+/* PFO 6.30: audit provider play fields and possession transitions without
+ * presuming that a possession segment is a full official drive. All outputs
+ * are aggregates or allowlisted field NAMES, never licensed play content.
+ * A candidate is NOT an awarded three-and-out.
+ */
+function ffo630InspectPossessionSequence(rows,fixture){
+ const top=new Set(),statusFields=new Set(),possessionFields=new Set();
+ const safeFields=(obj,set)=>{
+  if(!obj||typeof obj!=='object'||Array.isArray(obj))return;
+  for(const key of Object.keys(obj).slice(0,55))
+   if(/^[a-zA-Z][a-zA-Z0-9]{0,42}$/.test(key)&&
+      !/(key|token|secret|credential|password|authorization)/i.test(key))set.add(key);
+ };
+ const plays=rows.map(p=>{
+  safeFields(p,top);
+  const st=p?.playStatus||{};
+  safeFields(st,statusFields);
+  safeFields(st.teamInPossession,possessionFields);
+  const team=String(st.teamInPossession?.abbreviation||st.teamInPossession?.abbr||
+   p?.teamInPossession?.abbreviation||'').toUpperCase();
+  const q=st.quarter??p?.quarter??p?.period;
+  const sec=st.secondsElapsed;
+  const isQuarter=q!==null&&q!==undefined&&q!==''&&Number.isInteger(Number(q))&&Number(q)>=1&&Number(q)<=7;
+  const isSecond=sec!==null&&sec!==undefined&&sec!==''&&Number.isFinite(Number(sec))&&Number(sec)>=0&&Number(sec)<=900;
+  const down=st.down??st.currentDown??p?.down;
+  const isDown=down!==null&&down!==undefined&&down!==''&&Number.isInteger(Number(down))&&Number(down)>=1&&Number(down)<=4;
+  const text=String(p?.description||p?.playDescription||p?.text||'').slice(0,550);
+  return {team:[fixture.home,fixture.away].includes(team)?team:null,
+   t:isQuarter&&isSecond?(Number(q)*1000+Number(sec)):null,
+   down:isDown?Number(down):null,
+   punt:/\bpunt(?:s|ed|ing)?\b/i.test(text),
+   canceled:/\b(?:no play|no-play|penalty|flag|replay down|declined|offsetting|overturned|nullified)\b/i.test(text),
+   kickoff:/\bkickoff\b|\bkicks off\b/i.test(text)
+  };
+ });
+ let forward=0,reverse=0,comparable=0;
+ for(let i=1;i<plays.length;i++){
+  const a=plays[i-1].t,b=plays[i].t;
+  if(a===null||b===null||a===b)continue;
+  comparable++;
+  if(b>a)forward++;else reverse++;
+ }
+ const order=forward>0&&reverse===0?'forward':reverse>0&&forward===0?'reverse':
+  forward===0&&reverse===0?'unknown':'mixed';
+ const chronological=order==='reverse'?[...plays].reverse():plays;
+ let transitionCount=0,segments=[],active=null;
+ if(order!=='mixed'&&order!=='unknown'){
+  for(const p of chronological){
+   if(!p.team){if(active){active.incomplete=true}continue}
+   if(active&&active.team!==p.team){segments.push(active);transitionCount++;active=null}
+   if(!active)active={team:p.team,count:0,downs:[],punts:0,canceled:false,incomplete:false,kickoff:false};
+   active.count++;
+   if(p.down!==null)active.downs.push(p.down);
+   if(p.punt)active.punts++;
+   if(p.canceled)active.canceled=true;
+   if(p.kickoff)active.kickoff=true;
+  }
+  if(active)segments.push(active);
+ }
+ // A narrow heuristic for a REVIEW queue only. An MSF down-state is not
+ // independently established as the down BEFORE each snap, so this is never
+ // promoted into a scored three-and-out.
+ const candidates=segments.filter((s,i)=>i>0&&i<segments.length-1&&
+  !s.incomplete&&!s.canceled&&!s.kickoff&&
+  s.punts===1&&s.count===4&&s.downs.length===4&&
+  s.downs.join(',')==='1,2,3,4').length;
+ const availableClock=plays.filter(p=>p.t!==null).length;
+ const availablePossession=plays.filter(p=>p.team!==null).length;
+ const trustworthyOrder=order==='forward'||order==='reverse';
+ return {schema:'FFO_MSF_DST_SEQUENCE_DIAGNOSTIC_V1',
+  play_fields:[...top].slice(0,32).sort(),
+  play_status_fields:[...statusFields].slice(0,32).sort(),
+  possession_fields:[...possessionFields].slice(0,20).sort(),
+  time_order:order,comparable_clock_pairs:comparable,
+  timestamped_plays:availableClock,attributed_possession_plays:availablePossession,
+  observed_possession_transitions:trustworthyOrder?transitionCount:null,
+  candidate_possession_segments:trustworthyOrder?segments.length:null,
+  short_punt_sequence_candidates:trustworthyOrder?candidates:null,
+  candidate_three_and_out_points:0,
+  inference_only:true,eligible_for_scoring:false,
+  limitations:['Native drives not available in verified source fields',
+    'Chronology and possession boundaries may omit drives, penalties and corrections',
+    'Down state may describe the post-play state rather than the play down',
+    'Short punt sequence candidates are NOT verified three-and-outs',
+    'Full-game play coverage remains uncertified']};
+}
 function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
  const data=payload?.data??payload;
  const rows=data?.gameplaybyplay?.plays??data?.gamePlayByPlay?.plays??data?.plays;
@@ -1035,6 +1121,7 @@ function ffo629InspectDefensePlayFields(payload,fixture,team,checkedAt){
   source_type:'licensed_primary',available:rows.length>0,team,game_id:fixture.id,
   checked_at:checkedAt,completed_fixture_verified:true,
   observed_fields:{...counts,distinct_drive_ids:drives.size},
+  sequence_diagnostics:ffo630InspectPossessionSequence(rows,fixture),
   missing_evidence:missing,full_game_certified:false,
   three_and_out_scoring_ready:false,points_allowed_scoring_ready:false,
   dst_points_certified:false,read_only:true,
