@@ -134,6 +134,10 @@
     // the sourced schedule verifies a playing week, it cannot continue to hide the model.
     const v=sourceForecast(id);
     if(v)return {...v,bye:false,adjustment:null,opponent:row.opponent,
+      // Even after a kicker has a numeric FFL projection, absent distance
+      // categories and incomplete historical kicks remain a source gap.
+      partial:pos==='K'||v.partial===true,
+      source:pos==='K'?'FFO partial MSF kicker estimate · verified FG distances only · missing categories unknown':v.source,
       modelStatus:'provisional',week,certified:false};
     return {points:null,bye:false,source:'FFO independent MSF player statistics or identity unavailable for Week '+week,
       modelPending:true,opponent:row.opponent,adjustment:null};
