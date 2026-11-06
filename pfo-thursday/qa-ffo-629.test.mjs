@@ -6,6 +6,7 @@ const worker=readFileSync(new URL('./_worker.js',import.meta.url),'utf8');
 const ui=readFileSync(new URL('./ffo-pfo-616.js',import.meta.url),'utf8');
 const fixStart=worker.indexOf('function ffo618VerifiedFixtures(');
 const fixEnd=worker.indexOf('function ffo616NormalizeDefense(',fixStart);
+const helperStart=worker.indexOf('function ffo630InspectPossessionSequence(');
 const start=worker.indexOf('function ffo629InspectDefensePlayFields(');
 const end=worker.indexOf('/* PFO 6.16: fill missing starter denominators',start);
 assert.ok(fixStart>=0&&fixEnd>fixStart&&start>=0&&end>start);
@@ -27,7 +28,7 @@ const make=(provider,auth=async()=>true)=>{
   ffo598NFLTeams:new Set(['MIN','BUF','GB']),
   comIdentity:auth,
   ffoReply:(d,s=200)=>reply(d,s)});
- new Script(worker.slice(fixStart,fixEnd)+worker.slice(start,end)+
+ new Script(worker.slice(fixStart,fixEnd)+(helperStart>=0?worker.slice(helperStart,start):'')+worker.slice(start,end)+
   ';this.audit={shape:ffo629InspectDefensePlayFields,route:ffo629DefenseSourceAuditRoute};').runInContext(ctx);
  return {seen,...ctx.audit};
 };
