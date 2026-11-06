@@ -1,0 +1,30 @@
+name: PFO 6.28 D/ST provenance and scoring coverage QA
+on:
+  push:
+    branches:
+      - pfo-628-dst-evidence-audit-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Test isolated D/ST evidence audit (NO DEPLOY)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate syntax
+        run: |
+          cp pfo-thursday/_worker.js /tmp/pfo628-worker.mjs
+          node --check /tmp/pfo628-worker.mjs
+          node --check pfo-thursday/ffo-pfo-616.js
+          node --check pfo-thursday/qa-ffo-628.test.mjs
+      - name: D/ST provenance, historical scoring, kicker and Commissioner regression tests
+        run: |
+          node --test pfo-thursday/qa-ffo-628.test.mjs pfo-thursday/qa-ffo-627.test.mjs pfo-thursday/qa-ffo-626.test.mjs pfo-thursday/qa-ffo-625.test.mjs pfo-thursday/qa-ffo-621.test.mjs pfo-thursday/qa-ffo-618.test.mjs
+      - name: Explicit no-deployment boundary
+        run: |
+          echo "PFO 6.28 is an isolated D/ST source audit. No Pages deployment, production changes, public demo changes, or Commissioner changes."
