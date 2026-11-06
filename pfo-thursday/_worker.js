@@ -791,9 +791,11 @@ function ffo616NormalizeTeamSeason(payload,team,checkedAt,fixtures=new Map()){
  return {schema:'FFO_MSF_DEFENSE_SEASON_V1',source:'MySportsFeeds',source_type:'licensed_primary',
   team,checked_at:checkedAt,games_observed:games,season_totals:totals,forecast,
   coverage:{points_allowed_games:0,defensive_stat_games:games,
+   three_and_out_games:0,
    completed_scoreboard_games:fixtureGames.length,
    denominator_source:listed!=null?'provider_games_played':'verified_finished_nfl_schedule',
-   scoring_categories:Object.keys(forecast)},
+   scoring_categories:Object.keys(forecast),
+   unresolved_scoring_categories:['pts_allow','def_3_and_out']},
   projection_method:'MSF team defensive totals divided by documented team games; raw opponent scores never imply FFL points allowed',
   partial:true,certified:false};
 }
