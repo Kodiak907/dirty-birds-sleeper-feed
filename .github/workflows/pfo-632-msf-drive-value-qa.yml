@@ -1,0 +1,91 @@
+name: PFO 6.32 MSF D/ST PBP schema and possession transition QA
+on:
+  push:
+    branches:
+      - pfo-632-msf-drive-value-diagnostics-20261105
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Protected source audit and existing scoring regressions (NO DEPLOY)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check isolated worker and UI syntax
+        run: |
+          cp pfo-thursday/_worker.js /tmp/pfo629-worker.mjs
+          node --check /tmp/pfo629-worker.mjs
+          node --check pfo-thursday/ffo-pfo-616.js
+          node --check pfo-thursday/qa-ffo-629.test.mjs
+          node --check pfo-thursday/qa-ffo-630.test.mjs
+          node --check pfo-thursday/qa-ffo-631.test.mjs
+          node --check pfo-thursday/qa-ffo-632.test.mjs
+      - name: Validate guarded source audit and D/ST scoring independence
+        run: |
+          node --test pfo-thursday/qa-ffo-632.test.mjs pfo-thursday/qa-ffo-631.test.mjs pfo-thursday/qa-ffo-630.test.mjs pfo-thursday/qa-ffo-629.test.mjs pfo-thursday/qa-ffo-628.test.mjs pfo-thursday/qa-ffo-627.test.mjs pfo-thursday/qa-ffo-626.test.mjs pfo-thursday/qa-ffo-625.test.mjs pfo-thursday/qa-ffo-621.test.mjs pfo-thursday/qa-ffo-618.test.mjs
+      - name: Existing mobile-browser regression gate
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
+      - name: Confirm source-audit isolation
+        run: echo "Static and mobile QA passed; only protected private preview may be updated."
+
+  deploy-private-preview:
+    name: Release QA-approved 6.30 to protected private preview only
+    needs: verify
+    if: github.ref == 'refs/heads/pfo-632-msf-drive-value-diagnostics-20261105' && github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: pfo-preview
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package only site assets; exclude tests and development files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-preview"
+          find pfo-thursday -maxdepth 1 -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' -o -name '*.json' \) ! -name 'qa-*' -exec cp {} "$RUNNER_TEMP/pfo-preview/" \;
+          for name in index.html _worker.js FFO_FFL_SCORING_V1.json ffo-pfo-616.js ffo-pfo-597.js ffo-pfo-core.js; do
+            test -s "$RUNNER_TEMP/pfo-preview/$name"
+          done
+          grep -q 'ffo-pfo-616.js?v=627' "$RUNNER_TEMP/pfo-preview/index.html"
+          grep -q '2026-11-05-commissioner-approved-rules-v2' "$RUNNER_TEMP/pfo-preview/FFO_FFL_SCORING_V1.json"
+          grep -q 'ffo629DefenseSourceAuditRoute' "$RUNNER_TEMP/pfo-preview/_worker.js"
+          grep -q 'ffo630InspectPossessionSequence' "$RUNNER_TEMP/pfo-preview/_worker.js"
+          grep -q 'overallDriveNum' "$RUNNER_TEMP/pfo-preview/_worker.js"
+          grep -q 'PFO 6.32' "$RUNNER_TEMP/pfo-preview/ffo-pfo-616.js"
+          grep -q 'ffo632AuditDriveRawValues' "$RUNNER_TEMP/pfo-preview/_worker.js"
+          grep -q 'pfo629-dst-source-audit' "$RUNNER_TEMP/pfo-preview/ffo-pfo-616.js"
+      - name: Require protected preview deploy credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+        shell: bash
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo '::error::Preview token missing'; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy to private PFO preview ONLY
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.47.0 pages deploy "$RUNNER_TEMP/pfo-preview" \
+            --project-name dirtybirdstest \
+            --branch pfo-598-msf-core-and-mobile-20261029 \
+            --commit-hash "$GITHUB_SHA" \
+            --commit-message "PFO 6.32 MSF native drive counters and read-only source provenance (private preview only)"
+          echo "No public demo, main production or Commissioner record changes."
