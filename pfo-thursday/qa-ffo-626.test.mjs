@@ -133,3 +133,13 @@ test('model loads own updated scoring file without Sleeper point totals, protect
  assert.match(html,/ffo-pfo-616\.js\?v=626/);
  assert.doesNotMatch(source,/sleeperGet\(/);
 });
+
+test('GameCast and Team HQ share the same updated FFL scoring contract without changing historical Sleeper records',()=>{
+ const g=read('ffo-gamecast-model.mjs');
+ assert.ok(g.includes("Number(rules.fgm):0)"),'PBP kicker audit includes base FG points with sourced distance bonus');
+ assert.ok(g.includes("const xp=num(source?.extraPointAttempts?.xpMade)"),'GameCast maps verified XP counts');
+ assert.ok(source.includes("fgTiers=['fgm_0_19'"),'Team HQ FFL scorer stacks base and distance');
+ assert.equal(cfg.scoring.def_3_and_out,0.5);
+ assert.equal(cfg.scoring.pass_td,6);
+ assert.doesNotMatch(g,/Sleeper fantasy score as primary projection/);
+});
