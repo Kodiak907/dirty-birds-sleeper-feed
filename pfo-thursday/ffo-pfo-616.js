@@ -81,6 +81,60 @@
    lines.push(side+' · '+name+': unavailable · '+reason);
   }
   panel.textContent=lines.join('\n');
+  // Explicit user-triggered evidence check. Do not spend provider requests on
+  // every refresh, and do not treat published plays as certified D/ST scoring.
+  let tools=document.getElementById('pfo629-dst-source-audit');
+  if(!tools){
+   tools=document.createElement('div');
+   tools.id='pfo629-dst-source-audit';
+   tools.style.cssText='font-size:12px;line-height:1.5;margin:8px 0 12px;overflow-wrap:anywhere';
+   host.appendChild(tools);
+  }
+  const teams=[...new Set(defenseIds().map(id=>canonical(info(id)?.team||id))
+   .filter(t=>/^[A-Z]{2,3}$/.test(t)))].slice(0,4);
+  const before=tools.dataset.teams||'';
+  if(before!==teams.join(',')||!tools.querySelector('button')){
+   tools.replaceChildren();
+   tools.dataset.teams=teams.join(',');
+   if(teams.length){
+    const label=document.createElement('div');
+    label.textContent='PFO 6.29 · licensed MSF D/ST source audit (read-only; no score changes)';
+    tools.appendChild(label);
+   }
+   for(const team of teams){
+    const button=document.createElement('button');
+    button.type='button';button.textContent='Check '+team+' D/ST evidence';
+    button.style.cssText='font-size:12px;padding:7px 10px;margin:5px 6px 3px 0;cursor:pointer';
+    const result=document.createElement('div');
+    result.style.cssText='margin:2px 0 8px;white-space:pre-line';
+    button.addEventListener('click',async()=>{
+     button.disabled=true;result.textContent='Checking protected MSF source for '+team+'...';
+     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),14000);
+     try{
+      const response=await fetch('/api/ffo/stats/defense-source-audit?team='+encodeURIComponent(team),
+       {cache:'no-store',signal:controller.signal});
+      if(!response.ok)throw Error('Protected source audit HTTP '+response.status);
+      const data=await response.json();
+      if(!data.available){
+       result.textContent=team+' · '+String(data.error||'source unavailable').slice(0,90)+
+        ' · scoring remains partial';
+      }else{
+       const c=data.observed_fields||{},missing=Array.isArray(data.missing_evidence)?data.missing_evidence:[];
+       result.textContent=team+' · '+String(data.game_id||'game unverified')+
+        ' · published plays '+Number(c.plays||0)+
+        ' · possession fields '+Number(c.possession_team||0)+
+        ' · down fields '+Number(c.down||0)+
+        ' · drive IDs '+Number(c.drive_id||0)+
+        ' · score snapshots '+Number(c.score_snapshots||0)+
+        ' · unresolved: '+(missing.length?missing.join(', '):'none reported')+
+        ' · D/ST points NOT certified';
+      }
+     }catch{result.textContent=team+' · protected MSF source check unavailable; D/ST remains partial'}
+     finally{clearTimeout(timer);button.disabled=false}
+    });
+    tools.appendChild(button);tools.appendChild(result);
+   }
+  }
  }
  function redraw(){
   try{renderDiagnostics()}catch{}
