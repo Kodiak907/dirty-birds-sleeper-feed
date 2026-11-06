@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-06T03:53:33.552147+00:00
-Sleeper snapshot: 2026-11-06T03:53:26.556833+00:00
+Generated: 2026-11-06T04:57:32.045236+00:00
+Sleeper snapshot: 2026-11-06T04:57:27.285803+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -13,23 +13,23 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 
 | Player | Pos | Total pts | Pts per calendar week | Nonzero weeks |
 |---|---|---:|---:|---:|
-| Jaxon Smith-Njigba | WR | 199.46 | 24.93 | 8/8 |
-| Patrick Mahomes | QB | 160.00 | 20.00 | 7/8 |
+| Jaxon Smith-Njigba | WR | 192.96 | 24.12 | 8/8 |
 | Kyren Williams | RB | 133.50 | 16.69 | 8/8 |
+| Patrick Mahomes | QB | 128.50 | 16.06 | 7/8 |
 | Christian McCaffrey | RB | 127.00 | 15.88 | 7/8 |
-| Zay Flowers | WR | 111.70 | 13.96 | 6/8 |
-| Isaiah Likely | TE | 92.50 | 11.56 | 7/8 |
-| C.J. Stroud | QB | 92.46 | 11.56 | 4/8 |
-| Will Reichard | K | 67.00 | 8.38 | 3/8 |
-| Minnesota Vikings | DEF | 65.50 | 8.19 | 5/8 |
-| Deebo Samuel Sr. | WR | 55.90 | 6.99 | 5/8 |
-| Jonah Coleman | RB | 40.60 | 5.08 | 3/8 |
+| Zay Flowers | WR | 106.20 | 13.28 | 6/8 |
+| Isaiah Likely | TE | 92.00 | 11.50 | 7/8 |
+| C.J. Stroud | QB | 77.46 | 9.68 | 4/8 |
+| Deebo Samuel Sr. | WR | 55.40 | 6.92 | 5/8 |
+| Minnesota Vikings | DEF | 54.00 | 6.75 | 5/8 |
+| Will Reichard | K | 47.00 | 5.88 | 3/8 |
+| Jonah Coleman | RB | 39.60 | 4.95 | 3/8 |
 | Kaelon Black | RB | 29.20 | 3.65 | 7/8 |
 | Michael Mayer | TE | 26.10 | 3.26 | 5/8 |
 | A.J. Brown | WR | 14.60 | 1.82 | 3/8 |
-| Antonio Williams | WR | 8.40 | 1.05 | 1/8 |
+| Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
-| Buffalo Bills | DEF | 6.00 | 0.75 | 1/8 |
+| Buffalo Bills | DEF | 5.00 | 0.62 | 1/8 |
 | Pat Bryant | WR | 0.00 | 0.00 | 0/8 |
 | Christian Kirk | WR | 0.00 | 0.00 | 0/8 |
 
@@ -38,18 +38,18 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 5-3 | 131.66 | 11 |
-| suck my dickerson | 6-2 | 124.24 | 1 |
-| Cokerthestroker | 6-2 | 122.63 | 3 |
-| JA’MARRTRIX | 2-6 | 120.61 | 5 |
-| Victorious Secret | 3-5 | 119.66 | 2 |
-| kfsn | 6-2 | 113.46 | 2 |
-| BigOlBoyle | 2-6 | 112.29 | 0 |
-| To Infinity and Bijan | 3-5 | 110.58 | 6 |
-| EmanAndYoMomma | 2-6 | 104.50 | 0 |
-| DeeboSix0 | 6-2 | 101.48 | 1 |
-| DANGER CLOSE | 3-5 | 100.01 | 1 |
-| CREAM MACHINE | 4-4 | 85.12 | 0 |
+| Dirty Birds | 5-3 | 122.03 | 11 |
+| suck my dickerson | 6-2 | 116.48 | 1 |
+| Cokerthestroker | 6-2 | 115.08 | 3 |
+| JA’MARRTRIX | 2-6 | 112.65 | 5 |
+| Victorious Secret | 3-5 | 108.29 | 2 |
+| BigOlBoyle | 2-6 | 105.33 | 0 |
+| kfsn | 6-2 | 104.83 | 2 |
+| To Infinity and Bijan | 3-5 | 100.89 | 6 |
+| DeeboSix0 | 6-2 | 95.28 | 1 |
+| EmanAndYoMomma | 2-6 | 94.37 | 0 |
+| DANGER CLOSE | 3-5 | 91.86 | 1 |
+| CREAM MACHINE | 4-4 | 78.45 | 0 |
 
 ## Trade evaluation gate
 

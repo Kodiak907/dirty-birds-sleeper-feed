@@ -1,6 +1,6 @@
 # Dirty Birds — Lineup Decision Backtesting
 
-Updated: 2026-11-06T03:53:38.446981+00:00
+Updated: 2026-11-06T04:57:36.179073+00:00
 Newly frozen future weeks: none.
 Comparable completed-week evaluations: 1.
 
@@ -9,7 +9,7 @@ Retrospective result does not prove the lineup was the right choice at decision 
 
 | Week | Status | Frozen lineup actual | Submitted lineup actual | Retrospective margin |
 |---:|---|---:|---:|---:|
-| 8 | comparable_retrospective | 84.84 | 93.24 | -8.40 |
+| 8 | comparable_retrospective | 75.84 | 83.74 | -7.90 |
 
 Future weeks with archives pending outcome: 9
 
