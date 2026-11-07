@@ -26,10 +26,13 @@ jobs:
           node --check pfo-thursday/ffo-lineup-reconciliation-643.mjs
           node --check pfo-thursday/ffo-server-forecast-643.mjs
           node --check pfo-thursday/ffo-msf-ingestion-health-643.mjs
+          node --check pfo-thursday/ffo-msf-season-normalizer-643.mjs
+          node --check pfo-thursday/ffo-msf-trusted-read-643.mjs
+          node --check pfo-thursday/qa-pfo-643-trusted-msf.test.mjs
           node --check pfo-thursday/qa-pfo-643-ingestion-health.test.mjs
           node --check pfo-thursday/qa-pfo-643-lineup.test.mjs
           node --check pfo-thursday/qa-pfo-643-roster-slots.test.mjs
-          node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-pfo-643-msf-fixtures.test.mjs pfo-thursday/qa-pfo-643-lineup.test.mjs pfo-thursday/qa-pfo-643-roster-slots.test.mjs pfo-thursday/qa-pfo-643-ingestion-health.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
+          node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-pfo-643-msf-fixtures.test.mjs pfo-thursday/qa-pfo-643-trusted-msf.test.mjs pfo-thursday/qa-pfo-643-lineup.test.mjs pfo-thursday/qa-pfo-643-roster-slots.test.mjs pfo-thursday/qa-pfo-643-ingestion-health.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
       - name: Check protected scoring version and dedicated Accuracy Worker remains fail-closed
         run: |
           set -euo pipefail
