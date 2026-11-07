@@ -7,12 +7,12 @@
   "excluded_fantasy_reserve_player_ids": [
     "12492"
   ],
-  "generated_at_utc": "2026-11-07T06:55:30.329614+00:00",
+  "generated_at_utc": "2026-11-07T07:59:41.328505+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-07T01:38:09.032924+00:00",
+  "projection_as_of": "2026-11-07T07:38:26.475646+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-07T06:55:22.491859+00:00",
+  "snapshot_utc": "2026-11-07T07:59:28.399682+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -653,7 +653,7 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.53,
+      "ppg": 131.5,
       "starters": [
         {
           "id": "1166",
@@ -681,7 +681,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.68
+          "ppg": 20.65
         },
         {
           "id": "9997",

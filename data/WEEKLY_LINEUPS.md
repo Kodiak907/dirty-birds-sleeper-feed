@@ -1,19 +1,19 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-07T06:55:30.329614+00:00 | Forecast as of: 2026-11-07T01:38:09.032924+00:00
+Generated: 2026-11-07T07:59:41.328505+00:00 | Forecast as of: 2026-11-07T07:38:26.475646+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 131.53
+**Projected optimal score:** 131.50
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | SF | 16.80 |
 | Christian McCaffrey | RB | LV | 21.00 |
 | Kyren Williams | RB | WAS | 17.11 |
-| Jaxon Smith-Njigba | WR | ARI | 20.68 |
+| Jaxon Smith-Njigba | WR | ARI | 20.65 |
 | Zay Flowers | WR | JAX | 11.23 |
 | Isaiah Likely | TE | PHI | 9.39 |
 | Will Reichard | K | BUF | 7.21 |
