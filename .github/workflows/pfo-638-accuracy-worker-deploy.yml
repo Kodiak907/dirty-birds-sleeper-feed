@@ -1,0 +1,70 @@
+name: PFO Accuracy Lab independent D1 Health Worker
+on:
+  push:
+    branches:
+      - pfo-638-642-accuracy-stack-20261106
+    paths:
+      - pfo-thursday/accuracy-worker-638.mjs
+      - pfo-thursday/wrangler.accuracy.toml
+      - pfo-thursday/ffo-pregame-capture-638.mjs
+      - pfo-thursday/qa-pfo-accuracy-worker-638.test.mjs
+      - .github/workflows/pfo-638-accuracy-worker-deploy.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-accuracy-lab-isolated-worker
+  cancel-in-progress: false
+jobs:
+  verify:
+    name: Isolated worker and D1 health validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify only dedicated accuracy D1 and no mutating routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check pfo-thursday/accuracy-worker-638.mjs
+          node --check pfo-thursday/ffo-pregame-capture-638.mjs
+          node --test pfo-thursday/qa-pfo-accuracy-worker-638.test.mjs pfo-thursday/qa-ffo-638-642.test.mjs
+          grep -q 'database_id = "7b354629-96ee-454e-9939-6674dd2a32d7"' pfo-thursday/wrangler.accuracy.toml
+          grep -q 'name = "pfo-accuracy-lab-worker"' pfo-thursday/wrangler.accuracy.toml
+          ! grep -qE '^\s*\[\[?triggers\]?\]|^\s*crons' pfo-thursday/wrangler.accuracy.toml
+  deploy-isolated-accuracy-health-worker:
+    name: Deploy new independent accuracy health Worker, never PFO Pages
+    needs: verify
+    if: github.ref == 'refs/heads/pfo-638-642-accuracy-stack-20261106'
+    environment: pfo-preview
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Require configured Cloudflare identity
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo '::error::Cloudflare token is missing'; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Deploy standalone Worker with PFO_ACCURACY_DB binding only
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: '5cc05345c4f2bc274e5db46f647b2900'
+          CLOUDFLARE_SEND_METRICS: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes wrangler@4.47.0 deploy --config pfo-thursday/wrangler.accuracy.toml
+          echo "New isolated Worker only; no PFO Pages, public demo, FFOI, or Commissioner writes."
