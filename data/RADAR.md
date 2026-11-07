@@ -1,7 +1,7 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-07T10:42:33.410717+00:00
-Sleeper snapshot: 2026-11-07T10:42:27.919951+00:00
+Generated: 2026-11-07T11:39:42.304177+00:00
+Sleeper snapshot: 2026-11-07T11:39:35.556628+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
