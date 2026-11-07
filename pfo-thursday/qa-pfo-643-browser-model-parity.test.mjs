@@ -9,7 +9,7 @@ import {readFileSync} from 'node:fs';
 import {Script,createContext} from 'node:vm';
 import {createHash} from 'node:crypto';
 import {BROWSER_SUPPORTED_FFL_STATS,scoreFrozenBrowserStats643,
- forecastBrowserSourceCandidate643} from './ffo-server-forecast-643.mjs';
+ forecastBrowserSourceCandidate643,forecastBrowserDefenseOverlay643} from './ffo-server-forecast-643.mjs';
 
 const read=name=>readFileSync(new URL('./'+name,import.meta.url),'utf8');
 const core=read('ffo-pfo-core.js'),client=read('ffo-pfo-597.js'),
@@ -167,4 +167,31 @@ test('candidate cannot produce snapshot-compatible results without separately ve
  const player=person('WR');
  assert.equal(forecastBrowserSourceCandidate643({row,player,rules}),null);
  assert.equal(forecastBrowserSourceCandidate643({row:{...row,team:'MIA'},player,rules,uniqueMSFIdentityVerified:true}),null);
+});
+
+test('current 6.16 D/ST override matches the separately extracted browser overlay, NOT generic core forecast',()=>{
+ const source=fragment(defense,' const score=(row)=>{',' function renderDiagnostics(){');
+ const raw={schema:'FFO_MSF_DEFENSE_GAMELOG_V1',games_observed:5,
+  coverage:{points_allowed_games:5,defensive_stat_games:5},
+  forecast:{sack:2.5,int:0.5,fum_rec:0.2,pts_allow_14_20:0.3}};
+ const model=actualBrowserModel();
+ const ctx=createContext({row:raw,window:{ffoPfo597:{scoreFrozen:stats=>model.score(stats)}}});
+ new Script(source+'\nthis.projected=score(row);').runInContext(ctx);
+ const candidate=forecastBrowserDefenseOverlay643({row:raw,rules,
+  uniqueMSFIdentityVerified:true,
+  weekFixture:{provider:'MSF',verified:true,bye:false,opponent:'MIA'}});
+ assert.equal(candidate.points,ctx.projected.points);
+ assert.equal(candidate.source,ctx.projected.source);
+ assert.equal(candidate.model,ctx.projected.model);
+ assert.equal(candidate.partial,true);
+ assert.equal(candidate.certified,false);
+ assert.equal(candidate.verifiedServerParity,false);
+ for(const invalid of [
+  {weekFixture:{provider:'MSF',verified:true,bye:true,opponent:'MIA'},
+   uniqueMSFIdentityVerified:true},
+  {weekFixture:{provider:'MSF',verified:true,bye:false,opponent:'MIA'},
+   uniqueMSFIdentityVerified:false},
+  {weekFixture:{provider:'Sleeper',verified:true,bye:false,opponent:'MIA'},
+   uniqueMSFIdentityVerified:true}
+ ])assert.equal(forecastBrowserDefenseOverlay643({row:raw,rules,...invalid}),null);
 });
