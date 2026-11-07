@@ -1,0 +1,47 @@
+name: PFO Accuracy Worker Live Health (Read Only)
+on:
+  push:
+    branches:
+      - pfo-638-642-accuracy-stack-20261106
+    paths:
+      - .github/workflows/pfo-638-accuracy-live-health.yml
+      - pfo-thursday/accuracy-worker-638.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health:
+    name: Verify deployed isolated D1 schema over HTTPS
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check actual deployed Worker JSON and immutable database schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          endpoint="https://pfo-accuracy-lab-worker.tvega2924.workers.dev/health"
+          response="$(curl --fail-with-body --silent --show-error --retry 3 --retry-delay 2 --max-time 20 "$endpoint")"
+          RESPONSE="$response" node -e '
+          const assert=require("node:assert/strict");
+          const data=JSON.parse(process.env.RESPONSE);
+          assert.equal(data.schema,"PFO_ACCURACY_HEALTH_V1");
+          assert.equal(data.status,"schema_verified");
+          assert.equal(data.rulesVersion,"2026-11-05-ffl-screen-recording-verified-v4");
+          assert.equal(data.tablesVerified,3);
+          assert.equal(data.immutableTriggersVerified,6);
+          assert.equal(data.schemaReady,true);
+          assert.equal(data.automaticCaptureActive,false);
+          assert.equal(data.independentResultsActive,false);
+          assert.equal(data.accuraciesCertified,false);
+          assert.equal(data.ffoiIntegrated,false);
+          assert.equal(data.commissionerDatabaseAccessible,false);
+          console.log("PASS: verified live standalone PFO Accuracy Worker, 3 D1 tables, 6 immutable triggers.");
+          console.log("PASS: automatic capture is disabled; no Commissioner/FFOI integration.");
+          '
+      - name: Confirm non-health route exposes no private records
+        shell: bash
+        run: |
+          set -euo pipefail
+          code="$(curl --silent --output "$RUNNER_TEMP/unknown-route.json" --write-out '%{http_code}' --max-time 15 https://pfo-accuracy-lab-worker.tvega2924.workers.dev/records)"
+          test "$code" = "404" || { echo "::error::Non-health route must remain unavailable"; exit 1; }
+          echo "PASS: /records returns 404, no record read/write API published."
