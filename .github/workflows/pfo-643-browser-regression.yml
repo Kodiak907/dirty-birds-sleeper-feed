@@ -1,4 +1,5 @@
 name: PFO 6.43 full existing-browser regression suite (NO DEPLOY)
+# Existing 6.16 QA now tests the actual 6.36 script asset reference rather than stale v=627.
 on:
   push:
     branches: [pfo-643-unified-production-upgrade-20261106]
