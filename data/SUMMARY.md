@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-07T20:38:17.979076+00:00
+Updated: 2026-11-07T21:37:56.769601+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -20,6 +20,7 @@ NFL week: 9
 
 ## Changes detected in this run
 - lineup_change â roster/transaction 1
+- reserve_change â roster/transaction 1
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
