@@ -1,16 +1,16 @@
 {
   "current_roster_reference": {
     "DEF": {
-      "name": "Minnesota Vikings",
-      "ppg": 6.877
+      "name": "New Orleans Saints",
+      "ppg": 5.878
     },
     "K": {
       "name": "Will Reichard",
       "ppg": 7.168
     },
     "QB": {
-      "name": "C.J. Stroud",
-      "ppg": 16.268
+      "name": "Kirk Cousins",
+      "ppg": 15.368
     },
     "RB": {
       "name": "Seth McGowan",
@@ -21,11 +21,11 @@
       "ppg": 5.48
     },
     "WR": {
-      "name": "Christian Kirk",
-      "ppg": 0.91
+      "name": "Pat Bryant",
+      "ppg": 6.56
     }
   },
-  "generated_at_utc": "2026-11-07T03:49:27.395905+00:00",
+  "generated_at_utc": "2026-11-07T04:52:12.669325+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -43,10 +43,10 @@
         "name": "Buffalo Bills",
         "ppg": 6.61,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.27,
+        "same_position_uplift_ppg": 0.73,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -65,10 +65,10 @@
         "name": "Baltimore Ravens",
         "ppg": 6.02,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.86,
+        "same_position_uplift_ppg": 0.14,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -87,10 +87,10 @@
         "name": "Green Bay Packers",
         "ppg": 6.0,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.88,
+        "same_position_uplift_ppg": 0.12,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -109,10 +109,10 @@
         "name": "Cincinnati Bengals",
         "ppg": 5.91,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.96,
+        "same_position_uplift_ppg": 0.04,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -131,35 +131,13 @@
         "name": "New England Patriots",
         "ppg": 5.89,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.99,
+        "same_position_uplift_ppg": 0.01,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "New Orleans Saints",
-        "ppg": 5.88,
-        "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
-        },
-        "same_position_uplift_ppg": -1.0,
-        "screen_only": true,
-        "sleeper_id": "NO",
-        "team": "NO"
       },
       {
         "audit": {
@@ -175,10 +153,10 @@
         "name": "Indianapolis Colts",
         "ppg": 5.71,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.17,
+        "same_position_uplift_ppg": -0.17,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -197,10 +175,10 @@
         "name": "Washington Commanders",
         "ppg": 5.45,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.43,
+        "same_position_uplift_ppg": -0.43,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -219,10 +197,10 @@
         "name": "Cleveland Browns",
         "ppg": 5.36,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.51,
+        "same_position_uplift_ppg": -0.52,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -241,10 +219,10 @@
         "name": "Tampa Bay Buccaneers",
         "ppg": 5.19,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.69,
+        "same_position_uplift_ppg": -0.69,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -263,10 +241,10 @@
         "name": "Tennessee Titans",
         "ppg": 4.42,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -2.46,
+        "same_position_uplift_ppg": -1.46,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -285,10 +263,10 @@
         "name": "New York Jets",
         "ppg": 4.36,
         "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 6.877
+          "name": "New Orleans Saints",
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -2.52,
+        "same_position_uplift_ppg": -1.52,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -448,10 +426,10 @@
         "name": "Baker Mayfield",
         "ppg": 12.5,
         "replacement_reference": {
-          "name": "C.J. Stroud",
-          "ppg": 16.268
+          "name": "Kirk Cousins",
+          "ppg": 15.368
         },
-        "same_position_uplift_ppg": -3.76,
+        "same_position_uplift_ppg": -2.86,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -889,10 +867,10 @@
         "name": "Keon Coleman",
         "ppg": 6.49,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 5.58,
+        "same_position_uplift_ppg": -0.07,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -914,10 +892,10 @@
         "name": "Quentin Johnston",
         "ppg": 6.03,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 5.12,
+        "same_position_uplift_ppg": -0.53,
         "screen_only": true,
         "sleeper_id": "9754",
         "team": "LAC"
@@ -936,10 +914,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.58,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 4.67,
+        "same_position_uplift_ppg": -0.98,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -961,10 +939,10 @@
         "name": "Chris Bell",
         "ppg": 5.31,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 4.4,
+        "same_position_uplift_ppg": -1.25,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -986,10 +964,10 @@
         "name": "Michael Pittman Jr.",
         "ppg": 4.48,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 3.57,
+        "same_position_uplift_ppg": -2.08,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
@@ -1008,10 +986,10 @@
         "name": "Makai Lemon",
         "ppg": 4.31,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 3.4,
+        "same_position_uplift_ppg": -2.25,
         "screen_only": true,
         "sleeper_id": "13294",
         "team": "PHI"
@@ -1036,10 +1014,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.26,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 3.35,
+        "same_position_uplift_ppg": -2.3,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1063,10 +1041,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.05,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 3.14,
+        "same_position_uplift_ppg": -2.51,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1090,10 +1068,10 @@
         "name": "Mack Hollins",
         "ppg": 3.85,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 2.94,
+        "same_position_uplift_ppg": -2.71,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1119,10 +1097,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 3.84,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 2.93,
+        "same_position_uplift_ppg": -2.72,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1144,10 +1122,10 @@
         "name": "Rashod Bateman",
         "ppg": 3.66,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 2.75,
+        "same_position_uplift_ppg": -2.9,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1166,10 +1144,10 @@
         "name": "Dohnte Meyers",
         "ppg": 3.45,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 2.54,
+        "same_position_uplift_ppg": -3.11,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1191,10 +1169,10 @@
         "name": "Jauan Jennings",
         "ppg": 2.71,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 1.8,
+        "same_position_uplift_ppg": -3.85,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1217,10 +1195,10 @@
         "name": "Konata Mumpfield",
         "ppg": 2.33,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 1.42,
+        "same_position_uplift_ppg": -4.23,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1244,10 +1222,10 @@
         "name": "Zachariah Branch",
         "ppg": 1.89,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 0.98,
+        "same_position_uplift_ppg": -4.67,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1266,12 +1244,40 @@
         "name": "Brandin Cooks",
         "ppg": 1.01,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": 0.1,
+        "same_position_uplift_ppg": -5.55,
         "screen_only": true,
         "sleeper_id": "2197",
+        "team": "SF"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [
+            "sleeper_injury_ir",
+            "targets_missing"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 30.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Christian Kirk",
+        "ppg": 0.91,
+        "replacement_reference": {
+          "name": "Pat Bryant",
+          "ppg": 6.56
+        },
+        "same_position_uplift_ppg": -5.65,
+        "screen_only": true,
+        "sleeper_id": "4950",
         "team": "SF"
       },
       {
@@ -1291,10 +1297,10 @@
         "name": "Cyrus Allen",
         "ppg": 0.89,
         "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 0.91
+          "name": "Pat Bryant",
+          "ppg": 6.56
         },
-        "same_position_uplift_ppg": -0.02,
+        "same_position_uplift_ppg": -5.67,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1302,5 +1308,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-07T03:49:22.358556+00:00"
+  "snapshot_utc": "2026-11-07T04:52:07.715635+00:00"
 }

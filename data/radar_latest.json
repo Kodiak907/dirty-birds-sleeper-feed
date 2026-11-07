@@ -1,12 +1,87 @@
 {
-  "changes": [],
-  "changes_count": 0,
-  "completed_count": 0,
+  "changes": [
+    {
+      "id": "1424650117750779904",
+      "kind": "new_transaction",
+      "status": "complete",
+      "transaction": {
+        "adds": {
+          "NO": 1
+        },
+        "consenter_ids": [
+          1
+        ],
+        "created": 1794025566093,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": {
+          "4950": 1
+        },
+        "leg": 9,
+        "metadata": null,
+        "roster_ids": [
+          1
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794025566093,
+        "transaction_id": "1424650117750779904",
+        "type": "free_agent",
+        "waiver_budget": []
+      }
+    },
+    {
+      "id": "1424643656148684800",
+      "kind": "new_transaction",
+      "status": "complete",
+      "transaction": {
+        "adds": {
+          "1166": 1,
+          "4046": 5,
+          "JAX": 1,
+          "MIN": 5
+        },
+        "consenter_ids": [
+          1,
+          5
+        ],
+        "created": 1794024025527,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": {
+          "1166": 5,
+          "4046": 1,
+          "JAX": 5,
+          "MIN": 1
+        },
+        "leg": 9,
+        "metadata": null,
+        "roster_ids": [
+          1,
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794024612657,
+        "transaction_id": "1424643656148684800",
+        "type": "trade",
+        "waiver_budget": [
+          {
+            "amount": 20,
+            "receiver": 1,
+            "sender": 5
+          }
+        ]
+      }
+    }
+  ],
+  "changes_count": 2,
+  "completed_count": 2,
   "failed_count": 0,
-  "generated_at_utc": "2026-11-07T03:49:27.125913+00:00",
+  "generated_at_utc": "2026-11-07T04:52:12.389715+00:00",
   "is_initial_baseline": false,
   "league_id": "1399157532559192064",
   "pending_count": 0,
-  "sleeper_snapshot_at_utc": "2026-11-07T03:49:22.358556+00:00",
-  "transactions_indexed": 300
+  "sleeper_snapshot_at_utc": "2026-11-07T04:52:07.715635+00:00",
+  "transactions_indexed": 302
 }

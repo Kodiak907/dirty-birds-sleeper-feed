@@ -1,15 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-07T03:49:27.125913+00:00
-Sleeper snapshot: 2026-11-07T03:49:22.358556+00:00
+Generated: 2026-11-07T04:52:12.389715+00:00
+Sleeper snapshot: 2026-11-07T04:52:07.715635+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1424650117750779904` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: New Orleans Saints → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
+- **NEW** · transaction `1424643656148684800` · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kirk Cousins → Dirty Birds (#1), Patrick Mahomes →     Victorious Secret (#5), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5) | Dropped: Kirk Cousins →     Victorious Secret (#5), Patrick Mahomes → Dirty Birds (#1), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-07T04:52:12.389715+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kirk Cousins → Dirty Birds (#1), Patrick Mahomes →     Victorious Secret (#5), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5) | Dropped: Kirk Cousins →     Victorious Secret (#5), Patrick Mahomes → Dirty Birds (#1), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1)
+- 2026-11-07T04:52:12.389715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: New Orleans Saints → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
 - 2026-11-06T17:50:03.503949+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Buffalo Bills → Dirty Birds (#1)
 - 2026-11-06T14:16:19.479799+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | FAAB bid: $7
 - 2026-11-06T01:04:12.378701+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
@@ -33,8 +38,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · To Infinity and Bijan (#9) | Added: Mike Washington Jr. → To Infinity and Bijan (#9) | Dropped: Kendrick Bourne → To Infinity and Bijan (#9) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Tyler Bass → Cokerthestroker (#12) | Dropped: Tyler Loop → Cokerthestroker (#12) | FAAB bid: $0
 
 ## Important limits
 

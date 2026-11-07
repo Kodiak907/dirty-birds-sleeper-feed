@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-07T03:49:27.263520+00:00
-Sleeper snapshot: 2026-11-07T03:49:22.358556+00:00
+Generated: 2026-11-07T04:52:12.537390+00:00
+Sleeper snapshot: 2026-11-07T04:52:07.715635+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,10 +9,10 @@ Sleeper snapshot: 2026-11-07T03:49:22.358556+00:00
 |---|---:|
 | QB | 328 |
 | RB | 628 |
-| WR | 1290 |
+| WR | 1291 |
 | TE | 614 |
 | K | 139 |
-| DEF | 15 |
+| DEF | 14 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -85,13 +85,12 @@ Sleeper snapshot: 2026-11-07T03:49:22.358556+00:00
 | 3 | Green Bay Packers | GB | 6.00 | 89% | — | Not flagged |
 | 4 | Cincinnati Bengals | CIN | 5.91 | 100% | — | Not flagged |
 | 5 | New England Patriots | NE | 5.89 | 89% | — | Not flagged |
-| 6 | New Orleans Saints | NO | 5.88 | 100% | — | Not flagged |
-| 7 | Indianapolis Colts | IND | 5.71 | 89% | — | Not flagged |
-| 8 | Washington Commanders | WAS | 5.45 | 100% | — | Not flagged |
-| 9 | Cleveland Browns | CLE | 5.36 | 89% | — | Not flagged |
-| 10 | Tampa Bay Buccaneers | TB | 5.19 | 89% | — | Not flagged |
-| 11 | Tennessee Titans | TEN | 4.42 | 89% | — | Not flagged |
-| 12 | New York Jets | NYJ | 4.36 | 89% | — | Not flagged |
+| 6 | Indianapolis Colts | IND | 5.71 | 89% | — | Not flagged |
+| 7 | Washington Commanders | WAS | 5.45 | 100% | — | Not flagged |
+| 8 | Cleveland Browns | CLE | 5.36 | 89% | — | Not flagged |
+| 9 | Tampa Bay Buccaneers | TB | 5.19 | 89% | — | Not flagged |
+| 10 | Tennessee Titans | TEN | 4.42 | 89% | — | Not flagged |
+| 11 | New York Jets | NYJ | 4.36 | 89% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -125,7 +124,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **37**
+Candidates with independently sourced projections AND usage data: **38**
 
 ## Coverage and rules
 

@@ -1,8 +1,8 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-07T03:49:30.378344+00:00",
+  "generated_at_utc": "2026-11-07T04:52:15.170480+00:00",
   "candidates_evaluated": 58656,
-  "market_matched": 7639,
+  "market_matched": 7342,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-07T03:49:27.974267+00:00",
@@ -11,44 +11,80 @@
   "rejected_due_to_stale_sources": false,
   "qualified": [
     {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
+      "opponent_roster_id": 4,
+      "opponent_name": "DANGER CLOSE ",
       "give": [
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
         },
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
         }
       ],
       "receive": [
         {
-          "id": "6790",
-          "name": "D'Andre Swift",
-          "pos": "RB"
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
         },
         {
-          "id": "96",
-          "name": "Aaron Rodgers",
+          "id": "3163",
+          "name": "Jared Goff",
           "pos": "QB"
         }
       ],
-      "our_gain": 1.87,
-      "their_gain": 1.11,
-      "market_paid_received_ratio": 0.99,
+      "our_gain": 3.3,
+      "their_gain": 2.05,
+      "market_paid_received_ratio": 0.934,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.507,
+      "score": 4.332,
       "not_an_approved_offer": true
     },
     {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
+      "opponent_roster_id": 4,
+      "opponent_name": "DANGER CLOSE ",
+      "give": [
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        },
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "3286",
+          "name": "Demarcus Robinson",
+          "pos": "WR"
+        },
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 2.36,
+      "their_gain": 2.98,
+      "market_paid_received_ratio": 0.996,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 4.135,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 5,
+      "opponent_name": "    Victorious Secret",
       "give": [
         {
           "id": "9997",
@@ -63,23 +99,23 @@
       ],
       "receive": [
         {
-          "id": "6790",
-          "name": "D'Andre Swift",
-          "pos": "RB"
+          "id": "1466",
+          "name": "Travis Kelce",
+          "pos": "TE"
         },
         {
-          "id": "11625",
-          "name": "Adonai Mitchell",
-          "pos": "WR"
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "pos": "QB"
         }
       ],
-      "our_gain": 1.87,
-      "their_gain": 1.11,
-      "market_paid_received_ratio": 0.951,
+      "our_gain": 2.0,
+      "their_gain": 0.81,
+      "market_paid_received_ratio": 0.935,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.388,
+      "score": 2.29,
       "not_an_approved_offer": true
     }
   ],

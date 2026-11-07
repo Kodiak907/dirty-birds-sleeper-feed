@@ -5,17 +5,16 @@
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "Christian Kirk",
       "A.J. Brown",
       "Deebo Samuel Sr."
     ],
-    "ppg": 135.11,
+    "ppg": 131.53,
     "starters": [
       {
-        "id": "4046",
-        "name": "Patrick Mahomes",
+        "id": "1166",
+        "name": "Kirk Cousins",
         "position": "QB",
-        "ppg": 21.2
+        "ppg": 16.8
       },
       {
         "id": "4034",
@@ -54,10 +53,10 @@
         "ppg": 7.21
       },
       {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
+        "id": "NO",
+        "name": "New Orleans Saints",
         "position": "DEF",
-        "ppg": 6.19
+        "ppg": 7.01
       },
       {
         "id": "13345",
@@ -77,22 +76,21 @@
   "explicit_excluded_ids": [
     "12492",
     "13345",
-    "4950",
     "5872"
   ],
-  "generated_at_utc": "2026-11-07T03:49:36.051178+00:00",
+  "generated_at_utc": "2026-11-07T04:52:19.566527+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown"
     ],
-    "ppg": 128.88,
+    "ppg": 125.3,
     "starters": [
       {
-        "id": "4046",
-        "name": "Patrick Mahomes",
+        "id": "1166",
+        "name": "Kirk Cousins",
         "position": "QB",
-        "ppg": 21.2
+        "ppg": 16.8
       },
       {
         "id": "4034",
@@ -131,10 +129,10 @@
         "ppg": 7.21
       },
       {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
+        "id": "NO",
+        "name": "New Orleans Saints",
         "position": "DEF",
-        "ppg": 6.19
+        "ppg": 7.01
       },
       {
         "id": "13301",
@@ -156,6 +154,15 @@
   "official_game_day_inactives_integrated": false,
   "official_inactive_source_status": "no_verified_official_submissions",
   "player_statuses": [
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "1166",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Kirk Cousins",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
     {
       "availability_verified": false,
       "fantasy_reserve": false,
@@ -226,24 +233,6 @@
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Christian McCaffrey",
       "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "4046",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Patrick Mahomes",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "4950",
-      "model_handling": "exclude_explicit_unavailable_tag",
-      "name": "Christian Kirk",
-      "sleeper_injury_status": "IR",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -321,9 +310,18 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "MIN",
+      "id": "JAX",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Minnesota Vikings",
+      "name": "Jacksonville Jaguars",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "NO",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "New Orleans Saints",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     }
@@ -334,8 +332,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-07T03:49:22.358556+00:00",
-  "source_availability_generated_at_utc": "2026-11-07T03:49:32.626988+00:00",
+  "snapshot_utc": "2026-11-07T04:52:07.715635+00:00",
+  "source_availability_generated_at_utc": "2026-11-07T04:52:17.195330+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

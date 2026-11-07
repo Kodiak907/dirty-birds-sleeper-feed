@@ -1,22 +1,23 @@
 {
-  "generated_at_utc": "2026-11-07T03:49:27.157957+00:00",
+  "generated_at_utc": "2026-11-07T04:52:12.423961+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 153,
+      "faab_used": 133,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 911.1,
       "positions": {
         "DEF": [
-          "Minnesota Vikings"
+          "Jacksonville Jaguars",
+          "New Orleans Saints"
         ],
         "K": [
           "Will Reichard"
         ],
         "QB": [
           "C.J. Stroud",
-          "Patrick Mahomes"
+          "Kirk Cousins"
         ],
         "RB": [
           "Christian McCaffrey",
@@ -33,7 +34,6 @@
           "A.J. Brown",
           "Antonio Williams",
           "Caleb Douglas",
-          "Christian Kirk",
           "Deebo Samuel Sr.",
           "Jaxon Smith-Njigba",
           "Pat Bryant",
@@ -125,7 +125,7 @@
       ],
       "team": "Dirty Birds",
       "trade_eligibility": "research only; no known active offer",
-      "trades_completed": 11
+      "trades_completed": 12
     },
     {
       "faab_used": 52,
@@ -280,20 +280,20 @@
       "trades_completed": 1
     },
     {
-      "faab_used": 25,
+      "faab_used": 45,
       "id": 5,
       "manager": "DMccolley03",
       "points_for": 906.4,
       "positions": {
         "DEF": [
-          "Jacksonville Jaguars"
+          "Minnesota Vikings"
         ],
         "K": [
           "Chase McLaughlin"
         ],
         "QB": [
           "Joe Burrow",
-          "Kirk Cousins"
+          "Patrick Mahomes"
         ],
         "RB": [
           "Bucky Irving",
@@ -325,7 +325,7 @@
       ],
       "team": "Victorious Secret",
       "trade_eligibility": "research only; no known active offer",
-      "trades_completed": 2
+      "trades_completed": 3
     },
     {
       "faab_used": 25,
@@ -702,5 +702,5 @@
       "trades_completed": 3
     }
   ],
-  "source_snapshot_utc": "2026-11-07T03:49:22.358556+00:00"
+  "source_snapshot_utc": "2026-11-07T04:52:07.715635+00:00"
 }

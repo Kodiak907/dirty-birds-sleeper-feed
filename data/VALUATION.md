@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-07T03:49:27.208007+00:00
-Sleeper snapshot: 2026-11-07T03:49:22.358556+00:00
+Generated: 2026-11-07T04:52:12.479197+00:00
+Sleeper snapshot: 2026-11-07T04:52:07.715635+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -15,13 +15,13 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 |---|---|---:|---:|---:|
 | Jaxon Smith-Njigba | WR | 192.96 | 24.12 | 8/8 |
 | Kyren Williams | RB | 133.50 | 16.69 | 8/8 |
-| Patrick Mahomes | QB | 128.50 | 16.06 | 7/8 |
 | Christian McCaffrey | RB | 127.00 | 15.88 | 7/8 |
+| Kirk Cousins | QB | 126.64 | 15.83 | 6/8 |
 | Zay Flowers | WR | 106.20 | 13.28 | 6/8 |
 | Isaiah Likely | TE | 92.00 | 11.50 | 7/8 |
 | C.J. Stroud | QB | 77.46 | 9.68 | 4/8 |
+| Jacksonville Jaguars | DEF | 66.00 | 8.25 | 7/8 |
 | Deebo Samuel Sr. | WR | 55.40 | 6.92 | 5/8 |
-| Minnesota Vikings | DEF | 54.00 | 6.75 | 5/8 |
 | Will Reichard | K | 47.00 | 5.88 | 3/8 |
 | Jonah Coleman | RB | 39.60 | 4.95 | 3/8 |
 | Kaelon Black | RB | 29.20 | 3.65 | 7/8 |
@@ -31,18 +31,18 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
 | Pat Bryant | WR | 0.00 | 0.00 | 0/8 |
 | Seth McGowan | RB | 0.00 | 0.00 | 0/8 |
-| Christian Kirk | WR | 0.00 | 0.00 | 0/8 |
+| New Orleans Saints | DEF | -3.00 | -0.38 | 1/8 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 5-3 | 122.03 | 11 |
+| Dirty Birds | 5-3 | 123.30 | 12 |
 | suck my dickerson | 6-2 | 116.48 | 1 |
 | Cokerthestroker | 6-2 | 115.08 | 3 |
 | JA’MARRTRIX | 2-6 | 112.65 | 5 |
-| Victorious Secret | 3-5 | 108.29 | 2 |
+| Victorious Secret | 3-5 | 106.79 | 3 |
 | BigOlBoyle | 2-6 | 105.33 | 0 |
 | kfsn | 6-2 | 104.83 | 2 |
 | To Infinity and Bijan | 3-5 | 100.89 | 6 |

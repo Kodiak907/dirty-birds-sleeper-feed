@@ -1,7 +1,55 @@
 {
-  "generated_at_utc": "2026-11-07T03:49:27.157957+00:00",
+  "generated_at_utc": "2026-11-07T04:52:12.423961+00:00",
   "is_initial_baseline": false,
-  "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-11-07T03:49:22.358556+00:00"
+  "new_completed_trades": [
+    {
+      "faab_transfers": [
+        {
+          "amount": 20,
+          "receiver": 1,
+          "sender": 5
+        }
+      ],
+      "id": "1424643656148684800",
+      "players_received": {
+        "Jacksonville Jaguars": "Dirty Birds",
+        "Kirk Cousins": "Dirty Birds",
+        "Minnesota Vikings": "Victorious Secret",
+        "Patrick Mahomes": "Victorious Secret"
+      },
+      "roster_ids": [
+        1,
+        5
+      ]
+    }
+  ],
+  "roster_changes": [
+    {
+      "adds": [
+        "Kirk Cousins",
+        "Jacksonville Jaguars",
+        "New Orleans Saints"
+      ],
+      "drops": [
+        "Patrick Mahomes",
+        "Christian Kirk",
+        "Minnesota Vikings"
+      ],
+      "roster_id": 1,
+      "team": "Dirty Birds"
+    },
+    {
+      "adds": [
+        "Patrick Mahomes",
+        "Minnesota Vikings"
+      ],
+      "drops": [
+        "Kirk Cousins",
+        "Jacksonville Jaguars"
+      ],
+      "roster_id": 5,
+      "team": "Victorious Secret"
+    }
+  ],
+  "source_snapshot_utc": "2026-11-07T04:52:07.715635+00:00"
 }
