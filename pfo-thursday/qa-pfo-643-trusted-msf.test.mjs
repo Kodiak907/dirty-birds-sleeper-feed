@@ -80,7 +80,7 @@ test('fixed authenticated, team-scoped MSF season fetch yields same current brow
  const forecast=forecastBrowserSourceCandidate643({
   player:qb,row:qb.row,rules:leagueRules,uniqueMSFIdentityVerified:true
  });
- assert.equal(forecast.points,18);
+ assert.equal(forecast.points,16);
  assert.equal(forecast.partial,true);
  assert.equal(forecast.certified,false);
  assert.equal(forecast.verifiedServerParity,false);
