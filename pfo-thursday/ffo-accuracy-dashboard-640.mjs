@@ -4,6 +4,7 @@
  */
 import {auditFFLProjectionAccuracy} from './ffo-projection-accuracy-audit-637.mjs';
 import {FFL_RULES_VERSION} from './ffo-pregame-capture-638.mjs';
+import {reconcileFinalCorrections643} from './ffo-accuracy-correction-view-643.mjs';
 const STATUSES=new Set(['research_metrics_only','no_verified_pregame_pairs']);
 const getRows=async(db,sql)=>{
  const result=await db.prepare(sql).all();
@@ -69,10 +70,49 @@ export async function readAccuracyDashboard(db){
   // NULL or corrupt payloads are never silently converted to a zero-point score.
   const validF=f.map(x=>parse(x)).filter(Boolean),validC=c.map(x=>parse(x)).filter(Boolean),
    validG=g.map(x=>parse(x)).filter(Boolean);
+  // 6.43: correction history is OPTIONAL before the separate D1 migration,
+  // but never silently claim that an untracked revised actual is certified.
+  const schema=await getRows(db,
+   "SELECT name FROM sqlite_master WHERE type='table' AND name='pfo_accuracy_final_revisions' LIMIT 1");
+  const revisionSchemaPresent=schema.some(x=>x.name==='pfo_accuracy_final_revisions');
+  let actuals=validC,correctionStatus='not_migrated_or_unavailable',correctionDetails=null;
+  let revisionRows=0,unreadableRevisions=0;
+  if(revisionSchemaPresent){
+   const rows=await getRows(db,
+    'SELECT payload_json FROM pfo_accuracy_final_revisions ORDER BY certified_at DESC LIMIT 15000');
+   revisionRows=rows.length;
+   const parsed=rows.map(x=>parse(x)).filter(Boolean);
+   unreadableRevisions=rows.length-parsed.length;
+   if(unreadableRevisions>0||rows.length>=15000){
+    return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+     status:'blocked',reason:'incomplete_or_corrupt_correction_revision_ledger',
+     measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+     readOnly:true,modelApprovedForDeployment:false};
+   }
+   const reviewed=reconcileFinalCorrections643({
+    originals:validC,revisions:parsed,rulesVersion:FFL_RULES_VERSION});
+   if(reviewed.status==='correction_integrity_blocked'){
+    return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+     status:'blocked',reason:'correction_revision_integrity_unverified',
+     measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+     readOnly:true,modelApprovedForDeployment:false};
+   }
+   actuals=reviewed.certificates;
+   correctionStatus=reviewed.status;
+   correctionDetails={applied:reviewed.revisionsApplied,
+    correctedPlayerGames:reviewed.correctedPlayerGames,
+    withheldPairs:reviewed.withheldKeys.length,
+    issues:reviewed.issues};
+  }
   const report=reportAccuracyFromVerifiedRecords({
-   forecasts:validF,certificates:validC,games:validG});
-  return {...report,ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
-   discardedUnreadableRows:f.length-validF.length+c.length-validC.length+g.length-validG.length}};
+   forecasts:validF,certificates:actuals,games:validG});
+  return {...report,correctionLedger:{
+    status:correctionStatus,migrationApplied:revisionSchemaPresent,
+    evidenceCompleteForRelease:false,latestSourceCorrectionFeedVerified:false,
+    correctionDetails,revisionRows,unreadableRevisions},
+   ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
+    discardedUnreadableRows:f.length-validF.length+c.length-validC.length+
+     g.length-validG.length+unreadableRevisions}};
  }catch{
   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.40',
    status:'blocked',reason:'isolated_ledger_schema_or_query_unavailable',
