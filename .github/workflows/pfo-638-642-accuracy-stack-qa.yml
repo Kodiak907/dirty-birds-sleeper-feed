@@ -1,0 +1,102 @@
+name: PFO 6.38–6.42 isolated accuracy stack QA (NO DEPLOY)
+on:
+  push:
+    branches:
+      - pfo-638-642-accuracy-stack-20261106
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-and-integrity:
+    name: Immutable ledgers, MSF certificates, accuracy, calibration, reliability
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check module syntax
+        run: |
+          set -euo pipefail
+          for file in pfo-thursday/ffo-{pregame-capture-638,final-score-certification-639,accuracy-dashboard-640,projection-calibration-641,projection-reliability-642,accuracy-stack-readiness-642}.mjs pfo-thursday/qa-ffo-638-642.test.mjs; do
+            node --check "$file"
+          done
+      - name: Score and independent MSF proof regressions
+        run: |
+          set -euo pipefail
+          node --test pfo-thursday/qa-ffo-638-642.test.mjs pfo-thursday/qa-ffo-637.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs pfo-thursday/qa-msf-scoring-pipeline.test.mjs pfo-thursday/qa-msf-verified-projections.test.mjs
+      - name: Existing browser and mobile layout regressions (no deployment)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+          node --test pfo-thursday/qa-ffo-66-browser.test.mjs pfo-thursday/qa-ffo-trade-mobile.test.mjs pfo-thursday/qa-ffo-layout-64-browser.test.mjs pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
+      - name: Test dedicated D1 SQL isolation, append-only rows, primary keys
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import sqlite3
+          path=Path('pfo-thursday/accuracy-migrations/0001_accuracy_ledger.sql')
+          ddl=path.read_text()
+          executable='\n'.join(line for line in ddl.splitlines() if not line.lstrip().startswith('--'))
+          assert 'commissioner_' not in executable.lower(), 'Accuracy SQL must not touch Commissioner tables'
+          db=sqlite3.connect(':memory:')
+          db.executescript(ddl)
+          tables={r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+          expected={'pfo_accuracy_forecasts','pfo_accuracy_final_certificates','pfo_accuracy_verified_games'}
+          assert expected<=tables, tables
+          record=(2026,'g12','p1',12,'QB','BUF','MIN',18.75,
+            '2026-11-05-ffl-screen-recording-verified-v4','pfo-6.36',
+            '2026-11-22T18:00:00Z','2026-11-22T21:25:00Z',
+            '2026-11-22T17:55:00Z',1,'MSF','{"playerId":"p1"}')
+          db.execute('INSERT INTO pfo_accuracy_forecasts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',record)
+          db.execute('INSERT INTO pfo_accuracy_forecasts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(season,game_id,player_id) DO NOTHING',record)
+          assert db.execute('SELECT count(*) FROM pfo_accuracy_forecasts').fetchone()[0]==1
+          for statement in [
+            "UPDATE pfo_accuracy_forecasts SET projected_points=999 WHERE game_id='g12'",
+            "DELETE FROM pfo_accuracy_forecasts WHERE game_id='g12'"
+          ]:
+            try:
+              db.execute(statement)
+              raise AssertionError('Immutable accuracy ledger modification was allowed')
+            except sqlite3.IntegrityError as error:
+              assert 'immutable_forecast' in str(error)
+          for name in ['pfo_accuracy_final_certificates','pfo_accuracy_verified_games']:
+            triggers={r[0] for r in db.execute(
+              "SELECT name FROM sqlite_master WHERE type='trigger' AND tbl_name=?",(name,))}
+            assert len(triggers)>=2,(name,triggers)
+          assert db.execute('SELECT projected_points FROM pfo_accuracy_forecasts').fetchone()[0]==18.75
+          print('Independent accuracy-only schema and immutable D1 triggers VERIFIED')
+          PY
+      - name: Generate truthful research readiness evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pfo-accuracy-stack"
+          node pfo-thursday/ffo-accuracy-stack-readiness-642.mjs > "$RUNNER_TEMP/pfo-accuracy-stack/readiness.json"
+          node --input-type=module - "$RUNNER_TEMP/pfo-accuracy-stack/readiness.json" <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync} from 'node:fs';
+          const report=JSON.parse(readFileSync(process.argv[2],'utf8'));
+          assert.equal(report.authoritativeRulesMatched,true);
+          assert.equal(report.productionEligible,false);
+          assert.deepEqual(report.phases.map(x=>x.status),Array(5).fill('blocked'));
+          assert.equal(report.operationalState.automatedPregameCaptureActive,false);
+          assert.equal(report.operationalState.independentActualCertificatesStored,0);
+          assert.equal(report.sourceOnlyResearch.historicArchiveForecastRecords,452);
+          assert.equal(report.sourceOnlyResearch.certifiedCurrentRulePairs,0);
+          assert.equal(report.protected.commissionerD1NotUsedForAccuracy,true);
+          process.stdout.write('All five modules are staged; operational release remains blocked until real sources and D1 are connected.\n');
+          NODE
+          cat "$RUNNER_TEMP/pfo-accuracy-stack/readiness.json"
+      - name: Store auditable read-only readiness artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pfo-638-642-readiness-gate
+          path: ${{ runner.temp }}/pfo-accuracy-stack/readiness.json
+          retention-days: 21
+      - name: Explicit no deployment boundary
+        run: echo "NO CLOUDFLARE DEPLOY; NO COMMISSIONER DB; NO MODEL CHANGES; NO FFOI INTEGRATION."
