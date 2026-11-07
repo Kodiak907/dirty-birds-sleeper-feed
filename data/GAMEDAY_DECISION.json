@@ -5,34 +5,35 @@
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
+      "Christian Kirk",
       "A.J. Brown",
       "Deebo Samuel Sr."
     ],
-    "ppg": 134.89,
+    "ppg": 135.11,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 21.0
+        "ppg": 21.2
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 21.06
+        "ppg": 21.0
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.05
+        "ppg": 17.11
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.66
+        "ppg": 20.68
       },
       {
         "id": "9997",
@@ -72,44 +73,44 @@
       }
     ]
   },
-  "difference_ppg": -6.15,
+  "difference_ppg": -6.23,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "4950",
     "5872"
   ],
-  "generated_at_utc": "2026-11-07T00:57:35.279764+00:00",
+  "generated_at_utc": "2026-11-07T01:57:48.280646+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown"
     ],
-    "ppg": 128.74,
+    "ppg": 128.88,
     "starters": [
       {
         "id": "4046",
         "name": "Patrick Mahomes",
         "position": "QB",
-        "ppg": 21.0
+        "ppg": 21.2
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 21.06
+        "ppg": 21.0
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.05
+        "ppg": 17.11
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.66
+        "ppg": 20.68
       },
       {
         "id": "9997",
@@ -145,7 +146,7 @@
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 7.04
+        "ppg": 6.96
       }
     ]
   },
@@ -333,8 +334,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-07T00:57:24.203626+00:00",
-  "source_availability_generated_at_utc": "2026-11-07T00:57:32.923489+00:00",
+  "snapshot_utc": "2026-11-07T01:57:34.657164+00:00",
+  "source_availability_generated_at_utc": "2026-11-07T01:57:44.870651+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

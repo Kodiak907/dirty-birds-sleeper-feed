@@ -7,12 +7,12 @@
   "excluded_fantasy_reserve_player_ids": [
     "12492"
   ],
-  "generated_at_utc": "2026-11-07T00:57:32.241896+00:00",
+  "generated_at_utc": "2026-11-07T01:57:44.088114+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-06T19:30:15.517596+00:00",
+  "projection_as_of": "2026-11-07T01:38:09.032924+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-07T00:57:24.203626+00:00",
+  "snapshot_utc": "2026-11-07T01:57:34.657164+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -649,38 +649,39 @@
     "9": {
       "complete": true,
       "missing_projection": [
+        "Christian Kirk",
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 134.89,
+      "ppg": 135.11,
       "starters": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "opponent": "NYJ",
           "position": "QB",
-          "ppg": 21.0
+          "ppg": 21.2
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 21.06
+          "ppg": 21.0
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "WAS",
           "position": "RB",
-          "ppg": 17.05
+          "ppg": 17.11
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.66
+          "ppg": 20.68
         },
         {
           "id": "9997",

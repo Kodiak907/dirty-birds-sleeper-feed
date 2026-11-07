@@ -1,19 +1,19 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-07T00:57:32.241896+00:00 | Forecast as of: 2026-11-06T19:30:15.517596+00:00
+Generated: 2026-11-07T01:57:44.088114+00:00 | Forecast as of: 2026-11-07T01:38:09.032924+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 134.89
+**Projected optimal score:** 135.11
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Patrick Mahomes | QB | NYJ | 21.00 |
-| Christian McCaffrey | RB | LV | 21.06 |
-| Kyren Williams | RB | WAS | 17.05 |
-| Jaxon Smith-Njigba | WR | ARI | 20.66 |
+| Patrick Mahomes | QB | NYJ | 21.20 |
+| Christian McCaffrey | RB | LV | 21.00 |
+| Kyren Williams | RB | WAS | 17.11 |
+| Jaxon Smith-Njigba | WR | ARI | 20.68 |
 | Zay Flowers | WR | JAX | 11.23 |
 | Isaiah Likely | TE | PHI | 9.39 |
 | Will Reichard | K | BUF | 7.21 |

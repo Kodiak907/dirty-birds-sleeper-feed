@@ -14,7 +14,7 @@
     },
     "RB": {
       "name": "Seth McGowan",
-      "ppg": 4.124
+      "ppg": 4.139
     },
     "TE": {
       "name": "Michael Mayer",
@@ -22,10 +22,10 @@
     },
     "WR": {
       "name": "Christian Kirk",
-      "ppg": 1.237
+      "ppg": 0.91
     }
   },
-  "generated_at_utc": "2026-11-07T00:57:28.889541+00:00",
+  "generated_at_utc": "2026-11-07T01:57:39.706935+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -151,7 +151,7 @@
           "targets_per_game": null
         },
         "name": "New Orleans Saints",
-        "ppg": 5.87,
+        "ppg": 5.88,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.877
@@ -173,12 +173,12 @@
           "targets_per_game": null
         },
         "name": "Indianapolis Colts",
-        "ppg": 5.74,
+        "ppg": 5.71,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.14,
+        "same_position_uplift_ppg": -1.17,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -195,12 +195,12 @@
           "targets_per_game": null
         },
         "name": "Washington Commanders",
-        "ppg": 5.42,
+        "ppg": 5.45,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.46,
+        "same_position_uplift_ppg": -1.43,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -239,12 +239,12 @@
           "targets_per_game": null
         },
         "name": "Tampa Bay Buccaneers",
-        "ppg": 5.15,
+        "ppg": 5.19,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.877
         },
-        "same_position_uplift_ppg": -1.73,
+        "same_position_uplift_ppg": -1.69,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -283,12 +283,12 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 4.35,
+        "ppg": 4.36,
         "replacement_reference": {
           "name": "Minnesota Vikings",
           "ppg": 6.877
         },
-        "same_position_uplift_ppg": -2.53,
+        "same_position_uplift_ppg": -2.52,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -478,9 +478,9 @@
         "ppg": 6.08,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": 1.96,
+        "same_position_uplift_ppg": 1.94,
         "screen_only": true,
         "sleeper_id": "12534",
         "team": "CHI"
@@ -506,9 +506,9 @@
         "ppg": 5.56,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": 1.44,
+        "same_position_uplift_ppg": 1.42,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
@@ -531,9 +531,9 @@
         "ppg": 5.32,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": 1.2,
+        "same_position_uplift_ppg": 1.18,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -561,9 +561,9 @@
         "ppg": 5.07,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": 0.94,
+        "same_position_uplift_ppg": 0.93,
         "screen_only": true,
         "sleeper_id": "9508",
         "team": "TEN"
@@ -586,9 +586,9 @@
         "ppg": 4.69,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": 0.56,
+        "same_position_uplift_ppg": 0.55,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
@@ -611,9 +611,9 @@
         "ppg": 3.85,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -0.27,
+        "same_position_uplift_ppg": -0.29,
         "screen_only": true,
         "sleeper_id": "11581",
         "team": "GB"
@@ -636,9 +636,9 @@
         "ppg": 2.76,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -1.36,
+        "same_position_uplift_ppg": -1.38,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -664,9 +664,9 @@
         "ppg": 1.96,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -2.16,
+        "same_position_uplift_ppg": -2.18,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -686,9 +686,9 @@
         "ppg": 1.06,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -3.07,
+        "same_position_uplift_ppg": -3.08,
         "screen_only": true,
         "sleeper_id": "7561",
         "team": "PHI"
@@ -708,9 +708,9 @@
         "ppg": 0.86,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -3.26,
+        "same_position_uplift_ppg": -3.28,
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
@@ -733,9 +733,9 @@
         "ppg": 0.82,
         "replacement_reference": {
           "name": "Seth McGowan",
-          "ppg": 4.124
+          "ppg": 4.139
         },
-        "same_position_uplift_ppg": -3.3,
+        "same_position_uplift_ppg": -3.32,
         "screen_only": true,
         "sleeper_id": "11435",
         "team": "SEA"
@@ -782,12 +782,12 @@
           "targets_per_game": 2.0
         },
         "name": "Darren Waller",
-        "ppg": 6.53,
+        "ppg": 6.48,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.48
         },
-        "same_position_uplift_ppg": 1.05,
+        "same_position_uplift_ppg": 1.0,
         "screen_only": true,
         "sleeper_id": "2505",
         "team": "CAR"
@@ -833,12 +833,12 @@
           "targets_per_game": null
         },
         "name": "Colby Parkinson",
-        "ppg": 3.47,
+        "ppg": 3.64,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.48
         },
-        "same_position_uplift_ppg": -2.01,
+        "same_position_uplift_ppg": -1.84,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -890,9 +890,9 @@
         "ppg": 6.49,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 5.25,
+        "same_position_uplift_ppg": 5.58,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -915,9 +915,9 @@
         "ppg": 6.03,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 4.8,
+        "same_position_uplift_ppg": 5.12,
         "screen_only": true,
         "sleeper_id": "9754",
         "team": "LAC"
@@ -937,9 +937,9 @@
         "ppg": 5.58,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 4.34,
+        "same_position_uplift_ppg": 4.67,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -959,40 +959,15 @@
           "targets_per_game": 3.67
         },
         "name": "Chris Bell",
-        "ppg": 5.32,
+        "ppg": 5.31,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 4.08,
+        "same_position_uplift_ppg": 4.4,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.33,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 41.3,
-          "snap_trend_3_appearances_pp": -14.0,
-          "targets_per_game": 5.0
-        },
-        "name": "Rashid Shaheed",
-        "ppg": 4.56,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.237
-        },
-        "same_position_uplift_ppg": 3.32,
-        "screen_only": true,
-        "sleeper_id": "8676",
-        "team": "SEA"
       },
       {
         "audit": {
@@ -1012,9 +987,9 @@
         "ppg": 4.48,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 3.25,
+        "same_position_uplift_ppg": 3.57,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
@@ -1034,9 +1009,9 @@
         "ppg": 4.31,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 3.08,
+        "same_position_uplift_ppg": 3.4,
         "screen_only": true,
         "sleeper_id": "13294",
         "team": "PHI"
@@ -1062,12 +1037,66 @@
         "ppg": 4.26,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 3.02,
+        "same_position_uplift_ppg": 3.35,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [
+            "projection_weeks_partial"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.778,
+          "recent_snap_pct": 41.3,
+          "snap_trend_3_appearances_pp": -14.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Rashid Shaheed",
+        "ppg": 4.05,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 0.91
+        },
+        "same_position_uplift_ppg": 3.14,
+        "screen_only": true,
+        "sleeper_id": "8676",
+        "team": "SEA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [
+            "sleeper_injury_ir"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 62.7,
+          "snap_trend_3_appearances_pp": -30.0,
+          "targets_per_game": 5.0
+        },
+        "name": "Mack Hollins",
+        "ppg": 3.85,
+        "replacement_reference": {
+          "name": "Christian Kirk",
+          "ppg": 0.91
+        },
+        "same_position_uplift_ppg": 2.94,
+        "screen_only": true,
+        "sleeper_id": "4177",
+        "team": "NE"
       },
       {
         "audit": {
@@ -1091,39 +1120,12 @@
         "ppg": 3.84,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 2.6,
+        "same_position_uplift_ppg": 2.93,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [
-            "sleeper_injury_ir"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 62.7,
-          "snap_trend_3_appearances_pp": -30.0,
-          "targets_per_game": 5.0
-        },
-        "name": "Mack Hollins",
-        "ppg": 3.8,
-        "replacement_reference": {
-          "name": "Christian Kirk",
-          "ppg": 1.237
-        },
-        "same_position_uplift_ppg": 2.56,
-        "screen_only": true,
-        "sleeper_id": "4177",
-        "team": "NE"
       },
       {
         "audit": {
@@ -1143,9 +1145,9 @@
         "ppg": 3.66,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 2.42,
+        "same_position_uplift_ppg": 2.75,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1165,9 +1167,9 @@
         "ppg": 3.45,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 2.22,
+        "same_position_uplift_ppg": 2.54,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1190,9 +1192,9 @@
         "ppg": 2.71,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 1.47,
+        "same_position_uplift_ppg": 1.8,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1216,9 +1218,9 @@
         "ppg": 2.33,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 1.09,
+        "same_position_uplift_ppg": 1.42,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1243,9 +1245,9 @@
         "ppg": 1.89,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": 0.65,
+        "same_position_uplift_ppg": 0.98,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1262,12 +1264,12 @@
           "targets_per_game": 2.33
         },
         "name": "Brandin Cooks",
-        "ppg": 0.96,
+        "ppg": 1.01,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": -0.28,
+        "same_position_uplift_ppg": 0.1,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1290,9 +1292,9 @@
         "ppg": 0.89,
         "replacement_reference": {
           "name": "Christian Kirk",
-          "ppg": 1.237
+          "ppg": 0.91
         },
-        "same_position_uplift_ppg": -0.35,
+        "same_position_uplift_ppg": -0.02,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1300,5 +1302,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-07T00:57:24.203626+00:00"
+  "snapshot_utc": "2026-11-07T01:57:34.657164+00:00"
 }
