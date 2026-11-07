@@ -33,7 +33,7 @@ export function joinVerifiedPFOIdentity643({
   msfIndex?.team!==t||!Array.isArray(msfIndex.players)||
   !Array.isArray(rosterPlayers)||!rosterPlayers.length||
   rules?.version!==FFL_RULES_VERSION||rules?.league!=='FFL'||
-  fixture?.provider!=='MSF'||fixture?.verified!==true||
+  fixture?.provider!=='MSF'||fixture?.verified!==true||!validId(fixture?.gameId)||
   !['SCHEDULED','PRE_GAME','NOT_STARTED'].includes(fixture.status)||
   !Number.isInteger(week)||week!==fixture?.week||
   ![fixture.home,fixture.away].includes(t)||
