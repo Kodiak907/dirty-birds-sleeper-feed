@@ -49,7 +49,7 @@ export function verifyNormalizedMSFPlayerIndex(data,{team}={}){
  }
  for(const id of conflicts)byProviderId.delete(id);
  const rows=[...byProviderId.values()];
- return safeResult(rows.length?'verified_identity_index':'no_unique_identified_players',
+ return safeResult(rows.length?'verified':'blocked',
   rows.length?'unique_msf_player_ids_and_team_position_verified':'no_valid_msf_player_ids',
   {team:upper(team),players:rows,playerCount:rows.length,
    rejectedIdentityRows:invalid.length,conflictingProviderIdentities:conflicts.size,
