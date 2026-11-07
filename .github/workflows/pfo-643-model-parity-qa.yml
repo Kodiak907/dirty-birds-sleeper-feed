@@ -36,6 +36,9 @@ jobs:
           node --check pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs
           node --check pfo-thursday/qa-pfo-643-startsit-week.test.mjs
           node --check pfo-thursday/qa-pfo-643-startsit-cache.test.mjs
+          node --check pfo-thursday/ffo-accuracy-correction-view-643.mjs
+          node --check pfo-thursday/qa-pfo-643-correction-view.test.mjs
+          node --check pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs
           node --check pfo-thursday/ffo-msf-final-corrections-643.mjs
           node --check pfo-thursday/qa-pfo-643-final-corrections.test.mjs
           node --check pfo-thursday/ffo-capture-parity-643.mjs
@@ -43,7 +46,7 @@ jobs:
           node --check pfo-thursday/ffo-release-gate-643.mjs
           node --check pfo-thursday/qa-pfo-643-release-gate.test.mjs
           node --check pfo-thursday/qa-pfo-643-roster-slots.test.mjs
-          node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-pfo-643-msf-fixtures.test.mjs pfo-thursday/qa-pfo-643-trusted-msf.test.mjs pfo-thursday/qa-pfo-643-roster-parity.test.mjs pfo-thursday/qa-pfo-643-lineup.test.mjs pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs pfo-thursday/qa-pfo-643-startsit-week.test.mjs pfo-thursday/qa-pfo-643-startsit-cache.test.mjs pfo-thursday/qa-pfo-643-release-gate.test.mjs pfo-thursday/qa-pfo-643-capture-parity.test.mjs pfo-thursday/qa-pfo-643-final-corrections.test.mjs pfo-thursday/qa-pfo-643-roster-slots.test.mjs pfo-thursday/qa-pfo-643-ingestion-health.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
+          node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-pfo-643-msf-fixtures.test.mjs pfo-thursday/qa-pfo-643-trusted-msf.test.mjs pfo-thursday/qa-pfo-643-roster-parity.test.mjs pfo-thursday/qa-pfo-643-lineup.test.mjs pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs pfo-thursday/qa-pfo-643-startsit-week.test.mjs pfo-thursday/qa-pfo-643-startsit-cache.test.mjs pfo-thursday/qa-pfo-643-release-gate.test.mjs pfo-thursday/qa-pfo-643-capture-parity.test.mjs pfo-thursday/qa-pfo-643-final-corrections.test.mjs pfo-thursday/qa-pfo-643-correction-view.test.mjs pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs pfo-thursday/qa-pfo-643-roster-slots.test.mjs pfo-thursday/qa-pfo-643-ingestion-health.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
       - name: Check protected scoring version and dedicated Accuracy Worker remains fail-closed
         run: |
           set -euo pipefail
