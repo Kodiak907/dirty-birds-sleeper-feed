@@ -1,6 +1,6 @@
 # Pregame forecast locks and calibration
 
-Updated: 2026-11-07T01:57:44.145998+00:00
+Updated: 2026-11-07T02:49:50.200776+00:00
 
 **Current Week 9:** 24 locked player forecasts; 0 newly locked.
 **Completed-week backtest sample:** 28 actual player outcomes.
