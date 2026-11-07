@@ -152,3 +152,38 @@ test('duplicate provider IDs and ambiguous same-name/team/position cannot be ass
  assert.equal(report.players[0].id,'18608');
  assert.ok(report.conflictingProviderIdentities>=1);
 });
+
+test('existing private GamecastInternal binding can supply verified MSF schedule without copying credentials',async()=>{
+ const calls=[];
+ const internal={async fetch(request){
+  calls.push({url:request.url,method:request.method,
+   auth:request.headers.get('authorization')});
+  return response({available:true,source:'MySportsFeeds',
+   provider_http_status:200,data:game},200);
+ }};
+ const result=await readTrustedMSF2026({env:{GAMECAST_INTERNAL:internal},
+  feed:'fixtures',team:'BUF',now,
+  transport:async()=>{throw Error('direct network must not run')}});
+ assert.equal(result.status,'verified');
+ assert.equal(result.gameCount,1);
+ assert.equal(result.viaTrustedGamecastInternal,true);
+ assert.equal(result.accuracyWritesEnabled,false);
+ assert.equal(calls.length,1);
+ assert.equal(calls[0].url,'https://api.mysportsfeeds.com/v2.1/pull/nfl/2026-regular/games.json?team=BUF');
+ assert.equal(calls[0].auth,null,'service binding request carries no secret or browser auth');
+});
+test('internal Gamecast upstream 403 inside HTTP 200 gateway envelope must not become a verified MSF feed',async()=>{
+ const internal={fetch:async()=>response({available:true,
+  provider_http_status:403,data:game},200)};
+ const result=await readTrustedMSF2026({env:{GAMECAST_INTERNAL:internal},
+  feed:'fixtures',team:'BUF',now});
+ assert.equal(result.status,'blocked');
+ assert.equal(result.reason,'provider_payload_not_verified');
+});
+test('untrusted external or missing service binding is never treated as internal MSF provenance',async()=>{
+ let used=false;
+ const bad={GAMECAST_INTERNAL:{request:async()=>{used=true}}};
+ const result=await readTrustedMSF2026({env:bad,feed:'fixtures',team:'BUF',now});
+ assert.equal(result.status,'blocked');
+ assert.equal(used,false);
+});
