@@ -2516,8 +2516,30 @@ function pfo69Submitted(team,w){
  return {assignments,...pfo52LineupScore(team,assignments,w,false)};
 }
 function pfo52Reconciles(team,w){if(!team||team.score==null)return false;const v=pfo52LineupScore(team,pfo52Actual(team,w).assignments,w,true);return v.complete&&Math.abs(v.total-team.score)<.05;}
-function pfo52LineupScore(team,assignments,w,past){let total=0,count=0;for(const x of assignments){const v=x.id?pfo52Value(team,x.id,w,past):null;if(v!=null){total+=v;count++;}}
- return {total:count?total:null,complete:count===assignments.length,known:count};
+function pfo52LineupScore(team,assignments,w,past){
+ // PFO 6.43: ten official FFL starters or NO complete projected team total.
+ // A partial sum belongs in the explicitly labeled subtotal, never in "total".
+ const required=pfo52Slots(),list=Array.isArray(assignments)?assignments:[];
+ const seen=new Set(),issues=[];let subtotal=0,known=0;
+ if(required.length!==10||list.length!==10)issues.push('ten_official_ffl_starter_slots_required');
+ for(let i=0;i<list.length;i++){
+  const x=list[i],id=String(x?.id||''),slot=String(x?.slot||'').toUpperCase();
+  if(slot!==String(required[i]||'').toUpperCase()){issues.push('starter_slot_order_mismatch');continue;}
+  if(!id||id==='0'){issues.push('starter_slot_unfilled');continue;}
+  if(seen.has(id)){issues.push('duplicate_starter');continue;}seen.add(id);
+  // Historical Sleeper league scores may be displayed separately, never used
+  // as independent model truth or promoted as verified PFO forecasts.
+  if(!past&&!pfo52Legal(slot,pfo52Info(id))){issues.push('position_ineligible');continue;}
+  const value=pfo52Value(team,id,w,past);
+  if(value===null||value===undefined||!Number.isFinite(Number(value))){
+   issues.push('independent_projection_unavailable');continue;
+  }
+  subtotal+=Number(value);known++;
+ }
+ const complete=known===10&&list.length===10&&required.length===10&&issues.length===0;
+ const rounding=n=>Math.round((n+Number.EPSILON)*100)/100;
+ return {total:complete?rounding(subtotal):null,subtotal:known?rounding(subtotal):null,
+  complete,known,required:10,partial:!complete,issues:[...new Set(issues)]};
 }
 function pfo52PointLabel(val,complete=true){return val==null?'—':pfo52Money(val,2)+(complete?'':' †');}
 function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[],original=mode==='ours'?pfo52Actual(t,w).assignments:[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
