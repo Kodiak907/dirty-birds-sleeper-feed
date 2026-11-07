@@ -66,17 +66,26 @@ export async function readTrustedMSF2026({
  const at=boundedTime(now),t=upper(team),path=pathFor(feed,t);
  if(!at)return safeResult('blocked','trusted_server_clock_required');
  if(!path)return safeResult('blocked','unsupported_feed_or_nfl_team');
- if(!env||typeof env.MSF_API_KEY!=='string'||!env.MSF_API_KEY.trim())
-  return safeResult('blocked','server_licensed_msf_secret_not_bound',{team:t,feed});
+ const directSecret=typeof env?.MSF_API_KEY==='string'&&!!env.MSF_API_KEY.trim();
+ const internalMSF=typeof env?.GAMECAST_INTERNAL?.fetch==='function';
+ if(!directSecret&&!internalMSF)
+  return safeResult('blocked','no_trusted_licensed_provider_binding',{team:t,feed});
  if(typeof transport!=='function'||!int(maxBytes)||maxBytes<1000||maxBytes>6_500_000)
   return safeResult('blocked','invalid_server_transport_or_response_limit');
  const url=ORIGIN+path, checkedAtUtc=at.toISOString();
  let response;
  try{
-  const credentials=btoa(env.MSF_API_KEY+':MYSPORTSFEEDS');
-  response=await transport(url,{method:'GET',
-   headers:{authorization:'Basic '+credentials,accept:'application/json'},
-   redirect:'error',signal:AbortSignal.timeout(12_000)});
+  if(directSecret){
+   const credentials=btoa(env.MSF_API_KEY+':MYSPORTSFEEDS');
+   response=await transport(url,{method:'GET',
+    headers:{authorization:'Basic '+credentials,accept:'application/json'},
+    redirect:'error',signal:AbortSignal.timeout(12_000)});
+  }else{
+   // Cloudflare's existing private GamecastInternal entrypoint only; no
+   // Internet URL or provider credentials are received from the browser.
+   response=await env.GAMECAST_INTERNAL.fetch(new Request(url,{method:'GET',
+    headers:{accept:'application/json'}}));
+  }
  }catch{
   return safeResult('blocked','provider_unreachable_or_timeout',{team:t,feed,checkedAtUtc});
  }
@@ -100,7 +109,8 @@ export async function readTrustedMSF2026({
  try{payload=JSON.parse(raw)}catch{
   return safeResult('blocked','provider_json_invalid',{team:t,feed,checkedAtUtc});
  }
- if(!payload||typeof payload!=='object'||payload?.available===false||payload?.error)
+ if(!payload||typeof payload!=='object'||payload?.available===false||payload?.error||
+  Number.isInteger(payload?.provider_http_status)&&payload.provider_http_status!==200)
   return safeResult('blocked','provider_payload_not_verified',{team:t,feed,checkedAtUtc});
  const p=payload?.data??payload;
  const evidence={provider:'MSF',authenticatedByServer:true,httpStatus:200,
@@ -114,6 +124,7 @@ export async function readTrustedMSF2026({
      withheld:normalized.withheld,issues:normalized.issues});
   return safeResult('verified','authenticated_msf_fixture_normalization',
    {team:t,feed,checkedAtUtc,providerHttpStatus:200,
+    viaTrustedGamecastInternal:!directSecret,
     fixtures:games,withheld:normalized.withheld,issues:normalized.issues,
     gameCount:games.length});
  }
@@ -125,7 +136,8 @@ export async function readTrustedMSF2026({
     {team:t,feed,checkedAtUtc,providerHttpStatus:200,
      rejectedIdentityRows:identities.rejectedIdentityRows??null});
   return safeResult('verified','authenticated_msf_season_normalized_like_existing_pfo',
-   {team:t,feed,checkedAtUtc,providerHttpStatus:200,normalized:identities,
+   {team:t,feed,checkedAtUtc,providerHttpStatus:200,
+    viaTrustedGamecastInternal:!directSecret,normalized:identities,
     playerCount:identities.playerCount,providerUpdatedAtUtc:normalized.provider_updated_at});
  }catch{
   return safeResult('blocked','provider_season_normalization_unverified',
