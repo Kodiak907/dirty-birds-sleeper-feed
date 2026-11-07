@@ -103,3 +103,24 @@ test('capture runner refuses a seven-day-early fixture before calling any model 
  assert.equal(forecastCalls,0);
  assert.equal(writeCalls,0);
 });
+
+test('actual MSF UNPLAYED status maps to verified not-started pregame capture eligibility',()=>{
+ const data=normalize([game('msf-unplayed','2026-11-08T18:25:00Z','UNPLAYED')]);
+ assert.equal(data.status,'fixture_identity_normalized');
+ assert.equal(data.fixtures[0].status,'NOT_STARTED');
+ assert.equal(selectEligiblePregameFixtures(data.fixtures,{serverNow:now}).eligible.length,1);
+});
+test('MSF postponement, active gameplay and postgame review cannot be captured as pregame',()=>{
+ const postponed=game('postponed','2026-11-08T18:25:00Z','UNPLAYED');
+ postponed.schedule.scheduleStatus='POSTPONED';
+ const rows=[
+  postponed,
+  game('inprogress','2026-11-08T18:25:00Z','IN_PROGRESS'),
+  game('reviewing','2026-11-08T18:25:00Z','POSTGAME_REVIEWING')
+ ];
+ const out=normalize(rows);
+ assert.equal(out.fixtures.length,0);
+ assert.equal(out.withheld,3);
+ const due=selectEligiblePregameFixtures(out.fixtures,{serverNow:now});
+ assert.equal(due.eligible.length,0);
+});
