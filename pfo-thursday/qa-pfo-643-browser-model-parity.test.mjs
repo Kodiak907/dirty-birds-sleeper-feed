@@ -8,6 +8,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {Script,createContext} from 'node:vm';
 import {createHash} from 'node:crypto';
+import {BROWSER_SUPPORTED_FFL_STATS,scoreFrozenBrowserStats643,
+ forecastBrowserSourceCandidate643} from './ffo-server-forecast-643.mjs';
 
 const read=name=>readFileSync(new URL('./'+name,import.meta.url),'utf8');
 const core=read('ffo-pfo-core.js'),client=read('ffo-pfo-597.js'),
@@ -118,4 +120,51 @@ test('missing independent player forecast and unknown identity do not become inv
   players:{'100':person('RB')}});
  assert.equal(model.wrapped('100'),null);
  assert.equal(model.wrapped('101'),null);
+});
+
+test('Worker-compatible stat whitelist exactly matches the live browser source',()=>{
+ const context=createContext({});
+ new Script(frozenScoreSource+'\nthis.keys=FFL_SUPPORTED_STATS;').runInContext(context);
+ assert.deepEqual([...context.keys],[...BROWSER_SUPPORTED_FFL_STATS]);
+});
+test('candidate server source forecast equals actual 6.36 browser for six positions and fallback',()=>{
+ const inputs=[
+  ['QB',{pass_yd:250,pass_td:2,pass_int:1,fum_lost:1}],
+  ['RB',{rush_yd:70,rec:4,rec_yd:35}],
+  ['WR',{rec:6,rec_yd:100,rec_td:1}],
+  ['TE',{rec:4,rec_yd:60,rec_td:1}],
+  ['K',{fgm:3,fgm_40_49:2,fgm_50_59:1,xpm:3}],
+  ['DEF',{sack:3,int:1,pts_allow_14_20:1,def_3_and_out:5}]
+ ];
+ for(const [position,stats] of inputs){
+  const row={name:'Verified Fixture Player',team:'BUF',position,forecast:stats};
+  const player=person(position);
+  const browser=actualBrowserModel({rows:{'100':row},players:{'100':player}}).wrapped('100');
+  const candidate=forecastBrowserSourceCandidate643({
+   row,player,rules,uniqueMSFIdentityVerified:true
+  });
+  assert.equal(candidate.points,browser.points,position+' numeric parity');
+  assert.equal(candidate.source,browser.source,position+' source wording');
+  assert.equal(candidate.partial,browser.partial);
+  assert.equal(candidate.certified,browser.certified);
+  assert.deepEqual(candidate.missingEvidence,[...browser.missingEvidence]);
+  assert.equal(candidate.sourceCategoriesObserved,browser.sourceCategoriesObserved);
+  assert.equal(candidate.verifiedServerParity,false,'fixture equality alone is not certified live parity');
+  assert.equal(scoreFrozenBrowserStats643(stats,rules).points,
+   actualBrowserModel({rows:{'100':row},players:{'100':player}}).score(stats).points);
+ }
+ const row={name:'Verified Fixture Player',team:'BUF',position:'RB',
+  season_totals:{rush_yd:220},games_played:2,
+  games:[{week:1,stats:{rush_yd:50}},{week:2,stats:{rush_yd:80}}]};
+ const player=person('RB');
+ const a=actualBrowserModel({rows:{'100':row},players:{'100':player}}).wrapped('100');
+ const b=forecastBrowserSourceCandidate643({row,player,rules,uniqueMSFIdentityVerified:true});
+ assert.equal(a.points,b.points);
+ assert.equal(a.source,b.source);
+});
+test('candidate cannot produce snapshot-compatible results without separately verified provider identity',()=>{
+ const row={name:'Verified Fixture Player',team:'BUF',forecast:{rec:6}};
+ const player=person('WR');
+ assert.equal(forecastBrowserSourceCandidate643({row,player,rules}),null);
+ assert.equal(forecastBrowserSourceCandidate643({row:{...row,team:'MIA'},player,rules,uniqueMSFIdentityVerified:true}),null);
 });
