@@ -2421,7 +2421,7 @@ let pfo52Week=Number(window.dbNflWeek||8),pfo52ManualWeek=false,pfo52Scenario=nu
 function pfo52Cur(){return pfo66WeekAt(new Date(),Number(window.dbNflSeason||gm47Snapshot?.nfl_state?.season||2026),Number(window.dbNflWeek||gm47Snapshot?.nfl_state?.week||8));}
 function pfo52Slots(){const positions=gm47Snapshot?.league?.roster_positions;
  const s=Array.isArray(positions)?positions.filter(x=>!['BN','IR','TAXI','RESERVE'].includes(String(x).toUpperCase())):[];
- return s.length?s:['QB','RB','RB','WR','WR','TE','FLEX','K','DEF'];}
+ return s.length?s:['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];}
 function pfo52Pos(p){const x=String(p?.position||'').toUpperCase();return x==='DST'||x==='D/ST'?'DEF':x;}
 function pfo52Legal(slot,p){const pos=pfo52Pos(p),sl=String(slot).toUpperCase();if(!pos||!sl)return false;
  if(sl==='FLEX')return ['RB','WR','TE'].includes(pos);
