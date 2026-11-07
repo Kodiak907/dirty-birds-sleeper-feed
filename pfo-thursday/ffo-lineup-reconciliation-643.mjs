@@ -19,6 +19,7 @@ const sameForecast=(a,b)=>a?.points===b?.points&&
 
 export function evaluateFFLLineup({slots,projections={},rulesVersion=FFL_RULES_VERSION}={}){
  const issues=[],rows=[],seen=new Set();
+ const sourced=projections&&typeof projections==='object'?projections:{};
  const valid=Array.isArray(slots)&&slots.length===10;
  if(!valid)issues.push('exactly_ten_submitted_starter_slots_required');
  if(rulesVersion!==FFL_RULES_VERSION)issues.push('unrecognized_ffl_scoring_contract');
@@ -33,9 +34,9 @@ export function evaluateFFLLineup({slots,projections={},rulesVersion=FFL_RULES_V
   if(id&&id!=='0'&&seen.has(id))problems.push('duplicate_starter_identity');
   if(id&&id!=='0')seen.add(id);
   if(id&&id!=='0'&&!posAllowed(expected,pos))problems.push('starter_position_ineligible');
-  const selected=id&&projections&&Object.hasOwn(projections,id)?projections[id]:entry?.projection;
-  if(id&&Object.hasOwn(projections,id)&&entry?.projection&&
-   !sameForecast(entry.projection,projections[id]))
+  const selected=id&&Object.hasOwn(sourced,id)?sourced[id]:entry?.projection;
+  if(id&&Object.hasOwn(sourced,id)&&entry?.projection&&
+   !sameForecast(entry.projection,sourced[id]))
    problems.push('conflicting_projection_across_tools');
   let points=null;
   if(!selected||!Number.isFinite(selected.points)||Math.abs(selected.points)>200){
