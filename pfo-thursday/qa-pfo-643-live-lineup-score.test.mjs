@@ -68,3 +68,16 @@ test('non-finite model values withheld, never interpreted as zero',()=>{
  assert.equal(r.known,9);
  assert.equal(r.subtotal,114);
 });
+
+test('optimized Lineup Lab delegates to identical strict ten-slot total, not zero-filling',()=>{
+ const begin=core.indexOf('function pfo52Best(team,w,past=false){');
+ const end=core.indexOf('function pfo52Actual(',begin);
+ assert.ok(begin>0&&end>begin);
+ const method=core.slice(begin,end);
+ assert.match(method,/const verified=pfo52LineupScore\(team,assignments,w,past\)/);
+ assert.doesNotMatch(method,/pfo52Value\(team,x\.id,w,past\)\|\|0/);
+});
+test('the roster never labels independent partial gamelog research as certified scoring',()=>{
+ assert.doesNotMatch(core,/partial FFO model pts · NFL stats verified/);
+ assert.match(core,/partial FFL reconstruction · not certified/);
+});
