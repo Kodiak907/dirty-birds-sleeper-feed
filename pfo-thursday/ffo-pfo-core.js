@@ -2504,8 +2504,10 @@ function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set(
   if(prev[snk]===-1)break;for(let v=snk;v!==src;v=prev[v]){const ed=graph[prev[v]][edgeIdx[v]];ed.cap--;graph[v][ed.rev].cap++;}
  }
  const assignments=slots.map((slot,j)=>{const x=graph[n+j].find(ed=>ed.to<n&&ed.cap===1);return {slot,id:x?eligible[x.to].id:null};});
- const known=assignments.filter(x=>x.id).length,sum=assignments.reduce((acc,x)=>acc+(x.id?pfo52Value(team,x.id,w,past)||0:0),0);
- return {assignments,known,required:slots.length,total:known?sum:null,complete:known===slots.length};
+ const verified=pfo52LineupScore(team,assignments,w,past);
+ return {assignments,known:verified.known,required:verified.required,
+  total:verified.total,subtotal:verified.subtotal,complete:verified.complete,
+  partial:verified.partial,issues:verified.issues};
 }
 function pfo52Actual(team,w){const slots=pfo52Slots(),started=team?.starters||[];
  return {assignments:slots.map((slot,i)=>({slot,id:started[i]&&started[i]!=='0'?started[i]:null})),total:team?.score??null};
@@ -2712,7 +2714,7 @@ function pfo52RosterPoints(){const el=$('actual-lineup');if(!el)return;
   const raw=observed?.stats||observed;
   const scoring=observed&&raw&&Object.keys(raw).some(k=>k!=='week')?pfo50Score(raw):null;
   const tag=document.createElement('div');tag.className='pfo52-rosterpoints';
-  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFO model pts · NFL stats verified':
+  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFL reconstruction · not certified':
    'W'+week+' · FFO live stats pending';
   cell.append(tag);
  }
