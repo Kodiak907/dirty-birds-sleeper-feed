@@ -1,0 +1,12 @@
+name = "pfo-accuracy-lab-worker"
+main = "accuracy-worker-638.mjs"
+compatibility_date = "2026-11-06"
+workers_dev = true
+
+# Intentionally separate from PFO Pages, its Commissioner D1 and FFOI.
+[[d1_databases]]
+binding = "PFO_ACCURACY_DB"
+database_name = "pfo-accuracy-lab"
+database_id = "7b354629-96ee-454e-9939-6674dd2a32d7"
+
+# NO cron until real pregame/fixture model adapters pass source parity.
