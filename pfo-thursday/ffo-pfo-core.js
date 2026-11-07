@@ -2475,21 +2475,38 @@ function pfo52Points(id,w,past=false){if(past)return null;
  const adjusted=pfo52Pos(p)!=='K'&&pfo52Pos(p)!=='DEF'?pfo52DefenseAdjustment(pfo52Pos(p),opponent):null;
  return {points:baseline*(adjusted??1),source:source+(adjusted!=null?' · observed defensive allowance adjustment':' · no opponent adjustment'),adjustment:adjusted};
 }
-function pfo52DefenseAdjustment(pos,opponent){if(!opponent||!pfo50Independent?.players?.length)return null;
- if(!['QB','RB','WR','TE'].includes(pos))return null;
- const target=gm47CanonicalTeam(opponent),rows=new Map();
- for(const p of pfo50Independent.players){if(p.position!==pos)continue;
-  for(const g of p.games||[]){const opp=gm47CanonicalTeam(g.opponent||'');if(!opp)continue;
-   const points=pfo50Score(g.stats);if(!Number.isFinite(points))continue;
-   const k=opp+'|'+g.week;rows.set(k,(rows.get(k)||0)+points);
+// PFO 6.43: Start/Sit and the Lineup Lab reuse the same independently scored
+// opponent allowance table. Building it per tap was O(all players × games).
+// Invalidate on licensed MSF source-array replacement; never cache missing rules.
+let pfo52AllowanceRows=null,pfo52AllowanceCache=new Map();
+function pfo52DefenseAdjustment(pos,opponent){
+ if(!opponent||!['QB','RB','WR','TE'].includes(pos)||
+  !pfo50Independent?.players?.length)return null;
+ if(window.ffoPfo597?.hasFrozenRules?.()!==true)return null;
+ const players=pfo50Independent.players;
+ if(players!==pfo52AllowanceRows){pfo52AllowanceRows=players;pfo52AllowanceCache.clear();}
+ if(!pfo52AllowanceCache.has(pos)){
+  const rows=new Map();
+  for(const p of players){if(p.position!==pos)continue;
+   for(const g of p.games||[]){
+    const opp=gm47CanonicalTeam(g.opponent||'');if(!opp)continue;
+    const points=pfo50Score(g.stats);if(!Number.isFinite(points))continue;
+    const k=opp+'|'+g.week;rows.set(k,(rows.get(k)||0)+points);
+   }
   }
+  const teamMeans=new Map();
+  for(const [k,v] of rows){const t=k.split('|')[0],a=teamMeans.get(t)||[];a.push(v);teamMeans.set(t,a);}
+  const means=[...teamMeans.entries()].filter(([_,x])=>x.length>=3)
+   .map(([team,x])=>({team,mean:x.reduce((a,b)=>a+b,0)/x.length}));
+  const baseline=means.length>=20?
+   means.reduce((a,b)=>a+b.mean,0)/means.length:null;
+  pfo52AllowanceCache.set(pos,{means,baseline});
  }
- const teamMeans=new Map();for(const [k,v] of rows){const t=k.split('|')[0],a=teamMeans.get(t)||[];a.push(v);teamMeans.set(t,a);}
- const means=[...teamMeans.entries()].filter(([_,x])=>x.length>=3).map(([team,x])=>({team,mean:x.reduce((a,b)=>a+b,0)/x.length}));
- if(means.length<20)return null;
- const baseline=means.reduce((a,b)=>a+b.mean,0)/means.length,mine=means.find(x=>x.team===target);
- if(!mine||baseline<=0)return null;
- return Math.max(.85,Math.min(1.15,1+(.25*(mine.mean/baseline-1)))); // shrink noisy allowance observations by 75%.
+ const {means,baseline}=pfo52AllowanceCache.get(pos);
+ if(baseline===null||baseline<=0)return null;
+ const mine=means.find(x=>x.team===gm47CanonicalTeam(opponent));
+ if(!mine)return null;
+ return Math.max(.85,Math.min(1.15,1+(.25*(mine.mean/baseline-1))));
 }
 function pfo52Value(team,id,w,past){if(past){const raw=team?.players_points?.[String(id)];return raw==null||!Number.isFinite(Number(raw))?null:Number(raw);}return pfo52Points(id,w)?.points??null;}
 function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set((team?.reserve||team?.record?.reserve||[]).map(String)),eligible=(team?.members||[]).filter(p=>!reserved.has(String(p.id||p.player_id))&&!(!past&&pfo52Pos(p)==='NA')).map(p=>({id:String(p.id||p.player_id),p,val:pfo52Value(team,String(p.id||p.player_id),w,past)}));
