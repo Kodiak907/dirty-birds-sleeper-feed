@@ -2,18 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-06T15:00:22.945822+00:00
+Updated: 2026-11-07T14:54:36.135839+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 3. Unpriced candidate packages: 2.
+Fully priced in-range opportunities: 5. Unpriced candidate packages: 3.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 11 | Patrick Mahomes, A.J. Brown | D'Andre Swift | 1.08× | +2.12 | +0.85 |
-| 2 | 3 | Patrick Mahomes, Minnesota Vikings | Malik Nabers | 0.89× | +1.44 | +1.13 |
-| 3 | 3 | Patrick Mahomes, Minnesota Vikings | Tee Higgins | 0.91× | +1.00 | +1.57 |
+| 1 | 4 | Jonah Coleman | Brock Purdy | 0.82× | +2.36 | +2.99 |
+| 2 | 11 | Kirk Cousins, Zay Flowers | Parker Washington | 1.01× | +1.28 | +0.79 |
+| 3 | 11 | Kirk Cousins, A.J. Brown | Tony Pollard | 0.80× | +1.59 | +0.48 |
+| 4 | 9 | Jonah Coleman | Garrett Wilson | 0.97× | +0.57 | +0.05 |
+| 5 | 3 | C.J. Stroud, Zay Flowers | Malik Nabers | 1.09× | +0.55 | +0.28 |
 
 ## Negotiation protocol
 
