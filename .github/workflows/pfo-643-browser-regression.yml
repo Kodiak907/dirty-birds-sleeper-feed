@@ -36,7 +36,10 @@ jobs:
             pfo-thursday/qa-ffo-613-video.test.mjs \
             pfo-thursday/qa-ffo-616.test.mjs \
             pfo-thursday/qa-ffo-635.test.mjs \
-            pfo-thursday/qa-ffo-636.test.mjs
+            pfo-thursday/qa-ffo-636.test.mjs \
+            pfo-thursday/qa-pfo-643-history-source-labels.test.mjs \
+            pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs \
+            pfo-thursday/qa-pfo-643-startsit-week.test.mjs
       - name: Confirm independent lab and live Pages preview untouched
         run: |
           set -euo pipefail
