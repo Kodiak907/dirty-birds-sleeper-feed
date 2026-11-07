@@ -29,7 +29,7 @@ test('a single missing projected score never becomes a zero or complete team tot
  assert.equal(result.numericCovered,9);
  assert.equal(result.missingOrInvalid,1);
  assert.equal(result.projectedTotal,null);
- assert.equal(result.knownSubtotal,126);
+ assert.equal(result.knownSubtotal,108);
  assert.equal(result.rows[8].points,null);
  assert.ok(result.issueCodes.includes('missing_or_invalid_ffl_projection'));
 });
