@@ -1,0 +1,33 @@
+name: PFO 6.43 source-model parity and frozen-scoring QA (NO DEPLOY)
+on:
+  push:
+    branches:
+      - pfo-643-unified-production-upgrade-20261106
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-model-parity:
+    name: Real browser scoring/forecast source regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check and execute the actual PFO 6.36 browser model excerpts
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs
+          node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
+      - name: Check protected scoring version and dedicated Accuracy Worker remains fail-closed
+        run: |
+          set -euo pipefail
+          node --test pfo-thursday/qa-pfo-accuracy-worker-638.test.mjs pfo-thursday/qa-ffo-638-642.test.mjs
+          grep -q 'NO cron until real pregame/fixture model adapters' pfo-thursday/wrangler.accuracy.toml
+          ! grep -qE '^\s*\[\[?triggers\]?\]|^\s*crons' pfo-thursday/wrangler.accuracy.toml
+          ! grep -q 'pfo-accuracy-lab' pfo-thursday/wrangler.jsonc
+      - name: Explicit release boundary
+        run: echo "Source-level parity QA only; NO deployment, NO real model parity certification, NO predictions saved, NO Commissioner D1, NO FFOI."
