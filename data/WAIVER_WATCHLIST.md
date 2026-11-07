@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-07T12:49:54.273850+00:00
-Sleeper snapshot: 2026-11-07T12:49:48.593837+00:00
+Generated: 2026-11-07T13:51:10.760519+00:00
+Sleeper snapshot: 2026-11-07T13:51:06.212579+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -116,8 +116,8 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Makai Lemon | WR | PHI | 4.31 | 88.7% |
 | Dontayvion Wicks | WR | PHI | 4.26 | 79.3% |
 | Rashid Shaheed | WR | SEA | 4.05 | 41.3% |
-| MarShawn Lloyd | RB | GB | 3.85 | 30.7% |
 | Mack Hollins | WR | NE | 3.85 | 62.7% |
+| MarShawn Lloyd | RB | GB | 3.85 | 30.7% |
 | Ja'Kobi Lane | WR | BAL | 3.84 | 63.7% |
 | Rashod Bateman | WR | BAL | 3.66 | 70.3% |
 

@@ -2501,7 +2501,7 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": -11.517,
+        "bench_depth_delta_ppg": -11.518,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 123.018,
@@ -2599,7 +2599,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "RB",
-        "projection_ppg": 3.851,
+        "projection_ppg": 3.85,
         "team": "GB",
         "warnings": [
           "Partial projection coverage"
@@ -4493,7 +4493,7 @@
         ]
       },
       {
-        "bench_depth_delta_ppg": -11.519,
+        "bench_depth_delta_ppg": -11.515,
         "best_candidate_drop": {
           "added_starters": [],
           "after_ppg": 123.018,
@@ -4591,7 +4591,7 @@
         "improves_projected_starters": false,
         "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
         "position": "WR",
-        "projection_ppg": 3.849,
+        "projection_ppg": 3.853,
         "team": "NE",
         "warnings": [
           "Availability status: ir",
@@ -5541,7 +5541,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-07T12:49:54.545328+00:00",
+  "generated_at_utc": "2026-11-07T13:51:10.928980+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5549,6 +5549,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-07T12:49:48.593837+00:00",
-  "source_projection_date": "2026-11-07T07:38:26.475646+00:00"
+  "sleeper_snapshot_utc": "2026-11-07T13:51:06.212579+00:00",
+  "source_projection_date": "2026-11-07T13:29:03.382099+00:00"
 }
