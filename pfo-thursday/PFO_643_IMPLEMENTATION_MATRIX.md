@@ -47,3 +47,17 @@ The previously deployed standalone Accuracy Lab Worker remains read-only health 
 ## Next implementation objective
 
 Using preexisting, authorized MSF access, build a **non-public trusted Worker-side MSF fixture/normalized player feed** and a **live browser-vs-server parity test** for the same player, verified game and source timestamp (including D/ST's independent override). Do not schedule snapshot writes or touch the protected Pages preview until those sources are proven, then proceed with certified final results and the consolidated remaining PFO functionality. No additional access requests unless an actual GitHub Actions/provider check identifies the missing capability.
+
+## Continued 6.43 checkpoint — November 6, 2026 (Pacific)
+
+- Draft review-only [PR #5](https://github.com/Kodiak907/dirty-birds-sleeper-feed/pull/5) targets the isolated accuracy-stack branch. **DO NOT MERGE OR DEPLOY** until every acceptance gate passes.
+- Exact copy of the existing private Pages MSF season normalizer is in 'ffo-msf-season-normalizer-643.mjs'; source-equivalence tests prevent divergence. The new trusted reader uses fixed 2026 team-scoped MSF endpoints, a single GET, bounded response size, private Basic authentication and no D1 writes.
+- [One-shot Actions access probe #42328252985](https://github.com/Kodiak907/dirty-birds-sleeper-feed/actions/runs/42328252985) did not run a provider request: 'MSF_API_KEY' is **not available in GitHub Actions environment pfo-preview**. Its successful workflow status only means the restricted diagnostic completed, not that provider access succeeded. Existing Cloudflare Pages credentials / internal Gamecast binding are not proven missing.
+- The private roster/player identity bridge requires unique matching of roster ID with licensed MSF player ID, exact team and position, verified fixture, frozen FFL scoring, and a pre-kickoff source as-of. Every candidate remains marked **live browser/server parity NOT verified / capture NOT allowed**.
+- Public MySportsFeeds SDK confirms upcoming game status 'UNPLAYED'. Our fixture adapter now normalizes it to internal NOT_STARTED and excludes cancelled/postponed, active-game and postgame-review records. Source: https://pkg.go.dev/github.com/MySportsFeeds/mysportsfeeds-go . Live schema verification remains mandatory.
+- Actual existing PFO browser lineup code now rejects partial, duplicate or nine-slot projected totals, and the optimizer shares that computation. A subtotal is distinct from a complete ten-slot projected team total. The roster no longer calls an independent partial stat reconstruction verified final points.
+- Start/Sit now respects the canonical Tuesday 08:30 Pacific rollover unless Coach explicitly selects a manual week; source-level tests cover both.
+- New separate 6.43 unified release gate allows shipping with truthful Not enough verified data after all operational proof, while keeping 100+ independent pairs and heldout research gates for **candidate model promotion only**. Static tests do not certify live PFO readiness.
+- Added a no-deployment local Chromium/browser regression workflow for navigation, matchup, mobile, trade and GameCast source checks.
+
+**Still blocked:** trusted live MSF provider fixture/player/final evidence, real browser/server model parity, cron and first-write immutable snapshots, certified final scores, authenticated accuracy UI, integrated cross-tool fixes, real iPhone QA and ONE protected preview release. No new costs, TinyFish, FFOI integration, Commissioner D1 or public-demo changes.
