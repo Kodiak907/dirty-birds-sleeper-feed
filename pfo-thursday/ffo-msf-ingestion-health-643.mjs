@@ -35,6 +35,8 @@ export function msfIngestionHealth({
  if(providerUpdate!==null&&Number.isFinite(time)&&providerUpdate>time+5_000)
   problems.push('provider_timestamp_in_future');
  const success=Number.isInteger(httpStatus)&&httpStatus>=200&&httpStatus<300&&responseVerified===true;
+ if(success&&Number.isInteger(consecutiveFailures)&&consecutiveFailures>0)
+  problems.push('success_cannot_keep_prior_failure_counter');
  if(success&&(!lastSuccess||!checked||checked<lastSuccess))
   problems.push('claimed_success_time_unverifiable');
  if(responseVerified!==true)problems.push('provider_response_not_verified');
@@ -43,8 +45,8 @@ export function msfIngestionHealth({
  const age=lastSuccess!==null&&Number.isFinite(time)?
   time-lastSuccess:null;
  if(age!==null&&age>maxAge)problems.push('provider_data_stale');
- const needed=new Set(requiredCategories||[]),
-  observed=new Set(verifiedCategories||[]);
+ const needed=new Set(Array.isArray(requiredCategories)?requiredCategories:[]),
+  observed=new Set(Array.isArray(verifiedCategories)?verifiedCategories:[]);
  const missing=[...needed].filter(k=>!observed.has(k));
  if(missing.length)problems.push('required_categories_unverified');
  const complete=integer(requiredPlayers)&&integer(numericProjections)&&
