@@ -128,3 +128,33 @@ export function forecastBrowserSourceCandidate643({
   'FFO independent NFL-season stats / verified games played · low-confidence average');
  return null;
 }
+
+
+/**
+ * Replicates the distinct PFO 6.16 D/ST override, which takes priority over
+ * pfo50Estimate for an upcoming game. The generic six-position parity tests
+ * alone are insufficient to establish ACTUALLY DISPLAYED D/ST parity.
+ * Caller must independently check exact team/provider identity and game week.
+ */
+export function forecastBrowserDefenseOverlay643({
+ row,weekFixture,rules,uniqueMSFIdentityVerified=false
+}={}){
+ if(!validRules(rules)||uniqueMSFIdentityVerified!==true||
+  !weekFixture||weekFixture.provider!=='MSF'||weekFixture.verified!==true||
+  weekFixture.bye===true||!weekFixture.opponent||!row?.forecast||
+  Number(row.games_observed)<2)return null;
+ const pa=Number(row?.coverage?.points_allowed_games||0);
+ const defense=Number(row?.coverage?.defensive_stat_games||0);
+ if(!pa&&!defense)return null;
+ const scored=scoreFrozenBrowserStats643(row.forecast,rules);
+ if(typeof scored?.points!=='number'||!Number.isFinite(scored.points))return null;
+ return {points:Math.round(scored.points*100)/100,source:
+  'MySportsFeeds '+(row.schema==='FFO_MSF_DEFENSE_SEASON_V1'?
+   'team season totals':'verified team gamelogs')+
+  ' · '+row.games_observed+' observed games · '+
+  (pa?'PA scoring bands included':'PA tiers unavailable')+
+  ' · FFO frozen D/ST scoring · partial model',
+  partial:true,certified:false,coverage:row.coverage,
+  model:'PFO_616_MSF_TEAM_DEFENSE_V1',
+  modelCandidate:SERVER_MODEL_CANDIDATE,verifiedServerParity:false};
+}
