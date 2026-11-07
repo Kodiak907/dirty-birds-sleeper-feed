@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-07T14:41:49.059091+00:00
+Generated: 2026-11-07T15:38:38.482810+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -12,15 +12,16 @@ Generated: 2026-11-07T14:41:49.059091+00:00
 
 ## Trade proposals
 
-**No defensible opening offers**
+**Ideas require Coach review**
 
 The prior two trades are suppressed because both teams' projected gains were marginal relative to the assets involved.
 
 ## Rejected old offers
 
-- Patrick Mahomes, A.J. Brown for D'Andre Swift: Opponent has insufficient demonstrated benefit
-- Patrick Mahomes, Minnesota Vikings for Malik Nabers: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
-- Patrick Mahomes, Minnesota Vikings for Tee Higgins: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
+- Kirk Cousins, Zay Flowers for Parker Washington: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Kirk Cousins, A.J. Brown for Tony Pollard: Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Jonah Coleman for Garrett Wilson: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit
+- C.J. Stroud, Zay Flowers for Malik Nabers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 
