@@ -17,7 +17,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Kyle Monangai | 6.08 | +1.94 | 39.7% | Carries 16.7 | sleeper_injury_out, injury_report_observation_review |
 | 2 | Chris Rodriguez Jr. | 5.56 | +1.42 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
-| 3 | Samaje Perine | 5.32 | +1.18 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 3 | Samaje Perine | 5.33 | +1.19 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 4 | Tyjae Spears | 5.07 | +0.93 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 5 | Keaton Mitchell | 4.69 | +0.55 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
 | 6 | MarShawn Lloyd | 3.85 | -0.29 | 30.7% | Carries 5.7 | injury_report_observation_review |
@@ -31,7 +31,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keon Coleman | 6.49 | -0.07 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 1 | Keon Coleman | 6.50 | -0.06 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 2 | Quentin Johnston | 6.03 | -0.53 | 79.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 3 | Kalif Raymond | 5.58 | -0.98 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 4 | Chris Bell | 5.31 | -1.25 | 62.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
@@ -42,7 +42,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 9 | Mack Hollins | 3.85 | -2.71 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
 | 10 | Ja'Kobi Lane | 3.84 | -2.72 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 11 | Rashod Bateman | 3.66 | -2.90 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 12 | Dohnte Meyers | 3.45 | -3.11 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 12 | Dohnte Meyers | 3.46 | -3.10 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Michael Mayer (5.48 PPG)
 
@@ -50,7 +50,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Chig Okonkwo | 6.92 | +1.44 | 74.7% | Tgt 5.7 | No modeled flags (not medically cleared) |
 | 2 | Darren Waller | 6.48 | +1.00 | 51.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
-| 3 | Noah Fant | 4.85 | -0.63 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
+| 3 | Noah Fant | 4.91 | -0.57 | 57.0% | Tgt 1.3 | No modeled flags (not medically cleared) |
 | 4 | Colby Parkinson | 3.64 | -1.84 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 | 5 | David Njoku | 3.20 | -2.28 | 35.5% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 
@@ -72,14 +72,14 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Buffalo Bills | 6.61 | +0.73 | — | — | No modeled flags (not medically cleared) |
 | 2 | Baltimore Ravens | 6.02 | +0.14 | — | — | No modeled flags (not medically cleared) |
 | 3 | Green Bay Packers | 6.00 | +0.12 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cincinnati Bengals | 5.91 | +0.04 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cincinnati Bengals | 5.92 | +0.04 | — | — | No modeled flags (not medically cleared) |
 | 5 | New England Patriots | 5.89 | +0.01 | — | — | No modeled flags (not medically cleared) |
 | 6 | Indianapolis Colts | 5.71 | -0.17 | — | — | No modeled flags (not medically cleared) |
 | 7 | Washington Commanders | 5.45 | -0.43 | — | — | No modeled flags (not medically cleared) |
 | 8 | Cleveland Browns | 5.36 | -0.52 | — | — | No modeled flags (not medically cleared) |
 | 9 | Tampa Bay Buccaneers | 5.19 | -0.69 | — | — | No modeled flags (not medically cleared) |
 | 10 | Tennessee Titans | 4.42 | -1.46 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 4.36 | -1.52 | — | — | No modeled flags (not medically cleared) |
+| 11 | New York Jets | 4.35 | -1.53 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

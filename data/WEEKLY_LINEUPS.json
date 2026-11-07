@@ -7,12 +7,12 @@
   "excluded_fantasy_reserve_player_ids": [
     "12492"
   ],
-  "generated_at_utc": "2026-11-07T18:43:27.398297+00:00",
+  "generated_at_utc": "2026-11-07T19:42:24.744237+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-07T13:29:03.382099+00:00",
+  "projection_as_of": "2026-11-07T19:21:35.904634+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-07T18:43:15.004948+00:00",
+  "snapshot_utc": "2026-11-07T19:42:17.122353+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -653,21 +653,21 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.5,
+      "ppg": 131.16,
       "starters": [
         {
           "id": "1166",
           "name": "Kirk Cousins",
           "opponent": "SF",
           "position": "QB",
-          "ppg": 16.8
+          "ppg": 16.79
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 21.0
+          "ppg": 20.68
         },
         {
           "id": "8150",
@@ -681,7 +681,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.65
+          "ppg": 20.64
         },
         {
           "id": "9997",

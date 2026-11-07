@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-07T18:43:27.065669+00:00",
-  "source_snapshot_utc": "2026-11-07T18:43:15.004948+00:00",
+  "generated_at_utc": "2026-11-07T19:42:24.403221+00:00",
+  "source_snapshot_utc": "2026-11-07T19:42:17.122353+00:00",
   "source_market_as_of": "2026-11-07T14:54:35.992835+00:00",
-  "source_projection_as_of": "2026-11-07T13:29:03.382099+00:00",
+  "source_projection_as_of": "2026-11-07T19:21:35.904634+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -37,44 +37,6 @@
               "position": "WR"
             },
             {
-              "id": "13301",
-              "name": "Antonio Williams",
-              "position": "WR"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4046",
-              "name": "Patrick Mahomes",
-              "position": "QB"
-            },
-            {
-              "id": "9480",
-              "name": "Brenton Strange",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 5,
-          "opponent": "    Victorious Secret",
-          "our_lineup_delta_ppg": 3.57,
-          "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.74,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
               "id": "13296",
               "name": "Caleb Douglas",
               "position": "WR"
@@ -94,9 +56,47 @@
           ],
           "opponent_roster_id": 5,
           "opponent": "    Victorious Secret",
-          "our_lineup_delta_ppg": 3.47,
+          "our_lineup_delta_ppg": 3.55,
           "their_lineup_delta_ppg": 0.0,
           "value_paid_received_ratio": 0.75,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13301",
+              "name": "Antonio Williams",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "9480",
+              "name": "Brenton Strange",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 5,
+          "opponent": "    Victorious Secret",
+          "our_lineup_delta_ppg": 3.55,
+          "their_lineup_delta_ppg": 0.0,
+          "value_paid_received_ratio": 0.74,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -313,7 +313,7 @@
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 1.52,
-          "their_lineup_delta_ppg": 1.72,
+          "their_lineup_delta_ppg": 1.7,
           "value_paid_received_ratio": 1.058,
           "our_extra_cut": null,
           "opponent_extra_cut": "Brian Thomas Jr.",

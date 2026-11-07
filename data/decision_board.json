@@ -10,7 +10,7 @@
     },
     "QB": {
       "name": "Kirk Cousins",
-      "ppg": 15.368
+      "ppg": 15.367
     },
     "RB": {
       "name": "Seth McGowan",
@@ -25,7 +25,7 @@
       "ppg": 6.56
     }
   },
-  "generated_at_utc": "2026-11-07T18:43:23.299513+00:00",
+  "generated_at_utc": "2026-11-07T19:42:20.920117+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -107,7 +107,7 @@
           "targets_per_game": null
         },
         "name": "Cincinnati Bengals",
-        "ppg": 5.91,
+        "ppg": 5.92,
         "replacement_reference": {
           "name": "New Orleans Saints",
           "ppg": 5.878
@@ -261,12 +261,12 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 4.36,
+        "ppg": 4.35,
         "replacement_reference": {
           "name": "New Orleans Saints",
           "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.52,
+        "same_position_uplift_ppg": -1.53,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -427,7 +427,7 @@
         "ppg": 12.5,
         "replacement_reference": {
           "name": "Kirk Cousins",
-          "ppg": 15.368
+          "ppg": 15.367
         },
         "same_position_uplift_ppg": -2.86,
         "screen_only": true,
@@ -510,12 +510,12 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.32,
+        "ppg": 5.33,
         "replacement_reference": {
           "name": "Seth McGowan",
           "ppg": 4.139
         },
-        "same_position_uplift_ppg": 1.18,
+        "same_position_uplift_ppg": 1.19,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -793,12 +793,12 @@
           "targets_per_game": 1.33
         },
         "name": "Noah Fant",
-        "ppg": 4.85,
+        "ppg": 4.91,
         "replacement_reference": {
           "name": "Michael Mayer",
           "ppg": 5.48
         },
-        "same_position_uplift_ppg": -0.63,
+        "same_position_uplift_ppg": -0.57,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -876,12 +876,12 @@
           "targets_per_game": 3.67
         },
         "name": "Keon Coleman",
-        "ppg": 6.49,
+        "ppg": 6.5,
         "replacement_reference": {
           "name": "Pat Bryant",
           "ppg": 6.56
         },
-        "same_position_uplift_ppg": -0.07,
+        "same_position_uplift_ppg": -0.06,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -1162,12 +1162,12 @@
           "targets_per_game": 2.33
         },
         "name": "Dohnte Meyers",
-        "ppg": 3.45,
+        "ppg": 3.46,
         "replacement_reference": {
           "name": "Pat Bryant",
           "ppg": 6.56
         },
-        "same_position_uplift_ppg": -3.11,
+        "same_position_uplift_ppg": -3.1,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1181,18 +1181,18 @@
             "week": "9"
           },
           "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
+          "projection_coverage": 0.889,
           "recent_snap_pct": 60.0,
           "snap_trend_3_appearances_pp": -14.0,
           "targets_per_game": 2.0
         },
         "name": "Jauan Jennings",
-        "ppg": 2.71,
+        "ppg": 2.41,
         "replacement_reference": {
           "name": "Pat Bryant",
           "ppg": 6.56
         },
-        "same_position_uplift_ppg": -3.85,
+        "same_position_uplift_ppg": -4.15,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1334,5 +1334,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-07T18:43:15.004948+00:00"
+  "snapshot_utc": "2026-11-07T19:42:17.122353+00:00"
 }
