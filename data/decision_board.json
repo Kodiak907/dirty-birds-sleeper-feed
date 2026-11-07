@@ -17,15 +17,15 @@
       "ppg": 4.139
     },
     "TE": {
-      "name": "Michael Mayer",
-      "ppg": 5.48
+      "name": "Isaiah Likely",
+      "ppg": 9.789
     },
     "WR": {
-      "name": "Pat Bryant",
-      "ppg": 6.56
+      "name": "Keon Coleman",
+      "ppg": 6.498
     }
   },
-  "generated_at_utc": "2026-11-07T22:38:21.470157+00:00",
+  "generated_at_utc": "2026-11-07T23:37:15.041949+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -438,37 +438,6 @@
     "RB": [
       {
         "audit": {
-          "carries_per_game": 16.67,
-          "flags": [
-            "sleeper_injury_out",
-            "injury_report_observation_review"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
-            "report_primary_injury": "Thumb",
-            "report_secondary_injury": "Toe",
-            "report_status": "Questionable",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 39.7,
-          "snap_trend_3_appearances_pp": 20.0,
-          "targets_per_game": 1.0
-        },
-        "name": "Kyle Monangai",
-        "ppg": 6.08,
-        "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.139
-        },
-        "same_position_uplift_ppg": 1.94,
-        "screen_only": true,
-        "sleeper_id": "12534",
-        "team": "CHI"
-      },
-      {
-        "audit": {
           "carries_per_game": 9.0,
           "flags": [
             "snap_data_missing",
@@ -606,6 +575,31 @@
       },
       {
         "audit": {
+          "carries_per_game": 5.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 36.3,
+          "snap_trend_3_appearances_pp": 29.0,
+          "targets_per_game": 4.33
+        },
+        "name": "Alvin Kamara",
+        "ppg": 2.94,
+        "replacement_reference": {
+          "name": "Seth McGowan",
+          "ppg": 4.139
+        },
+        "same_position_uplift_ppg": -1.2,
+        "screen_only": true,
+        "sleeper_id": "4035",
+        "team": "NO"
+      },
+      {
+        "audit": {
           "carries_per_game": null,
           "flags": [
             "projection_weeks_partial",
@@ -725,6 +719,28 @@
         "screen_only": true,
         "sleeper_id": "11435",
         "team": "SEA"
+      },
+      {
+        "audit": {
+          "carries_per_game": 6.67,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 24.7,
+          "snap_trend_3_appearances_pp": -20.0,
+          "targets_per_game": 1.0
+        },
+        "name": "Roschon Johnson",
+        "ppg": 0.41,
+        "replacement_reference": {
+          "name": "Seth McGowan",
+          "ppg": 4.139
+        },
+        "same_position_uplift_ppg": -3.73,
+        "screen_only": true,
+        "sleeper_id": "10235",
+        "team": "CHI"
       }
     ],
     "TE": [
@@ -745,10 +761,10 @@
         "name": "Chig Okonkwo",
         "ppg": 6.92,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.48
+          "name": "Isaiah Likely",
+          "ppg": 9.789
         },
-        "same_position_uplift_ppg": 1.44,
+        "same_position_uplift_ppg": -2.87,
         "screen_only": true,
         "sleeper_id": "8210",
         "team": "WAS"
@@ -770,13 +786,35 @@
         "name": "Darren Waller",
         "ppg": 6.48,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.48
+          "name": "Isaiah Likely",
+          "ppg": 9.789
         },
-        "same_position_uplift_ppg": 1.0,
+        "same_position_uplift_ppg": -3.31,
         "screen_only": true,
         "sleeper_id": "2505",
         "team": "CAR"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 80.0,
+          "snap_trend_3_appearances_pp": 0.0,
+          "targets_per_game": 6.0
+        },
+        "name": "Michael Mayer",
+        "ppg": 5.48,
+        "replacement_reference": {
+          "name": "Isaiah Likely",
+          "ppg": 9.789
+        },
+        "same_position_uplift_ppg": -4.31,
+        "screen_only": true,
+        "sleeper_id": "9482",
+        "team": "LV"
       },
       {
         "audit": {
@@ -795,10 +833,10 @@
         "name": "Noah Fant",
         "ppg": 4.91,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.48
+          "name": "Isaiah Likely",
+          "ppg": 9.789
         },
-        "same_position_uplift_ppg": -0.57,
+        "same_position_uplift_ppg": -4.88,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -821,10 +859,10 @@
         "name": "Colby Parkinson",
         "ppg": 3.64,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.48
+          "name": "Isaiah Likely",
+          "ppg": 9.789
         },
-        "same_position_uplift_ppg": -1.84,
+        "same_position_uplift_ppg": -6.15,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -851,10 +889,10 @@
         "name": "David Njoku",
         "ppg": 3.2,
         "replacement_reference": {
-          "name": "Michael Mayer",
-          "ppg": 5.48
+          "name": "Isaiah Likely",
+          "ppg": 9.789
         },
-        "same_position_uplift_ppg": -2.28,
+        "same_position_uplift_ppg": -6.59,
         "screen_only": true,
         "sleeper_id": "4033",
         "team": "LAC"
@@ -863,53 +901,33 @@
     "WR": [
       {
         "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
+          "carries_per_game": 0.33,
+          "flags": [
+            "sleeper_injury_ir",
+            "injury_report_observation_review"
+          ],
           "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
+            "practice_status": "Full Participation in Practice",
+            "report_primary_injury": "Ankle",
+            "report_status": "Questionable",
             "week": "9"
           },
           "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 77.3,
-          "snap_trend_3_appearances_pp": 7.0,
-          "targets_per_game": 3.67
+          "projection_coverage": 0.889,
+          "recent_snap_pct": 57.3,
+          "snap_trend_3_appearances_pp": -30.0,
+          "targets_per_game": 2.0
         },
-        "name": "Keon Coleman",
-        "ppg": 6.5,
+        "name": "Pat Bryant",
+        "ppg": 6.56,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -0.06,
+        "same_position_uplift_ppg": 0.06,
         "screen_only": true,
-        "sleeper_id": "11637",
-        "team": "BUF"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.33,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "6"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 79.7,
-          "snap_trend_3_appearances_pp": 7.0,
-          "targets_per_game": 3.0
-        },
-        "name": "Quentin Johnston",
-        "ppg": 6.03,
-        "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
-        },
-        "same_position_uplift_ppg": -0.53,
-        "screen_only": true,
-        "sleeper_id": "9754",
-        "team": "LAC"
+        "sleeper_id": "12492",
+        "team": "DEN"
       },
       {
         "audit": {
@@ -925,10 +943,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.58,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -0.98,
+        "same_position_uplift_ppg": -0.92,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -950,10 +968,10 @@
         "name": "Chris Bell",
         "ppg": 5.31,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -1.25,
+        "same_position_uplift_ppg": -1.19,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -975,35 +993,13 @@
         "name": "Michael Pittman Jr.",
         "ppg": 4.48,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.08,
+        "same_position_uplift_ppg": -2.02,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": 88.7,
-          "snap_trend_3_appearances_pp": 13.0,
-          "targets_per_game": 7.67
-        },
-        "name": "Makai Lemon",
-        "ppg": 4.31,
-        "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
-        },
-        "same_position_uplift_ppg": -2.25,
-        "screen_only": true,
-        "sleeper_id": "13294",
-        "team": "PHI"
       },
       {
         "audit": {
@@ -1028,10 +1024,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.26,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.3,
+        "same_position_uplift_ppg": -2.24,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1058,10 +1054,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.05,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.51,
+        "same_position_uplift_ppg": -2.45,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1088,10 +1084,10 @@
         "name": "Mack Hollins",
         "ppg": 3.85,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.71,
+        "same_position_uplift_ppg": -2.65,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1117,10 +1113,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 3.84,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.72,
+        "same_position_uplift_ppg": -2.66,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1142,10 +1138,10 @@
         "name": "Rashod Bateman",
         "ppg": 3.66,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -2.9,
+        "same_position_uplift_ppg": -2.84,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1164,10 +1160,10 @@
         "name": "Dohnte Meyers",
         "ppg": 3.46,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -3.1,
+        "same_position_uplift_ppg": -3.04,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1189,10 +1185,10 @@
         "name": "Jauan Jennings",
         "ppg": 2.41,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -4.15,
+        "same_position_uplift_ppg": -4.09,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1215,13 +1211,43 @@
         "name": "Konata Mumpfield",
         "ppg": 2.33,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -4.23,
+        "same_position_uplift_ppg": -4.17,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
+      },
+      {
+        "audit": {
+          "carries_per_game": 1.0,
+          "flags": [
+            "sleeper_injury_ir",
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "report_primary_injury": "Knee",
+            "report_status": "Questionable",
+            "week": "7"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 23.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 1.0
+        },
+        "name": "Tank Dell",
+        "ppg": 2.31,
+        "replacement_reference": {
+          "name": "Keon Coleman",
+          "ppg": 6.498
+        },
+        "same_position_uplift_ppg": -4.19,
+        "screen_only": true,
+        "sleeper_id": "9502",
+        "team": "HOU"
       },
       {
         "audit": {
@@ -1245,10 +1271,10 @@
         "name": "Zachariah Branch",
         "ppg": 1.89,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -4.67,
+        "same_position_uplift_ppg": -4.61,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1267,10 +1293,10 @@
         "name": "Brandin Cooks",
         "ppg": 1.01,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -5.55,
+        "same_position_uplift_ppg": -5.49,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1298,10 +1324,10 @@
         "name": "Christian Kirk",
         "ppg": 0.91,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -5.65,
+        "same_position_uplift_ppg": -5.59,
         "screen_only": true,
         "sleeper_id": "4950",
         "team": "SF"
@@ -1323,10 +1349,10 @@
         "name": "Cyrus Allen",
         "ppg": 0.89,
         "replacement_reference": {
-          "name": "Pat Bryant",
-          "ppg": 6.56
+          "name": "Keon Coleman",
+          "ppg": 6.498
         },
-        "same_position_uplift_ppg": -5.67,
+        "same_position_uplift_ppg": -5.61,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1334,5 +1360,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-07T22:38:15.910370+00:00"
+  "snapshot_utc": "2026-11-07T23:37:10.426944+00:00"
 }

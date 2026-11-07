@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-07T22:38:24.858285+00:00
-Sleeper snapshot: 2026-11-07T22:38:15.910370+00:00
-nflverse observations: 2026-11-07T22:38:20.882582+00:00; injury feed loaded: True
+Generated: 2026-11-07T23:37:18.736683+00:00
+Sleeper snapshot: 2026-11-07T23:37:10.426944+00:00
+nflverse observations: 2026-11-07T23:37:14.521295+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -10,9 +10,9 @@ nflverse observations: 2026-11-07T22:38:20.882582+00:00; injury feed loaded: Tru
 
 | Player | Sleeper injury tag | Official report observation | Snap % (last 3 appearances) | Notes |
 |---|---|---|---:|---|
+| Keon Coleman | No tag | Week 9 observation: Limited Participation in Practice | 77.3% | Verify current status before kickoff |
 | Kirk Cousins | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Pat Bryant | IR | Week 9 observation: Questionable, Full Participation in Practice, Ankle | 57.3% | Verify official NFL roster and game status before lineup decisions |
 | Caleb Douglas | No tag | Week 7 observation: Full Participation in Practice | 80.0% | Verify current status before kickoff |
 | Antonio Williams | No tag | No matched report (not clearance) | 72.7% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
@@ -23,7 +23,6 @@ nflverse observations: 2026-11-07T22:38:20.882582+00:00; injury feed loaded: Tru
 | Deebo Samuel Sr. | Out | Week 9 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Michael Mayer | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 9 observation: Full Participation in Practice | 88.7% | Verify current status before kickoff |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |

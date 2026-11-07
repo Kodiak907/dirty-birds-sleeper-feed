@@ -1,7 +1,54 @@
 {
-  "generated_at_utc": "2026-11-07T22:38:21.300843+00:00",
+  "generated_at_utc": "2026-11-07T23:37:14.867332+00:00",
   "is_initial_baseline": false,
   "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-11-07T22:38:15.910370+00:00"
+  "roster_changes": [
+    {
+      "adds": [
+        "Keon Coleman"
+      ],
+      "drops": [
+        "Pat Bryant",
+        "Michael Mayer"
+      ],
+      "roster_id": 1,
+      "team": "Dirty Birds"
+    },
+    {
+      "adds": [
+        "Makai Lemon"
+      ],
+      "drops": [
+        "Tank Dell"
+      ],
+      "roster_id": 7,
+      "team": "JA’MARRTRIX"
+    },
+    {
+      "kind": "reserve_change",
+      "roster_id": 7,
+      "team": "JA’MARRTRIX"
+    },
+    {
+      "adds": [
+        "Kyle Monangai"
+      ],
+      "drops": [
+        "Roschon Johnson"
+      ],
+      "roster_id": 8,
+      "team": "DeeboSix0"
+    },
+    {
+      "adds": [
+        "Quentin Johnston"
+      ],
+      "drops": [
+        "Alvin Kamara"
+      ],
+      "roster_id": 9,
+      "team": "To Infinity and Bijan"
+    }
+  ],
+  "source_snapshot_utc": "2026-11-07T23:37:10.426944+00:00"
 }

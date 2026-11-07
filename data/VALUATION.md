@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-07T22:38:21.340331+00:00
-Sleeper snapshot: 2026-11-07T22:38:15.910370+00:00
+Generated: 2026-11-07T23:37:14.920689+00:00
+Sleeper snapshot: 2026-11-07T23:37:10.426944+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -21,15 +21,14 @@ The points below average actual fantasy scoring over completed Weeks 1–8, with
 | Isaiah Likely | TE | 92.00 | 11.50 | 7/8 |
 | C.J. Stroud | QB | 77.46 | 9.68 | 4/8 |
 | Jacksonville Jaguars | DEF | 66.00 | 8.25 | 7/8 |
+| Keon Coleman | WR | 56.70 | 7.09 | 7/8 |
 | Deebo Samuel Sr. | WR | 55.40 | 6.92 | 5/8 |
 | Will Reichard | K | 47.00 | 5.88 | 3/8 |
 | Jonah Coleman | RB | 39.60 | 4.95 | 3/8 |
 | Kaelon Black | RB | 29.20 | 3.65 | 7/8 |
-| Michael Mayer | TE | 26.10 | 3.26 | 5/8 |
 | A.J. Brown | WR | 14.60 | 1.82 | 3/8 |
 | Antonio Williams | WR | 7.90 | 0.99 | 1/8 |
 | Caleb Douglas | WR | 6.30 | 0.79 | 1/8 |
-| Pat Bryant | WR | 0.00 | 0.00 | 0/8 |
 | Seth McGowan | RB | 0.00 | 0.00 | 0/8 |
 | New Orleans Saints | DEF | -3.00 | -0.38 | 1/8 |
 
@@ -38,7 +37,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 5-3 | 123.30 | 12 |
+| Dirty Birds | 5-3 | 125.44 | 12 |
 | suck my dickerson | 6-2 | 116.48 | 1 |
 | Cokerthestroker | 6-2 | 115.08 | 3 |
 | JA’MARRTRIX | 2-6 | 112.65 | 5 |
@@ -46,7 +45,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | BigOlBoyle | 2-6 | 105.33 | 0 |
 | kfsn | 6-2 | 104.83 | 2 |
 | To Infinity and Bijan | 3-5 | 100.89 | 6 |
-| DeeboSix0 | 6-2 | 95.28 | 1 |
+| DeeboSix0 | 6-2 | 96.76 | 1 |
 | EmanAndYoMomma | 2-6 | 94.37 | 0 |
 | DANGER CLOSE | 3-5 | 91.86 | 1 |
 | CREAM MACHINE | 4-4 | 78.45 | 0 |

@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-07T22:38:24.407295+00:00",
+  "generated_at_utc": "2026-11-07T23:37:18.069090+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-07T19:21:35.904634+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-07T22:38:15.910370+00:00",
+  "snapshot_utc": "2026-11-07T23:37:10.426944+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -21,7 +21,6 @@
     "10": {
       "complete": true,
       "missing_projection": [
-        "Pat Bryant",
         "Jonah Coleman"
       ],
       "ppg": 133.2,
@@ -105,7 +104,7 @@
         "Kyren Williams",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 109.21,
+      "ppg": 108.74,
       "starters": [
         {
           "id": "9758",
@@ -164,11 +163,11 @@
           "ppg": 7.07
         },
         {
-          "id": "12492",
-          "name": "Pat Bryant",
-          "opponent": "LV",
+          "id": "11637",
+          "name": "Keon Coleman",
+          "opponent": "MIA",
           "position": "WR",
-          "ppg": 7.77
+          "ppg": 7.3
         },
         {
           "id": "13301",
@@ -261,7 +260,6 @@
       "missing_projection": [
         "Kirk Cousins",
         "Seth McGowan",
-        "Michael Mayer",
         "Zay Flowers"
       ],
       "ppg": 128.34,

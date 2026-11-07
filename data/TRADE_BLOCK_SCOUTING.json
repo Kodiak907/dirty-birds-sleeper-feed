@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-07T22:38:24.225863+00:00",
-  "source_snapshot_utc": "2026-11-07T22:38:15.910370+00:00",
+  "generated_at_utc": "2026-11-07T23:37:17.900276+00:00",
+  "source_snapshot_utc": "2026-11-07T23:37:10.426944+00:00",
   "source_market_as_of": "2026-11-07T14:54:35.992835+00:00",
   "source_projection_as_of": "2026-11-07T19:21:35.904634+00:00",
   "focus_assets": [
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 8856,
-  "market_screened": 2181,
+  "market_screened": 2315,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -29,6 +29,44 @@
       "asset": "A.J. Brown",
       "owned_now": true,
       "leads": [
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "3163",
+              "name": "Jared Goff",
+              "position": "QB"
+            },
+            {
+              "id": "4217",
+              "name": "George Kittle",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 4,
+          "opponent": "DANGER CLOSE ",
+          "our_lineup_delta_ppg": 4.48,
+          "their_lineup_delta_ppg": 0.88,
+          "value_paid_received_ratio": 0.805,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
         {
           "give": [
             {
@@ -151,28 +189,28 @@
               "position": "WR"
             },
             {
-              "id": "1166",
-              "name": "Kirk Cousins",
-              "position": "QB"
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
             }
           ],
           "receive": [
             {
-              "id": "3163",
-              "name": "Jared Goff",
-              "position": "QB"
+              "id": "4217",
+              "name": "George Kittle",
+              "position": "TE"
             },
             {
-              "id": "5022",
-              "name": "Dallas Goedert",
-              "position": "TE"
+              "id": "13274",
+              "name": "Germie Bernard",
+              "position": "WR"
             }
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.95,
-          "their_lineup_delta_ppg": 0.48,
-          "value_paid_received_ratio": 0.766,
+          "our_lineup_delta_ppg": 2.04,
+          "their_lineup_delta_ppg": 0.88,
+          "value_paid_received_ratio": 1.025,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -289,42 +327,9 @@
             "Full-PPR external values are not FFL half-PPR prices",
             "Injuries, playoff matchups and manager intent remain unverified"
           ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "13414",
-              "name": "Kaelon Black",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "3163",
-              "name": "Jared Goff",
-              "position": "QB"
-            }
-          ],
-          "opponent_roster_id": 4,
-          "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 1.52,
-          "their_lineup_delta_ppg": 1.7,
-          "value_paid_received_ratio": 1.058,
-          "our_extra_cut": null,
-          "opponent_extra_cut": "Brian Thomas Jr.",
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
         }
       ],
-      "candidate_count": 138
+      "candidate_count": 142
     },
     {
       "asset": "Patrick Mahomes",

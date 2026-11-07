@@ -1,15 +1,32 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-07T22:38:21.276952+00:00
-Sleeper snapshot: 2026-11-07T22:38:15.910370+00:00
+Generated: 2026-11-07T23:37:14.844715+00:00
+Sleeper snapshot: 2026-11-07T23:37:10.426944+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**8 transaction changes:** 6 completed, 0 pending/processing, 2 failed.
+
+- **NEW** · transaction `1424930684299935744` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Tank Dell → JA’MARRTRIX (#7)
+- **NEW** · transaction `1424930180371103744` · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Quentin Johnston → To Infinity and Bijan (#9) | Dropped: Alvin Kamara → To Infinity and Bijan (#9)
+- **NEW** · transaction `1424927135172194304` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Keon Coleman → Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
+- **NEW** · transaction `1424927083712278528` · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
+- **NEW** · transaction `1424925854152101888` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
+- **NEW** · transaction `1424835390904279040` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
+- **NEW** · transaction `1424711833285115904` · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | FAAB bid: $0
+- **NEW** · transaction `1424591486225244160` · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | FAAB bid: $0
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Keon Coleman → Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Quentin Johnston → To Infinity and Bijan (#9) | Dropped: Alvin Kamara → To Infinity and Bijan (#9)
+- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Tank Dell → JA’MARRTRIX (#7)
 - 2026-11-07T04:52:12.389715+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kirk Cousins → Dirty Birds (#1), Patrick Mahomes →     Victorious Secret (#5), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5) | Dropped: Kirk Cousins →     Victorious Secret (#5), Patrick Mahomes → Dirty Birds (#1), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1)
 - 2026-11-07T04:52:12.389715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: New Orleans Saints → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
 - 2026-11-06T17:50:03.503949+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Seth McGowan → Dirty Birds (#1) | Dropped: Buffalo Bills → Dirty Birds (#1)
@@ -27,14 +44,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jahan Dotson → DANGER CLOSE  (#4)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Dylan Sampson → CREAM MACHINE  (#2) | Dropped: Darren Waller → CREAM MACHINE  (#2)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Buffalo Bills → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
-- 2026-11-05T17:13:44.314111+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Brandon Aiyuk → Dirty Birds (#1)
-- 2026-11-05T14:57:52.761970+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Drew Stevens → DeeboSix0 (#8) | Dropped: Matt Gay → DeeboSix0 (#8)
-- 2026-11-05T14:57:52.761970+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: New York Giants → DeeboSix0 (#8) | Dropped: Cincinnati Bengals → DeeboSix0 (#8)
-- 2026-11-04T19:57:47.424051+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Drew Lock → CREAM MACHINE  (#2) | Dropped: Elijah Mitchell → CREAM MACHINE  (#2)
-- 2026-11-04T15:55:51.650866+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Gardner Minshew II → suck my dickerson (#11) | Dropped: Lamar Jackson → suck my dickerson (#11) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Chicago Bears → suck my dickerson (#11) | Dropped: Dontayvion Wicks → suck my dickerson (#11) | FAAB bid: $0
-- 2026-11-04T08:56:44.093218+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Adonai Mitchell → suck my dickerson (#11) | Dropped: Brandin Cooks → suck my dickerson (#11) | FAAB bid: $0
 
 ## Important limits
 

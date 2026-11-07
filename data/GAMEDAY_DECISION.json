@@ -74,11 +74,10 @@
   },
   "difference_ppg": -6.16,
   "explicit_excluded_ids": [
-    "12492",
     "13345",
     "5872"
   ],
-  "generated_at_utc": "2026-11-07T22:38:27.087871+00:00",
+  "generated_at_utc": "2026-11-07T23:37:21.679869+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
@@ -157,6 +156,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "11637",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Keon Coleman",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "1166",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Kirk Cousins",
@@ -170,15 +178,6 @@
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Will Reichard",
       "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "12492",
-      "model_handling": "exclude_explicit_unavailable_tag",
-      "name": "Pat Bryant",
-      "sleeper_injury_status": "IR",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -274,15 +273,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "9482",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Michael Mayer",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "9488",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Jaxon Smith-Njigba",
@@ -332,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-07T22:38:15.910370+00:00",
-  "source_availability_generated_at_utc": "2026-11-07T22:38:24.858285+00:00",
+  "snapshot_utc": "2026-11-07T23:37:10.426944+00:00",
+  "source_availability_generated_at_utc": "2026-11-07T23:37:18.736683+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
