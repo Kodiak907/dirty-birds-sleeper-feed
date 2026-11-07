@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-07T02:49:49.475337+00:00",
-  "source_snapshot_utc": "2026-11-07T02:49:39.147208+00:00",
-  "source_market_as_of": "2026-11-06T15:00:22.761469+00:00",
+  "generated_at_utc": "2026-11-07T03:49:31.283365+00:00",
+  "source_snapshot_utc": "2026-11-07T03:49:22.358556+00:00",
+  "source_market_as_of": "2026-11-07T03:49:27.974267+00:00",
   "source_projection_as_of": "2026-11-07T01:38:09.032924+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 17712,
-  "market_screened": 4690,
+  "market_screened": 4709,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -29,6 +29,39 @@
       "asset": "A.J. Brown",
       "owned_now": true,
       "leads": [
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "5967",
+              "name": "Tony Pollard",
+              "position": "RB"
+            }
+          ],
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 1.59,
+          "their_lineup_delta_ppg": 1.38,
+          "value_paid_received_ratio": 1.187,
+          "our_extra_cut": null,
+          "opponent_extra_cut": "Adonai Mitchell",
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
         {
           "give": [
             {
@@ -58,45 +91,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
           "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.014,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "5967",
-              "name": "Tony Pollard",
-              "position": "RB"
-            },
-            {
-              "id": "3271",
-              "name": "Tyler Higbee",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 11,
-          "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 1.59,
-          "their_lineup_delta_ppg": 1.38,
-          "value_paid_received_ratio": 1.108,
+          "value_paid_received_ratio": 0.985,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -106,7 +101,7 @@
           ]
         }
       ],
-      "candidate_count": 4
+      "candidate_count": 5
     },
     {
       "asset": "Patrick Mahomes",
