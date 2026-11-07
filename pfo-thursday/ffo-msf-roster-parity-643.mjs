@@ -48,7 +48,7 @@ export function joinVerifiedPFOIdentity643({
   else byName.set(key,p);
  }
  for(const key of ambiguous)byName.delete(key);
- const rosterSeen=new Set(),out=[],withheld=[];
+ const rosterSeen=new Set(),mappedIds=new Set(),out=[],withheld=[];
  for(const p of rosterPlayers){
   const id=String(p?.player_id??p?.id??'');
   const pos=normPos(p?.position),key=nameKey(p?.name)+'|'+canon(p?.team)+'|'+pos;
@@ -65,6 +65,10 @@ export function joinVerifiedPFOIdentity643({
    withheld.push({sleeperPlayerId:id,reason:'no_unique_same_team_position_msf_identity'});
    continue;
   }
+  if(mappedIds.has(String(mapped.id))){
+   withheld.push({sleeperPlayerId:id,reason:'msf_identity_already_assigned_to_other_roster_player'});continue;
+  }
+  mappedIds.add(String(mapped.id));
   const result=forecastBrowserSourceCandidate643({
    player:{name:p.name,team:p.team,position:pos},row:mapped.row,
    rules,uniqueMSFIdentityVerified:true
