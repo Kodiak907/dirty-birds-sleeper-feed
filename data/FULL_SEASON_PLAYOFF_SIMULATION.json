@@ -19,6 +19,8 @@
     },
     {
       "players": [
+        "Kirk Cousins",
+        "Seth McGowan",
         "Michael Mayer",
         "Zay Flowers"
       ],
@@ -174,13 +176,6 @@
       ],
       "roster_id": 5,
       "week": 11
-    },
-    {
-      "players": [
-        "Kirk Cousins"
-      ],
-      "roster_id": 5,
-      "week": 13
     },
     {
       "players": [
@@ -402,7 +397,7 @@
     14
   ],
   "future_roster_assumption": "Current roster held fixed; no future pickups, trades, or injuries simulated",
-  "generated_at_utc": "2026-11-06T16:25:08.069371+00:00",
+  "generated_at_utc": "2026-11-07T16:12:40.711985+00:00",
   "historical_variability_audit": {
     "completed_weeks": 8,
     "leave_one_out_team_residual_sd": 24.42,
@@ -420,191 +415,191 @@
     "Model does not simulate correlated NFL player scoring or game lock time.",
     "Missing weekly player forecasts are transparently replaced by ROS PPG when available."
   ],
-  "projection_as_of": "2026-11-06T13:45:26.306900+00:00",
+  "projection_as_of": "2026-11-07T13:29:03.382099+00:00",
   "random_seed": 2808,
   "remaining_week_assumption": "Weeks through 14 are remaining regular season; no tie games modeled",
-  "roster_snapshot_as_of": "2026-11-06T15:50:52.815615+00:00",
+  "roster_snapshot_as_of": "2026-11-07T15:38:32.530704+00:00",
   "scoring_uncertainty": "Independent Normal(mean=weekly optimal lineup projection, sd=24.42), using descriptive FFL historical weekly residuals, NOT forecast error",
   "season_week": 9,
   "simulations": 10000,
   "status": "complete_schedule_conditional_model",
   "teams": [
     {
-      "bye_probability": 0.6514,
-      "championship_probability": 0.3086,
-      "final_probability": 0.5175,
+      "bye_probability": 0.6657,
+      "championship_probability": 0.3123,
+      "final_probability": 0.5265,
       "name": "kfsn",
-      "playoff_probability": 0.998,
+      "playoff_probability": 0.9979,
       "record": "6-2",
       "roster_id": 6,
       "seed_probabilities": {
-        "1": 0.3757,
-        "2": 0.2757,
-        "3": 0.174,
-        "4": 0.108,
-        "5": 0.0537,
-        "6": 0.0109
+        "1": 0.3833,
+        "2": 0.2824,
+        "3": 0.1723,
+        "4": 0.1032,
+        "5": 0.0469,
+        "6": 0.0098
       }
     },
     {
-      "bye_probability": 0.2382,
-      "championship_probability": 0.2144,
-      "final_probability": 0.3998,
+      "bye_probability": 0.1944,
+      "championship_probability": 0.1984,
+      "final_probability": 0.3616,
       "name": "Dirty Birds",
-      "playoff_probability": 0.9772,
+      "playoff_probability": 0.9667,
       "record": "5-3",
       "roster_id": 1,
       "seed_probabilities": {
-        "1": 0.0828,
-        "2": 0.1554,
-        "3": 0.2283,
-        "4": 0.2431,
-        "5": 0.2116,
-        "6": 0.056
+        "1": 0.063,
+        "2": 0.1314,
+        "3": 0.2125,
+        "4": 0.2501,
+        "5": 0.2417,
+        "6": 0.068
       }
     },
     {
-      "bye_probability": 0.5137,
-      "championship_probability": 0.1777,
-      "final_probability": 0.3882,
+      "bye_probability": 0.5313,
+      "championship_probability": 0.1819,
+      "final_probability": 0.3972,
       "name": "Cokerthestroker",
-      "playoff_probability": 0.9935,
+      "playoff_probability": 0.994,
       "record": "6-2",
       "roster_id": 12,
       "seed_probabilities": {
-        "1": 0.2665,
-        "2": 0.2472,
-        "3": 0.1954,
-        "4": 0.1543,
-        "5": 0.1121,
-        "6": 0.018
+        "1": 0.2738,
+        "2": 0.2575,
+        "3": 0.1974,
+        "4": 0.145,
+        "5": 0.103,
+        "6": 0.0173
       }
     },
     {
-      "bye_probability": 0.4013,
-      "championship_probability": 0.1645,
-      "final_probability": 0.3425,
+      "bye_probability": 0.4109,
+      "championship_probability": 0.1688,
+      "final_probability": 0.3491,
       "name": "suck my dickerson",
-      "playoff_probability": 0.9912,
+      "playoff_probability": 0.9908,
       "record": "6-2",
       "roster_id": 11,
       "seed_probabilities": {
-        "1": 0.2021,
-        "2": 0.1992,
-        "3": 0.2105,
-        "4": 0.1948,
-        "5": 0.1554,
-        "6": 0.0292
+        "1": 0.2075,
+        "2": 0.2034,
+        "3": 0.2188,
+        "4": 0.1877,
+        "5": 0.1458,
+        "6": 0.0276
       }
     },
     {
-      "bye_probability": 0.1943,
-      "championship_probability": 0.0478,
-      "final_probability": 0.1552,
+      "bye_probability": 0.1965,
+      "championship_probability": 0.0477,
+      "final_probability": 0.1563,
       "name": "DeeboSix0",
-      "playoff_probability": 0.9812,
+      "playoff_probability": 0.981,
       "record": "6-2",
       "roster_id": 8,
       "seed_probabilities": {
-        "1": 0.0729,
-        "2": 0.1214,
-        "3": 0.1822,
-        "4": 0.2587,
-        "5": 0.2826,
-        "6": 0.0634
+        "1": 0.0723,
+        "2": 0.1242,
+        "3": 0.188,
+        "4": 0.2663,
+        "5": 0.2675,
+        "6": 0.0627
       }
     },
     {
       "bye_probability": 0.0,
-      "championship_probability": 0.043,
-      "final_probability": 0.0831,
+      "championship_probability": 0.0437,
+      "final_probability": 0.085,
       "name": "JA\u2019MARRTRIX",
-      "playoff_probability": 0.2993,
+      "playoff_probability": 0.2992,
       "record": "2-6",
       "roster_id": 7,
       "seed_probabilities": {
         "1": 0.0,
         "2": 0.0,
-        "3": 0.0007,
-        "4": 0.0061,
-        "5": 0.0517,
-        "6": 0.2408
+        "3": 0.0008,
+        "4": 0.0069,
+        "5": 0.0532,
+        "6": 0.2383
       }
     },
     {
       "bye_probability": 0.0005,
-      "championship_probability": 0.0335,
-      "final_probability": 0.079,
+      "championship_probability": 0.0362,
+      "final_probability": 0.0866,
       "name": "    Victorious Secret",
-      "playoff_probability": 0.3334,
+      "playoff_probability": 0.3318,
       "record": "3-5",
       "roster_id": 5,
       "seed_probabilities": {
         "1": 0.0,
         "2": 0.0005,
-        "3": 0.0057,
-        "4": 0.0202,
-        "5": 0.0742,
-        "6": 0.2328
+        "3": 0.0061,
+        "4": 0.023,
+        "5": 0.0784,
+        "6": 0.2238
       }
     },
     {
-      "bye_probability": 0.0006,
-      "championship_probability": 0.0048,
-      "final_probability": 0.0168,
+      "bye_probability": 0.0007,
+      "championship_probability": 0.0058,
+      "final_probability": 0.0195,
       "name": "CREAM MACHINE ",
-      "playoff_probability": 0.2331,
+      "playoff_probability": 0.2492,
       "record": "4-4",
       "roster_id": 2,
       "seed_probabilities": {
-        "1": 0.0,
+        "1": 0.0001,
         "2": 0.0006,
-        "3": 0.0029,
-        "4": 0.0122,
-        "5": 0.0388,
-        "6": 0.1786
+        "3": 0.0037,
+        "4": 0.0149,
+        "5": 0.0428,
+        "6": 0.1871
       }
     },
     {
       "bye_probability": 0.0,
       "championship_probability": 0.0042,
-      "final_probability": 0.0127,
+      "final_probability": 0.0131,
       "name": "To Infinity and Bijan",
-      "playoff_probability": 0.1315,
+      "playoff_probability": 0.128,
       "record": "3-5",
       "roster_id": 9,
       "seed_probabilities": {
         "1": 0.0,
         "2": 0.0,
         "3": 0.0002,
-        "4": 0.002,
-        "5": 0.014,
-        "6": 0.1153
+        "4": 0.0022,
+        "5": 0.0147,
+        "6": 0.1109
       }
     },
     {
       "bye_probability": 0.0,
-      "championship_probability": 0.0011,
+      "championship_probability": 0.0008,
       "final_probability": 0.0036,
       "name": "BigOlBoyle",
-      "playoff_probability": 0.0392,
+      "playoff_probability": 0.0388,
       "record": "2-6",
       "roster_id": 3,
       "seed_probabilities": {
         "1": 0.0,
         "2": 0.0,
-        "3": 0.0,
-        "4": 0.0004,
-        "5": 0.0048,
-        "6": 0.034
+        "3": 0.0001,
+        "4": 0.0005,
+        "5": 0.0047,
+        "6": 0.0335
       }
     },
     {
       "bye_probability": 0.0,
-      "championship_probability": 0.0002,
-      "final_probability": 0.0007,
+      "championship_probability": 0.0001,
+      "final_probability": 0.0008,
       "name": "DANGER CLOSE ",
-      "playoff_probability": 0.0138,
+      "playoff_probability": 0.0141,
       "record": "3-5",
       "roster_id": 4,
       "seed_probabilities": {
@@ -613,15 +608,15 @@
         "3": 0.0001,
         "4": 0.0002,
         "5": 0.0008,
-        "6": 0.0127
+        "6": 0.013
       }
     },
     {
       "bye_probability": 0.0,
-      "championship_probability": 0.0002,
-      "final_probability": 0.0009,
+      "championship_probability": 0.0001,
+      "final_probability": 0.0007,
       "name": "EmanAndYoMomma",
-      "playoff_probability": 0.0086,
+      "playoff_probability": 0.0085,
       "record": "2-6",
       "roster_id": 10,
       "seed_probabilities": {
@@ -629,8 +624,8 @@
         "2": 0.0,
         "3": 0.0,
         "4": 0.0,
-        "5": 0.0003,
-        "6": 0.0083
+        "5": 0.0005,
+        "6": 0.008
       }
     }
   ],
