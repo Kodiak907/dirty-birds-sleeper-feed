@@ -1,15 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-07T04:52:12.389715+00:00
-Sleeper snapshot: 2026-11-07T04:52:07.715635+00:00
+Generated: 2026-11-07T05:48:00.072735+00:00
+Sleeper snapshot: 2026-11-07T05:47:56.040764+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1424650117750779904` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: New Orleans Saints → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
-- **NEW** · transaction `1424643656148684800` · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kirk Cousins → Dirty Birds (#1), Patrick Mahomes →     Victorious Secret (#5), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5) | Dropped: Kirk Cousins →     Victorious Secret (#5), Patrick Mahomes → Dirty Birds (#1), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

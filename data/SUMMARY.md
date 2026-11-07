@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-07T04:52:07.715635+00:00
+Updated: 2026-11-07T05:47:56.040764+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,12 +19,7 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 1: added Kirk Cousins, Jacksonville Jaguars, New Orleans Saints; dropped Patrick Mahomes, Christian Kirk, Minnesota Vikings
-- lineup_change â roster/transaction 1
-- Roster 5: added Patrick Mahomes, Minnesota Vikings; dropped Kirk Cousins, Jacksonville Jaguars
-- lineup_change â roster/transaction 5
-- Transaction 1424650117750779904: free_agent / complete / rosters [1] / adds {'NO': 1} / drops {'4950': 1} / FAAB bid None
-- Transaction 1424643656148684800: trade / complete / rosters [1, 5] / adds {'1166': 1, '4046': 5, 'JAX': 1, 'MIN': 5} / drops {'1166': 5, '4046': 1, 'JAX': 5, 'MIN': 1} / FAAB bid None
+- lineup_change â roster/transaction 7
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
