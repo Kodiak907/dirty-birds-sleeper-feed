@@ -38,7 +38,7 @@ jobs:
   deploy-isolated-accuracy-health-worker:
     name: Deploy new independent accuracy health Worker, never PFO Pages
     needs: verify
-    if: github.ref == 'refs/heads/pfo-638-642-accuracy-stack-20261106' && github.event_name == 'workflow_dispatch'
+    if: github.ref == 'refs/heads/pfo-638-642-accuracy-stack-20261106' && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.event.head_commit.message == 'PFO Accuracy Worker: one-time authenticated deploy'))
     environment: pfo-preview
     runs-on: ubuntu-24.04
     timeout-minutes: 12
