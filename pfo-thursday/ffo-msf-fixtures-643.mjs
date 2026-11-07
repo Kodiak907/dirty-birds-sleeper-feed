@@ -13,10 +13,13 @@ const team=x=>str(x).toUpperCase();
 const validTeam=x=>/^[A-Z]{2,3}$/.test(x);
 const posInt=x=>Number.isInteger(Number(x))?Number(x):null;
 const PLAYABLE=new Set(['SCHEDULED','NOT_STARTED','PRE_GAME']);
+// MSF v2 uses UNPLAYED for a scheduled game that has not begun.
+const PROVIDER_UPCOMING=new Set([...PLAYABLE,'UNPLAYED']);
+const BLOCKED_SCHEDULE=new Set(['CANCELED','CANCELLED','POSTPONED','SUSPENDED','ABANDONED']);
 const FINISHED=new Set(['COMPLETED','FINAL','FINAL_OVERTIME','FINAL_OT']);
 const normalizedStatus=s=>{
  s=team(s);
- return PLAYABLE.has(s)?(s==='NOT_STARTED'?'NOT_STARTED':s):
+ return PROVIDER_UPCOMING.has(s)?(s==='UNPLAYED'?'NOT_STARTED':s):
   FINISHED.has(s)?'FINAL':null;
 };
 function sourceAuthorized(e,now){
@@ -54,8 +57,9 @@ export function normalizeMSF2026Fixtures({payload,evidence,serverNow=new Date()}
    g?.gameStartTime??g?.kickoffAt);
   const status=normalizedStatus(g?.playedStatus??g?.status??item?.playedStatus??item?.status);
   const gameSeason=g?.season??g?.seasonYear??null;
+  const scheduleStatus=team(g?.scheduleStatus??item?.scheduleStatus??'');
   if(!id||week===null||week<1||week>18||!validTeam(home)||!validTeam(away)||
-   home===away||!kickoffAt||!status||
+   home===away||!kickoffAt||!status||BLOCKED_SCHEDULE.has(scheduleStatus)||
    (gameSeason!==null&&Number(gameSeason)!==2026)){
    withheld++;issues.push('invalid_or_missing_fixture_identity_time_or_status');continue;
   }
