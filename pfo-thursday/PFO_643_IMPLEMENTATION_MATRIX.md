@@ -61,3 +61,11 @@ Using preexisting, authorized MSF access, build a **non-public trusted Worker-si
 - Added a no-deployment local Chromium/browser regression workflow for navigation, matchup, mobile, trade and GameCast source checks.
 
 **Still blocked:** trusted live MSF provider fixture/player/final evidence, real browser/server model parity, cron and first-write immutable snapshots, certified final scores, authenticated accuracy UI, integrated cross-tool fixes, real iPhone QA and ONE protected preview release. No new costs, TinyFish, FFOI integration, Commissioner D1 or public-demo changes.
+
+## Browser and performance QA checkpoint — November 6 PT
+
+- Local Chromium/browser, lineup, trade, mobile-layout and GameCast baseline regressions passed in [Action #42329114977](https://github.com/Kodiak907/dirty-birds-sleeper-feed/actions/runs/42329114977). This is **not** real-device iPhone QA, and no Cloudflare Pages release occurred.
+- The first browser QA run revealed a stale legacy assertion expecting the D/ST companion asset at version 627, whereas actual frozen PFO 6.36 serves version 636. The test was corrected; production source was not changed to satisfy the stale check.
+- Start/Sit and the Interactive Lineup Lab now memoize identical MSF-based opponent allowances per position/source data array rather than recomputing over every player's games on every comparison. Cache invalidates on provider data refresh; tests check frozen-rule arithmetic, re-use, stale-source invalidation, and withholding without FFL scoring rules.
+- Existing Tuesday 08:30 PT week advancement and all official ten starter slots remain unchanged and covered by tests.
+- These QA outcomes confirm isolated regression behavior only. Live provider access, real PFO dashboard, complete scores, scheduled snapshots, Commissioner/demo isolation checks and iPhone Safari proof remain **NOT PASSED**.
