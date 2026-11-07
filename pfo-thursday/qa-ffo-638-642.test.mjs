@@ -128,7 +128,7 @@ test('6.38 first accepted player/game projection preserved on repeated saves',as
 test('6.38 batch captures verified fixture only with trusted PFO forecast adapter',async()=>{
  const {db,calls}=fakeDb();
  const other={...fixture,gameId:'163700',id:'163700',verified:false};
- const out=await runPregameCapture({db,serverNow:now,
+ const out=await runPregameCapture({db,serverNow:new Date('2026-11-22T21:00:00Z'),
   gameFeed:async()=>[fixture,other],
   forecastFeed:async(game)=>[{...forecast,gameId:game.gameId}]
  });

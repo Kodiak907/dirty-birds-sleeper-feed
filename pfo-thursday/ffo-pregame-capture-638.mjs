@@ -3,6 +3,7 @@
  * This is a server-side library, not a browser form or a public write API.
  * Does not scrape Sleeper, infer kickoffs, or use Commissioner D1 storage.
  */
+import {selectEligiblePregameFixtures} from './ffo-msf-fixtures-643.mjs';
 export const FFL_RULES_VERSION='2026-11-05-ffl-screen-recording-verified-v4';
 export const ACCURACY_SCHEMA='FFO_PFO_ACCURACY_LEDGER_V1';
 const POS=new Set(['QB','RB','WR','TE','K','DEF']);
@@ -96,8 +97,13 @@ export async function runPregameCapture({db,gameFeed,forecastFeed,serverNow=new 
  const fixtures=await gameFeed();
  if(!Array.isArray(fixtures)||fixtures.length===0)
   return {status:'blocked',reason:'no_verified_upcoming_msf_games',captured:0};
- let stored=0,preserved=0,withheld=0;
- for(const game of fixtures.slice(0,32)){
+ const due=selectEligiblePregameFixtures(fixtures,{serverNow,minLeadMinutes:15,maxLeadMinutes:30});
+ if(!due.eligible.length)return {status:'no_eligible_kickoff_windows',
+  captured:0,preserved:0,withheld:due.withheld?.length||0,
+  reason:due.reason||'capture_runs_only_15_to_30_minutes_before_verified_kickoff',
+  cutoffMinutes:15,source:'verified_msf_fixtures'};
+ let stored=0,preserved=0,withheld=due.withheld.length;
+ for(const game of due.eligible.slice(0,32)){
   if(game?.verified!==true)continue;
   const forecasts=await forecastFeed(game);
   if(!Array.isArray(forecasts)){withheld++;continue}

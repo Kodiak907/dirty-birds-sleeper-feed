@@ -7,7 +7,13 @@
  const fmt=(x,d=1)=>typeof x==='number'&&Number.isFinite(x)?x.toFixed(d):'—';
  const state={first:'',second:'',horizon:'WEEK',nonce:0,week:null};
  const home=()=>document.getElementById('pfo63-startsit');
- const weekNow=()=>state.week||(typeof pfo52Week!=='undefined'&&Number.isInteger(pfo52Week)?pfo52Week:typeof pfo52Cur==='function'?pfo52Cur():Number(window.dbNflWeek||9));
+ // PFO 6.43: do not let the stale previous-week selector override the
+ // Tuesday 08:30 PT canonical rollover. Respect an explicitly selected week.
+ const weekNow=()=>state.week||(typeof pfo52ManualWeek!=='undefined'&&pfo52ManualWeek&&
+  typeof pfo52Week!=='undefined'&&Number.isInteger(pfo52Week)?pfo52Week:
+  typeof pfo52Cur==='function'?pfo52Cur():
+  typeof pfo52Week!=='undefined'&&Number.isInteger(pfo52Week)?pfo52Week:
+  Number(window.dbNflWeek||9));
  const pos=p=>String(p?.position||'').toUpperCase().replace(/^(D\/ST|DST)$/,'DEF');
  const reportStats=p=>typeof pfo50StatsFor==='function'?pfo50StatsFor(p.id):null;
  function roster(){

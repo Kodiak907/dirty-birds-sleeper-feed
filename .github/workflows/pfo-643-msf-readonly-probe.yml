@@ -1,0 +1,67 @@
+name: PFO 6.43 licensed MSF read-only provider verification (NO DEPLOY)
+on:
+  push:
+    branches: [pfo-643-unified-production-upgrade-20261106]
+    paths: ['.github/workflows/pfo-643-msf-readonly-probe.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-643-msf-one-shot-diagnostics
+  cancel-in-progress: false
+jobs:
+  licensed-provider-probe:
+    name: Single-call authorized MSF fixture verification
+    runs-on: ubuntu-24.04
+    environment: pfo-preview
+    timeout-minutes: 5
+    env:
+      MSF_API_KEY: ${{ secrets.MSF_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm trusted provider functions cannot read / write D1
+        run: |
+          set -euo pipefail
+          node --test pfo-thursday/qa-pfo-643-trusted-msf.test.mjs
+          node --check pfo-thursday/ffo-msf-trusted-read-643.mjs
+          test ! -f pfo-thursday/.dev.vars
+      - name: One authorized provider read if already configured and US egress confirmed
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "### PFO 6.43 licensed MSF, no-deploy access probe" >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$MSF_API_KEY" ]; then
+            echo "BLOCKED: MSF_API_KEY not available as a GitHub Actions secret in the pfo-preview environment. Existing Cloudflare Pages secret may still exist; no credential values requested or copied." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # India/routing restriction: remote provider access only with positively verified US egress.
+          trace="$(curl -fsS --retry 0 --max-time 8 https://www.cloudflare.com/cdn-cgi/trace || true)"
+          loc="$(printf '%s\n' "$trace" | awk -F= '$1=="loc"{print $2}' | tr -d '\r')"
+          if [ "$loc" != "US" ]; then
+            echo "HELD: runner egress country not affirmatively verified US; no MSF request performed." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # Exactly one direct MSF HTTP GET with no retries; no credential or raw body logs.
+          node --input-type=module <<'NODE'
+          import {appendFileSync} from 'node:fs';
+          import {readTrustedMSF2026} from './pfo-thursday/ffo-msf-trusted-read-643.mjs';
+          const r=await readTrustedMSF2026({
+           env:{MSF_API_KEY:process.env.MSF_API_KEY},
+           feed:'fixtures',team:'BUF',now:new Date()
+          });
+          const summary={status:r.status,reason:r.reason,
+           providerHttpStatus:r.providerHttpStatus??null,gameCount:r.gameCount??0,
+           withheld:r.withheld??null,issues:r.issues??[],
+           scoringCertified:false,forecastParityVerified:false,
+           accuracyWritesEnabled:false,previewDeployed:false};
+          const line='MSF_PROBE_REDACTED='+JSON.stringify(summary);
+          console.log(line);
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,'\n'+line+'\n');
+          NODE
+      - name: Preserve release boundary
+        run: echo "No Worker deployment, no Pages deployment, no D1 write, no source publication, no FFOI, no Commissioner access."

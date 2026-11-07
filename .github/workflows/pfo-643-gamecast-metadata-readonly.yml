@@ -1,0 +1,64 @@
+name: PFO 6.43 existing GameCast Worker metadata inspection (NO DEPLOY)
+on:
+  push:
+    branches: [pfo-643-unified-production-upgrade-20261106]
+    paths: ['.github/workflows/pfo-643-gamecast-metadata-readonly.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-643-gamecast-worker-readonly
+  cancel-in-progress: false
+jobs:
+  gamecast-private-bindings:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: pfo-preview
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Inspect only existing GameCast Worker binding NAMES, never values
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "GAMECAST_METADATA=existing_cloudflare_actions_token_unavailable" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          trace="$(curl -fsS --retry 0 --max-time 8 https://www.cloudflare.com/cdn-cgi/trace || true)"
+          country="$(printf '%s\n' "$trace" | awk -F= '$1=="loc"{print $2}' | tr -d '\r')"
+          if [ "$country" != "US" ]; then
+            echo "GAMECAST_METADATA=withheld_US_egress_not_verified" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          node --input-type=module <<'NODE'
+          import {appendFileSync} from 'node:fs';
+          const result={status:'blocked',worker:'ffo-gamecast-api-staging',
+           scriptContentRead:false,secretValuesRead:false,
+           deployPerformed:false,msfProviderActuallyFetched:false,
+           commissionerDBTouched:false};
+          try{
+           const endpoint='https://api.cloudflare.com/client/v4/accounts/5cc05345c4f2bc274e5db46f647b2900/workers/scripts/ffo-gamecast-api-staging/settings';
+           const r=await fetch(endpoint,{method:'GET',redirect:'error',
+            headers:{authorization:'Bearer '+process.env.CLOUDFLARE_API_TOKEN,
+             accept:'application/json'},signal:AbortSignal.timeout(12000)});
+           result.httpStatus=r.status;
+           if(r.status===200){
+            const json=await r.json();
+            const bindings=json?.result?.bindings;
+            if(json?.success===true&&Array.isArray(bindings)){
+             result.status='binding_names_inspected';
+             result.MSF_API_KEY_binding_name_present=bindings.some(x=>x?.name==='MSF_API_KEY');
+             result.MSF_secret_type=bindings.some(x=>x?.name==='MSF_API_KEY'&&
+              ['secret_text','secret_key'].includes(String(x?.type||'')));
+             result.internalStatsProviderConfiguredByBindingName=result.MSF_API_KEY_binding_name_present;
+             result.apiEntitlementNotVerified=true;
+            }else result.status='binding_metadata_unavailable';
+           }else result.status='existing_token_lacks_script_metadata_permission_or_worker_unavailable';
+          }catch{result.status='read_failed_without_credential_exposure'}
+          const safe='PFO_643_GAMECAST_METADATA='+JSON.stringify(result);
+          console.log(safe);
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,safe+'\n');
+          NODE
+      - name: No-deployment boundary
+        run: echo "No Cloudflare script mutation, no provider request, no secret values, no D1 writes, no FFOI, no public-demo changes."
