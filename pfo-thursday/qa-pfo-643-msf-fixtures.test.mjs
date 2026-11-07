@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {normalizeMSF2026Fixtures,selectEligiblePregameFixtures}
  from './ffo-msf-fixtures-643.mjs';
-import {validatePregameCapture,FFL_RULES_VERSION}
+import {validatePregameCapture,runPregameCapture,FFL_RULES_VERSION}
  from './ffo-pregame-capture-638.mjs';
 
 const now=new Date('2026-11-08T18:00:00Z');
@@ -89,4 +89,17 @@ test('normalization output can enter existing immutable capture validator, no wr
  assert.equal(result.accepted,true);
  assert.equal(result.record.kickoffAt,'2026-11-08T18:25:00.000Z');
  assert.equal(result.record.certified,false);
+});
+
+test('capture runner refuses a seven-day-early fixture before calling any model or storage',async()=>{
+ let forecastCalls=0,writeCalls=0;
+ const db={prepare(){writeCalls++;throw Error('writes must be skipped')}};
+ const gameRecord=normalize([game('g101','2026-11-08T18:25:00Z')]).fixtures[0];
+ const result=await runPregameCapture({db,serverNow:new Date('2026-11-06T18:00:00Z'),
+  gameFeed:async()=>[gameRecord],
+  forecastFeed:async()=>{forecastCalls++;return [];}});
+ assert.equal(result.status,'no_eligible_kickoff_windows');
+ assert.equal(result.captured,0);
+ assert.equal(forecastCalls,0);
+ assert.equal(writeCalls,0);
 });
