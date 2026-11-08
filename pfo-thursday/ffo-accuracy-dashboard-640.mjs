@@ -4,6 +4,7 @@
  */
 import {auditFFLProjectionAccuracy} from './ffo-projection-accuracy-audit-637.mjs';
 import {FFL_RULES_VERSION} from './ffo-pregame-capture-638.mjs';
+import {reconcileFinalCorrections643} from './ffo-accuracy-correction-view-643.mjs';
 const STATUSES=new Set(['research_metrics_only','no_verified_pregame_pairs']);
 const getRows=async(db,sql)=>{
  const result=await db.prepare(sql).all();
@@ -66,13 +67,96 @@ export async function readAccuracyDashboard(db){
    getRows(db,'SELECT payload_json FROM pfo_accuracy_final_certificates ORDER BY certified_at DESC LIMIT 15000'),
    getRows(db,'SELECT payload_json FROM pfo_accuracy_verified_games ORDER BY week DESC LIMIT 1000')
   ]);
-  // NULL or corrupt payloads are never silently converted to a zero-point score.
+  // A LIMIT boundary can hide earlier entries. Withhold instead of
+  // calculating deceptively complete accuracy from a truncated ledger.
+  if(f.length>=15000||c.length>=15000||g.length>=1000){
+   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+    status:'blocked',reason:'accuracy_ledger_query_limit_reached',
+    measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+    readOnly:true,modelApprovedForDeployment:false};
+  }
+  // Any malformed record means results may have been biased by missing truth.
   const validF=f.map(x=>parse(x)).filter(Boolean),validC=c.map(x=>parse(x)).filter(Boolean),
    validG=g.map(x=>parse(x)).filter(Boolean);
+  if(validF.length!==f.length||validC.length!==c.length||validG.length!==g.length){
+   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+    status:'blocked',reason:'incomplete_or_corrupt_primary_accuracy_ledger',
+    measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+    ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
+     discardedUnreadableRows:f.length-validF.length+c.length-validC.length+g.length-validG.length},
+    readOnly:true,modelApprovedForDeployment:false};
+  }
+  // 6.43: correction history is OPTIONAL before the separate D1 migration,
+  // but never silently claim that an untracked revised actual is certified.
+  const schema=await getRows(db,
+   "SELECT name FROM sqlite_master WHERE type='table' AND name='pfo_accuracy_final_revisions' LIMIT 1");
+  const revisionSchemaPresent=schema.some(x=>x.name==='pfo_accuracy_final_revisions');
+  let actuals=validC,correctionStatus='not_migrated_or_unavailable',correctionDetails=null;
+  let revisionRows=0,unreadableRevisions=0;
+  if(revisionSchemaPresent){
+   const rows=await getRows(db,
+    'SELECT payload_json FROM pfo_accuracy_final_revisions ORDER BY certified_at DESC LIMIT 15000');
+   revisionRows=rows.length;
+   const parsed=rows.map(x=>parse(x)).filter(Boolean);
+   unreadableRevisions=rows.length-parsed.length;
+   if(unreadableRevisions>0||rows.length>=15000){
+    return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+     status:'blocked',reason:'incomplete_or_corrupt_correction_revision_ledger',
+     measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+     readOnly:true,modelApprovedForDeployment:false};
+   }
+   const reviewed=reconcileFinalCorrections643({
+    originals:validC,revisions:parsed,rulesVersion:FFL_RULES_VERSION});
+   if(reviewed.status==='correction_integrity_blocked'){
+    return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+     status:'blocked',reason:'correction_revision_integrity_unverified',
+     measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+     readOnly:true,modelApprovedForDeployment:false};
+   }
+   actuals=reviewed.certificates;
+   correctionStatus=reviewed.status;
+   correctionDetails={applied:reviewed.revisionsApplied,
+    correctedPlayerGames:reviewed.correctedPlayerGames,
+    withheldPairs:reviewed.withheldKeys.length,
+    issues:reviewed.issues};
+  }
+  // 6.43 accuracy uses ONLY independently witnessed live PFO browser
+  // forecasts. The earlier 6.37 research audit still accepts its own
+  // explicit historical fixture inputs; that never authorizes the dashboard
+  // to treat unproven past forecasts as measured PFO 6.43 accuracy.
+  const trustworthy=validF.filter(f=>{
+   const witness=f?.parityWitness;
+   return f?.sourceEvidence==='verified_live_pfo_636_model_parity'&&
+    witness?.authenticatedSameFixture===true&&
+    typeof witness.verifierRunId==='string'&&witness.verifierRunId.length>0&&
+    typeof witness.scoringContractSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.scoringContractSha256)&&
+    typeof witness.browserSourceSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.browserSourceSha256)&&
+    typeof witness.serverSourceSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.serverSourceSha256)&&
+    witness.sourceAsOfUtc===f.sourceAsOf&&
+    Number.isFinite(Date.parse(witness.verifiedAtUtc??''))&&
+    Number.isFinite(Date.parse(witness.browserObservedAtUtc??''))&&
+    Date.parse(witness.verifiedAtUtc)<=Date.parse(f.capturedAt)&&
+    Date.parse(witness.browserObservedAtUtc)<=Date.parse(witness.verifiedAtUtc);
+  });
+  const dropped=validF.length-trustworthy.length;
   const report=reportAccuracyFromVerifiedRecords({
-   forecasts:validF,certificates:validC,games:validG});
-  return {...report,ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
-   discardedUnreadableRows:f.length-validF.length+c.length-validC.length+g.length-validG.length}};
+   forecasts:trustworthy,certificates:actuals,games:validG});
+  return {...report,
+   sourceProvenance:{liveModelAttestedForecasts:trustworthy.length,
+    unattestedForecastsWithheld:dropped,
+    provenanceGate:'same_source_live_PFO_636_browser_and_server'},
+   exclusions:{...report.exclusions,
+    ...(dropped?{missing_643_live_model_parity_witness:dropped}:{})},
+   correctionLedger:{
+    status:correctionStatus,migrationApplied:revisionSchemaPresent,
+    evidenceCompleteForRelease:false,latestSourceCorrectionFeedVerified:false,
+    correctionDetails,revisionRows,unreadableRevisions},
+   ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
+    discardedUnreadableRows:f.length-validF.length+c.length-validC.length+
+     g.length-validG.length+unreadableRevisions}};
  }catch{
   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.40',
    status:'blocked',reason:'isolated_ledger_schema_or_query_unavailable',

@@ -6,6 +6,18 @@
  const panel=(name,body)=>'<section class="pfo62-priority"><strong>'+name+'</strong><p>'+body+'</p></section>';
  const pName=pid=>{try{return pfo49Info(String(pid))?.name||String(pid);}catch{return String(pid)}};
  const status=p=>String(p.sleeper_injury_status||'').toUpperCase();
+ function pfo643OverviewCoverage(starters,values){
+  const ids=Array.isArray(starters)?starters.map(x=>String(x??'')):[];
+  const list=Array.isArray(values)?values:[];
+  const measured=list.filter(x=>typeof x==='number'&&Number.isFinite(x));
+  const slotsVerified=ids.length===10&&ids.every(x=>x&&x!=='0')&&
+   new Set(ids).size===10;
+  const covered=slotsVerified&&list.length===10&&measured.length===10;
+  const projected=covered?Math.round((measured.reduce((sum,v)=>sum+v,0)+
+   Number.EPSILON)*100)/100:null;
+  return {covered,projected,measured,required:10,
+   distinctStarterSlots:slotsVerified,submittedCount:ids.filter(x=>x&&x!=='0').length};
+ }
  function brief(){
   const host=document.getElementById('briefing');if(!host)return;
   const week=typeof pfo51Week==='function'?pfo51Week():'—';
@@ -22,9 +34,8 @@
    const result=typeof pfo52Points==='function'?pfo52Points(String(id),Number(week)):null;
    return typeof result?.points==='number'&&Number.isFinite(result.points)?result.points:null;
   };
-  const values=starters.map(estimate),measured=values.filter(x=>x!==null);
-  const covered=values.length>0&&measured.length===values.length;
-  const projected=covered?measured.reduce((s,v)=>s+v,0):null;
+  const values=starters.map(estimate),coverage=pfo643OverviewCoverage(starters,values),
+   measured=coverage.measured,covered=coverage.covered,projected=coverage.projected;
   const reserve=new Set((mine?.reserve||[]).map(String));
   const eligible=roster.filter(p=>!reserve.has(String(p.player_id)));
   const counts={QB:0,RB:0,WR:0,TE:0,K:0,DEF:0};
@@ -60,7 +71,7 @@
    '" class="'+(mode===value?'on':'')+'">'+label+'</button>').join('')+'</div>';
   body+='<div class="pfo62-facts">'+[
    ['Starting slots',roster.length?starters.length:'Not synced'],
-   ['Model coverage',values.length?measured.length+'/'+values.length:'Pending'],
+   ['Model coverage',values.length?measured.length+'/10':'Pending'],
    ['Next opponent',opponent?.name||'Unconfirmed']
   ].map(([label,value])=>'<div><small>'+label+'</small><b>'+esc(value)+'</b></div>').join('')+'</div>';
   if(mode==='morning'){
@@ -78,7 +89,7 @@
    body+=panel('Scoring & decision readiness',covered?
     'Provisional submitted-starter baseline: <b>'+num(projected)+
     ' FFL points</b>. It is not a validated opponent-adjusted forecast.':
-    'Independent starter estimates available for <b>'+measured.length+'/'+values.length+
+    'Independent starter estimates available for <b>'+measured.length+'/10'+
     '</b>. Full weekly total withheld; compare players in the Market while historical score certification continues.');
    body+=panel('Market pulse',remaining!==null?
     'Published budget arithmetic suggests $'+esc(remaining)+' remaining FAAB, pending live transaction verification. '+
@@ -135,7 +146,7 @@
    '<div class="pfo615-brief-stats">'+(lines||'<span>No independent starter projections verified yet.</span>')+'</div>'+
    (missing.length?'<p class="pfo615-brief-warning"><b>'+missing.length+' missing individual model estimates:</b></p>'+
      '<div class="pfo615-brief-missing-list">'+miss+'</div>':
-     '<p class="pfo615-brief-good">All submitted starter positions have an independent model output; validation is still provisional.</p>')+
+     '<p class="pfo615-brief-good">'+(coverage.distinctStarterSlots?'All ten submitted starter slots have individual model outputs; validation remains provisional.':'Submitted starter slots are incomplete or duplicated; a full FFL team total is withheld.')+'</p>')+
    '<small>Showing the highest available model estimates, NOT ranking your starting decisions. '+link('matchup','Inspect every submitted starter')+'.</small>');
   const selectedIds=new Set(starters.map(String));
   const available=eligible.filter(p=>!selectedIds.has(String(p.player_id)));

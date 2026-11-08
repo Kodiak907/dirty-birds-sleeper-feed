@@ -10,11 +10,13 @@ const execute=async({path='/health',method='GET',tables=3,triggers=6,throwQuery=
  const dbMock={prepare(sql){queries.push(sql);return {async all(){
   if(throwQuery)throw Error('database inaccessible');
   return {results:[
-   ...['pfo_accuracy_forecasts','pfo_accuracy_final_certificates','pfo_accuracy_verified_games']
+   ...['pfo_accuracy_forecasts','pfo_accuracy_final_certificates','pfo_accuracy_verified_games',
+    'pfo_accuracy_final_revisions']
     .slice(0,tables).map(name=>({type:'table',name})),
    ...['immutable_accuracy_forecasts_update','immutable_accuracy_forecasts_delete',
     'immutable_accuracy_final_update','immutable_accuracy_final_delete',
-    'immutable_accuracy_games_update','immutable_accuracy_games_delete']
+    'immutable_accuracy_games_update','immutable_accuracy_games_delete',
+    'immutable_accuracy_revisions_update','immutable_accuracy_revisions_delete']
     .slice(0,triggers).map(name=>({type:'trigger',name}))]};
  }};}};
  const response=await worker.fetch(new Request('https://pfo-accuracy-lab-worker.example'+path,{method}),
@@ -68,4 +70,20 @@ test('Wrangler points exclusively at new approved accuracy DB, never Commissione
  assert.doesNotMatch(cfg,/\bCOMMISSIONER_DB\b/);
  assert.doesNotMatch(code,/api\/commissioner|PFO_SCORE_WRITE|scheduled\s*\(/);
  assert.equal(cfg.includes('crons ='),false);
+});
+
+test('6.43 proposed D1 schema is accepted only with all four tables and all eight immutable triggers',async()=>{
+ const migrated=await execute({tables:4,triggers:8});
+ assert.equal(migrated.response.status,200);
+ assert.equal(migrated.data.schemaVersion,2);
+ assert.equal(migrated.data.tablesVerified,4);
+ assert.equal(migrated.data.immutableTriggersVerified,8);
+ assert.equal(migrated.data.correctionRevisionTableReady,true);
+ assert.equal(migrated.data.automaticCaptureActive,false);
+ const partial1=await execute({tables:4,triggers:6});
+ const partial2=await execute({tables:3,triggers:8});
+ assert.equal(partial1.response.status,503);
+ assert.equal(partial2.response.status,503);
+ assert.equal(partial1.data.correctionRevisionTableReady,false);
+ assert.equal(partial2.data.correctionRevisionTableReady,false);
 });

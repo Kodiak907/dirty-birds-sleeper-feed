@@ -1,0 +1,58 @@
+name: PFO 6.43 full existing-browser regression suite (NO DEPLOY)
+# Existing 6.16 QA now tests the actual 6.36 script asset reference rather than stale v=627.
+on:
+  push:
+    branches: [pfo-643-unified-production-upgrade-20261106]
+    paths: ['.github/workflows/pfo-643-browser-regression.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-regressions:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install only the same browser regression runtime used by prior successful isolated QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Validate new GameCast scoring module dependency is loadable in local Chromium
+        run: |
+          set -euo pipefail
+          node --check pfo-thursday/ffo-long-td-policy-643.mjs
+          grep -q "ffo-long-td-policy-643.mjs" pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs
+      - name: Run baseline browser and mobile tests against local repository code only
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test \
+            pfo-thursday/qa-pfo-643-long-td-policy.test.mjs \
+            pfo-thursday/qa-pfo-643-guarded-pregame.test.mjs \
+            pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs \
+            pfo-thursday/qa-pfo-643-overview-coverage.test.mjs \
+            pfo-thursday/qa-ffo-66-browser.test.mjs \
+            pfo-thursday/qa-ffo-trade-mobile.test.mjs \
+            pfo-thursday/qa-ffo-layout-64-browser.test.mjs \
+            pfo-thursday/qa-msf-gamecast-weeks-browser.test.mjs \
+            pfo-thursday/qa-ffo-613-video.test.mjs \
+            pfo-thursday/qa-ffo-616.test.mjs \
+            pfo-thursday/qa-ffo-635.test.mjs \
+            pfo-thursday/qa-ffo-636.test.mjs \
+            pfo-thursday/qa-pfo-643-history-source-labels.test.mjs \
+            pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs \
+            pfo-thursday/qa-pfo-643-startsit-week.test.mjs
+      - name: Confirm independent lab and live Pages preview untouched
+        run: |
+          set -euo pipefail
+          test -f pfo-thursday/ffo-release-gate-643.mjs
+          grep -q 'NO cron until real pregame/fixture model adapters' pfo-thursday/wrangler.accuracy.toml
+          ! grep -q 'pfo-accuracy-lab' pfo-thursday/wrangler.jsonc
+          echo "Local Chromium/Node source QA ONLY; NO Cloudflare deploy; NO Commissioner changes; NO demo release."

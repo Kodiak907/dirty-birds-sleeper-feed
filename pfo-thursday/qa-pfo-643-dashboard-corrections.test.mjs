@@ -1,0 +1,141 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readAccuracyDashboard} from './ffo-accuracy-dashboard-640.mjs';
+import {MSF_CORRECTION_REVISION_SCHEMA}
+ from './ffo-msf-final-corrections-643.mjs';
+import {FFL_RULES_VERSION} from './ffo-pregame-capture-638.mjs';
+const kickoff='2026-11-08T18:25:00.000Z';
+const game={provider:'MSF',verified:true,gameId:'g101',week:10,
+ kickoffAt:kickoff,status:'FINAL'};
+const forecast={provider:'PFO',scoringSystem:'FFL',sourceProvider:'MSF',
+ playerId:'18607',gameId:'g101',position:'QB',week:10,
+ points:20,modelVersion:'pfo-636-baseline',
+ rulesVersion:FFL_RULES_VERSION,
+ fromSleeperActual:false,afterGameKnowledge:false,
+ capturedAt:'2026-11-08T18:00:00.000Z',kickoffAt:kickoff,
+ sourceAsOf:'2026-11-08T17:57:00Z',
+ sourceEvidence:'verified_live_pfo_636_model_parity',
+ parityWitness:{
+  authenticatedSameFixture:true,verifierRunId:'test_only_456',
+  scoringContractSha256:'d'.repeat(64),
+  browserSourceSha256:'f'.repeat(64),serverSourceSha256:'e'.repeat(64),
+  sourceAsOfUtc:'2026-11-08T17:57:00Z',
+  browserObservedAtUtc:'2026-11-08T17:58:00Z',
+  verifiedAtUtc:'2026-11-08T17:59:00Z'
+ }};
+const certificate={certified:true,provider:'MSF',rulesVersion:FFL_RULES_VERSION,
+ gameId:'g101',playerId:'18607',week:10,position:'QB',points:18,
+ gameStatus:'FINAL',fantasyScoreFromSleeper:false,
+ finalPlayerScoreRecomputed:true,playerIdentityVerified:true,
+ finalBoxScoreVerified:true,statCategoriesComplete:true,
+ eventBonusesReconciled:true,statCorrectionsChecked:true};
+const revision={schema:MSF_CORRECTION_REVISION_SCHEMA,season:2026,
+ gameId:'g101',playerId:'18607',week:10,revisionIndex:1,
+ priorPoints:18,correctedPoints:19,rulesVersion:FFL_RULES_VERSION,
+ providerCorrectionId:'corr_1',providerResponseSha256:'a'.repeat(64),
+ msfCorrectedAt:'2026-11-08T22:00:00.000Z',
+ certifiedAt:'2026-11-08T22:05:00.000Z',
+ certificate:{...certificate,points:19}};
+function db({migration=true,revisions=[revision]}={}){
+ const calls=[];
+ return {calls,connection:{
+  prepare(sql){
+   calls.push(sql);
+   return {async all(){
+    if(sql.includes('sqlite_master'))return {results:migration?[{name:'pfo_accuracy_final_revisions'}]:[]};
+    if(sql.includes('pfo_accuracy_forecasts'))return {results:[{payload_json:JSON.stringify(forecast)}]};
+    if(sql.includes('pfo_accuracy_final_certificates'))return {results:[{payload_json:JSON.stringify(certificate)}]};
+    if(sql.includes('pfo_accuracy_verified_games'))return {results:[{payload_json:JSON.stringify(game)}]};
+    if(sql.includes('pfo_accuracy_final_revisions'))return {results:revisions.map(r=>({payload_json:typeof r==='string'?r:JSON.stringify(r)}))};
+    return {results:[]};
+   }};
+  }
+ }};
+}
+test('before revision migration the read-only dashboard remains honest about missing correction support',async()=>{
+ const x=await readAccuracyDashboard(db({migration:false}).connection);
+ assert.equal(x.metrics.n,1);
+ assert.equal(x.metrics.mae,2);
+ assert.equal(x.correctionLedger.migrationApplied,false);
+ assert.equal(x.correctionLedger.evidenceCompleteForRelease,false);
+ assert.equal(x.correctionLedger.status,'not_migrated_or_unavailable');
+});
+test('with source-certified revision chain dashboard uses corrected latest actual, preserving old certificate',async()=>{
+ const source=db();
+ const x=await readAccuracyDashboard(source.connection);
+ assert.equal(x.metrics.n,1);
+ assert.equal(x.metrics.mae,1);
+ assert.equal(x.correctionLedger.migrationApplied,true);
+ assert.equal(x.correctionLedger.correctionDetails.applied,1);
+ assert.equal(x.correctionLedger.correctionDetails.correctedPlayerGames,1);
+ assert.equal(x.correctionLedger.latestSourceCorrectionFeedVerified,false);
+ assert.ok(source.calls.every(sql=>!/\bUPDATE\b|\bDELETE\b|commissioner/i.test(sql)));
+});
+test('broken correction chain withholds affected pair instead of measuring against the obsolete original',async()=>{
+ const bad={...revision,revisionIndex:2};
+ const x=await readAccuracyDashboard(db({revisions:[bad]}).connection);
+ assert.equal(x.measuredPlayerGames,0);
+ assert.equal(x.metrics.mae,null);
+ assert.equal(x.correctionLedger.correctionDetails.withheldPairs,1);
+});
+test('invalid or unreadable revision data closes entire accuracy read gate',async()=>{
+ const x=await readAccuracyDashboard(db({revisions:['{bad json}']}).connection);
+ assert.equal(x.status,'blocked');
+ assert.equal(x.metrics.mae,null);
+ assert.equal(x.reason,'incomplete_or_corrupt_correction_revision_ledger');
+});
+test('empty new correction ledger is still read-only and does not claim a completed provider correction check',async()=>{
+ const x=await readAccuracyDashboard(db({revisions:[]}).connection);
+ assert.equal(x.metrics.mae,2);
+ assert.equal(x.correctionLedger.migrationApplied,true);
+ assert.equal(x.correctionLedger.latestSourceCorrectionFeedVerified,false);
+});
+
+test('primary D1 reader withholds fake accuracy when any final certificate is corrupt',async()=>{
+ const record=db({migration:false});
+ const original=record.connection.prepare.bind(record.connection);
+ record.connection.prepare=sql=>{
+  const base=original(sql);
+  if(sql.includes('pfo_accuracy_final_certificates'))
+   return {async all(){return {results:[{payload_json:'{broken actual}'}]}}};
+  return base;
+ };
+ const result=await readAccuracyDashboard(record.connection);
+ assert.equal(result.status,'blocked');
+ assert.equal(result.reason,'incomplete_or_corrupt_primary_accuracy_ledger');
+ assert.equal(result.metrics.mae,null);
+ assert.equal(result.ledgerCounts.discardedUnreadableRows,1);
+});
+test('bounded ledger read refuses an exact 1000-row game cap instead of biased accuracy',async()=>{
+ const record=db({migration:false});
+ const original=record.connection.prepare.bind(record.connection);
+ record.connection.prepare=sql=>{
+  const base=original(sql);
+  if(sql.includes('pfo_accuracy_verified_games'))
+   return {async all(){return {results:Array.from({length:1000},()=>({payload_json:JSON.stringify(game)}))}}};
+  return base;
+ };
+ const result=await readAccuracyDashboard(record.connection);
+ assert.equal(result.status,'blocked');
+ assert.equal(result.reason,'accuracy_ledger_query_limit_reached');
+ assert.equal(result.measuredPlayerGames,0);
+ assert.equal(result.metrics.mae,null);
+});
+
+test('a forged or legacy pregame forecast without the real browser/server witness is excluded from metrics',async()=>{
+ const target=db({migration:true,revisions:[]});
+ const original=target.connection.prepare.bind(target.connection);
+ target.connection.prepare=sql=>{
+  if(sql.includes('pfo_accuracy_forecasts'))
+   return {async all(){return {results:[{payload_json:JSON.stringify({
+    ...forecast,sourceEvidence:'historical_legacy',parityWitness:null
+   })}]}}};
+  return original(sql);
+ };
+ const out=await readAccuracyDashboard(target.connection);
+ assert.equal(out.measuredPlayerGames,0);
+ assert.equal(out.metrics.mae,null);
+ assert.equal(out.sourceProvenance.liveModelAttestedForecasts,0);
+ assert.equal(out.sourceProvenance.unattestedForecastsWithheld,1);
+ assert.equal(out.exclusions.missing_643_live_model_parity_witness,1);
+});

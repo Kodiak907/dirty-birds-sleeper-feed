@@ -2421,7 +2421,7 @@ let pfo52Week=Number(window.dbNflWeek||8),pfo52ManualWeek=false,pfo52Scenario=nu
 function pfo52Cur(){return pfo66WeekAt(new Date(),Number(window.dbNflSeason||gm47Snapshot?.nfl_state?.season||2026),Number(window.dbNflWeek||gm47Snapshot?.nfl_state?.week||8));}
 function pfo52Slots(){const positions=gm47Snapshot?.league?.roster_positions;
  const s=Array.isArray(positions)?positions.filter(x=>!['BN','IR','TAXI','RESERVE'].includes(String(x).toUpperCase())):[];
- return s.length?s:['QB','RB','RB','WR','WR','TE','FLEX','K','DEF'];}
+ return s.length?s:['QB','RB','RB','WR','WR','TE','FLEX','FLEX','K','DEF'];}
 function pfo52Pos(p){const x=String(p?.position||'').toUpperCase();return x==='DST'||x==='D/ST'?'DEF':x;}
 function pfo52Legal(slot,p){const pos=pfo52Pos(p),sl=String(slot).toUpperCase();if(!pos||!sl)return false;
  if(sl==='FLEX')return ['RB','WR','TE'].includes(pos);
@@ -2475,21 +2475,38 @@ function pfo52Points(id,w,past=false){if(past)return null;
  const adjusted=pfo52Pos(p)!=='K'&&pfo52Pos(p)!=='DEF'?pfo52DefenseAdjustment(pfo52Pos(p),opponent):null;
  return {points:baseline*(adjusted??1),source:source+(adjusted!=null?' · observed defensive allowance adjustment':' · no opponent adjustment'),adjustment:adjusted};
 }
-function pfo52DefenseAdjustment(pos,opponent){if(!opponent||!pfo50Independent?.players?.length)return null;
- if(!['QB','RB','WR','TE'].includes(pos))return null;
- const target=gm47CanonicalTeam(opponent),rows=new Map();
- for(const p of pfo50Independent.players){if(p.position!==pos)continue;
-  for(const g of p.games||[]){const opp=gm47CanonicalTeam(g.opponent||'');if(!opp)continue;
-   const points=pfo50Score(g.stats);if(!Number.isFinite(points))continue;
-   const k=opp+'|'+g.week;rows.set(k,(rows.get(k)||0)+points);
+// PFO 6.43: Start/Sit and the Lineup Lab reuse the same independently scored
+// opponent allowance table. Building it per tap was O(all players × games).
+// Invalidate on licensed MSF source-array replacement; never cache missing rules.
+let pfo52AllowanceRows=null,pfo52AllowanceCache=new Map();
+function pfo52DefenseAdjustment(pos,opponent){
+ if(!opponent||!['QB','RB','WR','TE'].includes(pos)||
+  !pfo50Independent?.players?.length)return null;
+ if(window.ffoPfo597?.hasFrozenRules?.()!==true)return null;
+ const players=pfo50Independent.players;
+ if(players!==pfo52AllowanceRows){pfo52AllowanceRows=players;pfo52AllowanceCache.clear();}
+ if(!pfo52AllowanceCache.has(pos)){
+  const rows=new Map();
+  for(const p of players){if(p.position!==pos)continue;
+   for(const g of p.games||[]){
+    const opp=gm47CanonicalTeam(g.opponent||'');if(!opp)continue;
+    const points=pfo50Score(g.stats);if(!Number.isFinite(points))continue;
+    const k=opp+'|'+g.week;rows.set(k,(rows.get(k)||0)+points);
+   }
   }
+  const teamMeans=new Map();
+  for(const [k,v] of rows){const t=k.split('|')[0],a=teamMeans.get(t)||[];a.push(v);teamMeans.set(t,a);}
+  const means=[...teamMeans.entries()].filter(([_,x])=>x.length>=3)
+   .map(([team,x])=>({team,mean:x.reduce((a,b)=>a+b,0)/x.length}));
+  const baseline=means.length>=20?
+   means.reduce((a,b)=>a+b.mean,0)/means.length:null;
+  pfo52AllowanceCache.set(pos,{means,baseline});
  }
- const teamMeans=new Map();for(const [k,v] of rows){const t=k.split('|')[0],a=teamMeans.get(t)||[];a.push(v);teamMeans.set(t,a);}
- const means=[...teamMeans.entries()].filter(([_,x])=>x.length>=3).map(([team,x])=>({team,mean:x.reduce((a,b)=>a+b,0)/x.length}));
- if(means.length<20)return null;
- const baseline=means.reduce((a,b)=>a+b.mean,0)/means.length,mine=means.find(x=>x.team===target);
- if(!mine||baseline<=0)return null;
- return Math.max(.85,Math.min(1.15,1+(.25*(mine.mean/baseline-1)))); // shrink noisy allowance observations by 75%.
+ const {means,baseline}=pfo52AllowanceCache.get(pos);
+ if(baseline===null||baseline<=0)return null;
+ const mine=means.find(x=>x.team===gm47CanonicalTeam(opponent));
+ if(!mine)return null;
+ return Math.max(.85,Math.min(1.15,1+(.25*(mine.mean/baseline-1))));
 }
 function pfo52Value(team,id,w,past){if(past){const raw=team?.players_points?.[String(id)];return raw==null||!Number.isFinite(Number(raw))?null:Number(raw);}return pfo52Points(id,w)?.points??null;}
 function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set((team?.reserve||team?.record?.reserve||[]).map(String)),eligible=(team?.members||[]).filter(p=>!reserved.has(String(p.id||p.player_id))&&!(!past&&pfo52Pos(p)==='NA')).map(p=>({id:String(p.id||p.player_id),p,val:pfo52Value(team,String(p.id||p.player_id),w,past)}));
@@ -2504,8 +2521,10 @@ function pfo52Best(team,w,past=false){const slots=pfo52Slots(),reserved=new Set(
   if(prev[snk]===-1)break;for(let v=snk;v!==src;v=prev[v]){const ed=graph[prev[v]][edgeIdx[v]];ed.cap--;graph[v][ed.rev].cap++;}
  }
  const assignments=slots.map((slot,j)=>{const x=graph[n+j].find(ed=>ed.to<n&&ed.cap===1);return {slot,id:x?eligible[x.to].id:null};});
- const known=assignments.filter(x=>x.id).length,sum=assignments.reduce((acc,x)=>acc+(x.id?pfo52Value(team,x.id,w,past)||0:0),0);
- return {assignments,known,required:slots.length,total:known?sum:null,complete:known===slots.length};
+ const verified=pfo52LineupScore(team,assignments,w,past);
+ return {assignments,known:verified.known,required:verified.required,
+  total:verified.total,subtotal:verified.subtotal,complete:verified.complete,
+  partial:verified.partial,issues:verified.issues};
 }
 function pfo52Actual(team,w){const slots=pfo52Slots(),started=team?.starters||[];
  return {assignments:slots.map((slot,i)=>({slot,id:started[i]&&started[i]!=='0'?started[i]:null})),total:team?.score??null};
@@ -2516,8 +2535,30 @@ function pfo69Submitted(team,w){
  return {assignments,...pfo52LineupScore(team,assignments,w,false)};
 }
 function pfo52Reconciles(team,w){if(!team||team.score==null)return false;const v=pfo52LineupScore(team,pfo52Actual(team,w).assignments,w,true);return v.complete&&Math.abs(v.total-team.score)<.05;}
-function pfo52LineupScore(team,assignments,w,past){let total=0,count=0;for(const x of assignments){const v=x.id?pfo52Value(team,x.id,w,past):null;if(v!=null){total+=v;count++;}}
- return {total:count?total:null,complete:count===assignments.length,known:count};
+function pfo52LineupScore(team,assignments,w,past){
+ // PFO 6.43: ten official FFL starters or NO complete projected team total.
+ // A partial sum belongs in the explicitly labeled subtotal, never in "total".
+ const required=pfo52Slots(),list=Array.isArray(assignments)?assignments:[];
+ const seen=new Set(),issues=[];let subtotal=0,known=0;
+ if(required.length!==10||list.length!==10)issues.push('ten_official_ffl_starter_slots_required');
+ for(let i=0;i<list.length;i++){
+  const x=list[i],id=String(x?.id||''),slot=String(x?.slot||'').toUpperCase();
+  if(slot!==String(required[i]||'').toUpperCase()){issues.push('starter_slot_order_mismatch');continue;}
+  if(!id||id==='0'){issues.push('starter_slot_unfilled');continue;}
+  if(seen.has(id)){issues.push('duplicate_starter');continue;}seen.add(id);
+  // Historical Sleeper league scores may be displayed separately, never used
+  // as independent model truth or promoted as verified PFO forecasts.
+  if(!past&&!pfo52Legal(slot,pfo52Info(id))){issues.push('position_ineligible');continue;}
+  const value=pfo52Value(team,id,w,past);
+  if(value===null||value===undefined||!Number.isFinite(Number(value))){
+   issues.push('independent_projection_unavailable');continue;
+  }
+  subtotal+=Number(value);known++;
+ }
+ const complete=known===10&&list.length===10&&required.length===10&&issues.length===0;
+ const rounding=n=>Math.round((n+Number.EPSILON)*100)/100;
+ return {total:complete?rounding(subtotal):null,subtotal:known?rounding(subtotal):null,
+  complete,known,required:10,partial:!complete,issues:[...new Set(issues)]};
 }
 function pfo52PointLabel(val,complete=true){return val==null?'—':pfo52Money(val,2)+(complete?'':' †');}
 function pfo52Table(t,plan,w,past,mode){const rows=plan?.assignments||[],original=mode==='ours'?pfo52Actual(t,w).assignments:[];return '<div class="pfo52-lineup">'+rows.map((x,i)=>{const p=x.id?pfo52Info(x.id):null,val=x.id?pfo52Value(t,x.id,w,past):null;
@@ -2588,7 +2629,7 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;
  let ours=past?pfo52Team(w,'ours'):pfo52FutureTeam(Number(window.dbRosterId||1));
  let opp=past?pfo52Team(w,'theirs'):(match?.theirs?pfo52FutureTeam(Number(match.theirs.roster_id)):null);
  const header='<div class="pfo52-weekrow"><button data-pfo52-step="-1" type="button" '+(w===1?'disabled':'')+'>← Previous</button><label>FFL week <select id="pfo52-week">'+Array.from({length:17},(_,i)=>'<option value="'+(i+1)+'" '+(w===i+1?'selected':'')+'>Week '+(i+1)+(i+1>=15?' · playoffs':'')+'</option>').join('')+'</select></label><button data-pfo52-step="1" type="button" '+(w===17?'disabled':'')+'>Next →</button></div>';
- let h=header+'<p class="pfo52-fine">'+(past?'Historical final recorded FFL scores · using Week '+w+' roster only · corrections may revise prior totals':w===current?'Current-week submitted roster and model estimates · independent predictions are not final scores':'Future preview from current rosters · future trades, availability and playoff opponents are unknown')+'</p>';
+ let h=header+'<p class="pfo52-fine">'+(past?'Historical league-recorded matchup totals (Sleeper; NOT MSF-certified final scores) · original Week '+w+' roster · independent source corrections remain unverified':w===current?'Current-week submitted roster and model estimates · independent predictions are not final scores':'Future preview from current rosters · future trades, availability and playoff opponents are unknown')+'</p>';
  if(!ours){el.innerHTML=h+'<div class="note">No verified historical weekly matchup entry for Dirty Birds. Fetching Sleeper week '+w+' if possible. We will not substitute today\'s roster for past ownership.</div>';return;}
  const baseline=past?pfo52Actual(ours,w):pfo69Submitted(ours,w);
  const counterpart=past?(opp?pfo52Actual(opp,w):null):(opp?pfo69Submitted(opp,w):null);
@@ -2596,10 +2637,10 @@ function pfo52Render(){const el=$('pfo52-matchup');if(!el)return;
  const simulated=pfo52LineupScore(ours,pfo52Scenario.assignments,w,past),original=past?{total:ours.score,complete:ours.score!=null}:pfo52LineupScore(ours,baseline.assignments,w,false);
  const comparable=!past||pfo52Reconciles(ours,w),delta=comparable&&original.total!=null&&simulated.complete?(simulated.total-original.total):null;
  const oppScore=past?opp?.score:counterpart?.total;
- h+='<div class="pfo52-scoreboard"><div><small>DIRTY BIRDS · '+(past?'FINAL':'MODEL')+'</small><strong>'+pfo52PointLabel(past?ours.score:original.total,original.complete)+'</strong></div><div class="pfo52-versus">VS</div><div><small>'+e(opp?.name||'Opponent TBD')+' · '+(past?'FINAL':'MODEL')+'</small><strong>'+pfo52PointLabel(oppScore,past?oppScore!=null:!!counterpart?.complete)+'</strong></div></div>';
+ h+='<div class="pfo52-scoreboard"><div><small>DIRTY BIRDS · '+(past?'LEAGUE RECORDED':'FFL MODEL')+'</small><strong>'+pfo52PointLabel(past?ours.score:original.total,original.complete)+'</strong></div><div class="pfo52-versus">VS</div><div><small>'+e(opp?.name||'Opponent TBD')+' · '+(past?'LEAGUE RECORDED':'FFL MODEL')+'</small><strong>'+pfo52PointLabel(oppScore,past?oppScore!=null:!!counterpart?.complete)+'</strong></div></div>';
  if(!opp)h+='<p class="note">'+(past?'Historical opponent pairing unavailable in matched Sleeper records.':'Opponent not established for Week '+w+'. Playoff pairings remain TBD until FFL seeds are known.')+'</p>';
- h+='<div class="pfo52-duel"><article><div class="pfo52-panhead"><h3>Dirty Birds '+'submitted lineup'+'</h3><small>'+(past?'Actual starters &amp; final player points':'Actual submitted starters · independent FFL estimates')+'</small></div>'+pfo52Table(ours,baseline,w,past,'none')+'</article><article><div class="pfo52-panhead"><h3>'+e(opp?.name||'Opposing manager')+' '+'submitted lineup'+'</h3><small>'+(past?'Original weekly starters':'Currently submitted starters · independent estimates, not an optimizer')+'</small></div>'+(opp?pfo52Table(opp,counterpart,w,past,'none'):'<p class="pfo52-dim">Future opposing roster unconfirmed</p>')+'</article></div>';
- h+='<section class="pfo52-lab"><div class="pfo52-panhead"><h3>Interactive Lineup Lab</h3><small>'+(past?'HINDSIGHT: final player points':'SCENARIO: experimental FFO projections')+' · Never changes Sleeper</small></div>';
+ h+='<div class="pfo52-duel"><article><div class="pfo52-panhead"><h3>Dirty Birds '+'submitted lineup'+'</h3><small>'+(past?'Recorded starters and league-scored points · not MSF-certified':'Actual submitted starters · independent FFL estimates')+'</small></div>'+pfo52Table(ours,baseline,w,past,'none')+'</article><article><div class="pfo52-panhead"><h3>'+e(opp?.name||'Opposing manager')+' '+'submitted lineup'+'</h3><small>'+(past?'Recorded weekly starters · league scoring only':'Currently submitted starters · independent estimates, not an optimizer')+'</small></div>'+(opp?pfo52Table(opp,counterpart,w,past,'none'):'<p class="pfo52-dim">Future opposing roster unconfirmed</p>')+'</article></div>';
+ h+='<section class="pfo52-lab"><div class="pfo52-panhead"><h3>Interactive Lineup Lab</h3><small>'+(past?'HINDSIGHT: league-recorded points · not independently certified':'SCENARIO: experimental FFO projections')+' · Never changes Sleeper</small></div>';
  h+='<div class="pfo52-scorecards"><div><small>Original</small><b>'+pfo52PointLabel(original.total,original.complete)+'</b></div><div><small>Simulated</small><b>'+pfo52PointLabel(simulated.total,simulated.complete)+'</b></div><div><small>Difference</small><b>'+(delta==null?'—':(delta>=0?'+':'')+pfo52Money(delta))+'</b></div></div>';
  if(past&&!comparable)h+='<p class="note">Final team score and individual starter points do not reconcile in the loaded weekly record. Hindsight score differences are withheld until a complete league-scored audit can be performed.</p>';
  const changes=pfo52Scenario.assignments.map((next,i)=>({slot:next.slot,before:baseline.assignments[i]?.id||null,after:next.id||null}))
@@ -2690,7 +2731,7 @@ function pfo52RosterPoints(){const el=$('actual-lineup');if(!el)return;
   const raw=observed?.stats||observed;
   const scoring=observed&&raw&&Object.keys(raw).some(k=>k!=='week')?pfo50Score(raw):null;
   const tag=document.createElement('div');tag.className='pfo52-rosterpoints';
-  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFO model pts · NFL stats verified':
+  tag.textContent=scoring!=null?'W'+week+' · '+Number(scoring).toFixed(2)+' partial FFL reconstruction · not certified':
    'W'+week+' · FFO live stats pending';
   cell.append(tag);
  }

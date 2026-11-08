@@ -1,0 +1,71 @@
+name: PFO 6.43 Cloudflare existing Pages configuration metadata only (NO DEPLOY)
+on:
+  push:
+    branches: [pfo-643-unified-production-upgrade-20261106]
+    paths: ['.github/workflows/pfo-643-pages-config-readonly.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pfo-643-pages-config-readonly
+  cancel-in-progress: false
+jobs:
+  pages-readonly-metadata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment: pfo-preview
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Check U.S. egress; never request credentials in logs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "PAGES_METADATA=not_checked_existing_cloudflare_actions_token_unavailable" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          trace="$(curl --silent --show-error --fail --retry 0 --max-time 8 https://www.cloudflare.com/cdn-cgi/trace || true)"
+          country="$(printf '%s\n' "$trace" | awk -F= '$1=="loc"{print $2}' | tr -d '\r')"
+          if [ "$country" != "US" ]; then
+            echo "PAGES_METADATA=withheld_no_verified_US_egress" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # Pure metadata GET for existing project. NEVER print response JSON,
+          # environment-variable values, tokens, or private deployment settings.
+          node --input-type=module <<'NODE'
+          import {appendFileSync} from 'node:fs';
+          const endpoint='https://api.cloudflare.com/client/v4/accounts/5cc05345c4f2bc274e5db46f647b2900/pages/projects/dirtybirdstest';
+          let result={status:'blocked',project:'dirtybirdstest',readOnly:true,
+           msfSecretValueRead:false,deployPerformed:false,commissionerDataRead:false};
+          try{
+           const response=await fetch(endpoint,{method:'GET',redirect:'error',
+            headers:{authorization:'Bearer '+process.env.CLOUDFLARE_API_TOKEN,
+             accept:'application/json'},signal:AbortSignal.timeout(12000)});
+           result.apiStatus=response.status;
+           if(response.status===200){
+            const j=await response.json();
+            const project=j?.result;
+            if(j?.success===true&&project?.name==='dirtybirdstest'){
+             const dep=project.deployment_configs||{};
+             const names=[
+              ...Object.keys(dep.production?.env_vars||{}),
+              ...Object.keys(dep.preview?.env_vars||{})
+             ];
+             result.status='configuration_names_inspected';
+             result.MSF_API_KEY_name_present=names.includes('MSF_API_KEY');
+             result.previewHasMSFSecretName=Object.hasOwn(dep.preview?.env_vars||{},'MSF_API_KEY');
+             result.productionHasMSFSecretName=Object.hasOwn(dep.production?.env_vars||{},'MSF_API_KEY');
+             result.serviceBindingNameInspectable=false;
+             result.providerEntitlementVerified=false;
+            }else result.status='project_metadata_unverified';
+           }else result.status='existing_token_cannot_read_project_metadata';
+          }catch{
+           result.status='provider_metadata_read_failed';
+          }
+          const safe='PFO_643_CLOUDFLARE_METADATA='+JSON.stringify(result);
+          console.log(safe);
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,safe+'\n');
+          NODE
+      - name: Protected-release boundary
+        run: echo "NO deployment, NO provider data download, NO secret values, NO D1 writes, NO Commissioner access."
