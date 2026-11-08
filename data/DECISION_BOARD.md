@@ -16,7 +16,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Chris Rodriguez Jr. | 5.56 | +1.42 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
-| 2 | Samaje Perine | 5.32 | +1.18 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
+| 2 | Samaje Perine | 5.31 | +1.17 | 36.3% | Carries 7.3 | No modeled flags (not medically cleared) |
 | 3 | Tyjae Spears | 5.07 | +0.92 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 4 | Keaton Mitchell | 4.69 | +0.55 | 30.0% | Carries 4.0 | No modeled flags (not medically cleared) |
 | 5 | MarShawn Lloyd | 3.85 | -0.29 | 30.7% | Carries 5.7 | injury_report_observation_review |
@@ -41,7 +41,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 7 | Mack Hollins | 3.85 | -2.65 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
 | 8 | Ja'Kobi Lane | 3.84 | -2.66 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 9 | Rashod Bateman | 3.66 | -2.84 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 10 | Dohnte Meyers | 3.45 | -3.04 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 10 | Dohnte Meyers | 3.45 | -3.05 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 11 | Jauan Jennings | 2.41 | -4.09 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 | 12 | Konata Mumpfield | 2.33 | -4.17 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
@@ -63,7 +63,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Dominic Zvada | 6.94 | -0.23 | — | — | No modeled flags (not medically cleared) |
 | 2 | Matt Gay | 6.82 | -0.35 | — | — | No modeled flags (not medically cleared) |
 | 3 | Trey Smack | 6.14 | -1.03 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cameron Dicker | 5.91 | -1.25 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cameron Dicker | 5.92 | -1.25 | — | — | No modeled flags (not medically cleared) |
 | 5 | Cairo Santos | 5.51 | -1.66 | — | — | No modeled flags (not medically cleared) |
 | 6 | Chris Boswell | 5.42 | -1.75 | — | — | No modeled flags (not medically cleared) |
 

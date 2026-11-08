@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-08T12:50:16.296796+00:00
-Sleeper snapshot: 2026-11-08T12:50:09.351247+00:00
+Generated: 2026-11-08T13:50:35.686173+00:00
+Sleeper snapshot: 2026-11-08T13:50:29.797403+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -27,7 +27,7 @@ Sleeper snapshot: 2026-11-08T12:50:09.351247+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Chris Rodriguez Jr. | JAX | 5.56 | 100% | — | Not flagged |
-| 2 | Samaje Perine | CIN | 5.32 | 100% | 36.3% | Not flagged |
+| 2 | Samaje Perine | CIN | 5.31 | 100% | 36.3% | Not flagged |
 | 3 | Tyjae Spears | TEN | 5.07 | 89% | 38.0% | Questionable |
 | 4 | Keaton Mitchell | LAC | 4.69 | 100% | 30.0% | Not flagged |
 | 5 | MarShawn Lloyd | GB | 3.85 | 89% | 30.7% | Not flagged |
@@ -74,7 +74,7 @@ Sleeper snapshot: 2026-11-08T12:50:09.351247+00:00
 | 1 | Dominic Zvada | NYG | 6.94 | 100% | — | Not flagged |
 | 2 | Matt Gay | LV | 6.82 | 89% | — | Not flagged |
 | 3 | Trey Smack | GB | 6.14 | 89% | — | Not flagged |
-| 4 | Cameron Dicker | LAC | 5.91 | 100% | — | Not flagged |
+| 4 | Cameron Dicker | LAC | 5.92 | 100% | — | Not flagged |
 | 5 | Cairo Santos | CHI | 5.51 | 89% | — | Not flagged |
 | 6 | Chris Boswell | PIT | 5.42 | 89% | — | Not flagged |
 
@@ -108,7 +108,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Darren Waller | TE | CAR | 6.48 | 51.0% |
 | Kalif Raymond | WR | CHI | 5.58 | 62.0% |
 | Michael Mayer | TE | LV | 5.48 | 80.0% |
-| Samaje Perine | RB | CIN | 5.32 | 36.3% |
+| Samaje Perine | RB | CIN | 5.31 | 36.3% |
 | Chris Bell | WR | MIA | 5.31 | 62.7% |
 | Tyjae Spears | RB | TEN | 5.07 | 38.0% |
 | Noah Fant | TE | NO | 4.85 | 57.0% |

@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-08T12:50:16.600554+00:00
+Generated: 2026-11-08T13:50:35.851605+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **122.99**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **122.98**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -16,7 +16,7 @@ Baseline illustrative optimal PPG: **122.99**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Chris Rodriguez Jr. | 5.56 | Bench-depth scenario: Keon Coleman | +0.00 | -0.94 | Limited snap sample |
-| 2 | Samaje Perine | 5.32 | Bench-depth scenario: Keon Coleman | +0.00 | -1.18 | No flagged data gap; review still required |
+| 2 | Samaje Perine | 5.31 | Bench-depth scenario: Keon Coleman | +0.00 | -1.19 | No flagged data gap; review still required |
 | 3 | Tyjae Spears | 5.07 | Bench-depth scenario: Keon Coleman | +0.00 | -1.43 | Availability status: questionable; Partial projection coverage |
 | 4 | Keaton Mitchell | 4.69 | Bench-depth scenario: Keon Coleman | +0.00 | -1.81 | No flagged data gap; review still required |
 | 5 | MarShawn Lloyd | 3.85 | Bench-depth scenario: Keon Coleman | +0.00 | -2.65 | Partial projection coverage |
@@ -41,7 +41,7 @@ Baseline illustrative optimal PPG: **122.99**. Weeks with partial projections an
 | 7 | Mack Hollins | 3.85 | Bench-depth scenario: Keon Coleman | +0.00 | -2.65 | Availability status: ir; Partial projection coverage |
 | 8 | Ja'Kobi Lane | 3.84 | Bench-depth scenario: Keon Coleman | +0.00 | -2.66 | Partial projection coverage |
 | 9 | Rashod Bateman | 3.66 | Bench-depth scenario: Keon Coleman | +0.00 | -2.84 | Partial projection coverage |
-| 10 | Dohnte Meyers | 3.45 | Bench-depth scenario: Keon Coleman | +0.00 | -3.04 | No flagged data gap; review still required |
+| 10 | Dohnte Meyers | 3.45 | Bench-depth scenario: Keon Coleman | +0.00 | -3.05 | No flagged data gap; review still required |
 | 11 | Jauan Jennings | 2.41 | Bench-depth scenario: Keon Coleman | +0.00 | -4.09 | Partial projection coverage |
 | 12 | Konata Mumpfield | 2.33 | Bench-depth scenario: Keon Coleman | +0.00 | -4.17 | No sourced usage; Partial projection coverage; Limited snap sample |
 
@@ -63,7 +63,7 @@ Baseline illustrative optimal PPG: **122.99**. Weeks with partial projections an
 | 1 | Dominic Zvada | 6.94 | Bench-depth scenario: Keon Coleman | +0.00 | +0.45 | No sourced usage |
 | 2 | Matt Gay | 6.82 | Bench-depth scenario: Keon Coleman | +0.00 | +0.32 | No sourced usage; Partial projection coverage |
 | 3 | Trey Smack | 6.14 | Bench-depth scenario: Keon Coleman | +0.00 | -0.36 | No sourced usage; Partial projection coverage |
-| 4 | Cameron Dicker | 5.91 | Bench-depth scenario: Keon Coleman | +0.00 | -0.58 | No sourced usage |
+| 4 | Cameron Dicker | 5.92 | Bench-depth scenario: Keon Coleman | +0.00 | -0.58 | No sourced usage |
 | 5 | Cairo Santos | 5.51 | Bench-depth scenario: Keon Coleman | +0.00 | -0.99 | No sourced usage; Partial projection coverage |
 | 6 | Chris Boswell | 5.42 | Bench-depth scenario: Keon Coleman | +0.00 | -1.08 | No sourced usage; Partial projection coverage |
 

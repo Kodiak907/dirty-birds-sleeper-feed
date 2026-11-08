@@ -25,7 +25,7 @@
       "ppg": 6.498
     }
   },
-  "generated_at_utc": "2026-11-08T12:50:16.490768+00:00",
+  "generated_at_utc": "2026-11-08T13:50:35.781797+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -351,7 +351,7 @@
           "targets_per_game": null
         },
         "name": "Cameron Dicker",
-        "ppg": 5.91,
+        "ppg": 5.92,
         "replacement_reference": {
           "name": "Will Reichard",
           "ppg": 7.168
@@ -479,12 +479,12 @@
           "targets_per_game": 1.0
         },
         "name": "Samaje Perine",
-        "ppg": 5.32,
+        "ppg": 5.31,
         "replacement_reference": {
           "name": "Seth McGowan",
           "ppg": 4.142
         },
-        "same_position_uplift_ppg": 1.18,
+        "same_position_uplift_ppg": 1.17,
         "screen_only": true,
         "sleeper_id": "4147",
         "team": "CIN"
@@ -1163,7 +1163,7 @@
           "name": "Keon Coleman",
           "ppg": 6.498
         },
-        "same_position_uplift_ppg": -3.04,
+        "same_position_uplift_ppg": -3.05,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1364,5 +1364,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-08T12:50:09.351247+00:00"
+  "snapshot_utc": "2026-11-08T13:50:29.797403+00:00"
 }
