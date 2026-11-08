@@ -4,6 +4,7 @@
  * Missing value is UNKNOWN, never assumed 0. No Sleeper score dependency.
  */
 import {normalizeStats} from './ffo-gamecast-model.mjs';
+import {reconcileLongTDComponents643} from './ffo-long-td-policy-643.mjs';
 const round=x=>Math.round((x+Number.EPSILON)*100)/100;
 const id=x=>x===null||x===undefined?'':String(x);
 const valid=x=>typeof x==='number'&&Number.isFinite(x)&&x>=0;
@@ -35,7 +36,8 @@ const number=x=>typeof x==='number'&&Number.isFinite(x)?x:null;
  * counts from the reconciled MSF play ledger, not generic box-score counts.
  */
 export function certifyHistoricalFFLPlayerGame({game,player,rules,componentProof=[],
- bonusPolicy=null,bonusPolicyAdjudicated=false}={}){
+ bonusPolicy=null,bonusPolicyAdjudicated=false,
+ longTDThresholdEvidence=null}={}){
  const errors=[],missing=[],components=[],contradictions=[];
  if(!ruleVersionOK(rules))errors.push('frozen_ffl_rules_unverified');
  if(!game||!id(game.id)||!Number.isInteger(game.week)||game.week<1||game.week>18)errors.push('game_identity_or_week_missing');
@@ -83,13 +85,20 @@ export function certifyHistoricalFFLPlayerGame({game,player,rules,componentProof
  }
  if(contradictions.length)errors.push('conflicting_msf_stat_and_event_evidence');
  if(missing.length)errors.push('scoring_categories_not_verified');
- const certified=errors.length===0&&components.length===keys.length;
- const points=certified?round(components.reduce((sum,c)=>sum+c.points,0)):null;
+ const longBonuses=reconcileLongTDComponents643({
+  components,bonusPolicy,thresholdEvidence:longTDThresholdEvidence
+ });
+ if(!longBonuses.accepted)errors.push(longBonuses.reason);
+ const effectiveComponents=longBonuses.accepted?longBonuses.components:components;
+ const certified=errors.length===0&&effectiveComponents.length===keys.length;
+ const points=certified?round(effectiveComponents.reduce((sum,c)=>sum+c.points,0)):null;
  return {status:certified?'certified':'withheld',certified,
   playerId:id(player?.id)||null,team:player?.team||null,position:player?.position||null,
   gameId:id(game?.id)||null,week:game?.week||null,opponent:player?.team===game?.home?game?.away:game?.home,
   provider:'MSF',rulesVersion:rules?.version||null,bonusPolicy:bonusPolicy||null,
-  points,components,requiredCategoryCount:keys.length,verifiedCategoryCount:components.length,
+  points,components:effectiveComponents,
+  longTDBonusPolicySource:longBonuses.policySource||'unverified',
+  requiredCategoryCount:keys.length,verifiedCategoryCount:effectiveComponents.length,
   missing,contradictions,blockers:[...new Set(errors)],
   source:'MSF final game/player log plus independently reconciled MSF scoring events × FFO FFL rules',
   fantasyScoreFromSleeper:false,
