@@ -1,15 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-07T23:37:14.867332+00:00
-Sleeper snapshot: 2026-11-07T23:37:10.426944+00:00
+Generated: 2026-11-08T01:00:09.366783+00:00
+Sleeper snapshot: 2026-11-08T01:00:02.687962+00:00
 
-Roster change entries: 5. New completed trade entries: 0.
-
-- Dirty Birds: added Keon Coleman; dropped Pat Bryant, Michael Mayer
-- JA’MARRTRIX: added Makai Lemon; dropped Tank Dell
-- JA’MARRTRIX: reserve status changed
-- DeeboSix0: added Kyle Monangai; dropped Roschon Johnson
-- To Infinity and Bijan: added Quentin Johnston; dropped Alvin Kamara
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

@@ -1,21 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-07T23:37:14.844715+00:00
-Sleeper snapshot: 2026-11-07T23:37:10.426944+00:00
+Generated: 2026-11-08T01:00:09.335465+00:00
+Sleeper snapshot: 2026-11-08T01:00:02.687962+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**8 transaction changes:** 6 completed, 0 pending/processing, 2 failed.
-
-- **NEW** · transaction `1424930684299935744` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Tank Dell → JA’MARRTRIX (#7)
-- **NEW** · transaction `1424930180371103744` · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Quentin Johnston → To Infinity and Bijan (#9) | Dropped: Alvin Kamara → To Infinity and Bijan (#9)
-- **NEW** · transaction `1424927135172194304` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Keon Coleman → Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
-- **NEW** · transaction `1424927083712278528` · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
-- **NEW** · transaction `1424925854152101888` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
-- **NEW** · transaction `1424835390904279040` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
-- **NEW** · transaction `1424711833285115904` · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1424591486225244160` · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
