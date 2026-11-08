@@ -67,9 +67,25 @@ export async function readAccuracyDashboard(db){
    getRows(db,'SELECT payload_json FROM pfo_accuracy_final_certificates ORDER BY certified_at DESC LIMIT 15000'),
    getRows(db,'SELECT payload_json FROM pfo_accuracy_verified_games ORDER BY week DESC LIMIT 1000')
   ]);
-  // NULL or corrupt payloads are never silently converted to a zero-point score.
+  // A LIMIT boundary can hide earlier entries. Withhold instead of
+  // calculating deceptively complete accuracy from a truncated ledger.
+  if(f.length>=15000||c.length>=15000||g.length>=1000){
+   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+    status:'blocked',reason:'accuracy_ledger_query_limit_reached',
+    measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+    readOnly:true,modelApprovedForDeployment:false};
+  }
+  // Any malformed record means results may have been biased by missing truth.
   const validF=f.map(x=>parse(x)).filter(Boolean),validC=c.map(x=>parse(x)).filter(Boolean),
    validG=g.map(x=>parse(x)).filter(Boolean);
+  if(validF.length!==f.length||validC.length!==c.length||validG.length!==g.length){
+   return {schema:'FFO_PFO_ACCURACY_DASHBOARD_V1',version:'PFO 6.43',
+    status:'blocked',reason:'incomplete_or_corrupt_primary_accuracy_ledger',
+    measuredPlayerGames:0,metrics:{n:0,mae:null,rmse:null,bias:null},
+    ledgerCounts:{forecasts:f.length,certificates:c.length,games:g.length,
+     discardedUnreadableRows:f.length-validF.length+c.length-validC.length+g.length-validG.length},
+    readOnly:true,modelApprovedForDeployment:false};
+  }
   // 6.43: correction history is OPTIONAL before the separate D1 migration,
   // but never silently claim that an untracked revised actual is certified.
   const schema=await getRows(db,
