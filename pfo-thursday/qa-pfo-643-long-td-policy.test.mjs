@@ -21,8 +21,8 @@ const game={
 };
 const player={id:'P100',position:'QB',team:'BUF',gameId:'G10',
  identityVerified:true,stats:{}};
-const source=(policy)=>({
- verified:true,source:'commissioner_ffl_scoring_semantics_plus_msf_pbp',
+const officialEvidence=(policy='additive')=>({
+ verified:true,source:'official_sleeper_pass_td_stacking_2026_09_17_plus_msf_pbp',
  thresholdCountMode:'nested_40plus_includes_50plus',
  adjudicatedPolicy:policy,independentMSFEventsReconciled:true
 });
@@ -34,67 +34,90 @@ function proofs({pass40=1,pass50=1}={}){
   gameId:'G10',playerId:'P100',verified:true
  }));
 }
-function certify({policy='highest_only',evidence=null,componentProof=proofs()}={}){
+function certify({policy='additive',evidence=null,componentProof=proofs()}={}){
  return validateAndCertifyMSF({game,player,rules,componentProof,
   bonusPolicy:policy,bonusPolicyAdjudicated:true,
   longTDThresholdEvidence:evidence});
 }
-test('verified 50+ yard passing TD is WITHHELD absent official stacking semantics',()=>{
- const result=certify();
- assert.equal(result.status,'withheld');
- assert.ok(result.blockers.includes('msf_score_certificate_incomplete')||result.reason==='msf_score_certificate_incomplete');
- const high=certify({policy:'highest_only',evidence:source('highest_only')});
- assert.equal(high.status,'certified_source_score');
- assert.equal(high.certificate.points,8.2);
- assert.equal(high.certificate.longTDBonusPolicySource,
-  'commissioner_ffl_scoring_semantics_plus_msf_pbp');
+test('official Sleeper establishes additive passing TD tiers but MSF event proof is still mandatory',()=>{
+ const r=certify();
+ assert.equal(r.status,'withheld');
+ assert.equal(r.reason,'msf_score_certificate_incomplete');
+ assert.ok(r.blockers.includes('50_plus_bonus_stacking_or_msf_play_evidence_not_adequately_verified'));
+ const verified=certify({evidence:officialEvidence()});
+ assert.equal(verified.status,'certified_source_score');
+ assert.equal(verified.certificate.points,9.2);
+ assert.equal(verified.certificate.longTDBonusPolicySource,
+  'official_sleeper_pass_td_stacking_2026_09_17_plus_msf_pbp');
+ assert.equal(verified.certificate.certified,true);
 });
-test('policy calculations are different candidates, NEVER an assumed FFL interpretation',()=>{
- const top=certify({policy:'highest_only',evidence:source('highest_only')});
- const stacked=certify({policy:'additive',evidence:source('additive')});
- assert.equal(top.certificate.points,8.2);
- assert.equal(stacked.certificate.points,9.2);
- assert.equal(stacked.certificate.points-top.certificate.points,1);
- const top40=top.certificate.components.find(x=>x.category==='pass_td_40p');
- assert.equal(top40.providerThresholdCount,1);
- assert.equal(top40.value,0);
- assert.equal(top40.points,0);
- const stacked40=stacked.certificate.components.find(x=>x.category==='pass_td_40p');
- assert.equal(stacked40.value,1);
- assert.equal(stacked40.points,1);
+test('highest-only passing TD score is rejected despite plausible synthetic event counts',()=>{
+ const r=certify({policy:'highest_only',evidence:officialEvidence('highest_only')});
+ assert.equal(r.status,'withheld');
+ assert.ok(r.blockers.includes('official_sleeper_passing_td_40_and_50_bonuses_are_additive'));
+ assert.equal(r.certificate,undefined);
 });
-test('50+ provider count cannot exceed nested verified 40+ count',()=>{
- const bad=certify({componentProof:proofs({pass40:0,pass50:1}),
-  evidence:source('highest_only')});
- assert.equal(bad.status,'withheld');
- assert.ok(bad.blockers.includes('50_plus_long_tds_exceed_verified_40_plus_count'));
+test('valid additive 50+ play scores base pass TD, passing yards and BOTH 40+/50+ bonuses',()=>{
+ const result=certify({evidence:officialEvidence()});
+ assert.equal(result.certificate.points,9.2);
+ const comps=result.certificate.components;
+ const forty=comps.find(x=>x.category==='pass_td_40p');
+ const fifty=comps.find(x=>x.category==='pass_td_50p');
+ assert.equal(forty.value,1);
+ assert.equal(forty.points,1);
+ assert.equal(fifty.value,1);
+ assert.equal(fifty.points,2);
+ assert.equal(forty.points+fifty.points,3);
 });
-test('incorrect official policy statement or PBP reconciliation blocks even when numerical data seems valid',()=>{
- for(const e of [
-  {...source('highest_only'),verified:false},
-  {...source('highest_only'),independentMSFEventsReconciled:false},
-  {...source('additive')},
-  {...source('highest_only'),thresholdCountMode:'exclusive_40_to_49'},
-  {...source('highest_only'),source:'unknown_sleeper_guess'}
+test('50+ provider threshold count cannot exceed verified inclusive 40+ count',()=>{
+ const r=certify({componentProof:proofs({pass40:0,pass50:1}),
+  evidence:officialEvidence()});
+ assert.equal(r.status,'withheld');
+ assert.ok(r.blockers.includes('50_plus_long_tds_exceed_verified_40_plus_count'));
+});
+test('wrong policy source or missing official/PBP corroboration withholds 50+ score',()=>{
+ for(const invalid of [
+  {...officialEvidence(),verified:false},
+  {...officialEvidence(),independentMSFEventsReconciled:false},
+  {...officialEvidence(),thresholdCountMode:'exclusive_40_to_49'},
+  {...officialEvidence(),source:'unknown_sleeper_guess'},
+  {...officialEvidence(),adjudicatedPolicy:'highest_only'}
  ]){
-  const r=certify({evidence:e});
-  assert.equal(r.status,'withheld');
-  assert.equal(r.certificate,undefined);
+  const r=certify({evidence:invalid});
+  assert.equal(r.status,'withheld',JSON.stringify(invalid));
  }
 });
-test('verified 40–49 touchdown with no 50+ score is unaffected by unresolved overlap',()=>{
+test('verified 40–49 TD without any 50+ count remains scoreable under additive rules',()=>{
  const r=certify({componentProof:proofs({pass40:1,pass50:0})});
  assert.equal(r.status,'certified_source_score');
  assert.equal(r.certificate.points,7.2);
  assert.equal(r.certificate.longTDBonusPolicySource,
   'no_50_plus_long_touchdown_in_verified_game');
 });
-test('zero count event proof is never a reason to invent additional positive bonus',()=>{
- const a=reconcileLongTDComponents643({components:[
+test('official passing-only language does not falsely adjudicate 50+ rushing or receiving TDs',()=>{
+ const components=[
+  {category:'rec_td_40p',value:1,weight:1,points:1,source:'msf_reconciled_pbp'},
+  {category:'rec_td_50p',value:1,weight:2,points:2,source:'msf_reconciled_pbp'}
+ ];
+ const notYet=reconcileLongTDComponents643({
+  components,bonusPolicy:'additive',thresholdEvidence:officialEvidence()
+ });
+ assert.equal(notYet.accepted,false);
+ const futureIndependentEvidence={...officialEvidence(),
+  source:'commissioner_ffl_scoring_semantics_plus_msf_pbp'};
+ const conditional=reconcileLongTDComponents643({
+  components,bonusPolicy:'additive',thresholdEvidence:futureIndependentEvidence
+ });
+ assert.equal(conditional.accepted,true);
+ assert.equal(conditional.components.reduce((sum,c)=>sum+c.points,0),3);
+});
+test('zero-count verified PBP never becomes invented 50+ fantasy points',()=>{
+ const c=[
   {category:'pass_td_40p',value:0,weight:1,points:0,source:'msf_reconciled_pbp'},
   {category:'pass_td_50p',value:0,weight:2,points:0,source:'msf_reconciled_pbp'}
- ],bonusPolicy:'highest_only'});
- assert.equal(a.accepted,true);
- assert.equal(a.components.reduce((n,x)=>n+x.points,0),0);
- assert.equal(a.approvedFFLBonusPolicy,false);
+ ];
+ const result=reconcileLongTDComponents643({components:c,bonusPolicy:'additive'});
+ assert.equal(result.accepted,true);
+ assert.equal(result.components.reduce((sum,x)=>sum+x.points,0),0);
+ assert.equal(result.approvedFFLBonusPolicy,false);
 });
