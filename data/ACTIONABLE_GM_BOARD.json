@@ -1,19 +1,19 @@
 {
-  "generated_at_utc": "2026-11-08T14:40:21.872997+00:00",
-  "roster_snapshot_utc": "2026-11-08T14:40:15.236537+00:00",
+  "generated_at_utc": "2026-11-08T15:37:51.744672+00:00",
+  "roster_snapshot_utc": "2026-11-08T15:37:46.255731+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 125.381,
-      "dirty_birds_before": 123.018,
-      "dirty_birds_delta_ppg": 2.36,
+      "dirty_birds_after": 125.285,
+      "dirty_birds_before": 122.979,
+      "dirty_birds_delta_ppg": 2.31,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 9.75
+          "projected_ppg": 9.78
         }
       ],
       "market_quote": {
@@ -24,32 +24,45 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.664,
+      "mutual_benefit_screen_score": 4.653,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 99.391,
-      "opponent_before": 96.402,
-      "opponent_delta_ppg": 2.99,
+      "opponent_after": 99.329,
+      "opponent_before": 96.273,
+      "opponent_delta_ppg": 3.06,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 20.71,
-      "projected_ppg_sent": 9.75,
+      "projected_ppg_received": 20.66,
+      "projected_ppg_sent": 9.78,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 20.71
+          "projected_ppg": 20.66
         }
       ],
       "starter_benefit": {
-        "them": 2.99,
-        "us": 2.36
+        "them": 3.06,
+        "us": 2.31
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "trade_rejected": [
+    {
+      "give": [
+        "C.J. Stroud",
+        "Zay Flowers"
+      ],
+      "reasons": [
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Justin Jefferson"
+      ]
+    },
     {
       "give": [
         "Kirk Cousins",
@@ -66,15 +79,16 @@
     },
     {
       "give": [
-        "Kirk Cousins",
-        "A.J. Brown"
+        "C.J. Stroud",
+        "Zay Flowers"
       ],
       "reasons": [
+        "Too little projected starter benefit for roster disruption",
         "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Tony Pollard"
+        "Malik Nabers"
       ]
     },
     {
@@ -87,20 +101,6 @@
       ],
       "receive": [
         "Garrett Wilson"
-      ]
-    },
-    {
-      "give": [
-        "C.J. Stroud",
-        "Zay Flowers"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Malik Nabers"
       ]
     }
   ],
