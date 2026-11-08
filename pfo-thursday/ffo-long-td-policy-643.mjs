@@ -20,6 +20,7 @@ export function reconcileLongTDComponents643({
   return rejected('complete_reconciled_bonus_policy_required');
  const out=components.map(c=>({...c}));
  let longFiftyObserved=false;
+ const observedFiftyKinds=[];
  for(const kind of KINDS){
   const f=out.find(x=>x.category===kind+'_td_40p');
   const ff=out.find(x=>x.category===kind+'_td_50p');
@@ -30,15 +31,27 @@ export function reconcileLongTDComponents643({
    return rejected('long_td_threshold_counts_or_provider_play_evidence_unverified');
   if(ff.value>f.value)
    return rejected('50_plus_long_tds_exceed_verified_40_plus_count');
-  if(ff.value>0)longFiftyObserved=true;
+  if(ff.value>0){longFiftyObserved=true;observedFiftyKinds.push(kind);}
  }
  if(longFiftyObserved){
+  // Sleeper's first-party "What Stacks?" (2026-09-17) explicitly establishes
+  // additive 40+ and 50+ PASSING touchdown bonuses. A highest-tier-only
+  // passing calculation is therefore NOT an eligible FFL final certificate.
+  // Rushing/receiving threshold treatment is not explicitly established
+  // by that example and remains gated pending separately verified semantics.
+  if(observedFiftyKinds.includes('pass')&&bonusPolicy!=='additive')
+   return rejected('official_sleeper_passing_td_40_and_50_bonuses_are_additive');
+  const officialPassEvidence=
+   thresholdEvidence?.source==='official_sleeper_pass_td_stacking_2026_09_17_plus_msf_pbp'&&
+   observedFiftyKinds.every(k=>k==='pass')&&bonusPolicy==='additive';
+  const separatelyAdjudicatedAllTypes=
+   thresholdEvidence?.source==='commissioner_ffl_scoring_semantics_plus_msf_pbp';
   if(thresholdEvidence?.verified!==true||
-   thresholdEvidence?.source!=='commissioner_ffl_scoring_semantics_plus_msf_pbp'||
+   (!officialPassEvidence&&!separatelyAdjudicatedAllTypes)||
    thresholdEvidence?.thresholdCountMode!=='nested_40plus_includes_50plus'||
    thresholdEvidence?.adjudicatedPolicy!==bonusPolicy||
    thresholdEvidence?.independentMSFEventsReconciled!==true)
-   return rejected('50_plus_bonus_stacking_not_officially_adjudicated');
+   return rejected('50_plus_bonus_stacking_or_msf_play_evidence_not_adequately_verified');
  }
  for(const kind of KINDS){
   const f=out.find(x=>x.category===kind+'_td_40p'),
@@ -59,7 +72,7 @@ export function reconcileLongTDComponents643({
  }
  return {accepted:true,components:out,
   approvedFFLBonusPolicy:longFiftyObserved,
-  policySource:longFiftyObserved?'commissioner_ffl_scoring_semantics_plus_msf_pbp':
+  policySource:longFiftyObserved?thresholdEvidence.source:
    'no_50_plus_long_touchdown_in_verified_game',
   bonusPolicy,usedOverlappingDistanceSemantics:longFiftyObserved};
 }
