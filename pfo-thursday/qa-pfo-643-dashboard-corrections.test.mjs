@@ -80,3 +80,34 @@ test('empty new correction ledger is still read-only and does not claim a comple
  assert.equal(x.correctionLedger.migrationApplied,true);
  assert.equal(x.correctionLedger.latestSourceCorrectionFeedVerified,false);
 });
+
+test('primary D1 reader withholds fake accuracy when any final certificate is corrupt',async()=>{
+ const record=db({migration:false});
+ const original=record.connection.prepare.bind(record.connection);
+ record.connection.prepare=sql=>{
+  const base=original(sql);
+  if(sql.includes('pfo_accuracy_final_certificates'))
+   return {async all(){return {results:[{payload_json:'{broken actual}'}]}}};
+  return base;
+ };
+ const result=await readAccuracyDashboard(record.connection);
+ assert.equal(result.status,'blocked');
+ assert.equal(result.reason,'incomplete_or_corrupt_primary_accuracy_ledger');
+ assert.equal(result.metrics.mae,null);
+ assert.equal(result.ledgerCounts.discardedUnreadableRows,1);
+});
+test('bounded ledger read refuses an exact 1000-row game cap instead of biased accuracy',async()=>{
+ const record=db({migration:false});
+ const original=record.connection.prepare.bind(record.connection);
+ record.connection.prepare=sql=>{
+  const base=original(sql);
+  if(sql.includes('pfo_accuracy_verified_games'))
+   return {async all(){return {results:Array.from({length:1000},()=>({payload_json:JSON.stringify(game)}))}}};
+  return base;
+ };
+ const result=await readAccuracyDashboard(record.connection);
+ assert.equal(result.status,'blocked');
+ assert.equal(result.reason,'accuracy_ledger_query_limit_reached');
+ assert.equal(result.measuredPlayerGames,0);
+ assert.equal(result.metrics.mae,null);
+});
