@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-08T02:53:27.408195+00:00",
-  "source_snapshot_utc": "2026-11-08T02:53:18.497028+00:00",
-  "source_market_as_of": "2026-11-07T14:54:35.992835+00:00",
+  "generated_at_utc": "2026-11-08T03:53:09.692898+00:00",
+  "source_snapshot_utc": "2026-11-08T03:53:01.317855+00:00",
+  "source_market_as_of": "2026-11-08T03:53:06.706935+00:00",
   "source_projection_as_of": "2026-11-08T01:43:11.870873+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 8856,
-  "market_screened": 2315,
+  "market_screened": 2313,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -134,7 +134,7 @@
           "opponent": "    Victorious Secret",
           "our_lineup_delta_ppg": 3.45,
           "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.75,
+          "value_paid_received_ratio": 0.747,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -151,9 +151,9 @@
               "position": "WR"
             },
             {
-              "id": "13296",
-              "name": "Caleb Douglas",
-              "position": "WR"
+              "id": "1166",
+              "name": "Kirk Cousins",
+              "position": "QB"
             }
           ],
           "receive": [
@@ -172,7 +172,7 @@
           "opponent": "Cokerthestroker",
           "our_lineup_delta_ppg": 2.08,
           "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.783,
+          "value_paid_received_ratio": 0.726,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -243,7 +243,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
           "their_lineup_delta_ppg": 0.47,
-          "value_paid_received_ratio": 0.803,
+          "value_paid_received_ratio": 0.815,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -281,7 +281,7 @@
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
           "their_lineup_delta_ppg": 0.47,
-          "value_paid_received_ratio": 0.731,
+          "value_paid_received_ratio": 0.738,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -329,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 142
+      "candidate_count": 144
     },
     {
       "asset": "Patrick Mahomes",
