@@ -29,6 +29,9 @@ jobs:
         run: |
           set -euo pipefail
           node --test \
+            pfo-thursday/qa-pfo-643-long-td-policy.test.mjs \
+            pfo-thursday/qa-pfo-643-guarded-pregame.test.mjs \
+            pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs \
             pfo-thursday/qa-ffo-66-browser.test.mjs \
             pfo-thursday/qa-ffo-trade-mobile.test.mjs \
             pfo-thursday/qa-ffo-layout-64-browser.test.mjs \
