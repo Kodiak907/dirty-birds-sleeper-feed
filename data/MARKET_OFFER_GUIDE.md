@@ -2,20 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-07T14:54:36.135839+00:00
+Updated: 2026-11-08T14:52:58.598349+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 5. Unpriced candidate packages: 3.
+Fully priced in-range opportunities: 6. Unpriced candidate packages: 3.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 4 | Jonah Coleman | Brock Purdy | 0.82× | +2.36 | +2.99 |
-| 2 | 11 | Kirk Cousins, Zay Flowers | Parker Washington | 1.01× | +1.28 | +0.79 |
-| 3 | 11 | Kirk Cousins, A.J. Brown | Tony Pollard | 0.80× | +1.59 | +0.48 |
-| 4 | 9 | Jonah Coleman | Garrett Wilson | 0.97× | +0.57 | +0.05 |
-| 5 | 3 | C.J. Stroud, Zay Flowers | Malik Nabers | 1.09× | +0.55 | +0.28 |
+| 1 | 4 | Jonah Coleman | Brock Purdy | 0.82× | +2.31 | +3.06 |
+| 2 | 11 | C.J. Stroud, Zay Flowers | Justin Jefferson | 1.06× | +1.69 | +0.37 |
+| 3 | 11 | Kirk Cousins, Zay Flowers | Parker Washington | 0.97× | +1.28 | +0.78 |
+| 4 | 3 | C.J. Stroud, Zay Flowers | Malik Nabers | 1.09× | +0.53 | +0.27 |
+| 5 | 9 | Jonah Coleman | Garrett Wilson | 1.06× | +0.54 | +0.08 |
 
 ## Negotiation protocol
 
