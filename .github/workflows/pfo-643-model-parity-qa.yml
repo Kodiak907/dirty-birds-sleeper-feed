@@ -57,6 +57,12 @@ jobs:
           node --test pfo-thursday/qa-pfo-643-browser-model-parity.test.mjs pfo-thursday/qa-pfo-643-msf-fixtures.test.mjs pfo-thursday/qa-pfo-643-trusted-msf.test.mjs pfo-thursday/qa-pfo-643-roster-parity.test.mjs pfo-thursday/qa-pfo-643-lineup.test.mjs pfo-thursday/qa-pfo-643-live-lineup-score.test.mjs pfo-thursday/qa-pfo-643-startsit-week.test.mjs pfo-thursday/qa-pfo-643-startsit-cache.test.mjs pfo-thursday/qa-pfo-643-release-gate.test.mjs pfo-thursday/qa-pfo-643-capture-parity.test.mjs pfo-thursday/qa-pfo-643-final-corrections.test.mjs pfo-thursday/qa-pfo-643-correction-view.test.mjs pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs pfo-thursday/qa-pfo-643-accuracy-ui.test.mjs pfo-thursday/qa-pfo-643-history-source-labels.test.mjs pfo-thursday/qa-pfo-643-roster-slots.test.mjs pfo-thursday/qa-pfo-643-ingestion-health.test.mjs pfo-thursday/qa-ffo-66.test.mjs pfo-thursday/qa-ffo-636.test.mjs pfo-thursday/qa-ffo-635.test.mjs
       - name: Prove proposed correction migration immutable on local SQLite (never remote D1)
         run: python3 pfo-thursday/qa-pfo-643-corrections-sqlite.py
+      - name: Freeze exact Commissioner-verified FFL scoring contract bytes
+        run: |
+          set -euo pipefail
+          actual="$(git hash-object pfo-thursday/FFO_FFL_SCORING_V1.json)"
+          test "$actual" = "0e61cbe05f83419834c5d6619edd5ffbac5b2013"
+          echo "Official 2026-11-05-ffl-screen-recording-verified-v4 contract matches immutable baseline Git blob."
       - name: Check protected scoring version and dedicated Accuracy Worker remains fail-closed
         run: |
           set -euo pipefail
