@@ -120,9 +120,37 @@ export async function readAccuracyDashboard(db){
     withheldPairs:reviewed.withheldKeys.length,
     issues:reviewed.issues};
   }
+  // 6.43 accuracy uses ONLY independently witnessed live PFO browser
+  // forecasts. The earlier 6.37 research audit still accepts its own
+  // explicit historical fixture inputs; that never authorizes the dashboard
+  // to treat unproven past forecasts as measured PFO 6.43 accuracy.
+  const trustworthy=validF.filter(f=>{
+   const witness=f?.parityWitness;
+   return f?.sourceEvidence==='verified_live_pfo_636_model_parity'&&
+    witness?.authenticatedSameFixture===true&&
+    typeof witness.verifierRunId==='string'&&witness.verifierRunId.length>0&&
+    typeof witness.scoringContractSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.scoringContractSha256)&&
+    typeof witness.browserSourceSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.browserSourceSha256)&&
+    typeof witness.serverSourceSha256==='string'&&
+    /^[a-f0-9]{64}$/i.test(witness.serverSourceSha256)&&
+    witness.sourceAsOfUtc===f.sourceAsOf&&
+    Number.isFinite(Date.parse(witness.verifiedAtUtc??''))&&
+    Number.isFinite(Date.parse(witness.browserObservedAtUtc??''))&&
+    Date.parse(witness.verifiedAtUtc)<=Date.parse(f.capturedAt)&&
+    Date.parse(witness.browserObservedAtUtc)<=Date.parse(witness.verifiedAtUtc);
+  });
+  const dropped=validF.length-trustworthy.length;
   const report=reportAccuracyFromVerifiedRecords({
-   forecasts:validF,certificates:actuals,games:validG});
-  return {...report,correctionLedger:{
+   forecasts:trustworthy,certificates:actuals,games:validG});
+  return {...report,
+   sourceProvenance:{liveModelAttestedForecasts:trustworthy.length,
+    unattestedForecastsWithheld:dropped,
+    provenanceGate:'same_source_live_PFO_636_browser_and_server'},
+   exclusions:{...report.exclusions,
+    ...(dropped?{missing_643_live_model_parity_witness:dropped}:{})},
+   correctionLedger:{
     status:correctionStatus,migrationApplied:revisionSchemaPresent,
     evidenceCompleteForRelease:false,latestSourceCorrectionFeedVerified:false,
     correctionDetails,revisionRows,unreadableRevisions},
