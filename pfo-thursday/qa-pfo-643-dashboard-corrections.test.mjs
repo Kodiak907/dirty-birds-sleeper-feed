@@ -12,7 +12,17 @@ const forecast={provider:'PFO',scoringSystem:'FFL',sourceProvider:'MSF',
  points:20,modelVersion:'pfo-636-baseline',
  rulesVersion:FFL_RULES_VERSION,
  fromSleeperActual:false,afterGameKnowledge:false,
- capturedAt:'2026-11-08T18:00:00.000Z',kickoffAt:kickoff};
+ capturedAt:'2026-11-08T18:00:00.000Z',kickoffAt:kickoff,
+ sourceAsOf:'2026-11-08T17:57:00Z',
+ sourceEvidence:'verified_live_pfo_636_model_parity',
+ parityWitness:{
+  authenticatedSameFixture:true,verifierRunId:'test_only_456',
+  scoringContractSha256:'d'.repeat(64),
+  browserSourceSha256:'f'.repeat(64),serverSourceSha256:'e'.repeat(64),
+  sourceAsOfUtc:'2026-11-08T17:57:00Z',
+  browserObservedAtUtc:'2026-11-08T17:58:00Z',
+  verifiedAtUtc:'2026-11-08T17:59:00Z'
+ }};
 const certificate={certified:true,provider:'MSF',rulesVersion:FFL_RULES_VERSION,
  gameId:'g101',playerId:'18607',week:10,position:'QB',points:18,
  gameStatus:'FINAL',fantasyScoreFromSleeper:false,
@@ -110,4 +120,22 @@ test('bounded ledger read refuses an exact 1000-row game cap instead of biased a
  assert.equal(result.reason,'accuracy_ledger_query_limit_reached');
  assert.equal(result.measuredPlayerGames,0);
  assert.equal(result.metrics.mae,null);
+});
+
+test('a forged or legacy pregame forecast without the real browser/server witness is excluded from metrics',async()=>{
+ const target=db({migration:true,revisions:[]});
+ const original=target.connection.prepare.bind(target.connection);
+ target.connection.prepare=sql=>{
+  if(sql.includes('pfo_accuracy_forecasts'))
+   return {async all(){return {results:[{payload_json:JSON.stringify({
+    ...forecast,sourceEvidence:'historical_legacy',parityWitness:null
+   })}]}}};
+  return original(sql);
+ };
+ const out=await readAccuracyDashboard(target.connection);
+ assert.equal(out.measuredPlayerGames,0);
+ assert.equal(out.metrics.mae,null);
+ assert.equal(out.sourceProvenance.liveModelAttestedForecasts,0);
+ assert.equal(out.sourceProvenance.unattestedForecastsWithheld,1);
+ assert.equal(out.exclusions.missing_643_live_model_parity_witness,1);
 });
