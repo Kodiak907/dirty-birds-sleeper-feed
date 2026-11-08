@@ -17,7 +17,7 @@ const trustedFixture=({game,rules})=>game?.provider==='MSF'&&
  rules?.version===FFL_RULES_VERSION&&rules?.league==='FFL'&&rules?.season===2026;
 
 export function validateAndCertifyMSF({game,player,rules,componentProof,
- bonusPolicy=null,bonusPolicyAdjudicated=false}={}){
+ bonusPolicy=null,bonusPolicyAdjudicated=false,longTDThresholdEvidence=null}={}){
  if(!trustedFixture({game,rules}))
   return {status:'withheld',reason:'verified_final_msf_game_and_restored_ffl_scoring_required'};
  if(game?.statCorrectionsChecked!==true||game?.fullPlayCoverageVerified!==true)
@@ -27,7 +27,7 @@ export function validateAndCertifyMSF({game,player,rules,componentProof,
  if(!Array.isArray(componentProof))
   return {status:'withheld',reason:'complete_provider_component_proof_required'};
  const certificate=certifyHistoricalFFLPlayerGame({game,player,rules,
-  componentProof,bonusPolicy,bonusPolicyAdjudicated});
+  componentProof,bonusPolicy,bonusPolicyAdjudicated,longTDThresholdEvidence});
  if(!certificate?.certified||certificate.points===null||
   certificate.rulesVersion!==FFL_RULES_VERSION||
   certificate.fantasyScoreFromSleeper!==false)
