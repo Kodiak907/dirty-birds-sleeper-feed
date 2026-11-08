@@ -44,8 +44,10 @@ jobs:
           node --check pfo-thursday/qa-pfo-643-dashboard-corrections.test.mjs
           node --check pfo-thursday/ffo-msf-final-corrections-643.mjs
           node --check pfo-thursday/qa-pfo-643-final-corrections.test.mjs
+          node --check pfo-thursday/ffo-guarded-pregame-643.mjs
+          node --check pfo-thursday/qa-pfo-643-guarded-pregame.test.mjs
           node --check pfo-thursday/ffo-capture-parity-643.mjs
-          node --check pfo-thursday/qa-pfo-643-capture-parity.test.mjs
+          node --check pfo-thursday/qa-pfo-643-capture-parity.test.mjs pfo-thursday/qa-pfo-643-guarded-pregame.test.mjs
           node --check pfo-thursday/ffo-release-gate-643.mjs
           node --check pfo-thursday/qa-pfo-643-release-gate.test.mjs
           node --check pfo-thursday/qa-pfo-643-roster-slots.test.mjs
