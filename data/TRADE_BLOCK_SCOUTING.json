@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-08T01:00:12.585418+00:00",
-  "source_snapshot_utc": "2026-11-08T01:00:02.687962+00:00",
+  "generated_at_utc": "2026-11-08T02:03:48.024134+00:00",
+  "source_snapshot_utc": "2026-11-08T02:03:39.305848+00:00",
   "source_market_as_of": "2026-11-07T14:54:35.992835+00:00",
-  "source_projection_as_of": "2026-11-07T19:21:35.904634+00:00",
+  "source_projection_as_of": "2026-11-08T01:43:11.870873+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -56,47 +56,9 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 4.48,
-          "their_lineup_delta_ppg": 0.88,
+          "our_lineup_delta_ppg": 4.45,
+          "their_lineup_delta_ppg": 0.9,
           "value_paid_received_ratio": 0.805,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "13296",
-              "name": "Caleb Douglas",
-              "position": "WR"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4046",
-              "name": "Patrick Mahomes",
-              "position": "QB"
-            },
-            {
-              "id": "7002",
-              "name": "Juwan Johnson",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 5,
-          "opponent": "    Victorious Secret",
-          "our_lineup_delta_ppg": 3.55,
-          "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.75,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -135,6 +97,44 @@
           "our_lineup_delta_ppg": 3.55,
           "their_lineup_delta_ppg": 0.0,
           "value_paid_received_ratio": 0.74,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13296",
+              "name": "Caleb Douglas",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "7002",
+              "name": "Juwan Johnson",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 5,
+          "opponent": "    Victorious Secret",
+          "our_lineup_delta_ppg": 3.45,
+          "their_lineup_delta_ppg": 0.0,
+          "value_paid_received_ratio": 0.75,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -208,8 +208,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.04,
-          "their_lineup_delta_ppg": 0.88,
+          "our_lineup_delta_ppg": 2.01,
+          "their_lineup_delta_ppg": 0.9,
           "value_paid_received_ratio": 1.025,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -242,7 +242,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
-          "their_lineup_delta_ppg": 0.48,
+          "their_lineup_delta_ppg": 0.47,
           "value_paid_received_ratio": 0.803,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
@@ -280,7 +280,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.59,
-          "their_lineup_delta_ppg": 0.48,
+          "their_lineup_delta_ppg": 0.47,
           "value_paid_received_ratio": 0.731,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -317,7 +317,7 @@
           ],
           "opponent_roster_id": 12,
           "opponent": "Cokerthestroker",
-          "our_lineup_delta_ppg": 1.55,
+          "our_lineup_delta_ppg": 1.54,
           "their_lineup_delta_ppg": 0.0,
           "value_paid_received_ratio": 0.721,
           "our_extra_cut": null,
