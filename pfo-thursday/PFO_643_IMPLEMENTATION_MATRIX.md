@@ -115,3 +115,13 @@ The latest source-level CI pass and the Playwright browser regression should be 
 **Known blocker:** GitHub Actions pfo-preview lacks MSF_API_KEY; Pages metadata did not show the secret name; GameCast Worker binding metadata check received HTTP 403. None proves the separately running licensed internal GameCast has lost access. A real trusted internal feed and authenticated same-asof PFO browser/server comparison remain necessary before any live prediction capture. Do not copy secrets, buy automation or use TinyFish to compensate.
 
 **Next concrete gate:** establish provider proof through an existing authorized server-side Cloudflare binding or verify exact missing scope, then implement a real private same-source PFO browser/server comparison for QB/RB/WR/TE/K/DEF. Only then enable an audited scheduled capture and independent final-certificate pipeline. Finish cross-tool and real iPhone QA before the ONE protected-preview 6.43 release. Commissioner D1, public demo, production and FFOI remain segregated.
+
+## November 7 evidence addendum: official Sleeper touchdown stacking
+
+Sleeper HQ's September 17, 2026 [official What Stacks? guidance](https://support.sleeper.com/en/articles/3186339-what-stacks) explicitly confirms that **40+ and 50+ passing-TD bonuses add together**. Given the already-verified frozen FFL +1/+2 weights, a separately MSF-PBP-certified 50+ PASSING touchdown receives **+3 incremental long-TD bonus**. This is a platform scoring semantics clarification, NOT a scoring-settings change.
+
+The tested 6.43 certificate now rejects highest-tier-only passing TD values and still requires fully verified inclusive 40+/50+ event proof before certifying any actual player score. **Receiving/rushing 50+ TD source semantics remain separately gated** because the published official example explicitly covers passing. See `PFO_643_SLEEPER_LONG_TD_SEMANTICS_EVIDENCE.md`. Do not modify the frozen original scoring JSON silently or use Sleeper fantasy point totals as score truth.
+
+The latest full no-deploy browser regression after GameCast dependency and Overview ten-slot fixes passed [Action #42455199757](https://github.com/Kodiak907/dirty-birds-sleeper-feed/actions/runs/42455199757). This establishes isolated Chromium fixture behavior, NOT live Cloudflare or real iPhone success.
+
+**Release still BLOCKED** by real licensed MSF server evidence, same-asof displayed PFO parity, actual timed captures, corrected final game certificates, fully authenticated private UI, cross-tool QA and protected preview/iPhone/isolation gates.
