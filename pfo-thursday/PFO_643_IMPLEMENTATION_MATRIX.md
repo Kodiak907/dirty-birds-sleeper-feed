@@ -95,3 +95,23 @@ Using preexisting, authorized MSF access, build a **non-public trusted Worker-si
 ### Still required before one PFO 6.43 protected-preview release
 
 Licensed MSF data physically received and verified through an existing authorized internal runtime, a true displayed PFO browser/server same-asof forecast comparison for all position paths, verified actual game/player/play-by-play categories and 50+ touchdown bonus semantics, completed kickoff capture scheduler and original/duplicate D1 write smoke, official correction-feed proof, read-only authenticated Accuracy UI wired privately, full cross-tool trade/waiver/start-sit/overview/GameCast performance and functional QA, live protected Preview version parity, real iPhone Safari verification, and Commissioner/public-demo/data isolation diff. **Current upgrade not released.** No MSF credential or API key should be pasted into chat.
+
+## PFO 6.43 resumed operations — November 7, 2026 PT
+
+**Release remains NOT READY. No protected-preview deploy or D1 migration.** Draft PR #5 is open and unmerged. This fourth engineering round focused on immutable prediction provenance, corrected final-score integrity and FFL touchdown bonus safety.
+
+### Engineering changes staged
+
+- Added `ffo-guarded-pregame-643.mjs` and regression tests. A **future** scheduled Worker must identify its dedicated `PFO_ACCURACY_DB`, pass a verified 15–30-minute pre-kickoff window, and provide real protected-PFO browser/server SAME-model/SAME-source parity evidence before it can construct an immutable forecast INSERT. A source-level unit test or missing witness cannot write. Existing generic 6.38 research helper is not a production authorization path; no Worker cron, browser write endpoint or real forecasts were activated.
+- Hardened `ffo-accuracy-dashboard-640.mjs` to **withhold all error metrics** when raw ledger queries hit their safety LIMIT or contain malformed primary records; these conditions previously risked reporting a biased subset. Research dashboard now counts only pregame forecasts carrying the exact verified live-parity witness written by the guarded 6.43 capture path. Older archived/unattested forecasts are explicitly excluded rather than silently accepted for measured 6.43 accuracy.
+- Added `ffo-long-td-policy-643.mjs` and integrated its gate into both independent historical and 6.39 final-score certificate paths. A 50+ yard TD with overlapping 40+ thresholds cannot certify while the **actual Commissioner/Sleeper FFL stacking policy** is unadjudicated. When future independent MSF PBP and official scoring semantics prove one interpretation, the engine handles highest-tier-only vs additive correctly. Current frozen FFL scoring weights were **not changed**.
+- Git SHA-1 blob of the EXACT full official FFL JSON is pinned in branch-only CI: `0e61cbe05f83419834c5d6619edd5ffbac5b2013`; any changed scoring bytes block deployment QA until reviewed. Contract version remains `2026-11-05-ffl-screen-recording-verified-v4`.
+- New and existing Node tests cover guarded D1 writes, no-parity refusal, no-status/no-kickoff failures, first-write immutability, corrupt/truncated record blocking, source witnesses, disputed 50+ TD bonus candidates, and 6.39 certifier fail-closed behavior. These are synthetic/isolated, NOT live MSF scoring proof.
+
+### Environment and acceptance
+
+The latest source-level CI pass and the Playwright browser regression should be checked at the branch head before any promotion. Browser QA does not equal real iPhone acceptance. Official game/provider coverage, pregame cron activation and authenticated dashboard routing remain unproven and disabled. The independent Worker still exposes only GET /health; live Accuracy D1 remains at the existing unmodified 3-table/6-trigger schema. The draft 0002 migration is offline-only.
+
+**Known blocker:** GitHub Actions pfo-preview lacks MSF_API_KEY; Pages metadata did not show the secret name; GameCast Worker binding metadata check received HTTP 403. None proves the separately running licensed internal GameCast has lost access. A real trusted internal feed and authenticated same-asof PFO browser/server comparison remain necessary before any live prediction capture. Do not copy secrets, buy automation or use TinyFish to compensate.
+
+**Next concrete gate:** establish provider proof through an existing authorized server-side Cloudflare binding or verify exact missing scope, then implement a real private same-source PFO browser/server comparison for QB/RB/WR/TE/K/DEF. Only then enable an audited scheduled capture and independent final-certificate pipeline. Finish cross-tool and real iPhone QA before the ONE protected-preview 6.43 release. Commissioner D1, public demo, production and FFOI remain segregated.
