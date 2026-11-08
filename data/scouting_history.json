@@ -897,5 +897,49 @@
       }
     ],
     "source_snapshot_utc": "2026-11-07T23:37:10.426944+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-08T04:53:38.026428+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [
+      {
+        "faab_transfers": [],
+        "id": "1423424591807643648",
+        "players_received": {
+          "Bhayshul Tuten": "BigOlBoyle",
+          "Jaylen Warren": "Cokerthestroker",
+          "Mike Gesicki": "BigOlBoyle"
+        },
+        "roster_ids": [
+          3,
+          12
+        ]
+      }
+    ],
+    "roster_changes": [
+      {
+        "adds": [
+          "Bhayshul Tuten",
+          "Mike Gesicki"
+        ],
+        "drops": [
+          "Jaylen Warren"
+        ],
+        "roster_id": 3,
+        "team": "BigOlBoyle"
+      },
+      {
+        "adds": [
+          "Jaylen Warren"
+        ],
+        "drops": [
+          "Bhayshul Tuten",
+          "Mike Gesicki"
+        ],
+        "roster_id": 12,
+        "team": "Cokerthestroker"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-08T04:53:32.795524+00:00"
   }
 ]

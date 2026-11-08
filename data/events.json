@@ -12702,5 +12702,94 @@
       "PHI"
     ],
     "roster_id": 9
+  },
+  {
+    "added": [
+      "12490",
+      "4993"
+    ],
+    "detected_at_utc": "2026-11-08T04:53:32.795524+00:00",
+    "dropped": [
+      "8228"
+    ],
+    "kind": "roster_change",
+    "roster_id": 3
+  },
+  {
+    "added": [
+      "8228"
+    ],
+    "detected_at_utc": "2026-11-08T04:53:32.795524+00:00",
+    "dropped": [
+      "12490",
+      "4993"
+    ],
+    "kind": "roster_change",
+    "roster_id": 12
+  },
+  {
+    "detected_at_utc": "2026-11-08T04:53:32.795524+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "11564",
+      "7588",
+      "0",
+      "6786",
+      "7547",
+      "12506",
+      "13286",
+      "11646",
+      "7042",
+      "DEN"
+    ],
+    "old": [
+      "11564",
+      "7588",
+      "12490",
+      "6786",
+      "7547",
+      "12506",
+      "13286",
+      "11646",
+      "7042",
+      "DEN"
+    ],
+    "roster_id": 12
+  },
+  {
+    "detected_at_utc": "2026-11-08T04:53:32.795524+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "12490": 3,
+        "4993": 3,
+        "8228": 12
+      },
+      "consenter_ids": [
+        3,
+        12
+      ],
+      "created": 1793733377938,
+      "creator": "1400281937381240832",
+      "draft_picks": [],
+      "drops": {
+        "12490": 12,
+        "4993": 12,
+        "8228": 3
+      },
+      "leg": 8,
+      "metadata": null,
+      "roster_ids": [
+        3,
+        12
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1794113202959,
+      "transaction_id": "1423424591807643648",
+      "type": "trade",
+      "waiver_budget": []
+    },
+    "transaction_id": "1423424591807643648"
   }
 ]

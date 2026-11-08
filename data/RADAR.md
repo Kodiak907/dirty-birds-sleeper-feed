@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-08T03:53:05.982103+00:00
-Sleeper snapshot: 2026-11-08T03:53:01.317855+00:00
+Generated: 2026-11-08T04:53:37.991887+00:00
+Sleeper snapshot: 2026-11-08T04:53:32.795524+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1423424591807643648` · TRADE · COMPLETE · BigOlBoyle (#3), Cokerthestroker (#12) | Added: Bhayshul Tuten → BigOlBoyle (#3), Mike Gesicki → BigOlBoyle (#3), Jaylen Warren → Cokerthestroker (#12) | Dropped: Bhayshul Tuten → Cokerthestroker (#12), Mike Gesicki → Cokerthestroker (#12), Jaylen Warren → BigOlBoyle (#3)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-08T04:53:37.991887+00:00 · new_transaction · TRADE · COMPLETE · BigOlBoyle (#3), Cokerthestroker (#12) | Added: Bhayshul Tuten → BigOlBoyle (#3), Mike Gesicki → BigOlBoyle (#3), Jaylen Warren → Cokerthestroker (#12) | Dropped: Bhayshul Tuten → Cokerthestroker (#12), Mike Gesicki → Cokerthestroker (#12), Jaylen Warren → BigOlBoyle (#3)
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | FAAB bid: $0
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jahan Dotson → DANGER CLOSE  (#4)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Dylan Sampson → CREAM MACHINE  (#2) | Dropped: Darren Waller → CREAM MACHINE  (#2)
-- 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Buffalo Bills → Dirty Birds (#1) | Dropped: Christian Kirk → Dirty Birds (#1)
 
 ## Important limits
 

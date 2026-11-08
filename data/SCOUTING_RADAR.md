@@ -1,9 +1,13 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-08T03:53:06.006364+00:00
-Sleeper snapshot: 2026-11-08T03:53:01.317855+00:00
+Generated: 2026-11-08T04:53:38.026428+00:00
+Sleeper snapshot: 2026-11-08T04:53:32.795524+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 1.
+
+- BigOlBoyle: added Bhayshul Tuten, Mike Gesicki; dropped Jaylen Warren
+- Cokerthestroker: added Jaylen Warren; dropped Bhayshul Tuten, Mike Gesicki
+- Completed trade 1423424591807643648: {'Bhayshul Tuten': 'BigOlBoyle', 'Mike Gesicki': 'BigOlBoyle', 'Jaylen Warren': 'Cokerthestroker'}; FAAB transfers []
 
 ## Limits
 

@@ -1,12 +1,49 @@
 {
-  "changes": [],
-  "changes_count": 0,
-  "completed_count": 0,
+  "changes": [
+    {
+      "id": "1423424591807643648",
+      "kind": "new_transaction",
+      "status": "complete",
+      "transaction": {
+        "adds": {
+          "12490": 3,
+          "4993": 3,
+          "8228": 12
+        },
+        "consenter_ids": [
+          3,
+          12
+        ],
+        "created": 1793733377938,
+        "creator": "1400281937381240832",
+        "draft_picks": [],
+        "drops": {
+          "12490": 12,
+          "4993": 12,
+          "8228": 3
+        },
+        "leg": 8,
+        "metadata": null,
+        "roster_ids": [
+          3,
+          12
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794113202959,
+        "transaction_id": "1423424591807643648",
+        "type": "trade",
+        "waiver_budget": []
+      }
+    }
+  ],
+  "changes_count": 1,
+  "completed_count": 1,
   "failed_count": 0,
-  "generated_at_utc": "2026-11-08T03:53:05.982103+00:00",
+  "generated_at_utc": "2026-11-08T04:53:37.991887+00:00",
   "is_initial_baseline": false,
   "league_id": "1399157532559192064",
   "pending_count": 0,
-  "sleeper_snapshot_at_utc": "2026-11-08T03:53:01.317855+00:00",
-  "transactions_indexed": 310
+  "sleeper_snapshot_at_utc": "2026-11-08T04:53:32.795524+00:00",
+  "transactions_indexed": 311
 }
