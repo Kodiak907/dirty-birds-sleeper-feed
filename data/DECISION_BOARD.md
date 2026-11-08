@@ -42,7 +42,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 8 | Ja'Kobi Lane | 3.84 | -2.66 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 9 | Rashod Bateman | 3.66 | -2.84 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 10 | Dohnte Meyers | 3.45 | -3.04 | 42.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
-| 11 | Jauan Jennings | 2.41 | -4.09 | 60.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
+| 11 | Jauan Jennings | 2.41 | -4.09 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 | 12 | Konata Mumpfield | 2.33 | -4.17 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
 ## TE — reference: Isaiah Likely (9.77 PPG)
@@ -67,21 +67,21 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Cairo Santos | 5.51 | -1.66 | — | — | No modeled flags (not medically cleared) |
 | 6 | Chris Boswell | 5.42 | -1.75 | — | — | No modeled flags (not medically cleared) |
 
-## DEF — reference: New Orleans Saints (5.87 PPG)
+## DEF — reference: New Orleans Saints (5.88 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Buffalo Bills | 6.66 | +0.79 | — | — | No modeled flags (not medically cleared) |
-| 2 | Baltimore Ravens | 6.02 | +0.15 | — | — | No modeled flags (not medically cleared) |
-| 3 | Green Bay Packers | 6.00 | +0.13 | — | — | No modeled flags (not medically cleared) |
-| 4 | New England Patriots | 5.89 | +0.02 | — | — | No modeled flags (not medically cleared) |
-| 5 | Cincinnati Bengals | 5.88 | +0.01 | — | — | No modeled flags (not medically cleared) |
+| 1 | Buffalo Bills | 6.66 | +0.78 | — | — | No modeled flags (not medically cleared) |
+| 2 | Baltimore Ravens | 6.02 | +0.14 | — | — | No modeled flags (not medically cleared) |
+| 3 | Green Bay Packers | 6.00 | +0.12 | — | — | No modeled flags (not medically cleared) |
+| 4 | New England Patriots | 5.89 | +0.01 | — | — | No modeled flags (not medically cleared) |
+| 5 | Cincinnati Bengals | 5.88 | +0.00 | — | — | No modeled flags (not medically cleared) |
 | 6 | Indianapolis Colts | 5.71 | -0.17 | — | — | No modeled flags (not medically cleared) |
-| 7 | Washington Commanders | 5.45 | -0.42 | — | — | No modeled flags (not medically cleared) |
-| 8 | Cleveland Browns | 5.35 | -0.52 | — | — | No modeled flags (not medically cleared) |
+| 7 | Washington Commanders | 5.45 | -0.43 | — | — | No modeled flags (not medically cleared) |
+| 8 | Cleveland Browns | 5.35 | -0.53 | — | — | No modeled flags (not medically cleared) |
 | 9 | Tampa Bay Buccaneers | 5.19 | -0.69 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tennessee Titans | 4.42 | -1.45 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 4.35 | -1.53 | — | — | No modeled flags (not medically cleared) |
+| 10 | Tennessee Titans | 4.42 | -1.46 | — | — | No modeled flags (not medically cleared) |
+| 11 | New York Jets | 4.36 | -1.52 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-08T06:56:46.608773+00:00
-Sleeper snapshot: 2026-11-08T06:56:41.842766+00:00
+Generated: 2026-11-08T08:00:26.635224+00:00
+Sleeper snapshot: 2026-11-08T08:00:19.746339+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -92,7 +92,7 @@ Sleeper snapshot: 2026-11-08T06:56:41.842766+00:00
 | 8 | Cleveland Browns | CLE | 5.35 | 89% | — | Not flagged |
 | 9 | Tampa Bay Buccaneers | TB | 5.19 | 89% | — | Not flagged |
 | 10 | Tennessee Titans | TEN | 4.42 | 89% | — | Not flagged |
-| 11 | New York Jets | NYJ | 4.35 | 89% | — | Not flagged |
+| 11 | New York Jets | NYJ | 4.36 | 89% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 

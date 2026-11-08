@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-08T06:56:50.289473+00:00
-Sleeper snapshot: 2026-11-08T06:56:41.842766+00:00
-nflverse observations: 2026-11-08T06:56:46.110937+00:00; injury feed loaded: True
+Generated: 2026-11-08T08:00:30.187670+00:00
+Sleeper snapshot: 2026-11-08T08:00:19.746339+00:00
+nflverse observations: 2026-11-08T08:00:26.077543+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 4. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,8 +31,10 @@ nflverse observations: 2026-11-08T06:56:46.110937+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **David Montgomery** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Groin', 'report_status': 'Out', 'week': '9'}
+- **Jauan Jennings** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Calf', 'report_status': 'Out', 'week': '9'}
+- **Khalil Shakir** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '9'}
+- **Kyler Murray** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Hamstring', 'report_status': 'Out', 'week': '9'}
 
 ## Guardrails
 

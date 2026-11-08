@@ -2,7 +2,7 @@
   "current_roster_reference": {
     "DEF": {
       "name": "New Orleans Saints",
-      "ppg": 5.872
+      "ppg": 5.878
     },
     "K": {
       "name": "Will Reichard",
@@ -25,7 +25,7 @@
       "ppg": 6.498
     }
   },
-  "generated_at_utc": "2026-11-08T06:56:46.789532+00:00",
+  "generated_at_utc": "2026-11-08T08:00:26.729944+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -44,9 +44,9 @@
         "ppg": 6.66,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": 0.79,
+        "same_position_uplift_ppg": 0.78,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -66,9 +66,9 @@
         "ppg": 6.02,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": 0.15,
+        "same_position_uplift_ppg": 0.14,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -88,9 +88,9 @@
         "ppg": 6.0,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": 0.13,
+        "same_position_uplift_ppg": 0.12,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -110,9 +110,9 @@
         "ppg": 5.89,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": 0.02,
+        "same_position_uplift_ppg": 0.01,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -132,9 +132,9 @@
         "ppg": 5.88,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": 0.01,
+        "same_position_uplift_ppg": 0.0,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -154,7 +154,7 @@
         "ppg": 5.71,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
         "same_position_uplift_ppg": -0.17,
         "screen_only": true,
@@ -176,9 +176,9 @@
         "ppg": 5.45,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.42,
+        "same_position_uplift_ppg": -0.43,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -198,9 +198,9 @@
         "ppg": 5.35,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -0.52,
+        "same_position_uplift_ppg": -0.53,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -220,7 +220,7 @@
         "ppg": 5.19,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
         "same_position_uplift_ppg": -0.69,
         "screen_only": true,
@@ -242,9 +242,9 @@
         "ppg": 4.42,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.45,
+        "same_position_uplift_ppg": -1.46,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -261,12 +261,12 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 4.35,
+        "ppg": 4.36,
         "replacement_reference": {
           "name": "New Orleans Saints",
-          "ppg": 5.872
+          "ppg": 5.878
         },
-        "same_position_uplift_ppg": -1.53,
+        "same_position_uplift_ppg": -1.52,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -1171,9 +1171,13 @@
       {
         "audit": {
           "carries_per_game": 0.0,
-          "flags": [],
+          "flags": [
+            "injury_report_observation_review"
+          ],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Calf",
+            "report_status": "Out",
             "week": "9"
           },
           "not_an_injury_probability": true,
@@ -1360,5 +1364,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-08T06:56:41.842766+00:00"
+  "snapshot_utc": "2026-11-08T08:00:19.746339+00:00"
 }

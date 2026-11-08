@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-08T06:56:46.880830+00:00
+Generated: 2026-11-08T08:00:26.795861+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **122.98**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **122.99**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -81,7 +81,7 @@ Baseline illustrative optimal PPG: **122.98**. Weeks with partial projections an
 | 8 | Cleveland Browns | 5.35 | Bench-depth scenario: Keon Coleman | +0.00 | -1.15 | No sourced usage; Partial projection coverage |
 | 9 | Tampa Bay Buccaneers | 5.19 | Bench-depth scenario: Keon Coleman | +0.00 | -1.31 | No sourced usage; Partial projection coverage |
 | 10 | Tennessee Titans | 4.42 | Bench-depth scenario: Keon Coleman | +0.00 | -2.08 | No sourced usage; Partial projection coverage |
-| 11 | New York Jets | 4.35 | Bench-depth scenario: Keon Coleman | +0.00 | -2.15 | No sourced usage; Partial projection coverage |
+| 11 | New York Jets | 4.36 | Bench-depth scenario: Keon Coleman | +0.00 | -2.14 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 
