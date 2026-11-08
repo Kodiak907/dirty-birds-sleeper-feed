@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-08T19:20:09.359188+00:00",
+  "generated_at_utc": "2026-11-08T19:44:24.832365+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-08T13:28:07.393166+00:00",
+  "projection_as_of": "2026-11-08T19:20:56.044664+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-08T19:20:00.407302+00:00",
+  "snapshot_utc": "2026-11-08T19:44:16.362625+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,49 +23,49 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 133.2,
+      "ppg": 132.44,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "CLE",
           "position": "QB",
-          "ppg": 14.76
+          "ppg": 14.93
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "DAL",
           "position": "RB",
-          "ppg": 19.81
+          "ppg": 19.66
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "ARI",
           "position": "RB",
-          "ppg": 16.32
+          "ppg": 16.5
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 21.48
+          "ppg": 21.54
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 13.18
+          "ppg": 13.57
         },
         {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "WAS",
           "position": "TE",
-          "ppg": 11.17
+          "ppg": 10.85
         },
         {
           "id": "11792",
@@ -79,21 +79,21 @@
           "name": "Jacksonville Jaguars",
           "opponent": "TEN",
           "position": "DEF",
-          "ppg": 8.03
+          "ppg": 7.62
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "DET",
           "position": "WR",
-          "ppg": 12.31
+          "ppg": 12.21
         },
         {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "DAL",
           "position": "WR",
-          "ppg": 9.48
+          "ppg": 8.9
         }
       ]
     },
@@ -104,7 +104,7 @@
         "Kyren Williams",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 108.74,
+      "ppg": 108.66,
       "starters": [
         {
           "id": "9758",
@@ -132,7 +132,7 @@
           "name": "Zay Flowers",
           "opponent": "CAR",
           "position": "WR",
-          "ppg": 13.49
+          "ppg": 13.65
         },
         {
           "id": "5872",
@@ -160,7 +160,7 @@
           "name": "Jacksonville Jaguars",
           "opponent": "NYG",
           "position": "DEF",
-          "ppg": 7.07
+          "ppg": 6.83
         },
         {
           "id": "11637",
@@ -181,7 +181,7 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.9,
+      "ppg": 132.96,
       "starters": [
         {
           "id": "1166",
@@ -216,7 +216,7 @@
           "name": "Zay Flowers",
           "opponent": "HOU",
           "position": "WR",
-          "ppg": 14.43
+          "ppg": 14.63
         },
         {
           "id": "8131",
@@ -237,7 +237,7 @@
           "name": "Jacksonville Jaguars",
           "opponent": "TEN",
           "position": "DEF",
-          "ppg": 7.07
+          "ppg": 7.93
         },
         {
           "id": "5859",
@@ -262,7 +262,7 @@
         "Seth McGowan",
         "Zay Flowers"
       ],
-      "ppg": 128.34,
+      "ppg": 126.9,
       "starters": [
         {
           "id": "9758",
@@ -318,7 +318,7 @@
           "name": "Jacksonville Jaguars",
           "opponent": "CHI",
           "position": "DEF",
-          "ppg": 7.07
+          "ppg": 5.63
         },
         {
           "id": "13345",
@@ -339,7 +339,7 @@
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.57,
+      "ppg": 131.52,
       "starters": [
         {
           "id": "9758",
@@ -374,7 +374,7 @@
           "name": "Zay Flowers",
           "opponent": "TB",
           "position": "WR",
-          "ppg": 14.49
+          "ppg": 14.68
         },
         {
           "id": "8131",
@@ -395,7 +395,7 @@
           "name": "Jacksonville Jaguars",
           "opponent": "PIT",
           "position": "DEF",
-          "ppg": 7.07
+          "ppg": 6.83
         },
         {
           "id": "5859",
@@ -416,7 +416,7 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.32,
+      "ppg": 135.52,
       "starters": [
         {
           "id": "1166",
@@ -451,7 +451,7 @@
           "name": "Zay Flowers",
           "opponent": "PIT",
           "position": "WR",
-          "ppg": 14.59
+          "ppg": 14.79
         },
         {
           "id": "8131",
@@ -493,7 +493,7 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.69,
+      "ppg": 132.01,
       "starters": [
         {
           "id": "1166",
@@ -528,7 +528,7 @@
           "name": "Zay Flowers",
           "opponent": "CLE",
           "position": "WR",
-          "ppg": 13.62
+          "ppg": 13.79
         },
         {
           "id": "8131",
@@ -549,7 +549,7 @@
           "name": "New Orleans Saints",
           "opponent": "ARI",
           "position": "DEF",
-          "ppg": 6.37
+          "ppg": 6.52
         },
         {
           "id": "5859",
@@ -570,7 +570,7 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.01,
+      "ppg": 135.76,
       "starters": [
         {
           "id": "1166",
@@ -605,7 +605,7 @@
           "name": "Zay Flowers",
           "opponent": "CIN",
           "position": "WR",
-          "ppg": 14.89
+          "ppg": 15.1
         },
         {
           "id": "8131",
@@ -626,7 +626,7 @@
           "name": "Jacksonville Jaguars",
           "opponent": "WAS",
           "position": "DEF",
-          "ppg": 7.12
+          "ppg": 6.66
         },
         {
           "id": "5859",
@@ -650,7 +650,7 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.11,
+      "ppg": 131.33,
       "starters": [
         {
           "id": "1166",
@@ -671,14 +671,14 @@
           "name": "Kyren Williams",
           "opponent": "WAS",
           "position": "RB",
-          "ppg": 17.11
+          "ppg": 17.21
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.68
+          "ppg": 20.69
         },
         {
           "id": "9997",
@@ -692,7 +692,7 @@
           "name": "Isaiah Likely",
           "opponent": "PHI",
           "position": "TE",
-          "ppg": 9.21
+          "ppg": 9.05
         },
         {
           "id": "11792",
@@ -706,21 +706,21 @@
           "name": "New Orleans Saints",
           "opponent": "CLE",
           "position": "DEF",
-          "ppg": 7.01
+          "ppg": 7.13
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "CAR",
           "position": "RB",
-          "ppg": 13.4
+          "ppg": 13.47
         },
         {
           "id": "13301",
           "name": "Antonio Williams",
           "opponent": "LA",
           "position": "WR",
-          "ppg": 7.91
+          "ppg": 7.99
         }
       ]
     }
