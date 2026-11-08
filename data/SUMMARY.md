@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-08T04:53:32.795524+00:00
+Updated: 2026-11-08T05:50:14.866097+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,10 +19,7 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 3: added Bhayshul Tuten, Mike Gesicki; dropped Jaylen Warren
-- Roster 12: added Jaylen Warren; dropped Bhayshul Tuten, Mike Gesicki
-- lineup_change â roster/transaction 12
-- Transaction 1423424591807643648: trade / complete / rosters [3, 12] / adds {'12490': 3, '4993': 3, '8228': 12} / drops {'12490': 12, '4993': 12, '8228': 3} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

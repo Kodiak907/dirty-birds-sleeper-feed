@@ -1,16 +1,10 @@
 {
-  "as_of": "2026-11-08T04:53:42.690377+00:00",
+  "as_of": "2026-11-08T05:50:23.466126+00:00",
   "authority": "third_party_reported_not_official_team_submission",
   "errors": [],
   "events_checked": 15,
   "explicit_inactives": {},
   "game_coverage": [
-    {
-      "event_id": "401873037",
-      "kickoff_utc": "2026-11-06T01:15Z",
-      "listing_state": "not_published_or_unavailable",
-      "reported_count": 0
-    },
     {
       "event_id": "401873038",
       "kickoff_utc": "2026-11-08T14:30Z",
@@ -86,6 +80,12 @@
     {
       "event_id": "401873050",
       "kickoff_utc": "2026-11-09T01:20Z",
+      "listing_state": "not_published_or_unavailable",
+      "reported_count": 0
+    },
+    {
+      "event_id": "401873037",
+      "kickoff_utc": "2026-11-06T01:15Z",
       "listing_state": "not_published_or_unavailable",
       "reported_count": 0
     },
