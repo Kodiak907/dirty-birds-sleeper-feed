@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-09T02:12:22.946579+00:00",
+  "generated_at_utc": "2026-11-09T03:23:13.023843+00:00",
   "candidates_evaluated": 47388,
-  "market_matched": 6160,
+  "market_matched": 6120,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-08T14:52:58.503418+00:00",
+  "market_as_of": "2026-11-09T03:23:10.756318+00:00",
   "projection_as_of": "2026-11-09T01:47:44.558173+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -75,47 +75,11 @@
       ],
       "our_gain": 2.25,
       "their_gain": 2.96,
-      "market_paid_received_ratio": 0.993,
+      "market_paid_received_ratio": 0.981,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.004,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 5,
-      "opponent_name": "    Victorious Secret",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR"
-        }
-      ],
-      "receive": [
-        {
-          "id": "9480",
-          "name": "Brenton Strange",
-          "pos": "TE"
-        },
-        {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.37,
-      "their_gain": 0.5,
-      "market_paid_received_ratio": 0.86,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.249,
+      "score": 3.968,
       "not_an_approved_offer": true
     },
     {
@@ -147,11 +111,47 @@
       ],
       "our_gain": 1.78,
       "their_gain": 1.08,
-      "market_paid_received_ratio": 0.935,
+      "market_paid_received_ratio": 0.96,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.232,
+      "score": 2.307,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 5,
+      "opponent_name": "    Victorious Secret",
+      "give": [
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        }
+      ],
+      "receive": [
+        {
+          "id": "9480",
+          "name": "Brenton Strange",
+          "pos": "TE"
+        },
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 2.37,
+      "their_gain": 0.5,
+      "market_paid_received_ratio": 0.853,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.23,
       "not_an_approved_offer": true
     }
   ],

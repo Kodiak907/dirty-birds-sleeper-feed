@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-09T02:12:20.591972+00:00
-Sleeper snapshot: 2026-11-09T02:12:15.179975+00:00
+Generated: 2026-11-09T03:23:10.105211+00:00
+Sleeper snapshot: 2026-11-09T03:23:05.105474+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
