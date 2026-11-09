@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-09T05:05:01.086915+00:00
-Sleeper snapshot: 2026-11-09T05:04:52.552596+00:00
-nflverse observations: 2026-11-09T05:04:56.526451+00:00; injury feed loaded: True
+Generated: 2026-11-09T06:10:09.579508+00:00
+Sleeper snapshot: 2026-11-09T06:09:10.136801+00:00
+nflverse observations: 2026-11-09T06:09:55.313205+00:00; injury feed loaded: False
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -12,20 +12,20 @@ nflverse observations: 2026-11-09T05:04:56.526451+00:00; injury feed loaded: Tru
 |---|---|---|---:|---|
 | Kirk Cousins | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Caleb Douglas | No tag | Week 7 observation: Full Participation in Practice | 80.0% | Verify current status before kickoff |
+| Caleb Douglas | No tag | No matched report (not clearance) | 80.0% | Verify current status before kickoff |
 | Antonio Williams | No tag | No matched report (not clearance) | 72.7% | Verify current status before kickoff |
-| Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
-| Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
+| Jonah Coleman | IR | No matched report (not clearance) | 51.7% | Verify official NFL roster and game status before lineup decisions |
+| Kaelon Black | No tag | No matched report (not clearance) | 29.3% | Verify current status before kickoff |
 | Seth McGowan | No tag | No matched report (not clearance) | 27.0% | Verify current status before kickoff |
 | Cairo Santos | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Christian McCaffrey | No tag | Week 9 observation: Full Participation in Practice | 73.0% | Verify current status before kickoff |
-| A.J. Brown | No tag | Week 9 observation: Out, Did Not Participate In Practice, Ankle | 70.3% | Verify current status before kickoff |
-| Deebo Samuel Sr. | Out | Week 9 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
-| Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 85.7% | Verify current status before kickoff |
+| Christian McCaffrey | No tag | No matched report (not clearance) | 73.0% | Verify current status before kickoff |
+| A.J. Brown | No tag | No matched report (not clearance) | 70.3% | Verify current status before kickoff |
+| Deebo Samuel Sr. | Out | No matched report (not clearance) | — | Verify official NFL roster and game status before lineup decisions |
+| Isaiah Likely | No tag | No matched report (not clearance) | 85.7% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Jaxon Smith-Njigba | No tag | Week 9 observation: Full Participation in Practice | 88.7% | Verify current status before kickoff |
+| Jaxon Smith-Njigba | No tag | No matched report (not clearance) | 88.7% | Verify current status before kickoff |
 | C.J. Stroud | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
-| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
+| Zay Flowers | No tag | No matched report (not clearance) | 77.7% | Verify current status before kickoff |
 | Jacksonville Jaguars | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | New Orleans Saints | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
