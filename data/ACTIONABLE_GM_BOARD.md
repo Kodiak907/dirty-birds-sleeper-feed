@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-09T14:56:30.661391+00:00
+Generated: 2026-11-09T16:00:37.797795+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,10 +18,9 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- C.J. Stroud, Zay Flowers for Justin Jefferson: Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Kirk Cousins, Zay Flowers for Parker Washington: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- C.J. Stroud, Zay Flowers for Malik Nabers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Jonah Coleman for Garrett Wilson: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit
+- C.J. Stroud, Zay Flowers for Justin Jefferson: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Kirk Cousins, Zay Flowers for Parker Washington: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
+- Kirk Cousins, Zay Flowers for Tee Higgins: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 
