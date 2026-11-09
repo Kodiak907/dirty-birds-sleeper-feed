@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-09T01:03:48.750228+00:00
+Updated: 2026-11-09T01:47:39.633904+00:00
 League: 1399157532559192064
 NFL week: 9
 
@@ -19,9 +19,7 @@ NFL week: 9
 - Roster 12: Cokerthestroker | 6-2 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 1: added Cairo Santos; dropped Keon Coleman
-- lineup_change â roster/transaction 1
-- Transaction 1425310892827959296: free_agent / complete / rosters [1] / adds {'2020': 1} / drops {'11637': 1} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

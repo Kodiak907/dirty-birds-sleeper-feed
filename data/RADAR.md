@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-09T01:03:52.945230+00:00
-Sleeper snapshot: 2026-11-09T01:03:48.750228+00:00
+Generated: 2026-11-09T01:47:43.509409+00:00
+Sleeper snapshot: 2026-11-09T01:47:39.633904+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1425310892827959296` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Cairo Santos → Dirty Birds (#1) | Dropped: Keon Coleman → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

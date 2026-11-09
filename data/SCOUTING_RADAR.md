@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-09T01:03:52.981390+00:00
-Sleeper snapshot: 2026-11-09T01:03:48.750228+00:00
+Generated: 2026-11-09T01:47:43.540179+00:00
+Sleeper snapshot: 2026-11-09T01:47:39.633904+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Dirty Birds: added Cairo Santos; dropped Keon Coleman
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
