@@ -26,7 +26,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 9 | Elijah Mitchell | 1.04 | -3.11 | 39.0% | Carries 5.7 | No modeled flags (not medically cleared) |
 | 10 | Jaleel McLaughlin | 0.86 | -3.28 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
 | 11 | Emanuel Wilson | 0.82 | -3.32 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
-| 12 | Roschon Johnson | 0.77 | -3.37 | 24.7% | Carries 6.7 | No modeled flags (not medically cleared) |
+| 12 | Roschon Johnson | 0.77 | -3.37 | 24.7% | Carries 2.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Antonio Williams (6.63 PPG)
 
@@ -34,7 +34,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Pat Bryant | 6.62 | -0.01 | 57.3% | Tgt 3.3 | sleeper_injury_ir, injury_report_observation_review |
 | 2 | Keon Coleman | 6.49 | -0.14 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 3 | Kalif Raymond | 5.60 | -1.03 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 3 | Kalif Raymond | 5.60 | -1.03 | 62.0% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Chris Bell | 5.33 | -1.30 | 62.7% | Tgt 3.3 | No modeled flags (not medically cleared) |
 | 5 | Michael Pittman Jr. | 4.48 | -2.15 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 6 | Dontayvion Wicks | 4.26 | -2.37 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, projection_weeks_partial, injury_report_observation_review |

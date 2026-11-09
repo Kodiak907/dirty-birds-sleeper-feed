@@ -25,7 +25,7 @@
       "ppg": 6.629
     }
   },
-  "generated_at_utc": "2026-11-09T09:59:54.215955+00:00",
+  "generated_at_utc": "2026-11-09T10:58:26.201598+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -387,7 +387,7 @@
     "QB": [
       {
         "audit": {
-          "carries_per_game": 2.33,
+          "carries_per_game": 2.0,
           "flags": [
             "sleeper_injury_questionable"
           ],
@@ -701,14 +701,14 @@
       },
       {
         "audit": {
-          "carries_per_game": 6.67,
+          "carries_per_game": 2.33,
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
           "projection_coverage": 0.889,
           "recent_snap_pct": 24.7,
           "snap_trend_3_appearances_pp": -20.0,
-          "targets_per_game": 1.0
+          "targets_per_game": 0.33
         },
         "name": "Roschon Johnson",
         "ppg": 0.77,
@@ -942,7 +942,7 @@
           "projection_coverage": 0.889,
           "recent_snap_pct": 62.0,
           "snap_trend_3_appearances_pp": 22.0,
-          "targets_per_game": 2.33
+          "targets_per_game": 4.0
         },
         "name": "Kalif Raymond",
         "ppg": 5.6,
@@ -1337,5 +1337,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-09T09:59:47.835878+00:00"
+  "snapshot_utc": "2026-11-09T10:58:21.613540+00:00"
 }
