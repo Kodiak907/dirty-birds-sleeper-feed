@@ -25,7 +25,7 @@
       "ppg": 6.629
     }
   },
-  "generated_at_utc": "2026-11-09T18:55:51.017342+00:00",
+  "generated_at_utc": "2026-11-09T19:56:38.939345+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -41,12 +41,12 @@
           "targets_per_game": null
         },
         "name": "Buffalo Bills",
-        "ppg": 6.39,
+        "ppg": 6.4,
         "replacement_reference": {
           "name": "New Orleans Saints",
           "ppg": 5.859
         },
-        "same_position_uplift_ppg": 0.53,
+        "same_position_uplift_ppg": 0.54,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -1337,5 +1337,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-09T18:55:45.800447+00:00"
+  "snapshot_utc": "2026-11-09T19:56:30.061045+00:00"
 }

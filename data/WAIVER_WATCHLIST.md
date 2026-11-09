@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-09T18:55:50.881110+00:00
-Sleeper snapshot: 2026-11-09T18:55:45.800447+00:00
+Generated: 2026-11-09T19:56:38.782431+00:00
+Sleeper snapshot: 2026-11-09T19:56:30.061045+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -81,7 +81,7 @@ Sleeper snapshot: 2026-11-09T18:55:45.800447+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Buffalo Bills | BUF | 6.39 | 100% | — | Not flagged |
+| 1 | Buffalo Bills | BUF | 6.40 | 100% | — | Not flagged |
 | 2 | Cincinnati Bengals | CIN | 6.27 | 100% | — | Not flagged |
 | 3 | Baltimore Ravens | BAL | 5.74 | 89% | — | Not flagged |
 | 4 | New England Patriots | NE | 5.74 | 89% | — | Not flagged |

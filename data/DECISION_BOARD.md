@@ -70,7 +70,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Buffalo Bills | 6.39 | +0.53 | — | — | No modeled flags (not medically cleared) |
+| 1 | Buffalo Bills | 6.40 | +0.54 | — | — | No modeled flags (not medically cleared) |
 | 2 | Cincinnati Bengals | 6.27 | +0.41 | — | — | No modeled flags (not medically cleared) |
 | 3 | Baltimore Ravens | 5.74 | -0.12 | — | — | No modeled flags (not medically cleared) |
 | 4 | New England Patriots | 5.74 | -0.12 | — | — | No modeled flags (not medically cleared) |
