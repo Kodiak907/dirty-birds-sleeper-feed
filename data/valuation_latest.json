@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-09T00:09:06.345792+00:00",
+  "generated_at_utc": "2026-11-09T01:03:53.049429+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -37,7 +37,7 @@
     {
       "completed_trade_count": 12,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 125.44,
+      "observed_optimal_average": 123.3,
       "observed_optimal_lineup": [
         {
           "avg": 15.83,
@@ -80,37 +80,17 @@
           "position": "DEF"
         },
         {
-          "avg": 7.09,
-          "name": "Keon Coleman",
-          "position": "WR"
-        },
-        {
           "avg": 6.92,
           "name": "Deebo Samuel Sr.",
           "position": "WR"
+        },
+        {
+          "avg": 4.95,
+          "name": "Jonah Coleman",
+          "position": "RB"
         }
       ],
       "players": [
-        {
-          "actual_points_total": 56.7,
-          "actual_points_weekly_avg": 7.09,
-          "id": "11637",
-          "n_weeks": 8,
-          "name": "Keon Coleman",
-          "nonzero_weeks": 7,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            0.6,
-            9.3,
-            4.2,
-            20.6,
-            7.2,
-            13.9,
-            0.0,
-            0.9
-          ]
-        },
         {
           "actual_points_total": 126.64,
           "actual_points_weekly_avg": 15.83,
@@ -240,6 +220,26 @@
           "nonzero_weeks": 0,
           "on_fantasy_reserve": false,
           "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "2020",
+          "n_weeks": 8,
+          "name": "Cairo Santos",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "K",
           "weekly_points": [
             0.0,
             0.0,
@@ -515,6 +515,26 @@
               12.0,
               0.0
             ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "2020",
+            "n_weeks": 8,
+            "name": "Cairo Santos",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "K",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "QB": [
@@ -722,26 +742,6 @@
               9.7,
               24.7,
               0.0
-            ]
-          },
-          {
-            "actual_points_total": 56.7,
-            "actual_points_weekly_avg": 7.09,
-            "id": "11637",
-            "n_weeks": 8,
-            "name": "Keon Coleman",
-            "nonzero_weeks": 7,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.6,
-              9.3,
-              4.2,
-              20.6,
-              7.2,
-              13.9,
-              0.0,
-              0.9
             ]
           },
           {
@@ -9667,6 +9667,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-09T00:09:01.839923+00:00",
+  "snapshot_utc": "2026-11-09T01:03:48.750228+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-8"
 }

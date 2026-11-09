@@ -5,8 +5,8 @@
       "ppg": 5.854
     },
     "K": {
-      "name": "Will Reichard",
-      "ppg": 7.168
+      "name": "Cairo Santos",
+      "ppg": 5.509
     },
     "QB": {
       "name": "Kirk Cousins",
@@ -21,11 +21,11 @@
       "ppg": 9.716
     },
     "WR": {
-      "name": "Keon Coleman",
-      "ppg": 6.49
+      "name": "Antonio Williams",
+      "ppg": 6.632
     }
   },
-  "generated_at_utc": "2026-11-09T00:09:06.529178+00:00",
+  "generated_at_utc": "2026-11-09T01:03:53.265448+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -287,10 +287,10 @@
         "name": "Dominic Zvada",
         "ppg": 6.92,
         "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
+          "name": "Cairo Santos",
+          "ppg": 5.509
         },
-        "same_position_uplift_ppg": -0.25,
+        "same_position_uplift_ppg": 1.41,
         "screen_only": true,
         "sleeper_id": "13833",
         "team": "NYG"
@@ -309,10 +309,10 @@
         "name": "Matt Gay",
         "ppg": 6.83,
         "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
+          "name": "Cairo Santos",
+          "ppg": 5.509
         },
-        "same_position_uplift_ppg": -0.34,
+        "same_position_uplift_ppg": 1.32,
         "screen_only": true,
         "sleeper_id": "6083",
         "team": "LV"
@@ -331,10 +331,10 @@
         "name": "Trey Smack",
         "ppg": 6.14,
         "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
+          "name": "Cairo Santos",
+          "ppg": 5.509
         },
-        "same_position_uplift_ppg": -1.03,
+        "same_position_uplift_ppg": 0.63,
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
@@ -353,10 +353,10 @@
         "name": "Cameron Dicker",
         "ppg": 5.91,
         "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
+          "name": "Cairo Santos",
+          "ppg": 5.509
         },
-        "same_position_uplift_ppg": -1.26,
+        "same_position_uplift_ppg": 0.4,
         "screen_only": true,
         "sleeper_id": "8259",
         "team": "LAC"
@@ -372,35 +372,13 @@
           "snap_trend_3_appearances_pp": null,
           "targets_per_game": null
         },
-        "name": "Cairo Santos",
-        "ppg": 5.51,
-        "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
-        },
-        "same_position_uplift_ppg": -1.66,
-        "screen_only": true,
-        "sleeper_id": "2020",
-        "team": "CHI"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.889,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
         "name": "Chris Boswell",
         "ppg": 5.41,
         "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.168
+          "name": "Cairo Santos",
+          "ppg": 5.509
         },
-        "same_position_uplift_ppg": -1.76,
+        "same_position_uplift_ppg": -0.1,
         "screen_only": true,
         "sleeper_id": "1945",
         "team": "PIT"
@@ -921,13 +899,38 @@
         "name": "Pat Bryant",
         "ppg": 6.62,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": 0.13,
+        "same_position_uplift_ppg": -0.02,
         "screen_only": true,
         "sleeper_id": "12492",
         "team": "DEN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Limited Participation in Practice",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 77.3,
+          "snap_trend_3_appearances_pp": 7.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Keon Coleman",
+        "ppg": 6.49,
+        "replacement_reference": {
+          "name": "Antonio Williams",
+          "ppg": 6.632
+        },
+        "same_position_uplift_ppg": -0.14,
+        "screen_only": true,
+        "sleeper_id": "11637",
+        "team": "BUF"
       },
       {
         "audit": {
@@ -943,10 +946,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.59,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -0.9,
+        "same_position_uplift_ppg": -1.04,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -968,10 +971,10 @@
         "name": "Chris Bell",
         "ppg": 5.33,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -1.16,
+        "same_position_uplift_ppg": -1.3,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -993,10 +996,10 @@
         "name": "Michael Pittman Jr.",
         "ppg": 4.48,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.01,
+        "same_position_uplift_ppg": -2.15,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
@@ -1024,10 +1027,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.26,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.23,
+        "same_position_uplift_ppg": -2.37,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1054,10 +1057,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.01,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.48,
+        "same_position_uplift_ppg": -2.63,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1084,10 +1087,10 @@
         "name": "Mack Hollins",
         "ppg": 3.85,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.64,
+        "same_position_uplift_ppg": -2.78,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1113,10 +1116,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 3.83,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.66,
+        "same_position_uplift_ppg": -2.8,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1138,10 +1141,10 @@
         "name": "Rashod Bateman",
         "ppg": 3.68,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -2.81,
+        "same_position_uplift_ppg": -2.95,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1167,10 +1170,10 @@
         "name": "Jauan Jennings",
         "ppg": 2.37,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -4.12,
+        "same_position_uplift_ppg": -4.26,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1193,10 +1196,10 @@
         "name": "Konata Mumpfield",
         "ppg": 2.34,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -4.15,
+        "same_position_uplift_ppg": -4.29,
         "screen_only": true,
         "sleeper_id": "12718",
         "team": "LAR"
@@ -1223,10 +1226,10 @@
         "name": "Tank Dell",
         "ppg": 2.31,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -4.18,
+        "same_position_uplift_ppg": -4.32,
         "screen_only": true,
         "sleeper_id": "9502",
         "team": "HOU"
@@ -1245,10 +1248,10 @@
         "name": "Dohnte Meyers",
         "ppg": 2.06,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -4.43,
+        "same_position_uplift_ppg": -4.57,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1275,10 +1278,10 @@
         "name": "Zachariah Branch",
         "ppg": 1.81,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -4.68,
+        "same_position_uplift_ppg": -4.82,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1297,10 +1300,10 @@
         "name": "Brandin Cooks",
         "ppg": 1.12,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -5.37,
+        "same_position_uplift_ppg": -5.51,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1322,10 +1325,10 @@
         "name": "Cyrus Allen",
         "ppg": 0.89,
         "replacement_reference": {
-          "name": "Keon Coleman",
-          "ppg": 6.49
+          "name": "Antonio Williams",
+          "ppg": 6.632
         },
-        "same_position_uplift_ppg": -5.6,
+        "same_position_uplift_ppg": -5.74,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1333,5 +1336,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-09T00:09:01.839923+00:00"
+  "snapshot_utc": "2026-11-09T01:03:48.750228+00:00"
 }

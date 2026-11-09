@@ -28,22 +28,22 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 11 | Emanuel Wilson | 0.82 | -3.32 | 26.7% | Carries 19.3 | No modeled flags (not medically cleared) |
 | 12 | Roschon Johnson | 0.77 | -3.38 | 24.7% | Carries 6.7 | No modeled flags (not medically cleared) |
 
-## WR — reference: Keon Coleman (6.49 PPG)
+## WR — reference: Antonio Williams (6.63 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Pat Bryant | 6.62 | +0.13 | 57.3% | Tgt 3.3 | sleeper_injury_ir, injury_report_observation_review |
-| 2 | Kalif Raymond | 5.59 | -0.90 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
-| 3 | Chris Bell | 5.33 | -1.16 | 62.7% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 4 | Michael Pittman Jr. | 4.48 | -2.01 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 5 | Dontayvion Wicks | 4.26 | -2.23 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, projection_weeks_partial, injury_report_observation_review |
-| 6 | Rashid Shaheed | 4.01 | -2.48 | 41.3% | Tgt 5.0 | projection_weeks_partial, injury_report_observation_review |
-| 7 | Mack Hollins | 3.85 | -2.64 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
-| 8 | Ja'Kobi Lane | 3.83 | -2.66 | 63.7% | Tgt 2.0 | injury_report_observation_review |
-| 9 | Rashod Bateman | 3.68 | -2.81 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 10 | Jauan Jennings | 2.37 | -4.12 | 60.0% | Tgt 2.0 | injury_report_observation_review |
-| 11 | Konata Mumpfield | 2.34 | -4.15 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 12 | Tank Dell | 2.31 | -4.18 | 23.0% | Tgt 1.0 | sleeper_injury_ir, injury_report_observation_review |
+| 1 | Pat Bryant | 6.62 | -0.02 | 57.3% | Tgt 3.3 | sleeper_injury_ir, injury_report_observation_review |
+| 2 | Keon Coleman | 6.49 | -0.14 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 3 | Kalif Raymond | 5.59 | -1.04 | 62.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.33 | -1.30 | 62.7% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 5 | Michael Pittman Jr. | 4.48 | -2.15 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 6 | Dontayvion Wicks | 4.26 | -2.37 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, projection_weeks_partial, injury_report_observation_review |
+| 7 | Rashid Shaheed | 4.01 | -2.63 | 41.3% | Tgt 5.0 | projection_weeks_partial, injury_report_observation_review |
+| 8 | Mack Hollins | 3.85 | -2.78 | 62.7% | Tgt 5.0 | sleeper_injury_ir, injury_report_observation_review |
+| 9 | Ja'Kobi Lane | 3.83 | -2.80 | 63.7% | Tgt 2.0 | injury_report_observation_review |
+| 10 | Rashod Bateman | 3.68 | -2.95 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 11 | Jauan Jennings | 2.37 | -4.26 | 60.0% | Tgt 2.0 | injury_report_observation_review |
+| 12 | Konata Mumpfield | 2.34 | -4.29 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
 ## TE — reference: Isaiah Likely (9.72 PPG)
 
@@ -56,16 +56,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Colby Parkinson | 3.64 | -6.07 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 | 6 | David Njoku | 3.19 | -6.52 | 35.5% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 
-## K — reference: Will Reichard (7.17 PPG)
+## K — reference: Cairo Santos (5.51 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Dominic Zvada | 6.92 | -0.25 | — | — | No modeled flags (not medically cleared) |
-| 2 | Matt Gay | 6.83 | -0.34 | — | — | No modeled flags (not medically cleared) |
-| 3 | Trey Smack | 6.14 | -1.03 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cameron Dicker | 5.91 | -1.26 | — | — | No modeled flags (not medically cleared) |
-| 5 | Cairo Santos | 5.51 | -1.66 | — | — | No modeled flags (not medically cleared) |
-| 6 | Chris Boswell | 5.41 | -1.76 | — | — | No modeled flags (not medically cleared) |
+| 1 | Dominic Zvada | 6.92 | +1.41 | — | — | No modeled flags (not medically cleared) |
+| 2 | Matt Gay | 6.83 | +1.32 | — | — | No modeled flags (not medically cleared) |
+| 3 | Trey Smack | 6.14 | +0.63 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cameron Dicker | 5.91 | +0.40 | — | — | No modeled flags (not medically cleared) |
+| 5 | Chris Boswell | 5.41 | -0.10 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: New Orleans Saints (5.85 PPG)
 

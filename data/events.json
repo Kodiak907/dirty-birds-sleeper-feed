@@ -12907,5 +12907,75 @@
       "SF"
     ],
     "roster_id": 4
+  },
+  {
+    "added": [
+      "2020"
+    ],
+    "detected_at_utc": "2026-11-09T01:03:48.750228+00:00",
+    "dropped": [
+      "11637"
+    ],
+    "kind": "roster_change",
+    "roster_id": 1
+  },
+  {
+    "detected_at_utc": "2026-11-09T01:03:48.750228+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "1166",
+      "4034",
+      "8150",
+      "9488",
+      "9997",
+      "8131",
+      "13296",
+      "13345",
+      "2020",
+      "NO"
+    ],
+    "old": [
+      "1166",
+      "4034",
+      "8150",
+      "9488",
+      "9997",
+      "8131",
+      "13296",
+      "13345",
+      "11792",
+      "NO"
+    ],
+    "roster_id": 1
+  },
+  {
+    "detected_at_utc": "2026-11-09T01:03:48.750228+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": {
+        "2020": 1
+      },
+      "consenter_ids": [
+        1
+      ],
+      "created": 1794183107148,
+      "creator": "1399093464662073344",
+      "draft_picks": [],
+      "drops": {
+        "11637": 1
+      },
+      "leg": 9,
+      "metadata": null,
+      "roster_ids": [
+        1
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1794183107148,
+      "transaction_id": "1425310892827959296",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1425310892827959296"
   }
 ]

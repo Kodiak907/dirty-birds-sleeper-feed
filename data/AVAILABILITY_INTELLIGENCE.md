@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-09T00:09:10.220734+00:00
-Sleeper snapshot: 2026-11-09T00:09:01.839923+00:00
-nflverse observations: 2026-11-09T00:09:05.887953+00:00; injury feed loaded: True
+Generated: 2026-11-09T01:03:57.278762+00:00
+Sleeper snapshot: 2026-11-09T01:03:48.750228+00:00
+nflverse observations: 2026-11-09T01:03:52.619990+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -10,7 +10,6 @@ nflverse observations: 2026-11-09T00:09:05.887953+00:00; injury feed loaded: Tru
 
 | Player | Sleeper injury tag | Official report observation | Snap % (last 3 appearances) | Notes |
 |---|---|---|---:|---|
-| Keon Coleman | No tag | Week 9 observation: Limited Participation in Practice | 77.3% | Verify current status before kickoff |
 | Kirk Cousins | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Caleb Douglas | No tag | Week 7 observation: Full Participation in Practice | 80.0% | Verify current status before kickoff |
@@ -18,6 +17,7 @@ nflverse observations: 2026-11-09T00:09:05.887953+00:00; injury feed loaded: Tru
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 51.7% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 29.3% | Verify current status before kickoff |
 | Seth McGowan | No tag | No matched report (not clearance) | 27.0% | Verify current status before kickoff |
+| Cairo Santos | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Christian McCaffrey | No tag | Week 9 observation: Full Participation in Practice | 73.0% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 9 observation: Out, Did Not Participate In Practice, Ankle | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 9 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |

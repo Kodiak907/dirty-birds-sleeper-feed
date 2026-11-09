@@ -77,7 +77,7 @@
     "13345",
     "5872"
   ],
-  "generated_at_utc": "2026-11-09T00:09:12.157886+00:00",
+  "generated_at_utc": "2026-11-09T01:03:59.362464+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
@@ -156,15 +156,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "11637",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Keon Coleman",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "1166",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Kirk Cousins",
@@ -222,6 +213,15 @@
       "id": "13424",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Seth McGowan",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "2020",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Cairo Santos",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -322,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-09T00:09:01.839923+00:00",
-  "source_availability_generated_at_utc": "2026-11-09T00:09:10.220734+00:00",
+  "snapshot_utc": "2026-11-09T01:03:48.750228+00:00",
+  "source_availability_generated_at_utc": "2026-11-09T01:03:57.278762+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

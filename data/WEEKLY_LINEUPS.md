@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-09T00:09:09.719047+00:00 | Forecast as of: 2026-11-08T19:20:56.044664+00:00
+Generated: 2026-11-09T01:03:56.743593+00:00 | Forecast as of: 2026-11-08T19:20:56.044664+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -40,7 +40,7 @@ Generated: 2026-11-09T00:09:09.719047+00:00 | Forecast as of: 2026-11-08T19:20:5
 
 ## Week 11
 
-**Projected optimal score:** 108.66
+**Projected optimal score:** 107.74
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -52,8 +52,8 @@ Generated: 2026-11-09T00:09:09.719047+00:00 | Forecast as of: 2026-11-08T19:20:5
 | Isaiah Likely | TE | JAX | 9.62 |
 | Will Reichard | K | SF | 7.13 |
 | Jacksonville Jaguars | DEF | NYG | 6.83 |
-| Keon Coleman | WR | MIA | 7.30 |
 | Antonio Williams | WR | CIN | 6.76 |
+| Caleb Douglas | WR | BUF | 6.38 |
 
 ## Week 12
 
