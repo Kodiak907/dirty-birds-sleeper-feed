@@ -1,9 +1,9 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-09T13:11:12.989942+00:00
+Generated: 2026-11-09T14:56:30.573366+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **122.79**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **122.80**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
@@ -33,7 +33,7 @@ Baseline illustrative optimal PPG: **122.79**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Pat Bryant | 6.62 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.78 | Availability status: ir; Partial projection coverage |
-| 2 | Keon Coleman | 6.49 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.91 | No flagged data gap; review still required |
+| 2 | Keon Coleman | 6.50 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.90 | No flagged data gap; review still required |
 | 3 | Kalif Raymond | 5.60 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.80 | Partial projection coverage |
 | 4 | Chris Bell | 5.33 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.07 | No flagged data gap; review still required |
 | 5 | Michael Pittman Jr. | 4.48 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.92 | Availability status: ir; Partial projection coverage |
@@ -70,7 +70,7 @@ Baseline illustrative optimal PPG: **122.79**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Buffalo Bills | 6.38 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.02 | No sourced usage |
+| 1 | Buffalo Bills | 6.39 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.01 | No sourced usage |
 | 2 | Cincinnati Bengals | 6.27 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.13 | No sourced usage |
 | 3 | Baltimore Ravens | 5.74 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.66 | No sourced usage; Partial projection coverage |
 | 4 | New England Patriots | 5.74 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.66 | No sourced usage; Partial projection coverage |

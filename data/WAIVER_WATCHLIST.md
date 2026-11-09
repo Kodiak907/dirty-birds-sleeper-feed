@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-09T13:11:12.684285+00:00
-Sleeper snapshot: 2026-11-09T13:11:06.790182+00:00
+Generated: 2026-11-09T14:56:30.308355+00:00
+Sleeper snapshot: 2026-11-09T14:56:24.082238+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -44,7 +44,7 @@ Sleeper snapshot: 2026-11-09T13:11:06.790182+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Pat Bryant | DEN | 6.62 | 89% | 58.0% | IR |
-| 2 | Keon Coleman | BUF | 6.49 | 100% | 77.3% | Not flagged |
+| 2 | Keon Coleman | BUF | 6.50 | 100% | 77.3% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.60 | 89% | 69.7% | Not flagged |
 | 4 | Chris Bell | MIA | 5.33 | 100% | 60.0% | Not flagged |
 | 5 | Michael Pittman Jr. | PIT | 4.48 | 89% | 77.7% | IR |
@@ -81,7 +81,7 @@ Sleeper snapshot: 2026-11-09T13:11:06.790182+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Buffalo Bills | BUF | 6.38 | 100% | — | Not flagged |
+| 1 | Buffalo Bills | BUF | 6.39 | 100% | — | Not flagged |
 | 2 | Cincinnati Bengals | CIN | 6.27 | 100% | — | Not flagged |
 | 3 | Baltimore Ravens | BAL | 5.74 | 89% | — | Not flagged |
 | 4 | New England Patriots | NE | 5.74 | 89% | — | Not flagged |
@@ -105,7 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Chig Okonkwo | TE | WAS | 6.90 | 75.7% |
 | Alvin Kamara | RB | NO | 6.84 | 43.7% |
 | Pat Bryant | WR | DEN | 6.62 | 58.0% |
-| Keon Coleman | WR | BUF | 6.49 | 77.3% |
+| Keon Coleman | WR | BUF | 6.50 | 77.3% |
 | Darren Waller | TE | CAR | 6.48 | 53.3% |
 | Kalif Raymond | WR | CHI | 5.60 | 69.7% |
 | Michael Mayer | TE | LV | 5.49 | 79.0% |

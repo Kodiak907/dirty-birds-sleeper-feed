@@ -25,7 +25,7 @@
       "ppg": 6.629
     }
   },
-  "generated_at_utc": "2026-11-09T13:11:12.848504+00:00",
+  "generated_at_utc": "2026-11-09T14:56:30.460800+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -41,12 +41,12 @@
           "targets_per_game": null
         },
         "name": "Buffalo Bills",
-        "ppg": 6.38,
+        "ppg": 6.39,
         "replacement_reference": {
           "name": "New Orleans Saints",
           "ppg": 5.859
         },
-        "same_position_uplift_ppg": 0.52,
+        "same_position_uplift_ppg": 0.53,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -923,12 +923,12 @@
           "targets_per_game": 3.67
         },
         "name": "Keon Coleman",
-        "ppg": 6.49,
+        "ppg": 6.5,
         "replacement_reference": {
           "name": "Antonio Williams",
           "ppg": 6.629
         },
-        "same_position_uplift_ppg": -0.14,
+        "same_position_uplift_ppg": -0.13,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -1337,5 +1337,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-09T13:11:06.790182+00:00"
+  "snapshot_utc": "2026-11-09T14:56:24.082238+00:00"
 }
