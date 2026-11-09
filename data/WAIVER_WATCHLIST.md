@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-09T06:36:01.213523+00:00
-Sleeper snapshot: 2026-11-09T06:35:54.883255+00:00
+Generated: 2026-11-09T08:28:21.882570+00:00
+Sleeper snapshot: 2026-11-09T08:28:17.488231+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -44,7 +44,7 @@ Sleeper snapshot: 2026-11-09T06:35:54.883255+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Pat Bryant | DEN | 6.62 | 89% | 57.3% | IR |
-| 2 | Keon Coleman | BUF | 6.50 | 100% | 77.3% | Not flagged |
+| 2 | Keon Coleman | BUF | 6.49 | 100% | 77.3% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.60 | 89% | 62.0% | Not flagged |
 | 4 | Chris Bell | MIA | 5.33 | 100% | 62.7% | Not flagged |
 | 5 | Michael Pittman Jr. | PIT | 4.48 | 89% | 77.7% | IR |
@@ -105,7 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Chig Okonkwo | TE | WAS | 6.90 | 74.7% |
 | Alvin Kamara | RB | NO | 6.84 | 36.3% |
 | Pat Bryant | WR | DEN | 6.62 | 57.3% |
-| Keon Coleman | WR | BUF | 6.50 | 77.3% |
+| Keon Coleman | WR | BUF | 6.49 | 77.3% |
 | Darren Waller | TE | CAR | 6.48 | 51.0% |
 | Kalif Raymond | WR | CHI | 5.60 | 62.0% |
 | Michael Mayer | TE | LV | 5.49 | 80.0% |

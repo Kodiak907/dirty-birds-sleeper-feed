@@ -1,12 +1,12 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-09T06:36:04.741587+00:00 | Forecast as of: 2026-11-09T01:47:44.558173+00:00
+Generated: 2026-11-09T08:28:24.979811+00:00 | Forecast as of: 2026-11-09T07:56:30.851900+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 9
 
-**Projected optimal score:** 131.30
+**Projected optimal score:** 131.22
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -16,7 +16,7 @@ Generated: 2026-11-09T06:36:04.741587+00:00 | Forecast as of: 2026-11-09T01:47:4
 | Jaxon Smith-Njigba | WR | ARI | 20.64 |
 | Zay Flowers | WR | JAX | 11.23 |
 | Isaiah Likely | TE | PHI | 9.05 |
-| Will Reichard | K | BUF | 7.21 |
+| Will Reichard | K | BUF | 7.13 |
 | New Orleans Saints | DEF | CLE | 7.13 |
 | Jonah Coleman | RB | CAR | 13.47 |
 | Antonio Williams | WR | LA | 7.99 |
