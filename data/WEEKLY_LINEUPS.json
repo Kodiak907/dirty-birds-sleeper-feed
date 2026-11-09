@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-09T01:47:46.830274+00:00",
+  "generated_at_utc": "2026-11-09T02:12:24.161273+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-08T19:20:56.044664+00:00",
+  "projection_as_of": "2026-11-09T01:47:44.558173+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-09T01:47:39.633904+00:00",
+  "snapshot_utc": "2026-11-09T02:12:15.179975+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -24,56 +24,56 @@
         "Jonah Coleman",
         "Cairo Santos"
       ],
-      "ppg": 132.44,
+      "ppg": 132.69,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "CLE",
           "position": "QB",
-          "ppg": 14.93
+          "ppg": 15.0
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "DAL",
           "position": "RB",
-          "ppg": 19.66
+          "ppg": 20.04
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "ARI",
           "position": "RB",
-          "ppg": 16.5
+          "ppg": 16.58
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 21.54
+          "ppg": 21.07
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 13.57
+          "ppg": 13.79
         },
         {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "WAS",
           "position": "TE",
-          "ppg": 10.85
+          "ppg": 10.68
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "GB",
           "position": "K",
-          "ppg": 6.66
+          "ppg": 6.79
         },
         {
           "id": "JAX",
@@ -87,14 +87,14 @@
           "name": "A.J. Brown",
           "opponent": "DET",
           "position": "WR",
-          "ppg": 12.21
+          "ppg": 12.06
         },
         {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "DAL",
           "position": "WR",
-          "ppg": 8.9
+          "ppg": 9.06
         }
       ]
     },
@@ -182,7 +182,7 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.96,
+      "ppg": 132.78,
       "starters": [
         {
           "id": "1166",
@@ -210,7 +210,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "SF",
           "position": "WR",
-          "ppg": 20.97
+          "ppg": 20.79
         },
         {
           "id": "9997",
@@ -263,7 +263,7 @@
         "Seth McGowan",
         "Zay Flowers"
       ],
-      "ppg": 126.9,
+      "ppg": 126.72,
       "starters": [
         {
           "id": "9758",
@@ -291,7 +291,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "DAL",
           "position": "WR",
-          "ppg": 23.06
+          "ppg": 22.88
         },
         {
           "id": "5859",
@@ -340,7 +340,7 @@
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.52,
+      "ppg": 131.35,
       "starters": [
         {
           "id": "9758",
@@ -368,7 +368,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "NYG",
           "position": "WR",
-          "ppg": 21.75
+          "ppg": 21.58
         },
         {
           "id": "9997",
@@ -417,7 +417,7 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.52,
+      "ppg": 135.41,
       "starters": [
         {
           "id": "1166",
@@ -445,7 +445,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "PHI",
           "position": "WR",
-          "ppg": 21.01
+          "ppg": 20.9
         },
         {
           "id": "9997",
@@ -494,7 +494,7 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.01,
+      "ppg": 131.89,
       "starters": [
         {
           "id": "1166",
@@ -522,7 +522,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "LA",
           "position": "WR",
-          "ppg": 20.48
+          "ppg": 20.36
         },
         {
           "id": "9997",
@@ -571,7 +571,7 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.76,
+      "ppg": 135.58,
       "starters": [
         {
           "id": "1166",
@@ -599,7 +599,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "CAR",
           "position": "WR",
-          "ppg": 20.75
+          "ppg": 20.57
         },
         {
           "id": "9997",
@@ -651,21 +651,21 @@
         "A.J. Brown",
         "Deebo Samuel Sr."
       ],
-      "ppg": 131.33,
+      "ppg": 131.3,
       "starters": [
         {
           "id": "1166",
           "name": "Kirk Cousins",
           "opponent": "SF",
           "position": "QB",
-          "ppg": 16.67
+          "ppg": 16.88
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 20.68
+          "ppg": 20.49
         },
         {
           "id": "8150",
@@ -679,7 +679,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "ARI",
           "position": "WR",
-          "ppg": 20.69
+          "ppg": 20.64
         },
         {
           "id": "9997",
