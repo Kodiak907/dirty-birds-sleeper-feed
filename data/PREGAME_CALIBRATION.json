@@ -5,7 +5,7 @@
     "Predictions may still be stale at capture; availability must be verified separately.",
     "Projected points are not adjusted for uncertainty or changing lineups."
   ],
-  "eligible_completed_week_samples": 28,
+  "eligible_completed_week_samples": 45,
   "evaluations": [
     {
       "bias": 1.049,
@@ -18,11 +18,17 @@
       "mae": 7.053,
       "sample": 14,
       "week": 8
+    },
+    {
+      "bias": 0.875,
+      "mae": 6.505,
+      "sample": 17,
+      "week": 9
     }
   ],
-  "locked_this_run": 0,
-  "nfl_schedule_teams_with_verified_kickoff": 30,
-  "total_locked_week": 28,
-  "updated_at_utc": "2026-11-10T04:53:50.379858+00:00",
-  "week": 9
+  "locked_this_run": 16,
+  "nfl_schedule_teams_with_verified_kickoff": 28,
+  "total_locked_week": 16,
+  "updated_at_utc": "2026-11-10T05:54:38.559508+00:00",
+  "week": 10
 }

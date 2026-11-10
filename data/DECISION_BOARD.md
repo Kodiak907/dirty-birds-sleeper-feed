@@ -33,7 +33,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Pat Bryant | 6.62 | -0.01 | 58.0% | Tgt 3.3 | sleeper_injury_ir, injury_report_observation_review |
-| 2 | Keon Coleman | 6.50 | -0.13 | 77.3% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 2 | Keon Coleman | 6.50 | -0.13 | 77.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
 | 3 | Kalif Raymond | 5.60 | -1.03 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Chris Bell | 5.33 | -1.30 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
 | 5 | Michael Pittman Jr. | 4.48 | -2.15 | 77.7% | — | sleeper_injury_ir, targets_missing |

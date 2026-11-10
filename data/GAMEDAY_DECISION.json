@@ -5,145 +5,145 @@
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "A.J. Brown",
-      "Deebo Samuel Sr."
+      "Jonah Coleman",
+      "Cairo Santos"
     ],
-    "ppg": 131.33,
+    "ppg": 132.69,
     "starters": [
       {
-        "id": "1166",
-        "name": "Kirk Cousins",
+        "id": "9758",
+        "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 16.88
+        "ppg": 15.0
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.49
+        "ppg": 20.04
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.21
+        "ppg": 16.58
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.64
+        "ppg": 21.07
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.23
+        "ppg": 13.79
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.05
+        "ppg": 10.68
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.24
+        "ppg": 6.79
       },
       {
-        "id": "NO",
-        "name": "New Orleans Saints",
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
         "position": "DEF",
-        "ppg": 7.13
+        "ppg": 7.62
       },
       {
-        "id": "13345",
-        "name": "Jonah Coleman",
-        "position": "RB",
-        "ppg": 13.47
-      },
-      {
-        "id": "13301",
-        "name": "Antonio Williams",
+        "id": "5859",
+        "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 7.99
+        "ppg": 12.06
+      },
+      {
+        "id": "5872",
+        "name": "Deebo Samuel Sr.",
+        "position": "WR",
+        "ppg": 9.06
       }
     ]
   },
-  "difference_ppg": -6.11,
+  "difference_ppg": -2.35,
   "explicit_excluded_ids": [
     "13345",
     "5872"
   ],
-  "generated_at_utc": "2026-11-10T04:53:54.486357+00:00",
+  "generated_at_utc": "2026-11-10T05:54:41.723726+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
-      "A.J. Brown"
+      "Cairo Santos"
     ],
-    "ppg": 125.22,
+    "ppg": 130.34,
     "starters": [
       {
-        "id": "1166",
-        "name": "Kirk Cousins",
+        "id": "9758",
+        "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 16.88
+        "ppg": 15.0
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.49
+        "ppg": 20.04
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 17.21
+        "ppg": 16.58
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.64
+        "ppg": 21.07
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.23
+        "ppg": 13.79
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 9.05
+        "ppg": 10.68
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.24
+        "ppg": 6.79
       },
       {
-        "id": "NO",
-        "name": "New Orleans Saints",
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
         "position": "DEF",
-        "ppg": 7.13
+        "ppg": 7.62
       },
       {
-        "id": "13301",
-        "name": "Antonio Williams",
+        "id": "5859",
+        "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 7.99
+        "ppg": 12.06
       },
       {
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 7.36
+        "ppg": 6.71
       }
     ]
   },
@@ -318,12 +318,12 @@
   ],
   "players_needing_review": [],
   "removed_starters": [
-    "Jonah Coleman"
+    "Deebo Samuel Sr."
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-10T04:53:42.776925+00:00",
-  "source_availability_generated_at_utc": "2026-11-10T04:53:50.966710+00:00",
+  "snapshot_utc": "2026-11-10T05:54:30.891513+00:00",
+  "source_availability_generated_at_utc": "2026-11-10T05:54:39.113090+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
@@ -337,5 +337,5 @@
     "Official inactives must be checked near kickoff before any action.",
     "No roster or lineup change performed."
   ],
-  "week": 9
+  "week": 10
 }

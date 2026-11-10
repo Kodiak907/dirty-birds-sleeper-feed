@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-11-10T04:53:47.236127+00:00",
+  "as_of": "2026-11-10T05:54:35.182194+00:00",
   "description": "NFL future opponents only. No unsupported defense difficulty estimates.",
   "fantasy_playoff_weeks": [
     15,
     16,
     17
   ],
-  "from_week": 9,
+  "from_week": 10,
   "season": 2026,
   "source": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
   "teams": {
@@ -49,11 +49,6 @@
           "game_id": "2026_17_LV_ARI",
           "home": true,
           "opponent": "LV"
-        },
-        "9": {
-          "game_id": "2026_09_ARI_SEA",
-          "home": false,
-          "opponent": "SEA"
         }
       }
     },
@@ -96,11 +91,6 @@
           "game_id": "2026_17_NO_ATL",
           "home": true,
           "opponent": "NO"
-        },
-        "9": {
-          "game_id": "2026_09_CIN_ATL",
-          "home": true,
-          "opponent": "CIN"
         }
       }
     },
@@ -143,11 +133,6 @@
           "game_id": "2026_17_BAL_CIN",
           "home": false,
           "opponent": "CIN"
-        },
-        "9": {
-          "game_id": "2026_09_JAX_BAL",
-          "home": true,
-          "opponent": "JAX"
         }
       }
     },
@@ -192,11 +177,6 @@
           "game_id": "2026_17_BUF_MIA",
           "home": false,
           "opponent": "MIA"
-        },
-        "9": {
-          "game_id": "2026_09_BUF_MIN",
-          "home": false,
-          "opponent": "MIN"
         }
       }
     },
@@ -241,11 +221,6 @@
           "game_id": "2026_17_SEA_CAR",
           "home": true,
           "opponent": "SEA"
-        },
-        "9": {
-          "game_id": "2026_09_DEN_CAR",
-          "home": true,
-          "opponent": "DEN"
         }
       }
     },
@@ -288,11 +263,6 @@
           "game_id": "2026_17_DET_CHI",
           "home": true,
           "opponent": "DET"
-        },
-        "9": {
-          "game_id": "2026_09_TB_CHI",
-          "home": true,
-          "opponent": "TB"
         }
       }
     },
@@ -337,11 +307,6 @@
           "game_id": "2026_17_BAL_CIN",
           "home": true,
           "opponent": "BAL"
-        },
-        "9": {
-          "game_id": "2026_09_CIN_ATL",
-          "home": false,
-          "opponent": "ATL"
         }
       }
     },
@@ -384,11 +349,6 @@
           "game_id": "2026_17_IND_CLE",
           "home": true,
           "opponent": "IND"
-        },
-        "9": {
-          "game_id": "2026_09_CLE_NO",
-          "home": false,
-          "opponent": "NO"
         }
       }
     },
@@ -431,11 +391,6 @@
           "game_id": "2026_17_NYG_DAL",
           "home": true,
           "opponent": "NYG"
-        },
-        "9": {
-          "game_id": "2026_09_DAL_IND",
-          "home": false,
-          "opponent": "IND"
         }
       }
     },
@@ -478,11 +433,6 @@
           "game_id": "2026_17_DEN_NE",
           "home": false,
           "opponent": "NE"
-        },
-        "9": {
-          "game_id": "2026_09_DEN_CAR",
-          "home": false,
-          "opponent": "CAR"
         }
       }
     },
@@ -527,11 +477,6 @@
           "game_id": "2026_17_DET_CHI",
           "home": false,
           "opponent": "CHI"
-        },
-        "9": {
-          "game_id": "2026_09_DET_MIA",
-          "home": false,
-          "opponent": "MIA"
         }
       }
     },
@@ -574,11 +519,6 @@
           "game_id": "2026_17_HOU_GB",
           "home": true,
           "opponent": "HOU"
-        },
-        "9": {
-          "game_id": "2026_09_GB_NE",
-          "home": false,
-          "opponent": "NE"
         }
       }
     },
@@ -623,11 +563,6 @@
           "game_id": "2026_17_HOU_GB",
           "home": false,
           "opponent": "GB"
-        },
-        "9": {
-          "game_id": "2026_09_HOU_LAC",
-          "home": false,
-          "opponent": "LAC"
         }
       }
     },
@@ -670,11 +605,6 @@
           "game_id": "2026_17_IND_CLE",
           "home": false,
           "opponent": "CLE"
-        },
-        "9": {
-          "game_id": "2026_09_DAL_IND",
-          "home": true,
-          "opponent": "DAL"
         }
       }
     },
@@ -719,11 +649,6 @@
           "game_id": "2026_17_WAS_JAX",
           "home": true,
           "opponent": "WAS"
-        },
-        "9": {
-          "game_id": "2026_09_JAX_BAL",
-          "home": false,
-          "opponent": "BAL"
         }
       }
     },
@@ -768,11 +693,6 @@
           "game_id": "2026_17_KC_LAC",
           "home": false,
           "opponent": "LAC"
-        },
-        "9": {
-          "game_id": "2026_09_NYJ_KC",
-          "home": true,
-          "opponent": "NYJ"
         }
       }
     },
@@ -815,11 +735,6 @@
           "game_id": "2026_17_LA_TB",
           "home": false,
           "opponent": "TB"
-        },
-        "9": {
-          "game_id": "2026_09_LA_WAS",
-          "home": false,
-          "opponent": "WAS"
         }
       }
     },
@@ -864,11 +779,6 @@
           "game_id": "2026_17_KC_LAC",
           "home": true,
           "opponent": "KC"
-        },
-        "9": {
-          "game_id": "2026_09_HOU_LAC",
-          "home": true,
-          "opponent": "HOU"
         }
       }
     },
@@ -911,11 +821,6 @@
           "game_id": "2026_17_LV_ARI",
           "home": false,
           "opponent": "ARI"
-        },
-        "9": {
-          "game_id": "2026_09_LV_SF",
-          "home": false,
-          "opponent": "SF"
         }
       }
     },
@@ -960,11 +865,6 @@
           "game_id": "2026_17_BUF_MIA",
           "home": true,
           "opponent": "BUF"
-        },
-        "9": {
-          "game_id": "2026_09_DET_MIA",
-          "home": true,
-          "opponent": "DET"
         }
       }
     },
@@ -1009,11 +909,6 @@
           "game_id": "2026_17_MIN_NYJ",
           "home": false,
           "opponent": "NYJ"
-        },
-        "9": {
-          "game_id": "2026_09_BUF_MIN",
-          "home": true,
-          "opponent": "BUF"
         }
       }
     },
@@ -1056,11 +951,6 @@
           "game_id": "2026_17_DEN_NE",
           "home": true,
           "opponent": "DEN"
-        },
-        "9": {
-          "game_id": "2026_09_GB_NE",
-          "home": true,
-          "opponent": "GB"
         }
       }
     },
@@ -1105,11 +995,6 @@
           "game_id": "2026_17_NO_ATL",
           "home": false,
           "opponent": "ATL"
-        },
-        "9": {
-          "game_id": "2026_09_CLE_NO",
-          "home": true,
-          "opponent": "CLE"
         }
       }
     },
@@ -1154,11 +1039,6 @@
           "game_id": "2026_17_NYG_DAL",
           "home": false,
           "opponent": "DAL"
-        },
-        "9": {
-          "game_id": "2026_09_NYG_PHI",
-          "home": false,
-          "opponent": "PHI"
         }
       }
     },
@@ -1201,11 +1081,6 @@
           "game_id": "2026_17_MIN_NYJ",
           "home": true,
           "opponent": "MIN"
-        },
-        "9": {
-          "game_id": "2026_09_NYJ_KC",
-          "home": false,
-          "opponent": "KC"
         }
       }
     },
@@ -1248,11 +1123,6 @@
           "game_id": "2026_17_PHI_SF",
           "home": false,
           "opponent": "SF"
-        },
-        "9": {
-          "game_id": "2026_09_NYG_PHI",
-          "home": true,
-          "opponent": "NYG"
         }
       }
     },
@@ -1297,9 +1167,6 @@
           "game_id": "2026_17_PIT_TEN",
           "home": false,
           "opponent": "TEN"
-        },
-        "9": {
-          "bye": true
         }
       }
     },
@@ -1342,11 +1209,6 @@
           "game_id": "2026_17_SEA_CAR",
           "home": false,
           "opponent": "CAR"
-        },
-        "9": {
-          "game_id": "2026_09_ARI_SEA",
-          "home": true,
-          "opponent": "ARI"
         }
       }
     },
@@ -1391,11 +1253,6 @@
           "game_id": "2026_17_PHI_SF",
           "home": true,
           "opponent": "PHI"
-        },
-        "9": {
-          "game_id": "2026_09_LV_SF",
-          "home": true,
-          "opponent": "LV"
         }
       }
     },
@@ -1438,11 +1295,6 @@
           "game_id": "2026_17_LA_TB",
           "home": true,
           "opponent": "LA"
-        },
-        "9": {
-          "game_id": "2026_09_TB_CHI",
-          "home": false,
-          "opponent": "CHI"
         }
       }
     },
@@ -1487,9 +1339,6 @@
           "game_id": "2026_17_PIT_TEN",
           "home": true,
           "opponent": "PIT"
-        },
-        "9": {
-          "bye": true
         }
       }
     },
@@ -1534,11 +1383,6 @@
           "game_id": "2026_17_WAS_JAX",
           "home": false,
           "opponent": "JAX"
-        },
-        "9": {
-          "game_id": "2026_09_LA_WAS",
-          "home": true,
-          "opponent": "LA"
         }
       }
     }
