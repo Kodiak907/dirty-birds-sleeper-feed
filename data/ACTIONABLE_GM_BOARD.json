@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-10T08:20:41.510747+00:00",
-  "roster_snapshot_utc": "2026-11-10T08:20:34.996268+00:00",
+  "generated_at_utc": "2026-11-10T09:56:16.772295+00:00",
+  "roster_snapshot_utc": "2026-11-10T09:56:11.936507+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
@@ -93,8 +93,30 @@
     }
   ],
   "trade_status": "Ideas require Coach review",
-  "waiver_research_shortlist": [],
-  "waiver_screened_count": 0,
+  "waiver_research_shortlist": [
+    {
+      "bench_depth_difference_ppg": 2.3,
+      "coach_authorization_required": true,
+      "drop_id": "13414",
+      "evidence_flags": [
+        "Partial projection coverage"
+      ],
+      "hypothetical_drop": "Kaelon Black",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Zonovan Knight",
+      "position": "RB",
+      "research_tier": "depth candidate",
+      "source_player_id": "8122",
+      "team": "ARI"
+    }
+  ],
+  "waiver_screened_count": 1,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",
