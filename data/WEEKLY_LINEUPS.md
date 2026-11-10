@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-10T18:51:43.675588+00:00 | Forecast as of: 2026-11-10T08:20:42.542616+00:00
+Generated: 2026-11-10T19:54:04.911846+00:00 | Forecast as of: 2026-11-10T08:20:42.542616+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -108,7 +108,7 @@ Generated: 2026-11-10T18:51:43.675588+00:00 | Forecast as of: 2026-11-10T08:20:4
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 129.38
+**Projected optimal score:** 128.94
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -119,7 +119,7 @@ Generated: 2026-11-10T18:51:43.675588+00:00 | Forecast as of: 2026-11-10T08:20:4
 | Zay Flowers | WR | CLE | 13.11 |
 | Isaiah Likely | TE | DET | 10.57 |
 | Will Reichard | K | WAS | 7.67 |
-| New Orleans Saints | DEF | ARI | 6.52 |
+| Jacksonville Jaguars | DEF | DAL | 6.08 |
 | A.J. Brown | WR | NYJ | 11.11 |
 | Jonah Coleman | RB | BUF | 10.27 |
 

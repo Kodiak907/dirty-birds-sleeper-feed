@@ -1,12 +1,12 @@
 {
   "current_roster_reference": {
     "DEF": {
-      "name": "New Orleans Saints",
-      "ppg": 5.723
+      "name": "Jacksonville Jaguars",
+      "ppg": 6.825
     },
     "K": {
-      "name": "Cairo Santos",
-      "ppg": 5.39
+      "name": "Will Reichard",
+      "ppg": 7.16
     },
     "QB": {
       "name": "Kirk Cousins",
@@ -25,7 +25,7 @@
       "ppg": 6.391
     }
   },
-  "generated_at_utc": "2026-11-10T18:51:40.061553+00:00",
+  "generated_at_utc": "2026-11-10T19:54:00.885113+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -43,10 +43,10 @@
         "name": "Buffalo Bills",
         "ppg": 6.3,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": 0.58,
+        "same_position_uplift_ppg": -0.52,
         "screen_only": true,
         "sleeper_id": "BUF",
         "team": "BUF"
@@ -65,10 +65,10 @@
         "name": "Cincinnati Bengals",
         "ppg": 6.25,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": 0.53,
+        "same_position_uplift_ppg": -0.57,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -87,10 +87,10 @@
         "name": "Baltimore Ravens",
         "ppg": 5.84,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": 0.11,
+        "same_position_uplift_ppg": -0.99,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -109,13 +109,35 @@
         "name": "Washington Commanders",
         "ppg": 5.74,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": 0.01,
+        "same_position_uplift_ppg": -1.09,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New Orleans Saints",
+        "ppg": 5.72,
+        "replacement_reference": {
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
+        },
+        "same_position_uplift_ppg": -1.1,
+        "screen_only": true,
+        "sleeper_id": "NO",
+        "team": "NO"
       },
       {
         "audit": {
@@ -131,10 +153,10 @@
         "name": "Green Bay Packers",
         "ppg": 5.67,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.05,
+        "same_position_uplift_ppg": -1.15,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -153,10 +175,10 @@
         "name": "Tampa Bay Buccaneers",
         "ppg": 5.65,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.08,
+        "same_position_uplift_ppg": -1.18,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -175,10 +197,10 @@
         "name": "New England Patriots",
         "ppg": 5.6,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.12,
+        "same_position_uplift_ppg": -1.22,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -197,10 +219,10 @@
         "name": "Indianapolis Colts",
         "ppg": 5.57,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.15,
+        "same_position_uplift_ppg": -1.26,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -219,10 +241,10 @@
         "name": "Cleveland Browns",
         "ppg": 5.46,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.27,
+        "same_position_uplift_ppg": -1.37,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -241,10 +263,10 @@
         "name": "Tennessee Titans",
         "ppg": 5.03,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.69,
+        "same_position_uplift_ppg": -1.79,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -263,10 +285,10 @@
         "name": "New York Jets",
         "ppg": 5.02,
         "replacement_reference": {
-          "name": "New Orleans Saints",
-          "ppg": 5.723
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
         },
-        "same_position_uplift_ppg": -0.7,
+        "same_position_uplift_ppg": -1.8,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -287,10 +309,10 @@
         "name": "Dominic Zvada",
         "ppg": 6.97,
         "replacement_reference": {
-          "name": "Cairo Santos",
-          "ppg": 5.39
+          "name": "Will Reichard",
+          "ppg": 7.16
         },
-        "same_position_uplift_ppg": 1.58,
+        "same_position_uplift_ppg": -0.19,
         "screen_only": true,
         "sleeper_id": "13833",
         "team": "NYG"
@@ -309,10 +331,10 @@
         "name": "Matt Gay",
         "ppg": 6.78,
         "replacement_reference": {
-          "name": "Cairo Santos",
-          "ppg": 5.39
+          "name": "Will Reichard",
+          "ppg": 7.16
         },
-        "same_position_uplift_ppg": 1.39,
+        "same_position_uplift_ppg": -0.38,
         "screen_only": true,
         "sleeper_id": "6083",
         "team": "LV"
@@ -331,10 +353,10 @@
         "name": "Trey Smack",
         "ppg": 6.13,
         "replacement_reference": {
-          "name": "Cairo Santos",
-          "ppg": 5.39
+          "name": "Will Reichard",
+          "ppg": 7.16
         },
-        "same_position_uplift_ppg": 0.75,
+        "same_position_uplift_ppg": -1.03,
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
@@ -353,10 +375,10 @@
         "name": "Chris Boswell",
         "ppg": 6.1,
         "replacement_reference": {
-          "name": "Cairo Santos",
-          "ppg": 5.39
+          "name": "Will Reichard",
+          "ppg": 7.16
         },
-        "same_position_uplift_ppg": 0.71,
+        "same_position_uplift_ppg": -1.06,
         "screen_only": true,
         "sleeper_id": "1945",
         "team": "PIT"
@@ -375,13 +397,35 @@
         "name": "Cameron Dicker",
         "ppg": 5.95,
         "replacement_reference": {
-          "name": "Cairo Santos",
-          "ppg": 5.39
+          "name": "Will Reichard",
+          "ppg": 7.16
         },
-        "same_position_uplift_ppg": 0.56,
+        "same_position_uplift_ppg": -1.21,
         "screen_only": true,
         "sleeper_id": "8259",
         "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.875,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Cairo Santos",
+        "ppg": 5.39,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.16
+        },
+        "same_position_uplift_ppg": -1.77,
+        "screen_only": true,
+        "sleeper_id": "2020",
+        "team": "CHI"
       }
     ],
     "QB": [
@@ -1356,5 +1400,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-10T18:51:35.530505+00:00"
+  "snapshot_utc": "2026-11-10T19:53:54.687068+00:00"
 }

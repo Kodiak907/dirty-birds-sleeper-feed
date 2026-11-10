@@ -13064,5 +13064,100 @@
       "NYG"
     ],
     "roster_id": 8
+  },
+  {
+    "added": [],
+    "detected_at_utc": "2026-11-10T19:53:54.687068+00:00",
+    "dropped": [
+      "2020",
+      "NO"
+    ],
+    "kind": "roster_change",
+    "roster_id": 1
+  },
+  {
+    "detected_at_utc": "2026-11-10T19:53:54.687068+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "11564",
+      "7588",
+      "8228",
+      "6786",
+      "7547",
+      "12506",
+      "13286",
+      "11646",
+      "7042",
+      "DEN"
+    ],
+    "old": [
+      "11564",
+      "7588",
+      "0",
+      "6786",
+      "7547",
+      "12506",
+      "13286",
+      "11646",
+      "7042",
+      "DEN"
+    ],
+    "roster_id": 12
+  },
+  {
+    "detected_at_utc": "2026-11-10T19:53:54.687068+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        1
+      ],
+      "created": 1794340401586,
+      "creator": "1399093464662073344",
+      "draft_picks": [],
+      "drops": {
+        "2020": 1
+      },
+      "leg": 9,
+      "metadata": null,
+      "roster_ids": [
+        1
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1794340401586,
+      "transaction_id": "1425970633518387200",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1425970633518387200"
+  },
+  {
+    "detected_at_utc": "2026-11-10T19:53:54.687068+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        1
+      ],
+      "created": 1794340363595,
+      "creator": "1399093464662073344",
+      "draft_picks": [],
+      "drops": {
+        "NO": 1
+      },
+      "leg": 9,
+      "metadata": null,
+      "roster_ids": [
+        1
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1794340363595,
+      "transaction_id": "1425970474172583936",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1425970474172583936"
   }
 ]

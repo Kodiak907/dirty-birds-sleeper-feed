@@ -56,31 +56,33 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | David Njoku | 3.46 | -6.41 | 35.5% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 | 6 | Colby Parkinson | 3.42 | -6.45 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
-## K — reference: Cairo Santos (5.39 PPG)
+## K — reference: Will Reichard (7.16 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Dominic Zvada | 6.97 | +1.58 | — | — | No modeled flags (not medically cleared) |
-| 2 | Matt Gay | 6.78 | +1.39 | — | — | No modeled flags (not medically cleared) |
-| 3 | Trey Smack | 6.13 | +0.75 | — | — | No modeled flags (not medically cleared) |
-| 4 | Chris Boswell | 6.10 | +0.71 | — | — | No modeled flags (not medically cleared) |
-| 5 | Cameron Dicker | 5.95 | +0.56 | — | — | No modeled flags (not medically cleared) |
+| 1 | Dominic Zvada | 6.97 | -0.19 | — | — | No modeled flags (not medically cleared) |
+| 2 | Matt Gay | 6.78 | -0.38 | — | — | No modeled flags (not medically cleared) |
+| 3 | Trey Smack | 6.13 | -1.03 | — | — | No modeled flags (not medically cleared) |
+| 4 | Chris Boswell | 6.10 | -1.06 | — | — | No modeled flags (not medically cleared) |
+| 5 | Cameron Dicker | 5.95 | -1.21 | — | — | No modeled flags (not medically cleared) |
+| 6 | Cairo Santos | 5.39 | -1.77 | — | — | No modeled flags (not medically cleared) |
 
-## DEF — reference: New Orleans Saints (5.72 PPG)
+## DEF — reference: Jacksonville Jaguars (6.83 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Buffalo Bills | 6.30 | +0.58 | — | — | No modeled flags (not medically cleared) |
-| 2 | Cincinnati Bengals | 6.25 | +0.53 | — | — | No modeled flags (not medically cleared) |
-| 3 | Baltimore Ravens | 5.84 | +0.11 | — | — | No modeled flags (not medically cleared) |
-| 4 | Washington Commanders | 5.74 | +0.01 | — | — | No modeled flags (not medically cleared) |
-| 5 | Green Bay Packers | 5.67 | -0.05 | — | — | No modeled flags (not medically cleared) |
-| 6 | Tampa Bay Buccaneers | 5.65 | -0.08 | — | — | No modeled flags (not medically cleared) |
-| 7 | New England Patriots | 5.60 | -0.12 | — | — | No modeled flags (not medically cleared) |
-| 8 | Indianapolis Colts | 5.57 | -0.15 | — | — | No modeled flags (not medically cleared) |
-| 9 | Cleveland Browns | 5.46 | -0.27 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tennessee Titans | 5.03 | -0.69 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 5.02 | -0.70 | — | — | No modeled flags (not medically cleared) |
+| 1 | Buffalo Bills | 6.30 | -0.52 | — | — | No modeled flags (not medically cleared) |
+| 2 | Cincinnati Bengals | 6.25 | -0.57 | — | — | No modeled flags (not medically cleared) |
+| 3 | Baltimore Ravens | 5.84 | -0.99 | — | — | No modeled flags (not medically cleared) |
+| 4 | Washington Commanders | 5.74 | -1.09 | — | — | No modeled flags (not medically cleared) |
+| 5 | New Orleans Saints | 5.72 | -1.10 | — | — | No modeled flags (not medically cleared) |
+| 6 | Green Bay Packers | 5.67 | -1.15 | — | — | No modeled flags (not medically cleared) |
+| 7 | Tampa Bay Buccaneers | 5.65 | -1.18 | — | — | No modeled flags (not medically cleared) |
+| 8 | New England Patriots | 5.60 | -1.22 | — | — | No modeled flags (not medically cleared) |
+| 9 | Indianapolis Colts | 5.57 | -1.26 | — | — | No modeled flags (not medically cleared) |
+| 10 | Cleveland Browns | 5.46 | -1.37 | — | — | No modeled flags (not medically cleared) |
+| 11 | Tennessee Titans | 5.03 | -1.79 | — | — | No modeled flags (not medically cleared) |
+| 12 | New York Jets | 5.02 | -1.80 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

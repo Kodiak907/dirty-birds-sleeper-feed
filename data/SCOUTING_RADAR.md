@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-10T18:51:39.833541+00:00
-Sleeper snapshot: 2026-11-10T18:51:35.530505+00:00
+Generated: 2026-11-10T19:54:00.545712+00:00
+Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- Dirty Birds: added none; dropped Cairo Santos, New Orleans Saints
 
 ## Limits
 

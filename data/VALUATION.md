@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-10T18:51:39.881526+00:00
-Sleeper snapshot: 2026-11-10T18:51:35.530505+00:00
+Generated: 2026-11-10T19:54:00.655095+00:00
+Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -29,8 +29,6 @@ The points below average actual fantasy scoring over completed Weeks 1–9, with
 | A.J. Brown | WR | 14.60 | 1.62 | 3/9 |
 | Antonio Williams | WR | 11.90 | 1.32 | 2/9 |
 | Seth McGowan | RB | 10.70 | 1.19 | 1/9 |
-| Cairo Santos | K | 9.00 | 1.00 | 1/9 |
-| New Orleans Saints | DEF | 2.00 | 0.22 | 2/9 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.

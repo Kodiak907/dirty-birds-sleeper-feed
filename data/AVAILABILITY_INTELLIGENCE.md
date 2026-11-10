@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-10T18:51:44.168186+00:00
-Sleeper snapshot: 2026-11-10T18:51:35.530505+00:00
-nflverse observations: 2026-11-10T18:51:39.532256+00:00; injury feed loaded: True
+Generated: 2026-11-10T19:54:05.735047+00:00
+Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
+nflverse observations: 2026-11-10T19:54:00.065825+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -17,7 +17,6 @@ nflverse observations: 2026-11-10T18:51:39.532256+00:00; injury feed loaded: Tru
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 64.0% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 31.7% | Verify current status before kickoff |
 | Seth McGowan | No tag | No matched report (not clearance) | 29.7% | Verify current status before kickoff |
-| Cairo Santos | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Christian McCaffrey | No tag | Week 9 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 9 observation: Out, Did Not Participate In Practice, Ankle | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 9 observation: Out, Did Not Participate In Practice, Hamstring | — | Verify official NFL roster and game status before lineup decisions |
@@ -27,7 +26,6 @@ nflverse observations: 2026-11-10T18:51:39.532256+00:00; injury feed loaded: Tru
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
 | Jacksonville Jaguars | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| New Orleans Saints | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 

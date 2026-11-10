@@ -1,15 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-10T18:51:39.803065+00:00
-Sleeper snapshot: 2026-11-10T18:51:35.530505+00:00
+Generated: 2026-11-10T19:54:00.507480+00:00
+Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1425970633518387200` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
+- **NEW** · transaction `1425970474172583936` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
+- 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
 - 2026-11-09T01:03:52.945230+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Cairo Santos → Dirty Birds (#1) | Dropped: Keon Coleman → Dirty Birds (#1)
 - 2026-11-08T04:53:37.991887+00:00 · new_transaction · TRADE · COMPLETE · BigOlBoyle (#3), Cokerthestroker (#12) | Added: Bhayshul Tuten → BigOlBoyle (#3), Mike Gesicki → BigOlBoyle (#3), Jaylen Warren → Cokerthestroker (#12) | Dropped: Bhayshul Tuten → Cokerthestroker (#12), Mike Gesicki → Cokerthestroker (#12), Jaylen Warren → BigOlBoyle (#3)
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
@@ -33,8 +38,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-05T23:45:04.083279+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jordan Watkins → DANGER CLOSE  (#4) | Dropped: Keon Coleman → DANGER CLOSE  (#4)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Brian Thomas Jr. → DANGER CLOSE  (#4) | Dropped: New England Patriots → DANGER CLOSE  (#4)
-- 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Christian Kirk → Dirty Birds (#1)
-- 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jahan Dotson → DANGER CLOSE  (#4)
 
 ## Important limits
 

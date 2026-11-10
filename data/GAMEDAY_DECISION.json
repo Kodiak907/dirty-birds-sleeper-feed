@@ -5,8 +5,7 @@
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "Jonah Coleman",
-      "Cairo Santos"
+      "Jonah Coleman"
     ],
     "ppg": 132.43,
     "starters": [
@@ -77,12 +76,10 @@
     "13345",
     "5872"
   ],
-  "generated_at_utc": "2026-11-10T18:51:45.544178+00:00",
+  "generated_at_utc": "2026-11-10T19:54:08.625422+00:00",
   "hard_status_excluded": {
     "complete": true,
-    "missing_projection": [
-      "Cairo Santos"
-    ],
+    "missing_projection": [],
     "ppg": 130.19,
     "starters": [
       {
@@ -219,15 +216,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "2020",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Cairo Santos",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "4034",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Christian McCaffrey",
@@ -305,15 +293,6 @@
       "name": "Jacksonville Jaguars",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "NO",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "New Orleans Saints",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
     }
   ],
   "players_needing_review": [],
@@ -322,8 +301,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-10T18:51:35.530505+00:00",
-  "source_availability_generated_at_utc": "2026-11-10T18:51:44.168186+00:00",
+  "snapshot_utc": "2026-11-10T19:53:54.687068+00:00",
+  "source_availability_generated_at_utc": "2026-11-10T19:54:05.735047+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
