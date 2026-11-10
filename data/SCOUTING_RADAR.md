@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-10T20:46:04.209482+00:00
-Sleeper snapshot: 2026-11-10T20:45:57.278650+00:00
+Generated: 2026-11-10T21:41:41.716785+00:00
+Sleeper snapshot: 2026-11-10T21:41:36.091948+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Victorious Secret: added none; dropped Kendre Miller
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-10T20:46:04.173497+00:00
-Sleeper snapshot: 2026-11-10T20:45:57.278650+00:00
+Generated: 2026-11-10T21:41:41.691814+00:00
+Sleeper snapshot: 2026-11-10T21:41:36.091948+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1425976452754448384` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
