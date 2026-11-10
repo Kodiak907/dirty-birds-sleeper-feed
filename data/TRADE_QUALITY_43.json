@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-10T14:12:58.058707+00:00",
+  "generated_at_utc": "2026-11-10T15:49:21.593030+00:00",
   "candidates_evaluated": 48180,
-  "market_matched": 6206,
+  "market_matched": 6113,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-10T03:51:54.367257+00:00",
+  "market_as_of": "2026-11-10T15:04:58.586750+00:00",
   "projection_as_of": "2026-11-10T08:20:42.542616+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -56,9 +56,9 @@
           "pos": "RB"
         },
         {
-          "id": "8131",
-          "name": "Isaiah Likely",
-          "pos": "TE"
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR"
         }
       ],
       "receive": [
@@ -73,13 +73,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.7,
-      "their_gain": 2.6,
-      "market_paid_received_ratio": 1.039,
+      "our_gain": 3.25,
+      "their_gain": 2.06,
+      "market_paid_received_ratio": 0.879,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.142,
+      "score": 4.123,
       "not_an_approved_offer": true
     }
   ],

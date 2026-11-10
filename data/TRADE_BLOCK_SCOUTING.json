@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-10T14:12:58.937185+00:00",
-  "source_snapshot_utc": "2026-11-10T14:12:50.004967+00:00",
-  "source_market_as_of": "2026-11-10T03:51:54.367257+00:00",
+  "generated_at_utc": "2026-11-10T15:49:22.487817+00:00",
+  "source_snapshot_utc": "2026-11-10T15:49:15.659084+00:00",
+  "source_market_as_of": "2026-11-10T15:04:58.586750+00:00",
   "source_projection_as_of": "2026-11-10T08:20:42.542616+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 8847,
-  "market_screened": 2387,
+  "market_screened": 2380,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -29,44 +29,6 @@
       "asset": "A.J. Brown",
       "owned_now": true,
       "leads": [
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "13345",
-              "name": "Jonah Coleman",
-              "position": "RB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "8183",
-              "name": "Brock Purdy",
-              "position": "QB"
-            },
-            {
-              "id": "4217",
-              "name": "George Kittle",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 4,
-          "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 4.92,
-          "their_lineup_delta_ppg": 0.39,
-          "value_paid_received_ratio": 0.748,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
         {
           "give": [
             {
@@ -96,7 +58,45 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 3.25,
           "their_lineup_delta_ppg": 2.06,
-          "value_paid_received_ratio": 0.849,
+          "value_paid_received_ratio": 0.879,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "STRICT_RESEARCH_PASS",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "13345",
+              "name": "Jonah Coleman",
+              "position": "RB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "8183",
+              "name": "Brock Purdy",
+              "position": "QB"
+            },
+            {
+              "id": "4217",
+              "name": "George Kittle",
+              "position": "TE"
+            }
+          ],
+          "opponent_roster_id": 4,
+          "opponent": "DANGER CLOSE ",
+          "our_lineup_delta_ppg": 4.92,
+          "their_lineup_delta_ppg": 0.39,
+          "value_paid_received_ratio": 0.766,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -113,9 +113,9 @@
               "position": "WR"
             },
             {
-              "id": "13296",
-              "name": "Caleb Douglas",
-              "position": "WR"
+              "id": "1166",
+              "name": "Kirk Cousins",
+              "position": "QB"
             }
           ],
           "receive": [
@@ -134,7 +134,7 @@
           "opponent": "    Victorious Secret",
           "our_lineup_delta_ppg": 1.64,
           "their_lineup_delta_ppg": 0.45,
-          "value_paid_received_ratio": 0.72,
+          "value_paid_received_ratio": 0.722,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -172,7 +172,7 @@
           "opponent": "    Victorious Secret",
           "our_lineup_delta_ppg": 1.61,
           "their_lineup_delta_ppg": 0.45,
-          "value_paid_received_ratio": 0.72,
+          "value_paid_received_ratio": 0.725,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -210,7 +210,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.45,
           "their_lineup_delta_ppg": 0.55,
-          "value_paid_received_ratio": 0.912,
+          "value_paid_received_ratio": 0.918,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -248,7 +248,7 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 1.22,
           "their_lineup_delta_ppg": 0.77,
-          "value_paid_received_ratio": 0.934,
+          "value_paid_received_ratio": 0.939,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -286,7 +286,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.21,
           "their_lineup_delta_ppg": 0.7,
-          "value_paid_received_ratio": 1.182,
+          "value_paid_received_ratio": 1.134,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -324,7 +324,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.21,
           "their_lineup_delta_ppg": 0.0,
-          "value_paid_received_ratio": 0.865,
+          "value_paid_received_ratio": 0.836,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -334,7 +334,7 @@
           ]
         }
       ],
-      "candidate_count": 108
+      "candidate_count": 119
     },
     {
       "asset": "Patrick Mahomes",
