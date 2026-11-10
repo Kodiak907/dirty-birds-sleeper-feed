@@ -2,19 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-09T15:10:41.695248+00:00
+Updated: 2026-11-10T15:04:58.726586+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 5. Unpriced candidate packages: 2.
+Fully priced in-range opportunities: 6. Unpriced candidate packages: 2.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 4 | Jonah Coleman | Brock Purdy | 0.88× | +2.25 | +2.96 |
-| 2 | 11 | C.J. Stroud, Zay Flowers | Justin Jefferson | 1.08× | +1.40 | +0.72 |
-| 3 | 11 | Kirk Cousins, Zay Flowers | Parker Washington | 1.03× | +1.10 | +1.02 |
-| 4 | 3 | Kirk Cousins, Zay Flowers | Tee Higgins | 0.91× | +0.79 | +0.08 |
+| 1 | 4 | Jonah Coleman | Brock Purdy | 0.97× | +1.82 | +3.48 |
+| 2 | 9 | Jonah Coleman, Jacksonville Jaguars | Tetairoa McMillan | 0.96× | +1.81 | +0.64 |
+| 3 | 9 | Jonah Coleman | Garrett Wilson | 0.92× | +1.18 | +0.81 |
+| 4 | 5 | Isaiah Likely | Patrick Mahomes, Brenton Strange | 0.81× | +1.09 | +1.00 |
+| 5 | 3 | Kirk Cousins, Kyren Williams | Malik Nabers | 1.03× | +0.59 | +0.68 |
 
 ## Negotiation protocol
 
