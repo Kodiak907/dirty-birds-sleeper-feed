@@ -1,11 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-10T19:54:00.545712+00:00
-Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
+Generated: 2026-11-10T20:46:04.209482+00:00
+Sleeper snapshot: 2026-11-10T20:45:57.278650+00:00
 
 Roster change entries: 1. New completed trade entries: 0.
 
-- Dirty Birds: added none; dropped Cairo Santos, New Orleans Saints
+- Victorious Secret: added none; dropped Kendre Miller
 
 ## Limits
 

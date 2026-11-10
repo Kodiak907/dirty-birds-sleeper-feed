@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-10T19:53:54.687068+00:00",
+  "fetched_at_utc": "2026-11-10T20:45:57.278650+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1425970633635815424",
+    "last_message_id": "1425976452867715072",
     "last_message_text_map": null,
-    "last_message_time": 1794340401614,
+    "last_message_time": 1794341789027,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -6085,7 +6085,6 @@
           "8112",
           "9224",
           "9480",
-          "9757",
           "MIN"
         ],
         "players_points": {
@@ -6105,22 +6104,21 @@
           "8112": 0.0,
           "9224": 0.0,
           "9480": 0.0,
-          "9757": 0.0,
           "MIN": 0.0
         },
         "points": 0.0,
         "roster_id": 5,
         "starters": [
           "6770",
-          "9224",
           "11584",
+          "9224",
           "8112",
           "4983",
           "1466",
           "7611",
           "9480",
           "6650",
-          "JAX"
+          "MIN"
         ],
         "starters_points": [
           0.0,
@@ -12647,7 +12645,6 @@
           "8112",
           "9224",
           "9480",
-          "9757",
           "JAX",
           "MIN"
         ],
@@ -12668,7 +12665,6 @@
           "8112": 9.3,
           "9224": 9.0,
           "9480": 3.2,
-          "9757": 0.0,
           "JAX": 11.0,
           "MIN": 6.0
         },
@@ -13476,7 +13472,6 @@
         "8112",
         "9224",
         "9480",
-        "9757",
         "MIN"
       ],
       "reserve": null,
@@ -13497,15 +13492,15 @@
       },
       "starters": [
         "6770",
-        "9224",
         "11584",
+        "9224",
         "8112",
         "4983",
         "1466",
         "7611",
         "9480",
         "6650",
-        "0"
+        "MIN"
       ],
       "taxi": null
     },
@@ -21386,6 +21381,29 @@
       }
     ],
     "9": [
+      {
+        "adds": null,
+        "consenter_ids": [
+          5
+        ],
+        "created": 1794341788999,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": {
+          "9757": 5
+        },
+        "leg": 9,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794341788999,
+        "transaction_id": "1425976452754448384",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": null,
         "consenter_ids": [

@@ -1,14 +1,14 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-10T19:54:00.729376+00:00
-Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
+Generated: 2026-11-10T20:46:04.332195+00:00
+Sleeper snapshot: 2026-11-10T20:45:57.278650+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 629 |
+| RB | 630 |
 | WR | 1291 |
 | TE | 615 |
 | K | 139 |

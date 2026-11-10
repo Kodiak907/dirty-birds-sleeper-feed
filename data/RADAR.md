@@ -1,18 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-10T19:54:00.507480+00:00
-Sleeper snapshot: 2026-11-10T19:53:54.687068+00:00
+Generated: 2026-11-10T20:46:04.173497+00:00
+Sleeper snapshot: 2026-11-10T20:45:57.278650+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1425970633518387200` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
-- **NEW** · transaction `1425970474172583936` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
+- **NEW** · transaction `1425976452754448384` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-10T20:46:04.173497+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
 - 2026-11-09T01:03:52.945230+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Cairo Santos → Dirty Birds (#1) | Dropped: Keon Coleman → Dirty Birds (#1)
@@ -37,7 +37,6 @@ League: 1399157532559192064
 - 2026-11-05T23:45:04.083279+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), JA’MARRTRIX (#7) | Added: Ollie Gordon II → JA’MARRTRIX (#7), Christian McCaffrey → Dirty Birds (#1), Chris Olave → JA’MARRTRIX (#7), Zach Charbonnet → JA’MARRTRIX (#7) | Dropped: Ollie Gordon II → Dirty Birds (#1), Christian McCaffrey → JA’MARRTRIX (#7), Chris Olave → Dirty Birds (#1), Zach Charbonnet → Dirty Birds (#1)
 - 2026-11-05T23:45:04.083279+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Makai Lemon → JA’MARRTRIX (#7)
 - 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Jordan Watkins → DANGER CLOSE  (#4) | Dropped: Keon Coleman → DANGER CLOSE  (#4)
-- 2026-11-05T22:48:56.194282+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Brian Thomas Jr. → DANGER CLOSE  (#4) | Dropped: New England Patriots → DANGER CLOSE  (#4)
 
 ## Important limits
 

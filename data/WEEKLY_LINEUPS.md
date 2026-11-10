@@ -1,25 +1,25 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-10T19:54:04.911846+00:00 | Forecast as of: 2026-11-10T08:20:42.542616+00:00
+Generated: 2026-11-10T20:46:09.218833+00:00 | Forecast as of: 2026-11-10T20:46:05.940931+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 10
 
-**Projected optimal score:** 132.43
+**Projected optimal score:** 130.77
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | CLE | 15.86 |
-| Christian McCaffrey | RB | DAL | 20.33 |
-| Kyren Williams | RB | ARI | 16.69 |
-| Jaxon Smith-Njigba | WR | LV | 20.82 |
-| Zay Flowers | WR | LAC | 13.58 |
-| Isaiah Likely | TE | WAS | 10.34 |
-| Will Reichard | K | GB | 6.64 |
+| C.J. Stroud | QB | CLE | 15.90 |
+| Christian McCaffrey | RB | DAL | 20.34 |
+| Kyren Williams | RB | ARI | 15.84 |
+| Jaxon Smith-Njigba | WR | LV | 20.21 |
+| Zay Flowers | WR | LAC | 13.57 |
+| Isaiah Likely | TE | WAS | 10.24 |
+| Will Reichard | K | GB | 6.71 |
 | Jacksonville Jaguars | DEF | TEN | 7.67 |
-| A.J. Brown | WR | DET | 11.66 |
-| Deebo Samuel Sr. | WR | DAL | 8.84 |
+| A.J. Brown | WR | DET | 11.46 |
+| Deebo Samuel Sr. | WR | DAL | 8.83 |
 
 ## Week 11
 

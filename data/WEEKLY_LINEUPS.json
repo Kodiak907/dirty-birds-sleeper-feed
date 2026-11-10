@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-10T19:54:04.911846+00:00",
+  "generated_at_utc": "2026-11-10T20:46:09.218833+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-10T08:20:42.542616+00:00",
+  "projection_as_of": "2026-11-10T20:46:05.940931+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-10T19:53:54.687068+00:00",
+  "snapshot_utc": "2026-11-10T20:45:57.278650+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -23,56 +23,56 @@
       "missing_projection": [
         "Jonah Coleman"
       ],
-      "ppg": 132.43,
+      "ppg": 130.77,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "CLE",
           "position": "QB",
-          "ppg": 15.86
+          "ppg": 15.9
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "DAL",
           "position": "RB",
-          "ppg": 20.33
+          "ppg": 20.34
         },
         {
           "id": "8150",
           "name": "Kyren Williams",
           "opponent": "ARI",
           "position": "RB",
-          "ppg": 16.69
+          "ppg": 15.84
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 20.82
+          "ppg": 20.21
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 13.58
+          "ppg": 13.57
         },
         {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "WAS",
           "position": "TE",
-          "ppg": 10.34
+          "ppg": 10.24
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "GB",
           "position": "K",
-          "ppg": 6.64
+          "ppg": 6.71
         },
         {
           "id": "JAX",
@@ -86,14 +86,14 @@
           "name": "A.J. Brown",
           "opponent": "DET",
           "position": "WR",
-          "ppg": 11.66
+          "ppg": 11.46
         },
         {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "DAL",
           "position": "WR",
-          "ppg": 8.84
+          "ppg": 8.83
         }
       ]
     },
