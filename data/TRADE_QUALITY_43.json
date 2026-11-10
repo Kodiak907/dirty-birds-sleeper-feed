@@ -1,15 +1,51 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-10T07:06:23.645997+00:00",
-  "candidates_evaluated": 47388,
-  "market_matched": 6176,
+  "generated_at_utc": "2026-11-10T08:20:44.445004+00:00",
+  "candidates_evaluated": 48180,
+  "market_matched": 6206,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-10T03:51:54.367257+00:00",
-  "projection_as_of": "2026-11-09T19:32:28.763626+00:00",
+  "projection_as_of": "2026-11-10T08:20:42.542616+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
+    {
+      "opponent_roster_id": 4,
+      "opponent_name": "DANGER CLOSE ",
+      "give": [
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        },
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        }
+      ],
+      "receive": [
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
+        },
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 4.37,
+      "their_gain": 0.93,
+      "market_paid_received_ratio": 0.915,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 4.674,
+      "not_an_approved_offer": true
+    },
     {
       "opponent_roster_id": 4,
       "opponent_name": "DANGER CLOSE ",
@@ -37,121 +73,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 3.21,
-      "their_gain": 1.99,
+      "our_gain": 2.7,
+      "their_gain": 2.6,
       "market_paid_received_ratio": 1.039,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.286,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 4,
-      "opponent_name": "DANGER CLOSE ",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        }
-      ],
-      "receive": [
-        {
-          "id": "4217",
-          "name": "George Kittle",
-          "pos": "TE"
-        },
-        {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.56,
-      "their_gain": 2.64,
-      "market_paid_received_ratio": 0.972,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.059,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 5,
-      "opponent_name": "    Victorious Secret",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "7611",
-          "name": "Rhamondre Stevenson",
-          "pos": "RB"
-        },
-        {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.85,
-      "their_gain": 0.5,
-      "market_paid_received_ratio": 0.989,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.118,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 5,
-      "opponent_name": "    Victorious Secret",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB"
-        },
-        {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR"
-        }
-      ],
-      "receive": [
-        {
-          "id": "9480",
-          "name": "Brenton Strange",
-          "pos": "TE"
-        },
-        {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.37,
-      "their_gain": 0.5,
-      "market_paid_received_ratio": 0.951,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.523,
+      "score": 4.142,
       "not_an_approved_offer": true
     }
   ],
