@@ -1,37 +1,7 @@
 {
-  "current_week": 9,
+  "current_week": 10,
   "errors": [],
   "future_weeks": {
-    "10": {
-      "complete": true,
-      "pairs": [
-        [
-          1,
-          11
-        ],
-        [
-          2,
-          9
-        ],
-        [
-          3,
-          4
-        ],
-        [
-          5,
-          6
-        ],
-        [
-          7,
-          10
-        ],
-        [
-          8,
-          12
-        ]
-      ],
-      "records": 12
-    },
     "11": {
       "complete": true,
       "pairs": [
@@ -154,7 +124,7 @@
     }
   },
   "league_id": "1399157532559192064",
-  "retrieved_at_utc": "2026-11-09T16:38:18.587897+00:00",
+  "retrieved_at_utc": "2026-11-10T16:26:22.557959+00:00",
   "source": "Sleeper matchup API; https://api.sleeper.app/v1/league/1399157532559192064/matchups/{week}",
   "verified_full_schedule": true
 }
