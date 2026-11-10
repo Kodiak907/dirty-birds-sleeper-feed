@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-10T13:00:10.811504+00:00
-Sleeper snapshot: 2026-11-10T13:00:00.364697+00:00
-nflverse observations: 2026-11-10T13:00:06.038291+00:00; injury feed loaded: True
+Generated: 2026-11-10T14:12:59.839975+00:00
+Sleeper snapshot: 2026-11-10T14:12:50.004967+00:00
+nflverse observations: 2026-11-10T14:12:55.055526+00:00; injury feed loaded: True
 
-**New observed changes:** 3. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,9 +31,8 @@ nflverse observations: 2026-11-10T13:00:06.038291+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Jordan Mason** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
-- **Keon Coleman** (snap_share_change): Snap share fell 16.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
-- **Khalil Shakir** (snap_share_change): Snap share fell 15.0 percentage points between last two recorded appearances (week 9); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
