@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-10T11:52:10.296519+00:00
-Sleeper snapshot: 2026-11-10T11:52:04.324503+00:00
+Generated: 2026-11-10T13:00:06.602244+00:00
+Sleeper snapshot: 2026-11-10T13:00:00.364697+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -43,7 +43,7 @@ Sleeper snapshot: 2026-11-10T11:52:04.324503+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Keon Coleman | BUF | 7.14 | 100% | 77.3% | Not flagged |
+| 1 | Keon Coleman | BUF | 7.14 | 100% | 74.3% | Not flagged |
 | 2 | Pat Bryant | DEN | 6.99 | 88% | 58.0% | IR |
 | 3 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
 | 4 | Chris Bell | MIA | 5.14 | 100% | 60.0% | Not flagged |
@@ -102,7 +102,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
 | Baker Mayfield | QB | TB | 12.94 | 96.7% |
-| Keon Coleman | WR | BUF | 7.14 | 77.3% |
+| Keon Coleman | WR | BUF | 7.14 | 74.3% |
 | Chig Okonkwo | TE | WAS | 7.00 | 75.7% |
 | Pat Bryant | WR | DEN | 6.99 | 58.0% |
 | Zonovan Knight | RB | ARI | 6.97 | 39.7% |
@@ -125,7 +125,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **39**
+Candidates with independently sourced projections AND usage data: **40**
 
 ## Coverage and rules
 
