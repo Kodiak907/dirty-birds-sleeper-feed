@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-11T21:36:19.290996+00:00
-Sleeper snapshot: 2026-11-11T21:36:12.544807+00:00
+Generated: 2026-11-11T22:51:54.800017+00:00
+Sleeper snapshot: 2026-11-11T22:51:47.991520+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -53,7 +53,7 @@ Sleeper snapshot: 2026-11-11T21:36:12.544807+00:00
 | 7 | Rashod Bateman | BAL | 3.83 | 88% | 70.3% | Not flagged |
 | 8 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
 | 9 | Mack Hollins | NE | 3.69 | 88% | 61.7% | IR |
-| 10 | Jauan Jennings | MIN | 2.66 | 100% | 60.0% | Not flagged |
+| 10 | Jauan Jennings | MIN | 2.67 | 100% | 60.0% | Not flagged |
 | 11 | Dohnte Meyers | CIN | 1.84 | 100% | 46.3% | Not flagged |
 | 12 | Zachariah Branch | ATL | 1.80 | 75% | 26.0% | Not flagged |
 
