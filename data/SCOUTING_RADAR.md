@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-11T17:55:57.557548+00:00
-Sleeper snapshot: 2026-11-11T17:55:53.436277+00:00
+Generated: 2026-11-11T18:56:37.204392+00:00
+Sleeper snapshot: 2026-11-11T18:56:30.589020+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- JA’MARRTRIX: added J.J. McCarthy; dropped Kyler Murray
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
