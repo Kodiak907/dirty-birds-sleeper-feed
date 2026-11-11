@@ -25,7 +25,7 @@
       "ppg": 6.464
     }
   },
-  "generated_at_utc": "2026-11-11T05:59:09.697008+00:00",
+  "generated_at_utc": "2026-11-11T07:12:40.633600+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -770,7 +770,7 @@
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
-            "week": "5"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -1400,5 +1400,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-11T05:59:04.883988+00:00"
+  "snapshot_utc": "2026-11-11T07:12:34.647247+00:00"
 }
