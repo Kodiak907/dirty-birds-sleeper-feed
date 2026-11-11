@@ -1,21 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-11T08:56:41.433497+00:00
-Sleeper snapshot: 2026-11-11T08:56:38.509838+00:00
+Generated: 2026-11-11T09:59:14.205535+00:00
+Sleeper snapshot: 2026-11-11T09:59:08.536609+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**8 transaction changes:** 6 completed, 0 pending/processing, 2 failed.
-
-- **NEW** · transaction `1426156491081011200` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baltimore Ravens → CREAM MACHINE  (#2)
-- **NEW** · transaction `1426113571950956544` · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Konata Mumpfield → JA’MARRTRIX (#7) | FAAB bid: $10
-- **NEW** · transaction `1425974119555407873` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Fernando Mendoza → CREAM MACHINE  (#2) | Dropped: Drew Lock → CREAM MACHINE  (#2) | FAAB bid: $0
-- **NEW** · transaction `1425971146716614656` · WAIVER · FAILED · Dirty Birds (#1) | Added: Fernando Mendoza → Dirty Birds (#1) | FAAB bid: $10
-- **NEW** · transaction `1425970840930889728` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Pat Bryant → Dirty Birds (#1) | FAAB bid: $23
-- **NEW** · transaction `1425970767635423232` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Tank Dell → Dirty Birds (#1) | FAAB bid: $37
-- **NEW** · transaction `1425968017438670848` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Green Bay Packers → Cokerthestroker (#12) | FAAB bid: $0
-- **NEW** · transaction `1425696862169481216` · WAIVER · FAILED · DeeboSix0 (#8) | Added: Tank Dell → DeeboSix0 (#8) | FAAB bid: $30
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

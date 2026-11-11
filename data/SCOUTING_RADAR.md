@@ -1,15 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-11T08:56:41.464528+00:00
-Sleeper snapshot: 2026-11-11T08:56:38.509838+00:00
+Generated: 2026-11-11T09:59:14.237819+00:00
+Sleeper snapshot: 2026-11-11T09:59:08.536609+00:00
 
-Roster change entries: 5. New completed trade entries: 0.
-
-- Dirty Birds: added Pat Bryant, Tank Dell; dropped none
-- CREAM MACHINE: added Fernando Mendoza, Baltimore Ravens; dropped Drew Lock
-- CREAM MACHINE: reserve status changed
-- JA’MARRTRIX: added Konata Mumpfield; dropped none
-- Cokerthestroker: added Green Bay Packers; dropped none
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
