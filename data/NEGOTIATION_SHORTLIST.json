@@ -1,6 +1,6 @@
 {
-  "all_reviewed": 19,
-  "generated_at_utc": "2026-11-10T15:04:58.694734+00:00",
+  "all_reviewed": 21,
+  "generated_at_utc": "2026-11-11T15:06:19.438891+00:00",
   "limitations": [
     "Acceptance odds unavailable. Never convert score to a probability.",
     "Position depth heuristic is a rough proxy for roster needs, not manager preference.",
@@ -9,14 +9,14 @@
   ],
   "market_truth": "No independently verified ADP, expert trade chart or league negotiation behavior has been sourced. Position-relative projected PPG is NOT fair market value.",
   "screen_formula": "1.5*our line-up gain + 0.9*min(their gain,5) + 0.35*mean valid weeks 15-17 gain - 2*percentile imbalance - 2*redundant outgoing - 1 if playoff weeks incomplete",
-  "source_projections_as_of": "2026-11-10T08:20:42.542616+00:00",
-  "source_rosters_as_of": "2026-11-10T14:12:50.004967+00:00",
+  "source_projections_as_of": "2026-11-11T08:56:42.596223+00:00",
+  "source_rosters_as_of": "2026-11-11T14:22:28.454121+00:00",
   "top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.795,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.82,
+      "dirty_birds_after": 124.531,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 1.74,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)",
@@ -31,12 +31,12 @@
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 4.372,
-      "negotiation_rationale": "Opponent projected starters improve +3.48 PPG; potential shallow position(s): RB",
-      "negotiation_screen_score": 5.391,
-      "opponent_after": 99.237,
-      "opponent_before": 95.756,
-      "opponent_delta_ppg": 3.48,
+      "mutual_benefit_screen_score": 4.287,
+      "negotiation_rationale": "Opponent projected starters improve +3.49 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 5.28,
+      "opponent_after": 99.098,
+      "opponent_before": 95.606,
+      "opponent_delta_ppg": 3.49,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
       "playoff_week_gains_ppg": {
@@ -46,14 +46,14 @@
       },
       "position_relative_percentile_sum_received": 0.885,
       "position_relative_percentile_sum_sent": 0.615,
-      "projected_ppg_received": 20.31,
+      "projected_ppg_received": 20.3,
       "projected_ppg_sent": 9.6,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 20.31
+          "projected_ppg": 20.3
         }
       ],
       "redundant_outgoing_package": false,
@@ -63,64 +63,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.795,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.82,
-      "dirty_birds_drop_to_fit": "Kirk Cousins",
-      "evidence_warnings": [
-        "Large sum-of-positional-percentiles imbalance (NOT market pricing)",
-        "Negative playoff-week modeled effect"
-      ],
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB",
-          "projected_ppg": 9.6
-        }
-      ],
-      "market_value_source": null,
-      "mutual_benefit_screen_score": 4.372,
-      "negotiation_rationale": "Opponent projected starters improve +3.48 PPG; potential shallow position(s): RB",
-      "negotiation_screen_score": 4.973,
-      "opponent_after": 99.237,
-      "opponent_before": 95.756,
-      "opponent_delta_ppg": 3.48,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 4,
-      "playoff_week_gains_ppg": {
-        "15": 3.68,
-        "16": -0.42,
-        "17": -2.07
-      },
-      "position_relative_percentile_sum_received": 1.265,
-      "position_relative_percentile_sum_sent": 0.615,
-      "projected_ppg_received": 27.66,
-      "projected_ppg_sent": 9.6,
-      "receive": [
-        {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB",
-          "projected_ppg": 20.31
-        },
-        {
-          "id": "13274",
-          "name": "Germie Bernard",
-          "pos": "WR",
-          "projected_ppg": 7.35
-        }
-      ],
-      "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.514,
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 124.153,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.18,
+      "dirty_birds_after": 123.946,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 1.16,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [],
       "give": [
@@ -132,12 +77,12 @@
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.776,
-      "negotiation_rationale": "Opponent projected starters improve +0.81 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.742,
-      "opponent_after": 101.497,
-      "opponent_before": 100.685,
-      "opponent_delta_ppg": 0.81,
+      "mutual_benefit_screen_score": 1.75,
+      "negotiation_rationale": "Opponent projected starters improve +0.80 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.707,
+      "opponent_after": 101.504,
+      "opponent_before": 100.701,
+      "opponent_delta_ppg": 0.8,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
       "playoff_week_gains_ppg": {
@@ -145,28 +90,85 @@
         "16": 1.92,
         "17": 0.27
       },
-      "position_relative_percentile_sum_received": 0.69,
+      "position_relative_percentile_sum_received": 0.689,
       "position_relative_percentile_sum_sent": 0.615,
-      "projected_ppg_received": 10.78,
+      "projected_ppg_received": 10.76,
       "projected_ppg_sent": 9.6,
       "receive": [
         {
           "id": "8146",
           "name": "Garrett Wilson",
           "pos": "WR",
-          "projected_ppg": 10.78
+          "projected_ppg": 10.76
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.109,
+      "surrogate_balance_gap_fraction": 0.107,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.066,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.09,
+      "dirty_birds_after": 124.249,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 1.46,
+      "dirty_birds_drop_to_fit": "Kirk Cousins",
+      "evidence_warnings": [
+        "Kyren Williams: snap coverage absent",
+        "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
+      ],
+      "give": [
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB",
+          "projected_ppg": 13.03
+        }
+      ],
+      "market_value_source": null,
+      "mutual_benefit_screen_score": 1.735,
+      "negotiation_rationale": "Opponent projected starters improve +0.51 PPG; potential shallow position(s): RB",
+      "negotiation_screen_score": 2.062,
+      "opponent_after": 119.341,
+      "opponent_before": 118.831,
+      "opponent_delta_ppg": 0.51,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 5,
+      "playoff_week_gains_ppg": {
+        "15": 2.44,
+        "16": 0.99,
+        "17": 0.54
+      },
+      "position_relative_percentile_sum_received": 1.619,
+      "position_relative_percentile_sum_sent": 0.769,
+      "projected_ppg_received": 32.0,
+      "projected_ppg_sent": 13.03,
+      "receive": [
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "pos": "QB",
+          "projected_ppg": 19.48
+        },
+        {
+          "id": "8112",
+          "name": "Drake London",
+          "pos": "WR",
+          "projected_ppg": 12.52
+        }
+      ],
+      "redundant_outgoing_package": false,
+      "surrogate_balance_gap_fraction": 0.525,
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Kyren Williams: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 123.765,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 0.97,
       "dirty_birds_drop_to_fit": "Kirk Cousins",
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)",
@@ -177,16 +179,16 @@
           "id": "8131",
           "name": "Isaiah Likely",
           "pos": "TE",
-          "projected_ppg": 9.87
+          "projected_ppg": 9.86
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.877,
-      "negotiation_rationale": "Opponent projected starters improve +1.00 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 1.665,
-      "opponent_after": 119.877,
-      "opponent_before": 118.877,
-      "opponent_delta_ppg": 1.0,
+      "mutual_benefit_screen_score": 1.759,
+      "negotiation_rationale": "Opponent projected starters improve +0.99 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 1.476,
+      "opponent_after": 119.825,
+      "opponent_before": 118.831,
+      "opponent_delta_ppg": 0.99,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
       "playoff_week_gains_ppg": {
@@ -196,14 +198,14 @@
       },
       "position_relative_percentile_sum_received": 1.558,
       "position_relative_percentile_sum_sent": 0.821,
-      "projected_ppg_received": 28.4,
-      "projected_ppg_sent": 9.87,
+      "projected_ppg_received": 28.35,
+      "projected_ppg_sent": 9.86,
       "receive": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "pos": "QB",
-          "projected_ppg": 19.53
+          "projected_ppg": 19.48
         },
         {
           "id": "9480",
@@ -219,60 +221,60 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.197,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.23,
-      "dirty_birds_drop_to_fit": "Kirk Cousins",
+      "dirty_birds_after": 124.652,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 1.86,
+      "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
-        "Kyren Williams: snap coverage absent",
-        "Large sum-of-positional-percentiles imbalance (NOT market pricing)",
-        "Negative playoff-week modeled effect"
+        "Deebo Samuel Sr.: snap coverage absent",
+        "Unnecessary extra outgoing asset under aggregate PPG model",
+        "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
       ],
       "give": [
         {
-          "id": "8150",
-          "name": "Kyren Williams",
+          "id": "13345",
+          "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 13.14
+          "projected_ppg": 9.6
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "pos": "WR",
+          "projected_ppg": 8.55
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.876,
-      "negotiation_rationale": "Opponent projected starters improve +0.87 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 1.354,
-      "opponent_after": 119.746,
-      "opponent_before": 118.877,
-      "opponent_delta_ppg": 0.87,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 5,
+      "mutual_benefit_screen_score": 1.788,
+      "negotiation_rationale": "Opponent projected starters improve +0.20 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 0.501,
+      "opponent_after": 90.82,
+      "opponent_before": 90.615,
+      "opponent_delta_ppg": 0.2,
+      "opponent_drop_to_fit": "Jonathon Brooks",
+      "opponent_roster_id": 2,
       "playoff_week_gains_ppg": {
-        "15": 0.3,
-        "16": 0.43,
-        "17": -3.08
+        "15": -0.25,
+        "16": 1.56,
+        "17": 0.58
       },
-      "position_relative_percentile_sum_received": 1.539,
-      "position_relative_percentile_sum_sent": 0.769,
-      "projected_ppg_received": 31.81,
-      "projected_ppg_sent": 13.14,
+      "position_relative_percentile_sum_received": 0.757,
+      "position_relative_percentile_sum_sent": 1.156,
+      "projected_ppg_received": 11.46,
+      "projected_ppg_sent": 18.15,
       "receive": [
         {
-          "id": "4046",
-          "name": "Patrick Mahomes",
-          "pos": "QB",
-          "projected_ppg": 19.53
-        },
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 12.28
+          "id": "13279",
+          "name": "Carnell Tate",
+          "pos": "WR",
+          "projected_ppg": 11.46
         }
       ],
-      "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.5,
+      "redundant_outgoing_package": true,
+      "surrogate_balance_gap_fraction": 0.345,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Kyren Williams: snap coverage absent"
+        "Deebo Samuel Sr.: snap coverage absent"
       ]
     }
   ]
