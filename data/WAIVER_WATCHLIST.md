@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-11T13:06:36.564998+00:00
-Sleeper snapshot: 2026-11-11T13:06:27.999822+00:00
+Generated: 2026-11-11T14:22:32.666988+00:00
+Sleeper snapshot: 2026-11-11T14:22:28.454121+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,10 +9,10 @@ Sleeper snapshot: 2026-11-11T13:06:27.999822+00:00
 |---|---:|
 | QB | 328 |
 | RB | 630 |
-| WR | 1288 |
+| WR | 1287 |
 | TE | 615 |
 | K | 139 |
-| DEF | 13 |
+| DEF | 12 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -72,26 +72,25 @@ Sleeper snapshot: 2026-11-11T13:06:27.999822+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Dominic Zvada | NYG | 7.02 | 100% | — | Not flagged |
-| 2 | Matt Gay | LV | 6.73 | 88% | — | Not flagged |
-| 3 | Chris Boswell | PIT | 6.10 | 100% | — | Not flagged |
-| 4 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
-| 5 | Cameron Dicker | LAC | 6.03 | 100% | — | Not flagged |
+| 2 | Drew Stevens | WAS | 6.79 | 100% | — | Not flagged |
+| 3 | Matt Gay | LV | 6.73 | 88% | — | Not flagged |
+| 4 | Chris Boswell | PIT | 6.10 | 100% | — | Not flagged |
+| 5 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
 | 6 | Cairo Santos | CHI | 5.39 | 88% | — | Not flagged |
 
 ### DEF
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Buffalo Bills | BUF | 6.31 | 100% | — | Not flagged |
-| 2 | Cincinnati Bengals | CIN | 6.24 | 100% | — | Not flagged |
+| 1 | Cincinnati Bengals | CIN | 6.24 | 100% | — | Not flagged |
+| 2 | New York Giants | NYG | 5.89 | 100% | — | Not flagged |
 | 3 | Washington Commanders | WAS | 5.73 | 100% | — | Not flagged |
 | 4 | New Orleans Saints | NO | 5.72 | 100% | — | Not flagged |
-| 5 | Tampa Bay Buccaneers | TB | 5.65 | 88% | — | Not flagged |
-| 6 | New England Patriots | NE | 5.60 | 88% | — | Not flagged |
-| 7 | Indianapolis Colts | IND | 5.59 | 88% | — | Not flagged |
-| 8 | Cleveland Browns | CLE | 5.46 | 88% | — | Not flagged |
-| 9 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
-| 10 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
+| 5 | New England Patriots | NE | 5.60 | 88% | — | Not flagged |
+| 6 | Indianapolis Colts | IND | 5.59 | 88% | — | Not flagged |
+| 7 | Cleveland Browns | CLE | 5.46 | 88% | — | Not flagged |
+| 8 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
+| 9 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 

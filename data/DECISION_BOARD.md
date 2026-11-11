@@ -61,26 +61,25 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Dominic Zvada | 7.02 | -0.14 | — | — | No modeled flags (not medically cleared) |
-| 2 | Matt Gay | 6.73 | -0.43 | — | — | No modeled flags (not medically cleared) |
-| 3 | Chris Boswell | 6.10 | -1.06 | — | — | No modeled flags (not medically cleared) |
-| 4 | Trey Smack | 6.10 | -1.06 | — | — | No modeled flags (not medically cleared) |
-| 5 | Cameron Dicker | 6.03 | -1.14 | — | — | No modeled flags (not medically cleared) |
+| 2 | Drew Stevens | 6.79 | -0.38 | — | — | No modeled flags (not medically cleared) |
+| 3 | Matt Gay | 6.73 | -0.43 | — | — | No modeled flags (not medically cleared) |
+| 4 | Chris Boswell | 6.10 | -1.06 | — | — | No modeled flags (not medically cleared) |
+| 5 | Trey Smack | 6.10 | -1.06 | — | — | No modeled flags (not medically cleared) |
 | 6 | Cairo Santos | 5.39 | -1.77 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: Jacksonville Jaguars (6.83 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Buffalo Bills | 6.31 | -0.51 | — | — | No modeled flags (not medically cleared) |
-| 2 | Cincinnati Bengals | 6.24 | -0.59 | — | — | No modeled flags (not medically cleared) |
+| 1 | Cincinnati Bengals | 6.24 | -0.59 | — | — | No modeled flags (not medically cleared) |
+| 2 | New York Giants | 5.89 | -0.93 | — | — | No modeled flags (not medically cleared) |
 | 3 | Washington Commanders | 5.73 | -1.09 | — | — | No modeled flags (not medically cleared) |
 | 4 | New Orleans Saints | 5.72 | -1.11 | — | — | No modeled flags (not medically cleared) |
-| 5 | Tampa Bay Buccaneers | 5.65 | -1.18 | — | — | No modeled flags (not medically cleared) |
-| 6 | New England Patriots | 5.60 | -1.22 | — | — | No modeled flags (not medically cleared) |
-| 7 | Indianapolis Colts | 5.59 | -1.23 | — | — | No modeled flags (not medically cleared) |
-| 8 | Cleveland Browns | 5.46 | -1.37 | — | — | No modeled flags (not medically cleared) |
-| 9 | Tennessee Titans | 5.03 | -1.79 | — | — | No modeled flags (not medically cleared) |
-| 10 | New York Jets | 5.02 | -1.80 | — | — | No modeled flags (not medically cleared) |
+| 5 | New England Patriots | 5.60 | -1.22 | — | — | No modeled flags (not medically cleared) |
+| 6 | Indianapolis Colts | 5.59 | -1.23 | — | — | No modeled flags (not medically cleared) |
+| 7 | Cleveland Browns | 5.46 | -1.37 | — | — | No modeled flags (not medically cleared) |
+| 8 | Tennessee Titans | 5.03 | -1.79 | — | — | No modeled flags (not medically cleared) |
+| 9 | New York Jets | 5.02 | -1.80 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

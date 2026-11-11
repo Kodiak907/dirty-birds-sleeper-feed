@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-11T13:06:36.499900+00:00",
+  "generated_at_utc": "2026-11-11T14:22:32.614337+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -6197,7 +6197,7 @@
     {
       "completed_trade_count": 1,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 98.05,
+      "observed_optimal_average": 95.61,
       "observed_optimal_lineup": [
         {
           "avg": 15.65,
@@ -6230,13 +6230,13 @@
           "position": "TE"
         },
         {
-          "avg": 0.89,
-          "name": "Drew Stevens",
+          "avg": 0.33,
+          "name": "Cameron Dicker",
           "position": "K"
         },
         {
-          "avg": 2.44,
-          "name": "New York Giants",
+          "avg": 0.56,
+          "name": "Buffalo Bills",
           "position": "DEF"
         },
         {
@@ -6441,27 +6441,6 @@
           ]
         },
         {
-          "actual_points_total": 8.0,
-          "actual_points_weekly_avg": 0.89,
-          "id": "13968",
-          "n_weeks": 9,
-          "name": "Drew Stevens",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "K",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            8.0
-          ]
-        },
-        {
           "actual_points_total": 64.1,
           "actual_points_weekly_avg": 7.12,
           "id": "3214",
@@ -6630,6 +6609,27 @@
           ]
         },
         {
+          "actual_points_total": 3.0,
+          "actual_points_weekly_avg": 0.33,
+          "id": "8259",
+          "n_weeks": 9,
+          "name": "Cameron Dicker",
+          "nonzero_weeks": 2,
+          "on_fantasy_reserve": false,
+          "position": "K",
+          "weekly_points": [
+            2.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 30.5,
           "actual_points_weekly_avg": 3.39,
           "id": "9479",
@@ -6651,71 +6651,71 @@
           ]
         },
         {
-          "actual_points_total": 22.0,
-          "actual_points_weekly_avg": 2.44,
-          "id": "NYG",
+          "actual_points_total": 5.0,
+          "actual_points_weekly_avg": 0.56,
+          "id": "BUF",
           "n_weeks": 9,
-          "name": "New York Giants",
-          "nonzero_weeks": 2,
+          "name": "Buffalo Bills",
+          "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
             0.0,
             0.0,
-            8.0,
+            0.0,
+            5.0,
             0.0,
             0.0,
             0.0,
             0.0,
-            0.0,
-            14.0
+            0.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 22.0,
-            "actual_points_weekly_avg": 2.44,
-            "id": "NYG",
+            "actual_points_total": 5.0,
+            "actual_points_weekly_avg": 0.56,
+            "id": "BUF",
             "n_weeks": 9,
-            "name": "New York Giants",
-            "nonzero_weeks": 2,
+            "name": "Buffalo Bills",
+            "nonzero_weeks": 1,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
               0.0,
               0.0,
-              8.0,
+              0.0,
+              5.0,
               0.0,
               0.0,
               0.0,
               0.0,
-              0.0,
-              14.0
+              0.0
             ]
           }
         ],
         "K": [
           {
-            "actual_points_total": 8.0,
-            "actual_points_weekly_avg": 0.89,
-            "id": "13968",
+            "actual_points_total": 3.0,
+            "actual_points_weekly_avg": 0.33,
+            "id": "8259",
             "n_weeks": 9,
-            "name": "Drew Stevens",
-            "nonzero_weeks": 1,
+            "name": "Cameron Dicker",
+            "nonzero_weeks": 2,
             "on_fantasy_reserve": false,
             "position": "K",
             "weekly_points": [
+              2.0,
+              1.0,
               0.0,
               0.0,
               0.0,
               0.0,
               0.0,
               0.0,
-              0.0,
-              0.0,
-              8.0
+              0.0
             ]
           }
         ],
@@ -8916,6 +8916,27 @@
           ]
         },
         {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "7562",
+          "n_weeks": 9,
+          "name": "Tutu Atwell",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
           "actual_points_total": 126.3,
           "actual_points_weekly_avg": 14.03,
           "id": "8130",
@@ -9019,6 +9040,27 @@
             21.0,
             0.0
           ]
+        },
+        {
+          "actual_points_total": 11.0,
+          "actual_points_weekly_avg": 1.22,
+          "id": "TB",
+          "n_weeks": 9,
+          "name": "Tampa Bay Buccaneers",
+          "nonzero_weeks": 2,
+          "on_fantasy_reserve": false,
+          "position": "DEF",
+          "weekly_points": [
+            9.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         }
       ],
       "positions": {
@@ -9063,6 +9105,27 @@
               0.0,
               0.0,
               15.0
+            ]
+          },
+          {
+            "actual_points_total": 11.0,
+            "actual_points_weekly_avg": 1.22,
+            "id": "TB",
+            "n_weeks": 9,
+            "name": "Tampa Bay Buccaneers",
+            "nonzero_weeks": 2,
+            "on_fantasy_reserve": false,
+            "position": "DEF",
+            "weekly_points": [
+              9.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -9333,6 +9396,27 @@
             "id": "11625",
             "n_weeks": 9,
             "name": "Adonai Mitchell",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "7562",
+            "n_weeks": 9,
+            "name": "Tutu Atwell",
             "nonzero_weeks": 0,
             "on_fantasy_reserve": false,
             "position": "WR",
@@ -10187,6 +10271,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-11T13:06:27.999822+00:00",
+  "snapshot_utc": "2026-11-11T14:22:28.454121+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-9"
 }

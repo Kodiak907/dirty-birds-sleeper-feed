@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-11T13:06:27.999822+00:00",
+  "fetched_at_utc": "2026-11-11T14:22:28.454121+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1426159094128975872",
+    "last_message_id": "1426244461704253440",
     "last_message_text_map": null,
-    "last_message_time": 1794385334097,
+    "last_message_time": 1794405687313,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -6296,7 +6296,6 @@
           "12529",
           "12534",
           "13298",
-          "13968",
           "3214",
           "421",
           "7594",
@@ -6305,8 +6304,9 @@
           "8137",
           "8138",
           "8167",
+          "8259",
           "9479",
-          "NYG"
+          "BUF"
         ],
         "players_points": {
           "11560": 0.0,
@@ -6318,7 +6318,6 @@
           "12529": 0.0,
           "12534": 0.0,
           "13298": 0.0,
-          "13968": 0.0,
           "3214": 0.0,
           "421": 0.0,
           "7594": 0.0,
@@ -6327,8 +6326,9 @@
           "8137": 0.0,
           "8138": 0.0,
           "8167": 0.0,
+          "8259": 0.0,
           "9479": 0.0,
-          "NYG": 0.0
+          "BUF": 0.0
         },
         "points": 0.0,
         "roster_id": 8,
@@ -6341,8 +6341,8 @@
           "3214",
           "8167",
           "13298",
-          "13968",
-          "NYG"
+          "8259",
+          "BUF"
         ],
         "starters_points": [
           0.0,
@@ -6505,11 +6505,13 @@
           "6011",
           "6790",
           "6794",
+          "7562",
           "8130",
           "9487",
           "96",
           "CHI",
-          "PIT"
+          "PIT",
+          "TB"
         ],
         "players_points": {
           "11625": 0.0,
@@ -6522,25 +6524,27 @@
           "6011": 0.0,
           "6790": 0.0,
           "6794": 0.0,
+          "7562": 0.0,
           "8130": 0.0,
           "9487": 0.0,
           "96": 0.0,
           "CHI": 0.0,
-          "PIT": 0.0
+          "PIT": 0.0,
+          "TB": 0.0
         },
         "points": 0.0,
         "roster_id": 11,
         "starters": [
-          "6011",
+          "96",
           "12527",
-          "6790",
+          "5967",
           "9487",
           "6794",
           "8130",
-          "11625",
+          "7562",
           "12512",
           "3451",
-          "CHI"
+          "PIT"
         ],
         "starters_points": [
           0.0,
@@ -13664,7 +13668,6 @@
         "12529",
         "12534",
         "13298",
-        "13968",
         "3214",
         "421",
         "7594",
@@ -13673,8 +13676,9 @@
         "8137",
         "8138",
         "8167",
+        "8259",
         "9479",
-        "NYG"
+        "BUF"
       ],
       "reserve": [
         "11630",
@@ -13704,8 +13708,8 @@
         "3214",
         "8167",
         "13298",
-        "13968",
-        "NYG"
+        "8259",
+        "BUF"
       ],
       "taxi": null
     },
@@ -13847,11 +13851,13 @@
         "6011",
         "6790",
         "6794",
+        "7562",
         "8130",
         "9487",
         "96",
         "CHI",
-        "PIT"
+        "PIT",
+        "TB"
       ],
       "reserve": null,
       "roster_id": 11,
@@ -13870,16 +13876,16 @@
         "wins": 7
       },
       "starters": [
-        "6011",
+        "96",
         "12527",
-        "6790",
+        "5967",
         "9487",
         "6794",
         "8130",
-        "11625",
+        "7562",
         "12512",
         "3451",
-        "CHI"
+        "PIT"
       ],
       "taxi": null
     },
@@ -14575,6 +14581,102 @@
       }
     ],
     "10": [
+      {
+        "adds": {
+          "TB": 11
+        },
+        "consenter_ids": [
+          11
+        ],
+        "created": 1794405687276,
+        "creator": "1269115911856463873",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          11
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794405687276,
+        "transaction_id": "1426244461553262592",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "7562": 11
+        },
+        "consenter_ids": [
+          11
+        ],
+        "created": 1794405679140,
+        "creator": "1269115911856463873",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          11
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794405679140,
+        "transaction_id": "1426244427428401152",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "8259": 8
+        },
+        "consenter_ids": [
+          8
+        ],
+        "created": 1794404204550,
+        "creator": "1399634346477883392",
+        "draft_picks": [],
+        "drops": {
+          "13968": 8
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          8
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794404204550,
+        "transaction_id": "1426238242549690368",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "BUF": 8
+        },
+        "consenter_ids": [
+          8
+        ],
+        "created": 1794404086513,
+        "creator": "1399634346477883392",
+        "draft_picks": [],
+        "drops": {
+          "NYG": 8
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          8
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794404086513,
+        "transaction_id": "1426237747466620928",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "BAL": 2

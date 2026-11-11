@@ -25,32 +25,10 @@
       "ppg": 2.311
     }
   },
-  "generated_at_utc": "2026-11-11T13:06:36.718089+00:00",
+  "generated_at_utc": "2026-11-11T14:22:32.788026+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Buffalo Bills",
-        "ppg": 6.31,
-        "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.825
-        },
-        "same_position_uplift_ppg": -0.51,
-        "screen_only": true,
-        "sleeper_id": "BUF",
-        "team": "BUF"
-      },
       {
         "audit": {
           "carries_per_game": null,
@@ -72,6 +50,28 @@
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "New York Giants",
+        "ppg": 5.89,
+        "replacement_reference": {
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
+        },
+        "same_position_uplift_ppg": -0.93,
+        "screen_only": true,
+        "sleeper_id": "NYG",
+        "team": "NYG"
       },
       {
         "audit": {
@@ -116,28 +116,6 @@
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.875,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Tampa Bay Buccaneers",
-        "ppg": 5.65,
-        "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.825
-        },
-        "same_position_uplift_ppg": -1.18,
-        "screen_only": true,
-        "sleeper_id": "TB",
-        "team": "TB"
       },
       {
         "audit": {
@@ -279,6 +257,28 @@
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Drew Stevens",
+        "ppg": 6.79,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.162
+        },
+        "same_position_uplift_ppg": -0.38,
+        "screen_only": true,
+        "sleeper_id": "13968",
+        "team": "WAS"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
           "projection_coverage": 0.875,
           "recent_snap_pct": null,
           "snap_trend_3_appearances_pp": null,
@@ -338,28 +338,6 @@
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Cameron Dicker",
-        "ppg": 6.03,
-        "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.162
-        },
-        "same_position_uplift_ppg": -1.14,
-        "screen_only": true,
-        "sleeper_id": "8259",
-        "team": "LAC"
       },
       {
         "audit": {
@@ -1270,5 +1248,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-11T13:06:27.999822+00:00"
+  "snapshot_utc": "2026-11-11T14:22:28.454121+00:00"
 }
