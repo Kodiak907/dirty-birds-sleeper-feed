@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-11T07:12:40.717756+00:00
+Generated: 2026-11-11T08:56:41.780886+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.77**. Weeks with partial projections and injury status require manual verification.
@@ -33,17 +33,17 @@ Baseline illustrative optimal PPG: **122.77**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Keon Coleman | 7.20 | Bench-depth scenario: Kirk Cousins | +0.00 | -7.77 | No flagged data gap; review still required |
-| 2 | Pat Bryant | 6.99 | Bench-depth scenario: Kirk Cousins | +0.00 | -7.98 | Availability status: ir; Partial projection coverage |
-| 3 | Kalif Raymond | 5.33 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.64 | Partial projection coverage |
-| 4 | Chris Bell | 5.14 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.83 | No flagged data gap; review still required |
-| 5 | Konata Mumpfield | 4.86 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.11 | No sourced usage; Partial projection coverage; Limited snap sample |
-| 6 | Dontayvion Wicks | 4.67 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.31 | Availability status: questionable; Partial projection coverage |
-| 7 | Rashid Shaheed | 4.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.57 | Partial projection coverage |
-| 8 | Michael Pittman Jr. | 4.36 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.62 | Availability status: ir; Partial projection coverage |
-| 9 | Rashod Bateman | 3.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.15 | Partial projection coverage |
-| 10 | Ja'Kobi Lane | 3.81 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.17 | Partial projection coverage |
-| 11 | Mack Hollins | 3.63 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.34 | Availability status: ir; Partial projection coverage |
-| 12 | Jauan Jennings | 2.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.32 | No flagged data gap; review still required |
+| 2 | Kalif Raymond | 5.33 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.64 | Partial projection coverage |
+| 3 | Chris Bell | 5.14 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.83 | No flagged data gap; review still required |
+| 4 | Dontayvion Wicks | 4.67 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.31 | Availability status: questionable; Partial projection coverage |
+| 5 | Rashid Shaheed | 4.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.57 | Partial projection coverage |
+| 6 | Michael Pittman Jr. | 4.36 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.62 | Availability status: ir; Partial projection coverage |
+| 7 | Rashod Bateman | 3.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.15 | Partial projection coverage |
+| 8 | Ja'Kobi Lane | 3.81 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.17 | Partial projection coverage |
+| 9 | Mack Hollins | 3.63 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.34 | Availability status: ir; Partial projection coverage |
+| 10 | Jauan Jennings | 2.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.32 | No flagged data gap; review still required |
+| 11 | Dohnte Meyers | 1.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.13 | No flagged data gap; review still required |
+| 12 | Zachariah Branch | 1.80 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.18 | Partial projection coverage |
 
 ## TE
 
@@ -73,16 +73,14 @@ Baseline illustrative optimal PPG: **122.77**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Buffalo Bills | 6.31 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.66 | No sourced usage |
 | 2 | Cincinnati Bengals | 6.25 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.72 | No sourced usage |
-| 3 | Baltimore Ravens | 5.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.13 | No sourced usage; Partial projection coverage |
-| 4 | Washington Commanders | 5.73 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.24 | No sourced usage |
-| 5 | New Orleans Saints | 5.72 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.25 | No sourced usage |
-| 6 | Green Bay Packers | 5.67 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.30 | No sourced usage; Partial projection coverage |
-| 7 | Tampa Bay Buccaneers | 5.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.32 | No sourced usage; Partial projection coverage |
-| 8 | New England Patriots | 5.60 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.37 | No sourced usage; Partial projection coverage |
-| 9 | Indianapolis Colts | 5.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.40 | No sourced usage; Partial projection coverage |
-| 10 | Cleveland Browns | 5.46 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.52 | No sourced usage; Partial projection coverage |
-| 11 | Tennessee Titans | 5.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.94 | No sourced usage |
-| 12 | New York Jets | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.95 | No sourced usage; Partial projection coverage |
+| 3 | Washington Commanders | 5.73 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.24 | No sourced usage |
+| 4 | New Orleans Saints | 5.72 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.25 | No sourced usage |
+| 5 | Tampa Bay Buccaneers | 5.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.32 | No sourced usage; Partial projection coverage |
+| 6 | New England Patriots | 5.60 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.37 | No sourced usage; Partial projection coverage |
+| 7 | Indianapolis Colts | 5.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.40 | No sourced usage; Partial projection coverage |
+| 8 | Cleveland Browns | 5.46 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.52 | No sourced usage; Partial projection coverage |
+| 9 | Tennessee Titans | 5.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.94 | No sourced usage |
+| 10 | New York Jets | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.95 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 

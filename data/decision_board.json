@@ -21,11 +21,11 @@
       "ppg": 9.854
     },
     "WR": {
-      "name": "Antonio Williams",
-      "ppg": 6.464
+      "name": "Tank Dell",
+      "ppg": 2.311
     }
   },
-  "generated_at_utc": "2026-11-11T07:12:40.633600+00:00",
+  "generated_at_utc": "2026-11-11T08:56:41.694955+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -79,28 +79,6 @@
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
-          "projection_coverage": 0.875,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Baltimore Ravens",
-        "ppg": 5.84,
-        "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.825
-        },
-        "same_position_uplift_ppg": -0.99,
-        "screen_only": true,
-        "sleeper_id": "BAL",
-        "team": "BAL"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
           "projection_coverage": 1.0,
           "recent_snap_pct": null,
           "snap_trend_3_appearances_pp": null,
@@ -138,28 +116,6 @@
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.875,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Green Bay Packers",
-        "ppg": 5.67,
-        "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.825
-        },
-        "same_position_uplift_ppg": -1.16,
-        "screen_only": true,
-        "sleeper_id": "GB",
-        "team": "GB"
       },
       {
         "audit": {
@@ -936,43 +892,13 @@
         "name": "Keon Coleman",
         "ppg": 7.2,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": 0.73,
+        "same_position_uplift_ppg": 4.89,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [
-            "sleeper_injury_ir",
-            "injury_report_observation_review"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "report_primary_injury": "Ankle",
-            "report_status": "Questionable",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.875,
-          "recent_snap_pct": 58.0,
-          "snap_trend_3_appearances_pp": -2.0,
-          "targets_per_game": 3.33
-        },
-        "name": "Pat Bryant",
-        "ppg": 6.99,
-        "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
-        },
-        "same_position_uplift_ppg": 0.53,
-        "screen_only": true,
-        "sleeper_id": "12492",
-        "team": "DEN"
       },
       {
         "audit": {
@@ -988,10 +914,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.33,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -1.13,
+        "same_position_uplift_ppg": 3.02,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -1013,39 +939,13 @@
         "name": "Chris Bell",
         "ppg": 5.14,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -1.32,
+        "same_position_uplift_ppg": 2.83,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [
-            "snap_data_missing",
-            "usage_sample_missing",
-            "targets_missing"
-          ],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.875,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Konata Mumpfield",
-        "ppg": 4.86,
-        "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
-        },
-        "same_position_uplift_ppg": -1.6,
-        "screen_only": true,
-        "sleeper_id": "12718",
-        "team": "LAR"
       },
       {
         "audit": {
@@ -1069,10 +969,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.67,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -1.8,
+        "same_position_uplift_ppg": 2.35,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1098,10 +998,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.4,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -2.07,
+        "same_position_uplift_ppg": 2.08,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1123,10 +1023,10 @@
         "name": "Michael Pittman Jr.",
         "ppg": 4.36,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -2.11,
+        "same_position_uplift_ppg": 2.04,
         "screen_only": true,
         "sleeper_id": "6819",
         "team": "PIT"
@@ -1148,10 +1048,10 @@
         "name": "Rashod Bateman",
         "ppg": 3.82,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -2.64,
+        "same_position_uplift_ppg": 1.51,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1177,10 +1077,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 3.81,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -2.66,
+        "same_position_uplift_ppg": 1.49,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1207,10 +1107,10 @@
         "name": "Mack Hollins",
         "ppg": 3.63,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -2.83,
+        "same_position_uplift_ppg": 1.32,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1236,43 +1136,13 @@
         "name": "Jauan Jennings",
         "ppg": 2.65,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -3.82,
+        "same_position_uplift_ppg": 0.34,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.5,
-          "flags": [
-            "sleeper_injury_ir",
-            "injury_report_observation_review"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "report_primary_injury": "Knee",
-            "report_status": "Questionable",
-            "week": "7"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 35.0,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": 5.0
-        },
-        "name": "Tank Dell",
-        "ppg": 2.31,
-        "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
-        },
-        "same_position_uplift_ppg": -4.15,
-        "screen_only": true,
-        "sleeper_id": "9502",
-        "team": "HOU"
       },
       {
         "audit": {
@@ -1288,10 +1158,10 @@
         "name": "Dohnte Meyers",
         "ppg": 1.84,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -4.62,
+        "same_position_uplift_ppg": -0.47,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1318,10 +1188,10 @@
         "name": "Zachariah Branch",
         "ppg": 1.8,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -4.67,
+        "same_position_uplift_ppg": -0.51,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1343,10 +1213,10 @@
         "name": "Cyrus Allen",
         "ppg": 0.89,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -5.58,
+        "same_position_uplift_ppg": -1.42,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1367,10 +1237,10 @@
         "name": "Odell Beckham Jr.",
         "ppg": 0.83,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -5.63,
+        "same_position_uplift_ppg": -1.48,
         "screen_only": true,
         "sleeper_id": "2078",
         "team": "MIN"
@@ -1389,10 +1259,10 @@
         "name": "Brandin Cooks",
         "ppg": 0.58,
         "replacement_reference": {
-          "name": "Antonio Williams",
-          "ppg": 6.464
+          "name": "Tank Dell",
+          "ppg": 2.311
         },
-        "same_position_uplift_ppg": -5.88,
+        "same_position_uplift_ppg": -1.73,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1400,5 +1270,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-11T07:12:34.647247+00:00"
+  "snapshot_utc": "2026-11-11T08:56:38.509838+00:00"
 }

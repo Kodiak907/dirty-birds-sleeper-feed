@@ -1,31 +1,32 @@
 {
   "added_starters": [
-    "Caleb Douglas"
+    "Antonio Williams"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
+      "Pat Bryant",
       "Jonah Coleman"
     ],
-    "ppg": 130.77,
+    "ppg": 130.98,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 15.9
+        "ppg": 16.46
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.34
+        "ppg": 20.06
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 15.84
+        "ppg": 15.78
       },
       {
         "id": "9488",
@@ -37,19 +38,19 @@
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 13.57
+        "ppg": 13.55
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 10.24
+        "ppg": 10.3
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.71
+        "ppg": 6.66
       },
       {
         "id": "JAX",
@@ -71,34 +72,36 @@
       }
     ]
   },
-  "difference_ppg": -2.23,
+  "difference_ppg": -2.42,
   "explicit_excluded_ids": [
+    "12492",
     "13345",
-    "5872"
+    "5872",
+    "9502"
   ],
-  "generated_at_utc": "2026-11-11T07:12:45.794741+00:00",
+  "generated_at_utc": "2026-11-11T08:56:47.144915+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 128.54,
+    "ppg": 128.56,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 15.9
+        "ppg": 16.46
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.34
+        "ppg": 20.06
       },
       {
         "id": "8150",
         "name": "Kyren Williams",
         "position": "RB",
-        "ppg": 15.84
+        "ppg": 15.78
       },
       {
         "id": "9488",
@@ -110,19 +113,19 @@
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 13.57
+        "ppg": 13.55
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 10.24
+        "ppg": 10.3
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.71
+        "ppg": 6.66
       },
       {
         "id": "JAX",
@@ -137,10 +140,10 @@
         "ppg": 11.46
       },
       {
-        "id": "13296",
-        "name": "Caleb Douglas",
+        "id": "13301",
+        "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 6.6
+        "ppg": 6.41
       }
     ]
   },
@@ -166,6 +169,15 @@
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Will Reichard",
       "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "12492",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Pat Bryant",
+      "sleeper_injury_status": "IR",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -270,6 +282,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "9502",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "Tank Dell",
+      "sleeper_injury_status": "IR",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "9758",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "C.J. Stroud",
@@ -301,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-11T07:12:34.647247+00:00",
-  "source_availability_generated_at_utc": "2026-11-11T07:12:44.172548+00:00",
+  "snapshot_utc": "2026-11-11T08:56:38.509838+00:00",
+  "source_availability_generated_at_utc": "2026-11-11T08:56:45.942151+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

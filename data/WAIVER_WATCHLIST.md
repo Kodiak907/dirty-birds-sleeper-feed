@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-11T07:12:40.509670+00:00
-Sleeper snapshot: 2026-11-11T07:12:34.647247+00:00
+Generated: 2026-11-11T08:56:41.570099+00:00
+Sleeper snapshot: 2026-11-11T08:56:38.509838+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,10 +9,10 @@ Sleeper snapshot: 2026-11-11T07:12:34.647247+00:00
 |---|---:|
 | QB | 328 |
 | RB | 630 |
-| WR | 1291 |
+| WR | 1288 |
 | TE | 615 |
 | K | 139 |
-| DEF | 15 |
+| DEF | 13 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -44,17 +44,17 @@ Sleeper snapshot: 2026-11-11T07:12:34.647247+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Keon Coleman | BUF | 7.20 | 100% | 74.3% | Not flagged |
-| 2 | Pat Bryant | DEN | 6.99 | 88% | 58.0% | IR |
-| 3 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
-| 4 | Chris Bell | MIA | 5.14 | 100% | 60.0% | Not flagged |
-| 5 | Konata Mumpfield | LAR | 4.86 | 88% | — | Not flagged |
-| 6 | Dontayvion Wicks | PHI | 4.67 | 88% | 79.3% | Questionable |
-| 7 | Rashid Shaheed | SEA | 4.40 | 88% | 41.3% | Not flagged |
-| 8 | Michael Pittman Jr. | PIT | 4.36 | 88% | 77.7% | IR |
-| 9 | Rashod Bateman | BAL | 3.82 | 88% | 70.3% | Not flagged |
-| 10 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
-| 11 | Mack Hollins | NE | 3.63 | 88% | 61.7% | IR |
-| 12 | Jauan Jennings | MIN | 2.65 | 100% | 60.0% | Not flagged |
+| 2 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
+| 3 | Chris Bell | MIA | 5.14 | 100% | 60.0% | Not flagged |
+| 4 | Dontayvion Wicks | PHI | 4.67 | 88% | 79.3% | Questionable |
+| 5 | Rashid Shaheed | SEA | 4.40 | 88% | 41.3% | Not flagged |
+| 6 | Michael Pittman Jr. | PIT | 4.36 | 88% | 77.7% | IR |
+| 7 | Rashod Bateman | BAL | 3.82 | 88% | 70.3% | Not flagged |
+| 8 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
+| 9 | Mack Hollins | NE | 3.63 | 88% | 61.7% | IR |
+| 10 | Jauan Jennings | MIN | 2.65 | 100% | 60.0% | Not flagged |
+| 11 | Dohnte Meyers | CIN | 1.84 | 100% | 46.3% | Not flagged |
+| 12 | Zachariah Branch | ATL | 1.80 | 75% | 26.0% | Not flagged |
 
 ### TE
 
@@ -84,16 +84,14 @@ Sleeper snapshot: 2026-11-11T07:12:34.647247+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Buffalo Bills | BUF | 6.31 | 100% | — | Not flagged |
 | 2 | Cincinnati Bengals | CIN | 6.25 | 100% | — | Not flagged |
-| 3 | Baltimore Ravens | BAL | 5.84 | 88% | — | Not flagged |
-| 4 | Washington Commanders | WAS | 5.73 | 100% | — | Not flagged |
-| 5 | New Orleans Saints | NO | 5.72 | 100% | — | Not flagged |
-| 6 | Green Bay Packers | GB | 5.67 | 88% | — | Not flagged |
-| 7 | Tampa Bay Buccaneers | TB | 5.65 | 88% | — | Not flagged |
-| 8 | New England Patriots | NE | 5.60 | 88% | — | Not flagged |
-| 9 | Indianapolis Colts | IND | 5.57 | 88% | — | Not flagged |
-| 10 | Cleveland Browns | CLE | 5.46 | 88% | — | Not flagged |
-| 11 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
-| 12 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
+| 3 | Washington Commanders | WAS | 5.73 | 100% | — | Not flagged |
+| 4 | New Orleans Saints | NO | 5.72 | 100% | — | Not flagged |
+| 5 | Tampa Bay Buccaneers | TB | 5.65 | 88% | — | Not flagged |
+| 6 | New England Patriots | NE | 5.60 | 88% | — | Not flagged |
+| 7 | Indianapolis Colts | IND | 5.57 | 88% | — | Not flagged |
+| 8 | Cleveland Browns | CLE | 5.46 | 88% | — | Not flagged |
+| 9 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
+| 10 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -106,7 +104,6 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Baker Mayfield | QB | TB | 12.94 | 96.7% |
 | Keon Coleman | WR | BUF | 7.20 | 74.3% |
 | Zonovan Knight | RB | ARI | 7.07 | 39.7% |
-| Pat Bryant | WR | DEN | 6.99 | 58.0% |
 | Chig Okonkwo | TE | WAS | 6.99 | 75.7% |
 | Darren Waller | TE | CAR | 6.79 | 53.3% |
 | Alvin Kamara | RB | NO | 6.12 | 43.7% |
@@ -123,11 +120,12 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | MarShawn Lloyd | RB | GB | 3.96 | 30.7% |
 | Rashod Bateman | WR | BAL | 3.82 | 70.3% |
 | Ja'Kobi Lane | WR | BAL | 3.81 | 63.7% |
+| Mack Hollins | WR | NE | 3.63 | 61.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **40**
+Candidates with independently sourced projections AND usage data: **39**
 
 ## Coverage and rules
 

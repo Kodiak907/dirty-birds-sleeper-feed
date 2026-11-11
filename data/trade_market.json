@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-11T07:12:40.325343+00:00",
+  "generated_at_utc": "2026-11-11T08:56:41.464528+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 133,
+      "faab_used": 193,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 1017.04,
@@ -34,6 +34,8 @@
           "Caleb Douglas",
           "Deebo Samuel Sr.",
           "Jaxon Smith-Njigba",
+          "Pat Bryant",
+          "Tank Dell",
           "Zay Flowers"
         ]
       },
@@ -118,6 +120,14 @@
         {
           "bid": 16,
           "player": "Deebo Samuel Sr."
+        },
+        {
+          "bid": 23,
+          "player": "Pat Bryant"
+        },
+        {
+          "bid": 37,
+          "player": "Tank Dell"
         }
       ],
       "team": "Dirty Birds",
@@ -131,13 +141,14 @@
       "points_for": 888.78,
       "positions": {
         "DEF": [
+          "Baltimore Ravens",
           "Kansas City Chiefs"
         ],
         "K": [
           "Evan McPherson"
         ],
         "QB": [
-          "Drew Lock",
+          "Fernando Mendoza",
           "Malik Willis",
           "Sam Darnold"
         ],
@@ -367,7 +378,7 @@
       "trades_completed": 2
     },
     {
-      "faab_used": 195,
+      "faab_used": 205,
       "id": 7,
       "manager": "kingslayer1o4",
       "points_for": 1068.06,
@@ -400,6 +411,7 @@
           "Denzel Boston",
           "Ja'Marr Chase",
           "Jordyn Tyson",
+          "Konata Mumpfield",
           "Makai Lemon",
           "Malik Washington",
           "Michael Wilson"
@@ -430,6 +442,10 @@
         {
           "bid": 5,
           "player": "Kyle Monangai"
+        },
+        {
+          "bid": 10,
+          "player": "Konata Mumpfield"
         }
       ],
       "team": "JA’MARRTRIX",
@@ -641,7 +657,8 @@
       "points_for": 1129.52,
       "positions": {
         "DEF": [
-          "Denver Broncos"
+          "Denver Broncos",
+          "Green Bay Packers"
         ],
         "K": [
           "Tyler Bass"
@@ -702,5 +719,5 @@
       "trades_completed": 4
     }
   ],
-  "source_snapshot_utc": "2026-11-11T07:12:34.647247+00:00"
+  "source_snapshot_utc": "2026-11-11T08:56:38.509838+00:00"
 }

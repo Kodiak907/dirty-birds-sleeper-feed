@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-11T07:12:40.456812+00:00
-Sleeper snapshot: 2026-11-11T07:12:34.647247+00:00
+Generated: 2026-11-11T08:56:41.517404+00:00
+Sleeper snapshot: 2026-11-11T08:56:38.509838+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -29,6 +29,8 @@ The points below average actual fantasy scoring over completed Weeks 1–9, with
 | A.J. Brown | WR | 14.60 | 1.62 | 3/9 |
 | Antonio Williams | WR | 11.90 | 1.32 | 2/9 |
 | Seth McGowan | RB | 10.70 | 1.19 | 1/9 |
+| Tank Dell | WR | 5.00 | 0.56 | 1/9 |
+| Pat Bryant | WR | 0.00 | 0.00 | 0/9 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
