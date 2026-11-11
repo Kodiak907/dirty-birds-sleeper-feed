@@ -9,7 +9,8 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Baker Mayfield | 12.94 | -2.07 | 96.7% | — | sleeper_injury_questionable |
+| 1 | Kyler Murray | 14.82 | -0.19 | 100.0% | — | injury_report_observation_review |
+| 2 | Baker Mayfield | 12.94 | -2.07 | 96.7% | — | sleeper_injury_questionable |
 
 ## RB — reference: Seth McGowan (4.08 PPG)
 

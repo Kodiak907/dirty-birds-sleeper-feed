@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-11T16:56:45.800662+00:00
+Generated: 2026-11-11T17:55:57.952915+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.79**. Weeks with partial projections and injury status require manual verification.
@@ -9,7 +9,8 @@ Baseline illustrative optimal PPG: **122.79**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Baker Mayfield | 12.94 | Bench-depth scenario: Kirk Cousins | +0.00 | -2.07 | Availability status: questionable; Partial projection coverage |
+| 1 | Kyler Murray | 14.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -0.19 | Partial projection coverage |
+| 2 | Baker Mayfield | 12.94 | Bench-depth scenario: Kirk Cousins | +0.00 | -2.07 | Availability status: questionable; Partial projection coverage |
 
 ## RB
 

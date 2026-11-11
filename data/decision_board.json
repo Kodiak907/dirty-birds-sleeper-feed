@@ -25,7 +25,7 @@
       "ppg": 2.311
     }
   },
-  "generated_at_utc": "2026-11-11T16:56:45.691825+00:00",
+  "generated_at_utc": "2026-11-11T17:55:57.843747+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -363,6 +363,35 @@
       }
     ],
     "QB": [
+      {
+        "audit": {
+          "carries_per_game": 6.33,
+          "flags": [
+            "injury_report_observation_review"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "report_primary_injury": "Hamstring",
+            "report_status": "Out",
+            "week": "9"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.875,
+          "recent_snap_pct": 100.0,
+          "snap_trend_3_appearances_pp": 0.0,
+          "targets_per_game": 0.0
+        },
+        "name": "Kyler Murray",
+        "ppg": 14.82,
+        "replacement_reference": {
+          "name": "Kirk Cousins",
+          "ppg": 15.012
+        },
+        "same_position_uplift_ppg": -0.19,
+        "screen_only": true,
+        "sleeper_id": "5849",
+        "team": "MIN"
+      },
       {
         "audit": {
           "carries_per_game": 2.0,
@@ -1248,5 +1277,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-11T16:56:36.719699+00:00"
+  "snapshot_utc": "2026-11-11T17:55:53.436277+00:00"
 }

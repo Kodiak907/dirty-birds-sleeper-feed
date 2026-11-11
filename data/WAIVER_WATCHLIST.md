@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-11T16:56:45.539271+00:00
-Sleeper snapshot: 2026-11-11T16:56:36.719699+00:00
+Generated: 2026-11-11T17:55:57.687994+00:00
+Sleeper snapshot: 2026-11-11T17:55:53.436277+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,7 +20,8 @@ Sleeper snapshot: 2026-11-11T16:56:36.719699+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Baker Mayfield | TB | 12.94 | 88% | 96.7% | Questionable |
+| 1 | Kyler Murray | MIN | 14.82 | 88% | 100.0% | Not flagged |
+| 2 | Baker Mayfield | TB | 12.94 | 88% | 96.7% | Questionable |
 
 ### RB
 
@@ -100,6 +101,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
+| Kyler Murray | QB | MIN | 14.82 | 100.0% |
 | Baker Mayfield | QB | TB | 12.94 | 96.7% |
 | Keon Coleman | WR | BUF | 7.20 | 74.3% |
 | Zonovan Knight | RB | ARI | 7.06 | 39.7% |
@@ -119,12 +121,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | MarShawn Lloyd | RB | GB | 3.96 | 30.7% |
 | Rashod Bateman | WR | BAL | 3.83 | 70.3% |
 | Ja'Kobi Lane | WR | BAL | 3.81 | 63.7% |
-| Mack Hollins | WR | NE | 3.69 | 61.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **39**
+Candidates with independently sourced projections AND usage data: **40**
 
 ## Coverage and rules
 

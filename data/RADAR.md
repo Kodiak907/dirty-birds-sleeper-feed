@@ -1,15 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-11T16:56:45.272931+00:00
-Sleeper snapshot: 2026-11-11T16:56:36.719699+00:00
+Generated: 2026-11-11T17:55:57.519544+00:00
+Sleeper snapshot: 2026-11-11T17:55:53.436277+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1426294112444751872` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: J.J. McCarthy → JA’MARRTRIX (#7)
+- **NEW** · transaction `1426293807313334272` · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Kyler Murray → JA’MARRTRIX (#7)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Kyler Murray → JA’MARRTRIX (#7)
+- 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: J.J. McCarthy → JA’MARRTRIX (#7)
 - 2026-11-11T14:22:32.536327+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Buffalo Bills → DeeboSix0 (#8) | Dropped: New York Giants → DeeboSix0 (#8)
 - 2026-11-11T14:22:32.536327+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Cameron Dicker → DeeboSix0 (#8) | Dropped: Drew Stevens → DeeboSix0 (#8)
 - 2026-11-11T14:22:32.536327+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Tutu Atwell → suck my dickerson (#11)
@@ -33,8 +38,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Keon Coleman → Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Quentin Johnston → To Infinity and Bijan (#9) | Dropped: Alvin Kamara → To Infinity and Bijan (#9)
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Tank Dell → JA’MARRTRIX (#7)
 
 ## Important limits
 
