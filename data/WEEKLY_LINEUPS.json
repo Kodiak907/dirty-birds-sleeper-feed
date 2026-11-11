@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-11T19:59:16.312610+00:00",
+  "generated_at_utc": "2026-11-11T21:36:23.889271+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-11T08:56:42.596223+00:00",
+  "projection_as_of": "2026-11-11T21:36:20.732999+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-11T19:59:07.483498+00:00",
+  "snapshot_utc": "2026-11-11T21:36:12.544807+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -24,14 +24,14 @@
         "Pat Bryant",
         "Jonah Coleman"
       ],
-      "ppg": 130.98,
+      "ppg": 131.23,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "CLE",
           "position": "QB",
-          "ppg": 16.46
+          "ppg": 16.63
         },
         {
           "id": "4034",
@@ -66,14 +66,14 @@
           "name": "Isaiah Likely",
           "opponent": "WAS",
           "position": "TE",
-          "ppg": 10.3
+          "ppg": 10.25
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "GB",
           "position": "K",
-          "ppg": 6.66
+          "ppg": 6.79
         },
         {
           "id": "JAX",
