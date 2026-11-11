@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-11T14:22:32.940169+00:00",
-  "roster_snapshot_utc": "2026-11-11T14:22:28.454121+00:00",
+  "generated_at_utc": "2026-11-11T15:52:58.996439+00:00",
+  "roster_snapshot_utc": "2026-11-11T15:52:53.923616+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.795,
-      "dirty_birds_before": 122.971,
-      "dirty_birds_delta_ppg": 1.82,
+      "dirty_birds_after": 124.531,
+      "dirty_birds_before": 122.79,
+      "dirty_birds_delta_ppg": 1.74,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -18,51 +18,38 @@
       ],
       "market_quote": {
         "paid": 4965,
-        "paid_to_received_ratio": 0.972,
-        "received": 5109,
-        "relative_value_difference_pct": -2.8
+        "paid_to_received_ratio": 1.074,
+        "received": 4623,
+        "relative_value_difference_pct": 7.4
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.372,
+      "mutual_benefit_screen_score": 4.287,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 99.237,
-      "opponent_before": 95.756,
-      "opponent_delta_ppg": 3.48,
+      "opponent_after": 99.098,
+      "opponent_before": 95.606,
+      "opponent_delta_ppg": 3.49,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 20.31,
+      "projected_ppg_received": 20.3,
       "projected_ppg_sent": 9.6,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 20.31
+          "projected_ppg": 20.3
         }
       ],
       "starter_benefit": {
-        "them": 3.48,
-        "us": 1.82
+        "them": 3.49,
+        "us": 1.74
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "trade_rejected": [
-    {
-      "give": [
-        "Jonah Coleman",
-        "Jacksonville Jaguars"
-      ],
-      "reasons": [
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Tetairoa McMillan"
-      ]
-    },
     {
       "give": [
         "Jonah Coleman"
@@ -77,15 +64,16 @@
     },
     {
       "give": [
-        "Isaiah Likely"
+        "Kirk Cousins",
+        "Kyren Williams"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
-        "Requires further outgoing roster action"
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Patrick Mahomes",
-        "Brenton Strange"
+        "Malik Nabers"
       ]
     },
     {
@@ -99,7 +87,7 @@
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Malik Nabers"
+        "Tee Higgins"
       ]
     }
   ],

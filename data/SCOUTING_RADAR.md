@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-11T14:22:32.566526+00:00
-Sleeper snapshot: 2026-11-11T14:22:28.454121+00:00
+Generated: 2026-11-11T15:52:58.478443+00:00
+Sleeper snapshot: 2026-11-11T15:52:53.923616+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- DeeboSix0: added Cameron Dicker, Buffalo Bills; dropped Drew Stevens, New York Giants
-- suck my dickerson: added Tutu Atwell, Tampa Bay Buccaneers; dropped none
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

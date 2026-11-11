@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-11T14:22:32.940169+00:00
+Generated: 2026-11-11T15:52:58.996439+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,10 +18,9 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- Jonah Coleman, Jacksonville Jaguars for Tetairoa McMillan: Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 - Jonah Coleman for Garrett Wilson: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit
-- Isaiah Likely for Patrick Mahomes, Brenton Strange: Too little projected starter benefit for roster disruption; Requires further outgoing roster action
 - Kirk Cousins, Kyren Williams for Malik Nabers: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Kirk Cousins, Kyren Williams for Tee Higgins: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 

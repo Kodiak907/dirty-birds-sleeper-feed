@@ -1,17 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-11T14:22:32.536327+00:00
-Sleeper snapshot: 2026-11-11T14:22:28.454121+00:00
+Generated: 2026-11-11T15:52:58.417929+00:00
+Sleeper snapshot: 2026-11-11T15:52:53.923616+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**4 transaction changes:** 4 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1426244461553262592` · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Tampa Bay Buccaneers → suck my dickerson (#11)
-- **NEW** · transaction `1426244427428401152` · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Tutu Atwell → suck my dickerson (#11)
-- **NEW** · transaction `1426238242549690368` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Cameron Dicker → DeeboSix0 (#8) | Dropped: Drew Stevens → DeeboSix0 (#8)
-- **NEW** · transaction `1426237747466620928` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Buffalo Bills → DeeboSix0 (#8) | Dropped: New York Giants → DeeboSix0 (#8)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
