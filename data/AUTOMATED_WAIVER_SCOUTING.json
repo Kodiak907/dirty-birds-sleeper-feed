@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-12T22:47:32.585345+00:00",
-  "source_snapshot_utc": "2026-11-12T22:47:25.134887+00:00",
-  "candidate_count": 37,
+  "generated_at_utc": "2026-11-12T23:43:50.083779+00:00",
+  "source_snapshot_utc": "2026-11-12T23:43:43.329870+00:00",
+  "candidate_count": 36,
   "news_queries_attempted": 30,
   "news_query_failures": 0,
   "news_status": "connected",
@@ -19,56 +19,56 @@
       "team": "ARI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [],
       "news": []
     },
     {
-      "id": "5849",
-      "name": "Kyler Murray",
-      "team": "MIN",
+      "id": "4017",
+      "name": "Deshaun Watson",
+      "team": "CLE",
       "position": "QB",
-      "snap_share_pct": 100.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "snap_share_pct": 98.0,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 10, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
+          "description": "nflverse injury observation: 9, Questionable, Limited Participation in Practice, Concussion. This record is not official game-day status and may be stale.",
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         },
         {
           "type": "High recent participation",
-          "description": "Snap share 100.0%; targets, touches and route trends still need verification.",
+          "description": "Snap share 98.0%; targets, touches and route trends still need verification.",
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
       "news": [
         {
-          "title": "Kyler Murray has grade 2 hamstring strain - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWVBJZmpRRzFTZXlFRWdYbXpVSEJyaFYybmNld01YYVg4WDRZckFPNTQxWWF5T01pMW5jemVUMHhaaFJRMzdvekk2SzFTRFNFbTZ0WHhMRjhKc3E2amFKeE4xQWtILW14aTh5Y1JSM2NtM0Y3NkQtTG16UzZLVmZpUS1uREFBb0c2aDdFNWQwNGlHSnhrUGZRR0V1d2JEYWxKazVyRkNWSW5DSEY4Z0R0bWRhYW5wQQ?oc=5",
-          "published": "2026-11-10",
+          "title": "Makes sense for Browns to start QB Watson? - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONGs3bllVdTU4RVJyaElCekJpRGQyTkhJYzh5WnNmQUZNck45dEN5TXNrclh0M3VtbEpZcVJHRnNEdXgtMXdId1JycGhNUExBS09lT0VIRnB0SkFzcVVrc29jcC1VMl9sQTU0eXBlTlV1aVRaalVxcmlKSkxIWFQ5Slh3NjBUTEs4TFpwV1FObmgwdnpnaWx2QnRrVU1KUmZGMG90ZWM4RUVlTmR4Q1lEOUN0ZEszV1pfWEg4dkVPbTc3M2p6SVFlNVB4VjNPOWRUQVdsT3JnT3VRZ0JkVFZv?oc=5",
+          "published": "2026-11-12",
           "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Ex-Cardinals QB Kyler Murray Gets Brutal News After Vikings Trade - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPMXYzNHNuUTZFeWs0TlBQZU5fQW1oRUprTFk3aEZzY0UtN2NZZ1EzLWlSa0lwMHpxX0Q5ZFBXVDQwM2J5cmdJYzRHVTZkcFl6ajJDaUFZMGFJYkhueEFlLXZTenlRemhpcnllY04xUmsybFBqVnJsN2NqVWc1S3FzeFpGTQ?oc=5",
+          "title": "NFL news roundup: Browns to start QB Deshaun Watson vs. Texans; Cardinals' Carson Beck to start vs. Rams - NFL.com",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdVp5TGh3WldCYXlnLU9yLXUzWWZPZDRRZkk0ZDA3Rk1XM0ZiME0xdnZVS2toYTRpUWFHQU5CdE9WdTNNZHNMb21uTTVteVNZcmdSeEF6WWk4M3FMSHMzOVdoWWJFbFl6cWRiVXFONjlkVE4xX0Zib0VaUDh6bDhBdGVOMU85c3JmZ3FFUDZB?oc=5",
           "published": "2026-11-11",
-          "publisher": "Yahoo Sports",
+          "publisher": "NFL.com",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Kyler Murray Injury Uncertainty Impacts Vikings vs. Packers Odds for NFL Week 10 - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNR3kzemQ5emQ2dVhtaVZWVE1QM1NiaGVPMFVscks4RU5ncTFOQ2dCZlRnT3VDdmNndzkxOURlWFBCeWxwOFRKNzU5ZFB2eG1jQjh3TmlFTm94YW5KQmFzUDMtNzRCZzdrY3lVNDd5bVozekI1UGp1ZE12dXpJaUZrNE9DbjJQRFB4SG9tOGFzOVBlTkVkaE1DUVJxTXljZ0hVVWFoUml5SXYxUQ?oc=5",
-          "published": "2026-11-10",
-          "publisher": "Sports Illustrated",
+          "title": "How the Deshaun Watson trade turned into Will Anderson Jr., Tank Dell and more - Houston Chronicle",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNTVFISUxLTFpGRFhNV1NtR1FEUC0xTW9PNExfbExKeGd3bU91LWQydGV3UXIzN3ZwMXpRbHhpOUw1SFNwakk4ZDBCSmFIV2xENUpuYkxxck9HYkxzc01ENlNMeFo0YlJ4U0xGY3JJMGY3ZXVac2ptS3o5eFpqZ2NRV0JiSHFnV0o5XzQyQUxySDBoVmNlQWFkT1F1Mmx0TUI2eW5wMm9jTEhuZw?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Houston Chronicle",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "What happened to Kyler Murray? Injury update for Vikings QB - USA Today",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPa2h2S0EybUVta0I5dFp3MHVJVmV2clJEQjYwNjBid202Z202MWNMWVdMb2U1cTg3eVpJRVdBdUpvX3U3dk13Y0JaOTlRelMyMkUwZXIzYTJiREMtWHRGckZ3ZzdSbFQyWkp0S1Qxa09DYXpBOHYxb0NDcHB5bzBKVklhTEo3NlNiTHJuZTRsVlVpM1NPNHFxNUhkME5mNEhDM3FibURidG5fek1BRzV1NWRBNEtkQQ?oc=5",
-          "published": "2026-11-09",
-          "publisher": "USA Today",
+          "title": "NFL Week 9 Injury Report: Deshaun Watson out, Myles Garrett in - DAZN",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbWRSc2JONkhrQ1FjdjhHXzdaMHFMZnM2aThoTG9MY2JESXlYbm9LTEtTSkxNTkJTYldtODFCdS1MZW5FNGhCaExuSjVzN1EwT0pwcFZHZkRjc2txTFlacXI0VVZqSXF2WS1JcXpVS2NGdWJOcldseUpiY2FhYWJIRk8xWUhZNHIxU0pMYlhwUWg1dE9FemdqSjRYX0ZiR25OREFXbFE3a0hwYmg4YTk2dW9DSHgtNkhwalZYa05B?oc=5",
+          "published": "2026-11-08",
+          "publisher": "DAZN",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -79,7 +79,7 @@
       "team": "TB",
       "position": "QB",
       "snap_share_pct": 96.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -108,55 +108,51 @@
       ]
     },
     {
-      "id": "10213",
-      "name": "Tre Tucker",
-      "team": "LV",
-      "position": "WR",
-      "snap_share_pct": 66.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Recent target volume",
-          "description": "7.0 targets per appearance in the source's recent sample; check trend and role.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": []
-    },
-    {
-      "id": "11637",
-      "name": "Keon Coleman",
-      "team": "BUF",
-      "position": "WR",
-      "snap_share_pct": 74.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "id": "3257",
+      "name": "Jacoby Brissett",
+      "team": "ARI",
+      "position": "QB",
+      "snap_share_pct": 86.0,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 9, Limited Participation in Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+          "description": "nflverse injury observation: 9, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        },
+        {
+          "type": "High recent participation",
+          "description": "Snap share 86.0%; targets, touches and route trends still need verification.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
       "news": [
         {
-          "title": "Monday Night Football Injury Status for Bills' DJ Moore, Dalton Kincaid, Keon Coleman - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSWNQdTU2d0xYb1pLTU5ZU3NWblpSX1ZGNmw3alpKSGpyTFMtaHY2elRBNm5wU012NnM3U2tHeHptOGhFQkNZN2p6MzRZcE9yenllVW5Ra3FOcXNBS3kyQ2RmajAwTmZzM0w3NC1MN3ZJRklkdHl4UHVVTkVia1NFUEpIX0prUmctUGZtcDlnN0syeUVpaGwxMm9PdVYxSnVDR3QzRVVRZVFieWRqaE52OU8tdVdUaDE4SmQxZDdn?oc=5",
-          "published": "2026-11-09",
-          "publisher": "Sports Illustrated",
+          "title": "READERS RESPOND: Ravens fans not confident in QB Jacoby Brissett - Baltimore Sun",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPeFJ1cUlFRHNQQnZUMWd2ME1maEVnRU92c3dQYWNPYWxxZHJmV2QtcTlwTkxTSjV4OVdZN1RxYmJDNlF4dUF6NHFmX1dNQ0VPX2U2VzJxZVlxQWxzZUplNVlPWGVGT1ExLVFWVW9KeFlEQlVETkpHdGlIT05jVnNhMVcyT1pWWWlLRWozVGNfNTZqYmpLTFFnQ1FGNUJPWTR6eE4wclRQNA?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Baltimore Sun",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Six targets for Keon Coleman in prime time win - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOX0lmOC13T3BmVHdWNURDa1I0XzZlMGJQS0RzYzllaFJ0cWhYUk9MVXRNdHQ1M3I3TTNFRVJuWVlsazV1Zy1XX1lkbkJKRV91Q0RHT3hBUjI4YzdETTNHSnItV0xtNXJBOTQ3S1hPSU9lN0hSQ1p2VGhRaHdFVzVNdmVmcy1nQQ?oc=5",
-          "published": "2026-11-10",
+          "title": "Cardinals to start rookie QB Carson Beck vs. Rams following Gardner Minshew injury, Jacoby Brissett trade - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNTjFZS1U0aXk3T28xYXVDaHlsVDJhRXlteXhXUzBSNDBnMTRSV21xTDQwSEJta09MbmlFYzdUbjFFbjZGSjNkU2ZCYjBsSGJlVVFwRXZOcEtKZWpvYkZGQWR2ckFmekw0OEd1OWpCajBzWHhOWDNGRk5Ic05tQWF0VkJtUlJ0Yk56QnRGWDBFSEk4M3EyMzVFYUtyUzJ3N2swOHNMT01nSzlHQ1NjdEdWN2x3T1FXZ0tsU2xkc2JSYzNMZXRjSWd4elFLQ1ZqTEJHNVZMd08wRE1zRVBrQngxR0xjQXYyN21mcE9ZcmluMnYxWUtKeE9CWHhnU3hnZw?oc=5",
+          "published": "2026-11-11",
           "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Keon Coleman: Must-Add Waiver Wire Pickup for Week 10 Fantasy Football? - NFL News - RotoBaller",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdnk3N19FaHVoSUJBMWVfeVZ2aXNndm12NjBQS2wwTy1zZjdRSHBJajlNMHdkNEY4cTFpUXJjWGdMY09TVUVzNWtZdzFpekk4R0I0RE9GaXFJUjUxQzE2WjMwckFlYmNENG9MVGJNUkdMOHF4VUJwZ2hDbnl5c0F3Wmt2aVNMRGJMR0w2OWJNQl9OMlpKRmRHcnlCVGpxWURyaXBGbmpwVlg?oc=5",
-          "published": "2026-11-09",
-          "publisher": "RotoBaller",
+          "title": "JJ McCarthy, Jacoby Brissett, And More Week 10 Fantasy Football Quarterback Streamers - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTE1oQ2YwUGZMODd4NkphRWtMUVpTamQtQzZjRlRqVGxSQ1V3N25JV0czZW5xbEJZYWtlcjMxU3pfa2pBY2syV0ZtdTVlSzZzdVhyMzluakp4WDluVVhRZ2ExbUlCOG5XYWtfaTZQbDlnc200cUloN2Z5RTNSQkxGUUt2VEk3ZUZLUWFPWFFkbVhXQ1lGN05Da3U0MFljMVlYcERqMklac1FVZ29RR0ZYNGtMY0NtOXZNZmg4?oc=5",
+          "published": "2026-11-11",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Jacoby Brissett In line to start next Monday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPSl9EZm5pdmM3aktVOWcwdV9UbEYtMDVoQlQzR0JuX0hUb3pZeWplMTBHSkpjY09NUWhRdVNrVlVuN1VnUmhOV2E1VWYwQ1J3RjcwUDA0RGcwNjFjTmF2RWY0a2Z0Q1lQQnRTclQwT3IxdEJBSC1CYV9VZW1fRDhGQUVxMlJJQmwxWGdYVUxCYmcxNEE1MUJZb3dLRQ?oc=5",
+          "published": "2026-11-10",
+          "publisher": "Fantasy Footballers Podcast",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -167,7 +163,7 @@
       "team": "WAS",
       "position": "TE",
       "snap_share_pct": 75.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -227,7 +223,7 @@
       "team": "CAR",
       "position": "TE",
       "snap_share_pct": 53.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -267,12 +263,66 @@
       ]
     },
     {
+      "id": "11637",
+      "name": "Keon Coleman",
+      "team": "BUF",
+      "position": "WR",
+      "snap_share_pct": 74.3,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 9, Limited Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
+        }
+      ],
+      "news": [
+        {
+          "title": "Monday Night Football Injury Status for Bills' DJ Moore, Dalton Kincaid, Keon Coleman - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSWNQdTU2d0xYb1pLTU5ZU3NWblpSX1ZGNmw3alpKSGpyTFMtaHY2elRBNm5wU012NnM3U2tHeHptOGhFQkNZN2p6MzRZcE9yenllVW5Ra3FOcXNBS3kyQ2RmajAwTmZzM0w3NC1MN3ZJRklkdHl4UHVVTkVia1NFUEpIX0prUmctUGZtcDlnN0syeUVpaGwxMm9PdVYxSnVDR3QzRVVRZVFieWRqaE52OU8tdVdUaDE4SmQxZDdn?oc=5",
+          "published": "2026-11-09",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Six targets for Keon Coleman in prime time win - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOX0lmOC13T3BmVHdWNURDa1I0XzZlMGJQS0RzYzllaFJ0cWhYUk9MVXRNdHQ1M3I3TTNFRVJuWVlsazV1Zy1XX1lkbkJKRV91Q0RHT3hBUjI4YzdETTNHSnItV0xtNXJBOTQ3S1hPSU9lN0hSQ1p2VGhRaHdFVzVNdmVmcy1nQQ?oc=5",
+          "published": "2026-11-10",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Keon Coleman: Must-Add Waiver Wire Pickup for Week 10 Fantasy Football? - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdnk3N19FaHVoSUJBMWVfeVZ2aXNndm12NjBQS2wwTy1zZjdRSHBJajlNMHdkNEY4cTFpUXJjWGdMY09TVUVzNWtZdzFpekk4R0I0RE9GaXFJUjUxQzE2WjMwckFlYmNENG9MVGJNUkdMOHF4VUJwZ2hDbnl5c0F3Wmt2aVNMRGJMR0w2OWJNQl9OMlpKRmRHcnlCVGpxWURyaXBGbmpwVlg?oc=5",
+          "published": "2026-11-09",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
+    },
+    {
+      "id": "10213",
+      "name": "Tre Tucker",
+      "team": "LV",
+      "position": "WR",
+      "snap_share_pct": 66.7,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Recent target volume",
+          "description": "7.0 targets per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": []
+    },
+    {
       "id": "4147",
       "name": "Samaje Perine",
       "team": "CIN",
       "position": "RB",
       "snap_share_pct": 32.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -291,62 +341,12 @@
       ]
     },
     {
-      "id": "4035",
-      "name": "Alvin Kamara",
-      "team": "NO",
-      "position": "RB",
-      "snap_share_pct": 43.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Recent reception volume",
-          "description": "4.0 receptions per appearance in the source's recent sample; check trend and role.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        },
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 10, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": [
-        {
-          "title": "Alvin Kamara Returns to practice - Fantasy Footballers Podcast",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMUpTN3RXNXNSUUtQckFSaTU2Q1JhMXBicVlTRDk4aXdRQm16UC1nTU93b2E1ei1GQUw3dURyM2dFa25mTTY3UGVpOHJMWEtER19VeXlycG5JNy1RNlRQOXkxSzE2bUNWTXlJeVlQOUZZSVdMd0RZN1g4MFpTbVJFY0o2N21meUpHRWNr?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Fantasy Footballers Podcast",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Alvin Kamara Injury: Returns to practice - RotoWire",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcXY1YzlkbkNxdkRiZHA0TFZfZ1RfTXVvY0V1NTI5UXVYWmtjUEhpNndZSE5PR1EzaTdPa2VZRmRYaVg1NEstcmZGUlhrd3Z2LXgyOWotTlVEQlh5QTJydEdVWERtblRmRnpYb08yZThNRFlXZVh5QXl5a3BHY2VLMk96LWx2b19CcmYzOHI5Z0tPa3Zy?oc=5",
-          "published": "2026-11-12",
-          "publisher": "RotoWire",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Saints injury update: Is Alvin Kamara playing in Week 9? - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWEZUU1UxY3Nyc0tkd3NsTVFKQjQ0eE1rd3FsVmFOdFF0SlJnbUhnLXVrV2tfX2pvZmhyOEJfZGp1QXY5eVY4eW1NQ3JiU281UHlrLWhZcnpFZnVGNWZxNDd5a2R3eDdHa2FidnpHODN4V0lkU1EzdTJ2bndjblBJcEEzQ1ZPcjBkLUdv?oc=5",
-          "published": "2026-11-08",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Alvin Kamara Logs full practice Thursday - Fantasy Footballers Podcast",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQb3hWWGd5RnRQN0t1UnNaNzFMZXBiUkMyT2JNbVRYTFZKLUhCbVJHYU9GazhTd3ZESnpxLTI4RFY5VW9XSUh2c2lESk5hRGx1aURGSHNKT2JPMzBYeGZpVjlyenE1M3JoZ0JrektlaXFNZVVBUkJRTkVHcy1IOUppN0NBeTZUMEQzNDRnOWktX1labHlNYkE?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Fantasy Footballers Podcast",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
-    },
-    {
       "id": "9508",
       "name": "Tyjae Spears",
       "team": "TEN",
       "position": "RB",
       "snap_share_pct": 38.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -391,12 +391,38 @@
       ]
     },
     {
+      "id": "3634",
+      "name": "Kalif Raymond",
+      "team": "CHI",
+      "position": "WR",
+      "snap_share_pct": 69.7,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [],
+      "news": []
+    },
+    {
+      "id": "9511",
+      "name": "Keaton Mitchell",
+      "team": "LAC",
+      "position": "RB",
+      "snap_share_pct": 27.0,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": []
+    },
+    {
       "id": "9482",
       "name": "Michael Mayer",
       "team": "LV",
       "position": "TE",
       "snap_share_pct": 79.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "High recent participation",
@@ -422,67 +448,12 @@
       ]
     },
     {
-      "id": "3634",
-      "name": "Kalif Raymond",
-      "team": "CHI",
-      "position": "WR",
-      "snap_share_pct": 69.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [],
-      "news": []
-    },
-    {
-      "id": "13311",
-      "name": "Chris Bell",
-      "team": "MIA",
-      "position": "WR",
-      "snap_share_pct": 60.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 10, Limited Participation in Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": [
-        {
-          "title": "Chris Bell Not seen at practice Thursday - Fantasy Footballers Podcast",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNYUtyOEIyUUoweVBaNzB0YnBDQnhZRW9GMkFJVnNHVmIxZ2hqZDBKYnVySlBXWG5HQXZ2ZXIxeW91dFFHMW5ZUUhMazA0WFdNeTAzTkxqSXB6Ync1em1qaWVzT2JLZF9hVWRiY3ZBczNJZ0sycFB4am8yRExQZlJpSzlKdUFGTFhDUGtTVXVOV3FKb2RpQmc?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Fantasy Footballers Podcast",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chris Bell (knee) downgrades, sits out on Thursday - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYjJVMlJLNWNJN3JjbmRHVzgwZnU3UUltUmo4Z0xaQnpxbVZBVEhUaGVKRXpZOWtMZF9ZaklNT1FYQnEyNXpLTkhVWWRIbk5rOS1Qa2RLNEZUVXYzM1BBU1dIeEFoUUVqX3BLcF9FVUJLaUlJdXB4NldhbS1zLTdDSTBoTEx6SllKU2kwVUdpSXo1TnA1NXZmRkFCQWFzR3A3UVJUTDNHNjhXYnNLVndPNnJFZw?oc=5",
-          "published": "2026-11-12",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chris Bell (knee) not seen practicing Thursday - FantasyPros",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOazVYQ0hXWjh4V3FTMWpGa0RaTlgtQnZjWDVvTUVvT3hwMlhJNHRaVGdISWVaZGNjYWVFM3lHNzdoU1dMNmhSYWEwd0h5RldCNEFGenZCeWRUaUxfaFFKeVVBOVdiT1hsY25KZUF4WWo4QkU3YUNVN0VkRnhyb3dJbjRzajFxSXZmcEtiUWh3Y25lOVkxaEtJ0gGcAUFVX3lxTE8yVXdEWTBTQkNNOXRoaV9VYXlUOUVnM3I5OEl3ZERVV0swWDZZblNYaUpQQXp4TEZwNndwOXM2ZjY5VmFXcWhhVmhWUUExZXVTNk1DejFqZ0lJNHRvX0NMNnlxemhWaFl0TndJQ3ZEUll4OURSS2NKVmtZWmsxUTZhcmxtaVlDa295M1huRzluZ1VrRG1ReXo1YVViNg?oc=5",
-          "published": "2026-11-12",
-          "publisher": "FantasyPros",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Dolphins' Chris Bell: Limited on injury report - CBS Sports",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTG0wTTItaXcwdUVGWk1hdWhUUUR4RTZGd0Q3bXk2cXFFNXFsU3cwdHN6Tm1FaWwyYUs0SFBlYVc1UFpQcFF1eVdKOV91eUVZTVdwc2hwcml6cUxtRU15OHp6Rk16cE5DalBNLWlyMVpSZTBuYV8tdmpxTTFrUlpNZXUtbG9UTUZ0NXgzMzNvSnh4aFZLZnYzcQ?oc=5",
-          "published": "2026-11-11",
-          "publisher": "CBS Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
-    },
-    {
       "id": "5857",
       "name": "Noah Fant",
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 50.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -508,12 +479,107 @@
       ]
     },
     {
+      "id": "4035",
+      "name": "Alvin Kamara",
+      "team": "NO",
+      "position": "RB",
+      "snap_share_pct": 43.7,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Recent reception volume",
+          "description": "4.0 receptions per appearance in the source's recent sample; check trend and role.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        },
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 10, Did Not Participate In Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": [
+        {
+          "title": "Alvin Kamara Returns to practice - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMUpTN3RXNXNSUUtQckFSaTU2Q1JhMXBicVlTRDk4aXdRQm16UC1nTU93b2E1ei1GQUw3dURyM2dFa25mTTY3UGVpOHJMWEtER19VeXlycG5JNy1RNlRQOXkxSzE2bUNWTXlJeVlQOUZZSVdMd0RZN1g4MFpTbVJFY0o2N21meUpHRWNr?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Alvin Kamara Injury: Returns to practice - RotoWire",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcXY1YzlkbkNxdkRiZHA0TFZfZ1RfTXVvY0V1NTI5UXVYWmtjUEhpNndZSE5PR1EzaTdPa2VZRmRYaVg1NEstcmZGUlhrd3Z2LXgyOWotTlVEQlh5QTJydEdVWERtblRmRnpYb08yZThNRFlXZVh5QXl5a3BHY2VLMk96LWx2b19CcmYzOHI5Z0tPa3Zy?oc=5",
+          "published": "2026-11-12",
+          "publisher": "RotoWire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Saints injury update: Is Alvin Kamara playing in Week 9? - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWEZUU1UxY3Nyc0tkd3NsTVFKQjQ0eE1rd3FsVmFOdFF0SlJnbUhnLXVrV2tfX2pvZmhyOEJfZGp1QXY5eVY4eW1NQ3JiU281UHlrLWhZcnpFZnVGNWZxNDd5a2R3eDdHa2FidnpHODN4V0lkU1EzdTJ2bndjblBJcEEzQ1ZPcjBkLUdv?oc=5",
+          "published": "2026-11-08",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Alvin Kamara Logs full practice Thursday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQb3hWWGd5RnRQN0t1UnNaNzFMZXBiUkMyT2JNbVRYTFZKLUhCbVJHYU9GazhTd3ZESnpxLTI4RFY5VW9XSUh2c2lESk5hRGx1aURGSHNKT2JPMzBYeGZpVjlyenE1M3JoZ0JrektlaXFNZVVBUkJRTkVHcy1IOUppN0NBeTZUMEQzNDRnOWktX1labHlNYkE?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
+    },
+    {
+      "id": "8676",
+      "name": "Rashid Shaheed",
+      "team": "SEA",
+      "position": "WR",
+      "snap_share_pct": 41.3,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 10, Full Participation in Practice. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": [
+        {
+          "title": "Rashid Shaheed (knee) practices in full Wednesday - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORFF0SG9Bd0N1aVVyUWdpZjZHRGZrQjd5QWRSaDBacTU1T3U2R043Qi01OVoyNjRlTzZsQlJBc1Z5MXpuVXZJZjY0NzhTNGJUWWV1dHR1RjZQb29nM0hwc1Z2T1cyT0RoVVJXdEtPQ2ZTTzVQNE5RNUI1VlJjWmdLSXJ6OG4xNWMzX0Q1Z2x1akJwTGhlbU4tNllYVDlXWUVGenUwVjhfLURNZkhvYlZsZGFVMA?oc=5",
+          "published": "2026-11-12",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Rashid Shaheed Full practice Wednesday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTE5zeE1ENElOMUxjamI4Nm8yZkFLODJkRzVoQlZyVFVPV1RjYnIyNHl3N2NlX1h5dkR6cEpINkYyTGhSUE1Fa0hqY3BtQWRrYVBGRUVGbDdoMmtjUUh3bnc3cnJGeFlibEtoaUtPMmZna1NWeThFUnpBQnlHMEdka3ZPT1Q0NmZfYmsxVGdPOGh3N1k?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Seahawks-Raiders Wednesday injury report: Leonard Williams still out, Rashid Shaheed returns - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONks3ZXo5NkthWTAyaG1XUWtNaGNKTlpPQ2RJcVRxb09MOHBEb3FDR0pJN3JOaE9Lc0dvVDlEVTEwWmdZbGduWTVDeUhoNlltUHRMenRTTjV5dnBnVk5kQkdMY29nWFZpdXZHRXZZQ0tmSzhkUXhRdUUyOWhiZnFxQ2VFemhESTJLS1NHQm9EMVdjNUE?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Rashid Shaheed Practices in Full on Wednesday - NFL News | Fantasy Football - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcXVnUExaQUlKRi1sWGRIaW82RTFMbmpyVUxiOUd3Sy1sUms4eWxiV0ttTllXQWlXNVE2cTlBRUlJYzduS1VMcC12ei1PUkR0R080N2diRTZaY05zRWt5bV9sTG16a0puUVExck5lNVhRLXd6aXgtcnIwcmU3MmdQelVJN2Rrb0d5WGNSS3B1aWdYLWdObEE?oc=5",
+          "published": "2026-11-12",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
+    },
+    {
       "id": "9486",
       "name": "Dontayvion Wicks",
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 79.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -568,116 +634,12 @@
       ]
     },
     {
-      "id": "9511",
-      "name": "Keaton Mitchell",
-      "team": "LAC",
-      "position": "RB",
-      "snap_share_pct": 27.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 4, Full Participation in Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": []
-    },
-    {
-      "id": "8676",
-      "name": "Rashid Shaheed",
-      "team": "SEA",
-      "position": "WR",
-      "snap_share_pct": 41.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 10, Full Participation in Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": [
-        {
-          "title": "Rashid Shaheed (knee) practices in full Wednesday - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORFF0SG9Bd0N1aVVyUWdpZjZHRGZrQjd5QWRSaDBacTU1T3U2R043Qi01OVoyNjRlTzZsQlJBc1Z5MXpuVXZJZjY0NzhTNGJUWWV1dHR1RjZQb29nM0hwc1Z2T1cyT0RoVVJXdEtPQ2ZTTzVQNE5RNUI1VlJjWmdLSXJ6OG4xNWMzX0Q1Z2x1akJwTGhlbU4tNllYVDlXWUVGenUwVjhfLURNZkhvYlZsZGFVMA?oc=5",
-          "published": "2026-11-12",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Rashid Shaheed Full practice Wednesday - Fantasy Footballers Podcast",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTE5zeE1ENElOMUxjamI4Nm8yZkFLODJkRzVoQlZyVFVPV1RjYnIyNHl3N2NlX1h5dkR6cEpINkYyTGhSUE1Fa0hqY3BtQWRrYVBGRUVGbDdoMmtjUUh3bnc3cnJGeFlibEtoaUtPMmZna1NWeThFUnpBQnlHMEdka3ZPT1Q0NmZfYmsxVGdPOGh3N1k?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Fantasy Footballers Podcast",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Seahawks-Raiders Wednesday injury report: Leonard Williams still out, Rashid Shaheed returns - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONks3ZXo5NkthWTAyaG1XUWtNaGNKTlpPQ2RJcVRxb09MOHBEb3FDR0pJN3JOaE9Lc0dvVDlEVTEwWmdZbGduWTVDeUhoNlltUHRMenRTTjV5dnBnVk5kQkdMY29nWFZpdXZHRXZZQ0tmSzhkUXhRdUUyOWhiZnFxQ2VFemhESTJLS1NHQm9EMVdjNUE?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Rashid Shaheed News: Full practice Wednesday - RotoWire",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPUENHczAxcy00ZzA2blJQb2t0SDBTMTdMQXg4SEF2akxqc0YyaGhZbUFmRW9rajZ4dlotZGRXQWFKcEhmWVhOOTdXcXFkNTRtdGJYb0FVb25fT0xQZDRjVVBEaHhqTHFhNlB4b21OZ3Fvald1OFUzeWR4V3hvY1NpSkpzUnJmRXBHd3k0WURvM0NKbEN0eUF2WFNB?oc=5",
-          "published": "2026-11-12",
-          "publisher": "RotoWire",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
-    },
-    {
-      "id": "6819",
-      "name": "Michael Pittman Jr.",
-      "team": "PIT",
-      "position": "WR",
-      "snap_share_pct": 77.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Own Sleeper injury flag (unverified)",
-          "description": "Michael Pittman Jr.: IR. Check official club report before making a claim.",
-          "source_url": "https://www.nfl.com/injuries/"
-        },
-        {
-          "type": "High recent participation",
-          "description": "Snap share 77.7%; targets, touches and route trends still need verification.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
-        }
-      ],
-      "news": [
-        {
-          "title": "Steelers Sights & Sounds: Michael Pittman Jr. Shows Promising Signs - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPUElEVUFiZWJKT0l2N3pOaHA3SmxXaWY3YktPUzhxZnBTbFZzZXl4cjRoRTlaQmRjYlRabkJXNXBhZ2dra3Iydy0yaDdWVWRCMEVOMnRiWU1yU3p6aThrX0FMR0lVZC1Mb2tTa0FWdjBrWGFpVDhQcUZBS3N3SUZiMThXTnZvbWZnekdxSHFsVHg?oc=5",
-          "published": "2026-11-12",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Michael Pittman Jr. Not ready to practice - Fantasy Footballers Podcast",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdkJSZUUwX0VtMDZzRExhYnU5MUlleVhxY0czLXVYRjRUWDY4dHVlSGI2TGI0OTk5RDBkakdOaGZkTDFMcjBZcDVrNV9zVWwzdk9FUk9oSXJSQUZGVDNRZFMyRXhmc24wem5iMEpncFUxOGp6YnA2Y3NIeng4OU9LOHJaYUVobVFETnJ2WHprME52blhlZkE?oc=5",
-          "published": "2026-11-11",
-          "publisher": "Fantasy Footballers Podcast",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Steelers get positive injury updates on Michael Pittman Jr, Derrick Harmon - Behind the Steel Curtain",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNWk5OQjBqN2I5SnNJNkFEdmNoNmNRU0U2WjRUd3BGSVlUS1dSUHhCZ1dGQUpkSnpLRDlFOW1lMkxYb2hOMHBXcjg5T0dQODRvYXZFSjl2ZFZFaWJYSC1kcGNyYWFsN2hldTNnQkdLYnR2RXVDWmk3YTNwZjZFdkxfQkZLcmpoekh5dlJhQWNmQndVNmhnWThFWDdoTHhwdzM0UXBwWEZoMnd3REV0VVY0b2ZPbldIUk5Od2RZZjVfamZmdG9FSTJ2TGNYZFc4d1U2UmdBWnNGcnVfWFk?oc=5",
-          "published": "2026-11-09",
-          "publisher": "Behind the Steel Curtain",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
-    },
-    {
       "id": "12509",
       "name": "Tre' Harris",
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 59.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -711,7 +673,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 61.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -771,7 +733,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 70.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -787,7 +749,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 63.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -806,46 +768,39 @@
       ]
     },
     {
-      "id": "11581",
-      "name": "MarShawn Lloyd",
-      "team": "GB",
-      "position": "RB",
-      "snap_share_pct": 30.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "id": "13311",
+      "name": "Chris Bell",
+      "team": "MIA",
+      "position": "WR",
+      "snap_share_pct": 60.0,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 9, Questionable, Limited Participation in Practice, Knee. This record is not official game-day status and may be stale.",
+          "description": "nflverse injury observation: 10, Limited Participation in Practice. This record is not official game-day status and may be stale.",
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
       "news": [
         {
-          "title": "MarShawn Lloyd (knee) absent from injury report - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORklrdjJxdjF2emQ4U1V0amhmZmEzMmRlTzVETjdIb3ByOEh6SWZRNmhidzgyNnQ1em1INlNZYndsMVJXSERvSlp3bmlvcDFKVzExYlFxR2JJTWFMSDZZaS11ejNEVkstdmFRU2FaTTI3WWN6cTR1b0x2X3RJU0Fuam9wX3VEcmYxdld0RjdBbDRGTE5EV1AwVlN6MFZmbTVFbm1MdUVnemphQ19kZEljRA?oc=5",
+          "title": "Chris Bell Not seen at practice Thursday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNYUtyOEIyUUoweVBaNzB0YnBDQnhZRW9GMkFJVnNHVmIxZ2hqZDBKYnVySlBXWG5HQXZ2ZXIxeW91dFFHMW5ZUUhMazA0WFdNeTAzTkxqSXB6Ync1em1qaWVzT2JLZF9hVWRiY3ZBczNJZ0sycFB4am8yRExQZlJpSzlKdUFGTFhDUGtTVXVOV3FKb2RpQmc?oc=5",
+          "published": "2026-11-12",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Chris Bell (knee) downgrades, sits out on Thursday - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYjJVMlJLNWNJN3JjbmRHVzgwZnU3UUltUmo4Z0xaQnpxbVZBVEhUaGVKRXpZOWtMZF9ZaklNT1FYQnEyNXpLTkhVWWRIbk5rOS1Qa2RLNEZUVXYzM1BBU1dIeEFoUUVqX3BLcF9FVUJLaUlJdXB4NldhbS1zLTdDSTBoTEx6SllKU2kwVUdpSXo1TnA1NXZmRkFCQWFzR3A3UVJUTDNHNjhXYnNLVndPNnJFZw?oc=5",
           "published": "2026-11-12",
           "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "MarShawn Lloyd (knee) off injury report Wednesday - FantasyPros",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdlNpWVExLVBzUmR5bmVZZjh2Vld6ZXhQcE9Mc2tSR0dCNlJNQW9lSkN1cGozQVVZMkU5UHFPME1IYjkxUk8zcUJMSUxCV0ZlNkVubUtBTDM4X3ctVnpuWUhVLVlEZjEweGNScENpY1lnOVp1V29Jb0t2MlRCT1RVZTdzcnV2TlRmalBCR3RRcTQ4MG9SWDExQVFmMNIBoAFBVV95cUxPNEdSS3JDX3M5QkpJNkJPTEVzQVJVUDNaVjNBX0VrajVLZ1JxQUVqaVdhMTBicXM3Z0xZTGJHVzFKWnhvaEVraGtJUmNUSjdXa250V292SXhxU3htUElBbEZoRkRudC1GN1dmNzlNeEdZVnRQM21SdjhycFVkUzFxRFJ0TUxCcG1ZU1lMOFBBQ0dlUkdZRTgzT2tMaTkzWWlW?oc=5",
-          "published": "2026-11-12",
-          "publisher": "FantasyPros",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "MarShawn Lloyd is Cleared to Play for Week 10 - NFL News | Fantasy Football - RotoBaller",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUk5weDU4ZGszS01KVGtuNGR1X2tBQ3BCNTJkWE1zZlN2a1liWEdqWUNabDUtVHJicGR3aVVUOTFQZ3hGdVFPSEY5V2EtelFXWllDVmQ5QzNwVFRIaXVnaHZYZUo4YnhsZ3ZzbUJVNVcweGxEUDc4UmlrMFVEcUhGLTBvemYyUmt5MzM4TkNOT3BlRXdBMDBB?oc=5",
-          "published": "2026-11-12",
-          "publisher": "RotoBaller",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "MarShawn Lloyd Injury: Inactive in Week 9 - RotoWire",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSmdxSGJVbWhhREZudGNLZmpQNHlIeDZ1Q2RCTW1yclNTUGxZY1p3U1ZVWUxqbTJHTC02SzFxY0ZhM1pMZUVIUWZJNElfRGtHV1owQWNCZkVxc1pOSUFZekZHenJEMWp2N3VQZl9wZmt4M0w3UDVfaWhpdEtlRVZKMHRkbUs3NHYxSTBCVHVrQmo0UjVGdGc?oc=5",
-          "published": "2026-11-08",
-          "publisher": "RotoWire",
+          "title": "Dolphins' Chris Bell: Limited on injury report - CBS Sports",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTG0wTTItaXcwdUVGWk1hdWhUUUR4RTZGd0Q3bXk2cXFFNXFsU3cwdHN6Tm1FaWwyYUs0SFBlYVc1UFpQcFF1eVdKOV91eUVZTVdwc2hwcml6cUxtRU15OHp6Rk16cE5DalBNLWlyMVpSZTBuYV8tdmpxTTFrUlpNZXUtbG9UTUZ0NXgzMzNvSnh4aFZLZnYzcQ?oc=5",
+          "published": "2026-11-11",
+          "publisher": "CBS Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -856,7 +811,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -892,10 +847,10 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "David Njoku Injury: Not activated ahead of Week 9 - RotoWire",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcTBXZFdwNy1rLU1iSllIUDhfamNkWTl1X0NVZWpSTGxJb1FVLWl0WFFxUTV4QlFMWXFqTHZvbU9hQUh4a016UXRuQ3BxNHU3QlVVSl9GVC1iU1FKc3p6cExPSzVUaWllbzVVMjRlX3ZnQ3dTNXE3dUJvREpfajVoWlRvN2VUdTY0UDNKWWEyMnRDbHJGNWFVSXNlSGt6cFpz?oc=5",
+          "title": "Chargers won’t activate David Njoku (fibula) Wk 9 - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSzJ6ZHFDVXB0QXNDYTQ4UzZDU3d3cEhpX3BfWFhjeGFUdzZhLWpOdGlBWnhFa2w3Qy1tV2N2cnk2S2xxdlpVeHI0ZW9Bc2FOdmFnc0NmMHFWR2RsX3h3a3FONVd6SFNEZWY0dktsSU5vU0thX3lZRGFrZWFwZkhXYXd0MXNXMjNWRXFXcnc5YUxRamRiOXBkY3cwYUtieTRVZDZWRUxjTnpNS1VPTjdYSU1B?oc=5",
           "published": "2026-11-08",
-          "publisher": "RotoWire",
+          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -906,7 +861,7 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -946,14 +901,49 @@
       ]
     },
     {
-      "id": "12542",
-      "name": "Efton Chism III",
-      "team": "NE",
-      "position": "WR",
-      "snap_share_pct": 67.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [],
-      "news": []
+      "id": "11581",
+      "name": "MarShawn Lloyd",
+      "team": "GB",
+      "position": "RB",
+      "snap_share_pct": 30.7,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [
+        {
+          "type": "Published injury report observation — historical",
+          "description": "nflverse injury observation: 9, Questionable, Limited Participation in Practice, Knee. This record is not official game-day status and may be stale.",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
+        }
+      ],
+      "news": [
+        {
+          "title": "MarShawn Lloyd (knee) absent from injury report - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORklrdjJxdjF2emQ4U1V0amhmZmEzMmRlTzVETjdIb3ByOEh6SWZRNmhidzgyNnQ1em1INlNZYndsMVJXSERvSlp3bmlvcDFKVzExYlFxR2JJTWFMSDZZaS11ejNEVkstdmFRU2FaTTI3WWN6cTR1b0x2X3RJU0Fuam9wX3VEcmYxdld0RjdBbDRGTE5EV1AwVlN6MFZmbTVFbm1MdUVnemphQ19kZEljRA?oc=5",
+          "published": "2026-11-12",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "MarShawn Lloyd (knee) off injury report Wednesday - FantasyPros",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdlNpWVExLVBzUmR5bmVZZjh2Vld6ZXhQcE9Mc2tSR0dCNlJNQW9lSkN1cGozQVVZMkU5UHFPME1IYjkxUk8zcUJMSUxCV0ZlNkVubUtBTDM4X3ctVnpuWUhVLVlEZjEweGNScENpY1lnOVp1V29Jb0t2MlRCT1RVZTdzcnV2TlRmalBCR3RRcTQ4MG9SWDExQVFmMNIBoAFBVV95cUxPNEdSS3JDX3M5QkpJNkJPTEVzQVJVUDNaVjNBX0VrajVLZ1JxQUVqaVdhMTBicXM3Z0xZTGJHVzFKWnhvaEVraGtJUmNUSjdXa250V292SXhxU3htUElBbEZoRkRudC1GN1dmNzlNeEdZVnRQM21SdjhycFVkUzFxRFJ0TUxCcG1ZU1lMOFBBQ0dlUkdZRTgzT2tMaTkzWWlW?oc=5",
+          "published": "2026-11-12",
+          "publisher": "FantasyPros",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "MarShawn Lloyd is Cleared to Play for Week 10 - NFL News | Fantasy Football - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUk5weDU4ZGszS01KVGtuNGR1X2tBQ3BCNTJkWE1zZlN2a1liWEdqWUNabDUtVHJicGR3aVVUOTFQZ3hGdVFPSEY5V2EtelFXWllDVmQ5QzNwVFRIaXVnaHZYZUo4YnhsZ3ZzbUJVNVcweGxEUDc4UmlrMFVEcUhGLTBvemYyUmt5MzM4TkNOT3BlRXdBMDBB?oc=5",
+          "published": "2026-11-12",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "MarShawn Lloyd Injury: Inactive in Week 9 - RotoWire",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSmdxSGJVbWhhREZudGNLZmpQNHlIeDZ1Q2RCTW1yclNTUGxZY1p3U1ZVWUxqbTJHTC02SzFxY0ZhM1pMZUVIUWZJNElfRGtHV1owQWNCZkVxc1pOSUFZekZHenJEMWp2N3VQZl9wZmt4M0w3UDVfaWhpdEtlRVZKMHRkbUs3NHYxSTBCVHVrQmo0UjVGdGc?oc=5",
+          "published": "2026-11-08",
+          "publisher": "RotoWire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9225",
@@ -961,7 +951,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -987,7 +977,7 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 46.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [],
       "news": [
         {
@@ -1012,7 +1002,7 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 26.0,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -1027,6 +1017,13 @@
       ],
       "news": [
         {
+          "title": "Branch remains sidelined on Thursday with hammy - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPTXJkTkp2Q3YzNTljZXQ2aXdVTkFRYmo2RUg4ai1fbkRaMVM1NjVBb1NyTjNHdFhxUExVdDdCTm5Uc1FFYVc2RzkwdHhUMW5zc1dKeHZiTWdUaDktRExYR2Y2Nm5DOEkxNzByUnZxOXRLVkdidHM0NVpiSWR2Sl81T3pVS3RQNVZmWVdQY3VkWFlQX0VXbXB4QnNGaHAydWhrbUFTTFdWSzY2Sl9jVVpDdGhhRQ?oc=5",
+          "published": "2026-11-12",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
           "title": "Zachariah Branch (hamstring) sidelined at practice Thursday - FantasyPros",
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNcTg2dEY3dDJ2RUE4N2RYazBtM0x1SDhVbjV1MG9Td0g2ME1CMmkyMFFlWDlqVGJLN1I1SGV6LVhTc3FpbENaT0s2M19IN2toT1FTQ0ZoX0xLeHlZMG5GMmI1UWU0UkxmbmQ4WWFnS1RyM1ByZl9JS2FiOUxpM09XY1JGU2dWcExtNlJYblVCRUFQSnJXckxDWnB4WHhxT2UyZnRmYtIBqgFBVV95cUxOS3JKNXhlcU1ndUZsREZTMkNtN1RXVEVlVDZIQmdkdEpHTXNsMWFmV3h1dFFDWWhUZEFPYmtyeEIxcmVfVTJrazlZRE9pbnZiVHVCMjhmMWdxTWpiVGpDUGxoTk1keDJBem5JR19nTDE1Z2RsdGJaWi02QlhaUGpvSlFBNllQQk1rWExpSW9PamF6Ml90SnVxZWQtN2RWYkU3U21aMXhjcXlQZw?oc=5",
           "published": "2026-11-12",
@@ -1038,13 +1035,6 @@
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQRlAtWUtrQ0hTMlpMYlhaU0ZVcDJoUWlvR2RJYlJVcU5vT0kwQXM2NUFhZmtSSjU3eDE5My1zTnU2d1c0MUd0amh3UTlTTzZKUG14Qy1uQ0FiV2dudHNwWUc0dTNYTW1BMUZjcF9iOWxmNEl5Tm5PLTdCTmhSbjE1Vzc3WHYyUE82SVNYVXdHcVdQb3FPWU42SlpsNmJJbHRk?oc=5",
           "published": "2026-11-11",
           "publisher": "CBS Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Branch (hamstring) remains out on Wednesday - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUzhVT3lpWTJVY21td1hIT0RZWmJubmk0c2xsYjJGWXZ0S2ZpMDJiZnVfR2haOXB6cFhpNFVkZGhwV2ZHdk9OSEtmVjQyRnYwdTE0RDVfbHJzZm13Q3NOekZIWGRFM1RfM0xTZ1ZUeVNnM2xJeWhqOXhCTVMwa3RUTGNZbjFaMlJGMFhHS3p6YjA5TWFxNGc2RFRGTi1OTDdaaGpURzJJY3Itbzg?oc=5",
-          "published": "2026-11-12",
-          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -1062,7 +1052,7 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 34.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1086,48 +1076,7 @@
       "team": "CLE",
       "position": "RB",
       "snap_share_pct": 21.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [],
-      "news": []
-    },
-    {
-      "id": "11435",
-      "name": "Emanuel Wilson",
-      "team": "SEA",
-      "position": "RB",
-      "snap_share_pct": 26.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [
-        {
-          "type": "Recent carry workload",
-          "description": "19.3 rush attempts per appearance in the source's recent sample; check trend and role.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        },
-        {
-          "type": "Published injury report observation — historical",
-          "description": "nflverse injury observation: 1, Full Participation in Practice. This record is not official game-day status and may be stale.",
-          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
-        }
-      ],
-      "news": []
-    },
-    {
-      "id": "2197",
-      "name": "Brandin Cooks",
-      "team": "SF",
-      "position": "WR",
-      "snap_share_pct": 54.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
-      "signals": [],
-      "news": []
-    },
-    {
-      "id": "10235",
-      "name": "Roschon Johnson",
-      "team": "CHI",
-      "position": "RB",
-      "snap_share_pct": 11.3,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [],
       "news": []
     },
@@ -1137,7 +1086,37 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [],
+      "news": []
+    },
+    {
+      "id": "12542",
+      "name": "Efton Chism III",
+      "team": "NE",
+      "position": "WR",
+      "snap_share_pct": 67.3,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [],
+      "news": []
+    },
+    {
+      "id": "2197",
+      "name": "Brandin Cooks",
+      "team": "SF",
+      "position": "WR",
+      "snap_share_pct": 54.7,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
+      "signals": [],
+      "news": []
+    },
+    {
+      "id": "10235",
+      "name": "Roschon Johnson",
+      "team": "CHI",
+      "position": "RB",
+      "snap_share_pct": 11.3,
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [],
       "news": []
     },
@@ -1147,7 +1126,7 @@
       "team": "JAX",
       "position": "RB",
       "snap_share_pct": null,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1163,7 +1142,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-11-12T22:47:32.585345+00:00",
+      "checked_at": "2026-11-12T23:43:50.083779+00:00",
       "signals": [],
       "news": []
     }

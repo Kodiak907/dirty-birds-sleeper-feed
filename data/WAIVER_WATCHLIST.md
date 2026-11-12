@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-12T22:47:31.246514+00:00
-Sleeper snapshot: 2026-11-12T22:47:25.134887+00:00
+Generated: 2026-11-12T23:43:49.392374+00:00
+Sleeper snapshot: 2026-11-12T23:43:43.329870+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -20,78 +20,78 @@ Sleeper snapshot: 2026-11-12T22:47:25.134887+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Kyler Murray | MIN | 14.82 | 88% | 100.0% | Not flagged |
-| 2 | Baker Mayfield | TB | 12.94 | 88% | 96.7% | Questionable |
+| 1 | Deshaun Watson | CLE | 12.97 | 88% | 98.0% | Not flagged |
+| 2 | Baker Mayfield | TB | 12.88 | 88% | 96.7% | Questionable |
+| 3 | Jacoby Brissett | ARI | 10.52 | 88% | 86.0% | Not flagged |
 
 ### RB
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Zonovan Knight | ARI | 7.06 | 88% | 39.7% | Not flagged |
-| 2 | Samaje Perine | CIN | 6.11 | 100% | 32.7% | Not flagged |
-| 3 | Alvin Kamara | NO | 5.97 | 100% | 43.7% | Not flagged |
-| 4 | Chris Rodriguez Jr. | JAX | 5.76 | 100% | — | Not flagged |
-| 5 | Tyjae Spears | TEN | 5.65 | 100% | 38.0% | Questionable |
-| 6 | Keaton Mitchell | LAC | 4.49 | 100% | 27.0% | Not flagged |
-| 7 | MarShawn Lloyd | GB | 3.68 | 88% | 30.7% | Not flagged |
+| 1 | Zonovan Knight | ARI | 7.11 | 88% | 39.7% | Not flagged |
+| 2 | Samaje Perine | CIN | 6.03 | 100% | 32.7% | Not flagged |
+| 3 | Chris Rodriguez Jr. | JAX | 5.91 | 100% | — | Not flagged |
+| 4 | Tyjae Spears | TEN | 5.40 | 100% | 38.0% | Questionable |
+| 5 | Keaton Mitchell | LAC | 5.09 | 100% | 27.0% | Not flagged |
+| 6 | Alvin Kamara | NO | 4.71 | 100% | 43.7% | Not flagged |
+| 7 | MarShawn Lloyd | GB | 2.42 | 88% | 30.7% | Not flagged |
 | 8 | Tank Bigsby | PHI | 2.17 | 88% | 28.7% | IR |
 | 9 | Jaleel McLaughlin | CLE | 0.86 | 88% | 21.7% | Not flagged |
-| 10 | Emanuel Wilson | SEA | 0.84 | 88% | 26.7% | Not flagged |
+| 10 | Elijah Mitchell | PHI | 0.82 | 88% | 39.7% | Not flagged |
 | 11 | Roschon Johnson | CHI | 0.40 | 88% | 11.3% | Not flagged |
-| 12 | Elijah Mitchell | PHI | 0.38 | 88% | 39.7% | Not flagged |
 
 ### WR
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Tre Tucker | LV | 8.21 | 88% | 66.7% | Not flagged |
-| 2 | Keon Coleman | BUF | 7.20 | 100% | 74.3% | Not flagged |
-| 3 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
-| 4 | Chris Bell | MIA | 5.10 | 100% | 60.0% | Not flagged |
-| 5 | Dontayvion Wicks | PHI | 4.67 | 88% | 79.3% | Questionable |
-| 6 | Rashid Shaheed | SEA | 4.40 | 88% | 41.3% | Not flagged |
-| 7 | Michael Pittman Jr. | PIT | 4.36 | 88% | 77.7% | IR |
-| 8 | Tre' Harris | LAC | 4.14 | 100% | 59.7% | Out |
-| 9 | Mack Hollins | NE | 3.88 | 88% | 61.7% | IR |
-| 10 | Rashod Bateman | BAL | 3.83 | 88% | 70.3% | Not flagged |
-| 11 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
-| 12 | Jauan Jennings | MIN | 2.67 | 100% | 60.0% | Not flagged |
+| 1 | Keon Coleman | BUF | 7.19 | 100% | 74.3% | Not flagged |
+| 2 | Tre Tucker | LV | 6.90 | 88% | 66.7% | Not flagged |
+| 3 | Kalif Raymond | CHI | 5.32 | 88% | 69.7% | Not flagged |
+| 4 | Rashid Shaheed | SEA | 4.47 | 88% | 41.3% | Not flagged |
+| 5 | Dontayvion Wicks | PHI | 4.31 | 88% | 79.3% | Questionable |
+| 6 | Tre' Harris | LAC | 4.15 | 100% | 59.7% | Out |
+| 7 | Mack Hollins | NE | 3.88 | 88% | 61.7% | IR |
+| 8 | Rashod Bateman | BAL | 3.81 | 88% | 70.3% | Not flagged |
+| 9 | Ja'Kobi Lane | BAL | 3.80 | 88% | 63.7% | Not flagged |
+| 10 | Chris Bell | MIA | 3.69 | 100% | 60.0% | Not flagged |
+| 11 | Jauan Jennings | MIN | 2.61 | 88% | 60.0% | Not flagged |
+| 12 | Dohnte Meyers | CIN | 1.96 | 100% | 46.3% | Not flagged |
 
 ### TE
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Chig Okonkwo | WAS | 6.99 | 100% | 75.7% | Not flagged |
-| 2 | Darren Waller | CAR | 6.78 | 100% | 53.3% | Not flagged |
-| 3 | Michael Mayer | LV | 5.45 | 88% | 79.0% | Not flagged |
-| 4 | Noah Fant | NO | 4.82 | 100% | 50.3% | Not flagged |
-| 5 | Colby Parkinson | LAR | 3.41 | 88% | — | Not flagged |
-| 6 | David Njoku | LAC | 3.06 | 88% | 35.5% | IR |
+| 1 | Chig Okonkwo | WAS | 7.57 | 100% | 75.7% | Not flagged |
+| 2 | Darren Waller | CAR | 7.29 | 100% | 53.3% | Not flagged |
+| 3 | Michael Mayer | LV | 5.01 | 88% | 79.0% | Not flagged |
+| 4 | Noah Fant | NO | 4.78 | 100% | 50.3% | Not flagged |
+| 5 | David Njoku | LAC | 3.49 | 100% | 35.5% | IR |
+| 6 | Colby Parkinson | LAR | 3.47 | 88% | — | Not flagged |
 
 ### K
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Drew Stevens | WAS | 6.78 | 100% | — | Not flagged |
-| 2 | Matt Gay | LV | 6.76 | 88% | — | Not flagged |
-| 3 | Chris Boswell | PIT | 6.10 | 100% | — | Not flagged |
-| 4 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
-| 5 | Cairo Santos | CHI | 5.39 | 88% | — | Not flagged |
+| 1 | Drew Stevens | WAS | 6.79 | 100% | — | Not flagged |
+| 2 | Matt Gay | LV | 6.66 | 88% | — | Not flagged |
+| 3 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
+| 4 | Chris Boswell | PIT | 6.08 | 100% | — | Not flagged |
+| 5 | Cairo Santos | CHI | 5.48 | 88% | — | Not flagged |
 
 ### DEF
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Cincinnati Bengals | CIN | 6.21 | 100% | — | Not flagged |
-| 2 | New York Giants | NYG | 5.90 | 100% | — | Not flagged |
-| 3 | Washington Commanders | WAS | 5.75 | 100% | — | Not flagged |
-| 4 | New Orleans Saints | NO | 5.72 | 100% | — | Not flagged |
-| 5 | New England Patriots | NE | 5.65 | 88% | — | Not flagged |
-| 6 | Indianapolis Colts | IND | 5.61 | 88% | — | Not flagged |
-| 7 | Cleveland Browns | CLE | 5.49 | 88% | — | Not flagged |
-| 8 | Los Angeles Chargers | LAC | 5.45 | 100% | — | Not flagged |
-| 9 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
-| 10 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
+| 1 | Cincinnati Bengals | CIN | 6.30 | 100% | — | Not flagged |
+| 2 | Washington Commanders | WAS | 5.87 | 100% | — | Not flagged |
+| 3 | New York Giants | NYG | 5.84 | 100% | — | Not flagged |
+| 4 | New Orleans Saints | NO | 5.69 | 100% | — | Not flagged |
+| 5 | New England Patriots | NE | 5.63 | 88% | — | Not flagged |
+| 6 | Cleveland Browns | CLE | 5.57 | 88% | — | Not flagged |
+| 7 | Indianapolis Colts | IND | 5.53 | 88% | — | Not flagged |
+| 8 | Los Angeles Chargers | LAC | 5.47 | 100% | — | Not flagged |
+| 9 | Tennessee Titans | TEN | 5.02 | 100% | — | Not flagged |
+| 10 | New York Jets | NYJ | 5.01 | 88% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -101,31 +101,31 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 
 | Player | Pos | Team | ROS PPG* | Recent 3-appearance snap share |
 |---|---|---|---:|---:|
-| Kyler Murray | QB | MIN | 14.82 | 100.0% |
-| Baker Mayfield | QB | TB | 12.94 | 96.7% |
-| Tre Tucker | WR | LV | 8.21 | 66.7% |
-| Keon Coleman | WR | BUF | 7.20 | 74.3% |
-| Zonovan Knight | RB | ARI | 7.06 | 39.7% |
-| Chig Okonkwo | TE | WAS | 6.99 | 75.7% |
-| Darren Waller | TE | CAR | 6.78 | 53.3% |
-| Samaje Perine | RB | CIN | 6.11 | 32.7% |
-| Alvin Kamara | RB | NO | 5.97 | 43.7% |
-| Tyjae Spears | RB | TEN | 5.65 | 38.0% |
-| Michael Mayer | TE | LV | 5.45 | 79.0% |
-| Kalif Raymond | WR | CHI | 5.33 | 69.7% |
-| Chris Bell | WR | MIA | 5.10 | 60.0% |
-| Noah Fant | TE | NO | 4.82 | 50.3% |
-| Dontayvion Wicks | WR | PHI | 4.67 | 79.3% |
-| Keaton Mitchell | RB | LAC | 4.49 | 27.0% |
-| Rashid Shaheed | WR | SEA | 4.40 | 41.3% |
-| Michael Pittman Jr. | WR | PIT | 4.36 | 77.7% |
-| Tre' Harris | WR | LAC | 4.14 | 59.7% |
+| Deshaun Watson | QB | CLE | 12.97 | 98.0% |
+| Baker Mayfield | QB | TB | 12.88 | 96.7% |
+| Jacoby Brissett | QB | ARI | 10.52 | 86.0% |
+| Chig Okonkwo | TE | WAS | 7.57 | 75.7% |
+| Darren Waller | TE | CAR | 7.29 | 53.3% |
+| Keon Coleman | WR | BUF | 7.19 | 74.3% |
+| Zonovan Knight | RB | ARI | 7.11 | 39.7% |
+| Tre Tucker | WR | LV | 6.90 | 66.7% |
+| Samaje Perine | RB | CIN | 6.03 | 32.7% |
+| Tyjae Spears | RB | TEN | 5.40 | 38.0% |
+| Kalif Raymond | WR | CHI | 5.32 | 69.7% |
+| Keaton Mitchell | RB | LAC | 5.09 | 27.0% |
+| Michael Mayer | TE | LV | 5.01 | 79.0% |
+| Noah Fant | TE | NO | 4.78 | 50.3% |
+| Alvin Kamara | RB | NO | 4.71 | 43.7% |
+| Rashid Shaheed | WR | SEA | 4.47 | 41.3% |
+| Dontayvion Wicks | WR | PHI | 4.31 | 79.3% |
+| Tre' Harris | WR | LAC | 4.15 | 59.7% |
 | Mack Hollins | WR | NE | 3.88 | 61.7% |
+| Rashod Bateman | WR | BAL | 3.81 | 70.3% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **43**
+Candidates with independently sourced projections AND usage data: **39**
 
 ## Coverage and rules
 

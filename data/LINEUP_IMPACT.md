@@ -1,86 +1,86 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-12T22:47:31.516448+00:00
+Generated: 2026-11-12T23:43:49.632313+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
-Baseline illustrative optimal PPG: **122.93**. Weeks with partial projections and injury status require manual verification.
+Baseline illustrative optimal PPG: **123.20**. Weeks with partial projections and injury status require manual verification.
 
 ## QB
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Kyler Murray | 14.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -0.24 | Partial projection coverage |
-| 2 | Baker Mayfield | 12.94 | Bench-depth scenario: Kirk Cousins | +0.00 | -2.12 | Availability status: questionable; Partial projection coverage |
+| 1 | Deshaun Watson | 12.97 | Bench-depth scenario: Kirk Cousins | +0.00 | -4.40 | Partial projection coverage |
+| 2 | Baker Mayfield | 12.88 | Bench-depth scenario: Kirk Cousins | +0.00 | -4.49 | Availability status: questionable; Partial projection coverage |
+| 3 | Jacoby Brissett | 10.52 | Bench-depth scenario: Kirk Cousins | +0.00 | -6.85 | Partial projection coverage |
 
 ## RB
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Zonovan Knight | 7.06 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.00 | Partial projection coverage |
-| 2 | Samaje Perine | 6.11 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.95 | No flagged data gap; review still required |
-| 3 | Alvin Kamara | 5.97 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.09 | No flagged data gap; review still required |
-| 4 | Chris Rodriguez Jr. | 5.76 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.30 | Limited snap sample |
-| 5 | Tyjae Spears | 5.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.41 | Availability status: questionable |
-| 6 | Keaton Mitchell | 4.49 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.57 | No flagged data gap; review still required |
-| 7 | MarShawn Lloyd | 3.68 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.38 | Partial projection coverage |
-| 8 | Tank Bigsby | 2.17 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.89 | Availability status: ir; Partial projection coverage |
-| 9 | Jaleel McLaughlin | 0.86 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.20 | Partial projection coverage |
-| 10 | Emanuel Wilson | 0.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.22 | Partial projection coverage |
-| 11 | Roschon Johnson | 0.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.66 | Partial projection coverage |
-| 12 | Elijah Mitchell | 0.38 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.68 | Partial projection coverage |
+| 1 | Zonovan Knight | 7.11 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.25 | Partial projection coverage |
+| 2 | Samaje Perine | 6.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.33 | No flagged data gap; review still required |
+| 3 | Chris Rodriguez Jr. | 5.91 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.46 | Limited snap sample |
+| 4 | Tyjae Spears | 5.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.97 | Availability status: questionable |
+| 5 | Keaton Mitchell | 5.09 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.27 | No flagged data gap; review still required |
+| 6 | Alvin Kamara | 4.71 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.65 | No flagged data gap; review still required |
+| 7 | MarShawn Lloyd | 2.42 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.95 | Partial projection coverage |
+| 8 | Tank Bigsby | 2.17 | Bench-depth scenario: Kirk Cousins | +0.00 | -15.19 | Availability status: ir; Partial projection coverage |
+| 9 | Jaleel McLaughlin | 0.86 | Bench-depth scenario: Kirk Cousins | +0.00 | -16.50 | Partial projection coverage |
+| 10 | Elijah Mitchell | 0.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -16.54 | Partial projection coverage |
+| 11 | Roschon Johnson | 0.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -16.97 | Partial projection coverage |
 
 ## WR
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Tre Tucker | 8.21 | Bench-depth scenario: Kirk Cousins | +0.00 | -6.85 | Partial projection coverage |
-| 2 | Keon Coleman | 7.20 | Bench-depth scenario: Kirk Cousins | +0.00 | -7.86 | No flagged data gap; review still required |
-| 3 | Kalif Raymond | 5.33 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.72 | Partial projection coverage |
-| 4 | Chris Bell | 5.10 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.96 | No flagged data gap; review still required |
-| 5 | Dontayvion Wicks | 4.67 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.39 | Availability status: questionable; Partial projection coverage |
-| 6 | Rashid Shaheed | 4.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.66 | Partial projection coverage |
-| 7 | Michael Pittman Jr. | 4.36 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.71 | Availability status: ir; Partial projection coverage |
-| 8 | Tre' Harris | 4.14 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.92 | Availability status: out |
-| 9 | Mack Hollins | 3.88 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.18 | Availability status: ir; Partial projection coverage |
-| 10 | Rashod Bateman | 3.83 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.23 | Partial projection coverage |
-| 11 | Ja'Kobi Lane | 3.81 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.25 | Partial projection coverage |
-| 12 | Jauan Jennings | 2.67 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.39 | No flagged data gap; review still required |
+| 1 | Keon Coleman | 7.19 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.17 | No flagged data gap; review still required |
+| 2 | Tre Tucker | 6.90 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.46 | Partial projection coverage |
+| 3 | Kalif Raymond | 5.32 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.04 | Partial projection coverage |
+| 4 | Rashid Shaheed | 4.47 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.90 | Partial projection coverage |
+| 5 | Dontayvion Wicks | 4.31 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.05 | Availability status: questionable; Partial projection coverage |
+| 6 | Tre' Harris | 4.15 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.22 | Availability status: out |
+| 7 | Mack Hollins | 3.88 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.48 | Availability status: ir; Partial projection coverage |
+| 8 | Rashod Bateman | 3.81 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.55 | Partial projection coverage |
+| 9 | Ja'Kobi Lane | 3.80 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.56 | Partial projection coverage |
+| 10 | Chris Bell | 3.69 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.67 | No flagged data gap; review still required |
+| 11 | Jauan Jennings | 2.61 | Bench-depth scenario: Kirk Cousins | +0.00 | -14.75 | Partial projection coverage |
+| 12 | Dohnte Meyers | 1.96 | Bench-depth scenario: Kirk Cousins | +0.00 | -15.40 | No flagged data gap; review still required |
 
 ## TE
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Chig Okonkwo | 6.99 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.07 | No flagged data gap; review still required |
-| 2 | Darren Waller | 6.78 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.28 | No flagged data gap; review still required |
-| 3 | Michael Mayer | 5.45 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.61 | Partial projection coverage |
-| 4 | Noah Fant | 4.82 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.24 | No flagged data gap; review still required |
-| 5 | Colby Parkinson | 3.41 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.65 | No sourced usage; Partial projection coverage; Limited snap sample |
-| 6 | David Njoku | 3.06 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.01 | Availability status: ir; Partial projection coverage |
+| 1 | Chig Okonkwo | 7.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.79 | No flagged data gap; review still required |
+| 2 | Darren Waller | 7.29 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.08 | No flagged data gap; review still required |
+| 3 | Michael Mayer | 5.01 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.35 | Partial projection coverage |
+| 4 | Noah Fant | 4.78 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.59 | No flagged data gap; review still required |
+| 5 | David Njoku | 3.49 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.88 | Availability status: ir |
+| 6 | Colby Parkinson | 3.47 | Bench-depth scenario: Kirk Cousins | +0.00 | -13.89 | No sourced usage; Partial projection coverage; Limited snap sample |
 
 ## K
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Drew Stevens | 6.78 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.28 | No sourced usage |
-| 2 | Matt Gay | 6.76 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.30 | No sourced usage; Partial projection coverage |
-| 3 | Chris Boswell | 6.10 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.96 | No sourced usage |
-| 4 | Trey Smack | 6.10 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.96 | No sourced usage; Partial projection coverage |
-| 5 | Cairo Santos | 5.39 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.67 | No sourced usage; Partial projection coverage |
+| 1 | Drew Stevens | 6.79 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.57 | No sourced usage |
+| 2 | Matt Gay | 6.66 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.70 | No sourced usage; Partial projection coverage |
+| 3 | Trey Smack | 6.10 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.27 | No sourced usage; Partial projection coverage |
+| 4 | Chris Boswell | 6.08 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.28 | No sourced usage |
+| 5 | Cairo Santos | 5.48 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.89 | No sourced usage; Partial projection coverage |
 
 ## DEF
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Cincinnati Bengals | 6.21 | Bench-depth scenario: Kirk Cousins | +0.00 | -8.85 | No sourced usage |
-| 2 | New York Giants | 5.90 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.16 | No sourced usage |
-| 3 | Washington Commanders | 5.75 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.31 | No sourced usage |
-| 4 | New Orleans Saints | 5.72 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.34 | No sourced usage |
-| 5 | New England Patriots | 5.65 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.41 | No sourced usage; Partial projection coverage |
-| 6 | Indianapolis Colts | 5.61 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.46 | No sourced usage; Partial projection coverage |
-| 7 | Cleveland Browns | 5.49 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.57 | No sourced usage; Partial projection coverage |
-| 8 | Los Angeles Chargers | 5.45 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.61 | No sourced usage |
-| 9 | Tennessee Titans | 5.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.03 | No sourced usage |
-| 10 | New York Jets | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.04 | No sourced usage; Partial projection coverage |
+| 1 | Cincinnati Bengals | 6.30 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.07 | No sourced usage |
+| 2 | Washington Commanders | 5.87 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.50 | No sourced usage |
+| 3 | New York Giants | 5.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.52 | No sourced usage |
+| 4 | New Orleans Saints | 5.69 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.67 | No sourced usage |
+| 5 | New England Patriots | 5.63 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.73 | No sourced usage; Partial projection coverage |
+| 6 | Cleveland Browns | 5.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.79 | No sourced usage; Partial projection coverage |
+| 7 | Indianapolis Colts | 5.53 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.83 | No sourced usage; Partial projection coverage |
+| 8 | Los Angeles Chargers | 5.47 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.89 | No sourced usage |
+| 9 | Tennessee Titans | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.34 | No sourced usage |
+| 10 | New York Jets | 5.01 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.36 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 
