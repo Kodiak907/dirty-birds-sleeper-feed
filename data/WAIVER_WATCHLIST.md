@@ -1,17 +1,17 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-12T02:52:24.993028+00:00
-Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
+Generated: 2026-11-12T03:55:31.207959+00:00
+Sleeper snapshot: 2026-11-12T03:55:26.423390+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 630 |
-| WR | 1287 |
+| RB | 628 |
+| WR | 1290 |
 | TE | 615 |
-| K | 139 |
+| K | 138 |
 | DEF | 13 |
 
 ## Position-specific projection rankings (screening only)
@@ -44,18 +44,18 @@ Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Keon Coleman | BUF | 7.20 | 100% | 74.3% | Not flagged |
-| 2 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
-| 3 | Chris Bell | MIA | 5.10 | 100% | 60.0% | Not flagged |
-| 4 | Dontayvion Wicks | PHI | 4.67 | 88% | 79.3% | Questionable |
-| 5 | Rashid Shaheed | SEA | 4.40 | 88% | 41.3% | Not flagged |
-| 6 | Michael Pittman Jr. | PIT | 4.36 | 88% | 77.7% | IR |
-| 7 | Rashod Bateman | BAL | 3.83 | 88% | 70.3% | Not flagged |
-| 8 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
-| 9 | Mack Hollins | NE | 3.69 | 88% | 61.7% | IR |
-| 10 | Jauan Jennings | MIN | 2.67 | 100% | 60.0% | Not flagged |
-| 11 | Dohnte Meyers | CIN | 1.84 | 100% | 46.3% | Not flagged |
-| 12 | Zachariah Branch | ATL | 1.80 | 75% | 26.0% | Not flagged |
+| 1 | Tre Tucker | LV | 8.21 | 88% | 66.7% | Not flagged |
+| 2 | Keon Coleman | BUF | 7.20 | 100% | 74.3% | Not flagged |
+| 3 | Kalif Raymond | CHI | 5.33 | 88% | 69.7% | Not flagged |
+| 4 | Chris Bell | MIA | 5.10 | 100% | 60.0% | Not flagged |
+| 5 | Dontayvion Wicks | PHI | 4.67 | 88% | 79.3% | Questionable |
+| 6 | Rashid Shaheed | SEA | 4.40 | 88% | 41.3% | Not flagged |
+| 7 | Michael Pittman Jr. | PIT | 4.36 | 88% | 77.7% | IR |
+| 8 | Tre' Harris | LAC | 4.14 | 100% | 59.7% | Out |
+| 9 | Rashod Bateman | BAL | 3.83 | 88% | 70.3% | Not flagged |
+| 10 | Ja'Kobi Lane | BAL | 3.81 | 88% | 63.7% | Not flagged |
+| 11 | Mack Hollins | NE | 3.69 | 88% | 61.7% | IR |
+| 12 | Jauan Jennings | MIN | 2.67 | 100% | 60.0% | Not flagged |
 
 ### TE
 
@@ -72,12 +72,11 @@ Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Dominic Zvada | NYG | 7.02 | 100% | — | Not flagged |
-| 2 | Drew Stevens | WAS | 6.79 | 100% | — | Not flagged |
-| 3 | Matt Gay | LV | 6.73 | 88% | — | Not flagged |
-| 4 | Chris Boswell | PIT | 6.10 | 100% | — | Not flagged |
-| 5 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
-| 6 | Cairo Santos | CHI | 5.39 | 88% | — | Not flagged |
+| 1 | Drew Stevens | WAS | 6.79 | 100% | — | Not flagged |
+| 2 | Matt Gay | LV | 6.73 | 88% | — | Not flagged |
+| 3 | Chris Boswell | PIT | 6.10 | 100% | — | Not flagged |
+| 4 | Trey Smack | GB | 6.10 | 88% | — | Not flagged |
+| 5 | Cairo Santos | CHI | 5.39 | 88% | — | Not flagged |
 
 ### DEF
 
@@ -104,6 +103,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 |---|---|---|---:|---:|
 | Kyler Murray | QB | MIN | 14.82 | 100.0% |
 | Baker Mayfield | QB | TB | 12.94 | 96.7% |
+| Tre Tucker | WR | LV | 8.21 | 66.7% |
 | Keon Coleman | WR | BUF | 7.20 | 74.3% |
 | Zonovan Knight | RB | ARI | 7.06 | 39.7% |
 | Chig Okonkwo | TE | WAS | 6.99 | 75.7% |
@@ -119,14 +119,13 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Keaton Mitchell | RB | LAC | 4.49 | 27.0% |
 | Rashid Shaheed | WR | SEA | 4.40 | 41.3% |
 | Michael Pittman Jr. | WR | PIT | 4.36 | 77.7% |
+| Tre' Harris | WR | LAC | 4.14 | 59.7% |
 | MarShawn Lloyd | RB | GB | 3.96 | 30.7% |
-| Rashod Bateman | WR | BAL | 3.83 | 70.3% |
-| Ja'Kobi Lane | WR | BAL | 3.81 | 63.7% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **40**
+Candidates with independently sourced projections AND usage data: **43**
 
 ## Coverage and rules
 

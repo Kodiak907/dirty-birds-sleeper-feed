@@ -1,17 +1,26 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-12T02:52:24.860301+00:00
-Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
+Generated: 2026-11-12T03:55:31.086361+00:00
+Sleeper snapshot: 2026-11-12T03:55:26.423390+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+**5 transaction changes:** 5 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1426421681911533568` · FREE_AGENT · COMPLETE · BigOlBoyle (#3) | Dropped: Los Angeles Chargers → BigOlBoyle (#3)
+- **NEW** · transaction `1426452364285444096` · FREE_AGENT · COMPLETE · EmanAndYoMomma (#10) | Added: Austin Ekeler → EmanAndYoMomma (#10) | Dropped: Tre Tucker → EmanAndYoMomma (#10)
+- **NEW** · transaction `1426449899498520576` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Dominic Zvada →     Victorious Secret (#5)
+- **NEW** · transaction `1426449754975383552` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
+- **NEW** · transaction `1426449594396479488` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
+- **NEW** · transaction `1426449577141104640` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
+- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
+- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
+- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Dominic Zvada →     Victorious Secret (#5)
+- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE · EmanAndYoMomma (#10) | Added: Austin Ekeler → EmanAndYoMomma (#10) | Dropped: Tre Tucker → EmanAndYoMomma (#10)
 - 2026-11-12T02:52:24.860301+00:00 · new_transaction · FREE_AGENT · COMPLETE · BigOlBoyle (#3) | Dropped: Los Angeles Chargers → BigOlBoyle (#3)
 - 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Kyler Murray → JA’MARRTRIX (#7)
 - 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: J.J. McCarthy → JA’MARRTRIX (#7)
@@ -32,11 +41,6 @@ League: 1399157532559192064
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
 - 2026-11-09T01:03:52.945230+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Cairo Santos → Dirty Birds (#1) | Dropped: Keon Coleman → Dirty Birds (#1)
 - 2026-11-08T04:53:37.991887+00:00 · new_transaction · TRADE · COMPLETE · BigOlBoyle (#3), Cokerthestroker (#12) | Added: Bhayshul Tuten → BigOlBoyle (#3), Mike Gesicki → BigOlBoyle (#3), Jaylen Warren → Cokerthestroker (#12) | Dropped: Bhayshul Tuten → Cokerthestroker (#12), Mike Gesicki → Cokerthestroker (#12), Jaylen Warren → BigOlBoyle (#3)
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · To Infinity and Bijan (#9) | Added: Kyle Monangai → To Infinity and Bijan (#9) | FAAB bid: $0
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Makai Lemon → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
 
 ## Important limits
 

@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-12T02:52:28.293308+00:00",
-  "source_snapshot_utc": "2026-11-12T02:52:20.394517+00:00",
-  "source_market_as_of": "2026-11-11T15:06:19.371673+00:00",
+  "generated_at_utc": "2026-11-12T03:55:34.486509+00:00",
+  "source_snapshot_utc": "2026-11-12T03:55:26.423390+00:00",
+  "source_market_as_of": "2026-11-12T03:55:31.824071+00:00",
   "source_projection_as_of": "2026-11-11T21:36:20.732999+00:00",
   "focus_assets": [
     {
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 8946,
-  "market_screened": 2207,
+  "tested": 8712,
+  "market_screened": 2131,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -91,7 +91,7 @@
           "opponent": "DANGER CLOSE ",
           "our_lineup_delta_ppg": 2.03,
           "their_lineup_delta_ppg": 0.37,
-          "value_paid_received_ratio": 0.813,
+          "value_paid_received_ratio": 0.804,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -129,7 +129,7 @@
           "opponent": "    Victorious Secret",
           "our_lineup_delta_ppg": 1.54,
           "their_lineup_delta_ppg": 0.43,
-          "value_paid_received_ratio": 0.748,
+          "value_paid_received_ratio": 0.744,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -191,6 +191,11 @@
           ],
           "receive": [
             {
+              "id": "8161",
+              "name": "Malik Willis",
+              "position": "QB"
+            },
+            {
               "id": "10229",
               "name": "Rashee Rice",
               "position": "WR"
@@ -200,9 +205,9 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.09,
           "their_lineup_delta_ppg": 0.4,
-          "value_paid_received_ratio": 1.171,
+          "value_paid_received_ratio": 1.04,
           "our_extra_cut": null,
-          "opponent_extra_cut": "Jonathon Brooks",
+          "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -224,21 +229,21 @@
           ],
           "receive": [
             {
-              "id": "8161",
-              "name": "Malik Willis",
-              "position": "QB"
-            },
-            {
               "id": "10229",
               "name": "Rashee Rice",
               "position": "WR"
+            },
+            {
+              "id": "4943",
+              "name": "Sam Darnold",
+              "position": "QB"
             }
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 1.09,
           "their_lineup_delta_ppg": 0.4,
-          "value_paid_received_ratio": 1.003,
+          "value_paid_received_ratio": 1.042,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -248,7 +253,7 @@
           ]
         }
       ],
-      "candidate_count": 132
+      "candidate_count": 124
     },
     {
       "asset": "Patrick Mahomes",

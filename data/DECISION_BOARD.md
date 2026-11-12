@@ -33,18 +33,18 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keon Coleman | 7.20 | +4.89 | 74.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
-| 2 | Kalif Raymond | 5.33 | +3.02 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 3 | Chris Bell | 5.10 | +2.79 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 4 | Dontayvion Wicks | 4.67 | +2.35 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 5 | Rashid Shaheed | 4.40 | +2.08 | 41.3% | Tgt 5.0 | injury_report_observation_review |
-| 6 | Michael Pittman Jr. | 4.36 | +2.04 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 7 | Rashod Bateman | 3.83 | +1.51 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 8 | Ja'Kobi Lane | 3.81 | +1.50 | 63.7% | Tgt 2.0 | injury_report_observation_review |
-| 9 | Mack Hollins | 3.69 | +1.38 | 61.7% | Tgt 6.3 | sleeper_injury_ir, injury_report_observation_review |
-| 10 | Jauan Jennings | 2.67 | +0.36 | 60.0% | Tgt 2.0 | injury_report_observation_review |
-| 11 | Dohnte Meyers | 1.84 | -0.47 | 46.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
-| 12 | Zachariah Branch | 1.80 | -0.51 | 26.0% | Tgt 1.3 | projection_weeks_partial, injury_report_observation_review |
+| 1 | Tre Tucker | 8.21 | +5.90 | 66.7% | Tgt 7.0 | No modeled flags (not medically cleared) |
+| 2 | Keon Coleman | 7.20 | +4.89 | 74.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 3 | Kalif Raymond | 5.33 | +3.02 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 4 | Chris Bell | 5.10 | +2.79 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 5 | Dontayvion Wicks | 4.67 | +2.35 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 6 | Rashid Shaheed | 4.40 | +2.08 | 41.3% | Tgt 5.0 | injury_report_observation_review |
+| 7 | Michael Pittman Jr. | 4.36 | +2.04 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 8 | Tre' Harris | 4.14 | +1.83 | 59.7% | Tgt 4.7 | sleeper_injury_out |
+| 9 | Rashod Bateman | 3.83 | +1.51 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 10 | Ja'Kobi Lane | 3.81 | +1.50 | 63.7% | Tgt 2.0 | injury_report_observation_review |
+| 11 | Mack Hollins | 3.69 | +1.38 | 61.7% | Tgt 6.3 | sleeper_injury_ir, injury_report_observation_review |
+| 12 | Jauan Jennings | 2.67 | +0.36 | 60.0% | Tgt 2.0 | injury_report_observation_review |
 
 ## TE — reference: Isaiah Likely (9.86 PPG)
 
@@ -61,12 +61,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Dominic Zvada | 7.02 | -0.16 | — | — | No modeled flags (not medically cleared) |
-| 2 | Drew Stevens | 6.79 | -0.39 | — | — | No modeled flags (not medically cleared) |
-| 3 | Matt Gay | 6.73 | -0.45 | — | — | No modeled flags (not medically cleared) |
-| 4 | Chris Boswell | 6.10 | -1.08 | — | — | No modeled flags (not medically cleared) |
-| 5 | Trey Smack | 6.10 | -1.08 | — | — | No modeled flags (not medically cleared) |
-| 6 | Cairo Santos | 5.39 | -1.79 | — | — | No modeled flags (not medically cleared) |
+| 1 | Drew Stevens | 6.79 | -0.39 | — | — | No modeled flags (not medically cleared) |
+| 2 | Matt Gay | 6.73 | -0.45 | — | — | No modeled flags (not medically cleared) |
+| 3 | Chris Boswell | 6.10 | -1.08 | — | — | No modeled flags (not medically cleared) |
+| 4 | Trey Smack | 6.10 | -1.08 | — | — | No modeled flags (not medically cleared) |
+| 5 | Cairo Santos | 5.39 | -1.79 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: Jacksonville Jaguars (6.83 PPG)
 

@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-12T02:52:24.940440+00:00",
+  "generated_at_utc": "2026-11-12T03:55:31.167459+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -3693,35 +3693,35 @@
           ]
         },
         {
-          "actual_points_total": 9.3,
-          "actual_points_weekly_avg": 1.03,
-          "id": "12509",
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "12491",
           "n_weeks": 9,
-          "name": "Tre' Harris",
-          "nonzero_weeks": 3,
+          "name": "Corey Kiner",
+          "nonzero_weeks": 0,
           "on_fantasy_reserve": false,
-          "position": "WR",
+          "position": "RB",
           "weekly_points": [
             0.0,
             0.0,
             0.0,
             0.0,
-            2.6,
             0.0,
             0.0,
-            4.6,
-            2.1
+            0.0,
+            0.0,
+            0.0
           ]
         },
         {
-          "actual_points_total": 19.7,
-          "actual_points_weekly_avg": 2.19,
-          "id": "12542",
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "13833",
           "n_weeks": 9,
-          "name": "Efton Chism III",
-          "nonzero_weeks": 3,
+          "name": "Dominic Zvada",
+          "nonzero_weeks": 0,
           "on_fantasy_reserve": false,
-          "position": "WR",
+          "position": "K",
           "weekly_points": [
             0.0,
             0.0,
@@ -3729,9 +3729,9 @@
             0.0,
             0.0,
             0.0,
-            2.1,
-            4.2,
-            13.4
+            0.0,
+            0.0,
+            0.0
           ]
         },
         {
@@ -4074,6 +4074,27 @@
               12.0,
               10.0
             ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "13833",
+            "n_weeks": 9,
+            "name": "Dominic Zvada",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "K",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "QB": [
@@ -4182,6 +4203,27 @@
               7.8,
               12.1,
               9.0
+            ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "12491",
+            "n_weeks": 9,
+            "name": "Corey Kiner",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -4354,48 +4396,6 @@
               3.0,
               7.2,
               4.7
-            ]
-          },
-          {
-            "actual_points_total": 19.7,
-            "actual_points_weekly_avg": 2.19,
-            "id": "12542",
-            "n_weeks": 9,
-            "name": "Efton Chism III",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              2.1,
-              4.2,
-              13.4
-            ]
-          },
-          {
-            "actual_points_total": 9.3,
-            "actual_points_weekly_avg": 1.03,
-            "id": "12509",
-            "n_weeks": 9,
-            "name": "Tre' Harris",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              2.6,
-              0.0,
-              0.0,
-              4.6,
-              2.1
             ]
           }
         ]
@@ -7903,7 +7903,7 @@
     {
       "completed_trade_count": 0,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 92.4,
+      "observed_optimal_average": 88.61,
       "observed_optimal_lineup": [
         {
           "avg": 22.46,
@@ -7921,13 +7921,13 @@
           "position": "RB"
         },
         {
-          "avg": 10.53,
-          "name": "Tre Tucker",
+          "avg": 10.19,
+          "name": "Jameson Williams",
           "position": "WR"
         },
         {
-          "avg": 10.19,
-          "name": "Jameson Williams",
+          "avg": 6.82,
+          "name": "DK Metcalf",
           "position": "WR"
         },
         {
@@ -7946,38 +7946,17 @@
           "position": "DEF"
         },
         {
-          "avg": 6.82,
-          "name": "DK Metcalf",
+          "avg": 6.79,
+          "name": "Keenan Allen",
           "position": "WR"
         },
         {
-          "avg": 6.79,
-          "name": "Keenan Allen",
+          "avg": 6.74,
+          "name": "Khalil Shakir",
           "position": "WR"
         }
       ],
       "players": [
-        {
-          "actual_points_total": 94.8,
-          "actual_points_weekly_avg": 10.53,
-          "id": "10213",
-          "n_weeks": 9,
-          "name": "Tre Tucker",
-          "nonzero_weeks": 8,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            3.7,
-            21.4,
-            6.3,
-            6.4,
-            5.5,
-            25.2,
-            18.8,
-            0.0,
-            7.5
-          ]
-        },
         {
           "actual_points_total": 79.0,
           "actual_points_weekly_avg": 8.78,
@@ -8018,6 +7997,27 @@
             4.6,
             10.2,
             4.6
+          ]
+        },
+        {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "4663",
+          "n_weeks": 9,
+          "name": "Austin Ekeler",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
           ]
         },
         {
@@ -8448,6 +8448,27 @@
               2.0,
               5.2
             ]
+          },
+          {
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "4663",
+            "n_weeks": 9,
+            "name": "Austin Ekeler",
+            "nonzero_weeks": 0,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "TE": [
@@ -8495,27 +8516,6 @@
           }
         ],
         "WR": [
-          {
-            "actual_points_total": 94.8,
-            "actual_points_weekly_avg": 10.53,
-            "id": "10213",
-            "n_weeks": 9,
-            "name": "Tre Tucker",
-            "nonzero_weeks": 8,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              3.7,
-              21.4,
-              6.3,
-              6.4,
-              5.5,
-              25.2,
-              18.8,
-              0.0,
-              7.5
-            ]
-          },
           {
             "actual_points_total": 91.7,
             "actual_points_weekly_avg": 10.19,
@@ -10229,6 +10229,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-12T02:52:20.394517+00:00",
+  "snapshot_utc": "2026-11-12T03:55:26.423390+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-9"
 }

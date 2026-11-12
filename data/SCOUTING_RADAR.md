@@ -1,11 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-12T02:52:24.891299+00:00
-Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
+Generated: 2026-11-12T03:55:31.109327+00:00
+Sleeper snapshot: 2026-11-12T03:55:26.423390+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
+Roster change entries: 2. New completed trade entries: 0.
 
-- BigOlBoyle: added none; dropped Los Angeles Chargers
+- Victorious Secret: added Corey Kiner, Dominic Zvada; dropped Tre' Harris, Efton Chism III
+- EmanAndYoMomma: added Austin Ekeler; dropped Tre Tucker
 
 ## Limits
 

@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-12T02:52:20.394517+00:00",
+  "fetched_at_utc": "2026-11-12T03:55:26.423390+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1426421682028957696",
+    "last_message_id": "1426452364444864512",
     "last_message_text_map": null,
-    "last_message_time": 1794447939931,
+    "last_message_time": 1794455255188,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -6074,8 +6074,8 @@
         "matchup_id": 4,
         "players": [
           "11584",
-          "12509",
-          "12542",
+          "12491",
+          "13833",
           "1466",
           "2216",
           "4039",
@@ -6093,8 +6093,8 @@
         ],
         "players_points": {
           "11584": 0.0,
-          "12509": 0.0,
-          "12542": 0.0,
+          "12491": 0.0,
+          "13833": 0.0,
           "1466": 0.0,
           "2216": 0.0,
           "4039": 0.0,
@@ -6114,14 +6114,14 @@
         "roster_id": 5,
         "starters": [
           "6770",
-          "11584",
+          "12491",
           "9224",
           "8112",
           "4983",
           "1466",
-          "7611",
+          "7002",
           "9480",
-          "6650",
+          "13833",
           "MIN"
         ],
         "starters_points": [
@@ -6429,9 +6429,9 @@
         "custom_points": null,
         "matchup_id": 6,
         "players": [
-          "10213",
           "11539",
           "1479",
+          "4663",
           "4866",
           "4984",
           "5012",
@@ -6446,9 +6446,9 @@
           "LAR"
         ],
         "players_points": {
-          "10213": 0.0,
           "11539": 0.0,
           "1479": 0.0,
+          "4663": 0.0,
           "4866": 0.0,
           "4984": 0.0,
           "5012": 0.0,
@@ -6466,8 +6466,8 @@
         "roster_id": 10,
         "starters": [
           "4984",
-          "4866",
-          "6806",
+          "8408",
+          "4663",
           "8148",
           "8134",
           "5012",
@@ -13472,8 +13472,8 @@
       "player_map": null,
       "players": [
         "11584",
-        "12509",
-        "12542",
+        "12491",
+        "13833",
         "1466",
         "2216",
         "4039",
@@ -13507,14 +13507,14 @@
       },
       "starters": [
         "6770",
-        "11584",
+        "12491",
         "9224",
         "8112",
         "4983",
         "1466",
-        "7611",
+        "7002",
         "9480",
-        "6650",
+        "13833",
         "MIN"
       ],
       "taxi": null
@@ -13781,9 +13781,9 @@
       "owner_id": "1311546446310313984",
       "player_map": null,
       "players": [
-        "10213",
         "11539",
         "1479",
+        "4663",
         "4866",
         "4984",
         "5012",
@@ -13815,8 +13815,8 @@
       },
       "starters": [
         "4984",
-        "4866",
-        "6806",
+        "8408",
+        "4663",
         "8148",
         "8134",
         "5012",
@@ -14578,6 +14578,123 @@
       }
     ],
     "10": [
+      {
+        "adds": {
+          "4663": 10
+        },
+        "consenter_ids": [
+          10
+        ],
+        "created": 1794455255150,
+        "creator": "1311546446310313984",
+        "draft_picks": [],
+        "drops": {
+          "10213": 10
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          10
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794455255150,
+        "transaction_id": "1426452364285444096",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "13833": 5
+        },
+        "consenter_ids": [
+          5
+        ],
+        "created": 1794454667499,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794454667499,
+        "transaction_id": "1426449899498520576",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": null,
+        "consenter_ids": [
+          5
+        ],
+        "created": 1794454633042,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": {
+          "12542": 5
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794454633042,
+        "transaction_id": "1426449754975383552",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": {
+          "12491": 5
+        },
+        "consenter_ids": [
+          5
+        ],
+        "created": 1794454594758,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794454594758,
+        "transaction_id": "1426449594396479488",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
+      {
+        "adds": null,
+        "consenter_ids": [
+          5
+        ],
+        "created": 1794454590643,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": {
+          "12509": 5
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794454590643,
+        "transaction_id": "1426449577141104640",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": null,
         "consenter_ids": [

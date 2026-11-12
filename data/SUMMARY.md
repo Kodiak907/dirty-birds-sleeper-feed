@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-12T02:52:20.394517+00:00
+Updated: 2026-11-12T03:55:26.423390+00:00
 League: 1399157532559192064
 NFL week: 10
 
@@ -19,9 +19,15 @@ NFL week: 10
 - Roster 12: Cokerthestroker | 6-3 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 3: added none; dropped Los Angeles Chargers
-- lineup_change â roster/transaction 3
-- Transaction 1426421681911533568: free_agent / complete / rosters [3] / adds None / drops {'LAC': 3} / FAAB bid None
+- Roster 5: added Corey Kiner, Dominic Zvada; dropped Tre' Harris, Efton Chism III
+- lineup_change â roster/transaction 5
+- Roster 10: added Austin Ekeler; dropped Tre Tucker
+- lineup_change â roster/transaction 10
+- Transaction 1426452364285444096: free_agent / complete / rosters [10] / adds {'4663': 10} / drops {'10213': 10} / FAAB bid None
+- Transaction 1426449899498520576: free_agent / complete / rosters [5] / adds {'13833': 5} / drops None / FAAB bid None
+- Transaction 1426449754975383552: free_agent / complete / rosters [5] / adds None / drops {'12542': 5} / FAAB bid None
+- Transaction 1426449594396479488: free_agent / complete / rosters [5] / adds {'12491': 5} / drops None / FAAB bid None
+- Transaction 1426449577141104640: free_agent / complete / rosters [5] / adds None / drops {'12509': 5} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -25,7 +25,7 @@
       "ppg": 2.311
     }
   },
-  "generated_at_utc": "2026-11-12T02:52:25.116892+00:00",
+  "generated_at_utc": "2026-11-12T03:55:31.299617+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -251,28 +251,6 @@
       }
     ],
     "K": [
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Dominic Zvada",
-        "ppg": 7.02,
-        "replacement_reference": {
-          "name": "Will Reichard",
-          "ppg": 7.179
-        },
-        "same_position_uplift_ppg": -0.16,
-        "screen_only": true,
-        "sleeper_id": "13833",
-        "team": "NYG"
-      },
       {
         "audit": {
           "carries_per_game": null,
@@ -908,6 +886,28 @@
         "audit": {
           "carries_per_game": 0.0,
           "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.875,
+          "recent_snap_pct": 66.7,
+          "snap_trend_3_appearances_pp": -18.0,
+          "targets_per_game": 7.0
+        },
+        "name": "Tre Tucker",
+        "ppg": 8.21,
+        "replacement_reference": {
+          "name": "Tank Dell",
+          "ppg": 2.311
+        },
+        "same_position_uplift_ppg": 5.9,
+        "screen_only": true,
+        "sleeper_id": "10213",
+        "team": "LV"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
           "injury_report_observation": {
             "practice_status": "Limited Participation in Practice",
             "week": "9"
@@ -1063,6 +1063,33 @@
       {
         "audit": {
           "carries_per_game": 0.0,
+          "flags": [
+            "sleeper_injury_out"
+          ],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "8"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 59.7,
+          "snap_trend_3_appearances_pp": 38.0,
+          "targets_per_game": 4.67
+        },
+        "name": "Tre' Harris",
+        "ppg": 4.14,
+        "replacement_reference": {
+          "name": "Tank Dell",
+          "ppg": 2.311
+        },
+        "same_position_uplift_ppg": 1.83,
+        "screen_only": true,
+        "sleeper_id": "12509",
+        "team": "LAC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -1172,6 +1199,28 @@
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.875,
+          "recent_snap_pct": 67.3,
+          "snap_trend_3_appearances_pp": -12.0,
+          "targets_per_game": 3.67
+        },
+        "name": "Efton Chism III",
+        "ppg": 2.34,
+        "replacement_reference": {
+          "name": "Tank Dell",
+          "ppg": 2.311
+        },
+        "same_position_uplift_ppg": 0.03,
+        "screen_only": true,
+        "sleeper_id": "12542",
+        "team": "NE"
       },
       {
         "audit": {
@@ -1299,5 +1348,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-12T02:52:20.394517+00:00"
+  "snapshot_utc": "2026-11-12T03:55:26.423390+00:00"
 }
