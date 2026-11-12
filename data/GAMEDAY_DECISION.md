@@ -1,15 +1,15 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 10 | Snapshot: 2026-11-12T08:59:49.590514+00:00
+Week 10 | Snapshot: 2026-11-12T10:00:23.642121+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
 Manually verified official-release submissions: 0; no_verified_official_submissions.
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
-Baseline projected lineup: 131.23.
-Hard-tag exclusion projected lineup: 128.78.
-Conditional projected difference: -2.45.
+Baseline projected lineup: 131.81.
+Hard-tag exclusion projected lineup: 129.47.
+Conditional projected difference: -2.34.
 
 ## Hard-tag excluded from provisional lineup
 
@@ -28,7 +28,7 @@ None in Sleeper tags; absence of flags is NOT active confirmation.
 
 ## Proposed conditional substitutions
 
-Potentially added: Antonio Williams
+Potentially added: Caleb Douglas
 Potentially removed: Deebo Samuel Sr.
 
 ## Mandatory verification

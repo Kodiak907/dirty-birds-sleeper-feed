@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-12T08:59:58.534161+00:00",
-  "source_snapshot_utc": "2026-11-12T08:59:49.590514+00:00",
+  "generated_at_utc": "2026-11-12T10:00:31.666644+00:00",
+  "source_snapshot_utc": "2026-11-12T10:00:23.642121+00:00",
   "source_market_as_of": "2026-11-12T03:55:31.824071+00:00",
-  "source_projection_as_of": "2026-11-11T21:36:20.732999+00:00",
+  "source_projection_as_of": "2026-11-12T10:00:28.592247+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 8712,
-  "market_screened": 2131,
+  "tested": 8946,
+  "market_screened": 2207,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -51,8 +51,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.03,
-          "their_lineup_delta_ppg": 0.37,
+          "our_lineup_delta_ppg": 1.88,
+          "their_lineup_delta_ppg": 0.42,
           "value_paid_received_ratio": 0.896,
           "our_extra_cut": null,
           "opponent_extra_cut": "Brian Thomas Jr.",
@@ -89,8 +89,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 2.03,
-          "their_lineup_delta_ppg": 0.37,
+          "our_lineup_delta_ppg": 1.88,
+          "their_lineup_delta_ppg": 0.42,
           "value_paid_received_ratio": 0.804,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -127,8 +127,8 @@
           ],
           "opponent_roster_id": 5,
           "opponent": "    Victorious Secret",
-          "our_lineup_delta_ppg": 1.54,
-          "their_lineup_delta_ppg": 0.43,
+          "our_lineup_delta_ppg": 1.45,
+          "their_lineup_delta_ppg": 0.48,
           "value_paid_received_ratio": 0.744,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -165,8 +165,8 @@
           ],
           "opponent_roster_id": 5,
           "opponent": "    Victorious Secret",
-          "our_lineup_delta_ppg": 1.35,
-          "their_lineup_delta_ppg": 0.43,
+          "our_lineup_delta_ppg": 1.25,
+          "their_lineup_delta_ppg": 0.48,
           "value_paid_received_ratio": 0.725,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -203,8 +203,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.09,
-          "their_lineup_delta_ppg": 0.4,
+          "our_lineup_delta_ppg": 0.89,
+          "their_lineup_delta_ppg": 0.6,
           "value_paid_received_ratio": 1.04,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -241,8 +241,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 1.09,
-          "their_lineup_delta_ppg": 0.4,
+          "our_lineup_delta_ppg": 0.89,
+          "their_lineup_delta_ppg": 0.6,
           "value_paid_received_ratio": 1.042,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -253,7 +253,7 @@
           ]
         }
       ],
-      "candidate_count": 124
+      "candidate_count": 86
     },
     {
       "asset": "Patrick Mahomes",

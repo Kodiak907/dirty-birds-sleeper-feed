@@ -1,6 +1,6 @@
 {
   "added_starters": [
-    "Antonio Williams"
+    "Caleb Douglas"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
@@ -8,13 +8,13 @@
       "Pat Bryant",
       "Jonah Coleman"
     ],
-    "ppg": 131.23,
+    "ppg": 131.81,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 16.63
+        "ppg": 17.05
       },
       {
         "id": "4034",
@@ -44,52 +44,52 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 10.25
+        "ppg": 10.28
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.79
+        "ppg": 6.8
       },
       {
         "id": "JAX",
         "name": "Jacksonville Jaguars",
         "position": "DEF",
-        "ppg": 7.67
+        "ppg": 7.56
       },
       {
         "id": "5859",
         "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 11.46
+        "ppg": 11.96
       },
       {
         "id": "5872",
         "name": "Deebo Samuel Sr.",
         "position": "WR",
-        "ppg": 8.83
+        "ppg": 8.56
       }
     ]
   },
-  "difference_ppg": -2.45,
+  "difference_ppg": -2.34,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "5872",
     "9502"
   ],
-  "generated_at_utc": "2026-11-12T09:00:00.347903+00:00",
+  "generated_at_utc": "2026-11-12T10:00:33.682619+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [],
-    "ppg": 128.78,
+    "ppg": 129.47,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 16.63
+        "ppg": 17.05
       },
       {
         "id": "4034",
@@ -119,31 +119,31 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 10.25
+        "ppg": 10.28
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.79
+        "ppg": 6.8
       },
       {
         "id": "JAX",
         "name": "Jacksonville Jaguars",
         "position": "DEF",
-        "ppg": 7.67
+        "ppg": 7.56
       },
       {
         "id": "5859",
         "name": "A.J. Brown",
         "position": "WR",
-        "ppg": 11.46
+        "ppg": 11.96
       },
       {
-        "id": "13301",
-        "name": "Antonio Williams",
+        "id": "13296",
+        "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 6.38
+        "ppg": 6.22
       }
     ]
   },
@@ -322,8 +322,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-12T08:59:49.590514+00:00",
-  "source_availability_generated_at_utc": "2026-11-12T08:59:59.264524+00:00",
+  "snapshot_utc": "2026-11-12T10:00:23.642121+00:00",
+  "source_availability_generated_at_utc": "2026-11-12T10:00:32.536153+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

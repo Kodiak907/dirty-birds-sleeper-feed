@@ -1,25 +1,25 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-12T08:59:58.779640+00:00 | Forecast as of: 2026-11-11T21:36:20.732999+00:00
+Generated: 2026-11-12T10:00:32.006136+00:00 | Forecast as of: 2026-11-12T10:00:28.592247+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 10
 
-**Projected optimal score:** 131.23
+**Projected optimal score:** 131.81
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | CLE | 16.63 |
+| C.J. Stroud | QB | CLE | 17.05 |
 | Christian McCaffrey | RB | DAL | 20.06 |
 | Kyren Williams | RB | ARI | 15.78 |
 | Jaxon Smith-Njigba | WR | LV | 20.21 |
 | Zay Flowers | WR | LAC | 13.55 |
-| Isaiah Likely | TE | WAS | 10.25 |
-| Will Reichard | K | GB | 6.79 |
-| Jacksonville Jaguars | DEF | TEN | 7.67 |
-| A.J. Brown | WR | DET | 11.46 |
-| Deebo Samuel Sr. | WR | DAL | 8.83 |
+| Isaiah Likely | TE | WAS | 10.28 |
+| Will Reichard | K | GB | 6.80 |
+| Jacksonville Jaguars | DEF | TEN | 7.56 |
+| A.J. Brown | WR | DET | 11.96 |
+| Deebo Samuel Sr. | WR | DAL | 8.56 |
 
 ## Week 11
 
