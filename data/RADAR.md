@@ -1,18 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-12T03:55:31.086361+00:00
-Sleeper snapshot: 2026-11-12T03:55:26.423390+00:00
+Generated: 2026-11-12T04:59:53.926579+00:00
+Sleeper snapshot: 2026-11-12T04:59:47.274361+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**5 transaction changes:** 5 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1426452364285444096` · FREE_AGENT · COMPLETE · EmanAndYoMomma (#10) | Added: Austin Ekeler → EmanAndYoMomma (#10) | Dropped: Tre Tucker → EmanAndYoMomma (#10)
-- **NEW** · transaction `1426449899498520576` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Dominic Zvada →     Victorious Secret (#5)
-- **NEW** · transaction `1426449754975383552` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
-- **NEW** · transaction `1426449594396479488` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
-- **NEW** · transaction `1426449577141104640` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

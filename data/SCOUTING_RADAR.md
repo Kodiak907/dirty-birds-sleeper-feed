@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-12T03:55:31.109327+00:00
-Sleeper snapshot: 2026-11-12T03:55:26.423390+00:00
+Generated: 2026-11-12T04:59:53.953614+00:00
+Sleeper snapshot: 2026-11-12T04:59:47.274361+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- Victorious Secret: added Corey Kiner, Dominic Zvada; dropped Tre' Harris, Efton Chism III
-- EmanAndYoMomma: added Austin Ekeler; dropped Tre Tucker
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
