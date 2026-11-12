@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-12T01:08:59.365491+00:00",
+  "fetched_at_utc": "2026-11-12T02:52:20.394517+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1426294112595746816",
+    "last_message_id": "1426421682028957696",
     "last_message_text_map": null,
-    "last_message_time": 1794417525008,
+    "last_message_time": 1794447939931,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -5946,8 +5946,7 @@
           "6813",
           "7543",
           "8126",
-          "DAL",
-          "LAC"
+          "DAL"
         ],
         "players_points": {
           "11586": 0.0,
@@ -5967,21 +5966,20 @@
           "6813": 0.0,
           "7543": 0.0,
           "8126": 0.0,
-          "DAL": 0.0,
-          "LAC": 0.0
+          "DAL": 0.0
         },
         "points": 0.0,
         "roster_id": 3,
         "starters": [
           "1373",
           "6813",
-          "12507",
+          "12490",
           "11632",
           "6801",
-          "12517",
+          "4993",
           "11586",
-          "11624",
-          "650",
+          "8126",
+          "4227",
           "DAL"
         ],
         "starters_points": [
@@ -13365,8 +13363,7 @@
         "6813",
         "7543",
         "8126",
-        "DAL",
-        "LAC"
+        "DAL"
       ],
       "reserve": null,
       "roster_id": 3,
@@ -13387,13 +13384,13 @@
       "starters": [
         "1373",
         "6813",
-        "12507",
+        "12490",
         "11632",
         "6801",
-        "12517",
+        "4993",
         "11586",
-        "11624",
-        "650",
+        "8126",
+        "4227",
         "DAL"
       ],
       "taxi": null
@@ -14581,6 +14578,29 @@
       }
     ],
     "10": [
+      {
+        "adds": null,
+        "consenter_ids": [
+          3
+        ],
+        "created": 1794447939902,
+        "creator": "1399196890498596864",
+        "draft_picks": [],
+        "drops": {
+          "LAC": 3
+        },
+        "leg": 10,
+        "metadata": null,
+        "roster_ids": [
+          3
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1794447939902,
+        "transaction_id": "1426421681911533568",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "11565": 7

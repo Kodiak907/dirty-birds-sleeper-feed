@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-12T01:09:04.552077+00:00
-Sleeper snapshot: 2026-11-12T01:08:59.365491+00:00
+Generated: 2026-11-12T02:52:24.993028+00:00
+Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -12,7 +12,7 @@ Sleeper snapshot: 2026-11-12T01:08:59.365491+00:00
 | WR | 1287 |
 | TE | 615 |
 | K | 139 |
-| DEF | 12 |
+| DEF | 13 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -90,8 +90,9 @@ Sleeper snapshot: 2026-11-12T01:08:59.365491+00:00
 | 5 | New England Patriots | NE | 5.60 | 88% | — | Not flagged |
 | 6 | Indianapolis Colts | IND | 5.59 | 88% | — | Not flagged |
 | 7 | Cleveland Browns | CLE | 5.46 | 88% | — | Not flagged |
-| 8 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
-| 9 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
+| 8 | Los Angeles Chargers | LAC | 5.45 | 100% | — | Not flagged |
+| 9 | Tennessee Titans | TEN | 5.03 | 100% | — | Not flagged |
+| 10 | New York Jets | NYJ | 5.02 | 88% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 

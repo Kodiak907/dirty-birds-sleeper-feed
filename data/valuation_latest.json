@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-12T01:09:04.510872+00:00",
+  "generated_at_utc": "2026-11-12T02:52:24.940440+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -1869,7 +1869,7 @@
     {
       "completed_trade_count": 1,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 99.79,
+      "observed_optimal_average": 97.57,
       "observed_optimal_lineup": [
         {
           "avg": 9.29,
@@ -1907,8 +1907,8 @@
           "position": "K"
         },
         {
-          "avg": 4.44,
-          "name": "Los Angeles Chargers",
+          "avg": 2.22,
+          "name": "Dallas Cowboys",
           "position": "DEF"
         },
         {
@@ -2300,52 +2300,10 @@
             9.0,
             7.0
           ]
-        },
-        {
-          "actual_points_total": 40.0,
-          "actual_points_weekly_avg": 4.44,
-          "id": "LAC",
-          "n_weeks": 9,
-          "name": "Los Angeles Chargers",
-          "nonzero_weeks": 8,
-          "on_fantasy_reserve": false,
-          "position": "DEF",
-          "weekly_points": [
-            1.0,
-            5.0,
-            17.0,
-            6.0,
-            5.0,
-            4.0,
-            0.0,
-            3.0,
-            -1.0
-          ]
         }
       ],
       "positions": {
         "DEF": [
-          {
-            "actual_points_total": 40.0,
-            "actual_points_weekly_avg": 4.44,
-            "id": "LAC",
-            "n_weeks": 9,
-            "name": "Los Angeles Chargers",
-            "nonzero_weeks": 8,
-            "on_fantasy_reserve": false,
-            "position": "DEF",
-            "weekly_points": [
-              1.0,
-              5.0,
-              17.0,
-              6.0,
-              5.0,
-              4.0,
-              0.0,
-              3.0,
-              -1.0
-            ]
-          },
           {
             "actual_points_total": 20.0,
             "actual_points_weekly_avg": 2.22,
@@ -10271,6 +10229,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-12T01:08:59.365491+00:00",
+  "snapshot_utc": "2026-11-12T02:52:20.394517+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-9"
 }

@@ -13936,5 +13936,71 @@
       "JAX"
     ],
     "roster_id": 1
+  },
+  {
+    "added": [],
+    "detected_at_utc": "2026-11-12T02:52:20.394517+00:00",
+    "dropped": [
+      "LAC"
+    ],
+    "kind": "roster_change",
+    "roster_id": 3
+  },
+  {
+    "detected_at_utc": "2026-11-12T02:52:20.394517+00:00",
+    "kind": "lineup_change",
+    "new": [
+      "1373",
+      "6813",
+      "12490",
+      "11632",
+      "6801",
+      "4993",
+      "11586",
+      "8126",
+      "4227",
+      "DAL"
+    ],
+    "old": [
+      "1373",
+      "6813",
+      "12507",
+      "11632",
+      "6801",
+      "12517",
+      "11586",
+      "11624",
+      "650",
+      "DAL"
+    ],
+    "roster_id": 3
+  },
+  {
+    "detected_at_utc": "2026-11-12T02:52:20.394517+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        3
+      ],
+      "created": 1794447939902,
+      "creator": "1399196890498596864",
+      "draft_picks": [],
+      "drops": {
+        "LAC": 3
+      },
+      "leg": 10,
+      "metadata": null,
+      "roster_ids": [
+        3
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1794447939902,
+      "transaction_id": "1426421681911533568",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1426421681911533568"
   }
 ]

@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-12T01:09:04.364194+00:00
-Sleeper snapshot: 2026-11-12T01:08:59.365491+00:00
+Generated: 2026-11-12T02:52:24.860301+00:00
+Sleeper snapshot: 2026-11-12T02:52:20.394517+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1426421681911533568` · FREE_AGENT · COMPLETE · BigOlBoyle (#3) | Dropped: Los Angeles Chargers → BigOlBoyle (#3)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-12T02:52:24.860301+00:00 · new_transaction · FREE_AGENT · COMPLETE · BigOlBoyle (#3) | Dropped: Los Angeles Chargers → BigOlBoyle (#3)
 - 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Dropped: Kyler Murray → JA’MARRTRIX (#7)
 - 2026-11-11T17:55:57.519544+00:00 · new_transaction · FREE_AGENT · COMPLETE · JA’MARRTRIX (#7) | Added: J.J. McCarthy → JA’MARRTRIX (#7)
 - 2026-11-11T14:22:32.536327+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Added: Buffalo Bills → DeeboSix0 (#8) | Dropped: New York Giants → DeeboSix0 (#8)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Kyle Monangai → DeeboSix0 (#8) | Dropped: Roschon Johnson → DeeboSix0 (#8) | FAAB bid: $15
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Pat Bryant → Dirty Birds (#1)
 - 2026-11-07T23:37:14.844715+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Kyle Monangai → Dirty Birds (#1) | FAAB bid: $7
-- 2026-11-07T23:37:14.844715+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Keon Coleman → Dirty Birds (#1) | Dropped: Michael Mayer → Dirty Birds (#1)
 
 ## Important limits
 

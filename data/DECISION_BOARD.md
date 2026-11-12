@@ -79,8 +79,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | New England Patriots | 5.60 | -1.22 | — | — | No modeled flags (not medically cleared) |
 | 6 | Indianapolis Colts | 5.59 | -1.23 | — | — | No modeled flags (not medically cleared) |
 | 7 | Cleveland Browns | 5.46 | -1.36 | — | — | No modeled flags (not medically cleared) |
-| 8 | Tennessee Titans | 5.03 | -1.79 | — | — | No modeled flags (not medically cleared) |
-| 9 | New York Jets | 5.02 | -1.80 | — | — | No modeled flags (not medically cleared) |
+| 8 | Los Angeles Chargers | 5.45 | -1.38 | — | — | No modeled flags (not medically cleared) |
+| 9 | Tennessee Titans | 5.03 | -1.79 | — | — | No modeled flags (not medically cleared) |
+| 10 | New York Jets | 5.02 | -1.80 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

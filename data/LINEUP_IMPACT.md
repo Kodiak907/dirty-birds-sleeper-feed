@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-12T01:09:04.707525+00:00
+Generated: 2026-11-12T02:52:25.206264+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.82**. Weeks with partial projections and injury status require manual verification.
@@ -79,8 +79,9 @@ Baseline illustrative optimal PPG: **122.82**. Weeks with partial projections an
 | 5 | New England Patriots | 5.60 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.46 | No sourced usage; Partial projection coverage |
 | 6 | Indianapolis Colts | 5.59 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.47 | No sourced usage; Partial projection coverage |
 | 7 | Cleveland Browns | 5.46 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.60 | No sourced usage; Partial projection coverage |
-| 8 | Tennessee Titans | 5.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.03 | No sourced usage |
-| 9 | New York Jets | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.04 | No sourced usage; Partial projection coverage |
+| 8 | Los Angeles Chargers | 5.45 | Bench-depth scenario: Kirk Cousins | +0.00 | -9.62 | No sourced usage |
+| 9 | Tennessee Titans | 5.03 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.03 | No sourced usage |
+| 10 | New York Jets | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.04 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 
