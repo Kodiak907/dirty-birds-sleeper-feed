@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-12T16:00:15.994987+00:00
-Sleeper snapshot: 2026-11-12T16:00:01.670110+00:00
-nflverse observations: 2026-11-12T16:00:05.952640+00:00; injury feed loaded: True
+Generated: 2026-11-12T17:02:27.302646+00:00
+Sleeper snapshot: 2026-11-12T17:02:18.443317+00:00
+nflverse observations: 2026-11-12T17:02:21.605429+00:00; injury feed loaded: True
 
-**New observed changes:** 5. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,11 +31,8 @@ nflverse observations: 2026-11-12T16:00:05.952640+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
-- **Jaxon Smith-Njigba** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
-- **AJ Barner** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **Rashid Shaheed** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **Sam Darnold** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
