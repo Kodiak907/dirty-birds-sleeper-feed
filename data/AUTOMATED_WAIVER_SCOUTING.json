@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-12T13:10:39.028177+00:00",
-  "source_snapshot_utc": "2026-11-12T13:10:31.495458+00:00",
+  "generated_at_utc": "2026-11-12T14:55:43.068849+00:00",
+  "source_snapshot_utc": "2026-11-12T14:55:37.555893+00:00",
   "candidate_count": 37,
   "news_queries_attempted": 30,
   "news_query_failures": 0,
@@ -19,7 +19,7 @@
       "team": "ARI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -29,7 +29,7 @@
       "team": "MIN",
       "position": "QB",
       "snap_share_pct": 100.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -51,13 +51,6 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Kyler Murray misses practice Wednesday - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZzNBcE1zVkhPek12c3g1UHlhXzZBeVduTmNkOVl6cEhiRkd3VU5NSXE2VVlMYnBfRGdJZ3V4ZkJZMlhkWTViUFA4MF9nZkdKZ1NMMEE4RXI5U2JXR3dHR3RGSTJOVTEyTmV2dkRtelRKM1FONU1lc3VLRkUzcHdjZnFydTI3Q0ZoMzU5THY3Q2s?oc=5",
-          "published": "2026-11-11",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Kyler Murray Injury Uncertainty Impacts Vikings vs. Packers Odds for NFL Week 10 - Sports Illustrated",
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNR3kzemQ5emQ2dVhtaVZWVE1QM1NiaGVPMFVscks4RU5ncTFOQ2dCZlRnT3VDdmNndzkxOURlWFBCeWxwOFRKNzU5ZFB2eG1jQjh3TmlFTm94YW5KQmFzUDMtNzRCZzdrY3lVNDd5bVozekI1UGp1ZE12dXpJaUZrNE9DbjJQRFB4SG9tOGFzOVBlTkVkaE1DUVJxTXljZ0hVVWFoUml5SXYxUQ?oc=5",
           "published": "2026-11-10",
@@ -70,6 +63,13 @@
           "published": "2026-11-09",
           "publisher": "USA Today",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Kyler Murray Injury: Remains week-to-week - RotoWire",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPTWlzS0djYlpUSG01dVdLUll3UTRuUXlSMnh1QnY1b21WdlBBb0FiYm5TVHU1MHlxaWRiN1ZSV0UyS0tUaVAySW9aLXl1Tk9UeW1qdTVoNm1teWo2eVRFdjUxeEh5dy1MN2ZSV05VNmVMdlY5eXNvVHEzdVg5ZWY3SDFtZ2JTWWV3aUxLQUM4SzdYbGFMWkE?oc=5",
+          "published": "2026-11-11",
+          "publisher": "RotoWire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
     },
@@ -79,7 +79,7 @@
       "team": "TB",
       "position": "QB",
       "snap_share_pct": 96.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -113,7 +113,7 @@
       "team": "LV",
       "position": "WR",
       "snap_share_pct": 66.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -129,7 +129,7 @@
       "team": "BUF",
       "position": "WR",
       "snap_share_pct": 74.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -174,7 +174,7 @@
       "team": "WAS",
       "position": "TE",
       "snap_share_pct": 75.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -234,7 +234,7 @@
       "team": "CAR",
       "position": "TE",
       "snap_share_pct": 53.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -279,7 +279,7 @@
       "team": "CIN",
       "position": "RB",
       "snap_share_pct": 32.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -303,7 +303,7 @@
       "team": "NO",
       "position": "RB",
       "snap_share_pct": 43.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Recent reception volume",
@@ -353,7 +353,7 @@
       "team": "TEN",
       "position": "RB",
       "snap_share_pct": 38.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -382,17 +382,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Tyjae Spears (knee) misses practice Wednesday - FantasyPros",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPWDlmMGxQeWUtUkV0Ym4yT1FFZkFDdUFrWE10b2lUT1RGWjRxTFc5bFJ3WGloMkdaaXk1SnE0VnZJWVZmd3hLQnZwaHM3NnZhUEd6dE8zTEFzamhFWUZHQ1hVWFhYSVQ5OXVLVHdfWnVBR29hYUI1NFh3bE9sT0ZUb0lUeXA2TkFScm9uRWQyWjJoZnVfNWfSAZsBQVVfeXFMT1ZEVG5UNUdmY2drbXlRaVh2eVZoakFhVHFyMzNESGNwTEltSEsxbXJnQTdjaXB0WDh5RHBxdkg5cnhEVEJsS21sTGVKTmEwTDhpZGUyQ0wwNFB2TXBPbjFIZ1ZPTTRiQ2tmcUJpUHZkUUZuMUZxOU1KT1BianFlVm5BMzV4OW9NWUZyX0hrYTUzWnI1VmtXbk9tc3M?oc=5",
-          "published": "2026-11-11",
-          "publisher": "FantasyPros",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Tyjae Spears Injury: No practice Wednesday - RotoWire",
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcUVMaUtYWklDdEt6dFhPcEFLRVloMnN4MG9BNjRRR0J1YTlTd1ZvOGRnazRSOHFuem82YXBlcGhPY0dwNHJlcDRkQW1MNUlSNzJsdHMwSHcyS0VsYkNnbzBVYXRNS2REY3Q4azhuNkpKZXluMjZOU3N1eFBDRnRDQV9kVV85MVdXUmdyN1ZWSWtCNkdsYThF?oc=5",
           "published": "2026-11-11",
           "publisher": "RotoWire",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Tyjae Spears Not Practicing Wednesday - NFL News | Fantasy Football - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPXzA0SXNoRFRVSXpzWDdEeFFXdXJ0dGpHOHYzdnV1SnNEOGQ4b0VMQndVTjRMb2JaZ3NMNVpjcmxNcE1VSkY2WVd2QnR3UHloYTkzTHFLUHBhVXBlTGNiVmN6NXlDbmFOejhqblVaWVNDSjhaWUhDN3A1MWJjT1RXUnd0azN5RVo1WDh0eQ?oc=5",
+          "published": "2026-11-11",
+          "publisher": "RotoBaller",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -403,7 +403,7 @@
       "team": "LV",
       "position": "TE",
       "snap_share_pct": 79.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "High recent participation",
@@ -427,7 +427,7 @@
       "team": "CHI",
       "position": "WR",
       "snap_share_pct": 69.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -437,7 +437,7 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -461,7 +461,7 @@
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 50.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -485,7 +485,7 @@
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 79.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -517,17 +517,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Eagles rule out Dontayvion Wicks (ankle) for Wk 9 - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOLWdVUlhmVUQxUjNsUlhVaDFKR0RHeHpuSmVYNG9OYWVEd3ZCc0lfQUpwaHRRNWE2cEVwMXlrajRBRFFua0I0SDg4cnNsQTVGVTNEYmR5bVFlbDNMTlgyazVaa0h6dWhfSlR1SW5CRzN3OG9fbWZ0RE1BSmxOVnREWGVjOUhHcHg2Nk9IcmVVR1dhNmV1V01rdGtxQ0xMNUR6LWdJcDlyV05FUGU1WXR1N3hyYw?oc=5",
-          "published": "2026-11-06",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Fantasy Football Injury Update: DeVonta Smith & Dontayvion Wicks Still Not Practicing, Boosting Makai Lemon's Role - Sports Illustrated",
           "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTEpvaU5tbmJoM19PRzk4TU9NNzJ2OXNrTmJ1bEpNVk9TUFllLVFLeFM1SXhEZmh2RmdXYzJFdWRGWWlQZ1F2ZEVmdkdnNEtRLU9FUFBjZWkxRUx4LVdhc2RPM2lFRWY5QnNNdkFFeGZ4R3ZObjkzLVlmY3NSanZ3RC15RGk1SnNvX2Y3ZWdKekdVNzk4SGxla1ZWMS1TbVp0cTJKbDVQaERrSTVHX3l6NjVRUl9YOU1vQzJqNFlPa3VzdnZWRzVfTmVqSHRIbnVpaDUxbllnbUkxX3ljNTRlOWZUMHQ4dw?oc=5",
           "published": "2026-11-06",
           "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles rule out Dontayvion Wicks (ankle) for Wk 9 - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOLWdVUlhmVUQxUjNsUlhVaDFKR0RHeHpuSmVYNG9OYWVEd3ZCc0lfQUpwaHRRNWE2cEVwMXlrajRBRFFua0I0SDg4cnNsQTVGVTNEYmR5bVFlbDNMTlgyazVaa0h6dWhfSlR1SW5CRzN3OG9fbWZ0RE1BSmxOVnREWGVjOUhHcHg2Nk9IcmVVR1dhNmV1V01rdGtxQ0xMNUR6LWdJcDlyV05FUGU1WXR1N3hyYw?oc=5",
+          "published": "2026-11-06",
+          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -545,7 +545,7 @@
       "team": "LAC",
       "position": "RB",
       "snap_share_pct": 27.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -561,7 +561,7 @@
       "team": "SEA",
       "position": "WR",
       "snap_share_pct": 41.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -606,7 +606,7 @@
       "team": "PIT",
       "position": "WR",
       "snap_share_pct": 77.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -642,7 +642,7 @@
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 59.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -676,7 +676,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 61.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -736,7 +736,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 70.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -752,7 +752,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 63.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -776,7 +776,7 @@
       "team": "GB",
       "position": "RB",
       "snap_share_pct": 30.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -821,7 +821,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -871,7 +871,7 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -916,7 +916,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 67.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": [
         {
@@ -941,7 +941,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -967,7 +967,7 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 46.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": [
         {
@@ -985,7 +985,7 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 26.0,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -1035,7 +1035,7 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 34.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1059,7 +1059,7 @@
       "team": "CLE",
       "position": "RB",
       "snap_share_pct": 21.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -1069,7 +1069,7 @@
       "team": "SEA",
       "position": "RB",
       "snap_share_pct": 26.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Recent carry workload",
@@ -1090,7 +1090,7 @@
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 54.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -1100,7 +1100,7 @@
       "team": "CHI",
       "position": "RB",
       "snap_share_pct": 11.3,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -1110,7 +1110,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     },
@@ -1120,7 +1120,7 @@
       "team": "JAX",
       "position": "RB",
       "snap_share_pct": null,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1136,7 +1136,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-11-12T13:10:39.028177+00:00",
+      "checked_at": "2026-11-12T14:55:43.068849+00:00",
       "signals": [],
       "news": []
     }
