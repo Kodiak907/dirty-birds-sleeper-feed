@@ -2,19 +2,19 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-11T15:06:19.466283+00:00
+Updated: 2026-11-12T15:10:55.092102+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 4. Unpriced candidate packages: 3.
+Fully priced in-range opportunities: 4. Unpriced candidate packages: 6.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 4 | Jonah Coleman | Brock Purdy | 1.07× | +1.74 | +3.49 |
-| 2 | 9 | Jonah Coleman | Garrett Wilson | 0.94× | +1.16 | +0.80 |
-| 3 | 3 | Kirk Cousins, Kyren Williams | Malik Nabers | 1.04× | +0.67 | +0.56 |
-| 4 | 3 | Kirk Cousins, Kyren Williams | Tee Higgins | 1.05× | +0.70 | +0.53 |
+| 1 | 4 | Jonah Coleman | Brock Purdy | 1.07× | +1.64 | +3.49 |
+| 2 | 9 | Jonah Coleman | Garrett Wilson | 0.94× | +1.16 | +0.75 |
+| 3 | 3 | Kirk Cousins, Kyren Williams | Malik Nabers | 1.05× | +0.67 | +0.61 |
+| 4 | 3 | Kirk Cousins, Kyren Williams | Tee Higgins | 1.07× | +0.70 | +0.58 |
 
 ## Negotiation protocol
 

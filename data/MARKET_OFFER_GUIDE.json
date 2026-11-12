@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-11T15:06:19.466283+00:00",
+  "generated_at_utc": "2026-11-12T15:10:55.092102+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -15,9 +15,9 @@
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.531,
-      "dirty_birds_before": 122.79,
-      "dirty_birds_delta_ppg": 1.74,
+      "dirty_birds_after": 124.566,
+      "dirty_birds_before": 122.928,
+      "dirty_birds_delta_ppg": 1.64,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -35,34 +35,34 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.287,
+      "mutual_benefit_screen_score": 4.173,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 99.098,
-      "opponent_before": 95.606,
+      "opponent_after": 99.137,
+      "opponent_before": 95.65,
       "opponent_delta_ppg": 3.49,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 20.3,
+      "projected_ppg_received": 20.31,
       "projected_ppg_sent": 9.6,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 20.3
+          "projected_ppg": 20.31
         }
       ],
       "starter_benefit": {
         "them": 3.49,
-        "us": 1.74
+        "us": 1.64
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 123.946,
-      "dirty_birds_before": 122.79,
+      "dirty_birds_after": 124.084,
+      "dirty_birds_before": 122.928,
       "dirty_birds_delta_ppg": 1.16,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -81,11 +81,11 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.75,
+      "mutual_benefit_screen_score": 1.703,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 101.504,
-      "opponent_before": 100.701,
-      "opponent_delta_ppg": 0.8,
+      "opponent_after": 101.499,
+      "opponent_before": 100.749,
+      "opponent_delta_ppg": 0.75,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
       "projected_ppg_received": 10.76,
@@ -99,7 +99,7 @@
         }
       ],
       "starter_benefit": {
-        "them": 0.8,
+        "them": 0.75,
         "us": 1.16
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -107,8 +107,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 123.46,
-      "dirty_birds_before": 122.79,
+      "dirty_birds_after": 123.593,
+      "dirty_birds_before": 122.928,
       "dirty_birds_delta_ppg": 0.67,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -116,7 +116,7 @@
           "id": "1166",
           "name": "Kirk Cousins",
           "pos": "QB",
-          "projected_ppg": 15.01
+          "projected_ppg": 15.06
         },
         {
           "id": "8150",
@@ -126,22 +126,22 @@
         }
       ],
       "market_quote": {
-        "paid": 8514,
-        "paid_to_received_ratio": 1.04,
+        "paid": 8617,
+        "paid_to_received_ratio": 1.053,
         "received": 8186,
-        "relative_value_difference_pct": 4.0
+        "relative_value_difference_pct": 5.3
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.103,
+      "mutual_benefit_screen_score": 1.15,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 108.59,
-      "opponent_before": 108.03,
-      "opponent_delta_ppg": 0.56,
+      "opponent_after": 107.95,
+      "opponent_before": 107.337,
+      "opponent_delta_ppg": 0.61,
       "opponent_drop_to_fit": "Blake Corum",
       "opponent_roster_id": 3,
       "projected_ppg_received": 13.7,
-      "projected_ppg_sent": 28.04,
+      "projected_ppg_sent": 28.09,
       "receive": [
         {
           "id": "11632",
@@ -151,7 +151,7 @@
         }
       ],
       "starter_benefit": {
-        "them": 0.56,
+        "them": 0.61,
         "us": 0.67
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -161,8 +161,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 123.486,
-      "dirty_birds_before": 122.79,
+      "dirty_birds_after": 123.626,
+      "dirty_birds_before": 122.928,
       "dirty_birds_delta_ppg": 0.7,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -170,7 +170,7 @@
           "id": "1166",
           "name": "Kirk Cousins",
           "pos": "QB",
-          "projected_ppg": 15.01
+          "projected_ppg": 15.06
         },
         {
           "id": "8150",
@@ -180,22 +180,22 @@
         }
       ],
       "market_quote": {
-        "paid": 8514,
-        "paid_to_received_ratio": 1.055,
+        "paid": 8617,
+        "paid_to_received_ratio": 1.068,
         "received": 8070,
-        "relative_value_difference_pct": 5.5
+        "relative_value_difference_pct": 6.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.1,
+      "mutual_benefit_screen_score": 1.147,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 108.564,
-      "opponent_before": 108.03,
-      "opponent_delta_ppg": 0.53,
+      "opponent_after": 107.917,
+      "opponent_before": 107.337,
+      "opponent_delta_ppg": 0.58,
       "opponent_drop_to_fit": "Blake Corum",
       "opponent_roster_id": 3,
       "projected_ppg_received": 13.73,
-      "projected_ppg_sent": 28.04,
+      "projected_ppg_sent": 28.09,
       "receive": [
         {
           "id": "6801",
@@ -205,7 +205,7 @@
         }
       ],
       "starter_benefit": {
-        "them": 0.53,
+        "them": 0.58,
         "us": 0.7
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -215,17 +215,37 @@
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-11-11T15:06:19.371673+00:00",
-  "unpriced_cases": 3,
+  "source_as_of": "2026-11-12T15:10:54.940376+00:00",
+  "unpriced_cases": 6,
   "unpriced_examples": [
     {
       "give": [
-        "Zay Flowers",
+        "Jonah Coleman",
         "Deebo Samuel Sr."
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
-        "Rashee Rice"
+        "Jameson Williams"
+      ]
+    },
+    {
+      "give": [
+        "A.J. Brown",
+        "Deebo Samuel Sr."
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Jameson Williams"
+      ]
+    },
+    {
+      "give": [
+        "Jonah Coleman",
+        "Deebo Samuel Sr."
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Saquon Barkley"
       ]
     },
     {
@@ -236,6 +256,16 @@
       "reason": "One or more players has no matched market value",
       "receive": [
         "Carnell Tate"
+      ]
+    },
+    {
+      "give": [
+        "Zay Flowers",
+        "Deebo Samuel Sr."
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Rashee Rice"
       ]
     },
     {
