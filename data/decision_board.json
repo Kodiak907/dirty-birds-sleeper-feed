@@ -25,7 +25,7 @@
       "ppg": 2.311
     }
   },
-  "generated_at_utc": "2026-11-12T06:02:15.107792+00:00",
+  "generated_at_utc": "2026-11-12T07:16:48.045855+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -366,14 +366,10 @@
       {
         "audit": {
           "carries_per_game": 6.33,
-          "flags": [
-            "injury_report_observation_review"
-          ],
+          "flags": [],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Hamstring",
-            "report_status": "Out",
-            "week": "9"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.875,
@@ -475,8 +471,8 @@
           "carries_per_game": 6.33,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "9"
+            "practice_status": "Did Not Participate In Practice",
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -504,7 +500,7 @@
           ],
           "injury_report_observation": {
             "practice_status": "Limited Participation in Practice",
-            "week": "9"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -527,14 +523,11 @@
         "audit": {
           "carries_per_game": 1.67,
           "flags": [
-            "sleeper_injury_questionable",
-            "injury_report_observation_review"
+            "sleeper_injury_questionable"
           ],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Knee",
-            "report_status": "Out",
-            "week": "8"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -804,8 +797,8 @@
           "carries_per_game": 0.0,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "5"
+            "practice_status": "Limited Participation in Practice",
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -956,8 +949,8 @@
           "carries_per_game": 0.33,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "5"
+            "practice_status": "Limited Participation in Practice",
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -1174,14 +1167,10 @@
       {
         "audit": {
           "carries_per_game": 0.0,
-          "flags": [
-            "injury_report_observation_review"
-          ],
+          "flags": [],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Calf",
-            "report_status": "Out",
-            "week": "9"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -1248,14 +1237,11 @@
         "audit": {
           "carries_per_game": 0.33,
           "flags": [
-            "projection_weeks_partial",
-            "injury_report_observation_review"
+            "projection_weeks_partial"
           ],
           "injury_report_observation": {
             "practice_status": "Did Not Participate In Practice",
-            "report_primary_injury": "Hamstring",
-            "report_status": "Out",
-            "week": "9"
+            "week": "10"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.75,
@@ -1348,5 +1334,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-12T06:02:09.981051+00:00"
+  "snapshot_utc": "2026-11-12T07:16:44.153113+00:00"
 }

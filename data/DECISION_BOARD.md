@@ -9,7 +9,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Kyler Murray | 14.82 | -0.24 | 100.0% | — | injury_report_observation_review |
+| 1 | Kyler Murray | 14.82 | -0.24 | 100.0% | — | No modeled flags (not medically cleared) |
 | 2 | Baker Mayfield | 12.94 | -2.12 | 96.7% | — | sleeper_injury_questionable |
 
 ## RB — reference: Seth McGowan (4.08 PPG)
@@ -20,7 +20,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Samaje Perine | 6.09 | +2.02 | 32.7% | Carries 6.3 | No modeled flags (not medically cleared) |
 | 3 | Alvin Kamara | 5.97 | +1.89 | 43.7% | Carries 6.3 | No modeled flags (not medically cleared) |
 | 4 | Chris Rodriguez Jr. | 5.76 | +1.69 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
-| 5 | Tyjae Spears | 5.65 | +1.58 | 38.0% | Carries 1.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 5 | Tyjae Spears | 5.65 | +1.58 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
 | 6 | Keaton Mitchell | 4.49 | +0.42 | 27.0% | Carries 4.3 | No modeled flags (not medically cleared) |
 | 7 | MarShawn Lloyd | 3.96 | -0.12 | 30.7% | Carries 5.7 | injury_report_observation_review |
 | 8 | Tank Bigsby | 2.17 | -1.91 | 28.7% | Carries 9.0 | sleeper_injury_ir |
@@ -44,7 +44,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 9 | Rashod Bateman | 3.83 | +1.51 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 10 | Ja'Kobi Lane | 3.81 | +1.50 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 11 | Mack Hollins | 3.69 | +1.38 | 61.7% | Tgt 6.3 | sleeper_injury_ir, injury_report_observation_review |
-| 12 | Jauan Jennings | 2.67 | +0.36 | 60.0% | Tgt 2.0 | injury_report_observation_review |
+| 12 | Jauan Jennings | 2.67 | +0.36 | 60.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Isaiah Likely (9.86 PPG)
 
