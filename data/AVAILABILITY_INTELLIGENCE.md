@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-12T14:55:46.885617+00:00
-Sleeper snapshot: 2026-11-12T14:55:37.555893+00:00
-nflverse observations: 2026-11-12T14:55:42.163611+00:00; injury feed loaded: True
+Generated: 2026-11-12T16:00:15.994987+00:00
+Sleeper snapshot: 2026-11-12T16:00:01.670110+00:00
+nflverse observations: 2026-11-12T16:00:05.952640+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 5. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -18,12 +18,12 @@ nflverse observations: 2026-11-12T14:55:42.163611+00:00; injury feed loaded: Tru
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 64.0% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 31.7% | Verify current status before kickoff |
 | Seth McGowan | No tag | No matched report (not clearance) | 29.7% | Verify current status before kickoff |
-| Christian McCaffrey | No tag | Week 9 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
+| Christian McCaffrey | No tag | Week 10 observation: Did Not Participate In Practice | 68.3% | Verify current status before kickoff |
 | A.J. Brown | No tag | Week 10 observation: Limited Participation in Practice | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 10 observation: Limited Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 84.0% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Jaxon Smith-Njigba | No tag | Week 9 observation: Full Participation in Practice | 83.3% | Verify current status before kickoff |
+| Jaxon Smith-Njigba | No tag | Week 10 observation: Did Not Participate In Practice | 83.3% | Verify current status before kickoff |
 | Tank Dell | IR | Week 10 observation: Limited Participation in Practice | 35.0% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
@@ -31,8 +31,11 @@ nflverse observations: 2026-11-12T14:55:42.163611+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+- **Jaxon Smith-Njigba** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+- **AJ Barner** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Rashid Shaheed** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Sam Darnold** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
 
 ## Guardrails
 

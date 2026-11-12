@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-12T14:55:42.934872+00:00",
-  "roster_snapshot_utc": "2026-11-12T14:55:37.555893+00:00",
+  "generated_at_utc": "2026-11-12T16:00:06.878062+00:00",
+  "roster_snapshot_utc": "2026-11-12T16:00:01.670110+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.531,
-      "dirty_birds_before": 122.79,
-      "dirty_birds_delta_ppg": 1.74,
+      "dirty_birds_after": 124.566,
+      "dirty_birds_before": 122.928,
+      "dirty_birds_delta_ppg": 1.64,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -24,26 +24,26 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.287,
+      "mutual_benefit_screen_score": 4.173,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 99.098,
-      "opponent_before": 95.606,
+      "opponent_after": 99.137,
+      "opponent_before": 95.65,
       "opponent_delta_ppg": 3.49,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 20.3,
+      "projected_ppg_received": 20.31,
       "projected_ppg_sent": 9.6,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 20.3
+          "projected_ppg": 20.31
         }
       ],
       "starter_benefit": {
         "them": 3.49,
-        "us": 1.74
+        "us": 1.64
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []

@@ -38,7 +38,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 3 | Kalif Raymond | 5.33 | +3.02 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Chris Bell | 5.10 | +2.79 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
 | 5 | Dontayvion Wicks | 4.67 | +2.35 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 6 | Rashid Shaheed | 4.40 | +2.08 | 41.3% | Tgt 5.0 | injury_report_observation_review |
+| 6 | Rashid Shaheed | 4.40 | +2.08 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
 | 7 | Michael Pittman Jr. | 4.36 | +2.04 | 77.7% | — | sleeper_injury_ir, targets_missing |
 | 8 | Tre' Harris | 4.14 | +1.83 | 59.7% | Tgt 4.7 | sleeper_injury_out |
 | 9 | Mack Hollins | 3.88 | +1.57 | 61.7% | Tgt 6.3 | sleeper_injury_ir, injury_report_observation_review |

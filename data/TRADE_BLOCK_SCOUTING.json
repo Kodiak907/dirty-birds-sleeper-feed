@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-12T14:55:45.936853+00:00",
-  "source_snapshot_utc": "2026-11-12T14:55:37.555893+00:00",
-  "source_market_as_of": "2026-11-12T03:55:31.824071+00:00",
+  "generated_at_utc": "2026-11-12T16:00:15.184066+00:00",
+  "source_snapshot_utc": "2026-11-12T16:00:01.670110+00:00",
+  "source_market_as_of": "2026-11-12T15:10:54.940376+00:00",
   "source_projection_as_of": "2026-11-12T10:00:28.592247+00:00",
   "focus_assets": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "tested": 8946,
-  "market_screened": 2207,
+  "market_screened": 2206,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -205,7 +205,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.89,
           "their_lineup_delta_ppg": 0.6,
-          "value_paid_received_ratio": 1.04,
+          "value_paid_received_ratio": 1.053,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -243,7 +243,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 0.89,
           "their_lineup_delta_ppg": 0.6,
-          "value_paid_received_ratio": 1.042,
+          "value_paid_received_ratio": 1.055,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -253,7 +253,7 @@
           ]
         }
       ],
-      "candidate_count": 86
+      "candidate_count": 85
     },
     {
       "asset": "Patrick Mahomes",
