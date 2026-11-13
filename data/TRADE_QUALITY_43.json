@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-13T02:09:42.195621+00:00",
+  "generated_at_utc": "2026-11-13T03:54:13.986051+00:00",
   "candidates_evaluated": 50490,
-  "market_matched": 6377,
+  "market_matched": 6390,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-12T15:10:54.940376+00:00",
+  "market_as_of": "2026-11-13T03:54:11.923704+00:00",
   "projection_as_of": "2026-11-12T22:47:32.466728+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -39,11 +39,11 @@
       ],
       "our_gain": 2.2,
       "their_gain": 3.37,
-      "market_paid_received_ratio": 0.958,
+      "market_paid_received_ratio": 1.038,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.097,
+      "score": 4.109,
       "not_an_approved_offer": true
     },
     {
@@ -68,18 +68,18 @@
           "pos": "WR"
         },
         {
-          "id": "11603",
-          "name": "AJ Barner",
-          "pos": "TE"
+          "id": "4943",
+          "name": "Sam Darnold",
+          "pos": "QB"
         }
       ],
       "our_gain": 2.2,
       "their_gain": 3.37,
-      "market_paid_received_ratio": 0.947,
+      "market_paid_received_ratio": 1.042,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.063,
+      "score": 4.096,
       "not_an_approved_offer": true
     },
     {
@@ -111,11 +111,11 @@
       ],
       "our_gain": 2.71,
       "their_gain": 1.7,
-      "market_paid_received_ratio": 0.957,
+      "market_paid_received_ratio": 0.964,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.602,
+      "score": 3.622,
       "not_an_approved_offer": true
     },
     {
@@ -135,23 +135,23 @@
       ],
       "receive": [
         {
-          "id": "2133",
-          "name": "Davante Adams",
-          "pos": "WR"
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE"
         },
         {
-          "id": "8183",
-          "name": "Brock Purdy",
+          "id": "3163",
+          "name": "Jared Goff",
           "pos": "QB"
         }
       ],
-      "our_gain": 2.62,
-      "their_gain": 1.14,
-      "market_paid_received_ratio": 1.021,
+      "our_gain": 3.27,
+      "their_gain": 0.5,
+      "market_paid_received_ratio": 0.914,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.24,
+      "score": 3.311,
       "not_an_approved_offer": true
     },
     {
@@ -176,18 +176,18 @@
           "pos": "RB"
         },
         {
-          "id": "11624",
-          "name": "Xavier Worthy",
+          "id": "8126",
+          "name": "Wan'Dale Robinson",
           "pos": "WR"
         }
       ],
       "our_gain": 2.06,
       "their_gain": 1.53,
-      "market_paid_received_ratio": 0.976,
+      "market_paid_received_ratio": 1.005,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.905,
+      "score": 2.962,
       "not_an_approved_offer": true
     },
     {
@@ -212,18 +212,85 @@
           "pos": "RB"
         },
         {
-          "id": "11624",
-          "name": "Xavier Worthy",
+          "id": "8126",
+          "name": "Wan'Dale Robinson",
           "pos": "WR"
         }
       ],
       "our_gain": 2.03,
       "their_gain": 1.56,
-      "market_paid_received_ratio": 0.965,
+      "market_paid_received_ratio": 0.994,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.86,
+      "score": 2.949,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        },
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "8130",
+          "name": "Trey McBride",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 1.54,
+      "their_gain": 0.73,
+      "market_paid_received_ratio": 0.874,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": "Adonai Mitchell",
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 1.601,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE"
+        },
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "7562",
+          "name": "Tutu Atwell",
+          "pos": "WR"
+        },
+        {
+          "id": "8130",
+          "name": "Trey McBride",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 1.54,
+      "their_gain": 0.73,
+      "market_paid_received_ratio": 0.859,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 1.554,
       "not_an_approved_offer": true
     }
   ],
