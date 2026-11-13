@@ -25,7 +25,7 @@
       "ppg": 5.146
     }
   },
-  "generated_at_utc": "2026-11-13T11:55:50.931523+00:00",
+  "generated_at_utc": "2026-11-13T13:05:56.817222+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -756,8 +756,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
-          "recent_snap_pct": 75.7,
-          "snap_trend_3_appearances_pp": -2.0,
+          "recent_snap_pct": 70.0,
+          "snap_trend_3_appearances_pp": -18.0,
           "targets_per_game": 6.33
         },
         "name": "Chig Okonkwo",
@@ -1307,5 +1307,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-13T11:55:44.966446+00:00"
+  "snapshot_utc": "2026-11-13T13:05:50.618471+00:00"
 }

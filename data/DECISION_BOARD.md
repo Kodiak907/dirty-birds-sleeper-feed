@@ -50,7 +50,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Chig Okonkwo | 7.58 | -2.34 | 75.7% | Tgt 6.3 | No modeled flags (not medically cleared) |
+| 1 | Chig Okonkwo | 7.58 | -2.34 | 70.0% | Tgt 6.3 | No modeled flags (not medically cleared) |
 | 2 | Darren Waller | 7.26 | -2.66 | 53.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 3 | Michael Mayer | 5.01 | -4.91 | 79.0% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Noah Fant | 4.78 | -5.14 | 50.3% | Tgt 1.7 | No modeled flags (not medically cleared) |

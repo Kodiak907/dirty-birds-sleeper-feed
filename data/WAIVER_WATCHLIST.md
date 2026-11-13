@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-13T11:55:50.842185+00:00
-Sleeper snapshot: 2026-11-13T11:55:44.966446+00:00
+Generated: 2026-11-13T13:05:56.666605+00:00
+Sleeper snapshot: 2026-11-13T13:05:50.618471+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -61,7 +61,7 @@ Sleeper snapshot: 2026-11-13T11:55:44.966446+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Chig Okonkwo | WAS | 7.58 | 100% | 75.7% | Not flagged |
+| 1 | Chig Okonkwo | WAS | 7.58 | 100% | 70.0% | Not flagged |
 | 2 | Darren Waller | CAR | 7.26 | 100% | 53.3% | Not flagged |
 | 3 | Michael Mayer | LV | 5.01 | 88% | 79.0% | Not flagged |
 | 4 | Noah Fant | NO | 4.78 | 100% | 50.3% | Not flagged |
@@ -105,7 +105,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Deshaun Watson | QB | CLE | 12.97 | 98.0% |
 | Baker Mayfield | QB | TB | 12.88 | 96.7% |
 | Jacoby Brissett | QB | ARI | 10.51 | 86.0% |
-| Chig Okonkwo | TE | WAS | 7.58 | 75.7% |
+| Chig Okonkwo | TE | WAS | 7.58 | 70.0% |
 | Darren Waller | TE | CAR | 7.26 | 53.3% |
 | Keon Coleman | WR | BUF | 7.21 | 74.3% |
 | Zonovan Knight | RB | ARI | 7.09 | 39.7% |
