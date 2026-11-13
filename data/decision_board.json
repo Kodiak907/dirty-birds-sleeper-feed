@@ -10,11 +10,11 @@
     },
     "QB": {
       "name": "Kirk Cousins",
-      "ppg": 17.364
+      "ppg": 17.343
     },
     "RB": {
       "name": "Kaelon Black",
-      "ppg": 4.669
+      "ppg": 4.674
     },
     "TE": {
       "name": "Isaiah Likely",
@@ -22,10 +22,10 @@
     },
     "WR": {
       "name": "Tank Dell",
-      "ppg": 5.147
+      "ppg": 5.146
     }
   },
-  "generated_at_utc": "2026-11-13T10:59:24.511003+00:00",
+  "generated_at_utc": "2026-11-13T11:55:50.931523+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -156,7 +156,7 @@
           "name": "Jacksonville Jaguars",
           "ppg": 6.825
         },
-        "same_position_uplift_ppg": -1.19,
+        "same_position_uplift_ppg": -1.2,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -285,12 +285,12 @@
           "targets_per_game": null
         },
         "name": "Drew Stevens",
-        "ppg": 6.79,
+        "ppg": 6.8,
         "replacement_reference": {
           "name": "Will Reichard",
           "ppg": 7.16
         },
-        "same_position_uplift_ppg": -0.37,
+        "same_position_uplift_ppg": -0.36,
         "screen_only": true,
         "sleeper_id": "13968",
         "team": "WAS"
@@ -407,9 +407,9 @@
         "ppg": 12.97,
         "replacement_reference": {
           "name": "Kirk Cousins",
-          "ppg": 17.364
+          "ppg": 17.343
         },
-        "same_position_uplift_ppg": -4.4,
+        "same_position_uplift_ppg": -4.38,
         "screen_only": true,
         "sleeper_id": "4017",
         "team": "CLE"
@@ -434,9 +434,9 @@
         "ppg": 12.88,
         "replacement_reference": {
           "name": "Kirk Cousins",
-          "ppg": 17.364
+          "ppg": 17.343
         },
-        "same_position_uplift_ppg": -4.49,
+        "same_position_uplift_ppg": -4.47,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -456,12 +456,12 @@
           "targets_per_game": 0.0
         },
         "name": "Jacoby Brissett",
-        "ppg": 10.52,
+        "ppg": 10.51,
         "replacement_reference": {
           "name": "Kirk Cousins",
-          "ppg": 17.364
+          "ppg": 17.343
         },
-        "same_position_uplift_ppg": -6.85,
+        "same_position_uplift_ppg": -6.83,
         "screen_only": true,
         "sleeper_id": "3257",
         "team": "ARI"
@@ -482,12 +482,12 @@
           "targets_per_game": null
         },
         "name": "Zonovan Knight",
-        "ppg": 7.11,
+        "ppg": 7.09,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": 2.44,
+        "same_position_uplift_ppg": 2.42,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -510,7 +510,7 @@
         "ppg": 6.03,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
         "same_position_uplift_ppg": 1.36,
         "screen_only": true,
@@ -538,12 +538,37 @@
         "ppg": 5.91,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": 1.24,
+        "same_position_uplift_ppg": 1.23,
         "screen_only": true,
         "sleeper_id": "10219",
         "team": "JAX"
+      },
+      {
+        "audit": {
+          "carries_per_game": 4.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "4"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 27.0,
+          "snap_trend_3_appearances_pp": 0.0,
+          "targets_per_game": 2.67
+        },
+        "name": "Keaton Mitchell",
+        "ppg": 5.73,
+        "replacement_reference": {
+          "name": "Kaelon Black",
+          "ppg": 4.674
+        },
+        "same_position_uplift_ppg": 1.06,
+        "screen_only": true,
+        "sleeper_id": "9511",
+        "team": "LAC"
       },
       {
         "audit": {
@@ -565,37 +590,12 @@
         "ppg": 5.4,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": 0.73,
+        "same_position_uplift_ppg": 0.72,
         "screen_only": true,
         "sleeper_id": "9508",
         "team": "TEN"
-      },
-      {
-        "audit": {
-          "carries_per_game": 4.33,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "4"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 27.0,
-          "snap_trend_3_appearances_pp": 0.0,
-          "targets_per_game": 2.67
-        },
-        "name": "Keaton Mitchell",
-        "ppg": 5.09,
-        "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.669
-        },
-        "same_position_uplift_ppg": 0.43,
-        "screen_only": true,
-        "sleeper_id": "9511",
-        "team": "LAC"
       },
       {
         "audit": {
@@ -615,9 +615,9 @@
         "ppg": 4.71,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": 0.04,
+        "same_position_uplift_ppg": 0.03,
         "screen_only": true,
         "sleeper_id": "4035",
         "team": "NO"
@@ -644,9 +644,9 @@
         "ppg": 2.42,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": -2.25,
+        "same_position_uplift_ppg": -2.26,
         "screen_only": true,
         "sleeper_id": "11581",
         "team": "GB"
@@ -671,7 +671,7 @@
         "ppg": 2.17,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
         "same_position_uplift_ppg": -2.5,
         "screen_only": true,
@@ -693,7 +693,7 @@
         "ppg": 0.86,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
         "same_position_uplift_ppg": -3.81,
         "screen_only": true,
@@ -715,9 +715,9 @@
         "ppg": 0.82,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": -3.84,
+        "same_position_uplift_ppg": -3.85,
         "screen_only": true,
         "sleeper_id": "7561",
         "team": "PHI"
@@ -737,9 +737,9 @@
         "ppg": 0.4,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.669
+          "ppg": 4.674
         },
-        "same_position_uplift_ppg": -4.27,
+        "same_position_uplift_ppg": -4.28,
         "screen_only": true,
         "sleeper_id": "10235",
         "team": "CHI"
@@ -761,12 +761,12 @@
           "targets_per_game": 6.33
         },
         "name": "Chig Okonkwo",
-        "ppg": 7.57,
+        "ppg": 7.58,
         "replacement_reference": {
           "name": "Isaiah Likely",
           "ppg": 9.92
         },
-        "same_position_uplift_ppg": -2.35,
+        "same_position_uplift_ppg": -2.34,
         "screen_only": true,
         "sleeper_id": "8210",
         "team": "WAS"
@@ -786,12 +786,12 @@
           "targets_per_game": 4.67
         },
         "name": "Darren Waller",
-        "ppg": 7.29,
+        "ppg": 7.26,
         "replacement_reference": {
           "name": "Isaiah Likely",
           "ppg": 9.92
         },
-        "same_position_uplift_ppg": -2.63,
+        "same_position_uplift_ppg": -2.66,
         "screen_only": true,
         "sleeper_id": "2505",
         "team": "CAR"
@@ -916,12 +916,12 @@
           "targets_per_game": 5.0
         },
         "name": "Keon Coleman",
-        "ppg": 7.19,
+        "ppg": 7.21,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": 2.04,
+        "same_position_uplift_ppg": 2.06,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -938,12 +938,12 @@
           "targets_per_game": 7.0
         },
         "name": "Tre Tucker",
-        "ppg": 6.9,
+        "ppg": 6.81,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": 1.75,
+        "same_position_uplift_ppg": 1.66,
         "screen_only": true,
         "sleeper_id": "10213",
         "team": "LV"
@@ -963,7 +963,7 @@
         "ppg": 5.32,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": 0.17,
         "screen_only": true,
@@ -988,7 +988,7 @@
         "ppg": 4.47,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -0.68,
         "screen_only": true,
@@ -1018,9 +1018,9 @@
         "ppg": 4.31,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -0.84,
+        "same_position_uplift_ppg": -0.83,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1045,7 +1045,7 @@
         "ppg": 4.15,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -1.0,
         "screen_only": true,
@@ -1072,12 +1072,12 @@
           "targets_per_game": 6.33
         },
         "name": "Mack Hollins",
-        "ppg": 3.88,
+        "ppg": 3.87,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -1.27,
+        "same_position_uplift_ppg": -1.28,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1100,7 +1100,7 @@
         "ppg": 3.81,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -1.33,
         "screen_only": true,
@@ -1129,7 +1129,7 @@
         "ppg": 3.8,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -1.35,
         "screen_only": true,
@@ -1154,7 +1154,7 @@
         "ppg": 3.69,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -1.45,
         "screen_only": true,
@@ -1179,9 +1179,9 @@
         "ppg": 2.61,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -2.53,
+        "same_position_uplift_ppg": -2.54,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1198,12 +1198,12 @@
           "targets_per_game": 2.67
         },
         "name": "Dohnte Meyers",
-        "ppg": 1.96,
+        "ppg": 1.98,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -3.19,
+        "same_position_uplift_ppg": -3.17,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1228,7 +1228,7 @@
         "ppg": 1.8,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -3.35,
         "screen_only": true,
@@ -1250,12 +1250,12 @@
           "targets_per_game": 2.0
         },
         "name": "Cyrus Allen",
-        "ppg": 1.31,
+        "ppg": 1.32,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -3.83,
+        "same_position_uplift_ppg": -3.82,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1275,9 +1275,9 @@
         "ppg": 0.68,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
-        "same_position_uplift_ppg": -4.46,
+        "same_position_uplift_ppg": -4.47,
         "screen_only": true,
         "sleeper_id": "12542",
         "team": "NE"
@@ -1297,7 +1297,7 @@
         "ppg": 0.52,
         "replacement_reference": {
           "name": "Tank Dell",
-          "ppg": 5.147
+          "ppg": 5.146
         },
         "same_position_uplift_ppg": -4.62,
         "screen_only": true,
@@ -1307,5 +1307,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-13T10:59:19.368436+00:00"
+  "snapshot_utc": "2026-11-13T11:55:44.966446+00:00"
 }
