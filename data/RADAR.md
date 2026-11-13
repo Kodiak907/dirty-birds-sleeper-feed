@@ -1,15 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-13T01:06:25.696652+00:00
-Sleeper snapshot: 2026-11-13T01:06:18.782401+00:00
+Generated: 2026-11-13T02:09:39.287780+00:00
+Sleeper snapshot: 2026-11-13T02:09:34.170432+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1426772165780324352` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
-- **NEW** · transaction `1426771843418718208` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

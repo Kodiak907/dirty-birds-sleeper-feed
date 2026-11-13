@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-13T01:06:25.788822+00:00
-Sleeper snapshot: 2026-11-13T01:06:18.782401+00:00
+Generated: 2026-11-13T02:09:39.320152+00:00
+Sleeper snapshot: 2026-11-13T02:09:34.170432+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- CREAM MACHINE: added Audric Estime, Malachi Fields; dropped Kansas City Chiefs
-- CREAM MACHINE: reserve status changed
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

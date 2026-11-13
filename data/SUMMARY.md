@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-13T01:06:18.782401+00:00
+Updated: 2026-11-13T02:09:34.170432+00:00
 League: 1399157532559192064
 NFL week: 10
 
@@ -19,12 +19,7 @@ NFL week: 10
 - Roster 12: Cokerthestroker | 6-3 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 2: added Audric Estime, Malachi Fields; dropped Kansas City Chiefs
-- reserve_change â roster/transaction 2
-- lineup_change â roster/transaction 7
-- lineup_change â roster/transaction 9
-- Transaction 1426772165780324352: free_agent / complete / rosters [2] / adds {'11579': 2} / drops {'KC': 2} / FAAB bid None
-- Transaction 1426771843418718208: free_agent / complete / rosters [2] / adds {'13285': 2} / drops None / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
