@@ -25,10 +25,32 @@
       "ppg": 5.147
     }
   },
-  "generated_at_utc": "2026-11-12T23:43:49.540999+00:00",
+  "generated_at_utc": "2026-11-13T01:06:26.241996+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Kansas City Chiefs",
+        "ppg": 6.4,
+        "replacement_reference": {
+          "name": "Jacksonville Jaguars",
+          "ppg": 6.825
+        },
+        "same_position_uplift_ppg": -0.42,
+        "screen_only": true,
+        "sleeper_id": "KC",
+        "team": "KC"
+      },
       {
         "audit": {
           "carries_per_game": null,
@@ -1285,5 +1307,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-12T23:43:43.329870+00:00"
+  "snapshot_utc": "2026-11-13T01:06:18.782401+00:00"
 }

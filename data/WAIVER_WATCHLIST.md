@@ -1,18 +1,18 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-12T23:43:49.392374+00:00
-Sleeper snapshot: 2026-11-12T23:43:43.329870+00:00
+Generated: 2026-11-13T01:06:26.090835+00:00
+Sleeper snapshot: 2026-11-13T01:06:18.782401+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 628 |
-| WR | 1290 |
+| RB | 627 |
+| WR | 1289 |
 | TE | 615 |
 | K | 138 |
-| DEF | 13 |
+| DEF | 14 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -82,16 +82,17 @@ Sleeper snapshot: 2026-11-12T23:43:43.329870+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Cincinnati Bengals | CIN | 6.30 | 100% | — | Not flagged |
-| 2 | Washington Commanders | WAS | 5.87 | 100% | — | Not flagged |
-| 3 | New York Giants | NYG | 5.84 | 100% | — | Not flagged |
-| 4 | New Orleans Saints | NO | 5.69 | 100% | — | Not flagged |
-| 5 | New England Patriots | NE | 5.63 | 88% | — | Not flagged |
-| 6 | Cleveland Browns | CLE | 5.57 | 88% | — | Not flagged |
-| 7 | Indianapolis Colts | IND | 5.53 | 88% | — | Not flagged |
-| 8 | Los Angeles Chargers | LAC | 5.47 | 100% | — | Not flagged |
-| 9 | Tennessee Titans | TEN | 5.02 | 100% | — | Not flagged |
-| 10 | New York Jets | NYJ | 5.01 | 88% | — | Not flagged |
+| 1 | Kansas City Chiefs | KC | 6.40 | 100% | — | Not flagged |
+| 2 | Cincinnati Bengals | CIN | 6.30 | 100% | — | Not flagged |
+| 3 | Washington Commanders | WAS | 5.87 | 100% | — | Not flagged |
+| 4 | New York Giants | NYG | 5.84 | 100% | — | Not flagged |
+| 5 | New Orleans Saints | NO | 5.69 | 100% | — | Not flagged |
+| 6 | New England Patriots | NE | 5.63 | 88% | — | Not flagged |
+| 7 | Cleveland Browns | CLE | 5.57 | 88% | — | Not flagged |
+| 8 | Indianapolis Colts | IND | 5.53 | 88% | — | Not flagged |
+| 9 | Los Angeles Chargers | LAC | 5.47 | 100% | — | Not flagged |
+| 10 | Tennessee Titans | TEN | 5.02 | 100% | — | Not flagged |
+| 11 | New York Jets | NYJ | 5.01 | 88% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 

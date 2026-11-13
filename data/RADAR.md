@@ -1,15 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-12T23:43:49.233349+00:00
-Sleeper snapshot: 2026-11-12T23:43:43.329870+00:00
+Generated: 2026-11-13T01:06:25.696652+00:00
+Sleeper snapshot: 2026-11-13T01:06:18.782401+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1426772165780324352` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
+- **NEW** · transaction `1426771843418718208` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
+- 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
@@ -33,8 +38,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-10T20:46:04.173497+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
-- 2026-11-09T01:03:52.945230+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Cairo Santos → Dirty Birds (#1) | Dropped: Keon Coleman → Dirty Birds (#1)
-- 2026-11-08T04:53:37.991887+00:00 · new_transaction · TRADE · COMPLETE · BigOlBoyle (#3), Cokerthestroker (#12) | Added: Bhayshul Tuten → BigOlBoyle (#3), Mike Gesicki → BigOlBoyle (#3), Jaylen Warren → Cokerthestroker (#12) | Dropped: Bhayshul Tuten → Cokerthestroker (#12), Mike Gesicki → Cokerthestroker (#12), Jaylen Warren → BigOlBoyle (#3)
 
 ## Important limits
 

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-12T23:43:49.632313+00:00
+Generated: 2026-11-13T01:06:26.382182+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **123.20**. Weeks with partial projections and injury status require manual verification.
@@ -71,16 +71,17 @@ Baseline illustrative optimal PPG: **123.20**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Cincinnati Bengals | 6.30 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.07 | No sourced usage |
-| 2 | Washington Commanders | 5.87 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.50 | No sourced usage |
-| 3 | New York Giants | 5.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.52 | No sourced usage |
-| 4 | New Orleans Saints | 5.69 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.67 | No sourced usage |
-| 5 | New England Patriots | 5.63 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.73 | No sourced usage; Partial projection coverage |
-| 6 | Cleveland Browns | 5.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.79 | No sourced usage; Partial projection coverage |
-| 7 | Indianapolis Colts | 5.53 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.83 | No sourced usage; Partial projection coverage |
-| 8 | Los Angeles Chargers | 5.47 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.89 | No sourced usage |
-| 9 | Tennessee Titans | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.34 | No sourced usage |
-| 10 | New York Jets | 5.01 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.36 | No sourced usage; Partial projection coverage |
+| 1 | Kansas City Chiefs | 6.40 | Bench-depth scenario: Kirk Cousins | +0.00 | -10.96 | No sourced usage |
+| 2 | Cincinnati Bengals | 6.30 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.07 | No sourced usage |
+| 3 | Washington Commanders | 5.87 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.50 | No sourced usage |
+| 4 | New York Giants | 5.84 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.52 | No sourced usage |
+| 5 | New Orleans Saints | 5.69 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.67 | No sourced usage |
+| 6 | New England Patriots | 5.63 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.73 | No sourced usage; Partial projection coverage |
+| 7 | Cleveland Browns | 5.57 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.79 | No sourced usage; Partial projection coverage |
+| 8 | Indianapolis Colts | 5.53 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.83 | No sourced usage; Partial projection coverage |
+| 9 | Los Angeles Chargers | 5.47 | Bench-depth scenario: Kirk Cousins | +0.00 | -11.89 | No sourced usage |
+| 10 | Tennessee Titans | 5.02 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.34 | No sourced usage |
+| 11 | New York Jets | 5.01 | Bench-depth scenario: Kirk Cousins | +0.00 | -12.36 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 

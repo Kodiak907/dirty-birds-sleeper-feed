@@ -71,16 +71,17 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Cincinnati Bengals | 6.30 | -0.53 | — | — | No modeled flags (not medically cleared) |
-| 2 | Washington Commanders | 5.87 | -0.96 | — | — | No modeled flags (not medically cleared) |
-| 3 | New York Giants | 5.84 | -0.99 | — | — | No modeled flags (not medically cleared) |
-| 4 | New Orleans Saints | 5.69 | -1.13 | — | — | No modeled flags (not medically cleared) |
-| 5 | New England Patriots | 5.63 | -1.19 | — | — | No modeled flags (not medically cleared) |
-| 6 | Cleveland Browns | 5.57 | -1.25 | — | — | No modeled flags (not medically cleared) |
-| 7 | Indianapolis Colts | 5.53 | -1.29 | — | — | No modeled flags (not medically cleared) |
-| 8 | Los Angeles Chargers | 5.47 | -1.36 | — | — | No modeled flags (not medically cleared) |
-| 9 | Tennessee Titans | 5.02 | -1.81 | — | — | No modeled flags (not medically cleared) |
-| 10 | New York Jets | 5.01 | -1.82 | — | — | No modeled flags (not medically cleared) |
+| 1 | Kansas City Chiefs | 6.40 | -0.42 | — | — | No modeled flags (not medically cleared) |
+| 2 | Cincinnati Bengals | 6.30 | -0.53 | — | — | No modeled flags (not medically cleared) |
+| 3 | Washington Commanders | 5.87 | -0.96 | — | — | No modeled flags (not medically cleared) |
+| 4 | New York Giants | 5.84 | -0.99 | — | — | No modeled flags (not medically cleared) |
+| 5 | New Orleans Saints | 5.69 | -1.13 | — | — | No modeled flags (not medically cleared) |
+| 6 | New England Patriots | 5.63 | -1.19 | — | — | No modeled flags (not medically cleared) |
+| 7 | Cleveland Browns | 5.57 | -1.25 | — | — | No modeled flags (not medically cleared) |
+| 8 | Indianapolis Colts | 5.53 | -1.29 | — | — | No modeled flags (not medically cleared) |
+| 9 | Los Angeles Chargers | 5.47 | -1.36 | — | — | No modeled flags (not medically cleared) |
+| 10 | Tennessee Titans | 5.02 | -1.81 | — | — | No modeled flags (not medically cleared) |
+| 11 | New York Jets | 5.01 | -1.82 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

@@ -1147,5 +1147,29 @@
       }
     ],
     "source_snapshot_utc": "2026-11-12T03:55:26.423390+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-13T01:06:25.788822+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [
+          "Audric Estime",
+          "Malachi Fields"
+        ],
+        "drops": [
+          "Kansas City Chiefs"
+        ],
+        "roster_id": 2,
+        "team": "CREAM MACHINE"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 2,
+        "team": "CREAM MACHINE"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-13T01:06:18.782401+00:00"
   }
 ]
