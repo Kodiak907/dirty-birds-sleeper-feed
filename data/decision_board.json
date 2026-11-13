@@ -25,7 +25,7 @@
       "ppg": 5.147
     }
   },
-  "generated_at_utc": "2026-11-13T06:00:00.781440+00:00",
+  "generated_at_utc": "2026-11-13T07:14:21.807783+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -552,7 +552,7 @@
             "sleeper_injury_questionable"
           ],
           "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
+            "practice_status": "Limited Participation in Practice",
             "week": "10"
           },
           "not_an_injury_probability": true,
@@ -602,7 +602,7 @@
           "carries_per_game": 6.33,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
+            "practice_status": "Full Participation in Practice",
             "week": "10"
           },
           "not_an_injury_probability": true,
@@ -823,7 +823,7 @@
           "carries_per_game": 0.0,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
+            "practice_status": "Full Participation in Practice",
             "week": "10"
           },
           "not_an_injury_probability": true,
@@ -1141,7 +1141,7 @@
           "carries_per_game": 0.33,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
+            "practice_status": "Did Not Participate In Practice",
             "week": "10"
           },
           "not_an_injury_probability": true,
@@ -1307,5 +1307,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-13T05:59:55.931376+00:00"
+  "snapshot_utc": "2026-11-13T07:14:15.151663+00:00"
 }

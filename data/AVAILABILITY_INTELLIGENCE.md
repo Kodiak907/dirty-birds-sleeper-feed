@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-13T06:00:05.014137+00:00
-Sleeper snapshot: 2026-11-13T05:59:55.931376+00:00
-nflverse observations: 2026-11-13T06:00:00.140766+00:00; injury feed loaded: True
+Generated: 2026-11-13T07:14:26.122112+00:00
+Sleeper snapshot: 2026-11-13T07:14:15.151663+00:00
+nflverse observations: 2026-11-13T07:14:21.040497+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 11. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,8 +31,17 @@ nflverse observations: 2026-11-13T06:00:00.140766+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Alvin Kamara** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Chris Bell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+- **Chuba Hubbard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Darnell Washington** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Jakobi Meyers** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
+- **Jared Goff** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Jonathan Taylor** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Noah Fant** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Rhamondre Stevenson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
+- **Tony Pollard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+- **Tyjae Spears** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
 
 ## Guardrails
 
