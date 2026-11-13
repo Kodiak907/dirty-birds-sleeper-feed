@@ -1,49 +1,55 @@
 {
-  "generated_at_utc": "2026-11-13T14:19:46.961303+00:00",
-  "roster_snapshot_utc": "2026-11-13T14:19:41.242388+00:00",
+  "generated_at_utc": "2026-11-13T15:51:04.912826+00:00",
+  "roster_snapshot_utc": "2026-11-13T15:50:58.192202+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 124.566,
-      "dirty_birds_before": 122.928,
-      "dirty_birds_delta_ppg": 1.64,
+      "dirty_birds_after": 125.322,
+      "dirty_birds_before": 123.192,
+      "dirty_birds_delta_ppg": 2.13,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB",
-          "projected_ppg": 9.6
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB",
+          "projected_ppg": 17.34
+        },
+        {
+          "id": "5859",
+          "name": "A.J. Brown",
+          "pos": "WR",
+          "projected_ppg": 9.99
         }
       ],
       "market_quote": {
-        "paid": 4965,
-        "paid_to_received_ratio": 1.074,
-        "received": 4623,
-        "relative_value_difference_pct": 7.4
+        "paid": 5972,
+        "paid_to_received_ratio": 1.028,
+        "received": 5810,
+        "relative_value_difference_pct": 2.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.173,
+      "mutual_benefit_screen_score": 4.685,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 99.137,
-      "opponent_before": 95.65,
-      "opponent_delta_ppg": 3.49,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 4,
-      "projected_ppg_received": 20.31,
-      "projected_ppg_sent": 9.6,
+      "opponent_after": 90.045,
+      "opponent_before": 86.626,
+      "opponent_delta_ppg": 3.42,
+      "opponent_drop_to_fit": "Audric Estime",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 12.12,
+      "projected_ppg_sent": 27.34,
       "receive": [
         {
-          "id": "8183",
-          "name": "Brock Purdy",
-          "pos": "QB",
-          "projected_ppg": 20.31
+          "id": "10229",
+          "name": "Rashee Rice",
+          "pos": "WR",
+          "projected_ppg": 12.12
         }
       ],
       "starter_benefit": {
-        "them": 3.49,
-        "us": 1.64
+        "them": 3.42,
+        "us": 2.13
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
@@ -52,42 +58,50 @@
   "trade_rejected": [
     {
       "give": [
-        "Jonah Coleman"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit"
-      ],
-      "receive": [
-        "Garrett Wilson"
-      ]
-    },
-    {
-      "give": [
         "Kirk Cousins",
-        "Kyren Williams"
+        "Zay Flowers"
       ],
       "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Malik Nabers"
-      ]
-    },
-    {
-      "give": [
-        "Kirk Cousins",
-        "Kyren Williams"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
         "Tee Higgins"
+      ]
+    },
+    {
+      "give": [
+        "Kirk Cousins",
+        "Zay Flowers"
+      ],
+      "reasons": [
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Jonathan Taylor"
+      ]
+    },
+    {
+      "give": [
+        "Kirk Cousins",
+        "Jonah Coleman"
+      ],
+      "reasons": [
+        "Opponent has insufficient demonstrated benefit"
+      ],
+      "receive": [
+        "Tetairoa McMillan"
+      ]
+    },
+    {
+      "give": [
+        "Kirk Cousins",
+        "Kyren Williams"
+      ],
+      "reasons": [
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Josh Allen"
       ]
     }
   ],

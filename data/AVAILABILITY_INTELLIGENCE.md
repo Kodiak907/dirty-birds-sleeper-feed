@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-13T14:19:51.009924+00:00
-Sleeper snapshot: 2026-11-13T14:19:41.242388+00:00
-nflverse observations: 2026-11-13T14:19:46.017422+00:00; injury feed loaded: True
+Generated: 2026-11-13T15:51:08.893846+00:00
+Sleeper snapshot: 2026-11-13T15:50:58.192202+00:00
+nflverse observations: 2026-11-13T15:51:03.966629+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 9. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -18,21 +18,28 @@ nflverse observations: 2026-11-13T14:19:46.017422+00:00; injury feed loaded: Tru
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 64.0% | Verify official NFL roster and game status before lineup decisions |
 | Kaelon Black | No tag | Week 6 observation: Did Not Participate In Practice | 31.7% | Verify current status before kickoff |
 | Seth McGowan | No tag | No matched report (not clearance) | 29.7% | Verify current status before kickoff |
-| Christian McCaffrey | No tag | Week 10 observation: Did Not Participate In Practice | 68.3% | Verify current status before kickoff |
-| A.J. Brown | No tag | Week 10 observation: Limited Participation in Practice | 70.3% | Verify current status before kickoff |
+| Christian McCaffrey | No tag | Week 10 observation: Full Participation in Practice | 68.3% | Verify current status before kickoff |
+| A.J. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Ankle | 70.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 10 observation: Limited Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 83.0% | Verify current status before kickoff |
 | Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Jaxon Smith-Njigba | No tag | Week 10 observation: Did Not Participate In Practice | 83.3% | Verify current status before kickoff |
-| Tank Dell | IR | Week 10 observation: Limited Participation in Practice | 35.0% | Verify official NFL roster and game status before lineup decisions |
+| Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 83.3% | Verify current status before kickoff |
+| Tank Dell | IR | Week 10 observation: Full Participation in Practice | 35.0% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
 | Jacksonville Jaguars | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **A.J. Brown** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Ankle', 'report_secondary_injury': 'Knee', 'report_status': 'Questionable', 'week': '10'}
+- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Jaxon Smith-Njigba** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **Tank Dell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
+- **David Montgomery** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
+- **Jonathon Brooks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
+- **Marvin Harrison Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+- **Rhamondre Stevenson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Knee', 'report_status': 'Questionable', 'week': '10'}
+- **Woody Marks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
 
 ## Guardrails
 
