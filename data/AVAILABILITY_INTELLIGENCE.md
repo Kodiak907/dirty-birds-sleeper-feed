@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-13T13:06:00.614192+00:00
-Sleeper snapshot: 2026-11-13T13:05:50.618471+00:00
-nflverse observations: 2026-11-13T13:05:56.039527+00:00; injury feed loaded: True
+Generated: 2026-11-13T14:19:51.009924+00:00
+Sleeper snapshot: 2026-11-13T14:19:41.242388+00:00
+nflverse observations: 2026-11-13T14:19:46.017422+00:00; injury feed loaded: True
 
-**New observed changes:** 4. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,10 +31,8 @@ nflverse observations: 2026-11-13T13:05:56.039527+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Cam Skattebo** (snap_share_change): Snap share rose 33.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Chig Okonkwo** (snap_share_change): Snap share fell 15.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Devin Singletary** (snap_share_change): Snap share fell 85.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **J.J. McCarthy** (snap_share_change): Snap share rose 19.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
