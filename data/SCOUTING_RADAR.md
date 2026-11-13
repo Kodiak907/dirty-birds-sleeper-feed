@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-13T17:52:17.332653+00:00
-Sleeper snapshot: 2026-11-13T17:52:11.158529+00:00
+Generated: 2026-11-13T18:53:24.024600+00:00
+Sleeper snapshot: 2026-11-13T18:53:18.510341+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- DANGER CLOSE: added Chris Rodriguez Jr.; dropped Brian Thomas Jr.
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
