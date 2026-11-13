@@ -1,15 +1,15 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-13T16:55:19.383608+00:00
-Sleeper snapshot: 2026-11-13T16:55:14.919493+00:00
+Generated: 2026-11-13T17:52:17.517495+00:00
+Sleeper snapshot: 2026-11-13T17:52:11.158529+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 627 |
-| WR | 1289 |
+| RB | 626 |
+| WR | 1290 |
 | TE | 615 |
 | K | 138 |
 | DEF | 14 |
@@ -30,15 +30,14 @@ Sleeper snapshot: 2026-11-13T16:55:14.919493+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Zonovan Knight | ARI | 7.09 | 88% | 39.7% | Not flagged |
 | 2 | Samaje Perine | CIN | 6.03 | 100% | 32.7% | Not flagged |
-| 3 | Chris Rodriguez Jr. | JAX | 5.91 | 100% | — | Not flagged |
-| 4 | Keaton Mitchell | LAC | 5.73 | 100% | 27.0% | Not flagged |
-| 5 | Tyjae Spears | TEN | 5.40 | 100% | 38.0% | Questionable |
-| 6 | Alvin Kamara | NO | 4.71 | 100% | 43.7% | Not flagged |
-| 7 | MarShawn Lloyd | GB | 2.42 | 88% | 30.7% | Not flagged |
-| 8 | Tank Bigsby | PHI | 2.17 | 88% | 28.7% | IR |
-| 9 | Jaleel McLaughlin | CLE | 0.86 | 88% | 21.7% | Not flagged |
-| 10 | Elijah Mitchell | PHI | 0.82 | 88% | 39.7% | Not flagged |
-| 11 | Roschon Johnson | CHI | 0.40 | 88% | 11.3% | Not flagged |
+| 3 | Keaton Mitchell | LAC | 5.73 | 100% | 27.0% | Not flagged |
+| 4 | Tyjae Spears | TEN | 5.40 | 100% | 38.0% | Questionable |
+| 5 | Alvin Kamara | NO | 4.71 | 100% | 43.7% | Not flagged |
+| 6 | MarShawn Lloyd | GB | 2.42 | 88% | 30.7% | Not flagged |
+| 7 | Tank Bigsby | PHI | 2.17 | 88% | 28.7% | IR |
+| 8 | Jaleel McLaughlin | CLE | 0.86 | 88% | 21.7% | Not flagged |
+| 9 | Elijah Mitchell | PHI | 0.82 | 88% | 39.7% | Not flagged |
+| 10 | Roschon Johnson | CHI | 0.40 | 88% | 11.3% | Not flagged |
 
 ### WR
 
@@ -54,8 +53,8 @@ Sleeper snapshot: 2026-11-13T16:55:14.919493+00:00
 | 8 | Rashod Bateman | BAL | 3.81 | 88% | 70.3% | Not flagged |
 | 9 | Ja'Kobi Lane | BAL | 3.80 | 88% | 63.7% | Not flagged |
 | 10 | Chris Bell | MIA | 3.69 | 100% | 60.0% | Not flagged |
-| 11 | Jauan Jennings | MIN | 2.61 | 88% | 60.0% | Not flagged |
-| 12 | Dohnte Meyers | CIN | 1.98 | 100% | 46.3% | Not flagged |
+| 11 | Brian Thomas Jr. | JAX | 3.58 | 100% | — | Not flagged |
+| 12 | Jauan Jennings | MIN | 2.61 | 88% | 60.0% | Not flagged |
 
 ### TE
 

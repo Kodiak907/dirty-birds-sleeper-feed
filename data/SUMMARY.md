@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-13T16:55:14.919493+00:00
+Updated: 2026-11-13T17:52:11.158529+00:00
 League: 1399157532559192064
 NFL week: 10
 
@@ -19,7 +19,9 @@ NFL week: 10
 - Roster 12: Cokerthestroker | 6-3 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 4: added Chris Rodriguez Jr.; dropped Brian Thomas Jr.
+- lineup_change â roster/transaction 4
+- Transaction 1427026634984144896: free_agent / complete / rosters [4] / adds {'10219': 4} / drops {'11631': 4} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

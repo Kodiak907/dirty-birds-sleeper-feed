@@ -19,15 +19,14 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Zonovan Knight | 7.09 | +2.42 | 39.7% | — | carries_missing |
 | 2 | Samaje Perine | 6.03 | +1.36 | 32.7% | Carries 6.3 | No modeled flags (not medically cleared) |
-| 3 | Chris Rodriguez Jr. | 5.91 | +1.23 | — | Carries 9.0 | snap_data_missing, usage_sample_missing |
-| 4 | Keaton Mitchell | 5.73 | +1.06 | 27.0% | Carries 4.3 | No modeled flags (not medically cleared) |
-| 5 | Tyjae Spears | 5.40 | +0.72 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
-| 6 | Alvin Kamara | 4.71 | +0.03 | 43.7% | Carries 6.3 | No modeled flags (not medically cleared) |
-| 7 | MarShawn Lloyd | 2.42 | -2.26 | 30.7% | Carries 5.7 | injury_report_observation_review |
-| 8 | Tank Bigsby | 2.17 | -2.50 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 9 | Jaleel McLaughlin | 0.86 | -3.81 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 10 | Elijah Mitchell | 0.82 | -3.85 | 39.7% | Carries 5.7 | No modeled flags (not medically cleared) |
-| 11 | Roschon Johnson | 0.40 | -4.28 | 11.3% | Carries 2.3 | No modeled flags (not medically cleared) |
+| 3 | Keaton Mitchell | 5.73 | +1.06 | 27.0% | Carries 4.3 | No modeled flags (not medically cleared) |
+| 4 | Tyjae Spears | 5.40 | +0.72 | 38.0% | Carries 1.7 | sleeper_injury_questionable |
+| 5 | Alvin Kamara | 4.71 | +0.03 | 43.7% | Carries 6.3 | No modeled flags (not medically cleared) |
+| 6 | MarShawn Lloyd | 2.42 | -2.26 | 30.7% | Carries 5.7 | injury_report_observation_review |
+| 7 | Tank Bigsby | 2.17 | -2.50 | 28.7% | Carries 9.0 | sleeper_injury_ir |
+| 8 | Jaleel McLaughlin | 0.86 | -3.81 | 21.7% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 9 | Elijah Mitchell | 0.82 | -3.85 | 39.7% | Carries 5.7 | No modeled flags (not medically cleared) |
+| 10 | Roschon Johnson | 0.40 | -4.28 | 11.3% | Carries 2.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Tank Dell (5.15 PPG)
 
@@ -43,8 +42,8 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 8 | Rashod Bateman | 3.81 | -1.33 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
 | 9 | Ja'Kobi Lane | 3.80 | -1.35 | 63.7% | Tgt 2.0 | injury_report_observation_review |
 | 10 | Chris Bell | 3.69 | -1.45 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 11 | Jauan Jennings | 2.61 | -2.54 | 60.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
-| 12 | Dohnte Meyers | 1.98 | -3.17 | 46.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 11 | Brian Thomas Jr. | 3.58 | -1.57 | — | Tgt 2.3 | snap_data_missing, usage_sample_missing |
+| 12 | Jauan Jennings | 2.61 | -2.54 | 60.0% | Tgt 2.0 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Isaiah Likely (9.92 PPG)
 

@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-13T16:55:19.319412+00:00",
+  "generated_at_utc": "2026-11-13T17:52:17.455806+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -2798,18 +2798,18 @@
       ],
       "players": [
         {
-          "actual_points_total": 12.3,
-          "actual_points_weekly_avg": 1.37,
-          "id": "11631",
+          "actual_points_total": 3.6,
+          "actual_points_weekly_avg": 0.4,
+          "id": "10219",
           "n_weeks": 9,
-          "name": "Brian Thomas Jr.",
-          "nonzero_weeks": 3,
+          "name": "Chris Rodriguez Jr.",
+          "nonzero_weeks": 2,
           "on_fantasy_reserve": false,
-          "position": "WR",
+          "position": "RB",
           "weekly_points": [
-            5.5,
-            5.5,
+            2.3,
             1.3,
+            0.0,
             0.0,
             0.0,
             0.0,
@@ -3372,6 +3372,27 @@
               14.0,
               9.1
             ]
+          },
+          {
+            "actual_points_total": 3.6,
+            "actual_points_weekly_avg": 0.4,
+            "id": "10219",
+            "n_weeks": 9,
+            "name": "Chris Rodriguez Jr.",
+            "nonzero_weeks": 2,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              2.3,
+              1.3,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           }
         ],
         "TE": [
@@ -3543,27 +3564,6 @@
               7.1,
               0.0,
               16.6
-            ]
-          },
-          {
-            "actual_points_total": 12.3,
-            "actual_points_weekly_avg": 1.37,
-            "id": "11631",
-            "n_weeks": 9,
-            "name": "Brian Thomas Jr.",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              5.5,
-              5.5,
-              1.3,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
             ]
           },
           {
@@ -10271,6 +10271,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-13T16:55:14.919493+00:00",
+  "snapshot_utc": "2026-11-13T17:52:11.158529+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-9"
 }

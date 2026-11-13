@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-13T16:55:19.220411+00:00
-Sleeper snapshot: 2026-11-13T16:55:14.919493+00:00
+Generated: 2026-11-13T17:52:17.295924+00:00
+Sleeper snapshot: 2026-11-13T17:52:11.158529+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1427026634984144896` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Chris Rodriguez Jr. → DANGER CLOSE  (#4) | Dropped: Brian Thomas Jr. → DANGER CLOSE  (#4)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-13T17:52:17.295924+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Chris Rodriguez Jr. → DANGER CLOSE  (#4) | Dropped: Brian Thomas Jr. → DANGER CLOSE  (#4)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baltimore Ravens → CREAM MACHINE  (#2)
 - 2026-11-10T20:46:04.173497+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
 - 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
-- 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Cairo Santos → Dirty Birds (#1)
 
 ## Important limits
 
