@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-13T15:51:08.893846+00:00
-Sleeper snapshot: 2026-11-13T15:50:58.192202+00:00
-nflverse observations: 2026-11-13T15:51:03.966629+00:00; injury feed loaded: True
+Generated: 2026-11-13T16:55:23.688472+00:00
+Sleeper snapshot: 2026-11-13T16:55:14.919493+00:00
+nflverse observations: 2026-11-13T16:55:18.949641+00:00; injury feed loaded: True
 
-**New observed changes:** 9. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,15 +31,8 @@ nflverse observations: 2026-11-13T15:51:03.966629+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **A.J. Brown** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Ankle', 'report_secondary_injury': 'Knee', 'report_status': 'Questionable', 'week': '10'}
-- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **Jaxon Smith-Njigba** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **Tank Dell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **David Montgomery** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
-- **Jonathon Brooks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '10'}
-- **Marvin Harrison Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
-- **Rhamondre Stevenson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Knee', 'report_status': 'Questionable', 'week': '10'}
-- **Woody Marks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '10'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
