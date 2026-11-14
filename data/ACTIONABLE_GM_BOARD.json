@@ -1,19 +1,19 @@
 {
-  "generated_at_utc": "2026-11-14T14:43:27.317147+00:00",
-  "roster_snapshot_utc": "2026-11-14T14:43:22.721652+00:00",
+  "generated_at_utc": "2026-11-14T15:39:58.603816+00:00",
+  "roster_snapshot_utc": "2026-11-14T15:39:51.416099+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 125.322,
-      "dirty_birds_before": 123.192,
-      "dirty_birds_delta_ppg": 2.13,
+      "dirty_birds_after": 125.31,
+      "dirty_birds_before": 123.166,
+      "dirty_birds_delta_ppg": 2.14,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "1166",
           "name": "Kirk Cousins",
           "pos": "QB",
-          "projected_ppg": 17.34
+          "projected_ppg": 17.38
         },
         {
           "id": "5859",
@@ -30,26 +30,26 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.685,
+      "mutual_benefit_screen_score": 4.703,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 90.045,
-      "opponent_before": 86.626,
-      "opponent_delta_ppg": 3.42,
+      "opponent_after": 88.911,
+      "opponent_before": 85.479,
+      "opponent_delta_ppg": 3.43,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.12,
-      "projected_ppg_sent": 27.34,
+      "projected_ppg_received": 12.13,
+      "projected_ppg_sent": 27.38,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.12
+          "projected_ppg": 12.13
         }
       ],
       "starter_benefit": {
-        "them": 3.42,
-        "us": 2.13
+        "them": 3.43,
+        "us": 2.14
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
@@ -83,18 +83,6 @@
     {
       "give": [
         "Kirk Cousins",
-        "Jonah Coleman"
-      ],
-      "reasons": [
-        "Opponent has insufficient demonstrated benefit"
-      ],
-      "receive": [
-        "Tetairoa McMillan"
-      ]
-    },
-    {
-      "give": [
-        "Kirk Cousins",
         "Kyren Williams"
       ],
       "reasons": [
@@ -102,6 +90,20 @@
       ],
       "receive": [
         "Josh Allen"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Isaiah Likely"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Trey McBride"
       ]
     }
   ],

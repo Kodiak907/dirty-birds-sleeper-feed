@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-14T14:43:27.317147+00:00
+Generated: 2026-11-14T15:39:58.603816+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -20,8 +20,8 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 - Kirk Cousins, Zay Flowers for Tee Higgins: Overpays in outgoing assets for a marginal gain
 - Kirk Cousins, Zay Flowers for Jonathan Taylor: Overpays in outgoing assets for a marginal gain
-- Kirk Cousins, Jonah Coleman for Tetairoa McMillan: Opponent has insufficient demonstrated benefit
 - Kirk Cousins, Kyren Williams for Josh Allen: Overpays in outgoing assets for a marginal gain
+- C.J. Stroud, Isaiah Likely for Trey McBride: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 
