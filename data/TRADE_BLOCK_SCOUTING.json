@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-14T11:40:17.333276+00:00",
-  "source_snapshot_utc": "2026-11-14T11:40:09.824254+00:00",
+  "generated_at_utc": "2026-11-14T12:50:34.820529+00:00",
+  "source_snapshot_utc": "2026-11-14T12:50:25.999162+00:00",
   "source_market_as_of": "2026-11-14T03:51:48.792895+00:00",
-  "source_projection_as_of": "2026-11-13T23:41:44.756419+00:00",
+  "source_projection_as_of": "2026-11-14T12:50:32.095782+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -51,8 +51,8 @@
           ],
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.56,
-          "their_lineup_delta_ppg": 0.07,
+          "our_lineup_delta_ppg": 3.55,
+          "their_lineup_delta_ppg": 0.08,
           "value_paid_received_ratio": 0.973,
           "our_extra_cut": null,
           "opponent_extra_cut": "Blake Corum",
@@ -89,8 +89,8 @@
           ],
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.56,
-          "their_lineup_delta_ppg": 0.07,
+          "our_lineup_delta_ppg": 3.55,
+          "their_lineup_delta_ppg": 0.08,
           "value_paid_received_ratio": 0.853,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -122,8 +122,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.11,
-          "their_lineup_delta_ppg": 3.49,
+          "our_lineup_delta_ppg": 2.14,
+          "their_lineup_delta_ppg": 3.43,
           "value_paid_received_ratio": 1.077,
           "our_extra_cut": null,
           "opponent_extra_cut": "Audric Estime",
@@ -160,8 +160,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.11,
-          "their_lineup_delta_ppg": 3.49,
+          "our_lineup_delta_ppg": 2.14,
+          "their_lineup_delta_ppg": 3.43,
           "value_paid_received_ratio": 0.913,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -194,7 +194,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.9,
-          "their_lineup_delta_ppg": 0.4,
+          "their_lineup_delta_ppg": 0.39,
           "value_paid_received_ratio": 1.003,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
@@ -232,7 +232,7 @@
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
           "our_lineup_delta_ppg": 1.9,
-          "their_lineup_delta_ppg": 0.4,
+          "their_lineup_delta_ppg": 0.39,
           "value_paid_received_ratio": 0.796,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -269,8 +269,8 @@
           ],
           "opponent_roster_id": 4,
           "opponent": "DANGER CLOSE ",
-          "our_lineup_delta_ppg": 0.82,
-          "their_lineup_delta_ppg": 0.62,
+          "our_lineup_delta_ppg": 0.8,
+          "their_lineup_delta_ppg": 0.61,
           "value_paid_received_ratio": 0.817,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -288,30 +288,25 @@
               "position": "WR"
             },
             {
-              "id": "13296",
-              "name": "Caleb Douglas",
-              "position": "WR"
+              "id": "1166",
+              "name": "Kirk Cousins",
+              "position": "QB"
             }
           ],
           "receive": [
             {
-              "id": "6804",
-              "name": "Jordan Love",
-              "position": "QB"
-            },
-            {
-              "id": "8148",
-              "name": "Jameson Williams",
+              "id": "8146",
+              "name": "Garrett Wilson",
               "position": "WR"
             }
           ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
+          "opponent_roster_id": 9,
+          "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 0.74,
-          "their_lineup_delta_ppg": 1.98,
-          "value_paid_received_ratio": 0.862,
+          "their_lineup_delta_ppg": 0.37,
+          "value_paid_received_ratio": 1.093,
           "our_extra_cut": null,
-          "opponent_extra_cut": null,
+          "opponent_extra_cut": "Tyler Shough",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -319,7 +314,7 @@
           ]
         }
       ],
-      "candidate_count": 127
+      "candidate_count": 126
     },
     {
       "asset": "Patrick Mahomes",
