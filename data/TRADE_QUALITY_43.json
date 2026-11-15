@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-15T14:44:55.183976+00:00",
+  "generated_at_utc": "2026-11-15T15:40:37.484335+00:00",
   "candidates_evaluated": 49698,
-  "market_matched": 6414,
+  "market_matched": 6404,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-15T03:54:05.063861+00:00",
+  "market_as_of": "2026-11-15T14:56:42.370375+00:00",
   "projection_as_of": "2026-11-15T13:53:50.577935+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -30,15 +30,20 @@
           "id": "12490",
           "name": "Bhayshul Tuten",
           "pos": "RB"
+        },
+        {
+          "id": "6797",
+          "name": "Justin Herbert",
+          "pos": "QB"
         }
       ],
       "our_gain": 2.52,
       "their_gain": 1.12,
-      "market_paid_received_ratio": 0.993,
+      "market_paid_received_ratio": 0.951,
       "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": "Blake Corum",
+      "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.17,
+      "score": 3.045,
       "not_an_approved_offer": true
     },
     {
@@ -51,8 +56,8 @@
           "pos": "RB"
         },
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
+          "id": "1166",
+          "name": "Kirk Cousins",
           "pos": "QB"
         }
       ],
@@ -63,18 +68,18 @@
           "pos": "RB"
         },
         {
-          "id": "11624",
-          "name": "Xavier Worthy",
-          "pos": "WR"
+          "id": "1373",
+          "name": "Geno Smith",
+          "pos": "QB"
         }
       ],
-      "our_gain": 2.25,
-      "their_gain": 1.39,
-      "market_paid_received_ratio": 0.997,
+      "our_gain": 2.52,
+      "their_gain": 1.12,
+      "market_paid_received_ratio": 0.947,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.076,
+      "score": 3.034,
       "not_an_approved_offer": true
     },
     {
@@ -101,83 +106,11 @@
       ],
       "our_gain": 1.87,
       "their_gain": 1.92,
-      "market_paid_received_ratio": 0.989,
+      "market_paid_received_ratio": 1.014,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Audric Estime",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.989,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 10,
-      "opponent_name": "EmanAndYoMomma",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "6806",
-          "name": "J.K. Dobbins",
-          "pos": "RB"
-        },
-        {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.39,
-      "their_gain": 0.74,
-      "market_paid_received_ratio": 1.026,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.756,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 10,
-      "opponent_name": "EmanAndYoMomma",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "5012",
-          "name": "Mark Andrews",
-          "pos": "TE"
-        },
-        {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.39,
-      "their_gain": 0.74,
-      "market_paid_received_ratio": 1.061,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.651,
+      "score": 2.98,
       "not_an_approved_offer": true
     },
     {
@@ -209,11 +142,83 @@
       ],
       "our_gain": 1.87,
       "their_gain": 1.92,
-      "market_paid_received_ratio": 0.865,
+      "market_paid_received_ratio": 0.889,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.617,
+      "score": 2.688,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 10,
+      "opponent_name": "EmanAndYoMomma",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "5012",
+          "name": "Mark Andrews",
+          "pos": "TE"
+        },
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 2.39,
+      "their_gain": 0.74,
+      "market_paid_received_ratio": 1.06,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.655,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 10,
+      "opponent_name": "EmanAndYoMomma",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "4663",
+          "name": "Austin Ekeler",
+          "pos": "RB"
+        },
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 2.39,
+      "their_gain": 0.74,
+      "market_paid_received_ratio": 1.066,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.635,
       "not_an_approved_offer": true
     }
   ],

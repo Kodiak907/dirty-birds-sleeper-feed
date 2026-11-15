@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-15T14:44:52.776634+00:00",
-  "roster_snapshot_utc": "2026-11-15T14:44:48.710504+00:00",
+  "generated_at_utc": "2026-11-15T15:40:34.919803+00:00",
+  "roster_snapshot_utc": "2026-11-15T15:40:29.587299+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 125.31,
-      "dirty_birds_before": 123.166,
+      "dirty_birds_after": 128.011,
+      "dirty_birds_before": 125.867,
       "dirty_birds_delta_ppg": 2.14,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -13,13 +13,13 @@
           "id": "1166",
           "name": "Kirk Cousins",
           "pos": "QB",
-          "projected_ppg": 17.38
+          "projected_ppg": 17.41
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "pos": "WR",
-          "projected_ppg": 9.99
+          "projected_ppg": 10.01
         }
       ],
       "market_quote": {
@@ -30,25 +30,25 @@
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 4.703,
+      "mutual_benefit_screen_score": 4.723,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.911,
-      "opponent_before": 85.479,
-      "opponent_delta_ppg": 3.43,
+      "opponent_after": 88.21,
+      "opponent_before": 84.747,
+      "opponent_delta_ppg": 3.46,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.13,
-      "projected_ppg_sent": 27.38,
+      "projected_ppg_received": 12.15,
+      "projected_ppg_sent": 27.42,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.13
+          "projected_ppg": 12.15
         }
       ],
       "starter_benefit": {
-        "them": 3.43,
+        "them": 3.46,
         "us": 2.14
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -71,18 +71,6 @@
     {
       "give": [
         "Kirk Cousins",
-        "Zay Flowers"
-      ],
-      "reasons": [
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Jonathan Taylor"
-      ]
-    },
-    {
-      "give": [
-        "Kirk Cousins",
         "Kyren Williams"
       ],
       "reasons": [
@@ -94,8 +82,8 @@
     },
     {
       "give": [
-        "C.J. Stroud",
-        "Isaiah Likely"
+        "Kirk Cousins",
+        "A.J. Brown"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
@@ -103,7 +91,7 @@
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Trey McBride"
+        "Garrett Wilson"
       ]
     }
   ],
