@@ -1,7 +1,7 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-15T22:13:21.598139+00:00
-Sleeper snapshot: 2026-11-15T22:13:15.757675+00:00
+Generated: 2026-11-15T22:40:55.708163+00:00
+Sleeper snapshot: 2026-11-15T22:40:51.067401+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
