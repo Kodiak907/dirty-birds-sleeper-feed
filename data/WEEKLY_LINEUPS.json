@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-15T12:52:06.727625+00:00",
+  "generated_at_utc": "2026-11-15T13:53:53.750148+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-15T01:02:26.172203+00:00",
+  "projection_as_of": "2026-11-15T13:53:50.577935+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-15T12:51:58.355508+00:00",
+  "snapshot_utc": "2026-11-15T13:53:45.226447+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -24,14 +24,14 @@
         "Pat Bryant",
         "Jonah Coleman"
       ],
-      "ppg": 132.13,
+      "ppg": 132.22,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "CLE",
           "position": "QB",
-          "ppg": 17.42
+          "ppg": 17.64
         },
         {
           "id": "4034",
@@ -45,7 +45,7 @@
           "name": "Kyren Williams",
           "opponent": "ARI",
           "position": "RB",
-          "ppg": 15.72
+          "ppg": 15.65
         },
         {
           "id": "9488",
@@ -59,7 +59,7 @@
           "name": "Zay Flowers",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 13.55
+          "ppg": 13.38
         },
         {
           "id": "8131",
@@ -87,7 +87,7 @@
           "name": "A.J. Brown",
           "opponent": "DET",
           "position": "WR",
-          "ppg": 11.84
+          "ppg": 11.95
         },
         {
           "id": "5872",
@@ -105,21 +105,21 @@
         "Kyren Williams",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 112.31,
+      "ppg": 112.58,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "IND",
           "position": "QB",
-          "ppg": 19.54
+          "ppg": 19.8
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "MIN",
           "position": "RB",
-          "ppg": 17.8
+          "ppg": 17.81
         },
         {
           "id": "13345",
@@ -140,7 +140,7 @@
           "name": "Caleb Douglas",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 7.49
+          "ppg": 7.5
         },
         {
           "id": "8131",
@@ -168,7 +168,7 @@
           "name": "Deebo Samuel Sr.",
           "opponent": "MIN",
           "position": "WR",
-          "ppg": 7.09
+          "ppg": 7.08
         },
         {
           "id": "12492",

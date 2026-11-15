@@ -1,41 +1,41 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-15T12:52:06.727625+00:00 | Forecast as of: 2026-11-15T01:02:26.172203+00:00
+Generated: 2026-11-15T13:53:53.750148+00:00 | Forecast as of: 2026-11-15T13:53:50.577935+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 10
 
-**Projected optimal score:** 132.13
+**Projected optimal score:** 132.22
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | CLE | 17.42 |
+| C.J. Stroud | QB | CLE | 17.64 |
 | Christian McCaffrey | RB | DAL | 20.57 |
-| Kyren Williams | RB | ARI | 15.72 |
+| Kyren Williams | RB | ARI | 15.65 |
 | Jaxon Smith-Njigba | WR | LV | 19.42 |
-| Zay Flowers | WR | LAC | 13.55 |
+| Zay Flowers | WR | LAC | 13.38 |
 | Isaiah Likely | TE | WAS | 10.12 |
 | Will Reichard | K | GB | 6.91 |
 | Jacksonville Jaguars | DEF | TEN | 7.56 |
-| A.J. Brown | WR | DET | 11.84 |
+| A.J. Brown | WR | DET | 11.95 |
 | Deebo Samuel Sr. | WR | DAL | 9.02 |
 
 ## Week 11
 
-**Projected optimal score:** 112.31
+**Projected optimal score:** 112.58
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 19.54 |
-| Christian McCaffrey | RB | MIN | 17.80 |
+| C.J. Stroud | QB | IND | 19.80 |
+| Christian McCaffrey | RB | MIN | 17.81 |
 | Jonah Coleman | RB | LV | 15.44 |
 | Zay Flowers | WR | CAR | 12.52 |
-| Caleb Douglas | WR | BUF | 7.49 |
+| Caleb Douglas | WR | BUF | 7.50 |
 | Isaiah Likely | TE | JAX | 11.73 |
 | Will Reichard | K | SF | 6.95 |
 | Jacksonville Jaguars | DEF | NYG | 6.84 |
-| Deebo Samuel Sr. | WR | MIN | 7.09 |
+| Deebo Samuel Sr. | WR | MIN | 7.08 |
 | Pat Bryant | WR | LV | 6.91 |
 
 ## Week 12
