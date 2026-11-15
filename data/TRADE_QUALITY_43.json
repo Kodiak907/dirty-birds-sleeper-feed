@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-15T02:54:05.652303+00:00",
+  "generated_at_utc": "2026-11-15T03:54:06.907038+00:00",
   "candidates_evaluated": 49698,
-  "market_matched": 6387,
+  "market_matched": 6414,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-14T14:55:33.843668+00:00",
+  "market_as_of": "2026-11-15T03:54:05.063861+00:00",
   "projection_as_of": "2026-11-15T01:02:26.172203+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -20,8 +20,8 @@
           "pos": "RB"
         },
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
+          "id": "1166",
+          "name": "Kirk Cousins",
           "pos": "QB"
         }
       ],
@@ -30,20 +30,15 @@
           "id": "12490",
           "name": "Bhayshul Tuten",
           "pos": "RB"
-        },
-        {
-          "id": "1373",
-          "name": "Geno Smith",
-          "pos": "QB"
         }
       ],
-      "our_gain": 2.33,
-      "their_gain": 1.32,
-      "market_paid_received_ratio": 1.005,
+      "our_gain": 2.54,
+      "their_gain": 1.11,
+      "market_paid_received_ratio": 0.993,
       "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
+      "theirs_cut_to_fit": "Blake Corum",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.107,
+      "score": 3.184,
       "not_an_approved_offer": true
     },
     {
@@ -68,18 +63,18 @@
           "pos": "RB"
         },
         {
-          "id": "6797",
-          "name": "Justin Herbert",
-          "pos": "QB"
+          "id": "11624",
+          "name": "Xavier Worthy",
+          "pos": "WR"
         }
       ],
       "our_gain": 2.33,
       "their_gain": 1.32,
-      "market_paid_received_ratio": 1.009,
+      "market_paid_received_ratio": 0.997,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.096,
+      "score": 3.114,
       "not_an_approved_offer": true
     },
     {
@@ -142,47 +137,11 @@
       ],
       "our_gain": 2.44,
       "their_gain": 0.69,
-      "market_paid_received_ratio": 1.058,
+      "market_paid_received_ratio": 1.026,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.679,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 2,
-      "opponent_name": "CREAM MACHINE ",
-      "give": [
-        {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "11583",
-          "name": "Jonathon Brooks",
-          "pos": "RB"
-        },
-        {
-          "id": "10229",
-          "name": "Rashee Rice",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 1.95,
-      "their_gain": 1.85,
-      "market_paid_received_ratio": 0.873,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.678,
+      "score": 2.776,
       "not_an_approved_offer": true
     },
     {
@@ -214,11 +173,47 @@
       ],
       "our_gain": 2.44,
       "their_gain": 0.69,
-      "market_paid_received_ratio": 1.06,
+      "market_paid_received_ratio": 1.061,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.675,
+      "score": 2.671,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 2,
+      "opponent_name": "CREAM MACHINE ",
+      "give": [
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "10229",
+          "name": "Rashee Rice",
+          "pos": "WR"
+        },
+        {
+          "id": "11603",
+          "name": "AJ Barner",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 1.95,
+      "their_gain": 1.85,
+      "market_paid_received_ratio": 0.865,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.655,
       "not_an_approved_offer": true
     }
   ],
