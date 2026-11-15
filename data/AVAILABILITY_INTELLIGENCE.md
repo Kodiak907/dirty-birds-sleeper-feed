@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-15T08:08:22.715722+00:00
-Sleeper snapshot: 2026-11-15T08:08:14.322046+00:00
-nflverse observations: 2026-11-15T08:08:17.986874+00:00; injury feed loaded: True
+Generated: 2026-11-15T09:48:03.311309+00:00
+Sleeper snapshot: 2026-11-15T09:47:55.610108+00:00
+nflverse observations: 2026-11-15T09:47:58.902726+00:00; injury feed loaded: True
 
-**New observed changes:** 3. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,9 +31,8 @@ nflverse observations: 2026-11-15T08:08:17.986874+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **David Njoku** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'report_primary_injury': 'Fibula', 'report_status': 'Questionable', 'week': '10'}
-- **Keaton Mitchell** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '10'}
-- **Ladd McConkey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Back', 'report_status': 'Questionable', 'week': '10'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
