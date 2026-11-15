@@ -53,7 +53,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Darren Waller | 7.26 | -3.63 | 53.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 3 | Michael Mayer | 5.02 | -5.87 | 79.0% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Noah Fant | 3.73 | -7.17 | 50.3% | Tgt 1.7 | No modeled flags (not medically cleared) |
-| 5 | David Njoku | 3.49 | -7.41 | 35.5% | Tgt 4.0 | sleeper_injury_ir |
+| 5 | David Njoku | 3.49 | -7.41 | 35.5% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 | 6 | Colby Parkinson | 3.12 | -7.77 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 
 ## K — reference: Will Reichard (7.12 PPG)
