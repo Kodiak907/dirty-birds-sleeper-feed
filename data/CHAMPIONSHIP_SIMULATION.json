@@ -1,7 +1,7 @@
 {
   "bracket_assumption": "Six entrants, seeds 1 and 2 receive Week 15 byes; higher seed faces lower surviving seed Week 16.",
-  "forecast_source_as_of": "2026-11-14T12:50:32.095782+00:00",
-  "generated_at_utc": "2026-11-14T16:13:52.242754+00:00",
+  "forecast_source_as_of": "2026-11-15T13:53:50.577935+00:00",
+  "generated_at_utc": "2026-11-15T16:13:55.733146+00:00",
   "key_disclaimer": "These championship probabilities are CONDITIONAL on today's six seeds reaching the playoffs, not estimates of actual season-end playoff or title probabilities.",
   "league_week": 10,
   "not_modeled": [
@@ -14,7 +14,7 @@
   ],
   "random_seed": 2607,
   "ranking_assumption": "Current wins, losses, then scored points. Official Sleeper tiebreaks not reconstructed.",
-  "roster_snapshot_as_of": "2026-11-14T15:39:51.416099+00:00",
+  "roster_snapshot_as_of": "2026-11-15T15:40:29.587299+00:00",
   "seeded_rosters": [
     11,
     6,
@@ -27,84 +27,84 @@
   "status": "completed_conditional_current_seed_bracket",
   "teams": [
     {
-      "conditional_championship_probability": 0.198,
-      "conditional_final_probability": 0.468,
+      "conditional_championship_probability": 0.1815,
+      "conditional_final_probability": 0.436,
       "conditional_semifinal_probability": 1.0,
       "name": "suck my dickerson",
       "playoff_lineup_forecasts": {
-        "15": 123.33,
-        "16": 123.72,
-        "17": 125.26
+        "15": 121.43,
+        "16": 121.82,
+        "17": 123.61
       },
       "record": "7-2",
       "roster_id": 11,
       "seed": 1
     },
     {
-      "conditional_championship_probability": 0.3923,
-      "conditional_final_probability": 0.6377,
+      "conditional_championship_probability": 0.3604,
+      "conditional_final_probability": 0.6021,
       "conditional_semifinal_probability": 1.0,
       "name": "kfsn",
       "playoff_lineup_forecasts": {
-        "15": 131.01,
-        "16": 138.33,
-        "17": 137.49
+        "15": 130.1,
+        "16": 135.46,
+        "17": 135.65
       },
       "record": "7-2",
       "roster_id": 6,
       "seed": 2
     },
     {
-      "conditional_championship_probability": 0.0415,
-      "conditional_final_probability": 0.116,
-      "conditional_semifinal_probability": 0.4186,
+      "conditional_championship_probability": 0.0382,
+      "conditional_final_probability": 0.1123,
+      "conditional_semifinal_probability": 0.3957,
       "name": "DeeboSix0",
       "playoff_lineup_forecasts": {
-        "15": 118.72,
-        "16": 114.54,
-        "17": 116.87
+        "15": 117.68,
+        "16": 113.38,
+        "17": 115.66
       },
       "record": "7-2",
       "roster_id": 8,
       "seed": 3
     },
     {
-      "conditional_championship_probability": 0.0791,
-      "conditional_final_probability": 0.1552,
-      "conditional_semifinal_probability": 0.339,
+      "conditional_championship_probability": 0.0797,
+      "conditional_final_probability": 0.1532,
+      "conditional_semifinal_probability": 0.3173,
       "name": "Cokerthestroker",
       "playoff_lineup_forecasts": {
-        "15": 121.62,
-        "16": 128.03,
-        "17": 128.12
+        "15": 121.58,
+        "16": 127.58,
+        "17": 127.83
       },
       "record": "6-3",
       "roster_id": 12,
       "seed": 4
     },
     {
-      "conditional_championship_probability": 0.1773,
-      "conditional_final_probability": 0.3299,
-      "conditional_semifinal_probability": 0.661,
+      "conditional_championship_probability": 0.2149,
+      "conditional_final_probability": 0.3752,
+      "conditional_semifinal_probability": 0.6827,
       "name": "Dirty Birds",
       "playoff_lineup_forecasts": {
-        "15": 138.32,
-        "16": 131.51,
-        "17": 131.55
+        "15": 141.22,
+        "16": 134.82,
+        "17": 135.0
       },
       "record": "6-3",
       "roster_id": 1,
       "seed": 5
     },
     {
-      "conditional_championship_probability": 0.1118,
-      "conditional_final_probability": 0.2932,
-      "conditional_semifinal_probability": 0.5814,
+      "conditional_championship_probability": 0.1253,
+      "conditional_final_probability": 0.3212,
+      "conditional_semifinal_probability": 0.6043,
       "name": "    Victorious Secret",
       "playoff_lineup_forecasts": {
-        "15": 126.1,
-        "16": 125.32,
-        "17": 121.74
+        "15": 127.32,
+        "16": 126.23,
+        "17": 122.56
       },
       "record": "4-5",
       "roster_id": 5,
