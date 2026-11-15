@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-15T01:02:25.228843+00:00
+Generated: 2026-11-15T02:06:09.418355+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,7 +8,7 @@ Generated: 2026-11-15T01:02:25.228843+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Zonovan Knight | RB | +0.00 | 2.43 | Kaelon Black | depth candidate |
+| — | — | — | — | No sufficiently compelling sourced candidate | — |
 
 ## Trade proposals
 
