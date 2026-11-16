@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-16T09:40:55.864034+00:00
+Generated: 2026-11-16T11:25:07.169298+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **125.93**. Weeks with partial projections and injury status require manual verification.
