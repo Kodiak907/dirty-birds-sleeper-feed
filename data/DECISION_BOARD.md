@@ -17,7 +17,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Samaje Perine | 6.03 | +1.36 | 32.7% | Carries 6.3 | No modeled flags (not medically cleared) |
+| 1 | Samaje Perine | 6.03 | +1.36 | 32.7% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 5.74 | +1.06 | 27.0% | Carries 4.3 | No modeled flags (not medically cleared) |
 | 3 | Tyjae Spears | 4.93 | +0.25 | 38.0% | Carries 2.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 4 | Alvin Kamara | 4.79 | +0.11 | 43.7% | Carries 4.7 | No modeled flags (not medically cleared) |
