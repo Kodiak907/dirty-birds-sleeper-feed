@@ -1,12 +1,12 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-16T11:25:10.681068+00:00 | Forecast as of: 2026-11-16T01:59:45.356969+00:00
+Generated: 2026-11-16T15:05:59.399615+00:00 | Forecast as of: 2026-11-16T15:05:56.342031+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 10
 
-**Projected optimal score:** 132.26
+**Projected optimal score:** 132.34
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -14,7 +14,7 @@ Generated: 2026-11-16T11:25:10.681068+00:00 | Forecast as of: 2026-11-16T01:59:4
 | Christian McCaffrey | RB | DAL | 20.56 |
 | Kyren Williams | RB | ARI | 15.75 |
 | Jaxon Smith-Njigba | WR | LV | 19.48 |
-| Zay Flowers | WR | LAC | 13.38 |
+| Zay Flowers | WR | LAC | 13.46 |
 | Isaiah Likely | TE | WAS | 10.12 |
 | Will Reichard | K | GB | 6.95 |
 | Jacksonville Jaguars | DEF | TEN | 7.49 |
@@ -23,24 +23,24 @@ Generated: 2026-11-16T11:25:10.681068+00:00 | Forecast as of: 2026-11-16T01:59:4
 
 ## Week 11
 
-**Projected optimal score:** 112.93
+**Projected optimal score:** 113.12
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 19.66 |
-| Christian McCaffrey | RB | MIN | 17.93 |
-| Jonah Coleman | RB | LV | 15.47 |
-| Zay Flowers | WR | CAR | 12.52 |
-| Caleb Douglas | WR | BUF | 7.37 |
-| Isaiah Likely | TE | JAX | 12.08 |
-| Will Reichard | K | SF | 6.97 |
+| C.J. Stroud | QB | IND | 19.75 |
+| Christian McCaffrey | RB | MIN | 17.95 |
+| Jonah Coleman | RB | LV | 15.55 |
+| Zay Flowers | WR | CAR | 12.46 |
+| Caleb Douglas | WR | BUF | 7.48 |
+| Isaiah Likely | TE | JAX | 12.06 |
+| Will Reichard | K | SF | 7.05 |
 | Jacksonville Jaguars | DEF | NYG | 6.97 |
-| Deebo Samuel Sr. | WR | MIN | 7.15 |
-| Pat Bryant | WR | LV | 6.81 |
+| Deebo Samuel Sr. | WR | MIN | 7.06 |
+| Pat Bryant | WR | LV | 6.79 |
 
 ## Week 12
 
-**Projected optimal score:** 136.18
+**Projected optimal score:** 136.31
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -52,7 +52,7 @@ Generated: 2026-11-16T11:25:10.681068+00:00 | Forecast as of: 2026-11-16T01:59:4
 | Isaiah Likely | TE | IND | 11.28 |
 | Will Reichard | K | ATL | 7.13 |
 | Jacksonville Jaguars | DEF | TEN | 7.67 |
-| Jonah Coleman | RB | PIT | 12.58 |
+| Jonah Coleman | RB | PIT | 12.71 |
 | A.J. Brown | WR | LAC | 12.37 |
 
 ## Week 13
