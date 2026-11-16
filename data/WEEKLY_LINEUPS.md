@@ -1,53 +1,53 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:50.577935+00:00
+Generated: 2026-11-16T01:59:48.033349+00:00 | Forecast as of: 2026-11-16T01:59:45.356969+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 10
 
-**Projected optimal score:** 132.22
+**Projected optimal score:** 132.26
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | CLE | 17.64 |
-| Christian McCaffrey | RB | DAL | 20.57 |
-| Kyren Williams | RB | ARI | 15.65 |
-| Jaxon Smith-Njigba | WR | LV | 19.42 |
+| C.J. Stroud | QB | CLE | 17.44 |
+| Christian McCaffrey | RB | DAL | 20.56 |
+| Kyren Williams | RB | ARI | 15.75 |
+| Jaxon Smith-Njigba | WR | LV | 19.48 |
 | Zay Flowers | WR | LAC | 13.38 |
 | Isaiah Likely | TE | WAS | 10.12 |
-| Will Reichard | K | GB | 6.91 |
-| Jacksonville Jaguars | DEF | TEN | 7.56 |
-| A.J. Brown | WR | DET | 11.95 |
-| Deebo Samuel Sr. | WR | DAL | 9.02 |
+| Will Reichard | K | GB | 6.95 |
+| Jacksonville Jaguars | DEF | TEN | 7.49 |
+| A.J. Brown | WR | DET | 11.97 |
+| Deebo Samuel Sr. | WR | DAL | 9.12 |
 
 ## Week 11
 
-**Projected optimal score:** 112.58
+**Projected optimal score:** 112.93
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 19.80 |
-| Christian McCaffrey | RB | MIN | 17.81 |
-| Jonah Coleman | RB | LV | 15.44 |
+| C.J. Stroud | QB | IND | 19.66 |
+| Christian McCaffrey | RB | MIN | 17.93 |
+| Jonah Coleman | RB | LV | 15.47 |
 | Zay Flowers | WR | CAR | 12.52 |
-| Caleb Douglas | WR | BUF | 7.50 |
-| Isaiah Likely | TE | JAX | 11.73 |
-| Will Reichard | K | SF | 6.95 |
-| Jacksonville Jaguars | DEF | NYG | 6.84 |
-| Deebo Samuel Sr. | WR | MIN | 7.08 |
-| Pat Bryant | WR | LV | 6.91 |
+| Caleb Douglas | WR | BUF | 7.37 |
+| Isaiah Likely | TE | JAX | 12.08 |
+| Will Reichard | K | SF | 6.97 |
+| Jacksonville Jaguars | DEF | NYG | 6.97 |
+| Deebo Samuel Sr. | WR | MIN | 7.15 |
+| Pat Bryant | WR | LV | 6.81 |
 
 ## Week 12
 
-**Projected optimal score:** 136.16
+**Projected optimal score:** 136.18
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | BAL | 17.83 |
 | Christian McCaffrey | RB | SEA | 18.07 |
 | Kyren Williams | RB | GB | 14.90 |
-| Jaxon Smith-Njigba | WR | SF | 20.57 |
+| Jaxon Smith-Njigba | WR | SF | 20.59 |
 | Zay Flowers | WR | HOU | 13.76 |
 | Isaiah Likely | TE | IND | 11.28 |
 | Will Reichard | K | ATL | 7.13 |
@@ -57,14 +57,14 @@ Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:5
 
 ## Week 13
 
-**Projected optimal score:** 130.39
+**Projected optimal score:** 130.40
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | PIT | 17.06 |
 | Christian McCaffrey | RB | NYG | 20.92 |
 | Kyren Williams | RB | KC | 13.79 |
-| Jaxon Smith-Njigba | WR | DAL | 22.43 |
+| Jaxon Smith-Njigba | WR | DAL | 22.44 |
 | A.J. Brown | WR | BUF | 11.24 |
 | Isaiah Likely | TE | SF | 10.40 |
 | Will Reichard | K | CAR | 7.13 |
@@ -74,14 +74,14 @@ Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:5
 
 ## Week 14
 
-**Projected optimal score:** 132.77
+**Projected optimal score:** 132.78
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | WAS | 20.23 |
 | Christian McCaffrey | RB | LA | 18.20 |
 | Kyren Williams | RB | SF | 13.45 |
-| Jaxon Smith-Njigba | WR | NYG | 21.16 |
+| Jaxon Smith-Njigba | WR | NYG | 21.17 |
 | Zay Flowers | WR | TB | 13.79 |
 | Isaiah Likely | TE | SEA | 9.87 |
 | Will Reichard | K | NE | 6.70 |
@@ -91,14 +91,14 @@ Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:5
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 141.22
+**Projected optimal score:** 141.18
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | DEN | 19.84 |
 | Christian McCaffrey | RB | LAC | 20.70 |
 | Kyren Williams | RB | DAL | 16.32 |
-| Jaxon Smith-Njigba | WR | PHI | 20.77 |
+| Jaxon Smith-Njigba | WR | PHI | 20.73 |
 | Zay Flowers | WR | PIT | 13.99 |
 | Isaiah Likely | TE | CLE | 10.32 |
 | Will Reichard | K | DET | 7.64 |
@@ -108,14 +108,14 @@ Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:5
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 134.82
+**Projected optimal score:** 134.83
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | TEN | 20.08 |
 | Christian McCaffrey | RB | KC | 18.50 |
 | Kyren Williams | RB | SEA | 13.10 |
-| Jaxon Smith-Njigba | WR | LA | 20.07 |
+| Jaxon Smith-Njigba | WR | LA | 20.08 |
 | Zay Flowers | WR | CLE | 13.11 |
 | Isaiah Likely | TE | DET | 11.76 |
 | Will Reichard | K | WAS | 7.67 |
@@ -125,14 +125,14 @@ Generated: 2026-11-16T01:23:01.937604+00:00 | Forecast as of: 2026-11-15T13:53:5
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 135.00
+**Projected optimal score:** 135.01
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | ARI | 18.53 |
 | Christian McCaffrey | RB | PHI | 19.14 |
 | Kyren Williams | RB | TB | 13.64 |
-| Jaxon Smith-Njigba | WR | CAR | 20.35 |
+| Jaxon Smith-Njigba | WR | CAR | 20.36 |
 | Zay Flowers | WR | CIN | 14.41 |
 | Isaiah Likely | TE | DAL | 11.67 |
 | Will Reichard | K | NYJ | 6.81 |

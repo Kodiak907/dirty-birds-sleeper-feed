@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-16T01:23:01.667512+00:00",
-  "source_snapshot_utc": "2026-11-16T01:22:52.221337+00:00",
+  "generated_at_utc": "2026-11-16T01:59:47.851074+00:00",
+  "source_snapshot_utc": "2026-11-16T01:59:41.170960+00:00",
   "source_market_as_of": "2026-11-15T14:56:42.370375+00:00",
-  "source_projection_as_of": "2026-11-15T13:53:50.577935+00:00",
+  "source_projection_as_of": "2026-11-16T01:59:45.356969+00:00",
   "focus_assets": [
     {
       "id": "8146",
@@ -37,23 +37,23 @@
               "position": "WR"
             },
             {
-              "id": "9758",
-              "name": "C.J. Stroud",
+              "id": "1166",
+              "name": "Kirk Cousins",
               "position": "QB"
             }
           ],
           "receive": [
             {
-              "id": "6813",
-              "name": "Jonathan Taylor",
-              "position": "RB"
+              "id": "6801",
+              "name": "Tee Higgins",
+              "position": "WR"
             }
           ],
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.59,
-          "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 0.993,
+          "our_lineup_delta_ppg": 3.71,
+          "their_lineup_delta_ppg": 0.14,
+          "value_paid_received_ratio": 0.73,
           "our_extra_cut": null,
           "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -80,20 +80,15 @@
               "id": "6813",
               "name": "Jonathan Taylor",
               "position": "RB"
-            },
-            {
-              "id": "1373",
-              "name": "Geno Smith",
-              "position": "QB"
             }
           ],
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.59,
-          "their_lineup_delta_ppg": 0.06,
-          "value_paid_received_ratio": 0.864,
+          "our_lineup_delta_ppg": 3.65,
+          "their_lineup_delta_ppg": 0.19,
+          "value_paid_received_ratio": 0.993,
           "our_extra_cut": null,
-          "opponent_extra_cut": null,
+          "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -122,8 +117,8 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.14,
-          "their_lineup_delta_ppg": 3.46,
+          "our_lineup_delta_ppg": 2.16,
+          "their_lineup_delta_ppg": 3.52,
           "value_paid_received_ratio": 1.028,
           "our_extra_cut": null,
           "opponent_extra_cut": "Audric Estime",
@@ -160,9 +155,47 @@
           ],
           "opponent_roster_id": 2,
           "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.14,
-          "their_lineup_delta_ppg": 3.46,
+          "our_lineup_delta_ppg": 2.16,
+          "their_lineup_delta_ppg": 3.52,
           "value_paid_received_ratio": 0.871,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9502",
+              "name": "Tank Dell",
+              "position": "WR"
+            }
+          ],
+          "receive": [
+            {
+              "id": "4046",
+              "name": "Patrick Mahomes",
+              "position": "QB"
+            },
+            {
+              "id": "7611",
+              "name": "Rhamondre Stevenson",
+              "position": "RB"
+            }
+          ],
+          "opponent_roster_id": 5,
+          "opponent": "    Victorious Secret",
+          "our_lineup_delta_ppg": 1.13,
+          "their_lineup_delta_ppg": 0.17,
+          "value_paid_received_ratio": 0.759,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -193,8 +226,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 0.82,
-          "their_lineup_delta_ppg": 1.49,
+          "our_lineup_delta_ppg": 0.84,
+          "their_lineup_delta_ppg": 1.53,
           "value_paid_received_ratio": 1.088,
           "our_extra_cut": null,
           "opponent_extra_cut": "Adonai Mitchell",
@@ -231,8 +264,8 @@
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 0.82,
-          "their_lineup_delta_ppg": 1.49,
+          "our_lineup_delta_ppg": 0.84,
+          "their_lineup_delta_ppg": 1.53,
           "value_paid_received_ratio": 0.839,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
@@ -269,47 +302,9 @@
           ],
           "opponent_roster_id": 10,
           "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.74,
-          "their_lineup_delta_ppg": 2.4,
+          "our_lineup_delta_ppg": 0.73,
+          "their_lineup_delta_ppg": 2.33,
           "value_paid_received_ratio": 0.796,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "13296",
-              "name": "Caleb Douglas",
-              "position": "WR"
-            }
-          ],
-          "receive": [
-            {
-              "id": "8148",
-              "name": "Jameson Williams",
-              "position": "WR"
-            },
-            {
-              "id": "5012",
-              "name": "Mark Andrews",
-              "position": "TE"
-            }
-          ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 0.74,
-          "their_lineup_delta_ppg": 2.4,
-          "value_paid_received_ratio": 1.168,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -319,7 +314,7 @@
           ]
         }
       ],
-      "candidate_count": 123
+      "candidate_count": 138
     },
     {
       "asset": "Patrick Mahomes",
