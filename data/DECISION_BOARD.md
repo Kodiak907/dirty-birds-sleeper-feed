@@ -32,10 +32,10 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Tre Tucker | 6.84 | +1.54 | 66.7% | Tgt 7.0 | No modeled flags (not medically cleared) |
+| 1 | Tre Tucker | 6.84 | +1.54 | 66.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 2 | Keon Coleman | 6.81 | +1.51 | 74.3% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | Kalif Raymond | 5.34 | +0.04 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 4 | Rashid Shaheed | 4.47 | -0.83 | 41.3% | Tgt 5.0 | No modeled flags (not medically cleared) |
+| 4 | Rashid Shaheed | 4.47 | -0.83 | 41.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 5 | Dontayvion Wicks | 4.31 | -0.99 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 6 | Tre' Harris | 4.13 | -1.17 | 59.7% | Tgt 4.7 | sleeper_injury_out |
 | 7 | Rashod Bateman | 3.81 | -1.49 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
