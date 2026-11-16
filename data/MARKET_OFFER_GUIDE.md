@@ -2,7 +2,7 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-15T14:56:42.478598+00:00
+Updated: 2026-11-16T16:16:23.671665+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
@@ -11,10 +11,10 @@ Fully priced in-range opportunities: 5. Unpriced candidate packages: 3.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 2 | Kirk Cousins, A.J. Brown | Rashee Rice | 1.03× | +2.14 | +3.46 |
-| 2 | 3 | Kirk Cousins, Zay Flowers | Tee Higgins | 1.00× | +1.84 | +1.81 |
-| 3 | 10 | Kirk Cousins, Kyren Williams | Josh Allen | 1.06× | +1.66 | +1.21 |
-| 4 | 9 | Kirk Cousins, A.J. Brown | Garrett Wilson | 1.07× | +0.73 | +0.43 |
+| 1 | 2 | Kirk Cousins, A.J. Brown | Rashee Rice | 1.08× | +2.16 | +3.55 |
+| 2 | 3 | Kirk Cousins, Jonah Coleman | Tee Higgins | 0.96× | +2.12 | +1.72 |
+| 3 | 3 | Kirk Cousins, Zay Flowers | Jonathan Taylor | 1.09× | +1.98 | +1.85 |
+| 4 | 10 | Kirk Cousins, Kyren Williams | Josh Allen | 1.09× | +1.65 | +1.22 |
 
 ## Negotiation protocol
 

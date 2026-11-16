@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-11-15T14:56:42.450656+00:00
+Generated: 2026-11-16T16:16:23.638814+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 2 | C.J. Stroud, A.J. Brown | Rashee Rice | +1.87 | +3.74 | +1.2/-0.4/+1.9 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 2 | 3 | C.J. Stroud, Jonah Coleman | Jonathan Taylor | +1.99 | +1.66 | +2.7/+5.2/+2.7 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 3 | 10 | C.J. Stroud, Jonah Coleman | Josh Allen | +2.66 | +0.48 | +0.2/-1.6/+2.7 | Unnecessary extra outgoing asset under aggregate PPG model; Negative playoff-week modeled effect |
-| 4 | 3 | C.J. Stroud, Jonah Coleman | Tee Higgins | +1.83 | +1.81 | -1.1/+1.6/+0.9 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing); Negative playoff-week modeled effect |
-| 5 | 5 | Jonah Coleman | Patrick Mahomes, Mike Evans | +1.08 | +0.10 | +0.2/+0.9/+1.7 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 1 | 2 | C.J. Stroud, A.J. Brown | Rashee Rice | +1.95 | +3.75 | +1.2/-0.4/+1.9 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 2 | 3 | C.J. Stroud, Jonah Coleman | Jonathan Taylor | +2.02 | +1.82 | +2.7/+5.2/+2.7 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 3 | 3 | C.J. Stroud, Jonah Coleman | Tee Higgins | +1.91 | +1.92 | -1.1/+1.6/+0.9 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing); Negative playoff-week modeled effect |
+| 4 | 10 | C.J. Stroud, Jonah Coleman | Josh Allen | +2.64 | +0.43 | +0.2/-1.6/+2.7 | Unnecessary extra outgoing asset under aggregate PPG model; Negative playoff-week modeled effect |
+| 5 | 11 | C.J. Stroud, Zay Flowers | D'Andre Swift | +1.78 | +0.61 | +0.8/+2.2/+2.2 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
 
 ## What the other manager might gain
 
-**1. Rashee Rice** — Opponent projected starters improve +3.74 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 41% (not a trade price).
+**1. Rashee Rice** — Opponent projected starters improve +3.75 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 42% (not a trade price).
 
-**2. Jonathan Taylor** — Opponent projected starters improve +1.66 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 37% (not a trade price).
+**2. Jonathan Taylor** — Opponent projected starters improve +1.82 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 40% (not a trade price).
 
-**3. Josh Allen** — Opponent projected starters improve +0.48 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 27% (not a trade price).
-
-**4. Tee Higgins** — Opponent projected starters improve +1.81 PPG; no clear shallow-position signal.
+**3. Tee Higgins** — Opponent projected starters improve +1.92 PPG; no clear shallow-position signal.
 Diagnostic positional-percentile imbalance: 34% (not a trade price).
 
-**5. Patrick Mahomes, Mike Evans** — Opponent projected starters improve +0.10 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 56% (not a trade price).
+**4. Josh Allen** — Opponent projected starters improve +0.43 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 29% (not a trade price).
+
+**5. D'Andre Swift** — Opponent projected starters improve +0.61 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 43% (not a trade price).
 
 ## Verification before discussions
 
