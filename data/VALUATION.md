@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-16T19:57:47.664871+00:00
-Sleeper snapshot: 2026-11-16T19:57:43.881702+00:00
+Generated: 2026-11-16T20:52:14.607436+00:00
+Sleeper snapshot: 2026-11-16T20:52:10.594903+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
