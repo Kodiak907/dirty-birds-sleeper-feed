@@ -1,13 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-17T22:56:12.718355+00:00
-Sleeper snapshot: 2026-11-17T22:56:05.913286+00:00
+Generated: 2026-11-17T23:51:55.384916+00:00
+Sleeper snapshot: 2026-11-17T23:51:48.493851+00:00
 
-Roster change entries: 2. New completed trade entries: 1.
-
-- Dirty Birds: added Minnesota Vikings; dropped Kyren Williams, Jacksonville Jaguars
-- Victorious Secret: added Kyren Williams, Jacksonville Jaguars; dropped Minnesota Vikings
-- Completed trade 1428536640191619072: {'Kyren Williams': 'Victorious Secret', 'Jacksonville Jaguars': 'Victorious Secret', 'Minnesota Vikings': 'Dirty Birds'}; FAAB transfers []
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

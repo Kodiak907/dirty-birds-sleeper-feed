@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-17T22:56:12.686701+00:00
-Sleeper snapshot: 2026-11-17T22:56:05.913286+00:00
+Generated: 2026-11-17T23:51:55.347469+00:00
+Sleeper snapshot: 2026-11-17T23:51:48.493851+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1428536640191619072` · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kyren Williams →     Victorious Secret (#5), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1) | Dropped: Kyren Williams → Dirty Birds (#1), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
