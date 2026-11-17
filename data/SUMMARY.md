@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-17T03:55:16.459171+00:00
+Updated: 2026-11-17T04:59:00.139644+00:00
 League: 1399157532559192064
 NFL week: 10
 
