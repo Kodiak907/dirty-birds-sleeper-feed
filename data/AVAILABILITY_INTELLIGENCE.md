@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-17T13:06:32.056502+00:00
-Sleeper snapshot: 2026-11-17T13:06:24.451079+00:00
-nflverse observations: 2026-11-17T13:06:27.492398+00:00; injury feed loaded: True
+Generated: 2026-11-17T14:24:14.197522+00:00
+Sleeper snapshot: 2026-11-17T14:24:07.010178+00:00
+nflverse observations: 2026-11-17T14:24:10.173708+00:00; injury feed loaded: True
 
-**New observed changes:** 6. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -31,12 +31,8 @@ nflverse observations: 2026-11-17T13:06:27.492398+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Zay Flowers** (snap_share_change): Snap share rose 22.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **David Njoku** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Justin Herbert** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Omarion Hampton** (snap_share_change): Snap share rose 23.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Rashod Bateman** (snap_share_change): Snap share rose 29.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
-- **Tre' Harris** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
