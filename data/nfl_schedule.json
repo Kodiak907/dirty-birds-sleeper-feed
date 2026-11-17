@@ -1,22 +1,17 @@
 {
-  "as_of": "2026-11-17T04:59:04.462108+00:00",
+  "as_of": "2026-11-17T06:00:15.093958+00:00",
   "description": "NFL future opponents only. No unsupported defense difficulty estimates.",
   "fantasy_playoff_weeks": [
     15,
     16,
     17
   ],
-  "from_week": 10,
+  "from_week": 11,
   "season": 2026,
   "source": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
   "teams": {
     "ARI": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_LA_ARI",
-          "home": true,
-          "opponent": "LA"
-        },
         "11": {
           "game_id": "2026_11_ARI_KC",
           "home": false,
@@ -54,11 +49,6 @@
     },
     "ATL": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_KC_ATL",
-          "home": true,
-          "opponent": "KC"
-        },
         "11": {
           "bye": true
         },
@@ -96,11 +86,6 @@
     },
     "BAL": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_LAC_BAL",
-          "home": true,
-          "opponent": "LAC"
-        },
         "11": {
           "game_id": "2026_11_BAL_CAR",
           "home": false,
@@ -138,11 +123,6 @@
     },
     "BUF": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_BUF_NYJ",
-          "home": false,
-          "opponent": "NYJ"
-        },
         "11": {
           "game_id": "2026_11_MIA_BUF",
           "home": true,
@@ -182,11 +162,6 @@
     },
     "CAR": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_CAR_NO",
-          "home": false,
-          "opponent": "NO"
-        },
         "11": {
           "game_id": "2026_11_BAL_CAR",
           "home": true,
@@ -226,9 +201,6 @@
     },
     "CHI": {
       "weeks": {
-        "10": {
-          "bye": true
-        },
         "11": {
           "game_id": "2026_11_NO_CHI",
           "home": true,
@@ -268,11 +240,6 @@
     },
     "CIN": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_PIT_CIN",
-          "home": true,
-          "opponent": "PIT"
-        },
         "11": {
           "game_id": "2026_11_CIN_WAS",
           "home": false,
@@ -312,11 +279,6 @@
     },
     "CLE": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_HOU_CLE",
-          "home": true,
-          "opponent": "HOU"
-        },
         "11": {
           "bye": true
         },
@@ -354,11 +316,6 @@
     },
     "DAL": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_SF_DAL",
-          "home": true,
-          "opponent": "SF"
-        },
         "11": {
           "game_id": "2026_11_TEN_DAL",
           "home": true,
@@ -396,9 +353,6 @@
     },
     "DEN": {
       "weeks": {
-        "10": {
-          "bye": true
-        },
         "11": {
           "game_id": "2026_11_LV_DEN",
           "home": true,
@@ -438,11 +392,6 @@
     },
     "DET": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_NE_DET",
-          "home": true,
-          "opponent": "NE"
-        },
         "11": {
           "game_id": "2026_11_TB_DET",
           "home": true,
@@ -482,11 +431,6 @@
     },
     "GB": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_MIN_GB",
-          "home": true,
-          "opponent": "MIN"
-        },
         "11": {
           "bye": true
         },
@@ -524,11 +468,6 @@
     },
     "HOU": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_HOU_CLE",
-          "home": false,
-          "opponent": "CLE"
-        },
         "11": {
           "game_id": "2026_11_IND_HOU",
           "home": true,
@@ -568,11 +507,6 @@
     },
     "IND": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_MIA_IND",
-          "home": true,
-          "opponent": "MIA"
-        },
         "11": {
           "game_id": "2026_11_IND_HOU",
           "home": false,
@@ -610,11 +544,6 @@
     },
     "JAX": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_JAX_TEN",
-          "home": false,
-          "opponent": "TEN"
-        },
         "11": {
           "game_id": "2026_11_JAX_NYG",
           "home": false,
@@ -654,11 +583,6 @@
     },
     "KC": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_KC_ATL",
-          "home": false,
-          "opponent": "ATL"
-        },
         "11": {
           "game_id": "2026_11_ARI_KC",
           "home": true,
@@ -698,11 +622,6 @@
     },
     "LA": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_LA_ARI",
-          "home": false,
-          "opponent": "ARI"
-        },
         "11": {
           "bye": true
         },
@@ -740,11 +659,6 @@
     },
     "LAC": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_LAC_BAL",
-          "home": false,
-          "opponent": "BAL"
-        },
         "11": {
           "game_id": "2026_11_NYJ_LAC",
           "home": true,
@@ -784,11 +698,6 @@
     },
     "LV": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_SEA_LV",
-          "home": true,
-          "opponent": "SEA"
-        },
         "11": {
           "game_id": "2026_11_LV_DEN",
           "home": false,
@@ -826,11 +735,6 @@
     },
     "MIA": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_MIA_IND",
-          "home": false,
-          "opponent": "IND"
-        },
         "11": {
           "game_id": "2026_11_MIA_BUF",
           "home": false,
@@ -870,11 +774,6 @@
     },
     "MIN": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_MIN_GB",
-          "home": false,
-          "opponent": "GB"
-        },
         "11": {
           "game_id": "2026_11_MIN_SF",
           "home": false,
@@ -914,11 +813,6 @@
     },
     "NE": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_NE_DET",
-          "home": false,
-          "opponent": "DET"
-        },
         "11": {
           "bye": true
         },
@@ -956,11 +850,6 @@
     },
     "NO": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_CAR_NO",
-          "home": true,
-          "opponent": "CAR"
-        },
         "11": {
           "game_id": "2026_11_NO_CHI",
           "home": false,
@@ -1000,11 +889,6 @@
     },
     "NYG": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_WAS_NYG",
-          "home": true,
-          "opponent": "WAS"
-        },
         "11": {
           "game_id": "2026_11_JAX_NYG",
           "home": true,
@@ -1044,11 +928,6 @@
     },
     "NYJ": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_BUF_NYJ",
-          "home": true,
-          "opponent": "BUF"
-        },
         "11": {
           "game_id": "2026_11_NYJ_LAC",
           "home": false,
@@ -1086,9 +965,6 @@
     },
     "PHI": {
       "weeks": {
-        "10": {
-          "bye": true
-        },
         "11": {
           "game_id": "2026_11_PIT_PHI",
           "home": true,
@@ -1128,11 +1004,6 @@
     },
     "PIT": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_PIT_CIN",
-          "home": false,
-          "opponent": "CIN"
-        },
         "11": {
           "game_id": "2026_11_PIT_PHI",
           "home": false,
@@ -1172,11 +1043,6 @@
     },
     "SEA": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_SEA_LV",
-          "home": false,
-          "opponent": "LV"
-        },
         "11": {
           "bye": true
         },
@@ -1214,11 +1080,6 @@
     },
     "SF": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_SF_DAL",
-          "home": false,
-          "opponent": "DAL"
-        },
         "11": {
           "game_id": "2026_11_MIN_SF",
           "home": true,
@@ -1258,9 +1119,6 @@
     },
     "TB": {
       "weeks": {
-        "10": {
-          "bye": true
-        },
         "11": {
           "game_id": "2026_11_TB_DET",
           "home": false,
@@ -1300,11 +1158,6 @@
     },
     "TEN": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_JAX_TEN",
-          "home": true,
-          "opponent": "JAX"
-        },
         "11": {
           "game_id": "2026_11_TEN_DAL",
           "home": false,
@@ -1344,11 +1197,6 @@
     },
     "WAS": {
       "weeks": {
-        "10": {
-          "game_id": "2026_10_WAS_NYG",
-          "home": false,
-          "opponent": "NYG"
-        },
         "11": {
           "game_id": "2026_11_CIN_WAS",
           "home": true,

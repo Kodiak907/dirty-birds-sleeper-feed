@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-17T04:59:04.558874+00:00
-Sleeper snapshot: 2026-11-17T04:59:00.139644+00:00
+Generated: 2026-11-17T06:00:15.272946+00:00
+Sleeper snapshot: 2026-11-17T06:00:08.843535+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -9,46 +9,46 @@ League: 12 teams; half-PPR; 1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF.
 Trade deadline week setting: 11
 
 ## Dirty Birds historical production signals
-The points below average actual fantasy scoring over completed Weeks 1–9, with zeroes included. They are NOT future projections.
+The points below average actual fantasy scoring over completed Weeks 1–10, with zeroes included. They are NOT future projections.
 
 | Player | Pos | Total pts | Pts per calendar week | Nonzero weeks |
 |---|---|---:|---:|---:|
-| Jaxon Smith-Njigba | WR | 201.56 | 22.40 | 9/9 |
-| Christian McCaffrey | RB | 148.70 | 16.52 | 8/9 |
-| Kyren Williams | RB | 141.10 | 15.68 | 9/9 |
-| Kirk Cousins | QB | 136.28 | 15.14 | 7/9 |
-| C.J. Stroud | QB | 118.82 | 13.20 | 5/9 |
-| Zay Flowers | WR | 110.00 | 12.22 | 7/9 |
-| Isaiah Likely | TE | 105.80 | 11.76 | 8/9 |
-| Jacksonville Jaguars | DEF | 77.00 | 8.56 | 8/9 |
-| Jonah Coleman | RB | 56.40 | 6.27 | 4/9 |
-| Will Reichard | K | 56.00 | 6.22 | 4/9 |
-| Deebo Samuel Sr. | WR | 55.40 | 6.16 | 5/9 |
-| Kaelon Black | RB | 36.20 | 4.02 | 8/9 |
-| Caleb Douglas | WR | 16.30 | 1.81 | 2/9 |
-| A.J. Brown | WR | 14.60 | 1.62 | 3/9 |
-| Antonio Williams | WR | 11.90 | 1.32 | 2/9 |
-| Seth McGowan | RB | 10.70 | 1.19 | 1/9 |
-| Tank Dell | WR | 5.00 | 0.56 | 1/9 |
-| Pat Bryant | WR | 0.00 | 0.00 | 0/9 |
+| Jaxon Smith-Njigba | WR | 231.66 | 23.17 | 10/10 |
+| Christian McCaffrey | RB | 199.00 | 19.90 | 9/10 |
+| Kirk Cousins | QB | 151.66 | 15.17 | 8/10 |
+| Kyren Williams | RB | 145.30 | 14.53 | 10/10 |
+| C.J. Stroud | QB | 139.26 | 13.93 | 6/10 |
+| Isaiah Likely | TE | 132.00 | 13.20 | 9/10 |
+| Zay Flowers | WR | 118.40 | 11.84 | 8/10 |
+| Deebo Samuel Sr. | WR | 82.80 | 8.28 | 6/10 |
+| Jacksonville Jaguars | DEF | 80.00 | 8.00 | 9/10 |
+| Will Reichard | K | 68.00 | 6.80 | 5/10 |
+| Jonah Coleman | RB | 56.40 | 5.64 | 4/10 |
+| Kaelon Black | RB | 49.80 | 4.98 | 9/10 |
+| Caleb Douglas | WR | 24.90 | 2.49 | 3/10 |
+| Seth McGowan | RB | 24.40 | 2.44 | 2/10 |
+| Antonio Williams | WR | 23.10 | 2.31 | 3/10 |
+| A.J. Brown | WR | 18.30 | 1.83 | 4/10 |
+| Tank Dell | WR | 8.60 | 0.86 | 2/10 |
+| Pat Bryant | WR | 0.00 | 0.00 | 0/10 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 6-3 | 120.93 | 12 |
-| Cokerthestroker | 6-3 | 118.11 | 4 |
-| JA’MARRTRIX | 3-6 | 116.30 | 5 |
-| suck my dickerson | 7-2 | 110.41 | 1 |
-| Victorious Secret | 4-5 | 109.42 | 3 |
-| kfsn | 7-2 | 107.11 | 2 |
-| To Infinity and Bijan | 3-6 | 100.20 | 6 |
-| BigOlBoyle | 2-7 | 97.57 | 1 |
-| DeeboSix0 | 7-2 | 95.61 | 1 |
-| DANGER CLOSE | 3-6 | 92.39 | 1 |
-| EmanAndYoMomma | 2-7 | 88.61 | 0 |
-| CREAM MACHINE | 4-5 | 77.88 | 0 |
+| Dirty Birds | 7-3 | 126.53 | 12 |
+| JA’MARRTRIX | 4-6 | 116.36 | 5 |
+| Cokerthestroker | 6-4 | 115.64 | 4 |
+| suck my dickerson | 7-3 | 110.01 | 1 |
+| kfsn | 7-3 | 108.71 | 2 |
+| Victorious Secret | 5-5 | 108.65 | 3 |
+| DeeboSix0 | 8-2 | 102.46 | 1 |
+| To Infinity and Bijan | 4-6 | 100.04 | 6 |
+| BigOlBoyle | 2-8 | 98.19 | 1 |
+| DANGER CLOSE | 4-6 | 90.81 | 1 |
+| EmanAndYoMomma | 2-8 | 87.94 | 0 |
+| CREAM MACHINE | 4-6 | 75.51 | 0 |
 
 ## Trade evaluation gate
 

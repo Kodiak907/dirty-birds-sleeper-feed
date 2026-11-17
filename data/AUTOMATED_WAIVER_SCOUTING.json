@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-17T04:59:05.295256+00:00",
-  "source_snapshot_utc": "2026-11-17T04:59:00.139644+00:00",
+  "generated_at_utc": "2026-11-17T06:00:15.942192+00:00",
+  "source_snapshot_utc": "2026-11-17T06:00:08.843535+00:00",
   "candidate_count": 38,
   "news_queries_attempted": 30,
-  "news_query_failures": 7,
+  "news_query_failures": 4,
   "news_status": "degraded",
   "limitations": [
     "Public news index displays dated headlines only; link and verify individual reporting.",
@@ -19,7 +19,7 @@
       "team": "CLE",
       "position": "QB",
       "snap_share_pct": 98.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -32,36 +32,7 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": [
-        {
-          "title": "NFL injury tracker Week 10: Latest news, fantasy implications as Patriots’ A.J. Brown (ankle/knee) progressing, 49ers’ Mike Evans (Achilles) 'getting real close,' Deshaun Watson to start for Browns - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxPRHVESm1oN19Qc2dYbjZPdTZUWkRYTEVwcWJuaXRRRzZxb0JTWjBJQm1jT1kxNk5jNWszakk3NlRpUk9KUXF5MmlSdE1qVTJFV1ZkZGplRVdFb1NFNE1yMzdFbjNEUUU0cWRqWkNsQUd4VGllclRVdHh1UTZNQWlSZXptQ1NKS1RjZ2NvLUNOOFQ2ZnRyRkh4MklrRi1lRzNMSFY1aWJHQU8zYkZfMXFxOU13bVItLTQ4U2dxNzlVWk13X0hzazIwdmdibnJSSmdqYjlLQlRTdC01aFFLY3U0UEt5Yk81Y1BnQTdVbTRXakhqYzF5YW9iMWhHZFR6V0NoQmV2aTd3Uk5LdEFaUDZGdV81VlVQTkM5UEJQeTNxRmVYZWU4ZEZEY05pVTFGVmVWcHZNMG43VjJiN09aRDljZVo4Ukd5bEYtd2pIcF9YUzdFZW0xS293?oc=5",
-          "published": "2026-11-14",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Is Deshaun Watson Playing Today? (Injury Update, Betting Impact for Texans vs. Browns in NFL Week 10) - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQLThocFNnLVZ6MlpyTmlsRWNOMkwyWFVJbVpmUkh1MWxiSlpEY0M4MnM3c1hvZW5JZk1hQXIxMVBaUlpOU293S3dTcXV2dTJQcUsxVkZmVU9LMkg2MC15ZkRKU2xpajJPaEFEd3VOZmxLNEJFTmFKTlQwNDZCTl9HLV9JdzA3V19SaVREUVR2Vl8wUDVycGpQSlZvMU90TUh3SnNWUHYwcTZyMWdlLVlpNA?oc=5",
-          "published": "2026-11-15",
-          "publisher": "Sports Illustrated",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Final Injury Report for Texans-Browns: Will Deshaun Watson, Will Anderson Jr. Play? - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZHd1bWFLQ21oejVOSW9uMDBBcnluMmJJSnUzbWR1SnAzazJiRnpmeG1iS3hRVUpIa1pFZnAtM1BtbkdDTzFpcjg5cXZrS1E1WERIaHlkM0lfelUzWnByY0dBYlA5aXFkenNaUTJKSWZvZkdOV2pqYTdTYzcxSGpjT0poY1lCTjAzdHc?oc=5",
-          "published": "2026-11-15",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Browns Get Huge News on QB Deshaun Watson's Injury Status Ahead of Week 10 - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQTjBCTERMZEluTzR2T2tUSUExb2tuaWhXT1BheXYtRC1oY3p6RFNBOWNOelRXSEhpWkJvVGdfUVhNU19yUzB4ZUdYaVVjelE5dnpHbGhVRlF0TUlHemVMWkhtc000b2tPOFVTak1TNjBGelhsZnVsbFhOaWE1M1RSOE1B?oc=5",
-          "published": "2026-11-09",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
+      "news": []
     },
     {
       "id": "4892",
@@ -69,7 +40,7 @@
       "team": "TB",
       "position": "QB",
       "snap_share_pct": 96.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -96,17 +67,17 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Bucs Sign Veteran QB After Concerning Baker Mayfield Injury News - Sports Illustrated",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaFI5dWhYZnpQeVBiV1Q3azl6bzREcl9aT1otamZJS3ZSOGZVUmhvV1lfQ3dWVTlNQXBhZnBSZ1F2SHgtT2FUU3A0RlZJY1pjZkhPWUFkT0R6WlRxTTBudHpJQlVSU2tDVXJ0UE16dllwaGlDVXdwaGU3OTBRRGRBdC0za2loSXRXNVlMNGx5aXg1Z3YtRkdIeU5nZ01LY24tY2NGNlZ4cU5qMW9KNVBPOXlqTzViZw?oc=5",
-          "published": "2026-11-16",
-          "publisher": "Sports Illustrated",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
           "title": "Buccaneers sign new QB to practice squad after Baker Mayfield injury update - Yahoo Sports",
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQa1laMDBqel85N1Y2dmx5dnhPNkpkNkMtVG9zSHVMXzVqXzI2SHdISGZGN3Q4Sjd1WGZFemF0S0t3cnZjUFBsZHZUb3RNUzNuNVN5YkZmUTRsNktUSy1uenpHMmtVVmNWblpVY0l4RHVuZWZXRzhUNl9zMG1JMGVkWFlwWl9xbjFSSXc?oc=5",
           "published": "2026-11-16",
           "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Bucs Sign Veteran QB After Concerning Baker Mayfield Injury News - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaFI5dWhYZnpQeVBiV1Q3azl6bzREcl9aT1otamZJS3ZSOGZVUmhvV1lfQ3dWVTlNQXBhZnBSZ1F2SHgtT2FUU3A0RlZJY1pjZkhPWUFkT0R6WlRxTTBudHpJQlVSU2tDVXJ0UE16dllwaGlDVXdwaGU3OTBRRGRBdC0za2loSXRXNVlMNGx5aXg1Z3YtRkdIeU5nZ01LY24tY2NGNlZ4cU5qMW9KNVBPOXlqTzViZw?oc=5",
+          "published": "2026-11-16",
+          "publisher": "Sports Illustrated",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -124,7 +95,7 @@
       "team": "ARI",
       "position": "QB",
       "snap_share_pct": 86.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -137,7 +108,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Jacoby Brissett Injury Update: Ravens QB Hurt Early in Chargers Game - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObW9pU2t5TkQzNlgyUGFJR0JCMHVSTDhSZTJScDBsaGVTVXRzQ1hibzZMNWRyVEJuZWZDa2stX2p3c09NT041NkZlUC1sYjVBVWpjMERES084UUk3bHVMWnU0MkQzM0puNHZxdG9POXpQRWp5M3lVVC1KSENNTjJDcExTalFVOEli?oc=5",
+          "published": "2026-11-17",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Jacoby Brissett can make Super Bowl-era history in Ravens debut - The New York Times",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeEl0VHB4aldQSnRwQ3RRSjUwYmxFZEdHWkxjY2JmcVNFTmN2Z3hoR1JmVDRscmh5NldvYk1VTlk4bWhjQlVjS0xJbFJxYmlVX0dhNmx2UDd2VnBjUm5tZTNzaTdXc1NjUlhoc2hHWHJESlNPTjZnMDRKeDVGUnk5VWd3dGtINElxSUx3elpjdEpSXzFEem1haGhyLUNPeWZ3S1YzRw?oc=5",
+          "published": "2026-11-17",
+          "publisher": "The New York Times",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Ravens' Jesse Minter 'very impressed' by Jacoby Brissett, feels team is 'refreshed' after mini bye week - NFL.com",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOUHkzOHJ0cmxZR005T1VMdXdDOXd2YkxOMGJ1OEJHd0tJdzlUcmZhMWpSSHJwQnVxUEY0MjRKbVBsbzVlaldfZlI2bGNQVHpua1BlbUR2ZnpObXlFcWpfVUlIZGhsTjdXZUNZM1RybGVLemwwRFBxU2poYkowRGdDVmp6VkVyNzV3bjdUUGs5ZllwRFpTVVdWam5mX2JwajMtUmR0U2FZN1Fhb1lpT2pRMDdTX3lqckJ1QkgyWHdjdw?oc=5",
+          "published": "2026-11-14",
+          "publisher": "NFL.com",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Jacoby Brissett tries to make NFL history by saving the Ravens’ season - Lyndy's Sports Annuals",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVThHNVFuOXV1eXZJNXBMcmM4cGNaakJqTVhQUHNBaHBzSnZIZWppUmllOVRtWnhRaTBROWl4VkRYeGZST3pmTlVBUmVfYWVIS3hBdUhrZ21uZkptb3ZpaFRxSTJreU40YWttM1dfWFNSQ1NDakRKT003Z2RxTG1PNlo1LXM4SXlYLURTOTBFc3VRMkZSbU9mNjcydDJFZURwRWZBV2E1RkxNSGRKcDBHaDRJNGtoQQ?oc=5",
+          "published": "2026-11-17",
+          "publisher": "Lyndy's Sports Annuals",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "8210",
@@ -145,7 +145,7 @@
       "team": "WAS",
       "position": "TE",
       "snap_share_pct": 70.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Recent target volume",
@@ -179,16 +179,16 @@
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Eight targets for Chig Okonkwo - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTGJrTXNoWW5OTXpQSFRjZXd6T19xYm5Wc2RubmxnSnRQcldLS3lyTUliY3RCTGp2LXVyS2dnUnE4YlpFWFNXaVlkYVQxSVZuVE1qUGk2NUxKa3BtSUpNaHhYYVZ3SDQyR1l5aVJOQWlERGtBZ09tUEx2XzhxZmRwNA?oc=5",
-          "published": "2026-11-13",
+          "title": "Week 11 Waiver Wire: Chig Okonkwo - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONU1kMlZUak1adlZ5bnJxcXFodmhWSjR2a0NKc0tESmNZUHh0UFZnMElpcktXc0V4RkluWWdMLVFaX1dGUDZ6cF9iR25DaUxmUGxtSGF4ckkyWjg3VzNYRk1PdmNLUTlweVVicjVDWE50YnpPN3FnTUxlVG9FU01pZ1NXUzQ?oc=5",
+          "published": "2026-11-17",
           "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
-          "title": "Zay Flowers, Chig Okonkwo, And More Fantasy Football Buy-Low Trade Candidates For Week 10 - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQYS0zOV90bnpreUt2Tjl1SVVsYnBfZ2lQZDB4cGIyQTU3cXlJSkJBeVMteWNua1V2YVlhQUVjTkZzRE45aWpPcEpnY1dOWlNUWHJINjNQODRULVpYZF9nd2E2VlBvMndFMktWRDFsU3d5N2FJd0pkN0ktTkN1aTduY1JlcXY?oc=5",
-          "published": "2026-11-12",
+          "title": "Eight targets for Chig Okonkwo - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTGJrTXNoWW5OTXpQSFRjZXd6T19xYm5Wc2RubmxnSnRQcldLS3lyTUliY3RCTGp2LXVyS2dnUnE4YlpFWFNXaVlkYVQxSVZuVE1qUGk2NUxKa3BtSUpNaHhYYVZ3SDQyR1l5aVJOQWlERGtBZ09tUEx2XzhxZmRwNA?oc=5",
+          "published": "2026-11-13",
           "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
@@ -200,7 +200,7 @@
       "team": "CAR",
       "position": "TE",
       "snap_share_pct": 58.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -208,7 +208,15 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Darren Waller: Must-Add Waiver Wire Pickup for Week 11 Fantasy Football? - NFL News - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYW11MDk2WVdTY285RXp0WDBwa1d0NnllQXRsR1ZINmc1YVFBMk82WlQxemJFNjlHTVA4UURnZURYdmNHNjJ1VkMxZzhaOU1UUE5MWHVrWWZZQjZyaWRlQ2l6WktmclNhdnZyTkJQd0JBVzA2UWtKNE1iTEJfcHcxc1JJM1dJRGdXdVMyU3RwcWhwQjI2eTBHYXlCV2pyQnhjeHUtRjJn?oc=5",
+          "published": "2026-11-17",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "10213",
@@ -216,17 +224,9 @@
       "team": "LV",
       "position": "WR",
       "snap_share_pct": 68.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
-      "news": [
-        {
-          "title": "Tucker held to one catch in Week 10 loss - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMk1OODdKWEwtS1lmcUR3RUZMMGNjOThZT2c0aUdrTXYwSkNIOUtaNHRrNndHalQ2aHhjRGVLeWJ0MDkxY21SMFRKN0R6RktaTnM5NTNVWmpfTldKZVlYS0xpNnBwVVpYX2xud09oQ1gyZllILThnY0NiMTJpbFJGc0gwUkY0Y2QydkVMbGxGaDUySXhfU3BPZTRodEhjNHBxSXdhMHdXSXZOQQ?oc=5",
-          "published": "2026-11-16",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
+      "news": []
     },
     {
       "id": "11637",
@@ -234,7 +234,7 @@
       "team": "BUF",
       "position": "WR",
       "snap_share_pct": 63.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -279,7 +279,7 @@
       "team": "CIN",
       "position": "RB",
       "snap_share_pct": 35.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -303,7 +303,7 @@
       "team": "LAC",
       "position": "RB",
       "snap_share_pct": 27.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -348,7 +348,7 @@
       "team": "CHI",
       "position": "WR",
       "snap_share_pct": 69.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -358,7 +358,7 @@
       "team": "LV",
       "position": "TE",
       "snap_share_pct": 79.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "High recent participation",
@@ -366,7 +366,22 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Week 11 waiver wire FAAB: Michael Mayer, Ryan Flournoy top fantasy football adds - The Big Lead",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTEpqa0ljOUdyZTNQaktzM1ZOVEVUNmZ2Q2RJelJEQ3ZtWHhJZVBZR0RBUTNHZzR4czZ0SDhUX0RVZHZSTEtBUW05TkNoc2ZmY1ZQRlRuWXJpWG8wRGtVclVIZHhPRXlVbDBJM2hJdzRaaHZWSHE4MkpScjRhVmF0R0xSTDE5R1pLaXNLSDBFblc1ajVtNVRWNEt3T3FGcTBueTRhc2hXX1JDc3c3al93?oc=5",
+          "published": "2026-11-16",
+          "publisher": "The Big Lead",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Two grabs for Michael Mayer in Week 10 - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNk1SNmRxSGU1T3M0UlYzRlBQZWk4TVdiN2N1eEVMVkZ6ZmZrX21UN0tnNTRFOWpSVDJ6ekJhcWdPVzU5ak80cHF4OENiYkN5U2ZIVnlIWnZKY1ZJZllEZm9kODdqUzhIZEFBVFhYb19UWWVpZHFicEVCNGU1NmVTXy01aw?oc=5",
+          "published": "2026-11-16",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "9508",
@@ -374,7 +389,7 @@
       "team": "TEN",
       "position": "RB",
       "snap_share_pct": 35.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -424,7 +439,7 @@
       "team": "NO",
       "position": "RB",
       "snap_share_pct": 43.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Recent reception volume",
@@ -460,7 +475,7 @@
       "team": "ARI",
       "position": "RB",
       "snap_share_pct": 43.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -470,7 +485,7 @@
       "team": "SEA",
       "position": "WR",
       "snap_share_pct": 40.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -515,7 +530,7 @@
       "team": "LAC",
       "position": "WR",
       "snap_share_pct": 59.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -570,7 +585,7 @@
       "team": "PHI",
       "position": "WR",
       "snap_share_pct": 79.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -601,7 +616,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 70.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -610,6 +625,13 @@
         }
       ],
       "news": [
+        {
+          "title": "Rashod Bateman goes 3-42 in Week 10 loss to LAC - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQalhmUU9qOG1tbXBFZ2I1RVQ5NmFVZHlZM20zRHNDejYyS3pVendKaFhCU2lFZUNMMF92cnhtNG1YSWJWV3NsQzRubHpER0h3MmdlcGxIbUVnV1E0clRzWGV0ZEp4a3k3c0ZvRGxVUUZsS0luTjVOdFAyZ3BZZEdWQU1CSGx1c0MybHdpUFlQeXZRYzNGeHg0MXg5SkJ1V1hPNHo1b0NSbXJ5anBGY0ppY3VIYw?oc=5",
+          "published": "2026-11-17",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
         {
           "title": "Rashod Bateman Limited practice Thursday - Fantasy Footballers Podcast",
           "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTkUyNzI0c3J2eUFTcnlmc3drb1p6NDg3M3JiaU81Zl9TVVhsc2F0ZnpSaDMycmlLaWpMR0hYU3ZKSklPMkpoLTV1SzhkUG1XUjNMb2NLU1RsWnlIWWh6TXBaRkkxRTU5UFZrZjl6U3NVUjhyMjBYdGtEaXkzQzBsQTNzOE9OM2NZVGNtcHF2MmV6Q2xjMUE?oc=5",
@@ -622,13 +644,6 @@
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRTBaRUZHWXVYdkhuWVM5VmJYOUFhallsYWlzQkwzWHRaVXNza3BELWVqc2JCU1k3NWl1Z1ZHX2o4blh6ZU1yX1JaSlNXaHg4NUJ5WDZQdGV1UENFLV9JSTFoSGFlNEhSNVdNWHFZRllwMXk1Ym9RMG4tTVBMaDJTOWkzRUtCWklLWVE?oc=5",
           "published": "2026-11-14",
           "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Ravens list Rashod Bateman, Vega Ioane as limited in Thursday’s practice - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObXlCNzhjaUp2YlhqeGRQZmoxdjFsU1BGVjdmcWJ0QlhwMGpsNFNiQzk3SnpXazZjQVVhU0wyaTk3YWwxNU9PU2ZMTlJjT003bFFVakYyY2U3MllRTWlnTkpKZWFvY2tBTWl0TllNWWJpLVc1NGxITkRyR1o0c1VyRmZlN1ZIcGdZQzNxX09FOWhHUDUtWXpjODlUZUEyX1J0OFZiZjFmMTFCYXdROVVfQjcyaUwxQzdDbGhsRjBRV3VIcGN2VWVpWnFvYTc?oc=5",
-          "published": "2026-11-12",
-          "publisher": "NBC Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         },
         {
@@ -646,7 +661,7 @@
       "team": "PIT",
       "position": "WR",
       "snap_share_pct": 77.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -696,7 +711,7 @@
       "team": "BAL",
       "position": "WR",
       "snap_share_pct": 63.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -705,6 +720,13 @@
         }
       ],
       "news": [
+        {
+          "title": "11 targets for Ja’Kobi Lane in loss to Chargers - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMjdUeUhwTHlXXzhrcTRNLXlLTzV0OGRMUHBhV2MyTjEyX1pDamRzYnVzYy1pNmt5LXgzNVNhNG9ubDFZVkQyeHlNcTdvdU1zSmFHYVVyVkE5SlBRZm1hakMxcWtOMUlVNW5QVGl4N3J4aFFTWjFnWlpWZjFrMjI3MXBoS056VUtUSkJ6Z2M2c1JqY2lUOVRnRWdoLXB5S19hR0xPNGdmZFJhajg5bVVmYm9n?oc=5",
+          "published": "2026-11-17",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
         {
           "title": "Ja'Kobi Lane: Must-Add Waiver Wire Pickup for Week 11 Fantasy Football? - NFL News - RotoBaller",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUmtsRmNBMkFBYzlWbHVtUGQ0bVdMTnFLYlZXdGp4QnRTakNmOWZkZ2NMTDlKcjJ6bjBRR0pWa1pOTnVUNnRYUER6QklJVWZVdUlhamRjQmJDckg0MmZnUDNLRkhoM2FlSk5NODhaaURUT2xPdEZaU2pUTDZuZU85Z0hPUlFLODFuckZwN2l3VE5NMDdudVQxbk5R?oc=5",
@@ -720,7 +742,7 @@
       "team": "LAC",
       "position": "TE",
       "snap_share_pct": 35.5,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -733,36 +755,7 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": [
-        {
-          "title": "Chargers activate TE David Njoku, LB Denzel Perryman for Monday night vs. Ravens - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOT2R3LVdtTE1YSFNOY091S05ieVZFNFV0YjVTZWFON0ZjNkJhT1phRFc0dDM1aXBGZUdmQXRXdjh0RlE5NUpDd2tnN2dzdV9vd19jSDRkU3phTGpqV1NKYUY5d2xtSC1fa09wM0g5dk8tRV9mM20zZ1JMMXYtSEozQzY5SDloZTQw?oc=5",
-          "published": "2026-11-16",
-          "publisher": "Yahoo Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chargers' David Njoku: Returning for Monday night game - CBS Sports",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZXFwaWk0alR6SkRYNzREX2lfVkpad1JPQ1ZfV2NmLUFBbFgyREkwbXExZkRqUG54cWhlWmtWeVRIdlNyTzQ0NGEzTWM1VFhyVGNEQ1oySHhfRjU2Vnp3LWRzejZrVWRuUjdrSlJXM1RnR25NSkVEM0pqRmN4dTJLSnk2WlZKOWJPU2dYOTVZNnpMWjZUdGZoM1BrY2UwNHNGZ2VZ?oc=5",
-          "published": "2026-11-16",
-          "publisher": "CBS Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chargers activate Njoku from injured reserve - NBC Sports",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOa1NHZVhteTFFUHVNQzhfV29YejhieDdMdTFqRzMyR2NwekpQTVg4TWdIeEJ1eWtpRWNIUjBjaWEtRVJzQmxGUTBTTmZVejNjdlQtcVFMZ0Q3XzI4RDc1ekw0VDU2ckRMdERXeFVSNE1admRwN0lQNFAxc2R3U3RxSlktdDdqM0xJZHNJaTdfTTNLQUQ5ZGExb2d5UVJLQ3ZzZ1FwWFVraWpnQzVqSlNR?oc=5",
-          "published": "2026-11-17",
-          "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Chargers activate TE David Njoku from IR - Sportsnet.ca",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQTDhmN2hjelhPMVNQSWxDakV4N3lwRDF6aFg4VjVGeXhfWDNyM0FfbUtEX0VBYzQwQXFIVXoyanFtdnRQMXN3SHZUNF9qN3R2bm5qWnJ4RHoyN2xXUXpQbGpCWVBBWTNqOTdrNTVjcEhXWVdUc3FOVFhxdXJLOFllNlBvUVA?oc=5",
-          "published": "2026-11-17",
-          "publisher": "Sportsnet.ca",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        }
-      ]
+      "news": []
     },
     {
       "id": "5857",
@@ -770,7 +763,7 @@
       "team": "NO",
       "position": "TE",
       "snap_share_pct": 45.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -801,7 +794,7 @@
       "team": "MIA",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -809,7 +802,36 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Breaking Down the Good News/Bad News Regarding Dolphins WR Chris Bell - Sports Illustrated",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVN0SnoyS1ZNWWxqNWhiRnBfT3NKcnhDS3ZLemFaYTZxSjBuM3R3RFFQSTREbHpZQmdubDJJbGRPcFN0S3VEaDVseVBwMGE0ajZvaW1fdFI1cnBFNlgwVlJreFIwdmowT0IzVmtJNDZRNUV2Y2dqUlYyNThqOVJZdTBkUm1ZcmFRcEZUekpoRWNVX250X3VuZkhkX0N6M1hMeVlUTEcxc1RwOGotMDBIckMzMy1wVi16WGpB?oc=5",
+          "published": "2026-11-13",
+          "publisher": "Sports Illustrated",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Chris Bell Injury Hits Dolphins Right Before Key Week - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOcUxMZEpRMDVzTHV1cHpVTHNSRk5admFFMnY2VE1kakp6dGlySTVIZHhOc0Y4ZHNxSjUxNTdxNC1fM1c3LUFSNnd6TGFFZzhMZnFkM0lzVnJEYmN0YWpGYUVETC1WeXQ5XzFuazliMUtUTS1tWVl2bDBqNmRGOVJlUkRqUTJqbzg?oc=5",
+          "published": "2026-11-13",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Chris Bell Not seen at practice Thursday - Fantasy Footballers Podcast",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNYUtyOEIyUUoweVBaNzB0YnBDQnhZRW9GMkFJVnNHVmIxZ2hqZDBKYnVySlBXWG5HQXZ2ZXIxeW91dFFHMW5ZUUhMazA0WFdNeTAzTkxqSXB6Ync1em1qaWVzT2JLZF9hVWRiY3ZBczNJZ0sycFB4am8yRExQZlJpSzlKdUFGTFhDUGtTVXVOV3FKb2RpQmc?oc=5",
+          "published": "2026-11-13",
+          "publisher": "Fantasy Footballers Podcast",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Chris Bell (knee) doubtful for Week 10 - NBC Sports",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcHNtNGw4bmp3OEx6UF9QUXBWRVpfY2lPTmdBV1VSRmNjTW5QSTlJOXI0ZUNJY05Uc0RxMnFjRDFuYm1ySTJocnUyMmsySnBVN3lqZzBKd1RjUjk0ZE9CcHk2WEpjYUhVQmJDNkJGMThKWk14ZmNQeVBNRnZGbkNKcmdBRXltV193aFBMZG9wcTlhX3dtWlhjQ3ZHeVRCcWg0aWV0dw?oc=5",
+          "published": "2026-11-13",
+          "publisher": "NBC Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "4177",
@@ -817,7 +839,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 67.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -830,7 +852,15 @@
           "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv"
         }
       ],
-      "news": []
+      "news": [
+        {
+          "title": "Fantasy Football Week 11 Waiver Wire Debate: Mack Hollins vs. Malachi Fields - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQzU5RDd4dnpWNk4zM1ZzYjJweTVqNzh3aXgzOVFNV0FFaENJZzBnTjhkY3RESktsOHh2Sk0xTTQtVzU3UV9DbGx6dmNuU1JhZWdEVGVvLXU3R1BqWjljSUs5ZnJDUnJRVjNINEU2cklnVWRwOHhrLU9CbFlQNy1kRFFXeWRVSmc?oc=5",
+          "published": "2026-11-16",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "11581",
@@ -838,7 +868,7 @@
       "team": "GB",
       "position": "RB",
       "snap_share_pct": 25.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -854,7 +884,7 @@
       "team": "MIN",
       "position": "WR",
       "snap_share_pct": 60.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -885,7 +915,7 @@
       "team": "CIN",
       "position": "WR",
       "snap_share_pct": 47.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": [
         {
@@ -893,13 +923,6 @@
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWmVhT0JRbGdPWWtad2Y2SGZRZzBGQkRlUFVPN2dvNUUzNWdRYUYtTFlXZFpVNTN6cW5ha05ndzFZWmw2T1ZGRFN1bkhQV1o0RVFiUk12NmxMWWUwdEt4dXc3aXhpb0J2UDBoNm90SEJ5UlAySkh2WkpTQlNiRWF6bFpMVFY4TzN0ZnhyQ3dtdmx2aTZvQWRGRnQ3M2ZZREhrSERRS0ZUTk9LS3ljWlJYY2xFNlE?oc=5",
           "published": "2026-11-16",
           "publisher": "NBC Sports",
-          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
-        },
-        {
-          "title": "Dohnte Meyers continues excelling in the 3rd receiver role - Yahoo Sports",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRjZqM2xmYXFaRDEzaHJXeUVMb2lzNWlqdEYzOFZRQ3d4ajhYZ1FadGVnLXJ1UXhPWXhTUk5tTFh3Sk5OR3BDVVVKUHJBaGxkdDBaLW1YM2xzaEtJWkoxUDkxODRTenF0bTRYTGRrTU5HcjBzVjlkbFExWGhfVUw1NjJReXgtbEV3Yl93ZjBoNA?oc=5",
-          "published": "2026-11-11",
-          "publisher": "Yahoo Sports",
           "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
         }
       ]
@@ -910,7 +933,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 28.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Own Sleeper injury flag (unverified)",
@@ -936,7 +959,7 @@
       "team": "ATL",
       "position": "WR",
       "snap_share_pct": 26.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Teammate depth opportunity — provider-tag only",
@@ -972,9 +995,38 @@
       "team": "PHI",
       "position": "TE",
       "snap_share_pct": 23.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
-      "news": []
+      "news": [
+        {
+          "title": "Eagles roster news: Zach Ertz’s promotion among 7 moves - Yahoo Sports",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPOXdrTDE5R1FxU3NzQTgtSl9TWWRTNkppVGExZWJGV3kxbTM2aG0xUWhkQ2tSOHVFMUFoazBJSlhwZDZTVkNxTnZwcUJKU25keFd5czhaUWFKb3A2QW5rdUxScUxLNFVrNXhSTkVDX000SGNGS1NCdWNxQkw2emgwMU9tVQ?oc=5",
+          "published": "2026-11-16",
+          "publisher": "Yahoo Sports",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles sign Zach Ertz to 53-man roster in flurry of moves - NBC Sports Philadelphia",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZUxyY2ZhQkdHT2ptZXRhMnd4WU9LNVNjTmJCTXlnTlJ6NVBJNDdEOVB0LXgzeEIzY09SNEs4V2EyNThkQkFPelNMd0h1aVRjcTgxUmw4akMySEhtem5OQW8xY09mVlNxZjVHNTQ3RmZwX2FMRGczZnRBcFRiXzlFM1R1cUIyVmtLdndIc3czSGZiWmQ0RU95VzI5cFBaTTd3bnlMeGNyMTBfTWpMM0dncnpMTTlMSlF5UDREUmZReUdCTmw5Q1HSAc4BQVVfeXFMTlQzalNVUkU4SURGbk1XUzFZSFpZZXVyY3ZMYW1jX0pYMDlaM3NEeldTX0gxSy1NR19FLVMwcEpxdHJIU05VZy00RXV2U2o2RnV5OVlUX1RoeU5BcFhuTzdwd3lRRVZWSzg4QlZQSU92VEFXTThuN2o3RkxnTmJXSFdic0wxRVdkaVp0NzU2Skk3ZkF6RUdwWXprWHo0c05Nc0xncUhncEZwSW12eTB5Sl93RThJMjRhb1BNQ3cyN0d5VEFhWVN6N2M4ejFuMlE?oc=5",
+          "published": "2026-11-16",
+          "publisher": "NBC Sports Philadelphia",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles Sign Tight End Zach Ertz to Active Roster - NFL News | Fantasy Football - RotoBaller",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOdGo0Tk9hX1h0Q09LWmpWUzM0X000RXdXMlBfY2FEVExESFRXLThOYzZ4TUl3cTlrR3BtVmpxUm9pU093QTlSelAzVmpLQXZhYnMtcEVKeW11QnA5NUNRRVUyMkc5TWdKcWlYTXpYNWVhRWQwU0VLVjJkM1dDZVNTUV9ybk40d1p3WmlNM1JnZnlNUDVW?oc=5",
+          "published": "2026-11-16",
+          "publisher": "RotoBaller",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        },
+        {
+          "title": "Eagles Promote TE Zach Ertz Among Seven Roster Moves - NFLTradeRumors.co",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQcHR6ZmhBeDRtYm5oUjk5bnF4Y3R4ekVrRlZBMkpSSWdYQmlzQzhraXduZDFWZlZUSjNRRmxDQU9WamdKaWtva0V6MDE5WXF3Z2V0NGVGOFd6Y3BqbTBlQTBHTGE4MnZ1eEl4Si0xQ0VKMWF6RjlWRXA0Wkp2bEhiVjJzaXR4Zw?oc=5",
+          "published": "2026-11-16",
+          "publisher": "NFLTradeRumors.co",
+          "verification": "HEADLINE_ONLY_NOT_FACT_CHECKED"
+        }
+      ]
     },
     {
       "id": "13413",
@@ -982,7 +1034,7 @@
       "team": "KC",
       "position": "WR",
       "snap_share_pct": 36.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -998,7 +1050,7 @@
       "team": "PHI",
       "position": "RB",
       "snap_share_pct": 39.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -1008,7 +1060,7 @@
       "team": "CLE",
       "position": "RB",
       "snap_share_pct": 1.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -1018,7 +1070,7 @@
       "team": "NE",
       "position": "WR",
       "snap_share_pct": 51.0,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -1028,7 +1080,7 @@
       "team": "CHI",
       "position": "RB",
       "snap_share_pct": 11.3,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -1038,7 +1090,7 @@
       "team": "SF",
       "position": "WR",
       "snap_share_pct": 54.7,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     },
@@ -1048,7 +1100,7 @@
       "team": "JAX",
       "position": "WR",
       "snap_share_pct": null,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [
         {
           "type": "Published injury report observation — historical",
@@ -1064,7 +1116,7 @@
       "team": "LAR",
       "position": "TE",
       "snap_share_pct": null,
-      "checked_at": "2026-11-17T04:59:05.295256+00:00",
+      "checked_at": "2026-11-17T06:00:15.942192+00:00",
       "signals": [],
       "news": []
     }

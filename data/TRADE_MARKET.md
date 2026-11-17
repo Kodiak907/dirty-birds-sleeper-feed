@@ -1,24 +1,24 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-17T04:59:04.521268+00:00
-Sleeper snapshot: 2026-11-17T04:59:00.139644+00:00
+Generated: 2026-11-17T06:00:15.184471+00:00
+Sleeper snapshot: 2026-11-17T06:00:08.843535+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
 | Team | Record | QB / RB / WR / TE | Completed trades | FAAB used |
 |---|---|---|---:|---:|
-| Dirty Birds | 6-3 | 2 / 5 / 8 / 1 | 12 | 193 |
-| CREAM MACHINE | 4-5 | 3 / 7 / 8 / 3 | 0 | 52 |
-| BigOlBoyle | 2-7 | 3 / 6 / 4 / 2 | 1 | 0 |
-| DANGER CLOSE | 3-6 | 2 / 3 / 9 / 3 | 1 | 85 |
-| Victorious Secret | 4-5 | 2 / 4 / 4 / 4 | 3 | 45 |
-| kfsn | 7-2 | 2 / 5 / 5 / 3 | 2 | 25 |
-| JA’MARRTRIX | 3-6 | 2 / 6 / 8 / 2 | 5 | 205 |
-| DeeboSix0 | 7-2 | 3 / 5 / 8 / 2 | 1 | 60 |
-| To Infinity and Bijan | 3-6 | 2 / 5 / 6 / 2 | 6 | 100 |
-| EmanAndYoMomma | 2-7 | 2 / 4 / 4 / 2 | 0 | 0 |
-| suck my dickerson | 7-2 | 2 / 4 / 4 / 2 | 1 | 0 |
-| Cokerthestroker | 6-3 | 2 / 4 / 7 / 2 | 4 | 133 |
+| Dirty Birds | 7-3 | 2 / 5 / 8 / 1 | 12 | 193 |
+| CREAM MACHINE | 4-6 | 3 / 7 / 8 / 3 | 0 | 52 |
+| BigOlBoyle | 2-8 | 3 / 6 / 4 / 2 | 1 | 0 |
+| DANGER CLOSE | 4-6 | 2 / 3 / 9 / 3 | 1 | 85 |
+| Victorious Secret | 5-5 | 2 / 4 / 4 / 4 | 3 | 45 |
+| kfsn | 7-3 | 2 / 5 / 5 / 3 | 2 | 25 |
+| JA’MARRTRIX | 4-6 | 2 / 6 / 8 / 2 | 5 | 205 |
+| DeeboSix0 | 8-2 | 3 / 5 / 8 / 2 | 1 | 60 |
+| To Infinity and Bijan | 4-6 | 2 / 5 / 6 / 2 | 6 | 100 |
+| EmanAndYoMomma | 2-8 | 2 / 4 / 4 / 2 | 0 | 0 |
+| suck my dickerson | 7-3 | 2 / 4 / 4 / 2 | 1 | 0 |
+| Cokerthestroker | 6-4 | 2 / 4 / 7 / 2 | 4 | 133 |
 
 ## Reading this board
 

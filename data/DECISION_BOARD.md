@@ -18,7 +18,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Samaje Perine | 6.28 | +1.57 | 35.0% | Carries 7.0 | No modeled flags (not medically cleared) |
-| 2 | Keaton Mitchell | 5.58 | +0.87 | 27.0% | Carries 4.3 | No modeled flags (not medically cleared) |
+| 2 | Keaton Mitchell | 5.58 | +0.87 | 27.0% | Carries 4.7 | No modeled flags (not medically cleared) |
 | 3 | Tyjae Spears | 4.96 | +0.24 | 35.3% | Carries 2.3 | sleeper_injury_questionable, injury_report_observation_review |
 | 4 | Alvin Kamara | 4.88 | +0.17 | 43.3% | Carries 4.7 | No modeled flags (not medically cleared) |
 | 5 | Zonovan Knight | 4.63 | -0.08 | 43.0% | — | carries_missing |
@@ -36,11 +36,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Keon Coleman | 6.75 | +1.44 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | Kalif Raymond | 5.19 | -0.12 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 4 | Rashid Shaheed | 4.41 | -0.90 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 5 | Tre' Harris | 4.36 | -0.95 | 59.7% | Tgt 4.7 | sleeper_injury_out |
+| 5 | Tre' Harris | 4.36 | -0.95 | 59.7% | Tgt 5.0 | sleeper_injury_out |
 | 6 | Dontayvion Wicks | 4.25 | -1.05 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 7 | Rashod Bateman | 3.90 | -1.40 | 70.3% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 7 | Rashod Bateman | 3.90 | -1.40 | 70.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
 | 8 | Michael Pittman Jr. | 3.83 | -1.48 | 77.7% | — | sleeper_injury_ir, projection_weeks_partial, targets_missing |
-| 9 | Ja'Kobi Lane | 3.75 | -1.56 | 63.7% | Tgt 2.0 | injury_report_observation_review |
+| 9 | Ja'Kobi Lane | 3.75 | -1.56 | 63.7% | Tgt 4.0 | injury_report_observation_review |
 | 10 | Brian Thomas Jr. | 3.59 | -1.72 | — | Tgt 2.7 | snap_data_missing, usage_sample_missing |
 | 11 | Chris Bell | 3.23 | -2.08 | 60.0% | Tgt 3.3 | injury_report_observation_review |
 | 12 | Mack Hollins | 2.92 | -2.39 | 67.0% | Tgt 5.3 | sleeper_injury_ir, injury_report_observation_review |

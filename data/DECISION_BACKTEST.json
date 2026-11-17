@@ -1,5 +1,5 @@
 {
-  "completed_comparable_weeks": 1,
+  "completed_comparable_weeks": 2,
   "evaluations": [
     {
       "comparison_note": "Retrospective only; not proof the frozen lineup was preferable using injury news at lock.",
@@ -27,6 +27,28 @@
       "reason": "One or more frozen proposed players not on the scored week roster.",
       "status": "not_comparable_roster_changed",
       "week": 9
+    },
+    {
+      "comparison_note": "Retrospective only; not proof the frozen lineup was preferable using injury news at lock.",
+      "frozen_lineup_actual_points": 185.74,
+      "frozen_predicted_ppg": 132.69,
+      "model_lineup_names": [
+        "C.J. Stroud",
+        "Christian McCaffrey",
+        "Kyren Williams",
+        "Jaxon Smith-Njigba",
+        "Zay Flowers",
+        "Isaiah Likely",
+        "Will Reichard",
+        "Jacksonville Jaguars",
+        "A.J. Brown",
+        "Deebo Samuel Sr."
+      ],
+      "model_prediction_error": -53.05,
+      "retrospective_margin": 0.0,
+      "status": "comparable_retrospective",
+      "submitted_lineup_actual_points": 185.74,
+      "week": 10
     }
   ],
   "guardrails": [
@@ -41,8 +63,7 @@
   ],
   "newly_archived_weeks": [],
   "pending_weeks": [
-    10,
     11
   ],
-  "updated_at_utc": "2026-11-17T04:59:08.289620+00:00"
+  "updated_at_utc": "2026-11-17T06:00:19.179987+00:00"
 }

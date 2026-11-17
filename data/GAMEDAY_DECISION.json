@@ -1,149 +1,156 @@
 {
   "added_starters": [
-    "Caleb Douglas"
+    "Seth McGowan",
+    "Antonio Williams",
+    "Kaelon Black"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "Pat Bryant",
-      "Jonah Coleman"
+      "A.J. Brown",
+      "Kyren Williams",
+      "Jaxon Smith-Njigba"
     ],
-    "ppg": 132.12,
+    "ppg": 114.37,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 17.44
+        "ppg": 20.28
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.56
+        "ppg": 18.02
       },
       {
-        "id": "8150",
-        "name": "Kyren Williams",
+        "id": "13345",
+        "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 15.75
-      },
-      {
-        "id": "9488",
-        "name": "Jaxon Smith-Njigba",
-        "position": "WR",
-        "ppg": 19.48
+        "ppg": 15.78
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 13.24
+        "ppg": 12.06
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 7.39
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 10.12
+        "ppg": 12.53
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.95
+        "ppg": 7.05
       },
       {
         "id": "JAX",
         "name": "Jacksonville Jaguars",
         "position": "DEF",
-        "ppg": 7.49
-      },
-      {
-        "id": "5859",
-        "name": "A.J. Brown",
-        "position": "WR",
-        "ppg": 11.97
+        "ppg": 6.92
       },
       {
         "id": "5872",
         "name": "Deebo Samuel Sr.",
         "position": "WR",
-        "ppg": 9.12
+        "ppg": 7.34
+      },
+      {
+        "id": "12492",
+        "name": "Pat Bryant",
+        "position": "WR",
+        "ppg": 7.0
       }
     ]
   },
-  "difference_ppg": -1.54,
+  "difference_ppg": -13.51,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "5872",
     "9502"
   ],
-  "generated_at_utc": "2026-11-17T04:59:10.619109+00:00",
+  "generated_at_utc": "2026-11-17T06:00:21.596692+00:00",
   "hard_status_excluded": {
     "complete": true,
-    "missing_projection": [],
-    "ppg": 130.58,
+    "missing_projection": [
+      "A.J. Brown",
+      "Kyren Williams",
+      "Jaxon Smith-Njigba"
+    ],
+    "ppg": 100.86,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 17.44
+        "ppg": 20.28
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 20.56
+        "ppg": 18.02
       },
       {
-        "id": "8150",
-        "name": "Kyren Williams",
+        "id": "13424",
+        "name": "Seth McGowan",
         "position": "RB",
-        "ppg": 15.75
-      },
-      {
-        "id": "9488",
-        "name": "Jaxon Smith-Njigba",
-        "position": "WR",
-        "ppg": 19.48
+        "ppg": 5.45
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 13.24
-      },
-      {
-        "id": "8131",
-        "name": "Isaiah Likely",
-        "position": "TE",
-        "ppg": 10.12
-      },
-      {
-        "id": "11792",
-        "name": "Will Reichard",
-        "position": "K",
-        "ppg": 6.95
-      },
-      {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
-        "position": "DEF",
-        "ppg": 7.49
-      },
-      {
-        "id": "5859",
-        "name": "A.J. Brown",
-        "position": "WR",
-        "ppg": 11.97
+        "ppg": 12.06
       },
       {
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 7.58
+        "ppg": 7.39
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 12.53
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.05
+      },
+      {
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
+        "position": "DEF",
+        "ppg": 6.92
+      },
+      {
+        "id": "13301",
+        "name": "Antonio Williams",
+        "position": "WR",
+        "ppg": 6.62
+      },
+      {
+        "id": "13414",
+        "name": "Kaelon Black",
+        "position": "RB",
+        "ppg": 4.54
       }
     ]
   },
@@ -318,12 +325,14 @@
   ],
   "players_needing_review": [],
   "removed_starters": [
-    "Deebo Samuel Sr."
+    "Jonah Coleman",
+    "Deebo Samuel Sr.",
+    "Pat Bryant"
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-17T04:59:00.139644+00:00",
-  "source_availability_generated_at_utc": "2026-11-17T04:59:08.580077+00:00",
+  "snapshot_utc": "2026-11-17T06:00:08.843535+00:00",
+  "source_availability_generated_at_utc": "2026-11-17T06:00:19.371387+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
@@ -337,5 +346,5 @@
     "Official inactives must be checked near kickoff before any action.",
     "No roster or lineup change performed."
   ],
-  "week": 10
+  "week": 11
 }
