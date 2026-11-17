@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-17T20:06:48.982003+00:00 | Forecast as of: 2026-11-17T15:57:03.017622+00:00
+Generated: 2026-11-17T20:57:46.550572+00:00 | Forecast as of: 2026-11-17T15:57:03.017622+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
