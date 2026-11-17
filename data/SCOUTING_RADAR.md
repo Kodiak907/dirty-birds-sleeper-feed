@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-17T20:57:42.770637+00:00
-Sleeper snapshot: 2026-11-17T20:57:39.294742+00:00
+Generated: 2026-11-17T21:55:27.176840+00:00
+Sleeper snapshot: 2026-11-17T21:55:21.360220+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- CREAM MACHINE: added none; dropped Malachi Fields
 
 ## Limits
 

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-17T20:57:43.269408+00:00
+Generated: 2026-11-17T21:55:27.594243+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.71**. Weeks with partial projections and injury status require manual verification.
@@ -36,15 +36,15 @@ Baseline illustrative optimal PPG: **126.71**. Weeks with partial projections an
 | 1 | Tre Tucker | 6.88 | Bench-depth scenario: Pat Bryant | +0.00 | -0.35 | Partial projection coverage |
 | 2 | Keon Coleman | 6.85 | Bench-depth scenario: Pat Bryant | +0.00 | -0.38 | No flagged data gap; review still required |
 | 3 | Kalif Raymond | 5.92 | Bench-depth scenario: Pat Bryant | +0.00 | -1.31 | No flagged data gap; review still required |
-| 4 | Dontayvion Wicks | 4.85 | Bench-depth scenario: Pat Bryant | +0.00 | -2.38 | Availability status: questionable |
-| 5 | Michael Pittman Jr. | 4.37 | Bench-depth scenario: Pat Bryant | +0.00 | -2.86 | Availability status: ir; Partial projection coverage |
-| 6 | Rashid Shaheed | 4.27 | Bench-depth scenario: Pat Bryant | +0.00 | -2.96 | Partial projection coverage |
-| 7 | Tre' Harris | 4.11 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: out |
-| 8 | Rashod Bateman | 3.80 | Bench-depth scenario: Pat Bryant | +0.00 | -3.43 | Partial projection coverage |
-| 9 | Chris Bell | 3.69 | Bench-depth scenario: Pat Bryant | +0.00 | -3.54 | No flagged data gap; review still required |
-| 10 | Ja'Kobi Lane | 3.65 | Bench-depth scenario: Pat Bryant | +0.00 | -3.58 | Partial projection coverage |
-| 11 | Brian Thomas Jr. | 3.56 | Bench-depth scenario: Pat Bryant | +0.00 | -3.67 | Limited snap sample |
-| 12 | Marvin Harrison Jr. | 3.31 | Bench-depth scenario: Pat Bryant | +0.00 | -3.92 | No flagged data gap; review still required |
+| 4 | Malachi Fields | 5.09 | Bench-depth scenario: Pat Bryant | +0.00 | -2.14 | No flagged data gap; review still required |
+| 5 | Dontayvion Wicks | 4.85 | Bench-depth scenario: Pat Bryant | +0.00 | -2.38 | Availability status: questionable |
+| 6 | Michael Pittman Jr. | 4.37 | Bench-depth scenario: Pat Bryant | +0.00 | -2.86 | Availability status: ir; Partial projection coverage |
+| 7 | Rashid Shaheed | 4.27 | Bench-depth scenario: Pat Bryant | +0.00 | -2.96 | Partial projection coverage |
+| 8 | Tre' Harris | 4.11 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: out |
+| 9 | Rashod Bateman | 3.80 | Bench-depth scenario: Pat Bryant | +0.00 | -3.43 | Partial projection coverage |
+| 10 | Chris Bell | 3.69 | Bench-depth scenario: Pat Bryant | +0.00 | -3.54 | No flagged data gap; review still required |
+| 11 | Ja'Kobi Lane | 3.65 | Bench-depth scenario: Pat Bryant | +0.00 | -3.58 | Partial projection coverage |
+| 12 | Brian Thomas Jr. | 3.56 | Bench-depth scenario: Pat Bryant | +0.00 | -3.67 | Limited snap sample |
 
 ## TE
 

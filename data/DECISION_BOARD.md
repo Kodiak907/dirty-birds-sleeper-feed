@@ -36,15 +36,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Tre Tucker | 6.88 | +1.70 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 2 | Keon Coleman | 6.85 | +1.67 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | Kalif Raymond | 5.92 | +0.74 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 4 | Dontayvion Wicks | 4.85 | -0.33 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 5 | Michael Pittman Jr. | 4.37 | -0.81 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 6 | Rashid Shaheed | 4.27 | -0.91 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 7 | Tre' Harris | 4.11 | -1.07 | 77.3% | Tgt 5.0 | sleeper_injury_out |
-| 8 | Rashod Bateman | 3.80 | -1.38 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 9 | Chris Bell | 3.69 | -1.49 | 60.0% | Tgt 3.3 | injury_report_observation_review |
-| 10 | Ja'Kobi Lane | 3.65 | -1.53 | 62.0% | Tgt 4.0 | injury_report_observation_review |
-| 11 | Brian Thomas Jr. | 3.56 | -1.62 | — | Tgt 2.7 | snap_data_missing, usage_sample_missing |
-| 12 | Marvin Harrison Jr. | 3.31 | -1.87 | 28.7% | Tgt 3.7 | injury_report_observation_review |
+| 4 | Malachi Fields | 5.09 | -0.09 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 5 | Dontayvion Wicks | 4.85 | -0.33 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 6 | Michael Pittman Jr. | 4.37 | -0.81 | 77.7% | — | sleeper_injury_ir, targets_missing |
+| 7 | Rashid Shaheed | 4.27 | -0.91 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 8 | Tre' Harris | 4.11 | -1.07 | 77.3% | Tgt 5.0 | sleeper_injury_out |
+| 9 | Rashod Bateman | 3.80 | -1.38 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 10 | Chris Bell | 3.69 | -1.49 | 60.0% | Tgt 3.3 | injury_report_observation_review |
+| 11 | Ja'Kobi Lane | 3.65 | -1.53 | 62.0% | Tgt 4.0 | injury_report_observation_review |
+| 12 | Brian Thomas Jr. | 3.56 | -1.62 | — | Tgt 2.7 | snap_data_missing, usage_sample_missing |
 
 ## TE — reference: Isaiah Likely (11.37 PPG)
 

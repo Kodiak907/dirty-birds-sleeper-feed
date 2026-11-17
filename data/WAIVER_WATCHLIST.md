@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-17T20:57:43.086559+00:00
-Sleeper snapshot: 2026-11-17T20:57:39.294742+00:00
+Generated: 2026-11-17T21:55:27.309965+00:00
+Sleeper snapshot: 2026-11-17T21:55:21.360220+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,7 +9,7 @@ Sleeper snapshot: 2026-11-17T20:57:39.294742+00:00
 |---|---:|
 | QB | 328 |
 | RB | 626 |
-| WR | 1291 |
+| WR | 1292 |
 | TE | 615 |
 | K | 138 |
 | DEF | 14 |
@@ -47,15 +47,15 @@ Sleeper snapshot: 2026-11-17T20:57:39.294742+00:00
 | 1 | Tre Tucker | LV | 6.88 | 86% | 68.7% | Not flagged |
 | 2 | Keon Coleman | BUF | 6.85 | 100% | 63.7% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.92 | 100% | 69.7% | Not flagged |
-| 4 | Dontayvion Wicks | PHI | 4.85 | 100% | 79.3% | Questionable |
-| 5 | Michael Pittman Jr. | PIT | 4.37 | 86% | 77.7% | IR |
-| 6 | Rashid Shaheed | SEA | 4.27 | 86% | 40.7% | Not flagged |
-| 7 | Tre' Harris | LAC | 4.11 | 100% | 77.3% | Out |
-| 8 | Rashod Bateman | BAL | 3.80 | 86% | 76.3% | Not flagged |
-| 9 | Chris Bell | MIA | 3.69 | 100% | 60.0% | Not flagged |
-| 10 | Ja'Kobi Lane | BAL | 3.65 | 86% | 62.0% | Not flagged |
-| 11 | Brian Thomas Jr. | JAX | 3.56 | 100% | — | Not flagged |
-| 12 | Marvin Harrison Jr. | HOU | 3.31 | 100% | 28.7% | Not flagged |
+| 4 | Malachi Fields | NYG | 5.09 | 100% | 82.3% | Not flagged |
+| 5 | Dontayvion Wicks | PHI | 4.85 | 100% | 79.3% | Questionable |
+| 6 | Michael Pittman Jr. | PIT | 4.37 | 86% | 77.7% | IR |
+| 7 | Rashid Shaheed | SEA | 4.27 | 86% | 40.7% | Not flagged |
+| 8 | Tre' Harris | LAC | 4.11 | 100% | 77.3% | Out |
+| 9 | Rashod Bateman | BAL | 3.80 | 86% | 76.3% | Not flagged |
+| 10 | Chris Bell | MIA | 3.69 | 100% | 60.0% | Not flagged |
+| 11 | Ja'Kobi Lane | BAL | 3.65 | 86% | 62.0% | Not flagged |
+| 12 | Brian Thomas Jr. | JAX | 3.56 | 100% | — | Not flagged |
 
 ### TE
 
@@ -114,6 +114,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Kalif Raymond | WR | CHI | 5.92 | 69.7% |
 | Keaton Mitchell | RB | LAC | 5.67 | 26.3% |
 | Michael Mayer | TE | LV | 5.27 | 79.3% |
+| Malachi Fields | WR | NYG | 5.09 | 82.3% |
 | Tyjae Spears | RB | TEN | 4.97 | 35.3% |
 | Dontayvion Wicks | WR | PHI | 4.85 | 79.3% |
 | Alvin Kamara | RB | NO | 4.81 | 43.3% |
@@ -122,12 +123,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Zonovan Knight | RB | ARI | 4.20 | 43.0% |
 | Tre' Harris | WR | LAC | 4.11 | 77.3% |
 | Rashod Bateman | WR | BAL | 3.80 | 76.3% |
-| Chris Bell | WR | MIA | 3.69 | 60.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **41**
+Candidates with independently sourced projections AND usage data: **42**
 
 ## Coverage and rules
 
