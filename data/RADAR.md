@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-17T19:00:53.982304+00:00
-Sleeper snapshot: 2026-11-17T19:00:49.162553+00:00
+Generated: 2026-11-17T20:06:08.942173+00:00
+Sleeper snapshot: 2026-11-17T20:06:02.602391+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1428490662654791680` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Marvin Harrison Jr. → DeeboSix0 (#8)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
