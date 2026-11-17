@@ -1,7 +1,7 @@
 # Dirty Birds — Lineup Decision Backtesting
 
-Updated: 2026-11-17T02:19:06.536437+00:00
-Newly frozen future weeks: 11.
+Updated: 2026-11-17T03:55:26.159070+00:00
+Newly frozen future weeks: none.
 Comparable completed-week evaluations: 1.
 
 The model snapshot is stored **before the first NFL game of the week**.
