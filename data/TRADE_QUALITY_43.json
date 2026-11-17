@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-17T14:24:13.238337+00:00",
-  "candidates_evaluated": 26055,
-  "market_matched": 3443,
+  "generated_at_utc": "2026-11-17T15:57:04.976320+00:00",
+  "candidates_evaluated": 26505,
+  "market_matched": 3486,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-17T04:59:05.219687+00:00",
-  "projection_as_of": "2026-11-17T03:55:22.764314+00:00",
+  "market_as_of": "2026-11-17T15:08:01.078399+00:00",
+  "projection_as_of": "2026-11-17T15:57:03.017622+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -37,13 +37,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 3.06,
-      "their_gain": 0.86,
+      "our_gain": 3.57,
+      "their_gain": 0.78,
       "market_paid_received_ratio": 0.98,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.516,
+      "score": 3.978,
       "not_an_approved_offer": true
     },
     {
@@ -73,49 +73,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 3.06,
-      "their_gain": 0.86,
+      "our_gain": 3.57,
+      "their_gain": 0.78,
       "market_paid_received_ratio": 0.976,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.504,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 11,
-      "opponent_name": "suck my dickerson",
-      "give": [
-        {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "6790",
-          "name": "D'Andre Swift",
-          "pos": "RB"
-        },
-        {
-          "id": "96",
-          "name": "Aaron Rodgers",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.04,
-      "their_gain": 0.72,
-      "market_paid_received_ratio": 1.024,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.401,
+      "score": 3.966,
       "not_an_approved_offer": true
     }
   ],
