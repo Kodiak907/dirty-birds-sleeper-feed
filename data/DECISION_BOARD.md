@@ -44,7 +44,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 9 | Chris Bell | 3.69 | -1.49 | 60.0% | Tgt 3.3 | injury_report_observation_review |
 | 10 | Ja'Kobi Lane | 3.65 | -1.53 | 62.0% | Tgt 4.0 | injury_report_observation_review |
 | 11 | Brian Thomas Jr. | 3.56 | -1.62 | — | Tgt 2.7 | snap_data_missing, usage_sample_missing |
-| 12 | Jauan Jennings | 2.98 | -2.20 | 60.0% | Tgt 2.0 | injury_report_observation_review |
+| 12 | Marvin Harrison Jr. | 3.31 | -1.87 | 28.7% | Tgt 3.7 | injury_report_observation_review |
 
 ## TE — reference: Isaiah Likely (11.37 PPG)
 

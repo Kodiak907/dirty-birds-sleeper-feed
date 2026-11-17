@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-17T18:02:33.962908+00:00
-Sleeper snapshot: 2026-11-17T18:02:27.631699+00:00
+Generated: 2026-11-17T19:00:54.116126+00:00
+Sleeper snapshot: 2026-11-17T19:00:49.162553+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,7 +9,7 @@ Sleeper snapshot: 2026-11-17T18:02:27.631699+00:00
 |---|---:|
 | QB | 328 |
 | RB | 626 |
-| WR | 1290 |
+| WR | 1291 |
 | TE | 615 |
 | K | 138 |
 | DEF | 14 |
@@ -55,7 +55,7 @@ Sleeper snapshot: 2026-11-17T18:02:27.631699+00:00
 | 9 | Chris Bell | MIA | 3.69 | 100% | 60.0% | Not flagged |
 | 10 | Ja'Kobi Lane | BAL | 3.65 | 86% | 62.0% | Not flagged |
 | 11 | Brian Thomas Jr. | JAX | 3.56 | 100% | — | Not flagged |
-| 12 | Jauan Jennings | MIN | 2.98 | 100% | 60.0% | Not flagged |
+| 12 | Marvin Harrison Jr. | HOU | 3.31 | 100% | 28.7% | Not flagged |
 
 ### TE
 
@@ -127,7 +127,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **40**
+Candidates with independently sourced projections AND usage data: **41**
 
 ## Coverage and rules
 

@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-17T18:02:27.631699+00:00
+Updated: 2026-11-17T19:00:49.162553+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,7 +19,8 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 133
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 8: added none; dropped Marvin Harrison Jr.
+- Transaction 1428490662654791680: free_agent / complete / rosters [8] / adds None / drops {'11628': 8} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

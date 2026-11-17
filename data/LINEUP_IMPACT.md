@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-17T18:02:34.189351+00:00
+Generated: 2026-11-17T19:00:54.336265+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **126.71**. Weeks with partial projections and injury status require manual verification.
@@ -44,7 +44,7 @@ Baseline illustrative optimal PPG: **126.71**. Weeks with partial projections an
 | 9 | Chris Bell | 3.69 | Bench-depth scenario: Pat Bryant | +0.00 | -3.54 | No flagged data gap; review still required |
 | 10 | Ja'Kobi Lane | 3.65 | Bench-depth scenario: Pat Bryant | +0.00 | -3.58 | Partial projection coverage |
 | 11 | Brian Thomas Jr. | 3.56 | Bench-depth scenario: Pat Bryant | +0.00 | -3.67 | Limited snap sample |
-| 12 | Jauan Jennings | 2.98 | Bench-depth scenario: Pat Bryant | +0.00 | -4.25 | No flagged data gap; review still required |
+| 12 | Marvin Harrison Jr. | 3.31 | Bench-depth scenario: Pat Bryant | +0.00 | -3.92 | No flagged data gap; review still required |
 
 ## TE
 

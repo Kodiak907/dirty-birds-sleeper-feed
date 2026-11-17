@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-17T18:02:33.818364+00:00
-Sleeper snapshot: 2026-11-17T18:02:27.631699+00:00
+Generated: 2026-11-17T19:00:53.982304+00:00
+Sleeper snapshot: 2026-11-17T19:00:49.162553+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1428490662654791680` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Marvin Harrison Jr. → DeeboSix0 (#8)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-17T19:00:53.982304+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Marvin Harrison Jr. → DeeboSix0 (#8)
 - 2026-11-13T17:52:17.295924+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Chris Rodriguez Jr. → DANGER CLOSE  (#4) | Dropped: Brian Thomas Jr. → DANGER CLOSE  (#4)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Konata Mumpfield → JA’MARRTRIX (#7) | FAAB bid: $10
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baltimore Ravens → CREAM MACHINE  (#2)
 - 2026-11-10T20:46:04.173497+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Kendre Miller →     Victorious Secret (#5)
-- 2026-11-10T19:54:00.507480+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: New Orleans Saints → Dirty Birds (#1)
 
 ## Important limits
 

@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-17T18:02:33.851113+00:00
-Sleeper snapshot: 2026-11-17T18:02:27.631699+00:00
+Generated: 2026-11-17T19:00:54.013271+00:00
+Sleeper snapshot: 2026-11-17T19:00:49.162553+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- DeeboSix0: added none; dropped Marvin Harrison Jr.
 
 ## Limits
 
