@@ -25,7 +25,7 @@
       "ppg": 5.306
     }
   },
-  "generated_at_utc": "2026-11-17T11:55:49.531607+00:00",
+  "generated_at_utc": "2026-11-17T13:06:28.226070+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -503,8 +503,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
-          "recent_snap_pct": 27.0,
-          "snap_trend_3_appearances_pp": 0.0,
+          "recent_snap_pct": 26.3,
+          "snap_trend_3_appearances_pp": -8.0,
           "targets_per_game": 2.67
         },
         "name": "Keaton Mitchell",
@@ -809,8 +809,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
-          "recent_snap_pct": 35.5,
-          "snap_trend_3_appearances_pp": null,
+          "recent_snap_pct": 34.7,
+          "snap_trend_3_appearances_pp": -22.0,
           "targets_per_game": 4.0
         },
         "name": "David Njoku",
@@ -1005,8 +1005,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
-          "recent_snap_pct": 59.7,
-          "snap_trend_3_appearances_pp": 38.0,
+          "recent_snap_pct": 77.3,
+          "snap_trend_3_appearances_pp": 47.0,
           "targets_per_game": 5.0
         },
         "name": "Tre' Harris",
@@ -1060,8 +1060,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.875,
-          "recent_snap_pct": 70.3,
-          "snap_trend_3_appearances_pp": -11.0,
+          "recent_snap_pct": 76.3,
+          "snap_trend_3_appearances_pp": 15.0,
           "targets_per_game": 3.33
         },
         "name": "Rashod Bateman",
@@ -1115,8 +1115,8 @@
           },
           "not_an_injury_probability": true,
           "projection_coverage": 0.875,
-          "recent_snap_pct": 63.7,
-          "snap_trend_3_appearances_pp": -12.0,
+          "recent_snap_pct": 62.0,
+          "snap_trend_3_appearances_pp": -1.0,
           "targets_per_game": 4.0
         },
         "name": "Ja'Kobi Lane",
@@ -1370,5 +1370,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-17T11:55:45.040097+00:00"
+  "snapshot_utc": "2026-11-17T13:06:24.451079+00:00"
 }

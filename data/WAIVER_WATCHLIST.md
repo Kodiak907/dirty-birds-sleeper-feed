@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-17T11:55:49.375727+00:00
-Sleeper snapshot: 2026-11-17T11:55:45.040097+00:00
+Generated: 2026-11-17T13:06:28.061317+00:00
+Sleeper snapshot: 2026-11-17T13:06:24.451079+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -29,7 +29,7 @@ Sleeper snapshot: 2026-11-17T11:55:45.040097+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Samaje Perine | CIN | 6.28 | 100% | 35.0% | Not flagged |
-| 2 | Keaton Mitchell | LAC | 5.58 | 100% | 27.0% | Not flagged |
+| 2 | Keaton Mitchell | LAC | 5.58 | 100% | 26.3% | Not flagged |
 | 3 | Tyjae Spears | TEN | 4.96 | 100% | 35.3% | Questionable |
 | 4 | Alvin Kamara | NO | 4.88 | 100% | 43.3% | Not flagged |
 | 5 | Zonovan Knight | ARI | 4.63 | 88% | 43.0% | Not flagged |
@@ -47,11 +47,11 @@ Sleeper snapshot: 2026-11-17T11:55:45.040097+00:00
 | 2 | Keon Coleman | BUF | 6.75 | 100% | 63.7% | Not flagged |
 | 3 | Kalif Raymond | CHI | 5.19 | 88% | 69.7% | Not flagged |
 | 4 | Rashid Shaheed | SEA | 4.41 | 88% | 40.7% | Not flagged |
-| 5 | Tre' Harris | LAC | 4.36 | 100% | 59.7% | Out |
+| 5 | Tre' Harris | LAC | 4.36 | 100% | 77.3% | Out |
 | 6 | Dontayvion Wicks | PHI | 4.25 | 88% | 79.3% | Questionable |
-| 7 | Rashod Bateman | BAL | 3.90 | 88% | 70.3% | Not flagged |
+| 7 | Rashod Bateman | BAL | 3.90 | 88% | 76.3% | Not flagged |
 | 8 | Michael Pittman Jr. | PIT | 3.83 | 75% | 77.7% | IR |
-| 9 | Ja'Kobi Lane | BAL | 3.75 | 88% | 63.7% | Not flagged |
+| 9 | Ja'Kobi Lane | BAL | 3.75 | 88% | 62.0% | Not flagged |
 | 10 | Brian Thomas Jr. | JAX | 3.59 | 100% | — | Not flagged |
 | 11 | Chris Bell | MIA | 3.23 | 88% | 60.0% | Not flagged |
 | 12 | Mack Hollins | NE | 2.92 | 88% | 67.0% | IR |
@@ -63,7 +63,7 @@ Sleeper snapshot: 2026-11-17T11:55:45.040097+00:00
 | 1 | Chig Okonkwo | WAS | 7.65 | 100% | 70.0% | Not flagged |
 | 2 | Darren Waller | CAR | 7.29 | 100% | 58.7% | Not flagged |
 | 3 | Michael Mayer | LV | 5.18 | 88% | 79.3% | Not flagged |
-| 4 | David Njoku | LAC | 3.56 | 100% | 35.5% | IR |
+| 4 | David Njoku | LAC | 3.56 | 100% | 34.7% | IR |
 | 5 | Noah Fant | NO | 3.45 | 100% | 45.7% | Not flagged |
 | 6 | Colby Parkinson | LAR | 3.06 | 88% | — | Not flagged |
 | 7 | Zach Ertz | PHI | 1.76 | 88% | 23.3% | Not flagged |
@@ -110,18 +110,18 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tre Tucker | WR | LV | 6.81 | 68.7% |
 | Keon Coleman | WR | BUF | 6.75 | 63.7% |
 | Samaje Perine | RB | CIN | 6.28 | 35.0% |
-| Keaton Mitchell | RB | LAC | 5.58 | 27.0% |
+| Keaton Mitchell | RB | LAC | 5.58 | 26.3% |
 | Kalif Raymond | WR | CHI | 5.19 | 69.7% |
 | Michael Mayer | TE | LV | 5.18 | 79.3% |
 | Tyjae Spears | RB | TEN | 4.96 | 35.3% |
 | Alvin Kamara | RB | NO | 4.88 | 43.3% |
 | Zonovan Knight | RB | ARI | 4.63 | 43.0% |
 | Rashid Shaheed | WR | SEA | 4.41 | 40.7% |
-| Tre' Harris | WR | LAC | 4.36 | 59.7% |
+| Tre' Harris | WR | LAC | 4.36 | 77.3% |
 | Dontayvion Wicks | WR | PHI | 4.25 | 79.3% |
-| Rashod Bateman | WR | BAL | 3.90 | 70.3% |
+| Rashod Bateman | WR | BAL | 3.90 | 76.3% |
 | Michael Pittman Jr. | WR | PIT | 3.83 | 77.7% |
-| Ja'Kobi Lane | WR | BAL | 3.75 | 63.7% |
+| Ja'Kobi Lane | WR | BAL | 3.75 | 62.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 

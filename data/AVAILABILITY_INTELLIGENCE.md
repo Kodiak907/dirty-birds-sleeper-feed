@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-17T11:55:53.074516+00:00
-Sleeper snapshot: 2026-11-17T11:55:45.040097+00:00
-nflverse observations: 2026-11-17T11:55:48.849065+00:00; injury feed loaded: True
+Generated: 2026-11-17T13:06:32.056502+00:00
+Sleeper snapshot: 2026-11-17T13:06:24.451079+00:00
+nflverse observations: 2026-11-17T13:06:27.492398+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 6. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -26,13 +26,17 @@ nflverse observations: 2026-11-17T11:55:48.849065+00:00; injury feed loaded: Tru
 | Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 82.7% | Verify current status before kickoff |
 | Tank Dell | IR | Week 10 observation: Full Participation in Practice | 39.7% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
-| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 77.7% | Verify current status before kickoff |
+| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 78.7% | Verify current status before kickoff |
 | Jacksonville Jaguars | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Zay Flowers** (snap_share_change): Snap share rose 22.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+- **David Njoku** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+- **Justin Herbert** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+- **Omarion Hampton** (snap_share_change): Snap share rose 23.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+- **Rashod Bateman** (snap_share_change): Snap share rose 29.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
+- **Tre' Harris** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 10); confirm role/injury context.
 
 ## Guardrails
 
