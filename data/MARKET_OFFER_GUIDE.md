@@ -2,19 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-16T16:16:23.671665+00:00
+Updated: 2026-11-17T15:08:01.179587+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 5. Unpriced candidate packages: 3.
+Fully priced in-range opportunities: 6. Unpriced candidate packages: 17.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 2 | Kirk Cousins, A.J. Brown | Rashee Rice | 1.08× | +2.16 | +3.55 |
-| 2 | 3 | Kirk Cousins, Jonah Coleman | Tee Higgins | 0.96× | +2.12 | +1.72 |
-| 3 | 3 | Kirk Cousins, Zay Flowers | Jonathan Taylor | 1.09× | +1.98 | +1.85 |
-| 4 | 10 | Kirk Cousins, Kyren Williams | Josh Allen | 1.09× | +1.65 | +1.22 |
+| 1 | 3 | C.J. Stroud, Jonah Coleman | Bhayshul Tuten | 0.87× | +2.02 | +1.90 |
+| 2 | 10 | C.J. Stroud, Zay Flowers | Josh Allen | 0.90× | +2.71 | +0.46 |
+| 3 | 5 | Kyren Williams | Patrick Mahomes, Mike Evans | 0.98× | +0.78 | +0.63 |
+| 4 | 5 | Zay Flowers | Patrick Mahomes, DJ Moore | 0.81× | +1.20 | +0.20 |
+| 5 | 8 | C.J. Stroud, Jonah Coleman | Christian Watson | 0.92× | +0.58 | +0.48 |
 
 ## Negotiation protocol
 
