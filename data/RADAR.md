@@ -1,17 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-17T21:55:27.136722+00:00
-Sleeper snapshot: 2026-11-17T21:55:21.360220+00:00
+Generated: 2026-11-17T22:56:12.686701+00:00
+Sleeper snapshot: 2026-11-17T22:56:05.913286+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
 **1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1428537903780208640` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Malachi Fields → CREAM MACHINE  (#2)
+- **NEW** · transaction `1428536640191619072` · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kyren Williams →     Victorious Secret (#5), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1) | Dropped: Kyren Williams → Dirty Birds (#1), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-17T22:56:12.686701+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kyren Williams →     Victorious Secret (#5), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1) | Dropped: Kyren Williams → Dirty Birds (#1), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5)
 - 2026-11-17T21:55:27.136722+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Malachi Fields → CREAM MACHINE  (#2)
 - 2026-11-17T19:00:53.982304+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Marvin Harrison Jr. → DeeboSix0 (#8)
 - 2026-11-13T17:52:17.295924+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Chris Rodriguez Jr. → DANGER CLOSE  (#4) | Dropped: Brian Thomas Jr. → DANGER CLOSE  (#4)
@@ -36,7 +37,6 @@ League: 1399157532559192064
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Fernando Mendoza → Dirty Birds (#1) | FAAB bid: $10
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Fernando Mendoza → CREAM MACHINE  (#2) | Dropped: Drew Lock → CREAM MACHINE  (#2) | FAAB bid: $0
 - 2026-11-11T08:56:41.433497+00:00 · new_transaction · WAIVER · COMPLETE · JA’MARRTRIX (#7) | Added: Konata Mumpfield → JA’MARRTRIX (#7) | FAAB bid: $10
-- 2026-11-11T08:56:41.433497+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Baltimore Ravens → CREAM MACHINE  (#2)
 
 ## Important limits
 

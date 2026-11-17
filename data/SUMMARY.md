@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-17T21:55:21.360220+00:00
+Updated: 2026-11-17T22:56:05.913286+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,8 +19,11 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 2: added none; dropped Malachi Fields
-- Transaction 1428537903780208640: free_agent / complete / rosters [2] / adds None / drops {'13285': 2} / FAAB bid None
+- Roster 1: added Minnesota Vikings; dropped Kyren Williams, Jacksonville Jaguars
+- lineup_change â roster/transaction 1
+- Roster 5: added Kyren Williams, Jacksonville Jaguars; dropped Minnesota Vikings
+- lineup_change â roster/transaction 5
+- Transaction 1428536640191619072: trade / complete / rosters [1, 5] / adds {'8150': 5, 'JAX': 5, 'MIN': 1} / drops {'8150': 1, 'JAX': 1, 'MIN': 5} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

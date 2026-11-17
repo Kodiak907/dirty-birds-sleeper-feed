@@ -1,8 +1,8 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-17T21:55:29.608626+00:00",
-  "candidates_evaluated": 26505,
-  "market_matched": 3486,
+  "generated_at_utc": "2026-11-17T22:56:15.576437+00:00",
+  "candidates_evaluated": 21600,
+  "market_matched": 2801,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-17T15:08:01.078399+00:00",
@@ -80,6 +80,109 @@
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
       "score": 3.966,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "13301",
+          "name": "Antonio Williams",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "2449",
+          "name": "Stefon Diggs",
+          "pos": "WR"
+        },
+        {
+          "id": "13330",
+          "name": "Kenyon Sadiq",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 2.06,
+      "their_gain": 1.54,
+      "market_paid_received_ratio": 1.004,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.972,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "13301",
+          "name": "Antonio Williams",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "2449",
+          "name": "Stefon Diggs",
+          "pos": "WR"
+        },
+        {
+          "id": "12545",
+          "name": "Tyler Shough",
+          "pos": "QB"
+        }
+      ],
+      "our_gain": 2.06,
+      "their_gain": 1.54,
+      "market_paid_received_ratio": 1.006,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.965,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 2,
+      "opponent_name": "CREAM MACHINE ",
+      "give": [
+        {
+          "id": "13301",
+          "name": "Antonio Williams",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "13279",
+          "name": "Carnell Tate",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 1.96,
+      "their_gain": 1.66,
+      "market_paid_received_ratio": 0.924,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": "Audric Estime",
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.728,
       "not_an_approved_offer": true
     }
   ],

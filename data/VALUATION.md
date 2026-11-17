@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-17T21:55:27.240833+00:00
-Sleeper snapshot: 2026-11-17T21:55:21.360220+00:00
+Generated: 2026-11-17T22:56:12.813070+00:00
+Sleeper snapshot: 2026-11-17T22:56:05.913286+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -16,12 +16,11 @@ The points below average actual fantasy scoring over completed Weeks 1–10, wit
 | Jaxon Smith-Njigba | WR | 231.66 | 23.17 | 10/10 |
 | Christian McCaffrey | RB | 199.00 | 19.90 | 9/10 |
 | Kirk Cousins | QB | 151.66 | 15.17 | 8/10 |
-| Kyren Williams | RB | 145.30 | 14.53 | 10/10 |
 | C.J. Stroud | QB | 139.26 | 13.93 | 6/10 |
 | Isaiah Likely | TE | 132.00 | 13.20 | 9/10 |
 | Zay Flowers | WR | 118.40 | 11.84 | 8/10 |
 | Deebo Samuel Sr. | WR | 82.80 | 8.28 | 6/10 |
-| Jacksonville Jaguars | DEF | 80.00 | 8.00 | 9/10 |
+| Minnesota Vikings | DEF | 81.00 | 8.10 | 7/10 |
 | Will Reichard | K | 68.00 | 6.80 | 5/10 |
 | Jonah Coleman | RB | 56.40 | 5.64 | 4/10 |
 | Kaelon Black | RB | 49.80 | 4.98 | 9/10 |
@@ -37,12 +36,12 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
-| Dirty Birds | 7-3 | 126.53 | 12 |
+| Dirty Birds | 7-3 | 117.08 | 13 |
 | JA’MARRTRIX | 4-6 | 116.36 | 5 |
+| Victorious Secret | 5-5 | 116.14 | 4 |
 | Cokerthestroker | 6-4 | 115.64 | 4 |
 | suck my dickerson | 7-3 | 110.01 | 1 |
 | kfsn | 7-3 | 108.71 | 2 |
-| Victorious Secret | 5-5 | 108.65 | 3 |
 | DeeboSix0 | 8-2 | 102.46 | 1 |
 | To Infinity and Bijan | 4-6 | 100.04 | 6 |
 | BigOlBoyle | 2-8 | 98.19 | 1 |

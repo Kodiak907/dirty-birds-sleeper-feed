@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-17T21:55:27.240833+00:00",
+  "generated_at_utc": "2026-11-17T22:56:12.813070+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -35,9 +35,9 @@
   },
   "profiles": [
     {
-      "completed_trade_count": 12,
+      "completed_trade_count": 13,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 126.53,
+      "observed_optimal_average": 117.08,
       "observed_optimal_lineup": [
         {
           "avg": 15.17,
@@ -50,8 +50,8 @@
           "position": "RB"
         },
         {
-          "avg": 14.53,
-          "name": "Kyren Williams",
+          "avg": 5.64,
+          "name": "Jonah Coleman",
           "position": "RB"
         },
         {
@@ -75,8 +75,8 @@
           "position": "K"
         },
         {
-          "avg": 8.0,
-          "name": "Jacksonville Jaguars",
+          "avg": 8.1,
+          "name": "Minnesota Vikings",
           "position": "DEF"
         },
         {
@@ -85,8 +85,8 @@
           "position": "WR"
         },
         {
-          "avg": 5.64,
-          "name": "Jonah Coleman",
+          "avg": 4.98,
+          "name": "Kaelon Black",
           "position": "RB"
         }
       ],
@@ -356,28 +356,6 @@
           ]
         },
         {
-          "actual_points_total": 145.3,
-          "actual_points_weekly_avg": 14.53,
-          "id": "8150",
-          "n_weeks": 10,
-          "name": "Kyren Williams",
-          "nonzero_weeks": 10,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            14.0,
-            14.7,
-            18.8,
-            31.7,
-            16.6,
-            8.2,
-            17.1,
-            12.4,
-            7.6,
-            4.2
-          ]
-        },
-        {
           "actual_points_total": 231.66,
           "actual_points_weekly_avg": 23.17,
           "id": "9488",
@@ -466,50 +444,50 @@
           ]
         },
         {
-          "actual_points_total": 80.0,
-          "actual_points_weekly_avg": 8.0,
-          "id": "JAX",
+          "actual_points_total": 81.0,
+          "actual_points_weekly_avg": 8.1,
+          "id": "MIN",
           "n_weeks": 10,
-          "name": "Jacksonville Jaguars",
-          "nonzero_weeks": 9,
+          "name": "Minnesota Vikings",
+          "nonzero_weeks": 7,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
-            15.0,
-            3.0,
-            17.0,
-            8.0,
-            2.0,
-            1.0,
             0.0,
-            20.0,
+            0.0,
+            17.0,
+            9.0,
             11.0,
-            3.0
+            0.0,
+            10.0,
+            7.0,
+            6.0,
+            21.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 80.0,
-            "actual_points_weekly_avg": 8.0,
-            "id": "JAX",
+            "actual_points_total": 81.0,
+            "actual_points_weekly_avg": 8.1,
+            "id": "MIN",
             "n_weeks": 10,
-            "name": "Jacksonville Jaguars",
-            "nonzero_weeks": 9,
+            "name": "Minnesota Vikings",
+            "nonzero_weeks": 7,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
-              15.0,
-              3.0,
-              17.0,
-              8.0,
-              2.0,
-              1.0,
               0.0,
-              20.0,
+              0.0,
+              17.0,
+              9.0,
               11.0,
-              3.0
+              0.0,
+              10.0,
+              7.0,
+              6.0,
+              21.0
             ]
           }
         ],
@@ -604,28 +582,6 @@
               0.0,
               21.7,
               50.3
-            ]
-          },
-          {
-            "actual_points_total": 145.3,
-            "actual_points_weekly_avg": 14.53,
-            "id": "8150",
-            "n_weeks": 10,
-            "name": "Kyren Williams",
-            "nonzero_weeks": 10,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              14.0,
-              14.7,
-              18.8,
-              31.7,
-              16.6,
-              8.2,
-              17.1,
-              12.4,
-              7.6,
-              4.2
             ]
           },
           {
@@ -3771,9 +3727,9 @@
       "team": "DANGER CLOSE"
     },
     {
-      "completed_trade_count": 3,
+      "completed_trade_count": 4,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 108.65,
+      "observed_optimal_average": 116.14,
       "observed_optimal_lineup": [
         {
           "avg": 23.13,
@@ -3786,8 +3742,8 @@
           "position": "RB"
         },
         {
-          "avg": 10.62,
-          "name": "Chase Brown",
+          "avg": 14.53,
+          "name": "Kyren Williams",
           "position": "RB"
         },
         {
@@ -3811,19 +3767,19 @@
           "position": "K"
         },
         {
-          "avg": 8.1,
-          "name": "Minnesota Vikings",
+          "avg": 8.0,
+          "name": "Jacksonville Jaguars",
           "position": "DEF"
+        },
+        {
+          "avg": 10.62,
+          "name": "Chase Brown",
+          "position": "RB"
         },
         {
           "avg": 10.27,
           "name": "Rhamondre Stevenson",
           "position": "RB"
-        },
-        {
-          "avg": 6.94,
-          "name": "DJ Moore",
-          "position": "WR"
         }
       ],
       "players": [
@@ -4136,6 +4092,28 @@
           ]
         },
         {
+          "actual_points_total": 145.3,
+          "actual_points_weekly_avg": 14.53,
+          "id": "8150",
+          "n_weeks": 10,
+          "name": "Kyren Williams",
+          "nonzero_weeks": 10,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            14.0,
+            14.7,
+            18.8,
+            31.7,
+            16.6,
+            8.2,
+            17.1,
+            12.4,
+            7.6,
+            4.2
+          ]
+        },
+        {
           "actual_points_total": 106.2,
           "actual_points_weekly_avg": 10.62,
           "id": "9224",
@@ -4180,50 +4158,50 @@
           ]
         },
         {
-          "actual_points_total": 81.0,
-          "actual_points_weekly_avg": 8.1,
-          "id": "MIN",
+          "actual_points_total": 80.0,
+          "actual_points_weekly_avg": 8.0,
+          "id": "JAX",
           "n_weeks": 10,
-          "name": "Minnesota Vikings",
-          "nonzero_weeks": 7,
+          "name": "Jacksonville Jaguars",
+          "nonzero_weeks": 9,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
-            0.0,
-            0.0,
+            15.0,
+            3.0,
             17.0,
-            9.0,
-            11.0,
+            8.0,
+            2.0,
+            1.0,
             0.0,
-            10.0,
-            7.0,
-            6.0,
-            21.0
+            20.0,
+            11.0,
+            3.0
           ]
         }
       ],
       "positions": {
         "DEF": [
           {
-            "actual_points_total": 81.0,
-            "actual_points_weekly_avg": 8.1,
-            "id": "MIN",
+            "actual_points_total": 80.0,
+            "actual_points_weekly_avg": 8.0,
+            "id": "JAX",
             "n_weeks": 10,
-            "name": "Minnesota Vikings",
-            "nonzero_weeks": 7,
+            "name": "Jacksonville Jaguars",
+            "nonzero_weeks": 9,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
-              0.0,
-              0.0,
+              15.0,
+              3.0,
               17.0,
-              9.0,
-              11.0,
+              8.0,
+              2.0,
+              1.0,
               0.0,
-              10.0,
-              7.0,
-              6.0,
-              21.0
+              20.0,
+              11.0,
+              3.0
             ]
           }
         ],
@@ -4340,6 +4318,28 @@
               21.0,
               26.5,
               0.0
+            ]
+          },
+          {
+            "actual_points_total": 145.3,
+            "actual_points_weekly_avg": 14.53,
+            "id": "8150",
+            "n_weeks": 10,
+            "name": "Kyren Williams",
+            "nonzero_weeks": 10,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              14.0,
+              14.7,
+              18.8,
+              31.7,
+              16.6,
+              8.2,
+              17.1,
+              12.4,
+              7.6,
+              4.2
             ]
           },
           {
@@ -10627,6 +10627,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-17T21:55:21.360220+00:00",
+  "snapshot_utc": "2026-11-17T22:56:05.913286+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-10"
 }

@@ -1,12 +1,12 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-17T21:55:30.416088+00:00 | Forecast as of: 2026-11-17T15:57:03.017622+00:00
+Generated: 2026-11-17T22:56:16.086140+00:00 | Forecast as of: 2026-11-17T15:57:03.017622+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 11
 
-**Projected optimal score:** 114.16
+**Projected optimal score:** 113.25
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -17,30 +17,30 @@ Generated: 2026-11-17T21:55:30.416088+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Caleb Douglas | WR | BUF | 7.38 |
 | Isaiah Likely | TE | JAX | 12.36 |
 | Will Reichard | K | SF | 7.05 |
-| Jacksonville Jaguars | DEF | NYG | 6.92 |
+| Minnesota Vikings | DEF | SF | 6.01 |
 | Deebo Samuel Sr. | WR | MIN | 7.32 |
 | Pat Bryant | WR | LV | 7.01 |
 
 ## Week 12
 
-**Projected optimal score:** 136.61
+**Projected optimal score:** 130.68
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | BAL | 18.42 |
 | Christian McCaffrey | RB | SEA | 18.58 |
-| Kyren Williams | RB | GB | 14.30 |
+| Jonah Coleman | RB | PIT | 12.88 |
 | Jaxon Smith-Njigba | WR | SF | 20.66 |
 | Zay Flowers | WR | HOU | 13.12 |
 | Isaiah Likely | TE | IND | 11.68 |
 | Will Reichard | K | ATL | 7.13 |
-| Jacksonville Jaguars | DEF | TEN | 7.67 |
-| Jonah Coleman | RB | PIT | 12.88 |
+| Minnesota Vikings | DEF | ATL | 7.32 |
 | A.J. Brown | WR | LAC | 12.17 |
+| Caleb Douglas | WR | NYJ | 8.72 |
 
 ## Week 13
 
-**Projected optimal score:** 130.78
+**Projected optimal score:** 127.23
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -51,64 +51,64 @@ Generated: 2026-11-17T21:55:30.416088+00:00 | Forecast as of: 2026-11-17T15:57:0
 | A.J. Brown | WR | BUF | 10.79 |
 | Isaiah Likely | TE | SF | 10.75 |
 | Will Reichard | K | CAR | 7.13 |
-| Jacksonville Jaguars | DEF | CHI | 5.76 |
-| Kyren Williams | RB | KC | 13.15 |
+| Minnesota Vikings | DEF | CAR | 7.40 |
 | Deebo Samuel Sr. | WR | NYG | 8.54 |
+| Caleb Douglas | WR | DEN | 7.96 |
 
 ## Week 14
 
-**Projected optimal score:** 132.29
+**Projected optimal score:** 128.22
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | WAS | 20.30 |
 | Christian McCaffrey | RB | LA | 18.37 |
-| Kyren Williams | RB | SF | 12.93 |
+| Jonah Coleman | RB | NYJ | 12.55 |
 | Jaxon Smith-Njigba | WR | NYG | 21.12 |
 | Zay Flowers | WR | TB | 13.16 |
 | Isaiah Likely | TE | SEA | 10.12 |
 | Will Reichard | K | NE | 6.70 |
-| Jacksonville Jaguars | DEF | PIT | 6.73 |
-| Jonah Coleman | RB | NYJ | 12.55 |
+| Minnesota Vikings | DEF | NE | 6.47 |
 | A.J. Brown | WR | MIN | 10.31 |
+| Caleb Douglas | WR | CHI | 9.12 |
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 141.29
+**Projected optimal score:** 134.11
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | DEN | 19.61 |
 | Christian McCaffrey | RB | LAC | 21.24 |
-| Kyren Williams | RB | DAL | 16.22 |
+| Jonah Coleman | RB | LV | 14.48 |
 | Jaxon Smith-Njigba | WR | PHI | 20.80 |
 | Zay Flowers | WR | PIT | 13.51 |
 | Isaiah Likely | TE | CLE | 10.60 |
 | Will Reichard | K | DET | 7.64 |
-| Jacksonville Jaguars | DEF | HOU | 6.54 |
-| Jonah Coleman | RB | LV | 14.48 |
+| Minnesota Vikings | DEF | DET | 6.66 |
 | A.J. Brown | WR | KC | 10.65 |
+| Deebo Samuel Sr. | WR | LAC | 8.92 |
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 134.01
+**Projected optimal score:** 131.82
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Kirk Cousins | QB | TEN | 19.88 |
 | Christian McCaffrey | RB | KC | 18.79 |
-| Kyren Williams | RB | SEA | 12.63 |
+| Jonah Coleman | RB | BUF | 12.62 |
 | Jaxon Smith-Njigba | WR | LA | 20.00 |
 | Zay Flowers | WR | CLE | 12.60 |
 | Isaiah Likely | TE | DET | 11.98 |
 | Will Reichard | K | WAS | 7.67 |
-| Jacksonville Jaguars | DEF | DAL | 6.08 |
-| Jonah Coleman | RB | BUF | 12.62 |
+| Minnesota Vikings | DEF | WAS | 7.50 |
 | A.J. Brown | WR | NYJ | 11.76 |
+| Caleb Douglas | WR | LAC | 9.02 |
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 135.30
+**Projected optimal score:** 131.14
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -119,9 +119,9 @@ Generated: 2026-11-17T21:55:30.416088+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Zay Flowers | WR | CIN | 13.86 |
 | Isaiah Likely | TE | DAL | 12.08 |
 | Will Reichard | K | NYJ | 6.81 |
-| Jacksonville Jaguars | DEF | WAS | 6.83 |
-| Kyren Williams | RB | TB | 12.98 |
+| Minnesota Vikings | DEF | NYJ | 7.45 |
 | A.J. Brown | WR | DEN | 10.53 |
+| Deebo Samuel Sr. | WR | PHI | 8.20 |
 
 ## Prediction tracking and calibration
 

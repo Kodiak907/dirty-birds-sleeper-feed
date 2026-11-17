@@ -8,10 +8,9 @@
     "complete": true,
     "missing_projection": [
       "A.J. Brown",
-      "Kyren Williams",
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 114.16,
+    "ppg": 113.25,
     "starters": [
       {
         "id": "9758",
@@ -56,10 +55,10 @@
         "ppg": 7.05
       },
       {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
+        "id": "MIN",
+        "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.92
+        "ppg": 6.01
       },
       {
         "id": "5872",
@@ -82,15 +81,14 @@
     "5872",
     "9502"
   ],
-  "generated_at_utc": "2026-11-17T21:55:32.052703+00:00",
+  "generated_at_utc": "2026-11-17T22:56:18.615202+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown",
-      "Kyren Williams",
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 100.53,
+    "ppg": 99.62,
     "starters": [
       {
         "id": "9758",
@@ -135,10 +133,10 @@
         "ppg": 7.05
       },
       {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
+        "id": "MIN",
+        "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.92
+        "ppg": 6.01
       },
       {
         "id": "13301",
@@ -271,15 +269,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "8150",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Kyren Williams",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "9488",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Jaxon Smith-Njigba",
@@ -316,9 +305,9 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "JAX",
+      "id": "MIN",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Jacksonville Jaguars",
+      "name": "Minnesota Vikings",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     }
@@ -331,8 +320,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-17T21:55:21.360220+00:00",
-  "source_availability_generated_at_utc": "2026-11-17T21:55:30.969683+00:00",
+  "snapshot_utc": "2026-11-17T22:56:05.913286+00:00",
+  "source_availability_generated_at_utc": "2026-11-17T22:56:16.875455+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

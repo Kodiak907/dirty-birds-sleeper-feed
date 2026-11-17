@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-17T21:55:30.969683+00:00
-Sleeper snapshot: 2026-11-17T21:55:21.360220+00:00
-nflverse observations: 2026-11-17T21:55:26.703970+00:00; injury feed loaded: True
+Generated: 2026-11-17T22:56:16.875455+00:00
+Sleeper snapshot: 2026-11-17T22:56:05.913286+00:00
+nflverse observations: 2026-11-17T22:56:12.208917+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -22,12 +22,11 @@ nflverse observations: 2026-11-17T21:55:26.703970+00:00; injury feed loaded: Tru
 | A.J. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Ankle | 71.3% | Verify current status before kickoff |
 | Deebo Samuel Sr. | Out | Week 10 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 83.0% | Verify current status before kickoff |
-| Kyren Williams | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 82.7% | Verify current status before kickoff |
 | Tank Dell | IR | Week 10 observation: Full Participation in Practice | 39.7% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
 | Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 78.7% | Verify current status before kickoff |
-| Jacksonville Jaguars | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
+| Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot
 

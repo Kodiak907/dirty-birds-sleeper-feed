@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-17T21:55:30.163307+00:00",
-  "source_snapshot_utc": "2026-11-17T21:55:21.360220+00:00",
+  "generated_at_utc": "2026-11-17T22:56:15.909642+00:00",
+  "source_snapshot_utc": "2026-11-17T22:56:05.913286+00:00",
   "source_market_as_of": "2026-11-17T15:08:01.078399+00:00",
   "source_projection_as_of": "2026-11-17T15:57:03.017622+00:00",
   "focus_assets": [
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 6309,
-  "market_screened": 1608,
+  "tested": 5704,
+  "market_screened": 1539,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -120,6 +120,82 @@
           ],
           "receive": [
             {
+              "id": "2449",
+              "name": "Stefon Diggs",
+              "position": "WR"
+            },
+            {
+              "id": "8146",
+              "name": "Garrett Wilson",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 9,
+          "opponent": "To Infinity and Bijan",
+          "our_lineup_delta_ppg": 3.0,
+          "their_lineup_delta_ppg": 0.6,
+          "value_paid_received_ratio": 1.177,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "7525",
+              "name": "DeVonta Smith",
+              "position": "WR"
+            },
+            {
+              "id": "7526",
+              "name": "Jaylen Waddle",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 9,
+          "opponent": "To Infinity and Bijan",
+          "our_lineup_delta_ppg": 2.91,
+          "their_lineup_delta_ppg": 0.69,
+          "value_paid_received_ratio": 0.748,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
               "id": "4943",
               "name": "Sam Darnold",
               "position": "QB"
@@ -189,28 +265,28 @@
               "position": "WR"
             },
             {
-              "id": "8150",
-              "name": "Kyren Williams",
-              "position": "RB"
+              "id": "9997",
+              "name": "Zay Flowers",
+              "position": "WR"
             }
           ],
           "receive": [
             {
-              "id": "12526",
-              "name": "Tetairoa McMillan",
-              "position": "WR"
+              "id": "4984",
+              "name": "Josh Allen",
+              "position": "QB"
             },
             {
-              "id": "7525",
-              "name": "DeVonta Smith",
+              "id": "5846",
+              "name": "DK Metcalf",
               "position": "WR"
             }
           ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 2.16,
-          "their_lineup_delta_ppg": 0.18,
-          "value_paid_received_ratio": 1.034,
+          "opponent_roster_id": 10,
+          "opponent": "EmanAndYoMomma",
+          "our_lineup_delta_ppg": 1.25,
+          "their_lineup_delta_ppg": 0.03,
+          "value_paid_received_ratio": 1.12,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -234,99 +310,18 @@
           ],
           "receive": [
             {
-              "id": "12545",
-              "name": "Tyler Shough",
-              "position": "QB"
-            },
-            {
-              "id": "7525",
-              "name": "DeVonta Smith",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 1.69,
-          "their_lineup_delta_ppg": 0.84,
-          "value_paid_received_ratio": 1.033,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9997",
-              "name": "Zay Flowers",
-              "position": "WR"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4984",
-              "name": "Josh Allen",
-              "position": "QB"
-            },
-            {
-              "id": "5846",
-              "name": "DK Metcalf",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 1.57,
-          "their_lineup_delta_ppg": 0.03,
-          "value_paid_received_ratio": 1.12,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9997",
-              "name": "Zay Flowers",
-              "position": "WR"
-            }
-          ],
-          "receive": [
-            {
-              "id": "4984",
-              "name": "Josh Allen",
-              "position": "QB"
-            },
-            {
-              "id": "6806",
-              "name": "J.K. Dobbins",
+              "id": "12527",
+              "name": "Ashton Jeanty",
               "position": "RB"
             }
           ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 1.52,
-          "their_lineup_delta_ppg": 0.03,
-          "value_paid_received_ratio": 1.178,
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 0.5,
+          "their_lineup_delta_ppg": 2.94,
+          "value_paid_received_ratio": 0.994,
           "our_extra_cut": null,
-          "opponent_extra_cut": null,
+          "opponent_extra_cut": "Adonai Mitchell",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -334,7 +329,7 @@
           ]
         }
       ],
-      "candidate_count": 44
+      "candidate_count": 41
     },
     {
       "asset": "Patrick Mahomes",

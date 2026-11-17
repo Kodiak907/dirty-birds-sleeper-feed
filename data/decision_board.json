@@ -1,8 +1,8 @@
 {
   "current_roster_reference": {
     "DEF": {
-      "name": "Jacksonville Jaguars",
-      "ppg": 6.647
+      "name": "Minnesota Vikings",
+      "ppg": 6.973
     },
     "K": {
       "name": "Will Reichard",
@@ -25,7 +25,7 @@
       "ppg": 5.18
     }
   },
-  "generated_at_utc": "2026-11-17T21:55:27.472430+00:00",
+  "generated_at_utc": "2026-11-17T22:56:12.995261+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -43,10 +43,10 @@
         "name": "Cincinnati Bengals",
         "ppg": 6.38,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -0.26,
+        "same_position_uplift_ppg": -0.59,
         "screen_only": true,
         "sleeper_id": "CIN",
         "team": "CIN"
@@ -65,10 +65,10 @@
         "name": "Kansas City Chiefs",
         "ppg": 6.37,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -0.28,
+        "same_position_uplift_ppg": -0.6,
         "screen_only": true,
         "sleeper_id": "KC",
         "team": "KC"
@@ -87,10 +87,10 @@
         "name": "Washington Commanders",
         "ppg": 5.8,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -0.85,
+        "same_position_uplift_ppg": -1.18,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -109,10 +109,10 @@
         "name": "New Orleans Saints",
         "ppg": 5.73,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -0.92,
+        "same_position_uplift_ppg": -1.25,
         "screen_only": true,
         "sleeper_id": "NO",
         "team": "NO"
@@ -131,10 +131,10 @@
         "name": "New York Giants",
         "ppg": 5.68,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -0.97,
+        "same_position_uplift_ppg": -1.29,
         "screen_only": true,
         "sleeper_id": "NYG",
         "team": "NYG"
@@ -153,10 +153,10 @@
         "name": "Cleveland Browns",
         "ppg": 5.65,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.0,
+        "same_position_uplift_ppg": -1.33,
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
@@ -175,10 +175,10 @@
         "name": "New England Patriots",
         "ppg": 5.49,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.15,
+        "same_position_uplift_ppg": -1.48,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -197,10 +197,10 @@
         "name": "Los Angeles Chargers",
         "ppg": 5.4,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.24,
+        "same_position_uplift_ppg": -1.57,
         "screen_only": true,
         "sleeper_id": "LAC",
         "team": "LAC"
@@ -219,10 +219,10 @@
         "name": "Indianapolis Colts",
         "ppg": 5.22,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.43,
+        "same_position_uplift_ppg": -1.75,
         "screen_only": true,
         "sleeper_id": "IND",
         "team": "IND"
@@ -241,10 +241,10 @@
         "name": "Tennessee Titans",
         "ppg": 5.21,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.44,
+        "same_position_uplift_ppg": -1.76,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -263,10 +263,10 @@
         "name": "New York Jets",
         "ppg": 5.12,
         "replacement_reference": {
-          "name": "Jacksonville Jaguars",
-          "ppg": 6.647
+          "name": "Minnesota Vikings",
+          "ppg": 6.973
         },
-        "same_position_uplift_ppg": -1.53,
+        "same_position_uplift_ppg": -1.85,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -1445,5 +1445,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-17T21:55:21.360220+00:00"
+  "snapshot_utc": "2026-11-17T22:56:05.913286+00:00"
 }
