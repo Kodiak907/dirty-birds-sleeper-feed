@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-18T19:59:16.312738+00:00
+Updated: 2026-11-18T20:55:41.598531+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,9 +19,7 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 133
 
 ## Changes detected in this run
-- Roster 5: added none; dropped Chase McLaughlin
-- lineup_change â roster/transaction 5
-- Transaction 1428867252668620800: free_agent / complete / rosters [5] / adds None / drops {'6650': 5} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-18T19:59:20.907462+00:00
-Sleeper snapshot: 2026-11-18T19:59:16.312738+00:00
+Generated: 2026-11-18T20:55:44.921765+00:00
+Sleeper snapshot: 2026-11-18T20:55:41.598531+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1428867252668620800` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Chase McLaughlin →     Victorious Secret (#5)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

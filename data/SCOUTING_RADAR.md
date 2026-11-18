@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-18T19:59:20.938384+00:00
-Sleeper snapshot: 2026-11-18T19:59:16.312738+00:00
+Generated: 2026-11-18T20:55:44.948729+00:00
+Sleeper snapshot: 2026-11-18T20:55:41.598531+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Victorious Secret: added none; dropped Chase McLaughlin
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
