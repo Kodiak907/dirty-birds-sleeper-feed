@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-18T13:12:33.112503+00:00
+Generated: 2026-11-18T14:56:17.004979+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections and injury status require manual verification.
@@ -37,25 +37,24 @@ Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections an
 | 2 | Tre Tucker | 6.88 | Bench-depth scenario: Pat Bryant | +0.00 | -0.34 | Partial projection coverage |
 | 3 | Keon Coleman | 6.83 | Bench-depth scenario: Pat Bryant | +0.00 | -0.39 | No flagged data gap; review still required |
 | 4 | Kalif Raymond | 5.93 | Bench-depth scenario: Pat Bryant | +0.00 | -1.28 | No flagged data gap; review still required |
-| 5 | Malachi Fields | 5.10 | Bench-depth scenario: Pat Bryant | +0.00 | -2.12 | No flagged data gap; review still required |
-| 6 | Dontayvion Wicks | 4.78 | Bench-depth scenario: Pat Bryant | +0.00 | -2.44 | Availability status: questionable |
-| 7 | Ja'Kobi Lane | 4.70 | Bench-depth scenario: Pat Bryant | +0.00 | -2.52 | Partial projection coverage |
-| 8 | Rashid Shaheed | 4.28 | Bench-depth scenario: Pat Bryant | +0.00 | -2.94 | Partial projection coverage |
-| 9 | Tre' Harris | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: out |
-| 10 | Michael Pittman Jr. | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: ir; Partial projection coverage |
-| 11 | Rashod Bateman | 4.06 | Bench-depth scenario: Pat Bryant | +0.00 | -3.16 | Partial projection coverage |
-| 12 | Chris Bell | 3.67 | Bench-depth scenario: Pat Bryant | +0.00 | -3.55 | No flagged data gap; review still required |
+| 5 | Makai Lemon | 5.72 | Bench-depth scenario: Pat Bryant | +0.00 | -1.50 | No flagged data gap; review still required |
+| 6 | Malachi Fields | 5.10 | Bench-depth scenario: Pat Bryant | +0.00 | -2.12 | No flagged data gap; review still required |
+| 7 | Dontayvion Wicks | 4.78 | Bench-depth scenario: Pat Bryant | +0.00 | -2.44 | Availability status: questionable |
+| 8 | Ja'Kobi Lane | 4.70 | Bench-depth scenario: Pat Bryant | +0.00 | -2.52 | Partial projection coverage |
+| 9 | Rashid Shaheed | 4.28 | Bench-depth scenario: Pat Bryant | +0.00 | -2.94 | Partial projection coverage |
+| 10 | Tre' Harris | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: out |
+| 11 | Michael Pittman Jr. | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: ir; Partial projection coverage |
+| 12 | Rashod Bateman | 4.06 | Bench-depth scenario: Pat Bryant | +0.00 | -3.16 | Partial projection coverage |
 
 ## TE
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Chig Okonkwo | 7.73 | Bench-depth scenario: Pat Bryant | +0.00 | +0.51 | No flagged data gap; review still required |
-| 2 | Darren Waller | 7.21 | Bench-depth scenario: Pat Bryant | +0.00 | -0.01 | No flagged data gap; review still required |
-| 3 | David Njoku | 3.52 | Bench-depth scenario: Pat Bryant | +0.00 | -3.70 | Availability status: ir |
-| 4 | Noah Fant | 3.46 | Bench-depth scenario: Pat Bryant | +0.00 | -3.76 | No flagged data gap; review still required |
-| 5 | Colby Parkinson | 2.64 | Bench-depth scenario: Pat Bryant | +0.00 | -4.58 | No sourced usage; Partial projection coverage; Limited snap sample |
-| 6 | Zach Ertz | 2.00 | Bench-depth scenario: Pat Bryant | +0.00 | -5.21 | No flagged data gap; review still required |
+| 1 | Darren Waller | 7.21 | Bench-depth scenario: Pat Bryant | +0.00 | -0.01 | No flagged data gap; review still required |
+| 2 | David Njoku | 3.52 | Bench-depth scenario: Pat Bryant | +0.00 | -3.70 | Availability status: ir |
+| 3 | Noah Fant | 3.46 | Bench-depth scenario: Pat Bryant | +0.00 | -3.76 | No flagged data gap; review still required |
+| 4 | Colby Parkinson | 2.64 | Bench-depth scenario: Pat Bryant | +0.00 | -4.58 | No sourced usage; Partial projection coverage; Limited snap sample |
+| 5 | Zach Ertz | 2.00 | Bench-depth scenario: Pat Bryant | +0.00 | -5.21 | No flagged data gap; review still required |
 
 ## K
 
@@ -71,16 +70,17 @@ Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections an
 
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
-| 1 | Cincinnati Bengals | 6.54 | Bench-depth scenario: Pat Bryant | +0.00 | -0.68 | No sourced usage |
-| 2 | Washington Commanders | 5.82 | Bench-depth scenario: Pat Bryant | +0.00 | -1.40 | No sourced usage |
-| 3 | New Orleans Saints | 5.71 | Bench-depth scenario: Pat Bryant | +0.00 | -1.51 | No sourced usage |
-| 4 | New York Giants | 5.70 | Bench-depth scenario: Pat Bryant | +0.00 | -1.52 | No sourced usage |
-| 5 | Cleveland Browns | 5.65 | Bench-depth scenario: Pat Bryant | +0.00 | -1.57 | No sourced usage; Partial projection coverage |
-| 6 | Los Angeles Chargers | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.81 | No sourced usage |
-| 7 | New England Patriots | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.81 | No sourced usage; Partial projection coverage |
-| 8 | Indianapolis Colts | 5.19 | Bench-depth scenario: Pat Bryant | +0.00 | -2.03 | No sourced usage; Partial projection coverage |
-| 9 | Tennessee Titans | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -2.07 | No sourced usage |
-| 10 | New York Jets | 5.11 | Bench-depth scenario: Pat Bryant | +0.00 | -2.11 | No sourced usage; Partial projection coverage |
+| 1 | Tampa Bay Buccaneers | 6.66 | Bench-depth scenario: Pat Bryant | +0.00 | -0.56 | No sourced usage |
+| 2 | Cincinnati Bengals | 6.54 | Bench-depth scenario: Pat Bryant | +0.00 | -0.68 | No sourced usage |
+| 3 | Washington Commanders | 5.82 | Bench-depth scenario: Pat Bryant | +0.00 | -1.40 | No sourced usage |
+| 4 | New Orleans Saints | 5.71 | Bench-depth scenario: Pat Bryant | +0.00 | -1.51 | No sourced usage |
+| 5 | New York Giants | 5.70 | Bench-depth scenario: Pat Bryant | +0.00 | -1.52 | No sourced usage |
+| 6 | Cleveland Browns | 5.65 | Bench-depth scenario: Pat Bryant | +0.00 | -1.57 | No sourced usage; Partial projection coverage |
+| 7 | Los Angeles Chargers | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.81 | No sourced usage |
+| 8 | New England Patriots | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.81 | No sourced usage; Partial projection coverage |
+| 9 | Indianapolis Colts | 5.19 | Bench-depth scenario: Pat Bryant | +0.00 | -2.03 | No sourced usage; Partial projection coverage |
+| 10 | Tennessee Titans | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -2.07 | No sourced usage |
+| 11 | New York Jets | 5.11 | Bench-depth scenario: Pat Bryant | +0.00 | -2.11 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 

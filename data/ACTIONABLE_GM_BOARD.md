@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-18T13:12:33.189329+00:00
+Generated: 2026-11-18T14:56:17.081727+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -9,7 +9,6 @@ Generated: 2026-11-18T13:12:33.189329+00:00
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
 | A.J. Brown | WR | +1.39 | 2.14 | Pat Bryant | depth candidate |
-| Chig Okonkwo | TE | +0.00 | 2.47 | Michael Mayer | depth candidate |
 
 ## Trade proposals
 

@@ -1,7 +1,7 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-18T13:12:32.786340+00:00
-Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
+Generated: 2026-11-18T14:56:16.565611+00:00
+Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
@@ -13,11 +13,11 @@ Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
 | DANGER CLOSE | 4-6 | 2 / 3 / 9 / 3 | 1 | 85 |
 | Victorious Secret | 5-5 | 2 / 5 / 4 / 4 | 4 | 45 |
 | kfsn | 7-3 | 2 / 5 / 5 / 3 | 2 | 25 |
-| JA’MARRTRIX | 4-6 | 2 / 6 / 8 / 2 | 5 | 205 |
+| JA’MARRTRIX | 4-6 | 2 / 6 / 7 / 3 | 5 | 205 |
 | DeeboSix0 | 8-2 | 3 / 5 / 8 / 2 | 1 | 65 |
 | To Infinity and Bijan | 4-6 | 2 / 5 / 6 / 2 | 6 | 100 |
 | EmanAndYoMomma | 2-8 | 2 / 4 / 4 / 2 | 0 | 0 |
-| suck my dickerson | 7-3 | 3 / 4 / 4 / 2 | 1 | 0 |
+| suck my dickerson | 7-3 | 3 / 4 / 5 / 2 | 1 | 0 |
 | Cokerthestroker | 6-4 | 2 / 4 / 7 / 2 | 4 | 133 |
 
 ## Reading this board

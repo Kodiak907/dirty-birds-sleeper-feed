@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-18T13:12:32.889720+00:00
-Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
+Generated: 2026-11-18T14:56:16.779873+00:00
+Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -10,9 +10,9 @@ Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
 | QB | 327 |
 | RB | 625 |
 | WR | 1292 |
-| TE | 614 |
+| TE | 613 |
 | K | 138 |
-| DEF | 13 |
+| DEF | 14 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -48,25 +48,24 @@ Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
 | 2 | Tre Tucker | LV | 6.88 | 86% | 68.7% | Not flagged |
 | 3 | Keon Coleman | BUF | 6.83 | 100% | 63.7% | Not flagged |
 | 4 | Kalif Raymond | CHI | 5.93 | 100% | 69.7% | Not flagged |
-| 5 | Malachi Fields | NYG | 5.10 | 100% | 82.3% | Not flagged |
-| 6 | Dontayvion Wicks | PHI | 4.78 | 100% | 79.3% | Questionable |
-| 7 | Ja'Kobi Lane | BAL | 4.70 | 86% | 62.0% | Not flagged |
-| 8 | Rashid Shaheed | SEA | 4.28 | 86% | 40.7% | Not flagged |
-| 9 | Tre' Harris | LAC | 4.10 | 100% | 77.3% | Out |
-| 10 | Michael Pittman Jr. | PIT | 4.10 | 86% | 77.7% | IR |
-| 11 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
-| 12 | Chris Bell | MIA | 3.67 | 100% | 60.0% | Not flagged |
+| 5 | Makai Lemon | PHI | 5.72 | 100% | 92.7% | Not flagged |
+| 6 | Malachi Fields | NYG | 5.10 | 100% | 82.3% | Not flagged |
+| 7 | Dontayvion Wicks | PHI | 4.78 | 100% | 79.3% | Questionable |
+| 8 | Ja'Kobi Lane | BAL | 4.70 | 86% | 62.0% | Not flagged |
+| 9 | Rashid Shaheed | SEA | 4.28 | 86% | 40.7% | Not flagged |
+| 10 | Tre' Harris | LAC | 4.10 | 100% | 77.3% | Out |
+| 11 | Michael Pittman Jr. | PIT | 4.10 | 86% | 77.7% | IR |
+| 12 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
 
 ### TE
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Chig Okonkwo | WAS | 7.73 | 100% | 70.0% | Not flagged |
-| 2 | Darren Waller | CAR | 7.21 | 100% | 58.7% | Not flagged |
-| 3 | David Njoku | LAC | 3.52 | 100% | 34.7% | IR |
-| 4 | Noah Fant | NO | 3.46 | 100% | 45.7% | Not flagged |
-| 5 | Colby Parkinson | LAR | 2.64 | 86% | — | Not flagged |
-| 6 | Zach Ertz | PHI | 2.00 | 100% | 23.3% | Not flagged |
+| 1 | Darren Waller | CAR | 7.21 | 100% | 58.7% | Not flagged |
+| 2 | David Njoku | LAC | 3.52 | 100% | 34.7% | IR |
+| 3 | Noah Fant | NO | 3.46 | 100% | 45.7% | Not flagged |
+| 4 | Colby Parkinson | LAR | 2.64 | 86% | — | Not flagged |
+| 5 | Zach Ertz | PHI | 2.00 | 100% | 23.3% | Not flagged |
 
 ### K
 
@@ -82,16 +81,17 @@ Sleeper snapshot: 2026-11-18T13:12:28.387769+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Cincinnati Bengals | CIN | 6.54 | 100% | — | Not flagged |
-| 2 | Washington Commanders | WAS | 5.82 | 100% | — | Not flagged |
-| 3 | New Orleans Saints | NO | 5.71 | 100% | — | Not flagged |
-| 4 | New York Giants | NYG | 5.70 | 100% | — | Not flagged |
-| 5 | Cleveland Browns | CLE | 5.65 | 86% | — | Not flagged |
-| 6 | Los Angeles Chargers | LAC | 5.40 | 100% | — | Not flagged |
-| 7 | New England Patriots | NE | 5.40 | 86% | — | Not flagged |
-| 8 | Indianapolis Colts | IND | 5.19 | 86% | — | Not flagged |
-| 9 | Tennessee Titans | TEN | 5.15 | 100% | — | Not flagged |
-| 10 | New York Jets | NYJ | 5.11 | 86% | — | Not flagged |
+| 1 | Tampa Bay Buccaneers | TB | 6.66 | 100% | — | Not flagged |
+| 2 | Cincinnati Bengals | CIN | 6.54 | 100% | — | Not flagged |
+| 3 | Washington Commanders | WAS | 5.82 | 100% | — | Not flagged |
+| 4 | New Orleans Saints | NO | 5.71 | 100% | — | Not flagged |
+| 5 | New York Giants | NYG | 5.70 | 100% | — | Not flagged |
+| 6 | Cleveland Browns | CLE | 5.65 | 86% | — | Not flagged |
+| 7 | Los Angeles Chargers | LAC | 5.40 | 100% | — | Not flagged |
+| 8 | New England Patriots | NE | 5.40 | 86% | — | Not flagged |
+| 9 | Indianapolis Colts | IND | 5.19 | 86% | — | Not flagged |
+| 10 | Tennessee Titans | TEN | 5.15 | 100% | — | Not flagged |
+| 11 | New York Jets | NYJ | 5.11 | 86% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -105,12 +105,12 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Baker Mayfield | QB | TB | 12.63 | 96.7% |
 | Jacoby Brissett | QB | ARI | 10.37 | 86.0% |
 | A.J. Brown | WR | NE | 9.36 | 71.3% |
-| Chig Okonkwo | TE | WAS | 7.73 | 70.0% |
 | Darren Waller | TE | CAR | 7.21 | 58.7% |
 | Tre Tucker | WR | LV | 6.88 | 68.7% |
 | Keon Coleman | WR | BUF | 6.83 | 63.7% |
 | Samaje Perine | RB | CIN | 6.52 | 35.0% |
 | Kalif Raymond | WR | CHI | 5.93 | 69.7% |
+| Makai Lemon | WR | PHI | 5.72 | 92.7% |
 | Malachi Fields | WR | NYG | 5.10 | 82.3% |
 | Keaton Mitchell | RB | LAC | 4.98 | 26.3% |
 | Tyjae Spears | RB | TEN | 4.97 | 35.3% |
