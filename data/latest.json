@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-18T14:56:12.213675+00:00",
+  "fetched_at_utc": "2026-11-18T15:59:57.990109+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1428789493992792064",
+    "last_message_id": "1428796229621411840",
     "last_message_text_map": null,
-    "last_message_time": 1795012470295,
+    "last_message_time": 1795014076194,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -6646,6 +6646,7 @@
           "4034",
           "4137",
           "5872",
+          "6819",
           "8131",
           "9482",
           "9488",
@@ -6666,6 +6667,7 @@
           "4034": 0.0,
           "4137": 0.0,
           "5872": 0.0,
+          "6819": 0.0,
           "8131": 0.0,
           "9482": 0.0,
           "9488": 0.0,
@@ -14088,6 +14090,7 @@
         "4034",
         "4137",
         "5872",
+        "6819",
         "8131",
         "9482",
         "9488",
@@ -14096,7 +14099,10 @@
         "9997",
         "MIN"
       ],
-      "reserve": null,
+      "reserve": [
+        "4137",
+        "6819"
+      ],
       "roster_id": 1,
       "settings": {
         "fpts": 1202,
@@ -16157,6 +16163,29 @@
       }
     ],
     "11": [
+      {
+        "adds": {
+          "6819": 1
+        },
+        "consenter_ids": [
+          1
+        ],
+        "created": 1795014076168,
+        "creator": "1399093464662073344",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 11,
+        "metadata": null,
+        "roster_ids": [
+          1
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1795014076168,
+        "transaction_id": "1428796229516546048",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "8210": 7

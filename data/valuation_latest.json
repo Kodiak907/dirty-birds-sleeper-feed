@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-18T14:56:16.694937+00:00",
+  "generated_at_utc": "2026-11-18T16:00:04.060278+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -296,7 +296,7 @@
           "n_weeks": 10,
           "name": "James Conner",
           "nonzero_weeks": 0,
-          "on_fantasy_reserve": false,
+          "on_fantasy_reserve": true,
           "position": "RB",
           "weekly_points": [
             0.0,
@@ -331,6 +331,28 @@
             0.0,
             0.0,
             27.4
+          ]
+        },
+        {
+          "actual_points_total": 12.4,
+          "actual_points_weekly_avg": 1.24,
+          "id": "6819",
+          "n_weeks": 10,
+          "name": "Michael Pittman Jr.",
+          "nonzero_weeks": 3,
+          "on_fantasy_reserve": true,
+          "position": "WR",
+          "weekly_points": [
+            7.3,
+            0.0,
+            2.6,
+            2.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
           ]
         },
         {
@@ -679,7 +701,7 @@
             "n_weeks": 10,
             "name": "James Conner",
             "nonzero_weeks": 0,
-            "on_fantasy_reserve": false,
+            "on_fantasy_reserve": true,
             "position": "RB",
             "weekly_points": [
               0.0,
@@ -850,6 +872,28 @@
               7.9,
               4.0,
               11.2
+            ]
+          },
+          {
+            "actual_points_total": 12.4,
+            "actual_points_weekly_avg": 1.24,
+            "id": "6819",
+            "n_weeks": 10,
+            "name": "Michael Pittman Jr.",
+            "nonzero_weeks": 3,
+            "on_fantasy_reserve": true,
+            "position": "WR",
+            "weekly_points": [
+              7.3,
+              0.0,
+              2.6,
+              2.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           },
           {
@@ -10803,6 +10847,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-18T14:56:12.213675+00:00",
+  "snapshot_utc": "2026-11-18T15:59:57.990109+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-10"
 }

@@ -29,22 +29,22 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 10 | Jaleel McLaughlin | 0.87 | -3.69 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
 | 11 | Roschon Johnson | 0.45 | -4.11 | 11.3% | Carries 2.3 | No modeled flags (not medically cleared) |
 
-## WR — reference: Tank Dell (5.31 PPG)
+## WR — reference: Michael Pittman Jr. (4.10 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | A.J. Brown | 9.36 | +4.04 | 71.3% | Tgt 7.3 | injury_report_observation_review |
-| 2 | Tre Tucker | 6.88 | +1.57 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 3 | Keon Coleman | 6.83 | +1.51 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 4 | Kalif Raymond | 5.93 | +0.62 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 5 | Makai Lemon | 5.72 | +0.40 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
-| 6 | Malachi Fields | 5.10 | -0.21 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 7 | Dontayvion Wicks | 4.78 | -0.53 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 8 | Ja'Kobi Lane | 4.70 | -0.62 | 62.0% | Tgt 4.0 | injury_report_observation_review |
-| 9 | Rashid Shaheed | 4.28 | -1.03 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 10 | Tre' Harris | 4.10 | -1.21 | 77.3% | Tgt 5.0 | sleeper_injury_out |
-| 11 | Michael Pittman Jr. | 4.10 | -1.22 | 77.7% | — | sleeper_injury_ir, targets_missing |
-| 12 | Rashod Bateman | 4.06 | -1.26 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 1 | A.J. Brown | 9.36 | +5.26 | 71.3% | Tgt 7.3 | injury_report_observation_review |
+| 2 | Tre Tucker | 6.88 | +2.79 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 3 | Keon Coleman | 6.83 | +2.73 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 4 | Kalif Raymond | 5.93 | +1.84 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 5 | Makai Lemon | 5.72 | +1.62 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
+| 6 | Malachi Fields | 5.10 | +1.01 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 7 | Dontayvion Wicks | 4.78 | +0.68 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 8 | Ja'Kobi Lane | 4.70 | +0.60 | 62.0% | Tgt 4.0 | injury_report_observation_review |
+| 9 | Rashid Shaheed | 4.28 | +0.18 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 10 | Tre' Harris | 4.10 | +0.00 | 77.3% | Tgt 5.0 | sleeper_injury_out |
+| 11 | Rashod Bateman | 4.06 | -0.04 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 12 | Chris Bell | 3.67 | -0.43 | 60.0% | Tgt 3.3 | injury_report_observation_review |
 
 ## TE — reference: Michael Mayer (5.27 PPG)
 

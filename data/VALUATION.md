@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-18T14:56:16.694937+00:00
-Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
+Generated: 2026-11-18T16:00:04.060278+00:00
+Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -28,6 +28,7 @@ The points below average actual fantasy scoring over completed Weeks 1–10, wit
 | Caleb Douglas | WR | 24.90 | 2.49 | 3/10 |
 | Seth McGowan | RB | 24.40 | 2.44 | 2/10 |
 | Antonio Williams | WR | 23.10 | 2.31 | 3/10 |
+| Michael Pittman Jr. | WR | 12.40 | 1.24 | 3/10 |
 | Tank Dell | WR | 8.60 | 0.86 | 2/10 |
 | Pat Bryant | WR | 0.00 | 0.00 | 0/10 |
 | James Conner | RB | 0.00 | 0.00 | 0/10 |

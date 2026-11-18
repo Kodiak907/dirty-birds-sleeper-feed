@@ -21,11 +21,11 @@
       "ppg": 5.267
     },
     "WR": {
-      "name": "Tank Dell",
-      "ppg": 5.313
+      "name": "Michael Pittman Jr.",
+      "ppg": 4.097
     }
   },
-  "generated_at_utc": "2026-11-18T14:56:16.912015+00:00",
+  "generated_at_utc": "2026-11-18T16:00:04.284609+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -901,10 +901,10 @@
         "name": "A.J. Brown",
         "ppg": 9.36,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": 4.04,
+        "same_position_uplift_ppg": 5.26,
         "screen_only": true,
         "sleeper_id": "5859",
         "team": "NE"
@@ -923,10 +923,10 @@
         "name": "Tre Tucker",
         "ppg": 6.88,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": 1.57,
+        "same_position_uplift_ppg": 2.79,
         "screen_only": true,
         "sleeper_id": "10213",
         "team": "LV"
@@ -948,10 +948,10 @@
         "name": "Keon Coleman",
         "ppg": 6.83,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": 1.51,
+        "same_position_uplift_ppg": 2.73,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
@@ -970,10 +970,10 @@
         "name": "Kalif Raymond",
         "ppg": 5.93,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": 0.62,
+        "same_position_uplift_ppg": 1.84,
         "screen_only": true,
         "sleeper_id": "3634",
         "team": "CHI"
@@ -992,10 +992,10 @@
         "name": "Makai Lemon",
         "ppg": 5.72,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": 0.4,
+        "same_position_uplift_ppg": 1.62,
         "screen_only": true,
         "sleeper_id": "13294",
         "team": "PHI"
@@ -1014,10 +1014,10 @@
         "name": "Malachi Fields",
         "ppg": 5.1,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -0.21,
+        "same_position_uplift_ppg": 1.01,
         "screen_only": true,
         "sleeper_id": "13285",
         "team": "NYG"
@@ -1044,10 +1044,10 @@
         "name": "Dontayvion Wicks",
         "ppg": 4.78,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -0.53,
+        "same_position_uplift_ppg": 0.68,
         "screen_only": true,
         "sleeper_id": "9486",
         "team": "PHI"
@@ -1073,10 +1073,10 @@
         "name": "Ja'Kobi Lane",
         "ppg": 4.7,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -0.62,
+        "same_position_uplift_ppg": 0.6,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1098,10 +1098,10 @@
         "name": "Rashid Shaheed",
         "ppg": 4.28,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -1.03,
+        "same_position_uplift_ppg": 0.18,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1125,38 +1125,13 @@
         "name": "Tre' Harris",
         "ppg": 4.1,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -1.21,
+        "same_position_uplift_ppg": 0.0,
         "screen_only": true,
         "sleeper_id": "12509",
         "team": "LAC"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [
-            "sleeper_injury_ir",
-            "targets_missing"
-          ],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.857,
-          "recent_snap_pct": 77.7,
-          "snap_trend_3_appearances_pp": -16.0,
-          "targets_per_game": null
-        },
-        "name": "Michael Pittman Jr.",
-        "ppg": 4.1,
-        "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
-        },
-        "same_position_uplift_ppg": -1.22,
-        "screen_only": true,
-        "sleeper_id": "6819",
-        "team": "PIT"
       },
       {
         "audit": {
@@ -1175,10 +1150,10 @@
         "name": "Rashod Bateman",
         "ppg": 4.06,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -1.26,
+        "same_position_uplift_ppg": -0.04,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1204,10 +1179,10 @@
         "name": "Chris Bell",
         "ppg": 3.67,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -1.64,
+        "same_position_uplift_ppg": -0.43,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -1232,10 +1207,10 @@
         "name": "Brian Thomas Jr.",
         "ppg": 3.57,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -1.74,
+        "same_position_uplift_ppg": -0.53,
         "screen_only": true,
         "sleeper_id": "11631",
         "team": "JAX"
@@ -1261,10 +1236,10 @@
         "name": "Jauan Jennings",
         "ppg": 2.97,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -2.34,
+        "same_position_uplift_ppg": -1.13,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1286,10 +1261,10 @@
         "name": "Marvin Harrison Jr.",
         "ppg": 2.84,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -2.48,
+        "same_position_uplift_ppg": -1.26,
         "screen_only": true,
         "sleeper_id": "11628",
         "team": "HOU"
@@ -1316,10 +1291,10 @@
         "name": "Mack Hollins",
         "ppg": 2.36,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -2.95,
+        "same_position_uplift_ppg": -1.74,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1345,10 +1320,10 @@
         "name": "Zachariah Branch",
         "ppg": 2.02,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -3.3,
+        "same_position_uplift_ppg": -2.08,
         "screen_only": true,
         "sleeper_id": "13320",
         "team": "ATL"
@@ -1367,10 +1342,10 @@
         "name": "Dohnte Meyers",
         "ppg": 1.95,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -3.37,
+        "same_position_uplift_ppg": -2.15,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1392,10 +1367,10 @@
         "name": "Cyrus Allen",
         "ppg": 1.36,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -3.95,
+        "same_position_uplift_ppg": -2.73,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
@@ -1414,10 +1389,10 @@
         "name": "Efton Chism III",
         "ppg": 0.45,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -4.86,
+        "same_position_uplift_ppg": -3.65,
         "screen_only": true,
         "sleeper_id": "12542",
         "team": "NE"
@@ -1436,10 +1411,10 @@
         "name": "Brandin Cooks",
         "ppg": 0.03,
         "replacement_reference": {
-          "name": "Tank Dell",
-          "ppg": 5.313
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.097
         },
-        "same_position_uplift_ppg": -5.28,
+        "same_position_uplift_ppg": -4.06,
         "screen_only": true,
         "sleeper_id": "2197",
         "team": "SF"
@@ -1447,5 +1422,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-18T14:56:12.213675+00:00"
+  "snapshot_utc": "2026-11-18T15:59:57.990109+00:00"
 }

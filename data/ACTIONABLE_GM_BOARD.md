@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-18T14:56:17.081727+00:00
+Generated: 2026-11-18T16:00:04.502276+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,10 +18,9 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- C.J. Stroud, Zay Flowers for Josh Allen: Opponent has insufficient demonstrated benefit
-- Kyren Williams for Patrick Mahomes, Mike Evans: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
-- Zay Flowers for Patrick Mahomes, DJ Moore: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
-- C.J. Stroud, Jonah Coleman for Christian Watson: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- C.J. Stroud, Caleb Douglas for Ashton Jeanty: Overpays in outgoing assets for a marginal gain
+- Kirk Cousins for Rome Odunze: Opponent has insufficient demonstrated benefit
+- Kirk Cousins, Zay Flowers for Josh Allen: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
 
 ## Required checks
 

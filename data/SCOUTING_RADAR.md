@@ -1,13 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-18T14:56:16.565611+00:00
-Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
+Generated: 2026-11-18T16:00:03.995110+00:00
+Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
 
-Roster change entries: 3. New completed trade entries: 0.
+Roster change entries: 2. New completed trade entries: 0.
 
-- JA’MARRTRIX: added Chig Okonkwo; dropped Makai Lemon
-- suck my dickerson: added Xavier Hutchinson; dropped Tampa Bay Buccaneers
-- suck my dickerson: reserve status changed
+- Dirty Birds: added Michael Pittman Jr.; dropped none
+- Dirty Birds: reserve status changed
 
 ## Limits
 

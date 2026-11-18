@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-18T14:56:17.004979+00:00
+Generated: 2026-11-18T16:00:04.406854+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections and injury status require manual verification.
@@ -43,8 +43,8 @@ Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections an
 | 8 | Ja'Kobi Lane | 4.70 | Bench-depth scenario: Pat Bryant | +0.00 | -2.52 | Partial projection coverage |
 | 9 | Rashid Shaheed | 4.28 | Bench-depth scenario: Pat Bryant | +0.00 | -2.94 | Partial projection coverage |
 | 10 | Tre' Harris | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: out |
-| 11 | Michael Pittman Jr. | 4.10 | Bench-depth scenario: Pat Bryant | +0.00 | -3.12 | Availability status: ir; Partial projection coverage |
-| 12 | Rashod Bateman | 4.06 | Bench-depth scenario: Pat Bryant | +0.00 | -3.16 | Partial projection coverage |
+| 11 | Rashod Bateman | 4.06 | Bench-depth scenario: Pat Bryant | +0.00 | -3.16 | Partial projection coverage |
+| 12 | Chris Bell | 3.67 | Bench-depth scenario: Pat Bryant | +0.00 | -3.55 | No flagged data gap; review still required |
 
 ## TE
 

@@ -1,55 +1,107 @@
 {
-  "generated_at_utc": "2026-11-18T14:56:17.081727+00:00",
-  "roster_snapshot_utc": "2026-11-18T14:56:12.213675+00:00",
+  "generated_at_utc": "2026-11-18T16:00:04.502276+00:00",
+  "roster_snapshot_utc": "2026-11-18T15:59:57.990109+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 128.158,
-      "dirty_birds_before": 126.138,
-      "dirty_birds_delta_ppg": 2.02,
+      "dirty_birds_after": 126.525,
+      "dirty_birds_before": 122.658,
+      "dirty_birds_delta_ppg": 3.87,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.02
+          "projected_ppg": 18.2
         },
         {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB",
-          "projected_ppg": 11.89
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR",
+          "projected_ppg": 8.36
         }
       ],
       "market_quote": {
-        "paid": 3295,
-        "paid_to_received_ratio": 0.872,
-        "received": 3780,
-        "relative_value_difference_pct": -12.8
+        "paid": 5330,
+        "paid_to_received_ratio": 0.891,
+        "received": 5979,
+        "relative_value_difference_pct": -10.9
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.523,
+      "mutual_benefit_screen_score": 4.917,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 113.547,
-      "opponent_before": 111.647,
-      "opponent_delta_ppg": 1.9,
-      "opponent_drop_to_fit": "Xavier Worthy",
-      "opponent_roster_id": 3,
-      "projected_ppg_received": 14.21,
-      "projected_ppg_sent": 29.91,
+      "opponent_after": 88.309,
+      "opponent_before": 86.621,
+      "opponent_delta_ppg": 1.69,
+      "opponent_drop_to_fit": "Audric Estime",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 12.22,
+      "projected_ppg_sent": 26.55,
       "receive": [
         {
-          "id": "12490",
-          "name": "Bhayshul Tuten",
-          "pos": "RB",
-          "projected_ppg": 14.21
+          "id": "10229",
+          "name": "Rashee Rice",
+          "pos": "WR",
+          "projected_ppg": 12.22
         }
       ],
       "starter_benefit": {
-        "them": 1.9,
-        "us": 2.02
+        "them": 1.69,
+        "us": 3.87
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 125.021,
+      "dirty_birds_before": 122.658,
+      "dirty_birds_delta_ppg": 2.36,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB",
+          "projected_ppg": 18.24
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR",
+          "projected_ppg": 11.82
+        }
+      ],
+      "market_quote": {
+        "paid": 9200,
+        "paid_to_received_ratio": 1.092,
+        "received": 8424,
+        "relative_value_difference_pct": 9.2
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 3.891,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 116.29,
+      "opponent_before": 114.306,
+      "opponent_delta_ppg": 1.98,
+      "opponent_drop_to_fit": "Blake Corum",
+      "opponent_roster_id": 3,
+      "projected_ppg_received": 14.23,
+      "projected_ppg_sent": 30.06,
+      "receive": [
+        {
+          "id": "6801",
+          "name": "Tee Higgins",
+          "pos": "WR",
+          "projected_ppg": 14.23
+        }
+      ],
+      "starter_benefit": {
+        "them": 1.98,
+        "us": 2.36
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
@@ -59,55 +111,37 @@
     {
       "give": [
         "C.J. Stroud",
-        "Zay Flowers"
+        "Caleb Douglas"
+      ],
+      "reasons": [
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Ashton Jeanty"
+      ]
+    },
+    {
+      "give": [
+        "Kirk Cousins"
       ],
       "reasons": [
         "Opponent has insufficient demonstrated benefit"
       ],
       "receive": [
-        "Josh Allen"
+        "Rome Odunze"
       ]
     },
     {
       "give": [
-        "Kyren Williams"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Requires further outgoing roster action"
-      ],
-      "receive": [
-        "Patrick Mahomes",
-        "Mike Evans"
-      ]
-    },
-    {
-      "give": [
+        "Kirk Cousins",
         "Zay Flowers"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Requires further outgoing roster action"
-      ],
-      "receive": [
-        "Patrick Mahomes",
-        "DJ Moore"
-      ]
-    },
-    {
-      "give": [
-        "C.J. Stroud",
-        "Jonah Coleman"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Christian Watson"
+        "Josh Allen"
       ]
     }
   ],

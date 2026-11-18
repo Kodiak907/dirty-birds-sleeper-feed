@@ -1344,5 +1344,26 @@
       }
     ],
     "source_snapshot_utc": "2026-11-18T14:56:12.213675+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-18T16:00:03.995110+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [
+          "Michael Pittman Jr."
+        ],
+        "drops": [],
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-18T15:59:57.990109+00:00"
   }
 ]

@@ -4,13 +4,16 @@
     "status": "awaiting_completed_week_with_archived_predictions",
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
-  "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-18T14:56:20.720928+00:00",
+  "excluded_fantasy_reserve_player_ids": [
+    "4137",
+    "6819"
+  ],
+  "generated_at_utc": "2026-11-18T16:00:07.883124+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-18T05:01:39.429230+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-18T14:56:12.213675+00:00",
+  "snapshot_utc": "2026-11-18T15:59:57.990109+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -21,7 +24,6 @@
     "11": {
       "complete": true,
       "missing_projection": [
-        "James Conner",
         "Jaxon Smith-Njigba"
       ],
       "ppg": 113.47,
@@ -100,9 +102,7 @@
     },
     "12": {
       "complete": true,
-      "missing_projection": [
-        "James Conner"
-      ],
+      "missing_projection": [],
       "ppg": 125.52,
       "starters": [
         {
@@ -181,7 +181,6 @@
       "complete": true,
       "missing_projection": [
         "Seth McGowan",
-        "James Conner",
         "Michael Mayer",
         "Zay Flowers"
       ],
@@ -261,9 +260,7 @@
     },
     "14": {
       "complete": true,
-      "missing_projection": [
-        "James Conner"
-      ],
+      "missing_projection": [],
       "ppg": 126.67,
       "starters": [
         {
@@ -340,9 +337,7 @@
     },
     "15": {
       "complete": true,
-      "missing_projection": [
-        "James Conner"
-      ],
+      "missing_projection": [],
       "ppg": 132.84,
       "starters": [
         {
@@ -419,9 +414,7 @@
     },
     "16": {
       "complete": true,
-      "missing_projection": [
-        "James Conner"
-      ],
+      "missing_projection": [],
       "ppg": 128.89,
       "starters": [
         {
@@ -498,9 +491,7 @@
     },
     "17": {
       "complete": true,
-      "missing_projection": [
-        "James Conner"
-      ],
+      "missing_projection": [],
       "ppg": 129.69,
       "starters": [
         {

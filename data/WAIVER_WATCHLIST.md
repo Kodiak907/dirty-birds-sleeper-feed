@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-18T14:56:16.779873+00:00
-Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
+Generated: 2026-11-18T16:00:04.125822+00:00
+Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,7 +9,7 @@ Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
 |---|---:|
 | QB | 327 |
 | RB | 625 |
-| WR | 1292 |
+| WR | 1291 |
 | TE | 613 |
 | K | 138 |
 | DEF | 14 |
@@ -54,8 +54,8 @@ Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
 | 8 | Ja'Kobi Lane | BAL | 4.70 | 86% | 62.0% | Not flagged |
 | 9 | Rashid Shaheed | SEA | 4.28 | 86% | 40.7% | Not flagged |
 | 10 | Tre' Harris | LAC | 4.10 | 100% | 77.3% | Out |
-| 11 | Michael Pittman Jr. | PIT | 4.10 | 86% | 77.7% | IR |
-| 12 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
+| 11 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
+| 12 | Chris Bell | MIA | 3.67 | 100% | 60.0% | Not flagged |
 
 ### TE
 
@@ -119,13 +119,13 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Rashid Shaheed | WR | SEA | 4.28 | 40.7% |
 | Zonovan Knight | RB | ARI | 4.20 | 43.0% |
 | Tre' Harris | WR | LAC | 4.10 | 77.3% |
-| Michael Pittman Jr. | WR | PIT | 4.10 | 77.7% |
 | Rashod Bateman | WR | BAL | 4.06 | 76.3% |
+| Chris Bell | WR | MIA | 3.67 | 60.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **43**
+Candidates with independently sourced projections AND usage data: **42**
 
 ## Coverage and rules
 

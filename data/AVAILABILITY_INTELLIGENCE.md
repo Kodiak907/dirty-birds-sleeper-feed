@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-18T14:56:21.198597+00:00
-Sleeper snapshot: 2026-11-18T14:56:12.213675+00:00
-nflverse observations: 2026-11-18T14:56:15.992061+00:00; injury feed loaded: True
+Generated: 2026-11-18T16:00:08.407416+00:00
+Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
+nflverse observations: 2026-11-18T16:00:03.523615+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -21,6 +21,7 @@ nflverse observations: 2026-11-18T14:56:15.992061+00:00; injury feed loaded: Tru
 | Christian McCaffrey | No tag | Week 10 observation: Full Participation in Practice | 60.0% | Verify current status before kickoff |
 | James Conner | IR | No matched report (not clearance) | — | Verify official NFL roster and game status before lineup decisions |
 | Deebo Samuel Sr. | Out | Week 10 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
+| Michael Pittman Jr. | IR | No matched report (not clearance) | 77.7% | Verify official NFL roster and game status before lineup decisions |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 83.0% | Verify current status before kickoff |
 | Michael Mayer | No tag | No matched report (not clearance) | 79.3% | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 82.7% | Verify current status before kickoff |
