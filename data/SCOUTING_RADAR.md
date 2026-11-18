@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-18T16:00:03.995110+00:00
-Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
+Generated: 2026-11-18T17:06:32.068124+00:00
+Sleeper snapshot: 2026-11-18T17:06:25.760247+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- Dirty Birds: added Michael Pittman Jr.; dropped none
-- Dirty Birds: reserve status changed
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

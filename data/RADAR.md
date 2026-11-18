@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-18T16:00:03.957294+00:00
-Sleeper snapshot: 2026-11-18T15:59:57.990109+00:00
+Generated: 2026-11-18T17:06:32.031398+00:00
+Sleeper snapshot: 2026-11-18T17:06:25.760247+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1428796229516546048` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Pittman Jr. → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
