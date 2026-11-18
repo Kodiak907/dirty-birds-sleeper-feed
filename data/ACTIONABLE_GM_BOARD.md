@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-18T17:06:32.578059+00:00
+Generated: 2026-11-18T17:59:00.669749+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,7 +8,7 @@ Generated: 2026-11-18T17:06:32.578059+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| A.J. Brown | WR | +1.39 | 2.14 | Pat Bryant | depth candidate |
+| A.J. Brown | WR | +1.38 | 2.12 | Pat Bryant | depth candidate |
 
 ## Trade proposals
 
