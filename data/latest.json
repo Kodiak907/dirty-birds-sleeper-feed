@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-18T18:56:55.880211+00:00",
+  "fetched_at_utc": "2026-11-18T19:59:16.312738+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": null,
-    "last_author_display_name": "sys",
-    "last_author_id": "166666666666666666",
-    "last_author_is_bot": true,
+    "last_author_avatar": "06a7a98b6f1801cd134db689a08ddb92",
+    "last_author_display_name": "Kodiak907",
+    "last_author_id": "1399093464662073344",
+    "last_author_is_bot": false,
     "last_message_attachment": null,
-    "last_message_id": "1428796229621411840",
+    "last_message_id": "1428868628907823104",
     "last_message_text_map": null,
-    "last_message_time": 1795014076194,
+    "last_message_time": 1795031337528,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -6939,7 +6939,6 @@
           "4039",
           "4046",
           "4983",
-          "6650",
           "6770",
           "7002",
           "7611",
@@ -6959,7 +6958,6 @@
           "4039": 0.0,
           "4046": 0.0,
           "4983": 0.0,
-          "6650": 0.0,
           "6770": 0.0,
           "7002": 0.0,
           "7611": 0.0,
@@ -6974,15 +6972,15 @@
         "roster_id": 5,
         "starters": [
           "6770",
-          "12491",
+          "11584",
           "9224",
-          "8112",
+          "2216",
           "4983",
           "1466",
           "7002",
           "9480",
           "13833",
-          "0"
+          "JAX"
         ],
         "starters_points": [
           0.0,
@@ -14347,7 +14345,6 @@
         "4039",
         "4046",
         "4983",
-        "6650",
         "6770",
         "7002",
         "7611",
@@ -14376,15 +14373,15 @@
       },
       "starters": [
         "6770",
-        "12491",
+        "11584",
         "9224",
-        "8112",
+        "2216",
         "4983",
         "1466",
         "7002",
         "9480",
         "13833",
-        "0"
+        "JAX"
       ],
       "taxi": null
     },
@@ -16163,6 +16160,29 @@
       }
     ],
     "11": [
+      {
+        "adds": null,
+        "consenter_ids": [
+          5
+        ],
+        "created": 1795031009407,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": {
+          "6650": 5
+        },
+        "leg": 11,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1795031009407,
+        "transaction_id": "1428867252668620800",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "6819": 1

@@ -25,7 +25,7 @@
       "ppg": 4.097
     }
   },
-  "generated_at_utc": "2026-11-18T18:57:00.248770+00:00",
+  "generated_at_utc": "2026-11-18T19:59:21.180813+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -294,6 +294,28 @@
         "screen_only": true,
         "sleeper_id": "13968",
         "team": "WAS"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Chase McLaughlin",
+        "ppg": 6.55,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.187
+        },
+        "same_position_uplift_ppg": -0.63,
+        "screen_only": true,
+        "sleeper_id": "6650",
+        "team": "TB"
       },
       {
         "audit": {
@@ -1422,5 +1444,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-18T18:56:55.880211+00:00"
+  "snapshot_utc": "2026-11-18T19:59:16.312738+00:00"
 }

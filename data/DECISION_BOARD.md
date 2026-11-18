@@ -61,10 +61,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Drew Stevens | 7.00 | -0.19 | — | — | No modeled flags (not medically cleared) |
-| 2 | Matt Gay | 6.48 | -0.71 | — | — | No modeled flags (not medically cleared) |
-| 3 | Cairo Santos | 6.15 | -1.04 | — | — | No modeled flags (not medically cleared) |
-| 4 | Chris Boswell | 6.11 | -1.08 | — | — | No modeled flags (not medically cleared) |
-| 5 | Trey Smack | 5.61 | -1.58 | — | — | No modeled flags (not medically cleared) |
+| 2 | Chase McLaughlin | 6.55 | -0.63 | — | — | No modeled flags (not medically cleared) |
+| 3 | Matt Gay | 6.48 | -0.71 | — | — | No modeled flags (not medically cleared) |
+| 4 | Cairo Santos | 6.15 | -1.04 | — | — | No modeled flags (not medically cleared) |
+| 5 | Chris Boswell | 6.11 | -1.08 | — | — | No modeled flags (not medically cleared) |
+| 6 | Trey Smack | 5.61 | -1.58 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: Minnesota Vikings (7.00 PPG)
 

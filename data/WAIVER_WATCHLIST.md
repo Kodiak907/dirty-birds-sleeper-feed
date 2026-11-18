@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-18T18:57:00.082856+00:00
-Sleeper snapshot: 2026-11-18T18:56:55.880211+00:00
+Generated: 2026-11-18T19:59:21.055760+00:00
+Sleeper snapshot: 2026-11-18T19:59:16.312738+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -11,7 +11,7 @@ Sleeper snapshot: 2026-11-18T18:56:55.880211+00:00
 | RB | 625 |
 | WR | 1291 |
 | TE | 613 |
-| K | 138 |
+| K | 139 |
 | DEF | 14 |
 
 ## Position-specific projection rankings (screening only)
@@ -72,10 +72,11 @@ Sleeper snapshot: 2026-11-18T18:56:55.880211+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Drew Stevens | WAS | 7.00 | 100% | — | Not flagged |
-| 2 | Matt Gay | LV | 6.48 | 86% | — | Not flagged |
-| 3 | Cairo Santos | CHI | 6.15 | 100% | — | Not flagged |
-| 4 | Chris Boswell | PIT | 6.11 | 100% | — | Not flagged |
-| 5 | Trey Smack | GB | 5.61 | 86% | — | Not flagged |
+| 2 | Chase McLaughlin | TB | 6.55 | 100% | — | Not flagged |
+| 3 | Matt Gay | LV | 6.48 | 86% | — | Not flagged |
+| 4 | Cairo Santos | CHI | 6.15 | 100% | — | Not flagged |
+| 5 | Chris Boswell | PIT | 6.11 | 100% | — | Not flagged |
+| 6 | Trey Smack | GB | 5.61 | 86% | — | Not flagged |
 
 ### DEF
 

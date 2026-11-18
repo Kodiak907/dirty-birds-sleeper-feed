@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-18T18:57:00.013510+00:00",
+  "generated_at_utc": "2026-11-18T19:59:21.002156+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -3861,7 +3861,7 @@
     {
       "completed_trade_count": 4,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 116.14,
+      "observed_optimal_average": 109.14,
       "observed_optimal_lineup": [
         {
           "avg": 23.13,
@@ -3894,8 +3894,8 @@
           "position": "TE"
         },
         {
-          "avg": 7.2,
-          "name": "Chase McLaughlin",
+          "avg": 0.2,
+          "name": "Dominic Zvada",
           "position": "K"
         },
         {
@@ -4089,28 +4089,6 @@
             14.6,
             5.1,
             18.4
-          ]
-        },
-        {
-          "actual_points_total": 72.0,
-          "actual_points_weekly_avg": 7.2,
-          "id": "6650",
-          "n_weeks": 10,
-          "name": "Chase McLaughlin",
-          "nonzero_weeks": 7,
-          "on_fantasy_reserve": false,
-          "position": "K",
-          "weekly_points": [
-            0.0,
-            0.0,
-            12.0,
-            2.0,
-            7.0,
-            17.0,
-            12.0,
-            12.0,
-            10.0,
-            0.0
           ]
         },
         {
@@ -4338,28 +4316,6 @@
           }
         ],
         "K": [
-          {
-            "actual_points_total": 72.0,
-            "actual_points_weekly_avg": 7.2,
-            "id": "6650",
-            "n_weeks": 10,
-            "name": "Chase McLaughlin",
-            "nonzero_weeks": 7,
-            "on_fantasy_reserve": false,
-            "position": "K",
-            "weekly_points": [
-              0.0,
-              0.0,
-              12.0,
-              2.0,
-              7.0,
-              17.0,
-              12.0,
-              12.0,
-              10.0,
-              0.0
-            ]
-          },
           {
             "actual_points_total": 2.0,
             "actual_points_weekly_avg": 0.2,
@@ -10847,6 +10803,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-18T18:56:55.880211+00:00",
+  "snapshot_utc": "2026-11-18T19:59:16.312738+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-10"
 }

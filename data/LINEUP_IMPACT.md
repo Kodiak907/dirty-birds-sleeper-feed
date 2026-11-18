@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-18T18:57:00.374626+00:00
+Generated: 2026-11-18T19:59:21.277320+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.57**. Weeks with partial projections and injury status require manual verification.
@@ -61,10 +61,11 @@ Baseline illustrative optimal PPG: **122.57**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Drew Stevens | 7.00 | Bench-depth scenario: Pat Bryant | +0.00 | -0.21 | No sourced usage |
-| 2 | Matt Gay | 6.48 | Bench-depth scenario: Pat Bryant | +0.00 | -0.73 | No sourced usage; Partial projection coverage |
-| 3 | Cairo Santos | 6.15 | Bench-depth scenario: Pat Bryant | +0.00 | -1.06 | No sourced usage |
-| 4 | Chris Boswell | 6.11 | Bench-depth scenario: Pat Bryant | +0.00 | -1.10 | No sourced usage |
-| 5 | Trey Smack | 5.61 | Bench-depth scenario: Pat Bryant | +0.00 | -1.59 | No sourced usage; Partial projection coverage |
+| 2 | Chase McLaughlin | 6.55 | Bench-depth scenario: Pat Bryant | +0.00 | -0.65 | No sourced usage |
+| 3 | Matt Gay | 6.48 | Bench-depth scenario: Pat Bryant | +0.00 | -0.73 | No sourced usage; Partial projection coverage |
+| 4 | Cairo Santos | 6.15 | Bench-depth scenario: Pat Bryant | +0.00 | -1.06 | No sourced usage |
+| 5 | Chris Boswell | 6.11 | Bench-depth scenario: Pat Bryant | +0.00 | -1.10 | No sourced usage |
+| 6 | Trey Smack | 5.61 | Bench-depth scenario: Pat Bryant | +0.00 | -1.59 | No sourced usage; Partial projection coverage |
 
 ## DEF
 
