@@ -1,42 +1,42 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:03.017622+00:00
+Generated: 2026-11-18T05:01:42.765906+00:00 | Forecast as of: 2026-11-18T05:01:39.429230+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 11
 
-**Projected optimal score:** 113.25
+**Projected optimal score:** 113.47
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 20.39 |
-| Christian McCaffrey | RB | MIN | 18.03 |
-| Jonah Coleman | RB | LV | 15.83 |
-| Zay Flowers | WR | CAR | 11.87 |
+| C.J. Stroud | QB | IND | 20.43 |
+| Christian McCaffrey | RB | MIN | 17.92 |
+| Jonah Coleman | RB | LV | 15.77 |
+| Zay Flowers | WR | CAR | 12.47 |
 | Caleb Douglas | WR | BUF | 7.38 |
-| Isaiah Likely | TE | JAX | 12.36 |
-| Will Reichard | K | SF | 7.05 |
-| Minnesota Vikings | DEF | SF | 6.01 |
-| Deebo Samuel Sr. | WR | MIN | 7.32 |
+| Isaiah Likely | TE | JAX | 12.34 |
+| Will Reichard | K | SF | 6.96 |
+| Minnesota Vikings | DEF | SF | 5.96 |
+| Deebo Samuel Sr. | WR | MIN | 7.23 |
 | Pat Bryant | WR | LV | 7.01 |
 
 ## Week 12
 
-**Projected optimal score:** 130.68
+**Projected optimal score:** 129.86
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 18.42 |
-| Christian McCaffrey | RB | SEA | 18.58 |
-| Jonah Coleman | RB | PIT | 12.88 |
-| Jaxon Smith-Njigba | WR | SF | 20.66 |
-| Zay Flowers | WR | HOU | 13.12 |
-| Isaiah Likely | TE | IND | 11.68 |
-| Will Reichard | K | ATL | 7.13 |
-| Minnesota Vikings | DEF | ATL | 7.32 |
-| A.J. Brown | WR | LAC | 12.17 |
-| Caleb Douglas | WR | NYJ | 8.72 |
+| C.J. Stroud | QB | BAL | 18.91 |
+| Christian McCaffrey | RB | SEA | 16.26 |
+| Jonah Coleman | RB | PIT | 13.04 |
+| Jaxon Smith-Njigba | WR | SF | 21.23 |
+| Zay Flowers | WR | HOU | 13.35 |
+| Isaiah Likely | TE | IND | 12.16 |
+| Will Reichard | K | ATL | 7.40 |
+| Minnesota Vikings | DEF | ATL | 7.54 |
+| A.J. Brown | WR | LAC | 11.45 |
+| Caleb Douglas | WR | NYJ | 8.52 |
 
 ## Week 13
 
@@ -57,7 +57,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 
 ## Week 14
 
-**Projected optimal score:** 128.22
+**Projected optimal score:** 129.15
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -65,7 +65,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Christian McCaffrey | RB | LA | 18.37 |
 | Jonah Coleman | RB | NYJ | 12.55 |
 | Jaxon Smith-Njigba | WR | NYG | 21.12 |
-| Zay Flowers | WR | TB | 13.16 |
+| Zay Flowers | WR | TB | 14.09 |
 | Isaiah Likely | TE | SEA | 10.12 |
 | Will Reichard | K | NE | 6.70 |
 | Minnesota Vikings | DEF | NE | 6.47 |
@@ -74,7 +74,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 134.11
+**Projected optimal score:** 135.08
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -82,7 +82,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Christian McCaffrey | RB | LAC | 21.24 |
 | Jonah Coleman | RB | LV | 14.48 |
 | Jaxon Smith-Njigba | WR | PHI | 20.80 |
-| Zay Flowers | WR | PIT | 13.51 |
+| Zay Flowers | WR | PIT | 14.48 |
 | Isaiah Likely | TE | CLE | 10.60 |
 | Will Reichard | K | DET | 7.64 |
 | Minnesota Vikings | DEF | DET | 6.66 |
@@ -91,7 +91,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 131.82
+**Projected optimal score:** 132.74
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -99,7 +99,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Christian McCaffrey | RB | KC | 18.79 |
 | Jonah Coleman | RB | BUF | 12.62 |
 | Jaxon Smith-Njigba | WR | LA | 20.00 |
-| Zay Flowers | WR | CLE | 12.60 |
+| Zay Flowers | WR | CLE | 13.52 |
 | Isaiah Likely | TE | DET | 11.98 |
 | Will Reichard | K | WAS | 7.67 |
 | Minnesota Vikings | DEF | WAS | 7.50 |
@@ -108,7 +108,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 131.14
+**Projected optimal score:** 132.13
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -116,7 +116,7 @@ Generated: 2026-11-18T03:56:43.974368+00:00 | Forecast as of: 2026-11-17T15:57:0
 | Christian McCaffrey | RB | PHI | 19.66 |
 | Jonah Coleman | RB | NE | 13.26 |
 | Jaxon Smith-Njigba | WR | CAR | 20.32 |
-| Zay Flowers | WR | CIN | 13.86 |
+| Zay Flowers | WR | CIN | 14.85 |
 | Isaiah Likely | TE | DAL | 12.08 |
 | Will Reichard | K | NYJ | 6.81 |
 | Minnesota Vikings | DEF | NYJ | 7.45 |

@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-18T03:56:43.974368+00:00",
+  "generated_at_utc": "2026-11-18T05:01:42.765906+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-17T15:57:03.017622+00:00",
+  "projection_as_of": "2026-11-18T05:01:39.429230+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-18T03:56:31.726093+00:00",
+  "snapshot_utc": "2026-11-18T05:01:33.470301+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -24,35 +24,35 @@
         "A.J. Brown",
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 113.25,
+      "ppg": 113.47,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "IND",
           "position": "QB",
-          "ppg": 20.39
+          "ppg": 20.43
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "MIN",
           "position": "RB",
-          "ppg": 18.03
+          "ppg": 17.92
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 15.83
+          "ppg": 15.77
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "CAR",
           "position": "WR",
-          "ppg": 11.87
+          "ppg": 12.47
         },
         {
           "id": "13296",
@@ -66,28 +66,28 @@
           "name": "Isaiah Likely",
           "opponent": "JAX",
           "position": "TE",
-          "ppg": 12.36
+          "ppg": 12.34
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "SF",
           "position": "K",
-          "ppg": 7.05
+          "ppg": 6.96
         },
         {
           "id": "MIN",
           "name": "Minnesota Vikings",
           "opponent": "SF",
           "position": "DEF",
-          "ppg": 6.01
+          "ppg": 5.96
         },
         {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "MIN",
           "position": "WR",
-          "ppg": 7.32
+          "ppg": 7.23
         },
         {
           "id": "12492",
@@ -101,77 +101,77 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 130.68,
+      "ppg": 129.86,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "BAL",
           "position": "QB",
-          "ppg": 18.42
+          "ppg": 18.91
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "SEA",
           "position": "RB",
-          "ppg": 18.58
+          "ppg": 16.26
         },
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "PIT",
           "position": "RB",
-          "ppg": 12.88
+          "ppg": 13.04
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "SF",
           "position": "WR",
-          "ppg": 20.66
+          "ppg": 21.23
         },
         {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "HOU",
           "position": "WR",
-          "ppg": 13.12
+          "ppg": 13.35
         },
         {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "IND",
           "position": "TE",
-          "ppg": 11.68
+          "ppg": 12.16
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "ATL",
           "position": "K",
-          "ppg": 7.13
+          "ppg": 7.4
         },
         {
           "id": "MIN",
           "name": "Minnesota Vikings",
           "opponent": "ATL",
           "position": "DEF",
-          "ppg": 7.32
+          "ppg": 7.54
         },
         {
           "id": "5859",
           "name": "A.J. Brown",
           "opponent": "LAC",
           "position": "WR",
-          "ppg": 12.17
+          "ppg": 11.45
         },
         {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "NYJ",
           "position": "WR",
-          "ppg": 8.72
+          "ppg": 8.52
         }
       ]
     },
@@ -258,7 +258,7 @@
     "14": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 128.22,
+      "ppg": 129.15,
       "starters": [
         {
           "id": "9758",
@@ -293,7 +293,7 @@
           "name": "Zay Flowers",
           "opponent": "TB",
           "position": "WR",
-          "ppg": 13.16
+          "ppg": 14.09
         },
         {
           "id": "8131",
@@ -335,7 +335,7 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 134.11,
+      "ppg": 135.08,
       "starters": [
         {
           "id": "1166",
@@ -370,7 +370,7 @@
           "name": "Zay Flowers",
           "opponent": "PIT",
           "position": "WR",
-          "ppg": 13.51
+          "ppg": 14.48
         },
         {
           "id": "8131",
@@ -412,7 +412,7 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.82,
+      "ppg": 132.74,
       "starters": [
         {
           "id": "1166",
@@ -447,7 +447,7 @@
           "name": "Zay Flowers",
           "opponent": "CLE",
           "position": "WR",
-          "ppg": 12.6
+          "ppg": 13.52
         },
         {
           "id": "8131",
@@ -489,7 +489,7 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 131.14,
+      "ppg": 132.13,
       "starters": [
         {
           "id": "1166",
@@ -524,7 +524,7 @@
           "name": "Zay Flowers",
           "opponent": "CIN",
           "position": "WR",
-          "ppg": 13.86
+          "ppg": 14.85
         },
         {
           "id": "8131",

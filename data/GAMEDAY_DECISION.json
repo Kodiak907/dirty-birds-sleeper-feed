@@ -10,31 +10,31 @@
       "A.J. Brown",
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 113.25,
+    "ppg": 113.47,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 20.39
+        "ppg": 20.43
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 18.03
+        "ppg": 17.92
       },
       {
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 15.83
+        "ppg": 15.77
       },
       {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.87
+        "ppg": 12.47
       },
       {
         "id": "13296",
@@ -46,25 +46,25 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 12.36
+        "ppg": 12.34
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.05
+        "ppg": 6.96
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.01
+        "ppg": 5.96
       },
       {
         "id": "5872",
         "name": "Deebo Samuel Sr.",
         "position": "WR",
-        "ppg": 7.32
+        "ppg": 7.23
       },
       {
         "id": "12492",
@@ -74,33 +74,33 @@
       }
     ]
   },
-  "difference_ppg": -13.63,
+  "difference_ppg": -13.62,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "5872",
     "9502"
   ],
-  "generated_at_utc": "2026-11-18T03:56:47.528227+00:00",
+  "generated_at_utc": "2026-11-18T05:01:46.933453+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "A.J. Brown",
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 99.62,
+    "ppg": 99.85,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 20.39
+        "ppg": 20.43
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 18.03
+        "ppg": 17.92
       },
       {
         "id": "13424",
@@ -112,7 +112,7 @@
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
-        "ppg": 11.87
+        "ppg": 12.47
       },
       {
         "id": "13296",
@@ -124,31 +124,31 @@
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 12.36
+        "ppg": 12.34
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 7.05
+        "ppg": 6.96
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 6.01
+        "ppg": 5.96
       },
       {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 6.54
+        "ppg": 6.63
       },
       {
         "id": "13414",
         "name": "Kaelon Black",
         "position": "RB",
-        "ppg": 4.55
+        "ppg": 4.32
       }
     ]
   },
@@ -320,8 +320,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-18T03:56:31.726093+00:00",
-  "source_availability_generated_at_utc": "2026-11-18T03:56:44.788425+00:00",
+  "snapshot_utc": "2026-11-18T05:01:33.470301+00:00",
+  "source_availability_generated_at_utc": "2026-11-18T05:01:43.530574+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
