@@ -1,22 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-18T09:04:00.476864+00:00
-Sleeper snapshot: 2026-11-18T09:03:54.450206+00:00
+Generated: 2026-11-18T10:05:31.717210+00:00
+Sleeper snapshot: 2026-11-18T10:05:27.279517+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**9 transaction changes:** 6 completed, 0 pending/processing, 3 failed.
-
-- **NEW** · transaction `1428540940510859269` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Michael Mayer → Dirty Birds (#1) | FAAB bid: $27
-- **NEW** · transaction `1428538090074443776` · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Keon Coleman → CREAM MACHINE  (#2) | FAAB bid: $10
-- **NEW** · transaction `1428538054498324480` · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | FAAB bid: $16
-- **NEW** · transaction `1428491796782014464` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Alvin Kamara → DeeboSix0 (#8) | Dropped: TreVeyon Henderson → DeeboSix0 (#8) | FAAB bid: $0
-- **NEW** · transaction `1428490736201908224` · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Elic Ayomanor → DeeboSix0 (#8) | FAAB bid: $5
-- **NEW** · transaction `1428456230052974592` · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Michael Mayer → JA’MARRTRIX (#7) | FAAB bid: $0
-- **NEW** · transaction `1428441978755907584` · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Cam Ward → suck my dickerson (#11) | FAAB bid: $0
-- **NEW** · transaction `1428381094658445312` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: James Conner → Dirty Birds (#1) | Dropped: A.J. Brown → Dirty Birds (#1) | FAAB bid: $0
-- **NEW** · transaction `1428195822318661632` · WAIVER · FAILED · Cokerthestroker (#12) | Added: Michael Mayer → Cokerthestroker (#12) | FAAB bid: $0
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
