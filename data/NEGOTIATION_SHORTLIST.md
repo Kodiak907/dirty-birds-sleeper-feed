@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-11-17T15:08:01.152785+00:00
+Generated: 2026-11-18T15:12:37.921510+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 2 | C.J. Stroud, A.J. Brown | Rashee Rice | +2.16 | +3.89 | +1.9/+0.1/+2.3 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 2 | 3 | C.J. Stroud, Zay Flowers | Tee Higgins | +2.38 | +1.54 | -0.2/+1.9/+0.2 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 3 | 3 | C.J. Stroud, Jonah Coleman | Bhayshul Tuten | +2.02 | +1.90 | -0.5/+3.2/+0.5 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 4 | 10 | C.J. Stroud, Zay Flowers | Josh Allen | +2.71 | +0.46 | +1.8/-1.1/+1.4 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing); Negative playoff-week modeled effect |
-| 5 | 4 | Caleb Douglas, Deebo Samuel Sr. | Brock Purdy | +2.11 | +0.67 | +3.0/+0.0/+2.2 | Deebo Samuel Sr.: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 1 | 2 | C.J. Stroud, Deebo Samuel Sr. | Rashee Rice | +4.26 | +1.29 | +3.6/+3.9/+4.7 | Deebo Samuel Sr.: snap coverage absent; Unnecessary extra outgoing asset under aggregate PPG model |
+| 2 | 9 | Kirk Cousins | Garrett Wilson | +2.38 | +1.70 | +1.6/+2.2/-0.1 | No flagged data gap |
+| 3 | 9 | Kirk Cousins | Tyler Shough, Garrett Wilson | +2.38 | +1.70 | +1.6/+4.1/-0.1 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 4 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +2.53 | +0.00 | +2.1/+2.9/+3.8 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 5 | 12 | Kirk Cousins | Rome Odunze | +1.95 | +0.68 | -2.6/-0.6/-0.6 | Negative playoff-week modeled effect |
 
 ## What the other manager might gain
 
-**1. Rashee Rice** — Opponent projected starters improve +3.89 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 42% (not a trade price).
+**1. Rashee Rice** — Opponent projected starters improve +1.29 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 25% (not a trade price).
 
-**2. Tee Higgins** — Opponent projected starters improve +1.54 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 36% (not a trade price).
+**2. Garrett Wilson** — Opponent projected starters improve +1.70 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 4% (not a trade price).
 
-**3. Bhayshul Tuten** — Opponent projected starters improve +1.90 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 38% (not a trade price).
+**3. Tyler Shough, Garrett Wilson** — Opponent projected starters improve +1.70 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 40% (not a trade price).
 
-**4. Josh Allen** — Opponent projected starters improve +0.46 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 33% (not a trade price).
+**4. Patrick Mahomes, Rhamondre Stevenson** — Opponent projected starters improve +0.00 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 54% (not a trade price).
 
-**5. Brock Purdy** — Opponent projected starters improve +0.67 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 17% (not a trade price).
+**5. Rome Odunze** — Opponent projected starters improve +0.68 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 6% (not a trade price).
 
 ## Verification before discussions
 

@@ -1,37 +1,37 @@
 # Dirty Birds — Mutually Beneficial Trade Ideas
 
-Generated: 2026-11-17T15:08:00.681021+00:00
+Generated: 2026-11-18T15:12:37.538701+00:00
 
 **These are statistical conversation starters, NOT predicted acceptances or recommended offers.**
 Only projected starting-lineup gains (not medical-adjusted values) are tested. Ranking deliberately requires both teams to gain.
 
 | # | Opponent roster | We give | We receive | Our gain | Their gain | Extra cut |
 |---:|---:|---|---|---:|---:|---|
-| 1 | 2 | Kirk Cousins, A.J. Brown | Rashee Rice | +2.45 | +3.60 |  Them: Audric Estime |
-| 2 | 2 | C.J. Stroud, A.J. Brown | Rashee Rice | +2.16 | +3.89 |  Them: Audric Estime |
-| 3 | 2 | Kirk Cousins, Zay Flowers | Rashee Rice | +0.78 | +5.27 |  Them: Audric Estime |
-| 4 | 2 | Kirk Cousins, Caleb Douglas | Rashee Rice | +2.45 | +2.11 |  Them: Audric Estime |
-| 5 | 3 | Kirk Cousins, Kyren Williams | Bhayshul Tuten | +1.96 | +1.96 |  Them: Xavier Worthy |
-| 6 | 3 | C.J. Stroud, Jonah Coleman | Bhayshul Tuten | +2.02 | +1.90 |  Them: Xavier Worthy |
-| 7 | 3 | Kirk Cousins, Zay Flowers | Jonathan Taylor | +2.18 | +1.74 |  Them: Xavier Worthy |
-| 8 | 3 | C.J. Stroud, Zay Flowers | Tee Higgins | +2.38 | +1.54 |  Them: Xavier Worthy |
-| 9 | 10 | C.J. Stroud, Kyren Williams | Josh Allen | +1.91 | +1.27 |  Them: Keenan Allen |
-| 10 | 10 | C.J. Stroud, Jonah Coleman | Josh Allen | +2.26 | +0.91 |  Them: Keenan Allen |
-| 11 | 10 | C.J. Stroud, Zay Flowers | Josh Allen | +2.71 | +0.46 |  Them: Keenan Allen |
-| 12 | 10 | A.J. Brown, Caleb Douglas | Jameson Williams | +1.17 | +2.00 |  Them: Keenan Allen |
-| 13 | 11 | Kirk Cousins, Kyren Williams | D'Andre Swift | +1.53 | +1.22 |  Them: Adonai Mitchell |
-| 14 | 11 | C.J. Stroud, Jonah Coleman | D'Andre Swift | +1.59 | +1.16 |  Them: Adonai Mitchell |
-| 15 | 11 | Kirk Cousins, A.J. Brown | Tony Pollard | +1.32 | +1.43 |  Them: Adonai Mitchell |
-| 16 | 4 | Caleb Douglas, Deebo Samuel Sr. | Brock Purdy | +2.11 | +0.67 |  Them: Jordan Watkins |
-| 17 | 11 | Kirk Cousins, Jonah Coleman | D'Andre Swift | +1.89 | +0.87 |  Them: Adonai Mitchell |
-| 18 | 4 | A.J. Brown, Deebo Samuel Sr. | Brock Purdy | +0.63 | +2.16 |  Them: Jordan Watkins |
-| 19 | 4 | A.J. Brown, Caleb Douglas | Brock Purdy | +0.54 | +2.25 |  Them: Jordan Watkins |
-| 20 | 4 | Caleb Douglas, Deebo Samuel Sr. | Jared Goff | +0.53 | +2.25 |  Them: Jordan Watkins |
-| 21 | 9 | Kirk Cousins, A.J. Brown | Garrett Wilson | +0.90 | +0.99 |  Them: Woody Marks |
-| 22 | 9 | Kirk Cousins, Zay Flowers | Tetairoa McMillan | +0.88 | +1.01 |  Them: Woody Marks |
-| 23 | 9 | C.J. Stroud, A.J. Brown | Garrett Wilson | +0.61 | +1.29 |  Them: Woody Marks |
-| 24 | 9 | C.J. Stroud, Zay Flowers | Tetairoa McMillan | +0.58 | +1.31 |  Them: Woody Marks |
-| 25 | 5 | Jonah Coleman | Patrick Mahomes, DJ Moore | +0.76 | +0.65 | Us: Kirk Cousins |
+| 1 | 2 | C.J. Stroud, Caleb Douglas | Rashee Rice | +3.87 | +1.69 |  Them: Audric Estime |
+| 2 | 2 | Kirk Cousins, Caleb Douglas | Rashee Rice | +3.82 | +1.73 |  Them: Audric Estime |
+| 3 | 2 | Kirk Cousins, Deebo Samuel Sr. | Rashee Rice | +4.22 | +1.34 |  Them: Audric Estime |
+| 4 | 2 | C.J. Stroud, Deebo Samuel Sr. | Rashee Rice | +4.26 | +1.29 |  Them: Audric Estime |
+| 5 | 3 | C.J. Stroud, Zay Flowers | Tee Higgins | +2.41 | +1.94 |  Them: Blake Corum |
+| 6 | 3 | Kirk Cousins, Zay Flowers | Tee Higgins | +2.36 | +1.98 |  Them: Blake Corum |
+| 7 | 3 | Kirk Cousins, Zay Flowers | Bhayshul Tuten | +2.69 | +1.66 |  Them: Blake Corum |
+| 8 | 3 | C.J. Stroud, Zay Flowers | Bhayshul Tuten | +2.73 | +1.61 |  Them: Blake Corum |
+| 9 | 9 | Kirk Cousins | Garrett Wilson | +2.38 | +1.70 | None |
+| 10 | 9 | Kirk Cousins, Deebo Samuel Sr. | Garrett Wilson | +2.38 | +1.70 |  Them: Woody Marks |
+| 11 | 9 | Kirk Cousins, Pat Bryant | Garrett Wilson | +2.38 | +1.70 |  Them: Woody Marks |
+| 12 | 9 | Kirk Cousins | Tyler Shough, Garrett Wilson | +2.38 | +1.70 | Us: Pat Bryant |
+| 13 | 11 | C.J. Stroud, Caleb Douglas | Ashton Jeanty | +1.62 | +1.66 |  Them: Xavier Hutchinson |
+| 14 | 11 | C.J. Stroud, Zay Flowers | Parker Washington | +1.89 | +1.40 |  Them: Xavier Hutchinson |
+| 15 | 11 | Kirk Cousins, Zay Flowers | Parker Washington | +1.84 | +1.44 |  Them: Xavier Hutchinson |
+| 16 | 11 | Kirk Cousins, Jonah Coleman | D'Andre Swift | +1.98 | +1.31 |  Them: Xavier Hutchinson |
+| 17 | 12 | Kirk Cousins | Rome Odunze | +1.95 | +0.68 | None |
+| 18 | 12 | Kirk Cousins, Deebo Samuel Sr. | Rome Odunze | +1.95 | +0.68 |  Them: Drake Maye |
+| 19 | 12 | Kirk Cousins, Pat Bryant | Rome Odunze | +1.95 | +0.68 |  Them: Drake Maye |
+| 20 | 12 | Kirk Cousins | Bryce Young, Rome Odunze | +1.95 | +0.68 | Us: Pat Bryant |
+| 21 | 5 | Kirk Cousins | Patrick Mahomes, Rhamondre Stevenson | +2.53 | +0.00 | Us: Pat Bryant |
+| 22 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +2.53 | +0.00 | Us: Kirk Cousins |
+| 23 | 5 | Deebo Samuel Sr. | Patrick Mahomes, Rhamondre Stevenson | +2.53 | +0.00 | Us: Kirk Cousins |
+| 24 | 5 | Pat Bryant | Patrick Mahomes, Rhamondre Stevenson | +2.53 | +0.00 | Us: Kirk Cousins |
+| 25 | 10 | Kirk Cousins, Zay Flowers | Josh Allen | +0.99 | +1.02 |  Them: Keenan Allen |
 
 ## Due diligence before negotiating
 
