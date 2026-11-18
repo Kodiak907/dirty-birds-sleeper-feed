@@ -1,22 +1,22 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-18T02:53:24.567423+00:00",
-  "candidates_evaluated": 21600,
-  "market_matched": 2801,
+  "generated_at_utc": "2026-11-18T03:56:42.924043+00:00",
+  "candidates_evaluated": 49698,
+  "market_matched": 6218,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-17T15:08:01.078399+00:00",
+  "market_as_of": "2026-11-18T03:56:40.854973+00:00",
   "projection_as_of": "2026-11-17T15:57:03.017622+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
     {
-      "opponent_roster_id": 3,
-      "opponent_name": "BigOlBoyle",
+      "opponent_roster_id": 2,
+      "opponent_name": "CREAM MACHINE ",
       "give": [
         {
-          "id": "5859",
-          "name": "A.J. Brown",
+          "id": "13296",
+          "name": "Caleb Douglas",
           "pos": "WR"
         },
         {
@@ -27,131 +27,18 @@
       ],
       "receive": [
         {
-          "id": "11632",
-          "name": "Malik Nabers",
-          "pos": "WR"
-        },
-        {
-          "id": "8126",
-          "name": "Wan'Dale Robinson",
+          "id": "10229",
+          "name": "Rashee Rice",
           "pos": "WR"
         }
       ],
-      "our_gain": 3.57,
-      "their_gain": 0.78,
-      "market_paid_received_ratio": 0.98,
+      "our_gain": 3.86,
+      "their_gain": 1.7,
+      "market_paid_received_ratio": 0.946,
       "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
+      "theirs_cut_to_fit": "Audric Estime",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.978,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 3,
-      "opponent_name": "BigOlBoyle",
-      "give": [
-        {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "11632",
-          "name": "Malik Nabers",
-          "pos": "WR"
-        },
-        {
-          "id": "11624",
-          "name": "Xavier Worthy",
-          "pos": "WR"
-        }
-      ],
-      "our_gain": 3.57,
-      "their_gain": 0.78,
-      "market_paid_received_ratio": 0.976,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.966,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 9,
-      "opponent_name": "To Infinity and Bijan",
-      "give": [
-        {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "2449",
-          "name": "Stefon Diggs",
-          "pos": "WR"
-        },
-        {
-          "id": "13330",
-          "name": "Kenyon Sadiq",
-          "pos": "TE"
-        }
-      ],
-      "our_gain": 2.06,
-      "their_gain": 1.54,
-      "market_paid_received_ratio": 1.004,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.972,
-      "not_an_approved_offer": true
-    },
-    {
-      "opponent_roster_id": 9,
-      "opponent_name": "To Infinity and Bijan",
-      "give": [
-        {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "pos": "WR"
-        },
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB"
-        }
-      ],
-      "receive": [
-        {
-          "id": "2449",
-          "name": "Stefon Diggs",
-          "pos": "WR"
-        },
-        {
-          "id": "12545",
-          "name": "Tyler Shough",
-          "pos": "QB"
-        }
-      ],
-      "our_gain": 2.06,
-      "their_gain": 1.54,
-      "market_paid_received_ratio": 1.006,
-      "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
-      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.965,
+      "score": 4.718,
       "not_an_approved_offer": true
     },
     {
@@ -159,8 +46,8 @@
       "opponent_name": "CREAM MACHINE ",
       "give": [
         {
-          "id": "13301",
-          "name": "Antonio Williams",
+          "id": "13296",
+          "name": "Caleb Douglas",
           "pos": "WR"
         },
         {
@@ -174,15 +61,231 @@
           "id": "13279",
           "name": "Carnell Tate",
           "pos": "WR"
+        },
+        {
+          "id": "13269",
+          "name": "Fernando Mendoza",
+          "pos": "QB"
         }
       ],
       "our_gain": 1.96,
-      "their_gain": 1.66,
-      "market_paid_received_ratio": 0.924,
+      "their_gain": 3.61,
+      "market_paid_received_ratio": 1.054,
       "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": "Audric Estime",
+      "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.728,
+      "score": 3.965,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 3,
+      "opponent_name": "BigOlBoyle",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "12490",
+          "name": "Bhayshul Tuten",
+          "pos": "RB"
+        },
+        {
+          "id": "4993",
+          "name": "Mike Gesicki",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 3.08,
+      "their_gain": 1.22,
+      "market_paid_received_ratio": 1.009,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.786,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 3,
+      "opponent_name": "BigOlBoyle",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "12490",
+          "name": "Bhayshul Tuten",
+          "pos": "RB"
+        },
+        {
+          "id": "11624",
+          "name": "Xavier Worthy",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 3.08,
+      "their_gain": 1.27,
+      "market_paid_received_ratio": 1.025,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.767,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "7525",
+          "name": "DeVonta Smith",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 2.76,
+      "their_gain": 0.84,
+      "market_paid_received_ratio": 1.016,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": "Woody Marks",
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.216,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "5967",
+          "name": "Tony Pollard",
+          "pos": "RB"
+        },
+        {
+          "id": "3271",
+          "name": "Tyler Higbee",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 2.72,
+      "their_gain": 0.72,
+      "market_paid_received_ratio": 0.999,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.15,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "7525",
+          "name": "DeVonta Smith",
+          "pos": "WR"
+        },
+        {
+          "id": "13330",
+          "name": "Kenyon Sadiq",
+          "pos": "TE"
+        }
+      ],
+      "our_gain": 2.76,
+      "their_gain": 0.84,
+      "market_paid_received_ratio": 0.959,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 3.142,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 11,
+      "opponent_name": "suck my dickerson",
+      "give": [
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "5967",
+          "name": "Tony Pollard",
+          "pos": "RB"
+        },
+        {
+          "id": "7562",
+          "name": "Tutu Atwell",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 2.72,
+      "their_gain": 0.72,
+      "market_paid_received_ratio": 1.078,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.919,
       "not_an_approved_offer": true
     }
   ],

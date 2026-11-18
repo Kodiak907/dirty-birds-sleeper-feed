@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-18T02:53:24.814694+00:00",
-  "source_snapshot_utc": "2026-11-18T02:53:16.867434+00:00",
-  "source_market_as_of": "2026-11-17T15:08:01.078399+00:00",
+  "generated_at_utc": "2026-11-18T03:56:43.692208+00:00",
+  "source_snapshot_utc": "2026-11-18T03:56:31.726093+00:00",
+  "source_market_as_of": "2026-11-18T03:56:40.854973+00:00",
   "source_projection_as_of": "2026-11-17T15:57:03.017622+00:00",
   "focus_assets": [
     {
@@ -17,8 +17,8 @@
       "name": "Patrick Mahomes"
     }
   ],
-  "tested": 5704,
-  "market_screened": 1539,
+  "tested": 9063,
+  "market_screened": 2272,
   "reports": [
     {
       "asset": "Garrett Wilson",
@@ -47,96 +47,48 @@
               "id": "11632",
               "name": "Malik Nabers",
               "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 3,
+          "opponent": "BigOlBoyle",
+          "our_lineup_delta_ppg": 3.57,
+          "their_lineup_delta_ppg": 0.78,
+          "value_paid_received_ratio": 0.861,
+          "our_extra_cut": null,
+          "opponent_extra_cut": "Blake Corum",
+          "screen": "STRICT_RESEARCH_PASS",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
             },
             {
-              "id": "11586",
-              "name": "Blake Corum",
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "6813",
+              "name": "Jonathan Taylor",
               "position": "RB"
             }
           ],
           "opponent_roster_id": 3,
           "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.57,
-          "their_lineup_delta_ppg": 0.78,
-          "value_paid_received_ratio": 0.888,
+          "our_lineup_delta_ppg": 3.86,
+          "their_lineup_delta_ppg": 0.49,
+          "value_paid_received_ratio": 0.849,
           "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "STRICT_RESEARCH_PASS",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "11632",
-              "name": "Malik Nabers",
-              "position": "WR"
-            },
-            {
-              "id": "8126",
-              "name": "Wan'Dale Robinson",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 3,
-          "opponent": "BigOlBoyle",
-          "our_lineup_delta_ppg": 3.57,
-          "their_lineup_delta_ppg": 0.78,
-          "value_paid_received_ratio": 0.98,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "STRICT_RESEARCH_PASS",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9758",
-              "name": "C.J. Stroud",
-              "position": "QB"
-            }
-          ],
-          "receive": [
-            {
-              "id": "2449",
-              "name": "Stefon Diggs",
-              "position": "WR"
-            },
-            {
-              "id": "8146",
-              "name": "Garrett Wilson",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 9,
-          "opponent": "To Infinity and Bijan",
-          "our_lineup_delta_ppg": 3.0,
-          "their_lineup_delta_ppg": 0.6,
-          "value_paid_received_ratio": 1.177,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
+          "opponent_extra_cut": "Blake Corum",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -172,9 +124,42 @@
           "opponent": "To Infinity and Bijan",
           "our_lineup_delta_ppg": 2.91,
           "their_lineup_delta_ppg": 0.69,
-          "value_paid_received_ratio": 0.748,
+          "value_paid_received_ratio": 0.737,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "10229",
+              "name": "Rashee Rice",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 2,
+          "opponent": "CREAM MACHINE ",
+          "our_lineup_delta_ppg": 2.79,
+          "their_lineup_delta_ppg": 2.77,
+          "value_paid_received_ratio": 1.114,
+          "our_extra_cut": null,
+          "opponent_extra_cut": "Audric Estime",
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -210,7 +195,7 @@
           "opponent": "CREAM MACHINE ",
           "our_lineup_delta_ppg": 2.79,
           "their_lineup_delta_ppg": 2.77,
-          "value_paid_received_ratio": 1.058,
+          "value_paid_received_ratio": 0.956,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -234,59 +219,21 @@
           ],
           "receive": [
             {
-              "id": "10229",
-              "name": "Rashee Rice",
+              "id": "2449",
+              "name": "Stefon Diggs",
               "position": "WR"
             },
             {
-              "id": "13269",
-              "name": "Fernando Mendoza",
-              "position": "QB"
-            }
-          ],
-          "opponent_roster_id": 2,
-          "opponent": "CREAM MACHINE ",
-          "our_lineup_delta_ppg": 2.79,
-          "their_lineup_delta_ppg": 2.77,
-          "value_paid_received_ratio": 1.066,
-          "our_extra_cut": null,
-          "opponent_extra_cut": null,
-          "screen": "FURTHER_NEGOTIATION_RESEARCH",
-          "limits": [
-            "Full-PPR external values are not FFL half-PPR prices",
-            "Injuries, playoff matchups and manager intent remain unverified"
-          ]
-        },
-        {
-          "give": [
-            {
-              "id": "5859",
-              "name": "A.J. Brown",
-              "position": "WR"
-            },
-            {
-              "id": "9997",
-              "name": "Zay Flowers",
+              "id": "7526",
+              "name": "Jaylen Waddle",
               "position": "WR"
             }
           ],
-          "receive": [
-            {
-              "id": "4984",
-              "name": "Josh Allen",
-              "position": "QB"
-            },
-            {
-              "id": "5846",
-              "name": "DK Metcalf",
-              "position": "WR"
-            }
-          ],
-          "opponent_roster_id": 10,
-          "opponent": "EmanAndYoMomma",
-          "our_lineup_delta_ppg": 1.25,
-          "their_lineup_delta_ppg": 0.03,
-          "value_paid_received_ratio": 1.12,
+          "opponent_roster_id": 9,
+          "opponent": "To Infinity and Bijan",
+          "our_lineup_delta_ppg": 2.21,
+          "their_lineup_delta_ppg": 1.39,
+          "value_paid_received_ratio": 0.829,
           "our_extra_cut": null,
           "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
@@ -310,18 +257,61 @@
           ],
           "receive": [
             {
-              "id": "12527",
-              "name": "Ashton Jeanty",
+              "id": "96",
+              "name": "Aaron Rodgers",
+              "position": "QB"
+            },
+            {
+              "id": "5967",
+              "name": "Tony Pollard",
               "position": "RB"
             }
           ],
           "opponent_roster_id": 11,
           "opponent": "suck my dickerson",
-          "our_lineup_delta_ppg": 0.5,
-          "their_lineup_delta_ppg": 2.94,
-          "value_paid_received_ratio": 0.994,
+          "our_lineup_delta_ppg": 1.64,
+          "their_lineup_delta_ppg": 1.8,
+          "value_paid_received_ratio": 0.967,
           "our_extra_cut": null,
-          "opponent_extra_cut": "Adonai Mitchell",
+          "opponent_extra_cut": null,
+          "screen": "FURTHER_NEGOTIATION_RESEARCH",
+          "limits": [
+            "Full-PPR external values are not FFL half-PPR prices",
+            "Injuries, playoff matchups and manager intent remain unverified"
+          ]
+        },
+        {
+          "give": [
+            {
+              "id": "5859",
+              "name": "A.J. Brown",
+              "position": "WR"
+            },
+            {
+              "id": "9758",
+              "name": "C.J. Stroud",
+              "position": "QB"
+            }
+          ],
+          "receive": [
+            {
+              "id": "5967",
+              "name": "Tony Pollard",
+              "position": "RB"
+            },
+            {
+              "id": "11625",
+              "name": "Adonai Mitchell",
+              "position": "WR"
+            }
+          ],
+          "opponent_roster_id": 11,
+          "opponent": "suck my dickerson",
+          "our_lineup_delta_ppg": 1.64,
+          "their_lineup_delta_ppg": 1.8,
+          "value_paid_received_ratio": 1.008,
+          "our_extra_cut": null,
+          "opponent_extra_cut": null,
           "screen": "FURTHER_NEGOTIATION_RESEARCH",
           "limits": [
             "Full-PPR external values are not FFL half-PPR prices",
@@ -329,7 +319,7 @@
           ]
         }
       ],
-      "candidate_count": 41
+      "candidate_count": 129
     },
     {
       "asset": "Patrick Mahomes",
