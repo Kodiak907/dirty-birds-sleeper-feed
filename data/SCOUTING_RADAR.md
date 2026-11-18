@@ -1,9 +1,14 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-18T07:19:43.031191+00:00
-Sleeper snapshot: 2026-11-18T07:19:36.240499+00:00
+Generated: 2026-11-18T09:04:00.507483+00:00
+Sleeper snapshot: 2026-11-18T09:03:54.450206+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 4. New completed trade entries: 0.
+
+- Dirty Birds: added James Conner, Michael Mayer; dropped A.J. Brown
+- CREAM MACHINE: added Kansas City Chiefs; dropped none
+- DeeboSix0: added Elic Ayomanor, Alvin Kamara; dropped TreVeyon Henderson
+- suck my dickerson: added Cam Ward; dropped none
 
 ## Limits
 

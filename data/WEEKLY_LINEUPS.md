@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:39.429230+00:00
+Generated: 2026-11-18T09:04:03.905519+00:00 | Forecast as of: 2026-11-18T05:01:39.429230+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -23,7 +23,7 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 
 ## Week 12
 
-**Projected optimal score:** 129.86
+**Projected optimal score:** 125.52
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -35,12 +35,12 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Isaiah Likely | TE | IND | 12.16 |
 | Will Reichard | K | ATL | 7.40 |
 | Minnesota Vikings | DEF | ATL | 7.54 |
-| A.J. Brown | WR | LAC | 11.45 |
 | Caleb Douglas | WR | NYJ | 8.52 |
+| Deebo Samuel Sr. | WR | SEA | 7.11 |
 
 ## Week 13
 
-**Projected optimal score:** 127.23
+**Projected optimal score:** 124.30
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -48,16 +48,16 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Christian McCaffrey | RB | NYG | 21.02 |
 | Jonah Coleman | RB | MIA | 13.61 |
 | Jaxon Smith-Njigba | WR | DAL | 22.54 |
-| A.J. Brown | WR | BUF | 10.79 |
+| Deebo Samuel Sr. | WR | NYG | 8.54 |
 | Isaiah Likely | TE | SF | 10.75 |
 | Will Reichard | K | CAR | 7.13 |
 | Minnesota Vikings | DEF | CAR | 7.40 |
-| Deebo Samuel Sr. | WR | NYG | 8.54 |
 | Caleb Douglas | WR | DEN | 7.96 |
+| Pat Bryant | WR | MIA | 7.86 |
 
 ## Week 14
 
-**Projected optimal score:** 129.15
+**Projected optimal score:** 126.67
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -69,12 +69,12 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Isaiah Likely | TE | SEA | 10.12 |
 | Will Reichard | K | NE | 6.70 |
 | Minnesota Vikings | DEF | NE | 6.47 |
-| A.J. Brown | WR | MIN | 10.31 |
 | Caleb Douglas | WR | CHI | 9.12 |
+| Deebo Samuel Sr. | WR | LA | 7.83 |
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 135.08
+**Projected optimal score:** 132.84
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -86,12 +86,12 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Isaiah Likely | TE | CLE | 10.60 |
 | Will Reichard | K | DET | 7.64 |
 | Minnesota Vikings | DEF | DET | 6.66 |
-| A.J. Brown | WR | KC | 10.65 |
 | Deebo Samuel Sr. | WR | LAC | 8.92 |
+| Caleb Douglas | WR | GB | 8.41 |
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 132.74
+**Projected optimal score:** 128.89
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -103,12 +103,12 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Isaiah Likely | TE | DET | 11.98 |
 | Will Reichard | K | WAS | 7.67 |
 | Minnesota Vikings | DEF | WAS | 7.50 |
-| A.J. Brown | WR | NYJ | 11.76 |
 | Caleb Douglas | WR | LAC | 9.02 |
+| Deebo Samuel Sr. | WR | KC | 7.91 |
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 132.13
+**Projected optimal score:** 129.69
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -120,8 +120,8 @@ Generated: 2026-11-18T07:19:47.011465+00:00 | Forecast as of: 2026-11-18T05:01:3
 | Isaiah Likely | TE | DAL | 12.08 |
 | Will Reichard | K | NYJ | 6.81 |
 | Minnesota Vikings | DEF | NYJ | 7.45 |
-| A.J. Brown | WR | DEN | 10.53 |
 | Deebo Samuel Sr. | WR | PHI | 8.20 |
+| Caleb Douglas | WR | BUF | 8.09 |
 
 ## Prediction tracking and calibration
 

@@ -2,12 +2,12 @@
   "added_starters": [
     "Seth McGowan",
     "Antonio Williams",
-    "Kaelon Black"
+    "Michael Mayer"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "A.J. Brown",
+      "James Conner",
       "Jaxon Smith-Njigba"
     ],
     "ppg": 113.47,
@@ -74,21 +74,21 @@
       }
     ]
   },
-  "difference_ppg": -13.62,
+  "difference_ppg": -11.49,
   "explicit_excluded_ids": [
     "12492",
     "13345",
+    "4137",
     "5872",
     "9502"
   ],
-  "generated_at_utc": "2026-11-18T07:19:49.179996+00:00",
+  "generated_at_utc": "2026-11-18T09:04:07.361581+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
-      "A.J. Brown",
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 99.85,
+    "ppg": 101.98,
     "starters": [
       {
         "id": "9758",
@@ -145,10 +145,10 @@
         "ppg": 6.63
       },
       {
-        "id": "13414",
-        "name": "Kaelon Black",
-        "position": "RB",
-        "ppg": 4.32
+        "id": "9482",
+        "name": "Michael Mayer",
+        "position": "TE",
+        "ppg": 6.45
       }
     ]
   },
@@ -242,10 +242,10 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "5859",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "A.J. Brown",
-      "sleeper_injury_status": null,
+      "id": "4137",
+      "model_handling": "exclude_explicit_unavailable_tag",
+      "name": "James Conner",
+      "sleeper_injury_status": "IR",
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -263,6 +263,15 @@
       "id": "8131",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Isaiah Likely",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "9482",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Michael Mayer",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -320,8 +329,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-18T07:19:36.240499+00:00",
-  "source_availability_generated_at_utc": "2026-11-18T07:19:47.760797+00:00",
+  "snapshot_utc": "2026-11-18T09:03:54.450206+00:00",
+  "source_availability_generated_at_utc": "2026-11-18T09:04:04.383831+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

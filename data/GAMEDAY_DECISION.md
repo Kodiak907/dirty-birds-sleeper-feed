@@ -1,6 +1,6 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 11 | Snapshot: 2026-11-18T07:19:36.240499+00:00
+Week 11 | Snapshot: 2026-11-18T09:03:54.450206+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
@@ -8,13 +8,14 @@ Manually verified official-release submissions: 0; no_verified_official_submissi
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
 Baseline projected lineup: 113.47.
-Hard-tag exclusion projected lineup: 99.85.
-Conditional projected difference: -13.62.
+Hard-tag exclusion projected lineup: 101.98.
+Conditional projected difference: -11.49.
 
 ## Hard-tag excluded from provisional lineup
 
 - Pat Bryant — fantasy reserve: False; Sleeper injury: IR
 - Jonah Coleman — fantasy reserve: False; Sleeper injury: IR
+- James Conner — fantasy reserve: False; Sleeper injury: IR
 - Deebo Samuel Sr. — fantasy reserve: False; Sleeper injury: Out
 - Tank Dell — fantasy reserve: False; Sleeper injury: IR
 
@@ -28,7 +29,7 @@ None in Sleeper tags; absence of flags is NOT active confirmation.
 
 ## Proposed conditional substitutions
 
-Potentially added: Seth McGowan, Antonio Williams, Kaelon Black
+Potentially added: Seth McGowan, Antonio Williams, Michael Mayer
 Potentially removed: Jonah Coleman, Deebo Samuel Sr., Pat Bryant
 
 ## Mandatory verification

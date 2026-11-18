@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-18T07:19:43.031191+00:00",
+  "generated_at_utc": "2026-11-18T09:04:00.507483+00:00",
   "note": "Research-only; counts/imbalances are not valuations, offers, or intentions.",
   "profiles": [
     {
-      "faab_used": 193,
+      "faab_used": 220,
       "id": 1,
       "manager": "Kodiak907",
       "points_for": 1202.78,
@@ -20,15 +20,16 @@
         ],
         "RB": [
           "Christian McCaffrey",
+          "James Conner",
           "Jonah Coleman",
           "Kaelon Black",
           "Seth McGowan"
         ],
         "TE": [
-          "Isaiah Likely"
+          "Isaiah Likely",
+          "Michael Mayer"
         ],
         "WR": [
-          "A.J. Brown",
           "Antonio Williams",
           "Caleb Douglas",
           "Deebo Samuel Sr.",
@@ -47,6 +48,10 @@
         {
           "bid": 7,
           "player": "Mike Gesicki"
+        },
+        {
+          "bid": 27,
+          "player": "Michael Mayer"
         },
         {
           "bid": 27,
@@ -134,13 +139,14 @@
       "trades_completed": 13
     },
     {
-      "faab_used": 52,
+      "faab_used": 68,
       "id": 2,
       "manager": "vglizzy",
       "points_for": 958.7,
       "positions": {
         "DEF": [
-          "Baltimore Ravens"
+          "Baltimore Ravens",
+          "Kansas City Chiefs"
         ],
         "K": [
           "Evan McPherson"
@@ -176,6 +182,10 @@
       },
       "record": "4-6",
       "successful_paid_waivers": [
+        {
+          "bid": 16,
+          "player": "Kansas City Chiefs"
+        },
         {
           "bid": 33,
           "player": "Sam Darnold"
@@ -452,7 +462,7 @@
       "trades_completed": 5
     },
     {
-      "faab_used": 60,
+      "faab_used": 65,
       "id": 8,
       "manager": "DeeboSix0",
       "points_for": 1193.08,
@@ -469,11 +479,11 @@
           "Matthew Stafford"
         ],
         "RB": [
+          "Alvin Kamara",
           "Chuba Hubbard",
           "James Cook III",
           "Kyle Monangai",
-          "Rachaad White",
-          "TreVeyon Henderson"
+          "Rachaad White"
         ],
         "TE": [
           "Darnell Washington",
@@ -481,6 +491,7 @@
         ],
         "WR": [
           "Christian Watson",
+          "Elic Ayomanor",
           "George Pickens",
           "KC Concepcion Jr.",
           "Ladd McConkey",
@@ -491,6 +502,10 @@
       },
       "record": "8-2",
       "successful_paid_waivers": [
+        {
+          "bid": 5,
+          "player": "Elic Ayomanor"
+        },
         {
           "bid": 5,
           "player": "Baltimore Ravens"
@@ -625,6 +640,7 @@
         ],
         "QB": [
           "Aaron Rodgers",
+          "Cam Ward",
           "Gardner Minshew II"
         ],
         "RB": [
@@ -719,5 +735,5 @@
       "trades_completed": 4
     }
   ],
-  "source_snapshot_utc": "2026-11-18T07:19:36.240499+00:00"
+  "source_snapshot_utc": "2026-11-18T09:03:54.450206+00:00"
 }

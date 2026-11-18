@@ -5,12 +5,12 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [],
-  "generated_at_utc": "2026-11-18T07:19:47.011465+00:00",
+  "generated_at_utc": "2026-11-18T09:04:03.905519+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-18T05:01:39.429230+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-18T07:19:36.240499+00:00",
+  "snapshot_utc": "2026-11-18T09:03:54.450206+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -21,7 +21,7 @@
     "11": {
       "complete": true,
       "missing_projection": [
-        "A.J. Brown",
+        "James Conner",
         "Jaxon Smith-Njigba"
       ],
       "ppg": 113.47,
@@ -100,8 +100,10 @@
     },
     "12": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 129.86,
+      "missing_projection": [
+        "James Conner"
+      ],
+      "ppg": 125.52,
       "starters": [
         {
           "id": "9758",
@@ -160,18 +162,18 @@
           "ppg": 7.54
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "LAC",
-          "position": "WR",
-          "ppg": 11.45
-        },
-        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "NYJ",
           "position": "WR",
           "ppg": 8.52
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "SEA",
+          "position": "WR",
+          "ppg": 7.11
         }
       ]
     },
@@ -179,9 +181,11 @@
       "complete": true,
       "missing_projection": [
         "Seth McGowan",
+        "James Conner",
+        "Michael Mayer",
         "Zay Flowers"
       ],
-      "ppg": 127.23,
+      "ppg": 124.3,
       "starters": [
         {
           "id": "9758",
@@ -212,11 +216,11 @@
           "ppg": 22.54
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "BUF",
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "NYG",
           "position": "WR",
-          "ppg": 10.79
+          "ppg": 8.54
         },
         {
           "id": "8131",
@@ -240,25 +244,27 @@
           "ppg": 7.4
         },
         {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "NYG",
-          "position": "WR",
-          "ppg": 8.54
-        },
-        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "DEN",
           "position": "WR",
           "ppg": 7.96
+        },
+        {
+          "id": "12492",
+          "name": "Pat Bryant",
+          "opponent": "MIA",
+          "position": "WR",
+          "ppg": 7.86
         }
       ]
     },
     "14": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 129.15,
+      "missing_projection": [
+        "James Conner"
+      ],
+      "ppg": 126.67,
       "starters": [
         {
           "id": "9758",
@@ -317,25 +323,27 @@
           "ppg": 6.47
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "MIN",
-          "position": "WR",
-          "ppg": 10.31
-        },
-        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "CHI",
           "position": "WR",
           "ppg": 9.12
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "LA",
+          "position": "WR",
+          "ppg": 7.83
         }
       ]
     },
     "15": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 135.08,
+      "missing_projection": [
+        "James Conner"
+      ],
+      "ppg": 132.84,
       "starters": [
         {
           "id": "1166",
@@ -394,25 +402,27 @@
           "ppg": 6.66
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "KC",
-          "position": "WR",
-          "ppg": 10.65
-        },
-        {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "LAC",
           "position": "WR",
           "ppg": 8.92
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "opponent": "GB",
+          "position": "WR",
+          "ppg": 8.41
         }
       ]
     },
     "16": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 132.74,
+      "missing_projection": [
+        "James Conner"
+      ],
+      "ppg": 128.89,
       "starters": [
         {
           "id": "1166",
@@ -471,25 +481,27 @@
           "ppg": 7.5
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "NYJ",
-          "position": "WR",
-          "ppg": 11.76
-        },
-        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "LAC",
           "position": "WR",
           "ppg": 9.02
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel Sr.",
+          "opponent": "KC",
+          "position": "WR",
+          "ppg": 7.91
         }
       ]
     },
     "17": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 132.13,
+      "missing_projection": [
+        "James Conner"
+      ],
+      "ppg": 129.69,
       "starters": [
         {
           "id": "1166",
@@ -548,18 +560,18 @@
           "ppg": 7.45
         },
         {
-          "id": "5859",
-          "name": "A.J. Brown",
-          "opponent": "DEN",
-          "position": "WR",
-          "ppg": 10.53
-        },
-        {
           "id": "5872",
           "name": "Deebo Samuel Sr.",
           "opponent": "PHI",
           "position": "WR",
           "ppg": 8.2
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "opponent": "BUF",
+          "position": "WR",
+          "ppg": 8.09
         }
       ]
     }
