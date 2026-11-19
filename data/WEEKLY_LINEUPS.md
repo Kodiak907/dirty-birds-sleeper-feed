@@ -1,20 +1,20 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:33.600212+00:00
+Generated: 2026-11-19T18:59:57.506944+00:00 | Forecast as of: 2026-11-19T17:07:33.600212+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 11
 
-**Projected optimal score:** 113.35
+**Projected optimal score:** 121.55
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | IND | 20.31 |
 | Christian McCaffrey | RB | MIN | 18.11 |
 | Jonah Coleman | RB | LV | 15.77 |
+| Amon-Ra St. Brown | WR | TB | 15.49 |
 | Zay Flowers | WR | CAR | 12.38 |
-| Deebo Samuel Sr. | WR | MIN | 7.29 |
 | Isaiah Likely | TE | JAX | 12.16 |
 | Will Reichard | K | SF | 7.05 |
 | Minnesota Vikings | DEF | SF | 6.01 |
@@ -23,7 +23,7 @@ Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:3
 
 ## Week 12
 
-**Projected optimal score:** 125.40
+**Projected optimal score:** 135.33
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -31,16 +31,16 @@ Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:3
 | Christian McCaffrey | RB | SEA | 16.28 |
 | Jonah Coleman | RB | PIT | 12.92 |
 | Jaxon Smith-Njigba | WR | SF | 21.03 |
-| Zay Flowers | WR | HOU | 13.46 |
+| Amon-Ra St. Brown | WR | CHI | 16.99 |
 | Isaiah Likely | TE | IND | 12.16 |
 | Will Reichard | K | ATL | 7.40 |
 | Minnesota Vikings | DEF | ATL | 7.54 |
+| Zay Flowers | WR | HOU | 13.46 |
 | Caleb Douglas | WR | NYJ | 8.36 |
-| Deebo Samuel Sr. | WR | SEA | 7.06 |
 
 ## Week 13
 
-**Projected optimal score:** 124.30
+**Projected optimal score:** 131.90
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -48,7 +48,7 @@ Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:3
 | Christian McCaffrey | RB | NYG | 21.02 |
 | Jonah Coleman | RB | MIA | 13.61 |
 | Jaxon Smith-Njigba | WR | DAL | 22.54 |
-| Deebo Samuel Sr. | WR | NYG | 8.54 |
+| Amon-Ra St. Brown | WR | ATL | 16.14 |
 | Isaiah Likely | TE | SF | 10.75 |
 | Will Reichard | K | CAR | 7.13 |
 | Minnesota Vikings | DEF | CAR | 7.40 |
@@ -57,7 +57,7 @@ Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:3
 
 ## Week 14
 
-**Projected optimal score:** 126.67
+**Projected optimal score:** 136.13
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -65,62 +65,62 @@ Generated: 2026-11-19T17:07:37.438171+00:00 | Forecast as of: 2026-11-19T17:07:3
 | Christian McCaffrey | RB | LA | 18.37 |
 | Jonah Coleman | RB | NYJ | 12.55 |
 | Jaxon Smith-Njigba | WR | NYG | 21.12 |
-| Zay Flowers | WR | TB | 14.09 |
+| Amon-Ra St. Brown | WR | TEN | 17.29 |
 | Isaiah Likely | TE | SEA | 10.12 |
 | Will Reichard | K | NE | 6.70 |
 | Minnesota Vikings | DEF | NE | 6.47 |
+| Zay Flowers | WR | TB | 14.09 |
 | Caleb Douglas | WR | CHI | 9.12 |
-| Deebo Samuel Sr. | WR | LA | 7.83 |
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 132.84
+**Projected optimal score:** 137.65
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Kirk Cousins | QB | DEN | 19.61 |
+| Bryce Young | QB | CIN | 18.31 |
 | Christian McCaffrey | RB | LAC | 21.24 |
 | Jonah Coleman | RB | LV | 14.48 |
 | Jaxon Smith-Njigba | WR | PHI | 20.80 |
-| Zay Flowers | WR | PIT | 14.48 |
+| Amon-Ra St. Brown | WR | MIN | 15.03 |
 | Isaiah Likely | TE | CLE | 10.60 |
 | Will Reichard | K | DET | 7.64 |
 | Minnesota Vikings | DEF | DET | 6.66 |
-| Deebo Samuel Sr. | WR | LAC | 8.92 |
+| Zay Flowers | WR | PIT | 14.48 |
 | Caleb Douglas | WR | GB | 8.41 |
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 128.89
+**Projected optimal score:** 135.16
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Kirk Cousins | QB | TEN | 19.88 |
+| C.J. Stroud | QB | PHI | 17.76 |
 | Christian McCaffrey | RB | KC | 18.79 |
 | Jonah Coleman | RB | BUF | 12.62 |
 | Jaxon Smith-Njigba | WR | LA | 20.00 |
-| Zay Flowers | WR | CLE | 13.52 |
+| Amon-Ra St. Brown | WR | NYG | 16.30 |
 | Isaiah Likely | TE | DET | 11.98 |
 | Will Reichard | K | WAS | 7.67 |
 | Minnesota Vikings | DEF | WAS | 7.50 |
+| Zay Flowers | WR | CLE | 13.52 |
 | Caleb Douglas | WR | LAC | 9.02 |
-| Deebo Samuel Sr. | WR | KC | 7.91 |
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 129.69
+**Projected optimal score:** 136.13
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| Kirk Cousins | QB | ARI | 18.97 |
+| C.J. Stroud | QB | GB | 16.19 |
 | Christian McCaffrey | RB | PHI | 19.66 |
 | Jonah Coleman | RB | NE | 13.26 |
 | Jaxon Smith-Njigba | WR | CAR | 20.32 |
-| Zay Flowers | WR | CIN | 14.85 |
+| Amon-Ra St. Brown | WR | CHI | 17.42 |
 | Isaiah Likely | TE | DAL | 12.08 |
 | Will Reichard | K | NYJ | 6.81 |
 | Minnesota Vikings | DEF | NYJ | 7.45 |
-| Deebo Samuel Sr. | WR | PHI | 8.20 |
+| Zay Flowers | WR | CIN | 14.85 |
 | Caleb Douglas | WR | BUF | 8.09 |
 
 ## Prediction tracking and calibration

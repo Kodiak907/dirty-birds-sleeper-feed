@@ -1,11 +1,11 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-19T17:07:26.166064+00:00
+Updated: 2026-11-19T18:59:47.061132+00:00
 League: 1399157532559192064
 NFL week: 11
 
 ## All rosters / records
-- Roster 1: Dirty Birds | 7-3 | FAAB used: 220
+- Roster 1: Dirty Birds | 7-3 | FAAB used: 205
 - Roster 2: CREAM MACHINE  | 4-6 | FAAB used: 68
 - Roster 3: BigOlBoyle | 2-8 | FAAB used: 0
 - Roster 4: DANGER CLOSE  | 4-6 | FAAB used: 85
@@ -16,12 +16,15 @@ NFL week: 11
 - Roster 9: To Infinity and Bijan | 4-6 | FAAB used: 100
 - Roster 10: EmanAndYoMomma | 2-8 | FAAB used: 0
 - Roster 11: suck my dickerson | 7-3 | FAAB used: 0
-- Roster 12: Cokerthestroker | 6-4 | FAAB used: 133
+- Roster 12: Cokerthestroker | 6-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 12: added Brevyn Spann-Ford; dropped Green Bay Packers
+- Roster 1: added Brevyn Spann-Ford, Amon-Ra St. Brown, Bryce Young; dropped Kirk Cousins, Deebo Samuel Sr., Michael Mayer
+- lineup_change â roster/transaction 1
+- lineup_change â roster/transaction 9
+- Roster 12: added Kirk Cousins, Deebo Samuel Sr., Michael Mayer; dropped Brevyn Spann-Ford, Amon-Ra St. Brown, Bryce Young
 - lineup_change â roster/transaction 12
-- Transaction 1429185287044493312: free_agent / complete / rosters [12] / adds {'11593': 12} / drops {'GB': 12} / FAAB bid None
+- Transaction 1429199362788954112: trade / complete / rosters [1, 12] / adds {'11593': 1, '1166': 12, '5872': 12, '7547': 1, '9228': 1, '9482': 12} / drops {'11593': 12, '1166': 1, '5872': 1, '7547': 12, '9228': 12, '9482': 1} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

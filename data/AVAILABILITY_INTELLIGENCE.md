@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-19T17:07:38.128293+00:00
-Sleeper snapshot: 2026-11-19T17:07:26.166064+00:00
-nflverse observations: 2026-11-19T17:07:31.866785+00:00; injury feed loaded: True
+Generated: 2026-11-19T18:59:58.116475+00:00
+Sleeper snapshot: 2026-11-19T18:59:47.061132+00:00
+nflverse observations: 2026-11-19T18:59:52.934239+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -10,7 +10,7 @@ nflverse observations: 2026-11-19T17:07:31.866785+00:00; injury feed loaded: Tru
 
 | Player | Sleeper injury tag | Official report observation | Snap % (last 3 appearances) | Notes |
 |---|---|---|---:|---|
-| Kirk Cousins | No tag | No matched report (not clearance) | 100.0% | Verify current status before kickoff |
+| Brevyn Spann-Ford | No tag | Week 10 observation: Full Participation in Practice | 74.7% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Pat Bryant | IR | Week 9 observation: Questionable, Full Participation in Practice, Ankle | 58.0% | Verify official NFL roster and game status before lineup decisions |
 | Caleb Douglas | No tag | Week 11 observation: Limited Participation in Practice | 81.3% | Verify current status before kickoff |
@@ -20,10 +20,10 @@ nflverse observations: 2026-11-19T17:07:31.866785+00:00; injury feed loaded: Tru
 | Seth McGowan | No tag | No matched report (not clearance) | 28.3% | Verify current status before kickoff |
 | Christian McCaffrey | No tag | Week 11 observation: Did Not Participate In Practice | 60.0% | Verify current status before kickoff |
 | James Conner | IR | No matched report (not clearance) | — | Verify official NFL roster and game status before lineup decisions |
-| Deebo Samuel Sr. | Out | Week 10 observation: Full Participation in Practice | — | Verify official NFL roster and game status before lineup decisions |
 | Michael Pittman Jr. | IR | No matched report (not clearance) | 77.7% | Verify official NFL roster and game status before lineup decisions |
+| Amon-Ra St. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Rib | 71.0% | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 83.0% | Verify current status before kickoff |
-| Michael Mayer | No tag | No matched report (not clearance) | 79.3% | Verify current status before kickoff |
+| Bryce Young | No tag | Week 11 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 82.7% | Verify current status before kickoff |
 | Tank Dell | IR | Week 11 observation: Full Participation in Practice | 39.7% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |

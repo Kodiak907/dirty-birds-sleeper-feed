@@ -1,15 +1,14 @@
 {
   "added_starters": [
     "Seth McGowan",
-    "Antonio Williams",
-    "Michael Mayer"
+    "Antonio Williams"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 113.35,
+    "ppg": 121.55,
     "starters": [
       {
         "id": "9758",
@@ -30,16 +29,16 @@
         "ppg": 15.77
       },
       {
+        "id": "7547",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "ppg": 15.49
+      },
+      {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
         "ppg": 12.38
-      },
-      {
-        "id": "5872",
-        "name": "Deebo Samuel Sr.",
-        "position": "WR",
-        "ppg": 7.29
       },
       {
         "id": "8131",
@@ -73,22 +72,21 @@
       }
     ]
   },
-  "difference_ppg": -11.6,
+  "difference_ppg": -10.76,
   "explicit_excluded_ids": [
     "12492",
     "13345",
     "4137",
-    "5872",
     "6819",
     "9502"
   ],
-  "generated_at_utc": "2026-11-19T17:07:39.457167+00:00",
+  "generated_at_utc": "2026-11-19T18:59:59.198903+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 101.75,
+    "ppg": 110.79,
     "starters": [
       {
         "id": "9758",
@@ -109,16 +107,16 @@
         "ppg": 5.37
       },
       {
+        "id": "7547",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "ppg": 15.49
+      },
+      {
         "id": "9997",
         "name": "Zay Flowers",
         "position": "WR",
         "ppg": 12.38
-      },
-      {
-        "id": "13296",
-        "name": "Caleb Douglas",
-        "position": "WR",
-        "ppg": 7.26
       },
       {
         "id": "8131",
@@ -139,16 +137,16 @@
         "ppg": 6.01
       },
       {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 7.26
+      },
+      {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
         "ppg": 6.65
-      },
-      {
-        "id": "9482",
-        "name": "Michael Mayer",
-        "position": "TE",
-        "ppg": 6.45
       }
     ]
   },
@@ -161,9 +159,9 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "1166",
+      "id": "11593",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Kirk Cousins",
+      "name": "Brevyn Spann-Ford",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -250,20 +248,20 @@
     },
     {
       "availability_verified": false,
-      "fantasy_reserve": false,
-      "id": "5872",
-      "model_handling": "exclude_explicit_unavailable_tag",
-      "name": "Deebo Samuel Sr.",
-      "sleeper_injury_status": "Out",
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
       "fantasy_reserve": true,
       "id": "6819",
       "model_handling": "exclude_explicit_unavailable_tag",
       "name": "Michael Pittman Jr.",
       "sleeper_injury_status": "IR",
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
+      "id": "7547",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Amon-Ra St. Brown",
+      "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
     {
@@ -278,9 +276,9 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "9482",
+      "id": "9228",
       "model_handling": "unverified_no_hard_exclusion",
-      "name": "Michael Mayer",
+      "name": "Bryce Young",
       "sleeper_injury_status": null,
       "status_source": "Sleeper metadata, not official gameday inactive list"
     },
@@ -333,13 +331,12 @@
   "players_needing_review": [],
   "removed_starters": [
     "Jonah Coleman",
-    "Deebo Samuel Sr.",
     "Pat Bryant"
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-19T17:07:26.166064+00:00",
-  "source_availability_generated_at_utc": "2026-11-19T17:07:38.128293+00:00",
+  "snapshot_utc": "2026-11-19T18:59:47.061132+00:00",
+  "source_availability_generated_at_utc": "2026-11-19T18:59:58.116475+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

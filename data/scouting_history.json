@@ -1399,5 +1399,64 @@
       }
     ],
     "source_snapshot_utc": "2026-11-19T17:07:26.166064+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-19T18:59:53.461322+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [
+      {
+        "faab_transfers": [
+          {
+            "amount": 15,
+            "receiver": 1,
+            "sender": 12
+          }
+        ],
+        "id": "1429199362788954112",
+        "players_received": {
+          "Amon-Ra St. Brown": "Dirty Birds",
+          "Brevyn Spann-Ford": "Dirty Birds",
+          "Bryce Young": "Dirty Birds",
+          "Deebo Samuel Sr.": "Cokerthestroker",
+          "Kirk Cousins": "Cokerthestroker",
+          "Michael Mayer": "Cokerthestroker"
+        },
+        "roster_ids": [
+          1,
+          12
+        ]
+      }
+    ],
+    "roster_changes": [
+      {
+        "adds": [
+          "Brevyn Spann-Ford",
+          "Amon-Ra St. Brown",
+          "Bryce Young"
+        ],
+        "drops": [
+          "Kirk Cousins",
+          "Deebo Samuel Sr.",
+          "Michael Mayer"
+        ],
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      },
+      {
+        "adds": [
+          "Kirk Cousins",
+          "Deebo Samuel Sr.",
+          "Michael Mayer"
+        ],
+        "drops": [
+          "Brevyn Spann-Ford",
+          "Amon-Ra St. Brown",
+          "Bryce Young"
+        ],
+        "roster_id": 12,
+        "team": "Cokerthestroker"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-19T18:59:47.061132+00:00"
   }
 ]

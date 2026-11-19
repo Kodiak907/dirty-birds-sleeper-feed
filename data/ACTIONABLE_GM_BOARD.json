@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-19T17:07:32.779275+00:00",
-  "roster_snapshot_utc": "2026-11-19T17:07:26.166064+00:00",
+  "generated_at_utc": "2026-11-19T18:59:54.042183+00:00",
+  "roster_snapshot_utc": "2026-11-19T18:59:47.061132+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
@@ -143,7 +143,7 @@
         "Partial projection coverage"
       ],
       "hypothetical_drop": "Pat Bryant",
-      "modeled_starter_gain_ppg": 1.36,
+      "modeled_starter_gain_ppg": 1.01,
       "not_yet_verified": [
         "current waiver lock",
         "official game availability",
@@ -155,9 +155,30 @@
       "research_tier": "depth candidate",
       "source_player_id": "5859",
       "team": "NE"
+    },
+    {
+      "bench_depth_difference_ppg": 5.68,
+      "coach_authorization_required": true,
+      "drop_id": "11593",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Brevyn Spann-Ford",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Darren Waller",
+      "position": "TE",
+      "research_tier": "depth candidate",
+      "source_player_id": "2505",
+      "team": "CAR"
     }
   ],
-  "waiver_screened_count": 1,
+  "waiver_screened_count": 2,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",

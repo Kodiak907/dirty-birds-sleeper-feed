@@ -1,17 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-19T17:07:32.191291+00:00
-Sleeper snapshot: 2026-11-19T17:07:26.166064+00:00
+Generated: 2026-11-19T18:59:53.421554+00:00
+Sleeper snapshot: 2026-11-19T18:59:47.061132+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
 **1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1429185287044493312` · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Cokerthestroker (#12) | Dropped: Green Bay Packers → Cokerthestroker (#12)
+- **NEW** · transaction `1429199362788954112` · TRADE · COMPLETE · Dirty Birds (#1), Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Dirty Birds (#1), Kirk Cousins → Cokerthestroker (#12), Deebo Samuel Sr. → Cokerthestroker (#12), Amon-Ra St. Brown → Dirty Birds (#1), Bryce Young → Dirty Birds (#1), Michael Mayer → Cokerthestroker (#12) | Dropped: Brevyn Spann-Ford → Cokerthestroker (#12), Kirk Cousins → Dirty Birds (#1), Deebo Samuel Sr. → Dirty Birds (#1), Amon-Ra St. Brown → Cokerthestroker (#12), Bryce Young → Cokerthestroker (#12), Michael Mayer → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-19T18:59:53.421554+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Dirty Birds (#1), Kirk Cousins → Cokerthestroker (#12), Deebo Samuel Sr. → Cokerthestroker (#12), Amon-Ra St. Brown → Dirty Birds (#1), Bryce Young → Dirty Birds (#1), Michael Mayer → Cokerthestroker (#12) | Dropped: Brevyn Spann-Ford → Cokerthestroker (#12), Kirk Cousins → Dirty Birds (#1), Deebo Samuel Sr. → Dirty Birds (#1), Amon-Ra St. Brown → Cokerthestroker (#12), Bryce Young → Cokerthestroker (#12), Michael Mayer → Dirty Birds (#1)
 - 2026-11-19T17:07:32.191291+00:00 · new_transaction · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Cokerthestroker (#12) | Dropped: Green Bay Packers → Cokerthestroker (#12)
 - 2026-11-18T19:59:20.907462+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Chase McLaughlin →     Victorious Secret (#5)
 - 2026-11-18T16:00:03.957294+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Pittman Jr. → Dirty Birds (#1)
@@ -36,7 +37,6 @@ League: 1399157532559192064
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Dominic Zvada →     Victorious Secret (#5)
-- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE · EmanAndYoMomma (#10) | Added: Austin Ekeler → EmanAndYoMomma (#10) | Dropped: Tre Tucker → EmanAndYoMomma (#10)
 
 ## Important limits
 

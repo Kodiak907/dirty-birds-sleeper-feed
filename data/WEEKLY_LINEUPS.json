@@ -8,12 +8,12 @@
     "4137",
     "6819"
   ],
-  "generated_at_utc": "2026-11-19T17:07:37.438171+00:00",
+  "generated_at_utc": "2026-11-19T18:59:57.506944+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-19T17:07:33.600212+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-19T17:07:26.166064+00:00",
+  "snapshot_utc": "2026-11-19T18:59:47.061132+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -26,7 +26,7 @@
       "missing_projection": [
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 113.35,
+      "ppg": 121.55,
       "starters": [
         {
           "id": "9758",
@@ -50,18 +50,18 @@
           "ppg": 15.77
         },
         {
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "TB",
+          "position": "WR",
+          "ppg": 15.49
+        },
+        {
           "id": "9997",
           "name": "Zay Flowers",
           "opponent": "CAR",
           "position": "WR",
           "ppg": 12.38
-        },
-        {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "MIN",
-          "position": "WR",
-          "ppg": 7.29
         },
         {
           "id": "8131",
@@ -103,7 +103,7 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 125.4,
+      "ppg": 135.33,
       "starters": [
         {
           "id": "9758",
@@ -134,11 +134,11 @@
           "ppg": 21.03
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "HOU",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "CHI",
           "position": "WR",
-          "ppg": 13.46
+          "ppg": 16.99
         },
         {
           "id": "8131",
@@ -162,18 +162,18 @@
           "ppg": 7.54
         },
         {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "HOU",
+          "position": "WR",
+          "ppg": 13.46
+        },
+        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "NYJ",
           "position": "WR",
           "ppg": 8.36
-        },
-        {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "SEA",
-          "position": "WR",
-          "ppg": 7.06
         }
       ]
     },
@@ -181,10 +181,9 @@
       "complete": true,
       "missing_projection": [
         "Seth McGowan",
-        "Michael Mayer",
         "Zay Flowers"
       ],
-      "ppg": 124.3,
+      "ppg": 131.9,
       "starters": [
         {
           "id": "9758",
@@ -215,11 +214,11 @@
           "ppg": 22.54
         },
         {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "NYG",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "ATL",
           "position": "WR",
-          "ppg": 8.54
+          "ppg": 16.14
         },
         {
           "id": "8131",
@@ -260,8 +259,10 @@
     },
     "14": {
       "complete": true,
-      "missing_projection": [],
-      "ppg": 126.67,
+      "missing_projection": [
+        "Brevyn Spann-Ford"
+      ],
+      "ppg": 136.13,
       "starters": [
         {
           "id": "9758",
@@ -292,11 +293,11 @@
           "ppg": 21.12
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "TB",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "TEN",
           "position": "WR",
-          "ppg": 14.09
+          "ppg": 17.29
         },
         {
           "id": "8131",
@@ -320,32 +321,32 @@
           "ppg": 6.47
         },
         {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "TB",
+          "position": "WR",
+          "ppg": 14.09
+        },
+        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "CHI",
           "position": "WR",
           "ppg": 9.12
-        },
-        {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "LA",
-          "position": "WR",
-          "ppg": 7.83
         }
       ]
     },
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 132.84,
+      "ppg": 137.65,
       "starters": [
         {
-          "id": "1166",
-          "name": "Kirk Cousins",
-          "opponent": "DEN",
+          "id": "9228",
+          "name": "Bryce Young",
+          "opponent": "CIN",
           "position": "QB",
-          "ppg": 19.61
+          "ppg": 18.31
         },
         {
           "id": "4034",
@@ -369,11 +370,11 @@
           "ppg": 20.8
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "PIT",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "MIN",
           "position": "WR",
-          "ppg": 14.48
+          "ppg": 15.03
         },
         {
           "id": "8131",
@@ -397,11 +398,11 @@
           "ppg": 6.66
         },
         {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "LAC",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "PIT",
           "position": "WR",
-          "ppg": 8.92
+          "ppg": 14.48
         },
         {
           "id": "13296",
@@ -415,14 +416,14 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 128.89,
+      "ppg": 135.16,
       "starters": [
         {
-          "id": "1166",
-          "name": "Kirk Cousins",
-          "opponent": "TEN",
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "opponent": "PHI",
           "position": "QB",
-          "ppg": 19.88
+          "ppg": 17.76
         },
         {
           "id": "4034",
@@ -446,11 +447,11 @@
           "ppg": 20.0
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CLE",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "NYG",
           "position": "WR",
-          "ppg": 13.52
+          "ppg": 16.3
         },
         {
           "id": "8131",
@@ -474,32 +475,32 @@
           "ppg": 7.5
         },
         {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CLE",
+          "position": "WR",
+          "ppg": 13.52
+        },
+        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "LAC",
           "position": "WR",
           "ppg": 9.02
-        },
-        {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "KC",
-          "position": "WR",
-          "ppg": 7.91
         }
       ]
     },
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 129.69,
+      "ppg": 136.13,
       "starters": [
         {
-          "id": "1166",
-          "name": "Kirk Cousins",
-          "opponent": "ARI",
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "opponent": "GB",
           "position": "QB",
-          "ppg": 18.97
+          "ppg": 16.19
         },
         {
           "id": "4034",
@@ -523,11 +524,11 @@
           "ppg": 20.32
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CIN",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "opponent": "CHI",
           "position": "WR",
-          "ppg": 14.85
+          "ppg": 17.42
         },
         {
           "id": "8131",
@@ -551,11 +552,11 @@
           "ppg": 7.45
         },
         {
-          "id": "5872",
-          "name": "Deebo Samuel Sr.",
-          "opponent": "PHI",
+          "id": "9997",
+          "name": "Zay Flowers",
+          "opponent": "CIN",
           "position": "WR",
-          "ppg": 8.2
+          "ppg": 14.85
         },
         {
           "id": "13296",
