@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-19T18:59:47.061132+00:00
+Updated: 2026-11-19T20:05:39.305049+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,12 +19,7 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 1: added Brevyn Spann-Ford, Amon-Ra St. Brown, Bryce Young; dropped Kirk Cousins, Deebo Samuel Sr., Michael Mayer
-- lineup_change â roster/transaction 1
-- lineup_change â roster/transaction 9
-- Roster 12: added Kirk Cousins, Deebo Samuel Sr., Michael Mayer; dropped Brevyn Spann-Ford, Amon-Ra St. Brown, Bryce Young
-- lineup_change â roster/transaction 12
-- Transaction 1429199362788954112: trade / complete / rosters [1, 12] / adds {'11593': 1, '1166': 12, '5872': 12, '7547': 1, '9228': 1, '9482': 12} / drops {'11593': 12, '1166': 1, '5872': 1, '7547': 12, '9228': 12, '9482': 1} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
