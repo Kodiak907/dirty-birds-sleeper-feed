@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-19T14:56:30.506751+00:00
+Generated: 2026-11-19T15:59:46.900417+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -18,7 +18,6 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- C.J. Stroud, Caleb Douglas for Ashton Jeanty: Overpays in outgoing assets for a marginal gain
 - Kirk Cousins for Rome Odunze: Opponent has insufficient demonstrated benefit
 - Kirk Cousins, Zay Flowers for Josh Allen: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
 
