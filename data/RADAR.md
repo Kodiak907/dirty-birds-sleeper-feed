@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-19T15:59:46.298148+00:00
-Sleeper snapshot: 2026-11-19T15:59:38.298876+00:00
+Generated: 2026-11-19T17:07:32.191291+00:00
+Sleeper snapshot: 2026-11-19T17:07:26.166064+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1429185287044493312` · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Cokerthestroker (#12) | Dropped: Green Bay Packers → Cokerthestroker (#12)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-19T17:07:32.191291+00:00 · new_transaction · FREE_AGENT · COMPLETE · Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Cokerthestroker (#12) | Dropped: Green Bay Packers → Cokerthestroker (#12)
 - 2026-11-18T19:59:20.907462+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Chase McLaughlin →     Victorious Secret (#5)
 - 2026-11-18T16:00:03.957294+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Michael Pittman Jr. → Dirty Birds (#1)
 - 2026-11-18T14:56:16.502319+00:00 · new_transaction · FREE_AGENT · COMPLETE · suck my dickerson (#11) | Added: Xavier Hutchinson → suck my dickerson (#11) | Dropped: Tampa Bay Buccaneers → suck my dickerson (#11)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Efton Chism III →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Dominic Zvada →     Victorious Secret (#5)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE · EmanAndYoMomma (#10) | Added: Austin Ekeler → EmanAndYoMomma (#10) | Dropped: Tre Tucker → EmanAndYoMomma (#10)
-- 2026-11-12T02:52:24.860301+00:00 · new_transaction · FREE_AGENT · COMPLETE · BigOlBoyle (#3) | Dropped: Los Angeles Chargers → BigOlBoyle (#3)
 
 ## Important limits
 

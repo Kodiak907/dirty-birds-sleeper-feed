@@ -25,7 +25,7 @@
       "ppg": 4.096
     }
   },
-  "generated_at_utc": "2026-11-19T15:59:46.663589+00:00",
+  "generated_at_utc": "2026-11-19T17:07:32.552608+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -160,6 +160,28 @@
         "screen_only": true,
         "sleeper_id": "CLE",
         "team": "CLE"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.857,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Green Bay Packers",
+        "ppg": 5.53,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.004
+        },
+        "same_position_uplift_ppg": -1.47,
+        "screen_only": true,
+        "sleeper_id": "GB",
+        "team": "GB"
       },
       {
         "audit": {
@@ -1434,5 +1456,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-19T15:59:38.298876+00:00"
+  "snapshot_utc": "2026-11-19T17:07:26.166064+00:00"
 }

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-19T15:59:46.796705+00:00
+Generated: 2026-11-19T17:07:32.681461+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections and injury status require manual verification.
@@ -77,11 +77,12 @@ Baseline illustrative optimal PPG: **122.66**. Weeks with partial projections an
 | 4 | New Orleans Saints | 5.71 | Bench-depth scenario: Pat Bryant | +0.00 | -1.51 | No sourced usage |
 | 5 | New York Giants | 5.69 | Bench-depth scenario: Pat Bryant | +0.00 | -1.53 | No sourced usage |
 | 6 | Cleveland Browns | 5.65 | Bench-depth scenario: Pat Bryant | +0.00 | -1.57 | No sourced usage; Partial projection coverage |
-| 7 | Los Angeles Chargers | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.82 | No sourced usage |
-| 8 | New England Patriots | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.82 | No sourced usage; Partial projection coverage |
-| 9 | Indianapolis Colts | 5.18 | Bench-depth scenario: Pat Bryant | +0.00 | -2.04 | No sourced usage; Partial projection coverage |
-| 10 | Tennessee Titans | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -2.07 | No sourced usage |
-| 11 | New York Jets | 5.12 | Bench-depth scenario: Pat Bryant | +0.00 | -2.10 | No sourced usage; Partial projection coverage |
+| 7 | Green Bay Packers | 5.53 | Bench-depth scenario: Pat Bryant | +0.00 | -1.68 | No sourced usage; Partial projection coverage |
+| 8 | Los Angeles Chargers | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.82 | No sourced usage |
+| 9 | New England Patriots | 5.40 | Bench-depth scenario: Pat Bryant | +0.00 | -1.82 | No sourced usage; Partial projection coverage |
+| 10 | Indianapolis Colts | 5.18 | Bench-depth scenario: Pat Bryant | +0.00 | -2.04 | No sourced usage; Partial projection coverage |
+| 11 | Tennessee Titans | 5.15 | Bench-depth scenario: Pat Bryant | +0.00 | -2.07 | No sourced usage |
+| 12 | New York Jets | 5.12 | Bench-depth scenario: Pat Bryant | +0.00 | -2.10 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 

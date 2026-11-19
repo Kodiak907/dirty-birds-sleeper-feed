@@ -77,11 +77,12 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 4 | New Orleans Saints | 5.71 | -1.29 | — | — | No modeled flags (not medically cleared) |
 | 5 | New York Giants | 5.69 | -1.31 | — | — | No modeled flags (not medically cleared) |
 | 6 | Cleveland Browns | 5.65 | -1.36 | — | — | No modeled flags (not medically cleared) |
-| 7 | Los Angeles Chargers | 5.40 | -1.60 | — | — | No modeled flags (not medically cleared) |
-| 8 | New England Patriots | 5.40 | -1.61 | — | — | No modeled flags (not medically cleared) |
-| 9 | Indianapolis Colts | 5.18 | -1.82 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tennessee Titans | 5.15 | -1.85 | — | — | No modeled flags (not medically cleared) |
-| 11 | New York Jets | 5.12 | -1.88 | — | — | No modeled flags (not medically cleared) |
+| 7 | Green Bay Packers | 5.53 | -1.47 | — | — | No modeled flags (not medically cleared) |
+| 8 | Los Angeles Chargers | 5.40 | -1.60 | — | — | No modeled flags (not medically cleared) |
+| 9 | New England Patriots | 5.40 | -1.61 | — | — | No modeled flags (not medically cleared) |
+| 10 | Indianapolis Colts | 5.18 | -1.82 | — | — | No modeled flags (not medically cleared) |
+| 11 | Tennessee Titans | 5.15 | -1.85 | — | — | No modeled flags (not medically cleared) |
+| 12 | New York Jets | 5.12 | -1.88 | — | — | No modeled flags (not medically cleared) |
 
 ## Decision gates
 

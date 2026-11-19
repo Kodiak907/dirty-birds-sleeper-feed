@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-19T15:59:46.342515+00:00
-Sleeper snapshot: 2026-11-19T15:59:38.298876+00:00
+Generated: 2026-11-19T17:07:32.229966+00:00
+Sleeper snapshot: 2026-11-19T17:07:26.166064+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- Cokerthestroker: added Brevyn Spann-Ford; dropped Green Bay Packers
 
 ## Limits
 

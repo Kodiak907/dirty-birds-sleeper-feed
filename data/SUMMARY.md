@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-19T15:59:38.298876+00:00
+Updated: 2026-11-19T17:07:26.166064+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,7 +19,9 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 133
 
 ## Changes detected in this run
-- lineup_change â roster/transaction 7
+- Roster 12: added Brevyn Spann-Ford; dropped Green Bay Packers
+- lineup_change â roster/transaction 12
+- Transaction 1429185287044493312: free_agent / complete / rosters [12] / adds {'11593': 12} / drops {'GB': 12} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
