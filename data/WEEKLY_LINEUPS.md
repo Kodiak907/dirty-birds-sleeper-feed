@@ -1,41 +1,41 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-19T03:58:27.219996+00:00 | Forecast as of: 2026-11-18T17:06:33.703266+00:00
+Generated: 2026-11-19T05:06:41.899335+00:00 | Forecast as of: 2026-11-19T05:06:38.324610+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 11
 
-**Projected optimal score:** 113.46
+**Projected optimal score:** 113.37
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 20.43 |
-| Christian McCaffrey | RB | MIN | 17.93 |
+| C.J. Stroud | QB | IND | 20.11 |
+| Christian McCaffrey | RB | MIN | 18.04 |
 | Jonah Coleman | RB | LV | 15.77 |
-| Zay Flowers | WR | CAR | 12.37 |
-| Caleb Douglas | WR | BUF | 7.38 |
-| Isaiah Likely | TE | JAX | 12.43 |
-| Will Reichard | K | SF | 6.96 |
-| Minnesota Vikings | DEF | SF | 5.96 |
-| Deebo Samuel Sr. | WR | MIN | 7.22 |
+| Zay Flowers | WR | CAR | 12.38 |
+| Caleb Douglas | WR | BUF | 7.43 |
+| Isaiah Likely | TE | JAX | 12.27 |
+| Will Reichard | K | SF | 7.05 |
+| Minnesota Vikings | DEF | SF | 6.01 |
+| Deebo Samuel Sr. | WR | MIN | 7.30 |
 | Pat Bryant | WR | LV | 7.01 |
 
 ## Week 12
 
-**Projected optimal score:** 124.89
+**Projected optimal score:** 125.35
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 18.91 |
+| C.J. Stroud | QB | BAL | 19.19 |
 | Christian McCaffrey | RB | SEA | 16.29 |
-| Jonah Coleman | RB | PIT | 12.94 |
+| Jonah Coleman | RB | PIT | 12.92 |
 | Jaxon Smith-Njigba | WR | SF | 20.96 |
-| Zay Flowers | WR | HOU | 13.35 |
-| Isaiah Likely | TE | IND | 12.06 |
+| Zay Flowers | WR | HOU | 13.46 |
+| Isaiah Likely | TE | IND | 12.16 |
 | Will Reichard | K | ATL | 7.40 |
 | Minnesota Vikings | DEF | ATL | 7.54 |
-| Caleb Douglas | WR | NYJ | 8.38 |
+| Caleb Douglas | WR | NYJ | 8.37 |
 | Deebo Samuel Sr. | WR | SEA | 7.06 |
 
 ## Week 13

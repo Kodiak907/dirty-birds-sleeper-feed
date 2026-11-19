@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-19T03:58:26.273594+00:00",
-  "candidates_evaluated": 59670,
-  "market_matched": 6975,
+  "generated_at_utc": "2026-11-19T05:06:40.948086+00:00",
+  "candidates_evaluated": 58890,
+  "market_matched": 6888,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-19T03:58:23.698965+00:00",
-  "projection_as_of": "2026-11-18T17:06:33.703266+00:00",
+  "projection_as_of": "2026-11-19T05:06:38.324610+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -33,12 +33,12 @@
         }
       ],
       "our_gain": 3.86,
-      "their_gain": 1.71,
+      "their_gain": 1.7,
       "market_paid_received_ratio": 0.957,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Audric Estime",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.758,
+      "score": 4.752,
       "not_an_approved_offer": true
     },
     {
@@ -69,12 +69,12 @@
         }
       ],
       "our_gain": 3.86,
-      "their_gain": 1.71,
+      "their_gain": 1.7,
       "market_paid_received_ratio": 0.857,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 4.457,
+      "score": 4.451,
       "not_an_approved_offer": true
     },
     {
@@ -105,12 +105,12 @@
         }
       ],
       "our_gain": 3.81,
-      "their_gain": 0.74,
+      "their_gain": 0.73,
       "market_paid_received_ratio": 0.859,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.83,
+      "score": 3.824,
       "not_an_approved_offer": true
     },
     {
@@ -140,13 +140,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 2.45,
-      "their_gain": 1.92,
+      "our_gain": 2.43,
+      "their_gain": 1.93,
       "market_paid_received_ratio": 0.997,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.593,
+      "score": 3.579,
       "not_an_approved_offer": true
     },
     {
@@ -171,13 +171,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.45,
-      "their_gain": 1.67,
+      "our_gain": 2.44,
+      "their_gain": 1.63,
       "market_paid_received_ratio": 0.957,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Woody Marks",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.322,
+      "score": 3.288,
       "not_an_approved_offer": true
     },
     {
@@ -202,13 +202,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.78,
-      "their_gain": 0.95,
+      "our_gain": 2.76,
+      "their_gain": 0.93,
       "market_paid_received_ratio": 0.971,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Woody Marks",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.264,
+      "score": 3.232,
       "not_an_approved_offer": true
     },
     {
@@ -221,8 +221,8 @@
           "pos": "WR"
         },
         {
-          "id": "1166",
-          "name": "Kirk Cousins",
+          "id": "9758",
+          "name": "C.J. Stroud",
           "pos": "QB"
         }
       ],
@@ -233,13 +233,13 @@
           "pos": "RB"
         }
       ],
-      "our_gain": 2.8,
-      "their_gain": 0.53,
-      "market_paid_received_ratio": 0.949,
+      "our_gain": 2.83,
+      "their_gain": 0.52,
+      "market_paid_received_ratio": 1.028,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Hutchinson",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.964,
+      "score": 3.057,
       "not_an_approved_offer": true
     },
     {
@@ -252,8 +252,8 @@
           "pos": "WR"
         },
         {
-          "id": "1166",
-          "name": "Kirk Cousins",
+          "id": "9758",
+          "name": "C.J. Stroud",
           "pos": "QB"
         }
       ],
@@ -269,13 +269,13 @@
           "pos": "TE"
         }
       ],
-      "our_gain": 2.8,
-      "their_gain": 0.53,
-      "market_paid_received_ratio": 0.871,
+      "our_gain": 2.83,
+      "their_gain": 0.52,
+      "market_paid_received_ratio": 0.944,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.73,
+      "score": 2.974,
       "not_an_approved_offer": true
     },
     {
@@ -295,13 +295,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.98,
-      "their_gain": 0.67,
+      "our_gain": 1.99,
+      "their_gain": 0.64,
       "market_paid_received_ratio": 0.958,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.256,
+      "score": 2.248,
       "not_an_approved_offer": true
     },
     {
@@ -321,8 +321,8 @@
       ],
       "receive": [
         {
-          "id": "8228",
-          "name": "Jaylen Warren",
+          "id": "7588",
+          "name": "Javonte Williams",
           "pos": "RB"
         },
         {
@@ -331,13 +331,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.66,
-      "their_gain": 0.99,
-      "market_paid_received_ratio": 0.977,
+      "our_gain": 1.95,
+      "their_gain": 0.69,
+      "market_paid_received_ratio": 0.958,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.185,
+      "score": 2.238,
       "not_an_approved_offer": true
     }
   ],
