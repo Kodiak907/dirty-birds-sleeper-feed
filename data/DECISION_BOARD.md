@@ -19,7 +19,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Samaje Perine | 6.55 | +4.19 | 35.0% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 4.97 | +2.61 | 26.3% | Carries 4.7 | No modeled flags (not medically cleared) |
-| 3 | Tyjae Spears | 4.97 | +2.61 | 35.3% | Carries 2.3 | sleeper_injury_questionable, injury_report_observation_review |
+| 3 | Tyjae Spears | 4.97 | +2.61 | 35.3% | Carries 2.3 | sleeper_injury_questionable |
 | 4 | Zonovan Knight | 4.19 | +1.83 | 43.0% | — | carries_missing |
 | 5 | Tyrone Tracy Jr. | 3.53 | +1.18 | 24.0% | Carries 5.0 | projection_weeks_partial |
 | 6 | MarShawn Lloyd | 2.48 | +0.12 | 25.7% | Carries 4.3 | injury_report_observation_review |
@@ -39,12 +39,12 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 4 | Kalif Raymond | 5.93 | +1.84 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 5 | Makai Lemon | 5.71 | +1.62 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
 | 6 | Malachi Fields | 5.10 | +1.01 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 7 | Dontayvion Wicks | 4.77 | +0.67 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
+| 7 | Dontayvion Wicks | 4.77 | +0.67 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
 | 8 | Ja'Kobi Lane | 4.70 | +0.60 | 62.0% | Tgt 4.0 | injury_report_observation_review |
 | 9 | Rashid Shaheed | 4.27 | +0.18 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 10 | Tre' Harris | 4.10 | +0.00 | 77.3% | Tgt 5.0 | sleeper_injury_out |
 | 11 | Rashod Bateman | 4.06 | -0.04 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 12 | Chris Bell | 3.67 | -0.43 | 60.0% | Tgt 3.3 | injury_report_observation_review |
+| 12 | Chris Bell | 3.67 | -0.43 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Michael Mayer (5.25 PPG)
 
