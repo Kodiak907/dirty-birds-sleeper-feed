@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-20T07:22:00.301364+00:00
-Sleeper snapshot: 2026-11-20T07:21:51.958259+00:00
-nflverse observations: 2026-11-20T07:21:55.812382+00:00; injury feed loaded: True
+Generated: 2026-11-20T09:03:37.545862+00:00
+Sleeper snapshot: 2026-11-20T09:03:26.890035+00:00
+nflverse observations: 2026-11-20T09:03:32.573313+00:00; injury feed loaded: True
 
-**New observed changes:** 21. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,27 +32,8 @@ nflverse observations: 2026-11-20T07:21:55.812382+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Alvin Kamara** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Baker Mayfield** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '11'}
-- **Bhayshul Tuten** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '11'}
-- **Brock Bowers** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '11'}
-- **Bucky Irving** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '11'}
-- **Chig Okonkwo** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Chris Godwin Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '11'}
-- **Chuba Hubbard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Courtland Sutton** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Darnell Washington** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Darren Waller** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '11'}
-- **DeVonta Smith** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Jacory Croskey-Merritt** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Jayden Daniels** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Joe Burrow** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Mike Evans** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '11'}
-- **Stefon Diggs** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '11'}
-- **Tee Higgins** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '11'}
-- **Tony Pollard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '11'}
-- **Tyjae Spears** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '11'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
