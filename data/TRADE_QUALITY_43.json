@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-20T14:56:28.250044+00:00",
+  "generated_at_utc": "2026-11-20T15:57:47.524305+00:00",
   "candidates_evaluated": 59670,
-  "market_matched": 6903,
+  "market_matched": 6930,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-20T03:55:14.457887+00:00",
+  "market_as_of": "2026-11-20T15:12:31.304713+00:00",
   "projection_as_of": "2026-11-20T06:06:09.299560+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -34,11 +34,11 @@
       ],
       "our_gain": 2.21,
       "their_gain": 1.62,
-      "market_paid_received_ratio": 0.946,
+      "market_paid_received_ratio": 1.016,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Audric Estime",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.02,
+      "score": 3.134,
       "not_an_approved_offer": true
     },
     {
@@ -70,11 +70,47 @@
       ],
       "our_gain": 2.21,
       "their_gain": 1.62,
-      "market_paid_received_ratio": 0.853,
+      "market_paid_received_ratio": 0.909,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.741,
+      "score": 2.91,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 3,
+      "opponent_name": "BigOlBoyle",
+      "give": [
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR"
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "12490",
+          "name": "Bhayshul Tuten",
+          "pos": "RB"
+        },
+        {
+          "id": "12507",
+          "name": "Omarion Hampton",
+          "pos": "RB"
+        }
+      ],
+      "our_gain": 1.76,
+      "their_gain": 0.73,
+      "market_paid_received_ratio": 0.859,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 1.776,
       "not_an_approved_offer": true
     }
   ],
