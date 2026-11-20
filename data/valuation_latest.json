@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-20T20:00:26.180228+00:00",
+  "generated_at_utc": "2026-11-20T20:52:49.071012+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -35,9 +35,9 @@
   },
   "profiles": [
     {
-      "completed_trade_count": 14,
+      "completed_trade_count": 15,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 122.95,
+      "observed_optimal_average": 121.73,
       "observed_optimal_lineup": [
         {
           "avg": 13.93,
@@ -50,8 +50,8 @@
           "position": "RB"
         },
         {
-          "avg": 5.64,
-          "name": "Jonah Coleman",
+          "avg": 10.62,
+          "name": "Chase Brown",
           "position": "RB"
         },
         {
@@ -80,9 +80,9 @@
           "position": "DEF"
         },
         {
-          "avg": 11.84,
-          "name": "Zay Flowers",
-          "position": "WR"
+          "avg": 5.64,
+          "name": "Jonah Coleman",
+          "position": "RB"
         },
         {
           "avg": 4.98,
@@ -378,6 +378,28 @@
           ]
         },
         {
+          "actual_points_total": 106.2,
+          "actual_points_weekly_avg": 10.62,
+          "id": "9224",
+          "n_weeks": 10,
+          "name": "Chase Brown",
+          "nonzero_weeks": 9,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            16.3,
+            9.7,
+            7.9,
+            13.6,
+            5.5,
+            0.0,
+            7.8,
+            12.1,
+            9.0,
+            24.3
+          ]
+        },
+        {
           "actual_points_total": 126.24,
           "actual_points_weekly_avg": 12.62,
           "id": "9228",
@@ -463,28 +485,6 @@
             0.0,
             41.36,
             20.44
-          ]
-        },
-        {
-          "actual_points_total": 118.4,
-          "actual_points_weekly_avg": 11.84,
-          "id": "9997",
-          "n_weeks": 10,
-          "name": "Zay Flowers",
-          "nonzero_weeks": 8,
-          "on_fantasy_reserve": false,
-          "position": "WR",
-          "weekly_points": [
-            26.5,
-            0.0,
-            12.9,
-            21.8,
-            10.6,
-            9.7,
-            24.7,
-            0.0,
-            3.8,
-            8.4
           ]
         },
         {
@@ -626,6 +626,28 @@
               0.0,
               21.7,
               50.3
+            ]
+          },
+          {
+            "actual_points_total": 106.2,
+            "actual_points_weekly_avg": 10.62,
+            "id": "9224",
+            "n_weeks": 10,
+            "name": "Chase Brown",
+            "nonzero_weeks": 9,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              16.3,
+              9.7,
+              7.9,
+              13.6,
+              5.5,
+              0.0,
+              7.8,
+              12.1,
+              9.0,
+              24.3
             ]
           },
           {
@@ -806,28 +828,6 @@
               9.1,
               12.6,
               26.8
-            ]
-          },
-          {
-            "actual_points_total": 118.4,
-            "actual_points_weekly_avg": 11.84,
-            "id": "9997",
-            "n_weeks": 10,
-            "name": "Zay Flowers",
-            "nonzero_weeks": 8,
-            "on_fantasy_reserve": false,
-            "position": "WR",
-            "weekly_points": [
-              26.5,
-              0.0,
-              12.9,
-              21.8,
-              10.6,
-              9.7,
-              24.7,
-              0.0,
-              3.8,
-              8.4
             ]
           },
           {
@@ -3859,9 +3859,9 @@
       "team": "DANGER CLOSE"
     },
     {
-      "completed_trade_count": 4,
+      "completed_trade_count": 5,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 109.14,
+      "observed_optimal_average": 110.36,
       "observed_optimal_lineup": [
         {
           "avg": 23.13,
@@ -3879,13 +3879,13 @@
           "position": "RB"
         },
         {
-          "avg": 11.35,
-          "name": "Drake London",
+          "avg": 11.84,
+          "name": "Zay Flowers",
           "position": "WR"
         },
         {
-          "avg": 7.55,
-          "name": "Mike Evans",
+          "avg": 11.35,
+          "name": "Drake London",
           "position": "WR"
         },
         {
@@ -3904,14 +3904,14 @@
           "position": "DEF"
         },
         {
-          "avg": 10.62,
-          "name": "Chase Brown",
-          "position": "RB"
-        },
-        {
           "avg": 10.27,
           "name": "Rhamondre Stevenson",
           "position": "RB"
+        },
+        {
+          "avg": 7.55,
+          "name": "Mike Evans",
+          "position": "WR"
         }
       ],
       "players": [
@@ -4224,28 +4224,6 @@
           ]
         },
         {
-          "actual_points_total": 106.2,
-          "actual_points_weekly_avg": 10.62,
-          "id": "9224",
-          "n_weeks": 10,
-          "name": "Chase Brown",
-          "nonzero_weeks": 9,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            16.3,
-            9.7,
-            7.9,
-            13.6,
-            5.5,
-            0.0,
-            7.8,
-            12.1,
-            9.0,
-            24.3
-          ]
-        },
-        {
           "actual_points_total": 34.8,
           "actual_points_weekly_avg": 3.48,
           "id": "9480",
@@ -4265,6 +4243,28 @@
             6.5,
             3.2,
             7.9
+          ]
+        },
+        {
+          "actual_points_total": 118.4,
+          "actual_points_weekly_avg": 11.84,
+          "id": "9997",
+          "n_weeks": 10,
+          "name": "Zay Flowers",
+          "nonzero_weeks": 8,
+          "on_fantasy_reserve": false,
+          "position": "WR",
+          "weekly_points": [
+            26.5,
+            0.0,
+            12.9,
+            21.8,
+            10.6,
+            9.7,
+            24.7,
+            0.0,
+            3.8,
+            8.4
           ]
         },
         {
@@ -4431,28 +4431,6 @@
             ]
           },
           {
-            "actual_points_total": 106.2,
-            "actual_points_weekly_avg": 10.62,
-            "id": "9224",
-            "n_weeks": 10,
-            "name": "Chase Brown",
-            "nonzero_weeks": 9,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              16.3,
-              9.7,
-              7.9,
-              13.6,
-              5.5,
-              0.0,
-              7.8,
-              12.1,
-              9.0,
-              24.3
-            ]
-          },
-          {
             "actual_points_total": 102.7,
             "actual_points_weekly_avg": 10.27,
             "id": "7611",
@@ -4588,6 +4566,28 @@
           }
         ],
         "WR": [
+          {
+            "actual_points_total": 118.4,
+            "actual_points_weekly_avg": 11.84,
+            "id": "9997",
+            "n_weeks": 10,
+            "name": "Zay Flowers",
+            "nonzero_weeks": 8,
+            "on_fantasy_reserve": false,
+            "position": "WR",
+            "weekly_points": [
+              26.5,
+              0.0,
+              12.9,
+              21.8,
+              10.6,
+              9.7,
+              24.7,
+              0.0,
+              3.8,
+              8.4
+            ]
+          },
           {
             "actual_points_total": 113.5,
             "actual_points_weekly_avg": 11.35,
@@ -10803,6 +10803,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-20T20:00:17.544462+00:00",
+  "snapshot_utc": "2026-11-20T20:52:44.240675+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-10"
 }

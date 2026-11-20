@@ -8,12 +8,12 @@
     "4137",
     "6819"
   ],
-  "generated_at_utc": "2026-11-20T20:00:30.240405+00:00",
+  "generated_at_utc": "2026-11-20T20:52:53.003063+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
   "projection_as_of": "2026-11-20T18:59:08.312096+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-20T20:00:17.544462+00:00",
+  "snapshot_utc": "2026-11-20T20:52:44.240675+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -26,7 +26,7 @@
       "missing_projection": [
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 121.89,
+      "ppg": 122.29,
       "starters": [
         {
           "id": "9758",
@@ -57,11 +57,11 @@
           "ppg": 15.62
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CAR",
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "opponent": "BUF",
           "position": "WR",
-          "ppg": 12.34
+          "ppg": 7.3
         },
         {
           "id": "8131",
@@ -85,11 +85,11 @@
           "ppg": 5.99
         },
         {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "opponent": "BUF",
-          "position": "WR",
-          "ppg": 7.3
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "WAS",
+          "position": "RB",
+          "ppg": 12.74
         },
         {
           "id": "12492",
@@ -103,7 +103,7 @@
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.33,
+      "ppg": 136.81,
       "starters": [
         {
           "id": "9758",
@@ -120,11 +120,11 @@
           "ppg": 16.29
         },
         {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "opponent": "PIT",
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "NO",
           "position": "RB",
-          "ppg": 12.91
+          "ppg": 14.87
         },
         {
           "id": "9488",
@@ -162,11 +162,11 @@
           "ppg": 7.54
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "HOU",
-          "position": "WR",
-          "ppg": 13.39
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "PIT",
+          "position": "RB",
+          "ppg": 12.91
         },
         {
           "id": "13296",
@@ -180,10 +180,9 @@
     "13": {
       "complete": true,
       "missing_projection": [
-        "Seth McGowan",
-        "Zay Flowers"
+        "Seth McGowan"
       ],
-      "ppg": 131.9,
+      "ppg": 136.04,
       "starters": [
         {
           "id": "9758",
@@ -242,18 +241,18 @@
           "ppg": 7.4
         },
         {
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "CLE",
+          "position": "RB",
+          "ppg": 12.0
+        },
+        {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "DEN",
           "position": "WR",
           "ppg": 7.96
-        },
-        {
-          "id": "12492",
-          "name": "Pat Bryant",
-          "opponent": "MIA",
-          "position": "WR",
-          "ppg": 7.86
         }
       ]
     },
@@ -262,7 +261,7 @@
       "missing_projection": [
         "Brevyn Spann-Ford"
       ],
-      "ppg": 136.13,
+      "ppg": 132.8,
       "starters": [
         {
           "id": "9758",
@@ -321,11 +320,11 @@
           "ppg": 6.47
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "TB",
-          "position": "WR",
-          "ppg": 14.09
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "KC",
+          "position": "RB",
+          "ppg": 10.76
         },
         {
           "id": "13296",
@@ -339,7 +338,7 @@
     "15": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 137.65,
+      "ppg": 136.42,
       "starters": [
         {
           "id": "9228",
@@ -398,11 +397,11 @@
           "ppg": 6.66
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "PIT",
-          "position": "WR",
-          "ppg": 14.48
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "CAR",
+          "position": "RB",
+          "ppg": 13.25
         },
         {
           "id": "13296",
@@ -416,7 +415,7 @@
     "16": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 135.16,
+      "ppg": 135.48,
       "starters": [
         {
           "id": "9758",
@@ -433,11 +432,11 @@
           "ppg": 18.79
         },
         {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "opponent": "BUF",
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "IND",
           "position": "RB",
-          "ppg": 12.62
+          "ppg": 13.84
         },
         {
           "id": "9488",
@@ -475,11 +474,11 @@
           "ppg": 7.5
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CLE",
-          "position": "WR",
-          "ppg": 13.52
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "opponent": "BUF",
+          "position": "RB",
+          "ppg": 12.62
         },
         {
           "id": "13296",
@@ -493,7 +492,7 @@
     "17": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.13,
+      "ppg": 132.21,
       "starters": [
         {
           "id": "9758",
@@ -552,11 +551,11 @@
           "ppg": 7.45
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "opponent": "CIN",
-          "position": "WR",
-          "ppg": 14.85
+          "id": "9224",
+          "name": "Chase Brown",
+          "opponent": "BAL",
+          "position": "RB",
+          "ppg": 10.93
         },
         {
           "id": "13296",

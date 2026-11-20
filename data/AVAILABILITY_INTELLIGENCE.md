@@ -1,8 +1,8 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-20T20:00:31.191740+00:00
-Sleeper snapshot: 2026-11-20T20:00:17.544462+00:00
-nflverse observations: 2026-11-20T20:00:25.490644+00:00; injury feed loaded: True
+Generated: 2026-11-20T20:52:53.601953+00:00
+Sleeper snapshot: 2026-11-20T20:52:44.240675+00:00
+nflverse observations: 2026-11-20T20:52:48.611339+00:00; injury feed loaded: True
 
 **New observed changes:** 0. Initial baseline: False.
 
@@ -23,11 +23,11 @@ nflverse observations: 2026-11-20T20:00:25.490644+00:00; injury feed loaded: Tru
 | Michael Pittman Jr. | IR | No matched report (not clearance) | 77.7% | Verify official NFL roster and game status before lineup decisions |
 | Amon-Ra St. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Rib | 71.0% | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 6 observation: Full Participation in Practice | 83.0% | Verify current status before kickoff |
+| Chase Brown | No tag | No matched report (not clearance) | 68.3% | Verify current status before kickoff |
 | Bryce Young | No tag | Week 11 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
 | Jaxon Smith-Njigba | No tag | Week 10 observation: Full Participation in Practice | 82.7% | Verify current status before kickoff |
 | Tank Dell | IR | Week 11 observation: Full Participation in Practice | 46.7% | Verify official NFL roster and game status before lineup decisions |
 | C.J. Stroud | No tag | No matched report (not clearance) | 96.3% | Verify current status before kickoff |
-| Zay Flowers | No tag | Week 6 observation: Limited Participation in Practice | 78.7% | Verify current status before kickoff |
 | Minnesota Vikings | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 
 ## Changes since last published snapshot

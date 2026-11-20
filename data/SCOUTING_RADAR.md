@@ -1,9 +1,13 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-20T20:00:26.048414+00:00
-Sleeper snapshot: 2026-11-20T20:00:17.544462+00:00
+Generated: 2026-11-20T20:52:48.983141+00:00
+Sleeper snapshot: 2026-11-20T20:52:44.240675+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 1.
+
+- Dirty Birds: added Chase Brown; dropped Zay Flowers
+- Victorious Secret: added Zay Flowers; dropped Chase Brown
+- Completed trade 1429605589096357888: {'Chase Brown': 'Dirty Birds', 'Zay Flowers': 'Victorious Secret'}; FAAB transfers []
 
 ## Limits
 

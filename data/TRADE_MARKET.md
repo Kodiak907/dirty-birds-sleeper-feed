@@ -1,17 +1,17 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-20T20:00:26.048414+00:00
-Sleeper snapshot: 2026-11-20T20:00:17.544462+00:00
+Generated: 2026-11-20T20:52:48.983141+00:00
+Sleeper snapshot: 2026-11-20T20:52:44.240675+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
 | Team | Record | QB / RB / WR / TE | Completed trades | FAAB used |
 |---|---|---|---:|---:|
-| Dirty Birds | 7-3 | 2 / 5 / 8 / 2 | 14 | 205 |
+| Dirty Birds | 7-3 | 2 / 6 / 7 / 2 | 15 | 205 |
 | CREAM MACHINE | 4-6 | 3 / 7 / 7 / 3 | 0 | 68 |
 | BigOlBoyle | 2-8 | 3 / 6 / 4 / 2 | 1 | 0 |
 | DANGER CLOSE | 4-6 | 2 / 3 / 9 / 3 | 1 | 85 |
-| Victorious Secret | 5-5 | 2 / 5 / 4 / 4 | 4 | 45 |
+| Victorious Secret | 5-5 | 2 / 4 / 5 / 4 | 5 | 45 |
 | kfsn | 7-3 | 2 / 5 / 5 / 3 | 2 | 25 |
 | JA’MARRTRIX | 4-6 | 2 / 6 / 7 / 3 | 5 | 205 |
 | DeeboSix0 | 8-2 | 3 / 5 / 8 / 2 | 1 | 65 |

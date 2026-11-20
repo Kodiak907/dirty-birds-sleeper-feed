@@ -1,14 +1,14 @@
 {
   "added_starters": [
-    "Seth McGowan",
-    "Antonio Williams"
+    "Antonio Williams",
+    "Brevyn Spann-Ford"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 121.89,
+    "ppg": 122.29,
     "starters": [
       {
         "id": "9758",
@@ -35,10 +35,10 @@
         "ppg": 15.62
       },
       {
-        "id": "9997",
-        "name": "Zay Flowers",
+        "id": "13296",
+        "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 12.34
+        "ppg": 7.3
       },
       {
         "id": "8131",
@@ -59,10 +59,10 @@
         "ppg": 5.99
       },
       {
-        "id": "13296",
-        "name": "Caleb Douglas",
-        "position": "WR",
-        "ppg": 7.3
+        "id": "9224",
+        "name": "Chase Brown",
+        "position": "RB",
+        "ppg": 12.74
       },
       {
         "id": "12492",
@@ -72,7 +72,7 @@
       }
     ]
   },
-  "difference_ppg": -10.75,
+  "difference_ppg": -10.01,
   "explicit_excluded_ids": [
     "12492",
     "13345",
@@ -80,13 +80,13 @@
     "6819",
     "9502"
   ],
-  "generated_at_utc": "2026-11-20T20:00:34.218132+00:00",
+  "generated_at_utc": "2026-11-20T20:52:55.583796+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "Jaxon Smith-Njigba"
     ],
-    "ppg": 111.14,
+    "ppg": 112.28,
     "starters": [
       {
         "id": "9758",
@@ -101,10 +101,10 @@
         "ppg": 18.17
       },
       {
-        "id": "13424",
-        "name": "Seth McGowan",
+        "id": "9224",
+        "name": "Chase Brown",
         "position": "RB",
-        "ppg": 5.44
+        "ppg": 12.74
       },
       {
         "id": "7547",
@@ -113,10 +113,10 @@
         "ppg": 15.62
       },
       {
-        "id": "9997",
-        "name": "Zay Flowers",
+        "id": "13296",
+        "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 12.34
+        "ppg": 7.3
       },
       {
         "id": "8131",
@@ -137,16 +137,16 @@
         "ppg": 5.99
       },
       {
-        "id": "13296",
-        "name": "Caleb Douglas",
-        "position": "WR",
-        "ppg": 7.3
-      },
-      {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
         "ppg": 6.65
+      },
+      {
+        "id": "11593",
+        "name": "Brevyn Spann-Ford",
+        "position": "TE",
+        "ppg": 6.18
       }
     ]
   },
@@ -276,6 +276,15 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
+      "id": "9224",
+      "model_handling": "unverified_no_hard_exclusion",
+      "name": "Chase Brown",
+      "sleeper_injury_status": null,
+      "status_source": "Sleeper metadata, not official gameday inactive list"
+    },
+    {
+      "availability_verified": false,
+      "fantasy_reserve": false,
       "id": "9228",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Bryce Young",
@@ -312,15 +321,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "9997",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Zay Flowers",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "MIN",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Minnesota Vikings",
@@ -335,8 +335,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-20T20:00:17.544462+00:00",
-  "source_availability_generated_at_utc": "2026-11-20T20:00:31.191740+00:00",
+  "snapshot_utc": "2026-11-20T20:52:44.240675+00:00",
+  "source_availability_generated_at_utc": "2026-11-20T20:52:53.601953+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
