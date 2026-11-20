@@ -1,42 +1,42 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-20T05:01:52.010532+00:00 | Forecast as of: 2026-11-19T17:07:33.600212+00:00
+Generated: 2026-11-20T06:06:11.941733+00:00 | Forecast as of: 2026-11-20T06:06:09.299560+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 11
 
-**Projected optimal score:** 121.55
+**Projected optimal score:** 121.88
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | IND | 20.31 |
-| Christian McCaffrey | RB | MIN | 18.11 |
-| Jonah Coleman | RB | LV | 15.77 |
-| Amon-Ra St. Brown | WR | TB | 15.49 |
-| Zay Flowers | WR | CAR | 12.38 |
-| Isaiah Likely | TE | JAX | 12.16 |
-| Will Reichard | K | SF | 7.05 |
-| Minnesota Vikings | DEF | SF | 6.01 |
+| C.J. Stroud | QB | IND | 20.43 |
+| Christian McCaffrey | RB | MIN | 18.17 |
+| Jonah Coleman | RB | LV | 15.84 |
+| Amon-Ra St. Brown | WR | TB | 15.64 |
+| Zay Flowers | WR | CAR | 12.35 |
+| Isaiah Likely | TE | JAX | 12.23 |
+| Will Reichard | K | SF | 6.97 |
+| Minnesota Vikings | DEF | SF | 5.99 |
 | Caleb Douglas | WR | BUF | 7.26 |
-| Pat Bryant | WR | LV | 7.01 |
+| Pat Bryant | WR | LV | 7.00 |
 
 ## Week 12
 
-**Projected optimal score:** 135.33
+**Projected optimal score:** 135.06
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 19.19 |
-| Christian McCaffrey | RB | SEA | 16.28 |
+| C.J. Stroud | QB | BAL | 19.03 |
+| Christian McCaffrey | RB | SEA | 16.27 |
 | Jonah Coleman | RB | PIT | 12.92 |
-| Jaxon Smith-Njigba | WR | SF | 21.03 |
-| Amon-Ra St. Brown | WR | CHI | 16.99 |
-| Isaiah Likely | TE | IND | 12.16 |
+| Jaxon Smith-Njigba | WR | SF | 21.14 |
+| Amon-Ra St. Brown | WR | CHI | 17.11 |
+| Isaiah Likely | TE | IND | 12.10 |
 | Will Reichard | K | ATL | 7.40 |
 | Minnesota Vikings | DEF | ATL | 7.54 |
-| Zay Flowers | WR | HOU | 13.46 |
-| Caleb Douglas | WR | NYJ | 8.36 |
+| Zay Flowers | WR | HOU | 13.28 |
+| Caleb Douglas | WR | NYJ | 8.27 |
 
 ## Week 13
 
