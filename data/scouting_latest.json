@@ -1,41 +1,7 @@
 {
-  "generated_at_utc": "2026-11-20T20:52:48.983141+00:00",
+  "generated_at_utc": "2026-11-20T21:50:10.377310+00:00",
   "is_initial_baseline": false,
-  "new_completed_trades": [
-    {
-      "faab_transfers": [],
-      "id": "1429605589096357888",
-      "players_received": {
-        "Chase Brown": "Dirty Birds",
-        "Zay Flowers": "Victorious Secret"
-      },
-      "roster_ids": [
-        1,
-        5
-      ]
-    }
-  ],
-  "roster_changes": [
-    {
-      "adds": [
-        "Chase Brown"
-      ],
-      "drops": [
-        "Zay Flowers"
-      ],
-      "roster_id": 1,
-      "team": "Dirty Birds"
-    },
-    {
-      "adds": [
-        "Zay Flowers"
-      ],
-      "drops": [
-        "Chase Brown"
-      ],
-      "roster_id": 5,
-      "team": "Victorious Secret"
-    }
-  ],
-  "source_snapshot_utc": "2026-11-20T20:52:44.240675+00:00"
+  "new_completed_trades": [],
+  "roster_changes": [],
+  "source_snapshot_utc": "2026-11-20T21:50:02.516785+00:00"
 }

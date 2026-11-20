@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-20T20:52:44.240675+00:00
+Updated: 2026-11-20T21:50:02.516785+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,11 +19,7 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 1: added Chase Brown; dropped Zay Flowers
-- lineup_change â roster/transaction 1
-- Roster 5: added Zay Flowers; dropped Chase Brown
-- lineup_change â roster/transaction 5
-- Transaction 1429605589096357888: trade / complete / rosters [1, 5] / adds {'9224': 1, '9997': 5} / drops {'9224': 5, '9997': 1} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
