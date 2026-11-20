@@ -2,19 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-19T15:14:28.958453+00:00
+Updated: 2026-11-20T15:12:31.438954+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 6. Unpriced candidate packages: 9.
+Fully priced in-range opportunities: 9. Unpriced candidate packages: 0.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 2 | C.J. Stroud, Caleb Douglas | Rashee Rice | 0.96× | +3.86 | +1.70 |
-| 2 | 3 | Kirk Cousins, Zay Flowers | Tee Higgins | 1.08× | +2.35 | +2.01 |
-| 3 | 12 | Kirk Cousins | Rome Odunze | 0.83× | +1.91 | +0.73 |
-| 4 | 10 | Kirk Cousins, Zay Flowers | Josh Allen | 1.07× | +0.93 | +1.07 |
+| 1 | 2 | C.J. Stroud, Caleb Douglas | Rashee Rice | 1.02× | +2.21 | +1.62 |
+| 2 | 2 | Bryce Young, Caleb Douglas | Carnell Tate | 1.01× | +1.44 | +2.39 |
+| 3 | 3 | Bryce Young, Zay Flowers | Tee Higgins | 1.01× | +2.41 | +0.23 |
+| 4 | 3 | Bryce Young, Zay Flowers | Jonathan Taylor | 1.09× | +1.42 | +1.23 |
+| 5 | 9 | C.J. Stroud, Pat Bryant | DeVonta Smith | 1.01× | +1.06 | +0.99 |
 
 ## Negotiation protocol
 
