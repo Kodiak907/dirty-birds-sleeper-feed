@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-20T13:12:08.631843+00:00
-Sleeper snapshot: 2026-11-20T13:11:56.800627+00:00
-nflverse observations: 2026-11-20T13:12:03.257961+00:00; injury feed loaded: True
+Generated: 2026-11-20T14:56:29.692092+00:00
+Sleeper snapshot: 2026-11-20T14:56:20.184342+00:00
+nflverse observations: 2026-11-20T14:56:24.507280+00:00; injury feed loaded: True
 
-**New observed changes:** 1. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,7 +32,8 @@ nflverse observations: 2026-11-20T13:12:03.257961+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **David Montgomery** (snap_share_change): Snap share rose 59.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
