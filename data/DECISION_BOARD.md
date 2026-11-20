@@ -36,15 +36,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | A.J. Brown | 9.33 | +5.23 | 71.3% | Tgt 7.3 | injury_report_observation_review |
 | 2 | Tre Tucker | 6.84 | +2.75 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 3 | Keon Coleman | 6.76 | +2.66 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 4 | Kalif Raymond | 5.92 | +1.82 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
-| 5 | Makai Lemon | 5.71 | +1.61 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
-| 6 | Malachi Fields | 5.10 | +1.00 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 7 | Dontayvion Wicks | 4.77 | +0.67 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
-| 8 | Ja'Kobi Lane | 4.70 | +0.60 | 62.0% | Tgt 4.0 | injury_report_observation_review |
-| 9 | Rashid Shaheed | 4.27 | +0.18 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 10 | Tre' Harris | 4.10 | +0.00 | 77.3% | Tgt 5.0 | sleeper_injury_out |
-| 11 | Rashod Bateman | 4.06 | -0.04 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 12 | Chris Bell | 3.65 | -0.45 | 60.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 4 | Quentin Johnston | 6.36 | +2.26 | 80.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 5 | Kalif Raymond | 5.92 | +1.82 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 6 | Makai Lemon | 5.71 | +1.61 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
+| 7 | Malachi Fields | 5.10 | +1.00 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 8 | Dontayvion Wicks | 4.77 | +0.67 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
+| 9 | Ja'Kobi Lane | 4.70 | +0.60 | 62.0% | Tgt 4.0 | injury_report_observation_review |
+| 10 | Rashid Shaheed | 4.27 | +0.18 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 11 | Tre' Harris | 4.10 | +0.00 | 77.3% | Tgt 5.0 | sleeper_injury_out |
+| 12 | Rashod Bateman | 4.06 | -0.04 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Brevyn Spann-Ford (1.51 PPG)
 
@@ -63,9 +63,8 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Drew Stevens | 7.00 | -0.20 | — | — | No modeled flags (not medically cleared) |
 | 2 | Chase McLaughlin | 6.55 | -0.65 | — | — | No modeled flags (not medically cleared) |
 | 3 | Matt Gay | 6.48 | -0.72 | — | — | No modeled flags (not medically cleared) |
-| 4 | Cairo Santos | 6.15 | -1.05 | — | — | No modeled flags (not medically cleared) |
-| 5 | Chris Boswell | 6.11 | -1.09 | — | — | No modeled flags (not medically cleared) |
-| 6 | Trey Smack | 5.61 | -1.59 | — | — | No modeled flags (not medically cleared) |
+| 4 | Chris Boswell | 6.11 | -1.09 | — | — | No modeled flags (not medically cleared) |
+| 5 | Trey Smack | 5.61 | -1.59 | — | — | No modeled flags (not medically cleared) |
 
 ## DEF — reference: Minnesota Vikings (7.00 PPG)
 

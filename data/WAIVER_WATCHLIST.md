@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-19T23:45:20.580292+00:00
-Sleeper snapshot: 2026-11-19T23:45:13.755219+00:00
+Generated: 2026-11-20T01:03:57.963968+00:00
+Sleeper snapshot: 2026-11-20T01:03:53.321658+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -9,9 +9,9 @@ Sleeper snapshot: 2026-11-19T23:45:13.755219+00:00
 |---|---:|
 | QB | 327 |
 | RB | 625 |
-| WR | 1291 |
+| WR | 1292 |
 | TE | 612 |
-| K | 139 |
+| K | 138 |
 | DEF | 15 |
 
 ## Position-specific projection rankings (screening only)
@@ -47,15 +47,15 @@ Sleeper snapshot: 2026-11-19T23:45:13.755219+00:00
 | 1 | A.J. Brown | NE | 9.33 | 86% | 71.3% | Not flagged |
 | 2 | Tre Tucker | LV | 6.84 | 86% | 68.7% | Not flagged |
 | 3 | Keon Coleman | BUF | 6.76 | 100% | 63.7% | Not flagged |
-| 4 | Kalif Raymond | CHI | 5.92 | 100% | 69.7% | Not flagged |
-| 5 | Makai Lemon | PHI | 5.71 | 100% | 92.7% | Not flagged |
-| 6 | Malachi Fields | NYG | 5.10 | 100% | 82.3% | Not flagged |
-| 7 | Dontayvion Wicks | PHI | 4.77 | 100% | 79.3% | Questionable |
-| 8 | Ja'Kobi Lane | BAL | 4.70 | 86% | 62.0% | Not flagged |
-| 9 | Rashid Shaheed | SEA | 4.27 | 86% | 40.7% | Not flagged |
-| 10 | Tre' Harris | LAC | 4.10 | 100% | 77.3% | Out |
-| 11 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
-| 12 | Chris Bell | MIA | 3.65 | 100% | 60.0% | Not flagged |
+| 4 | Quentin Johnston | LAC | 6.36 | 100% | 80.7% | Not flagged |
+| 5 | Kalif Raymond | CHI | 5.92 | 100% | 69.7% | Not flagged |
+| 6 | Makai Lemon | PHI | 5.71 | 100% | 92.7% | Not flagged |
+| 7 | Malachi Fields | NYG | 5.10 | 100% | 82.3% | Not flagged |
+| 8 | Dontayvion Wicks | PHI | 4.77 | 100% | 79.3% | Questionable |
+| 9 | Ja'Kobi Lane | BAL | 4.70 | 86% | 62.0% | Not flagged |
+| 10 | Rashid Shaheed | SEA | 4.27 | 86% | 40.7% | Not flagged |
+| 11 | Tre' Harris | LAC | 4.10 | 100% | 77.3% | Out |
+| 12 | Rashod Bateman | BAL | 4.06 | 86% | 76.3% | Not flagged |
 
 ### TE
 
@@ -74,9 +74,8 @@ Sleeper snapshot: 2026-11-19T23:45:13.755219+00:00
 | 1 | Drew Stevens | WAS | 7.00 | 100% | — | Not flagged |
 | 2 | Chase McLaughlin | TB | 6.55 | 100% | — | Not flagged |
 | 3 | Matt Gay | LV | 6.48 | 86% | — | Not flagged |
-| 4 | Cairo Santos | CHI | 6.15 | 100% | — | Not flagged |
-| 5 | Chris Boswell | PIT | 6.11 | 100% | — | Not flagged |
-| 6 | Trey Smack | GB | 5.61 | 86% | — | Not flagged |
+| 4 | Chris Boswell | PIT | 6.11 | 100% | — | Not flagged |
+| 5 | Trey Smack | GB | 5.61 | 86% | — | Not flagged |
 
 ### DEF
 
@@ -111,6 +110,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Tre Tucker | WR | LV | 6.84 | 68.7% |
 | Keon Coleman | WR | BUF | 6.76 | 63.7% |
 | Samaje Perine | RB | CIN | 6.54 | 35.0% |
+| Quentin Johnston | WR | LAC | 6.36 | 80.7% |
 | Kalif Raymond | WR | CHI | 5.92 | 69.7% |
 | Makai Lemon | WR | PHI | 5.71 | 92.7% |
 | Malachi Fields | WR | NYG | 5.10 | 82.3% |
@@ -122,12 +122,11 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Zonovan Knight | RB | ARI | 4.19 | 43.0% |
 | Tre' Harris | WR | LAC | 4.10 | 77.3% |
 | Rashod Bateman | WR | BAL | 4.06 | 76.3% |
-| Chris Bell | WR | MIA | 3.65 | 60.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **41**
+Candidates with independently sourced projections AND usage data: **42**
 
 ## Coverage and rules
 

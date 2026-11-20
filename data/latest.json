@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-19T23:45:13.755219+00:00",
+  "fetched_at_utc": "2026-11-20T01:03:53.321658+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": "d22e52781a5d7a94bcbf2aa70e748382",
-    "last_author_display_name": "Alank0819",
-    "last_author_id": "1356910412213260288",
-    "last_author_is_bot": false,
+    "last_author_avatar": null,
+    "last_author_display_name": "sys",
+    "last_author_id": "166666666666666666",
+    "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1429236428344152064",
+    "last_message_id": "1429298770851426304",
     "last_message_text_map": null,
-    "last_message_time": 1795119027748,
+    "last_message_time": 1795133891359,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -7222,6 +7222,7 @@
           "12545",
           "13305",
           "13330",
+          "2020",
           "2449",
           "2747",
           "3294",
@@ -7232,7 +7233,6 @@
           "8146",
           "8154",
           "9509",
-          "9754",
           "LV",
           "PHI"
         ],
@@ -7242,6 +7242,7 @@
           "12545": 0.0,
           "13305": 0.0,
           "13330": 0.0,
+          "2020": 0.0,
           "2449": 0.0,
           "2747": 0.0,
           "3294": 0.0,
@@ -7252,7 +7253,6 @@
           "8146": 0.0,
           "8154": 0.0,
           "9509": 0.0,
-          "9754": 0.0,
           "LV": 0.0,
           "PHI": 0.0
         },
@@ -7267,7 +7267,7 @@
           "13330",
           "2449",
           "12526",
-          "2747",
+          "2020",
           "LV"
         ],
         "starters_points": [
@@ -14592,6 +14592,7 @@
         "12545",
         "13305",
         "13330",
+        "2020",
         "2449",
         "2747",
         "3294",
@@ -14602,7 +14603,6 @@
         "8146",
         "8154",
         "9509",
-        "9754",
         "LV",
         "PHI"
       ],
@@ -14631,7 +14631,7 @@
         "13330",
         "2449",
         "12526",
-        "2747",
+        "2020",
         "LV"
       ],
       "taxi": null
@@ -16160,6 +16160,31 @@
       }
     ],
     "11": [
+      {
+        "adds": {
+          "2020": 9
+        },
+        "consenter_ids": [
+          9
+        ],
+        "created": 1795133891323,
+        "creator": "1356910412213260288",
+        "draft_picks": [],
+        "drops": {
+          "9754": 9
+        },
+        "leg": 11,
+        "metadata": null,
+        "roster_ids": [
+          9
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1795133891323,
+        "transaction_id": "1429298770700439552",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "11593": 1,

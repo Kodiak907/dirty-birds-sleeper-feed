@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-19T23:45:20.763183+00:00
+Generated: 2026-11-20T01:03:58.246912+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **130.99**. Weeks with partial projections and injury status require manual verification.
@@ -36,15 +36,15 @@ Baseline illustrative optimal PPG: **130.99**. Weeks with partial projections an
 | 1 | A.J. Brown | 9.33 | Brevyn Spann-Ford | +1.01 | +7.82 | Partial projection coverage |
 | 2 | Tre Tucker | 6.84 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.33 | Partial projection coverage |
 | 3 | Keon Coleman | 6.76 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.25 | No flagged data gap; review still required |
-| 4 | Kalif Raymond | 5.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.41 | No flagged data gap; review still required |
-| 5 | Makai Lemon | 5.71 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.20 | No flagged data gap; review still required |
-| 6 | Malachi Fields | 5.10 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.59 | No flagged data gap; review still required |
-| 7 | Dontayvion Wicks | 4.77 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.26 | Availability status: questionable |
-| 8 | Ja'Kobi Lane | 4.70 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.19 | Partial projection coverage |
-| 9 | Rashid Shaheed | 4.27 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.76 | Partial projection coverage |
-| 10 | Tre' Harris | 4.10 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.59 | Availability status: out |
-| 11 | Rashod Bateman | 4.06 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.55 | Partial projection coverage |
-| 12 | Chris Bell | 3.65 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.14 | No flagged data gap; review still required |
+| 4 | Quentin Johnston | 6.36 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.85 | No flagged data gap; review still required |
+| 5 | Kalif Raymond | 5.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.41 | No flagged data gap; review still required |
+| 6 | Makai Lemon | 5.71 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.20 | No flagged data gap; review still required |
+| 7 | Malachi Fields | 5.10 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.59 | No flagged data gap; review still required |
+| 8 | Dontayvion Wicks | 4.77 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.26 | Availability status: questionable |
+| 9 | Ja'Kobi Lane | 4.70 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.19 | Partial projection coverage |
+| 10 | Rashid Shaheed | 4.27 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.76 | Partial projection coverage |
+| 11 | Tre' Harris | 4.10 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.59 | Availability status: out |
+| 12 | Rashod Bateman | 4.06 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.55 | Partial projection coverage |
 
 ## TE
 
@@ -63,9 +63,8 @@ Baseline illustrative optimal PPG: **130.99**. Weeks with partial projections an
 | 1 | Drew Stevens | 7.00 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.49 | No sourced usage |
 | 2 | Chase McLaughlin | 6.55 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.04 | No sourced usage |
 | 3 | Matt Gay | 6.48 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.97 | No sourced usage; Partial projection coverage |
-| 4 | Cairo Santos | 6.15 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.64 | No sourced usage |
-| 5 | Chris Boswell | 6.11 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.60 | No sourced usage |
-| 6 | Trey Smack | 5.61 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.10 | No sourced usage; Partial projection coverage |
+| 4 | Chris Boswell | 6.11 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.60 | No sourced usage |
+| 5 | Trey Smack | 5.61 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.10 | No sourced usage; Partial projection coverage |
 
 ## DEF
 

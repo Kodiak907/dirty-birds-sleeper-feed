@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-19T23:45:20.303798+00:00
-Sleeper snapshot: 2026-11-19T23:45:13.755219+00:00
+Generated: 2026-11-20T01:03:57.780685+00:00
+Sleeper snapshot: 2026-11-20T01:03:53.321658+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- To Infinity and Bijan: added Cairo Santos; dropped Quentin Johnston
 
 ## Limits
 
