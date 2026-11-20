@@ -2388,111 +2388,6 @@
         "warnings": []
       },
       {
-        "bench_depth_delta_ppg": 3.457,
-        "best_candidate_drop": {
-          "added_starters": [],
-          "after_ppg": 131.862,
-          "before_ppg": 131.862,
-          "displaced_starters": [],
-          "drop": "Brevyn Spann-Ford",
-          "drop_id": "11593",
-          "drop_is_fantasy_reserve": false,
-          "projected_lineup_gain_ppg": 0.0
-        },
-        "candidate": "Tyjae Spears",
-        "candidate_drop_options": [
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Brevyn Spann-Ford",
-            "drop_id": "11593",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Pat Bryant",
-            "drop_id": "12492",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Antonio Williams",
-            "drop_id": "13301",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Kaelon Black",
-            "drop_id": "13414",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Seth McGowan",
-            "drop_id": "13424",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "James Conner",
-            "drop_id": "4137",
-            "drop_is_fantasy_reserve": true,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Michael Pittman Jr.",
-            "drop_id": "6819",
-            "drop_is_fantasy_reserve": true,
-            "projected_lineup_gain_ppg": 0.0
-          },
-          {
-            "added_starters": [],
-            "after_ppg": 131.862,
-            "before_ppg": 131.862,
-            "displaced_starters": [],
-            "drop": "Bryce Young",
-            "drop_id": "9228",
-            "drop_is_fantasy_reserve": false,
-            "projected_lineup_gain_ppg": 0.0
-          }
-        ],
-        "candidate_id": "9508",
-        "improves_projected_starters": false,
-        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
-        "position": "RB",
-        "projection_ppg": 4.967,
-        "team": "TEN",
-        "warnings": [
-          "Availability status: questionable"
-        ]
-      },
-      {
         "bench_depth_delta_ppg": 2.64,
         "best_candidate_drop": {
           "added_starters": [],
@@ -3433,6 +3328,109 @@
         "position": "TE",
         "projection_ppg": 7.186,
         "team": "CAR",
+        "warnings": []
+      },
+      {
+        "bench_depth_delta_ppg": 3.826,
+        "best_candidate_drop": {
+          "added_starters": [],
+          "after_ppg": 131.862,
+          "before_ppg": 131.862,
+          "displaced_starters": [],
+          "drop": "Brevyn Spann-Ford",
+          "drop_id": "11593",
+          "drop_is_fantasy_reserve": false,
+          "projected_lineup_gain_ppg": 0.0
+        },
+        "candidate": "Cade Otton",
+        "candidate_drop_options": [
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Brevyn Spann-Ford",
+            "drop_id": "11593",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Pat Bryant",
+            "drop_id": "12492",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Antonio Williams",
+            "drop_id": "13301",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Kaelon Black",
+            "drop_id": "13414",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Seth McGowan",
+            "drop_id": "13424",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "James Conner",
+            "drop_id": "4137",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Michael Pittman Jr.",
+            "drop_id": "6819",
+            "drop_is_fantasy_reserve": true,
+            "projected_lineup_gain_ppg": 0.0
+          },
+          {
+            "added_starters": [],
+            "after_ppg": 131.862,
+            "before_ppg": 131.862,
+            "displaced_starters": [],
+            "drop": "Bryce Young",
+            "drop_id": "9228",
+            "drop_is_fantasy_reserve": false,
+            "projected_lineup_gain_ppg": 0.0
+          }
+        ],
+        "candidate_id": "8111",
+        "improves_projected_starters": false,
+        "not_adjusted_for": "injuries, route share, matchup difficulty, roster lock, waiver status, FAAB or playoff-week volatility",
+        "position": "TE",
+        "projection_ppg": 5.336,
+        "team": "TB",
         "warnings": []
       },
       {
@@ -5976,7 +5974,7 @@
       }
     ]
   },
-  "generated_at_utc": "2026-11-20T22:49:07.510784+00:00",
+  "generated_at_utc": "2026-11-20T23:49:34.414396+00:00",
   "limitations": [
     "Averages over explicitly projected weeks, not week-specific starting projections.",
     "Drop comparison is hypothetical; do not cut injured stashes or IR players on this model alone.",
@@ -5984,6 +5982,6 @@
     "Cumulative two-FLEX impact is recalculated but future schedules and injuries are not weighted."
   ],
   "model": "Exact 1QB/2RB/2WR/1TE/2FLEX/K/DEF lineup; swap one acquired candidate for one currently owned player.",
-  "sleeper_snapshot_utc": "2026-11-20T22:48:58.146474+00:00",
+  "sleeper_snapshot_utc": "2026-11-20T23:49:29.218407+00:00",
   "source_projection_date": "2026-11-20T18:59:08.312096+00:00"
 }

@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-20T22:48:58.146474+00:00
+Updated: 2026-11-20T23:49:29.218407+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,7 +19,9 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 148
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- Roster 5: added Tyjae Spears; dropped Cade Otton
+- lineup_change â roster/transaction 5
+- Transaction 1429639716180889600: free_agent / complete / rosters [5] / adds {'9508': 5} / drops {'8111': 5} / FAAB bid None
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-20T22:49:07.510784+00:00
+Generated: 2026-11-20T23:49:34.414396+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **131.86**. Weeks with partial projections and injury status require manual verification.
@@ -19,15 +19,14 @@ Baseline illustrative optimal PPG: **131.86**. Weeks with partial projections an
 |---:|---|---:|---|---:|---:|---|
 | 1 | Samaje Perine | 6.53 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.02 | No flagged data gap; review still required |
 | 2 | Keaton Mitchell | 4.97 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.46 | No flagged data gap; review still required |
-| 3 | Tyjae Spears | 4.97 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.46 | Availability status: questionable |
-| 4 | Zonovan Knight | 4.15 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.64 | Partial projection coverage |
-| 5 | Tyrone Tracy Jr. | 3.53 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.02 | Partial projection coverage |
-| 6 | MarShawn Lloyd | 2.48 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.97 | Partial projection coverage |
-| 7 | Tank Bigsby | 2.14 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.63 | Availability status: ir; Partial projection coverage |
-| 8 | Elijah Mitchell | 1.29 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.22 | No flagged data gap; review still required |
-| 9 | Robert Henry Jr. | 0.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.59 | No sourced usage; Limited snap sample |
-| 10 | Jaleel McLaughlin | 0.87 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.64 | Partial projection coverage |
-| 11 | Roschon Johnson | 0.44 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -1.07 | No flagged data gap; review still required |
+| 3 | Zonovan Knight | 4.15 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.64 | Partial projection coverage |
+| 4 | Tyrone Tracy Jr. | 3.53 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.02 | Partial projection coverage |
+| 5 | MarShawn Lloyd | 2.48 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.97 | Partial projection coverage |
+| 6 | Tank Bigsby | 2.14 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.63 | Availability status: ir; Partial projection coverage |
+| 7 | Elijah Mitchell | 1.29 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.22 | No flagged data gap; review still required |
+| 8 | Robert Henry Jr. | 0.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.59 | No sourced usage; Limited snap sample |
+| 9 | Jaleel McLaughlin | 0.87 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -0.64 | Partial projection coverage |
+| 10 | Roschon Johnson | 0.44 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | -1.07 | No flagged data gap; review still required |
 
 ## WR
 
@@ -51,10 +50,11 @@ Baseline illustrative optimal PPG: **131.86**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Darren Waller | 7.19 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.68 | No flagged data gap; review still required |
-| 2 | David Njoku | 3.52 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.01 | Availability status: ir |
-| 3 | Noah Fant | 3.45 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +1.94 | No flagged data gap; review still required |
-| 4 | Colby Parkinson | 2.64 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +1.13 | No sourced usage; Partial projection coverage; Limited snap sample |
-| 5 | Zach Ertz | 1.99 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.48 | No flagged data gap; review still required |
+| 2 | Cade Otton | 5.34 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.83 | No flagged data gap; review still required |
+| 3 | David Njoku | 3.52 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.01 | Availability status: ir |
+| 4 | Noah Fant | 3.45 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +1.94 | No flagged data gap; review still required |
+| 5 | Colby Parkinson | 2.64 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +1.13 | No sourced usage; Partial projection coverage; Limited snap sample |
+| 6 | Zach Ertz | 1.99 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +0.48 | No flagged data gap; review still required |
 
 ## K
 

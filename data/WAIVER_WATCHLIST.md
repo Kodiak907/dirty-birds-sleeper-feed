@@ -1,16 +1,16 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-20T22:49:07.254157+00:00
-Sleeper snapshot: 2026-11-20T22:48:58.146474+00:00
+Generated: 2026-11-20T23:49:34.184346+00:00
+Sleeper snapshot: 2026-11-20T23:49:29.218407+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 327 |
-| RB | 625 |
+| RB | 624 |
 | WR | 1292 |
-| TE | 612 |
+| TE | 613 |
 | K | 138 |
 | DEF | 15 |
 
@@ -30,15 +30,14 @@ Sleeper snapshot: 2026-11-20T22:48:58.146474+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | Samaje Perine | CIN | 6.53 | 100% | 35.0% | Not flagged |
 | 2 | Keaton Mitchell | LAC | 4.97 | 100% | 26.3% | Not flagged |
-| 3 | Tyjae Spears | TEN | 4.97 | 100% | 35.3% | Questionable |
-| 4 | Zonovan Knight | ARI | 4.15 | 86% | 43.0% | Not flagged |
-| 5 | Tyrone Tracy Jr. | NYG | 3.53 | 71% | 24.0% | Not flagged |
-| 6 | MarShawn Lloyd | GB | 2.48 | 86% | 25.7% | Not flagged |
-| 7 | Tank Bigsby | PHI | 2.14 | 86% | 28.7% | IR |
-| 8 | Elijah Mitchell | PHI | 1.29 | 100% | 39.7% | Not flagged |
-| 9 | Robert Henry Jr. | SEA | 0.92 | 100% | — | Not flagged |
-| 10 | Jaleel McLaughlin | CLE | 0.87 | 86% | 1.3% | Not flagged |
-| 11 | Roschon Johnson | CHI | 0.44 | 100% | 11.3% | Not flagged |
+| 3 | Zonovan Knight | ARI | 4.15 | 86% | 43.0% | Not flagged |
+| 4 | Tyrone Tracy Jr. | NYG | 3.53 | 71% | 24.0% | Not flagged |
+| 5 | MarShawn Lloyd | GB | 2.48 | 86% | 25.7% | Not flagged |
+| 6 | Tank Bigsby | PHI | 2.14 | 86% | 28.7% | IR |
+| 7 | Elijah Mitchell | PHI | 1.29 | 100% | 39.7% | Not flagged |
+| 8 | Robert Henry Jr. | SEA | 0.92 | 100% | — | Not flagged |
+| 9 | Jaleel McLaughlin | CLE | 0.87 | 86% | 1.3% | Not flagged |
+| 10 | Roschon Johnson | CHI | 0.44 | 100% | 11.3% | Not flagged |
 
 ### WR
 
@@ -62,10 +61,11 @@ Sleeper snapshot: 2026-11-20T22:48:58.146474+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Darren Waller | CAR | 7.19 | 100% | 58.7% | Not flagged |
-| 2 | David Njoku | LAC | 3.52 | 100% | 34.7% | IR |
-| 3 | Noah Fant | NO | 3.45 | 100% | 45.7% | Not flagged |
-| 4 | Colby Parkinson | LAR | 2.64 | 86% | — | Not flagged |
-| 5 | Zach Ertz | PHI | 1.99 | 100% | 23.3% | Not flagged |
+| 2 | Cade Otton | TB | 5.34 | 100% | 94.7% | Not flagged |
+| 3 | David Njoku | LAC | 3.52 | 100% | 34.7% | IR |
+| 4 | Noah Fant | NO | 3.45 | 100% | 45.7% | Not flagged |
+| 5 | Colby Parkinson | LAR | 2.64 | 86% | — | Not flagged |
+| 6 | Zach Ertz | PHI | 1.99 | 100% | 23.3% | Not flagged |
 
 ### K
 
@@ -113,9 +113,9 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Quentin Johnston | WR | LAC | 6.36 | 80.7% |
 | Kalif Raymond | WR | CHI | 5.93 | 69.7% |
 | Makai Lemon | WR | PHI | 5.70 | 92.7% |
+| Cade Otton | TE | TB | 5.34 | 94.7% |
 | Malachi Fields | WR | NYG | 5.09 | 82.3% |
 | Keaton Mitchell | RB | LAC | 4.97 | 26.3% |
-| Tyjae Spears | RB | TEN | 4.97 | 35.3% |
 | Dontayvion Wicks | WR | PHI | 4.77 | 79.3% |
 | Ja'Kobi Lane | WR | BAL | 4.69 | 62.0% |
 | Rashid Shaheed | WR | SEA | 4.27 | 40.7% |

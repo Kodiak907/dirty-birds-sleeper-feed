@@ -19,15 +19,14 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Samaje Perine | 6.53 | +4.17 | 35.0% | Carries 7.0 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 4.97 | +2.61 | 26.3% | Carries 4.7 | No modeled flags (not medically cleared) |
-| 3 | Tyjae Spears | 4.97 | +2.61 | 35.3% | Carries 2.3 | sleeper_injury_questionable |
-| 4 | Zonovan Knight | 4.15 | +1.79 | 43.0% | — | carries_missing |
-| 5 | Tyrone Tracy Jr. | 3.53 | +1.18 | 24.0% | Carries 5.0 | projection_weeks_partial |
-| 6 | MarShawn Lloyd | 2.48 | +0.12 | 25.7% | Carries 4.3 | injury_report_observation_review |
-| 7 | Tank Bigsby | 2.14 | -0.21 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 8 | Elijah Mitchell | 1.29 | -1.07 | 39.7% | Carries 5.7 | No modeled flags (not medically cleared) |
-| 9 | Robert Henry Jr. | 0.92 | -1.43 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
-| 10 | Jaleel McLaughlin | 0.87 | -1.49 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
-| 11 | Roschon Johnson | 0.44 | -1.91 | 11.3% | Carries 2.3 | No modeled flags (not medically cleared) |
+| 3 | Zonovan Knight | 4.15 | +1.79 | 43.0% | — | carries_missing |
+| 4 | Tyrone Tracy Jr. | 3.53 | +1.18 | 24.0% | Carries 5.0 | projection_weeks_partial |
+| 5 | MarShawn Lloyd | 2.48 | +0.12 | 25.7% | Carries 4.3 | injury_report_observation_review |
+| 6 | Tank Bigsby | 2.14 | -0.21 | 28.7% | Carries 9.0 | sleeper_injury_ir |
+| 7 | Elijah Mitchell | 1.29 | -1.07 | 39.7% | Carries 5.7 | No modeled flags (not medically cleared) |
+| 8 | Robert Henry Jr. | 0.92 | -1.43 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
+| 9 | Jaleel McLaughlin | 0.87 | -1.49 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 10 | Roschon Johnson | 0.44 | -1.91 | 11.3% | Carries 2.3 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Michael Pittman Jr. (4.09 PPG)
 
@@ -51,10 +50,11 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Darren Waller | 7.19 | +5.68 | 58.7% | Tgt 5.3 | No modeled flags (not medically cleared) |
-| 2 | David Njoku | 3.52 | +2.01 | 34.7% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
-| 3 | Noah Fant | 3.45 | +1.94 | 45.7% | Tgt 1.7 | No modeled flags (not medically cleared) |
-| 4 | Colby Parkinson | 2.64 | +1.13 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 5 | Zach Ertz | 1.99 | +0.48 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 2 | Cade Otton | 5.34 | +3.83 | 94.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 3 | David Njoku | 3.52 | +2.01 | 34.7% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
+| 4 | Noah Fant | 3.45 | +1.94 | 45.7% | Tgt 1.7 | No modeled flags (not medically cleared) |
+| 5 | Colby Parkinson | 2.64 | +1.13 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
+| 6 | Zach Ertz | 1.99 | +0.48 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
 
 ## K — reference: Will Reichard (7.19 PPG)
 

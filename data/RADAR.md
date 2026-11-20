@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-20T22:49:07.105107+00:00
-Sleeper snapshot: 2026-11-20T22:48:58.146474+00:00
+Generated: 2026-11-20T23:49:33.803913+00:00
+Sleeper snapshot: 2026-11-20T23:49:29.218407+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1429639716180889600` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Tyjae Spears →     Victorious Secret (#5) | Dropped: Cade Otton →     Victorious Secret (#5)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-20T23:49:33.803913+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Tyjae Spears →     Victorious Secret (#5) | Dropped: Cade Otton →     Victorious Secret (#5)
 - 2026-11-20T20:52:48.943371+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Chase Brown → Dirty Birds (#1), Zay Flowers →     Victorious Secret (#5) | Dropped: Chase Brown →     Victorious Secret (#5), Zay Flowers → Dirty Birds (#1)
 - 2026-11-20T01:03:57.742302+00:00 · new_transaction · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Cairo Santos → To Infinity and Bijan (#9) | Dropped: Quentin Johnston → To Infinity and Bijan (#9)
 - 2026-11-19T18:59:53.421554+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1), Cokerthestroker (#12) | Added: Brevyn Spann-Ford → Dirty Birds (#1), Kirk Cousins → Cokerthestroker (#12), Deebo Samuel Sr. → Cokerthestroker (#12), Amon-Ra St. Brown → Dirty Birds (#1), Bryce Young → Dirty Birds (#1), Michael Mayer → Cokerthestroker (#12) | Dropped: Brevyn Spann-Ford → Cokerthestroker (#12), Kirk Cousins → Dirty Birds (#1), Deebo Samuel Sr. → Dirty Birds (#1), Amon-Ra St. Brown → Cokerthestroker (#12), Bryce Young → Cokerthestroker (#12), Michael Mayer → Dirty Birds (#1)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
 - 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
-- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Corey Kiner →     Victorious Secret (#5)
 
 ## Important limits
 

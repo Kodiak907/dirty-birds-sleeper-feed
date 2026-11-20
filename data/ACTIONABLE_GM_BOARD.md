@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-20T22:49:07.599208+00:00
+Generated: 2026-11-20T23:49:34.493087+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -10,6 +10,7 @@ Generated: 2026-11-20T22:49:07.599208+00:00
 |---|---|---:|---:|---|---|
 | A.J. Brown | WR | +1.01 | 2.11 | Pat Bryant | depth candidate |
 | Darren Waller | TE | +0.00 | 5.68 | Brevyn Spann-Ford | depth candidate |
+| Cade Otton | TE | +0.00 | 3.83 | Brevyn Spann-Ford | depth candidate |
 
 ## Trade proposals
 

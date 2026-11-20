@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-20T22:49:07.599208+00:00",
-  "roster_snapshot_utc": "2026-11-20T22:48:58.146474+00:00",
+  "generated_at_utc": "2026-11-20T23:49:34.493087+00:00",
+  "roster_snapshot_utc": "2026-11-20T23:49:29.218407+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
@@ -152,9 +152,30 @@
       "research_tier": "depth candidate",
       "source_player_id": "2505",
       "team": "CAR"
+    },
+    {
+      "bench_depth_difference_ppg": 3.83,
+      "coach_authorization_required": true,
+      "drop_id": "11593",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Brevyn Spann-Ford",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Cade Otton",
+      "position": "TE",
+      "research_tier": "depth candidate",
+      "source_player_id": "8111",
+      "team": "TB"
     }
   ],
-  "waiver_screened_count": 2,
+  "waiver_screened_count": 3,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",
