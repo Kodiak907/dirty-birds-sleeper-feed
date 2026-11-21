@@ -1,19 +1,19 @@
 {
-  "generated_at_utc": "2026-11-21T14:52:45.123213+00:00",
-  "roster_snapshot_utc": "2026-11-21T14:52:41.196795+00:00",
+  "generated_at_utc": "2026-11-21T15:47:15.440764+00:00",
+  "roster_snapshot_utc": "2026-11-21T15:47:11.551954+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.214,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 2.21,
+      "dirty_birds_after": 134.36,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 2.52,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         },
         {
           "id": "13296",
@@ -23,33 +23,33 @@
         }
       ],
       "market_quote": {
-        "paid": 5656,
-        "paid_to_received_ratio": 1.016,
+        "paid": 5821,
+        "paid_to_received_ratio": 1.046,
         "received": 5567,
-        "relative_value_difference_pct": 1.6
+        "relative_value_difference_pct": 4.6
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.423,
+      "mutual_benefit_screen_score": 3.417,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.321,
-      "opponent_before": 86.696,
-      "opponent_delta_ppg": 1.62,
+      "opponent_after": 88.805,
+      "opponent_before": 87.48,
+      "opponent_delta_ppg": 1.33,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.25,
-      "projected_ppg_sent": 26.52,
+      "projected_ppg_received": 12.6,
+      "projected_ppg_sent": 26.55,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.25
+          "projected_ppg": 12.6
         }
       ],
       "starter_benefit": {
-        "them": 1.62,
-        "us": 2.21
+        "them": 1.33,
+        "us": 2.52
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
@@ -72,19 +72,20 @@
     {
       "give": [
         "Bryce Young",
-        "Zay Flowers"
+        "Chase Brown"
       ],
       "reasons": [
-        "Opponent has insufficient demonstrated benefit"
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Tee Higgins"
+        "Bhayshul Tuten"
       ]
     },
     {
       "give": [
         "Bryce Young",
-        "Zay Flowers"
+        "Chase Brown"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
@@ -101,7 +102,6 @@
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
