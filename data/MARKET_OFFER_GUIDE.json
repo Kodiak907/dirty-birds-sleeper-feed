@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-20T15:12:31.438954+00:00",
+  "generated_at_utc": "2026-11-21T15:02:03.850835+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -11,20 +11,20 @@
   "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
   "no_automatic_trade_offers": true,
   "not_a_probability": true,
-  "priced_candidates": 9,
+  "priced_candidates": 8,
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.214,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 2.21,
+      "dirty_birds_after": 134.36,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 2.52,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         },
         {
           "id": "13296",
@@ -34,41 +34,41 @@
         }
       ],
       "market_quote": {
-        "paid": 5656,
-        "paid_to_received_ratio": 1.016,
+        "paid": 5821,
+        "paid_to_received_ratio": 1.046,
         "received": 5567,
-        "relative_value_difference_pct": 1.6
+        "relative_value_difference_pct": 4.6
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.423,
+      "mutual_benefit_screen_score": 3.417,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.321,
-      "opponent_before": 86.696,
-      "opponent_delta_ppg": 1.62,
+      "opponent_after": 88.805,
+      "opponent_before": 87.48,
+      "opponent_delta_ppg": 1.33,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.25,
-      "projected_ppg_sent": 26.52,
+      "projected_ppg_received": 12.6,
+      "projected_ppg_sent": 26.55,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.25
+          "projected_ppg": 12.6
         }
       ],
       "starter_benefit": {
-        "them": 1.62,
-        "us": 2.21
+        "them": 1.33,
+        "us": 2.52
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.448,
-      "dirty_birds_before": 131.005,
+      "dirty_birds_after": 133.281,
+      "dirty_birds_before": 131.839,
       "dirty_birds_delta_ppg": 1.44,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -86,22 +86,22 @@
         }
       ],
       "market_quote": {
-        "paid": 4430,
-        "paid_to_received_ratio": 1.015,
-        "received": 4366,
-        "relative_value_difference_pct": 1.5
+        "paid": 4595,
+        "paid_to_received_ratio": 1.098,
+        "received": 4183,
+        "relative_value_difference_pct": 9.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.219,
+      "mutual_benefit_screen_score": 3.226,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 89.087,
-      "opponent_before": 86.696,
-      "opponent_delta_ppg": 2.39,
+      "opponent_after": 89.884,
+      "opponent_before": 87.48,
+      "opponent_delta_ppg": 2.4,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
       "projected_ppg_received": 9.75,
-      "projected_ppg_sent": 24.78,
+      "projected_ppg_sent": 24.77,
       "receive": [
         {
           "id": "13279",
@@ -111,7 +111,7 @@
         }
       ],
       "starter_benefit": {
-        "them": 2.39,
+        "them": 2.4,
         "us": 1.44
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -119,9 +119,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.419,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 2.41,
+      "dirty_birds_after": 133.814,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 1.97,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -131,49 +131,49 @@
           "projected_ppg": 16.47
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR",
-          "projected_ppg": 11.8
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 12.61
         }
       ],
       "market_quote": {
-        "paid": 8529,
-        "paid_to_received_ratio": 1.012,
-        "received": 8424,
-        "relative_value_difference_pct": 1.2
+        "paid": 8093,
+        "paid_to_received_ratio": 1.032,
+        "received": 7843,
+        "relative_value_difference_pct": 3.2
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.289,
+      "mutual_benefit_screen_score": 2.315,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 114.446,
-      "opponent_before": 114.216,
-      "opponent_delta_ppg": 0.23,
+      "opponent_after": 107.097,
+      "opponent_before": 106.434,
+      "opponent_delta_ppg": 0.66,
       "opponent_drop_to_fit": "Blake Corum",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 14.21,
-      "projected_ppg_sent": 28.27,
+      "projected_ppg_received": 14.58,
+      "projected_ppg_sent": 29.08,
       "receive": [
         {
-          "id": "6801",
-          "name": "Tee Higgins",
-          "pos": "WR",
-          "projected_ppg": 14.21
+          "id": "12490",
+          "name": "Bhayshul Tuten",
+          "pos": "RB",
+          "projected_ppg": 14.58
         }
       ],
       "starter_benefit": {
-        "them": 0.23,
-        "us": 2.41
+        "them": 0.66,
+        "us": 1.97
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.423,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 1.42,
+      "dirty_birds_after": 132.414,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 0.57,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -183,99 +183,99 @@
           "projected_ppg": 16.47
         },
         {
-          "id": "9997",
-          "name": "Zay Flowers",
-          "pos": "WR",
-          "projected_ppg": 11.8
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 12.61
         }
       ],
       "market_quote": {
-        "paid": 8529,
-        "paid_to_received_ratio": 1.087,
-        "received": 7843,
-        "relative_value_difference_pct": 8.7
+        "paid": 8093,
+        "paid_to_received_ratio": 1.077,
+        "received": 7514,
+        "relative_value_difference_pct": 7.7
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.377,
+      "mutual_benefit_screen_score": 2.009,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 115.442,
-      "opponent_before": 114.216,
-      "opponent_delta_ppg": 1.23,
+      "opponent_after": 108.497,
+      "opponent_before": 106.434,
+      "opponent_delta_ppg": 2.06,
       "opponent_drop_to_fit": "Blake Corum",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 13.21,
-      "projected_ppg_sent": 28.27,
+      "projected_ppg_received": 13.18,
+      "projected_ppg_sent": 29.08,
       "receive": [
         {
           "id": "6813",
           "name": "Jonathan Taylor",
           "pos": "RB",
-          "projected_ppg": 13.21
+          "projected_ppg": 13.18
         }
       ],
       "starter_benefit": {
-        "them": 1.23,
-        "us": 1.42
+        "them": 2.06,
+        "us": 0.57
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.068,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 1.06,
+      "dirty_birds_after": 132.859,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 1.02,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         },
         {
           "id": "12492",
           "name": "Pat Bryant",
           "pos": "WR",
-          "projected_ppg": 7.22
+          "projected_ppg": 7.21
         }
       ],
       "market_quote": {
-        "paid": 4798,
-        "paid_to_received_ratio": 1.009,
-        "received": 4757,
-        "relative_value_difference_pct": 0.9
+        "paid": 4685,
+        "paid_to_received_ratio": 0.944,
+        "received": 4965,
+        "relative_value_difference_pct": -5.6
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.842,
+      "mutual_benefit_screen_score": 1.827,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.055,
-      "opponent_before": 101.068,
-      "opponent_delta_ppg": 0.99,
+      "opponent_after": 102.218,
+      "opponent_before": 101.211,
+      "opponent_delta_ppg": 1.01,
       "opponent_drop_to_fit": "Woody Marks",
       "opponent_roster_id": 9,
-      "projected_ppg_received": 11.11,
-      "projected_ppg_sent": 25.43,
+      "projected_ppg_received": 11.1,
+      "projected_ppg_sent": 25.46,
       "receive": [
         {
           "id": "7525",
           "name": "DeVonta Smith",
           "pos": "WR",
-          "projected_ppg": 11.11
+          "projected_ppg": 11.1
         }
       ],
       "starter_benefit": {
-        "them": 0.99,
-        "us": 1.06
+        "them": 1.01,
+        "us": 1.02
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-11-20T15:12:31.304713+00:00",
+  "source_as_of": "2026-11-21T15:02:03.734490+00:00",
   "unpriced_cases": 0,
   "unpriced_examples": []
 }

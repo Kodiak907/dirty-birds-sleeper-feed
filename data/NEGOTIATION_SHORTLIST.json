@@ -1,6 +1,6 @@
 {
-  "all_reviewed": 19,
-  "generated_at_utc": "2026-11-20T15:12:31.405285+00:00",
+  "all_reviewed": 21,
+  "generated_at_utc": "2026-11-21T15:02:03.819380+00:00",
   "limitations": [
     "Acceptance odds unavailable. Never convert score to a probability.",
     "Position depth heuristic is a rough proxy for roster needs, not manager preference.",
@@ -9,14 +9,14 @@
   ],
   "market_truth": "No independently verified ADP, expert trade chart or league negotiation behavior has been sourced. Position-relative projected PPG is NOT fair market value.",
   "screen_formula": "1.5*our line-up gain + 0.9*min(their gain,5) + 0.35*mean valid weeks 15-17 gain - 2*percentile imbalance - 2*redundant outgoing - 1 if playoff weeks incomplete",
-  "source_projections_as_of": "2026-11-20T06:06:09.299560+00:00",
-  "source_rosters_as_of": "2026-11-20T14:56:20.184342+00:00",
+  "source_projections_as_of": "2026-11-21T07:09:04.259964+00:00",
+  "source_rosters_as_of": "2026-11-21T14:52:41.196795+00:00",
   "top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.219,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 2.21,
+      "dirty_birds_after": 134.343,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 2.5,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
@@ -26,51 +26,51 @@
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.901,
+      "mutual_benefit_screen_score": 2.15,
       "negotiation_rationale": "Opponent projected starters improve +0.00 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 3.714,
-      "opponent_after": 123.986,
-      "opponent_before": 123.986,
+      "negotiation_screen_score": 3.925,
+      "opponent_after": 123.497,
+      "opponent_before": 123.497,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
       "playoff_week_gains_ppg": {
-        "15": 3.39,
-        "16": 2.52,
-        "17": 6.61
+        "15": 2.74,
+        "16": 1.93,
+        "17": 6.02
       },
-      "position_relative_percentile_sum_received": 1.394,
+      "position_relative_percentile_sum_received": 1.41,
       "position_relative_percentile_sum_sent": 0.654,
-      "projected_ppg_received": 28.73,
-      "projected_ppg_sent": 18.21,
+      "projected_ppg_received": 29.05,
+      "projected_ppg_sent": 18.25,
       "receive": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "pos": "QB",
-          "projected_ppg": 19.39
+          "projected_ppg": 20.22
         },
         {
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 9.34
+          "projected_ppg": 8.83
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.531,
+      "surrogate_balance_gap_fraction": 0.536,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.214,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 2.21,
+      "dirty_birds_after": 134.36,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 2.52,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Unnecessary extra outgoing asset under aggregate PPG model",
@@ -81,7 +81,7 @@
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         },
         {
           "id": "13296",
@@ -91,12 +91,12 @@
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.423,
-      "negotiation_rationale": "Opponent projected starters improve +1.62 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 3.237,
-      "opponent_after": 88.321,
-      "opponent_before": 86.696,
-      "opponent_delta_ppg": 1.62,
+      "mutual_benefit_screen_score": 3.417,
+      "negotiation_rationale": "Opponent projected starters improve +1.33 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 3.457,
+      "opponent_after": 88.805,
+      "opponent_before": 87.48,
+      "opponent_delta_ppg": 1.33,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
       "playoff_week_gains_ppg": {
@@ -105,27 +105,27 @@
         "17": 3.21
       },
       "position_relative_percentile_sum_received": 0.814,
-      "position_relative_percentile_sum_sent": 1.211,
-      "projected_ppg_received": 12.25,
-      "projected_ppg_sent": 26.52,
+      "position_relative_percentile_sum_sent": 1.197,
+      "projected_ppg_received": 12.6,
+      "projected_ppg_sent": 26.55,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.25
+          "projected_ppg": 12.6
         }
       ],
       "redundant_outgoing_package": true,
-      "surrogate_balance_gap_fraction": 0.328,
+      "surrogate_balance_gap_fraction": 0.32,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.068,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 1.06,
+      "dirty_birds_after": 132.859,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 1.02,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [],
       "give": [
@@ -133,16 +133,16 @@
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.842,
-      "negotiation_rationale": "Opponent projected starters improve +0.99 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.737,
-      "opponent_after": 102.055,
-      "opponent_before": 101.068,
-      "opponent_delta_ppg": 0.99,
+      "mutual_benefit_screen_score": 1.827,
+      "negotiation_rationale": "Opponent projected starters improve +1.01 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.695,
+      "opponent_after": 102.218,
+      "opponent_before": 101.211,
+      "opponent_delta_ppg": 1.01,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
       "playoff_week_gains_ppg": {
@@ -152,14 +152,14 @@
       },
       "position_relative_percentile_sum_received": 0.729,
       "position_relative_percentile_sum_sent": 0.654,
-      "projected_ppg_received": 11.11,
-      "projected_ppg_sent": 18.21,
+      "projected_ppg_received": 11.1,
+      "projected_ppg_sent": 18.25,
       "receive": [
         {
           "id": "7525",
           "name": "DeVonta Smith",
           "pos": "WR",
-          "projected_ppg": 11.11
+          "projected_ppg": 11.1
         }
       ],
       "redundant_outgoing_package": false,
@@ -169,9 +169,9 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.068,
-      "dirty_birds_before": 131.005,
-      "dirty_birds_delta_ppg": 1.06,
+      "dirty_birds_after": 132.859,
+      "dirty_birds_before": 131.839,
+      "dirty_birds_delta_ppg": 1.02,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
@@ -181,16 +181,16 @@
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.21
+          "projected_ppg": 18.25
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.842,
-      "negotiation_rationale": "Opponent projected starters improve +0.99 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.409,
-      "opponent_after": 102.055,
-      "opponent_before": 101.068,
-      "opponent_delta_ppg": 0.99,
+      "mutual_benefit_screen_score": 1.827,
+      "negotiation_rationale": "Opponent projected starters improve +1.01 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.368,
+      "opponent_after": 102.218,
+      "opponent_before": 101.211,
+      "opponent_delta_ppg": 1.01,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 9,
       "playoff_week_gains_ppg": {
@@ -201,19 +201,19 @@
       "position_relative_percentile_sum_received": 1.229,
       "position_relative_percentile_sum_sent": 0.654,
       "projected_ppg_received": 26.81,
-      "projected_ppg_sent": 18.21,
+      "projected_ppg_sent": 18.25,
       "receive": [
         {
           "id": "12545",
           "name": "Tyler Shough",
           "pos": "QB",
-          "projected_ppg": 15.7
+          "projected_ppg": 15.71
         },
         {
           "id": "7525",
           "name": "DeVonta Smith",
           "pos": "WR",
-          "projected_ppg": 11.11
+          "projected_ppg": 11.1
         }
       ],
       "redundant_outgoing_package": false,
@@ -223,8 +223,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.448,
-      "dirty_birds_before": 131.005,
+      "dirty_birds_after": 133.281,
+      "dirty_birds_before": 131.839,
       "dirty_birds_delta_ppg": 1.44,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
@@ -246,12 +246,12 @@
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.219,
-      "negotiation_rationale": "Opponent projected starters improve +2.39 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 1.583,
-      "opponent_after": 89.087,
-      "opponent_before": 86.696,
-      "opponent_delta_ppg": 2.39,
+      "mutual_benefit_screen_score": 3.226,
+      "negotiation_rationale": "Opponent projected starters improve +2.40 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 1.607,
+      "opponent_after": 89.884,
+      "opponent_before": 87.48,
+      "opponent_delta_ppg": 2.4,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
       "playoff_week_gains_ppg": {
@@ -260,9 +260,9 @@
         "17": 1.19
       },
       "position_relative_percentile_sum_received": 0.614,
-      "position_relative_percentile_sum_sent": 1.095,
+      "position_relative_percentile_sum_sent": 1.081,
       "projected_ppg_received": 9.75,
-      "projected_ppg_sent": 24.78,
+      "projected_ppg_sent": 24.77,
       "receive": [
         {
           "id": "13279",
@@ -272,7 +272,7 @@
         }
       ],
       "redundant_outgoing_package": true,
-      "surrogate_balance_gap_fraction": 0.439,
+      "surrogate_balance_gap_fraction": 0.432,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
