@@ -8,12 +8,12 @@
     "4137",
     "6819"
   ],
-  "generated_at_utc": "2026-11-21T05:57:03.114799+00:00",
+  "generated_at_utc": "2026-11-21T07:09:07.233347+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-20T18:59:08.312096+00:00",
+  "projection_as_of": "2026-11-21T07:09:04.259964+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-21T05:56:53.722286+00:00",
+  "snapshot_utc": "2026-11-21T07:08:58.677480+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -26,7 +26,7 @@
       "missing_projection": [
         "Jaxon Smith-Njigba"
       ],
-      "ppg": 122.29,
+      "ppg": 122.23,
       "starters": [
         {
           "id": "9758",
@@ -47,7 +47,7 @@
           "name": "Jonah Coleman",
           "opponent": "LV",
           "position": "RB",
-          "ppg": 15.84
+          "ppg": 15.95
         },
         {
           "id": "7547",
@@ -61,14 +61,14 @@
           "name": "Caleb Douglas",
           "opponent": "BUF",
           "position": "WR",
-          "ppg": 7.3
+          "ppg": 7.26
         },
         {
           "id": "8131",
           "name": "Isaiah Likely",
           "opponent": "JAX",
           "position": "TE",
-          "ppg": 12.23
+          "ppg": 12.2
         },
         {
           "id": "11792",
@@ -89,21 +89,21 @@
           "name": "Chase Brown",
           "opponent": "WAS",
           "position": "RB",
-          "ppg": 12.74
+          "ppg": 12.69
         },
         {
           "id": "12492",
           "name": "Pat Bryant",
           "opponent": "LV",
           "position": "WR",
-          "ppg": 7.0
+          "ppg": 6.95
         }
       ]
     },
     "12": {
       "complete": true,
       "missing_projection": [],
-      "ppg": 136.81,
+      "ppg": 136.66,
       "starters": [
         {
           "id": "9758",
@@ -117,21 +117,21 @@
           "name": "Christian McCaffrey",
           "opponent": "SEA",
           "position": "RB",
-          "ppg": 16.29
+          "ppg": 16.43
         },
         {
           "id": "9224",
           "name": "Chase Brown",
           "opponent": "NO",
           "position": "RB",
-          "ppg": 14.87
+          "ppg": 14.79
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "SF",
           "position": "WR",
-          "ppg": 20.94
+          "ppg": 20.77
         },
         {
           "id": "7547",
@@ -145,7 +145,7 @@
           "name": "Isaiah Likely",
           "opponent": "IND",
           "position": "TE",
-          "ppg": 12.13
+          "ppg": 12.17
         },
         {
           "id": "11792",
@@ -166,14 +166,14 @@
           "name": "Jonah Coleman",
           "opponent": "PIT",
           "position": "RB",
-          "ppg": 12.91
+          "ppg": 12.92
         },
         {
           "id": "13296",
           "name": "Caleb Douglas",
           "opponent": "NYJ",
           "position": "WR",
-          "ppg": 8.36
+          "ppg": 8.27
         }
       ]
     },

@@ -9,7 +9,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Baker Mayfield | 14.59 | -1.87 | 96.7% | — | sleeper_injury_questionable |
+| 1 | Baker Mayfield | 14.59 | -1.87 | 96.7% | — | sleeper_injury_questionable, injury_report_observation_review |
 | 2 | Deshaun Watson | 12.65 | -3.81 | 98.0% | — | injury_report_observation_review |
 | 3 | Jacoby Brissett | 10.37 | -6.09 | 86.0% | — | No modeled flags (not medically cleared) |
 
@@ -39,7 +39,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 5 | Kalif Raymond | 5.93 | +1.84 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 6 | Makai Lemon | 5.70 | +1.60 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
 | 7 | Malachi Fields | 5.09 | +1.00 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 8 | Dontayvion Wicks | 4.77 | +0.68 | 79.3% | Tgt 5.7 | sleeper_injury_questionable |
+| 8 | Dontayvion Wicks | 4.77 | +0.68 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 9 | Ja'Kobi Lane | 4.69 | +0.59 | 62.0% | Tgt 4.0 | injury_report_observation_review |
 | 10 | Rashid Shaheed | 4.27 | +0.18 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 11 | Tre' Harris | 4.10 | +0.01 | 77.3% | Tgt 5.0 | sleeper_injury_out |
@@ -49,7 +49,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Darren Waller | 7.19 | +5.68 | 58.7% | Tgt 5.3 | No modeled flags (not medically cleared) |
+| 1 | Darren Waller | 7.19 | +5.68 | 58.7% | Tgt 5.3 | injury_report_observation_review |
 | 2 | Cade Otton | 5.34 | +3.83 | 94.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
 | 3 | David Njoku | 3.52 | +2.01 | 34.7% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 | 4 | Noah Fant | 3.45 | +1.94 | 45.7% | Tgt 1.7 | No modeled flags (not medically cleared) |
