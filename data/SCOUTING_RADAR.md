@@ -1,11 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-20T23:49:33.835927+00:00
-Sleeper snapshot: 2026-11-20T23:49:29.218407+00:00
+Generated: 2026-11-21T01:08:02.185115+00:00
+Sleeper snapshot: 2026-11-21T01:07:58.577398+00:00
 
-Roster change entries: 1. New completed trade entries: 0.
-
-- Victorious Secret: added Tyjae Spears; dropped Cade Otton
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
