@@ -1,6 +1,6 @@
 # Dirty Birds — Phase VIII Conditional Championship Simulator
 
-Generated: 2026-11-21T16:19:56.021292+00:00 | Live league week: 11
+Generated: 2026-11-22T16:20:27.622628+00:00 | Live league week: 11
 
 **Not actual playoff qualification odds.** This assumes the league's current top six teams become the playoff seeds.
 It also assumes a 6-team Week 15–17 bracket, two byes, and weekly score volatility of 22% (minimum 8 points).
@@ -8,11 +8,11 @@ It also assumes a 6-team Week 15–17 bracket, two byes, and weekly score volati
 | Seed | Team | Current record | Week 15 forecast | Week 16 | Week 17 | Conditional title chance |
 |---:|---|---|---:|---:|---:|---:|
 | 1 | DeeboSix0 (roster 8) | 8-2 | 117.4 | 112.8 | 114.9 | 12.1% |
-| 2 | suck my dickerson (roster 11) | 7-3 | 121.2 | 123.4 | 123.5 | 20.3% |
-| 3 | kfsn (roster 6) | 7-3 | 129.8 | 136.4 | 135.8 | 16.4% |
-| 4 | Dirty Birds (roster 1) | 7-3 | 136.4 | 135.5 | 132.2 | 25.4% |
-| 5 | Cokerthestroker (roster 12) | 6-4 | 114.4 | 120.3 | 118.8 | 6.7% |
-| 6 |     Victorious Secret (roster 5) | 5-5 | 135.7 | 128.3 | 129.5 | 19.2% |
+| 2 | suck my dickerson (roster 11) | 7-3 | 121.6 | 123.8 | 123.9 | 20.7% |
+| 3 | kfsn (roster 6) | 7-3 | 129.8 | 136.4 | 135.8 | 16.3% |
+| 4 | Dirty Birds (roster 1) | 7-3 | 136.4 | 135.5 | 132.2 | 25.3% |
+| 5 | Cokerthestroker (roster 12) | 6-4 | 114.4 | 120.3 | 118.8 | 6.6% |
+| 6 |     Victorious Secret (roster 5) | 5-5 | 135.7 | 128.3 | 129.5 | 19.1% |
 
 ## Method and limitations
 
