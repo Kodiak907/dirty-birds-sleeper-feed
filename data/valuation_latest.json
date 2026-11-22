@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-22T08:51:53.203180+00:00",
+  "generated_at_utc": "2026-11-22T09:49:29.036382+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -6509,11 +6509,11 @@
     {
       "completed_trade_count": 1,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 102.46,
+      "observed_optimal_average": 100.08,
       "observed_optimal_lineup": [
         {
-          "avg": 16.06,
-          "name": "Matthew Stafford",
+          "avg": 13.68,
+          "name": "Bo Nix",
           "position": "QB"
         },
         {
@@ -6614,7 +6614,7 @@
           "n_weeks": 10,
           "name": "Roman Wilson",
           "nonzero_weeks": 0,
-          "on_fantasy_reserve": true,
+          "on_fantasy_reserve": false,
           "position": "WR",
           "weekly_points": [
             0.0,
@@ -6781,28 +6781,6 @@
             0.0,
             0.0,
             0.0
-          ]
-        },
-        {
-          "actual_points_total": 160.62,
-          "actual_points_weekly_avg": 16.06,
-          "id": "421",
-          "n_weeks": 10,
-          "name": "Matthew Stafford",
-          "nonzero_weeks": 10,
-          "on_fantasy_reserve": false,
-          "position": "QB",
-          "weekly_points": [
-            4.1,
-            26.98,
-            18.9,
-            9.68,
-            27.32,
-            16.88,
-            17.5,
-            8.28,
-            11.22,
-            19.76
           ]
         },
         {
@@ -7054,28 +7032,6 @@
           }
         ],
         "QB": [
-          {
-            "actual_points_total": 160.62,
-            "actual_points_weekly_avg": 16.06,
-            "id": "421",
-            "n_weeks": 10,
-            "name": "Matthew Stafford",
-            "nonzero_weeks": 10,
-            "on_fantasy_reserve": false,
-            "position": "QB",
-            "weekly_points": [
-              4.1,
-              26.98,
-              18.9,
-              9.68,
-              27.32,
-              16.88,
-              17.5,
-              8.28,
-              11.22,
-              19.76
-            ]
-          },
           {
             "actual_points_total": 136.8,
             "actual_points_weekly_avg": 13.68,
@@ -7419,7 +7375,7 @@
             "n_weeks": 10,
             "name": "Roman Wilson",
             "nonzero_weeks": 0,
-            "on_fantasy_reserve": true,
+            "on_fantasy_reserve": false,
             "position": "WR",
             "weekly_points": [
               0.0,
@@ -10803,6 +10759,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-22T08:51:49.580262+00:00",
+  "snapshot_utc": "2026-11-22T09:49:25.621348+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-10"
 }

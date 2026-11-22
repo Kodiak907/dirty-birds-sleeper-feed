@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-22T08:51:53.028502+00:00
-Sleeper snapshot: 2026-11-22T08:51:49.580262+00:00
+Generated: 2026-11-22T09:49:28.797778+00:00
+Sleeper snapshot: 2026-11-22T09:49:25.621348+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1430161181938565120` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Matthew Stafford → DeeboSix0 (#8)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-22T09:49:28.797778+00:00 · new_transaction · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Matthew Stafford → DeeboSix0 (#8)
 - 2026-11-20T23:49:33.803913+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Tyjae Spears →     Victorious Secret (#5) | Dropped: Cade Otton →     Victorious Secret (#5)
 - 2026-11-20T20:52:48.943371+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Chase Brown → Dirty Birds (#1), Zay Flowers →     Victorious Secret (#5) | Dropped: Chase Brown →     Victorious Secret (#5), Zay Flowers → Dirty Birds (#1)
 - 2026-11-20T01:03:57.742302+00:00 · new_transaction · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Cairo Santos → To Infinity and Bijan (#9) | Dropped: Quentin Johnston → To Infinity and Bijan (#9)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-13T17:52:17.295924+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Chris Rodriguez Jr. → DANGER CLOSE  (#4) | Dropped: Brian Thomas Jr. → DANGER CLOSE  (#4)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Malachi Fields → CREAM MACHINE  (#2)
 - 2026-11-13T01:06:25.696652+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Audric Estime → CREAM MACHINE  (#2) | Dropped: Kansas City Chiefs → CREAM MACHINE  (#2)
-- 2026-11-12T03:55:31.086361+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Dropped: Tre' Harris →     Victorious Secret (#5)
 
 ## Important limits
 

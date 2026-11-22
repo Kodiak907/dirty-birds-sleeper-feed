@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-22T08:51:49.580262+00:00",
+  "fetched_at_utc": "2026-11-22T09:49:25.621348+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4758,9 +4758,9 @@
     "last_author_id": "166666666666666666",
     "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1429639716327686144",
+    "last_message_id": "1430161182051803136",
     "last_message_text_map": null,
-    "last_message_time": 1795215179095,
+    "last_message_time": 1795339506213,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -7153,7 +7153,6 @@
           "13298",
           "3214",
           "4035",
-          "421",
           "7594",
           "8121",
           "8136",
@@ -7175,7 +7174,6 @@
           "13298": 0.0,
           "3214": 0.0,
           "4035": 0.0,
-          "421": 0.0,
           "7594": 0.0,
           "8121": 0.0,
           "8136": 0.0,
@@ -14532,7 +14530,6 @@
         "13298",
         "3214",
         "4035",
-        "421",
         "7594",
         "8121",
         "8136",
@@ -14544,7 +14541,6 @@
         "BUF"
       ],
       "reserve": [
-        "11630",
         "8121"
       ],
       "roster_id": 8,
@@ -16160,6 +16156,29 @@
       }
     ],
     "11": [
+      {
+        "adds": null,
+        "consenter_ids": [
+          8
+        ],
+        "created": 1795339506185,
+        "creator": "1399634346477883392",
+        "draft_picks": [],
+        "drops": {
+          "421": 8
+        },
+        "leg": 11,
+        "metadata": null,
+        "roster_ids": [
+          8
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1795339506185,
+        "transaction_id": "1430161181938565120",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": {
           "9508": 5

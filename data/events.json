@@ -16482,5 +16482,54 @@
       "SF"
     ],
     "roster_id": 4
+  },
+  {
+    "added": [],
+    "detected_at_utc": "2026-11-22T09:49:25.621348+00:00",
+    "dropped": [
+      "421"
+    ],
+    "kind": "roster_change",
+    "roster_id": 8
+  },
+  {
+    "detected_at_utc": "2026-11-22T09:49:25.621348+00:00",
+    "kind": "reserve_change",
+    "new": [
+      "8121"
+    ],
+    "old": [
+      "11630",
+      "8121"
+    ],
+    "roster_id": 8
+  },
+  {
+    "detected_at_utc": "2026-11-22T09:49:25.621348+00:00",
+    "kind": "new_transaction",
+    "transaction": {
+      "adds": null,
+      "consenter_ids": [
+        8
+      ],
+      "created": 1795339506185,
+      "creator": "1399634346477883392",
+      "draft_picks": [],
+      "drops": {
+        "421": 8
+      },
+      "leg": 11,
+      "metadata": null,
+      "roster_ids": [
+        8
+      ],
+      "settings": null,
+      "status": "complete",
+      "status_updated": 1795339506185,
+      "transaction_id": "1430161181938565120",
+      "type": "free_agent",
+      "waiver_budget": []
+    },
+    "transaction_id": "1430161181938565120"
   }
 ]

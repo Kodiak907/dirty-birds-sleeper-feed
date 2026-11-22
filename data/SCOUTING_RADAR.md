@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-22T08:51:53.055292+00:00
-Sleeper snapshot: 2026-11-22T08:51:49.580262+00:00
+Generated: 2026-11-22T09:49:28.823609+00:00
+Sleeper snapshot: 2026-11-22T09:49:25.621348+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- DeeboSix0: added none; dropped Matthew Stafford
+- DeeboSix0: reserve status changed
 
 ## Limits
 
