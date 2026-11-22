@@ -35,25 +35,25 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | A.J. Brown | 8.13 | +4.50 | 71.3% | Tgt 7.3 | injury_report_observation_review |
 | 2 | Tre Tucker | 6.98 | +3.36 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
-| 3 | Keon Coleman | 6.85 | +3.23 | 63.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 3 | Keon Coleman | 6.85 | +3.23 | 63.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 4 | Quentin Johnston | 6.37 | +2.75 | 80.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
-| 5 | Makai Lemon | 5.92 | +2.30 | 92.7% | Tgt 8.7 | No modeled flags (not medically cleared) |
-| 6 | Kalif Raymond | 5.91 | +2.29 | 69.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
+| 5 | Makai Lemon | 5.92 | +2.30 | 92.7% | Tgt 7.0 | No modeled flags (not medically cleared) |
+| 6 | Kalif Raymond | 5.91 | +2.29 | 69.7% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 7 | Malachi Fields | 5.07 | +1.45 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 8 | Ja'Kobi Lane | 4.70 | +1.08 | 62.0% | Tgt 4.0 | injury_report_observation_review |
 | 9 | Rashid Shaheed | 4.28 | +0.65 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
 | 10 | Tre' Harris | 4.24 | +0.62 | 77.3% | Tgt 5.0 | sleeper_injury_out |
 | 11 | Dontayvion Wicks | 4.12 | +0.50 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
-| 12 | Rashod Bateman | 4.06 | +0.44 | 76.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
+| 12 | Rashod Bateman | 4.06 | +0.44 | 76.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Brevyn Spann-Ford (1.49 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Darren Waller | 7.19 | +5.70 | 58.7% | Tgt 5.3 | injury_report_observation_review |
-| 2 | Cade Otton | 5.35 | +3.87 | 94.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 1 | Darren Waller | 7.19 | +5.70 | 58.7% | Tgt 5.7 | injury_report_observation_review |
+| 2 | Cade Otton | 5.35 | +3.87 | 94.7% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | David Njoku | 3.53 | +2.04 | 34.7% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
-| 4 | Noah Fant | 3.43 | +1.94 | 45.7% | Tgt 1.7 | No modeled flags (not medically cleared) |
+| 4 | Noah Fant | 3.43 | +1.94 | 45.7% | Tgt 2.7 | No modeled flags (not medically cleared) |
 | 5 | Colby Parkinson | 2.66 | +1.17 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
 | 6 | Zach Ertz | 2.00 | +0.52 | 23.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
 
