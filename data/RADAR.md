@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-22T09:49:28.797778+00:00
-Sleeper snapshot: 2026-11-22T09:49:25.621348+00:00
+Generated: 2026-11-22T10:48:07.347986+00:00
+Sleeper snapshot: 2026-11-22T10:48:00.993631+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1430161181938565120` · FREE_AGENT · COMPLETE · DeeboSix0 (#8) | Dropped: Matthew Stafford → DeeboSix0 (#8)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

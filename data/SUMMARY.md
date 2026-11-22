@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-22T09:49:25.621348+00:00
+Updated: 2026-11-22T10:48:00.993631+00:00
 League: 1399157532559192064
 NFL week: 11
 
@@ -19,9 +19,7 @@ NFL week: 11
 - Roster 12: Cokerthestroker | 6-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 8: added none; dropped Matthew Stafford
-- reserve_change â roster/transaction 8
-- Transaction 1430161181938565120: free_agent / complete / rosters [8] / adds None / drops {'421': 8} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
