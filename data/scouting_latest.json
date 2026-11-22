@@ -1,7 +1,13 @@
 {
-  "generated_at_utc": "2026-11-22T17:44:17.213233+00:00",
+  "generated_at_utc": "2026-11-22T18:15:27.295848+00:00",
   "is_initial_baseline": false,
   "new_completed_trades": [],
-  "roster_changes": [],
-  "source_snapshot_utc": "2026-11-22T17:44:11.108713+00:00"
+  "roster_changes": [
+    {
+      "kind": "reserve_change",
+      "roster_id": 3,
+      "team": "BigOlBoyle"
+    }
+  ],
+  "source_snapshot_utc": "2026-11-22T18:15:23.440603+00:00"
 }
