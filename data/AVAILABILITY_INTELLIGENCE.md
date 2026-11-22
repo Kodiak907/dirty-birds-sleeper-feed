@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-22T07:09:40.843664+00:00
-Sleeper snapshot: 2026-11-22T07:09:30.639590+00:00
-nflverse observations: 2026-11-22T07:09:36.400603+00:00; injury feed loaded: True
+Generated: 2026-11-22T08:51:57.275439+00:00
+Sleeper snapshot: 2026-11-22T08:51:49.580262+00:00
+nflverse observations: 2026-11-22T08:51:52.826073+00:00; injury feed loaded: True
 
-**New observed changes:** 2. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,8 +32,8 @@ nflverse observations: 2026-11-22T07:09:36.400603+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Jacory Croskey-Merritt** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'report_primary_injury': 'Groin', 'report_status': 'Questionable', 'week': '11'}
-- **Rachaad White** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'report_primary_injury': 'Heel', 'report_status': 'Questionable', 'week': '11'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 
