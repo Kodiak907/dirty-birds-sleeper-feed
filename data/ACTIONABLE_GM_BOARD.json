@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-22T14:51:04.009880+00:00",
-  "roster_snapshot_utc": "2026-11-22T14:50:59.411330+00:00",
+  "generated_at_utc": "2026-11-22T15:46:09.530577+00:00",
+  "roster_snapshot_utc": "2026-11-22T15:46:02.828963+00:00",
   "trade_qualified_for_negotiation_review": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 134.36,
-      "dirty_birds_before": 131.839,
-      "dirty_birds_delta_ppg": 2.52,
+      "dirty_birds_after": 134.136,
+      "dirty_birds_before": 131.929,
+      "dirty_birds_delta_ppg": 2.21,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
@@ -19,37 +19,37 @@
           "id": "13296",
           "name": "Caleb Douglas",
           "pos": "WR",
-          "projected_ppg": 8.3
+          "projected_ppg": 8.32
         }
       ],
       "market_quote": {
-        "paid": 5821,
-        "paid_to_received_ratio": 1.046,
+        "paid": 5721,
+        "paid_to_received_ratio": 1.028,
         "received": 5567,
-        "relative_value_difference_pct": 4.6
+        "relative_value_difference_pct": 2.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.417,
+      "mutual_benefit_screen_score": 3.452,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.805,
-      "opponent_before": 87.48,
-      "opponent_delta_ppg": 1.33,
+      "opponent_after": 88.754,
+      "opponent_before": 87.106,
+      "opponent_delta_ppg": 1.65,
       "opponent_drop_to_fit": "Audric Estime",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 12.6,
-      "projected_ppg_sent": 26.55,
+      "projected_ppg_received": 12.3,
+      "projected_ppg_sent": 26.56,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 12.6
+          "projected_ppg": 12.3
         }
       ],
       "starter_benefit": {
-        "them": 1.33,
-        "us": 2.52
+        "them": 1.65,
+        "us": 2.21
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
@@ -84,28 +84,30 @@
     },
     {
       "give": [
-        "Bryce Young",
-        "Chase Brown"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Jonathan Taylor"
-      ]
-    },
-    {
-      "give": [
         "C.J. Stroud",
         "Pat Bryant"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
         "DeVonta Smith"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Caleb Douglas"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Tony Pollard"
       ]
     }
   ],
