@@ -19,7 +19,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Samaje Perine | 6.55 | +4.20 | 35.0% | Carries 7.0 | No modeled flags (not medically cleared) |
-| 2 | Keaton Mitchell | 4.98 | +2.62 | 26.3% | Carries 4.7 | No modeled flags (not medically cleared) |
+| 2 | Keaton Mitchell | 4.98 | +2.62 | 26.3% | Carries 3.3 | No modeled flags (not medically cleared) |
 | 3 | Zonovan Knight | 4.24 | +1.88 | 43.0% | — | carries_missing |
 | 4 | Tyrone Tracy Jr. | 3.53 | +1.18 | 24.0% | Carries 5.0 | projection_weeks_partial |
 | 5 | MarShawn Lloyd | 2.50 | +0.14 | 25.7% | Carries 4.3 | injury_report_observation_review |
@@ -34,15 +34,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | A.J. Brown | 8.13 | +4.50 | 71.3% | Tgt 7.3 | injury_report_observation_review |
-| 2 | Tre Tucker | 6.98 | +3.36 | 68.7% | Tgt 3.7 | No modeled flags (not medically cleared) |
+| 2 | Tre Tucker | 6.98 | +3.36 | 68.7% | Tgt 6.7 | No modeled flags (not medically cleared) |
 | 3 | Keon Coleman | 6.85 | +3.23 | 63.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 4 | Quentin Johnston | 6.37 | +2.75 | 80.7% | Tgt 3.0 | No modeled flags (not medically cleared) |
+| 4 | Quentin Johnston | 6.37 | +2.75 | 80.7% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 5 | Makai Lemon | 5.92 | +2.30 | 92.7% | Tgt 7.0 | No modeled flags (not medically cleared) |
 | 6 | Kalif Raymond | 5.91 | +2.29 | 69.7% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 7 | Malachi Fields | 5.07 | +1.45 | 82.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 8 | Ja'Kobi Lane | 4.70 | +1.08 | 62.0% | Tgt 4.0 | injury_report_observation_review |
 | 9 | Rashid Shaheed | 4.28 | +0.65 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 10 | Tre' Harris | 4.24 | +0.62 | 77.3% | Tgt 5.0 | sleeper_injury_out |
+| 10 | Tre' Harris | 4.24 | +0.62 | 77.3% | Tgt 4.7 | sleeper_injury_out |
 | 11 | Dontayvion Wicks | 4.12 | +0.50 | 79.3% | Tgt 5.7 | sleeper_injury_questionable, injury_report_observation_review |
 | 12 | Rashod Bateman | 4.06 | +0.44 | 76.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
 

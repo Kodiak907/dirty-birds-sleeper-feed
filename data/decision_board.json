@@ -25,7 +25,7 @@
       "ppg": 3.623
     }
   },
-  "generated_at_utc": "2026-11-23T00:19:10.075831+00:00",
+  "generated_at_utc": "2026-11-23T01:09:35.502428+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -546,7 +546,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 4.67,
+          "carries_per_game": 3.33,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -556,7 +556,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 26.3,
           "snap_trend_3_appearances_pp": -8.0,
-          "targets_per_game": 2.67
+          "targets_per_game": 2.0
         },
         "name": "Keaton Mitchell",
         "ppg": 4.98,
@@ -968,7 +968,7 @@
           "projection_coverage": 0.857,
           "recent_snap_pct": 68.7,
           "snap_trend_3_appearances_pp": 34.0,
-          "targets_per_game": 3.67
+          "targets_per_game": 6.67
         },
         "name": "Tre Tucker",
         "ppg": 6.98,
@@ -1008,7 +1008,7 @@
       },
       {
         "audit": {
-          "carries_per_game": 0.33,
+          "carries_per_game": 0.67,
           "flags": [],
           "injury_report_observation": {
             "practice_status": "Full Participation in Practice",
@@ -1018,7 +1018,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 80.7,
           "snap_trend_3_appearances_pp": -5.0,
-          "targets_per_game": 3.0
+          "targets_per_game": 2.33
         },
         "name": "Quentin Johnston",
         "ppg": 6.37,
@@ -1165,7 +1165,7 @@
           "projection_coverage": 1.0,
           "recent_snap_pct": 77.3,
           "snap_trend_3_appearances_pp": 47.0,
-          "targets_per_game": 5.0
+          "targets_per_game": 4.67
         },
         "name": "Tre' Harris",
         "ppg": 4.24,
@@ -1472,5 +1472,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-23T00:19:04.747702+00:00"
+  "snapshot_utc": "2026-11-23T01:09:31.206192+00:00"
 }
