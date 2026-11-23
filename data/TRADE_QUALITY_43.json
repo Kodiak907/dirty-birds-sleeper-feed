@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-23T07:35:43.373254+00:00",
+  "generated_at_utc": "2026-11-23T09:25:14.045686+00:00",
   "candidates_evaluated": 59670,
   "market_matched": 6925,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-23T03:32:55.419636+00:00",
-  "projection_as_of": "2026-11-22T21:21:34.799678+00:00",
+  "projection_as_of": "2026-11-23T09:25:11.971177+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -37,13 +37,13 @@
           "pos": "TE"
         }
       ],
-      "our_gain": 2.2,
-      "their_gain": 1.62,
+      "our_gain": 2.12,
+      "their_gain": 1.78,
       "market_paid_received_ratio": 0.989,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.139,
+      "score": 3.155,
       "not_an_approved_offer": true
     },
     {
@@ -73,13 +73,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.2,
-      "their_gain": 1.62,
+      "our_gain": 2.12,
+      "their_gain": 1.78,
       "market_paid_received_ratio": 0.95,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 3.021,
+      "score": 3.037,
       "not_an_approved_offer": true
     },
     {
@@ -109,13 +109,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.88,
-      "their_gain": 0.72,
+      "our_gain": 1.94,
+      "their_gain": 0.81,
       "market_paid_received_ratio": 1.018,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.257,
+      "score": 2.371,
       "not_an_approved_offer": true
     },
     {
@@ -145,13 +145,13 @@
           "pos": "QB"
         }
       ],
-      "our_gain": 1.88,
-      "their_gain": 0.72,
+      "our_gain": 1.94,
+      "their_gain": 0.81,
       "market_paid_received_ratio": 1.022,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.246,
+      "score": 2.36,
       "not_an_approved_offer": true
     },
     {
@@ -181,13 +181,49 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.57,
-      "their_gain": 0.62,
+      "our_gain": 1.6,
+      "their_gain": 0.59,
       "market_paid_received_ratio": 0.87,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.552,
+      "score": 1.564,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 9,
+      "opponent_name": "To Infinity and Bijan",
+      "give": [
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        },
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "pos": "RB"
+        },
+        {
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 1.58,
+      "their_gain": 0.61,
+      "market_paid_received_ratio": 0.853,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 1.504,
       "not_an_approved_offer": true
     }
   ],
