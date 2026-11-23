@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-23T09:25:11.326206+00:00
+Generated: 2026-11-23T21:59:51.638842+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,20 +8,21 @@ Generated: 2026-11-23T09:25:11.326206+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Darren Waller | TE | +0.00 | 5.7 | Brevyn Spann-Ford | depth candidate |
-| Cade Otton | TE | +0.00 | 3.87 | Brevyn Spann-Ford | depth candidate |
+| Darren Waller | TE | +0.00 | 5.71 | Brevyn Spann-Ford | depth candidate |
+| Cade Otton | TE | +0.00 | 3.86 | Brevyn Spann-Ford | depth candidate |
 
 ## Trade proposals
 
-**Ideas require Coach review**
+**No defensible opening offers**
 
 The prior two trades are suppressed because both teams' projected gains were marginal relative to the assets involved.
 
 ## Rejected old offers
 
-- Bryce Young, Caleb Douglas for Carnell Tate: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Caleb Douglas for Breece Hall: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
 - Bryce Young, Chase Brown for Bhayshul Tuten: Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- C.J. Stroud, Pat Bryant for DeVonta Smith: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Pat Bryant for Carnell Tate: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
+- C.J. Stroud, Caleb Douglas for DeVonta Smith: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
 - C.J. Stroud, Caleb Douglas for Tony Pollard: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
 
 ## Required checks

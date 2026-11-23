@@ -1,60 +1,7 @@
 {
-  "generated_at_utc": "2026-11-23T09:25:11.326206+00:00",
-  "roster_snapshot_utc": "2026-11-23T09:25:07.387395+00:00",
-  "trade_qualified_for_negotiation_review": [
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 134.136,
-      "dirty_birds_before": 131.929,
-      "dirty_birds_delta_ppg": 2.21,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB",
-          "projected_ppg": 18.25
-        },
-        {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR",
-          "projected_ppg": 8.32
-        }
-      ],
-      "market_quote": {
-        "paid": 5721,
-        "paid_to_received_ratio": 1.028,
-        "received": 5567,
-        "relative_value_difference_pct": 2.8
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 3.452,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.754,
-      "opponent_before": 87.106,
-      "opponent_delta_ppg": 1.65,
-      "opponent_drop_to_fit": "Audric Estime",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 12.3,
-      "projected_ppg_sent": 26.56,
-      "receive": [
-        {
-          "id": "10229",
-          "name": "Rashee Rice",
-          "pos": "WR",
-          "projected_ppg": 12.3
-        }
-      ],
-      "starter_benefit": {
-        "them": 1.65,
-        "us": 2.21
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    }
-  ],
+  "generated_at_utc": "2026-11-23T21:59:51.638842+00:00",
+  "roster_snapshot_utc": "2026-11-23T21:59:47.234117+00:00",
+  "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
       "give": [
@@ -66,7 +13,7 @@
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Carnell Tate"
+        "Breece Hall"
       ]
     },
     {
@@ -84,12 +31,24 @@
     },
     {
       "give": [
-        "C.J. Stroud",
+        "Bryce Young",
         "Pat Bryant"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Carnell Tate"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Caleb Douglas"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
@@ -111,10 +70,10 @@
       ]
     }
   ],
-  "trade_status": "Ideas require Coach review",
+  "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [
     {
-      "bench_depth_difference_ppg": 5.7,
+      "bench_depth_difference_ppg": 5.71,
       "coach_authorization_required": true,
       "drop_id": "11593",
       "evidence_flags": [
@@ -135,7 +94,7 @@
       "team": "CAR"
     },
     {
-      "bench_depth_difference_ppg": 3.87,
+      "bench_depth_difference_ppg": 3.86,
       "coach_authorization_required": true,
       "drop_id": "11593",
       "evidence_flags": [
