@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-23T15:23:51.392729+00:00",
+  "generated_at_utc": "2026-11-24T23:29:43.467087+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -11,20 +11,20 @@
   "market_baseline": "12-team 1QB FULL PPR redraft; FFL is HALF PPR",
   "no_automatic_trade_offers": true,
   "not_a_probability": true,
-  "priced_candidates": 9,
+  "priced_candidates": 7,
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 132.935,
-      "dirty_birds_before": 131.914,
-      "dirty_birds_delta_ppg": 1.02,
+      "dirty_birds_after": 137.045,
+      "dirty_birds_before": 135.469,
+      "dirty_birds_delta_ppg": 1.58,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.5
+          "projected_ppg": 16.21
         },
         {
           "id": "13296",
@@ -34,258 +34,280 @@
         }
       ],
       "market_quote": {
-        "paid": 4568,
-        "paid_to_received_ratio": 0.974,
-        "received": 4690,
-        "relative_value_difference_pct": -2.6
+        "paid": 4106,
+        "paid_to_received_ratio": 1.069,
+        "received": 3840,
+        "relative_value_difference_pct": 6.9
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.641,
+      "mutual_benefit_screen_score": 2.87,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 89.433,
-      "opponent_before": 87.196,
-      "opponent_delta_ppg": 2.24,
-      "opponent_drop_to_fit": "Audric Estime",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 9.33,
-      "projected_ppg_sent": 24.81,
-      "receive": [
-        {
-          "id": "8155",
-          "name": "Breece Hall",
-          "pos": "RB",
-          "projected_ppg": 9.33
-        }
-      ],
-      "starter_benefit": {
-        "them": 2.24,
-        "us": 1.02
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 133.853,
-      "dirty_birds_before": 131.914,
-      "dirty_birds_delta_ppg": 1.94,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9228",
-          "name": "Bryce Young",
-          "pos": "QB",
-          "projected_ppg": 16.5
-        },
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 12.61
-        }
-      ],
-      "market_quote": {
-        "paid": 8671,
-        "paid_to_received_ratio": 1.09,
-        "received": 7956,
-        "relative_value_difference_pct": 9.0
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.43,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 107.053,
-      "opponent_before": 106.247,
-      "opponent_delta_ppg": 0.81,
-      "opponent_drop_to_fit": "Blake Corum",
+      "opponent_after": 107.511,
+      "opponent_before": 105.889,
+      "opponent_delta_ppg": 1.62,
+      "opponent_drop_to_fit": "Xavier Worthy",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 14.55,
-      "projected_ppg_sent": 29.11,
+      "projected_ppg_received": 9.88,
+      "projected_ppg_sent": 24.52,
       "receive": [
         {
-          "id": "12490",
-          "name": "Bhayshul Tuten",
+          "id": "11586",
+          "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 14.55
+          "projected_ppg": 9.88
         }
       ],
       "starter_benefit": {
-        "them": 0.81,
-        "us": 1.94
+        "them": 1.62,
+        "us": 1.58
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
+      "warnings": [
+        "Blake Corum: snap coverage absent"
+      ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.385,
-      "dirty_birds_before": 131.914,
-      "dirty_birds_delta_ppg": 1.47,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.469,
+      "dirty_birds_delta_ppg": 1.39,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.5
+          "projected_ppg": 16.21
         },
         {
           "id": "12492",
           "name": "Pat Bryant",
           "pos": "WR",
-          "projected_ppg": 7.21
+          "projected_ppg": 7.25
         }
       ],
       "market_quote": {
-        "paid": 3823,
-        "paid_to_received_ratio": 0.968,
-        "received": 3951,
-        "relative_value_difference_pct": -3.2
+        "paid": 3114,
+        "paid_to_received_ratio": 0.922,
+        "received": 3376,
+        "relative_value_difference_pct": -7.8
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.514,
+      "mutual_benefit_screen_score": 1.797,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 88.522,
-      "opponent_before": 87.196,
-      "opponent_delta_ppg": 1.33,
-      "opponent_drop_to_fit": "Audric Estime",
-      "opponent_roster_id": 2,
-      "projected_ppg_received": 9.78,
-      "projected_ppg_sent": 23.71,
-      "receive": [
-        {
-          "id": "13279",
-          "name": "Carnell Tate",
-          "pos": "WR",
-          "projected_ppg": 9.78
-        }
-      ],
-      "starter_benefit": {
-        "them": 1.33,
-        "us": 1.47
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 132.957,
-      "dirty_birds_before": 131.914,
-      "dirty_birds_delta_ppg": 1.04,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB",
-          "projected_ppg": 18.38
-        },
-        {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR",
-          "projected_ppg": 8.31
-        }
-      ],
-      "market_quote": {
-        "paid": 5815,
-        "paid_to_received_ratio": 1.001,
-        "received": 5810,
-        "relative_value_difference_pct": 0.1
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.879,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 102.413,
-      "opponent_before": 101.36,
-      "opponent_delta_ppg": 1.05,
-      "opponent_drop_to_fit": "Woody Marks",
+      "opponent_after": 104.98,
+      "opponent_before": 104.342,
+      "opponent_delta_ppg": 0.64,
+      "opponent_drop_to_fit": "Tyler Shough",
       "opponent_roster_id": 9,
-      "projected_ppg_received": 11.24,
-      "projected_ppg_sent": 26.69,
+      "projected_ppg_received": 9.7,
+      "projected_ppg_sent": 23.46,
       "receive": [
         {
-          "id": "7525",
-          "name": "DeVonta Smith",
+          "id": "7526",
+          "name": "Jaylen Waddle",
           "pos": "WR",
-          "projected_ppg": 11.24
+          "projected_ppg": 9.7
         }
       ],
       "starter_benefit": {
-        "them": 1.05,
-        "us": 1.04
+        "them": 0.64,
+        "us": 1.39
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 133.207,
-      "dirty_birds_before": 131.914,
-      "dirty_birds_delta_ppg": 1.29,
+      "dirty_birds_after": 136.581,
+      "dirty_birds_before": 135.469,
+      "dirty_birds_delta_ppg": 1.11,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
-          "id": "9758",
-          "name": "C.J. Stroud",
+          "id": "9228",
+          "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 18.38
+          "projected_ppg": 16.21
         },
         {
-          "id": "13296",
-          "name": "Caleb Douglas",
-          "pos": "WR",
-          "projected_ppg": 8.31
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB",
+          "projected_ppg": 13.67
         }
       ],
       "market_quote": {
-        "paid": 5815,
-        "paid_to_received_ratio": 1.045,
-        "received": 5567,
-        "relative_value_difference_pct": 4.5
+        "paid": 7972,
+        "paid_to_received_ratio": 1.076,
+        "received": 7407,
+        "relative_value_difference_pct": 7.6
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.551,
+      "mutual_benefit_screen_score": 1.331,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 116.142,
-      "opponent_before": 115.669,
-      "opponent_delta_ppg": 0.47,
+      "opponent_after": 119.058,
+      "opponent_before": 118.66,
+      "opponent_delta_ppg": 0.4,
       "opponent_drop_to_fit": "Xavier Hutchinson",
       "opponent_roster_id": 11,
-      "projected_ppg_received": 11.49,
-      "projected_ppg_sent": 26.69,
+      "projected_ppg_received": 14.79,
+      "projected_ppg_sent": 29.89,
       "receive": [
         {
-          "id": "5967",
-          "name": "Tony Pollard",
+          "id": "6790",
+          "name": "D'Andre Swift",
           "pos": "RB",
-          "projected_ppg": 11.49
+          "projected_ppg": 14.79
         }
       ],
       "starter_benefit": {
-        "them": 0.47,
-        "us": 1.29
+        "them": 0.4,
+        "us": 1.11
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 136.004,
+      "dirty_birds_before": 135.469,
+      "dirty_birds_delta_ppg": 0.53,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9228",
+          "name": "Bryce Young",
+          "pos": "QB",
+          "projected_ppg": 16.21
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR",
+          "projected_ppg": 8.31
+        }
+      ],
+      "market_quote": {
+        "paid": 4106,
+        "paid_to_received_ratio": 0.927,
+        "received": 4429,
+        "relative_value_difference_pct": -7.3
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 0.851,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 89.478,
+      "opponent_before": 89.061,
+      "opponent_delta_ppg": 0.42,
+      "opponent_drop_to_fit": "Audric Estime",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 8.84,
+      "projected_ppg_sent": 24.52,
+      "receive": [
+        {
+          "id": "8155",
+          "name": "Breece Hall",
+          "pos": "RB",
+          "projected_ppg": 8.84
+        }
+      ],
+      "starter_benefit": {
+        "them": 0.42,
+        "us": 0.53
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.988,
+      "dirty_birds_before": 135.469,
+      "dirty_birds_delta_ppg": 0.52,
+      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "give": [
+        {
+          "id": "8131",
+          "name": "Isaiah Likely",
+          "pos": "TE",
+          "projected_ppg": 11.34
+        }
+      ],
+      "market_quote": {
+        "paid": 5728,
+        "paid_to_received_ratio": 0.864,
+        "received": 6629,
+        "relative_value_difference_pct": -13.6
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 0.956,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 110.793,
+      "opponent_before": 110.244,
+      "opponent_delta_ppg": 0.55,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 12,
+      "projected_ppg_received": 20.16,
+      "projected_ppg_sent": 11.34,
+      "receive": [
+        {
+          "id": "11646",
+          "name": "Jalen Coker",
+          "pos": "WR",
+          "projected_ppg": 10.78
+        },
+        {
+          "id": "9484",
+          "name": "Tucker Kraft",
+          "pos": "TE",
+          "projected_ppg": 9.38
+        }
+      ],
+      "starter_benefit": {
+        "them": 0.55,
+        "us": 0.52
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-11-23T15:23:51.269048+00:00",
-  "unpriced_cases": 1,
+  "source_as_of": "2026-11-24T23:29:43.356901+00:00",
+  "unpriced_cases": 3,
   "unpriced_examples": [
     {
       "give": [
-        "Bryce Young",
-        "Caleb Douglas"
+        "Isaiah Likely"
       ],
       "reason": "One or more players has no matched market value",
       "receive": [
-        "Travis Etienne Jr."
+        "Jalen Coker",
+        "Harold Fannin Jr."
+      ]
+    },
+    {
+      "give": [
+        "Minnesota Vikings"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Harold Fannin Jr.",
+        "Denver Broncos"
+      ]
+    },
+    {
+      "give": [
+        "Minnesota Vikings"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Aaron Jones Sr.",
+        "Denver Broncos"
       ]
     }
   ]

@@ -1,33 +1,37 @@
 # Dirty Birds — Mutually Beneficial Trade Ideas
 
-Generated: 2026-11-23T15:23:50.768120+00:00
+Generated: 2026-11-24T23:29:42.951911+00:00
 
 **These are statistical conversation starters, NOT predicted acceptances or recommended offers.**
 Only projected starting-lineup gains (not medical-adjusted values) are tested. Ranking deliberately requires both teams to gain.
 
 | # | Opponent roster | We give | We receive | Our gain | Their gain | Extra cut |
 |---:|---:|---|---|---:|---:|---|
-| 1 | 2 | C.J. Stroud, Caleb Douglas | Rashee Rice | +2.12 | +1.78 |  Them: Audric Estime |
-| 2 | 2 | Bryce Young, Caleb Douglas | Carnell Tate | +1.47 | +2.43 |  Them: Audric Estime |
-| 3 | 2 | Bryce Young, Caleb Douglas | Breece Hall | +1.02 | +2.24 |  Them: Audric Estime |
-| 4 | 2 | Bryce Young, Pat Bryant | Carnell Tate | +1.47 | +1.33 |  Them: Audric Estime |
-| 5 | 3 | Bryce Young, Chase Brown | Bhayshul Tuten | +1.94 | +0.81 |  Them: Blake Corum |
-| 6 | 3 | Bryce Young, Jonah Coleman | Bhayshul Tuten | +0.92 | +1.83 |  Them: Blake Corum |
-| 7 | 3 | Bryce Young, Caleb Douglas | Travis Etienne Jr. | +0.66 | +2.09 |  Them: Blake Corum |
-| 8 | 3 | Bryce Young, Caleb Douglas | Omarion Hampton | +0.63 | +2.12 |  Them: Blake Corum |
-| 9 | 9 | C.J. Stroud | DeVonta Smith | +1.04 | +1.05 | None |
-| 10 | 9 | C.J. Stroud, Caleb Douglas | DeVonta Smith | +1.04 | +1.05 |  Them: Woody Marks |
-| 11 | 9 | C.J. Stroud, Pat Bryant | DeVonta Smith | +1.04 | +1.05 |  Them: Woody Marks |
-| 12 | 9 | C.J. Stroud | Tyler Shough, DeVonta Smith | +1.04 | +1.05 | Us: Brevyn Spann-Ford |
-| 13 | 10 | Chase Brown, Pat Bryant | Saquon Barkley | +1.24 | +0.61 |  Them: Keenan Allen |
-| 14 | 11 | C.J. Stroud, Chase Brown | D'Andre Swift | +1.14 | +0.63 |  Them: Xavier Hutchinson |
-| 15 | 11 | C.J. Stroud, Caleb Douglas | Tony Pollard | +1.29 | +0.47 |  Them: Xavier Hutchinson |
-| 16 | 11 | Bryce Young, Caleb Douglas | Ashton Jeanty | +1.72 | +0.05 |  Them: Xavier Hutchinson |
-| 17 | 11 | Bryce Young, Caleb Douglas | Quinshon Judkins | +0.69 | +1.08 |  Them: Xavier Hutchinson |
-| 18 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +1.66 | +0.00 | Us: Brevyn Spann-Ford |
-| 19 | 5 | Bryce Young | Patrick Mahomes, Rhamondre Stevenson | +1.66 | +0.00 | Us: Brevyn Spann-Ford |
-| 20 | 5 | Caleb Douglas | Patrick Mahomes, Rhamondre Stevenson | +1.66 | +0.00 | Us: Brevyn Spann-Ford |
-| 21 | 5 | Pat Bryant | Patrick Mahomes, Rhamondre Stevenson | +1.66 | +0.00 | Us: Brevyn Spann-Ford |
+| 1 | 3 | Bryce Young | Blake Corum | +1.58 | +1.62 | None |
+| 2 | 3 | Bryce Young, Caleb Douglas | Blake Corum | +1.58 | +1.62 |  Them: Xavier Worthy |
+| 3 | 3 | Bryce Young, Pat Bryant | Blake Corum | +1.58 | +1.62 |  Them: Xavier Worthy |
+| 4 | 3 | Bryce Young | Justin Herbert, Blake Corum | +1.58 | +1.62 | Us: Brevyn Spann-Ford |
+| 5 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +3.28 | +0.00 | Us: Brevyn Spann-Ford |
+| 6 | 5 | Bryce Young | Patrick Mahomes, Rhamondre Stevenson | +3.28 | +0.00 | Us: Brevyn Spann-Ford |
+| 7 | 5 | Caleb Douglas | Patrick Mahomes, Rhamondre Stevenson | +3.28 | +0.00 | Us: Brevyn Spann-Ford |
+| 8 | 5 | Pat Bryant | Patrick Mahomes, Rhamondre Stevenson | +3.28 | +0.00 | Us: Brevyn Spann-Ford |
+| 9 | 10 | Pat Bryant | Jordan Love | +0.81 | +1.97 | None |
+| 10 | 10 | C.J. Stroud, Pat Bryant | Jordan Love | +0.81 | +1.97 |  Them: Keenan Allen |
+| 11 | 10 | Bryce Young, Pat Bryant | Jordan Love | +0.81 | +1.97 |  Them: Keenan Allen |
+| 12 | 10 | Pat Bryant | Jordan Love, Los Angeles Rams | +0.81 | +1.97 | Us: Brevyn Spann-Ford |
+| 13 | 9 | Bryce Young | Jaylen Waddle | +1.39 | +0.64 | None |
+| 14 | 9 | Bryce Young, Caleb Douglas | Jaylen Waddle | +1.39 | +0.64 |  Them: Tyler Shough |
+| 15 | 9 | Bryce Young, Pat Bryant | Jaylen Waddle | +1.39 | +0.64 |  Them: Tyler Shough |
+| 16 | 9 | Bryce Young | Tyler Shough, Jaylen Waddle | +1.39 | +0.64 | Us: Brevyn Spann-Ford |
+| 17 | 11 | Bryce Young, Jonah Coleman | D'Andre Swift | +1.11 | +0.40 |  Them: Xavier Hutchinson |
+| 18 | 11 | Bryce Young, Chase Brown | Tony Pollard | +1.26 | +0.25 |  Them: Xavier Hutchinson |
+| 19 | 4 | Chase Brown | Brock Purdy, George Kittle | +1.11 | +0.11 | Us: Brevyn Spann-Ford |
+| 20 | 4 | Pat Bryant | Jared Goff | +0.58 | +0.51 | None |
+| 21 | 4 | C.J. Stroud, Pat Bryant | Jared Goff | +0.58 | +0.51 |  Them: Jordan Watkins |
+| 22 | 4 | Bryce Young, Pat Bryant | Jared Goff | +0.58 | +0.51 |  Them: Jordan Watkins |
+| 23 | 12 | Isaiah Likely | Jalen Coker, Tucker Kraft | +0.52 | +0.55 | Us: Brevyn Spann-Ford |
+| 24 | 12 | Isaiah Likely | Jalen Coker, Harold Fannin Jr. | +0.51 | +0.56 | Us: Brevyn Spann-Ford |
+| 25 | 12 | Minnesota Vikings | Harold Fannin Jr., Denver Broncos | +0.77 | +0.30 | Us: Brevyn Spann-Ford |
 
 ## Due diligence before negotiating
 

@@ -1,33 +1,33 @@
 # Dirty Birds — Negotiation Intelligence Shortlist
 
-Generated: 2026-11-23T15:23:51.355327+00:00
+Generated: 2026-11-24T23:29:43.444236+00:00
 
 **Screened trade ideas only; not market-priced, predicted to be accepted, or authorized offers.**
 
 | # | Opponent roster | Give | Receive | Our gain | Their gain | Playoff weeks 15/16/17 | Warnings |
 |---:|---:|---|---|---:|---:|---|---|
-| 1 | 2 | C.J. Stroud, Caleb Douglas | Rashee Rice | +2.12 | +1.78 | +4.2/+2.2/+3.2 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 2 | 9 | C.J. Stroud | DeVonta Smith | +1.04 | +1.05 | +1.5/+1.4/+1.1 | No flagged data gap |
-| 3 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +1.66 | +0.00 | +2.7/+1.9/+6.0 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 4 | 9 | C.J. Stroud | Tyler Shough, DeVonta Smith | +1.04 | +1.05 | +1.5/+3.8/+2.1 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
-| 5 | 2 | Bryce Young, Caleb Douglas | Carnell Tate | +1.47 | +2.43 | -0.8/+0.9/+1.2 | Unnecessary extra outgoing asset under aggregate PPG model; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 1 | 5 | C.J. Stroud | Patrick Mahomes, Rhamondre Stevenson | +3.28 | +0.00 | +3.9/+2.3/+7.2 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 2 | 3 | Bryce Young | Blake Corum | +1.58 | +1.62 | +1.7/+0.3/+1.3 | Blake Corum: snap coverage absent |
+| 3 | 3 | Bryce Young | Justin Herbert, Blake Corum | +1.58 | +1.62 | +1.7/+0.3/+1.3 | Blake Corum: snap coverage absent; Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 4 | 10 | Pat Bryant | Jordan Love | +0.81 | +1.97 | +2.4/+2.3/+2.7 | Large sum-of-positional-percentiles imbalance (NOT market pricing) |
+| 5 | 9 | Bryce Young | Jaylen Waddle | +1.39 | +0.64 | +0.2/+0.0/+2.1 | No flagged data gap |
 
 ## What the other manager might gain
 
-**1. Rashee Rice** — Opponent projected starters improve +1.78 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 33% (not a trade price).
+**1. Patrick Mahomes, Rhamondre Stevenson** — Opponent projected starters improve +0.00 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 58% (not a trade price).
 
-**2. DeVonta Smith** — Opponent projected starters improve +1.05 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 6% (not a trade price).
+**2. Blake Corum** — Opponent projected starters improve +1.62 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 12% (not a trade price).
 
-**3. Patrick Mahomes, Rhamondre Stevenson** — Opponent projected starters improve +0.00 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 50% (not a trade price).
+**3. Justin Herbert, Blake Corum** — Opponent projected starters improve +1.62 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 34% (not a trade price).
 
-**4. Tyler Shough, DeVonta Smith** — Opponent projected starters improve +1.05 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 44% (not a trade price).
+**4. Jordan Love** — Opponent projected starters improve +1.97 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 45% (not a trade price).
 
-**5. Carnell Tate** — Opponent projected starters improve +2.43 PPG; no clear shallow-position signal.
-Diagnostic positional-percentile imbalance: 41% (not a trade price).
+**5. Jaylen Waddle** — Opponent projected starters improve +0.64 PPG; no clear shallow-position signal.
+Diagnostic positional-percentile imbalance: 12% (not a trade price).
 
 ## Verification before discussions
 
