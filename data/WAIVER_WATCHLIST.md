@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-24T05:56:10.467420+00:00
-Sleeper snapshot: 2026-11-24T05:56:06.731787+00:00
+Generated: 2026-11-24T17:31:51.019164+00:00
+Sleeper snapshot: 2026-11-24T17:31:45.647403+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -29,7 +29,7 @@ Sleeper snapshot: 2026-11-24T05:56:06.731787+00:00
 
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
-| 1 | Samaje Perine | CIN | 6.67 | 100% | 35.0% | Not flagged |
+| 1 | Samaje Perine | CIN | 6.67 | 100% | 40.0% | Not flagged |
 | 2 | Keaton Mitchell | LAC | 4.84 | 100% | 17.0% | Not flagged |
 | 3 | Zonovan Knight | ARI | 4.17 | 86% | 40.7% | Not flagged |
 | 4 | Tyrone Tracy Jr. | NYG | 3.54 | 71% | 24.0% | Not flagged |
@@ -108,7 +108,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Darren Waller | TE | CAR | 7.28 | 53.3% |
 | Tre Tucker | WR | LV | 6.90 | 77.3% |
 | Keon Coleman | WR | BUF | 6.77 | 65.0% |
-| Samaje Perine | RB | CIN | 6.67 | 35.0% |
+| Samaje Perine | RB | CIN | 6.67 | 40.0% |
 | Quentin Johnston | WR | LAC | 6.48 | 79.0% |
 | A.J. Brown | WR | NE | 6.44 | 71.3% |
 | Makai Lemon | WR | PHI | 5.80 | 90.0% |

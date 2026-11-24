@@ -1,8 +1,8 @@
 # Pregame forecast locks and calibration
 
-Updated: 2026-11-24T05:56:14.532509+00:00
+Updated: 2026-11-24T17:31:55.506886+00:00
 
-**Current Week 12:** 16 locked player forecasts; 16 newly locked.
+**Current Week 12:** 16 locked player forecasts; 0 newly locked.
 **Completed-week backtest sample:** 78 actual player outcomes.
 
 | Completed week | Players | MAE | Mean bias |

@@ -18,7 +18,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Samaje Perine | 6.67 | +4.30 | 35.0% | Carries 7.7 | No modeled flags (not medically cleared) |
+| 1 | Samaje Perine | 6.67 | +4.30 | 40.0% | Carries 7.7 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 4.84 | +2.47 | 17.0% | Carries 3.3 | No modeled flags (not medically cleared) |
 | 3 | Zonovan Knight | 4.17 | +1.80 | 40.7% | — | carries_missing |
 | 4 | Tyrone Tracy Jr. | 3.54 | +1.17 | 24.0% | Carries 5.0 | projection_weeks_partial |

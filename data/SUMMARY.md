@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-24T05:56:06.731787+00:00
+Updated: 2026-11-24T17:31:45.647403+00:00
 League: 1399157532559192064
 NFL week: 12
 
@@ -19,7 +19,9 @@ NFL week: 12
 - Roster 12: Cokerthestroker | 7-4 | FAAB used: 148
 
 ## Changes detected in this run
-No changes versus previous captured snapshot.
+- lineup_change â roster/transaction 7
+- lineup_change â roster/transaction 8
+- lineup_change â roster/transaction 9
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
