@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-23T21:59:56.164854+00:00
-Sleeper snapshot: 2026-11-23T21:59:47.234117+00:00
-nflverse observations: 2026-11-23T21:59:50.751119+00:00; injury feed loaded: True
+Generated: 2026-11-24T05:56:14.910550+00:00
+Sleeper snapshot: 2026-11-24T05:56:06.731787+00:00
+nflverse observations: 2026-11-24T05:56:10.034664+00:00; injury feed loaded: True
 
-**New observed changes:** 32. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,38 +32,8 @@ nflverse observations: 2026-11-23T21:59:50.751119+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Aaron Rodgers** (snap_share_change): Snap share rose 18.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Adonai Mitchell** (snap_share_change): Snap share fell 25.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Bhayshul Tuten** (snap_share_change): Snap share fell 27.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Courtland Sutton** (snap_share_change): Snap share fell 18.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **D'Andre Swift** (snap_share_change): Snap share fell 26.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **DJ Moore** (snap_share_change): Snap share rose 16.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **DK Metcalf** (snap_share_change): Snap share fell 20.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Darren Waller** (snap_share_change): Snap share fell 15.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **DeVonta Smith** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Elic Ayomanor** (snap_share_change): Snap share fell 41.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Geno Smith** (snap_share_change): Snap share rose 52.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **George Kittle** (snap_share_change): Snap share fell 20.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Jauan Jennings** (snap_share_change): Snap share rose 23.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Jaylen Waddle** (snap_share_change): Snap share rose 34.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Jaylen Warren** (snap_share_change): Snap share rose 30.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Jordan Watkins** (snap_share_change): Snap share fell 16.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Jordyn Tyson** (snap_share_change): Snap share fell 21.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Juwan Johnson** (snap_share_change): Snap share fell 30.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Keaton Mitchell** (snap_share_change): Snap share fell 20.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Kenyon Sadiq** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Keon Coleman** (snap_share_change): Snap share rose 28.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Khalil Shakir** (snap_share_change): Snap share rose 18.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Kyle Monangai** (snap_share_change): Snap share fell 16.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Michael Mayer** (snap_share_change): Snap share fell 16.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Noah Fant** (snap_share_change): Snap share rose 24.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Rico Dowdle** (snap_share_change): Snap share fell 17.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Roman Wilson** (snap_share_change): Snap share rose 36.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Ryan Flournoy** (snap_share_change): Snap share fell 27.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **T.J. Hockenson** (snap_share_change): Snap share fell 30.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Travis Kelce** (snap_share_change): Snap share rose 41.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Tre' Harris** (snap_share_change): Snap share fell 30.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Xavier Worthy** (snap_share_change): Snap share fell 23.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 

@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-23T21:59:51.638842+00:00
+Generated: 2026-11-24T05:56:10.837317+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,8 +8,10 @@ Generated: 2026-11-23T21:59:51.638842+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Darren Waller | TE | +0.00 | 5.71 | Brevyn Spann-Ford | depth candidate |
-| Cade Otton | TE | +0.00 | 3.86 | Brevyn Spann-Ford | depth candidate |
+| Darren Waller | TE | +0.00 | 5.79 | Brevyn Spann-Ford | depth candidate |
+| Cade Otton | TE | +0.00 | 3.75 | Brevyn Spann-Ford | depth candidate |
+| Samaje Perine | RB | +0.00 | 2.13 | Kaelon Black | depth candidate |
+| Noah Fant | TE | +0.00 | 2.08 | Brevyn Spann-Ford | depth candidate |
 
 ## Trade proposals
 

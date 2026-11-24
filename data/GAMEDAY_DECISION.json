@@ -1,78 +1,77 @@
 {
   "added_starters": [
-    "Antonio Williams",
-    "Brevyn Spann-Ford"
+    "Antonio Williams"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "Jaxon Smith-Njigba"
+      "Seth McGowan"
     ],
-    "ppg": 122.54,
+    "ppg": 139.15,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 20.43
+        "ppg": 20.72
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 18.2
-      },
-      {
-        "id": "13345",
-        "name": "Jonah Coleman",
-        "position": "RB",
-        "ppg": 16.2
-      },
-      {
-        "id": "7547",
-        "name": "Amon-Ra St. Brown",
-        "position": "WR",
-        "ppg": 15.98
-      },
-      {
-        "id": "13296",
-        "name": "Caleb Douglas",
-        "position": "WR",
-        "ppg": 7.3
-      },
-      {
-        "id": "8131",
-        "name": "Isaiah Likely",
-        "position": "TE",
-        "ppg": 11.94
-      },
-      {
-        "id": "11792",
-        "name": "Will Reichard",
-        "position": "K",
-        "ppg": 6.81
-      },
-      {
-        "id": "MIN",
-        "name": "Minnesota Vikings",
-        "position": "DEF",
-        "ppg": 5.87
+        "ppg": 16.84
       },
       {
         "id": "9224",
         "name": "Chase Brown",
         "position": "RB",
-        "ppg": 12.8
+        "ppg": 14.3
       },
       {
-        "id": "12492",
-        "name": "Pat Bryant",
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 7.01
+        "ppg": 20.9
+      },
+      {
+        "id": "7547",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "ppg": 17.33
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "ppg": 12.04
+      },
+      {
+        "id": "11792",
+        "name": "Will Reichard",
+        "position": "K",
+        "ppg": 7.4
+      },
+      {
+        "id": "MIN",
+        "name": "Minnesota Vikings",
+        "position": "DEF",
+        "ppg": 7.54
+      },
+      {
+        "id": "13345",
+        "name": "Jonah Coleman",
+        "position": "RB",
+        "ppg": 13.86
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 8.22
       }
     ]
   },
-  "difference_ppg": -10.41,
+  "difference_ppg": -7.2,
   "explicit_excluded_ids": [
     "12492",
     "13345",
@@ -80,73 +79,73 @@
     "6819",
     "9502"
   ],
-  "generated_at_utc": "2026-11-23T21:59:58.014168+00:00",
+  "generated_at_utc": "2026-11-24T05:56:16.416251+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
-      "Jaxon Smith-Njigba"
+      "Seth McGowan"
     ],
-    "ppg": 112.13,
+    "ppg": 131.95,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 20.43
+        "ppg": 20.72
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 18.2
+        "ppg": 16.84
       },
       {
         "id": "9224",
         "name": "Chase Brown",
         "position": "RB",
-        "ppg": 12.8
+        "ppg": 14.3
+      },
+      {
+        "id": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "ppg": 20.9
       },
       {
         "id": "7547",
         "name": "Amon-Ra St. Brown",
         "position": "WR",
-        "ppg": 15.98
-      },
-      {
-        "id": "13296",
-        "name": "Caleb Douglas",
-        "position": "WR",
-        "ppg": 7.3
+        "ppg": 17.33
       },
       {
         "id": "8131",
         "name": "Isaiah Likely",
         "position": "TE",
-        "ppg": 11.94
+        "ppg": 12.04
       },
       {
         "id": "11792",
         "name": "Will Reichard",
         "position": "K",
-        "ppg": 6.81
+        "ppg": 7.4
       },
       {
         "id": "MIN",
         "name": "Minnesota Vikings",
         "position": "DEF",
-        "ppg": 5.87
+        "ppg": 7.54
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "position": "WR",
+        "ppg": 8.22
       },
       {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 6.8
-      },
-      {
-        "id": "11593",
-        "name": "Brevyn Spann-Ford",
-        "position": "TE",
-        "ppg": 6.0
+        "ppg": 6.66
       }
     ]
   },
@@ -330,13 +329,12 @@
   ],
   "players_needing_review": [],
   "removed_starters": [
-    "Jonah Coleman",
-    "Pat Bryant"
+    "Jonah Coleman"
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-23T21:59:47.234117+00:00",
-  "source_availability_generated_at_utc": "2026-11-23T21:59:56.164854+00:00",
+  "snapshot_utc": "2026-11-24T05:56:06.731787+00:00",
+  "source_availability_generated_at_utc": "2026-11-24T05:56:14.910550+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
@@ -350,5 +348,5 @@
     "Official inactives must be checked near kickoff before any action.",
     "No roster or lineup change performed."
   ],
-  "week": 11
+  "week": 12
 }
