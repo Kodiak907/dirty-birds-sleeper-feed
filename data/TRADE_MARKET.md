@@ -1,13 +1,13 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-25T02:18:44.972500+00:00
-Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
+Generated: 2026-11-25T12:39:57.937015+00:00
+Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
 | Team | Record | QB / RB / WR / TE | Completed trades | FAAB used |
 |---|---|---|---:|---:|
-| Dirty Birds | 7-4 | 2 / 6 / 7 / 2 | 15 | 205 |
+| Dirty Birds | 7-4 | 2 / 6 / 8 / 2 | 15 | 207 |
 | CREAM MACHINE | 5-6 | 3 / 7 / 7 / 3 | 0 | 68 |
 | BigOlBoyle | 3-8 | 3 / 6 / 4 / 2 | 1 | 0 |
 | DANGER CLOSE | 4-7 | 2 / 3 / 9 / 3 | 1 | 85 |
@@ -15,7 +15,7 @@ Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
 | kfsn | 7-4 | 2 / 5 / 5 / 3 | 2 | 25 |
 | JA’MARRTRIX | 5-6 | 2 / 6 / 7 / 3 | 5 | 205 |
 | DeeboSix0 | 9-2 | 2 / 5 / 8 / 2 | 1 | 65 |
-| To Infinity and Bijan | 4-7 | 2 / 5 / 5 / 2 | 6 | 100 |
+| To Infinity and Bijan | 4-7 | 2 / 4 / 6 / 2 | 6 | 100 |
 | EmanAndYoMomma | 2-9 | 2 / 4 / 4 / 2 | 0 | 0 |
 | suck my dickerson | 8-3 | 3 / 4 / 5 / 2 | 1 | 0 |
 | Cokerthestroker | 7-4 | 2 / 4 / 7 / 3 | 5 | 148 |

@@ -1,46 +1,46 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-25T02:18:49.091486+00:00 | Forecast as of: 2026-11-24T17:31:52.090607+00:00
+Generated: 2026-11-25T12:40:03.482040+00:00 | Forecast as of: 2026-11-25T12:39:59.710442+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 12
 
-**Projected optimal score:** 137.69
+**Projected optimal score:** 139.42
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 20.72 |
-| Christian McCaffrey | RB | SEA | 16.60 |
-| Chase Brown | RB | NO | 13.93 |
-| Jaxon Smith-Njigba | WR | SF | 20.57 |
-| Amon-Ra St. Brown | WR | CHI | 17.33 |
+| C.J. Stroud | QB | BAL | 21.54 |
+| Christian McCaffrey | RB | SEA | 16.61 |
+| Jonah Coleman | RB | PIT | 15.60 |
+| Jaxon Smith-Njigba | WR | SF | 20.53 |
+| Amon-Ra St. Brown | WR | CHI | 17.41 |
 | Isaiah Likely | TE | IND | 12.04 |
-| Will Reichard | K | ATL | 7.37 |
-| Minnesota Vikings | DEF | ATL | 7.72 |
-| Jonah Coleman | RB | PIT | 13.19 |
-| Caleb Douglas | WR | NYJ | 8.22 |
+| Will Reichard | K | ATL | 7.25 |
+| Minnesota Vikings | DEF | ATL | 7.68 |
+| Chase Brown | RB | NO | 12.61 |
+| Caleb Douglas | WR | NYJ | 8.15 |
 
 ## Week 13
 
-**Projected optimal score:** 137.10
+**Projected optimal score:** 138.09
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | PIT | 17.87 |
-| Christian McCaffrey | RB | NYG | 21.05 |
-| Jonah Coleman | RB | MIA | 13.93 |
-| Jaxon Smith-Njigba | WR | DAL | 22.67 |
-| Amon-Ra St. Brown | WR | ATL | 16.40 |
-| Isaiah Likely | TE | SF | 10.81 |
-| Will Reichard | K | CAR | 7.13 |
-| Minnesota Vikings | DEF | CAR | 7.40 |
-| Chase Brown | RB | CLE | 12.03 |
-| Pat Bryant | WR | MIA | 7.81 |
+| C.J. Stroud | QB | PIT | 18.39 |
+| Christian McCaffrey | RB | NYG | 19.05 |
+| Jonah Coleman | RB | MIA | 14.89 |
+| Jaxon Smith-Njigba | WR | DAL | 24.52 |
+| Amon-Ra St. Brown | WR | ATL | 16.04 |
+| Isaiah Likely | TE | SF | 11.51 |
+| Will Reichard | K | CAR | 7.22 |
+| Minnesota Vikings | DEF | CAR | 7.43 |
+| Chase Brown | RB | CLE | 10.90 |
+| Antonio Williams | WR | TEN | 8.14 |
 
 ## Week 14
 
-**Projected optimal score:** 133.20
+**Projected optimal score:** 132.12
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -52,12 +52,12 @@ Generated: 2026-11-25T02:18:49.091486+00:00 | Forecast as of: 2026-11-24T17:31:5
 | Isaiah Likely | TE | SEA | 10.12 |
 | Will Reichard | K | NE | 6.70 |
 | Minnesota Vikings | DEF | NE | 6.47 |
-| Chase Brown | RB | KC | 10.63 |
+| Chase Brown | RB | KC | 9.55 |
 | Caleb Douglas | WR | CHI | 8.92 |
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 137.22
+**Projected optimal score:** 135.82
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -69,29 +69,29 @@ Generated: 2026-11-25T02:18:49.091486+00:00 | Forecast as of: 2026-11-24T17:31:5
 | Isaiah Likely | TE | CLE | 10.69 |
 | Will Reichard | K | DET | 7.64 |
 | Minnesota Vikings | DEF | DET | 6.66 |
-| Chase Brown | RB | CAR | 13.36 |
+| Chase Brown | RB | CAR | 11.96 |
 | Caleb Douglas | WR | GB | 8.18 |
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 136.29
+**Projected optimal score:** 134.84
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | PHI | 18.02 |
 | Christian McCaffrey | RB | KC | 18.89 |
-| Chase Brown | RB | IND | 13.92 |
+| Jonah Coleman | RB | BUF | 12.98 |
 | Jaxon Smith-Njigba | WR | LA | 19.90 |
 | Amon-Ra St. Brown | WR | NYG | 16.41 |
 | Isaiah Likely | TE | DET | 12.09 |
 | Will Reichard | K | WAS | 7.67 |
 | Minnesota Vikings | DEF | WAS | 7.50 |
-| Jonah Coleman | RB | BUF | 12.98 |
+| Chase Brown | RB | IND | 12.47 |
 | Caleb Douglas | WR | LAC | 8.91 |
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 133.28
+**Projected optimal score:** 132.18
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -103,7 +103,7 @@ Generated: 2026-11-25T02:18:49.091486+00:00 | Forecast as of: 2026-11-24T17:31:5
 | Isaiah Likely | TE | DAL | 12.26 |
 | Will Reichard | K | NYJ | 6.81 |
 | Minnesota Vikings | DEF | NYJ | 7.45 |
-| Chase Brown | RB | BAL | 11.02 |
+| Chase Brown | RB | BAL | 9.92 |
 | Caleb Douglas | WR | BUF | 7.81 |
 
 ## Prediction tracking and calibration

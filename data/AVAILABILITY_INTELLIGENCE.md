@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-25T02:18:49.598772+00:00
-Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
-nflverse observations: 2026-11-25T02:18:44.663534+00:00; injury feed loaded: True
+Generated: 2026-11-25T12:40:04.279982+00:00
+Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
+nflverse observations: 2026-11-25T12:39:57.460013+00:00; injury feed loaded: True
 
-**New observed changes:** 0. Initial baseline: False.
+**New observed changes:** 13. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -12,7 +12,7 @@ nflverse observations: 2026-11-25T02:18:44.663534+00:00; injury feed loaded: Tru
 |---|---|---|---:|---|
 | Brevyn Spann-Ford | No tag | Week 10 observation: Full Participation in Practice | 68.0% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
-| Pat Bryant | IR | Week 9 observation: Questionable, Full Participation in Practice, Ankle | 53.0% | Verify official NFL roster and game status before lineup decisions |
+| Pat Bryant | IR | Week 12 observation: Full Participation in Practice | 53.0% | Verify official NFL roster and game status before lineup decisions |
 | Caleb Douglas | No tag | Week 11 observation: Full Participation in Practice | 77.7% | Verify current status before kickoff |
 | Antonio Williams | No tag | No matched report (not clearance) | 84.7% | Verify current status before kickoff |
 | Jonah Coleman | IR | Week 7 observation: Questionable, Full Participation in Practice, Ankle | 76.0% | Verify official NFL roster and game status before lineup decisions |
@@ -20,6 +20,7 @@ nflverse observations: 2026-11-25T02:18:44.663534+00:00; injury feed loaded: Tru
 | Seth McGowan | No tag | No matched report (not clearance) | 26.0% | Verify current status before kickoff |
 | Christian McCaffrey | No tag | Week 11 observation: Full Participation in Practice | 64.3% | Verify current status before kickoff |
 | James Conner | IR | No matched report (not clearance) | — | Verify official NFL roster and game status before lineup decisions |
+| Brandon Aiyuk | DNR | No matched report (not clearance) | — | Verify current status before kickoff |
 | Michael Pittman Jr. | IR | No matched report (not clearance) | 77.7% | Verify official NFL roster and game status before lineup decisions |
 | Amon-Ra St. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Rib | 73.3% | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 11 observation: Did Not Participate In Practice | 79.7% | Verify current status before kickoff |
@@ -32,8 +33,19 @@ nflverse observations: 2026-11-25T02:18:44.663534+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
-
+- **Pat Bryant** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Dak Prescott** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Dallas Goedert** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Dalton Kincaid** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
+- **DeVonta Smith** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **J.K. Dobbins** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
+- **Jake Ferguson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
+- **Josh Jacobs** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Finger', 'report_status': 'Questionable', 'week': '12'}
+- **Kenneth Walker III** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
+- **Patrick Mahomes** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Rashee Rice** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Sam LaPorta** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Saquon Barkley** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
 
 ## Guardrails
 

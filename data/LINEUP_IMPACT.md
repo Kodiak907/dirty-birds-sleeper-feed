@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-25T02:18:45.383146+00:00
+Generated: 2026-11-25T12:39:58.248855+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **135.47**. Weeks with partial projections and injury status require manual verification.
@@ -33,17 +33,17 @@ Baseline illustrative optimal PPG: **135.47**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | A.J. Brown | 7.52 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +6.78 | Partial projection coverage |
-| 2 | Tre Tucker | 6.74 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +6.01 | Partial projection coverage |
-| 3 | Keon Coleman | 6.59 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.85 | No flagged data gap; review still required |
-| 4 | Quentin Johnston | 6.44 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.70 | No flagged data gap; review still required |
-| 5 | Makai Lemon | 5.82 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.08 | No flagged data gap; review still required |
-| 6 | Kalif Raymond | 5.73 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.99 | No flagged data gap; review still required |
-| 7 | Malachi Fields | 5.05 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.32 | No flagged data gap; review still required |
-| 8 | Rashid Shaheed | 4.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.19 | No flagged data gap; review still required |
-| 9 | Ja'Kobi Lane | 4.46 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.72 | Partial projection coverage |
-| 10 | Tre' Harris | 4.17 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.44 | Availability status: out |
-| 11 | Rashod Bateman | 4.13 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.40 | Partial projection coverage |
-| 12 | Brian Thomas Jr. | 3.67 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.93 | Limited snap sample |
+| 2 | Keon Coleman | 6.59 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.85 | No flagged data gap; review still required |
+| 3 | Quentin Johnston | 6.44 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.70 | No flagged data gap; review still required |
+| 4 | Makai Lemon | 5.82 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.08 | No flagged data gap; review still required |
+| 5 | Kalif Raymond | 5.73 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.99 | No flagged data gap; review still required |
+| 6 | Malachi Fields | 5.05 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.32 | No flagged data gap; review still required |
+| 7 | Rashid Shaheed | 4.92 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.19 | No flagged data gap; review still required |
+| 8 | Ja'Kobi Lane | 4.46 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.72 | Partial projection coverage |
+| 9 | Tre' Harris | 4.17 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.44 | Availability status: out |
+| 10 | Rashod Bateman | 4.13 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.40 | Partial projection coverage |
+| 11 | Brian Thomas Jr. | 3.67 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.93 | Limited snap sample |
+| 12 | Chris Bell | 3.63 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +2.90 | No flagged data gap; review still required |
 
 ## TE
 

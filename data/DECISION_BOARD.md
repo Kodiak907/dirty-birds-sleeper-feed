@@ -33,17 +33,17 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | A.J. Brown | 7.52 | +3.31 | 71.3% | Tgt 7.3 | injury_report_observation_review |
-| 2 | Tre Tucker | 6.74 | +2.53 | 77.3% | Tgt 6.7 | No modeled flags (not medically cleared) |
-| 3 | Keon Coleman | 6.59 | +2.38 | 65.0% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 4 | Quentin Johnston | 6.44 | +2.23 | 79.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
-| 5 | Makai Lemon | 5.82 | +1.60 | 90.0% | Tgt 7.0 | No modeled flags (not medically cleared) |
-| 6 | Kalif Raymond | 5.73 | +1.52 | 69.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 7 | Malachi Fields | 5.05 | +0.84 | 86.7% | Tgt 4.7 | No modeled flags (not medically cleared) |
-| 8 | Rashid Shaheed | 4.92 | +0.71 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 9 | Ja'Kobi Lane | 4.46 | +0.25 | 57.3% | Tgt 4.0 | injury_report_observation_review |
-| 10 | Tre' Harris | 4.17 | -0.04 | 83.0% | Tgt 4.7 | sleeper_injury_out |
-| 11 | Rashod Bateman | 4.13 | -0.08 | 81.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 12 | Brian Thomas Jr. | 3.67 | -0.54 | — | Tgt 3.0 | snap_data_missing, usage_sample_missing |
+| 2 | Keon Coleman | 6.59 | +2.38 | 65.0% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 3 | Quentin Johnston | 6.44 | +2.23 | 79.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
+| 4 | Makai Lemon | 5.82 | +1.60 | 90.0% | Tgt 7.0 | No modeled flags (not medically cleared) |
+| 5 | Kalif Raymond | 5.73 | +1.52 | 69.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 6 | Malachi Fields | 5.05 | +0.84 | 86.7% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 7 | Rashid Shaheed | 4.92 | +0.71 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 8 | Ja'Kobi Lane | 4.46 | +0.25 | 57.3% | Tgt 4.0 | injury_report_observation_review |
+| 9 | Tre' Harris | 4.17 | -0.04 | 83.0% | Tgt 4.7 | sleeper_injury_out |
+| 10 | Rashod Bateman | 4.13 | -0.08 | 81.3% | Tgt 4.3 | No modeled flags (not medically cleared) |
+| 11 | Brian Thomas Jr. | 3.67 | -0.54 | — | Tgt 3.0 | snap_data_missing, usage_sample_missing |
+| 12 | Chris Bell | 3.63 | -0.58 | 65.0% | Tgt 3.3 | No modeled flags (not medically cleared) |
 
 ## TE — reference: Brevyn Spann-Ford (0.73 PPG)
 

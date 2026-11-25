@@ -1030,5 +1030,37 @@
     "kind": "new_transaction",
     "old_status": null,
     "status": "complete"
+  },
+  {
+    "description": "WAIVER · COMPLETE · Dirty Birds (#1) | Added: Rashod Bateman → Dirty Birds (#1) | FAAB bid: $2",
+    "detected_at_utc": "2026-11-25T12:39:57.906008+00:00",
+    "id": "1431026083095924736",
+    "kind": "new_transaction",
+    "old_status": null,
+    "status": "complete"
+  },
+  {
+    "description": "WAIVER · FAILED · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | FAAB bid: $1",
+    "detected_at_utc": "2026-11-25T12:39:57.906008+00:00",
+    "id": "1430671026760486912",
+    "kind": "new_transaction",
+    "old_status": null,
+    "status": "failed"
+  },
+  {
+    "description": "FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Tre Tucker → To Infinity and Bijan (#9) | Dropped: Brian Robinson Jr. → To Infinity and Bijan (#9)",
+    "detected_at_utc": "2026-11-25T12:39:57.906008+00:00",
+    "id": "1431229014915162112",
+    "kind": "new_transaction",
+    "old_status": null,
+    "status": "complete"
+  },
+  {
+    "description": "FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Rashod Bateman → Dirty Birds (#1)",
+    "detected_at_utc": "2026-11-25T12:39:57.906008+00:00",
+    "id": "1431228898695196672",
+    "kind": "new_transaction",
+    "old_status": null,
+    "status": "complete"
   }
 ]

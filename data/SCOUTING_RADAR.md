@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-25T02:18:44.972500+00:00
-Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
+Generated: 2026-11-25T12:39:57.937015+00:00
+Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- Dirty Birds: added Brandon Aiyuk; dropped none
+- To Infinity and Bijan: added Tre Tucker; dropped Brian Robinson Jr.
 
 ## Limits
 

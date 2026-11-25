@@ -1,15 +1,15 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-25T02:18:45.104090+00:00
-Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
+Generated: 2026-11-25T12:39:58.035704+00:00
+Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 328 |
-| RB | 624 |
-| WR | 1292 |
+| RB | 625 |
+| WR | 1290 |
 | TE | 613 |
 | K | 138 |
 | DEF | 15 |
@@ -44,17 +44,17 @@ Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | A.J. Brown | NE | 7.52 | 83% | 71.3% | Not flagged |
-| 2 | Tre Tucker | LV | 6.74 | 83% | 77.3% | Not flagged |
-| 3 | Keon Coleman | BUF | 6.59 | 100% | 65.0% | Not flagged |
-| 4 | Quentin Johnston | LAC | 6.44 | 100% | 79.0% | Not flagged |
-| 5 | Makai Lemon | PHI | 5.82 | 100% | 90.0% | Not flagged |
-| 6 | Kalif Raymond | CHI | 5.73 | 100% | 69.3% | Not flagged |
-| 7 | Malachi Fields | NYG | 5.05 | 100% | 86.7% | Not flagged |
-| 8 | Rashid Shaheed | SEA | 4.92 | 100% | 40.7% | Not flagged |
-| 9 | Ja'Kobi Lane | BAL | 4.46 | 83% | 57.3% | Not flagged |
-| 10 | Tre' Harris | LAC | 4.17 | 100% | 83.0% | Out |
-| 11 | Rashod Bateman | BAL | 4.13 | 83% | 81.3% | Not flagged |
-| 12 | Brian Thomas Jr. | JAX | 3.67 | 100% | — | Not flagged |
+| 2 | Keon Coleman | BUF | 6.59 | 100% | 65.0% | Not flagged |
+| 3 | Quentin Johnston | LAC | 6.44 | 100% | 79.0% | Not flagged |
+| 4 | Makai Lemon | PHI | 5.82 | 100% | 90.0% | Not flagged |
+| 5 | Kalif Raymond | CHI | 5.73 | 100% | 69.3% | Not flagged |
+| 6 | Malachi Fields | NYG | 5.05 | 100% | 86.7% | Not flagged |
+| 7 | Rashid Shaheed | SEA | 4.92 | 100% | 40.7% | Not flagged |
+| 8 | Ja'Kobi Lane | BAL | 4.46 | 83% | 57.3% | Not flagged |
+| 9 | Tre' Harris | LAC | 4.17 | 100% | 83.0% | Out |
+| 10 | Rashod Bateman | BAL | 4.13 | 83% | 81.3% | Not flagged |
+| 11 | Brian Thomas Jr. | JAX | 3.67 | 100% | — | Not flagged |
+| 12 | Chris Bell | MIA | 3.63 | 100% | 65.0% | Not flagged |
 
 ### TE
 
@@ -107,7 +107,6 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Jacoby Brissett | QB | ARI | 10.05 | 86.0% |
 | A.J. Brown | WR | NE | 7.52 | 71.3% |
 | Darren Waller | TE | CAR | 7.27 | 53.3% |
-| Tre Tucker | WR | LV | 6.74 | 77.3% |
 | Samaje Perine | RB | CIN | 6.62 | 40.0% |
 | Keon Coleman | WR | BUF | 6.59 | 65.0% |
 | Quentin Johnston | WR | LAC | 6.44 | 79.0% |
@@ -122,6 +121,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Rashod Bateman | WR | BAL | 4.13 | 81.3% |
 | Tyrone Tracy Jr. | RB | NYG | 4.13 | 24.0% |
 | Zonovan Knight | RB | ARI | 3.83 | 40.7% |
+| Chris Bell | WR | MIA | 3.63 | 65.0% |
 
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 

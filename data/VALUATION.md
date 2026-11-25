@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-25T02:18:45.036517+00:00
-Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
+Generated: 2026-11-25T12:39:57.986247+00:00
+Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -32,6 +32,7 @@ The points below average actual fantasy scoring over completed Weeks 1–11, wit
 | Brevyn Spann-Ford | TE | 7.50 | 0.68 | 1/11 |
 | Pat Bryant | WR | 4.70 | 0.43 | 1/11 |
 | James Conner | RB | 0.00 | 0.00 | 0/11 |
+| Brandon Aiyuk | WR | 0.00 | 0.00 | 0/11 |
 
 ## Opponent historical lineup signal
 Illustrative lineup using best season-to-date averages, not an achievable or recommended lineup.
@@ -44,9 +45,9 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | suck my dickerson | 8-3 | 110.37 | 1 |
 | Cokerthestroker | 7-4 | 108.20 | 5 |
 | kfsn | 7-4 | 105.55 | 2 |
+| To Infinity and Bijan | 4-7 | 99.83 | 6 |
 | DeeboSix0 | 9-2 | 99.30 | 1 |
 | BigOlBoyle | 3-8 | 98.50 | 1 |
-| To Infinity and Bijan | 4-7 | 97.99 | 6 |
 | DANGER CLOSE | 4-7 | 91.07 | 1 |
 | EmanAndYoMomma | 2-9 | 87.33 | 0 |
 | CREAM MACHINE | 5-6 | 76.56 | 0 |
