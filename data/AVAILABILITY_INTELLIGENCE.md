@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-25T12:40:04.279982+00:00
-Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
-nflverse observations: 2026-11-25T12:39:57.460013+00:00; injury feed loaded: True
+Generated: 2026-11-25T22:26:13.684271+00:00
+Sleeper snapshot: 2026-11-25T22:26:03.300201+00:00
+nflverse observations: 2026-11-25T22:26:08.983590+00:00; injury feed loaded: True
 
-**New observed changes:** 13. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -33,19 +33,8 @@ nflverse observations: 2026-11-25T12:39:57.460013+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Pat Bryant** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Dak Prescott** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Dallas Goedert** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Dalton Kincaid** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **DeVonta Smith** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **J.K. Dobbins** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
-- **Jake Ferguson** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
-- **Josh Jacobs** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'report_primary_injury': 'Finger', 'report_status': 'Questionable', 'week': '12'}
-- **Kenneth Walker III** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **Patrick Mahomes** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Rashee Rice** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Sam LaPorta** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Saquon Barkley** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 

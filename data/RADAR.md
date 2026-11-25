@@ -1,17 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-25T12:39:57.906008+00:00
-Sleeper snapshot: 2026-11-25T12:39:50.835387+00:00
+Generated: 2026-11-25T22:26:09.289946+00:00
+Sleeper snapshot: 2026-11-25T22:26:03.300201+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**4 transaction changes:** 3 completed, 0 pending/processing, 1 failed.
-
-- **NEW** · transaction `1431026083095924736` · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Rashod Bateman → Dirty Birds (#1) | FAAB bid: $2
-- **NEW** · transaction `1430671026760486912` · WAIVER · FAILED · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | FAAB bid: $1
-- **NEW** · transaction `1431229014915162112` · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Tre Tucker → To Infinity and Bijan (#9) | Dropped: Brian Robinson Jr. → To Infinity and Bijan (#9)
-- **NEW** · transaction `1431228898695196672` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Rashod Bateman → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
