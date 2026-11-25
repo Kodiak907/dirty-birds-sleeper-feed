@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-24T17:31:56.125188+00:00
-Sleeper snapshot: 2026-11-24T17:31:45.647403+00:00
-nflverse observations: 2026-11-24T17:31:50.285043+00:00; injury feed loaded: True
+Generated: 2026-11-25T02:18:49.598772+00:00
+Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
+nflverse observations: 2026-11-25T02:18:44.663534+00:00; injury feed loaded: True
 
-**New observed changes:** 3. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,9 +32,8 @@ nflverse observations: 2026-11-24T17:31:50.285043+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Rachaad White** (snap_share_change): Snap share fell 30.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Samaje Perine** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
-- **Tee Higgins** (snap_share_change): Snap share rose 20.0 percentage points between last two recorded appearances (week 11); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 

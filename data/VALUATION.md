@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-24T17:31:50.965523+00:00
-Sleeper snapshot: 2026-11-24T17:31:45.647403+00:00
+Generated: 2026-11-25T02:18:45.036517+00:00
+Sleeper snapshot: 2026-11-25T02:18:41.071814+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -39,8 +39,8 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | Team | Record | Historical optimal average | Completed trades |
 |---|---|---:|---:|
 | Dirty Birds | 7-4 | 119.27 | 15 |
-| JA’MARRTRIX | 4-7 | 111.18 | 5 |
-| Victorious Secret | 6-5 | 110.44 | 5 |
+| JA’MARRTRIX | 5-6 | 111.18 | 5 |
+| Victorious Secret | 5-6 | 110.44 | 5 |
 | suck my dickerson | 8-3 | 110.37 | 1 |
 | Cokerthestroker | 7-4 | 108.20 | 5 |
 | kfsn | 7-4 | 105.55 | 2 |

@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-24T17:31:51.324261+00:00
+Generated: 2026-11-25T02:18:45.480791+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,10 +8,11 @@ Generated: 2026-11-24T17:31:51.324261+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Darren Waller | TE | +0.00 | 5.79 | Brevyn Spann-Ford | depth candidate |
-| Cade Otton | TE | +0.00 | 3.75 | Brevyn Spann-Ford | depth candidate |
-| Samaje Perine | RB | +0.00 | 2.13 | Kaelon Black | depth candidate |
-| Noah Fant | TE | +0.00 | 2.08 | Brevyn Spann-Ford | depth candidate |
+| Darren Waller | TE | +0.00 | 6.53 | Brevyn Spann-Ford | depth candidate |
+| Cade Otton | TE | +0.00 | 4.44 | Brevyn Spann-Ford | depth candidate |
+| Noah Fant | TE | +0.00 | 2.89 | Brevyn Spann-Ford | depth candidate |
+| Colby Parkinson | TE | +0.00 | 2.64 | Brevyn Spann-Ford | depth candidate |
+| Samaje Perine | RB | +0.00 | 2.06 | Kaelon Black | depth candidate |
 
 ## Trade proposals
 
@@ -21,11 +22,11 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- Bryce Young, Caleb Douglas for Breece Hall: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
-- Bryce Young, Chase Brown for Bhayshul Tuten: Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Bryce Young, Pat Bryant for Carnell Tate: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
-- C.J. Stroud, Caleb Douglas for DeVonta Smith: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
-- C.J. Stroud, Caleb Douglas for Tony Pollard: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Caleb Douglas for Blake Corum: Overpays in outgoing assets for a marginal gain
+- Bryce Young, Pat Bryant for Jaylen Waddle: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Jonah Coleman for D'Andre Swift: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Caleb Douglas for Breece Hall: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Isaiah Likely for Jalen Coker, Tucker Kraft: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
 
 ## Required checks
 

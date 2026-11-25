@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-24T17:31:51.324261+00:00",
-  "roster_snapshot_utc": "2026-11-24T17:31:45.647403+00:00",
+  "generated_at_utc": "2026-11-25T02:18:45.480791+00:00",
+  "roster_snapshot_utc": "2026-11-25T02:18:41.071814+00:00",
   "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
@@ -9,24 +9,10 @@
         "Caleb Douglas"
       ],
       "reasons": [
-        "Too little projected starter benefit for roster disruption",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Breece Hall"
-      ]
-    },
-    {
-      "give": [
-        "Bryce Young",
-        "Chase Brown"
-      ],
-      "reasons": [
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Bhayshul Tuten"
+        "Blake Corum"
       ]
     },
     {
@@ -36,28 +22,30 @@
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Carnell Tate"
+        "Jaylen Waddle"
       ]
     },
     {
       "give": [
-        "C.J. Stroud",
-        "Caleb Douglas"
+        "Bryce Young",
+        "Jonah Coleman"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "DeVonta Smith"
+        "D'Andre Swift"
       ]
     },
     {
       "give": [
-        "C.J. Stroud",
+        "Bryce Young",
         "Caleb Douglas"
       ],
       "reasons": [
@@ -66,14 +54,28 @@
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Tony Pollard"
+        "Breece Hall"
+      ]
+    },
+    {
+      "give": [
+        "Isaiah Likely"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Requires further outgoing roster action"
+      ],
+      "receive": [
+        "Jalen Coker",
+        "Tucker Kraft"
       ]
     }
   ],
   "trade_status": "No defensible opening offers",
   "waiver_research_shortlist": [
     {
-      "bench_depth_difference_ppg": 5.79,
+      "bench_depth_difference_ppg": 6.53,
       "coach_authorization_required": true,
       "drop_id": "11593",
       "evidence_flags": [
@@ -94,7 +96,7 @@
       "team": "CAR"
     },
     {
-      "bench_depth_difference_ppg": 3.75,
+      "bench_depth_difference_ppg": 4.44,
       "coach_authorization_required": true,
       "drop_id": "11593",
       "evidence_flags": [
@@ -115,28 +117,7 @@
       "team": "TB"
     },
     {
-      "bench_depth_difference_ppg": 2.13,
-      "coach_authorization_required": true,
-      "drop_id": "13414",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Kaelon Black",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Samaje Perine",
-      "position": "RB",
-      "research_tier": "depth candidate",
-      "source_player_id": "4147",
-      "team": "CIN"
-    },
-    {
-      "bench_depth_difference_ppg": 2.08,
+      "bench_depth_difference_ppg": 2.89,
       "coach_authorization_required": true,
       "drop_id": "11593",
       "evidence_flags": [
@@ -155,9 +136,52 @@
       "research_tier": "depth candidate",
       "source_player_id": "5857",
       "team": "NO"
+    },
+    {
+      "bench_depth_difference_ppg": 2.64,
+      "coach_authorization_required": true,
+      "drop_id": "11593",
+      "evidence_flags": [
+        "No sourced usage",
+        "Limited snap sample"
+      ],
+      "hypothetical_drop": "Brevyn Spann-Ford",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Colby Parkinson",
+      "position": "TE",
+      "research_tier": "depth candidate",
+      "source_player_id": "6865",
+      "team": "LAR"
+    },
+    {
+      "bench_depth_difference_ppg": 2.06,
+      "coach_authorization_required": true,
+      "drop_id": "13414",
+      "evidence_flags": [
+        "No listed coverage caveats"
+      ],
+      "hypothetical_drop": "Kaelon Black",
+      "modeled_starter_gain_ppg": 0.0,
+      "not_yet_verified": [
+        "current waiver lock",
+        "official game availability",
+        "week-by-week role",
+        "reasonable FAAB cost"
+      ],
+      "player": "Samaje Perine",
+      "position": "RB",
+      "research_tier": "depth candidate",
+      "source_player_id": "4147",
+      "team": "CIN"
     }
   ],
-  "waiver_screened_count": 4,
+  "waiver_screened_count": 5,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",

@@ -1,11 +1,11 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-24T17:31:54.648581+00:00",
+  "generated_at_utc": "2026-11-25T02:18:47.958573+00:00",
   "candidates_evaluated": 59670,
-  "market_matched": 7043,
+  "market_matched": 6999,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-24T05:56:11.096867+00:00",
+  "market_as_of": "2026-11-24T23:29:43.356901+00:00",
   "projection_as_of": "2026-11-24T17:31:52.090607+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
@@ -34,11 +34,11 @@
       ],
       "our_gain": 2.47,
       "their_gain": 0.73,
-      "market_paid_received_ratio": 0.909,
+      "market_paid_received_ratio": 0.864,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.634,
+      "score": 2.501,
       "not_an_approved_offer": true
     },
     {
@@ -61,20 +61,15 @@
           "id": "11586",
           "name": "Blake Corum",
           "pos": "RB"
-        },
-        {
-          "id": "1373",
-          "name": "Geno Smith",
-          "pos": "QB"
         }
       ],
       "our_gain": 1.58,
       "their_gain": 1.62,
-      "market_paid_received_ratio": 1.0,
+      "market_paid_received_ratio": 1.069,
       "ours_cut_to_fit": null,
-      "theirs_cut_to_fit": null,
+      "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.552,
+      "score": 2.344,
       "not_an_approved_offer": true
     },
     {
@@ -106,11 +101,11 @@
       ],
       "our_gain": 1.83,
       "their_gain": 0.55,
-      "market_paid_received_ratio": 0.958,
+      "market_paid_received_ratio": 0.941,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.035,
+      "score": 1.983,
       "not_an_approved_offer": true
     }
   ],
