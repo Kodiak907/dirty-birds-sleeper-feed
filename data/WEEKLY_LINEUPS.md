@@ -1,6 +1,6 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-26T15:00:39.871195+00:00 | Forecast as of: 2026-11-26T04:56:55.812926+00:00
+Generated: 2026-11-26T23:45:24.425377+00:00 | Forecast as of: 2026-11-26T23:45:21.270833+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
@@ -11,32 +11,32 @@ Generated: 2026-11-26T15:00:39.871195+00:00 | Forecast as of: 2026-11-26T04:56:5
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | BAL | 21.26 |
-| Christian McCaffrey | RB | SEA | 16.48 |
-| Jonah Coleman | RB | PIT | 16.25 |
-| Jaxon Smith-Njigba | WR | SF | 20.44 |
-| Amon-Ra St. Brown | WR | CHI | 17.48 |
+| Jonah Coleman | RB | PIT | 16.49 |
+| Christian McCaffrey | RB | SEA | 16.43 |
+| Jaxon Smith-Njigba | WR | SF | 20.17 |
+| Amon-Ra St. Brown | WR | CHI | 17.59 |
 | Isaiah Likely | TE | IND | 12.05 |
 | Will Reichard | K | ATL | 7.25 |
 | Minnesota Vikings | DEF | ATL | 7.68 |
 | Chase Brown | RB | NO | 12.36 |
-| Antonio Williams | WR | ARI | 8.13 |
+| Caleb Douglas | WR | NYJ | 8.10 |
 
 ## Week 13
 
-**Projected optimal score:** 138.58
+**Projected optimal score:** 138.04
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | PIT | 18.79 |
-| Christian McCaffrey | RB | NYG | 19.21 |
+| C.J. Stroud | QB | PIT | 18.78 |
+| Christian McCaffrey | RB | NYG | 18.88 |
 | Jonah Coleman | RB | MIA | 14.88 |
-| Jaxon Smith-Njigba | WR | DAL | 24.52 |
+| Jaxon Smith-Njigba | WR | DAL | 24.20 |
 | Amon-Ra St. Brown | WR | ATL | 16.04 |
-| Isaiah Likely | TE | SF | 11.30 |
-| Will Reichard | K | CAR | 7.22 |
-| Minnesota Vikings | DEF | CAR | 7.43 |
-| Chase Brown | RB | CLE | 10.89 |
-| Antonio Williams | WR | TEN | 8.30 |
+| Isaiah Likely | TE | SF | 11.50 |
+| Will Reichard | K | CAR | 7.25 |
+| Minnesota Vikings | DEF | CAR | 7.49 |
+| Chase Brown | RB | CLE | 10.87 |
+| Antonio Williams | WR | TEN | 8.15 |
 
 ## Week 14
 
@@ -91,7 +91,7 @@ Generated: 2026-11-26T15:00:39.871195+00:00 | Forecast as of: 2026-11-26T04:56:5
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 132.94
+**Projected optimal score:** 132.73
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
@@ -102,7 +102,7 @@ Generated: 2026-11-26T15:00:39.871195+00:00 | Forecast as of: 2026-11-26T04:56:5
 | Amon-Ra St. Brown | WR | CHI | 17.58 |
 | Isaiah Likely | TE | DAL | 12.26 |
 | Will Reichard | K | NYJ | 6.81 |
-| Minnesota Vikings | DEF | NYJ | 7.45 |
+| Minnesota Vikings | DEF | NYJ | 7.24 |
 | Chase Brown | RB | BAL | 9.92 |
 | Caleb Douglas | WR | BUF | 7.81 |
 

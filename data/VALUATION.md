@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-26T15:00:35.706225+00:00
-Sleeper snapshot: 2026-11-26T15:00:31.442375+00:00
+Generated: 2026-11-26T23:45:20.182438+00:00
+Sleeper snapshot: 2026-11-26T23:45:15.900827+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -26,7 +26,6 @@ The points below average actual fantasy scoring over completed Weeks 1–11, wit
 | Kaelon Black | RB | 51.80 | 4.71 | 10/11 |
 | Antonio Williams | WR | 39.80 | 3.62 | 4/11 |
 | Caleb Douglas | WR | 28.90 | 2.63 | 4/11 |
-| Seth McGowan | RB | 25.70 | 2.34 | 3/11 |
 | Tank Dell | WR | 12.80 | 1.16 | 3/11 |
 | Michael Pittman Jr. | WR | 12.40 | 1.13 | 3/11 |
 | Brevyn Spann-Ford | TE | 7.50 | 0.68 | 1/11 |

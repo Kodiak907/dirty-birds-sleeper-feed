@@ -1,14 +1,14 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-26T15:00:35.775149+00:00
-Sleeper snapshot: 2026-11-26T15:00:31.442375+00:00
+Generated: 2026-11-26T23:45:20.247955+00:00
+Sleeper snapshot: 2026-11-26T23:45:15.900827+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
 | Position | Available candidates |
 |---|---:|
 | QB | 327 |
-| RB | 626 |
+| RB | 627 |
 | WR | 1290 |
 | TE | 613 |
 | K | 138 |
@@ -125,7 +125,7 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 *Projected points per week with an explicit forecast; bye/unprojected weeks excluded. Availability and injury report must be rechecked.
 
 
-Candidates with independently sourced projections AND usage data: **38**
+Candidates with independently sourced projections AND usage data: **39**
 
 ## Coverage and rules
 

@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-26T15:00:35.706225+00:00",
+  "generated_at_utc": "2026-11-26T23:45:20.182438+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -253,29 +253,6 @@
           ]
         },
         {
-          "actual_points_total": 25.7,
-          "actual_points_weekly_avg": 2.34,
-          "id": "13424",
-          "n_weeks": 11,
-          "name": "Seth McGowan",
-          "nonzero_weeks": 3,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            10.7,
-            13.7,
-            1.3
-          ]
-        },
-        {
           "actual_points_total": 212.2,
           "actual_points_weekly_avg": 19.29,
           "id": "4034",
@@ -351,7 +328,7 @@
           "n_weeks": 11,
           "name": "Michael Pittman Jr.",
           "nonzero_weeks": 3,
-          "on_fantasy_reserve": true,
+          "on_fantasy_reserve": false,
           "position": "WR",
           "weekly_points": [
             7.3,
@@ -745,29 +722,6 @@
             ]
           },
           {
-            "actual_points_total": 25.7,
-            "actual_points_weekly_avg": 2.34,
-            "id": "13424",
-            "n_weeks": 11,
-            "name": "Seth McGowan",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              10.7,
-              13.7,
-              1.3
-            ]
-          },
-          {
             "actual_points_total": 0.0,
             "actual_points_weekly_avg": 0.0,
             "id": "4137",
@@ -962,7 +916,7 @@
             "n_weeks": 11,
             "name": "Michael Pittman Jr.",
             "nonzero_weeks": 3,
-            "on_fantasy_reserve": true,
+            "on_fantasy_reserve": false,
             "position": "WR",
             "weekly_points": [
               7.3,
@@ -11251,6 +11205,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-26T15:00:31.442375+00:00",
+  "snapshot_utc": "2026-11-26T23:45:15.900827+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-11"
 }

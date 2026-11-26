@@ -1,15 +1,18 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-26T15:00:35.598001+00:00
-Sleeper snapshot: 2026-11-26T15:00:31.442375+00:00
+Generated: 2026-11-26T23:45:20.073255+00:00
+Sleeper snapshot: 2026-11-26T23:45:15.900827+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1431765900511424512` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-26T23:45:20.073255+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 - 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Cleveland Browns → CREAM MACHINE  (#2) | Dropped: Baltimore Ravens → CREAM MACHINE  (#2)
 - 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Matthew Stafford → CREAM MACHINE  (#2) | Dropped: Audric Estime → CREAM MACHINE  (#2)
 - 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Samaje Perine → CREAM MACHINE  (#2) | Dropped: Braelon Allen → CREAM MACHINE  (#2)
@@ -34,7 +37,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Elic Ayomanor → DeeboSix0 (#8) | FAAB bid: $5
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Alvin Kamara → DeeboSix0 (#8) | Dropped: TreVeyon Henderson → DeeboSix0 (#8) | FAAB bid: $0
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | FAAB bid: $16
-- 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Keon Coleman → CREAM MACHINE  (#2) | FAAB bid: $10
 
 ## Important limits
 

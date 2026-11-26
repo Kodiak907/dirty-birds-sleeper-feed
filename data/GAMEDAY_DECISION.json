@@ -1,11 +1,10 @@
 {
   "added_starters": [
-    "Caleb Douglas"
+    "Antonio Williams"
   ],
   "baseline_fantasy_reserve_excluded": {
     "complete": true,
     "missing_projection": [
-      "Seth McGowan",
       "Brandon Aiyuk"
     ],
     "ppg": 139.38,
@@ -17,28 +16,28 @@
         "ppg": 21.26
       },
       {
-        "id": "4034",
-        "name": "Christian McCaffrey",
-        "position": "RB",
-        "ppg": 16.48
-      },
-      {
         "id": "13345",
         "name": "Jonah Coleman",
         "position": "RB",
-        "ppg": 16.25
+        "ppg": 16.49
+      },
+      {
+        "id": "4034",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "ppg": 16.43
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.44
+        "ppg": 20.17
       },
       {
         "id": "7547",
         "name": "Amon-Ra St. Brown",
         "position": "WR",
-        "ppg": 17.48
+        "ppg": 17.59
       },
       {
         "id": "8131",
@@ -65,14 +64,14 @@
         "ppg": 12.36
       },
       {
-        "id": "13301",
-        "name": "Antonio Williams",
+        "id": "13296",
+        "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 8.13
+        "ppg": 8.1
       }
     ]
   },
-  "difference_ppg": -8.15,
+  "difference_ppg": -8.41,
   "explicit_excluded_ids": [
     "12492",
     "13345",
@@ -80,14 +79,13 @@
     "6819",
     "9502"
   ],
-  "generated_at_utc": "2026-11-26T15:00:41.980095+00:00",
+  "generated_at_utc": "2026-11-26T23:45:26.450295+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
-      "Seth McGowan",
       "Brandon Aiyuk"
     ],
-    "ppg": 131.23,
+    "ppg": 130.97,
     "starters": [
       {
         "id": "9758",
@@ -99,7 +97,7 @@
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 16.48
+        "ppg": 16.43
       },
       {
         "id": "9224",
@@ -111,13 +109,13 @@
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.44
+        "ppg": 20.17
       },
       {
         "id": "7547",
         "name": "Amon-Ra St. Brown",
         "position": "WR",
-        "ppg": 17.48
+        "ppg": 17.59
       },
       {
         "id": "8131",
@@ -138,16 +136,16 @@
         "ppg": 7.68
       },
       {
-        "id": "13301",
-        "name": "Antonio Williams",
-        "position": "WR",
-        "ppg": 8.13
-      },
-      {
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
         "ppg": 8.1
+      },
+      {
+        "id": "13301",
+        "name": "Antonio Williams",
+        "position": "WR",
+        "ppg": 8.08
       }
     ]
   },
@@ -223,15 +221,6 @@
     {
       "availability_verified": false,
       "fantasy_reserve": false,
-      "id": "13424",
-      "model_handling": "unverified_no_hard_exclusion",
-      "name": "Seth McGowan",
-      "sleeper_injury_status": null,
-      "status_source": "Sleeper metadata, not official gameday inactive list"
-    },
-    {
-      "availability_verified": false,
-      "fantasy_reserve": false,
       "id": "4034",
       "model_handling": "unverified_no_hard_exclusion",
       "name": "Christian McCaffrey",
@@ -258,7 +247,7 @@
     },
     {
       "availability_verified": false,
-      "fantasy_reserve": true,
+      "fantasy_reserve": false,
       "id": "6819",
       "model_handling": "exclude_explicit_unavailable_tag",
       "name": "Michael Pittman Jr.",
@@ -344,8 +333,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-26T15:00:31.442375+00:00",
-  "source_availability_generated_at_utc": "2026-11-26T15:00:40.354971+00:00",
+  "snapshot_utc": "2026-11-26T23:45:15.900827+00:00",
+  "source_availability_generated_at_utc": "2026-11-26T23:45:24.874925+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [

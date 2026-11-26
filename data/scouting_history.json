@@ -1617,5 +1617,26 @@
       }
     ],
     "source_snapshot_utc": "2026-11-26T04:56:46.188421+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-26T23:45:20.110707+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [],
+        "drops": [
+          "Seth McGowan"
+        ],
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 1,
+        "team": "Dirty Birds"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-26T23:45:15.900827+00:00"
   }
 ]

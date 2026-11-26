@@ -13,8 +13,8 @@
       "ppg": 16.023
     },
     "RB": {
-      "name": "Seth McGowan",
-      "ppg": 4.29
+      "name": "Kaelon Black",
+      "ppg": 4.537
     },
     "TE": {
       "name": "Brevyn Spann-Ford",
@@ -25,7 +25,7 @@
       "ppg": 4.535
     }
   },
-  "generated_at_utc": "2026-11-26T15:00:35.932874+00:00",
+  "generated_at_utc": "2026-11-26T23:45:20.399440+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -511,10 +511,10 @@
         "name": "Braelon Allen",
         "ppg": 6.5,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": 2.21,
+        "same_position_uplift_ppg": 1.97,
         "screen_only": true,
         "sleeper_id": "11576",
         "team": "NYJ"
@@ -524,8 +524,8 @@
           "carries_per_game": 3.33,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "10"
+            "practice_status": "Did Not Participate In Practice",
+            "week": "12"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -536,10 +536,10 @@
         "name": "Keaton Mitchell",
         "ppg": 4.67,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": 0.38,
+        "same_position_uplift_ppg": 0.13,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
@@ -561,10 +561,10 @@
         "name": "Tyrone Tracy Jr.",
         "ppg": 4.19,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -0.1,
+        "same_position_uplift_ppg": -0.35,
         "screen_only": true,
         "sleeper_id": "11655",
         "team": "NYG"
@@ -585,10 +585,10 @@
         "name": "Zonovan Knight",
         "ppg": 3.81,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -0.48,
+        "same_position_uplift_ppg": -0.73,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -614,10 +614,10 @@
         "name": "MarShawn Lloyd",
         "ppg": 3.29,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -1.0,
+        "same_position_uplift_ppg": -1.24,
         "screen_only": true,
         "sleeper_id": "11581",
         "team": "GB"
@@ -641,10 +641,10 @@
         "name": "Tank Bigsby",
         "ppg": 2.04,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -2.25,
+        "same_position_uplift_ppg": -2.5,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -663,10 +663,10 @@
         "name": "Audric Estime",
         "ppg": 1.86,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -2.43,
+        "same_position_uplift_ppg": -2.67,
         "screen_only": true,
         "sleeper_id": "11579",
         "team": "CLE"
@@ -689,10 +689,10 @@
         "name": "Robert Henry Jr.",
         "ppg": 0.86,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -3.43,
+        "same_position_uplift_ppg": -3.68,
         "screen_only": true,
         "sleeper_id": "13418",
         "team": "SEA"
@@ -711,10 +711,10 @@
         "name": "Jaleel McLaughlin",
         "ppg": 0.35,
         "replacement_reference": {
-          "name": "Seth McGowan",
-          "ppg": 4.29
+          "name": "Kaelon Black",
+          "ppg": 4.537
         },
-        "same_position_uplift_ppg": -3.94,
+        "same_position_uplift_ppg": -4.18,
         "screen_only": true,
         "sleeper_id": "11439",
         "team": "CLE"
@@ -830,14 +830,11 @@
         "audit": {
           "carries_per_game": 0.0,
           "flags": [
-            "sleeper_injury_ir",
-            "injury_report_observation_review"
+            "sleeper_injury_ir"
           ],
           "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "report_primary_injury": "Fibula",
-            "report_status": "Questionable",
-            "week": "10"
+            "practice_status": "Did Not Participate In Practice",
+            "week": "12"
           },
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
@@ -957,14 +954,14 @@
       },
       {
         "audit": {
-          "carries_per_game": 0.33,
+          "carries_per_game": 0.0,
           "flags": [],
           "injury_report_observation": null,
           "not_an_injury_probability": true,
           "projection_coverage": 1.0,
           "recent_snap_pct": 69.3,
           "snap_trend_3_appearances_pp": 0.0,
-          "targets_per_game": 4.67
+          "targets_per_game": 5.33
         },
         "name": "Kalif Raymond",
         "ppg": 5.75,
@@ -1357,5 +1354,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-26T15:00:31.442375+00:00"
+  "snapshot_utc": "2026-11-26T23:45:15.900827+00:00"
 }

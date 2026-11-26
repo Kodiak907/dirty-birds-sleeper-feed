@@ -5,15 +5,14 @@
     "warning": "No retrospective claims from forecasts captured after kickoff. Only archived predictions are eligible."
   },
   "excluded_fantasy_reserve_player_ids": [
-    "4137",
-    "6819"
+    "4137"
   ],
-  "generated_at_utc": "2026-11-26T15:00:39.871195+00:00",
+  "generated_at_utc": "2026-11-26T23:45:24.425377+00:00",
   "model": "1 QB / 2 RB / 2 WR / 1 TE / 2 FLEX / K / DEF. Week-specific Sleeper forecast; missing estimates never imputed.",
-  "projection_as_of": "2026-11-26T04:56:55.812926+00:00",
+  "projection_as_of": "2026-11-26T23:45:21.270833+00:00",
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "roster_id": 1,
-  "snapshot_utc": "2026-11-26T15:00:31.442375+00:00",
+  "snapshot_utc": "2026-11-26T23:45:15.900827+00:00",
   "warnings": [
     "Current fantasy reserve players excluded; verify NFL availability separately.",
     "Publisher weekly estimates are not verified start/sit recommendations or injury predictions.",
@@ -24,7 +23,6 @@
     "12": {
       "complete": true,
       "missing_projection": [
-        "Seth McGowan",
         "Brandon Aiyuk"
       ],
       "ppg": 139.38,
@@ -37,32 +35,32 @@
           "ppg": 21.26
         },
         {
-          "id": "4034",
-          "name": "Christian McCaffrey",
-          "opponent": "SEA",
-          "position": "RB",
-          "ppg": 16.48
-        },
-        {
           "id": "13345",
           "name": "Jonah Coleman",
           "opponent": "PIT",
           "position": "RB",
-          "ppg": 16.25
+          "ppg": 16.49
+        },
+        {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "opponent": "SEA",
+          "position": "RB",
+          "ppg": 16.43
         },
         {
           "id": "9488",
           "name": "Jaxon Smith-Njigba",
           "opponent": "SF",
           "position": "WR",
-          "ppg": 20.44
+          "ppg": 20.17
         },
         {
           "id": "7547",
           "name": "Amon-Ra St. Brown",
           "opponent": "CHI",
           "position": "WR",
-          "ppg": 17.48
+          "ppg": 17.59
         },
         {
           "id": "8131",
@@ -93,35 +91,34 @@
           "ppg": 12.36
         },
         {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "opponent": "ARI",
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "opponent": "NYJ",
           "position": "WR",
-          "ppg": 8.13
+          "ppg": 8.1
         }
       ]
     },
     "13": {
       "complete": true,
       "missing_projection": [
-        "Seth McGowan",
         "Brandon Aiyuk"
       ],
-      "ppg": 138.58,
+      "ppg": 138.04,
       "starters": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "opponent": "PIT",
           "position": "QB",
-          "ppg": 18.79
+          "ppg": 18.78
         },
         {
           "id": "4034",
           "name": "Christian McCaffrey",
           "opponent": "NYG",
           "position": "RB",
-          "ppg": 19.21
+          "ppg": 18.88
         },
         {
           "id": "13345",
@@ -135,7 +132,7 @@
           "name": "Jaxon Smith-Njigba",
           "opponent": "DAL",
           "position": "WR",
-          "ppg": 24.52
+          "ppg": 24.2
         },
         {
           "id": "7547",
@@ -149,35 +146,35 @@
           "name": "Isaiah Likely",
           "opponent": "SF",
           "position": "TE",
-          "ppg": 11.3
+          "ppg": 11.5
         },
         {
           "id": "11792",
           "name": "Will Reichard",
           "opponent": "CAR",
           "position": "K",
-          "ppg": 7.22
+          "ppg": 7.25
         },
         {
           "id": "MIN",
           "name": "Minnesota Vikings",
           "opponent": "CAR",
           "position": "DEF",
-          "ppg": 7.43
+          "ppg": 7.49
         },
         {
           "id": "9224",
           "name": "Chase Brown",
           "opponent": "CLE",
           "position": "RB",
-          "ppg": 10.89
+          "ppg": 10.87
         },
         {
           "id": "13301",
           "name": "Antonio Williams",
           "opponent": "TEN",
           "position": "WR",
-          "ppg": 8.3
+          "ppg": 8.15
         }
       ]
     },
@@ -424,7 +421,7 @@
       "missing_projection": [
         "Brandon Aiyuk"
       ],
-      "ppg": 132.94,
+      "ppg": 132.73,
       "starters": [
         {
           "id": "9758",
@@ -480,7 +477,7 @@
           "name": "Minnesota Vikings",
           "opponent": "NYJ",
           "position": "DEF",
-          "ppg": 7.45
+          "ppg": 7.24
         },
         {
           "id": "9224",

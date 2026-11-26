@@ -1,6 +1,6 @@
 # Dirty Birds — Gameday Availability Decision Board
 
-Week 12 | Snapshot: 2026-11-26T15:00:31.442375+00:00
+Week 12 | Snapshot: 2026-11-26T23:45:15.900827+00:00
 
 **PROVISIONAL: Sleeper injury tags plus explicit ESPN-reported inactives. NOT verified official NFL submissions.**
 ESPN event status: espn_no_explicit_inactive_names_available. Confirm any report with the NFL/team inactive release.
@@ -8,15 +8,15 @@ Manually verified official-release submissions: 0; no_verified_official_submissi
 This report is a read-only scenario showing the impact of explicit unavailable tags.
 
 Baseline projected lineup: 139.38.
-Hard-tag exclusion projected lineup: 131.23.
-Conditional projected difference: -8.15.
+Hard-tag exclusion projected lineup: 130.97.
+Conditional projected difference: -8.41.
 
 ## Hard-tag excluded from provisional lineup
 
 - Pat Bryant — fantasy reserve: False; Sleeper injury: IR
 - Jonah Coleman — fantasy reserve: False; Sleeper injury: IR
 - James Conner — fantasy reserve: True; Sleeper injury: IR
-- Michael Pittman Jr. — fantasy reserve: True; Sleeper injury: IR
+- Michael Pittman Jr. — fantasy reserve: False; Sleeper injury: IR
 - Tank Dell — fantasy reserve: False; Sleeper injury: IR
 
 ## ESPN / Sleeper discrepancies
@@ -29,7 +29,7 @@ None in Sleeper tags; absence of flags is NOT active confirmation.
 
 ## Proposed conditional substitutions
 
-Potentially added: Caleb Douglas
+Potentially added: Antonio Williams
 Potentially removed: Jonah Coleman
 
 ## Mandatory verification

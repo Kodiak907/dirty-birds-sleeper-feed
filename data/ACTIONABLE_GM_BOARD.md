@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-26T15:00:36.150495+00:00
+Generated: 2026-11-26T23:45:20.605990+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -21,11 +21,11 @@ The prior two trades are suppressed because both teams' projected gains were mar
 
 ## Rejected old offers
 
-- Bryce Young, Chase Brown for Tetairoa McMillan: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
+- Bryce Young, Caleb Douglas for Blake Corum: Overpays in outgoing assets for a marginal gain
 - C.J. Stroud, Chase Brown for Josh Allen: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
-- C.J. Stroud, Chase Brown for Tony Pollard: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Jonah Coleman for Jaylen Warren, Rome Odunze: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
-- Amon-Ra St. Brown for Ja'Marr Chase, Denzel Boston: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
+- Chase Brown for Tetairoa McMillan: Too little projected starter benefit for roster disruption
+- C.J. Stroud, Antonio Williams for Brock Purdy: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
+- Amon-Ra St. Brown for Kenneth Walker III, Denzel Boston: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
 
 ## Required checks
 

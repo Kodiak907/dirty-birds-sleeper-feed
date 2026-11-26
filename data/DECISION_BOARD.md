@@ -13,19 +13,19 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Baker Mayfield | 14.71 | -1.31 | 100.0% | — | sleeper_injury_questionable, injury_report_observation_review |
 | 3 | Jacoby Brissett | 10.07 | -5.95 | 86.0% | — | No modeled flags (not medically cleared) |
 
-## RB — reference: Seth McGowan (4.29 PPG)
+## RB — reference: Kaelon Black (4.54 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Braelon Allen | 6.50 | +2.21 | 48.0% | Carries 10.7 | No modeled flags (not medically cleared) |
-| 2 | Keaton Mitchell | 4.67 | +0.38 | 17.0% | Carries 3.3 | No modeled flags (not medically cleared) |
-| 3 | Tyrone Tracy Jr. | 4.19 | -0.10 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
-| 4 | Zonovan Knight | 3.81 | -0.48 | 40.7% | — | carries_missing |
-| 5 | MarShawn Lloyd | 3.29 | -1.00 | 16.0% | Carries 2.7 | injury_report_observation_review |
-| 6 | Tank Bigsby | 2.04 | -2.25 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 7 | Audric Estime | 1.86 | -2.43 | 30.0% | Carries 9.0 | No modeled flags (not medically cleared) |
-| 8 | Robert Henry Jr. | 0.86 | -3.43 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
-| 9 | Jaleel McLaughlin | 0.35 | -3.94 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 1 | Braelon Allen | 6.50 | +1.97 | 48.0% | Carries 10.7 | No modeled flags (not medically cleared) |
+| 2 | Keaton Mitchell | 4.67 | +0.13 | 17.0% | Carries 3.3 | No modeled flags (not medically cleared) |
+| 3 | Tyrone Tracy Jr. | 4.19 | -0.35 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
+| 4 | Zonovan Knight | 3.81 | -0.73 | 40.7% | — | carries_missing |
+| 5 | MarShawn Lloyd | 3.29 | -1.24 | 16.0% | Carries 2.7 | injury_report_observation_review |
+| 6 | Tank Bigsby | 2.04 | -2.50 | 28.7% | Carries 9.0 | sleeper_injury_ir |
+| 7 | Audric Estime | 1.86 | -2.67 | 30.0% | Carries 9.0 | No modeled flags (not medically cleared) |
+| 8 | Robert Henry Jr. | 0.86 | -3.68 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
+| 9 | Jaleel McLaughlin | 0.35 | -4.18 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Michael Pittman Jr. (4.54 PPG)
 
@@ -34,7 +34,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | A.J. Brown | 7.43 | +2.89 | 71.3% | Tgt 7.3 | No modeled flags (not medically cleared) |
 | 2 | Quentin Johnston | 6.37 | +1.84 | 79.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 3 | Keon Coleman | 6.27 | +1.73 | 65.0% | Tgt 4.3 | No modeled flags (not medically cleared) |
-| 4 | Kalif Raymond | 5.75 | +1.21 | 69.3% | Tgt 4.7 | No modeled flags (not medically cleared) |
+| 4 | Kalif Raymond | 5.75 | +1.21 | 69.3% | Tgt 5.3 | No modeled flags (not medically cleared) |
 | 5 | Makai Lemon | 5.74 | +1.20 | 90.0% | Tgt 7.0 | No modeled flags (not medically cleared) |
 | 6 | Malachi Fields | 5.07 | +0.53 | 86.7% | Tgt 4.7 | No modeled flags (not medically cleared) |
 | 7 | Rashid Shaheed | 4.96 | +0.43 | 40.7% | Tgt 4.3 | No modeled flags (not medically cleared) |
@@ -52,7 +52,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 2 | Cade Otton | 5.13 | +3.83 | 97.3% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | Noah Fant | 3.60 | +2.30 | 53.0% | Tgt 2.7 | No modeled flags (not medically cleared) |
 | 4 | Colby Parkinson | 3.49 | +2.20 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 5 | David Njoku | 3.39 | +2.09 | 30.3% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
+| 5 | David Njoku | 3.39 | +2.09 | 30.3% | Tgt 4.0 | sleeper_injury_ir |
 | 6 | Zach Ertz | 1.97 | +0.68 | 14.3% | Tgt 2.7 | No modeled flags (not medically cleared) |
 
 ## K — reference: Will Reichard (7.21 PPG)
