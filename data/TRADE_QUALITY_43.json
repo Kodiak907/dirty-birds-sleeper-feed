@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-25T22:26:12.515564+00:00",
-  "candidates_evaluated": 59670,
-  "market_matched": 4064,
+  "generated_at_utc": "2026-11-26T04:56:58.084663+00:00",
+  "candidates_evaluated": 58734,
+  "market_matched": 4002,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-25T12:39:58.563778+00:00",
-  "projection_as_of": "2026-11-25T12:39:59.710442+00:00",
+  "market_as_of": "2026-11-25T23:08:03.706745+00:00",
+  "projection_as_of": "2026-11-26T04:56:55.812926+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -15,35 +15,71 @@
       "opponent_name": "    Victorious Secret",
       "give": [
         {
-          "id": "13296",
-          "name": "Caleb Douglas",
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
           "pos": "WR"
         },
         {
-          "id": "8131",
-          "name": "Isaiah Likely",
-          "pos": "TE"
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
         }
       ],
       "receive": [
         {
-          "id": "4983",
-          "name": "DJ Moore",
-          "pos": "WR"
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB"
         },
         {
-          "id": "1466",
-          "name": "Travis Kelce",
-          "pos": "TE"
+          "id": "8112",
+          "name": "Drake London",
+          "pos": "WR"
         }
       ],
-      "our_gain": 1.75,
-      "their_gain": 0.82,
-      "market_paid_received_ratio": 0.986,
+      "our_gain": 2.12,
+      "their_gain": 0.57,
+      "market_paid_received_ratio": 0.98,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.201,
+      "score": 2.402,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 5,
+      "opponent_name": "    Victorious Secret",
+      "give": [
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR"
+        }
+      ],
+      "receive": [
+        {
+          "id": "2216",
+          "name": "Mike Evans",
+          "pos": "WR"
+        },
+        {
+          "id": "4983",
+          "name": "DJ Moore",
+          "pos": "WR"
+        }
+      ],
+      "our_gain": 1.91,
+      "their_gain": 0.77,
+      "market_paid_received_ratio": 0.968,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": null,
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.276,
       "not_an_approved_offer": true
     },
     {
@@ -68,13 +104,13 @@
           "pos": "RB"
         }
       ],
-      "our_gain": 1.53,
-      "their_gain": 0.92,
+      "our_gain": 1.59,
+      "their_gain": 0.99,
       "market_paid_received_ratio": 0.873,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.7,
+      "score": 1.802,
       "not_an_approved_offer": true
     },
     {
@@ -104,13 +140,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.53,
-      "their_gain": 0.92,
+      "our_gain": 1.59,
+      "their_gain": 0.99,
       "market_paid_received_ratio": 0.85,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 1.633,
+      "score": 1.735,
       "not_an_approved_offer": true
     }
   ],

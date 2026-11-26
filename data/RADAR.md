@@ -1,15 +1,22 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-25T22:26:09.289946+00:00
-Sleeper snapshot: 2026-11-25T22:26:03.300201+00:00
+Generated: 2026-11-26T04:56:54.430016+00:00
+Sleeper snapshot: 2026-11-26T04:56:46.188421+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-No newly detected transactions or transaction-status changes.
+**3 transaction changes:** 3 completed, 0 pending/processing, 0 failed.
+
+- **NEW** · transaction `1431468648857337856` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Samaje Perine → CREAM MACHINE  (#2) | Dropped: Braelon Allen → CREAM MACHINE  (#2)
+- **NEW** · transaction `1431468524047470592` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Matthew Stafford → CREAM MACHINE  (#2) | Dropped: Audric Estime → CREAM MACHINE  (#2)
+- **NEW** · transaction `1431467970609057792` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Cleveland Browns → CREAM MACHINE  (#2) | Dropped: Baltimore Ravens → CREAM MACHINE  (#2)
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Cleveland Browns → CREAM MACHINE  (#2) | Dropped: Baltimore Ravens → CREAM MACHINE  (#2)
+- 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Matthew Stafford → CREAM MACHINE  (#2) | Dropped: Audric Estime → CREAM MACHINE  (#2)
+- 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Samaje Perine → CREAM MACHINE  (#2) | Dropped: Braelon Allen → CREAM MACHINE  (#2)
 - 2026-11-25T12:39:57.906008+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | Dropped: Rashod Bateman → Dirty Birds (#1)
 - 2026-11-25T12:39:57.906008+00:00 · new_transaction · FREE_AGENT · COMPLETE · To Infinity and Bijan (#9) | Added: Tre Tucker → To Infinity and Bijan (#9) | Dropped: Brian Robinson Jr. → To Infinity and Bijan (#9)
 - 2026-11-25T12:39:57.906008+00:00 · new_transaction · WAIVER · FAILED · Dirty Birds (#1) | Added: Brandon Aiyuk → Dirty Birds (#1) | FAAB bid: $1
@@ -32,9 +39,6 @@ No newly detected transactions or transaction-status changes.
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Alvin Kamara → DeeboSix0 (#8) | Dropped: TreVeyon Henderson → DeeboSix0 (#8) | FAAB bid: $0
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · CREAM MACHINE  (#2) | Added: Kansas City Chiefs → CREAM MACHINE  (#2) | FAAB bid: $16
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · FAILED · CREAM MACHINE  (#2) | Added: Keon Coleman → CREAM MACHINE  (#2) | FAAB bid: $10
-- 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: Michael Mayer → Dirty Birds (#1) | FAAB bid: $27
-- 2026-11-17T22:56:12.686701+00:00 · new_transaction · TRADE · COMPLETE · Dirty Birds (#1),     Victorious Secret (#5) | Added: Kyren Williams →     Victorious Secret (#5), Jacksonville Jaguars →     Victorious Secret (#5), Minnesota Vikings → Dirty Birds (#1) | Dropped: Kyren Williams → Dirty Birds (#1), Jacksonville Jaguars → Dirty Birds (#1), Minnesota Vikings →     Victorious Secret (#5)
-- 2026-11-17T21:55:27.136722+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Dropped: Malachi Fields → CREAM MACHINE  (#2)
 
 ## Important limits
 

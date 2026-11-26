@@ -1,24 +1,38 @@
 {
-  "generated_at_utc": "2026-11-25T22:26:09.801299+00:00",
-  "roster_snapshot_utc": "2026-11-25T22:26:03.300201+00:00",
+  "generated_at_utc": "2026-11-26T04:56:54.776374+00:00",
+  "roster_snapshot_utc": "2026-11-26T04:56:46.188421+00:00",
   "trade_qualified_for_negotiation_review": [],
   "trade_rejected": [
     {
       "give": [
         "Bryce Young",
-        "Caleb Douglas"
+        "Chase Brown"
       ],
       "reasons": [
+        "Too little projected starter benefit for roster disruption",
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Blake Corum"
+        "Tetairoa McMillan"
       ]
     },
     {
       "give": [
-        "Bryce Young",
-        "Pat Bryant"
+        "C.J. Stroud",
+        "Chase Brown"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Overpays in outgoing assets for a marginal gain"
+      ],
+      "receive": [
+        "Josh Allen"
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud",
+        "Chase Brown"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
@@ -26,40 +40,12 @@
         "Overpays in outgoing assets for a marginal gain"
       ],
       "receive": [
-        "Jaylen Waddle"
+        "Tony Pollard"
       ]
     },
     {
       "give": [
-        "Bryce Young",
         "Jonah Coleman"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "D'Andre Swift"
-      ]
-    },
-    {
-      "give": [
-        "Bryce Young",
-        "Caleb Douglas"
-      ],
-      "reasons": [
-        "Too little projected starter benefit for roster disruption",
-        "Opponent has insufficient demonstrated benefit",
-        "Overpays in outgoing assets for a marginal gain"
-      ],
-      "receive": [
-        "Breece Hall"
-      ]
-    },
-    {
-      "give": [
-        "Isaiah Likely"
       ],
       "reasons": [
         "Too little projected starter benefit for roster disruption",
@@ -67,8 +53,22 @@
         "Requires further outgoing roster action"
       ],
       "receive": [
-        "Jalen Coker",
-        "Tucker Kraft"
+        "Jaylen Warren",
+        "Rome Odunze"
+      ]
+    },
+    {
+      "give": [
+        "Amon-Ra St. Brown"
+      ],
+      "reasons": [
+        "Too little projected starter benefit for roster disruption",
+        "Opponent has insufficient demonstrated benefit",
+        "Requires further outgoing roster action"
+      ],
+      "receive": [
+        "Ja'Marr Chase",
+        "Denzel Boston"
       ]
     }
   ],
@@ -117,27 +117,6 @@
       "team": "TB"
     },
     {
-      "bench_depth_difference_ppg": 3.55,
-      "coach_authorization_required": true,
-      "drop_id": "13414",
-      "evidence_flags": [
-        "No listed coverage caveats"
-      ],
-      "hypothetical_drop": "Kaelon Black",
-      "modeled_starter_gain_ppg": 0.0,
-      "not_yet_verified": [
-        "current waiver lock",
-        "official game availability",
-        "week-by-week role",
-        "reasonable FAAB cost"
-      ],
-      "player": "Samaje Perine",
-      "position": "RB",
-      "research_tier": "depth candidate",
-      "source_player_id": "4147",
-      "team": "CIN"
-    },
-    {
       "bench_depth_difference_ppg": 2.31,
       "coach_authorization_required": true,
       "drop_id": "11593",
@@ -181,7 +160,7 @@
       "team": "LAR"
     }
   ],
-  "waiver_screened_count": 5,
+  "waiver_screened_count": 4,
   "warnings": [
     "Waiver research is NOT a pickup/drop recommendation; all moves need fresh eligibility and role confirmation.",
     "A zero-starter-gain player can still have depth value; this list uses limited projections.",

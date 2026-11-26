@@ -1,42 +1,42 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-25T22:26:13.110098+00:00 | Forecast as of: 2026-11-25T12:39:59.710442+00:00
+Generated: 2026-11-26T04:56:58.488291+00:00 | Forecast as of: 2026-11-26T04:56:55.812926+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 12
 
-**Projected optimal score:** 139.42
+**Projected optimal score:** 139.38
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 21.54 |
-| Christian McCaffrey | RB | SEA | 16.61 |
-| Jonah Coleman | RB | PIT | 15.60 |
-| Jaxon Smith-Njigba | WR | SF | 20.53 |
-| Amon-Ra St. Brown | WR | CHI | 17.41 |
-| Isaiah Likely | TE | IND | 12.04 |
+| C.J. Stroud | QB | BAL | 21.26 |
+| Christian McCaffrey | RB | SEA | 16.48 |
+| Jonah Coleman | RB | PIT | 16.25 |
+| Jaxon Smith-Njigba | WR | SF | 20.44 |
+| Amon-Ra St. Brown | WR | CHI | 17.48 |
+| Isaiah Likely | TE | IND | 12.05 |
 | Will Reichard | K | ATL | 7.25 |
 | Minnesota Vikings | DEF | ATL | 7.68 |
-| Chase Brown | RB | NO | 12.61 |
-| Caleb Douglas | WR | NYJ | 8.15 |
+| Chase Brown | RB | NO | 12.36 |
+| Antonio Williams | WR | ARI | 8.13 |
 
 ## Week 13
 
-**Projected optimal score:** 138.09
+**Projected optimal score:** 138.58
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | PIT | 18.39 |
-| Christian McCaffrey | RB | NYG | 19.05 |
-| Jonah Coleman | RB | MIA | 14.89 |
+| C.J. Stroud | QB | PIT | 18.79 |
+| Christian McCaffrey | RB | NYG | 19.21 |
+| Jonah Coleman | RB | MIA | 14.88 |
 | Jaxon Smith-Njigba | WR | DAL | 24.52 |
 | Amon-Ra St. Brown | WR | ATL | 16.04 |
-| Isaiah Likely | TE | SF | 11.51 |
+| Isaiah Likely | TE | SF | 11.30 |
 | Will Reichard | K | CAR | 7.22 |
 | Minnesota Vikings | DEF | CAR | 7.43 |
-| Chase Brown | RB | CLE | 10.90 |
-| Antonio Williams | WR | TEN | 8.14 |
+| Chase Brown | RB | CLE | 10.89 |
+| Antonio Williams | WR | TEN | 8.30 |
 
 ## Week 14
 
@@ -91,11 +91,11 @@ Generated: 2026-11-25T22:26:13.110098+00:00 | Forecast as of: 2026-11-25T12:39:5
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 132.18
+**Projected optimal score:** 132.94
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | GB | 16.27 |
+| C.J. Stroud | QB | GB | 17.03 |
 | Christian McCaffrey | RB | PHI | 19.78 |
 | Jonah Coleman | RB | NE | 13.91 |
 | Jaxon Smith-Njigba | WR | CAR | 20.39 |

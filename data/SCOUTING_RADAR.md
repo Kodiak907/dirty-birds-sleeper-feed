@@ -1,9 +1,11 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-25T22:26:09.322318+00:00
-Sleeper snapshot: 2026-11-25T22:26:03.300201+00:00
+Generated: 2026-11-26T04:56:54.454343+00:00
+Sleeper snapshot: 2026-11-26T04:56:46.188421+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 1. New completed trade entries: 0.
+
+- CREAM MACHINE: added Samaje Perine, Matthew Stafford, Cleveland Browns; dropped Braelon Allen, Audric Estime, Baltimore Ravens
 
 ## Limits
 

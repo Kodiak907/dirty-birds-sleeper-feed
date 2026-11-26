@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-25T22:26:09.449368+00:00
-Sleeper snapshot: 2026-11-25T22:26:03.300201+00:00
+Generated: 2026-11-26T04:56:54.520497+00:00
+Sleeper snapshot: 2026-11-26T04:56:46.188421+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -50,7 +50,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | BigOlBoyle | 3-8 | 98.50 | 1 |
 | DANGER CLOSE | 4-7 | 91.07 | 1 |
 | EmanAndYoMomma | 2-9 | 87.33 | 0 |
-| CREAM MACHINE | 5-6 | 76.56 | 0 |
+| CREAM MACHINE | 5-6 | 76.01 | 0 |
 
 ## Trade evaluation gate
 

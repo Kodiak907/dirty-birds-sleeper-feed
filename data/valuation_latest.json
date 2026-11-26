@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-25T22:26:09.449368+00:00",
+  "generated_at_utc": "2026-11-26T04:56:54.520497+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -1033,21 +1033,21 @@
     {
       "completed_trade_count": 0,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 76.56,
+      "observed_optimal_average": 76.01,
       "observed_optimal_lineup": [
         {
-          "avg": 8.21,
-          "name": "Sam Darnold",
+          "avg": 14.6,
+          "name": "Matthew Stafford",
           "position": "QB"
-        },
-        {
-          "avg": 8.86,
-          "name": "Braelon Allen",
-          "position": "RB"
         },
         {
           "avg": 7.09,
           "name": "Breece Hall",
+          "position": "RB"
+        },
+        {
+          "avg": 1.92,
+          "name": "De'Von Achane",
           "position": "RB"
         },
         {
@@ -1108,52 +1108,6 @@
             7.4,
             10.7,
             8.3
-          ]
-        },
-        {
-          "actual_points_total": 97.5,
-          "actual_points_weekly_avg": 8.86,
-          "id": "11576",
-          "n_weeks": 11,
-          "name": "Braelon Allen",
-          "nonzero_weeks": 9,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            3.2,
-            7.7,
-            18.1,
-            11.4,
-            16.4,
-            22.3,
-            4.4,
-            5.1,
-            8.9
-          ]
-        },
-        {
-          "actual_points_total": 1.6,
-          "actual_points_weekly_avg": 0.15,
-          "id": "11579",
-          "n_weeks": 11,
-          "name": "Audric Estime",
-          "nonzero_weeks": 1,
-          "on_fantasy_reserve": false,
-          "position": "RB",
-          "weekly_points": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.6,
-            0.0
           ]
         },
         {
@@ -1315,6 +1269,52 @@
             0.0,
             0.0,
             15.8
+          ]
+        },
+        {
+          "actual_points_total": 0.0,
+          "actual_points_weekly_avg": 0.0,
+          "id": "4147",
+          "n_weeks": 11,
+          "name": "Samaje Perine",
+          "nonzero_weeks": 0,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "actual_points_total": 160.62,
+          "actual_points_weekly_avg": 14.6,
+          "id": "421",
+          "n_weeks": 11,
+          "name": "Matthew Stafford",
+          "nonzero_weeks": 10,
+          "on_fantasy_reserve": false,
+          "position": "QB",
+          "weekly_points": [
+            4.1,
+            26.98,
+            18.9,
+            9.68,
+            27.32,
+            16.88,
+            17.5,
+            8.28,
+            11.22,
+            19.76,
+            0.0
           ]
         },
         {
@@ -1571,26 +1571,26 @@
           ]
         },
         {
-          "actual_points_total": 39.0,
-          "actual_points_weekly_avg": 3.55,
-          "id": "BAL",
+          "actual_points_total": 6.0,
+          "actual_points_weekly_avg": 0.55,
+          "id": "CLE",
           "n_weeks": 11,
-          "name": "Baltimore Ravens",
-          "nonzero_weeks": 6,
+          "name": "Cleveland Browns",
+          "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
           "position": "DEF",
           "weekly_points": [
-            7.0,
-            3.0,
-            0.0,
-            7.0,
-            0.0,
-            9.0,
             0.0,
             0.0,
             0.0,
-            4.0,
-            9.0
+            0.0,
+            0.0,
+            0.0,
+            6.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
           ]
         },
         {
@@ -1643,26 +1643,26 @@
             ]
           },
           {
-            "actual_points_total": 39.0,
-            "actual_points_weekly_avg": 3.55,
-            "id": "BAL",
+            "actual_points_total": 6.0,
+            "actual_points_weekly_avg": 0.55,
+            "id": "CLE",
             "n_weeks": 11,
-            "name": "Baltimore Ravens",
-            "nonzero_weeks": 6,
+            "name": "Cleveland Browns",
+            "nonzero_weeks": 1,
             "on_fantasy_reserve": false,
             "position": "DEF",
             "weekly_points": [
-              7.0,
-              3.0,
-              0.0,
-              7.0,
-              0.0,
-              9.0,
               0.0,
               0.0,
               0.0,
-              4.0,
-              9.0
+              0.0,
+              0.0,
+              0.0,
+              6.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -1692,6 +1692,29 @@
           }
         ],
         "QB": [
+          {
+            "actual_points_total": 160.62,
+            "actual_points_weekly_avg": 14.6,
+            "id": "421",
+            "n_weeks": 11,
+            "name": "Matthew Stafford",
+            "nonzero_weeks": 10,
+            "on_fantasy_reserve": false,
+            "position": "QB",
+            "weekly_points": [
+              4.1,
+              26.98,
+              18.9,
+              9.68,
+              27.32,
+              16.88,
+              17.5,
+              8.28,
+              11.22,
+              19.76,
+              0.0
+            ]
+          },
           {
             "actual_points_total": 90.32,
             "actual_points_weekly_avg": 8.21,
@@ -1763,29 +1786,6 @@
           }
         ],
         "RB": [
-          {
-            "actual_points_total": 97.5,
-            "actual_points_weekly_avg": 8.86,
-            "id": "11576",
-            "n_weeks": 11,
-            "name": "Braelon Allen",
-            "nonzero_weeks": 9,
-            "on_fantasy_reserve": false,
-            "position": "RB",
-            "weekly_points": [
-              0.0,
-              0.0,
-              3.2,
-              7.7,
-              18.1,
-              11.4,
-              16.4,
-              22.3,
-              4.4,
-              5.1,
-              8.9
-            ]
-          },
           {
             "actual_points_total": 78.0,
             "actual_points_weekly_avg": 7.09,
@@ -1902,12 +1902,12 @@
             ]
           },
           {
-            "actual_points_total": 1.6,
-            "actual_points_weekly_avg": 0.15,
-            "id": "11579",
+            "actual_points_total": 0.0,
+            "actual_points_weekly_avg": 0.0,
+            "id": "4147",
             "n_weeks": 11,
-            "name": "Audric Estime",
-            "nonzero_weeks": 1,
+            "name": "Samaje Perine",
+            "nonzero_weeks": 0,
             "on_fantasy_reserve": false,
             "position": "RB",
             "weekly_points": [
@@ -1920,7 +1920,7 @@
               0.0,
               0.0,
               0.0,
-              1.6,
+              0.0,
               0.0
             ]
           }
@@ -11251,6 +11251,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-25T22:26:03.300201+00:00",
+  "snapshot_utc": "2026-11-26T04:56:46.188421+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-11"
 }

@@ -11,21 +11,21 @@ Same-position uplift measures only potential replacement of the lowest-projected
 |---:|---|---:|---:|---:|---|---|
 | 1 | Deshaun Watson | 15.24 | -0.80 | 98.0% | — | injury_report_observation_review |
 | 2 | Baker Mayfield | 14.73 | -1.31 | 100.0% | — | sleeper_injury_questionable, injury_report_observation_review |
-| 3 | Matthew Stafford | 13.51 | -2.53 | — | — | snap_data_missing, usage_sample_missing |
-| 4 | Jacoby Brissett | 10.06 | -5.97 | 86.0% | — | No modeled flags (not medically cleared) |
+| 3 | Jacoby Brissett | 10.06 | -5.97 | 86.0% | — | No modeled flags (not medically cleared) |
 
 ## RB — reference: Seth McGowan (4.29 PPG)
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Samaje Perine | 8.08 | +3.79 | 40.0% | Carries 7.7 | No modeled flags (not medically cleared) |
+| 1 | Braelon Allen | 6.49 | +2.20 | 48.0% | Carries 10.7 | No modeled flags (not medically cleared) |
 | 2 | Keaton Mitchell | 4.69 | +0.40 | 17.0% | Carries 3.3 | No modeled flags (not medically cleared) |
 | 3 | Tyrone Tracy Jr. | 4.19 | -0.10 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
 | 4 | Zonovan Knight | 3.85 | -0.44 | 40.7% | — | carries_missing |
 | 5 | MarShawn Lloyd | 3.29 | -1.00 | 25.7% | Carries 4.3 | injury_report_observation_review |
 | 6 | Tank Bigsby | 2.04 | -2.25 | 28.7% | Carries 9.0 | sleeper_injury_ir |
-| 7 | Robert Henry Jr. | 0.86 | -3.43 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
-| 8 | Jaleel McLaughlin | 0.35 | -3.94 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
+| 7 | Audric Estime | 1.86 | -2.43 | 30.0% | Carries 9.0 | No modeled flags (not medically cleared) |
+| 8 | Robert Henry Jr. | 0.86 | -3.43 | — | — | snap_data_missing, usage_sample_missing, carries_missing |
+| 9 | Jaleel McLaughlin | 0.35 | -3.94 | 1.3% | Carries 3.0 | No modeled flags (not medically cleared) |
 
 ## WR — reference: Michael Pittman Jr. (4.49 PPG)
 
@@ -70,15 +70,15 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
 | 1 | Tampa Bay Buccaneers | 6.82 | -0.38 | — | — | No modeled flags (not medically cleared) |
-| 2 | Cleveland Browns | 6.60 | -0.60 | — | — | No modeled flags (not medically cleared) |
-| 3 | Cincinnati Bengals | 6.56 | -0.64 | — | — | No modeled flags (not medically cleared) |
-| 4 | Green Bay Packers | 6.51 | -0.69 | — | — | No modeled flags (not medically cleared) |
-| 5 | New England Patriots | 6.18 | -1.01 | — | — | No modeled flags (not medically cleared) |
-| 6 | Washington Commanders | 6.04 | -1.16 | — | — | No modeled flags (not medically cleared) |
-| 7 | New Orleans Saints | 5.87 | -1.33 | — | — | No modeled flags (not medically cleared) |
-| 8 | New York Giants | 5.79 | -1.41 | — | — | No modeled flags (not medically cleared) |
-| 9 | Los Angeles Chargers | 5.40 | -1.80 | — | — | No modeled flags (not medically cleared) |
-| 10 | Tennessee Titans | 5.26 | -1.93 | — | — | No modeled flags (not medically cleared) |
+| 2 | Cincinnati Bengals | 6.56 | -0.64 | — | — | No modeled flags (not medically cleared) |
+| 3 | Green Bay Packers | 6.51 | -0.69 | — | — | No modeled flags (not medically cleared) |
+| 4 | New England Patriots | 6.18 | -1.01 | — | — | No modeled flags (not medically cleared) |
+| 5 | Washington Commanders | 6.04 | -1.16 | — | — | No modeled flags (not medically cleared) |
+| 6 | New Orleans Saints | 5.87 | -1.33 | — | — | No modeled flags (not medically cleared) |
+| 7 | New York Giants | 5.79 | -1.41 | — | — | No modeled flags (not medically cleared) |
+| 8 | Los Angeles Chargers | 5.40 | -1.80 | — | — | No modeled flags (not medically cleared) |
+| 9 | Tennessee Titans | 5.26 | -1.93 | — | — | No modeled flags (not medically cleared) |
+| 10 | Baltimore Ravens | 5.18 | -2.02 | — | — | No modeled flags (not medically cleared) |
 | 11 | Indianapolis Colts | 5.14 | -2.06 | — | — | No modeled flags (not medically cleared) |
 | 12 | New York Jets | 4.97 | -2.22 | — | — | No modeled flags (not medically cleared) |
 

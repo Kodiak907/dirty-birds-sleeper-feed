@@ -25,7 +25,7 @@
       "ppg": 4.493
     }
   },
-  "generated_at_utc": "2026-11-25T22:26:09.631748+00:00",
+  "generated_at_utc": "2026-11-26T04:56:54.651866+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -50,28 +50,6 @@
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
-      },
-      {
-        "audit": {
-          "carries_per_game": null,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Cleveland Browns",
-        "ppg": 6.6,
-        "replacement_reference": {
-          "name": "Minnesota Vikings",
-          "ppg": 7.198
-        },
-        "same_position_uplift_ppg": -0.6,
-        "screen_only": true,
-        "sleeper_id": "CLE",
-        "team": "CLE"
       },
       {
         "audit": {
@@ -248,6 +226,28 @@
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.833,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Baltimore Ravens",
+        "ppg": 5.18,
+        "replacement_reference": {
+          "name": "Minnesota Vikings",
+          "ppg": 7.198
+        },
+        "same_position_uplift_ppg": -2.02,
+        "screen_only": true,
+        "sleeper_id": "BAL",
+        "team": "BAL"
       },
       {
         "audit": {
@@ -469,31 +469,6 @@
       },
       {
         "audit": {
-          "carries_per_game": null,
-          "flags": [
-            "snap_data_missing",
-            "usage_sample_missing"
-          ],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": null,
-          "snap_trend_3_appearances_pp": null,
-          "targets_per_game": null
-        },
-        "name": "Matthew Stafford",
-        "ppg": 13.51,
-        "replacement_reference": {
-          "name": "Bryce Young",
-          "ppg": 16.038
-        },
-        "same_position_uplift_ppg": -2.53,
-        "screen_only": true,
-        "sleeper_id": "421",
-        "team": "LAR"
-      },
-      {
-        "audit": {
           "carries_per_game": 4.0,
           "flags": [],
           "injury_report_observation": {
@@ -521,28 +496,28 @@
     "RB": [
       {
         "audit": {
-          "carries_per_game": 7.67,
+          "carries_per_game": 10.67,
           "flags": [],
           "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
-            "week": "2"
+            "practice_status": "Full Participation in Practice",
+            "week": "8"
           },
           "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 40.0,
-          "snap_trend_3_appearances_pp": 10.0,
-          "targets_per_game": 2.67
+          "projection_coverage": 0.833,
+          "recent_snap_pct": 48.0,
+          "snap_trend_3_appearances_pp": -22.0,
+          "targets_per_game": 1.33
         },
-        "name": "Samaje Perine",
-        "ppg": 8.08,
+        "name": "Braelon Allen",
+        "ppg": 6.49,
         "replacement_reference": {
           "name": "Seth McGowan",
           "ppg": 4.29
         },
-        "same_position_uplift_ppg": 3.79,
+        "same_position_uplift_ppg": 2.2,
         "screen_only": true,
-        "sleeper_id": "4147",
-        "team": "CIN"
+        "sleeper_id": "11576",
+        "team": "NYJ"
       },
       {
         "audit": {
@@ -673,6 +648,28 @@
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 9.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.833,
+          "recent_snap_pct": 30.0,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": 0.0
+        },
+        "name": "Audric Estime",
+        "ppg": 1.86,
+        "replacement_reference": {
+          "name": "Seth McGowan",
+          "ppg": 4.29
+        },
+        "same_position_uplift_ppg": -2.43,
+        "screen_only": true,
+        "sleeper_id": "11579",
+        "team": "CLE"
       },
       {
         "audit": {
@@ -1373,5 +1370,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-25T22:26:03.300201+00:00"
+  "snapshot_utc": "2026-11-26T04:56:46.188421+00:00"
 }
