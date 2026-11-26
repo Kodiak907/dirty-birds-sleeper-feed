@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-26T04:56:54.776374+00:00
+Generated: 2026-11-26T15:00:36.150495+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -10,8 +10,8 @@ Generated: 2026-11-26T04:56:54.776374+00:00
 |---|---|---:|---:|---|---|
 | Darren Waller | TE | +0.00 | 5.89 | Brevyn Spann-Ford | depth candidate |
 | Cade Otton | TE | +0.00 | 3.83 | Brevyn Spann-Ford | depth candidate |
-| Noah Fant | TE | +0.00 | 2.31 | Brevyn Spann-Ford | depth candidate |
-| Colby Parkinson | TE | +0.00 | 2.06 | Brevyn Spann-Ford | depth candidate |
+| Noah Fant | TE | +0.00 | 2.3 | Brevyn Spann-Ford | depth candidate |
+| Colby Parkinson | TE | +0.00 | 2.2 | Brevyn Spann-Ford | depth candidate |
 
 ## Trade proposals
 

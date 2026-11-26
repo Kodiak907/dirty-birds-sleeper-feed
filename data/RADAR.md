@@ -1,16 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-26T04:56:54.430016+00:00
-Sleeper snapshot: 2026-11-26T04:56:46.188421+00:00
+Generated: 2026-11-26T15:00:35.598001+00:00
+Sleeper snapshot: 2026-11-26T15:00:31.442375+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**3 transaction changes:** 3 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1431468648857337856` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Samaje Perine → CREAM MACHINE  (#2) | Dropped: Braelon Allen → CREAM MACHINE  (#2)
-- **NEW** · transaction `1431468524047470592` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Matthew Stafford → CREAM MACHINE  (#2) | Dropped: Audric Estime → CREAM MACHINE  (#2)
-- **NEW** · transaction `1431467970609057792` · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Cleveland Browns → CREAM MACHINE  (#2) | Dropped: Baltimore Ravens → CREAM MACHINE  (#2)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

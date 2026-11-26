@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-26T04:56:46.188421+00:00
+Updated: 2026-11-26T15:00:31.442375+00:00
 League: 1399157532559192064
 NFL week: 12
 
@@ -19,13 +19,7 @@ NFL week: 12
 - Roster 12: Cokerthestroker | 7-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 2: added Samaje Perine, Matthew Stafford, Cleveland Browns; dropped Braelon Allen, Audric Estime, Baltimore Ravens
-- lineup_change â roster/transaction 2
-- lineup_change â roster/transaction 7
-- lineup_change â roster/transaction 8
-- Transaction 1431468648857337856: free_agent / complete / rosters [2] / adds {'4147': 2} / drops {'11576': 2} / FAAB bid None
-- Transaction 1431468524047470592: free_agent / complete / rosters [2] / adds {'421': 2} / drops {'11579': 2} / FAAB bid None
-- Transaction 1431467970609057792: free_agent / complete / rosters [2] / adds {'CLE': 2} / drops {'BAL': 2} / FAAB bid None
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.
