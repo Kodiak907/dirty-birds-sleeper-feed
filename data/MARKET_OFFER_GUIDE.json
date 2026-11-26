@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-25T23:08:03.858857+00:00",
+  "generated_at_utc": "2026-11-26T23:01:45.609606+00:00",
   "limitations": [
     "Value ratios are not exchange rates or manager acceptance probabilities.",
     "Full-PPR market baseline differs from FFL half-PPR.",
@@ -15,318 +15,265 @@
   "qualified_top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.613,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR",
+          "projected_ppg": 8.1
         }
       ],
       "market_quote": {
-        "paid": 3962,
-        "paid_to_received_ratio": 1.077,
-        "received": 3678,
-        "relative_value_difference_pct": 7.7
+        "paid": 2603,
+        "paid_to_received_ratio": 0.918,
+        "received": 2836,
+        "relative_value_difference_pct": -8.2
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 2.13,
+      "mutual_benefit_screen_score": 3.067,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 105.889,
-      "opponent_before": 104.007,
-      "opponent_delta_ppg": 1.88,
-      "opponent_drop_to_fit": "Tre Tucker",
-      "opponent_roster_id": 9,
-      "projected_ppg_received": 12.01,
-      "projected_ppg_sent": 27.27,
+      "opponent_after": 107.668,
+      "opponent_before": 106.095,
+      "opponent_delta_ppg": 1.57,
+      "opponent_drop_to_fit": "Xavier Worthy",
+      "opponent_roster_id": 3,
+      "projected_ppg_received": 9.95,
+      "projected_ppg_sent": 24.12,
       "receive": [
         {
-          "id": "12526",
-          "name": "Tetairoa McMillan",
-          "pos": "WR",
-          "projected_ppg": 12.01
+          "id": "11586",
+          "name": "Blake Corum",
+          "pos": "RB",
+          "projected_ppg": 9.95
         }
       ],
       "starter_benefit": {
-        "them": 1.88,
-        "us": 0.78
+        "them": 1.57,
+        "us": 1.85
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
+      "warnings": [
+        "Blake Corum: snap coverage absent"
+      ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.554,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.77,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.48
+          "projected_ppg": 18.63
         },
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
       "market_quote": {
-        "paid": 5075,
-        "paid_to_received_ratio": 0.837,
-        "received": 6065,
-        "relative_value_difference_pct": -16.3
+        "paid": 6505,
+        "paid_to_received_ratio": 0.951,
+        "received": 6838,
+        "relative_value_difference_pct": -4.9
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.831,
+      "mutual_benefit_screen_score": 1.738,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 103.042,
-      "opponent_before": 101.507,
-      "opponent_delta_ppg": 1.53,
+      "opponent_after": 102.957,
+      "opponent_before": 101.632,
+      "opponent_delta_ppg": 1.32,
       "opponent_drop_to_fit": "Keenan Allen",
       "opponent_roster_id": 10,
-      "projected_ppg_received": 22.84,
-      "projected_ppg_sent": 29.72,
+      "projected_ppg_received": 22.96,
+      "projected_ppg_sent": 29.82,
       "receive": [
         {
           "id": "4984",
           "name": "Josh Allen",
           "pos": "QB",
-          "projected_ppg": 22.84
+          "projected_ppg": 22.96
         }
       ],
       "starter_benefit": {
-        "them": 1.53,
-        "us": 0.72
+        "them": 1.32,
+        "us": 0.76
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.457,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.62,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 11.19
+        }
+      ],
+      "market_quote": {
+        "paid": 4404,
+        "paid_to_received_ratio": 1.083,
+        "received": 4065,
+        "relative_value_difference_pct": 8.3
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 1.744,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 105.341,
+      "opponent_before": 104.079,
+      "opponent_delta_ppg": 1.26,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 11.99,
+      "projected_ppg_sent": 11.19,
+      "receive": [
+        {
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR",
+          "projected_ppg": 11.99
+        }
+      ],
+      "starter_benefit": {
+        "them": 1.26,
+        "us": 0.8
+      },
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.937,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.93,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.48
+          "projected_ppg": 18.63
         },
         {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "market_quote": {
-        "paid": 5075,
-        "paid_to_received_ratio": 1.033,
-        "received": 4913,
-        "relative_value_difference_pct": 3.3
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.208,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 118.496,
-      "opponent_before": 117.735,
-      "opponent_delta_ppg": 0.76,
-      "opponent_drop_to_fit": "Xavier Hutchinson",
-      "opponent_roster_id": 11,
-      "projected_ppg_received": 14.3,
-      "projected_ppg_sent": 29.72,
-      "receive": [
-        {
-          "id": "5967",
-          "name": "Tony Pollard",
-          "pos": "RB",
-          "projected_ppg": 14.3
-        }
-      ],
-      "starter_benefit": {
-        "them": 0.76,
-        "us": 0.62
-      },
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.44,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.6,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
-      "give": [
-        {
-          "id": "13345",
-          "name": "Jonah Coleman",
-          "pos": "RB",
-          "projected_ppg": 14.23
-        }
-      ],
-      "market_quote": {
-        "paid": 5754,
-        "paid_to_received_ratio": 1.056,
-        "received": 5447,
-        "relative_value_difference_pct": 5.6
-      },
-      "market_screen": "in_range",
-      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.113,
-      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 110.608,
-      "opponent_before": 109.955,
-      "opponent_delta_ppg": 0.65,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 12,
-      "projected_ppg_received": 22.94,
-      "projected_ppg_sent": 14.23,
-      "receive": [
-        {
-          "id": "8228",
-          "name": "Jaylen Warren",
-          "pos": "RB",
-          "projected_ppg": 12.88
-        },
-        {
-          "id": "11620",
-          "name": "Rome Odunze",
+          "id": "13301",
+          "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 10.07
+          "projected_ppg": 7.62
+        }
+      ],
+      "market_quote": {
+        "paid": 3301,
+        "paid_to_received_ratio": 0.862,
+        "received": 3829,
+        "relative_value_difference_pct": -13.8
+      },
+      "market_screen": "in_range",
+      "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
+      "mutual_benefit_screen_score": 1.195,
+      "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
+      "opponent_after": 94.603,
+      "opponent_before": 94.185,
+      "opponent_delta_ppg": 0.42,
+      "opponent_drop_to_fit": "Jordan Watkins",
+      "opponent_roster_id": 4,
+      "projected_ppg_received": 19.56,
+      "projected_ppg_sent": 26.25,
+      "receive": [
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB",
+          "projected_ppg": 19.56
         }
       ],
       "starter_benefit": {
-        "them": 0.65,
-        "us": 0.6
+        "them": 0.42,
+        "us": 0.93
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.557,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.769,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "7547",
           "name": "Amon-Ra St. Brown",
           "pos": "WR",
-          "projected_ppg": 16.73
+          "projected_ppg": 16.75
         }
       ],
       "market_quote": {
-        "paid": 8766,
-        "paid_to_received_ratio": 0.831,
+        "paid": 9047,
+        "paid_to_received_ratio": 0.857,
         "received": 10554,
-        "relative_value_difference_pct": -16.9
+        "relative_value_difference_pct": -14.3
       },
       "market_screen": "in_range",
       "maximum_price_note": "No justified maximum offer without validated market, player risk, and Coach's priorities.",
-      "mutual_benefit_screen_score": 1.099,
+      "mutual_benefit_screen_score": 1.02,
       "opening_note": "Consider exploratory discussion only after current injury, workload, playoff review.",
-      "opponent_after": 128.977,
-      "opponent_before": 128.471,
-      "opponent_delta_ppg": 0.51,
+      "opponent_after": 125.807,
+      "opponent_before": 125.415,
+      "opponent_delta_ppg": 0.39,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 7,
-      "projected_ppg_received": 25.56,
-      "projected_ppg_sent": 16.73,
+      "projected_ppg_received": 25.6,
+      "projected_ppg_sent": 16.75,
       "receive": [
         {
-          "id": "7564",
-          "name": "Ja'Marr Chase",
-          "pos": "WR",
-          "projected_ppg": 16.23
+          "id": "8151",
+          "name": "Kenneth Walker III",
+          "pos": "RB",
+          "projected_ppg": 16.35
         },
         {
           "id": "13346",
           "name": "Denzel Boston",
           "pos": "WR",
-          "projected_ppg": 9.33
+          "projected_ppg": 9.25
         }
       ],
       "starter_benefit": {
-        "them": 0.51,
-        "us": 0.72
+        "them": 0.39,
+        "us": 0.76
       },
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
   ],
   "source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "source_as_of": "2026-11-25T23:08:03.706745+00:00",
-  "unpriced_cases": 6,
+  "source_as_of": "2026-11-26T23:01:45.496483+00:00",
+  "unpriced_cases": 2,
   "unpriced_examples": [
-    {
-      "give": [
-        "Bryce Young"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Travis Etienne Jr."
-      ]
-    },
-    {
-      "give": [
-        "Bryce Young",
-        "Caleb Douglas"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Travis Etienne Jr."
-      ]
-    },
-    {
-      "give": [
-        "Bryce Young",
-        "Antonio Williams"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Travis Etienne Jr."
-      ]
-    },
-    {
-      "give": [
-        "Bryce Young"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Justin Herbert",
-        "Travis Etienne Jr."
-      ]
-    },
-    {
-      "give": [
-        "Chase Brown"
-      ],
-      "reason": "One or more players has no matched market value",
-      "receive": [
-        "Jalen Coker",
-        "Harold Fannin Jr."
-      ]
-    },
     {
       "give": [
         "Chase Brown"
@@ -335,6 +282,16 @@
       "receive": [
         "Jalen Coker",
         "Aaron Jones Sr."
+      ]
+    },
+    {
+      "give": [
+        "C.J. Stroud"
+      ],
+      "reason": "One or more players has no matched market value",
+      "receive": [
+        "Kirk Cousins",
+        "Harold Fannin Jr."
       ]
     }
   ]

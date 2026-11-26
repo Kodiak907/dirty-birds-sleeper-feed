@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-25T23:08:03.439826+00:00",
+  "generated_at_utc": "2026-11-26T23:01:45.302867+00:00",
   "league_trade_deadline_week": 11,
   "model": "Screen packages where both clubs can fill legal starting lineups and each gains projected lineup PPG.",
   "not_estimated": [
@@ -10,189 +10,189 @@
     "negotiation history",
     "week-by-week expected wins"
   ],
-  "projections_as_of": "2026-11-25T12:39:59.710442+00:00",
-  "source_snapshot_utc": "2026-11-25T22:26:03.300201+00:00",
+  "projections_as_of": "2026-11-26T04:56:55.812926+00:00",
+  "source_snapshot_utc": "2026-11-26T15:00:31.442375+00:00",
   "suggestions": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.508,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.67,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         }
       ],
-      "mutual_benefit_screen_score": 3.026,
-      "opponent_after": 108.377,
-      "opponent_before": 106.677,
-      "opponent_delta_ppg": 1.7,
+      "mutual_benefit_screen_score": 3.067,
+      "opponent_after": 107.668,
+      "opponent_before": 106.095,
+      "opponent_delta_ppg": 1.57,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 3,
-      "projected_ppg_received": 9.78,
-      "projected_ppg_sent": 16.04,
+      "projected_ppg_received": 9.95,
+      "projected_ppg_sent": 16.02,
       "receive": [
         {
-          "id": "7543",
-          "name": "Travis Etienne Jr.",
+          "id": "11586",
+          "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 9.78
+          "projected_ppg": 9.95
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Travis Etienne Jr.: snap coverage absent"
+        "Blake Corum: snap coverage absent"
       ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.508,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.67,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
           "id": "13296",
           "name": "Caleb Douglas",
           "pos": "WR",
-          "projected_ppg": 8.11
+          "projected_ppg": 8.1
         }
       ],
-      "mutual_benefit_screen_score": 3.026,
-      "opponent_after": 108.377,
-      "opponent_before": 106.677,
-      "opponent_delta_ppg": 1.7,
+      "mutual_benefit_screen_score": 3.067,
+      "opponent_after": 107.668,
+      "opponent_before": 106.095,
+      "opponent_delta_ppg": 1.57,
       "opponent_drop_to_fit": "Xavier Worthy",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 9.78,
-      "projected_ppg_sent": 24.14,
+      "projected_ppg_received": 9.95,
+      "projected_ppg_sent": 24.12,
       "receive": [
         {
-          "id": "7543",
-          "name": "Travis Etienne Jr.",
+          "id": "11586",
+          "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 9.78
+          "projected_ppg": 9.95
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Travis Etienne Jr.: snap coverage absent"
+        "Blake Corum: snap coverage absent"
       ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.508,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.67,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 3.026,
-      "opponent_after": 108.377,
-      "opponent_before": 106.677,
-      "opponent_delta_ppg": 1.7,
+      "mutual_benefit_screen_score": 3.067,
+      "opponent_after": 107.668,
+      "opponent_before": 106.095,
+      "opponent_delta_ppg": 1.57,
       "opponent_drop_to_fit": "Xavier Worthy",
       "opponent_roster_id": 3,
-      "projected_ppg_received": 9.78,
-      "projected_ppg_sent": 23.63,
+      "projected_ppg_received": 9.95,
+      "projected_ppg_sent": 23.64,
       "receive": [
         {
-          "id": "7543",
-          "name": "Travis Etienne Jr.",
+          "id": "11586",
+          "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 9.78
+          "projected_ppg": 9.95
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Travis Etienne Jr.: snap coverage absent"
+        "Blake Corum: snap coverage absent"
       ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.508,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.67,
+      "dirty_birds_after": 136.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.85,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         }
       ],
-      "mutual_benefit_screen_score": 3.026,
-      "opponent_after": 108.377,
-      "opponent_before": 106.677,
-      "opponent_delta_ppg": 1.7,
+      "mutual_benefit_screen_score": 3.067,
+      "opponent_after": 107.668,
+      "opponent_before": 106.095,
+      "opponent_delta_ppg": 1.57,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 3,
-      "projected_ppg_received": 23.36,
-      "projected_ppg_sent": 16.04,
+      "projected_ppg_received": 23.39,
+      "projected_ppg_sent": 16.02,
       "receive": [
         {
           "id": "6797",
           "name": "Justin Herbert",
           "pos": "QB",
-          "projected_ppg": 13.58
+          "projected_ppg": 13.44
         },
         {
-          "id": "7543",
-          "name": "Travis Etienne Jr.",
+          "id": "11586",
+          "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 9.78
+          "projected_ppg": 9.95
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Travis Etienne Jr.: snap coverage absent"
+        "Blake Corum: snap coverage absent"
       ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 138.013,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 3.18,
+      "dirty_birds_after": 138.152,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 3.14,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.48
+          "projected_ppg": 18.63
         }
       ],
-      "mutual_benefit_screen_score": 2.735,
-      "opponent_after": 126.633,
-      "opponent_before": 126.633,
+      "mutual_benefit_screen_score": 2.7,
+      "opponent_after": 125.979,
+      "opponent_before": 125.979,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
-      "projected_ppg_received": 29.76,
-      "projected_ppg_sent": 18.48,
+      "projected_ppg_received": 29.87,
+      "projected_ppg_sent": 18.63,
       "receive": [
         {
           "id": "4046",
@@ -204,7 +204,7 @@
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 10.67
+          "projected_ppg": 10.78
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -212,26 +212,26 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 138.013,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 3.18,
+      "dirty_birds_after": 138.152,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 3.14,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         }
       ],
-      "mutual_benefit_screen_score": 2.735,
-      "opponent_after": 126.633,
-      "opponent_before": 126.633,
+      "mutual_benefit_screen_score": 2.7,
+      "opponent_after": 125.979,
+      "opponent_before": 125.979,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
-      "projected_ppg_received": 29.76,
-      "projected_ppg_sent": 16.04,
+      "projected_ppg_received": 29.87,
+      "projected_ppg_sent": 16.02,
       "receive": [
         {
           "id": "4046",
@@ -243,7 +243,7 @@
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 10.67
+          "projected_ppg": 10.78
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -251,26 +251,26 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 138.013,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 3.18,
+      "dirty_birds_after": 138.152,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 3.14,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "13296",
           "name": "Caleb Douglas",
           "pos": "WR",
-          "projected_ppg": 8.11
+          "projected_ppg": 8.1
         }
       ],
-      "mutual_benefit_screen_score": 2.735,
-      "opponent_after": 126.633,
-      "opponent_before": 126.633,
+      "mutual_benefit_screen_score": 2.7,
+      "opponent_after": 125.979,
+      "opponent_before": 125.979,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
-      "projected_ppg_received": 29.76,
-      "projected_ppg_sent": 8.11,
+      "projected_ppg_received": 29.87,
+      "projected_ppg_sent": 8.1,
       "receive": [
         {
           "id": "4046",
@@ -282,7 +282,7 @@
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 10.67
+          "projected_ppg": 10.78
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -290,26 +290,26 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 138.013,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 3.18,
+      "dirty_birds_after": 138.152,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 3.14,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 2.735,
-      "opponent_after": 126.633,
-      "opponent_before": 126.633,
+      "mutual_benefit_screen_score": 2.7,
+      "opponent_after": 125.979,
+      "opponent_before": 125.979,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
-      "projected_ppg_received": 29.76,
-      "projected_ppg_sent": 7.59,
+      "projected_ppg_received": 29.87,
+      "projected_ppg_sent": 7.62,
       "receive": [
         {
           "id": "4046",
@@ -321,7 +321,7 @@
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 10.67
+          "projected_ppg": 10.78
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -329,38 +329,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.613,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
-      "mutual_benefit_screen_score": 2.13,
-      "opponent_after": 105.889,
-      "opponent_before": 104.007,
-      "opponent_delta_ppg": 1.88,
+      "mutual_benefit_screen_score": 2.034,
+      "opponent_after": 105.774,
+      "opponent_before": 104.079,
+      "opponent_delta_ppg": 1.7,
       "opponent_drop_to_fit": "Tre Tucker",
       "opponent_roster_id": 9,
-      "projected_ppg_received": 12.01,
-      "projected_ppg_sent": 27.27,
+      "projected_ppg_received": 11.99,
+      "projected_ppg_sent": 27.21,
       "receive": [
         {
           "id": "12526",
           "name": "Tetairoa McMillan",
           "pos": "WR",
-          "projected_ppg": 12.01
+          "projected_ppg": 11.99
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -368,32 +368,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.554,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
-      "mutual_benefit_screen_score": 1.831,
-      "opponent_after": 103.042,
-      "opponent_before": 101.507,
-      "opponent_delta_ppg": 1.53,
+      "mutual_benefit_screen_score": 1.744,
+      "opponent_after": 105.341,
+      "opponent_before": 104.079,
+      "opponent_delta_ppg": 1.26,
       "opponent_drop_to_fit": null,
-      "opponent_roster_id": 10,
-      "projected_ppg_received": 22.84,
-      "projected_ppg_sent": 11.23,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 11.99,
+      "projected_ppg_sent": 11.19,
       "receive": [
         {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB",
-          "projected_ppg": 22.84
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR",
+          "projected_ppg": 11.99
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -401,77 +401,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.554,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
       "dirty_birds_drop_to_fit": null,
       "give": [
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB",
-          "projected_ppg": 18.48
-        },
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.831,
-      "opponent_after": 103.042,
-      "opponent_before": 101.507,
-      "opponent_delta_ppg": 1.53,
-      "opponent_drop_to_fit": "Keenan Allen",
-      "opponent_roster_id": 10,
-      "projected_ppg_received": 22.84,
-      "projected_ppg_sent": 29.72,
-      "receive": [
-        {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB",
-          "projected_ppg": 22.84
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.554,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9228",
-          "name": "Bryce Young",
-          "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 11.19
         },
         {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
+          "id": "13301",
+          "name": "Antonio Williams",
+          "pos": "WR",
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 1.831,
-      "opponent_after": 103.042,
-      "opponent_before": 101.507,
-      "opponent_delta_ppg": 1.53,
-      "opponent_drop_to_fit": "Keenan Allen",
-      "opponent_roster_id": 10,
-      "projected_ppg_received": 22.84,
-      "projected_ppg_sent": 27.27,
+      "mutual_benefit_screen_score": 1.744,
+      "opponent_after": 105.341,
+      "opponent_before": 104.079,
+      "opponent_delta_ppg": 1.26,
+      "opponent_drop_to_fit": "Tre Tucker",
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 11.99,
+      "projected_ppg_sent": 18.81,
       "receive": [
         {
-          "id": "4984",
-          "name": "Josh Allen",
-          "pos": "QB",
-          "projected_ppg": 22.84
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR",
+          "projected_ppg": 11.99
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -479,32 +440,182 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.554,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
-      "mutual_benefit_screen_score": 1.831,
-      "opponent_after": 103.042,
-      "opponent_before": 101.507,
-      "opponent_delta_ppg": 1.53,
+      "mutual_benefit_screen_score": 1.744,
+      "opponent_after": 105.341,
+      "opponent_before": 104.079,
+      "opponent_delta_ppg": 1.26,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 9,
+      "projected_ppg_received": 26.29,
+      "projected_ppg_sent": 11.19,
+      "receive": [
+        {
+          "id": "3294",
+          "name": "Dak Prescott",
+          "pos": "QB",
+          "projected_ppg": 14.3
+        },
+        {
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR",
+          "projected_ppg": 11.99
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.77,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 11.19
+        }
+      ],
+      "mutual_benefit_screen_score": 1.738,
+      "opponent_after": 102.957,
+      "opponent_before": 101.632,
+      "opponent_delta_ppg": 1.32,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 10,
-      "projected_ppg_received": 29.0,
-      "projected_ppg_sent": 11.23,
+      "projected_ppg_received": 22.96,
+      "projected_ppg_sent": 11.19,
       "receive": [
         {
           "id": "4984",
           "name": "Josh Allen",
           "pos": "QB",
-          "projected_ppg": 22.84
+          "projected_ppg": 22.96
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.77,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "projected_ppg": 18.63
+        },
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 11.19
+        }
+      ],
+      "mutual_benefit_screen_score": 1.738,
+      "opponent_after": 102.957,
+      "opponent_before": 101.632,
+      "opponent_delta_ppg": 1.32,
+      "opponent_drop_to_fit": "Keenan Allen",
+      "opponent_roster_id": 10,
+      "projected_ppg_received": 22.96,
+      "projected_ppg_sent": 29.82,
+      "receive": [
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB",
+          "projected_ppg": 22.96
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.77,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9228",
+          "name": "Bryce Young",
+          "pos": "QB",
+          "projected_ppg": 16.02
+        },
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 11.19
+        }
+      ],
+      "mutual_benefit_screen_score": 1.738,
+      "opponent_after": 102.957,
+      "opponent_before": 101.632,
+      "opponent_delta_ppg": 1.32,
+      "opponent_drop_to_fit": "Keenan Allen",
+      "opponent_roster_id": 10,
+      "projected_ppg_received": 22.96,
+      "projected_ppg_sent": 27.21,
+      "receive": [
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB",
+          "projected_ppg": 22.96
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.77,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "give": [
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "projected_ppg": 11.19
+        }
+      ],
+      "mutual_benefit_screen_score": 1.738,
+      "opponent_after": 102.957,
+      "opponent_before": 101.632,
+      "opponent_delta_ppg": 1.32,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 10,
+      "projected_ppg_received": 29.12,
+      "projected_ppg_sent": 11.19,
+      "receive": [
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB",
+          "projected_ppg": 22.96
         },
         {
           "id": "LAR",
@@ -518,143 +629,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.613,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.793,
-      "opponent_after": 105.379,
-      "opponent_before": 104.007,
-      "opponent_delta_ppg": 1.37,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 9,
-      "projected_ppg_received": 12.01,
-      "projected_ppg_sent": 11.23,
-      "receive": [
-        {
-          "id": "12526",
-          "name": "Tetairoa McMillan",
-          "pos": "WR",
-          "projected_ppg": 12.01
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.613,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        },
-        {
-          "id": "13301",
-          "name": "Antonio Williams",
-          "pos": "WR",
-          "projected_ppg": 7.59
-        }
-      ],
-      "mutual_benefit_screen_score": 1.793,
-      "opponent_after": 105.379,
-      "opponent_before": 104.007,
-      "opponent_delta_ppg": 1.37,
-      "opponent_drop_to_fit": "Tre Tucker",
-      "opponent_roster_id": 9,
-      "projected_ppg_received": 12.01,
-      "projected_ppg_sent": 18.83,
-      "receive": [
-        {
-          "id": "12526",
-          "name": "Tetairoa McMillan",
-          "pos": "WR",
-          "projected_ppg": 12.01
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.613,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
-      "give": [
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.793,
-      "opponent_after": 105.379,
-      "opponent_before": 104.007,
-      "opponent_delta_ppg": 1.37,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 9,
-      "projected_ppg_received": 26.38,
-      "projected_ppg_sent": 11.23,
-      "receive": [
-        {
-          "id": "3294",
-          "name": "Dak Prescott",
-          "pos": "QB",
-          "projected_ppg": 14.37
-        },
-        {
-          "id": "12526",
-          "name": "Tetairoa McMillan",
-          "pos": "WR",
-          "projected_ppg": 12.01
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.956,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.12,
+      "dirty_birds_after": 135.937,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.93,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 1.311,
-      "opponent_after": 94.543,
-      "opponent_before": 94.17,
-      "opponent_delta_ppg": 0.37,
+      "mutual_benefit_screen_score": 1.195,
+      "opponent_after": 94.603,
+      "opponent_before": 94.185,
+      "opponent_delta_ppg": 0.42,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 19.6,
-      "projected_ppg_sent": 7.59,
+      "projected_ppg_received": 19.56,
+      "projected_ppg_sent": 7.62,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 19.6
+          "projected_ppg": 19.56
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -662,38 +662,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.956,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.12,
+      "dirty_birds_after": 135.937,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.93,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.48
+          "projected_ppg": 18.63
         },
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 1.311,
-      "opponent_after": 94.543,
-      "opponent_before": 94.17,
-      "opponent_delta_ppg": 0.37,
+      "mutual_benefit_screen_score": 1.195,
+      "opponent_after": 94.603,
+      "opponent_before": 94.185,
+      "opponent_delta_ppg": 0.42,
       "opponent_drop_to_fit": "Jordan Watkins",
       "opponent_roster_id": 4,
-      "projected_ppg_received": 19.6,
-      "projected_ppg_sent": 26.07,
+      "projected_ppg_received": 19.56,
+      "projected_ppg_sent": 26.25,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 19.6
+          "projected_ppg": 19.56
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -701,38 +701,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.956,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.12,
+      "dirty_birds_after": 135.937,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.93,
       "dirty_birds_drop_to_fit": null,
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 1.311,
-      "opponent_after": 94.543,
-      "opponent_before": 94.17,
-      "opponent_delta_ppg": 0.37,
+      "mutual_benefit_screen_score": 1.195,
+      "opponent_after": 94.603,
+      "opponent_before": 94.185,
+      "opponent_delta_ppg": 0.42,
       "opponent_drop_to_fit": "Jordan Watkins",
       "opponent_roster_id": 4,
-      "projected_ppg_received": 19.6,
-      "projected_ppg_sent": 23.63,
+      "projected_ppg_received": 19.56,
+      "projected_ppg_sent": 23.64,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 19.6
+          "projected_ppg": 19.56
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -740,38 +740,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.956,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.12,
+      "dirty_birds_after": 135.937,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.93,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "13301",
           "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 7.59
+          "projected_ppg": 7.62
         }
       ],
-      "mutual_benefit_screen_score": 1.311,
-      "opponent_after": 94.543,
-      "opponent_before": 94.17,
-      "opponent_delta_ppg": 0.37,
+      "mutual_benefit_screen_score": 1.195,
+      "opponent_after": 94.603,
+      "opponent_before": 94.185,
+      "opponent_delta_ppg": 0.42,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 4,
-      "projected_ppg_received": 25.94,
-      "projected_ppg_sent": 7.59,
+      "projected_ppg_received": 25.93,
+      "projected_ppg_sent": 7.62,
       "receive": [
         {
           "id": "8183",
           "name": "Brock Purdy",
           "pos": "QB",
-          "projected_ppg": 19.6
+          "projected_ppg": 19.56
         },
         {
-          "id": "8119",
-          "name": "Jahan Dotson",
-          "pos": "WR",
-          "projected_ppg": 6.34
+          "id": "7600",
+          "name": "Pat Freiermuth",
+          "pos": "TE",
+          "projected_ppg": 6.38
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -779,151 +779,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.457,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.62,
-      "dirty_birds_drop_to_fit": null,
-      "give": [
-        {
-          "id": "9758",
-          "name": "C.J. Stroud",
-          "pos": "QB",
-          "projected_ppg": 18.48
-        },
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.208,
-      "opponent_after": 118.496,
-      "opponent_before": 117.735,
-      "opponent_delta_ppg": 0.76,
-      "opponent_drop_to_fit": "Xavier Hutchinson",
-      "opponent_roster_id": 11,
-      "projected_ppg_received": 14.3,
-      "projected_ppg_sent": 29.72,
-      "receive": [
-        {
-          "id": "5967",
-          "name": "Tony Pollard",
-          "pos": "RB",
-          "projected_ppg": 14.3
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.548,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.71,
+      "dirty_birds_after": 135.654,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.65,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
-      "mutual_benefit_screen_score": 1.128,
-      "opponent_after": 110.5,
-      "opponent_before": 109.955,
+      "mutual_benefit_screen_score": 1.076,
+      "opponent_after": 110.237,
+      "opponent_before": 109.692,
       "opponent_delta_ppg": 0.55,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 12,
-      "projected_ppg_received": 20.05,
-      "projected_ppg_sent": 11.23,
+      "projected_ppg_received": 19.94,
+      "projected_ppg_sent": 11.19,
       "receive": [
         {
           "id": "11646",
           "name": "Jalen Coker",
           "pos": "WR",
-          "projected_ppg": 10.69
-        },
-        {
-          "id": "9484",
-          "name": "Tucker Kraft",
-          "pos": "TE",
-          "projected_ppg": 9.36
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.566,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.73,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
-      "give": [
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.126,
-      "opponent_after": 110.482,
-      "opponent_before": 109.955,
-      "opponent_delta_ppg": 0.53,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 12,
-      "projected_ppg_received": 20.07,
-      "projected_ppg_sent": 11.23,
-      "receive": [
-        {
-          "id": "11646",
-          "name": "Jalen Coker",
-          "pos": "WR",
-          "projected_ppg": 10.69
-        },
-        {
-          "id": "12506",
-          "name": "Harold Fannin Jr.",
-          "pos": "TE",
-          "projected_ppg": 9.38
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": [
-        "Harold Fannin Jr.: snap coverage absent"
-      ]
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.616,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.78,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
-      "give": [
-        {
-          "id": "9224",
-          "name": "Chase Brown",
-          "pos": "RB",
-          "projected_ppg": 11.23
-        }
-      ],
-      "mutual_benefit_screen_score": 1.122,
-      "opponent_after": 110.432,
-      "opponent_before": 109.955,
-      "opponent_delta_ppg": 0.48,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 12,
-      "projected_ppg_received": 20.12,
-      "projected_ppg_sent": 11.23,
-      "receive": [
-        {
-          "id": "11646",
-          "name": "Jalen Coker",
-          "pos": "WR",
-          "projected_ppg": 10.69
+          "projected_ppg": 10.51
         },
         {
           "id": "4199",
@@ -939,38 +820,118 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.44,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.6,
+      "dirty_birds_after": 135.806,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.8,
+      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "give": [
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "projected_ppg": 18.63
+        }
+      ],
+      "mutual_benefit_screen_score": 1.055,
+      "opponent_after": 110.085,
+      "opponent_before": 109.692,
+      "opponent_delta_ppg": 0.39,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 12,
+      "projected_ppg_received": 27.52,
+      "projected_ppg_sent": 18.63,
+      "receive": [
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB",
+          "projected_ppg": 18.23
+        },
+        {
+          "id": "12506",
+          "name": "Harold Fannin Jr.",
+          "pos": "TE",
+          "projected_ppg": 9.29
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": [
+        "Harold Fannin Jr.: snap coverage absent"
+      ]
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.851,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.84,
+      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "give": [
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "projected_ppg": 18.63
+        }
+      ],
+      "mutual_benefit_screen_score": 1.051,
+      "opponent_after": 110.04,
+      "opponent_before": 109.692,
+      "opponent_delta_ppg": 0.35,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 12,
+      "projected_ppg_received": 27.57,
+      "projected_ppg_sent": 18.63,
+      "receive": [
+        {
+          "id": "1166",
+          "name": "Kirk Cousins",
+          "pos": "QB",
+          "projected_ppg": 18.23
+        },
+        {
+          "id": "9484",
+          "name": "Tucker Kraft",
+          "pos": "TE",
+          "projected_ppg": 9.33
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.859,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.85,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "13345",
           "name": "Jonah Coleman",
           "pos": "RB",
-          "projected_ppg": 14.23
+          "projected_ppg": 14.34
         }
       ],
-      "mutual_benefit_screen_score": 1.113,
-      "opponent_after": 110.608,
-      "opponent_before": 109.955,
-      "opponent_delta_ppg": 0.65,
+      "mutual_benefit_screen_score": 1.051,
+      "opponent_after": 110.032,
+      "opponent_before": 109.692,
+      "opponent_delta_ppg": 0.34,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 12,
-      "projected_ppg_received": 22.94,
-      "projected_ppg_sent": 14.23,
+      "projected_ppg_received": 23.29,
+      "projected_ppg_sent": 14.34,
       "receive": [
         {
           "id": "8228",
           "name": "Jaylen Warren",
           "pos": "RB",
-          "projected_ppg": 12.88
+          "projected_ppg": 12.78
         },
         {
-          "id": "11620",
-          "name": "Rome Odunze",
+          "id": "11646",
+          "name": "Jalen Coker",
           "pos": "WR",
-          "projected_ppg": 10.07
+          "projected_ppg": 10.51
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -978,77 +939,38 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.557,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.72,
+      "dirty_birds_after": 135.834,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.83,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "7547",
           "name": "Amon-Ra St. Brown",
           "pos": "WR",
-          "projected_ppg": 16.73
+          "projected_ppg": 16.75
         }
       ],
-      "mutual_benefit_screen_score": 1.099,
-      "opponent_after": 128.977,
-      "opponent_before": 128.471,
-      "opponent_delta_ppg": 0.51,
+      "mutual_benefit_screen_score": 1.024,
+      "opponent_after": 125.742,
+      "opponent_before": 125.415,
+      "opponent_delta_ppg": 0.33,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 7,
-      "projected_ppg_received": 25.56,
-      "projected_ppg_sent": 16.73,
+      "projected_ppg_received": 25.67,
+      "projected_ppg_sent": 16.75,
       "receive": [
         {
           "id": "7564",
           "name": "Ja'Marr Chase",
           "pos": "WR",
-          "projected_ppg": 16.23
+          "projected_ppg": 16.12
         },
         {
-          "id": "13346",
-          "name": "Denzel Boston",
-          "pos": "WR",
-          "projected_ppg": 9.33
-        }
-      ],
-      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
-      "warnings": []
-    },
-    {
-      "acceptance_probability": null,
-      "dirty_birds_after": 135.785,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.95,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
-      "give": [
-        {
-          "id": "MIN",
-          "name": "Minnesota Vikings",
-          "pos": "DEF",
-          "projected_ppg": 7.2
-        }
-      ],
-      "mutual_benefit_screen_score": 1.08,
-      "opponent_after": 128.749,
-      "opponent_before": 128.471,
-      "opponent_delta_ppg": 0.28,
-      "opponent_drop_to_fit": null,
-      "opponent_roster_id": 7,
-      "projected_ppg_received": 16.25,
-      "projected_ppg_sent": 7.2,
-      "receive": [
-        {
-          "id": "13346",
-          "name": "Denzel Boston",
-          "pos": "WR",
-          "projected_ppg": 9.33
-        },
-        {
-          "id": "SEA",
-          "name": "Seattle Seahawks",
-          "pos": "DEF",
-          "projected_ppg": 6.92
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "projected_ppg": 9.54
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -1057,37 +979,76 @@
     {
       "acceptance_probability": null,
       "dirty_birds_after": 135.769,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 0.93,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "give": [
         {
           "id": "7547",
           "name": "Amon-Ra St. Brown",
           "pos": "WR",
-          "projected_ppg": 16.73
+          "projected_ppg": 16.75
         }
       ],
-      "mutual_benefit_screen_score": 1.072,
-      "opponent_after": 128.765,
-      "opponent_before": 128.471,
-      "opponent_delta_ppg": 0.29,
+      "mutual_benefit_screen_score": 1.02,
+      "opponent_after": 125.807,
+      "opponent_before": 125.415,
+      "opponent_delta_ppg": 0.39,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 7,
-      "projected_ppg_received": 25.77,
-      "projected_ppg_sent": 16.73,
+      "projected_ppg_received": 25.6,
+      "projected_ppg_sent": 16.75,
+      "receive": [
+        {
+          "id": "8151",
+          "name": "Kenneth Walker III",
+          "pos": "RB",
+          "projected_ppg": 16.35
+        },
+        {
+          "id": "13346",
+          "name": "Denzel Boston",
+          "pos": "WR",
+          "projected_ppg": 9.25
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.539,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.53,
+      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "give": [
+        {
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "pos": "WR",
+          "projected_ppg": 16.75
+        }
+      ],
+      "mutual_benefit_screen_score": 1.013,
+      "opponent_after": 126.037,
+      "opponent_before": 125.415,
+      "opponent_delta_ppg": 0.62,
+      "opponent_drop_to_fit": null,
+      "opponent_roster_id": 7,
+      "projected_ppg_received": 25.37,
+      "projected_ppg_sent": 16.75,
       "receive": [
         {
           "id": "7564",
           "name": "Ja'Marr Chase",
           "pos": "WR",
-          "projected_ppg": 16.23
+          "projected_ppg": 16.12
         },
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 9.54
+          "id": "13346",
+          "name": "Denzel Boston",
+          "pos": "WR",
+          "projected_ppg": 9.25
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -1095,38 +1056,32 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.997,
-      "dirty_birds_before": 134.838,
-      "dirty_birds_delta_ppg": 1.16,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "dirty_birds_after": 136.161,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 1.15,
+      "dirty_birds_drop_to_fit": null,
       "give": [
         {
-          "id": "MIN",
-          "name": "Minnesota Vikings",
-          "pos": "DEF",
-          "projected_ppg": 7.2
+          "id": "9228",
+          "name": "Bryce Young",
+          "pos": "QB",
+          "projected_ppg": 16.02
         }
       ],
-      "mutual_benefit_screen_score": 1.063,
-      "opponent_after": 128.537,
-      "opponent_before": 128.471,
-      "opponent_delta_ppg": 0.07,
+      "mutual_benefit_screen_score": 0.989,
+      "opponent_after": 125.415,
+      "opponent_before": 125.415,
+      "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 7,
-      "projected_ppg_received": 16.46,
-      "projected_ppg_sent": 7.2,
+      "projected_ppg_received": 9.25,
+      "projected_ppg_sent": 16.02,
       "receive": [
         {
-          "id": "9753",
-          "name": "Zach Charbonnet",
-          "pos": "RB",
-          "projected_ppg": 9.54
-        },
-        {
-          "id": "SEA",
-          "name": "Seattle Seahawks",
-          "pos": "DEF",
-          "projected_ppg": 6.92
+          "id": "13346",
+          "name": "Denzel Boston",
+          "pos": "WR",
+          "projected_ppg": 9.25
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
@@ -1134,8 +1089,8 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.598,
-      "dirty_birds_before": 134.838,
+      "dirty_birds_after": 135.768,
+      "dirty_birds_before": 135.008,
       "dirty_birds_delta_ppg": 0.76,
       "dirty_birds_drop_to_fit": null,
       "give": [
@@ -1143,29 +1098,68 @@
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.04
+          "projected_ppg": 16.02
         },
         {
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.23
+          "projected_ppg": 11.19
         }
       ],
-      "mutual_benefit_screen_score": 0.795,
-      "opponent_after": 89.281,
-      "opponent_before": 89.136,
-      "opponent_delta_ppg": 0.15,
-      "opponent_drop_to_fit": "Braelon Allen",
+      "mutual_benefit_screen_score": 0.785,
+      "opponent_after": 91.022,
+      "opponent_before": 90.884,
+      "opponent_delta_ppg": 0.14,
+      "opponent_drop_to_fit": "Jonathon Brooks",
       "opponent_roster_id": 2,
-      "projected_ppg_received": 11.99,
-      "projected_ppg_sent": 27.27,
+      "projected_ppg_received": 11.95,
+      "projected_ppg_sent": 27.21,
       "receive": [
         {
           "id": "10229",
           "name": "Rashee Rice",
           "pos": "WR",
-          "projected_ppg": 11.99
+          "projected_ppg": 11.95
+        }
+      ],
+      "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
+      "warnings": []
+    },
+    {
+      "acceptance_probability": null,
+      "dirty_birds_after": 135.764,
+      "dirty_birds_before": 135.008,
+      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_drop_to_fit": null,
+      "give": [
+        {
+          "id": "9228",
+          "name": "Bryce Young",
+          "pos": "QB",
+          "projected_ppg": 16.02
+        },
+        {
+          "id": "13296",
+          "name": "Caleb Douglas",
+          "pos": "WR",
+          "projected_ppg": 8.1
+        }
+      ],
+      "mutual_benefit_screen_score": 0.785,
+      "opponent_after": 91.026,
+      "opponent_before": 90.884,
+      "opponent_delta_ppg": 0.14,
+      "opponent_drop_to_fit": "Jonathon Brooks",
+      "opponent_roster_id": 2,
+      "projected_ppg_received": 8.85,
+      "projected_ppg_sent": 24.12,
+      "receive": [
+        {
+          "id": "8155",
+          "name": "Breece Hall",
+          "pos": "RB",
+          "projected_ppg": 8.85
         }
       ],
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
