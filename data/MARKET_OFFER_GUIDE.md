@@ -2,20 +2,20 @@
 
 Values by TheTradeCalc: https://thetradecalc.com
 
-Updated: 2026-11-26T23:01:45.609606+00:00
+Updated: 2026-11-27T22:45:11.290211+00:00
 
 **Read-only market-informed shortlist, not acceptance predictions or authorized offers.**
 TheTradeCalc's reference is 12-team full-PPR redraft. FFL is half-PPR; do not treat this as precise FFL pricing.
 
-Fully priced in-range opportunities: 6. Unpriced candidate packages: 2.
+Fully priced in-range opportunities: 6. Unpriced candidate packages: 4.
 
 | # | Opponent | Our outgoing | Incoming | Market paid / received | Our lineup Δ | Their lineup Δ |
 |---:|---:|---|---|---:|---:|---:|
-| 1 | 3 | Bryce Young, Caleb Douglas | Blake Corum | 0.92× | +1.85 | +1.57 |
-| 2 | 10 | C.J. Stroud, Chase Brown | Josh Allen | 0.95× | +0.76 | +1.32 |
-| 3 | 9 | Chase Brown | Tetairoa McMillan | 1.08× | +0.80 | +1.26 |
-| 4 | 4 | C.J. Stroud, Antonio Williams | Brock Purdy | 0.86× | +0.93 | +0.42 |
-| 5 | 7 | Amon-Ra St. Brown | Kenneth Walker III, Denzel Boston | 0.86× | +0.76 | +0.39 |
+| 1 | 3 | Bryce Young, Caleb Douglas | Blake Corum | 0.86× | +1.92 | +1.52 |
+| 2 | 10 | C.J. Stroud, Chase Brown | Josh Allen | 1.02× | +0.66 | +1.44 |
+| 3 | 9 | Chase Brown | Tetairoa McMillan | 1.04× | +0.74 | +1.30 |
+| 4 | 4 | C.J. Stroud, Antonio Williams | Brock Purdy | 0.98× | +0.91 | +0.55 |
+| 5 | 12 | Jonah Coleman | Jaylen Warren, Rome Odunze | 0.82× | +0.52 | +0.50 |
 
 ## Negotiation protocol
 

@@ -1,6 +1,6 @@
 {
-  "all_reviewed": 30,
-  "generated_at_utc": "2026-11-26T23:01:45.580619+00:00",
+  "all_reviewed": 31,
+  "generated_at_utc": "2026-11-27T22:45:11.261034+00:00",
   "limitations": [
     "Acceptance odds unavailable. Never convert score to a probability.",
     "Position depth heuristic is a rough proxy for roster needs, not manager preference.",
@@ -9,14 +9,14 @@
   ],
   "market_truth": "No independently verified ADP, expert trade chart or league negotiation behavior has been sourced. Position-relative projected PPG is NOT fair market value.",
   "screen_formula": "1.5*our line-up gain + 0.9*min(their gain,5) + 0.35*mean valid weeks 15-17 gain - 2*percentile imbalance - 2*redundant outgoing - 1 if playoff weeks incomplete",
-  "source_projections_as_of": "2026-11-26T04:56:55.812926+00:00",
-  "source_rosters_as_of": "2026-11-26T15:00:31.442375+00:00",
+  "source_projections_as_of": "2026-11-27T18:51:55.624198+00:00",
+  "source_rosters_as_of": "2026-11-27T18:51:49.343250+00:00",
   "top_five": [
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 138.152,
-      "dirty_birds_before": 135.008,
-      "dirty_birds_delta_ppg": 3.14,
+      "dirty_birds_after": 138.052,
+      "dirty_birds_before": 134.878,
+      "dirty_birds_delta_ppg": 3.17,
       "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
@@ -26,15 +26,15 @@
           "id": "9758",
           "name": "C.J. Stroud",
           "pos": "QB",
-          "projected_ppg": 18.63
+          "projected_ppg": 18.57
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 2.7,
+      "mutual_benefit_screen_score": 2.726,
       "negotiation_rationale": "Opponent projected starters improve +0.00 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 5.084,
-      "opponent_after": 125.979,
-      "opponent_before": 125.979,
+      "negotiation_screen_score": 5.159,
+      "opponent_after": 125.7,
+      "opponent_before": 125.7,
       "opponent_delta_ppg": 0.0,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 5,
@@ -43,34 +43,34 @@
         "16": 2.31,
         "17": 6.41
       },
-      "position_relative_percentile_sum_received": 1.425,
+      "position_relative_percentile_sum_received": 1.378,
       "position_relative_percentile_sum_sent": 0.64,
-      "projected_ppg_received": 29.87,
-      "projected_ppg_sent": 18.63,
+      "projected_ppg_received": 29.83,
+      "projected_ppg_sent": 18.57,
       "receive": [
         {
           "id": "4046",
           "name": "Patrick Mahomes",
           "pos": "QB",
-          "projected_ppg": 19.09
+          "projected_ppg": 18.96
         },
         {
           "id": "7611",
           "name": "Rhamondre Stevenson",
           "pos": "RB",
-          "projected_ppg": 10.78
+          "projected_ppg": 10.88
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.551,
+      "surrogate_balance_gap_fraction": 0.536,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.859,
-      "dirty_birds_before": 135.008,
-      "dirty_birds_delta_ppg": 1.85,
+      "dirty_birds_after": 136.793,
+      "dirty_birds_before": 134.878,
+      "dirty_birds_delta_ppg": 1.92,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Blake Corum: snap coverage absent"
@@ -80,16 +80,16 @@
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.02
+          "projected_ppg": 16.05
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.067,
-      "negotiation_rationale": "Opponent projected starters improve +1.57 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 4.402,
-      "opponent_after": 107.668,
-      "opponent_before": 106.095,
-      "opponent_delta_ppg": 1.57,
+      "mutual_benefit_screen_score": 3.08,
+      "negotiation_rationale": "Opponent projected starters improve +1.52 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 4.426,
+      "opponent_after": 107.416,
+      "opponent_before": 105.898,
+      "opponent_delta_ppg": 1.52,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 3,
       "playoff_week_gains_ppg": {
@@ -97,20 +97,20 @@
         "16": 0.31,
         "17": 1.31
       },
-      "position_relative_percentile_sum_received": 0.571,
+      "position_relative_percentile_sum_received": 0.582,
       "position_relative_percentile_sum_sent": 0.52,
-      "projected_ppg_received": 9.95,
-      "projected_ppg_sent": 16.02,
+      "projected_ppg_received": 10.0,
+      "projected_ppg_sent": 16.05,
       "receive": [
         {
           "id": "11586",
           "name": "Blake Corum",
           "pos": "RB",
-          "projected_ppg": 9.95
+          "projected_ppg": 10.0
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.089,
+      "surrogate_balance_gap_fraction": 0.107,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
         "Blake Corum: snap coverage absent"
@@ -118,66 +118,60 @@
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 136.859,
-      "dirty_birds_before": 135.008,
-      "dirty_birds_delta_ppg": 1.85,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "dirty_birds_after": 136.58,
+      "dirty_birds_before": 134.878,
+      "dirty_birds_delta_ppg": 1.7,
+      "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
-        "Blake Corum: snap coverage absent",
-        "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
+        "Travis Etienne Jr.: snap coverage absent",
+        "Negative playoff-week modeled effect"
       ],
       "give": [
         {
           "id": "9228",
           "name": "Bryce Young",
           "pos": "QB",
-          "projected_ppg": 16.02
+          "projected_ppg": 16.05
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 3.067,
-      "negotiation_rationale": "Opponent projected starters improve +1.57 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 3.928,
-      "opponent_after": 107.668,
-      "opponent_before": 106.095,
-      "opponent_delta_ppg": 1.57,
+      "mutual_benefit_screen_score": 3.08,
+      "negotiation_rationale": "Opponent projected starters improve +1.73 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 4.104,
+      "opponent_after": 107.629,
+      "opponent_before": 105.898,
+      "opponent_delta_ppg": 1.73,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 3,
       "playoff_week_gains_ppg": {
-        "15": 1.74,
-        "16": 0.31,
-        "17": 1.31
+        "15": -1.96,
+        "16": 0.51,
+        "17": 2.21
       },
-      "position_relative_percentile_sum_received": 0.771,
+      "position_relative_percentile_sum_received": 0.545,
       "position_relative_percentile_sum_sent": 0.52,
-      "projected_ppg_received": 23.39,
-      "projected_ppg_sent": 16.02,
+      "projected_ppg_received": 9.79,
+      "projected_ppg_sent": 16.05,
       "receive": [
         {
-          "id": "6797",
-          "name": "Justin Herbert",
-          "pos": "QB",
-          "projected_ppg": 13.44
-        },
-        {
-          "id": "11586",
-          "name": "Blake Corum",
+          "id": "7543",
+          "name": "Travis Etienne Jr.",
           "pos": "RB",
-          "projected_ppg": 9.95
+          "projected_ppg": 9.79
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.326,
+      "surrogate_balance_gap_fraction": 0.046,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": [
-        "Blake Corum: snap coverage absent"
+        "Travis Etienne Jr.: snap coverage absent"
       ]
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.77,
-      "dirty_birds_before": 135.008,
-      "dirty_birds_delta_ppg": 0.76,
+      "dirty_birds_after": 135.534,
+      "dirty_birds_before": 134.878,
+      "dirty_birds_delta_ppg": 0.66,
       "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
@@ -187,16 +181,16 @@
           "id": "9224",
           "name": "Chase Brown",
           "pos": "RB",
-          "projected_ppg": 11.19
+          "projected_ppg": 11.28
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.738,
-      "negotiation_rationale": "Opponent projected starters improve +1.32 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.538,
-      "opponent_after": 102.957,
-      "opponent_before": 101.632,
-      "opponent_delta_ppg": 1.32,
+      "mutual_benefit_screen_score": 1.703,
+      "negotiation_rationale": "Opponent projected starters improve +1.44 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.52,
+      "opponent_after": 102.977,
+      "opponent_before": 101.538,
+      "opponent_delta_ppg": 1.44,
       "opponent_drop_to_fit": null,
       "opponent_roster_id": 10,
       "playoff_week_gains_ppg": {
@@ -205,73 +199,67 @@
         "17": 5.72
       },
       "position_relative_percentile_sum_received": 1.0,
-      "position_relative_percentile_sum_sent": 0.661,
-      "projected_ppg_received": 22.96,
-      "projected_ppg_sent": 11.19,
+      "position_relative_percentile_sum_sent": 0.673,
+      "projected_ppg_received": 22.93,
+      "projected_ppg_sent": 11.28,
       "receive": [
         {
           "id": "4984",
           "name": "Josh Allen",
           "pos": "QB",
-          "projected_ppg": 22.96
+          "projected_ppg": 22.93
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.339,
+      "surrogate_balance_gap_fraction": 0.327,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     },
     {
       "acceptance_probability": null,
-      "dirty_birds_after": 135.769,
-      "dirty_birds_before": 135.008,
-      "dirty_birds_delta_ppg": 0.76,
-      "dirty_birds_drop_to_fit": "Brevyn Spann-Ford",
+      "dirty_birds_after": 135.788,
+      "dirty_birds_before": 134.878,
+      "dirty_birds_delta_ppg": 0.91,
+      "dirty_birds_drop_to_fit": null,
       "evidence_warnings": [
         "Large sum-of-positional-percentiles imbalance (NOT market pricing)"
       ],
       "give": [
         {
-          "id": "7547",
-          "name": "Amon-Ra St. Brown",
+          "id": "13301",
+          "name": "Antonio Williams",
           "pos": "WR",
-          "projected_ppg": 16.75
+          "projected_ppg": 7.58
         }
       ],
       "market_value_source": null,
-      "mutual_benefit_screen_score": 1.02,
-      "negotiation_rationale": "Opponent projected starters improve +0.39 PPG; no clear shallow-position signal",
-      "negotiation_screen_score": 2.31,
-      "opponent_after": 125.807,
-      "opponent_before": 125.415,
-      "opponent_delta_ppg": 0.39,
+      "mutual_benefit_screen_score": 1.3,
+      "negotiation_rationale": "Opponent projected starters improve +0.55 PPG; no clear shallow-position signal",
+      "negotiation_screen_score": 2.236,
+      "opponent_after": 94.553,
+      "opponent_before": 94.006,
+      "opponent_delta_ppg": 0.55,
       "opponent_drop_to_fit": null,
-      "opponent_roster_id": 7,
+      "opponent_roster_id": 4,
       "playoff_week_gains_ppg": {
-        "15": 6.01,
-        "16": 1.92,
-        "17": 4.83
+        "15": 4.86,
+        "16": 1.67,
+        "17": 4.51
       },
-      "position_relative_percentile_sum_received": 1.482,
-      "position_relative_percentile_sum_sent": 0.986,
-      "projected_ppg_received": 25.6,
-      "projected_ppg_sent": 16.75,
+      "position_relative_percentile_sum_received": 0.84,
+      "position_relative_percentile_sum_sent": 0.457,
+      "projected_ppg_received": 19.48,
+      "projected_ppg_sent": 7.58,
       "receive": [
         {
-          "id": "8151",
-          "name": "Kenneth Walker III",
-          "pos": "RB",
-          "projected_ppg": 16.35
-        },
-        {
-          "id": "13346",
-          "name": "Denzel Boston",
-          "pos": "WR",
-          "projected_ppg": 9.25
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB",
+          "projected_ppg": 19.48
         }
       ],
       "redundant_outgoing_package": false,
-      "surrogate_balance_gap_fraction": 0.335,
+      "surrogate_balance_gap_fraction": 0.456,
       "trade_value_caveat": "Lineup PPG benefit is not manager willingness or market/fair value.",
       "warnings": []
     }
