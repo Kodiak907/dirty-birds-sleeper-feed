@@ -1,7 +1,7 @@
 {
   "bracket_assumption": "Six entrants, seeds 1 and 2 receive Week 15 byes; higher seed faces lower surviving seed Week 16.",
-  "forecast_source_as_of": "2026-11-26T23:45:21.270833+00:00",
-  "generated_at_utc": "2026-11-26T23:58:28.238897+00:00",
+  "forecast_source_as_of": "2026-11-27T18:51:55.624198+00:00",
+  "generated_at_utc": "2026-11-27T23:41:37.144687+00:00",
   "key_disclaimer": "These championship probabilities are CONDITIONAL on today's six seeds reaching the playoffs, not estimates of actual season-end playoff or title probabilities.",
   "league_week": 12,
   "not_modeled": [
@@ -14,7 +14,7 @@
   ],
   "random_seed": 2607,
   "ranking_assumption": "Current wins, losses, then scored points. Official Sleeper tiebreaks not reconstructed.",
-  "roster_snapshot_as_of": "2026-11-26T23:45:15.900827+00:00",
+  "roster_snapshot_as_of": "2026-11-27T18:51:49.343250+00:00",
   "seeded_rosters": [
     8,
     11,
@@ -27,7 +27,7 @@
   "status": "completed_conditional_current_seed_bracket",
   "teams": [
     {
-      "conditional_championship_probability": 0.1219,
+      "conditional_championship_probability": 0.1216,
       "conditional_final_probability": 0.3147,
       "conditional_semifinal_probability": 1.0,
       "name": "DeeboSix0",
@@ -41,22 +41,22 @@
       "seed": 1
     },
     {
-      "conditional_championship_probability": 0.207,
-      "conditional_final_probability": 0.4605,
+      "conditional_championship_probability": 0.2086,
+      "conditional_final_probability": 0.4621,
       "conditional_semifinal_probability": 1.0,
       "name": "suck my dickerson",
       "playoff_lineup_forecasts": {
-        "15": 124.23,
-        "16": 126.33,
-        "17": 122.45
+        "15": 124.44,
+        "16": 126.49,
+        "17": 122.67
       },
       "record": "8-3",
       "roster_id": 11,
       "seed": 2
     },
     {
-      "conditional_championship_probability": 0.0581,
-      "conditional_final_probability": 0.1405,
+      "conditional_championship_probability": 0.0579,
+      "conditional_final_probability": 0.1401,
       "conditional_semifinal_probability": 0.3178,
       "name": "Cokerthestroker",
       "playoff_lineup_forecasts": {
@@ -69,8 +69,8 @@
       "seed": 3
     },
     {
-      "conditional_championship_probability": 0.2028,
-      "conditional_final_probability": 0.3587,
+      "conditional_championship_probability": 0.2022,
+      "conditional_final_probability": 0.3579,
       "conditional_semifinal_probability": 0.5717,
       "name": "Dirty Birds",
       "playoff_lineup_forecasts": {
@@ -83,8 +83,8 @@
       "seed": 4
     },
     {
-      "conditional_championship_probability": 0.1514,
-      "conditional_final_probability": 0.2641,
+      "conditional_championship_probability": 0.151,
+      "conditional_final_probability": 0.2637,
       "conditional_semifinal_probability": 0.4283,
       "name": "kfsn",
       "playoff_lineup_forecasts": {
@@ -97,7 +97,7 @@
       "seed": 5
     },
     {
-      "conditional_championship_probability": 0.2588,
+      "conditional_championship_probability": 0.2587,
       "conditional_final_probability": 0.4615,
       "conditional_semifinal_probability": 0.6822,
       "name": "JA’MARRTRIX",
