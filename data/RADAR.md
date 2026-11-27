@@ -1,14 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-26T23:45:20.073255+00:00
-Sleeper snapshot: 2026-11-26T23:45:15.900827+00:00
+Generated: 2026-11-27T08:12:05.692170+00:00
+Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1431765900511424512` · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 

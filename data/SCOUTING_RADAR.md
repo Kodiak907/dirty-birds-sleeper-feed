@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-26T23:45:20.110707+00:00
-Sleeper snapshot: 2026-11-26T23:45:15.900827+00:00
+Generated: 2026-11-27T08:12:05.731138+00:00
+Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- Dirty Birds: added none; dropped Seth McGowan
-- Dirty Birds: reserve status changed
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 
