@@ -1,16 +1,16 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-27T08:12:09.767550+00:00
-Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
-nflverse observations: 2026-11-27T08:12:05.346809+00:00; injury feed loaded: True
+Generated: 2026-11-27T18:51:59.538258+00:00
+Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
+nflverse observations: 2026-11-27T18:51:53.639105+00:00; injury feed loaded: True
 
-**New observed changes:** 17. Initial baseline: False.
+**New observed changes:** 12. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
 | Player | Sleeper injury tag | Official report observation | Snap % (last 3 appearances) | Notes |
 |---|---|---|---:|---|
-| Brevyn Spann-Ford | No tag | Week 10 observation: Full Participation in Practice | 68.0% | Verify current status before kickoff |
+| Brevyn Spann-Ford | No tag | Week 10 observation: Full Participation in Practice | 69.3% | Verify current status before kickoff |
 | Will Reichard | No tag | No matched report (not clearance) | — | Verify current status before kickoff |
 | Pat Bryant | IR | Week 12 observation: Full Participation in Practice | 53.0% | Verify official NFL roster and game status before lineup decisions |
 | Caleb Douglas | No tag | Week 11 observation: Full Participation in Practice | 77.7% | Verify current status before kickoff |
@@ -21,7 +21,7 @@ nflverse observations: 2026-11-27T08:12:05.346809+00:00; injury feed loaded: Tru
 | James Conner | IR | No matched report (not clearance) | — | Verify official NFL roster and game status before lineup decisions |
 | Brandon Aiyuk | DNR | No matched report (not clearance) | — | Verify current status before kickoff |
 | Michael Pittman Jr. | IR | No matched report (not clearance) | 77.7% | Verify official NFL roster and game status before lineup decisions |
-| Amon-Ra St. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Rib | 73.3% | Verify current status before kickoff |
+| Amon-Ra St. Brown | No tag | Week 10 observation: Questionable, Limited Participation in Practice, Rib | 77.0% | Verify current status before kickoff |
 | Isaiah Likely | No tag | Week 12 observation: Limited Participation in Practice | 79.7% | Verify current status before kickoff |
 | Chase Brown | No tag | No matched report (not clearance) | 65.0% | Verify current status before kickoff |
 | Bryce Young | No tag | Week 12 observation: Full Participation in Practice | 100.0% | Verify current status before kickoff |
@@ -32,23 +32,18 @@ nflverse observations: 2026-11-27T08:12:05.346809+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Bryce Young** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Christian McCaffrey** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Baker Mayfield** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Cade Otton** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Dalton Schultz** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **Darren Waller** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **David Montgomery** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **Derrick Henry** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Harold Fannin Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Jonathon Brooks** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Marvin Harrison Jr.** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Mike Evans** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **Parker Washington** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Limited Participation in Practice', 'week': '12'}
-- **Rashod Bateman** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
-- **Tetairoa McMillan** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
-- **Tony Pollard** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Did Not Participate In Practice', 'week': '12'}
-- **Zay Flowers** (injury_report_update): Published injury/practice report changed: {'practice_status': 'Full Participation in Practice', 'week': '12'}
+- **Colston Loveland** (snap_share_change): Snap share fell 84.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Cyrus Allen** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Dallas Goedert** (snap_share_change): Snap share fell 74.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Jameson Williams** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Javonte Williams** (snap_share_change): Snap share rose 18.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Keon Coleman** (snap_share_change): Snap share fell 32.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Khalil Shakir** (snap_share_change): Snap share fell 17.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Patrick Mahomes** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Rashee Rice** (snap_share_change): Snap share rose 28.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Ryan Flournoy** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Saquon Barkley** (snap_share_change): Snap share fell 47.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+- **Zach Ertz** (snap_share_change): Snap share rose 37.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
 
 ## Guardrails
 

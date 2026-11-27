@@ -1,7 +1,7 @@
 # Dirty Birds — Waiver Intelligence Watchlist
 
-Generated: 2026-11-27T08:12:05.870019+00:00
-Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
+Generated: 2026-11-27T18:51:54.169546+00:00
+Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
 
 **Ownership verified against Sleeper. Future-value ranking withheld until sources are complete.**
 
@@ -12,7 +12,7 @@ Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 | WR | 1290 |
 | TE | 613 |
 | K | 138 |
-| DEF | 15 |
+| DEF | 14 |
 
 ## Position-specific projection rankings (screening only)
 
@@ -44,9 +44,9 @@ Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 |---:|---|---|---:|---:|---:|---|
 | 1 | A.J. Brown | NE | 7.46 | 83% | 71.3% | Not flagged |
 | 2 | Quentin Johnston | LAC | 6.34 | 100% | 79.0% | Not flagged |
-| 3 | Keon Coleman | BUF | 6.31 | 100% | 65.0% | Not flagged |
-| 4 | Kalif Raymond | CHI | 5.76 | 100% | 69.3% | Not flagged |
-| 5 | Makai Lemon | PHI | 5.75 | 100% | 90.0% | Not flagged |
+| 3 | Keon Coleman | BUF | 6.31 | 100% | 61.0% | Not flagged |
+| 4 | Kalif Raymond | CHI | 5.76 | 100% | 65.0% | Not flagged |
+| 5 | Makai Lemon | PHI | 5.75 | 100% | 87.7% | Not flagged |
 | 6 | Malachi Fields | NYG | 5.08 | 100% | 86.7% | Not flagged |
 | 7 | Rashid Shaheed | SEA | 4.95 | 100% | 40.7% | Not flagged |
 | 8 | Ja'Kobi Lane | BAL | 4.46 | 83% | 57.3% | Not flagged |
@@ -64,7 +64,7 @@ Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 | 3 | Noah Fant | NO | 3.61 | 100% | 53.0% | Not flagged |
 | 4 | Colby Parkinson | LAR | 3.48 | 100% | — | Not flagged |
 | 5 | David Njoku | LAC | 3.38 | 100% | 30.3% | IR |
-| 6 | Zach Ertz | PHI | 1.99 | 100% | 14.3% | Not flagged |
+| 6 | Zach Ertz | PHI | 1.99 | 100% | 23.3% | Not flagged |
 
 ### K
 
@@ -81,17 +81,16 @@ Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
 | # | Player | Team | ROS PPG | Proj. coverage | Snap % | Injury tag |
 |---:|---|---|---:|---:|---:|---|
 | 1 | Tampa Bay Buccaneers | TB | 6.82 | 100% | — | Not flagged |
-| 2 | Cincinnati Bengals | CIN | 6.68 | 100% | — | Not flagged |
-| 3 | Green Bay Packers | GB | 6.50 | 100% | — | Not flagged |
-| 4 | New England Patriots | NE | 6.07 | 100% | — | Not flagged |
-| 5 | Washington Commanders | WAS | 6.03 | 100% | — | Not flagged |
-| 6 | New Orleans Saints | NO | 5.83 | 100% | — | Not flagged |
-| 7 | New York Giants | NYG | 5.76 | 100% | — | Not flagged |
-| 8 | Los Angeles Chargers | LAC | 5.37 | 100% | — | Not flagged |
-| 9 | Tennessee Titans | TEN | 5.33 | 100% | — | Not flagged |
-| 10 | New York Jets | NYJ | 5.17 | 83% | — | Not flagged |
-| 11 | Baltimore Ravens | BAL | 5.13 | 83% | — | Not flagged |
-| 12 | Indianapolis Colts | IND | 4.96 | 83% | — | Not flagged |
+| 2 | Green Bay Packers | GB | 6.50 | 100% | — | Not flagged |
+| 3 | New England Patriots | NE | 6.07 | 100% | — | Not flagged |
+| 4 | Washington Commanders | WAS | 6.03 | 100% | — | Not flagged |
+| 5 | New Orleans Saints | NO | 5.83 | 100% | — | Not flagged |
+| 6 | New York Giants | NYG | 5.76 | 100% | — | Not flagged |
+| 7 | Los Angeles Chargers | LAC | 5.37 | 100% | — | Not flagged |
+| 8 | Tennessee Titans | TEN | 5.33 | 100% | — | Not flagged |
+| 9 | New York Jets | NYJ | 5.17 | 83% | — | Not flagged |
+| 10 | Baltimore Ravens | BAL | 5.13 | 83% | — | Not flagged |
+| 11 | Indianapolis Colts | IND | 4.96 | 83% | — | Not flagged |
 
 **Ranking method:** within each position, published Sleeper ROS PPG with >=70% week coverage. No claim of risk-adjusted or official waiver priority; injury, byes, role, roster fit and FAAB require review.
 
@@ -108,9 +107,9 @@ Players with >=70% ROS forecast week coverage and >=2 recorded snap weeks, sorte
 | Darren Waller | TE | CAR | 7.17 | 53.3% |
 | Braelon Allen | RB | NYJ | 6.49 | 48.0% |
 | Quentin Johnston | WR | LAC | 6.34 | 79.0% |
-| Keon Coleman | WR | BUF | 6.31 | 65.0% |
-| Kalif Raymond | WR | CHI | 5.76 | 69.3% |
-| Makai Lemon | WR | PHI | 5.75 | 90.0% |
+| Keon Coleman | WR | BUF | 6.31 | 61.0% |
+| Kalif Raymond | WR | CHI | 5.76 | 65.0% |
+| Makai Lemon | WR | PHI | 5.75 | 87.7% |
 | Cade Otton | TE | TB | 5.13 | 97.3% |
 | Malachi Fields | WR | NYG | 5.08 | 86.7% |
 | Rashid Shaheed | WR | SEA | 4.95 | 40.7% |

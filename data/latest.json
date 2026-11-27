@@ -4745,7 +4745,7 @@
       "type": "snake"
     }
   ],
-  "fetched_at_utc": "2026-11-27T08:12:02.176635+00:00",
+  "fetched_at_utc": "2026-11-27T18:51:49.343250+00:00",
   "league": {
     "avatar": "e0e5b7b1e573ccb16828abb70bd77bd5",
     "bracket_id": null,
@@ -4753,14 +4753,14 @@
     "company_id": null,
     "draft_id": "1399157533943312384",
     "group_id": null,
-    "last_author_avatar": "06a7a98b6f1801cd134db689a08ddb92",
-    "last_author_display_name": "Kodiak907",
-    "last_author_id": "1399093464662073344",
-    "last_author_is_bot": false,
+    "last_author_avatar": null,
+    "last_author_display_name": "sys",
+    "last_author_id": "166666666666666666",
+    "last_author_is_bot": true,
     "last_message_attachment": null,
-    "last_message_id": "1431898803044102144",
+    "last_message_id": "1432050043912744960",
     "last_message_text_map": null,
-    "last_message_time": 1795753787341,
+    "last_message_time": 1795789845974,
     "last_pinned_message_id": "1425580363685662720",
     "last_read_id": null,
     "league_id": "1399157532559192064",
@@ -7803,6 +7803,7 @@
           "9480",
           "9508",
           "9997",
+          "CIN",
           "JAX"
         ],
         "players_points": {
@@ -7822,6 +7823,7 @@
           "9480": 0.0,
           "9508": 0.0,
           "9997": 0.0,
+          "CIN": 0.0,
           "JAX": 0.0
         },
         "points": 11.6,
@@ -7829,11 +7831,11 @@
         "starters": [
           "6770",
           "11584",
-          "9508",
-          "2216",
+          "7611",
+          "9997",
           "4983",
           "1466",
-          "9997",
+          "8112",
           "9480",
           "13833",
           "JAX"
@@ -15209,9 +15211,12 @@
         "9480",
         "9508",
         "9997",
+        "CIN",
         "JAX"
       ],
-      "reserve": null,
+      "reserve": [
+        "9508"
+      ],
       "roster_id": 5,
       "settings": {
         "fpts": 1253,
@@ -15230,11 +15235,11 @@
       "starters": [
         "6770",
         "11584",
-        "9508",
-        "2216",
+        "7611",
+        "9997",
         "4983",
         "1466",
-        "9997",
+        "8112",
         "9480",
         "13833",
         "JAX"
@@ -17338,6 +17343,29 @@
       }
     ],
     "12": [
+      {
+        "adds": {
+          "CIN": 5
+        },
+        "consenter_ids": [
+          5
+        ],
+        "created": 1795789845946,
+        "creator": "1399485071181774848",
+        "draft_picks": [],
+        "drops": null,
+        "leg": 12,
+        "metadata": null,
+        "roster_ids": [
+          5
+        ],
+        "settings": null,
+        "status": "complete",
+        "status_updated": 1795789845946,
+        "transaction_id": "1432050043799498752",
+        "type": "free_agent",
+        "waiver_budget": []
+      },
       {
         "adds": null,
         "consenter_ids": [

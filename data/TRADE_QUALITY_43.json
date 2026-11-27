@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-27T08:12:08.329143+00:00",
+  "generated_at_utc": "2026-11-27T18:51:58.084816+00:00",
   "candidates_evaluated": 58734,
-  "market_matched": 5116,
+  "market_matched": 5178,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
-  "market_as_of": "2026-11-26T23:01:45.496483+00:00",
-  "projection_as_of": "2026-11-26T23:45:21.270833+00:00",
+  "market_as_of": "2026-11-27T18:51:54.849307+00:00",
+  "projection_as_of": "2026-11-27T18:51:55.624198+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -15,8 +15,8 @@
       "opponent_name": "BigOlBoyle",
       "give": [
         {
-          "id": "13296",
-          "name": "Caleb Douglas",
+          "id": "13301",
+          "name": "Antonio Williams",
           "pos": "WR"
         },
         {
@@ -32,13 +32,13 @@
           "pos": "RB"
         }
       ],
-      "our_gain": 1.84,
-      "their_gain": 1.57,
-      "market_paid_received_ratio": 0.918,
+      "our_gain": 1.92,
+      "their_gain": 1.52,
+      "market_paid_received_ratio": 0.924,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.536,
+      "score": 2.605,
       "not_an_approved_offer": true
     },
     {
@@ -51,8 +51,8 @@
           "pos": "WR"
         },
         {
-          "id": "13296",
-          "name": "Caleb Douglas",
+          "id": "13301",
+          "name": "Antonio Williams",
           "pos": "WR"
         }
       ],
@@ -68,13 +68,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.09,
-      "their_gain": 0.61,
-      "market_paid_received_ratio": 0.962,
+      "our_gain": 2.2,
+      "their_gain": 0.59,
+      "market_paid_received_ratio": 0.94,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.343,
+      "score": 2.374,
       "not_an_approved_offer": true
     },
     {
@@ -87,16 +87,16 @@
           "pos": "WR"
         },
         {
-          "id": "11593",
-          "name": "Brevyn Spann-Ford",
-          "pos": "TE"
+          "id": "13301",
+          "name": "Antonio Williams",
+          "pos": "WR"
         }
       ],
       "receive": [
         {
-          "id": "8150",
-          "name": "Kyren Williams",
-          "pos": "RB"
+          "id": "8112",
+          "name": "Drake London",
+          "pos": "WR"
         },
         {
           "id": "2216",
@@ -104,13 +104,44 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 1.6,
-      "their_gain": 1.1,
-      "market_paid_received_ratio": 0.998,
+      "our_gain": 2.22,
+      "their_gain": 0.57,
+      "market_paid_received_ratio": 0.932,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.255,
+      "score": 2.357,
+      "not_an_approved_offer": true
+    },
+    {
+      "opponent_roster_id": 3,
+      "opponent_name": "BigOlBoyle",
+      "give": [
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB"
+        },
+        {
+          "id": "9228",
+          "name": "Bryce Young",
+          "pos": "QB"
+        }
+      ],
+      "receive": [
+        {
+          "id": "6813",
+          "name": "Jonathan Taylor",
+          "pos": "RB"
+        }
+      ],
+      "our_gain": 1.5,
+      "their_gain": 1.15,
+      "market_paid_received_ratio": 1.018,
+      "ours_cut_to_fit": null,
+      "theirs_cut_to_fit": "Xavier Worthy",
+      "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
+      "score": 2.136,
       "not_an_approved_offer": true
     }
   ],

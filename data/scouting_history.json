@@ -1638,5 +1638,26 @@
       }
     ],
     "source_snapshot_utc": "2026-11-26T23:45:15.900827+00:00"
+  },
+  {
+    "generated_at_utc": "2026-11-27T18:51:53.990324+00:00",
+    "is_initial_baseline": false,
+    "new_completed_trades": [],
+    "roster_changes": [
+      {
+        "adds": [
+          "Cincinnati Bengals"
+        ],
+        "drops": [],
+        "roster_id": 5,
+        "team": "Victorious Secret"
+      },
+      {
+        "kind": "reserve_change",
+        "roster_id": 5,
+        "team": "Victorious Secret"
+      }
+    ],
+    "source_snapshot_utc": "2026-11-27T18:51:49.343250+00:00"
   }
 ]

@@ -1,6 +1,6 @@
 # Dirty Birds — Two-FLEX Waiver Lineup Impact
 
-Generated: 2026-11-27T08:12:06.149427+00:00
+Generated: 2026-11-27T18:51:54.442751+00:00
 **Read-only hypothetical screening; NOT add/drop instructions or verified weekly forecasts.**
 
 Baseline illustrative optimal PPG: **134.91**. Weeks with partial projections and injury status require manual verification.
@@ -70,17 +70,16 @@ Baseline illustrative optimal PPG: **134.91**. Weeks with partial projections an
 | # | Free agent | PPG | Hypothetical depth swap | Starter gain | Bench PPG difference | Flags |
 |---:|---|---:|---|---:|---:|---|
 | 1 | Tampa Bay Buccaneers | 6.82 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.51 | No sourced usage |
-| 2 | Cincinnati Bengals | 6.68 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.36 | No sourced usage |
-| 3 | Green Bay Packers | 6.50 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.19 | No sourced usage |
-| 4 | New England Patriots | 6.07 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.75 | No sourced usage |
-| 5 | Washington Commanders | 6.03 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.72 | No sourced usage |
-| 6 | New Orleans Saints | 5.83 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.52 | No sourced usage |
-| 7 | New York Giants | 5.76 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.45 | No sourced usage |
-| 8 | Los Angeles Chargers | 5.37 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.06 | No sourced usage |
-| 9 | Tennessee Titans | 5.33 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.02 | No sourced usage |
-| 10 | New York Jets | 5.17 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.85 | No sourced usage; Partial projection coverage |
-| 11 | Baltimore Ravens | 5.13 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.81 | No sourced usage; Partial projection coverage |
-| 12 | Indianapolis Colts | 4.96 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.65 | No sourced usage; Partial projection coverage |
+| 2 | Green Bay Packers | 6.50 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +5.19 | No sourced usage |
+| 3 | New England Patriots | 6.07 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.75 | No sourced usage |
+| 4 | Washington Commanders | 6.03 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.72 | No sourced usage |
+| 5 | New Orleans Saints | 5.83 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.52 | No sourced usage |
+| 6 | New York Giants | 5.76 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.45 | No sourced usage |
+| 7 | Los Angeles Chargers | 5.37 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.06 | No sourced usage |
+| 8 | Tennessee Titans | 5.33 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +4.02 | No sourced usage |
+| 9 | New York Jets | 5.17 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.85 | No sourced usage; Partial projection coverage |
+| 10 | Baltimore Ravens | 5.13 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.81 | No sourced usage; Partial projection coverage |
+| 11 | Indianapolis Colts | 4.96 | Bench-depth scenario: Brevyn Spann-Ford | +0.00 | +3.65 | No sourced usage; Partial projection coverage |
 
 ## Before making any claim
 

@@ -1,9 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-27T08:12:05.731138+00:00
-Sleeper snapshot: 2026-11-27T08:12:02.176635+00:00
+Generated: 2026-11-27T18:51:53.990324+00:00
+Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
 
-No roster changes or newly completed trades detected since previous scouting run.
+Roster change entries: 2. New completed trade entries: 0.
+
+- Victorious Secret: added Cincinnati Bengals; dropped none
+- Victorious Secret: reserve status changed
 
 ## Limits
 

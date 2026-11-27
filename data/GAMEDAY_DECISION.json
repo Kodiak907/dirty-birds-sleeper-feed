@@ -7,31 +7,31 @@
     "missing_projection": [
       "Brandon Aiyuk"
     ],
-    "ppg": 139.38,
+    "ppg": 139.03,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 21.26
-      },
-      {
-        "id": "13345",
-        "name": "Jonah Coleman",
-        "position": "RB",
-        "ppg": 16.49
+        "ppg": 21.17
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 16.43
+        "ppg": 16.49
+      },
+      {
+        "id": "13345",
+        "name": "Jonah Coleman",
+        "position": "RB",
+        "ppg": 16.33
       },
       {
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.17
+        "ppg": 20.08
       },
       {
         "id": "7547",
@@ -67,11 +67,11 @@
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 8.1
+        "ppg": 8.03
       }
     ]
   },
-  "difference_ppg": -8.41,
+  "difference_ppg": -8.43,
   "explicit_excluded_ids": [
     "12492",
     "13345",
@@ -79,25 +79,25 @@
     "6819",
     "9502"
   ],
-  "generated_at_utc": "2026-11-27T08:12:10.879194+00:00",
+  "generated_at_utc": "2026-11-27T18:52:01.508756+00:00",
   "hard_status_excluded": {
     "complete": true,
     "missing_projection": [
       "Brandon Aiyuk"
     ],
-    "ppg": 130.97,
+    "ppg": 130.6,
     "starters": [
       {
         "id": "9758",
         "name": "C.J. Stroud",
         "position": "QB",
-        "ppg": 21.26
+        "ppg": 21.17
       },
       {
         "id": "4034",
         "name": "Christian McCaffrey",
         "position": "RB",
-        "ppg": 16.43
+        "ppg": 16.49
       },
       {
         "id": "9224",
@@ -109,7 +109,7 @@
         "id": "9488",
         "name": "Jaxon Smith-Njigba",
         "position": "WR",
-        "ppg": 20.17
+        "ppg": 20.08
       },
       {
         "id": "7547",
@@ -139,13 +139,13 @@
         "id": "13296",
         "name": "Caleb Douglas",
         "position": "WR",
-        "ppg": 8.1
+        "ppg": 8.03
       },
       {
         "id": "13301",
         "name": "Antonio Williams",
         "position": "WR",
-        "ppg": 8.08
+        "ppg": 7.9
       }
     ]
   },
@@ -333,8 +333,8 @@
   ],
   "reported_inactives_on_roster": [],
   "sleeper_discrepancies": [],
-  "snapshot_utc": "2026-11-27T08:12:02.176635+00:00",
-  "source_availability_generated_at_utc": "2026-11-27T08:12:09.767550+00:00",
+  "snapshot_utc": "2026-11-27T18:51:49.343250+00:00",
+  "source_availability_generated_at_utc": "2026-11-27T18:51:59.538258+00:00",
   "third_party_inactive_source_status": "espn_no_explicit_inactive_names_available",
   "third_party_reported_inactives_integrated": false,
   "warnings": [
