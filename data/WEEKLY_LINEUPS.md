@@ -1,51 +1,51 @@
 # Dirty Birds — Week-by-Week Optimizer
 
-Generated: 2026-11-28T01:53:56.412924+00:00 | Forecast as of: 2026-11-27T18:51:55.624198+00:00
+Generated: 2026-11-28T10:14:44.483490+00:00 | Forecast as of: 2026-11-28T10:14:41.395040+00:00
 
 **Read-only; reserve players excluded. Estimates do not constitute verified active/inactive information.**
 
 ## Week 12
 
-**Projected optimal score:** 139.03
+**Projected optimal score:** 138.74
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
-| C.J. Stroud | QB | BAL | 21.17 |
-| Christian McCaffrey | RB | SEA | 16.49 |
+| C.J. Stroud | QB | BAL | 21.25 |
 | Jonah Coleman | RB | PIT | 16.33 |
-| Jaxon Smith-Njigba | WR | SF | 20.08 |
+| Christian McCaffrey | RB | SEA | 15.66 |
+| Jaxon Smith-Njigba | WR | SF | 20.81 |
 | Amon-Ra St. Brown | WR | CHI | 17.59 |
-| Isaiah Likely | TE | IND | 12.05 |
+| Isaiah Likely | TE | IND | 12.01 |
 | Will Reichard | K | ATL | 7.25 |
 | Minnesota Vikings | DEF | ATL | 7.68 |
-| Chase Brown | RB | NO | 12.36 |
-| Caleb Douglas | WR | NYJ | 8.03 |
+| Chase Brown | RB | NO | 12.12 |
+| Caleb Douglas | WR | NYJ | 8.04 |
 
 ## Week 13
 
-**Projected optimal score:** 138.31
+**Projected optimal score:** 137.24
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | PIT | 18.55 |
-| Christian McCaffrey | RB | NYG | 19.04 |
-| Jonah Coleman | RB | MIA | 14.68 |
-| Jaxon Smith-Njigba | WR | DAL | 24.48 |
-| Amon-Ra St. Brown | WR | ATL | 16.04 |
-| Isaiah Likely | TE | SF | 11.16 |
+| Christian McCaffrey | RB | NYG | 19.51 |
+| Jonah Coleman | RB | MIA | 14.51 |
+| Jaxon Smith-Njigba | WR | DAL | 24.51 |
+| Amon-Ra St. Brown | WR | ATL | 16.15 |
+| Isaiah Likely | TE | SF | 10.23 |
 | Will Reichard | K | CAR | 7.22 |
 | Minnesota Vikings | DEF | CAR | 7.43 |
-| Chase Brown | RB | CLE | 11.43 |
-| Antonio Williams | WR | TEN | 8.28 |
+| Chase Brown | RB | CLE | 10.88 |
+| Antonio Williams | WR | TEN | 8.25 |
 
 ## Week 14
 
-**Projected optimal score:** 132.12
+**Projected optimal score:** 131.00
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | WAS | 20.38 |
-| Christian McCaffrey | RB | LA | 18.39 |
+| Christian McCaffrey | RB | LA | 17.27 |
 | Jonah Coleman | RB | NYJ | 13.04 |
 | Jaxon Smith-Njigba | WR | NYG | 20.93 |
 | Amon-Ra St. Brown | WR | TEN | 17.62 |
@@ -57,12 +57,12 @@ Generated: 2026-11-28T01:53:56.412924+00:00 | Forecast as of: 2026-11-27T18:51:5
 
 ## Week 15 (playoffs)
 
-**Projected optimal score:** 135.82
+**Projected optimal score:** 134.69
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | Bryce Young | QB | CIN | 18.25 |
-| Christian McCaffrey | RB | LAC | 21.37 |
+| Christian McCaffrey | RB | LAC | 20.24 |
 | Jonah Coleman | RB | LV | 14.99 |
 | Jaxon Smith-Njigba | WR | PHI | 20.74 |
 | Amon-Ra St. Brown | WR | MIN | 15.34 |
@@ -74,12 +74,12 @@ Generated: 2026-11-28T01:53:56.412924+00:00 | Forecast as of: 2026-11-27T18:51:5
 
 ## Week 16 (playoffs)
 
-**Projected optimal score:** 134.84
+**Projected optimal score:** 133.72
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | PHI | 18.02 |
-| Christian McCaffrey | RB | KC | 18.89 |
+| Christian McCaffrey | RB | KC | 17.77 |
 | Jonah Coleman | RB | BUF | 12.98 |
 | Jaxon Smith-Njigba | WR | LA | 19.90 |
 | Amon-Ra St. Brown | WR | NYG | 16.41 |
@@ -91,12 +91,12 @@ Generated: 2026-11-28T01:53:56.412924+00:00 | Forecast as of: 2026-11-27T18:51:5
 
 ## Week 17 (playoffs)
 
-**Projected optimal score:** 132.73
+**Projected optimal score:** 131.60
 
 | Starter | Position | Opponent | Projection |
 |---|---|---|---:|
 | C.J. Stroud | QB | GB | 17.03 |
-| Christian McCaffrey | RB | PHI | 19.78 |
+| Christian McCaffrey | RB | PHI | 18.65 |
 | Jonah Coleman | RB | NE | 13.91 |
 | Jaxon Smith-Njigba | WR | CAR | 20.39 |
 | Amon-Ra St. Brown | WR | CHI | 17.58 |

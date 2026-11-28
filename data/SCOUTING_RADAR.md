@@ -1,12 +1,9 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-28T01:53:52.585723+00:00
-Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
+Generated: 2026-11-28T10:14:40.260537+00:00
+Sleeper snapshot: 2026-11-28T10:14:35.208008+00:00
 
-Roster change entries: 2. New completed trade entries: 0.
-
-- DANGER CLOSE: added Deshaun Watson; dropped Wil Lutz
-- Cokerthestroker: added Braelon Allen; dropped Michael Mayer
+No roster changes or newly completed trades detected since previous scouting run.
 
 ## Limits
 

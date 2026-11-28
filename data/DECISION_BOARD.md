@@ -16,7 +16,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | Keaton Mitchell | 4.64 | +0.11 | 17.0% | Carries 3.3 | No modeled flags (not medically cleared) |
+| 1 | Keaton Mitchell | 4.64 | +0.11 | 17.0% | Carries 3.3 | injury_report_observation_review |
 | 2 | Tyrone Tracy Jr. | 4.17 | -0.36 | 24.0% | Carries 5.0 | No modeled flags (not medically cleared) |
 | 3 | Zonovan Knight | 3.84 | -0.69 | 40.7% | — | carries_missing |
 | 4 | MarShawn Lloyd | 3.29 | -1.23 | 16.0% | Carries 2.7 | injury_report_observation_review |
@@ -29,7 +29,7 @@ Same-position uplift measures only potential replacement of the lowest-projected
 
 | # | Player | ROS PPG | Same-pos uplift | Snaps | Workload | Flags |
 |---:|---|---:|---:|---:|---|---|
-| 1 | A.J. Brown | 7.45 | +2.70 | 71.3% | Tgt 7.3 | No modeled flags (not medically cleared) |
+| 1 | A.J. Brown | 7.45 | +2.70 | 71.3% | Tgt 7.3 | injury_report_observation_review |
 | 2 | Quentin Johnston | 6.33 | +1.58 | 79.0% | Tgt 2.3 | No modeled flags (not medically cleared) |
 | 3 | Keon Coleman | 6.28 | +1.53 | 61.0% | Tgt 2.7 | No modeled flags (not medically cleared) |
 | 4 | Makai Lemon | 5.76 | +1.01 | 87.7% | Tgt 6.0 | No modeled flags (not medically cleared) |
@@ -49,9 +49,9 @@ Same-position uplift measures only potential replacement of the lowest-projected
 | 1 | Darren Waller | 7.21 | +5.89 | 53.3% | Tgt 5.7 | No modeled flags (not medically cleared) |
 | 2 | Cade Otton | 5.13 | +3.82 | 97.3% | Tgt 4.0 | No modeled flags (not medically cleared) |
 | 3 | Michael Mayer | 4.93 | +3.61 | 75.3% | Tgt 3.3 | No modeled flags (not medically cleared) |
-| 4 | Noah Fant | 3.58 | +2.26 | 53.0% | Tgt 2.7 | No modeled flags (not medically cleared) |
+| 4 | Noah Fant | 3.58 | +2.26 | 53.0% | Tgt 2.7 | injury_report_observation_review |
 | 5 | Colby Parkinson | 3.49 | +2.18 | — | — | snap_data_missing, usage_sample_missing, targets_missing |
-| 6 | David Njoku | 3.37 | +2.06 | 30.3% | Tgt 4.0 | sleeper_injury_ir |
+| 6 | David Njoku | 3.37 | +2.06 | 30.3% | Tgt 4.0 | sleeper_injury_ir, injury_report_observation_review |
 | 7 | Zach Ertz | 1.99 | +0.67 | 23.3% | Tgt 2.0 | No modeled flags (not medically cleared) |
 
 ## K — reference: Will Reichard (7.21 PPG)

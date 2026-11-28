@@ -1,6 +1,6 @@
 # FFL / Dirty Birds â Sleeper intelligence feed
 
-Updated: 2026-11-28T01:53:48.675746+00:00
+Updated: 2026-11-28T10:14:35.208008+00:00
 League: 1399157532559192064
 NFL week: 12
 
@@ -19,11 +19,7 @@ NFL week: 12
 - Roster 12: Cokerthestroker | 7-4 | FAAB used: 148
 
 ## Changes detected in this run
-- Roster 4: added Deshaun Watson; dropped Wil Lutz
-- lineup_change â roster/transaction 4
-- Roster 12: added Braelon Allen; dropped Michael Mayer
-- Transaction 1432192366541811712: free_agent / complete / rosters [4] / adds {'4017': 4} / drops {'3678': 4} / FAAB bid None
-- Transaction 1431551762136829952: waiver / complete / rosters [12] / adds {'11576': 12} / drops {'9482': 12} / FAAB bid 0
+No changes versus previous captured snapshot.
 
 This is public read-only Sleeper data; transactions include statuses and must not be assumed completed until marked complete.
 Raw JSON: data/latest.json; names: data/player_names.json; accumulated changes: data/events.json.

@@ -1,12 +1,12 @@
 {
   "version": "4.3",
-  "generated_at_utc": "2026-11-28T01:53:55.516347+00:00",
+  "generated_at_utc": "2026-11-28T10:14:43.936360+00:00",
   "candidates_evaluated": 58734,
   "market_matched": 5188,
   "source": "Current Sleeper lineups, Sleeper half-PPR projections, TheTradeCalc market",
   "market_source": "Values by TheTradeCalc — https://thetradecalc.com",
   "market_as_of": "2026-11-27T22:45:11.172595+00:00",
-  "projection_as_of": "2026-11-27T18:51:55.624198+00:00",
+  "projection_as_of": "2026-11-28T10:14:41.395040+00:00",
   "market_baseline": "12-team full-PPR; FFL is half-PPR",
   "rejected_due_to_stale_sources": false,
   "qualified": [
@@ -32,13 +32,13 @@
           "pos": "RB"
         }
       ],
-      "our_gain": 1.92,
-      "their_gain": 1.52,
+      "our_gain": 1.88,
+      "their_gain": 1.72,
       "market_paid_received_ratio": 0.924,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.605,
+      "score": 2.685,
       "not_an_approved_offer": true
     },
     {
@@ -68,13 +68,13 @@
           "pos": "WR"
         }
       ],
-      "our_gain": 2.2,
-      "their_gain": 0.59,
+      "our_gain": 2.13,
+      "their_gain": 0.63,
       "market_paid_received_ratio": 0.94,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.374,
+      "score": 2.328,
       "not_an_approved_offer": true
     },
     {
@@ -82,9 +82,9 @@
       "opponent_name": "    Victorious Secret",
       "give": [
         {
-          "id": "7547",
-          "name": "Amon-Ra St. Brown",
-          "pos": "WR"
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB"
         },
         {
           "id": "13301",
@@ -94,23 +94,23 @@
       ],
       "receive": [
         {
-          "id": "8112",
-          "name": "Drake London",
-          "pos": "WR"
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB"
         },
         {
-          "id": "2216",
-          "name": "Mike Evans",
-          "pos": "WR"
+          "id": "7611",
+          "name": "Rhamondre Stevenson",
+          "pos": "RB"
         }
       ],
-      "our_gain": 2.22,
-      "their_gain": 0.57,
-      "market_paid_received_ratio": 0.932,
+      "our_gain": 1.6,
+      "their_gain": 1.16,
+      "market_paid_received_ratio": 0.981,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": null,
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.357,
+      "score": 2.239,
       "not_an_approved_offer": true
     },
     {
@@ -135,13 +135,13 @@
           "pos": "RB"
         }
       ],
-      "our_gain": 1.5,
-      "their_gain": 1.15,
+      "our_gain": 1.65,
+      "their_gain": 0.98,
       "market_paid_received_ratio": 1.018,
       "ours_cut_to_fit": null,
       "theirs_cut_to_fit": "Xavier Worthy",
       "why_both_benefit": "Both modeled legal lineups gain projected points and independent market values are reasonably balanced. Confirm health, playoff schedules and manager needs.",
-      "score": 2.136,
+      "score": 2.184,
       "not_an_approved_offer": true
     }
   ],

@@ -1,15 +1,12 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-28T01:53:52.547927+00:00
-Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
+Generated: 2026-11-28T10:14:40.231726+00:00
+Sleeper snapshot: 2026-11-28T10:14:35.208008+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
-
-- **NEW** · transaction `1432192366541811712` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Deshaun Watson → DANGER CLOSE  (#4) | Dropped: Wil Lutz → DANGER CLOSE  (#4)
-- **NEW** · transaction `1431551762136829952` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Braelon Allen → Cokerthestroker (#12) | Dropped: Michael Mayer → Cokerthestroker (#12) | FAAB bid: $0
+No newly detected transactions or transaction-status changes.
 
 ## Recently detected activity (up to 25)
 
