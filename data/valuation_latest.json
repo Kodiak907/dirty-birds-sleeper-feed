@@ -6,7 +6,7 @@
     "No automated injuries, routes, snap shares or rest-of-season projections are provided.",
     "Do not approve trades or estimate championship odds from these numbers alone."
   ],
-  "generated_at_utc": "2026-11-27T18:51:54.101614+00:00",
+  "generated_at_utc": "2026-11-28T01:53:52.648844+00:00",
   "league": {
     "lineup": [
       "QB",
@@ -3287,26 +3287,26 @@
           ]
         },
         {
-          "actual_points_total": 26.0,
-          "actual_points_weekly_avg": 2.36,
-          "id": "3678",
+          "actual_points_total": 12.2,
+          "actual_points_weekly_avg": 1.11,
+          "id": "4017",
           "n_weeks": 11,
-          "name": "Wil Lutz",
-          "nonzero_weeks": 3,
+          "name": "Deshaun Watson",
+          "nonzero_weeks": 1,
           "on_fantasy_reserve": false,
-          "position": "K",
+          "position": "QB",
           "weekly_points": [
             0.0,
             0.0,
             0.0,
             0.0,
+            12.2,
             0.0,
             0.0,
             0.0,
-            9.0,
-            9.0,
             0.0,
-            8.0
+            0.0,
+            0.0
           ]
         },
         {
@@ -3589,29 +3589,6 @@
               8.0,
               5.0
             ]
-          },
-          {
-            "actual_points_total": 26.0,
-            "actual_points_weekly_avg": 2.36,
-            "id": "3678",
-            "n_weeks": 11,
-            "name": "Wil Lutz",
-            "nonzero_weeks": 3,
-            "on_fantasy_reserve": false,
-            "position": "K",
-            "weekly_points": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              9.0,
-              9.0,
-              0.0,
-              8.0
-            ]
           }
         ],
         "QB": [
@@ -3659,6 +3636,29 @@
               5.3,
               23.42,
               23.36
+            ]
+          },
+          {
+            "actual_points_total": 12.2,
+            "actual_points_weekly_avg": 1.11,
+            "id": "4017",
+            "n_weeks": 11,
+            "name": "Deshaun Watson",
+            "nonzero_weeks": 1,
+            "on_fantasy_reserve": false,
+            "position": "QB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              12.2,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
             ]
           }
         ],
@@ -10349,7 +10349,7 @@
     {
       "completed_trade_count": 5,
       "note": "Observed average lineup is a retrospective heuristic, NOT a projection or feasible past lineup.",
-      "observed_optimal_average": 108.2,
+      "observed_optimal_average": 109.74,
       "observed_optimal_lineup": [
         {
           "avg": 16.93,
@@ -10397,9 +10397,9 @@
           "position": "RB"
         },
         {
-          "avg": 7.32,
-          "name": "Jalen Coker",
-          "position": "WR"
+          "avg": 8.86,
+          "name": "Braelon Allen",
+          "position": "RB"
         }
       ],
       "players": [
@@ -10424,6 +10424,29 @@
             18.26,
             3.02,
             0.0
+          ]
+        },
+        {
+          "actual_points_total": 97.5,
+          "actual_points_weekly_avg": 8.86,
+          "id": "11576",
+          "n_weeks": 11,
+          "name": "Braelon Allen",
+          "nonzero_weeks": 9,
+          "on_fantasy_reserve": false,
+          "position": "RB",
+          "weekly_points": [
+            0.0,
+            0.0,
+            3.2,
+            7.7,
+            18.1,
+            11.4,
+            16.4,
+            22.3,
+            4.4,
+            5.1,
+            8.9
           ]
         },
         {
@@ -10726,29 +10749,6 @@
           ]
         },
         {
-          "actual_points_total": 27.0,
-          "actual_points_weekly_avg": 2.45,
-          "id": "9482",
-          "n_weeks": 11,
-          "name": "Michael Mayer",
-          "nonzero_weeks": 6,
-          "on_fantasy_reserve": false,
-          "position": "TE",
-          "weekly_points": [
-            6.2,
-            3.8,
-            10.7,
-            0.0,
-            0.7,
-            0.0,
-            4.7,
-            0.0,
-            0.0,
-            0.0,
-            0.9
-          ]
-        },
-        {
           "actual_points_total": 74.8,
           "actual_points_weekly_avg": 6.8,
           "id": "9484",
@@ -10988,6 +10988,29 @@
             ]
           },
           {
+            "actual_points_total": 97.5,
+            "actual_points_weekly_avg": 8.86,
+            "id": "11576",
+            "n_weeks": 11,
+            "name": "Braelon Allen",
+            "nonzero_weeks": 9,
+            "on_fantasy_reserve": false,
+            "position": "RB",
+            "weekly_points": [
+              0.0,
+              0.0,
+              3.2,
+              7.7,
+              18.1,
+              11.4,
+              16.4,
+              22.3,
+              4.4,
+              5.1,
+              8.9
+            ]
+          },
+          {
             "actual_points_total": 37.4,
             "actual_points_weekly_avg": 3.4,
             "id": "13286",
@@ -11056,29 +11079,6 @@
               1.4,
               2.4,
               0.0
-            ]
-          },
-          {
-            "actual_points_total": 27.0,
-            "actual_points_weekly_avg": 2.45,
-            "id": "9482",
-            "n_weeks": 11,
-            "name": "Michael Mayer",
-            "nonzero_weeks": 6,
-            "on_fantasy_reserve": false,
-            "position": "TE",
-            "weekly_points": [
-              6.2,
-              3.8,
-              10.7,
-              0.0,
-              0.7,
-              0.0,
-              4.7,
-              0.0,
-              0.0,
-              0.0,
-              0.9
             ]
           }
         ],
@@ -11251,6 +11251,6 @@
       "team": "Cokerthestroker"
     }
   ],
-  "snapshot_utc": "2026-11-27T18:51:49.343250+00:00",
+  "snapshot_utc": "2026-11-28T01:53:48.675746+00:00",
   "source": "Sleeper historical per-player matchup points, 2026 Weeks 1-11"
 }

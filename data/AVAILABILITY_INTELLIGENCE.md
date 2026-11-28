@@ -1,10 +1,10 @@
 # Dirty Birds — Phase VII Availability and Workload Watch
 
-Generated: 2026-11-27T18:51:59.538258+00:00
-Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
-nflverse observations: 2026-11-27T18:51:53.639105+00:00; injury feed loaded: True
+Generated: 2026-11-28T01:53:56.860070+00:00
+Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
+nflverse observations: 2026-11-28T01:53:52.265769+00:00; injury feed loaded: True
 
-**New observed changes:** 12. Initial baseline: False.
+**New observed changes:** 0. Initial baseline: False.
 
 ## Dirty Birds watchlist
 
@@ -32,18 +32,8 @@ nflverse observations: 2026-11-27T18:51:53.639105+00:00; injury feed loaded: Tru
 
 ## Changes since last published snapshot
 
-- **Colston Loveland** (snap_share_change): Snap share fell 84.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Cyrus Allen** (snap_share_change): Snap share rose 21.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Dallas Goedert** (snap_share_change): Snap share fell 74.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Jameson Williams** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Javonte Williams** (snap_share_change): Snap share rose 18.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Keon Coleman** (snap_share_change): Snap share fell 32.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Khalil Shakir** (snap_share_change): Snap share fell 17.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Patrick Mahomes** (snap_share_change): Snap share rose 15.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Rashee Rice** (snap_share_change): Snap share rose 28.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Ryan Flournoy** (snap_share_change): Snap share rose 17.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Saquon Barkley** (snap_share_change): Snap share fell 47.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
-- **Zach Ertz** (snap_share_change): Snap share rose 37.0 percentage points between last two recorded appearances (week 12); confirm role/injury context.
+No verified changes detected since last stored baseline. This is not proof that no NFL news occurred.
+
 
 ## Guardrails
 

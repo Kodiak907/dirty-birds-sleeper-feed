@@ -1,6 +1,6 @@
 # Dirty Birds — GM Quality-Control Board
 
-Generated: 2026-11-27T18:51:54.536640+00:00
+Generated: 2026-11-28T01:53:53.076494+00:00
 
 **Realistic research, not automatic offers or claims.**
 
@@ -8,10 +8,11 @@ Generated: 2026-11-27T18:51:54.536640+00:00
 
 | Player | Pos | Starter gain | Depth difference | Hypothetical replacement | Level |
 |---|---|---:|---:|---|---|
-| Darren Waller | TE | +0.00 | 5.86 | Brevyn Spann-Ford | depth candidate |
-| Cade Otton | TE | +0.00 | 3.81 | Brevyn Spann-Ford | depth candidate |
-| Noah Fant | TE | +0.00 | 2.29 | Brevyn Spann-Ford | depth candidate |
-| Colby Parkinson | TE | +0.00 | 2.17 | Brevyn Spann-Ford | depth candidate |
+| Darren Waller | TE | +0.00 | 5.89 | Brevyn Spann-Ford | depth candidate |
+| Cade Otton | TE | +0.00 | 3.82 | Brevyn Spann-Ford | depth candidate |
+| Michael Mayer | TE | +0.00 | 3.61 | Brevyn Spann-Ford | depth candidate |
+| Noah Fant | TE | +0.00 | 2.26 | Brevyn Spann-Ford | depth candidate |
+| Colby Parkinson | TE | +0.00 | 2.18 | Brevyn Spann-Ford | depth candidate |
 
 ## Trade proposals
 
@@ -25,7 +26,7 @@ The prior two trades are suppressed because both teams' projected gains were mar
 - C.J. Stroud, Chase Brown for Josh Allen: Too little projected starter benefit for roster disruption; Overpays in outgoing assets for a marginal gain
 - Chase Brown for Tetairoa McMillan: Too little projected starter benefit for roster disruption
 - C.J. Stroud, Antonio Williams for Brock Purdy: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Overpays in outgoing assets for a marginal gain
-- Amon-Ra St. Brown for Kenneth Walker III, Denzel Boston: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
+- Jonah Coleman for Jaylen Warren, Rome Odunze: Too little projected starter benefit for roster disruption; Opponent has insufficient demonstrated benefit; Requires further outgoing roster action
 
 ## Required checks
 

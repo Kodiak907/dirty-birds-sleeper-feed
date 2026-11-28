@@ -1,17 +1,20 @@
 # Dirty Birds — League Transaction Radar
 
-Generated: 2026-11-27T18:51:53.952359+00:00
-Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
+Generated: 2026-11-28T01:53:52.547927+00:00
+Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
 League: 1399157532559192064
 
 ## New activity since previous radar run
 
-**1 transaction changes:** 1 completed, 0 pending/processing, 0 failed.
+**2 transaction changes:** 2 completed, 0 pending/processing, 0 failed.
 
-- **NEW** · transaction `1432050043799498752` · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Cincinnati Bengals →     Victorious Secret (#5)
+- **NEW** · transaction `1432192366541811712` · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Deshaun Watson → DANGER CLOSE  (#4) | Dropped: Wil Lutz → DANGER CLOSE  (#4)
+- **NEW** · transaction `1431551762136829952` · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Braelon Allen → Cokerthestroker (#12) | Dropped: Michael Mayer → Cokerthestroker (#12) | FAAB bid: $0
 
 ## Recently detected activity (up to 25)
 
+- 2026-11-28T01:53:52.547927+00:00 · new_transaction · WAIVER · COMPLETE · Cokerthestroker (#12) | Added: Braelon Allen → Cokerthestroker (#12) | Dropped: Michael Mayer → Cokerthestroker (#12) | FAAB bid: $0
+- 2026-11-28T01:53:52.547927+00:00 · new_transaction · FREE_AGENT · COMPLETE · DANGER CLOSE  (#4) | Added: Deshaun Watson → DANGER CLOSE  (#4) | Dropped: Wil Lutz → DANGER CLOSE  (#4)
 - 2026-11-27T18:51:53.952359+00:00 · new_transaction · FREE_AGENT · COMPLETE ·     Victorious Secret (#5) | Added: Cincinnati Bengals →     Victorious Secret (#5)
 - 2026-11-26T23:45:20.073255+00:00 · new_transaction · FREE_AGENT · COMPLETE · Dirty Birds (#1) | Dropped: Seth McGowan → Dirty Birds (#1)
 - 2026-11-26T04:56:54.430016+00:00 · new_transaction · FREE_AGENT · COMPLETE · CREAM MACHINE  (#2) | Added: Cleveland Browns → CREAM MACHINE  (#2) | Dropped: Baltimore Ravens → CREAM MACHINE  (#2)
@@ -35,8 +38,6 @@ League: 1399157532559192064
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · Dirty Birds (#1) | Added: James Conner → Dirty Birds (#1) | Dropped: A.J. Brown → Dirty Birds (#1) | FAAB bid: $0
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · suck my dickerson (#11) | Added: Cam Ward → suck my dickerson (#11) | FAAB bid: $0
 - 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · FAILED · JA’MARRTRIX (#7) | Added: Michael Mayer → JA’MARRTRIX (#7) | FAAB bid: $0
-- 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Elic Ayomanor → DeeboSix0 (#8) | FAAB bid: $5
-- 2026-11-18T09:04:00.476864+00:00 · new_transaction · WAIVER · COMPLETE · DeeboSix0 (#8) | Added: Alvin Kamara → DeeboSix0 (#8) | Dropped: TreVeyon Henderson → DeeboSix0 (#8) | FAAB bid: $0
 
 ## Important limits
 

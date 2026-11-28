@@ -2,30 +2,30 @@
   "current_roster_reference": {
     "DEF": {
       "name": "Minnesota Vikings",
-      "ppg": 7.173
+      "ppg": 7.163
     },
     "K": {
       "name": "Will Reichard",
-      "ppg": 7.22
+      "ppg": 7.215
     },
     "QB": {
       "name": "Bryce Young",
-      "ppg": 15.987
+      "ppg": 16.045
     },
     "RB": {
       "name": "Kaelon Black",
-      "ppg": 4.515
+      "ppg": 4.528
     },
     "TE": {
       "name": "Brevyn Spann-Ford",
-      "ppg": 1.313
+      "ppg": 1.315
     },
     "WR": {
       "name": "Michael Pittman Jr.",
-      "ppg": 4.535
+      "ppg": 4.75
     }
   },
-  "generated_at_utc": "2026-11-27T18:51:54.324616+00:00",
+  "generated_at_utc": "2026-11-28T01:53:52.868895+00:00",
   "method": "Same-position projection uplift vs lowest projected rostered player, with usage/injury verification gates. Not final add/drop decisions.",
   "rankings": {
     "DEF": [
@@ -44,9 +44,9 @@
         "ppg": 6.82,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -0.35,
+        "same_position_uplift_ppg": -0.34,
         "screen_only": true,
         "sleeper_id": "TB",
         "team": "TB"
@@ -63,12 +63,12 @@
           "targets_per_game": null
         },
         "name": "Green Bay Packers",
-        "ppg": 6.5,
+        "ppg": 6.51,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -0.67,
+        "same_position_uplift_ppg": -0.65,
         "screen_only": true,
         "sleeper_id": "GB",
         "team": "GB"
@@ -85,12 +85,12 @@
           "targets_per_game": null
         },
         "name": "New England Patriots",
-        "ppg": 6.07,
+        "ppg": 6.09,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -1.11,
+        "same_position_uplift_ppg": -1.08,
         "screen_only": true,
         "sleeper_id": "NE",
         "team": "NE"
@@ -110,9 +110,9 @@
         "ppg": 6.03,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -1.14,
+        "same_position_uplift_ppg": -1.13,
         "screen_only": true,
         "sleeper_id": "WAS",
         "team": "WAS"
@@ -129,10 +129,10 @@
           "targets_per_game": null
         },
         "name": "New Orleans Saints",
-        "ppg": 5.83,
+        "ppg": 5.82,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
         "same_position_uplift_ppg": -1.34,
         "screen_only": true,
@@ -151,10 +151,10 @@
           "targets_per_game": null
         },
         "name": "New York Giants",
-        "ppg": 5.76,
+        "ppg": 5.75,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
         "same_position_uplift_ppg": -1.41,
         "screen_only": true,
@@ -176,9 +176,9 @@
         "ppg": 5.37,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -1.8,
+        "same_position_uplift_ppg": -1.79,
         "screen_only": true,
         "sleeper_id": "LAC",
         "team": "LAC"
@@ -198,9 +198,9 @@
         "ppg": 5.33,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -1.84,
+        "same_position_uplift_ppg": -1.83,
         "screen_only": true,
         "sleeper_id": "TEN",
         "team": "TEN"
@@ -217,12 +217,12 @@
           "targets_per_game": null
         },
         "name": "New York Jets",
-        "ppg": 5.17,
+        "ppg": 5.18,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -2.01,
+        "same_position_uplift_ppg": -1.99,
         "screen_only": true,
         "sleeper_id": "NYJ",
         "team": "NYJ"
@@ -242,9 +242,9 @@
         "ppg": 5.13,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
-        "same_position_uplift_ppg": -2.05,
+        "same_position_uplift_ppg": -2.04,
         "screen_only": true,
         "sleeper_id": "BAL",
         "team": "BAL"
@@ -264,7 +264,7 @@
         "ppg": 4.96,
         "replacement_reference": {
           "name": "Minnesota Vikings",
-          "ppg": 7.173
+          "ppg": 7.163
         },
         "same_position_uplift_ppg": -2.21,
         "screen_only": true,
@@ -288,7 +288,7 @@
         "ppg": 7.09,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.22
+          "ppg": 7.215
         },
         "same_position_uplift_ppg": -0.12,
         "screen_only": true,
@@ -310,7 +310,7 @@
         "ppg": 6.71,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.22
+          "ppg": 7.215
         },
         "same_position_uplift_ppg": -0.51,
         "screen_only": true,
@@ -329,12 +329,12 @@
           "targets_per_game": null
         },
         "name": "Trey Smack",
-        "ppg": 6.57,
+        "ppg": 6.58,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.22
+          "ppg": 7.215
         },
-        "same_position_uplift_ppg": -0.65,
+        "same_position_uplift_ppg": -0.64,
         "screen_only": true,
         "sleeper_id": "13545",
         "team": "GB"
@@ -354,7 +354,7 @@
         "ppg": 6.47,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.22
+          "ppg": 7.215
         },
         "same_position_uplift_ppg": -0.75,
         "screen_only": true,
@@ -376,44 +376,37 @@
         "ppg": 5.96,
         "replacement_reference": {
           "name": "Will Reichard",
-          "ppg": 7.22
+          "ppg": 7.215
         },
         "same_position_uplift_ppg": -1.25,
         "screen_only": true,
         "sleeper_id": "1945",
         "team": "PIT"
+      },
+      {
+        "audit": {
+          "carries_per_game": null,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": null,
+          "snap_trend_3_appearances_pp": null,
+          "targets_per_game": null
+        },
+        "name": "Wil Lutz",
+        "ppg": 5.95,
+        "replacement_reference": {
+          "name": "Will Reichard",
+          "ppg": 7.215
+        },
+        "same_position_uplift_ppg": -1.26,
+        "screen_only": true,
+        "sleeper_id": "3678",
+        "team": "DEN"
       }
     ],
     "QB": [
-      {
-        "audit": {
-          "carries_per_game": 4.67,
-          "flags": [
-            "injury_report_observation_review"
-          ],
-          "injury_report_observation": {
-            "practice_status": "Limited Participation in Practice",
-            "report_primary_injury": "Concussion",
-            "report_status": "Questionable",
-            "week": "9"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 98.0,
-          "snap_trend_3_appearances_pp": 0.0,
-          "targets_per_game": 0.0
-        },
-        "name": "Deshaun Watson",
-        "ppg": 15.15,
-        "replacement_reference": {
-          "name": "Bryce Young",
-          "ppg": 15.987
-        },
-        "same_position_uplift_ppg": -0.83,
-        "screen_only": true,
-        "sleeper_id": "4017",
-        "team": "CLE"
-      },
       {
         "audit": {
           "carries_per_game": 3.67,
@@ -431,12 +424,12 @@
           "targets_per_game": 0.0
         },
         "name": "Baker Mayfield",
-        "ppg": 14.7,
+        "ppg": 14.72,
         "replacement_reference": {
           "name": "Bryce Young",
-          "ppg": 15.987
+          "ppg": 16.045
         },
-        "same_position_uplift_ppg": -1.29,
+        "same_position_uplift_ppg": -1.33,
         "screen_only": true,
         "sleeper_id": "4892",
         "team": "TB"
@@ -456,43 +449,18 @@
           "targets_per_game": 0.0
         },
         "name": "Jacoby Brissett",
-        "ppg": 10.07,
+        "ppg": 10.1,
         "replacement_reference": {
           "name": "Bryce Young",
-          "ppg": 15.987
+          "ppg": 16.045
         },
-        "same_position_uplift_ppg": -5.91,
+        "same_position_uplift_ppg": -5.95,
         "screen_only": true,
         "sleeper_id": "3257",
         "team": "ARI"
       }
     ],
     "RB": [
-      {
-        "audit": {
-          "carries_per_game": 10.67,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Full Participation in Practice",
-            "week": "8"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 0.833,
-          "recent_snap_pct": 48.0,
-          "snap_trend_3_appearances_pp": -22.0,
-          "targets_per_game": 1.33
-        },
-        "name": "Braelon Allen",
-        "ppg": 6.49,
-        "replacement_reference": {
-          "name": "Kaelon Black",
-          "ppg": 4.515
-        },
-        "same_position_uplift_ppg": 1.98,
-        "screen_only": true,
-        "sleeper_id": "11576",
-        "team": "NYJ"
-      },
       {
         "audit": {
           "carries_per_game": 3.33,
@@ -511,9 +479,9 @@
         "ppg": 4.64,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": 0.12,
+        "same_position_uplift_ppg": 0.11,
         "screen_only": true,
         "sleeper_id": "9511",
         "team": "LAC"
@@ -533,12 +501,12 @@
           "targets_per_game": 2.33
         },
         "name": "Tyrone Tracy Jr.",
-        "ppg": 4.18,
+        "ppg": 4.17,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -0.34,
+        "same_position_uplift_ppg": -0.36,
         "screen_only": true,
         "sleeper_id": "11655",
         "team": "NYG"
@@ -557,12 +525,12 @@
           "targets_per_game": null
         },
         "name": "Zonovan Knight",
-        "ppg": 3.81,
+        "ppg": 3.84,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -0.7,
+        "same_position_uplift_ppg": -0.69,
         "screen_only": true,
         "sleeper_id": "8122",
         "team": "ARI"
@@ -589,9 +557,9 @@
         "ppg": 3.29,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -1.22,
+        "same_position_uplift_ppg": -1.23,
         "screen_only": true,
         "sleeper_id": "11581",
         "team": "GB"
@@ -613,12 +581,12 @@
           "targets_per_game": 1.33
         },
         "name": "Tank Bigsby",
-        "ppg": 2.04,
+        "ppg": 2.03,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -2.48,
+        "same_position_uplift_ppg": -2.5,
         "screen_only": true,
         "sleeper_id": "9225",
         "team": "PHI"
@@ -638,9 +606,9 @@
         "ppg": 1.86,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -2.65,
+        "same_position_uplift_ppg": -2.67,
         "screen_only": true,
         "sleeper_id": "11579",
         "team": "CLE"
@@ -661,12 +629,12 @@
           "targets_per_game": null
         },
         "name": "Robert Henry Jr.",
-        "ppg": 0.86,
+        "ppg": 0.75,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
-        "same_position_uplift_ppg": -3.66,
+        "same_position_uplift_ppg": -3.77,
         "screen_only": true,
         "sleeper_id": "13418",
         "team": "SEA"
@@ -683,10 +651,10 @@
           "targets_per_game": 1.67
         },
         "name": "Jaleel McLaughlin",
-        "ppg": 0.34,
+        "ppg": 0.36,
         "replacement_reference": {
           "name": "Kaelon Black",
-          "ppg": 4.515
+          "ppg": 4.528
         },
         "same_position_uplift_ppg": -4.17,
         "screen_only": true,
@@ -710,12 +678,12 @@
           "targets_per_game": 5.67
         },
         "name": "Darren Waller",
-        "ppg": 7.17,
+        "ppg": 7.21,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
-        "same_position_uplift_ppg": 5.86,
+        "same_position_uplift_ppg": 5.89,
         "screen_only": true,
         "sleeper_id": "2505",
         "team": "CAR"
@@ -738,12 +706,37 @@
         "ppg": 5.13,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
-        "same_position_uplift_ppg": 3.81,
+        "same_position_uplift_ppg": 3.82,
         "screen_only": true,
         "sleeper_id": "8111",
         "team": "TB"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Full Participation in Practice",
+            "week": "12"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.833,
+          "recent_snap_pct": 75.3,
+          "snap_trend_3_appearances_pp": -9.0,
+          "targets_per_game": 3.33
+        },
+        "name": "Michael Mayer",
+        "ppg": 4.93,
+        "replacement_reference": {
+          "name": "Brevyn Spann-Ford",
+          "ppg": 1.315
+        },
+        "same_position_uplift_ppg": 3.61,
+        "screen_only": true,
+        "sleeper_id": "9482",
+        "team": "LV"
       },
       {
         "audit": {
@@ -760,12 +753,12 @@
           "targets_per_game": 2.67
         },
         "name": "Noah Fant",
-        "ppg": 3.61,
+        "ppg": 3.58,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
-        "same_position_uplift_ppg": 2.29,
+        "same_position_uplift_ppg": 2.26,
         "screen_only": true,
         "sleeper_id": "5857",
         "team": "NO"
@@ -786,12 +779,12 @@
           "targets_per_game": null
         },
         "name": "Colby Parkinson",
-        "ppg": 3.48,
+        "ppg": 3.49,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
-        "same_position_uplift_ppg": 2.17,
+        "same_position_uplift_ppg": 2.18,
         "screen_only": true,
         "sleeper_id": "6865",
         "team": "LAR"
@@ -813,10 +806,10 @@
           "targets_per_game": 4.0
         },
         "name": "David Njoku",
-        "ppg": 3.38,
+        "ppg": 3.37,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
         "same_position_uplift_ppg": 2.06,
         "screen_only": true,
@@ -838,7 +831,7 @@
         "ppg": 1.99,
         "replacement_reference": {
           "name": "Brevyn Spann-Ford",
-          "ppg": 1.313
+          "ppg": 1.315
         },
         "same_position_uplift_ppg": 0.67,
         "screen_only": true,
@@ -862,12 +855,12 @@
           "targets_per_game": 7.33
         },
         "name": "A.J. Brown",
-        "ppg": 7.46,
+        "ppg": 7.45,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 2.92,
+        "same_position_uplift_ppg": 2.7,
         "screen_only": true,
         "sleeper_id": "5859",
         "team": "NE"
@@ -887,12 +880,12 @@
           "targets_per_game": 2.33
         },
         "name": "Quentin Johnston",
-        "ppg": 6.34,
+        "ppg": 6.33,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 1.8,
+        "same_position_uplift_ppg": 1.58,
         "screen_only": true,
         "sleeper_id": "9754",
         "team": "LAC"
@@ -912,37 +905,15 @@
           "targets_per_game": 2.67
         },
         "name": "Keon Coleman",
-        "ppg": 6.31,
+        "ppg": 6.28,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 1.77,
+        "same_position_uplift_ppg": 1.53,
         "screen_only": true,
         "sleeper_id": "11637",
         "team": "BUF"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.0,
-          "flags": [],
-          "injury_report_observation": null,
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 65.0,
-          "snap_trend_3_appearances_pp": -14.0,
-          "targets_per_game": 5.33
-        },
-        "name": "Kalif Raymond",
-        "ppg": 5.76,
-        "replacement_reference": {
-          "name": "Michael Pittman Jr.",
-          "ppg": 4.535
-        },
-        "same_position_uplift_ppg": 1.22,
-        "screen_only": true,
-        "sleeper_id": "3634",
-        "team": "CHI"
       },
       {
         "audit": {
@@ -956,15 +927,37 @@
           "targets_per_game": 6.0
         },
         "name": "Makai Lemon",
-        "ppg": 5.75,
+        "ppg": 5.76,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 1.22,
+        "same_position_uplift_ppg": 1.01,
         "screen_only": true,
         "sleeper_id": "13294",
         "team": "PHI"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.0,
+          "flags": [],
+          "injury_report_observation": null,
+          "not_an_injury_probability": true,
+          "projection_coverage": 1.0,
+          "recent_snap_pct": 65.0,
+          "snap_trend_3_appearances_pp": -14.0,
+          "targets_per_game": 5.33
+        },
+        "name": "Kalif Raymond",
+        "ppg": 5.75,
+        "replacement_reference": {
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.75
+        },
+        "same_position_uplift_ppg": 1.0,
+        "screen_only": true,
+        "sleeper_id": "3634",
+        "team": "CHI"
       },
       {
         "audit": {
@@ -978,12 +971,12 @@
           "targets_per_game": 4.67
         },
         "name": "Malachi Fields",
-        "ppg": 5.08,
+        "ppg": 5.06,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 0.55,
+        "same_position_uplift_ppg": 0.31,
         "screen_only": true,
         "sleeper_id": "13285",
         "team": "NYG"
@@ -1003,12 +996,12 @@
           "targets_per_game": 4.33
         },
         "name": "Rashid Shaheed",
-        "ppg": 4.95,
+        "ppg": 4.96,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": 0.42,
+        "same_position_uplift_ppg": 0.21,
         "screen_only": true,
         "sleeper_id": "8676",
         "team": "SEA"
@@ -1035,9 +1028,9 @@
         "ppg": 4.46,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -0.08,
+        "same_position_uplift_ppg": -0.29,
         "screen_only": true,
         "sleeper_id": "13293",
         "team": "BAL"
@@ -1060,9 +1053,9 @@
         "ppg": 4.15,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -0.39,
+        "same_position_uplift_ppg": -0.6,
         "screen_only": true,
         "sleeper_id": "7571",
         "team": "BAL"
@@ -1087,9 +1080,9 @@
         "ppg": 4.11,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -0.42,
+        "same_position_uplift_ppg": -0.64,
         "screen_only": true,
         "sleeper_id": "12509",
         "team": "LAC"
@@ -1112,12 +1105,12 @@
           "targets_per_game": 3.0
         },
         "name": "Brian Thomas Jr.",
-        "ppg": 3.65,
+        "ppg": 3.92,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -0.89,
+        "same_position_uplift_ppg": -0.83,
         "screen_only": true,
         "sleeper_id": "11631",
         "team": "JAX"
@@ -1137,12 +1130,12 @@
           "targets_per_game": 3.33
         },
         "name": "Chris Bell",
-        "ppg": 3.53,
+        "ppg": 3.52,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -1.01,
+        "same_position_uplift_ppg": -1.23,
         "screen_only": true,
         "sleeper_id": "13311",
         "team": "MIA"
@@ -1170,9 +1163,9 @@
         "ppg": 3.15,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -1.38,
+        "same_position_uplift_ppg": -1.6,
         "screen_only": true,
         "sleeper_id": "4177",
         "team": "NE"
@@ -1195,9 +1188,9 @@
         "ppg": 3.05,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -1.48,
+        "same_position_uplift_ppg": -1.7,
         "screen_only": true,
         "sleeper_id": "7049",
         "team": "MIN"
@@ -1220,37 +1213,12 @@
         "ppg": 2.73,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -1.8,
+        "same_position_uplift_ppg": -2.02,
         "screen_only": true,
         "sleeper_id": "11628",
         "team": "HOU"
-      },
-      {
-        "audit": {
-          "carries_per_game": 0.33,
-          "flags": [],
-          "injury_report_observation": {
-            "practice_status": "Did Not Participate In Practice",
-            "week": "12"
-          },
-          "not_an_injury_probability": true,
-          "projection_coverage": 1.0,
-          "recent_snap_pct": 26.0,
-          "snap_trend_3_appearances_pp": -26.0,
-          "targets_per_game": 1.33
-        },
-        "name": "Zachariah Branch",
-        "ppg": 2.32,
-        "replacement_reference": {
-          "name": "Michael Pittman Jr.",
-          "ppg": 4.535
-        },
-        "same_position_uplift_ppg": -2.22,
-        "screen_only": true,
-        "sleeper_id": "13320",
-        "team": "ATL"
       },
       {
         "audit": {
@@ -1267,15 +1235,40 @@
           "targets_per_game": 3.0
         },
         "name": "Cyrus Allen",
-        "ppg": 2.23,
+        "ppg": 2.22,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -2.31,
+        "same_position_uplift_ppg": -2.53,
         "screen_only": true,
         "sleeper_id": "13413",
         "team": "KC"
+      },
+      {
+        "audit": {
+          "carries_per_game": 0.33,
+          "flags": [],
+          "injury_report_observation": {
+            "practice_status": "Did Not Participate In Practice",
+            "week": "12"
+          },
+          "not_an_injury_probability": true,
+          "projection_coverage": 0.833,
+          "recent_snap_pct": 26.0,
+          "snap_trend_3_appearances_pp": -26.0,
+          "targets_per_game": 1.33
+        },
+        "name": "Zachariah Branch",
+        "ppg": 1.99,
+        "replacement_reference": {
+          "name": "Michael Pittman Jr.",
+          "ppg": 4.75
+        },
+        "same_position_uplift_ppg": -2.76,
+        "screen_only": true,
+        "sleeper_id": "13320",
+        "team": "ATL"
       },
       {
         "audit": {
@@ -1289,12 +1282,12 @@
           "targets_per_game": 2.33
         },
         "name": "Dohnte Meyers",
-        "ppg": 1.88,
+        "ppg": 1.86,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -2.66,
+        "same_position_uplift_ppg": -2.89,
         "screen_only": true,
         "sleeper_id": "13264",
         "team": "CIN"
@@ -1311,12 +1304,12 @@
           "targets_per_game": 3.67
         },
         "name": "Efton Chism III",
-        "ppg": 0.99,
+        "ppg": 1.22,
         "replacement_reference": {
           "name": "Michael Pittman Jr.",
-          "ppg": 4.535
+          "ppg": 4.75
         },
-        "same_position_uplift_ppg": -3.54,
+        "same_position_uplift_ppg": -3.53,
         "screen_only": true,
         "sleeper_id": "12542",
         "team": "NE"
@@ -1324,5 +1317,5 @@
     ]
   },
   "risk_policy": "Do not assign made-up injury probabilities. Publish missing data and official injury observations as flags.",
-  "snapshot_utc": "2026-11-27T18:51:49.343250+00:00"
+  "snapshot_utc": "2026-11-28T01:53:48.675746+00:00"
 }

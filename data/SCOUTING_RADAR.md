@@ -1,12 +1,12 @@
 # Dirty Birds — Opponent Scouting Radar
 
-Generated: 2026-11-27T18:51:53.990324+00:00
-Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
+Generated: 2026-11-28T01:53:52.585723+00:00
+Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
 
 Roster change entries: 2. New completed trade entries: 0.
 
-- Victorious Secret: added Cincinnati Bengals; dropped none
-- Victorious Secret: reserve status changed
+- DANGER CLOSE: added Deshaun Watson; dropped Wil Lutz
+- Cokerthestroker: added Braelon Allen; dropped Michael Mayer
 
 ## Limits
 

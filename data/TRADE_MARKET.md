@@ -1,7 +1,7 @@
 # Dirty Birds — Trade Market Intelligence
 
-Generated: 2026-11-27T18:51:53.990324+00:00
-Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
+Generated: 2026-11-28T01:53:52.585723+00:00
+Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
 
 **Research only. No active offers inferred; no transaction actions performed.**
 
@@ -10,7 +10,7 @@ Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
 | Dirty Birds | 7-4 | 2 / 5 / 8 / 2 | 15 | 207 |
 | CREAM MACHINE | 5-6 | 4 / 6 / 7 / 3 | 0 | 68 |
 | BigOlBoyle | 3-8 | 3 / 6 / 4 / 2 | 1 | 0 |
-| DANGER CLOSE | 4-7 | 2 / 3 / 9 / 3 | 1 | 85 |
+| DANGER CLOSE | 4-7 | 3 / 3 / 9 / 3 | 1 | 85 |
 | Victorious Secret | 5-6 | 2 / 5 / 5 / 3 | 5 | 45 |
 | kfsn | 7-4 | 2 / 5 / 5 / 3 | 2 | 25 |
 | JA’MARRTRIX | 5-6 | 2 / 6 / 7 / 3 | 5 | 205 |
@@ -18,7 +18,7 @@ Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
 | To Infinity and Bijan | 4-7 | 2 / 4 / 6 / 2 | 6 | 100 |
 | EmanAndYoMomma | 2-9 | 2 / 4 / 4 / 2 | 0 | 0 |
 | suck my dickerson | 8-3 | 3 / 4 / 5 / 2 | 1 | 0 |
-| Cokerthestroker | 7-4 | 2 / 4 / 7 / 3 | 5 | 148 |
+| Cokerthestroker | 7-4 | 2 / 5 / 7 / 2 | 5 | 148 |
 
 ## Reading this board
 

@@ -1,41 +1,78 @@
 {
   "changes": [
     {
-      "id": "1432050043799498752",
+      "id": "1432192366541811712",
       "kind": "new_transaction",
       "status": "complete",
       "transaction": {
         "adds": {
-          "CIN": 5
+          "4017": 4
         },
         "consenter_ids": [
-          5
+          4
         ],
-        "created": 1795789845946,
-        "creator": "1399485071181774848",
+        "created": 1795823778332,
+        "creator": "1399227561199824896",
         "draft_picks": [],
-        "drops": null,
+        "drops": {
+          "3678": 4
+        },
         "leg": 12,
         "metadata": null,
         "roster_ids": [
-          5
+          4
         ],
         "settings": null,
         "status": "complete",
-        "status_updated": 1795789845946,
-        "transaction_id": "1432050043799498752",
+        "status_updated": 1795823778332,
+        "transaction_id": "1432192366541811712",
         "type": "free_agent",
+        "waiver_budget": []
+      }
+    },
+    {
+      "id": "1431551762136829952",
+      "kind": "new_transaction",
+      "status": "complete",
+      "transaction": {
+        "adds": {
+          "11576": 12
+        },
+        "consenter_ids": [
+          12
+        ],
+        "created": 1795671046341,
+        "creator": "1400281937381240832",
+        "draft_picks": [],
+        "drops": {
+          "9482": 12
+        },
+        "leg": 12,
+        "metadata": {
+          "notes": "Your waiver claim was processed successfully!"
+        },
+        "roster_ids": [
+          12
+        ],
+        "settings": {
+          "seq": 0,
+          "waiver_bid": 0
+        },
+        "status": "complete",
+        "status_updated": 1795820786163,
+        "transaction_id": "1431551762136829952",
+        "type": "waiver",
         "waiver_budget": []
       }
     }
   ],
-  "changes_count": 1,
-  "completed_count": 1,
+  "changes_count": 2,
+  "completed_count": 2,
   "failed_count": 0,
-  "generated_at_utc": "2026-11-27T18:51:53.952359+00:00",
+  "generated_at_utc": "2026-11-28T01:53:52.547927+00:00",
   "is_initial_baseline": false,
   "league_id": "1399157532559192064",
   "pending_count": 0,
-  "sleeper_snapshot_at_utc": "2026-11-27T18:51:49.343250+00:00",
-  "transactions_indexed": 369
+  "sleeper_snapshot_at_utc": "2026-11-28T01:53:48.675746+00:00",
+  "transactions_indexed": 371
 }

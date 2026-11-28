@@ -83,13 +83,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.502,
-        "remaining_projected_points": 39.01,
+        "ppg": 6.51,
+        "remaining_projected_points": 39.06,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 5.76,
-          "13": 7.19,
+          "13": 7.24,
           "14": 5.82,
           "15": 7.82,
           "16": 5.75,
@@ -203,13 +203,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.068,
-        "remaining_projected_points": 36.41,
+        "ppg": 6.087,
+        "remaining_projected_points": 36.52,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 7.09,
-          "13": 4.55,
+          "13": 4.66,
           "14": 6.76,
           "15": 5.44,
           "16": 6.1,
@@ -238,13 +238,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.833,
-        "remaining_projected_points": 35.0,
+        "ppg": 5.823,
+        "remaining_projected_points": 34.94,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 4.56,
-          "13": 5.27,
+          "12": 4.55,
+          "13": 5.22,
           "14": 6.18,
           "15": 5.87,
           "16": 6.94,
@@ -273,13 +273,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.765,
-        "remaining_projected_points": 34.59,
+        "ppg": 5.752,
+        "remaining_projected_points": 34.51,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 6.81,
-          "13": 5.08,
+          "13": 5.0,
           "14": 5.65,
           "15": 6.97,
           "16": 4.85,
@@ -308,12 +308,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.167,
-        "remaining_projected_points": 31.0,
+        "ppg": 5.178,
+        "remaining_projected_points": 31.07,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 6.83,
+          "12": 6.9,
           "14": 5.71,
           "15": 6.7,
           "16": 6.34,
@@ -377,12 +377,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.333,
-        "remaining_projected_points": 32.0,
+        "ppg": 5.332,
+        "remaining_projected_points": 31.99,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 3.59,
+          "12": 3.58,
           "13": 5.47,
           "14": 4.28,
           "15": 6.71,
@@ -1960,12 +1960,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.473,
-        "remaining_projected_points": 38.84,
+        "ppg": 6.467,
+        "remaining_projected_points": 38.8,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 6.86,
+          "12": 6.82,
           "14": 7.9,
           "15": 7.63,
           "16": 8.36,
@@ -2554,13 +2554,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.572,
-        "remaining_projected_points": 39.43,
+        "ppg": 6.575,
+        "remaining_projected_points": 39.45,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 6.02,
-          "13": 7.28,
+          "13": 7.3,
           "14": 6.55,
           "15": 6.72,
           "16": 6.16,
@@ -2679,6 +2679,41 @@
       "nfl_team": null,
       "position": "K",
       "projection": {},
+      "quality": "insufficient_independent_data",
+      "sleeper_injury_status": null,
+      "sleeper_status": "Active",
+      "usage": {}
+    },
+    {
+      "depth_chart_order": 1,
+      "fantasy_points_observed": 26.0,
+      "fantasy_week_observations": 4,
+      "has_sourced_projection": true,
+      "has_sourced_usage": false,
+      "id": "3678",
+      "name": "Wil Lutz",
+      "nfl_team": "DEN",
+      "position": "K",
+      "projection": {
+        "coverage_fraction": 1.0,
+        "coverage_weeks": 6,
+        "games_remaining": 6,
+        "method": [
+          "league_stat_estimate"
+        ],
+        "ppg": 5.952,
+        "remaining_projected_points": 35.71,
+        "status": "projection_only_not_injury_verified",
+        "total_weeks_fetched": 6,
+        "weeks": {
+          "12": 5.71,
+          "13": 6.46,
+          "14": 5.98,
+          "15": 6.04,
+          "16": 5.98,
+          "17": 5.54
+        }
+      },
       "quality": "insufficient_independent_data",
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
@@ -2811,7 +2846,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
         "injury_report_record": {
@@ -2985,7 +3020,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 4,
         "name": "Athan Kaliakmanis",
@@ -3101,13 +3136,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 14.7,
-        "remaining_projected_points": 88.2,
+        "ppg": 14.717,
+        "remaining_projected_points": 88.3,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 14.66,
-          "13": 15.7,
+          "12": 14.8,
+          "13": 15.66,
           "14": 15.12,
           "15": 15.99,
           "16": 14.75,
@@ -3119,7 +3154,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 9,
         "injury_report_observations": 9,
@@ -3530,7 +3565,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 10,
         "name": "Cade Klubnik",
@@ -3613,7 +3648,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -3670,7 +3705,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -3745,7 +3780,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 5,
         "name": "Case Keenum",
@@ -4053,7 +4088,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 5,
         "name": "Cole Payton",
@@ -4211,7 +4246,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "DJ Uiagalelei",
@@ -4262,7 +4297,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 11,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -4385,7 +4420,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Davis Mills",
@@ -4451,70 +4486,6 @@
       "sleeper_injury_status": "NA",
       "sleeper_status": "Active",
       "usage": {}
-    },
-    {
-      "depth_chart_order": 1,
-      "fantasy_points_observed": 12.2,
-      "fantasy_week_observations": 1,
-      "has_sourced_projection": true,
-      "has_sourced_usage": true,
-      "id": "4017",
-      "name": "Deshaun Watson",
-      "nfl_team": "CLE",
-      "position": "QB",
-      "projection": {
-        "coverage_fraction": 1.0,
-        "coverage_weeks": 6,
-        "games_remaining": 6,
-        "method": [
-          "league_stat_estimate"
-        ],
-        "ppg": 15.153,
-        "remaining_projected_points": 90.92,
-        "status": "projection_only_not_injury_verified",
-        "total_weeks_fetched": 6,
-        "weeks": {
-          "12": 15.82,
-          "13": 15.23,
-          "14": 14.2,
-          "15": 14.18,
-          "16": 14.71,
-          "17": 16.78
-        }
-      },
-      "quality": "reviewable",
-      "sleeper_injury_status": null,
-      "sleeper_status": "Active",
-      "usage": {
-        "advanced_rushing_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
-        "games_with_offense_snap_record": 9,
-        "injuries_weeks_observed": 1,
-        "injury_report_observations": 1,
-        "injury_report_record": {
-          "practice_status": "Limited Participation in Practice",
-          "report_primary_injury": "Concussion",
-          "report_status": "Questionable",
-          "week": "9"
-        },
-        "latest_snap_week": 10,
-        "name": "Deshaun Watson",
-        "nfl_team": "CLE",
-        "player_stats_weeks_observed": 9,
-        "recent_three_snap_pct": [
-          100.0,
-          94.0,
-          100.0
-        ],
-        "receptions_per_game": 0.0,
-        "rush_attempts_per_game": 4.67,
-        "season_avg_snap_share_pct": 99.2,
-        "snap_count": 68.0,
-        "snap_share_pct": 98.0,
-        "source": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv",
-        "targets_per_game": 0.0,
-        "weeks_with_snap_data": 9
-      }
     },
     {
       "depth_chart_order": null,
@@ -4595,7 +4566,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
         "injury_report_record": {
@@ -4705,7 +4676,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -5196,7 +5167,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 2,
         "name": "Jack Strand",
@@ -5312,12 +5283,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 10.073,
-        "remaining_projected_points": 60.44,
+        "ppg": 10.097,
+        "remaining_projected_points": 60.58,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 12.52,
+          "12": 12.66,
           "14": 10.6,
           "15": 12.48,
           "16": 11.4,
@@ -5330,7 +5301,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -5533,7 +5504,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -5577,7 +5548,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
         "injury_report_record": {
@@ -5622,7 +5593,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 7,
         "name": "Jalon Daniels",
@@ -5659,7 +5630,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 11,
         "name": "Jameis Winston",
@@ -5904,7 +5875,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -5945,7 +5916,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 10,
         "name": "Joe Flacco",
@@ -5978,7 +5949,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 12,
         "name": "Joe Milton",
@@ -6251,7 +6222,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 10,
         "name": "Joshua Dobbs",
@@ -6287,7 +6258,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -6426,7 +6397,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 7,
         "name": "Kenny Pickett",
@@ -6543,7 +6514,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Kyle Allen",
@@ -6596,7 +6567,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 11,
         "name": "Kyle McCord",
@@ -6680,7 +6651,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -6739,7 +6710,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -6896,7 +6867,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -6957,7 +6928,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -7032,7 +7003,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 10,
         "name": "Mason Rudolph",
@@ -7164,7 +7135,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Max Brosmer",
@@ -7487,7 +7458,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 1,
         "name": "Nick Mullens",
@@ -7697,7 +7668,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 8,
         "name": "Quinn Ewers",
@@ -8101,7 +8072,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 9,
         "name": "Shedeur Sanders",
@@ -8169,7 +8140,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -8270,7 +8241,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -8505,7 +8476,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 10,
         "name": "Tommy DeVito",
@@ -8605,7 +8576,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
         "injury_report_record": {
@@ -8634,7 +8605,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -8723,7 +8694,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -8768,7 +8739,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 10,
         "name": "Tyrod Taylor",
@@ -8805,7 +8776,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -9059,7 +9030,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -9181,7 +9152,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
         "injury_report_record": {
@@ -9418,7 +9389,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 11,
         "name": "Ameer Abdullah",
@@ -9471,7 +9442,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 11,
         "name": "Andrew Beck",
@@ -9588,7 +9559,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Anthony Tyus III",
@@ -9675,7 +9646,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 6,
         "name": "Audric Estime",
@@ -9805,7 +9776,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -9944,7 +9915,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -9969,68 +9940,6 @@
         "source": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv",
         "targets_per_game": 0.0,
         "weeks_with_snap_data": 10
-      }
-    },
-    {
-      "depth_chart_order": 2,
-      "fantasy_points_observed": 97.5,
-      "fantasy_week_observations": 9,
-      "has_sourced_projection": true,
-      "has_sourced_usage": true,
-      "id": "11576",
-      "name": "Braelon Allen",
-      "nfl_team": "NYJ",
-      "position": "RB",
-      "projection": {
-        "coverage_fraction": 0.833,
-        "coverage_weeks": 5,
-        "games_remaining": 5,
-        "method": [
-          "league_stat_estimate"
-        ],
-        "ppg": 6.493,
-        "remaining_projected_points": 38.96,
-        "status": "projection_only_not_injury_verified",
-        "total_weeks_fetched": 6,
-        "weeks": {
-          "12": 8.09,
-          "14": 7.37,
-          "15": 7.9,
-          "16": 8.26,
-          "17": 7.34
-        }
-      },
-      "quality": "reviewable",
-      "sleeper_injury_status": null,
-      "sleeper_status": "Active",
-      "usage": {
-        "advanced_receiving_weeks_observed": 11,
-        "advanced_rushing_weeks_observed": 11,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
-        "games_with_offense_snap_record": 11,
-        "injuries_weeks_observed": 1,
-        "injury_report_observations": 1,
-        "injury_report_record": {
-          "practice_status": "Full Participation in Practice",
-          "week": "8"
-        },
-        "latest_snap_week": 11,
-        "name": "Braelon Allen",
-        "nfl_team": "NYJ",
-        "player_stats_weeks_observed": 11,
-        "recent_three_snap_pct": [
-          59.0,
-          48.0,
-          37.0
-        ],
-        "receptions_per_game": 1.33,
-        "rush_attempts_per_game": 10.67,
-        "season_avg_snap_share_pct": 63.2,
-        "snap_count": 31.0,
-        "snap_share_pct": 48.0,
-        "source": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv",
-        "targets_per_game": 1.33,
-        "weeks_with_snap_data": 11
       }
     },
     {
@@ -10129,7 +10038,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -10255,7 +10164,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 6,
         "name": "Brian Robinson Jr.",
@@ -10287,7 +10196,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -10459,7 +10368,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -10727,7 +10636,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -10932,7 +10841,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 11,
         "name": "Cody Schrader",
@@ -10986,7 +10895,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 11,
         "name": "Connor Heyward",
@@ -11119,7 +11028,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 4,
         "name": "Craig Reynolds",
@@ -11251,7 +11160,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -11296,7 +11205,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "DJ Herman",
@@ -11414,7 +11323,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 7,
         "name": "Dameon Pierce",
@@ -11532,7 +11441,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 10,
         "name": "Dare Ogunbowale",
@@ -12018,7 +11927,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -12110,7 +12019,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -12604,7 +12513,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 11,
         "name": "Dylan Laube",
@@ -12672,7 +12581,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 2,
         "name": "Eli Heidenreich",
@@ -12773,7 +12682,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 9,
         "name": "Elijah Mitchell",
@@ -12878,20 +12787,34 @@
       "depth_chart_order": 1,
       "fantasy_points_observed": 62.3,
       "fantasy_week_observations": 6,
-      "has_sourced_projection": false,
+      "has_sourced_projection": true,
       "has_sourced_usage": true,
       "id": "11435",
       "name": "Emanuel Wilson",
       "nfl_team": "SEA",
       "position": "RB",
-      "projection": {},
-      "quality": "insufficient_independent_data",
+      "projection": {
+        "coverage_fraction": 0.167,
+        "coverage_weeks": 1,
+        "games_remaining": 1,
+        "method": [
+          "league_stat_estimate"
+        ],
+        "ppg": 0.055,
+        "remaining_projected_points": 0.33,
+        "status": "projection_only_not_injury_verified",
+        "total_weeks_fetched": 6,
+        "weeks": {
+          "12": 0.33
+        }
+      },
+      "quality": "reviewable",
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -12934,7 +12857,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 2,
         "name": "Emari Demercado",
@@ -13018,7 +12941,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 11,
         "name": "Evan Hull",
@@ -13087,7 +13010,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 2,
         "name": "Frank Gore Jr.",
@@ -13156,7 +13079,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -13424,7 +13347,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -13516,7 +13439,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 10,
         "name": "Israel Abanikanda",
@@ -13678,7 +13601,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Jabari Small",
@@ -13745,7 +13668,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -13869,13 +13792,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 0.342,
-        "remaining_projected_points": 2.05,
+        "ppg": 0.358,
+        "remaining_projected_points": 2.15,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 0.6,
-          "13": 0.3,
+          "12": 0.62,
+          "13": 0.38,
           "14": 0.29,
           "15": 0.29,
           "16": 0.27,
@@ -13888,7 +13811,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 10,
         "name": "Jaleel McLaughlin",
@@ -14294,7 +14217,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 6,
         "name": "Jawhar Jordan",
@@ -14361,7 +14284,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -14404,7 +14327,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 12,
         "name": "Jaydon Blue",
@@ -14458,7 +14381,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
@@ -14534,7 +14457,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -14851,7 +14774,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -15119,7 +15042,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 1,
         "name": "Josh Williams",
@@ -15185,7 +15108,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 11,
         "name": "Julius Chestnut",
@@ -15239,7 +15162,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -15395,7 +15318,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 12,
         "name": "Kaleb Johnson",
@@ -15432,7 +15355,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 7,
         "name": "Kalel Mullings",
@@ -15565,7 +15488,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -15660,7 +15583,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -15768,7 +15691,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -15810,7 +15733,7 @@
       "sleeper_injury_status": "Questionable",
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -16112,7 +16035,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 10,
         "name": "Khalil Herbert",
@@ -16150,7 +16073,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 8,
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Kimani Vidal",
@@ -16316,7 +16239,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 10,
         "name": "Lan Larison",
@@ -16448,7 +16371,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
         "injury_report_record": {
@@ -16577,7 +16500,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 11,
         "name": "Lew Nichols",
@@ -16689,7 +16612,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
         "injury_report_record": {
@@ -16755,7 +16678,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -17168,7 +17091,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Max Bredeson",
@@ -17254,7 +17177,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 2,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 11,
         "name": "Michael Carter",
@@ -17546,7 +17469,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Nate Carter",
         "nfl_team": "KC",
         "player_stats_weeks_observed": 3,
@@ -17652,7 +17575,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 8,
         "name": "Nicholas Singleton",
@@ -17928,7 +17851,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 11,
         "name": "Phil Mafah",
@@ -18105,7 +18028,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -18244,7 +18167,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -18288,7 +18211,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -18379,7 +18302,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -18470,7 +18393,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Riley Nowakowski",
@@ -18540,12 +18463,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 0.858,
-        "remaining_projected_points": 5.15,
+        "ppg": 0.753,
+        "remaining_projected_points": 4.52,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 0.93,
+          "12": 0.3,
           "13": 0.44,
           "14": 0.98,
           "15": 1.01,
@@ -18783,7 +18706,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -18956,7 +18879,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 12,
         "name": "Salvon Ahmed",
@@ -19057,7 +18980,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -19134,7 +19057,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -19306,7 +19229,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 8,
         "advanced_rushing_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -19607,7 +19530,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Tahj Brooks",
@@ -19677,12 +19600,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 2.037,
-        "remaining_projected_points": 12.22,
+        "ppg": 2.032,
+        "remaining_projected_points": 12.19,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "13": 2.46,
+          "13": 2.43,
           "14": 2.93,
           "15": 2.16,
           "16": 2.52,
@@ -19695,7 +19618,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -20106,7 +20029,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Travis Homer",
@@ -20240,7 +20163,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
@@ -20350,7 +20273,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -20538,7 +20461,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 8,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
@@ -20614,7 +20537,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -20676,7 +20599,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -20803,12 +20726,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 4.178,
-        "remaining_projected_points": 25.07,
+        "ppg": 4.17,
+        "remaining_projected_points": 25.02,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "13": 4.8,
+          "13": 4.75,
           "14": 4.43,
           "15": 5.04,
           "16": 5.13,
@@ -20821,7 +20744,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -20975,7 +20898,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -21194,7 +21117,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Zamir White",
@@ -21244,7 +21167,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -21288,16 +21211,16 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.813,
-        "remaining_projected_points": 22.88,
+        "ppg": 3.838,
+        "remaining_projected_points": 23.03,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 7.45,
-          "13": 8.01,
-          "15": 2.29,
-          "16": 2.46,
-          "17": 2.67
+          "12": 7.48,
+          "13": 8.1,
+          "15": 2.3,
+          "16": 2.47,
+          "17": 2.68
         }
       },
       "quality": "reviewable",
@@ -21306,7 +21229,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 11,
         "name": "Zonovan Knight",
@@ -21371,7 +21294,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -21766,7 +21689,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 10,
         "name": "Austin Hooper",
@@ -21851,7 +21774,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Bauer Sharp",
@@ -22032,7 +21955,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -22075,7 +21998,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -22216,7 +22139,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -22338,7 +22261,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 11,
         "name": "Brayden Willis",
@@ -22407,7 +22330,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -22498,7 +22421,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Brock Wright",
@@ -22744,13 +22667,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.127,
-        "remaining_projected_points": 30.76,
+        "ppg": 5.135,
+        "remaining_projected_points": 30.81,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 4.68,
-          "13": 5.39,
+          "12": 4.74,
+          "13": 5.38,
           "14": 5.4,
           "15": 5.52,
           "16": 5.09,
@@ -22762,7 +22685,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -22806,7 +22729,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 11,
         "name": "Cade Stover",
@@ -22874,7 +22797,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
         "injury_report_record": {
@@ -23015,7 +22938,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -23091,7 +23014,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -23181,7 +23104,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -23322,7 +23245,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -23384,7 +23307,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 10,
         "name": "Charlie Woerner",
@@ -23533,7 +23456,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -23737,13 +23660,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.48,
-        "remaining_projected_points": 20.88,
+        "ppg": 3.49,
+        "remaining_projected_points": 20.94,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 5.36,
-          "13": 4.06,
+          "13": 4.12,
           "14": 3.44,
           "15": 2.99,
           "16": 2.37,
@@ -23819,7 +23742,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 7,
         "name": "Cole Kmet",
@@ -23920,7 +23843,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -24171,7 +24094,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -24327,13 +24250,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 7.172,
-        "remaining_projected_points": 43.03,
+        "ppg": 7.205,
+        "remaining_projected_points": 43.23,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 6.83,
-          "13": 6.37,
+          "12": 6.95,
+          "13": 6.45,
           "14": 7.72,
           "15": 7.75,
           "16": 7.58,
@@ -24345,7 +24268,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
@@ -24387,7 +24310,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -24431,13 +24354,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.375,
-        "remaining_projected_points": 20.25,
+        "ppg": 3.373,
+        "remaining_projected_points": 20.24,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 3.06,
-          "13": 3.25,
+          "13": 3.24,
           "14": 3.7,
           "15": 3.27,
           "16": 3.85,
@@ -24449,7 +24372,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -24557,7 +24480,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Dawson Knox",
@@ -24865,7 +24788,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 10,
         "name": "Drake Dabney",
@@ -24961,7 +24884,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Drew Sample",
@@ -24998,7 +24921,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -25153,7 +25076,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -25198,7 +25121,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -25275,7 +25198,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 6,
         "name": "Elijah Arroyo",
@@ -25312,7 +25235,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 11,
         "name": "Elijah Higgins",
@@ -25413,7 +25336,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 10,
         "name": "Eric Saubert",
@@ -25578,7 +25501,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Evan Engram",
@@ -25646,7 +25569,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -25689,7 +25612,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Foster Moreau",
@@ -25838,7 +25761,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -25977,7 +25900,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -26038,7 +25961,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -26097,7 +26020,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -26252,7 +26175,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 9,
         "name": "Hayden Rucci",
@@ -26337,7 +26260,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -26412,7 +26335,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -26582,7 +26505,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 9,
         "name": "Ja'Tavion Sanders",
@@ -26645,7 +26568,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Jack Endries",
@@ -26681,7 +26604,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 5,
         "name": "Jack Stoll",
@@ -26760,7 +26683,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -26803,7 +26726,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 4,
         "name": "Jackson Meeks",
@@ -26920,7 +26843,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Jake Briningstool",
@@ -27052,7 +26975,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 1,
         "name": "Jake Tonges",
@@ -27147,7 +27070,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 12,
         "name": "James Mitchell",
@@ -27279,7 +27202,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 10,
         "name": "Jared Wiley",
@@ -27424,7 +27347,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 9,
         "name": "Jelani Woods",
@@ -27509,7 +27432,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -27792,7 +27715,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -27947,7 +27870,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Johnny Mundt",
@@ -28000,7 +27923,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 12,
         "name": "Jonnu Smith",
@@ -28197,7 +28120,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 11,
         "name": "Josh Cuevas",
@@ -28266,7 +28189,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 3,
         "name": "Josh Oliver",
@@ -28318,7 +28241,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -28470,7 +28393,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -28669,7 +28592,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Keleki Latu",
@@ -28737,7 +28660,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 8,
         "name": "Kenny Yeboah",
@@ -28851,7 +28774,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -28958,7 +28881,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -29321,7 +29244,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Luke Farrell",
@@ -29390,7 +29313,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -29547,7 +29470,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Mark Redman",
@@ -29600,7 +29523,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Marlin Klein",
@@ -29701,7 +29624,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -29985,6 +29908,68 @@
       "usage": {}
     },
     {
+      "depth_chart_order": 2,
+      "fantasy_points_observed": 27.0,
+      "fantasy_week_observations": 6,
+      "has_sourced_projection": true,
+      "has_sourced_usage": true,
+      "id": "9482",
+      "name": "Michael Mayer",
+      "nfl_team": "LV",
+      "position": "TE",
+      "projection": {
+        "coverage_fraction": 0.833,
+        "coverage_weeks": 5,
+        "games_remaining": 5,
+        "method": [
+          "league_stat_estimate"
+        ],
+        "ppg": 4.927,
+        "remaining_projected_points": 29.56,
+        "status": "projection_only_not_injury_verified",
+        "total_weeks_fetched": 6,
+        "weeks": {
+          "12": 4.92,
+          "14": 6.3,
+          "15": 5.37,
+          "16": 6.36,
+          "17": 6.61
+        }
+      },
+      "quality": "reviewable",
+      "sleeper_injury_status": null,
+      "sleeper_status": "Active",
+      "usage": {
+        "advanced_receiving_weeks_observed": 11,
+        "advanced_rushing_weeks_observed": 1,
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
+        "games_with_offense_snap_record": 11,
+        "injuries_weeks_observed": 1,
+        "injury_report_observations": 1,
+        "injury_report_record": {
+          "practice_status": "Full Participation in Practice",
+          "week": "12"
+        },
+        "latest_snap_week": 11,
+        "name": "Michael Mayer",
+        "nfl_team": "LV",
+        "player_stats_weeks_observed": 11,
+        "recent_three_snap_pct": [
+          76.0,
+          83.0,
+          67.0
+        ],
+        "receptions_per_game": 2.0,
+        "rush_attempts_per_game": 0.33,
+        "season_avg_snap_share_pct": 79.2,
+        "snap_count": 44.7,
+        "snap_share_pct": 75.3,
+        "source": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rec_2026.csv, https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_rush_2026.csv",
+        "targets_per_game": 3.33,
+        "weeks_with_snap_data": 11
+      }
+    },
+    {
       "depth_chart_order": null,
       "fantasy_points_observed": 0,
       "fantasy_week_observations": 0,
@@ -30129,7 +30114,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -30188,7 +30173,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -30330,7 +30315,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Nate Adkins",
@@ -30383,7 +30368,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -30553,7 +30538,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -30608,7 +30593,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -30682,7 +30667,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -30738,13 +30723,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.607,
-        "remaining_projected_points": 21.64,
+        "ppg": 3.578,
+        "remaining_projected_points": 21.47,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 5.0,
-          "13": 3.26,
+          "12": 4.89,
+          "13": 3.2,
           "14": 3.15,
           "15": 3.33,
           "16": 3.65,
@@ -30756,7 +30741,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -30815,7 +30800,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -30940,7 +30925,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -31046,7 +31031,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 4,
         "name": "Patrick Herbert",
@@ -31114,7 +31099,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Payne Durham",
@@ -31167,7 +31152,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Pharaoh Brown",
@@ -31268,7 +31253,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Quintin Morris",
@@ -31449,7 +31434,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 11,
         "name": "Robert Tonyan",
@@ -31774,7 +31759,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Sam Roush",
@@ -31939,7 +31924,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -32013,7 +31998,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 9,
         "name": "Shawn Bowman",
@@ -32076,7 +32061,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 12,
         "name": "Stephen Carlson",
@@ -32240,7 +32225,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 9,
         "name": "Tanner Arkin",
@@ -32293,7 +32278,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 5,
         "name": "Tanner Hudson",
@@ -32330,7 +32315,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 11,
         "name": "Tanner Koziol",
@@ -32447,7 +32432,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Teagan Quitoriano",
@@ -32516,7 +32501,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -32558,7 +32543,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
         "injury_report_record": {
@@ -32750,7 +32735,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -32985,7 +32970,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -33092,7 +33077,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 12,
         "name": "Tyler Conklin",
@@ -33353,7 +33338,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -33396,7 +33381,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -33488,13 +33473,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 1.985,
-        "remaining_projected_points": 11.91,
+        "ppg": 1.987,
+        "remaining_projected_points": 11.92,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 2.25,
-          "13": 2.09,
+          "13": 2.1,
           "14": 2.12,
           "15": 1.67,
           "16": 1.92,
@@ -33506,7 +33491,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 12,
         "name": "Zach Ertz",
@@ -33624,12 +33609,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 7.458,
-        "remaining_projected_points": 44.75,
+        "ppg": 7.452,
+        "remaining_projected_points": 44.71,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "13": 8.45,
+          "13": 8.41,
           "14": 8.62,
           "15": 8.83,
           "16": 10.03,
@@ -33641,7 +33626,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -33988,7 +33973,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -34368,7 +34353,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -34410,7 +34395,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 12,
         "name": "Andrew Armstrong",
@@ -34495,7 +34480,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -34796,7 +34781,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 2,
         "name": "Arian Smith",
@@ -34881,7 +34866,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -35117,7 +35102,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -35178,7 +35163,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -35254,7 +35239,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -35379,7 +35364,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -35488,7 +35473,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 9,
         "name": "Brandin Cooks",
@@ -35541,7 +35526,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 8,
         "name": "Brandon Johnson",
@@ -35642,7 +35627,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 10,
         "name": "Brandon Smith",
@@ -35695,7 +35680,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 4,
         "name": "Braxton Berrios",
@@ -35828,7 +35813,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 10,
         "injury_report_observations": 10,
@@ -35999,13 +35984,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.647,
-        "remaining_projected_points": 21.88,
+        "ppg": 3.92,
+        "remaining_projected_points": 23.52,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 3.86,
-          "13": 3.47,
+          "12": 5.53,
+          "13": 3.44,
           "14": 3.51,
           "15": 3.38,
           "16": 3.85,
@@ -36016,7 +36001,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
         "injury_report_record": {
@@ -36063,7 +36048,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -36202,7 +36187,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Bryce Lance",
@@ -36255,7 +36240,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Brycen Tremayne",
@@ -36483,7 +36468,7 @@
       "sleeper_injury_status": "Out",
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 1,
         "name": "CJ Williams",
@@ -36610,7 +36595,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -36718,7 +36703,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 12,
         "name": "Camden Brown",
@@ -36898,7 +36883,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 7,
         "name": "Cedric Tillman",
@@ -37059,7 +37044,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -37183,7 +37168,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Chimere Dike",
@@ -37237,12 +37222,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.53,
-        "remaining_projected_points": 21.18,
+        "ppg": 3.52,
+        "remaining_projected_points": 21.12,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 3.55,
+          "12": 3.49,
           "13": 2.79,
           "14": 3.98,
           "15": 3.54,
@@ -37256,7 +37241,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -37299,7 +37284,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 10,
         "name": "Chris Blair",
@@ -37480,7 +37465,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -37570,7 +37555,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -37705,7 +37690,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -37748,7 +37733,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -37856,7 +37841,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Coleman Owen",
@@ -38166,13 +38151,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 2.227,
-        "remaining_projected_points": 13.36,
+        "ppg": 2.217,
+        "remaining_projected_points": 13.3,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 1.73,
-          "13": 2.16,
+          "13": 2.1,
           "14": 2.4,
           "15": 2.38,
           "16": 2.22,
@@ -38184,7 +38169,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -38482,7 +38467,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 5,
         "name": "Dalen Cambre",
@@ -38981,7 +38966,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -39105,7 +39090,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -39276,7 +39261,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 9,
         "name": "David Moore",
@@ -39328,7 +39313,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 9,
         "name": "David Sills V",
@@ -39553,7 +39538,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 12,
         "name": "DeAndre Carter",
@@ -39831,7 +39816,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 8,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -40051,7 +40036,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -40206,7 +40191,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 5,
         "name": "Deven Thompkins",
@@ -40257,7 +40242,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -40492,7 +40477,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -40630,7 +40615,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 2,
         "name": "Dillon Bell",
@@ -40742,13 +40727,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 1.88,
-        "remaining_projected_points": 11.28,
+        "ppg": 1.858,
+        "remaining_projected_points": 11.15,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 1.92,
-          "13": 1.75,
+          "12": 1.9,
+          "13": 1.64,
           "14": 1.77,
           "15": 1.82,
           "16": 2.07,
@@ -40761,7 +40746,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Dohnte Meyers",
@@ -40877,7 +40862,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
         "injury_report_record": {
@@ -40955,7 +40940,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -41273,7 +41258,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -41431,12 +41416,12 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 0.99,
-        "remaining_projected_points": 5.94,
+        "ppg": 1.222,
+        "remaining_projected_points": 7.33,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 3.71,
+          "12": 5.1,
           "13": 0.45,
           "14": 0.41,
           "15": 0.42,
@@ -41450,7 +41435,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 10,
         "name": "Efton Chism III",
@@ -41567,7 +41552,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -41610,7 +41595,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 4,
         "name": "Elijah Sarratt",
@@ -42317,7 +42302,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 12,
         "name": "Greg Dortch",
@@ -42433,7 +42418,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Harrison Wallace III",
         "nfl_team": "ARI",
         "player_stats_weeks_observed": 2,
@@ -42586,7 +42571,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -42629,7 +42614,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Isaac TeSlaa",
@@ -42682,7 +42667,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 10,
         "name": "Isaiah Bond",
@@ -42848,7 +42833,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -43003,7 +42988,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 12,
         "name": "J. Michael Sturdivant",
@@ -43170,7 +43155,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -43263,7 +43248,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 4,
         "name": "Ja'seem Reed",
@@ -43346,7 +43331,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -43424,7 +43409,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -43547,7 +43532,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Jaden Bradley",
@@ -43678,7 +43663,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Jahdae Walker",
@@ -43859,7 +43844,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 7,
         "name": "Jalen Brooks",
@@ -43911,7 +43896,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Jalen Cropper",
         "nfl_team": "NO",
         "player_stats_weeks_observed": 1,
@@ -44001,7 +43986,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -44059,7 +44044,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -44102,7 +44087,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 10,
         "name": "Jalen Reagor",
@@ -44137,7 +44122,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 12,
         "name": "Jalen Royals",
@@ -44190,7 +44175,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Jalen Tolbert",
@@ -44291,7 +44276,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 11,
         "name": "Jalin Hyatt",
@@ -44359,7 +44344,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 3,
         "name": "Jamaal Pritchett",
@@ -44697,7 +44682,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -44854,7 +44839,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -45009,7 +44994,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -45101,7 +45086,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -45145,7 +45130,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 7,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "latest_snap_week": 7,
         "name": "Jaylin Noel",
@@ -45582,7 +45567,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -46040,7 +46025,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "John Metchie III",
         "nfl_team": "CAR",
         "player_stats_weeks_observed": 9,
@@ -46290,7 +46275,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -46399,7 +46384,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Jordan Hudson",
@@ -46642,7 +46627,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Josh Cameron",
@@ -47207,7 +47192,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 7,
         "name": "Justin Watson",
@@ -47322,7 +47307,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 7,
         "name": "K.J. Osborn",
@@ -47402,7 +47387,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -47476,7 +47461,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 1,
         "name": "Kaden Davis",
@@ -47526,7 +47511,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 10,
         "name": "Kaden Wetjen",
@@ -47596,13 +47581,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.76,
-        "remaining_projected_points": 34.56,
+        "ppg": 5.753,
+        "remaining_projected_points": 34.52,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 6.16,
-          "13": 5.63,
+          "13": 5.59,
           "14": 6.21,
           "15": 5.19,
           "16": 5.42,
@@ -47615,7 +47600,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Kalif Raymond",
@@ -47700,7 +47685,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Kameron Johnson",
@@ -47833,7 +47818,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -47891,7 +47876,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 3,
         "name": "Ke'Shawn Williams",
@@ -47926,7 +47911,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -48259,7 +48244,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 7,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 8,
         "name": "Kendrick Bourne",
@@ -48441,13 +48426,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.307,
-        "remaining_projected_points": 37.84,
+        "ppg": 6.275,
+        "remaining_projected_points": 37.65,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 5.2,
-          "13": 6.9,
+          "13": 6.71,
           "14": 6.91,
           "15": 6.41,
           "16": 5.67,
@@ -48459,7 +48444,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -48597,7 +48582,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Kevin Coleman Jr.",
         "nfl_team": "MIA",
         "player_stats_weeks_observed": 9,
@@ -48862,7 +48847,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 0,
         "latest_snap_week": 3,
         "name": "Kolbe Katsis",
@@ -49057,7 +49042,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 10,
         "name": "Kyle Williams",
@@ -49158,7 +49143,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 11,
         "name": "LaJohntay Wester",
@@ -49323,7 +49308,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 11,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -49510,7 +49495,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 3,
         "name": "Lewis Bond",
@@ -49562,7 +49547,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 8,
         "name": "Lil'Jordan Humphrey",
@@ -49679,7 +49664,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -49787,13 +49772,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 3.155,
-        "remaining_projected_points": 18.93,
+        "ppg": 3.152,
+        "remaining_projected_points": 18.91,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 6.89,
-          "13": 2.28,
+          "13": 2.26,
           "14": 2.34,
           "15": 2.37,
           "16": 2.66,
@@ -49805,7 +49790,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -49851,13 +49836,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.752,
-        "remaining_projected_points": 34.51,
+        "ppg": 5.765,
+        "remaining_projected_points": 34.59,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 6.45,
-          "13": 6.1,
+          "13": 6.18,
           "14": 6.13,
           "15": 4.87,
           "16": 5.53,
@@ -49870,7 +49855,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 10,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "latest_snap_week": 12,
         "name": "Makai Lemon",
@@ -49939,7 +49924,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 10,
         "name": "Malachi Corley",
@@ -49977,13 +49962,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 5.085,
-        "remaining_projected_points": 30.51,
+        "ppg": 5.057,
+        "remaining_projected_points": 30.34,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 5.32,
-          "13": 4.98,
+          "13": 4.81,
           "14": 4.47,
           "15": 4.76,
           "16": 5.46,
@@ -49995,7 +49980,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 10,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Malachi Fields",
@@ -50097,7 +50082,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -50235,7 +50220,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "latest_snap_week": 11,
         "name": "Malik McClain",
@@ -50303,7 +50288,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 6,
         "name": "Malik Turner",
@@ -50784,7 +50769,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 3,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 6,
         "injury_report_observations": 6,
@@ -50908,13 +50893,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 2.735,
-        "remaining_projected_points": 16.41,
+        "ppg": 2.728,
+        "remaining_projected_points": 16.37,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 2.96,
-          "13": 2.78,
+          "12": 2.95,
+          "13": 2.75,
           "14": 2.9,
           "15": 2.63,
           "16": 2.56,
@@ -50926,7 +50911,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -50984,7 +50969,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
         "injury_report_record": {
@@ -51703,7 +51688,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Montorie Foster Jr.",
         "nfl_team": "SEA",
         "player_stats_weeks_observed": 1,
@@ -51794,7 +51779,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -51965,7 +51950,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 11,
         "name": "Nick Westbrook-Ikhine",
@@ -52049,7 +52034,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -52237,7 +52222,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 9,
         "name": "Odell Beckham Jr.",
@@ -52268,7 +52253,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -52682,13 +52667,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 6.337,
-        "remaining_projected_points": 38.02,
+        "ppg": 6.335,
+        "remaining_projected_points": 38.01,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 5.72,
-          "13": 6.13,
+          "13": 6.12,
           "14": 7.07,
           "15": 6.04,
           "16": 7.18,
@@ -52701,7 +52686,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -52776,7 +52761,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 11,
         "name": "Quez Watkins",
@@ -53100,13 +53085,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 4.953,
-        "remaining_projected_points": 29.72,
+        "ppg": 4.955,
+        "remaining_projected_points": 29.73,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 4.69,
-          "13": 5.89,
+          "12": 4.68,
+          "13": 5.91,
           "14": 5.0,
           "15": 4.84,
           "16": 4.54,
@@ -53119,7 +53104,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 8,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -53180,7 +53165,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 11,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 11,
         "injuries_weeks_observed": 5,
         "injury_report_observations": 5,
@@ -53367,7 +53352,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 7,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -53905,7 +53890,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:52.828842+00:00",
+        "as_of": "2026-11-28T01:53:51.502434+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 8,
         "name": "Ryan Miller",
@@ -54097,7 +54082,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 5,
         "advanced_rushing_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -54589,7 +54574,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 4,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "latest_snap_week": 11,
         "name": "Simi Fehoko",
@@ -54642,7 +54627,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 10,
         "name": "Skyler Bell",
@@ -54679,7 +54664,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 5,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 6,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -54884,7 +54869,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "latest_snap_week": 11,
         "name": "Sterling Shepard",
@@ -55097,7 +55082,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -55284,7 +55269,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "latest_snap_week": 12,
         "name": "Tay Martin",
@@ -55448,7 +55433,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Ted Hurst III",
         "nfl_team": "TB",
         "player_stats_weeks_observed": 9,
@@ -55635,7 +55620,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "latest_snap_week": 11,
         "name": "Tez Johnson",
@@ -55687,7 +55672,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "name": "Theo Wease Jr.",
         "nfl_team": "LAC",
         "player_stats_weeks_observed": 3,
@@ -55793,7 +55778,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -55869,7 +55854,7 @@
       "sleeper_injury_status": "IR",
       "sleeper_status": "Inactive",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 1,
         "latest_snap_week": 5,
         "name": "Tom Kennedy",
@@ -56002,7 +55987,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 6,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -56238,13 +56223,13 @@
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 4.11,
-        "remaining_projected_points": 24.66,
+        "ppg": 4.108,
+        "remaining_projected_points": 24.65,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
           "12": 3.78,
-          "13": 3.94,
+          "13": 3.93,
           "14": 4.59,
           "15": 3.94,
           "16": 4.69,
@@ -56256,7 +56241,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 9,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 9,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -56346,7 +56331,7 @@
       "sleeper_injury_status": null,
       "sleeper_status": "Active",
       "usage": {
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 9,
         "name": "Trent Sherfield",
@@ -56606,7 +56591,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 8,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 7,
         "injury_report_observations": 7,
@@ -56698,7 +56683,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 9,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -56837,7 +56822,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -57072,7 +57057,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 4,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 4,
         "latest_snap_week": 4,
         "name": "Tyquan Thornton",
@@ -57141,7 +57126,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -57311,7 +57296,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 3,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 5,
         "latest_snap_week": 11,
         "name": "Van Jefferson",
@@ -57349,7 +57334,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 1,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 2,
         "injury_report_observations": 2,
@@ -57696,7 +57681,7 @@
       "sleeper_status": "Inactive",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 3,
         "injuries_weeks_observed": 3,
         "injury_report_observations": 3,
@@ -57757,7 +57742,7 @@
       "sleeper_status": "Active",
       "usage": {
         "advanced_receiving_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 2,
         "latest_snap_week": 11,
         "name": "Xavier Restrepo",
@@ -57933,18 +57918,17 @@
       "nfl_team": "ATL",
       "position": "WR",
       "projection": {
-        "coverage_fraction": 1.0,
-        "coverage_weeks": 6,
-        "games_remaining": 6,
+        "coverage_fraction": 0.833,
+        "coverage_weeks": 5,
+        "games_remaining": 5,
         "method": [
           "league_stat_estimate"
         ],
-        "ppg": 2.317,
-        "remaining_projected_points": 13.9,
+        "ppg": 1.99,
+        "remaining_projected_points": 11.94,
         "status": "projection_only_not_injury_verified",
         "total_weeks_fetched": 6,
         "weeks": {
-          "12": 1.96,
           "13": 2.46,
           "14": 2.19,
           "15": 2.54,
@@ -57958,7 +57942,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 1,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 8,
         "injuries_weeks_observed": 4,
         "injury_report_observations": 4,
@@ -58018,7 +58002,7 @@
       "usage": {
         "advanced_receiving_weeks_observed": 6,
         "advanced_rushing_weeks_observed": 2,
-        "as_of": "2026-11-27T18:51:53.639105+00:00",
+        "as_of": "2026-11-28T01:53:52.265769+00:00",
         "games_with_offense_snap_record": 10,
         "injuries_weeks_observed": 1,
         "injury_report_observations": 1,
@@ -58112,7 +58096,7 @@
       "usage": {}
     }
   ],
-  "generated_at_utc": "2026-11-27T18:51:54.169546+00:00",
+  "generated_at_utc": "2026-11-28T01:53:52.715334+00:00",
   "ownership_definition": "Not on any of 12 Sleeper roster players arrays at the saved snapshot.",
   "position_rankings": {
     "DEF": [
@@ -58131,7 +58115,7 @@
         "id": "GB",
         "injury_status": null,
         "name": "Green Bay Packers",
-        "ppg": 6.502,
+        "ppg": 6.51,
         "projection_coverage": 1.0,
         "rank": 2,
         "snap_share_pct": null,
@@ -58142,7 +58126,7 @@
         "id": "NE",
         "injury_status": null,
         "name": "New England Patriots",
-        "ppg": 6.068,
+        "ppg": 6.087,
         "projection_coverage": 1.0,
         "rank": 3,
         "snap_share_pct": null,
@@ -58164,7 +58148,7 @@
         "id": "NO",
         "injury_status": null,
         "name": "New Orleans Saints",
-        "ppg": 5.833,
+        "ppg": 5.823,
         "projection_coverage": 1.0,
         "rank": 5,
         "snap_share_pct": null,
@@ -58175,7 +58159,7 @@
         "id": "NYG",
         "injury_status": null,
         "name": "New York Giants",
-        "ppg": 5.765,
+        "ppg": 5.752,
         "projection_coverage": 1.0,
         "rank": 6,
         "snap_share_pct": null,
@@ -58197,7 +58181,7 @@
         "id": "TEN",
         "injury_status": null,
         "name": "Tennessee Titans",
-        "ppg": 5.333,
+        "ppg": 5.332,
         "projection_coverage": 1.0,
         "rank": 8,
         "snap_share_pct": null,
@@ -58208,7 +58192,7 @@
         "id": "NYJ",
         "injury_status": null,
         "name": "New York Jets",
-        "ppg": 5.167,
+        "ppg": 5.178,
         "projection_coverage": 0.833,
         "rank": 9,
         "snap_share_pct": null,
@@ -58265,7 +58249,7 @@
         "id": "13545",
         "injury_status": null,
         "name": "Trey Smack",
-        "ppg": 6.572,
+        "ppg": 6.575,
         "projection_coverage": 1.0,
         "rank": 3,
         "snap_share_pct": null,
@@ -58276,7 +58260,7 @@
         "id": "6083",
         "injury_status": null,
         "name": "Matt Gay",
-        "ppg": 6.473,
+        "ppg": 6.467,
         "projection_coverage": 0.833,
         "rank": 4,
         "snap_share_pct": null,
@@ -58293,27 +58277,27 @@
         "snap_share_pct": null,
         "team": "PIT",
         "usage_verified": false
+      },
+      {
+        "id": "3678",
+        "injury_status": null,
+        "name": "Wil Lutz",
+        "ppg": 5.952,
+        "projection_coverage": 1.0,
+        "rank": 6,
+        "snap_share_pct": null,
+        "team": "DEN",
+        "usage_verified": false
       }
     ],
     "QB": [
       {
-        "id": "4017",
-        "injury_status": null,
-        "name": "Deshaun Watson",
-        "ppg": 15.153,
-        "projection_coverage": 1.0,
-        "rank": 1,
-        "snap_share_pct": 98.0,
-        "team": "CLE",
-        "usage_verified": true
-      },
-      {
         "id": "4892",
         "injury_status": "Questionable",
         "name": "Baker Mayfield",
-        "ppg": 14.7,
+        "ppg": 14.717,
         "projection_coverage": 1.0,
-        "rank": 2,
+        "rank": 1,
         "snap_share_pct": 100.0,
         "team": "TB",
         "usage_verified": true
@@ -58322,9 +58306,9 @@
         "id": "3257",
         "injury_status": null,
         "name": "Jacoby Brissett",
-        "ppg": 10.073,
+        "ppg": 10.097,
         "projection_coverage": 0.833,
-        "rank": 3,
+        "rank": 2,
         "snap_share_pct": 86.0,
         "team": "ARI",
         "usage_verified": true
@@ -58332,23 +58316,12 @@
     ],
     "RB": [
       {
-        "id": "11576",
-        "injury_status": null,
-        "name": "Braelon Allen",
-        "ppg": 6.493,
-        "projection_coverage": 0.833,
-        "rank": 1,
-        "snap_share_pct": 48.0,
-        "team": "NYJ",
-        "usage_verified": true
-      },
-      {
         "id": "9511",
         "injury_status": null,
         "name": "Keaton Mitchell",
         "ppg": 4.64,
         "projection_coverage": 1.0,
-        "rank": 2,
+        "rank": 1,
         "snap_share_pct": 17.0,
         "team": "LAC",
         "usage_verified": true
@@ -58357,9 +58330,9 @@
         "id": "11655",
         "injury_status": null,
         "name": "Tyrone Tracy Jr.",
-        "ppg": 4.178,
+        "ppg": 4.17,
         "projection_coverage": 0.833,
-        "rank": 3,
+        "rank": 2,
         "snap_share_pct": 24.0,
         "team": "NYG",
         "usage_verified": true
@@ -58368,9 +58341,9 @@
         "id": "8122",
         "injury_status": null,
         "name": "Zonovan Knight",
-        "ppg": 3.813,
+        "ppg": 3.838,
         "projection_coverage": 0.833,
-        "rank": 4,
+        "rank": 3,
         "snap_share_pct": 40.7,
         "team": "ARI",
         "usage_verified": true
@@ -58381,7 +58354,7 @@
         "name": "MarShawn Lloyd",
         "ppg": 3.295,
         "projection_coverage": 1.0,
-        "rank": 5,
+        "rank": 4,
         "snap_share_pct": 16.0,
         "team": "GB",
         "usage_verified": true
@@ -58390,9 +58363,9 @@
         "id": "9225",
         "injury_status": "IR",
         "name": "Tank Bigsby",
-        "ppg": 2.037,
+        "ppg": 2.032,
         "projection_coverage": 0.833,
-        "rank": 6,
+        "rank": 5,
         "snap_share_pct": 28.7,
         "team": "PHI",
         "usage_verified": true
@@ -58403,7 +58376,7 @@
         "name": "Audric Estime",
         "ppg": 1.862,
         "projection_coverage": 0.833,
-        "rank": 7,
+        "rank": 6,
         "snap_share_pct": 30.0,
         "team": "CLE",
         "usage_verified": true
@@ -58412,9 +58385,9 @@
         "id": "13418",
         "injury_status": null,
         "name": "Robert Henry Jr.",
-        "ppg": 0.858,
+        "ppg": 0.753,
         "projection_coverage": 1.0,
-        "rank": 8,
+        "rank": 7,
         "snap_share_pct": null,
         "team": "SEA",
         "usage_verified": false
@@ -58423,9 +58396,9 @@
         "id": "11439",
         "injury_status": null,
         "name": "Jaleel McLaughlin",
-        "ppg": 0.342,
+        "ppg": 0.358,
         "projection_coverage": 1.0,
-        "rank": 9,
+        "rank": 8,
         "snap_share_pct": 1.3,
         "team": "CLE",
         "usage_verified": true
@@ -58436,7 +58409,7 @@
         "id": "2505",
         "injury_status": null,
         "name": "Darren Waller",
-        "ppg": 7.172,
+        "ppg": 7.205,
         "projection_coverage": 1.0,
         "rank": 1,
         "snap_share_pct": 53.3,
@@ -58447,7 +58420,7 @@
         "id": "8111",
         "injury_status": null,
         "name": "Cade Otton",
-        "ppg": 5.127,
+        "ppg": 5.135,
         "projection_coverage": 1.0,
         "rank": 2,
         "snap_share_pct": 97.3,
@@ -58455,12 +58428,23 @@
         "usage_verified": true
       },
       {
+        "id": "9482",
+        "injury_status": null,
+        "name": "Michael Mayer",
+        "ppg": 4.927,
+        "projection_coverage": 0.833,
+        "rank": 3,
+        "snap_share_pct": 75.3,
+        "team": "LV",
+        "usage_verified": true
+      },
+      {
         "id": "5857",
         "injury_status": null,
         "name": "Noah Fant",
-        "ppg": 3.607,
+        "ppg": 3.578,
         "projection_coverage": 1.0,
-        "rank": 3,
+        "rank": 4,
         "snap_share_pct": 53.0,
         "team": "NO",
         "usage_verified": true
@@ -58469,9 +58453,9 @@
         "id": "6865",
         "injury_status": null,
         "name": "Colby Parkinson",
-        "ppg": 3.48,
+        "ppg": 3.49,
         "projection_coverage": 1.0,
-        "rank": 4,
+        "rank": 5,
         "snap_share_pct": null,
         "team": "LAR",
         "usage_verified": false
@@ -58480,9 +58464,9 @@
         "id": "4033",
         "injury_status": "IR",
         "name": "David Njoku",
-        "ppg": 3.375,
+        "ppg": 3.373,
         "projection_coverage": 1.0,
-        "rank": 5,
+        "rank": 6,
         "snap_share_pct": 30.3,
         "team": "LAC",
         "usage_verified": true
@@ -58491,9 +58475,9 @@
         "id": "1339",
         "injury_status": null,
         "name": "Zach Ertz",
-        "ppg": 1.985,
+        "ppg": 1.987,
         "projection_coverage": 1.0,
-        "rank": 6,
+        "rank": 7,
         "snap_share_pct": 23.3,
         "team": "PHI",
         "usage_verified": true
@@ -58504,7 +58488,7 @@
         "id": "5859",
         "injury_status": null,
         "name": "A.J. Brown",
-        "ppg": 7.458,
+        "ppg": 7.452,
         "projection_coverage": 0.833,
         "rank": 1,
         "snap_share_pct": 71.3,
@@ -58515,7 +58499,7 @@
         "id": "9754",
         "injury_status": null,
         "name": "Quentin Johnston",
-        "ppg": 6.337,
+        "ppg": 6.335,
         "projection_coverage": 1.0,
         "rank": 2,
         "snap_share_pct": 79.0,
@@ -58526,7 +58510,7 @@
         "id": "11637",
         "injury_status": null,
         "name": "Keon Coleman",
-        "ppg": 6.307,
+        "ppg": 6.275,
         "projection_coverage": 1.0,
         "rank": 3,
         "snap_share_pct": 61.0,
@@ -58534,32 +58518,32 @@
         "usage_verified": true
       },
       {
-        "id": "3634",
-        "injury_status": null,
-        "name": "Kalif Raymond",
-        "ppg": 5.76,
-        "projection_coverage": 1.0,
-        "rank": 4,
-        "snap_share_pct": 65.0,
-        "team": "CHI",
-        "usage_verified": true
-      },
-      {
         "id": "13294",
         "injury_status": null,
         "name": "Makai Lemon",
-        "ppg": 5.752,
+        "ppg": 5.765,
         "projection_coverage": 1.0,
-        "rank": 5,
+        "rank": 4,
         "snap_share_pct": 87.7,
         "team": "PHI",
+        "usage_verified": true
+      },
+      {
+        "id": "3634",
+        "injury_status": null,
+        "name": "Kalif Raymond",
+        "ppg": 5.753,
+        "projection_coverage": 1.0,
+        "rank": 5,
+        "snap_share_pct": 65.0,
+        "team": "CHI",
         "usage_verified": true
       },
       {
         "id": "13285",
         "injury_status": null,
         "name": "Malachi Fields",
-        "ppg": 5.085,
+        "ppg": 5.057,
         "projection_coverage": 1.0,
         "rank": 6,
         "snap_share_pct": 86.7,
@@ -58570,7 +58554,7 @@
         "id": "8676",
         "injury_status": null,
         "name": "Rashid Shaheed",
-        "ppg": 4.953,
+        "ppg": 4.955,
         "projection_coverage": 1.0,
         "rank": 7,
         "snap_share_pct": 40.7,
@@ -58603,7 +58587,7 @@
         "id": "12509",
         "injury_status": "Out",
         "name": "Tre' Harris",
-        "ppg": 4.11,
+        "ppg": 4.108,
         "projection_coverage": 1.0,
         "rank": 10,
         "snap_share_pct": 83.0,
@@ -58614,7 +58598,7 @@
         "id": "11631",
         "injury_status": null,
         "name": "Brian Thomas Jr.",
-        "ppg": 3.647,
+        "ppg": 3.92,
         "projection_coverage": 1.0,
         "rank": 11,
         "snap_share_pct": null,
@@ -58625,7 +58609,7 @@
         "id": "13311",
         "injury_status": null,
         "name": "Chris Bell",
-        "ppg": 3.53,
+        "ppg": 3.52,
         "projection_coverage": 1.0,
         "rank": 12,
         "snap_share_pct": 65.0,
@@ -58636,7 +58620,7 @@
         "id": "4177",
         "injury_status": "IR",
         "name": "Mack Hollins",
-        "ppg": 3.155,
+        "ppg": 3.152,
         "projection_coverage": 1.0,
         "rank": 13,
         "snap_share_pct": 67.0,
@@ -58658,7 +58642,7 @@
         "id": "11628",
         "injury_status": null,
         "name": "Marvin Harrison Jr.",
-        "ppg": 2.735,
+        "ppg": 2.728,
         "projection_coverage": 1.0,
         "rank": 15,
         "snap_share_pct": 28.7,
@@ -58666,32 +58650,32 @@
         "usage_verified": true
       },
       {
-        "id": "13320",
-        "injury_status": null,
-        "name": "Zachariah Branch",
-        "ppg": 2.317,
-        "projection_coverage": 1.0,
-        "rank": 16,
-        "snap_share_pct": 26.0,
-        "team": "ATL",
-        "usage_verified": true
-      },
-      {
         "id": "13413",
         "injury_status": null,
         "name": "Cyrus Allen",
-        "ppg": 2.227,
+        "ppg": 2.217,
         "projection_coverage": 1.0,
-        "rank": 17,
+        "rank": 16,
         "snap_share_pct": 33.3,
         "team": "KC",
+        "usage_verified": true
+      },
+      {
+        "id": "13320",
+        "injury_status": null,
+        "name": "Zachariah Branch",
+        "ppg": 1.99,
+        "projection_coverage": 0.833,
+        "rank": 17,
+        "snap_share_pct": 26.0,
+        "team": "ATL",
         "usage_verified": true
       },
       {
         "id": "13264",
         "injury_status": null,
         "name": "Dohnte Meyers",
-        "ppg": 1.88,
+        "ppg": 1.858,
         "projection_coverage": 1.0,
         "rank": 18,
         "snap_share_pct": 40.0,
@@ -58702,7 +58686,7 @@
         "id": "12542",
         "injury_status": null,
         "name": "Efton Chism III",
-        "ppg": 0.99,
+        "ppg": 1.222,
         "projection_coverage": 1.0,
         "rank": 19,
         "snap_share_pct": 51.0,
@@ -58712,30 +58696,14 @@
     ]
   },
   "position_rankings_method": "Within-position screening by Sleeper published half-PPR PPG (>=70% published week coverage); unadjusted for availability, medical risk or player-specific waiver value.",
-  "projection_as_of": "2026-11-26T23:45:21.270833+00:00",
+  "projection_as_of": "2026-11-27T18:51:55.624198+00:00",
   "projection_opportunity_screen": [
-    {
-      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
-      "injury_status_from_sleeper": null,
-      "name": "Deshaun Watson",
-      "position": "QB",
-      "projected_ppg": 15.153,
-      "projection_week_coverage": 1.0,
-      "recent_snap_share_pct": 98.0,
-      "sleeper_id": "4017",
-      "snap_trend_last_three_appearances": [
-        100.0,
-        94.0,
-        100.0
-      ],
-      "team": "CLE"
-    },
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": "Questionable",
       "name": "Baker Mayfield",
       "position": "QB",
-      "projected_ppg": 14.7,
+      "projected_ppg": 14.717,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 100.0,
       "sleeper_id": "4892",
@@ -58751,7 +58719,7 @@
       "injury_status_from_sleeper": null,
       "name": "Jacoby Brissett",
       "position": "QB",
-      "projected_ppg": 10.073,
+      "projected_ppg": 10.097,
       "projection_week_coverage": 0.833,
       "recent_snap_share_pct": 86.0,
       "sleeper_id": "3257",
@@ -58767,7 +58735,7 @@
       "injury_status_from_sleeper": null,
       "name": "A.J. Brown",
       "position": "WR",
-      "projected_ppg": 7.458,
+      "projected_ppg": 7.452,
       "projection_week_coverage": 0.833,
       "recent_snap_share_pct": 71.3,
       "sleeper_id": "5859",
@@ -58783,7 +58751,7 @@
       "injury_status_from_sleeper": null,
       "name": "Darren Waller",
       "position": "TE",
-      "projected_ppg": 7.172,
+      "projected_ppg": 7.205,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 53.3,
       "sleeper_id": "2505",
@@ -58797,25 +58765,9 @@
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": null,
-      "name": "Braelon Allen",
-      "position": "RB",
-      "projected_ppg": 6.493,
-      "projection_week_coverage": 0.833,
-      "recent_snap_share_pct": 48.0,
-      "sleeper_id": "11576",
-      "snap_trend_last_three_appearances": [
-        59.0,
-        48.0,
-        37.0
-      ],
-      "team": "NYJ"
-    },
-    {
-      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
-      "injury_status_from_sleeper": null,
       "name": "Quentin Johnston",
       "position": "WR",
-      "projected_ppg": 6.337,
+      "projected_ppg": 6.335,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 79.0,
       "sleeper_id": "9754",
@@ -58831,7 +58783,7 @@
       "injury_status_from_sleeper": null,
       "name": "Keon Coleman",
       "position": "WR",
-      "projected_ppg": 6.307,
+      "projected_ppg": 6.275,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 61.0,
       "sleeper_id": "11637",
@@ -58845,25 +58797,9 @@
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": null,
-      "name": "Kalif Raymond",
-      "position": "WR",
-      "projected_ppg": 5.76,
-      "projection_week_coverage": 1.0,
-      "recent_snap_share_pct": 65.0,
-      "sleeper_id": "3634",
-      "snap_trend_last_three_appearances": [
-        70.0,
-        69.0,
-        56.0
-      ],
-      "team": "CHI"
-    },
-    {
-      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
-      "injury_status_from_sleeper": null,
       "name": "Makai Lemon",
       "position": "WR",
-      "projected_ppg": 5.752,
+      "projected_ppg": 5.765,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 87.7,
       "sleeper_id": "13294",
@@ -58877,9 +58813,25 @@
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": null,
+      "name": "Kalif Raymond",
+      "position": "WR",
+      "projected_ppg": 5.753,
+      "projection_week_coverage": 1.0,
+      "recent_snap_share_pct": 65.0,
+      "sleeper_id": "3634",
+      "snap_trend_last_three_appearances": [
+        70.0,
+        69.0,
+        56.0
+      ],
+      "team": "CHI"
+    },
+    {
+      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
+      "injury_status_from_sleeper": null,
       "name": "Cade Otton",
       "position": "TE",
-      "projected_ppg": 5.127,
+      "projected_ppg": 5.135,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 97.3,
       "sleeper_id": "8111",
@@ -58895,7 +58847,7 @@
       "injury_status_from_sleeper": null,
       "name": "Malachi Fields",
       "position": "WR",
-      "projected_ppg": 5.085,
+      "projected_ppg": 5.057,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 86.7,
       "sleeper_id": "13285",
@@ -58911,7 +58863,7 @@
       "injury_status_from_sleeper": null,
       "name": "Rashid Shaheed",
       "position": "WR",
-      "projected_ppg": 4.953,
+      "projected_ppg": 4.955,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 40.7,
       "sleeper_id": "8676",
@@ -58921,6 +58873,22 @@
         44.0
       ],
       "team": "SEA"
+    },
+    {
+      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
+      "injury_status_from_sleeper": null,
+      "name": "Michael Mayer",
+      "position": "TE",
+      "projected_ppg": 4.927,
+      "projection_week_coverage": 0.833,
+      "recent_snap_share_pct": 75.3,
+      "sleeper_id": "9482",
+      "snap_trend_last_three_appearances": [
+        76.0,
+        83.0,
+        67.0
+      ],
+      "team": "LV"
     },
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
@@ -58959,7 +58927,7 @@
       "injury_status_from_sleeper": null,
       "name": "Tyrone Tracy Jr.",
       "position": "RB",
-      "projected_ppg": 4.178,
+      "projected_ppg": 4.17,
       "projection_week_coverage": 0.833,
       "recent_snap_share_pct": 24.0,
       "sleeper_id": "11655",
@@ -58991,7 +58959,7 @@
       "injury_status_from_sleeper": "Out",
       "name": "Tre' Harris",
       "position": "WR",
-      "projected_ppg": 4.11,
+      "projected_ppg": 4.108,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 83.0,
       "sleeper_id": "12509",
@@ -59007,7 +58975,7 @@
       "injury_status_from_sleeper": null,
       "name": "Zonovan Knight",
       "position": "RB",
-      "projected_ppg": 3.813,
+      "projected_ppg": 3.838,
       "projection_week_coverage": 0.833,
       "recent_snap_share_pct": 40.7,
       "sleeper_id": "8122",
@@ -59023,7 +58991,7 @@
       "injury_status_from_sleeper": null,
       "name": "Noah Fant",
       "position": "TE",
-      "projected_ppg": 3.607,
+      "projected_ppg": 3.578,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 53.0,
       "sleeper_id": "5857",
@@ -59039,7 +59007,7 @@
       "injury_status_from_sleeper": null,
       "name": "Chris Bell",
       "position": "WR",
-      "projected_ppg": 3.53,
+      "projected_ppg": 3.52,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 65.0,
       "sleeper_id": "13311",
@@ -59055,7 +59023,7 @@
       "injury_status_from_sleeper": "IR",
       "name": "David Njoku",
       "position": "TE",
-      "projected_ppg": 3.375,
+      "projected_ppg": 3.373,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 30.3,
       "sleeper_id": "4033",
@@ -59087,7 +59055,7 @@
       "injury_status_from_sleeper": "IR",
       "name": "Mack Hollins",
       "position": "WR",
-      "projected_ppg": 3.155,
+      "projected_ppg": 3.152,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 67.0,
       "sleeper_id": "4177",
@@ -59119,7 +59087,7 @@
       "injury_status_from_sleeper": null,
       "name": "Marvin Harrison Jr.",
       "position": "WR",
-      "projected_ppg": 2.735,
+      "projected_ppg": 2.728,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 28.7,
       "sleeper_id": "11628",
@@ -59133,25 +59101,9 @@
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": null,
-      "name": "Zachariah Branch",
-      "position": "WR",
-      "projected_ppg": 2.317,
-      "projection_week_coverage": 1.0,
-      "recent_snap_share_pct": 26.0,
-      "sleeper_id": "13320",
-      "snap_trend_last_three_appearances": [
-        35.0,
-        34.0,
-        9.0
-      ],
-      "team": "ATL"
-    },
-    {
-      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
-      "injury_status_from_sleeper": null,
       "name": "Cyrus Allen",
       "position": "WR",
-      "projected_ppg": 2.227,
+      "projected_ppg": 2.217,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 33.3,
       "sleeper_id": "13413",
@@ -59167,7 +59119,7 @@
       "injury_status_from_sleeper": "IR",
       "name": "Tank Bigsby",
       "position": "RB",
-      "projected_ppg": 2.037,
+      "projected_ppg": 2.032,
       "projection_week_coverage": 0.833,
       "recent_snap_share_pct": 28.7,
       "sleeper_id": "9225",
@@ -59181,9 +59133,25 @@
     {
       "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
       "injury_status_from_sleeper": null,
+      "name": "Zachariah Branch",
+      "position": "WR",
+      "projected_ppg": 1.99,
+      "projection_week_coverage": 0.833,
+      "recent_snap_share_pct": 26.0,
+      "sleeper_id": "13320",
+      "snap_trend_last_three_appearances": [
+        35.0,
+        34.0,
+        9.0
+      ],
+      "team": "ATL"
+    },
+    {
+      "caveat": "Watchlist only; position, lineup need, routes, injuries and cost not fully assessed",
+      "injury_status_from_sleeper": null,
       "name": "Zach Ertz",
       "position": "TE",
-      "projected_ppg": 1.985,
+      "projected_ppg": 1.987,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 23.3,
       "sleeper_id": "1339",
@@ -59199,7 +59167,7 @@
       "injury_status_from_sleeper": null,
       "name": "Dohnte Meyers",
       "position": "WR",
-      "projected_ppg": 1.88,
+      "projected_ppg": 1.858,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 40.0,
       "sleeper_id": "13264",
@@ -59215,7 +59183,7 @@
       "injury_status_from_sleeper": null,
       "name": "Efton Chism III",
       "position": "WR",
-      "projected_ppg": 0.99,
+      "projected_ppg": 1.222,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 51.0,
       "sleeper_id": "12542",
@@ -59231,7 +59199,7 @@
       "injury_status_from_sleeper": null,
       "name": "Jaleel McLaughlin",
       "position": "RB",
-      "projected_ppg": 0.342,
+      "projected_ppg": 0.358,
       "projection_week_coverage": 1.0,
       "recent_snap_share_pct": 1.3,
       "sleeper_id": "11439",
@@ -59245,8 +59213,8 @@
   ],
   "projection_source": "Sleeper NFL weekly projection endpoint; https://api.sleeper.app/v1/projections/nfl/regular/{season}/{week}",
   "ranked": false,
-  "sleeper_snapshot_utc": "2026-11-27T18:51:49.343250+00:00",
-  "usage_as_of": "2026-11-27T18:51:53.639105+00:00",
+  "sleeper_snapshot_utc": "2026-11-28T01:53:48.675746+00:00",
+  "usage_as_of": "2026-11-28T01:53:52.265769+00:00",
   "usage_source": "nflverse public 2026 feeds; CC-BY 4.0; https://github.com/nflverse/nflverse-data",
   "warning": "Eligibility, pending claims, games already played and league waivers must be checked in Sleeper before pickup."
 }

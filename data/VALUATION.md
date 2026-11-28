@@ -1,7 +1,7 @@
 # Dirty Birds — Phase V Trade Valuation Research
 
-Generated: 2026-11-27T18:51:54.101614+00:00
-Sleeper snapshot: 2026-11-27T18:51:49.343250+00:00
+Generated: 2026-11-28T01:53:52.648844+00:00
+Sleeper snapshot: 2026-11-28T01:53:48.675746+00:00
 
 **MODEL STATUS: historical production screening only. No automatic fair-trade verdicts or championship probabilities.**
 
@@ -42,7 +42,7 @@ Illustrative lineup using best season-to-date averages, not an achievable or rec
 | JA’MARRTRIX | 5-6 | 111.18 | 5 |
 | Victorious Secret | 5-6 | 110.44 | 5 |
 | suck my dickerson | 8-3 | 110.37 | 1 |
-| Cokerthestroker | 7-4 | 108.20 | 5 |
+| Cokerthestroker | 7-4 | 109.74 | 5 |
 | kfsn | 7-4 | 105.55 | 2 |
 | To Infinity and Bijan | 4-7 | 99.83 | 6 |
 | DeeboSix0 | 9-2 | 99.30 | 1 |
